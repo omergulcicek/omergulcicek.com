@@ -53,9 +53,7 @@ export const projects = [
 export default function App() {
   useEffect(
     () => {
-      const section = document.getElementsByTagName("section")[0].classList
-      section.remove("blog", "about")
-      section.add("projects")
+      document.querySelectorAll("main section")[0].classList.add("projects")
     }
   )
 

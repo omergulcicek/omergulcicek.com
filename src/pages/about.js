@@ -21,7 +21,7 @@ const About = () => (
       </p>
 
       <p>
-        Frontend Developer'ım; <Turkuaz href="https://turkuazcss.com/" target="_blank" rel="noopener noreferrer">Turkuaz Css</Turkuaz> ve <TurkceDokuman href="https://turkcedokuman.com/" target="_blank" rel="noopener noreferrer">Türkçe Doküman</TurkceDokuman>'ın kurucusuyum. Yazılım alanında Türkçe kaynak sayısını arttırmak adına çeviriler yapmaktayım. Çalışmalarımın çoğu açık kaynak, <Link to="/projects">projeler</Link> sayfasından yada detaylı olarak <a href="https://github.com/omergulcicek" target="_blank" rel="noopener noreferrer">GitHub</a> profilimden ulaşabilirsiniz.
+        Frontend Developer'ım; <Turkuaz href="https://turkuazcss.com/" target="_blank" rel="noopener noreferrer">Turkuaz Css</Turkuaz> ve <TurkceDokuman href="https://turkcedokuman.com/" target="_blank" rel="noopener noreferrer">Türkçe Doküman</TurkceDokuman>'ın kurucusuyum. Yazılım alanında Türkçe kaynak sayısını arttırmak adına çeviriler yapmaktayım. Çalışmalarımın çoğu açık kaynak, <Link to="/projects/">projeler</Link> sayfasından yada detaylı olarak <a href="https://github.com/omergulcicek" target="_blank" rel="noopener noreferrer">GitHub</a> profilimden ulaşabilirsiniz.
       </p>
 
       <p>
@@ -29,7 +29,7 @@ const About = () => (
       </p>
 
       <p>
-        Kendimi sürekli güncel tutmak adına alanımla ilgili araştırmalar yapıp, bunları <Link to="/blog">paylaşıyorum</Link>.
+        Kendimi sürekli güncel tutmak adına alanımla ilgili araştırmalar yapıp, bunları <Link to="/blog/">paylaşıyorum</Link>.
       </p>
 
       <p>

@@ -19,7 +19,7 @@ export default function Template({ data }) {
 
       <section>
         <Details>
-          <Link to="/blog">{"<- Tüm Yazılar"}</Link>
+          <Link to="/blog/">{"<- Tüm Yazılar"}</Link>
           
           <span>•</span>
           <span>{ date }</span>
