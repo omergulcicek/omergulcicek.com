@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Helmet from "react-helmet"
 import styled from "styled-components"
+import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
 

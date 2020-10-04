@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Helmet from "react-helmet"
 import styled from "styled-components"
+import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
