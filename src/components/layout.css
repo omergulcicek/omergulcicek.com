@@ -136,6 +136,10 @@ pre code {
   padding: 0;
 }
 
+li a {
+  overflow-wrap: break-word;
+}
+
 iframe {
   margin-bottom: 80px;
   margin-top: 40px;
