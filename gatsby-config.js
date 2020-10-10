@@ -69,12 +69,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `.`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        name: `Ömer Gülçiçek`,
+        short_name: `omergulcicek`,
+        description: `Hayallerimin ve hedeflerimin arkasından koşmaya devam edeceğim. Sevdiğim işi yapıyorum, bu sayede hayatımın sonuna kadar bir gün bile çalışmam gerekmiyor; tutkunuzu bulun ve işiniz iş olmaktan çıksın.`,
+        lang: `tr`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+        start_url: `/`,
+        background_color: `#1b1b1b`,
+        theme_color: `#2196f3`
       },
     },
   ],
