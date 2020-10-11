@@ -93,7 +93,7 @@ const Hero = styled.section`
     text-align: center;
     width: 100%;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1600px) {
       text-align: left;
       width: 50%;
     }
@@ -102,7 +102,7 @@ const Hero = styled.section`
       display: none;
       transform: translateY(-80px);
 
-      @media (min-width: 1200px) {
+      @media (min-width: 1600px) {
         display: inline-block;
       }
     }
