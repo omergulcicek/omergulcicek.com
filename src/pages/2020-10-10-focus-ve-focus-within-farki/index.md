@@ -68,13 +68,6 @@ Aşağıdaki örnekte tab menü ile menüyü gezmek isterseniz linkleri sırası
 
 <iframe height="500" style="width: 100%;" scrolling="no" title=":focus &amp; :focus-within Örneği - Menü" src="https://codepen.io/omergulcicek/embed/vYKOOxY?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
-
-
-
-
-
-
-
 ### Kaynaklar
 
 - https://tenmilesquare.com/focus-vs-focus-within/
