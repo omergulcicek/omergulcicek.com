@@ -6,11 +6,13 @@ import articleTimeAgo from "article-time-ago"
 const Post = ({ title, date, category, path }) => (
   <Article>
     <Link to={ path }>{ title }</Link>
-    <div><span>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
+    <div><span title={ConvertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
   </Article>
 )
 
 export default Post
+
+const ConvertDate = d => new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })
 
 const Article = styled.article`
   color: var(--c-grey);
