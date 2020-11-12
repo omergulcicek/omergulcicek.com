@@ -34,7 +34,7 @@ Varsayılan olarak gelen bu `:focus` özelliğini beğenmediğimden dolayı, `ou
 }
 ```
 
-Kişisel projem olan Turkuaz ile focus'u test etmek için [Input](https://turkuazcss.com/docs/form/input/) linkinde form elemanlarının üzerine `tab` tuşu ile gelebilirsiniz.
+Kişisel projem olan Turkuaz ile focus'u test etmek için <a href="https://turkuazcss.com/docs/form/input/" target="_blank" rel="noreferrer noopener">Input</a> linkinde form elemanlarının üzerine `tab` tuşu ile gelebilirsiniz.
 
 ## CSS'te Focus Within Özelliği
 
@@ -70,7 +70,7 @@ Aşağıdaki örnekte tab menü ile menüyü gezmek isterseniz linkleri sırası
 
 ### Kaynaklar
 
-- https://tenmilesquare.com/focus-vs-focus-within/
-- https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within
-- https://css-tricks.com/almanac/selectors/f/focus-within/
-- https://www.digitalocean.com/community/tutorials/css-focus-within-pseudo-class
+- <a href="https://tenmilesquare.com/focus-vs-focus-within/" target="_blank" rel="noreferrer noopener">https://tenmilesquare.com/focus-vs-focus-within/</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within" target="_blank" rel="noreferrer noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within</a>
+- <a href="https://css-tricks.com/almanac/selectors/f/focus-within/" target="_blank" rel="noreferrer noopener">https://css-tricks.com/almanac/selectors/f/focus-within/</a>
+- <a href="https://www.digitalocean.com/community/tutorials/css-focus-within-pseudo-class" target="_blank" rel="noreferrer noopener">https://www.digitalocean.com/community/tutorials/css-focus-within-pseudo-class</a>

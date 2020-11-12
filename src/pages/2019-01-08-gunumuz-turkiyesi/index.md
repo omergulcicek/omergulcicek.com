@@ -36,7 +36,7 @@ Görselde mesai saatleri içerisinde işiyle ilgilenmeyip oyun oynayan bir memur
 Bütünü düzeltmek için kişiden başlamak gerekir. Kişi düzelirse zamanla ailesi, çevresi, mahallesi, ülkesi düzelir.
 Yeter ki sadece kötüleyip köşemize çekilmeyelim. Kolaya kaçmayalım. Olumsuzlukların farkında varıp çalışmaya başlamalıyız. İnternet Ekipler amirimiz Serdar Kuzuloğlu konuşmasının altına imzamı atarım. Diyor ki: “Yapmamız gereken tek şey çalışmak, sadece bu”.
 
-İlgili video: [https://youtu.be/7PMvex5PZF0?t=323](https://youtu.be/7PMvex5PZF0?t=323)
+İlgili video: <a href="https://youtu.be/7PMvex5PZF0?t=323" target="_blank" rel="noreferrer noopener">https://youtu.be/7PMvex5PZF0?t=323</a>
 
 Bedri Rahmi Eyüpoğlu’nun şiirinden bir alıntı yaparak:
 

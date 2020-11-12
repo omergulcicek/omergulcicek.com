@@ -6,8 +6,7 @@ category: "Yazılım"
 medium: "https://medium.com/@omergulcicek/google-fontlar%C4%B1-daha-h%C4%B1zl%C4%B1-y%C3%BCklemek-d2afb28494dc"
 ---
 
-Web sitenizde [Google Font](https://fonts.google.com/) kullanıyorsanız, basit birkaç adım ile daha hızlı yükleme sürelerine ulaşabilirsiniz.
-
+Web sitenizde <a href="https://fonts.google.com/" target="_blank" rel="noreferrer noopener">Google Font</a> kullanıyorsanız, basit birkaç adım ile daha hızlı yükleme sürelerine ulaşabilirsiniz.
 
 Öncelikle bu sitede kullandığım **Inter** yazı stilini HTML'e eklediğimizde olanları inceleyelim.
 
@@ -61,7 +60,7 @@ Sayfamızın `fonts.gstatic.com`'a istek atacağını bildiğimiz için bu boşa
 
 ## Yazı Stilini Kendimiz Barındırmak
 
-preconnect yardımıyla çok iyi bir süre kazandık. Fakat bir yazı stili için farklı bir linke istek atıp sonucunu beklemektense bu yazı stilini kendi hostumuzdan çekersek daha iyi bir süre kazanabiliriz. [Mario Ranftl](https://mranftl.com/)'ın geliştirdiği [Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts) projesi yardımıyla seçtiğimiz yazı stilini çeşitli özelleştirmelerden geçirerek indirmemize olanak sağlıyor.
+preconnect yardımıyla çok iyi bir süre kazandık. Fakat bir yazı stili için farklı bir linke istek atıp sonucunu beklemektense bu yazı stilini kendi hostumuzdan çekersek daha iyi bir süre kazanabiliriz. <a href="https://mranftl.com/" target="_blank" rel="noreferrer noopener">Mario Ranftl</a>'ın geliştirdiği <a href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank" rel="noreferrer noopener">Google Webfonts Helper</a> projesi yardımıyla seçtiğimiz yazı stilini çeşitli özelleştirmelerden geçirerek indirmemize olanak sağlıyor.
 
 İlk olarak arama çubuğu üzerinden istediğimiz Google Font'unu seçip, ardından charsets, styles gibi bölümlerden ihtiyaçlarımızı belirleyelim.
 
@@ -108,7 +107,7 @@ Hangisini kullanmanız gerektiğinde kararsız kaldıysanız `swap` kullanın. G
 
 ### Kaynaklar
 
-- https://ahmadawais.com/google-fonts-load-faster/
-- https://medium.com/clio-calliope/making-google-fonts-faster-aadf3c02a36d
-- https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#Browser_compatibility
-- https://font-display.glitch.me/
+- <a href="https://ahmadawais.com/google-fonts-load-faster/" target="_blank" rel="noreferrer noopener">https://ahmadawais.com/google-fonts-load-faster/</a>
+- <a href="https://medium.com/clio-calliope/making-google-fonts-faster-aadf3c02a36d" target="_blank" rel="noreferrer noopener">https://medium.com/clio-calliope/making-google-fonts-faster-aadf3c02a36d</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#Browser_compatibility" target="_blank" rel="noreferrer noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#Browser_compatibility</a>
+- <a href="https://font-display.glitch.me/" target="_blank" rel="noreferrer noopener">https://font-display.glitch.me/</a>

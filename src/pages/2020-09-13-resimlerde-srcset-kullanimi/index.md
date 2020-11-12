@@ -6,7 +6,7 @@ category: "Yazılım"
 medium: "https://medium.com/@omergulcicek/resimlerde-srcset-kullan%C4%B1m%C4%B1-acaf458181ac"
 ---
 
-[HTTP Arşivine](https://httparchive.org/reports/state-of-images) göre, tipik bir mobil web sayfasının ağırlığı 2.6 MB'nin üzerindedir ve bu ağırlığın üçte ikisinden fazlası resimlerdir. Resimleri en iyi şekilde optimize edersek, çok iyi bir performans kazancı elde edebiliriz.
+<a href="https://httparchive.org/reports/state-of-images" target="_blank" rel="noreferrer noopener">HTTP Arşivine</a> göre, tipik bir mobil web sayfasının ağırlığı 2.6 MB'nin üzerindedir ve bu ağırlığın üçte ikisinden fazlası resimlerdir. Resimleri en iyi şekilde optimize edersek, çok iyi bir performans kazancı elde edebiliriz.
 
 Resimler sayfa genişliğinden daha büyük olmamalıdır. Resimleri farklı breakpoint'lere göre birden çok kaydedin ve tarayıcının en uygun olanı seçmesini sağlamak için `srcset` özelliğini kullanın.
 
@@ -68,4 +68,5 @@ Sayfa genişliği değişirse tekrardan media özelliği kontrol edilir ve uygun
 
 `srcset` ile `picture` kullanıındaki fark, `srcset`te tarayıcı o an ki genişliğine göre en uygun resmi çeker ve o görsel sayfada kalır. `picture` etiketinde ise sayfa genişliği değiştiğinde sayfadaki resim DOM'da tekrardan güncellenir.
 
-w3schools üzerinde `picture` etiketinin nasıl çalıştığını deneyimlemek için [bu linki  yeni seçmede açın](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_picture) ve genişliği değiştirin.
+w3schools üzerinde `picture` etiketinin nasıl çalıştığını deneyimlemek için <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_picture" target="_blank" rel="noreferrer noopener">bu linki  yeni seçmede açın</a> ve genişliği değiştirin.
+

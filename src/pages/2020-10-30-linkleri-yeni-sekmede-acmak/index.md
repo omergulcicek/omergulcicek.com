@@ -16,7 +16,7 @@ React geliştirme yaparken eğer yukarıdaki kodu kullanırsanız, bunu `rel="no
 
 Bunun sebebi, `target="_blank"`ın ortaya çıkardığı güvenlik açığıdır. Bağlandığınız sayfa, geldiğiniz siteye erişim sağlayabiliyor.
 
-Test etmek için [Mathias Bynens'in konuda hakkında yazmış olduğu makaleyi](https://mathiasbynens.github.io/rel-noopener) inceleyin.
+Test etmek için <a href="https://mathiasbynens.github.io/rel-noopener" target="_blank" rel="noreferrer noopener">Mathias Bynens'in konuda hakkında yazmış olduğu makaleyi</a> inceleyin.
 
 `Click me!!1 (same-origin)` ve `Click me!!1 (cross-origin)` linklerine gittiğinizde açılan sayfa bizi *"Why don’t you go back to the previous tab? (Neden önceki sekmeye geri dönmüyorsun?)"* yazısıyla karşılıyor. Önceki sayfaya gittiğimizde ise daha önce sayfada olmayan şu yazı ile karşılaşıyoruz;
 
@@ -35,7 +35,7 @@ Sayfaların `window.opener`ı kötüye kullanımını önlemek için linke `rel=
 <a href="..." target="_blank" rel="noreferrer noopener">Link</a>
 ```
 
-[Developer Mozilla'nın konu ile ilgili yazısı](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target)nda da `target="_blank"` kullanırken `window.opener` API'sinin kötüye kullanımını önlemek için `rel="noreferrer noopener"` ile birlikte kullanmamız gerektiği konusunda uyarıyor.
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target" target="_blank" rel="noreferrer noopener">Developer Mozilla'nın konu ile ilgili yazısı</a>nda da `target="_blank"` kullanırken `window.opener` API'sinin kötüye kullanımını önlemek için `rel="noreferrer noopener"` ile birlikte kullanmamız gerektiği konusunda uyarıyor.
 
 Firefox 79+ sürümü ile sadece target kullansak bile, tarayıcı güvenlik sorununu ortadan kaldırmak için noreferrer noopener kısmını kendisi ekliyor. Genel olarak tarayıcı desteği ise oldukça iyi görünüyor;
 
@@ -46,7 +46,7 @@ Firefox 79+ sürümü ile sadece target kullansak bile, tarayıcı güvenlik sor
 
 ### Kaynaklar
 
-- https://mathiasbynens.github.io/rel-noopener/
-- https://zlypher.github.io/posts/secure-target-blank-with-noopener-noreferrer
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target
-- https://caniuse.com/?search=noopener
+- <a href="https://mathiasbynens.github.io/rel-noopener/" target="_blank" rel="noreferrer noopener">https://mathiasbynens.github.io/rel-noopener/</a>
+- <a href="https://zlypher.github.io/posts/secure-target-blank-with-noopener-noreferrer" target="_blank" rel="noreferrer noopener">https://zlypher.github.io/posts/secure-target-blank-with-noopener-noreferrer</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target" target="_blank" rel="noreferrer noopener">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target</a>
+- <a href="https://caniuse.com/?search=noopener" target="_blank" rel="noreferrer noopener">https://caniuse.com/?search=noopener</a>
