@@ -81,8 +81,8 @@ const Hero = styled.section`
     font-size: var(--f-size);
     font-weight: 100;
     letter-spacing: -0.5px;
+    line-height: 1.5;
     margin: 0;
-    white-space: nowrap;
 
     span {
       color: var(--c-theme);

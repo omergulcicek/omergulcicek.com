@@ -165,7 +165,7 @@ const Project = styled.article`
   }
 
   figure {
-    margin: 0 32px 8px 0;
+    margin: 0 24px 8px 0;
 
     @media (min-width: 992px) {
       margin: 0;
@@ -173,7 +173,8 @@ const Project = styled.article`
     }
 
     img {
-      width: 32px;
+      height: auto;
+      max-width: 32px;
     }
   }
 
