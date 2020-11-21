@@ -14,7 +14,7 @@ const Nav = () => {
         const header = document.getElementsByTagName("header")[0].classList
         const top = window.pageYOffset
 
-        top >= 50
+        top > 50
         ? header.add("active")
         : header.remove("active")
       }
@@ -50,11 +50,14 @@ const Nav = () => {
 export default Nav
 
 const Header = styled.header`
-  padding-bottom: 40px;
-  padding-top: 40px;
+  background-color: var(--c-background);
+  border-bottom: 1px solid transparent;
+  border-top: 4px solid var(--c-theme);
+  padding-bottom: 24px;
+  padding-top: 24px;
   position: sticky;
   top: 0;
-  transition: padding var(--g-transition);
+  transition: var(--g-transition);
   z-index: 10;
 
   @media (min-width: 992px) {
@@ -62,12 +65,8 @@ const Header = styled.header`
   }
 
   &.active {
-    background-color: var(--c-background);
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-bottom-color: rgba(0, 0, 0, .2);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
-    opacity: 0.9;
-    padding-bottom: 20px;
-    padding-top: 20px;
   }
 
   section {
@@ -107,6 +106,7 @@ const Menu = styled.nav`
   display: flex;
 
   a {
+    align-items: center;
     border-bottom: 2px solid transparent;
     color: var(--c-text);
     display: inline-block;
@@ -131,8 +131,10 @@ const Menu = styled.nav`
       width: 0;
     }
 
-    &:hover {
+    &:focus:not([type="button"]),
+    &:hover:not([type="button"]) {
       color: var(--c-theme);
+      outline: none;
 
       &::after {
         width: 100%;
@@ -153,7 +155,8 @@ const Menu = styled.nav`
     }
 
     svg {
-      height: 16px
+      height: 16px;
+      vertical-align: middle;
     }
   }
 `
