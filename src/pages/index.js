@@ -12,20 +12,13 @@ const Home = () => (
       <aside>
         <h1>Ömer Gülçiçek</h1>
         <h2>Frontend Developer</h2>
-        <h3>HTML, CSS, SASS, JavaScript, jQuery, ES6, Gulp, React, SPA</h3>
-      </aside>
-
-      <aside>
-        <Rotate
-          src="https://omergulcicek.com/img/square.png"
-          alt="Square Animation"
-        />
-        <Circle1 />
-        <Circle2 />
-        <Circle3 />
-        <figure></figure>
+        <h3>&lt;<span>code</span>&gt;HTML, CSS, SASS, JavaScript, jQuery, ES6, Gulp, React, SPA&lt;<span>/code</span>&gt;</h3>
       </aside>
     </Hero>
+    
+    <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="var(--c-theme)" d="M37.8,-60.4C46.4,-53.4,48.8,-38.4,50.3,-25.7C51.8,-13.1,52.3,-2.7,49.5,6.1C46.6,14.9,40.3,22.2,35.6,34.8C30.8,47.4,27.6,65.3,17.8,74.5C8,83.6,-8.4,84,-23,79.3C-37.6,74.5,-50.5,64.7,-58.2,52.3C-66,40,-68.7,25.1,-70.5,10.3C-72.4,-4.5,-73.4,-19.3,-67.9,-30.8C-62.3,-42.4,-50.2,-50.8,-37.8,-56.1C-25.4,-61.4,-12.7,-63.5,1,-65C14.6,-66.6,29.3,-67.4,37.8,-60.4Z" transform="translate(100 100)" />
+    </Svg>
 
     <GetInTouch>
       <h3>Site mi yaptırmak istiyorsunuz?</h3>
@@ -54,10 +47,11 @@ const Hero = styled.section`
   padding-top: 80px;
 
   @media (min-width: 992px) {
-    height: 60vh;
+    height: 54vh;
     padding-bottom: 160px;
     padding-top: 160px;
   }
+
   h1 {
     color: var(--c-theme);
     font-size: 40px;
@@ -83,29 +77,21 @@ const Hero = styled.section`
 
   h3 {
     color: var(--c-grey);
+    font-family: monospace;
     font-size: var(--f-size);
     font-weight: 100;
+    letter-spacing: -0.5px;
     margin: 0;
+    white-space: nowrap;
+
+    span {
+      color: var(--c-theme);
+    }
   }
 
   aside {
     position: relative;
-    text-align: center;
     width: 100%;
-
-    @media (min-width: 1600px) {
-      text-align: left;
-      width: 50%;
-    }
-
-    &:nth-child(2) {
-      display: none;
-      transform: translateY(-80px);
-
-      @media (min-width: 1600px) {
-        display: inline-block;
-      }
-    }
 
     img {
       margin: 0;
@@ -118,53 +104,6 @@ const Hero = styled.section`
       z-index: 2;
     }
   }
-`
-
-const Circle = styled.span`
-  border-radius: 50%;
-  opacity: 0.9;
-  overflow: hidden;
-  position: absolute;
-  user-select: none;
-  z-index: 1;
-`
-
-const Rotate = styled.img`
-  animation: rotate 25s linear infinite;
-  left: -10px;
-  position: absolute;
-  top: 320px;
-  user-select: none;
-  z-index: 0;
-`
-
-const Circle1 = styled(Circle)`
-  animation: circling 18s linear infinite;
-  background: #26a69a;
-  height: 85px;
-  right: 34px;
-  top: 150px;
-  width: 85px;
-`
-
-const Circle2 = styled(Circle)`
-  animation: circlereverse 22s linear infinite;
-  background: var(--c-theme);
-  bottom: 250px;
-  height: 55px;
-  left: 280px;
-  right: 0;
-  top: 250px;
-  width: 55px;
-`
-
-const Circle3 = styled(Circle)`
-  animation: floating 5s linear infinite;
-  background: #f44336;
-  height: 50px;
-  right: 40px;
-  top: 10px;
-  width: 50px;
 `
 
 const GetInTouch = styled.section`
@@ -188,7 +127,7 @@ const GetInTouch = styled.section`
   p {
     font-size: var(--f-size);
     line-height: 28px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 
     @media (min-width: 992px) {
       font-size: 20px;
@@ -199,7 +138,7 @@ const GetInTouch = styled.section`
 const Button = styled.a`
   color: var(--c-theme);
   cursor: pointer;
-  display: block;
+  display: inline-block;
   font-size: var(--f-size);
   line-height: 1;
   text-decoration: none;
@@ -214,9 +153,20 @@ const Button = styled.a`
     transition: var(--g-transition);
   }
 
+  &:focus,
   &:hover {
     svg {
       transform: translateX(0.25em);
     }
   }
+`
+
+const Svg = styled.svg`
+  opacity: 0.05;
+  pointer-events: none;
+  position: absolute;
+  right: -25%;
+  top: -120px;
+  width: 80%;
+  z-index: -1;
 `
