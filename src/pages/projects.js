@@ -111,6 +111,19 @@ const A = styled.a`
   display: block;
   margin-bottom: 8px;
   text-decoration: none;
+
+  &:focus {
+    outline: none;
+
+    article {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-left-color: var(--c-theme);
+
+      &:before {
+        opacity: 1
+      }
+    }
+  }
 `
 
 const Project = styled.article`

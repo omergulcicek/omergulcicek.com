@@ -42,7 +42,7 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.7;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -66,6 +66,7 @@ a {
   font-size: inherit;
 }
 
+a:focus,
 a:hover {
   color: var(--c-theme);
 }
@@ -149,6 +150,12 @@ iframe {
   margin-top: 40px;
 }
 
+small {
+  color: var(--c-grey);
+  display: block;
+  margin-bottom: 40px;
+}
+
 section {
   margin-left: auto;
   margin-right: auto;
@@ -180,14 +187,16 @@ section {
   }
 }
 
-html[data-theme="light"] header div[type="button"] {
+html[data-theme="light"] header a[type="button"] {
   background-color: rgba(0,0,0,0.05)
 }
 
-html[data-theme="light"] header div[type="button"]:hover {
+html[data-theme="light"] header a[type="button"]:focus article,
+html[data-theme="light"] header a[type="button"]:hover {
   background-color: rgba(0,0,0,0.15)
 }
 
+html[data-theme="light"] .projects a:focus article,
 html[data-theme="light"] .projects article:hover {
   background-color: rgba(0,0,0,0.05)
 }

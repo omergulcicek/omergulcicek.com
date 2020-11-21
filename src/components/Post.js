@@ -30,6 +30,7 @@ const Article = styled.article`
       font-size: 22px;
     }
 
+    &:focus,
     &:hover {
       color: var(--c-theme);
     }
