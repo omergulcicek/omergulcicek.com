@@ -167,6 +167,7 @@ const Svg = styled.svg`
   position: absolute;
   right: -25%;
   top: -120px;
+  user-select: none;
   width: 80%;
   z-index: -1;
 `

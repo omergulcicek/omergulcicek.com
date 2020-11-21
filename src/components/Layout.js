@@ -28,4 +28,5 @@ export default Layout
 const Main = styled.main`
   margin-bottom: 160px;
   margin-top: 7%;
+  position: relative;
 `

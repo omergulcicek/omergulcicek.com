@@ -31,6 +31,11 @@ html {
   scroll-behavior: smooth;
 }
 
+#___gatsby {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body {
   background-color: var(--c-background);
   color: var(--c-text);
@@ -38,6 +43,8 @@ body {
   font-size: var(--f-size);
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: var(--g-transition);
 }
 
