@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import useDarkMode from "./../utilities/useDarkMode"
 import DarkTheme from "./../components/DarkTheme"
+import Brand from "./../components/Brand"
 
 const Nav = () => {
   const [darkMode, setDarkMode] = useDarkMode()
@@ -24,12 +25,8 @@ const Nav = () => {
   return (
     <>
       <Header>
-        <section>
-          <Brand>
-            <Link to="/">
-              <span>omergulcicek</span>.com
-            </Link>
-          </Brand>
+        <div className="container">
+          <Brand />
 
           <Menu>
             <Link to="/">
@@ -41,7 +38,7 @@ const Nav = () => {
             
             <DarkTheme darkMode={darkMode} setDarkMode={setDarkMode} />
           </Menu>
-        </section>
+        </div>
       </Header>
     </>
   )
@@ -55,9 +52,10 @@ const Header = styled.header`
   border-top: 4px solid var(--c-theme);
   padding-bottom: 24px;
   padding-top: 24px;
-  position: sticky;
+  position: fixed;
   top: 0;
   transition: var(--g-transition);
+  width: 100%;
   z-index: 10;
 
   @media (min-width: 992px) {
@@ -69,7 +67,7 @@ const Header = styled.header`
     box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
   }
 
-  section {
+  .container {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -79,25 +77,13 @@ const Header = styled.header`
       flex-direction: row
     }
   }
-`
 
-const Brand = styled.div`
-  display: none;
+  .brand {
+    display: none;
 
-  @media (min-width: 992px) {
-    display: block;
-  }
-
-  a {
-    color: var(--c-text);
-    font-size: 24px;
-    letter-spacing: 0.2px;
-    line-height: 1;
-    text-decoration: none;
-  }
-
-  span {
-    color: var(--c-theme)
+    @media (min-width: 992px) {
+      display: block
+    }
   }
 `
 
