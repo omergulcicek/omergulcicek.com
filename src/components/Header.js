@@ -98,13 +98,17 @@ const Menu = styled.nav`
     display: inline-block;
     font-size: var(--f-size);
     font-weight: normal;
-    margin-right: 16px;
+    margin-right: 8px;
     letter-spacing: 0.2px;
     line-height: 1;
     padding: 12px 8px;
     position: relative;
     text-decoration: none;
     transition: var(--g-transition);
+
+    @media (min-width: 992px) {
+      margin-right: 16px;
+    }
 
     &::after {
       background-color: var(--c-theme);
