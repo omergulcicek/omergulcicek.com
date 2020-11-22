@@ -6,29 +6,31 @@ import Layout from "../components/Layout"
 
 const Home = () => (
   <Layout>
-    <Helmet title="Ana Sayfa" titleTemplate="%s | Ömer Gülçiçek" />
+    <div className="container">
+      <Helmet title="Ana Sayfa" titleTemplate="%s | Ömer Gülçiçek" />
 
-    <Hero>
-      <h1>Ömer Gülçiçek</h1>
-      <h2>Frontend Developer</h2>
-      <h3>&lt;<span>code</span>&gt;HTML, CSS, SASS, JavaScript, jQuery, ES6, Gulp, React, SPA&lt;<span>/code</span>&gt;</h3>
-    </Hero>
+      <Hero>
+        <h1>Ömer Gülçiçek</h1>
+        <h2>Frontend Developer</h2>
+        <h3>&lt;<span>code</span>&gt;HTML, CSS, SASS, JavaScript, jQuery, ES6, Gulp, React, SPA&lt;<span>/code</span>&gt;</h3>
+      </Hero>
 
-    <GetInTouch>
-      <h3>Site mi yaptırmak istiyorsunuz?</h3>
-      <p>Tüm detayları içeren bir mail atabilirsin.</p>
+      <GetInTouch>
+        <h3>Site mi yaptırmak istiyorsunuz?</h3>
+        <p>Tüm detayları içeren bir mail atabilirsin.</p>
 
-      <Button href="mailto:iletisim@omergulcicek.com">
-        <span>iletisim@omergulcicek.com</span>
+        <Button href="mailto:iletisim@omergulcicek.com">
+          <span>iletisim@omergulcicek.com</span>
 
-        <svg width="14" height="10">
-          <g stroke="currentColor" fill="none" fillRule="evenodd">
-            <path d="M8.5.964L13.036 5.5 8.5 10.036"></path>
-            <path d="M12.5 5.5H.5" strokeLinecap="square"></path>
-          </g>
-        </svg>
-      </Button>
-    </GetInTouch>
+          <svg width="14" height="10">
+            <g stroke="currentColor" fill="none" fillRule="evenodd">
+              <path d="M8.5.964L13.036 5.5 8.5 10.036"></path>
+              <path d="M12.5 5.5H.5" strokeLinecap="square"></path>
+            </g>
+          </svg>
+        </Button>
+      </GetInTouch>
+    </div>
   </Layout>
 )
 
@@ -141,15 +143,4 @@ const Button = styled.a`
       transform: translateX(0.25em);
     }
   }
-`
-
-const Svg = styled.svg`
-  opacity: 0.05;
-  pointer-events: none;
-  position: absolute;
-  right: -25%;
-  top: -120px;
-  user-select: none;
-  width: 80%;
-  z-index: -1;
 `
