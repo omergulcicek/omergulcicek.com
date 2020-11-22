@@ -9,16 +9,10 @@ const Home = () => (
     <Helmet title="Ana Sayfa" titleTemplate="%s | Ömer Gülçiçek" />
 
     <Hero>
-      <aside>
-        <h1>Ömer Gülçiçek</h1>
-        <h2>Frontend Developer</h2>
-        <h3>&lt;<span>code</span>&gt;HTML, CSS, SASS, JavaScript, jQuery, ES6, Gulp, React, SPA&lt;<span>/code</span>&gt;</h3>
-      </aside>
+      <h1>Ömer Gülçiçek</h1>
+      <h2>Frontend Developer</h2>
+      <h3>&lt;<span>code</span>&gt;HTML, CSS, SASS, JavaScript, jQuery, ES6, Gulp, React, SPA&lt;<span>/code</span>&gt;</h3>
     </Hero>
-    
-    <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path fill="var(--c-theme)" d="M37.8,-60.4C46.4,-53.4,48.8,-38.4,50.3,-25.7C51.8,-13.1,52.3,-2.7,49.5,6.1C46.6,14.9,40.3,22.2,35.6,34.8C30.8,47.4,27.6,65.3,17.8,74.5C8,83.6,-8.4,84,-23,79.3C-37.6,74.5,-50.5,64.7,-58.2,52.3C-66,40,-68.7,25.1,-70.5,10.3C-72.4,-4.5,-73.4,-19.3,-67.9,-30.8C-62.3,-42.4,-50.2,-50.8,-37.8,-56.1C-25.4,-61.4,-12.7,-63.5,1,-65C14.6,-66.6,29.3,-67.4,37.8,-60.4Z" transform="translate(100 100)" />
-    </Svg>
 
     <GetInTouch>
       <h3>Site mi yaptırmak istiyorsunuz?</h3>
@@ -40,14 +34,18 @@ const Home = () => (
 
 export default Home
 
-const Hero = styled.section`
+const Hero = styled.aside`
   display: flex;
-  height: 240px;
+  flex-direction: column;
+  height: 320px;
   padding-bottom: 80px;
   padding-top: 80px;
+  position: relative;
+  text-align: center;
+  width: 100%;
 
   @media (min-width: 992px) {
-    height: 54vh;
+    height: 640px;
     padding-bottom: 160px;
     padding-top: 160px;
   }
@@ -88,25 +86,9 @@ const Hero = styled.section`
       color: var(--c-theme);
     }
   }
-
-  aside {
-    position: relative;
-    width: 100%;
-
-    img {
-      margin: 0;
-      user-select: none;
-    }
-
-    figure {
-      margin: 0;
-      position: relative;
-      z-index: 2;
-    }
-  }
 `
 
-const GetInTouch = styled.section`
+const GetInTouch = styled.div`
   color: var(--c-text);
   font-size: 20px;
   line-height: 1.5;

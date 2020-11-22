@@ -163,7 +163,7 @@ small {
   margin-bottom: 40px;
 }
 
-section {
+.container {
   margin-left: auto;
   margin-right: auto;
   max-width: 80%;
@@ -171,26 +171,20 @@ section {
 }
 
 @media (min-width: 768px) {
-  section {
+  .container {
     max-width: 540px;
   }
 }
 
 @media (min-width: 992px) {
-  section {
+  .container {
     max-width: 720px;
   }
 }
 
 @media (min-width: 1200px) {
-  section {
+  .container {
     max-width: 960px;
-  }
-}
-
-@media (min-width: 1600px) {
-  section {
-    max-width: 1280px;
   }
 }
 

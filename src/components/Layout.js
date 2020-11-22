@@ -12,7 +12,9 @@ const Layout = ({ children }) => (
     <Header />
 
     <Main>
-      { children }
+      <section>
+        { children }
+      </section>
     </Main>
 
     <Footer />
@@ -27,6 +29,10 @@ export default Layout
 
 const Main = styled.main`
   margin-bottom: 160px;
-  margin-top: 7%;
+  margin-top: 160px;
   position: relative;
+
+  @media (min-width: 992px) {
+  margin-top: 240px;
+  }
 `
