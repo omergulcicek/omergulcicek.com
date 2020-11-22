@@ -234,9 +234,13 @@ const Details = styled.details`
 
   summary {
     cursor: pointer;
-    display: inline-block;
+    display: block;
     margin-bottom: 8px;
     outline: none;
+
+    @media (min-width: 992px) {
+      display: inline-block;
+    }
 
     &:focus,
     &:hover {
