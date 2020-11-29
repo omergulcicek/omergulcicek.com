@@ -7,7 +7,7 @@ import DarkTheme from "./../components/DarkTheme"
 import Brand from "./../components/Brand"
 
 const Nav = () => {
-  const [darkMode, setDarkMode] = useDarkMode()
+  const [darkMode, setDarkMode] = useDarkMode(true)
 
   useEffect(
     () => {
@@ -92,19 +92,25 @@ const Menu = styled.nav`
   display: flex;
 
   a {
-    align-items: center;
     border-bottom: 2px solid transparent;
     color: var(--c-text);
     display: inline-block;
     font-size: var(--f-size);
     font-weight: normal;
-    margin-right: 8px;
     letter-spacing: 0.2px;
     line-height: 1;
-    padding: 12px 8px;
+    padding: 12px 4px;
     position: relative;
     text-decoration: none;
     transition: var(--g-transition);
+
+    &:first-child {
+      margin-right: 8px;
+    }
+
+    &[type="button"] {
+      margin-left: 8px;
+    }
 
     @media (min-width: 992px) {
       margin-right: 16px;
