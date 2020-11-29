@@ -46,8 +46,6 @@ const About = () => (
 
       <H3>Sevdiğim birkaç şey</H3>
 
-      <small>Detayları görmek için başlıklara tıklayın.</small>
-
       <Details open>
         <summary>UI/UX</summary>
 
@@ -133,8 +131,6 @@ const About = () => (
           Arkadaşlarımla ayda ortalama 2 kez Starbucks gidiyoruzdur. Favorilerim White Chocolate Mocha ve Toffee Nut Latte.
         </p>
       </Details>
-      
-      <Hr/>
 
       <Svg viewBox="0 0 200 200">
         <path fill="var(--c-theme)" d="M45.3,-52.9C60.9,-40.9,77.3,-28.7,79.5,-14.3C81.7,0.1,69.8,16.8,57.7,29.1C45.6,41.5,33.3,49.7,18.3,58.8C3.4,67.9,-14.3,77.9,-29.3,74.9C-44.3,71.9,-56.5,55.8,-59.2,39.7C-62,23.6,-55.2,7.5,-51.7,-8.5C-48.1,-24.5,-47.8,-40.5,-39.7,-53.9C-31.6,-67.2,-15.8,-77.8,-0.5,-77.2C14.9,-76.6,29.7,-64.9,45.3,-52.9Z" transform="translate(100 100)" />
@@ -226,25 +222,36 @@ const Hr = styled.hr`
 `
 
 const Details = styled.details`
-  margin-bottom: 16px;
+  border-left: 2px solid transparent;
+  padding: 24px 16px;
 
-  &[open] {
-    margin-bottom: 40px;
+  &:not(:first-of-type) {
+    border-top: 1px solid rgba(0,0,0,0.3);
   }
 
   summary {
+    border-radius: 4px;
     cursor: pointer;
     display: block;
-    margin-bottom: 8px;
     outline: none;
+    position: relative;
+    transition: var(--g-transition);
 
-    @media (min-width: 992px) {
-      display: inline-block;
+    &::after {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC1kb3duIiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyMCA1MTIiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1jYXJldC1kb3duIGZhLXctMTAgZmEtMngiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0zMS4zIDE5MmgyNTcuM2MxNy44IDAgMjYuNyAyMS41IDE0LjEgMzQuMUwxNzQuMSAzNTQuOGMtNy44IDcuOC0yMC41IDcuOC0yOC4zIDBMMTcuMiAyMjYuMUM0LjYgMjEzLjUgMTMuNSAxOTIgMzEuMyAxOTJ6IiBjbGFzcz0iIj48L3BhdGg+PC9zdmc+");
+      background-repeat: no-repeat;
+      content: "";
+      display: block;
+      height: 18px;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 11px;
     }
 
-    &:focus,
-    &:hover {
-      text-decoration: underline;
+    &::-webkit-details-marker {
+      display: none;
     }
   }
 
@@ -254,7 +261,24 @@ const Details = styled.details`
 
   p {
     font-size: 80%;
-    margin-bottom: 8px;
-    margin-left: 19px;
+    margin-top: 16px;
+    position: relative;
+    transition: var(--g-transition);
+  }
+
+  &[open] {
+    background-color: #1B2125;
+    border-left-color: var(--c-theme);
+
+    summary,
+    p {
+      margin-left: 16px;
+    }
+
+    summary {
+      &::after {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC11cCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2FyZXQtdXAgZmEtdy0xMCBmYS0yeCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI4OC42NjIgMzUySDMxLjMzOGMtMTcuODE4IDAtMjYuNzQxLTIxLjU0My0xNC4xNDItMzQuMTQybDEyOC42NjItMTI4LjY2MmM3LjgxLTcuODEgMjAuNDc0LTcuODEgMjguMjg0IDBsMTI4LjY2MiAxMjguNjYyYzEyLjYgMTIuNTk5IDMuNjc2IDM0LjE0Mi0xNC4xNDIgMzQuMTQyeiIgY2xhc3M9IiI+PC9wYXRoPjwvc3ZnPg==");
+      }
+    }
   }
 `
