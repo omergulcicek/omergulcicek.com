@@ -24,7 +24,8 @@ Herkes sevdiği işi yapsa hem millet olarak daha mutlu oluruz, hemde işler dah
 
 <div align="center">
 
-![Mesai saatlerinde oyun oynayan bir memur.](https://miro.medium.com/max/500/1*mwo7kXhtvDnjEhESQQ5EEA.jpeg)
+![Mesai saatlerinde oyun oynayan bir memur](https://miro.medium.com/max/500/1*mwo7kXhtvDnjEhESQQ5EEA.jpeg)
+<figcaption>Mesai saatlerinde oyun oynayan bir memur</figcaption>
 </div>
 
 Görselde mesai saatleri içerisinde işiyle ilgilenmeyip oyun oynayan bir memur görüyorsunuz. Bu tek örnek değil, onlarcası var. İşini severek yapmayan, sabah uyandığında akşam olsa da çıksak diye vakit öldüren bu kişilikte insanlar olduğu sürece nasıl gelişeceğiz? Görsel sadece örnek, sözüm her alandan, herkese.
@@ -50,6 +51,7 @@ Oğlum Mernus, sen otobüsü kaçırmış bir milletin çocuğusun.”*
 <div align="center">
 
 ![Nobel Kimya Ödülü sahibi gururumuz Aziz Sancar](https://miro.medium.com/max/366/1*Xdl3OtCNNkLSnid8oSwtyw.jpeg)
+<figcaption>Nobel Kimya Ödülü sahibi gururumuz Aziz Sancar</figcaption>
 </div>
 
 Aziz Sancar’ımızın dediği gibi, *“Çalışmaya inanıyorum.”*
@@ -67,6 +69,7 @@ Ardından eğitim sistemine köklü bir değişiklik ile saçma sapan dersler ve
 <div align="center">
 
 ![Eğitim Bakanımız Ziya Selçuk](https://miro.medium.com/max/500/1*m9WGQTzuzILO9126ZuNcnA.jpeg)
+<figcaption>Eğitim Bakanımız Ziya Selçuk</figcaption>
 </div>
 
 Çok şükür ki Ziya Selçuk hocamız eğitim bakanımız oldu. Ziya hocamız sayesinde bende en az herkes kadar bir şeylerin düzeleceğini düşünüyorum. İnşallah yanılmayız.
@@ -78,6 +81,7 @@ Hazır eğitime, kişisel gelişime, medyaya el atmışken hızımı alamayıp s
 <div align="center">
 
 ![Tarihçimiz İlber Ortaylı](https://miro.medium.com/max/500/1*G1XN28u6V06JsRM5uAPNSg.jpeg)
+<figcaption>Tarihçimiz İlber Ortaylı</figcaption>
 </div>
 
 Tarih alanında İlber Ortaylı, Kadir Mısıroğlu ve nice böyle üstatlar görevlendirilip okullarda ki gereksiz ve yanlış bilgiler silinip gerçek şanlı tarihimiz anlatılabilir. Türkiye Atatürk ve sonrasından ibaret değil. Osmanlı ve öncesi de bilinmeli.
@@ -95,7 +99,8 @@ Farklı spor alanlarına da halk çekilmeli ve her alanda adımızdan söz ettir
 
 <div align="center">
 
-![Ülkece “spora” verdiğimiz değeri gösteren üzücü bir fotoğraf](https://miro.medium.com/max/640/1*-D_V64LlRN9fQ_6HpTY0Cg.jpeg)
+![Ülkece spora verdiğimiz değeri gösteren üzücü bir fotoğraf](https://miro.medium.com/max/640/1*-D_V64LlRN9fQ_6HpTY0Cg.jpeg)
+<figcaption>Ülkece spora verdiğimiz değeri gösteren üzücü bir fotoğraf</figcaption>
 </div>
 
 ## Müzik
@@ -115,6 +120,7 @@ Nereye çekerseniz oraya gidecek bir söz ekliyorum;
 <div align="center">
 
 ![İsmail Hacıoğlu](https://miro.medium.com/max/500/1*G026f0Jcr4rilOL1Q0vAfg.jpeg)
+<figcaption>İsmail Hacıoğlu</figcaption>
 </div>
 
 İsmail Hacıoğlu çok sevdiğim bir oyuncudur. Bir çok filmini izledim ve takdir ediyorum kendisini. Bu gibi isimler işinin hakkını veren kişiler. Fakat artık ülkemizde oyuncu olmak çok basit. Herhangi bir eğitiminin olmasına gerek yok. Türkiye güzeli seçildikten sonraki sene başrolsün. Mankensen yada fiziğin iyiyse erkek başrolde sensin. Ezberlenilmiş yapmacık aşklar; zengin erkek, fakir ama güzel kız senaryoları; yalandan yere çarpışmalar ve sevişmeler… Artık aynı senaryoları içeren dizileri gördükçe midem bulanıyor.

@@ -12,7 +12,8 @@ Neyse ki <a href="https://mjml.io/" target="_blank" rel="noreferrer noopener">MJ
 
 <div align="center">
 
-![LMJML Kod Syntax'ı](https://mjml.io/assets/img/index/screen.png)
+![MJML Kod Syntax'ı](https://mjml.io/assets/img/index/screen.png)
+<figcaption>MJML Kod Syntax'ı</figcaption>
 </div>
 
 ## Kısa Bir MJML Eğitim Turu

@@ -23,6 +23,7 @@ Test etmek için <a href="https://mathiasbynens.github.io/rel-noopener" target="
 <div align="center">
 
 ![Linkleri Yeni Sekmede Açmak](https://miro.medium.com/max/430/1*K86RTPgR5bQs-uGMJAN-0g.png)
+<figcaption>Linkleri Yeni Sekmede Açmak</figcaption>
 </div>
 
 Aynı makalede `Click me!!1 (now with rel=noopener)` veya `Click me!!1 (now with rel=noreferrer-based workaround)` linklerine girdiğimizde ise karşımıza *"The previous tab is safe and intact. window.opener was null; mischief not managed! (Önceki sekme güvenli, windowopener null olduğu için yaramazlık yönetilmedi)"* uyarısı çıkıyor.
@@ -42,6 +43,7 @@ Firefox 79+ sürümü ile sadece target kullansak bile, tarayıcı güvenlik sor
 <div align="center">
 
 ![noopener Tarayıcı Desteği](https://miro.medium.com/max/700/1*1ruo2dfb3NC9Rd_Jlyp7mg.png)
+<figcaption>noopener Tarayıcı Desteği</figcaption>
 </div>
 
 ### Kaynaklar

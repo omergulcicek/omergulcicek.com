@@ -15,6 +15,7 @@ Birbirinden farklı 8 farklı logo; dikey/yatay, büyük/küçük.
 <div align="center">
 
 ![Logoları CSS ile Hizalama](https://miro.medium.com/max/700/1*RQgsaJAf5jOHuIxMwy9xcw.png)
+<figcaption>Logoları CSS ile Hizalama</figcaption>
 </div>
 
 Öncelikle bu logoları CSS Grid layout'u kullanarak hizalamaya başlayalım.
@@ -52,6 +53,7 @@ Bu işlemler sonucunda görüldüğü gibi her logonun birbirine eş alanları o
 <div align="center">
 
 ![Logoları CSS ile Hizalama](https://miro.medium.com/max/700/1*1m2GyY8PwCS97xUiw7OwrA.png)
+<figcaption>Logoları CSS ile Hizalama</figcaption>
 </div>
 
 Logo boyutları tutarlı değil. İlk çözüm olarak `width` ekleyerek hepsine sabit genişlik vermeyi deneyelim.
@@ -67,6 +69,7 @@ Logo boyutları tutarlı değil. İlk çözüm olarak `width` ekleyerek hepsine 
 <div align="center">
 
 ![Logoları CSS ile Hizalama](https://miro.medium.com/max/700/1*fNkXCtRhmoEqcV4FOJJNpA.png)
+<figcaption>Logoları CSS ile Hizalama</figcaption>
 </div>
 
 Bu işlem sonucunda logolar sabit genişliğe geçti fakat bu istediğimiz bir sonuç değil. Bazı logolar okunamayacak derecede küçük kaldı.
@@ -84,6 +87,7 @@ Bu işlem sonucunda logolar sabit genişliğe geçti fakat bu istediğimiz bir s
 <div align="center">
 
 ![Logoları CSS ile Hizalama](https://miro.medium.com/max/700/1*-OINUiHkxRWwfXGDdHOJSg.png)
+<figcaption>Logoları CSS ile Hizalama</figcaption>
 </div>
 
 Bu seferde yükseklikleri eşit oldu fakat esnemelerden ötürü her logodan istediğimiz sonucu alamadık.
@@ -112,6 +116,7 @@ Sonraki adım, logoları yatay ve dikey olarak ortalamak; Bunun için `flex` kul
 <div align="center">
 
 ![Logoları CSS ile Hizalama](https://miro.medium.com/max/700/1*ini8pV9Jc7bVwB6AwW1_CQ.png)
+<figcaption>Logoları CSS ile Hizalama</figcaption>
 </div>
 
 Sonuç olarak farklı boyut ve çeşitlerde logolarımızda olsa bunları net görünür şekilde listelemeyi başardık.
@@ -124,6 +129,7 @@ Bazı logoların JPG formatında ve arkalarında beyaz bir zemin renginin olduğ
 <div align="center">
 
 ![CSS mix-blend-mode](https://miro.medium.com/max/700/1*Uc3738lRr3YKOq8ZvGcAIg.png)
+<figcaption>CSS mix-blend-mode</figcaption>
 </div>
 
 `mix-blend-mode` kullanmak, logoyu arkaplan rengiyle harmanlayacağı için bazı logolarınızın renklerinde değişiklikler farkedebilirsiniz.

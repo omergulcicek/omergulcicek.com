@@ -1,8 +1,8 @@
 ---
 date: "2018-12-03"
 path: "/the-imitation-game"
-title: 'The Imitation Game'
-category: "Kişisel"
+title: "The Imitation Game"
+category: "Film Değerlendirmesi"
 medium: "https://medium.com/t%C3%BCrkiye/the-imitation-game-204530b0581b"
 ---
 
@@ -13,6 +13,7 @@ Her oyunculuğunda olduğu gibi The Imitation Game adlı filminde de rolüne ken
 <div align="center">
 
 ![Benedict Cumberbatch](https://miro.medium.com/proxy/1*ktwKxSkmmmKAblO8ntcUvQ.jpeg)
+<figcaption>Benedict Cumberbatch</figcaption>
 </div>
 
 ## Enigma Makinesi
@@ -20,6 +21,7 @@ Her oyunculuğunda olduğu gibi The Imitation Game adlı filminde de rolüne ken
 <div align="center">
 
 ![Enigma Makinesi](https://miro.medium.com/max/500/1*GDWZnjw5w0Ue7oCHskJQfA.jpeg)
+<figcaption>Enigma Makinesi</figcaption>
 </div>
 
 Film, II. Dünya savaşı zamanında gerçek olaylardan konu alınarak çekilmiş. Nazilerin yönetiminde olan Almanya, enigma şifreleme sistemi ile kriptolu biçimde haberleşip önüne çıkan her ülkeyi yenerken, İngiliz hükumeti ise buna çaresizce çözüm aramakta.
@@ -33,6 +35,7 @@ Alan’ın hiç Almanca bilmeden enigmayı çözebileceğini söylemesi İngiliz
 <div align="center">
 
 ![Alan Turing (16 yaşında)](https://miro.medium.com/max/500/1*wtdXFIRI2RwGRQhiAVmJmA.jpeg)
+<figcaption>Alan Turing (16 yaşında)</figcaption>
 </div>
 
 Tam adıyla Alan Mathison Turing, 1912 yılında doğmuş ve bilgisayar biliminin kurucusu sayılan bir matematik dehası. Geliştirmekte olduğu Turing testi ile makinelerin düşünme yetisine sahip olabileceğini iddia etmiştir; yaşadığı çağı ele alırsak, bunu düşünebilmesi bile muhteşem (o zamana göre belki aptalca) bir fikirdi.
