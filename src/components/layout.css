@@ -58,8 +58,11 @@ p:not(:last-of-type) {
 }
 
 img {
-  margin-top: 56px;
   max-width: 100%;
+}
+
+.article img {
+  margin-top: 56px;
 }
 
 figcaption {
