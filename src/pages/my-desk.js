@@ -56,7 +56,7 @@ const MyDesk = () => (
           </figure>
         </article>
         
-        <article disabled>
+        <article>
           <figure>
             <img src={SamsungSpace} alt="Samsung Space" />
             <figcaption>
