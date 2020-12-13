@@ -1,5 +1,5 @@
 ---
-date: "2020-12-29"
+date: "2020-11-29"
 path: "/the-queens-gambit"
 title: "The Queen's Gambit"
 category: "Dizi Değerlendirmesi"
