@@ -260,7 +260,6 @@ const Details = styled.details`
   }
 
   p {
-    font-size: 80%;
     margin-top: 16px;
     position: relative;
     transition: var(--g-transition);
