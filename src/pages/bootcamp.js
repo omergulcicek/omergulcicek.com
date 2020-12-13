@@ -17,7 +17,7 @@ const Bootcamp = () => (
       <Title t1="Frontent" t2="Bootcamp" />
 
       <Details>
-        <summary>Ders 1 - HTML & CSS Temeli</summary>
+        <summary><b>1.</b> 12 Aralık 2020 - HTML, CSS Seçiciler</summary>
 
         <p>
           Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini bilip robotların anlayacağı kodu yazmak üzerinde durduk.
@@ -26,18 +26,18 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li> HTML etiketleri (html, head, body, title, <a href="http://www.tasarimveyazilim.com/html-charset-nedir-ve-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">UTF-8</a>, <a href="https://www.aramamotoru.com/html-lang-etiketi-nedir-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">lang="tr"</a>, h1, p, span, a, img, table)</li>
+          <li>HTML etiketleri (html, head, body, title, <a href="http://www.tasarimveyazilim.com/html-charset-nedir-ve-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">UTF-8</a>, <a href="https://www.aramamotoru.com/html-lang-etiketi-nedir-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">lang="tr"</a>, h1, p, span, a, img, table)</li>
           <li><a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_blank" rel="noopener noreferrer">DOCTYPE nedir?</a></li>
           <li><a href="https://en.wikipedia.org/wiki/Document_Object_Model#/media/File:DOM-model.svg" target="_blank" rel="noopener noreferrer">DOM nedir?</a></li>
           <li><a href="https://fatihhayrioglu.com/meta-viewport-etiketi" target="_blank" rel="noopener noreferrer">meta viewport nedir?</a></li>
           <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank" rel="noopener noreferrer">Semantic HTML nedir?</a></li>
-          <li>CSS seçiciler (id, class, !important)</li>
+          <li>CSS seçiciler - <a href="https://fatihhayrioglu.com/cssde-tanimlamalar-ve-etkinliklerispecificity/" target="_blank" rel="noopener noreferrer">id, class, !important</a> - <a href="https://www.youtube.com/watch?v=YmiMpFaNAx4" target="_blank" rel="noopener noreferrer">inline, inline-block, block</a> - <a href="https://hakantasan.com/index/makaleler/14/css-padding-nedir-margin-nedir" target="_blank" rel="noopener noreferrer">margin, padding</a></li>
           <li><a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">CSS kodunu hangi tarayıcı hangi versiyonda destekliyor?</a></li>
         </ul>
       </Details>
 
       <Details>
-        <summary>Ders 2 - CSS - Form Oluşturmak</summary>
+        <summary><b>2.</b> 13 Aralık 2020 - Font, Psd to CSS</summary>
 
         <p>
           Tasarımı koda döktüğümüz işlemin adı <strong>Psd to CSS</strong>, bu olaya 100% hakim olmak şart.
