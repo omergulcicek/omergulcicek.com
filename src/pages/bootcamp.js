@@ -66,8 +66,17 @@ const Bootcamp = () => (
           <li><a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Font</a> - <a href="https://webcesi.com/web-tasarim/google-fonts-nedir-nasil-kullanilir/"  target="_blank" rel="noopener noreferrer">Google Font nasıl kullanılır?</a></li>
           <li><a href="https://github.com/necolas/normalize.css/" target="_blank" rel="noopener noreferrer">normalize.css</a> - <a href="https://medium.com/@10ursabanoglu/reset-css-normalize-css-23be4ce74ea6" target="_blank" rel="noopener noreferrer">reset.css ve normalize.css nedir?</a></li>
           <li><a href="https://github.com/omergulcicek/css-stil-rehberi" target="_blank" rel="noopener noreferrer">CSS stil rehberi</a></li>
+          <li><a href="https://www.yazilimkodlama.com/web/html-form-elemanlari/" target="_blank" rel="noopener noreferrer">HTML Form Elemanları</a></li>
         </ul>
 
+
+        <h6>Kullanılan Eklentiler;</h6>
+        <ul>
+          <li><a href="https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=tr" target="_blank" rel="noopener noreferrer">Color Zilla</a> (Sayfadaki rengi almak için)</li>
+          <li><a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=tr" target="_blank" rel="noopener noreferrer">WhatFont</a> (Sayfadaki yazı stilini seçmek için)</li>
+          <li><a href="https://code.visualstudio.com/docs/editor/emmet" target="_blank" rel="noopener noreferrer">Emmet</a> (Hızlı HTML CSS yazmak için) - (<a href="https://medium.com/@10ursabanoglu/emmet-nedir-nas%C4%B1l-kullan%C4%B1l%C4%B1r-3e73e7c1ab26" target="_blank" rel="noopener noreferrer">Emmet nasıl kullanılır?</a>)</li>
+          <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" rel="noopener noreferrer">Live Server</a> (HTML'in anlık yenilenmesi için)</li>
+        </ul>
 
         <h6>Verilen Ödevler;</h6>
         <ul>
@@ -77,18 +86,64 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>Sıradaki işlenecek konular</summary>
+        <summary><b>3.</b> 19 Aralık 2020 - Pseudo class</summary>
+
+        <p>
+          Ağırlıklı olarak CSS seçicilerin üstünde durduk.
+        </p>
+
+        <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li>Frontend Roadmap</li>
-          <li><Strong><strong>CSS position</strong></Strong></li>
-          <li><Strong><strong>CSS seçiciler (:hover, :focus, :nth-child, ::before, ::after)</strong></Strong> - Açılır menü örneği</li>
-          <li>CSS variable</li>
-          <li><Strong>BEM</Strong></li>
-          <li><Strong><strong>CSS Flexbox</strong></Strong></li>
-          <li><Strong><strong>media query, responsive web, mobile first</strong></Strong></li>
-          <li><Strong>SASS</Strong></li>
-          <li><Strong><strong>Bootstrap</strong></Strong></li>
+          <li><a href="https://roadmap.sh/frontend" target="_blank" rel="noopener noreferrer">Frontend Roadmap</a> - (Yol haritası)</li>
+          <li><Strong><strong><a href="https://www.youtube.com/watch?v=_FLV6X0druY" target="_blank" rel="noopener noreferrer">CSS position</a> - (relative, absolute, fixed)</strong></Strong></li>
+          <li><Strong><strong><a href="https://fatihhayrioglu.com/pseudo-siniflari-ve-pseudo-elementleri/" target="_blank" rel="noopener noreferrer">CSS seçiciler</a> -  (:hover, :focus, :nth-child, <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_nth-child_odd_even" target="_blank" rel="noopener noreferrer">:nth-child(odd)</a> ::before, ::after)</strong></Strong></li>
+
+        </ul>
+      </Details>
+
+      <Details>
+        <summary><b>4.</b> 20 Aralık 2020 - BEM, SASS, variable</summary>
+
+        <p>
+          Kodu daha sağlıklı, anlaşılır ve kolay yazmamızı sağlayan teknolojileri tanıdık.
+        </p>
+
+        <h6>İşlenen Konular;</h6>
+
+        <ul>
+          <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_var" target="_blank" rel="noopener noreferrer">CSS variable</a></li>
+          <li><Strong><a href="http://getbem.com/naming/" target="_blank" rel="noopener noreferrer">BEM</a></Strong></li>
+          <li><Strong><strong><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS Flexbox - (flex, direction, justify-content, align-items)</a></strong></Strong></li>
+          <li><Strong><a href="https://sass-lang.com/documentation/style-rules" target="_blank" rel="noopener noreferrer">SASS</a> - (<a href="https://sass-lang.com/documentation/style-rules#nesting" target="_blank" rel="noopener noreferrer">nesting</a>, <a href="https://sass-lang.com/documentation/variables" target="_blank" rel="noopener noreferrer">variable</a>)</Strong></li>
+
+        </ul>
+
+        <h6>Kullanılan Eklentiler;</h6>
+        <ul>
+          <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass">Live Sass Compiler</a> (SCSS kodunu CSS'e çevirir)</li>
+        </ul>
+
+        <h6>Verilen Ödevler;</h6>
+        <ul>
+          <li><a href="https://www.uistore.design/items/medi-free-meditation-web-headers-for-figma/" target="_blank" rel="noopener noreferrer">Tasarım koda dökülecek</a> - <a href="https://www.figma.com/downloads/" target="_blank" rel="noopener noreferrer">Figma İndir</a> <br/> (Eğitimde gördüğümüz her şeyi kullanmaya çalışın, BEM, SASS, variable, flex, Google fonts vb.)</li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary>Sıradaki işlenecek konular</summary>
+
+        <h6>26 Aralık 2020</h6>
+        <ul>
+          <li><Strong><strong>responsive web, mobile first, <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer"><Strong><strong>atomic design</strong></Strong></a></strong></Strong></li>
+          <li><Strong><strong><a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp" target="_blank" rel="noopener noreferrer">media query</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Tasarım koda dökülecek</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank" rel="noopener noreferrer">Bootstrap</a></strong></Strong></li>
+        </ul>
+        
+        <h6>27 Aralık 2020</h6>
+        <ul>
+          <li><Strong><strong><a href="https://prototurk.com/git" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong></li>
         </ul>
       </Details>
     </div>
@@ -99,6 +154,10 @@ export default Bootcamp
 
 const Strong = styled.span`
   color: var(--c-theme);
+
+  a {
+    text-decoration-color: var(--c-theme);
+  }
 `
 
 const Details = styled.details`
