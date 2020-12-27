@@ -26,6 +26,10 @@ const Bootcamp = () => (
         <Strong>Sadece mavi yazılar, bilmemiz gereken konular</Strong>
       </p>
 
+      <p>
+        <a href="https://docs.google.com/spreadsheets/d/1QIeF1E-gv8HGm-_QCs-1vf8SFDQPxiH0J251i6L8dKg/edit#gid=0" target="_blank" rel="noopener noreferrer">Ödevler'in Codepen linki olarak ekleneceği link</a>
+      </p>
+
       <br/>
 
       <Details>
@@ -69,7 +73,6 @@ const Bootcamp = () => (
           <li><a href="https://www.yazilimkodlama.com/web/html-form-elemanlari/" target="_blank" rel="noopener noreferrer">HTML Form Elemanları</a></li>
         </ul>
 
-
         <h6>Kullanılan Eklentiler;</h6>
         <ul>
           <li><a href="https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=tr" target="_blank" rel="noopener noreferrer">Color Zilla</a> (Sayfadaki rengi almak için)</li>
@@ -98,7 +101,6 @@ const Bootcamp = () => (
           <li><a href="https://roadmap.sh/frontend" target="_blank" rel="noopener noreferrer">Frontend Roadmap</a> - (Yol haritası)</li>
           <li><Strong><strong><a href="https://www.youtube.com/watch?v=_FLV6X0druY" target="_blank" rel="noopener noreferrer">CSS position</a> - (relative, absolute, fixed)</strong></Strong></li>
           <li><Strong><strong><a href="https://fatihhayrioglu.com/pseudo-siniflari-ve-pseudo-elementleri/" target="_blank" rel="noopener noreferrer">CSS seçiciler</a> -  (:hover, :focus, :nth-child, <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_nth-child_odd_even" target="_blank" rel="noopener noreferrer">:nth-child(odd)</a> ::before, ::after)</strong></Strong></li>
-
         </ul>
       </Details>
 
@@ -116,7 +118,6 @@ const Bootcamp = () => (
           <li><Strong><a href="http://getbem.com/naming/" target="_blank" rel="noopener noreferrer">BEM</a></Strong></li>
           <li><Strong><strong><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS Flexbox - (flex, direction, justify-content, align-items)</a></strong></Strong></li>
           <li><Strong><a href="https://sass-lang.com/documentation/style-rules" target="_blank" rel="noopener noreferrer">SASS</a> - (<a href="https://sass-lang.com/documentation/style-rules#nesting" target="_blank" rel="noopener noreferrer">nesting</a>, <a href="https://sass-lang.com/documentation/variables" target="_blank" rel="noopener noreferrer">variable</a>)</Strong></li>
-
         </ul>
 
         <h6>Kullanılan Eklentiler;</h6>
@@ -127,23 +128,58 @@ const Bootcamp = () => (
         <h6>Verilen Ödevler;</h6>
         <ul>
           <li><a href="https://www.uistore.design/items/medi-free-meditation-web-headers-for-figma/" target="_blank" rel="noopener noreferrer">Tasarım koda dökülecek</a> - <a href="https://www.figma.com/downloads/" target="_blank" rel="noopener noreferrer">Figma İndir</a> <br/> (Eğitimde gördüğümüz her şeyi kullanmaya çalışın, BEM, SASS, variable, flex, Google fonts vb.)</li>
+          <li><a href="https://tr.khanacademy.org/computing/computer-programming/html-css" target="_blank" rel="noopener noreferrer">Khan Academy Testleri Çözülecek</a></li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary><b>5.</b> 26-27 Aralık 2020 - Psd to CSS</summary>
+
+        <p>
+          Gerçek bir tasarımı Semantic HTML, BEM, SASS ve Bootstrap kullanarak <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını koda döktük.
+        </p>
+
+        <h6>İşlenen Konular;</h6>
+
+        <ul>
+          <li><a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background_hero" target="_blank" rel="noopener noreferrer">CSS'te background-image</a></li>
+          <li><Strong><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener noreferrer">CSS'te flex-direction</a></strong></Strong> - (Mobilde alt alta, tablette yan yana gelmesinin temel kodu)</li>
+          <li><Strong><strong><a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer">atomic design</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://medium.com/@protechman/mobile-first-yakla%C5%9F%C4%B1m-461c223cfb9a" target="_blank" rel="noopener noreferrer">Mobile first kavramı</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_ex1" target="_blank" rel="noopener noreferrer">@media query</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://getbootstrap.com/docs/4.0/layout/grid/#mix-and-match" target="_blank" rel="noopener noreferrer">Bootstrap grid system</a></strong></Strong> - (<a href="https://sadikturan.com/bootstrap/bootstrap-grids/1201" target="_blank" rel="noopener noreferrer">Grid sistemi kullanımı</a>)</li>
+        </ul>
+
+        <h6>Verilen Ödevler;</h6>
+        <ul>
+          <li><a href="https://www.uistore.design/items/covid-19-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Covid19 tasarımı koda dökülecek</a></li>
+          <li><a href="https://www.uistore.design/items/data-warehouse-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Data warehouse tasarımı koda dökülecek</a></li>
+        </ul>
+
+        <p>
+          Bootstrap'i Codepen'de Ayarlar > Css > arama kısmına Bootstrap yazarak yada <a href="https://getbootstrap.com/docs/5.0/getting-started/download/" target="_blank" rel="noopener noreferrer">sitesinden</a> indirerek yada <a href="https://cdnjs.com/libraries/twitter-bootstrap" target="_blank" rel="noopener noreferrer">CDN</a> ile kodunuza ekleyebilirsiniz.
+        </p>
+
+        <p>
+          Eğitimde gördüğümüz her şeyi kullanmalıyız: <br />
+          BEM, SASS, variable, flex, Google fonts, media query, Bootstrap grid system vb. <br />
+          @media query'ler yardımıyla mobil ve tablet üstü için farklı kodlar yazalım; yazıların fontlarının küçülmesi, resimlerin mobilde gizlenmesi, yan yana olan şeylerin mobilde alt alta gelmesi gibi. Tasarımı yorumlamakta özgürsünüz.
+        </p>
+
+        <h6>Faydalı Kaynaklar;</h6>
+        <ul>
+          <li><a href="https://fatihhayrioglu.com/css-dersleri/" target="_blank" rel="noopener noreferrer">Fatih Hayrioğlu'nun CSS Dersleri</a></li>
+          <li><a href="https://www.youtube.com/user/uzmanvideo" target="_blank" rel="noopener noreferrer">Prototurk Youtube kanalında HTML, CSS ve Frontend Daily oynatma listeleri</a></li>
+          <li><a href="https://www.youtube.com/channel/UC1Z-a8i2Ce4oIEMV-S3iFrg" target="_blank" rel="noopener noreferrer">Adem İlter'in Sıfırdan CSS Eğitim ve HTML+CSS Öğreniyoruz oynatma listeleri</a></li>
         </ul>
       </Details>
 
       <Details>
         <summary>Sıradaki işlenecek konular</summary>
 
-        <h6>26 Aralık 2020</h6>
-        <ul>
-          <li><Strong><strong>responsive web, mobile first, <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer"><Strong><strong>atomic design</strong></Strong></a></strong></Strong></li>
-          <li><Strong><strong><a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp" target="_blank" rel="noopener noreferrer">media query</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Tasarım koda dökülecek</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank" rel="noopener noreferrer">Bootstrap</a></strong></Strong></li>
-        </ul>
-        
-        <h6>27 Aralık 2020</h6>
         <ul>
           <li><Strong><strong><a href="https://prototurk.com/git" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong></li>
         </ul>
       </Details>
     </div>
