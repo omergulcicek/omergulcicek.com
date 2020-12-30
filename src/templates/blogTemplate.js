@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Helmet from "react-helmet"
 import styled from "styled-components"
@@ -10,6 +10,14 @@ export default function Template({ data }) {
   const post = data.markdownRemark;
   const { title, date, medium } = post.frontmatter
   const { minutes } = post.fields.readingTime
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.querySelectorAll("article img").forEach(img => {
+        img.classList.add("loaded");
+      });
+    }, 500);
+  });
 
   return (
     <Layout>

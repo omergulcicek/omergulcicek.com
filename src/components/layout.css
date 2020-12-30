@@ -62,7 +62,16 @@ img {
 }
 
 .article img {
+  filter: blur(3px);
+  margin-bottom: 56px;
   margin-top: 56px;
+  opacity: .9;
+  transition: 200ms;
+}
+
+.article img.loaded {
+  filter: blur(0);
+  opacity: 1;
 }
 
 figcaption {
