@@ -54,7 +54,7 @@ const Header = styled.header`
   padding-top: 24px;
   position: fixed;
   top: 0;
-  transition: var(--g-transition);
+  transition: box-shadow var(--g-transition);
   width: 100%;
   z-index: 10;
 
