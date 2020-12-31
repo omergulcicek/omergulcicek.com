@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
-import Helmet from "react-helmet"
 import getProjects from "./../utils/getProjects"
 import { ProjectDesc, Svg } from "./../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
+import SEO from "../components/Seo"
 
 export const projects = [
   {
@@ -60,10 +60,7 @@ export default function App() {
   )
 
   return <Layout>
-    <Helmet
-      title="Projelerim"
-      titleTemplate="%s | Ömer Gülçiçek"
-    />
+    <SEO title="Projelerim" />
 
     <div className="container">
       <Title t1="En İyi" t2="Projelerim" />

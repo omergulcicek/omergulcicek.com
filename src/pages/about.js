@@ -1,17 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-import Helmet from "react-helmet"
 import { AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, Strong, Svg, H3, Hr, Details } from "./../components/Styled"
 
+import SEO from "../components/Seo"
 import Layout from "../components/Layout"
 import Title from "../components/Title"
 
 const About = () => (
   <Layout>
-    <Helmet
-      title="Hakkımda"
-      titleTemplate="%s | Ömer Gülçiçek"
-    />
+    <SEO title="Hakkımda" />
 
     <div className="container">
       <Title t1="Benim" t2="Hakkımda" />

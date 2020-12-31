@@ -1,9 +1,9 @@
 import React from "react"
-import Helmet from "react-helmet"
 import { MyDeskGrid } from "./../components/Styled"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
+import SEO from "../components/Seo"
 
 import MacbookPro from "../images/desk/macbook-pro.png"
 import iPhone12mini from "../images/desk/iphone-12-mini.png"
@@ -17,10 +17,7 @@ import LogitechG231 from "../images/desk/logitech-g231.png"
 
 export default function App() {
   return <Layout>
-    <Helmet
-      title="Çalışma Masam"
-      titleTemplate="%s | Ömer Gülçiçek"
-    />
+    <SEO title="Çalışma Masam" />
 
     <div className="container">
       <Title t1="Çalışma" t2="Masam" />

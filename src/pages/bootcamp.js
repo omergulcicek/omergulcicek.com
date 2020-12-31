@@ -1,17 +1,14 @@
 import React from "react"
-import Helmet from "react-helmet"
 import { Details, Strong } from "./../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import Title from "../components/Title"
 
 const Bootcamp = () => (
   <Layout>
-    <Helmet
-      title="Bootcamp"
-      titleTemplate="%s | Ömer Gülçiçek"
-    />
+    <SEO title="Bootcamp" />
 
     <div className="container">
       <Title t1="Frontent" t2="Bootcamp" />
