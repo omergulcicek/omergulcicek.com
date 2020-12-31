@@ -1,12 +1,30 @@
 import React, { useEffect } from "react"
-import { GetMyDesk } from "../components"
 import { MyDeskGrid } from "../components/Styled"
+import myDesk from "../assets/my-desk"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
 import SEO from "../components/Seo"
 
 export default function App() {
+  let desk = []
+
+  myDesk() !== null &&
+  myDesk().map(({ img, title, desc, disabled }, i) =>
+  desk.push(
+    <article className={disabled && "disabled"}>
+      <figure>
+        <img src={require(`./../assets/img/my-desk/${img}.png`)} alt={title} />
+
+        <figcaption>
+          <h5>{title}</h5>
+          <span>{desc}</span>
+        </figcaption>
+      </figure>
+    </article>
+    )
+  )
+
   return <Layout>
     <SEO title="Çalışma Masam" />
 
@@ -14,7 +32,7 @@ export default function App() {
       <Title t1="Çalışma" t2="Masam" />
 
       <MyDeskGrid>
-        <GetMyDesk />
+        {desk}
       </MyDeskGrid>
     </div>
   </Layout>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import { GetProjects } from "../components"
-import { ProjectDesc, Svg } from "../components/Styled"
+import projects from "../assets/projects"
+import { ProjectWrap, ProjectItem, ProjectDesc, Svg } from "../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
@@ -8,6 +8,26 @@ import Title from "../components/Title"
 import SEO from "../components/Seo"
 
 export default function App() {
+  let blog = []
+  projects() !== null &&
+  projects().map(({ link, img, title, desc }, i) =>
+    blog.push(
+    <ProjectWrap href={link} target="_blank" rel="noopener noreferrer" key={i}>
+      <ProjectItem>
+        <figure>
+          <img src={img} alt={title} loading="lazy" width="32" />
+        </figure>
+        <div>
+          <h2>{title}</h2>
+          <p>
+            {desc}
+          </p>
+        </div>
+      </ProjectItem>
+    </ProjectWrap>
+    )
+  )
+
   useEffect(
     () => {
       document.querySelectorAll("main .container")[0].classList.add("projects")
@@ -20,7 +40,7 @@ export default function App() {
     <div className="container">
       <Title t1="En İyi" t2="Projelerim" />
 
-      <GetProjects />
+      {blog}
 
       <ProjectDesc>
         Diğer projelerim için <a href="https://github.com/omergulcicek" target="_blank" rel="noopener noreferrer">GitHub profilimi</a> ziyaret edebilirsin.
