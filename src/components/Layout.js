@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types"
+import React from "react"
 import styled from "styled-components"
 
 import Header from "./Header"
@@ -21,10 +20,6 @@ const Layout = ({ children }) => (
   </>
 )
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-}
-
 export default Layout
 
 const Main = styled.main`
@@ -33,6 +28,6 @@ const Main = styled.main`
   position: relative;
 
   @media (min-width: 992px) {
-  margin-top: 240px;
+    margin-top: 240px;
   }
 `

@@ -1,71 +1,70 @@
 module.exports = {
   siteMetadata: {
     title: `Ömer Gülçiçek`,
-    siteUrl: "http://omergulcicek.com",
+    author: `Ömer Gülçiçek`,
     description: `Hayallerimin ve hedeflerimin arkasından koşmaya devam edeceğim. Sevdiğim işi yapıyorum, bu sayede hayatımın sonuna kadar bir gün bile çalışmam gerekmiyor; tutkunuzu bulun ve işiniz iş olmaktan çıksın.`,
-    author: `@omergulcicek`,
+    siteUrl: "http://omergulcicek.com",
+    social: {
+      twitter: `omergulcicek`,
+      github: `omergulcicek`,
+      instagram: `omergulcicek`,
+      linkedin: `omergulcicek`
+    },
   },
-  plugins: [{
-    resolve: `gatsby-plugin-google-analytics`,
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
-        trackingId: "UA-74400269-2",
+        path: `${__dirname}/src/blog`,
+        name: `blog`,
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        displayName: false,
-        ssr: true,
+        path: `${__dirname}/src/assets`,
+        name: `assets`,
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [".mdx", ".md"],
         plugins: [
-          `gatsby-remark-relative-images`,
+          `gatsby-remark-images`,
+        ],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-              linkImagesToOriginal: false,
-              sizeByPixelDensity: true,
-              showCaptions: true,
+              maxWidth: 590,
             },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+
+          {
+            resolve: `gatsby-remark-smartypants`,
           },
         ],
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-reading-time`],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`limelight`, `Rubik\:300,400,700,900`],
-        display: "swap",
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    'gatsby-remark-reading-time',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-74400269-2",
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -80,5 +79,14 @@ module.exports = {
         theme_color: `#2196f3`
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`limelight`, `Rubik\:300,400,700,900`],
+        display: "swap",
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`
   ],
 }

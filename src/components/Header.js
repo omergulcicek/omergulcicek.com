@@ -2,9 +2,9 @@ import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import useDarkMode from "./../utilities/useDarkMode"
-import DarkTheme from "./../components/DarkTheme"
-import Brand from "./../components/Brand"
+import useDarkMode from "./../utils/useDarkMode"
+import DarkTheme from "./DarkTheme"
+import Brand from ".//Brand"
 
 const Nav = () => {
   const [darkMode, setDarkMode] = useDarkMode(true)

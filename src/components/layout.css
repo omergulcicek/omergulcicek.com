@@ -74,6 +74,29 @@ img {
   opacity: 1;
 }
 
+.article h2,
+.article h3 {
+  scroll-margin-top: 140px;
+  position: relative;
+}
+
+.article h2 a,
+.article h3 a {
+  opacity: 0;
+  left: -24px;
+  padding-right: 8px;
+  position: absolute;
+  top: 0;
+  transition: var(--g-transition);
+}
+
+.article h2:hover a,
+.article h3:hover a,
+.article h2 a:hover,
+.article h3 a:hover {
+  opacity: 1;
+}
+
 figcaption {
   color: var(--c-grey);
   margin-bottom: 56px;
