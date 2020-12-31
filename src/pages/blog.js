@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from "styled-components"
-import "isomorphic-fetch"
 import articleTimeAgo from "article-time-ago"
+import "isomorphic-fetch"
+import { BlogArticle, Svg } from "./../components/Styled"
 
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 import Title from "../components/Title"
 
 const ConvertDate = d => new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })
@@ -31,10 +31,10 @@ class BlogIndex extends React.Component {
             const { slug } = node.fields
 
             return (
-              <Article key={slug}>
+              <BlogArticle key={slug}>
                 <Link to={ path }>{ title }</Link>
                 <div><span title={ConvertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
-              </Article>
+              </BlogArticle>
             )
           })}
           
@@ -72,37 +72,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-const Article = styled.article`
-  color: var(--c-grey);
-  line-height: 30px;
-  margin-top: 36px;
-
-  a {
-    color: var(--c-text);
-    font-size: 18px;
-    line-height: 1;
-    text-decoration: none;
-    transition: var(--g-transition);
-    
-    @media (min-width: 992px) {
-      font-size: 22px;
-    }
-
-    &:focus,
-    &:hover {
-      color: var(--c-theme);
-    }
-  }
-`
-
-const Svg = styled.svg`
-  opacity: 0.05;
-  left: -25%;
-  pointer-events: none;
-  position: absolute;
-  top: -120px;
-  width: 80%;
-  z-index: -1;
 `

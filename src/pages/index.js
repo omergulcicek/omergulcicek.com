@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 
 class BlogIndex extends React.Component {
   render() {

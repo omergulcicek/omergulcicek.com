@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-import styled from "styled-components"
+import { Details, Strong } from "./../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
@@ -187,79 +187,3 @@ const Bootcamp = () => (
 )
 
 export default Bootcamp
-
-const Strong = styled.span`
-  color: var(--c-theme);
-
-  a {
-    text-decoration-color: var(--c-theme);
-  }
-`
-
-const Details = styled.details`
-  border-left: 2px solid transparent;
-  padding: 24px 16px;
-
-  &:not(:first-of-type) {
-    border-top: 1px solid rgba(0,0,0,0.3);
-  }
-
-  summary {
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    outline: none;
-    position: relative;
-    transition: var(--g-transition);
-
-    &::after {
-      background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC1kb3duIiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyMCA1MTIiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1jYXJldC1kb3duIGZhLXctMTAgZmEtMngiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0zMS4zIDE5MmgyNTcuM2MxNy44IDAgMjYuNyAyMS41IDE0LjEgMzQuMUwxNzQuMSAzNTQuOGMtNy44IDcuOC0yMC41IDcuOC0yOC4zIDBMMTcuMiAyMjYuMUM0LjYgMjEzLjUgMTMuNSAxOTIgMzEuMyAxOTJ6IiBjbGFzcz0iIj48L3BhdGg+PC9zdmc+");
-      background-repeat: no-repeat;
-      content: "";
-      display: block;
-      height: 18px;
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 11px;
-    }
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-  }
-
-  code {
-    font-size: inherit;
-  }
-
-  h6 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    margin-top: 24px;
-  }
-
-  p {
-    margin-top: 16px;
-    position: relative;
-    transition: var(--g-transition);
-  }
-
-  &[open] {
-    background-color: #1B2125;
-    border-left-color: var(--c-theme);
-
-    summary,
-    h6,
-    p {
-      margin-left: 16px;
-    }
-
-    summary {
-      &::after {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC11cCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2FyZXQtdXAgZmEtdy0xMCBmYS0yeCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI4OC42NjIgMzUySDMxLjMzOGMtMTcuODE4IDAtMjYuNzQxLTIxLjU0My0xNC4xNDItMzQuMTQybDEyOC42NjItMTI4LjY2MmM3LjgxLTcuODEgMjAuNDc0LTcuODEgMjguMjg0IDBsMTI4LjY2MiAxMjguNjYyYzEyLjYgMTIuNTk5IDMuNjc2IDM0LjE0Mi0xNC4xNDIgMzQuMTQyeiIgY2xhc3M9IiI+PC9wYXRoPjwvc3ZnPg==");
-      }
-    }
-  }
-`

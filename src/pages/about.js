@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Helmet from "react-helmet"
-import styled from "styled-components"
+import { AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, Strong, Svg, H3, Hr, Details } from "./../components/Styled"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
@@ -17,7 +17,7 @@ const About = () => (
       <Title t1="Benim" t2="Hakkımda" />
 
       <p>
-        Merhaba! Ben Ömer Gülçiçek. { new Date().getFullYear() - 1993 } yaşındayım ve İstanbul'da yaşıyorum; <HangiKredi href="https://hangikredi.com/" target="_blank" rel="noopener noreferrer">hangikredi.com</HangiKredi>'da uzaktan çalışıyorum.
+        Merhaba! Ben Ömer Gülçiçek. { new Date().getFullYear() - 1993 } yaşındayım ve İstanbul'da yaşıyorum; <AboutHangiKredi href="https://hangikredi.com/" target="_blank" rel="noopener noreferrer">hangikredi.com</AboutHangiKredi>'da uzaktan çalışıyorum.
       </p>
 
       <p>
@@ -25,11 +25,11 @@ const About = () => (
       </p>
 
       <p>
-        <Turkuaz href="https://turkuazcss.com/" target="_blank" rel="noopener noreferrer">Turkuaz</Turkuaz> ve <TurkceDokuman href="https://turkcedokuman.com/" target="_blank" rel="noopener noreferrer">Türkçe Doküman</TurkceDokuman> projeleri başta olmak üzere çalışmalarımın tamamı açık kaynak. Türkçe kaynak sayısını arttırmak adına yazılım alanında çeviriler yapmaktayım. Kendimi sürekli güncel tutmak ve bildiklerimi aktarabilmek adına makale <Link to="/blog/">yazıyorum</Link>.
+        <AboutTurkuaz href="https://turkuazcss.com/" target="_blank" rel="noopener noreferrer">Turkuaz</AboutTurkuaz> ve <AboutTurkceDokuman href="https://turkcedokuman.com/" target="_blank" rel="noopener noreferrer">Türkçe Doküman</AboutTurkceDokuman> projeleri başta olmak üzere çalışmalarımın tamamı açık kaynak. Türkçe kaynak sayısını arttırmak adına yazılım alanında çeviriler yapmaktayım. Kendimi sürekli güncel tutmak ve bildiklerimi aktarabilmek adına makale <Link to="/blog/">yazıyorum</Link>.
       </p>
 
       <p>
-        Benimle konuşmak istediğiniz bir konu varsa <Mail href="mailto:iletisim@omergulcicek.com">iletisim@omergulcicek.com</Mail> adresine detaylı bir mail atabilirsiniz. Freelance iş, özel ders yada eğitmenlik için müsaitim.
+        Benimle konuşmak istediğiniz bir konu varsa <AboutMail href="mailto:iletisim@omergulcicek.com">iletisim@omergulcicek.com</AboutMail> adresine detaylı bir mail atabilirsiniz. Freelance iş, özel ders yada eğitmenlik için müsaitim.
       </p>
 
       <Hr/>
@@ -140,144 +140,3 @@ const About = () => (
 )
 
 export default About
-
-const A = styled.a`
-  background-color: transparent;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  margin: 0 6px;
-  overflow: hidden;
-  padding: 2px;
-  text-decoration: none;
-  transition: var(--g-transition);
-
-  &:focus,
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const Turkuaz = styled(A)`
-  box-shadow: 0 1px 0 4px rgba(38,166,154,.1), inset 0 40px 0 rgba(38,166,154,.1);
-  color: #26a69a;
-
-  &:focus,
-  &:hover {
-    color: #26a69a;
-  }
-`
-
-const TurkceDokuman = styled(A)`
-  box-shadow: 0 1px 0 4px rgba(244,67,54,.1), inset 0 40px 0 rgba(244,67,54,.1);
-  color: #f44336;
-
-  &:focus,
-  &:hover {
-    color: #f44336;
-  }
-`
-
-const Mail = styled(A)`
-  box-shadow: 0 1px 0 4px rgba(33,150,243,.1), inset 0 40px 0 rgba(33,150,243,.1);
-  color: var(--c-theme);
-
-  &:focus,
-  &:hover {
-    color: var(--c-theme);
-  }
-`
-
-const HangiKredi = styled(A)`
-  box-shadow: 0 1px 0 4px rgba(242,103,34,.15), inset 0 40px 0 rgba(242,103,34,.15);
-  color: #f26722;
-
-  &:focus,
-  &:hover {
-    color: #f26722;
-  }
-`
-
-const Strong = styled.span`
-  color: var(--c-theme);
-`
-
-const Svg = styled.svg`
-  opacity: 0.05;
-  left: -25%;
-  pointer-events: none;
-  position: absolute;
-  top: -120px;
-  width: 80%;
-  z-index: -1;
-`
-
-const H3 = styled.h3`
-  color: var(--c-theme);
-`
-
-const Hr = styled.hr`
-  margin-bottom: 64px;
-  margin-top: 64px;
-`
-
-const Details = styled.details`
-  border-left: 2px solid transparent;
-  padding: 24px 16px;
-
-  &:not(:first-of-type) {
-    border-top: 1px solid rgba(0,0,0,0.3);
-  }
-
-  summary {
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    outline: none;
-    position: relative;
-    transition: var(--g-transition);
-
-    &::after {
-      background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC1kb3duIiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyMCA1MTIiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1jYXJldC1kb3duIGZhLXctMTAgZmEtMngiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0zMS4zIDE5MmgyNTcuM2MxNy44IDAgMjYuNyAyMS41IDE0LjEgMzQuMUwxNzQuMSAzNTQuOGMtNy44IDcuOC0yMC41IDcuOC0yOC4zIDBMMTcuMiAyMjYuMUM0LjYgMjEzLjUgMTMuNSAxOTIgMzEuMyAxOTJ6IiBjbGFzcz0iIj48L3BhdGg+PC9zdmc+");
-      background-repeat: no-repeat;
-      content: "";
-      display: block;
-      height: 18px;
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 11px;
-    }
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-  }
-
-  code {
-    font-size: inherit;
-  }
-
-  p {
-    margin-top: 16px;
-    position: relative;
-    transition: var(--g-transition);
-  }
-
-  &[open] {
-    background-color: #1B2125;
-    border-left-color: var(--c-theme);
-
-    summary,
-    p {
-      margin-left: 16px;
-    }
-
-    summary {
-      &::after {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC11cCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2FyZXQtdXAgZmEtdy0xMCBmYS0yeCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI4OC42NjIgMzUySDMxLjMzOGMtMTcuODE4IDAtMjYuNzQxLTIxLjU0My0xNC4xNDItMzQuMTQybDEyOC42NjItMTI4LjY2MmM3LjgxLTcuODEgMjAuNDc0LTcuODEgMjguMjg0IDBsMTI4LjY2MiAxMjguNjYyYzEyLjYgMTIuNTk5IDMuNjc2IDM0LjE0Mi0xNC4xNDIgMzQuMTQyeiIgY2xhc3M9IiI+PC9wYXRoPjwvc3ZnPg==");
-      }
-    }
-  }
-`

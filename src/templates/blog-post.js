@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import styled from "styled-components"
+import { BlogDetailsInfo, BlogDetailsTitle, BlogDetailsContent, Svg } from "./../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 import friendlyUrl from "./../utils/friendlyUrl"
 
 
@@ -37,63 +37,62 @@ export default function BlogPostTemplate(props) {
     <Layout title={siteTitle}>
       <SEO title={title} description={post.excerpt} />
       
-      
-    <div className="container article">
-      <Details>
-        <Link to="/blog/">
-          <svg aria-hidden="true" role="img" viewBox="0 0 448 512" height="14px"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg>
+      <div className="container article">
+        <BlogDetailsInfo>
+          <Link to="/blog/">
+            <svg aria-hidden="true" role="img" viewBox="0 0 448 512" height="14px"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg>
 
-          <span>Tüm Yazılar</span>
-        </Link>
-        
-        <span>•</span>
-        <span>{ date }</span>
-        <span>•</span>
+            <span>Tüm Yazılar</span>
+          </Link>
+          
+          <span>•</span>
+          <span>{ date }</span>
+          <span>•</span>
 
-        {
-          minutes &&
-          <span title="Tahmini Okuma Süresi">{ Math.ceil(minutes) } dk</span>
-        }
-        
-        <div>
           {
-            medium && <>
-              <span>•</span>
-              <a href={medium} target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
-            </>
+            minutes &&
+            <span title="Tahmini Okuma Süresi">{ Math.ceil(minutes) } dk</span>
           }
-        </div>
-      </Details>
+          
+          <div>
+            {
+              medium && <>
+                <span>•</span>
+                <a href={medium} target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
+              </>
+            }
+          </div>
+        </BlogDetailsInfo>
 
-      <Title>{ title }</Title>
+        <BlogDetailsTitle>{ title }</BlogDetailsTitle>
 
-      <Content>
-        <MDXRenderer>{post.body}</MDXRenderer>
-      </Content>
+        <BlogDetailsContent>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </BlogDetailsContent>
 
         <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Link to={previous.frontmatter.path} rel="prev">
-              ← {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Link to={next.frontmatter.path} rel="next">
-              {next.frontmatter.title} →
-            </Link>
-          )}
-        </li>
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link to={previous.frontmatter.path} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.frontmatter.path} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
         </ul>
       
         <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -128,109 +127,4 @@ export const pageQuery = graphql`
       body
     }
   }
-`
-
-const Details = styled.div`
-  color: var(--c-grey);
-  font-size: 14px;
-  line-height: 18px;
-  margin-top: 40px;
-
-  svg {
-    vertical-align: middle;
-  }
-
-  a {
-    text-decoration: none;
-
-
-    &:focus,
-    &:hover {
-      color: var(--c-theme);
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  div {
-    margin-top: 8px;
-
-    span:first-of-type {
-      display: none;
-    }
-
-    a:first-of-type {
-      margin-left: 0;
-    }
-    
-    @media (min-width: 992px) {
-      display: inline-block;
-      margin-top: 0;
-
-      span:first-of-type {
-        display: inline-block;
-      }
-  
-      a:first-of-type {
-        margin-left: 8px;
-      }
-    }
-
-  }
-
-  a,
-  span {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-`
-
-const Title = styled.h1`
-  color: var(--c-theme);
-  font-size: 40px;
-  line-height: 56px;
-  margin-bottom: 24px;
-  margin-top: 8px;
-  position: relative;
-
-  @media (min-width: 992px) {
-    font-size: 56px;
-    line-height: 72px;
-  }
-`
-
-const Content = styled.article`
-  h1,
-  h2,
-  h3 {
-    color: var(--c-theme);
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 12px;
-    margin-top: 48px;
-  }
-
-  h1 {
-    font-size: 38px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-`
-
-const Svg = styled.svg`
-  opacity: 0.05;
-  left: -25%;
-  pointer-events: none;
-  position: absolute;
-  top: -120px;
-  width: 80%;
-  z-index: -1;
 `

@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-import styled from "styled-components"
+import { MyDeskGrid } from "./../components/Styled"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
@@ -15,8 +15,8 @@ import BekantMasa from "../images/desk/bekant-masa.png"
 import WatchSeries6 from "../images/desk/watch-series-6.png"
 import LogitechG231 from "../images/desk/logitech-g231.png"
 
-const MyDesk = () => (
-  <Layout>
+export default function App() {
+  return <Layout>
     <Helmet
       title="Çalışma Masam"
       titleTemplate="%s | Ömer Gülçiçek"
@@ -25,7 +25,7 @@ const MyDesk = () => (
     <div className="container">
       <Title t1="Çalışma" t2="Masam" />
 
-      <Grid>
+      <MyDeskGrid>
         <article disabled>
           <figure>
             <img src={MacbookPro} alt='Apple Macbook Pro (M1, 13", 2020)' />
@@ -115,53 +115,7 @@ const MyDesk = () => (
             </figcaption>
           </figure>
         </article>
-      </Grid>
+      </MyDeskGrid>
     </div>
   </Layout>
-)
-
-export default MyDesk
-
-const Grid = styled.div`
-  display: grid;
-  gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-  article {
-    &[disabled] {
-      img {
-        filter: blur(4px);
-        opacity: 0.5;
-      }
-    }
-
-    figure {
-      margin: 0;
-
-      img {
-        display: block;
-        height: 240px;
-        margin: 0 auto 32px;
-        max-width: 100%;
-        object-fit: contain;
-        vertical-align: middle;
-      }
-
-      figcaption {
-        h5 {
-          color: var(--c-text);
-          font-size: 18px;
-          font-weight: 400;
-          line-height: 24px;
-          margin: 0;
-        }
-
-        span {
-          color: var(--c-grey);
-          font-size: 16px;
-          font-weight: 100;
-        }
-      }
-    }
-  }
-`
+}

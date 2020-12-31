@@ -1,13 +1,11 @@
 import React from "react"
-import styled from "styled-components"
-
-import Header from "./Header"
-import Footer from "./Footer"
+import { Header, Footer } from "./../components"
+import { Main } from "./Styled"
 
 import "./layout.css"
 
-const Layout = ({ children }) => (
-  <>
+export default function App ({ children }) {
+  return <>
     <Header />
 
     <Main>
@@ -18,16 +16,4 @@ const Layout = ({ children }) => (
 
     <Footer />
   </>
-)
-
-export default Layout
-
-const Main = styled.main`
-  margin-bottom: 160px;
-  margin-top: 160px;
-  position: relative;
-
-  @media (min-width: 992px) {
-    margin-top: 240px;
-  }
-`
+}
