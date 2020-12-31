@@ -46,12 +46,12 @@ export default function BlogPostTemplate(props) {
           </Link>
           
           <span>•</span>
-          <span>{ date }</span>
+          <span>{date}</span>
           <span>•</span>
 
           {
             minutes &&
-            <span title="Tahmini Okuma Süresi">{ Math.ceil(minutes) } dk</span>
+            <span title="Tahmini Okuma Süresi">{Math.ceil(minutes)} dk</span>
           }
           
           <div>

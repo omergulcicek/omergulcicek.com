@@ -10,7 +10,7 @@ export default function App ({ children }) {
 
     <Main>
       <section>
-        { children }
+        {children}
       </section>
     </Main>
 

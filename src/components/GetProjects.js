@@ -6,17 +6,17 @@ export default function App () {
   let blog = []
 
   projects() !== null &&
-  projects().map(({ link, resim, baslik, aciklama }, i) =>
+  projects().map(({ link, img, title, desc }, i) =>
     blog.push(
     <ProjectWrap href={link} target="_blank" rel="noopener noreferrer" key={i}>
       <ProjectItem>
         <figure>
-          <img src={resim} alt={baslik} loading="lazy" width="32" />
+          <img src={img} alt={title} loading="lazy" width="32" />
         </figure>
         <div>
-          <h2>{baslik}</h2>
+          <h2>{title}</h2>
           <p>
-            {aciklama}
+            {desc}
           </p>
         </div>
       </ProjectItem>

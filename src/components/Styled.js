@@ -438,7 +438,7 @@ export const MyDeskGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
   article {
-    &[disabled] {
+    &.disabled {
       img {
         filter: blur(4px);
         opacity: 0.5;
