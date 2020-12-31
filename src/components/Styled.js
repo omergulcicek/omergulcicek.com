@@ -337,8 +337,12 @@ export const Details = styled.details`
 `
 
 export const Hr = styled.hr`
+  background-color: rgba(0,0,0,0.3);
+  border: 0;
+  height: 2px;
   margin-bottom: 64px;
   margin-top: 64px;
+  width: 100%;
 `
 //#endregion
 

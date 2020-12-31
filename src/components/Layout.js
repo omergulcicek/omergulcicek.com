@@ -2,7 +2,7 @@ import React from "react"
 import { Header, Footer } from "./../components"
 import { Main } from "./Styled"
 
-import "./layout.css"
+import "./../assets/css/style.css"
 
 export default function App ({ children }) {
   return <>
