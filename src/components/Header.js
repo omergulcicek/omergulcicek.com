@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
-import { Brand } from "./../components"
+import { Brand } from "../components"
 import { Header, Menu } from "./Styled"
 
-import useDarkMode from "./../utils/useDarkMode"
+import useDarkMode from "../utilities/useDarkMode"
 import DarkTheme from "./DarkTheme"
 
 export default function App() {

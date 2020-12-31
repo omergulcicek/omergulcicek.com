@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { BlogDetailsInfo, BlogDetailsTitle, BlogDetailsContent, Svg } from "./../components/Styled"
+import { BlogDetailsInfo, BlogDetailsTitle, BlogDetailsContent, Svg } from "../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import friendlyUrl from "./../utils/friendlyUrl"
+import friendlyUrl from "../utilities/friendlyUrl"
 
 
 export default function BlogPostTemplate(props) {

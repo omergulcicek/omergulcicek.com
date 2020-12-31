@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import articleTimeAgo from "article-time-ago"
 import "isomorphic-fetch"
-import { BlogArticle, Svg } from "./../components/Styled"
+import { BlogArticle, Svg } from "../components/Styled"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"

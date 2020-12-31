@@ -1,11 +1,12 @@
 import React from "react"
-import { ProjectWrap, ProjectItem } from "./../components/Styled"
+import projects from "../assets/projects"
+import { ProjectWrap, ProjectItem } from "./Styled"
 
-export default function getProjects(projects) {
+export default function App () {
   let blog = []
 
-  projects !== null &&
-  projects.map(({ link, resim, baslik, aciklama }, i) =>
+  projects() !== null &&
+  projects().map(({ link, resim, baslik, aciklama }, i) =>
     blog.push(
     <ProjectWrap href={link} target="_blank" rel="noopener noreferrer" key={i}>
       <ProjectItem>

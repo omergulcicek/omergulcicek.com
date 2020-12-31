@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, Strong, Svg, H3, Hr, Details } from "./../components/Styled"
+import { AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, Strong, Svg, H3, Hr, Details } from "../components/Styled"
 
 import SEO from "../components/Seo"
 import Layout from "../components/Layout"

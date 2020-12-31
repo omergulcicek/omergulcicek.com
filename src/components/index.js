@@ -1,15 +1,11 @@
 import React from "react"
 
-import SEOComp from "./Seo"
 import LayoutComp from "./Layout"
 import HeaderComp from "./Header"
 import BrandComp from "./Brand"
 import FooterComp from "./Footer"
 import TitleComp from "./Title"
-
-export const SEO = () => {
-  return <SEOComp />
-}
+import GetProjectsComp from "./GetProjects"
 
 export const Layout = () => {
   return <LayoutComp />
@@ -29,4 +25,8 @@ export const Footer = () => {
 
 export const Title = () => {
   return <TitleComp />
+}
+
+export const GetProjects = () => {
+  return <GetProjectsComp />
 }

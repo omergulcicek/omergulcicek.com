@@ -1,5 +1,5 @@
 import React from "react"
-import { Details, Strong } from "./../components/Styled"
+import { Details, Strong } from "../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"

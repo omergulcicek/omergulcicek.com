@@ -1,5 +1,5 @@
 import React from "react"
-import { Brand } from "./../components"
+import { Brand } from "../components"
 import { Footer } from "./Styled"
 
 export default function App() {

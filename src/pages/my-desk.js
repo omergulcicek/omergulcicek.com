@@ -1,5 +1,5 @@
 import React from "react"
-import { MyDeskGrid } from "./../components/Styled"
+import { MyDeskGrid } from "../components/Styled"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
