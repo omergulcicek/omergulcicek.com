@@ -14,7 +14,7 @@ export default function App() {
   desk.push(
     <article className={disabled && "disabled"}>
       <figure>
-        <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} />
+        <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} loading="lazy" />
 
         <figcaption>
           <h5>{title}</h5>
@@ -32,7 +32,7 @@ export default function App() {
       <Title t1="Çalışma" t2="Masam" />
       
       <DeskFigure>
-        <img src="" alt="" />
+        <img src="" alt="" loading="lazy" />
       </DeskFigure>
 
       <MyDeskGrid>

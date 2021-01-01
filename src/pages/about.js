@@ -30,7 +30,7 @@ const About = () => (
       </p>
 
       <AboutFigure>
-        <img src="" alt="" />
+        <img src="" alt="" loading="lazy" />
       </AboutFigure>
 
       <AboutTitle>Eğitim & Seminer</AboutTitle>
@@ -73,7 +73,7 @@ const About = () => (
       </p> 
 
       <AboutFigure>
-        <img src="" alt="" />
+        <img src="" alt="" loading="lazy" />
       </AboutFigure>
 
       <Svg viewBox="0 0 200 200">
