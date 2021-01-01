@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
         <SEO title="Yazılar" />
 
         <div className="container">
-          <Title t1="Son" t2="Yazılarım" />
+          <Title t1="Tüm" t2="Yazılarım" />
 
           {posts.map(({ node }) => {
             const { title, date, category, path } = node.frontmatter

@@ -535,6 +535,7 @@ export const MyDeskGrid = styled.div`
         max-width: 100%;
         object-fit: contain;
         vertical-align: middle;
+        transition: var(--g-transition);
       }
 
       figcaption {
@@ -552,6 +553,10 @@ export const MyDeskGrid = styled.div`
           font-weight: 100;
         }
       }
+    }
+
+    &:not(.disabled):hover img {
+      transform: scale(1.1);
     }
   }
 `
