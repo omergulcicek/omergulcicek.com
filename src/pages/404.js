@@ -1,21 +1,25 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import SEO from "../components/Seo"
 import Layout from "../components/Layout"
+import Title from "../components/Title"
 
-class NotFoundPage extends React.Component {
-  render() {
-    return (
-      <Layout location={this.props.location}>
-        <SEO title="404: Not Found" />
-        
-        <div className="container">
-          <h1>Not Found</h1>
-          <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-        </div>
-      </Layout>
-    )
-  }
+export default function NotFoundPage () {
+  useEffect(() => {
+    setTimeout(() => {
+      location.href = location.origin;
+    }, 1500);
+  });
+
+  return <Layout>
+    <SEO title="404: Not Found" />
+    
+    <div className="container">
+      <Title t1="Sayfa" t2="Bulunamadı :(" />
+
+      <p>
+        Sadece var olmayan bir linke girdin...
+      </p>
+    </div>
+</Layout>
 }
-
-export default NotFoundPage
