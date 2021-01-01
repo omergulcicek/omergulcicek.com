@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { BlogDetailsInfo, BlogDetailsTitle, BlogDetailsContent, Svg } from "../components/Styled"
+import { BlogDetailsInfo, BlogDetailsTitle, BlogDetailsContent, BlogDetailsPagination, Svg } from "../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
@@ -70,30 +70,25 @@ export default function BlogPostTemplate(props) {
           <MDXRenderer>{post.body}</MDXRenderer>
         </BlogDetailsContent>
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <BlogDetailsPagination className="pagination">
           <li>
             {previous && (
               <Link to={previous.frontmatter.path} rel="prev">
-                ← {previous.frontmatter.title}
+                <span>Önceki Makale</span>
+                {previous.frontmatter.title}
               </Link>
             )}
           </li>
+
           <li>
             {next && (
               <Link to={next.frontmatter.path} rel="next">
-                {next.frontmatter.title} →
+                <span>Sonraki Makale</span>
+                {next.frontmatter.title}
               </Link>
             )}
           </li>
-        </ul>
+        </BlogDetailsPagination>
       
         <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <path fill="var(--c-theme)" d="M47,-55.5C60.1,-45,69.2,-29.4,72.7,-12.4C76.1,4.6,73.9,23,66.4,40.6C58.9,58.2,46.2,75.1,30.6,78.2C15.1,81.3,-3.4,70.6,-23.3,63.5C-43.2,56.4,-64.5,53,-71.7,41.1C-78.8,29.3,-71.7,8.9,-64.6,-7.9C-57.4,-24.8,-50.3,-38.2,-39.6,-49C-28.8,-59.9,-14.4,-68.2,1.3,-69.7C17,-71.3,33.9,-66,47,-55.5Z" transform="translate(100 100)" />

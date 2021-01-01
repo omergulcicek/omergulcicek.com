@@ -670,5 +670,60 @@ export const BlogDetailsContent = styled.article`
     font-size: 20px;
   }
 `
+
+export const BlogDetailsPagination = styled.ul`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  list-style: none;
+  align-items: stretch;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 0;
+  flex-direction: column;
+  
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+
+  li {
+    border-radius: 8px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 32px);
+    transition: var(--g-transition);
+
+    &:first-child {
+      text-align: left;
+  
+      @media (min-width: 992px) {
+        text-align: right;
+      }
+    }
+
+    &:not(:empty) {
+      background-color: var(--c-theme);
+
+      &:hover {
+        background-color: #0b72c4;
+      }
+    }
+
+    a {
+      color: var(--c-text);
+      display: inline-block;
+      padding: 24px 32px;
+      text-decoration: none;
+
+      span {
+        color: rgba(255, 255, 255, 0.65);
+        display: block;
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+`
 //#endregion
 

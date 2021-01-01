@@ -100,6 +100,18 @@ html[data-theme="light"] details summary::after {
   background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC1kb3duIiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyMCA1MTIiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1jYXJldC1kb3duIGZhLXctMTAgZmEtMngiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTMxLjMgMTkyaDI1Ny4zYzE3LjggMCAyNi43IDIxLjUgMTQuMSAzNC4xTDE3NC4xIDM1NC44Yy03LjggNy44LTIwLjUgNy44LTI4LjMgMEwxNy4yIDIyNi4xQzQuNiAyMTMuNSAxMy41IDE5MiAzMS4zIDE5MnoiIGNsYXNzPSIiPjwvcGF0aD48L3N2Zz4=");
 }
 
+html[data-theme="light"] .pagination li:not(:empty) {
+  background-color: #F1F4F8;
+}
+
+html[data-theme="light"] .pagination li:not(:empty):hover {
+  background-color: #E1E6ED;
+}
+
+html[data-theme="light"] .pagination li:not(:empty) span {
+  color: rgba(0, 0, 0, 0.7);
+}
+
 body {
   background-color: var(--c-background);
   color: var(--c-text);
