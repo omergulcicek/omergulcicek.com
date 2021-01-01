@@ -1,4 +1,4 @@
-export default function friendlyUrl(url) {
+export default function friendlyUrl (url) {
   return url.toString()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g,'')

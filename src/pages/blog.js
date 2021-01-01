@@ -1,15 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import articleTimeAgo from "article-time-ago"
+import convertDate from "../utilities/convertDate"
 import "isomorphic-fetch"
 import { BlogArticle, Svg } from "../components/Styled"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Title from "../components/Title"
-
-const ConvertDate = d => new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })
-
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -30,7 +28,7 @@ class BlogIndex extends React.Component {
             return (
               <BlogArticle key={slug}>
                 <Link to={ path }>{ title }</Link>
-                <div><span title={ConvertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
+                <div><span title={convertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
               </BlogArticle>
             )
           })}
@@ -56,6 +54,7 @@ export const pageQuery = graphql`
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          excerpt
           fields {
             slug
           }

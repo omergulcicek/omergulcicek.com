@@ -10,11 +10,12 @@ import styled from "styled-components"
  *    1.3 Footer
  *  2. Helper Components
  *  3. Pages
- *    3.1 About
- *    3.2 Blog
- *    3.3 Bootcamp
- *    3.4 My Desk
- *    3.5 Projects
+ *    3.1 Home
+ *    3.2 About
+ *    3.3 Blog
+ *    3.4 Bootcamp
+ *    3.5 My Desk
+ *    3.6 Projects
  *  4. Blog Details
  * 
  */
@@ -340,7 +341,45 @@ export const Hr = styled.hr`
 //#endregion
 
 // 3. Pages
-//#region 3.1 About
+//#region 3.1 Home
+export const HomeTitle = styled.h2`
+  align-items: center;
+  color: var(--c-theme);
+  display: flex;
+  font-size: 32px;
+  margin-bottom: 32px;
+
+  @media (min-width: 992px) {
+    font-size: 40px;
+    margin-bottom: 64px;
+  }
+
+  span {
+    color: var(--c-text)
+  }
+
+  a {
+    font-size: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--c-text);
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 32px;
+
+    svg {
+      margin-left: 8px;
+      transition: var(--g-transition);
+    }
+
+    &:hover svg {
+      margin-left: 16px;
+    }
+  }
+`
+//#endregion
+
+//#region 3.2 About
 export const AboutA = styled.a`
   background-color: transparent;
   border-radius: 2px;
@@ -428,7 +467,7 @@ export const AboutFigure = styled.figure`
 `
 //#endregion
 
-//#region 3.2 Blog
+//#region 3.3 Blog
 export const BlogArticle = styled.article`
   color: var(--c-grey);
   line-height: 30px;
@@ -453,7 +492,7 @@ export const BlogArticle = styled.article`
 `
 //#endregion
 
-//#region 3.4 My Desk
+//#region 3.5 Desk
 export const DeskFigure = styled.figure`
   background-color: #eee;
   height: 810px;
@@ -518,7 +557,7 @@ export const MyDeskGrid = styled.div`
 `
 //#endregion
 
-//#region 3.5 Projects
+//#region 3.6 Projects
 export const ProjectWrap = styled.a`
   display: block;
   margin-bottom: 8px;
@@ -616,7 +655,6 @@ export const ProjectDesc = styled.p`
 
 // 4. Blog Details
 //#region
-
 export const BlogDetailsInfo = styled.div`
   color: var(--c-grey);
   font-size: 14px;
