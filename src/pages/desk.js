@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { MyDeskGrid } from "../components/Styled"
-import myDesk from "../assets/my-desk"
+import myDesk from "../assets/desk"
 
 import Layout from "../components/Layout"
 import Title from "../components/Title"
@@ -14,7 +14,7 @@ export default function App() {
   desk.push(
     <article className={disabled && "disabled"}>
       <figure>
-        <img src={require(`./../assets/img/my-desk/${img}.png`)} alt={title} />
+        <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} />
 
         <figcaption>
           <h5>{title}</h5>
