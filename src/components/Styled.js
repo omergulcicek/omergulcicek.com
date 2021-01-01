@@ -177,7 +177,7 @@ export const DarkTheme = styled.a`
 //#region 1.2 Main
 export const Main = styled.main`
   flex: 1;
-  margin-bottom: 160px;
+  margin-bottom: 80px;
   margin-top: 160px;
   position: relative;
 
@@ -209,7 +209,6 @@ export const Footer = styled.footer`
 
       svg {
         height: 24px;
-        opacity: 0.9;
         padding: 4px;
 
         @media (min-width: 992px) {
@@ -222,7 +221,6 @@ export const Footer = styled.footer`
         color: inherit;
 
         svg {
-          opacity: 1;
           transform: scale(1.1);
         }
       }

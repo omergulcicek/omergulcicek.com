@@ -41,17 +41,19 @@ const About = () => (
 
       <ul>
         <li>
-          <a href="https://www.kodluyoruz.org/bootcamp/kirikkale-front-end-web-gelistirme-101-bootcamp" target="_blank" rel="noopener noreferrer">Kırıkkale Front-End Web Geliştirme 101 Bootcamp</a>
+          <p>
+            <a href="https://www.kodluyoruz.org/bootcamp/kirikkale-front-end-web-gelistirme-101-bootcamp" target="_blank" rel="noopener noreferrer">Kırıkkale Front-End Web Geliştirme 101 Bootcamp</a>
+          </p>
 
           <p>
-            12 Aralık - 24 Ocak 2021 tarihleri arasında her hafta sonu Cumartesi ve Pazar günleri saat 10:00 - 15:00 arası gerçekleşecek.
+            12 Aralık - 24 Ocak 2021 tarihleri arasında farklı alanlardan 30 öğrenciye sıfırdan Frontend eğitimi verdim. Sırasıyla HTML, CSS, Git, JavaScript ve React anlattım. <br /> Eğitim hakkındaki detaylara <Link to="/bootcamp/">Frontend Bootcamp</Link> sayfasından erişebilirsiniz.
           </p>
         </li>
       </ul>
 
       <Hr />
 
-      <AboutTitle>Hakkımda birkaç şey:</AboutTitle>
+      <AboutTitle>Hakkımda birkaç şey</AboutTitle>
 
       <ul>
         <li>Minimalist yaşam felsefesini seviyorum.</li>
@@ -62,7 +64,17 @@ const About = () => (
         <li>Kişisel gelişim, tarih, tasavvuf konuları başta olmak üzere kitap okumayı seviyorum. Gelecekteki evimde büyük bir kütüphaneye sahip olmayı hedefliyorum.</li>
       </ul>
 
+      <Hr />
 
+      <AboutTitle>Çalışma masam</AboutTitle>
+
+      <p>
+        Kullandığım ekipmanları özenle seçiyorum ve harika vakit geçiriyorum. <Link to="/desk/">Çalışma masamı incelemek için tıklayın.</Link>
+      </p> 
+
+      <AboutFigure>
+        <img src="" alt="" />
+      </AboutFigure>
 
       <Svg viewBox="0 0 200 200">
         <path fill="var(--c-theme)" d="M45.3,-52.9C60.9,-40.9,77.3,-28.7,79.5,-14.3C81.7,0.1,69.8,16.8,57.7,29.1C45.6,41.5,33.3,49.7,18.3,58.8C3.4,67.9,-14.3,77.9,-29.3,74.9C-44.3,71.9,-56.5,55.8,-59.2,39.7C-62,23.6,-55.2,7.5,-51.7,-8.5C-48.1,-24.5,-47.8,-40.5,-39.7,-53.9C-31.6,-67.2,-15.8,-77.8,-0.5,-77.2C14.9,-76.6,29.7,-64.9,45.3,-52.9Z" transform="translate(100 100)" />
