@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
             <div>Son <span>5 Yazı</span></div>
             
             <Link to="/blog/">Tümünü Göster
-              <svg width="14" height="10"><g stroke="currentColor" fill="none" fill-rule="evenodd"><path d="M8.5.964L13.036 5.5 8.5 10.036"></path><path d="M12.5 5.5H.5" stroke-linecap="square"></path></g></svg>
+              <svg width="14" height="10"><g stroke="currentColor" fill="none" fillRule="evenodd"><path d="M8.5.964L13.036 5.5 8.5 10.036"></path><path d="M12.5 5.5H.5" strokeLinecap="square"></path></g></svg>
             </Link>
           </HomeTitle>
 

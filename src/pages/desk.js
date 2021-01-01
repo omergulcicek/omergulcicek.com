@@ -12,7 +12,7 @@ export default function App() {
   myDesk() !== null &&
   myDesk().map(({ img, title, desc, disabled }, i) =>
   desk.push(
-    <article className={disabled && "disabled"}>
+    <article className={disabled ? "disabled" : ""} key={i}>
       <figure>
         <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} loading="lazy" />
 
