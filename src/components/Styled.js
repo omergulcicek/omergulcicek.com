@@ -399,6 +399,35 @@ export const AboutHangiKredi = styled(AboutA)`
     color: #f26722;
   }
 `
+
+export const AboutTitle = styled.h2`
+  color: var(--c-theme);
+  font-size: 28px;
+  margin-bottom: 24px;
+
+  @media (min-width: 992px) {
+    font-size: 36px;
+  }
+`
+
+export const AboutFigure = styled.figure`
+  background-color: #eee;
+  height: 810px;
+  margin: 32px -32px;
+
+  @media (min-width: 992px) {
+    margin: 64px -96px
+  }
+
+  @media (min-width: 1400px) {
+    margin: 120px -128px
+  }
+
+  img {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+`
 //#endregion
 
 //#region 3.2 Blog
@@ -427,6 +456,25 @@ export const BlogArticle = styled.article`
 //#endregion
 
 //#region 3.4 My Desk
+export const DeskFigure = styled.figure`
+  background-color: #eee;
+  height: 810px;
+  margin: 0 -32px 32px;
+
+  @media (min-width: 992px) {
+    margin: 0 -96px 64px
+  }
+
+  @media (min-width: 1400px) {
+    margin: 0 -128px 120px
+  }
+
+  img {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+`
+
 export const MyDeskGrid = styled.div`
   display: grid;
   gap: 50px;

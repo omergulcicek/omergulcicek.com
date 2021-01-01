@@ -57,6 +57,17 @@
   overflow-y: auto;
 }
 
+#gatsby-focus-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -134,6 +145,7 @@ p:not(:last-of-type) {
 }
 
 li {
+  line-height: 1.5;
   margin-bottom: 16px;
 }
 

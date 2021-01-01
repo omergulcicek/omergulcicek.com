@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { MyDeskGrid } from "../components/Styled"
+import React from "react"
+import { DeskFigure, MyDeskGrid } from "../components/Styled"
 import myDesk from "../assets/desk"
 
 import Layout from "../components/Layout"
@@ -30,6 +30,10 @@ export default function App() {
 
     <div className="container">
       <Title t1="Çalışma" t2="Masam" />
+      
+      <DeskFigure>
+        <img src="" alt="" />
+      </DeskFigure>
 
       <MyDeskGrid>
         {desk}
