@@ -43,7 +43,7 @@ Hayat kalitesi direkt yarı yarıya düşüyor. İnşallah yıl içerisinde göz
 
 Her yıla yeni bir alt yapıyla sıfırdan geliştirdiğim kişisel sitemi yine Gatsby kütüphanesi ile yeni bir çok özellikte katarak, MDX destekleyen bir yapı ile geliştireceğim (*hatta büyük bir ölçüde tamamladım sayılır*).
 
-Projesini ve sitesini tamamladığım ilk göz ağrım <a href="https://turkuazcss.com">**Turkuaz**</a> ilk versiyonunu (*evet yıllardır çıkamayan o ilk versiyonunu*) çıkmaya hazır. İnşallah Turkuaz v1.0.0'i yayına aldıktan sonra hızlıca React Turkuaz, Vue Turkuaz paketlerini de duyurmayı planlıyorum.
+Projesini ve sitesini tamamladığım ilk göz ağrım <a href="https://turkuazcss.com" target="_blank" rel="noopener noreferrer" >**Turkuaz**</a> ilk versiyonunu (*evet yıllardır çıkamayan o ilk versiyonunu*) çıkmaya hazır. İnşallah Turkuaz v1.0.0'i yayına aldıktan sonra hızlıca React Turkuaz, Vue Turkuaz paketlerini de duyurmayı planlıyorum.
 
 Geride kalan sene içerisinde çok büyük ve sağlam bir futbolcu datası oluşturdum ve bunu bir oyun projesi olarak hayatıma kazandırmak istiyorum. Şimdilik detayları bende kalsın.
 

@@ -40,13 +40,13 @@ Aylarca borsayı takip etmek, yorumları okumak kafayı yedirten bir süreç old
 
 ## İş Hayatı
 
-Yazılım hayatım bir süre ofis, bir süre freelance şeklinde gidip geliyordu. Freelance çalışmanın her ne kadar artıları olsa da, düzensiz gelir planlar kurmamı engelliyordu. Bu yüzden düzenli bir iş hayatı çizgisi çizmek ilk hedeflerimden birisiydi. Çok şükür aradığım güzel ortamı Hangikredi çatısı altında buldum. <a href="http://www.olivasoft.com/">**Olivasoft**</a> firması ile el sıkışarak, danışman olarak Eylül itibariyle <a href="https://www.hangikredi.com/">**Hangikredi**</a>'de çalışmaya başladım.
+Yazılım hayatım bir süre ofis, bir süre freelance şeklinde gidip geliyordu. Freelance çalışmanın her ne kadar artıları olsa da, düzensiz gelir planlar kurmamı engelliyordu. Bu yüzden düzenli bir iş hayatı çizgisi çizmek ilk hedeflerimden birisiydi. Çok şükür aradığım güzel ortamı Hangikredi çatısı altında buldum. <a href="http://www.olivasoft.com/" target="_blank" rel="noopener noreferrer" >**Olivasoft**</a> firması ile el sıkışarak, danışman olarak Eylül itibariyle <a href="https://www.hangikredi.com/" target="_blank" rel="noopener noreferrer" >**Hangikredi**</a>'de çalışmaya başladım.
 
 Pantemi yüzünden remote başladı ve 2020 sonuna kadar böyle devam etti. Yeni yılıda büyük ölçüde bu şekilde ilerletiriz gibi duruyor. Çok yoğun fakat verimli bir ilerleyiş ile yorgun bir şekilde yılı noktaladım.
 
 ![Olivasoft, Hangikredi, Kodluyoruz](../../assets/img/blog/2020-12-31/is-hayati.jpg)
 
-Buna ek olarak <a href="https://www.kodluyoruz.org/bootcamp/kirikkale-front-end-web-gelistirme-101-bootcamp/">**Kodluyoruz**</a> ekibi Ekim ayı itibariyle tarafıma Frontend eğitimi vermem için ulaştı. Aralık sonu itibariyle hafta sonu saat 10:00-15:00 arasında -*genelde 17:00'a kadar*- eğitim verdim. Sıfır seviyesinden HTML, CSS, SASS, BEM konularını anlatıp, Psd to CSS üzerinde durdum. Yeni yıl itibariyle Git, JavaScript ve React anlatarak eğitimi noktalayacağım.
+Buna ek olarak <a href="https://www.kodluyoruz.org/bootcamp/kirikkale-front-end-web-gelistirme-101-bootcamp/" target="_blank" rel="noopener noreferrer" >**Kodluyoruz**</a> ekibi Ekim ayı itibariyle tarafıma Frontend eğitimi vermem için ulaştı. Aralık sonu itibariyle hafta sonu saat 10:00-15:00 arasında -*genelde 17:00'a kadar*- eğitim verdim. Sıfır seviyesinden HTML, CSS, SASS, BEM konularını anlatıp, Psd to CSS üzerinde durdum. Yeni yıl itibariyle Git, JavaScript ve React anlatarak eğitimi noktalayacağım.
 
 Hafta içi iş, hafta sonu eğitim vermek yorgunluktan hasta etmiş olsa bile bu yoğunluk ve üretkenlik çok hoşuma gidiyor.
 

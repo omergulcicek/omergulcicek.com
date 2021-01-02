@@ -46,7 +46,7 @@ Yılın başında ayda 8 kez havuz ve ayda 1 kez hamama gidiyordum. Ardından ha
 
 ## Kitap & Edebiyat & Tarih
 
-Hayatımda eksikliğini hissettiğim 2 şey vardı. Birisi spor, diğeri kitap. Sporu hayatıma kattım fakat kitaba bir türlü bağımlı olamıyorum. Çok sık makale okuyorum (<a href="https://medium.com/t%C3%BCrkiye">Medium Türkiye</a>) fakat bir kitaba başlasam da sonunu getirmesi zor oluyor. Bir çok yeni kitap siparişi verdim, fakat 2019'un ilk 6 ayı içerisinde maalesef bitirebildiğim bir kitap yok, iki kitap ise yarıda.
+Hayatımda eksikliğini hissettiğim 2 şey vardı. Birisi spor, diğeri kitap. Sporu hayatıma kattım fakat kitaba bir türlü bağımlı olamıyorum. Çok sık makale okuyorum (<a href="https://medium.com/t%C3%BCrkiye" target="_blank" rel="noopener noreferrer" >Medium Türkiye</a>) fakat bir kitaba başlasam da sonunu getirmesi zor oluyor. Bir çok yeni kitap siparişi verdim, fakat 2019'un ilk 6 ayı içerisinde maalesef bitirebildiğim bir kitap yok, iki kitap ise yarıda.
 
 Edebiyat konusunda ise Serdar Tuncer, Hayati İnanç, Ömer Tuğrul İnançer başta olmak üzere bir çok kişiyi sıklıkla takip ediyorum. Bu tarz insanların sayılarının artması duâsı ile.
 
@@ -54,7 +54,7 @@ Edebiyat konusunda ise Serdar Tuncer, Hayati İnanç, Ömer Tuğrul İnançer ba
 
 Rubik küpü daha öncede almış ve çözümünü 57sn gibi bir rakama kadar indirmiştim. Bu yıl kaliteli bir küp (MoYu AoLong 3x3) alarak paslanmamaya ve rekorumu geçmeyi hedefliyorum. 1.30dk’lara kadar indim fakat daha iyisi için daha sık tekrar yapmam gerekiyor. Rekordan öte aslında görsel hafıza ve zekamı geliştirdiğine inandığım için bu seviyeyi bile yeterli görüyorum.
 
-Satrançta ise öncelikle <a href="https://www.youtube.com/channel/UCh3EoSfbgqXYjRUVy1mkRYw">Cem Gündoğan'ın Satranç TV</a> kanalını keşfettim. Birçok satranç youtuber'ı olmasına rağmen Cem'in oyun zekasını daha çok beğeniyorum. Maçları at yarışı anlatır gibi anlatması, arada alakasız konulara geçiş yapması ile ilgimi çekti. Satrançta sadece taşların nasıl gittiğini biliyordum ve basitçe oynardım. Cem sayesinde taktiksel zekam gelişti. Ardından önce bilgisayar ile satranç kapışmalarına başladım, sonrasında chess.com mobil uygulamasını indirerek yabancı insanlar ile gün içerisinde yaklaşık 3–5 maç oynuyorum. İlk olarak süresiz satranç kapışmalarına başladım ardından 10dk'lık ve şu anda 5dk'lık satranç kapışmaları yapıyorum.
+Satrançta ise öncelikle <a href="https://www.youtube.com/channel/UCh3EoSfbgqXYjRUVy1mkRYw" target="_blank" rel="noopener noreferrer" >Cem Gündoğan'ın Satranç TV</a> kanalını keşfettim. Birçok satranç youtuber'ı olmasına rağmen Cem'in oyun zekasını daha çok beğeniyorum. Maçları at yarışı anlatır gibi anlatması, arada alakasız konulara geçiş yapması ile ilgimi çekti. Satrançta sadece taşların nasıl gittiğini biliyordum ve basitçe oynardım. Cem sayesinde taktiksel zekam gelişti. Ardından önce bilgisayar ile satranç kapışmalarına başladım, sonrasında chess.com mobil uygulamasını indirerek yabancı insanlar ile gün içerisinde yaklaşık 3–5 maç oynuyorum. İlk olarak süresiz satranç kapışmalarına başladım ardından 10dk'lık ve şu anda 5dk'lık satranç kapışmaları yapıyorum.
 
 ![2019 Satranç İstatistiğim](../../assets/img/blog/2019-12-31/chees2019.jpeg)
 
