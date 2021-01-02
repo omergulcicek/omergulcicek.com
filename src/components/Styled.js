@@ -796,7 +796,7 @@ export const BlogDetailsPagination = styled.ul`
 
     a {
       color: var(--c-text);
-      display: inline-block;
+      display: block;
       padding: 24px 32px;
       text-decoration: none;
 
