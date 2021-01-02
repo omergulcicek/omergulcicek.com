@@ -20,10 +20,7 @@ Google Chrome tarayıcısı, varsayılan olarak bir input'un üzerine geldiğind
 }
 ```
 
-<div align="center">
-
-![varsayılan ve :focus olunmuş bir input örneği](https://miro.medium.com/max/353/1*pxCsLofPzAhSxq2yjb5Jkg.png)
-</div>
+![CSS :focus](../../assets/img/blog/2020-10-10/focus.png)
 
 Varsayılan olarak gelen bu `:focus` özelliğini beğenmediğimden dolayı, `outline` kodunu kaldırıp, `box-shadow` ile daha hoş bir görsellik sunmak adına aşağıdaki kodu projelerime dahil etmeyi tercih ediyorum.
 

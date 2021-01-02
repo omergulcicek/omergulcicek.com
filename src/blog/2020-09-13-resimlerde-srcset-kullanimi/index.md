@@ -24,10 +24,7 @@ srcset'in içinde `w` değeri, tarayıcıya her resmin genişliğini söyler.
 
 Aşağıdaki 2 resim neredeyse aynı görünüyor. Fakat birinin dosya boyutu diğerinden 10 kat daha büyük.
 
-<div align="center">
-
-![Görsellerde Srcset Kullanımı](https://miro.medium.com/max/700/1*tAx2q_0dHc3BdRw2uGvqUw.jpeg)
-</div>
+![Görsellerde Srcset Kullanımı](../../assets/img/blog/2020-09-13/kedi.jpeg)
 
 İlk resmin dosya boyutu çok daha büyüktür. Eğer kullanacağımız resim sayfada 300px genişliğinde görüntülenecek ise bu resmi 1000px olarak sayfaya çağırmamız gereksiz yük oluşturacaktır.
 

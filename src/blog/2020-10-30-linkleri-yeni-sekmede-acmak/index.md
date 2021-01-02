@@ -20,11 +20,7 @@ Test etmek için <a href="https://mathiasbynens.github.io/rel-noopener" target="
 
 `Click me!!1 (same-origin)` ve `Click me!!1 (cross-origin)` linklerine gittiğinizde açılan sayfa bizi *"Why don’t you go back to the previous tab? (Neden önceki sekmeye geri dönmüyorsun?)"* yazısıyla karşılıyor. Önceki sayfaya gittiğimizde ise daha önce sayfada olmayan şu yazı ile karşılaşıyoruz;
 
-<div align="center">
-
-![Linkleri Yeni Sekmede Açmak](https://miro.medium.com/max/430/1*K86RTPgR5bQs-uGMJAN-0g.png)
-<figcaption>Linkleri Yeni Sekmede Açmak</figcaption>
-</div>
+![Linkleri Yeni Sekmede Açmak](../../assets/img/blog/2020-10-30/blank.png)
 
 Aynı makalede `Click me!!1 (now with rel=noopener)` veya `Click me!!1 (now with rel=noreferrer-based workaround)` linklerine girdiğimizde ise karşımıza *"The previous tab is safe and intact. window.opener was null; mischief not managed! (Önceki sekme güvenli, windowopener null olduğu için yaramazlık yönetilmedi)"* uyarısı çıkıyor.
 
@@ -40,12 +36,7 @@ Sayfaların `window.opener`ı kötüye kullanımını önlemek için linke `rel=
 
 Firefox 79+ sürümü ile sadece target kullansak bile, tarayıcı güvenlik sorununu ortadan kaldırmak için noreferrer noopener kısmını kendisi ekliyor. Genel olarak tarayıcı desteği ise oldukça iyi görünüyor;
 
-<div align="center">
-
-![noopener Tarayıcı Desteği](https://miro.medium.com/max/700/1*1ruo2dfb3NC9Rd_Jlyp7mg.png)
-<figcaption>noopener Tarayıcı Desteği</figcaption>
-</div>
-
+![noopener Tarayıcı Desteği](../../assets/img/blog/2020-10-30/noopener.png)
 ### Kaynaklar
 
 - <a href="https://mathiasbynens.github.io/rel-noopener/" target="_blank" rel="noreferrer noopener">https://mathiasbynens.github.io/rel-noopener/</a>

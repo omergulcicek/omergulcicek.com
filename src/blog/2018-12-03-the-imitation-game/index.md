@@ -10,19 +10,11 @@ medium: "https://medium.com/t%C3%BCrkiye/the-imitation-game-204530b0581b"
 
 Her oyunculuğunda olduğu gibi The Imitation Game adlı filminde de rolüne kendisine has farklı üslubunu katmayı başarmış.
 
-<div align="center">
-
-![Benedict Cumberbatch](https://miro.medium.com/proxy/1*ktwKxSkmmmKAblO8ntcUvQ.jpeg)
-<figcaption>Benedict Cumberbatch</figcaption>
-</div>
+![Benedict Cumberbatch](../../assets/img/blog/2018-12-03/benedict-cumberbatch.jpeg)
 
 ## Enigma Makinesi
 
-<div align="center">
-
-![Enigma Makinesi](https://miro.medium.com/max/500/1*GDWZnjw5w0Ue7oCHskJQfA.jpeg)
-<figcaption>Enigma Makinesi</figcaption>
-</div>
+![Enigma Makinesi](../../assets/img/blog/2018-12-03/enigma-makinesi.jpeg)
 
 Film, II. Dünya savaşı zamanında gerçek olaylardan konu alınarak çekilmiş. Nazilerin yönetiminde olan Almanya, enigma şifreleme sistemi ile kriptolu biçimde haberleşip önüne çıkan her ülkeyi yenerken, İngiliz hükumeti ise buna çaresizce çözüm aramakta.
 
@@ -32,11 +24,7 @@ Alan’ın hiç Almanca bilmeden enigmayı çözebileceğini söylemesi İngiliz
 
 ## Alan Turing
 
-<div align="center">
-
-![Alan Turing (16 yaşında)](https://miro.medium.com/max/500/1*wtdXFIRI2RwGRQhiAVmJmA.jpeg)
-<figcaption>Alan Turing (16 yaşında)</figcaption>
-</div>
+![Alan Turing (16 yaşında)](../../assets/img/blog/2018-12-03/alan-turing-16-yasinda.jpeg)
 
 Tam adıyla Alan Mathison Turing, 1912 yılında doğmuş ve bilgisayar biliminin kurucusu sayılan bir matematik dehası. Geliştirmekte olduğu Turing testi ile makinelerin düşünme yetisine sahip olabileceğini iddia etmiştir; yaşadığı çağı ele alırsak, bunu düşünebilmesi bile muhteşem (o zamana göre belki aptalca) bir fikirdi.
 

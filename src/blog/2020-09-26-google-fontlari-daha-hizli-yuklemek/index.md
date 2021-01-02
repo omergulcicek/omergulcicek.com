@@ -46,17 +46,11 @@ Karşılaştırma yapabilmek için bu kod yokken sayfanın yüklenme hızına ba
 
 Google Font'a **preconnect** olmadan bağlanmak:
 
-<div align="center">
-
-![preconnect olmadan bağlanmak](https://miro.medium.com/max/700/0*sQ4z8gGzbC4H1J0k.png)
-</div>
+![preconnect olmadan bağlanmak](../../assets/img/blog/2020-09-26/without-preconnect.png)
 
 Sayfamızın `fonts.gstatic.com`'a istek atacağını bildiğimiz için bu boşa zaman kaybını azaltabiliriz. preconnect ekleyerek kazandığımız süreyi inceleyelim:
 
-<div align="center">
-
-![preconnect ile bağlanmak](https://miro.medium.com/max/700/0*475qSjQUIs7dNRkm.png)
-</div>
+![preconnect ile bağlanmak](../../assets/img/blog/2020-09-26/with-preconnect.png)
 
 ## Yazı Stilini Kendimiz Barındırmak
 
@@ -64,17 +58,11 @@ preconnect yardımıyla çok iyi bir süre kazandık. Fakat bir yazı stili içi
 
 İlk olarak arama çubuğu üzerinden istediğimiz Google Font'unu seçip, ardından charsets, styles gibi bölümlerden ihtiyaçlarımızı belirleyelim.
 
-<div align="center">
-
-![google webfonts helper](https://miro.medium.com/max/700/1*LWIcE9-nw8ao59XUnBLEWQ.png)
-</div>
+![Google Webfonts Helper](../../assets/img/blog/2020-09-26/google-webfonts-helper.png)
 
 Ardından hangi tarayıcıları desteklemek istediğinizi seçmeniz gerekiyor. Burada *Best Support* TDD, EOT, SVG formatlarını verirken, *Modern Browsers* ise WOFF ve WOFF2 formatlarını verecektir.
 
-<div align="center">
-
-![google webfonts helper](https://miro.medium.com/max/700/1*HkYI97d-cnppUA7d8xelcg.png)
-</div>
+![Google Webfonts Helper](../../assets/img/blog/2020-09-26/google-webfonts-helper-2.png)
 
 Ardından özelleştirilmiş font dosyanızı indirin ve projenize dahil edin.
 
@@ -84,19 +72,13 @@ Ardından özelleştirilmiş font dosyanızı indirin ve projenize dahil edin.
 
 `font-display: block` özelliği ile, kısa bir süre için yazılarınız görünmez. Yazı stiliniz hazır olduğunda tüm metin ekranda görüntülenir. Buna FOIT (Flash of Invisible Text) denir.
 
-<div align="center">
-
-![font-display block özelliği](https://miro.medium.com/max/700/0*EbcEF5WZFzWoqTWe)
-</div>
+![font-display block özelliği](../../assets/img/blog/2020-09-26/display-block.png)
 
 ***
 
 `font-display: swap` özelliği ile, yazı stiliniz yüklenene kadar yedek yazı stili ile yazıyı hızlıca ekranda gösterir. Yazı stili yüklendiğinde ise bunu değiştirir. Buna FOUT (Flash of Unstyled Text) denir. Yazınız ekranda hızlı görüntülenmesine rağmen, yedek yazı stilinde özel yazı stilinize geçerken özellikle yavaş bağlantılarda oluşturacağı değişim hoşunuza gitmeyebilir. Burada önceliği belirlemek size kalmış.
 
-<div align="center">
-
-![font-display swap özelliği](https://miro.medium.com/max/700/0*YYLGoQXOVRvUSd83)
-</div>
+![font-display swap özelliği](../../assets/img/blog/2020-09-26/display-swap.png)
 
 Hangisini kullanmanız gerektiğinde kararsız kaldıysanız `swap` kullanın. Google font'un size verdiği linki incelerseniz swap kullanıldığını göreceksiniz.
 

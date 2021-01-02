@@ -10,11 +10,7 @@ Netflix yapımı The Queen's Gambit, toplam 7 bölümden oluşan bir mini dizi; 
 
 The Queen's Gambit dizisi gerçek bir hikaye değil, fakat Rus Boris Spassky'i mağlup ederek Dünya Satranç Şampiyonası'nı kazanan ilk Amerikalı olan satranç dehası **Bobby Fischer**'ın hikayesinden esinlenilmiş. Bobby Fischer, satrançseverlerin yakından tanıdığı 2785 elo (*satranç puanına*) sahip bir oyuncuydu. Halen günümüzde de oynanan Chess360'ı bulan kişi.
 
-<div align="center">
-
-![Bobby Fischer](https://miro.medium.com/max/700/0*4zAT-xZZhTFJjmbe.jpg)
-<figcaption>Bobby Fischer</figcaption>
-</div>
+![Bobby Fischer](../../assets/img/blog/2020-11-29/bobby-fischer.jpg)
 
 ## Chess360
 
@@ -22,21 +18,13 @@ Kısaca değinmek gerekirse Chess360, piyonların arkasındaki taşların yerler
 
 Chess360 turnuvalarında oyuncular, genelde bir kaç hamleden sonra rok atıp taşlarını normal satranç düzenine yerleştirirler.
 
-<div align="center">
-
-![Chess360](https://miro.medium.com/max/700/0*PaAaKlw6-gnezDj3.png)
-<figcaption>Örnek bir Chess360 dizilişi</figcaption>
-</div>
+![Örnek bir Chess360 dizilişi](../../assets/img/blog/2020-11-29/chess360.png)
 
 ## Dizi Hakkında
 
 Diziye gelecek olursak, başrolde oynayan Beth Harmon (*gerçek adıyla Anya Taylor-Joy*) küçük yaşta yetimhaneye alınıyor. Yetimhanede çalışan temizlik görevlisi amcamızın tek başına satranç oynadığını görüyor ve ilgisini çekiyor.
 
-<div align="center">
-
-![The Queen's Gambit](https://miro.medium.com/max/700/0*Vi1uFI_dPxvAkhKF.jpeg)
-<figcaption>Başrol ve kendisine satrancı öğreten temizlik görevlisi</figcaption>
-</div>
+![Başrol ve kendisine satrancı öğreten temizlik görevlisi](../../assets/img/blog/2020-11-29/queens-gambit.jpeg)
 
 Ardından çeşitli satranç kitapları okuyarak bu alanda ilerliyor. Dizi sadece 7 bölümden oluştuğu için, hızlıca satrancı öğrenip usta olmuş haline geçiş yapılıyor (*Ben 2 seneyi aşkındır oynuyorum daha 1200 küsür elo'dayım, dizi 7 bölümde 2700 küsürlere çıkıyor maşallah*).
 

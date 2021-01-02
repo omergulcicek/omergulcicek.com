@@ -10,12 +10,7 @@ Frontent Developer'ların en büyük baş belası sanırım mail template kodlam
  
 Neyse ki <a href="https://mjml.io/" target="_blank" rel="noreferrer noopener">MJML</a> var; MJML responsive mail arayüz kodlamayı oldukça kolay hale getiriyor. <a href="https://mjml.io/templates" target="_blank" rel="noreferrer noopener">Templates</a>  sayfasında oluşturdukları hazır şablonları kullanabilir yada sıfırdan mail template'inizi geliştirebilirsiniz.
 
-<div align="center">
-
-![MJML Kod Syntax'ı](https://mjml.io/assets/img/index/screen.png)
-<figcaption>MJML Kod Syntax'ı</figcaption>
-</div>
-
+![MJML Kod Syntax'ı](../../assets/img/blog/2020-11-13/mjml.png)
 ## Kısa Bir MJML Eğitim Turu
 
 <a href="https://mjml.io/getting-started/1" target="_blank" rel="noreferrer noopener">Getting started</a> sayfasına girdiğinizde kısa bir eğitim veriliyor.

@@ -135,12 +135,13 @@ img {
 figcaption {
   color: var(--c-grey);
   margin-bottom: 56px;
+  text-align: center;
 }
 
 .article {
-  img {
+  .gatsby-resp-image-wrapper {
     filter: blur(3px);
-    margin-bottom: 56px;
+    margin-bottom: 16px;
     margin-top: 56px;
     opacity: .9;
     transition: 200ms;

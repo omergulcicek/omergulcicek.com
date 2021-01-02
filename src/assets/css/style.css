@@ -180,19 +180,20 @@ img {
 figcaption {
   color: var(--c-grey);
   margin-bottom: 56px;
+  text-align: center;
 }
 
-.article img {
+.article .gatsby-resp-image-wrapper {
   -webkit-filter: blur(3px);
           filter: blur(3px);
-  margin-bottom: 56px;
+  margin-bottom: 16px;
   margin-top: 56px;
   opacity: .9;
   -webkit-transition: 200ms;
   transition: 200ms;
 }
 
-.article img.loaded {
+.article .gatsby-resp-image-wrapper.loaded {
   -webkit-filter: blur(0);
           filter: blur(0);
   opacity: 1;

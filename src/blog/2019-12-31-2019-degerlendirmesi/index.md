@@ -24,21 +24,13 @@ medium: ""
 
 Planlı ve elimden geldiğince düzenli yaşamak istediğimi yazmıştım. Bunun için ilk hamlem, Google Takvim & Google Keep ile yapacaklarımı not alarak programlı şekilde ilerlemekti.
 
-<div align="center">
-
-![Google Calendar](https://miro.medium.com/max/468/1*MLxpkCwUrKsvtsbIFkcfxg.png)
-<figcaption>Google Calendar</figcaption>
-</div>
+![Google Calendar](../../assets/img/blog/2019-12-31/calendar.png)
 
 İlk olarak Google Takvimde 7 adet kategori ile takvimime yapacaklarımı kaydetmeye başlamıştım. Sonradan bu maddelere 3 kategori daha ekledim ve şuan 10 kategori ile takvimim dolu ve zaman yönetimi konusunda yaşantıma etkisi olduğunu görebiliyorum.
 
 Google Keep'i ise farklı başlıklar altında notlar alarak kullanıyorum. Bunlar teknik ve normal hayatta yapacağım şeyler, Freelance işlerimde ki ödemelerin durumu, uzun vadede ihtiyacım olan alacaklarım, yazmayı planladığım makaleler için kaynak ve konu başlıkları özetleri, farklı alanlarda uzman kişilerin isimleri gibi çeşitli başlıklara ayrılmış durumda.
 
-<div align="center">
-
-![Google Keep](https://miro.medium.com/max/700/1*YzbILEPQRBGEFC_FKgLmjw.png)
-<figcaption>Google Keep</figcaption>
-</div>
+![Google Keep](../../assets/img/blog/2019-12-31/keep.png)
 
 Bu sayede hem hiçbir şeyi unutmamış oluyorum, hemde sürekli not tutma alışkanlığı edinmiş oluyorum.
 
@@ -64,11 +56,7 @@ Rubik küpü daha öncede almış ve çözümünü 57sn gibi bir rakama kadar in
 
 Satrançta ise öncelikle <a href="https://www.youtube.com/channel/UCh3EoSfbgqXYjRUVy1mkRYw">Cem Gündoğan'ın Satranç TV</a> kanalını keşfettim. Birçok satranç youtuber'ı olmasına rağmen Cem'in oyun zekasını daha çok beğeniyorum. Maçları at yarışı anlatır gibi anlatması, arada alakasız konulara geçiş yapması ile ilgimi çekti. Satrançta sadece taşların nasıl gittiğini biliyordum ve basitçe oynardım. Cem sayesinde taktiksel zekam gelişti. Ardından önce bilgisayar ile satranç kapışmalarına başladım, sonrasında chess.com mobil uygulamasını indirerek yabancı insanlar ile gün içerisinde yaklaşık 3–5 maç oynuyorum. İlk olarak süresiz satranç kapışmalarına başladım ardından 10dk'lık ve şu anda 5dk'lık satranç kapışmaları yapıyorum.
 
-<div align="center">
-
-![2019 Satranç İstatistiğim](https://miro.medium.com/max/359/1*0sfeNXXCyak3VXNHXxGTBQ.jpeg)
-<figcaption>2019 Satranç İstatistiğim</figcaption>
-</div>
+![2019 Satranç İstatistiğim](../../assets/img/blog/2019-12-31/chees2019.jpeg)
 
 Uygulamaya ilk başladığınızda **800** puandan sizi başlatıyor. Acemi olduğunuz için ilk rakiplerinize yenilerek puanınızı (elo) sürekli düşürüyorsunuz. Ben 665 elo’ya kadar düştüm. En fazla yükselebildiğim puan ise 1086 elo. Şuan 1070 elo’dayım.
 
@@ -82,11 +70,7 @@ Sene başında 665'lerden başlayıp 1086'ları görmek çok iyi, yıl sonu hede
 
 Mayıs ayı içerisinde bedelli askerlik görevimi Ankara Mamak Mebs’te tamamladım.
 
-<div align="center">
-
-![Askerlik künyem](https://miro.medium.com/max/471/1*WMdCi_SsOPOFzEPCSDn5kA.jpeg)
-<figcaption>Askerlik künyem</figcaption>
-</div>
+![Askerlik künyem](../../assets/img/blog/2019-12-31/askerlik.jpeg)
 
 Askerlikten tek beklentim farklı illerden, farklı mesleklerden arkadaşlıklar edinebilmekti. Çünkü sağa dön, sola dön, yürü, koş falan bunlar geçecek fakat arkadaşlıklar bâki kalacaktı. Hayatımda mesleğimden ötürü çevrem hep yazılımcı arkadaşlarla dolu. Her ne kadar yazılımı sevsem de farklı kültürlerde yetişmiş ve farklı sohbetleri olan kişiler tanımayı çok istiyordum. Bunu da en iyi kazanacağım yer askerlikti.
 
