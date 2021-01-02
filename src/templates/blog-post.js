@@ -43,7 +43,7 @@ export default function BlogPostTemplate (props) {
   return <Layout title={siteTitle}>
     <SEO title={title} description={post.excerpt} />
     
-    <div className="container article">
+    <section className="article">
       <BlogDetailsInfo>
         <Link to="/blog/">
           <svg aria-hidden="true" role="img" viewBox="0 0 448 512" height="14px"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg>
@@ -99,7 +99,7 @@ export default function BlogPostTemplate (props) {
       <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path fill="var(--c-theme)" d="M47,-55.5C60.1,-45,69.2,-29.4,72.7,-12.4C76.1,4.6,73.9,23,66.4,40.6C58.9,58.2,46.2,75.1,30.6,78.2C15.1,81.3,-3.4,70.6,-23.3,63.5C-43.2,56.4,-64.5,53,-71.7,41.1C-78.8,29.3,-71.7,8.9,-64.6,-7.9C-57.4,-24.8,-50.3,-38.2,-39.6,-49C-28.8,-59.9,-14.4,-68.2,1.3,-69.7C17,-71.3,33.9,-66,47,-55.5Z" transform="translate(100 100)" />
       </Svg>
-    </div>
+    </section>
   </Layout>
 }
 

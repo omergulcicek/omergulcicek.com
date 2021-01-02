@@ -14,12 +14,12 @@ export default function NotFoundPage () {
   return <Layout>
     <SEO title="404: Not Found" />
     
-    <div className="container">
+    <section className="not-found">
       <Title t1="Sayfa" t2="Bulunamadı :(" />
 
       <p>
         Sadece var olmayan bir linke girdin...
       </p>
-    </div>
+    </section>
 </Layout>
 }

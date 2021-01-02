@@ -10,7 +10,7 @@ const Bootcamp = () => (
   <Layout>
     <SEO title="Bootcamp" />
 
-    <div className="container">
+    <section className="bootcamp">
       <Title t1="Frontent" t2="Bootcamp" />
 
       <p>
@@ -30,7 +30,7 @@ const Bootcamp = () => (
       <br/>
 
       <Details>
-        <summary><b>1.</b> 12 Aralık 2020 - HTML, CSS Seçiciler</summary>
+        <summary>12 Aralık 2020 - HTML, CSS Seçiciler</summary>
 
         <p>
           Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini bilip robotların anlayacağı kodu yazmak üzerinde durduk.
@@ -50,7 +50,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><b>2.</b> 13 Aralık 2020 - Font, Psd to CSS</summary>
+        <summary>13 Aralık 2020 - Font, Psd to CSS</summary>
 
         <p>
           Tasarımı koda döktüğümüz işlemin adı Psd to CSS.
@@ -86,7 +86,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><b>3.</b> 19 Aralık 2020 - Pseudo class</summary>
+        <summary>19 Aralık 2020 - Pseudo class</summary>
 
         <p>
           Ağırlıklı olarak CSS seçicilerin üstünde durduk.
@@ -102,7 +102,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><b>4.</b> 20 Aralık 2020 - BEM, SASS, variable</summary>
+        <summary>20 Aralık 2020 - BEM, SASS, variable</summary>
 
         <p>
           Kodu daha sağlıklı, anlaşılır ve kolay yazmamızı sağlayan teknolojileri tanıdık.
@@ -130,7 +130,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><b>5.</b> 26-27 Aralık 2020 - Psd to CSS</summary>
+        <summary>26-27 Aralık 2020 - Psd to CSS</summary>
 
         <p>
           Gerçek bir tasarımı Semantic HTML, BEM, SASS ve Bootstrap kullanarak <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını koda döktük.
@@ -179,7 +179,7 @@ const Bootcamp = () => (
           <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong></li>
         </ul>
       </Details>
-    </div>
+    </section>
   </Layout>
 )
 

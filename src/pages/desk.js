@@ -1,5 +1,5 @@
 import React from "react"
-import { DeskFigure, MyDeskGrid } from "../components/Styled"
+import { H2Title, DeskFigure, MyDeskGrid } from "../components/Styled"
 import myDesk from "../assets/desk"
 
 import Layout from "../components/Layout"
@@ -28,16 +28,20 @@ export default function App() {
   return <Layout>
     <SEO title="Çalışma Masam" />
 
-    <div className="container">
+    <section className="desk">
       <Title t1="Çalışma" t2="Masam" />
       
       <DeskFigure>
         <img src="" alt="" loading="lazy" />
       </DeskFigure>
 
+      <H2Title>
+        <div>Kullandığım <span>Ekipmanlar</span></div>
+      </H2Title>
+
       <MyDeskGrid>
         {desk}
       </MyDeskGrid>
-    </div>
+    </section>
   </Layout>
 }

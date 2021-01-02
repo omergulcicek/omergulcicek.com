@@ -9,9 +9,7 @@ export default function App ({ children }) {
     <Header />
 
     <Main>
-      <section>
-        {children}
-      </section>
+      {children}
     </Main>
 
     <Footer />

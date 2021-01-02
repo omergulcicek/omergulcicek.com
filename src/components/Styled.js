@@ -43,14 +43,26 @@ export const Header = styled.header`
     box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
   }
 
-  .container {
+  section {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: auto;
+    max-width: 80%;
+    position: relative;
+
+    @media (min-width: 768px) {
+      max-width: 540px;
+    }
 
     @media (min-width: 992px) {
-      flex-direction: row
+      flex-direction: row;
+      max-width: 720px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 960px;
     }
   }
 
@@ -178,12 +190,22 @@ export const DarkTheme = styled.a`
 //#region 1.2 Main
 export const Main = styled.main`
   flex: 1;
-  margin-bottom: 80px;
-  margin-top: 160px;
+  margin: 80px auto 160px;
+  max-width: 80%;
   position: relative;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    max-width: 540px;
+  }
 
   @media (min-width: 992px) {
     margin-top: 240px;
+    max-width: 720px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 960px;
   }
 `
 //#endregion
@@ -271,7 +293,7 @@ export const H3 = styled.h3`
 
 export const Details = styled.details`
   border-left: 2px solid transparent;
-  padding: 24px 16px;
+  padding: 24px 16px 24px 24px;
 
   &:not(:first-of-type) {
     border-top: 1px solid rgba(0,0,0,0.3);
@@ -292,7 +314,7 @@ export const Details = styled.details`
       display: block;
       height: 18px;
       position: absolute;
-      right: 8px;
+      left: -25px;
       top: 50%;
       transform: translateY(-50%);
       width: 11px;
@@ -338,11 +360,8 @@ export const Hr = styled.hr`
   margin-top: 64px;
   width: 100%;
 `
-//#endregion
 
-// 3. Pages
-//#region 3.1 Home
-export const HomeTitle = styled.h2`
+export const H2Title = styled.h2`
   align-items: center;
   color: var(--c-theme);
   display: flex;
@@ -374,6 +393,66 @@ export const HomeTitle = styled.h2`
 
     &:hover svg {
       margin-left: 16px;
+    }
+  }
+`
+//#endregion
+
+// 3. Pages
+//#region 3.1 Home
+export const GetInTouch = styled.div`
+  color: var(--c-text);
+  font-size: 20px;
+  line-height: 1.5;
+  padding-bottom: 80px;
+  padding-top: 80px;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    font-size: 40px;
+    line-height: 48px;
+    padding-bottom: 240px;
+    padding-top: 240px;
+  }
+
+  h3 {
+    font-weight: 100;
+    margin: 0 0 12px;
+  }
+
+  p {
+    font-size: var(--f-size);
+    line-height: 28px;
+    margin-bottom: 24px;
+
+    @media (min-width: 992px) {
+      font-size: 20px;
+    }
+  }
+`
+
+export const Button = styled.a`
+  color: var(--c-theme);
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--f-size);
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--g-transition);
+
+  span {
+    letter-spacing: 1px;
+  }
+
+  svg {
+    margin-left: 8px;
+    transition: var(--g-transition);
+  }
+
+  &:focus,
+  &:hover {
+    svg {
+      transform: translateX(0.25em);
     }
   }
 `
