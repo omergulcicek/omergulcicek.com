@@ -30,7 +30,6 @@ export const Header = styled.header`
   padding-top: 24px;
   position: fixed;
   top: 0;
-  transition: box-shadow var(--g-transition);
   width: 100%;
   z-index: 10;
 
@@ -154,11 +153,6 @@ export const Menu = styled.nav`
         display: none
       }
     }
-
-    svg {
-      height: 16px;
-      vertical-align: baseline;
-    }
   }
 `
 
@@ -184,6 +178,10 @@ export const DarkTheme = styled.a`
     background-color: var(--c-theme);
     outline: none;
     text-decoration: none;
+
+    svg {
+      stroke: var(--c-text);
+    }
   }
 `
 //#endregion
