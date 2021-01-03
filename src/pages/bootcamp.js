@@ -18,12 +18,6 @@ const Bootcamp = () => (
       </p>
 
       <p>
-        <Strong><strong>Mavi ve kalın yazılar 100% hakim olmamız gereken konular</strong></Strong>
-        <br/>
-        <Strong>Sadece mavi yazılar, bilmemiz gereken konular</Strong>
-      </p>
-
-      <p>
         <a href="https://docs.google.com/spreadsheets/d/1QIeF1E-gv8HGm-_QCs-1vf8SFDQPxiH0J251i6L8dKg/edit#gid=0" target="_blank" rel="noopener noreferrer">Ödevler'in Codepen linki olarak ekleneceği link</a>
       </p>
 
@@ -33,7 +27,7 @@ const Bootcamp = () => (
         <summary>12 Aralık 2020 - HTML, CSS Seçiciler</summary>
 
         <p>
-          Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini bilip robotların anlayacağı kodu yazmak üzerinde durduk.
+          Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini üzerinde durduk.
         </p>
 
         <h6>İşlenen Konular;</h6>
@@ -175,8 +169,63 @@ const Bootcamp = () => (
         <summary>Sıradaki işlenecek konular</summary>
 
         <ul>
-          <li><Strong><strong><a href="https://prototurk.com/git" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong></li>
+          <li><Strong><strong><a href="https://rogerdudler.github.io/git-guide/index.tr.html" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong> - (master, checkout, branch, add, commit, push, merge, pull, fetch, conflict)</li>
+          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, değişkenler/array, for/forEach, if/else, fonksiyon, log)</li>
+          <li><i>JavaScript Ödev - Pratik</i><br />
+          <span hidden>Değişken, fonksiyon, for ve if kullanılarak aşağıdaki senaryo oluşturulacak.<br />
+          Örnek çıktı şu şekilde olacaktır: <i>Ömer doğdu -> Ömer 1 yaşında -> Ömer 2 yaşında -> ... -> Ömer reşit oldu -> Ömer 30 yaşında evlendi</i>
+            <p>
+              <b>Yapılacaklar:</b>
+            </p>
+            <ul>
+              <li>ad, resitYas, evlenecegiYas, yazdir() oluşturulacak</li>
+              <li>for ile 0'dan 35'e kadar döngü oluşturulacak</li>
+              <li>0 ise doğdu, 18 ise reşit oldu, 30 ise konsola evlendi yazacak</li>
+            </ul>
+          </span>
+          </li>
+          <li>JavaScript (Events, dir, debugger, classList, innerText, innerHtml)</li>
+          <li><i>JavaScript Ödev - Koyu Tema</i><br />
+          <span hidden>Butona basıldığında koyu tema atkifleştirilip, kaldırılacak.
+            <p>
+              <b>Yapılacaklar:</b>
+            </p>
+            <ul>
+              <li>Ekranda çeşitli yazılarak olacak.</li>
+              <li>"Koyu temayı aç" butonuna basılınca renkler değişecek ve buton "Koyu temayı kapat" olacak.</li>
+            </ul>
+          </span>
+          </li>
+          <li><i>JavaScript Ödev - Üyelik Form Kontrol</i><br />
+          <span hidden>Bootstrap ile ad, soyad, kullanıcı adı, email, parola, parola tekrar formu hazırlanacak.<br />
+          Submit edildiğinde kurallara göre sonuç verecek.<br />
+            <p>
+              <b>Yapılacaklar:</b>
+            </p>
+            <ul>
+              <li>Ad soyad otomatik olarak kullanıcı adı yapılacak; Ömer+Gülçiçek = ömergülçiçek</li>
+              <li>Submit edildiğinde parola eşleşmiyorsa yada 8 karakterden az ise kırmızı bir div'e "Parolanız 8 karakterden az yada eşleşmiyor" yazmalı</li>
+              <li>Form başarılı ise yeşil bir div'e <i>"Hoşgeldin @omergulcicek"</i> yazmalı</li>
+            </ul>
+          </span>
+          </li>
+          <li><i>JavaScript Ödev - Çekiliş Uygulaması</i><br />
+          <span hidden>Kullanıcıdan input ile kullanıcı listesi alınacak ve rastgele hediye dağıtılacak.<br />
+            <p>
+              <b>Yapılacaklar:</b>
+            </p>
+            <ul>
+              <li>Kullanıcı input'a virgüller ile sürüyle isim girecek.</li>
+              <li>Submit butonuna basıldığında bu isimler split() fonksiyonu ilediziye aktarılacak.</li>
+              <li>Kullanıcı sayısı kadar rastgele bir rakam seçilip o kişiye rastgele bir hediye verilecek.</li>
+              <li>Hediye kazanan kişiler ve verilen hediyeler dizilerden kaldırılmalı</li>
+              <li>Kimin ne hediye kazandığı ekrana yazdırılacak</li>
+            </ul>
+          </span>
+          </li>
+          <li><Strong><strong><a href="https://tr.reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">React</a></strong></Strong> (Virtual DOM, CRA incelemesi, JSX, component, props)</li>
+          <li>React (state, Conditional Rendering)</li>
+          <li>React ile Live Search Uygulaması</li>
         </ul>
       </Details>
     </section>
