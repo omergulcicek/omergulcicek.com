@@ -29,6 +29,12 @@ Kodluyoruz çatısı altında verdiğim Frontend Bootcamp'i Ocak sonu itibariyle
 
 Yazılım mühendisliği mezunuyum fakat farklı bir alanda daha uzmanlaşmak adına açık öğretime yazılmakta hedefler arasında.
 
+## Kitap
+
+Kitap okumak her sene hedeflerine eklenen ama yapmakta en çok zorlandığım konulardan. Vaktimin büyük çoğunluğu kod yazmaya gidiyor. Bir yerden sonra bu rahatsız etmeye başladı. Robotlaşmaya başlamış ve sürekli kod yazarken buluyorum kendimi.
+
+Sene içerisinde kitaplığımdaki bir heves alıp, okumadığım yada yarım kalmış kitapları temize çekmeyi planlıyorum. Bu seferde arada kaynamaması için <a href="https://1000kitap.com/omergulcicek" target="_blank" rel="noopener noreferrer">1000kitap</a> üyeliği açtım ve kitap takibimi yapacağım. 2021 okuma hedefimi 9 kitap olarak belirledim, bu sayı yıl içerisindeki yoğunluğuma göre tabikide değişebilir fakat yaklaşık 40 günde 1 kitap hedefi hayalci bir yaklaşım değil.
+
 ## Satranç
 
 Satrançta geçen yıl içerisinde en yüksek 1293 elo'ya yükseldim. Bu yıl içerisinde hedefim **1500 elo**ya ulaşabilmek.
