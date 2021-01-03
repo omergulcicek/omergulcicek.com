@@ -73,6 +73,10 @@ export const Header = styled.header`
       display: block
     }
   }
+
+  div:not(.brand) {
+    display: flex;
+  }
 `
 
 // 1.1.1 Brand
@@ -101,6 +105,7 @@ export const Menu = styled.nav`
     display: inline-block;
     font-size: var(--f-size);
     font-weight: normal;
+    margin-right: 4px;
     letter-spacing: 0.2px;
     line-height: 1;
     padding: 12px 4px;
@@ -110,10 +115,6 @@ export const Menu = styled.nav`
 
     &:first-child {
       margin-right: 8px;
-    }
-
-    &[type="button"] {
-      margin-left: 8px;
     }
 
     @media (min-width: 992px) {
@@ -156,7 +157,7 @@ export const Menu = styled.nav`
 
     svg {
       height: 16px;
-      vertical-align: middle;
+      vertical-align: baseline;
     }
   }
 `
@@ -190,7 +191,7 @@ export const DarkTheme = styled.a`
 //#region 1.2 Main
 export const Main = styled.main`
   flex: 1;
-  margin: 80px auto 160px;
+  margin: 120px auto 160px;
   max-width: 80%;
   position: relative;
   width: 100%;
@@ -270,6 +271,7 @@ export const Title = styled.h1`
 `
 
 export const Svg = styled.svg`
+  display: none;
   opacity: 0.05;
   left: -25%;
   pointer-events: none;
@@ -277,6 +279,10 @@ export const Svg = styled.svg`
   top: -120px;
   width: 80%;
   z-index: -1;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
 `
 
 export const Strong = styled.span`
@@ -329,6 +335,10 @@ export const Details = styled.details`
     font-size: inherit;
   }
 
+  h6 {
+    font-size: var(--f-size);
+  }
+
   p {
     margin-top: 16px;
     position: relative;
@@ -367,6 +377,7 @@ export const H2Title = styled.h2`
   display: flex;
   font-size: 32px;
   margin-bottom: 32px;
+  white-space: nowrap;
 
   @media (min-width: 992px) {
     font-size: 40px;
@@ -811,26 +822,71 @@ export const BlogDetailsTitle = styled.h1`
 `
 
 export const BlogDetailsContent = styled.article`
-  h1,
   h2,
   h3 {
     color: var(--c-theme);
     font-weight: 400;
     line-height: 1.3;
     margin-bottom: 12px;
-    margin-top: 48px;
-  }
+    margin-top: 64px;
+    scroll-margin-top: 140px;
+    position: relative;
 
-  h1 {
-    font-size: 38px;
+    &:hover a {
+      opacity: 1;
+    }
+
+    a {
+      opacity: 0;
+      left: -24px;
+      padding-right: 8px;
+      position: absolute;
+      top: 0;
+      transition: var(--g-transition);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 24px;
+  }
+
+  figcaption {
+    color: var(--c-grey);
+    margin-bottom: 56px;
+    text-align: center;
+  }
+
+  .gatsby-resp-image-wrapper {
+    filter: blur(3px);
+    margin-bottom: 16px;
+    margin-top: 56px;
+    opacity: .9;
+    transition: 200ms;
+
+    &.loaded {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  pre {
+    border-radius: 8px;
+    margin-bottom: 32px;
+    margin: 32px -32px;
+    overflow: auto;
+    padding: 24px;
+
+    @media (min-width: 992px) {
+      margin: 56px -96px;
+    }
   }
 `
 

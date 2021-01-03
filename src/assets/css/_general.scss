@@ -30,7 +30,7 @@ html {
       background-color: rgba(0,0,0,0.05)
     }
 
-    header a[type="button"]:focus article,
+    header a[type="button"]:focus,
     header a[type="button"]:hover {
       background-color: rgba(0,0,0,0.15)
     }
@@ -131,64 +131,4 @@ iframe {
 
 img {
   max-width: 100%;
-}
-
-figcaption {
-  color: var(--c-grey);
-  margin-bottom: 56px;
-  text-align: center;
-}
-
-.article {
-  .gatsby-resp-image-wrapper {
-    filter: blur(3px);
-    margin-bottom: 16px;
-    margin-top: 56px;
-    opacity: .9;
-    transition: 200ms;
-
-    &.loaded {
-      filter: blur(0);
-      opacity: 1;
-    }
-  }
-
-  h2,
-  h3 {
-    scroll-margin-top: 140px;
-    position: relative;
-
-    &:hover a {
-      opacity: 1;
-    }
-
-    a {
-      opacity: 0;
-      left: -24px;
-      padding-right: 8px;
-      position: absolute;
-      top: 0;
-      transition: var(--g-transition);
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-pre {
-  border-radius: 8px;
-  margin-bottom: 32px;
-  margin-left: -32px;
-  margin-right: -32px;
-  overflow: auto;
-  padding: 24px;
-}
-
-@media (min-width: 992px) {
-  pre {
-    margin-left: -96px;
-    margin-right: -96px;
-  }
 }
