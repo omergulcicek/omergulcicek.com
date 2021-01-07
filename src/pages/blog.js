@@ -27,8 +27,8 @@ class BlogIndex extends React.Component {
 
             return (
               <BlogArticle key={slug}>
-                <Link to={ path }>{ title }</Link>
                 <div><span title={convertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
+                <Link to={ path }>{ title }</Link>
               </BlogArticle>
             )
           })}

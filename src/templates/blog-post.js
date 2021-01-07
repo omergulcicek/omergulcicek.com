@@ -18,14 +18,14 @@ export default function BlogPostTemplate (props) {
   const { previous, next } = props.pageContext
   
   useEffect(() => {
-    document.querySelectorAll("article .gatsby-resp-image-wrapper").forEach(imgWrap => {
+    document.querySelectorAll("article .gatsby-resp-image-wrapper:not(.loaded)").forEach(imgWrap => {
       imgWrap.querySelectorAll("a")[0].removeAttribute("href");
       const img = imgWrap.querySelectorAll("img")[0];
       const figcaption = document.createElement("figcaption");
       const figcaptionText = document.createTextNode(img.alt);
       figcaption.appendChild(figcaptionText);
       imgWrap.parentNode.insertBefore(figcaption, imgWrap.nextSibling);
-
+      
       setTimeout(() => {
         imgWrap.classList.add("loaded");
       }, 500);

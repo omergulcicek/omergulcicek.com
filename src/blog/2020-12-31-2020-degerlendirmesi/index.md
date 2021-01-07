@@ -3,7 +3,7 @@ date: "2020-12-31"
 path: "/2020-degerlendirmesi"
 title: "2020 Değerlendirmesi"
 category: "Kişisel"
-medium: ""
+medium: "https://omergulcicek.medium.com/2020-de%C4%9Ferlendirmesi-7d9cf6017aee"
 ---
 
 Her yıl gelenek haline getirdiğim biten yılın değerlendirmesi ve yeni yıl hedefleri makaleme bu senede devam ediyorum.
@@ -104,13 +104,13 @@ Ayrıca 2020 için GitHub katkılarım:
 
 Son yıllarda hayatıma kattığım en güzel yeniliklerden birisi satranç olmuştu. 2019 yılında başladığım satrançta, düzenli oyun ve turnuva takipleri sayesinde oldukça ilerledim. Yılın başında en yüksek **1086 elo** (satranç puanım) olmuş ve yeni yıl hedef puanımı 1250 üstü olarak belirlemiştim. Puan ilerledikçe maçlar zorlanmaya başladığından bu hiçte kolay bir süreç olmuyor. 2020 sonu itibariyle satrançta **1293 elo**ya ulaşarak hedefimi geçtim.
 
-![Chess 2020](../../assets/img/blog/2020-12-31/chess2020.jpg)
+![2020 Satranç İstatistiğim](../../assets/img/blog/2020-12-31/chess-2020.jpg)
 
 ## 🎵 Spotify
 
 Son olarakta ilerleyen yıllarda dönüp arkama baktığımda neler dinlediğimi unutmamak adına Spotify yıl sonu raporunu bırakıyorum.
 
-![Spotify 2020 Wrapped](../../assets/img/blog/2020-12-31/spotify2020.jpeg)
+![Spotify 2020 Wrapped](../../assets/img/blog/2020-12-31/spotify-2020.jpeg)
 
 ## 👨🏻‍✈️ Drone Pilotluğu
 

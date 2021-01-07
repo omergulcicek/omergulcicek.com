@@ -561,6 +561,12 @@ export const BlogArticle = styled.article`
       color: var(--c-theme);
     }
   }
+
+  div {
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 4px;
+  }
 `
 //#endregion
 

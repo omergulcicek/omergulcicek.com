@@ -55,7 +55,7 @@ Rubik küpü daha öncede almış ve çözümünü 57sn gibi bir rakama kadar in
 
 Satrançta ise öncelikle <a href="https://www.youtube.com/channel/UCh3EoSfbgqXYjRUVy1mkRYw" target="_blank" rel="noopener noreferrer" >Cem Gündoğan'ın Satranç TV</a> kanalını keşfettim. Birçok satranç youtuber'ı olmasına rağmen Cem'in oyun zekasını daha çok beğeniyorum. Maçları at yarışı anlatır gibi anlatması, arada alakasız konulara geçiş yapması ile ilgimi çekti. Satrançta sadece taşların nasıl gittiğini biliyordum ve basitçe oynardım. Cem sayesinde taktiksel zekam gelişti. Ardından önce bilgisayar ile satranç kapışmalarına başladım, sonrasında chess.com mobil uygulamasını indirerek yabancı insanlar ile gün içerisinde yaklaşık 3–5 maç oynuyorum. İlk olarak süresiz satranç kapışmalarına başladım ardından 10dk'lık ve şu anda 5dk'lık satranç kapışmaları yapıyorum.
 
-![2019 Satranç İstatistiğim](../../assets/img/blog/2019-12-31/chess2019.jpeg)
+![2019 Satranç İstatistiğim](../../assets/img/blog/2019-12-31/chess-2019.jpg)
 
 Uygulamaya ilk başladığınızda **800** puandan sizi başlatıyor. Acemi olduğunuz için ilk rakiplerinize yenilerek puanınızı (elo) sürekli düşürüyorsunuz. Ben 665 elo’ya kadar düştüm. En fazla yükselebildiğim puan ise 1086 elo. Şuan 1070 elo’dayım.
 
