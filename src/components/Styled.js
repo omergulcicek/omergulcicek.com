@@ -745,7 +745,6 @@ export const BlogDetailsInfo = styled.div`
   a {
     text-decoration: none;
 
-
     &:focus,
     &:hover {
       color: var(--c-theme);
@@ -753,6 +752,7 @@ export const BlogDetailsInfo = styled.div`
 
     &:first-child {
       margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -806,7 +806,7 @@ export const BlogDetailsTitle = styled.h1`
 export const BlogDetailsContent = styled.article`
   h2,
   h3 {
-    color: var(--c-theme);
+    color: var(--c-text);
     font-weight: 400;
     line-height: 1.3;
     margin-bottom: 12px;
@@ -819,6 +819,7 @@ export const BlogDetailsContent = styled.article`
     }
 
     a {
+      border: none;
       opacity: 0;
       left: -24px;
       padding-right: 8px;
@@ -851,7 +852,7 @@ export const BlogDetailsContent = styled.article`
     margin-bottom: 16px;
     margin-top: 56px;
     opacity: .9;
-    transition: 200ms;
+    transition: var(--g-transition);
 
     &.loaded {
       filter: blur(0);
@@ -868,6 +869,17 @@ export const BlogDetailsContent = styled.article`
 
     @media (min-width: 992px) {
       margin: 56px -96px;
+    }
+  }
+
+  a {
+    border-bottom: 3px solid #a8d8ff;
+    color: var(--c-theme);
+    text-decoration: none;
+    transition: var(--g-transition);
+
+    &:hover {
+      border-color: var(--c-theme);
     }
   }
 `

@@ -18,7 +18,7 @@ Kısaca değinmek gerekirse Chess360, piyonların arkasındaki taşların yerler
 
 Chess360 turnuvalarında oyuncular, genelde bir kaç hamleden sonra rok atıp taşlarını normal satranç düzenine yerleştirirler.
 
-![Örnek bir Chess360 dizilişi](../../assets/img/blog/2020-11-29/chess360.png)
+![Örnek bir Chess360 dizilişi](../../assets/img/blog/2020-11-29/chess360.jpg)
 
 ## Dizi Hakkında
 
