@@ -1,7 +1,7 @@
 :root {
-  --c-background: #1b1b1b;
+  --c-background: #fff;
   --c-theme: #2196f3;
-  --c-text: #fff;
+  --c-text: #1b1b1b;
   --c-grey: #888;
   --f-size: 18px;
   --g-transition: 240ms;
@@ -50,45 +50,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html[data-theme="light"] {
-  --c-background: #fff;
-  --c-text: #1b1b1b;
-}
-
-html[data-theme="light"] header a[type="button"] {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-html[data-theme="light"] header a[type="button"]:focus,
-html[data-theme="light"] header a[type="button"]:hover {
-  background-color: rgba(0, 0, 0, 0.15);
-}
-
-html[data-theme="light"] .projects a:focus article,
-html[data-theme="light"] .projects article:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-html[data-theme="light"] hr {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-html[data-theme="light"] details:not(:first-of-type) {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-html[data-theme="light"] .pagination li:not(:empty) {
-  background-color: #F1F4F8;
-}
-
-html[data-theme="light"] .pagination li:not(:empty):hover {
-  background-color: #E1E6ED;
-}
-
-html[data-theme="light"] .pagination li:not(:empty) span {
-  color: rgba(0, 0, 0, 0.7);
-}
-
 body {
   background-color: var(--c-background);
   color: var(--c-text);
@@ -120,12 +81,16 @@ li a {
 }
 
 a {
-  color: inherit;
+  border-bottom: 3px solid #a8d8ff;
+  color: var(--c-theme);
   font-size: inherit;
+  text-decoration: none;
+  -webkit-transition: var(--g-transition);
+  transition: var(--g-transition);
 }
 
 a:focus, a:hover {
-  color: var(--c-theme);
+  border-color: var(--c-theme);
 }
 
 small {

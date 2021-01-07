@@ -5,7 +5,6 @@ import styled from "styled-components"
  *    1.1 Header
  *      1.1.1 Brand
  *      1.1.2 Menu
- *      1.1.3 Dark Theme
  *    1.2 Main
  *    1.3 Footer
  *  2. Helper Components
@@ -67,6 +66,10 @@ export const Header = styled.header`
 
   .brand {
     display: none;
+
+    a {
+      border: none;
+    }
 
     @media (min-width: 992px) {
       display: block
@@ -159,35 +162,6 @@ export const Menu = styled.nav`
     }
   }
 `
-
-// 1.1.3 Dark Theme
-export const DarkTheme = styled.a`
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 100%;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  padding: 12px;
-  user-select: none;
-  transition: var(--g-transition);
-
-  height: 42px;
-  box-sizing: border-box;
-  width: 42px;
-  text-align: center;
-
-  &:focus,
-  &:hover {
-    background-color: var(--c-theme);
-    outline: none;
-    text-decoration: none;
-
-    svg {
-      stroke: var(--c-text);
-    }
-  }
-`
 //#endregion
 
 //#region 1.2 Main
@@ -224,6 +198,7 @@ export const Footer = styled.footer`
     margin-top: 40px;
 
     a {
+      border: none;
       display: inline-block;
       padding: 8px;
 
@@ -243,8 +218,10 @@ export const Footer = styled.footer`
         }
       }
 
+      &:focus,
       &:hover {
         color: inherit;
+        outline: none;
 
         svg {
           transform: scale(1.1);
@@ -304,7 +281,7 @@ export const Details = styled.details`
   padding: 24px 16px 24px 24px;
 
   &:not(:first-of-type) {
-    border-top: 1px solid rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(0,0,0,0.05);
   }
 
   summary {
@@ -345,7 +322,7 @@ export const Details = styled.details`
 `
 
 export const Hr = styled.hr`
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.05);
   border: 0;
   height: 2px;
   margin-bottom: 64px;
@@ -371,19 +348,22 @@ export const H2Title = styled.h2`
   }
 
   a {
-    font-size: 14px;
+    border: none;
     border-radius: 8px;
-    text-decoration: none;
     color: var(--c-text);
-    font-weight: 400;
     display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
     margin-left: 32px;
+    text-decoration: none;
 
     svg {
       margin-left: 8px;
       transition: var(--g-transition);
     }
 
+    
+    &:focus svg,
     &:hover svg {
       margin-left: 16px;
     }
@@ -422,6 +402,10 @@ export const GetInTouch = styled.div`
       font-size: 20px;
     }
   }
+
+  a {
+    border: none;
+  }
 `
 
 export const Button = styled.a`
@@ -454,6 +438,7 @@ export const Button = styled.a`
 //#region 3.2 About
 export const AboutA = styled.a`
   background-color: transparent;
+  border: none;
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
@@ -546,6 +531,7 @@ export const BlogArticle = styled.article`
   margin-top: 36px;
 
   a {
+    border: none;
     color: var(--c-text);
     font-size: 18px;
     line-height: 1;
@@ -633,6 +619,7 @@ export const MyDeskGrid = styled.div`
       }
     }
 
+    &:not(.disabled):focus img,
     &:not(.disabled):hover img {
       transform: scale(1.1);
     }
@@ -642,6 +629,7 @@ export const MyDeskGrid = styled.div`
 
 //#region 3.6 Projects
 export const ProjectWrap = styled.a`
+  border: none;
   display: block;
   margin-bottom: 8px;
   text-decoration: none;
@@ -685,7 +673,7 @@ export const ProjectItem = styled.article`
   }
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0,0,0,0.05);
     border-left-color: var(--c-theme);
 
     &:before {
@@ -749,6 +737,7 @@ export const BlogDetailsInfo = styled.div`
   }
 
   a {
+    border: none;
     text-decoration: none;
 
     &:focus,
@@ -820,6 +809,7 @@ export const BlogDetailsContent = styled.article`
     scroll-margin-top: 140px;
     position: relative;
 
+    &:focus a,
     &:hover a {
       opacity: 1;
     }
@@ -833,6 +823,7 @@ export const BlogDetailsContent = styled.article`
       top: 0;
       transition: var(--g-transition);
 
+      &:focus,
       &:hover {
         opacity: 1;
       }
@@ -877,17 +868,6 @@ export const BlogDetailsContent = styled.article`
       margin: 56px -96px;
     }
   }
-
-  a {
-    border-bottom: 3px solid #a8d8ff;
-    color: var(--c-theme);
-    text-decoration: none;
-    transition: var(--g-transition);
-
-    &:hover {
-      border-color: var(--c-theme);
-    }
-  }
 `
 
 export const BlogDetailsPagination = styled.ul`
@@ -922,21 +902,23 @@ export const BlogDetailsPagination = styled.ul`
     }
 
     &:not(:empty) {
-      background-color: var(--c-theme);
+      background-color: #F1F4F8;
 
+      &:focus,
       &:hover {
-        background-color: #0b72c4;
+        background-color: #E1E6ED;
       }
     }
 
     a {
+      border: none;
       color: var(--c-text);
       display: block;
       padding: 24px 32px;
       text-decoration: none;
 
       span {
-        color: rgba(255, 255, 255, 0.65);
+        color: rgba(0, 0, 0, 0.7);
         display: block;
         font-size: 15px;
         margin-bottom: 8px;

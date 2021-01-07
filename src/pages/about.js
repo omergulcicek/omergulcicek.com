@@ -69,7 +69,7 @@ const About = () => (
       <AboutTitle>Çalışma masam</AboutTitle>
 
       <p>
-        Kullandığım ekipmanları özenle seçiyorum ve harika vakit geçiriyorum. <Link to="/desk/">Çalışma masamı incelemek için tıklayın.</Link>
+        Kullandığım ekipmanları özenle seçiyorum ve harika vakit geçiriyorum. <Link to="/desk/">Çalışma masamı inceleyin.</Link>
       </p> 
 
       <AboutFigure>
