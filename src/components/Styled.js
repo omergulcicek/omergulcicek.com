@@ -168,7 +168,7 @@ export const Menu = styled.nav`
 export const Main = styled.main`
   flex: 1;
   margin: 120px auto 160px;
-  max-width: 80%;
+  max-width: calc(100% - 24px);
   position: relative;
   width: 100%;
 
@@ -334,7 +334,7 @@ export const H2Title = styled.h2`
   align-items: center;
   color: var(--c-theme);
   display: flex;
-  font-size: 32px;
+  font-size: 24px;
   margin-bottom: 32px;
   white-space: nowrap;
 
@@ -506,6 +506,7 @@ export const AboutTitle = styled.h2`
 
 export const AboutFigure = styled.figure`
   background-color: #eee;
+  display: none;
   height: 810px;
   margin: 32px -32px;
 
@@ -559,10 +560,12 @@ export const BlogArticle = styled.article`
 //#region 3.5 Desk
 export const DeskFigure = styled.figure`
   background-color: #eee;
+  display: none;
   height: 810px;
   margin: 0 -32px 32px;
 
   @media (min-width: 992px) {
+    display: block;
     margin: 0 -96px 64px
   }
 
@@ -737,6 +740,7 @@ export const BlogDetailsInfo = styled.div`
   }
 
   a {
+    color: var(--c-grey);
     border: none;
     text-decoration: none;
 
@@ -860,12 +864,13 @@ export const BlogDetailsContent = styled.article`
   pre {
     border-radius: 8px;
     margin-bottom: 32px;
-    margin: 32px -32px;
+    margin: 32px 0;
     overflow: auto;
-    padding: 24px;
+    padding: 24px 12px;
 
     @media (min-width: 992px) {
       margin: 56px -96px;
+      padding: 24px;
     }
   }
 `
@@ -877,10 +882,8 @@ export const BlogDetailsPagination = styled.ul`
   margin-top: 80px;
   list-style: none;
   align-items: stretch;
-  margin-left: -16px;
-  margin-right: -16px;
   padding: 0;
-  flex-direction: column;
+  flex-direction: column-reverse;
   
   @media (min-width: 992px) {
     flex-direction: row;

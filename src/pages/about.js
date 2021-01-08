@@ -28,6 +28,8 @@ const About = () => (
       <p>
         Benimle konuşmak istediğiniz bir konu varsa <AboutMail href="mailto:iletisim@omergulcicek.com">iletisim@omergulcicek.com</AboutMail> adresine detaylı bir mail atabilirsiniz. Freelance iş, özel ders yada eğitmenlik için müsaitim.
       </p>
+      
+      <Hr />
 
       <AboutFigure>
         <img src="" alt="" loading="lazy" />
