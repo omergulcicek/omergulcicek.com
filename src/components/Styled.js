@@ -25,15 +25,17 @@ export const Header = styled.header`
   background-color: var(--c-background);
   border-bottom: 1px solid transparent;
   border-top: 4px solid var(--c-theme);
-  padding-bottom: 24px;
-  padding-top: 24px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
 
   @media (min-width: 992px) {
-    flex-direction: row
+    flex-direction: row;
+    padding-bottom: 24px;
+    padding-top: 24px;
   }
 
   &.active {
@@ -168,7 +170,7 @@ export const Menu = styled.nav`
 export const Main = styled.main`
   flex: 1;
   margin: 120px auto 160px;
-  max-width: calc(100% - 24px);
+  max-width: calc(100% - 48px);
   position: relative;
   width: 100%;
 
@@ -334,12 +336,14 @@ export const H2Title = styled.h2`
   align-items: center;
   color: var(--c-theme);
   display: flex;
+  justify-content: space-between;
   font-size: 24px;
   margin-bottom: 32px;
   white-space: nowrap;
 
   @media (min-width: 992px) {
     font-size: 40px;
+    justify-content: flex-start;
     margin-bottom: 64px;
   }
 
@@ -550,9 +554,13 @@ export const BlogArticle = styled.article`
   }
 
   div {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 100;
-    margin-bottom: 4px;
+    
+    @media (min-width: 992px) {
+      font-size: var(--f-size);
+      margin-bottom: 4px;
+    }
   }
 `
 //#endregion
@@ -652,7 +660,6 @@ export const ProjectWrap = styled.a`
 `
 
 export const ProjectItem = styled.article`
-  align-items: center;
   border-radius: 4px;
   display: flex;
   flex-direction: row;
@@ -706,6 +713,7 @@ export const ProjectItem = styled.article`
   h2 {
     font-size: 20px;
     font-weight: normal;
+    line-height: 1;
     margin: 0 32px 8px 0;
 
     @media (min-width: 992px) {
