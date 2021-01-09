@@ -50,7 +50,7 @@ Aylarca borsayı takip etmek, yorumları okumak kafayı yedirten bir süreç old
 
 Elimdeki bütçe ile son sistem bir oyun bilgisayarı topladım. Üst düzey performans almama rağmen, "*oyun oynamıyorum, neden böyle bir bilgisayar aldım?*" sorusu kafamı çok kurcaladı. Gün geçtikçe bu his, pişmanlığı arttırdı ve 6 ay kullandıktan sonra elden çıkarttım. Yeni yılda Macbook Pro almayı planlıyorum.
 
-Bu yılın güzel geliştirmelerinden biriside araba almış olmam. Zerre arabalardan anlamazdım fakat elimdeki birikmiş, borsa ve ailemdeki eski aracı satıp, birazda kredilerle destekleyerek **Volkswagen Polo 1.6 TDI Comfortline** satın aldım.
+Bu yılın güzel geliştirmelerinden biriside araba almış olmam. Elimdeki birikmiş paraya ek olarak borsa ve birazda kredi desteği ile 10 Kasım tarihinde **Volkswagen Polo 1.6 TDI Comfortline** satın aldım.
 
 ![Volkswagen Polo 1.6 TDI Comfortline](../../assets/img/blog/2020-12-31/volkswagen.jpg)
 
@@ -58,7 +58,7 @@ Bu yılın güzel geliştirmelerinden biriside araba almış olmam. Zerre arabal
 
 Yazılım hayatım bir süre ofis, bir süre freelance şeklinde gidip geliyordu. Freelance çalışmanın her ne kadar artıları olsa da, düzensiz gelir planlar kurmamı engelliyordu. Bu yüzden düzenli bir iş hayatı çizgisi çizmek ilk hedeflerimden birisiydi. Çok şükür aradığım güzel ortamı Hangikredi çatısı altında buldum. <a href="http://www.olivasoft.com/" target="_blank" rel="noopener noreferrer" >Olivasoft</a> firması ile el sıkışarak, danışman olarak Eylül itibariyle <a href="https://www.hangikredi.com/" target="_blank" rel="noopener noreferrer" >Hangikredi</a>'de çalışmaya başladım.
 
-Pantemi yüzünden remote başladı ve 2020 sonuna kadar böyle devam etti. Yeni yılıda büyük ölçüde bu şekilde ilerletiriz gibi duruyor. Çok yoğun fakat verimli bir ilerleyiş ile yorgun bir şekilde yılı noktaladım.
+Pandemi yüzünden remote başladı ve 2020 sonuna kadar böyle devam etti. Yeni yılıda büyük ölçüde bu şekilde ilerletiriz gibi duruyor. Çok yoğun fakat verimli bir ilerleyiş ile yorgun bir şekilde yılı noktaladım.
 
 ![Olivasoft, Hangikredi, Kodluyoruz](../../assets/img/blog/2020-12-31/is-hayati.jpg)
 
@@ -88,7 +88,7 @@ Bu sene 7 blog yazısı yayınladım. Bunlardan 6'sı teknik, diğeri ise dizi d
 
 React bilgimden ötürü <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer">Gatsby</a> kütüphanesini öğrendim. İşte bu yıl ilerlettiğim projelerimden bazıları:
 
-- <a href="https://github.com/omergulcicek/omergulcicek.com/" target="_blank" rel="noopener noreferrer">omergulcicek.com</a> - Kişisel sitemi Gatsby ve MDX alt yapısı ile baştan geliştirdim
+- <a href="https://github.com/omergulcicek/omergulcicek.com/" target="_blank" rel="noopener noreferrer">omergulcicek.com</a> - Kişisel sitemi Gatsby ile baştan geliştirdim
 
 - <a href="https://github.com/omergulcicek/turkuazcss.com/" target="_blank" rel="noopener noreferrer">turkuazcss.com</a> - Css framework'ümün sitesini React ve SPA ile tamamladım
 
@@ -103,6 +103,8 @@ Ayrıca 2020 için GitHub katkılarım:
 ## ♟️ Satranç
 
 Son yıllarda hayatıma kattığım en güzel yeniliklerden birisi satranç olmuştu. 2019 yılında başladığım satrançta, düzenli oyun ve turnuva takipleri sayesinde oldukça ilerledim. Yılın başında en yüksek **1086 elo** (satranç puanım) olmuş ve yeni yıl hedef puanımı 1250 üstü olarak belirlemiştim. Puan ilerledikçe maçlar zorlanmaya başladığından bu hiçte kolay bir süreç olmuyor. 2020 sonu itibariyle satrançta **1293 elo**ya ulaşarak hedefimi geçtim.
+
+Ayrıca 25 Aralık tarihinde Türkiye çapı ilk satranç turnuvama katıldım ve 43. oldum.
 
 ![2020 Satranç İstatistiğim](../../assets/img/blog/2020-12-31/chess-2020.jpg)
 
