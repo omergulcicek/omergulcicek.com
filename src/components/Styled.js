@@ -281,7 +281,12 @@ export const H3 = styled.h3`
 
 export const Details = styled.details`
   border-left: 2px solid transparent;
-  padding: 24px 16px 24px 24px;
+  padding: 16px 16px 16px 5px;
+
+  @media (min-width: 992px) {
+    padding-bottom: 24px;
+    padding-top: 24px;
+  }
 
   &:not(:first-of-type) {
     border-top: 1px solid rgba(0,0,0,0.05);

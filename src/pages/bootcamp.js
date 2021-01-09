@@ -127,14 +127,14 @@ const Bootcamp = () => (
         <summary>26-27 Aralık 2020 - Psd to CSS</summary>
 
         <p>
-          Gerçek bir tasarımı Semantic HTML, BEM, SASS ve Bootstrap kullanarak <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını koda döktük.
+        <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını Semantic HTML, BEM, SASS ve Bootstrap kullanarak koda döktük.
         </p>
 
         <h6>İşlenen Konular;</h6>
 
         <ul>
           <li><a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background_hero" target="_blank" rel="noopener noreferrer">CSS'te background-image</a></li>
-          <li><Strong><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener noreferrer">CSS'te flex-direction</a></strong></Strong> - (Mobilde alt alta, tablette yan yana gelmesinin temel kodu)</li>
+          <li><Strong><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener noreferrer">CSS'te flex-direction</a></strong></Strong></li>
           <li><Strong><strong><a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer">atomic design</a></strong></Strong></li>
           <li><Strong><strong><a href="https://medium.com/@protechman/mobile-first-yakla%C5%9F%C4%B1m-461c223cfb9a" target="_blank" rel="noopener noreferrer">Mobile first kavramı</a></strong></Strong></li>
           <li><Strong><strong><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_ex1" target="_blank" rel="noopener noreferrer">@media query</a></strong></Strong></li>
