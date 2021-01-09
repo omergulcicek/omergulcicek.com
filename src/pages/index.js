@@ -1,9 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import articleTimeAgo from "article-time-ago"
-import convertDate from "../utilities/convertDate"
-import { BlogArticle, H2Title, ProjectWrap, ProjectItem, Hr, GetInTouch, Button, AboutFigure } from "../components/Styled"
-import projects from "../assets/projects"
+import { H2Title, Hr, GetInTouch, Button, AboutFigure } from "../components/Styled"
+
+import { ArticleItem, ProjectsItem } from "../components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
@@ -13,27 +12,6 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
-
-    let blog = []
-
-    projects() !== null &&
-    projects().slice(0, 5).map(({ link, img, title, desc }, i) =>
-      blog.push(
-      <ProjectWrap href={link} target="_blank" rel="noopener noreferrer" key={i}>
-        <ProjectItem>
-          <figure>
-            <img src={img} alt={title} loading="lazy" width="32" />
-          </figure>
-          <div>
-            <h2>{title}</h2>
-            <p>
-              {desc}
-            </p>
-          </div>
-        </ProjectItem>
-      </ProjectWrap>
-      )
-    )
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -54,17 +32,7 @@ class BlogIndex extends React.Component {
             </Link>
           </H2Title>
 
-          {posts.map(({ node }) => {
-            const { title, date, category, path } = node.frontmatter
-            const { slug } = node.fields
-
-            return (
-              <BlogArticle key={slug}>
-                <Link to={ path }>{ title }</Link>
-                <div><span title={convertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
-              </BlogArticle>
-            )
-          })}
+          <ArticleItem data={posts} />
 
           <Hr />
         </section>
@@ -78,7 +46,7 @@ class BlogIndex extends React.Component {
             </Link>
           </H2Title>
 
-          {blog}
+          <ProjectsItem total="5" />
 
           <Hr />
         </section>

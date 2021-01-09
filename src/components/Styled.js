@@ -98,7 +98,8 @@ export const Logo = styled.div`
   }
 
   span {
-    color: var(--c-theme)
+    color: var(--c-theme);
+    font-weight: 700;
   }
 `
 

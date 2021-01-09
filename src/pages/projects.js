@@ -1,40 +1,20 @@
 import React from "react"
-import projects from "../assets/projects"
-import { ProjectWrap, ProjectItem, ProjectDesc, Svg } from "../components/Styled"
+import { ProjectDesc, Svg } from "../components/Styled"
 import "isomorphic-fetch"
 
+import { ProjectsItem } from "../components"
 import Layout from "../components/Layout"
 import Title from "../components/Title"
 import SEO from "../components/Seo"
 
 export default function App() {
-  let blog = []
-  projects() !== null &&
-  projects().map(({ link, img, title, desc }, i) =>
-    blog.push(
-    <ProjectWrap href={link} target="_blank" rel="noopener noreferrer" key={i}>
-      <ProjectItem>
-        <figure>
-          <img src={img} alt={title} loading="lazy" width="32" />
-        </figure>
-        <div>
-          <h2>{title}</h2>
-          <p>
-            {desc}
-          </p>
-        </div>
-      </ProjectItem>
-    </ProjectWrap>
-    )
-  )
-
   return <Layout>
     <SEO title="Projelerim" />
 
     <section className="projects">
       <Title t1="En İyi" t2="Projelerim" />
 
-      {blog}
+      <ProjectsItem />
 
       <ProjectDesc>
         Diğer projelerim için <a href="https://github.com/omergulcicek" target="_blank" rel="noopener noreferrer">GitHub profilimi</a> ziyaret edebilirsin.
