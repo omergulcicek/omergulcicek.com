@@ -166,25 +166,39 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>Sıradaki işlenecek konular</summary>
+        <summary>9 Ocak 2021 - Git, JacaScript Temeli</summary>
+
+        <h6>İşlenen Konular;</h6>
 
         <ul>
           <li><Strong><strong><a href="https://rogerdudler.github.io/git-guide/index.tr.html" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong> - (master, checkout, branch, add, commit, push, merge, pull, fetch, conflict)</li>
-          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, değişkenler/array, for/forEach, if/else, fonksiyon, log)</li>
+          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, string-integer-float-array-boolean değişkenler, if/else, for, log, debuggeri promp)</li>
+        </ul>
+
+        <h6>Verilen Ödevler;</h6>
+        <ul>
           <li><i>JavaScript Ödev - Pratik</i><br />
-          <span hidden>Değişken, fonksiyon, for ve if kullanılarak aşağıdaki senaryo oluşturulacak.<br />
+          <span>Değişken, for ve if kullanılarak aşağıdaki senaryo oluşturulacak.<br />
           Örnek çıktı şu şekilde olacaktır: <i>Ömer doğdu -> Ömer 1 yaşında -> Ömer 2 yaşında -> ... -> Ömer reşit oldu -> Ömer 30 yaşında evlendi</i>
             <p>
               <b>Yapılacaklar:</b>
             </p>
             <ul>
-              <li>ad, resitYas, evlenecegiYas, yazdir() oluşturulacak</li>
+              <li>ad, resitYas, evlenecegiYas değişkenleri oluşturulacak</li>
+              <li>evlenecegiYas değişkeni promp() ile kullanıcıya sorulacak</li>
               <li>for ile 0'dan 35'e kadar döngü oluşturulacak</li>
-              <li>0 ise doğdu, 18 ise reşit oldu, 30 ise konsola evlendi yazacak</li>
+              <li>Kişinin yaşı 0 ise doğdu, 18 ise reşit oldu, 'evlenecegiYas' ise konsola evlendi yazacak</li>
             </ul>
           </span>
           </li>
-          <li>JavaScript (Events, dir, debugger, classList, innerText, innerHtml)</li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary>Sıradaki işlenecek konular</summary>
+
+        <ul>
+          <li>JavaScript (Events, dir, forEach, function, classList, innerText, innerHtml)</li>
           <li><i>JavaScript Ödev - Koyu Tema</i><br />
           <span hidden>Butona basıldığında koyu tema atkifleştirilip, kaldırılacak.
             <p>
