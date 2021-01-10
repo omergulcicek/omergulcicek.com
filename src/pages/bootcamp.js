@@ -162,7 +162,7 @@ const Bootcamp = () => (
 
         <ul>
           <li><Strong><strong><a href="https://rogerdudler.github.io/git-guide/index.tr.html" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong> - (master, checkout, branch, add, commit, push, merge, pull, fetch, conflict)</li>
-          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, string-integer-float-<a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" rel="noopener noreferrer">array</a> -boolean değişkenler, <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank" rel="noopener noreferrer">if/else</a>, <a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank" rel="noopener noreferrer">for</a>, log, debugger, promp)</li>
+          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank" rel="noopener noreferrer">değişkenler</a> -<a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" rel="noopener noreferrer">array</a> - <a href="https://www.w3schools.com/js/js_booleans.asp" target="_blank" rel="noopener noreferrer">booleans</a>, <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank" rel="noopener noreferrer">if/else</a>, <a href="https://www.w3schools.com/js/js_loop_for.asp">for</a>, log, debugger, promp)</li>
         </ul>
 
         <h6>Verilen Ödevler;</h6>
@@ -171,7 +171,7 @@ const Bootcamp = () => (
           <span>Değişken, for ve if kullanılarak aşağıdaki senaryo oluşturulacak.<br />
           Örnek çıktı şu şekilde olacaktır: <i>Ömer doğdu, Ömer 1 yaşında, Ömer 2 yaşında, ... Ömer reşit oldu, Ömer 30 yaşında evlendi</i>
             <p>
-              <b>Yapılacaklar:</b>
+              <u>Yapılacaklar:</u>
             </p>
             <ul>
               <li>ad, resitYas, evlenecegiYas değişkenleri oluşturulacak</li>
@@ -190,11 +190,15 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li><Strong><strong>JavaScript</strong></Strong> (<a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" rel="noopener noreferrer">Events</a>, dir, <a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank" rel="noopener noreferrer">forEach</a>, function, classList, <a href="https://www.w3schools.com/jsref/prop_node_innertext.asp" target="_blank" rel="noopener noreferrer">innerText</a>, innerHtml)</li>
+          <li><Strong><strong>JavaScript</strong></Strong> (<a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" rel="noopener noreferrer">Events</a>, dir, <a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank" rel="noopener noreferrer">forEach</a>, <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" rel="noopener noreferrer">function</a>, <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp" target="_blank" rel="noopener noreferrer">classList </a>, <a href="https://www.w3schools.com/jsref/prop_node_innertext.asp" target="_blank" rel="noopener noreferrer">innerText</a>, <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">innerHTML</a>)</li>
+        </ul>
+      
+        <h6>Verilen Ödevler;</h6>
+        <ul>
           <li><i>JavaScript Ödev - Koyu Tema</i><br />
           <span>Butona basıldığında koyu tema atkifleştirilip, kaldırılacak.
             <p>
-              <b>Yapılacaklar:</b>
+              <u>Yapılacaklar:</u>
             </p>
             <ul>
               <li>Ekranda çeşitli yazılarak olacak.</li>
@@ -206,7 +210,7 @@ const Bootcamp = () => (
           <span>Ad, soyad, kullanıcı adı, email, parola, parola tekrar formu hazırlanacak.<br />
           Submit edildiğinde kurallara göre sonuç verecek.<br />
             <p>
-              <b>Yapılacaklar:</b>
+              <u>Yapılacaklar:</u>
             </p>
             <ul>
               <li>Ad soyad otomatik olarak kullanıcı adı yapılacak; Ömer+Gülçiçek = ömergülçiçek</li>
@@ -218,7 +222,7 @@ const Bootcamp = () => (
           <li><i>JavaScript Ödev - Çekiliş Uygulaması (İsteğe bağlı)</i><br />
           <span>Kullanıcıdan input ile kullanıcı listesi alınacak ve rastgele hediye dağıtılacak.<br />
             <p>
-              <b>Yapılacaklar:</b>
+              <u>Yapılacaklar:</u>
             </p>
             <ul>
               <li>Kullanıcı input'a virgüller ile sürüyle isim girecek (<i>"Ali, Veli, Ayşe, Zeynep" vb.</i>).</li>
@@ -241,6 +245,9 @@ const Bootcamp = () => (
           <li>React ile Live Search Uygulaması</li>
         </ul>
       </Details>
+
+      <br />
+      <br />
 
       <p>
         <a href="https://docs.google.com/spreadsheets/d/1QIeF1E-gv8HGm-_QCs-1vf8SFDQPxiH0J251i6L8dKg/edit#gid=0" target="_blank" rel="noopener noreferrer">Ödevler'in Codepen linki olarak ekleneceği link</a>
