@@ -13,16 +13,6 @@ const Bootcamp = () => (
     <section className="bootcamp">
       <Title t1="Frontent" t2="Bootcamp" />
 
-      <p>
-        Başlıklara tıklayarak detayları inceleyebilirsiniz.
-      </p>
-
-      <p>
-        <a href="https://docs.google.com/spreadsheets/d/1QIeF1E-gv8HGm-_QCs-1vf8SFDQPxiH0J251i6L8dKg/edit#gid=0" target="_blank" rel="noopener noreferrer">Ödevler'in Codepen linki olarak ekleneceği link</a>
-      </p>
-
-      <br/>
-
       <Details>
         <summary>12 Aralık 2020 - HTML, CSS Seçiciler</summary>
 
@@ -166,20 +156,20 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>9 Ocak 2021 - Git, JacaScript Temeli</summary>
+        <summary>9 Ocak 2021 - Git, JavaScript Temeli</summary>
 
         <h6>İşlenen Konular;</h6>
 
         <ul>
           <li><Strong><strong><a href="https://rogerdudler.github.io/git-guide/index.tr.html" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong> - (master, checkout, branch, add, commit, push, merge, pull, fetch, conflict)</li>
-          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, string-integer-float-array-boolean değişkenler, if/else, for, log, debuggeri promp)</li>
+          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, string-integer-float-<a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" rel="noopener noreferrer">array</a> -boolean değişkenler, <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank" rel="noopener noreferrer">if/else</a>, <a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank" rel="noopener noreferrer">for</a>, log, debugger, promp)</li>
         </ul>
 
         <h6>Verilen Ödevler;</h6>
         <ul>
           <li><i>JavaScript Ödev - Pratik</i><br />
           <span>Değişken, for ve if kullanılarak aşağıdaki senaryo oluşturulacak.<br />
-          Örnek çıktı şu şekilde olacaktır: <i>Ömer doğdu -> Ömer 1 yaşında -> Ömer 2 yaşında -> ... -> Ömer reşit oldu -> Ömer 30 yaşında evlendi</i>
+          Örnek çıktı şu şekilde olacaktır: <i>Ömer doğdu, Ömer 1 yaşında, Ömer 2 yaşında, ... Ömer reşit oldu, Ömer 30 yaşında evlendi</i>
             <p>
               <b>Yapılacaklar:</b>
             </p>
@@ -195,23 +185,25 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>Sıradaki işlenecek konular</summary>
+        <summary>10 Ocak 2021 - JavaScript</summary>
+
+        <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li>JavaScript (Events, dir, forEach, function, classList, innerText, innerHtml)</li>
+          <li><Strong><strong>JavaScript</strong></Strong> (<a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" rel="noopener noreferrer">Events</a>, dir, <a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank" rel="noopener noreferrer">forEach</a>, function, classList, <a href="https://www.w3schools.com/jsref/prop_node_innertext.asp" target="_blank" rel="noopener noreferrer">innerText</a>, innerHtml)</li>
           <li><i>JavaScript Ödev - Koyu Tema</i><br />
-          <span hidden>Butona basıldığında koyu tema atkifleştirilip, kaldırılacak.
+          <span>Butona basıldığında koyu tema atkifleştirilip, kaldırılacak.
             <p>
               <b>Yapılacaklar:</b>
             </p>
             <ul>
               <li>Ekranda çeşitli yazılarak olacak.</li>
-              <li>"Koyu temayı aç" butonuna basılınca renkler değişecek ve buton "Koyu temayı kapat" olacak.</li>
+              <li>"Koyu temayı aç" butonuna basılınca arkaplan ve yazı renkleri değişecek ve buton "Koyu temayı kapat" olacak.</li>
             </ul>
           </span>
           </li>
           <li><i>JavaScript Ödev - Üyelik Form Kontrol</i><br />
-          <span hidden>Bootstrap ile ad, soyad, kullanıcı adı, email, parola, parola tekrar formu hazırlanacak.<br />
+          <span>Ad, soyad, kullanıcı adı, email, parola, parola tekrar formu hazırlanacak.<br />
           Submit edildiğinde kurallara göre sonuç verecek.<br />
             <p>
               <b>Yapılacaklar:</b>
@@ -219,29 +211,40 @@ const Bootcamp = () => (
             <ul>
               <li>Ad soyad otomatik olarak kullanıcı adı yapılacak; Ömer+Gülçiçek = ömergülçiçek</li>
               <li>Submit edildiğinde parola eşleşmiyorsa yada 8 karakterden az ise kırmızı bir div'e "Parolanız 8 karakterden az yada eşleşmiyor" yazmalı</li>
-              <li>Form başarılı ise yeşil bir div'e <i>"Hoşgeldin @omergulcicek"</i> yazmalı</li>
+              <li>Form başarılı ise yeşil bir div'e <i>"Hoşgeldin @ömergülçiçek"</i> yazmalı</li>
             </ul>
           </span>
           </li>
-          <li><i>JavaScript Ödev - Çekiliş Uygulaması</i><br />
-          <span hidden>Kullanıcıdan input ile kullanıcı listesi alınacak ve rastgele hediye dağıtılacak.<br />
+          <li><i>JavaScript Ödev - Çekiliş Uygulaması (İsteğe bağlı)</i><br />
+          <span>Kullanıcıdan input ile kullanıcı listesi alınacak ve rastgele hediye dağıtılacak.<br />
             <p>
               <b>Yapılacaklar:</b>
             </p>
             <ul>
-              <li>Kullanıcı input'a virgüller ile sürüyle isim girecek.</li>
-              <li>Submit butonuna basıldığında bu isimler split() fonksiyonu ilediziye aktarılacak.</li>
+              <li>Kullanıcı input'a virgüller ile sürüyle isim girecek (<i>"Ali, Veli, Ayşe, Zeynep" vb.</i>).</li>
+              <li>Submit butonuna basıldığında bu isimler split() fonksiyonu ile diziye aktarılacak.</li>
               <li>Kullanıcı sayısı kadar rastgele bir rakam seçilip o kişiye rastgele bir hediye verilecek.</li>
               <li>Hediye kazanan kişiler ve verilen hediyeler dizilerden kaldırılmalı</li>
-              <li>Kimin ne hediye kazandığı ekrana yazdırılacak</li>
+              <li>En son kimin ne hediye kazandığı ekrana yazdırılacak</li>
             </ul>
           </span>
           </li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary>Sıradaki işlenecek konular</summary>
+
+        <ul>
           <li><Strong><strong><a href="https://tr.reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">React</a></strong></Strong> (Virtual DOM, CRA incelemesi, JSX, component, props)</li>
           <li>React (state, Conditional Rendering)</li>
           <li>React ile Live Search Uygulaması</li>
         </ul>
       </Details>
+
+      <p>
+        <a href="https://docs.google.com/spreadsheets/d/1QIeF1E-gv8HGm-_QCs-1vf8SFDQPxiH0J251i6L8dKg/edit#gid=0" target="_blank" rel="noopener noreferrer">Ödevler'in Codepen linki olarak ekleneceği link</a>
+      </p>
     </section>
   </Layout>
 )
