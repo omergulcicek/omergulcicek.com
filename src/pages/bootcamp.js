@@ -11,10 +11,10 @@ const Bootcamp = () => (
     <SEO title="Bootcamp" />
 
     <section className="bootcamp">
-      <Title t1="Frontent" t2="Bootcamp" />
+      <Title t1="Frontend" t2="Bootcamp" />
 
       <Details>
-        <summary>12 Aralık 2020 - HTML, CSS Seçiciler</summary>
+        <summary><span>HTML, CSS Seçiciler</span> <date>12 Aralık 2020</date></summary>
 
         <p>
           Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini üzerinde durduk.
@@ -34,7 +34,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>13 Aralık 2020 - Font, Psd to CSS</summary>
+        <summary><span>Font, Psd to CSS</span> <date>13 Aralık 2020</date></summary>
 
         <p>
           Tasarımı koda döktüğümüz işlemin adı Psd to CSS.
@@ -70,7 +70,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>19 Aralık 2020 - Pseudo class</summary>
+        <summary><span>Pseudo class</span> <date>19 Aralık 2020</date></summary>
 
         <p>
           Ağırlıklı olarak CSS seçicilerin üstünde durduk.
@@ -86,7 +86,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>20 Aralık 2020 - BEM, SASS, variable</summary>
+        <summary><span>BEM, SASS, variable</span> <date>20 Aralık 2020</date></summary>
 
         <p>
           Kodu daha sağlıklı, anlaşılır ve kolay yazmamızı sağlayan teknolojileri tanıdık.
@@ -114,7 +114,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>26-27 Aralık 2020 - Psd to CSS</summary>
+        <summary><span>Psd to CSS</span> <date>26-27 Aralık 2020</date></summary>
 
         <p>
         <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını Semantic HTML, BEM, SASS ve Bootstrap kullanarak koda döktük.
@@ -156,7 +156,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>9 Ocak 2021 - Git, JavaScript Temeli</summary>
+        <summary><span>Git, JavaScript Temeli</span> <date>9 Ocak 2021</date></summary>
 
         <h6>İşlenen Konular;</h6>
 
@@ -185,7 +185,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary>10 Ocak 2021 - JavaScript</summary>
+        <summary><span>JavaScript</span> <date>10 Ocak 2021</date></summary>
 
         <h6>İşlenen Konular;</h6>
 
@@ -237,11 +237,46 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
+        <summary><span>JavaScript Pratik</span> <date>16 Ocak 2021</date></summary>
+
+        <p>
+          Geniş kapsamlı JavaScript örneği üzerinde duruldu ve genel tekrar yapıldı.
+        </p>
+      
+        <h6>Verilen Ödevler;</h6>
+        <ul>
+          <li><i>JavaScript Ödev - Tiyatro Oturma Planı</i><br />
+          <span>Kimin hangi sırada oturacağını çeken JavaScript kodu geliştirilecek.
+            <p>
+              <u>Yapılacaklar:</u>
+            </p>
+            <ul>
+              <li>Id, katılımcı ismi, tiyatroya gelecek mi checkbox'ı ve sıra numarasını alan bir input olacak.</li>
+              <li>Sıra numarası varsayılan olarak disabled gelecek.</li>
+              <li>Partiye gelecek mi checkbox'ı dinlenecek, eğer gelecek ise sıra numarası yazılabilir olacak.</li>
+              <li>Sırayı kaydet butonuna tıklanıldığında tablodan veriler okunulacak ve konsola yazdırılacak.</li>
+              <li>Çıktı içerisinde, id ve sıra numarasını tutan objeleri kapsayan bir array oluşacak.</li>
+            </ul>
+          </span>
+          </li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary><span>React'a Giriş</span> <date>17 Ocak 2021</date></summary>
+
+        <h6>İşlenen Konular;</h6>
+
+        <ul>
+          <li><Strong><strong>React</strong></Strong> (<a href="https://miro.medium.com/max/1220/1*xqGJ7fECmgHQQZq5AbgeIw.png" target="_blank" rel="noopener noreferrer">Virtual DOM</a>, <a href="https://omergulcicek.com/jsx-nedir" target="_blank" rel="noopener noreferrer">JSX</a>, <a href="https://omergulcicek.github.io/react/kurulum/reactjs-kurulumu" target="_blank" rel="noopener noreferrer">Create React App</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export" target="_blank" rel="noopener noreferrer">export default - import</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/component-ve-props" target="_blank" rel="noopener noreferrer">components - props</a>)</li>
+        </ul>
+      </Details>
+
+      <Details>
         <summary>Sıradaki işlenecek konular</summary>
 
         <ul>
-          <li><Strong><strong><a href="https://tr.reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">React</a></strong></Strong> (Virtual DOM, CRA incelemesi, JSX, component, props)</li>
-          <li>React (state, Conditional Rendering)</li>
+          <li>React (state, Conditional Rendering, Handling Events, Lifecycle, Hooks)</li>
           <li>React ile Live Search Uygulaması</li>
         </ul>
       </Details>

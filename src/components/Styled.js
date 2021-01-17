@@ -295,8 +295,9 @@ export const Details = styled.details`
   summary {
     border-radius: 4px;
     cursor: pointer;
-    display: block;
+    display: flex;
     outline: none;
+    flex-direction: row;
     position: relative;
     transition: var(--g-transition);
 
@@ -304,6 +305,12 @@ export const Details = styled.details`
       right: 8px;
       position: relative;
       transform: scale(0.8);
+    }
+
+    date {
+      color: var(--c-grey);
+      display: inline-block;
+      margin-left: auto;
     }
   }
 
