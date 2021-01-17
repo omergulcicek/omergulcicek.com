@@ -6,7 +6,7 @@ category: "Yazılım"
 medium: "https://omergulcicek.medium.com/mjml-ile-responsive-mail-template-4a49d507f0e"
 ---
 
-Frontent Developer'ların en büyük baş belası sanırım mail template kodlamaktır. Hem her CSS koduna izin vermiyor, hemde e-posta servisleri (*Gmail, Outlook, Yandex Mail vb.*) arasındaki destek uyumsuzlukları başınızı ağrıtıyor. Hele birde kodlayacağınız arayüzün responsive olması istendiyse vay halinize!
+Frontend Developer'ların en büyük baş belası sanırım mail template kodlamaktır. Hem her CSS koduna izin vermiyor, hemde e-posta servisleri (*Gmail, Outlook, Yandex Mail vb.*) arasındaki destek uyumsuzlukları başınızı ağrıtıyor. Hele birde kodlayacağınız arayüzün responsive olması istendiyse vay halinize!
  
 Neyse ki <a href="https://mjml.io/" target="_blank" rel="noreferrer noopener">MJML</a> var; MJML responsive mail arayüz kodlamayı oldukça kolay hale getiriyor. <a href="https://mjml.io/templates" target="_blank" rel="noreferrer noopener">Templates</a>  sayfasında oluşturdukları hazır şablonları kullanabilir yada sıfırdan mail template'inizi geliştirebilirsiniz.
 
