@@ -302,15 +302,20 @@ export const Details = styled.details`
     transition: var(--g-transition);
 
     &::-webkit-details-marker {
-      right: 8px;
+      right: 12px;
       position: relative;
       transform: scale(0.8);
+      top: 4px;
     }
 
     date {
       color: var(--c-grey);
-      display: inline-block;
+      display: none;
       margin-left: auto;
+
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
     }
   }
 
