@@ -15,7 +15,7 @@ export default function App({total}) {
           <img src={img} alt={title} loading="lazy" width="32" />
         </figure>
         <div>
-          <h2>{title}</h2>
+          <strong>{title}</strong>
           <p>
             {desc}
           </p>

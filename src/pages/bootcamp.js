@@ -280,13 +280,6 @@ const Bootcamp = () => (
           <li>React ile Live Search Uygulaması</li>
         </ul>
       </Details>
-
-      <br />
-      <br />
-
-      <p>
-        <a href="https://docs.google.com/spreadsheets/d/1QIeF1E-gv8HGm-_QCs-1vf8SFDQPxiH0J251i6L8dKg/edit#gid=0" target="_blank" rel="noopener noreferrer">Ödevler'in Codepen linki olarak ekleneceği link</a>
-      </p>
     </section>
   </Layout>
 )

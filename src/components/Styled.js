@@ -195,9 +195,10 @@ export const Footer = styled.footer`
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding: 0 24px 40px;
 
   nav {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     margin-top: 40px;
 
     a {
@@ -239,11 +240,10 @@ export const Footer = styled.footer`
 //#region
 export const Title = styled.h1`
   color: var(--c-theme);
-  font-size: 32px;
+  font-size: var(--f-size-h1);
   margin-bottom: 32px;
 
   @media (min-width: 992px) {
-    font-size: 40px;
     margin-bottom: 64px;
   }
 
@@ -355,12 +355,11 @@ export const H2Title = styled.h2`
   color: var(--c-theme);
   display: flex;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: var(--f-size-h2);
   margin-bottom: 32px;
   white-space: nowrap;
 
   @media (min-width: 992px) {
-    font-size: 40px;
     justify-content: flex-start;
     margin-bottom: 64px;
   }
@@ -518,12 +517,8 @@ export const AboutHangiKredi = styled(AboutA)`
 
 export const AboutTitle = styled.h2`
   color: var(--c-theme);
-  font-size: 28px;
+  font-size: var(--f-size-h2);
   margin-bottom: 24px;
-
-  @media (min-width: 992px) {
-    font-size: 36px;
-  }
 `
 
 export const AboutFigure = styled.figure`
@@ -556,7 +551,7 @@ export const BlogArticle = styled.article`
   a {
     border: none;
     color: var(--c-text);
-    font-size: 18px;
+    font-size: var(--f-size);
     line-height: 1;
     text-decoration: none;
     transition: var(--g-transition);
@@ -572,11 +567,10 @@ export const BlogArticle = styled.article`
   }
 
   div {
-    font-size: 16px;
+    font-size: var(--f-size-subtitle);
     font-weight: 100;
     
     @media (min-width: 992px) {
-      font-size: var(--f-size);
       margin-bottom: 4px;
     }
   }
@@ -658,6 +652,7 @@ export const MyDeskGrid = styled.div`
 
 //#region 3.6 Projects
 export const ProjectWrap = styled.a`
+  color: var(--c-text);
   border: none;
   display: block;
   margin-bottom: 8px;
@@ -665,14 +660,11 @@ export const ProjectWrap = styled.a`
 
   &:focus {
     outline: none;
+  }
 
-    article {
-      background-color: rgba(0, 0, 0, 0.2);
-      border-left-color: var(--c-theme);
-
-      &:before {
-        opacity: 1
-      }
+  &:hover {
+    strong {
+      color: var(--c-theme);
     }
   }
 `
@@ -685,29 +677,6 @@ export const ProjectItem = styled.article`
   margin-right: -32px;
   padding: 16px 32px;
   position: relative;
-  transition: background-color var(--g-transition);
-
-  &:before {
-    background-color: var(--c-theme);
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0px;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: var(--g-transition);
-    width: 4px;
-  }
-
-  &:hover {
-    background-color: rgba(0,0,0,0.05);
-    border-left-color: var(--c-theme);
-
-    &:before {
-      opacity: 1
-    }
-  }
 
   div {
     display: flex;
@@ -728,19 +697,26 @@ export const ProjectItem = styled.article`
     }
   }
 
-  h2 {
-    font-size: 20px;
+  strong {
+    font-size: var(--f-size);
     font-weight: normal;
     line-height: 1;
     margin: 0 32px 8px 0;
 
     @media (min-width: 992px) {
+      font-size: 22px;
       width: 264px;
     }
   }
 
   p {
     color: var(--c-grey);
+    font-size: 16px;
+    font-weight: 100;
+
+    @media (min-width: 992px) {
+      font-size: var(--f-size);
+    }
   }
 `
 

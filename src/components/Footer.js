@@ -46,7 +46,9 @@ export default function App() {
         </svg>
       </a>
     </nav>
-
-    <small>Son Güncellenme Tarihi: 1 Ocak 2021</small>
+    
+    <small>
+      Bu web sitesinin <a href="https://github.com/omergulcicek/omergulcicek.com" target="_blank" rel="noopener noreferrer">kaynak kodlarına</a> Github üzerinden ulaşabilirsiniz ❤️
+    </small>
   </Footer>
 }

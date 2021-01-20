@@ -4,11 +4,17 @@
   --c-text: #1b1b1b;
   --c-grey: #888;
   --f-size: 18px;
+  --f-size-h1: 32px;
+  --f-size-h2: 28px;
+  --f-size-subtitle: 16px;
   --g-transition: 240ms;
 }
 
 @media (min-width: 992px) {
   :root {
     --f-size: 20px;
+    --f-size-h1: 40px;
+    --f-size-h2: 36px;
+    --f-size-subtitle: var(--f-size);
   }
 }
