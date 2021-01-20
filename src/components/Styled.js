@@ -99,7 +99,6 @@ export const Logo = styled.div`
 
   span {
     color: var(--c-theme);
-    font-weight: 700;
   }
 `
 
@@ -733,7 +732,7 @@ export const ProjectDesc = styled.p`
 //#region
 export const BlogDetailsInfo = styled.div`
   color: var(--c-grey);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 18px;
   margin-top: 40px;
 

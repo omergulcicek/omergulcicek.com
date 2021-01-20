@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { AboutTitle, AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, AboutFigure, Svg, Hr } from "../components/Styled"
+import { AboutTitle, AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, AboutFigure, Svg, Hr, H2Title } from "../components/Styled"
 
 import SEO from "../components/Seo"
 import Layout from "../components/Layout"
@@ -35,7 +35,9 @@ const About = () => (
         <img src="" alt="" loading="lazy" />
       </AboutFigure>
 
-      <AboutTitle>Eğitim & Seminer</AboutTitle>
+      <H2Title>
+        <div>Eğitim <span>& Seminer</span></div>
+      </H2Title>
 
       <p>
         Bildiklerimi başkalarına aktarmayı seviyorum.
@@ -55,7 +57,9 @@ const About = () => (
 
       <Hr />
 
-      <AboutTitle>Hakkımda birkaç şey</AboutTitle>
+      <H2Title>
+        <div>Hakkımda <span>Birkaç Şey</span></div>
+      </H2Title>
 
       <ul>
         <li>Minimalist yaşam felsefesini seviyorum.</li>
@@ -68,7 +72,9 @@ const About = () => (
 
       <Hr />
 
-      <AboutTitle>Çalışma masam</AboutTitle>
+      <H2Title>
+        <div>Çalışma <span>Masam</span></div>
+      </H2Title>
 
       <p>
         Kullandığım ekipmanları özenle seçiyorum ve harika vakit geçiriyorum. <Link to="/desk/">Çalışma masamı inceleyin.</Link>
