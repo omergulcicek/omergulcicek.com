@@ -199,6 +199,7 @@ export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   padding: 0 24px 40px;
+  text-align: center;
 
   nav {
     margin-bottom: 40px;
@@ -462,7 +463,6 @@ export const Button = styled.a`
 //#region 3.2 About
 export const AboutA = styled.a`
   background-color: transparent;
-  border: none;
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
@@ -471,6 +471,10 @@ export const AboutA = styled.a`
   padding: 2px;
   text-decoration: none;
   transition: var(--g-transition);
+
+  &[href] {
+    border: none;
+  }
 
   &:focus,
   &:hover {
