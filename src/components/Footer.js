@@ -1,4 +1,5 @@
 import React from "react"
+import ReactCirclePageBar from "./ReactCirclePageBar"
 import { Footer } from "./Styled"
 
 export default function App() {
@@ -47,15 +48,7 @@ export default function App() {
       </a>
     </nav>
 
-    <a className="page-progress" onClick={() => window.scrollTo(0, 0)}>
-      <svg className="circle-bar" viewBox="-1 -1 102 102" fill="transparent">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style={{"transition": "strokeDashoffset 10ms linear 0s", "strokeDasharray": "307.919, 307.919", "strokeDashoffset": "0"}}></path>
-      </svg>
-
-      <svg role="img" viewBox="0 0 448 512">
-        <path fill="currentColor" d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
-      </svg>
-    </a>
+    <ReactCirclePageBar options={{ "size": "80px" }} />
     
     <small>
       Bu web sitesinin <a href="https://github.com/omergulcicek/omergulcicek.com" target="_blank" rel="noopener noreferrer">kaynak kodlarına</a> Github üzerinden ulaşabilirsiniz ❤️
