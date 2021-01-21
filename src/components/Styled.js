@@ -25,10 +25,13 @@ export const Header = styled.header`
   background-color: var(--c-background);
   border-bottom: 1px solid transparent;
   border-top: 4px solid var(--c-theme);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
   padding-bottom: 8px;
   padding-top: 8px;
   position: fixed;
-  top: 0;
+  top: -100;
+  transform: translateY(0);
+  transition: var(--g-transition);
   width: 100%;
   z-index: 10;
 
@@ -38,9 +41,10 @@ export const Header = styled.header`
     padding-top: 24px;
   }
 
-  &.active {
+  &.is-active {
+    box-shadow: none;
     border-bottom-color: rgba(0, 0, 0, .2);
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
+    transform: translateY(-100%);
   }
 
   section {
@@ -651,11 +655,14 @@ export const MyDeskGrid = styled.div`
 
 //#region 3.6 Projects
 export const ProjectWrap = styled.a`
-  color: var(--c-text);
-  border: none;
   display: block;
   margin-bottom: 8px;
   text-decoration: none;
+
+  &[href] {
+    color: var(--c-text);
+    border: none;
+  }
 
   &:focus {
     outline: none;

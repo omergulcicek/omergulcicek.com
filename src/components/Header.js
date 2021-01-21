@@ -2,17 +2,39 @@ import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import { Brand } from "../components"
 import { Header, Menu } from "./Styled"
+import pageProgress from "../utilities/pageProgress"
 
 export default function App() {
   useEffect(
     () => {
-      document.addEventListener("scroll", function(e) {
-        const header = document.getElementsByTagName("header")[0].classList
-        const top = window.pageYOffset
 
-        top > 50
-        ? header.add("active")
-        : header.remove("active")
+      pageProgress()
+
+      let lastScroll = 0;
+      const headerActiveClass = "is-active";
+
+      document.addEventListener("scroll", () => {
+        const progressBar = document.querySelectorAll(".page-progress")[0].classList
+        const header = document.getElementsByTagName("header")[0]
+
+        pageProgress()
+        const currentScroll = window.pageYOffset
+
+        if (currentScroll <= 0) {
+          header.classList.remove(headerActiveClass)
+          return
+        }
+
+        if(currentScroll > lastScroll && header.className.indexOf(headerActiveClass) == -1) {
+          progressBar.add("is-active")
+          header.classList.add(headerActiveClass)
+        }
+        else if (currentScroll < lastScroll && header.className.indexOf(headerActiveClass) != -1) {
+          progressBar.remove("is-active")
+          header.classList.remove(headerActiveClass)
+        }
+
+        lastScroll = currentScroll
       });
     }
   )
