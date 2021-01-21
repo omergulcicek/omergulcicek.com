@@ -849,10 +849,12 @@ export const BlogDetailsContent = styled.article`
   }
 
   h2 {
+    color: var(--c-theme);
     font-size: 28px;
   }
 
   h3 {
+    color: var(--c-theme);
     font-size: 24px;
   }
 
@@ -877,6 +879,8 @@ export const BlogDetailsContent = styled.article`
 
   pre {
     border-radius: 8px;
+    font-size: 90%;
+    line-height: 1.4;
     margin-bottom: 32px;
     margin: 32px 0;
     overflow: auto;
@@ -886,6 +890,14 @@ export const BlogDetailsContent = styled.article`
       margin: 56px -96px;
       padding: 24px;
     }
+  }
+
+  code {
+    background-color: rgba(35, 209, 96, 0.1);
+    border-radius: 4px;
+    color: var(--c-theme);
+    font-size: 90%;
+    padding: 4px 8px;
   }
 `
 
