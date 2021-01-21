@@ -87,7 +87,7 @@ li a {
   overflow-wrap: break-word;
 }
 
-a[href] {
+a {
   border-bottom: 3px solid #b7ffd0;
   color: var(--c-theme);
   font-size: inherit;
@@ -96,7 +96,7 @@ a[href] {
   transition: var(--g-transition);
 }
 
-a[href]:focus, a[href]:hover {
+a:focus, a:hover {
   border-color: var(--c-theme);
 }
 
@@ -130,6 +130,7 @@ img {
 }
 
 .page-progress {
+  border: none;
   border-radius: 100%;
   bottom: 100px;
   -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
