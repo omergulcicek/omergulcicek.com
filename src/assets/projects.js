@@ -1,10 +1,10 @@
 export default function Projects (){
   return [
     {
-      "link": "https://github.com/omergulcicek/react-circle-page-bar",
+      "link": "https://github.com/omergulcicek/react-page-progress-bar",
       "img": "https://omergulcicek.com/img/npm.png",
-      "title": "React Circle Page Bar",
-      "desc": "Sayfadaki konumu dairesel bir progress bar'da gösterir"
+      "title": "React Page Progress Bar",
+      "desc": "Sayfadaki konumu dairesel bir progress bar'da gösterir ve tıklanıldığında üste çıkar"
     },
     {
       "link": "https://gith1ub.com/omergulcicek/turkuaz.com",
