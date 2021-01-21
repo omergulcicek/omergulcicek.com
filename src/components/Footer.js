@@ -1,5 +1,5 @@
 import React from "react"
-import ReactCirclePageBar from "./ReactCirclePageBar"
+import ReactCirclePageBar from "react-circle-page-bar"
 import { Footer } from "./Styled"
 
 export default function App() {
@@ -47,8 +47,8 @@ export default function App() {
         </svg>
       </a>
     </nav>
-
-    <ReactCirclePageBar options={{ "size": "80px" }} />
+    
+    <ReactCirclePageBar />
     
     <small>
       Bu web sitesinin <a href="https://github.com/omergulcicek/omergulcicek.com" target="_blank" rel="noopener noreferrer">kaynak kodlarına</a> Github üzerinden ulaşabilirsiniz ❤️

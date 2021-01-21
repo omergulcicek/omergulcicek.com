@@ -92,11 +92,3 @@ img {
     transform: scale(1.025);
   }
 }
-
-@media (min-width: 992px) {
-  #circle-page-bar-wrap.is-active {
-    opacity: 1 !important;
-    pointer-events: all !important;
-    transform: scale(1) !important
-  }
-}
