@@ -262,6 +262,8 @@ export const Svg = styled.svg`
   left: -25%;
   pointer-events: none;
   position: absolute;
+  stroke: rgba(0, 0, 0, 0.4);
+  stroke-width: 4px;
   top: -120px;
   width: 80%;
   z-index: -1;

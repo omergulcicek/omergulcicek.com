@@ -1,6 +1,12 @@
 export default function Projects (){
   return [
     {
+      "link": "https://github.com/omergulcicek/react-circle-page-bar",
+      "img": "https://omergulcicek.com/img/npm.png",
+      "title": "React Circle Page Bar",
+      "desc": "Sayfadaki konumu dairesel bir progress bar'da gösterir"
+    },
+    {
       "link": "https://gith1ub.com/omergulcicek/turkuaz.com",
       "img": "https://omergulcicek.com/img/turkuazcss.png",
       "title": "Turkuaz",
@@ -41,12 +47,6 @@ export default function Projects (){
       "img": "https://omergulcicek.com/img/npm.png",
       "title": "Article Time Ago",
       "desc": "Belirtilen tarih ile anlık tarih arasındaki süreyi sözel olarak yazar"
-    },
-    {
-      "link": "https://github.com/omergulcicek/reading-time",
-      "img": "https://omergulcicek.com/img/npm.png",
-      "title": "Reading Time",
-      "desc": "Makalenin kelime sayısına göre ortalama okunma süresini hesaplar"
     }
   ]
 }
