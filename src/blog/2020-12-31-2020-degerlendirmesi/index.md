@@ -104,7 +104,7 @@ Ayrıca 2020 için GitHub katkılarım:
 
 Son yıllarda hayatıma kattığım en güzel yeniliklerden birisi satranç olmuştu. 2019 yılında başladığım satrançta, düzenli oyun ve turnuva takipleri sayesinde oldukça ilerledim. Yılın başında en yüksek **1086 elo** (satranç puanım) olmuş ve yeni yıl hedef puanımı 1250 üstü olarak belirlemiştim. Puan ilerledikçe maçlar zorlanmaya başladığından bu hiçte kolay bir süreç olmuyor. 2020 sonu itibariyle satrançta **1293 elo**ya ulaşarak hedefimi geçtim.
 
-Ayrıca 25 Aralık tarihinde Türkiye çapı ilk satranç turnuvama katıldım ve 43. oldum.
+Yıl içerisinde toplam 977 maçta 479 galibiyet (*49.0% kazanma oranı*) elde ettim. Ayrıca 25 Aralık tarihinde Türkiye çapı ilk satranç turnuvama katıldım ve 43. oldum.
 
 ![2020 Satranç İstatistiğim](../../assets/img/blog/2020-12-31/chess-2020.jpg)
 
