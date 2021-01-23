@@ -23,12 +23,12 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li><Strong><strong>HTML etiketleri (html, head, body, title, <a href="http://www.tasarimveyazilim.com/html-charset-nedir-ve-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">UTF-8</a>, <a href="https://www.aramamotoru.com/html-lang-etiketi-nedir-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">lang="tr"</a>, h1, p, span, a, img, table)</strong></Strong></li>
+          <li>HTML etiketleri (html, head, body, title, <a href="http://www.tasarimveyazilim.com/html-charset-nedir-ve-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">UTF-8</a>, <a href="https://www.aramamotoru.com/html-lang-etiketi-nedir-nasil-kullanilir/" target="_blank" rel="noopener noreferrer">lang="tr"</a>, h1, p, span, a, img, table)</li>
           <li><a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_blank" rel="noopener noreferrer">DOCTYPE nedir?</a></li>
-          <li><Strong><a href="https://en.wikipedia.org/wiki/Document_Object_Model#/media/File:DOM-model.svg" target="_blank" rel="noopener noreferrer">DOM nedir?</a></Strong></li>
+          <li><a href="https://en.wikipedia.org/wiki/Document_Object_Model#/media/File:DOM-model.svg" target="_blank" rel="noopener noreferrer">DOM nedir?</a></li>
           <li><a href="https://fatihhayrioglu.com/meta-viewport-etiketi" target="_blank" rel="noopener noreferrer">meta viewport nedir?</a></li>
           <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank" rel="noopener noreferrer">Semantic HTML nedir?</a></li>
-          <li><Strong><strong>CSS seçiciler - <a href="https://fatihhayrioglu.com/cssde-tanimlamalar-ve-etkinliklerispecificity/" target="_blank" rel="noopener noreferrer">id, class, !important</a> - <a href="https://www.youtube.com/watch?v=YmiMpFaNAx4" target="_blank" rel="noopener noreferrer">inline, inline-block, block</a> - <a href="https://hakantasan.com/index/makaleler/14/css-padding-nedir-margin-nedir" target="_blank" rel="noopener noreferrer">margin, padding</a></strong></Strong></li>
+          <li>CSS seçiciler - <a href="https://fatihhayrioglu.com/cssde-tanimlamalar-ve-etkinliklerispecificity/" target="_blank" rel="noopener noreferrer">id, class, !important</a> - <a href="https://www.youtube.com/watch?v=YmiMpFaNAx4" target="_blank" rel="noopener noreferrer">inline, inline-block, block</a> - <a href="https://hakantasan.com/index/makaleler/14/css-padding-nedir-margin-nedir" target="_blank" rel="noopener noreferrer">margin, padding</a></li>
           <li><a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">CSS kodunu hangi tarayıcı hangi versiyonda destekliyor?</a></li>
         </ul>
       </Details>
@@ -43,11 +43,11 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li><Strong><strong><a href="https://www.youtube.com/watch?v=AbO1dp_VtGU" target="_blank" rel="noopener noreferrer">Psd to CSS</a></strong></Strong></li>
+          <li><a href="https://www.youtube.com/watch?v=AbO1dp_VtGU" target="_blank" rel="noopener noreferrer">Psd to CSS</a></li>
           <li><a href="https://i.stack.imgur.com/C7oir.png" target="_blank" rel="noopener noreferrer">box-sizing nedir?</a></li>
           <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_attselector_form" target="_blank" rel="noopener noreferrer">CSS attribute seçici</a></li>
           <li><a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_placeholder" target="_blank" rel="noopener noreferrer">CSS ::placeholder seçici</a></li>
-          <li><Strong><a href="https://www.youtube.com/watch?v=Bf5DCpbeTlQ" target="_blank" rel="noopener noreferrer">Google DevTools</a></Strong></li>
+          <li><a href="https://www.youtube.com/watch?v=Bf5DCpbeTlQ" target="_blank" rel="noopener noreferrer">Google DevTools</a></li>
           <li><a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Font</a> - <a href="https://webcesi.com/web-tasarim/google-fonts-nedir-nasil-kullanilir/"  target="_blank" rel="noopener noreferrer">Google Font nasıl kullanılır?</a></li>
           <li><a href="https://github.com/necolas/normalize.css/" target="_blank" rel="noopener noreferrer">normalize.css</a> - <a href="https://medium.com/@10ursabanoglu/reset-css-normalize-css-23be4ce74ea6" target="_blank" rel="noopener noreferrer">reset.css ve normalize.css nedir?</a></li>
           <li><a href="https://github.com/omergulcicek/css-stil-rehberi" target="_blank" rel="noopener noreferrer">CSS stil rehberi</a></li>
@@ -80,8 +80,8 @@ const Bootcamp = () => (
 
         <ul>
           <li><a href="https://roadmap.sh/frontend" target="_blank" rel="noopener noreferrer">Frontend Roadmap</a> - (Yol haritası)</li>
-          <li><Strong><strong><a href="https://www.youtube.com/watch?v=_FLV6X0druY" target="_blank" rel="noopener noreferrer">CSS position</a> - (relative, absolute, fixed)</strong></Strong></li>
-          <li><Strong><strong><a href="https://fatihhayrioglu.com/pseudo-siniflari-ve-pseudo-elementleri/" target="_blank" rel="noopener noreferrer">CSS seçiciler</a> -  (:hover, :focus, :nth-child, <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_nth-child_odd_even" target="_blank" rel="noopener noreferrer">:nth-child(odd)</a> ::before, ::after)</strong></Strong></li>
+          <li><a href="https://www.youtube.com/watch?v=_FLV6X0druY" target="_blank" rel="noopener noreferrer">CSS position</a> - (relative, absolute, fixed)</li>
+          <li><a href="https://fatihhayrioglu.com/pseudo-siniflari-ve-pseudo-elementleri/" target="_blank" rel="noopener noreferrer">CSS seçiciler</a> -  (:hover, :focus, :nth-child, <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_nth-child_odd_even" target="_blank" rel="noopener noreferrer">:nth-child(odd)</a> ::before, ::after)</li>
         </ul>
       </Details>
 
@@ -96,9 +96,9 @@ const Bootcamp = () => (
 
         <ul>
           <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_var" target="_blank" rel="noopener noreferrer">CSS variable</a></li>
-          <li><Strong><a href="http://getbem.com/naming/" target="_blank" rel="noopener noreferrer">BEM</a></Strong></li>
-          <li><Strong><strong><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS Flexbox - (flex, direction, justify-content, align-items)</a></strong></Strong></li>
-          <li><Strong><a href="https://sass-lang.com/documentation/style-rules" target="_blank" rel="noopener noreferrer">SASS</a> - (<a href="https://sass-lang.com/documentation/style-rules#nesting" target="_blank" rel="noopener noreferrer">nesting</a>, <a href="https://sass-lang.com/documentation/variables" target="_blank" rel="noopener noreferrer">variable</a>)</Strong></li>
+          <li><a href="http://getbem.com/naming/" target="_blank" rel="noopener noreferrer">BEM</a></li>
+          <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS Flexbox - (flex, direction, justify-content, align-items)</a></li>
+          <li><a href="https://sass-lang.com/documentation/style-rules" target="_blank" rel="noopener noreferrer">SASS</a> - (<a href="https://sass-lang.com/documentation/style-rules#nesting" target="_blank" rel="noopener noreferrer">nesting</a>, <a href="https://sass-lang.com/documentation/variables" target="_blank" rel="noopener noreferrer">variable</a>)</li>
         </ul>
 
         <h6>Kullanılan Eklentiler;</h6>
@@ -124,11 +124,11 @@ const Bootcamp = () => (
 
         <ul>
           <li><a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background_hero" target="_blank" rel="noopener noreferrer">CSS'te background-image</a></li>
-          <li><Strong><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener noreferrer">CSS'te flex-direction</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer">atomic design</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://medium.com/@protechman/mobile-first-yakla%C5%9F%C4%B1m-461c223cfb9a" target="_blank" rel="noopener noreferrer">Mobile first kavramı</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_ex1" target="_blank" rel="noopener noreferrer">@media query</a></strong></Strong></li>
-          <li><Strong><strong><a href="https://getbootstrap.com/docs/4.0/layout/grid/#mix-and-match" target="_blank" rel="noopener noreferrer">Bootstrap grid system</a></strong></Strong> - (<a href="https://sadikturan.com/bootstrap/bootstrap-grids/1201" target="_blank" rel="noopener noreferrer">Grid sistemi kullanımı</a>)</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener noreferrer">CSS'te flex-direction</a></li>
+          <li><a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer">atomic design</a></li>
+          <li><a href="https://medium.com/@protechman/mobile-first-yakla%C5%9F%C4%B1m-461c223cfb9a" target="_blank" rel="noopener noreferrer">Mobile first kavramı</a></li>
+          <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_ex1" target="_blank" rel="noopener noreferrer">@media query</a></li>
+          <li><a href="https://getbootstrap.com/docs/4.0/layout/grid/#mix-and-match" target="_blank" rel="noopener noreferrer">Bootstrap grid system</a> - (<a href="https://sadikturan.com/bootstrap/bootstrap-grids/1201" target="_blank" rel="noopener noreferrer">Grid sistemi kullanımı</a>)</li>
         </ul>
 
         <h6>Verilen Ödevler;</h6>
@@ -161,8 +161,8 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li><Strong><strong><a href="https://rogerdudler.github.io/git-guide/index.tr.html" target="_blank" rel="noopener noreferrer">Git</a></strong></Strong> - (master, checkout, branch, add, commit, push, merge, pull, fetch, conflict)</li>
-          <li><Strong><strong><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a></strong></Strong> (script tag'i, <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank" rel="noopener noreferrer">değişkenler</a> -<a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" rel="noopener noreferrer">array</a> - <a href="https://www.w3schools.com/js/js_booleans.asp" target="_blank" rel="noopener noreferrer">booleans</a>, <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank" rel="noopener noreferrer">if/else</a>, <a href="https://www.w3schools.com/js/js_loop_for.asp">for</a>, log, debugger, promp)</li>
+          <li><a href="https://rogerdudler.github.io/git-guide/index.tr.html" target="_blank" rel="noopener noreferrer">Git</a> - (master, checkout, branch, add, commit, push, merge, pull, fetch, conflict)</li>
+          <li><a href="https://tr.javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript</a> (script tag'i, <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank" rel="noopener noreferrer">değişkenler</a> -<a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" rel="noopener noreferrer">array</a> - <a href="https://www.w3schools.com/js/js_booleans.asp" target="_blank" rel="noopener noreferrer">booleans</a>, <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank" rel="noopener noreferrer">if/else</a>, <a href="https://www.w3schools.com/js/js_loop_for.asp">for</a>, log, debugger, promp)</li>
         </ul>
 
         <h6>Verilen Ödevler;</h6>
@@ -190,7 +190,7 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li><Strong><strong>JavaScript</strong></Strong> (<a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" rel="noopener noreferrer">Events</a>, dir, <a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank" rel="noopener noreferrer">forEach</a>, <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" rel="noopener noreferrer">function</a>, <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp" target="_blank" rel="noopener noreferrer">classList </a>, <a href="https://www.w3schools.com/jsref/prop_node_innertext.asp" target="_blank" rel="noopener noreferrer">innerText</a>, <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">innerHTML</a>)</li>
+          <li>JavaScript (<a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" rel="noopener noreferrer">Events</a>, dir, <a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank" rel="noopener noreferrer">forEach</a>, <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" rel="noopener noreferrer">function</a>, <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp" target="_blank" rel="noopener noreferrer">classList </a>, <a href="https://www.w3schools.com/jsref/prop_node_innertext.asp" target="_blank" rel="noopener noreferrer">innerText</a>, <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">innerHTML</a>)</li>
         </ul>
       
         <h6>Verilen Ödevler;</h6>
@@ -268,16 +268,49 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li><Strong><strong>React</strong></Strong> (<a href="https://miro.medium.com/max/1220/1*xqGJ7fECmgHQQZq5AbgeIw.png" target="_blank" rel="noopener noreferrer">Virtual DOM</a>, <a href="https://omergulcicek.com/jsx-nedir" target="_blank" rel="noopener noreferrer">JSX</a>, <a href="https://omergulcicek.github.io/react/kurulum/reactjs-kurulumu" target="_blank" rel="noopener noreferrer">Create React App</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export" target="_blank" rel="noopener noreferrer">export default - import</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/component-ve-props" target="_blank" rel="noopener noreferrer">components - props</a>)</li>
+          <li>React (<a href="https://miro.medium.com/max/1220/1*xqGJ7fECmgHQQZq5AbgeIw.png" target="_blank" rel="noopener noreferrer">Virtual DOM</a>, <a href="https://omergulcicek.com/jsx-nedir" target="_blank" rel="noopener noreferrer">JSX</a>, <a href="https://omergulcicek.github.io/react/kurulum/reactjs-kurulumu" target="_blank" rel="noopener noreferrer">Create React App</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export" target="_blank" rel="noopener noreferrer">export default - import</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/component-ve-props" target="_blank" rel="noopener noreferrer">components - props</a>)</li>
         </ul>
       </Details>
 
       <Details>
-        <summary>Sıradaki işlenecek konular</summary>
+        <summary><span>React</span> <date>23 Ocak 2021</date></summary>
+
+        <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li>React (state, Conditional Rendering, Handling Events, Lifecycle, Hooks)</li>
-          <li>React ile Live Search Uygulaması</li>
+          <li>React (<a href="https://omergulcicek.github.io/react/hizli-baslangic/state-ve-lifecycle" target="_blank" rel="noopener noreferrer">State</a>, <a href="https://reactjs.org/docs/hooks-reference.html" target="_blank" rel="noopener noreferrer">Hooks</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/sartli-render" target="_blank" rel="noopener noreferrer">Conditional Rendering</a>, <a href="https://dmitripavlutin.com/controlled-inputs-using-react-hooks/" target="_blank" rel="noopener noreferrer">Handling Event</a>)</li>
+        </ul>
+
+        <h6>Kullanılan Eklentiler;</h6>
+
+        <ul>
+          <li><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" target="_blank" rel="noopener noreferrer">React Developer Tools</a> - (DevTools'ta React componentlerini görmek için)</li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary><span>React Pratik, React Router</span> <date>24 Ocak 2021</date></summary>
+
+        <h6>İşlenen Konular;</h6>
+
+        <ul>
+          <li>React (<a href="https://reactjs.org/docs/hooks-reference.html#useeffect" target="_blank" rel="noopener noreferrer">Lifecycle</a>)</li>
+          <li><a href="https://github.com/omergulcicek/react-router" target="_blank" rel="noopener noreferrer">React Router</a></li>
+        </ul>
+
+        <h6>Verilen Ödevler;</h6>
+        <ul>
+          <li><i>React Ödev - Objeden header oluşturma ve state pratikleri</i><br />
+          <span>Verilen <code>headerLinks</code> dizisi ile <a href="https://github.com/omergulcicek/bootcamp/blob/master/React/README.md#react-%C3%B6devi" target="_blank" rel="noopener noreferrer">istenilen layout ve ve isimlerde</a> geliştirme tamamlanacaktır.
+            <p>
+              <u>Yapılacaklar:</u>
+            </p>
+            <ul>
+              <li><code>headerLinks</code> dizisi <code>&lt;Header /&gt;</code> componentine parametre olarak gönderilecek ve menü renderlanacak.</li>
+              <li><code>&lt;input&gt;</code>'a girilen değer anlık olarak <code>&lt;UserCard /&gt;</code> componentine gönerilip, ekrana yazılacak.</li>
+            </ul>
+          </span>
+          </li>
         </ul>
       </Details>
     </section>

@@ -37,7 +37,7 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-live": "^2.2.0",
-    "react-page-progress-bar": "^1.0.0",
+    "react-page-progress-bar": "^1.0.1",
     "styled-components": "^5.2.1",
     "typeface-merriweather": "^1.1.13",
     "typeface-montserrat": "^1.1.13"
@@ -47,7 +47,7 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/omergulcicek/omergulcicek.com",
   "keywords": [
     "gatsby"
   ],
@@ -55,7 +55,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/omergulcicek/omergulcicek.com.git"
   },
   "scripts": {
     "dev": "gatsby develop",

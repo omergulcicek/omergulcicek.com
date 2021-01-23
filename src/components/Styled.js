@@ -891,14 +891,6 @@ export const BlogDetailsContent = styled.article`
       padding: 24px;
     }
   }
-
-  code {
-    background-color: rgba(35, 209, 96, 0.1);
-    border-radius: 4px;
-    color: var(--c-theme);
-    font-size: 90%;
-    padding: 4px 8px;
-  }
 `
 
 export const BlogDetailsPagination = styled.ul`

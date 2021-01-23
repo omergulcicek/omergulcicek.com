@@ -92,3 +92,11 @@ img {
     transform: scale(1.025);
   }
 }
+
+code {
+  background-color: rgba(35, 209, 96, 0.1);
+  border-radius: 4px;
+  color: var(--c-theme);
+  font-size: 90%;
+  padding: 4px 8px;
+}
