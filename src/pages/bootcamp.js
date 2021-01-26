@@ -158,6 +158,10 @@ const Bootcamp = () => (
       <Details>
         <summary><span>Git, JavaScript Temeli</span> <date>9 Ocak 2021</date></summary>
 
+        <p>
+          Git ile temel komutları gösterip JavaScript temellerini gördük.
+        </p>
+
         <h6>İşlenen Konular;</h6>
 
         <ul>
@@ -265,6 +269,10 @@ const Bootcamp = () => (
       <Details>
         <summary><span>React'a Giriş</span> <date>17 Ocak 2021</date></summary>
 
+        <p>
+          CRA ile React temellerini gördük.
+        </p>
+
         <h6>İşlenen Konular;</h6>
 
         <ul>
@@ -278,7 +286,7 @@ const Bootcamp = () => (
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li>React (<a href="https://omergulcicek.github.io/react/hizli-baslangic/state-ve-lifecycle" target="_blank" rel="noopener noreferrer">State</a>, <a href="https://reactjs.org/docs/hooks-reference.html" target="_blank" rel="noopener noreferrer">Hooks</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/sartli-render" target="_blank" rel="noopener noreferrer">Conditional Rendering</a>, <a href="https://dmitripavlutin.com/controlled-inputs-using-react-hooks/" target="_blank" rel="noopener noreferrer">Handling Event</a>)</li>
+          <li>React (<a href="https://reactjs.org/docs/hooks-reference.html" target="_blank" rel="noopener noreferrer">Hooks</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/state-ve-lifecycle" target="_blank" rel="noopener noreferrer">State</a>,  <a href="https://omergulcicek.github.io/react/hizli-baslangic/sartli-render" target="_blank" rel="noopener noreferrer">Conditional Rendering</a>, <a href="https://dmitripavlutin.com/controlled-inputs-using-react-hooks/" target="_blank" rel="noopener noreferrer">Handling Event</a>)</li>
         </ul>
 
         <h6>Kullanılan Eklentiler;</h6>
@@ -289,13 +297,14 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>React Pratik, React Router</span> <date>24 Ocak 2021</date></summary>
+        <summary><span>React Router, JSON Server, Axios</span> <date>24 Ocak 2021</date></summary>
 
         <h6>İşlenen Konular;</h6>
 
         <ul>
-          <li>React (<a href="https://reactjs.org/docs/hooks-reference.html#useeffect" target="_blank" rel="noopener noreferrer">Lifecycle</a>)</li>
           <li><a href="https://github.com/omergulcicek/react-router" target="_blank" rel="noopener noreferrer">React Router</a></li>
+          <li><a href="https://www.npmjs.com/package/json-server" target="_blank" rel="noopener noreferrer">JSON Server</a></li>
+          <li><a href="https://www.npmjs.com/package/axios" target="_blank" rel="noopener noreferrer">Axios</a></li>
         </ul>
 
         <h6>Verilen Ödevler;</h6>
@@ -311,6 +320,38 @@ const Bootcamp = () => (
             </ul>
           </span>
           </li>
+        </ul>
+      </Details>
+
+      <Details>
+        <summary><span>Bitirme Projesi</span> <date>Son Gün: 28 Şubat 2021</date></summary>
+
+        <p>
+          Bitirme projesi olarak daha önce geliştirdiğimiz <a href="https://www.uistore.design/items/covid-19-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Covid19 tasarımı React ile koda dökülecek</a>. İsteyen kişiler şartları sağlayan ve işlediğimiz konuları içeren herhangi bir başka proje geliştirilebilir.
+        </p>
+
+        <h6>Proje Şartları;</h6>
+
+        <ul>
+          <li>Proje <b>Create React App</b> başlangıç kiti ile koda dökülecek.</li>
+          <li><b>Semantic HTML</b> etiketleri kullanılacak.</li>
+          <li>CSS kısmında <b>SASS/LESS</b> yada <b>Styled Component</b> kullanılabilir (<i>Düz CSS kullanmayın</i>).</li>
+          <li>SASS yada LESS ile geliştirenler <b>BEM</b> kullanmalı.</li>
+          <li><b>Bootstrap</b> grid sistemi ile mobil öncelikli geliştirilecek.</li>
+          <li><b>React Router</b> ile geliştirilecek (<i>Tasarımdaki section'ları farklı sayfalarda geliştirin</i>).</li>
+          <li>Statik yazılar hariç her yazı, <a href="https://github.com/omergulcicek/bootcamp/blob/master/React/README.md#bitirme-projesi" target="_blank" rel="noopener noreferrer">verilen obje render'lanarak</a> ekrana yazılacak.</li>
+          <li><b>Hook</b> (<i>useState ve useEffect</i>) kullanın.</li>
+          <li>Proje <b>GitHub'a atılacak</b>.</li>
+        </ul>
+
+        <h6>Bitirme Projesi Hakkında Notlar;</h6>
+
+        <ul>
+          <li>Tasarımın mobil ve tablet versiyonu olmadığı için buralarda esnek davranmanız serbest. Yazı boyutları ve margin/padding'leri azaltarak mobile göre sığdırmaya çalışabilirsiniz. Fakat mobilde (<i>arkaplan görselleri hariç</i>) herhangi bir başlık, yazı yada resmi gizlemeyin.</li>
+          <li>Projeyi bitirdikten sonra proje şartlarını sağlayıp sağlamadığını mutlaka kontrol edin.</li>
+          <li>Tasarımda farklı farklı butonlar mevcut. Standart olması açısından 1 tanesini component olarak geliştirip, her yere bu componenti çağırın.</li>
+          <li>Tasarımı 100% tutturmaya çalışmaya gerek yok, bir kaç px'lik kaymalar yada farklar sorun değil, göze batan çok büyük hatalar olmasın kafi; önemli olan React yapısı.</li>
+          <li>Sizlere verilen diziyi projenize dahil edip, axios (<i>yada herhangi bir istek atan kütüphane ile</i>) ile ulaşıp kullanın.</li>
         </ul>
       </Details>
     </section>
