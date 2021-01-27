@@ -14,7 +14,7 @@ const Bootcamp = () => (
       <Title t1="Frontend" t2="Bootcamp" />
 
       <Details>
-        <summary><span>HTML, CSS Seçiciler</span> <date>12 Aralık 2020</date></summary>
+        <summary><div><span>HTML, CSS Seçiciler</span> <date>12 Aralık 2020</date></div></summary>
 
         <p>
           Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini üzerinde durduk.
@@ -34,7 +34,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>Font, Psd to CSS</span> <date>13 Aralık 2020</date></summary>
+        <summary><div><span>Font, Psd to CSS</span> <date>13 Aralık 2020</date></div></summary>
 
         <p>
           Tasarımı koda döktüğümüz işlemin adı Psd to CSS.
@@ -70,7 +70,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>Pseudo class</span> <date>19 Aralık 2020</date></summary>
+        <summary><div><span>Pseudo class</span> <date>19 Aralık 2020</date></div></summary>
 
         <p>
           Ağırlıklı olarak CSS seçicilerin üstünde durduk.
@@ -86,7 +86,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>BEM, SASS, variable</span> <date>20 Aralık 2020</date></summary>
+        <summary><div><span>BEM, SASS, variable</span> <date>20 Aralık 2020</date></div></summary>
 
         <p>
           Kodu daha sağlıklı, anlaşılır ve kolay yazmamızı sağlayan teknolojileri tanıdık.
@@ -114,7 +114,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>Psd to CSS</span> <date>26-27 Aralık 2020</date></summary>
+        <summary><div><span>Psd to CSS</span> <date>26-27 Aralık 2020</date></div></summary>
 
         <p>
         <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını Semantic HTML, BEM, SASS ve Bootstrap kullanarak koda döktük.
@@ -156,7 +156,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>Git, JavaScript Temeli</span> <date>9 Ocak 2021</date></summary>
+        <summary><div><span>Git, JavaScript Temeli</span> <date>9 Ocak 2021</date></div></summary>
 
         <p>
           Git ile temel komutları gösterip JavaScript temellerini gördük.
@@ -189,7 +189,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>JavaScript</span> <date>10 Ocak 2021</date></summary>
+        <summary><div><span>JavaScript</span> <date>10 Ocak 2021</date></div></summary>
 
         <h6>İşlenen Konular;</h6>
 
@@ -241,7 +241,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>JavaScript Pratik</span> <date>16 Ocak 2021</date></summary>
+        <summary><div><span>JavaScript Pratik</span> <date>16 Ocak 2021</date></div></summary>
 
         <p>
           Geniş kapsamlı JavaScript örneği üzerinde duruldu ve genel tekrar yapıldı.
@@ -267,7 +267,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>React'a Giriş</span> <date>17 Ocak 2021</date></summary>
+        <summary><div><span>React'a Giriş</span> <date>17 Ocak 2021</date></div></summary>
 
         <p>
           CRA ile React temellerini gördük.
@@ -281,7 +281,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>React</span> <date>23 Ocak 2021</date></summary>
+        <summary><div><span>React</span> <date>23 Ocak 2021</date></div></summary>
 
         <h6>İşlenen Konular;</h6>
 
@@ -297,7 +297,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>React Router, JSON Server, Axios</span> <date>24 Ocak 2021</date></summary>
+        <summary><div><span>React Router, JSON Server, Axios</span> <date>24 Ocak 2021</date></div></summary>
 
         <h6>İşlenen Konular;</h6>
 
@@ -324,7 +324,7 @@ const Bootcamp = () => (
       </Details>
 
       <Details>
-        <summary><span>Bitirme Projesi</span> <date>Son Gün: 28 Şubat 2021</date></summary>
+        <summary><div><span>Bitirme Projesi</span> <date>Son Gün: 28 Şubat 2021</date></div></summary>
 
         <p>
           Bitirme projesi olarak daha önce geliştirdiğimiz <a href="https://www.uistore.design/items/covid-19-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Covid19 tasarımı React ile koda dökülecek</a>. İsteyen kişiler şartları sağlayan ve işlediğimiz konuları içeren herhangi bir başka proje geliştirilebilir.

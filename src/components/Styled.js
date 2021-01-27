@@ -287,36 +287,43 @@ export const H3 = styled.h3`
 
 export const Details = styled.details`
   border-left: 2px solid transparent;
-  padding: 16px 16px 16px 5px;
-
-  @media (min-width: 992px) {
-    padding-bottom: 24px;
-    padding-top: 24px;
-  }
 
   &:not(:first-of-type) {
     border-top: 1px solid rgba(0,0,0,0.05);
   }
 
+  div {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 100%;
+  }
+
   summary {
     border-radius: 4px;
     cursor: pointer;
-    display: flex;
     outline: none;
-    flex-direction: row;
-    position: relative;
-    transition: var(--g-transition);
+    transition: color var(--g-transition);
+    user-select: none;
+    padding-bottom: 16px;
+    padding-top: 16px;
+
+    @media (min-width: 992px) {
+      padding-bottom: 24px;
+      padding-top: 24px;
+    }
+
+    &:hover {
+      color: var(--c-theme);
+    }
 
     &::-webkit-details-marker {
-      right: 12px;
-      position: relative;
-      transform: scale(0.8);
-      top: 4px;
+      display: none;
     }
 
     date {
       color: var(--c-grey);
       display: none;
+      font-weight: 100;
       margin-left: auto;
 
       @media (min-width: 768px) {
@@ -341,9 +348,7 @@ export const Details = styled.details`
   }
 
   &[open] {
-    summary {
-      margin-bottom: 16px;
-    }
+    padding-bottom: 16px;
   }
 `
 
@@ -532,16 +537,11 @@ export const AboutTitle = styled.h2`
 
 export const AboutFigure = styled.figure`
   background-color: #eee;
-  display: none;
-  height: 810px;
+  height: 400px;
   margin: 32px -32px;
 
   @media (min-width: 992px) {
     margin: 64px -96px
-  }
-
-  @media (min-width: 1400px) {
-    margin: 120px -128px
   }
 
   img {
@@ -590,7 +590,7 @@ export const BlogArticle = styled.article`
 export const DeskFigure = styled.figure`
   background-color: #eee;
   display: none;
-  height: 810px;
+  height: 400px;
   margin: 0 -32px 32px;
 
   @media (min-width: 992px) {
