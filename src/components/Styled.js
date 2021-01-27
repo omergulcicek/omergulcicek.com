@@ -349,6 +349,10 @@ export const Details = styled.details`
 
   &[open] {
     padding-bottom: 16px;
+
+    summary {
+      color: var(--c-theme);
+    }
   }
 `
 
@@ -538,6 +542,7 @@ export const AboutTitle = styled.h2`
 export const AboutFigure = styled.figure`
   background-color: #eee;
   height: 400px;
+  display: none;
   margin: 32px -32px;
 
   @media (min-width: 992px) {
