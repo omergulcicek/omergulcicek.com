@@ -52,7 +52,7 @@ export default function MyDesk (){
       "img": "airpods-pro",
       "title": "Airpods Pro",
       "desc": "Kablosuz Kulaklık",
-      "done": false
+      "done": true
     },
   ]
 }
