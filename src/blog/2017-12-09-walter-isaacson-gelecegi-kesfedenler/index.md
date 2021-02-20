@@ -2,7 +2,7 @@
 date: "2017-12-09"
 path: "/walter-isaacson-gelecegi-kesfedenler"
 title: "Walter Isaacson - Geleceği Keşfedenler"
-category: "Kitap Yorumu"
+category: "Kitap Değerlendirmesi"
 ---
 
 Yazılım alanındaki kişilerin birçoğunun idolleri arasında Steve Jobs üstadımız bulunuyor. Bu tür kişilerin hayatları, yaptıkları hep ilgi çekici olmuştur ve örnek alınmıştır. Bende **Steve Jobs**, **Bill Gates** gibi insanların yaptıklarını yakınen takip ediyorum.
@@ -15,5 +15,4 @@ Kitap toplam 12 bölümden oluşuyor. İlk bölümde bilgisayarın anası olarak
 
 Okuduğum kitap ve izlediğim filmlerde isimleri pek aklımda tutamam, hikayeye odaklanırım. Geleceği Keşfedenler kitabında sürüsüyle isim geçtiği için bunları öğrenmem (*yada öğrenememem*) beni zorladı. Kişileri unutunca hikayeye odaklanmam zorlaştı. Birkaç sayfa okuduktan sonra ya bu Charles Babbage kimdi, neyi bulmuştu, ne yapmıştı derken kitaba bir türlü ısınamadım. O yüzden ilk sayfaları hızlıca geçip biran önce Bill Gates, Steve Jobs'un anlatıldığı yerlere gelmek istedim. Sayfa sayısıda daha önce okuduğum kitaplara nazaran biraz fazla (*400 sayfanın üzerinde*), pek alışık olmadığım bir durum. O yüzden kitap beni biraz sıktı diyebilirim. Fakat yinede başladığım kitabı yarım bırakmak olmaz diyerek sonunu getirdim.
 
-Kitabı tavsiye eder miyim? Benim gibi uzun kitapları okumaya alışık değilseniz ve isim hafızanız zayıf ise pek tavsiye etmem. Aksi durumda; kitapta bu sektöre yön veren sürüyle insanın yaşantıları ve yazışmalarına yer verilmiş, buda size birçok şey katacaktr. Kitaba puanım **6**/10
-
+Kitabı tavsiye eder miyim? Benim gibi uzun kitapları okumaya alışık değilseniz ve isim hafızanız zayıf ise pek tavsiye etmem. Aksi durumda; kitapta bu sektöre yön veren sürüyle insanın yaşantıları ve yazışmalarına yer verilmiş, buda size birçok şey katacaktr. Kitaba puanım **6**/10.
