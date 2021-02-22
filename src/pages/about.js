@@ -19,7 +19,7 @@ const About = () => (
       </p>
 
       <p>
-        <AboutTurkuaz href="https://turkuazcss.com/" target="_blank" rel="noopener noreferrer">Turkuaz</AboutTurkuaz> ve <AboutTurkceDokuman href="https://turkcedokuman.com/" target="_blank" rel="noopener noreferrer">Türkçe Doküman</AboutTurkceDokuman> projeleri başta olmak üzere çalışmalarımın tamamı açık kaynak. Türkçe kaynak sayısını arttırmak adına yazılım alanında çeviriler yapmaktayım. Kendimi sürekli güncel tutmak ve bildiklerimi aktarabilmek adına makale <Link to="/blog/">yazıyorum</Link>.
+        <AboutTurkuaz href="https://turkuazcss.com/" target="_blank" rel="noopener noreferrer">Turkuaz</AboutTurkuaz> ve <AboutTurkceDokuman href="https://turkcedokuman.com/" target="_blank" rel="noopener noreferrer">Türkçe Doküman</AboutTurkceDokuman> projeleri başta olmak üzere çalışmalarımın tamamı açık kaynak. Türkçe kaynak sayısını arttırmak adına yazılım alanında çeviriler yapmaktayım. Kendimi sürekli güncel tutmak ve bildiklerimi aktarabilmek adına makale <Link to="/">yazıyorum</Link>.
       </p>
 
       <p>
