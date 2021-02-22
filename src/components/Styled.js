@@ -551,7 +551,7 @@ export const AboutFigure = styled.figure`
 export const BlogArticle = styled.article`
   color: var(--c-grey);
   line-height: 30px;
-  margin-top: 36px;
+  margin-bottom: 36px;
 
   a {
     border: none;
@@ -664,6 +664,7 @@ export const ProjectWrap = styled.a`
   &[href] {
     color: var(--c-text);
     border: none;
+    margin-bottom: 32px;
   }
 
   &:focus {
@@ -681,9 +682,6 @@ export const ProjectItem = styled.article`
   border-radius: 4px;
   display: flex;
   flex-direction: row;
-  margin-left: -32px;
-  margin-right: -32px;
-  padding: 16px 32px;
   position: relative;
 
   div {
@@ -692,10 +690,9 @@ export const ProjectItem = styled.article`
   }
 
   figure {
-    margin: 0 24px 8px 0;
+    margin: 0 8px 8px 0;
 
     @media (min-width: 992px) {
-      margin: 0;
       width: 64px;
     }
 

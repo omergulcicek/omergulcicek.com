@@ -4,7 +4,6 @@ import "isomorphic-fetch"
 
 import { ProjectsItem } from "../components"
 import Layout from "../components/Layout"
-import Title from "../components/Title"
 import SEO from "../components/Seo"
 
 export default function App() {
@@ -12,8 +11,6 @@ export default function App() {
     <SEO title="Projelerim" />
 
     <section className="projects">
-      <Title t1="En İyi" t2="Projelerim" />
-
       <ProjectsItem />
 
       <ProjectDesc>

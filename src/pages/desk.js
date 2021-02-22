@@ -3,7 +3,6 @@ import { H2Title, DeskFigure, MyDeskGrid } from "../components/Styled"
 import myDesk from "../assets/desk"
 
 import Layout from "../components/Layout"
-import Title from "../components/Title"
 import SEO from "../components/Seo"
 
 export default function App() {
@@ -29,8 +28,6 @@ export default function App() {
     <SEO title="Çalışma Masam" />
 
     <section className="desk">
-      <Title t1="Çalışma" t2="Masam" />
-      
       <DeskFigure>
         <img src="" alt="" loading="lazy" />
       </DeskFigure>

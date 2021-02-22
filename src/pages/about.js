@@ -4,15 +4,12 @@ import { AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, AboutFigu
 
 import SEO from "../components/Seo"
 import Layout from "../components/Layout"
-import Title from "../components/Title"
 
 const About = () => (
   <Layout>
     <SEO title="Hakkımda" />
 
     <section className="about">
-      <Title t1="Benim" t2="Hakkımda" />
-
       <p>
         Merhaba! Ben Ömer Gülçiçek. { new Date().getFullYear() - 1993 } yaşındayım ve İstanbul'da yaşıyorum.
       </p>

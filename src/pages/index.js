@@ -6,7 +6,6 @@ import { ArticleItem, } from "../components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import Title from "../components/Title"
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,8 +18,6 @@ class BlogIndex extends React.Component {
         <SEO title="Blog" />
 
         <section className="blog">
-          <Title t1="Tüm" t2="Yazılarım" />
-
           <ArticleItem data={posts} />
 
           <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
