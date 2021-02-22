@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { AboutTitle, AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, AboutFigure, Svg, Hr, H2Title } from "../components/Styled"
+import { AboutTurkuaz, AboutTurkceDokuman, AboutMail, AboutHangiKredi, AboutFigure, Svg, Hr, H2Title, GetInTouch, Button } from "../components/Styled"
 
 import SEO from "../components/Seo"
 import Layout from "../components/Layout"
@@ -87,6 +87,26 @@ const About = () => (
       <Svg viewBox="0 0 200 200">
         <path fill="var(--c-theme)" d="M45.3,-52.9C60.9,-40.9,77.3,-28.7,79.5,-14.3C81.7,0.1,69.8,16.8,57.7,29.1C45.6,41.5,33.3,49.7,18.3,58.8C3.4,67.9,-14.3,77.9,-29.3,74.9C-44.3,71.9,-56.5,55.8,-59.2,39.7C-62,23.6,-55.2,7.5,-51.7,-8.5C-48.1,-24.5,-47.8,-40.5,-39.7,-53.9C-31.6,-67.2,-15.8,-77.8,-0.5,-77.2C14.9,-76.6,29.7,-64.9,45.3,-52.9Z" transform="translate(100 100)" />
       </Svg>
+
+      <Hr />
+    </section>
+     
+    <section className="get-in-touch">
+      <GetInTouch>
+        <h3>Site mi yaptırmak istiyorsunuz?</h3>
+        <p>Tüm detayları içeren bir mail atabilirsin.</p>
+
+        <Button href="mailto:iletisim@omergulcicek.com">
+          <span>iletisim@omergulcicek.com</span>
+
+          <svg width="14" height="10">
+            <g stroke="currentColor" fill="none" fillRule="evenodd">
+              <path d="M8.5.964L13.036 5.5 8.5 10.036"></path>
+              <path d="M12.5 5.5H.5" strokeLinecap="square"></path>
+            </g>
+          </svg>
+        </Button>
+      </GetInTouch>
     </section>
   </Layout>
 )

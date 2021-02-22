@@ -1,11 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { H2Title, Hr, GetInTouch, Button, AboutFigure } from "../components/Styled"
+import { graphql } from "gatsby"
+import { Svg } from "../components/Styled"
 
-import { ArticleItem, ProjectsItem } from "../components"
+import { ArticleItem, } from "../components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
+import Title from "../components/Title"
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,58 +16,16 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Ana Sayfa" />
+        <SEO title="Blog" />
 
-        <section className="hero">
-          <AboutFigure>
-            <img src="" alt="" loading="lazy" />
-          </AboutFigure>
-        </section>
-        
         <section className="blog">
-          <H2Title>
-            <div>Son <span>5 Yazı</span></div>
-            
-            <Link to="/blog/">Tümünü Göster
-              <svg width="14" height="10"><g stroke="currentColor" fill="none" fillRule="evenodd"><path d="M8.5.964L13.036 5.5 8.5 10.036"></path><path d="M12.5 5.5H.5" strokeLinecap="square"></path></g></svg>
-            </Link>
-          </H2Title>
+          <Title t1="Tüm" t2="Yazılarım" />
 
           <ArticleItem data={posts} />
 
-          <Hr />
-        </section>
-
-        <section className="projects">
-          <H2Title>
-            <div>Son <span>5 Proje</span></div>
-            
-            <Link to="/projects/">Tümünü Göster
-              <svg width="14" height="10"><g stroke="currentColor" fill="none" fillRule="evenodd"><path d="M8.5.964L13.036 5.5 8.5 10.036"></path><path d="M12.5 5.5H.5" strokeLinecap="square"></path></g></svg>
-            </Link>
-          </H2Title>
-
-          <ProjectsItem total="5" />
-
-          <Hr />
-        </section>
-      
-        <section className="get-in-touch">
-          <GetInTouch>
-            <h3>Site mi yaptırmak istiyorsunuz?</h3>
-            <p>Tüm detayları içeren bir mail atabilirsin.</p>
-
-            <Button href="mailto:iletisim@omergulcicek.com">
-              <span>iletisim@omergulcicek.com</span>
-
-              <svg width="14" height="10">
-                <g stroke="currentColor" fill="none" fillRule="evenodd">
-                  <path d="M8.5.964L13.036 5.5 8.5 10.036"></path>
-                  <path d="M12.5 5.5H.5" strokeLinecap="square"></path>
-                </g>
-              </svg>
-            </Button>
-          </GetInTouch>
+          <Svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="var(--c-theme)" d="M36.9,-45.4C45.9,-36.4,50,-23,50.9,-10.1C51.8,2.7,49.5,15,42.9,23.4C36.4,31.8,25.7,36.4,12.6,46.3C-0.5,56.2,-16,71.3,-24.4,67.9C-32.7,64.4,-34,42.4,-39.1,26.2C-44.2,9.9,-53.1,-0.5,-55.8,-14.1C-58.5,-27.8,-55.1,-44.7,-44.8,-53.4C-34.4,-62.2,-17.2,-62.8,-1.6,-60.8C13.9,-58.9,27.9,-54.4,36.9,-45.4Z" transform="translate(100 100)" />
+          </Svg>
         </section>
       </Layout>
     )
@@ -82,7 +41,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

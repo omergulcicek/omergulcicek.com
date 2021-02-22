@@ -124,11 +124,7 @@ export const Menu = styled.nav`
     position: relative;
     text-decoration: none;
     transition: var(--g-transition);
-
-    &:first-child {
-      margin-right: 8px;
-    }
-
+    
     @media (min-width: 992px) {
       margin-right: 16px;
     }
@@ -158,14 +154,6 @@ export const Menu = styled.nav`
       border-bottom-color: var(--c-theme);
       color: var(--c-theme);
     }
-
-    &:first-of-type {
-      display: block;
-
-      @media (min-width: 992px) {
-        display: none
-      }
-    }
   }
 `
 //#endregion
@@ -173,7 +161,7 @@ export const Menu = styled.nav`
 //#region 1.2 Main
 export const Main = styled.main`
   flex: 1;
-  margin: 120px auto 160px;
+  margin: 120px auto 0;
   max-width: calc(100% - 48px);
   position: relative;
   width: 100%;
@@ -196,10 +184,13 @@ export const Main = styled.main`
 //#region 1.3 Footer
 export const Footer = styled.footer`
   align-items: center;
+  border-top: 2px solid rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  padding: 0 24px 40px;
+  padding: 24px 24px 40px;
+  margin-top: 120px;
   text-align: center;
+  width: 100%;
 
   nav {
     margin-bottom: 40px;
@@ -420,8 +411,8 @@ export const GetInTouch = styled.div`
   @media (min-width: 992px) {
     font-size: 40px;
     line-height: 48px;
-    padding-bottom: 240px;
-    padding-top: 240px;
+    padding-bottom: 160px;
+    padding-top: 160px;
   }
 
   h3 {
