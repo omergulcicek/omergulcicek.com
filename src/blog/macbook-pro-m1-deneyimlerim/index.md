@@ -8,6 +8,9 @@ medium: "https://omergulcicek.medium.com/macbook-pro-m1-deneyimlerim-489f5742995
 
 Apple Kasım 2020 itibari ile kendi üretimi olan **M1** işlemcisini duyurdu; Macbook Air/Pro/Mini modellerini de M1 CPU ile baştan geliştirildi. Duyurulduğu ilk günden beri çok sıkı takip ettim. Gerek makaleler ve inceleme videoları olsun, gerek olası uyumsuzluk ve ilk olmasının acemiliği ile kötü bir ürün çıkma ihtimallerini araştırdım. Mağazalardan satın alma sürecine, program uyumsuzluklarından kullanım deneyimlerime bir çok konudan bahsedeceğim.
 
+
+![Macbook Pro M1](../../assets/img/blog/2021-02-22/macbook-pro.jpg)
+
 Bu makalede aşağıdaki başlıklar var:
 
 - <a href="#gurgencler">Gürgençler Mağaza Deneyimlerim</a>
