@@ -28,10 +28,10 @@ export const Title = () => {
   return <TitleComp />
 }
 
-export const ArticleItem = ({data}) => {
-  return <ArticleItemComp data={data} />
+export const ArticleItem = ({...props}) => {
+  return <ArticleItemComp {...props} />
 }
 
-export const ProjectsItem = ({total}) => {
-  return <ProjectsItemComp total={total} />
+export const ProjectsItem = ({...props}) => {
+  return <ProjectsItemComp {...props} />
 }

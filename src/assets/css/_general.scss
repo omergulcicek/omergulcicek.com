@@ -121,3 +121,9 @@ code {
     transform: scale(1)
   }
 }
+
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

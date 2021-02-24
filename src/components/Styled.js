@@ -550,8 +550,31 @@ export const AboutFigure = styled.figure`
 //#region 3.3 Blog
 export const BlogArticle = styled.article`
   color: var(--c-grey);
+  display: inline-block;
   line-height: 30px;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
+  padding-left: 40px;
+  position: relative;
+  width: 100%;
+    
+  @media (min-width: 992px) {
+    margin-bottom: 48px;
+    padding-left: 64px;
+    width: 40%;
+  }
+
+  b {
+    color: rgb(230, 230, 230);
+    font-size: 24px;
+    left: 0;
+    user-select: none;
+    position: absolute;
+    top: 18px;
+    
+    @media (min-width: 992px) {
+      font-size: 40px;
+    }
+  }
 
   a {
     border: none;
@@ -574,10 +597,6 @@ export const BlogArticle = styled.article`
   div {
     font-size: var(--f-size-subtitle);
     font-weight: 100;
-    
-    @media (min-width: 992px) {
-      margin-bottom: 4px;
-    }
   }
 `
 //#endregion

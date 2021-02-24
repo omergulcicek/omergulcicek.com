@@ -7,16 +7,20 @@ import { BlogArticle } from "../components/Styled"
 
 class ArticleItem extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data, id } = this.props;
+
+    console.dir(this.props)
 
     return (<>
-    {data.map(({ node }) => {
+    {data.map(({ node }, i) => {
         const { title, date, category, path } = node.frontmatter
         const { slug } = node.fields
 
         return (
           <BlogArticle key={slug}>
-            <div><span title={convertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
+            <div>
+              <b>{id - i}</b>
+              <span title={convertDate(date)}>{ articleTimeAgo.date(date) }</span> • <span>{ category }</span></div>
             <Link to={ path }>{ title }</Link>
           </BlogArticle>
         )
