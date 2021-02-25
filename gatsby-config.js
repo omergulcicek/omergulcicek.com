@@ -86,13 +86,6 @@ module.exports = {
         theme_color: `#2196f3`
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`limelight`, `Inter\:200,400,700`],
-        display: "swap",
-      },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`
   ],

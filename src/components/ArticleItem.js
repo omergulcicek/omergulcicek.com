@@ -7,10 +7,8 @@ import { BlogArticle } from "../components/Styled"
 
 class ArticleItem extends React.Component {
   render() {
-    const { data, id } = this.props;
-
-    console.dir(this.props)
-
+    const { data, id } = this.props
+    
     return (<>
     {data.map(({ node }, i) => {
         const { title, date, category, path } = node.frontmatter
