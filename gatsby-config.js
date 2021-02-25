@@ -89,7 +89,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`limelight`, `Rubik\:300,400,700`],
+        fonts: [`limelight`, `Inter\:200,400,700`],
         display: "swap",
       },
     },

@@ -74,7 +74,12 @@ export const Header = styled.header`
     display: none;
 
     a {
-      border: none;
+      border: 0;
+      font-size: 24px;
+      
+      span {
+        font-size: inherit;
+      }
     }
 
     @media (min-width: 992px) {
@@ -95,9 +100,7 @@ export const Header = styled.header`
 export const Logo = styled.div`
   a {
     color: var(--c-text);
-    font-size: 24px;
     letter-spacing: 0.2px;
-    line-height: 1;
     text-decoration: none;
   }
 
@@ -115,11 +118,9 @@ export const Menu = styled.nav`
     border-bottom: 2px solid transparent;
     color: var(--c-text);
     display: inline-block;
-    font-size: var(--f-size);
     font-weight: normal;
     margin-right: 4px;
     letter-spacing: 0.2px;
-    line-height: 1;
     padding: 12px 4px;
     position: relative;
     text-decoration: none;
@@ -235,7 +236,6 @@ export const Footer = styled.footer`
 //#region
 export const Title = styled.h1`
   color: var(--c-theme);
-  font-size: var(--f-size-h1);
   margin-bottom: 32px;
 
   @media (min-width: 992px) {
@@ -243,7 +243,8 @@ export const Title = styled.h1`
   }
 
   span {
-    color: var(--c-text)
+    color: var(--c-text);
+    font-size: inherit;
   }
 `
 
@@ -289,6 +290,11 @@ export const Details = styled.details`
     flex: 1 0 100%;
   }
 
+  b {
+    display: inline-block;
+    margin-top: 24px;
+  }
+
   summary {
     border-radius: 4px;
     cursor: pointer;
@@ -314,7 +320,6 @@ export const Details = styled.details`
     date {
       color: var(--c-grey);
       display: none;
-      font-weight: 100;
       margin-left: auto;
 
       @media (min-width: 768px) {
@@ -328,7 +333,6 @@ export const Details = styled.details`
   }
 
   h6 {
-    font-size: var(--f-size);
     margin-bottom: 16px;
   }
 
@@ -361,17 +365,17 @@ export const H2Title = styled.h2`
   color: var(--c-theme);
   display: flex;
   justify-content: space-between;
-  font-size: var(--f-size-h2);
   margin-bottom: 32px;
   white-space: nowrap;
 
   @media (min-width: 992px) {
     justify-content: flex-start;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
 
   span {
-    color: var(--c-text)
+    color: var(--c-text);
+    font-size: inherit;
   }
 
   a {
@@ -379,7 +383,6 @@ export const H2Title = styled.h2`
     border-radius: 8px;
     color: var(--c-text);
     display: inline-block;
-    font-size: 14px;
     font-weight: 400;
     margin-left: 32px;
     text-decoration: none;
@@ -402,32 +405,23 @@ export const H2Title = styled.h2`
 //#region 3.1 Home
 export const GetInTouch = styled.div`
   color: var(--c-text);
-  font-size: 20px;
-  line-height: 1.5;
   padding-bottom: 80px;
   padding-top: 80px;
   text-align: center;
 
   @media (min-width: 992px) {
-    font-size: 40px;
-    line-height: 48px;
     padding-bottom: 160px;
     padding-top: 160px;
   }
 
   h3 {
-    font-weight: 100;
-    margin: 0 0 12px;
+    font-size: clamp(1.913rem, calc( 12px + 2.475vw ), 2.587rem);
+    margin: 0 0 16px;
+    font-weight: 400;
   }
 
   p {
-    font-size: var(--f-size);
-    line-height: 28px;
     margin-bottom: 24px;
-
-    @media (min-width: 992px) {
-      font-size: 20px;
-    }
   }
 
   a {
@@ -439,8 +433,6 @@ export const Button = styled.a`
   color: var(--c-theme);
   cursor: pointer;
   display: inline-block;
-  font-size: var(--f-size);
-  line-height: 1;
   text-decoration: none;
   transition: var(--g-transition);
 
@@ -526,7 +518,6 @@ export const AboutHangiKredi = styled(AboutA)`
 
 export const AboutTitle = styled.h2`
   color: var(--c-theme);
-  font-size: var(--f-size-h2);
   margin-bottom: 24px;
 `
 
@@ -551,7 +542,6 @@ export const AboutFigure = styled.figure`
 export const BlogArticle = styled.article`
   color: var(--c-grey);
   display: inline-block;
-  line-height: 30px;
   margin-bottom: 24px;
   padding-left: 40px;
   position: relative;
@@ -567,26 +557,21 @@ export const BlogArticle = styled.article`
     color: rgb(230, 230, 230);
     font-size: 24px;
     left: 0;
-    user-select: none;
     position: absolute;
-    top: 18px;
+    top: 0;
+    user-select: none;
     
     @media (min-width: 992px) {
-      font-size: 40px;
+      font-size: 32px;
     }
   }
 
   a {
     border: none;
     color: var(--c-text);
-    font-size: var(--f-size);
-    line-height: 1;
+    font-size: clamp(1.125rem, calc( 12px + 0.900vw ), 1.350rem);
     text-decoration: none;
     transition: var(--g-transition);
-    
-    @media (min-width: 992px) {
-      font-size: 22px;
-    }
 
     &:focus,
     &:hover {
@@ -595,8 +580,8 @@ export const BlogArticle = styled.article`
   }
 
   div {
-    font-size: var(--f-size-subtitle);
-    font-weight: 100;
+    font-weight: 200;
+    margin-bottom: 8px;
   }
 `
 //#endregion
@@ -638,6 +623,7 @@ export const MyDeskGrid = styled.div`
 
     figure {
       margin: 0;
+      text-align: center;
 
       img {
         display: block;
@@ -650,18 +636,16 @@ export const MyDeskGrid = styled.div`
       }
 
       figcaption {
-        h5 {
+        b {
           color: var(--c-text);
-          font-size: 18px;
+          display: block;
+          font-size: clamp(0.900rem, calc( 12px + 0.360vw ), 1.012rem);
           font-weight: 400;
-          line-height: 24px;
-          margin: 0;
+          margin: 0 0 8px;
         }
 
         span {
           color: var(--c-grey);
-          font-size: 16px;
-          font-weight: 100;
         }
       }
     }
@@ -709,10 +693,10 @@ export const ProjectItem = styled.article`
   }
 
   figure {
-    margin: 0 8px 8px 0;
+    margin: 0 16px 8px 0;
 
     @media (min-width: 992px) {
-      width: 64px;
+      width: 48px;
     }
 
     img {
@@ -722,25 +706,16 @@ export const ProjectItem = styled.article`
   }
 
   strong {
-    font-size: var(--f-size);
     font-weight: normal;
-    line-height: 1;
     margin: 0 32px 8px 0;
 
     @media (min-width: 992px) {
-      font-size: 22px;
       width: 264px;
     }
   }
 
   p {
     color: var(--c-grey);
-    font-size: 16px;
-    font-weight: 100;
-
-    @media (min-width: 992px) {
-      font-size: var(--f-size);
-    }
   }
 `
 
@@ -748,7 +723,7 @@ export const ProjectDesc = styled.p`
   margin-top: 40px;
 
   @media (min-width: 992px) {
-  margin-top: 80px;
+    margin-top: 80px;
   }
 `
 //#endregion
@@ -757,8 +732,7 @@ export const ProjectDesc = styled.p`
 //#region
 export const BlogDetailsInfo = styled.div`
   color: var(--c-grey);
-  font-size: 15px;
-  line-height: 18px;
+  margin-bottom: 16px;
   margin-top: 40px;
 
   svg {
@@ -809,23 +783,17 @@ export const BlogDetailsInfo = styled.div`
 
   a,
   span {
-    margin-left: 8px;
-    margin-right: 8px;
+    font-size: clamp(0.900rem, calc( 12px + 0.360vw ), 1.012rem);
+    margin-left: 4px;
+    margin-right: 4px;
   }
 `
 
 export const BlogDetailsTitle = styled.h1`
   color: var(--c-theme);
-  font-size: 40px;
-  line-height: 56px;
   margin-bottom: 24px;
   margin-top: 8px;
   position: relative;
-
-  @media (min-width: 992px) {
-    font-size: 56px;
-    line-height: 72px;
-  }
 `
 
 export const BlogDetailsContent = styled.article`
@@ -833,7 +801,6 @@ export const BlogDetailsContent = styled.article`
   h3 {
     color: var(--c-text);
     font-weight: 400;
-    line-height: 1.3;
     margin-bottom: 12px;
     margin-top: 64px;
     scroll-margin-top: 140px;
@@ -862,12 +829,10 @@ export const BlogDetailsContent = styled.article`
 
   h2 {
     color: var(--c-theme);
-    font-size: 28px;
   }
 
   h3 {
     color: var(--c-theme);
-    font-size: 24px;
   }
 
   figcaption {
@@ -891,8 +856,6 @@ export const BlogDetailsContent = styled.article`
 
   pre {
     border-radius: 8px;
-    font-size: 90%;
-    line-height: 1.4;
     margin-bottom: 32px;
     margin: 32px 0;
     overflow: auto;
@@ -953,7 +916,6 @@ export const BlogDetailsPagination = styled.ul`
       span {
         color: rgba(0, 0, 0, 0.7);
         display: block;
-        font-size: 15px;
         margin-bottom: 8px;
       }
     }

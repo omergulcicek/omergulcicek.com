@@ -15,7 +15,7 @@ const About = () => (
       </p>
 
       <p>
-        Yazılım mühendisliği alanında lisans derecem var. Frontend Developer'ım; <AboutHangiKredi href="https://hangikredi.com/" target="_blank" rel="noopener noreferrer">hangikredi.com</AboutHangiKredi>'da uzaktan çalışıyorum. UI/UX alanında uzmanlaşmayı hedefliyorum. Kod benim için bir tutku.
+        Yazılım mühendisliği alanında lisans derecem var. Frontend Developer'ım; <AboutHangiKredi href="https://hangikredi.com/" target="_blank" rel="noopener noreferrer">hangikredi.com</AboutHangiKredi>'da çalışıyorum. UI/UX alanında uzmanlaşmayı hedefliyorum. Kod benim için bir tutku.
       </p>
 
       <p>

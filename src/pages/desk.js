@@ -16,7 +16,7 @@ export default function App() {
         <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} loading="lazy" />
 
         <figcaption>
-          <h5>{title}</h5>
+          <b>{title}</b>
           <span>{desc}</span>
         </figcaption>
       </figure>

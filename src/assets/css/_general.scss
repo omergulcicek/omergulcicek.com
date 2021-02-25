@@ -26,7 +26,7 @@ html {
 body {
   background-color: var(--c-background);
   color: var(--c-text);
-  font-family: "Rubik", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: var(--f-size);
   margin: 0;
   min-height: 100vh;
@@ -34,8 +34,29 @@ body {
   overflow-y: auto;
 }
 
+h1 {
+  font-size: clamp(1.913rem, calc( 12px + 2.475vw ), 2.587rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.575rem, calc( 12px + 1.800vw ), 2.025rem);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: clamp(1.282rem, calc( 12px + 1.350vw ), 1.688rem);
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: clamp(1.125rem, calc( 12px + 0.900vw ), 1.350rem);
+  line-height: 1.1;
+}
+
 p {
-  line-height: 1.7;
+  font-size: clamp(1.035rem, calc( 12px + 0.540vw ), 1.125rem);
+  line-height: 1.618;
   margin-bottom: 0;
   margin-top: 0;
 
@@ -44,8 +65,13 @@ p {
   }
 }
 
+span {
+  font-size: clamp(0.900rem, calc( 12px + 0.360vw ), 1.012rem);
+  line-height: 1.1;
+}
+
 li {
-  line-height: 1.5;
+  line-height: 1.618;
   margin-bottom: 16px;
   
   a {
@@ -54,7 +80,7 @@ li {
 }
 
 a {
-  border-bottom: 3px solid #b7ffd0;
+  border-bottom: 2px solid rgba(244, 67, 54, 0.3);
   color: var(--c-theme);
   font-size: inherit;
   text-decoration: none;
@@ -127,3 +153,4 @@ code {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+  
