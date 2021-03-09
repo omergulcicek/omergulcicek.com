@@ -1,8 +1,8 @@
 :root {
   --c-background: #fff;
-  --c-theme: #f44336;
+  --c-theme: #4360ff;
   --c-text: #1b1b1b;
-  --c-grey: #9e9e9e;
+  --c-grey: #585858;
   --f-size: 16px;
   --f-size-h1: 32px;
   --f-size-h2: 24px;
@@ -36,18 +36,21 @@
   font-family: 'Inter';
   src: url("../font/Inter-ExtraLight.ttf") format("truetype");
   font-weight: 200;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Inter';
   src: url("../font/Inter-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Inter';
   src: url("../font/Inter-Bold.ttf") format("truetype");
   font-weight: 700;
+  font-display: swap;
 }
 
 #___gatsby {
@@ -130,7 +133,7 @@ li a {
 }
 
 a {
-  border-bottom: 2px solid rgba(244, 67, 54, 0.3);
+  border-bottom: 2px solid rgba(67, 95, 255, 0.3);
   color: var(--c-theme);
   font-size: inherit;
   text-decoration: none;

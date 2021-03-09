@@ -76,14 +76,24 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ömer Gülçiçek`,
-        short_name: `omergulcicek`,
         description: `Hayallerimin ve hedeflerimin arkasından koşmaya devam edeceğim. Sevdiğim işi yapıyorum, bu sayede hayatımın sonuna kadar bir gün bile çalışmam gerekmiyor; tutkunuzu bulun ve işiniz iş olmaktan çıksın.`,
         lang: `tr`,
         display: `standalone`,
-        icon: `src/assets/img/favicon.png`,
+        icons: [
+          {
+            "src": "/src/assets/img/favicon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+          },
+          {
+            "src": "/src/assets/img/favicon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          }
+        ],
         start_url: `/`,
-        background_color: `#1b1b1b`,
-        theme_color: `#2196f3`
+        background_color: `#fff`,
+        theme_color: `#4360ff`
       },
     },
     `gatsby-plugin-offline`,

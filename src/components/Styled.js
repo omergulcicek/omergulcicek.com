@@ -97,17 +97,6 @@ export const Header = styled.header`
 `
 
 // 1.1.1 Brand
-export const Logo = styled.div`
-  a {
-    color: var(--c-text);
-    letter-spacing: 0.2px;
-    text-decoration: none;
-  }
-
-  span {
-    color: var(--c-theme);
-  }
-`
 
 // 1.1.2 Menu
 export const Menu = styled.nav`
@@ -554,9 +543,10 @@ export const BlogArticle = styled.article`
   }
 
   b {
-    color: rgb(230, 230, 230);
+    color: var(--c-text);
     font-size: 24px;
     left: 0;
+    opacity: 0.2;
     position: absolute;
     top: 0;
     user-select: none;
@@ -716,6 +706,7 @@ export const ProjectItem = styled.article`
 
   p {
     color: var(--c-grey);
+    font-weight: 100;
   }
 `
 
