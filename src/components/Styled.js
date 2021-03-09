@@ -532,28 +532,12 @@ export const BlogArticle = styled.article`
   color: var(--c-grey);
   display: inline-block;
   margin-bottom: 24px;
-  padding-left: 40px;
   position: relative;
   width: 100%;
     
   @media (min-width: 992px) {
     margin-bottom: 48px;
-    padding-left: 64px;
     width: 40%;
-  }
-
-  b {
-    color: var(--c-text);
-    font-size: 24px;
-    left: 0;
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    user-select: none;
-    
-    @media (min-width: 992px) {
-      font-size: 32px;
-    }
   }
 
   a {
