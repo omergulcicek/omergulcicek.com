@@ -470,21 +470,21 @@ export const AboutA = styled.a`
 
 export const AboutTurkuaz = styled(AboutA)`
   box-shadow: 0 1px 0 4px rgba(38,166,154,.1), inset 0 40px 0 rgba(38,166,154,.1);
-  color: #26a69a;
+  color: #175f58;
 
   &:focus,
   &:hover {
-    color: #26a69a;
+    color: #175f58;
   }
 `
 
 export const AboutTurkceDokuman = styled(AboutA)`
   box-shadow: 0 1px 0 4px rgba(244,67,54,.1), inset 0 40px 0 rgba(244,67,54,.1);
-  color: #f44336;
+  color: #a22b22;
 
   &:focus,
   &:hover {
-    color: #f44336;
+    color: #a22b22;
   }
 `
 
@@ -710,7 +710,7 @@ export const ProjectDesc = styled.p`
 export const BlogDetailsInfo = styled.div`
   color: var(--c-grey);
   margin-bottom: 16px;
-  margin-top: 40px;
+  margin-top: 32px;
 
   svg {
     vertical-align: middle;
@@ -719,6 +719,9 @@ export const BlogDetailsInfo = styled.div`
   a {
     color: var(--c-grey);
     border: none;
+    display: inline-block;
+    padding-bottom: 8px;
+    padding-top: 8px;
     text-decoration: none;
 
     &:focus,

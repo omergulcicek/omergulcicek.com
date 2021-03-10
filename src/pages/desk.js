@@ -29,7 +29,7 @@ export default function App() {
 
     <section className="desk">
       <DeskFigure>
-        <img src="" alt="" loading="lazy" />
+        {/* <img src="" alt="" loading="lazy" /> */}
       </DeskFigure>
 
       <H2Title>
