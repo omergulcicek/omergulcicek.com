@@ -13,7 +13,7 @@ export default function App() {
   desk.push(
     <article className={done ? "" : "disabled"} key={i}>
       <figure>
-        <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} loading="lazy" />
+        <img src={require(`./../assets/img/desk/${img}.png`)} alt={title} loading="lazy" width="100%" height="240" />
 
         <figcaption>
           <b>{title}</b>

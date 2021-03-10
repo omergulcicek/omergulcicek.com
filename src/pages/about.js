@@ -29,7 +29,7 @@ const About = () => (
       <Hr />
 
       <AboutFigure>
-        <img src="" alt="" loading="lazy" />
+        {/* <img src="" alt="" loading="lazy" /> */}
       </AboutFigure>
 
       <H2Title>
@@ -78,7 +78,7 @@ const About = () => (
       </p> 
 
       <AboutFigure>
-        <img src="" alt="" loading="lazy" />
+        {/* <img src="" alt="" loading="lazy" /> */}
       </AboutFigure>
 
       <Svg viewBox="0 0 200 200">

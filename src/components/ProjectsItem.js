@@ -9,10 +9,10 @@ export default function App({total}) {
   projects() !== null &&
   projects().slice(0, total).map(({ link, img, title, desc }, i) =>
   result.push(
-    <ProjectWrap href={link} target="_blank" rel="noopener noreferrer" key={i}>
+    <ProjectWrap href={link} title={title} target="_blank" rel="noopener noreferrer" key={i}>
       <ProjectItem>
         <figure>
-          <img src={img} alt={title} loading="lazy" width="32" />
+          <img src={img} alt={title} loading="lazy" width="32" height="auto" />
         </figure>
         <div>
           <strong>{title}</strong>

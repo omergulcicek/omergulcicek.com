@@ -287,11 +287,12 @@ export const Details = styled.details`
   summary {
     border-radius: 4px;
     cursor: pointer;
+    list-style-type: none;
     outline: none;
-    transition: color var(--g-transition);
-    user-select: none;
     padding-bottom: 16px;
     padding-top: 16px;
+    transition: color var(--g-transition);
+    user-select: none;
 
     @media (min-width: 992px) {
       padding-bottom: 24px;
@@ -302,7 +303,9 @@ export const Details = styled.details`
       color: var(--c-theme);
     }
 
-    &::-webkit-details-marker {
+    &::-webkit-details-marker,
+    &::marker {
+      content: "";
       display: none;
     }
 
@@ -497,11 +500,11 @@ export const AboutMail = styled(AboutA)`
 
 export const AboutHangiKredi = styled(AboutA)`
   box-shadow: 0 1px 0 4px rgba(242,103,34,.15), inset 0 40px 0 rgba(242,103,34,.15);
-  color: #f26722;
+  color: #983f12;
 
   &:focus,
   &:hover {
-    color: #f26722;
+    color: #983f12;
   }
 `
 
@@ -568,7 +571,6 @@ export const DeskFigure = styled.figure`
   margin: 0 -32px 32px;
 
   @media (min-width: 992px) {
-    display: block;
     margin: 0 -96px 64px
   }
 
