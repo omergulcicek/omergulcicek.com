@@ -81,12 +81,12 @@ module.exports = {
         display: `standalone`,
         icons: [
           {
-            "src": "https://omergulcicek.com/img/omergulcicek.png",
+            "src": "/img/omergulcicek.png",
             "type": "image/png",
             "sizes": "192x192"
           },
           {
-            "src": "https://omergulcicek.com/img/omergulcicek.png",
+            "src": "/img/omergulcicek.png",
             "type": "image/png",
             "sizes": "512x512"
           }
