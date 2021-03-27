@@ -217,4 +217,10 @@ code {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+hr {
+  border-top-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
 /*# sourceMappingURL=style.css.map */

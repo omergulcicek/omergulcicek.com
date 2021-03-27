@@ -19,13 +19,11 @@ export default function BlogPostTemplate (props) {
   
   useEffect(() => {
     document.querySelectorAll("article .gatsby-resp-image-wrapper:not(.loaded)").forEach(imgWrap => {
-      const img = imgWrap.querySelectorAll("img")[0];
-      const figcaption = document.createElement("figcaption");
-      const figcaptionText = document.createTextNode(img.alt);
-      figcaption.appendChild(figcaptionText);
-      imgWrap.parentNode.insertBefore(figcaption, imgWrap.nextSibling);
-      
-      imgWrap.querySelectorAll("a")[0].outerHTML = imgWrap.querySelectorAll("a")[0].outerHTML.replace("<a","<div").replace("/a>","/div>");
+      // const img = imgWrap.querySelectorAll("img")[0];
+      // const figcaption = document.createElement("figcaption");
+      // const figcaptionText = document.createTextNode(img.alt);
+      // figcaption.appendChild(figcaptionText);
+      // imgWrap.parentNode.insertBefore(figcaption, imgWrap.nextSibling);
       
       setTimeout(() => {
         imgWrap.classList.add("loaded");

@@ -710,7 +710,6 @@ export const ProjectDesc = styled.p`
 export const BlogDetailsInfo = styled.div`
   color: var(--c-grey);
   margin-bottom: 16px;
-  margin-top: 32px;
 
   svg {
     vertical-align: middle;
@@ -813,6 +812,10 @@ export const BlogDetailsContent = styled.article`
 
   h3 {
     color: var(--c-theme);
+  }
+
+  h2 + h3 {
+    margin-top: 32px;
   }
 
   figcaption {
