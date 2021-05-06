@@ -16,7 +16,7 @@ Tam hatırlamıyorum ama sanırım ortaokulun son zamanlarından beri gözlük k
 
 Öncelikle gözlük camlarımın kaç numara olduğu ölçülüp, makineden gözlerime bakıp hava üflendi. Ardından birisi mavi, diğeri kırmızı ışık veren makineler ile kornea kalınlığı gibi bilgileri çıktı veren bir makinede ölçümler yapıldı. Ardından doktor eşliğinde uzaktaki rakamları okuyup gözlerimin kaç numara miyop olduğu belirlendi.
 
-Son kullandığım gözlüklerin numaraları sağ 2.50 ve sol 2.00'dı. Muayenede sağ göz 3.15, sol göz 2.75 numara miyop çıktı. Kornea kalınlığınıza göre çeşitli lazer operasyonlarına uygunluğunuz belirleniyor. Benim gözlerim tüm lazerlere uyumluydu ve doktorum korneayı kesip lazer yapacağını belirtti. Göze bıçak değeceği için bunu pek istemediğimi belirttiğimde, no touch lazerde karar kıldık.
+Son kullandığım gözlüklerin numaraları sağ 2.50 ve sol 2.00'dı. Muayenede sağ göz 3.50, sol göz 3.00 numara miyop çıktı (Ek olarak sağ göz 0.50, sol göz 0.75 astigmat). Kornea kalınlığınıza göre çeşitli lazer operasyonlarına uygunluğunuz belirleniyor. Benim gözlerim tüm lazerlere uyumluydu ve doktorum korneayı kesip lazer yapacağını belirtti. Göze bıçak değeceği için bunu pek istemediğimi belirttiğimde, no touch lazerde karar kıldık.
 
 ## Ameliyat Öncesi
 
@@ -59,3 +59,11 @@ Umarım göz rahatsızlığı yaşayan herkes bir gün sağlığına kavuşabili
 Benim gibi bilgisayar başında çalışan kişiler no touch lazerde ameliyat sonrası ilk 3 gün sadece bilgisayardan değil, hayattan uzak kalacağının bilincinde olmalı. Diğer lazer yöntemlerinde bu süre azalabiliyor. Ben 1 haftalık rapor alarak iyice dinlenmeyi tercih ettim. Gözüm kurudukça suni göz yaşı ile ıslandırıp dinlenmeye çekiliyorum.
 
 Gözünüz ile ilgili tüm soruları doktorunuza danışın fakat ameliyat anı ve sonrasındaki merak ettiğiniz her soru için tarafıma mail yoluyla ulaşabilirsiniz.
+
+### Ameliyattan 1.5 Ay Sonra
+
+Ameliyat bittikten 1 ay sonra kontrole gittim. Sol gözümden çok memnunum, çok net; sağ gözüm net görüyor ama çok hafif bi rahatsızlık veren bulanık görme var. Bu durum bir çok kişide olmuş, hatta doktoru bilinçli böyle yapacağını söyleyenler bile olmuş. Damlalarıma 3 hafta daha devam etmem söylendi ve 3 ay sonraya son kontrol istendi.
+
+Ameliyattan sonra suni göz yaşını sık sık kullanıyorum ve uzun süre kullanmaya devam edeceğim (zararlı bir şey değil, her insanın kullanabileceği hatta yararlı bir damla); göz kuruluğumu alıyor daha rahat hissediyorum. Buna ek olarak ameliyattan sonraki bu süreçte sadece direkt güneş ışığı gözü çok kurutuyor, güneşten bir süre daha korunmaya devam ediyorum, bunun dışında bir sorun yok.
+
+Farklı bir hastanede gözlerime baktırdım, %100 seviyesini her iki gözlede rahatça görebildim. Bu sonuç beni oldukça rahatlattı.
