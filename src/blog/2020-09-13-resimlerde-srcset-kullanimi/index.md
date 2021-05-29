@@ -65,5 +65,9 @@ Sayfa genişliği değişirse tekrardan media özelliği kontrol edilir ve uygun
 
 `srcset` ile `picture` kullanıındaki fark, `srcset`te tarayıcı o an ki genişliğine göre en uygun resmi çeker ve o görsel sayfada kalır. `picture` etiketinde ise sayfa genişliği değiştiğinde sayfadaki resim DOM'da tekrardan güncellenir.
 
-w3schools üzerinde `picture` etiketinin nasıl çalıştığını deneyimlemek için <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_picture" target="_blank" rel="noreferrer noopener">bu linki  yeni seçmede açın</a> ve genişliği değiştirin.
+## Örnekler ile Test Et
+
+`srcset` örneği için <a href="https://imagekitio.github.io/responsive-images-guide/srcset-density.html" target="_blank" rel="noreferrer noopener">imagekitio src set örneği</a>ni açın ve DevTools'ta (*F12*) network sekmesinden farklı çözünürlüklerde sayfayı yenileyin, sayfaya yüklenen görselin boyutuna dikkat edin. 
+
+`picture` etiketinin nasıl çalıştığını deneyimlemek için <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_picture" target="_blank" rel="noreferrer noopener">w3schools'un picture örneği</a>ni açın ve genişliği değiştirin.
 
