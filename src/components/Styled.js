@@ -161,7 +161,7 @@ export const Main = styled.main`
   }
 
   @media (min-width: 992px) {
-    margin-top: 240px;
+    margin-top: 160px;
     max-width: 720px;
   }
 
