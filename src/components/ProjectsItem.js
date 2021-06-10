@@ -18,7 +18,10 @@ export default function App({total}) {
   result.push(
     <ProjectItem key={i}>
       <figure>
-        <img src={img} alt={title} loading="lazy" />
+        {
+          img &&
+          <img src={require(`./../assets/img/project/${img}.jpg`)} alt={title} loading="lazy" height="auto" width="600" />
+        }
       </figure>
 
       <div>

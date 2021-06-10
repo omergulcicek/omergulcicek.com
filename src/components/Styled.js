@@ -741,6 +741,7 @@ export const ProjectItem = styled.article`
     svg {
       position: relative;
       left: 8px;
+      opacity: 0.5;
       transition: var(--g-transition);
     }
 
@@ -749,6 +750,7 @@ export const ProjectItem = styled.article`
 
       svg {
         left: 12px;
+        opacity: 1;
       }
     }
 

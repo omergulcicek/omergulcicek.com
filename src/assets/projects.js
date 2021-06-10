@@ -2,7 +2,7 @@ export default function Projects (){
   return [
     {
       "link": "https://turkuazcss.com/",
-      "img": "https://omergulcicek.com/img/turkuazcss.png",
+      "img": "turkuaz",
       "title": "Turkuaz",
       "subtitle": "Hızlı esnek ve kolay web sayfaları geliştirmek için tasarlanan güçlü bir CSS Framework",
       "desc": "Yalnızca CSS içeren ve özelleştirilebilir bileşenlerden oluşan bir kütüphanesi. SCSS, React ve Vue kütüphane desteği bulunmakta. Açık kaynak olarak geliştirilmektedir.",
@@ -10,14 +10,14 @@ export default function Projects (){
     },
     {
       "link": "https://turkcedokuman.com/",
-      "img": "https://omergulcicek.com/img/turkcedokuman.png",
+      "img": "turkcedokuman",
       "title": "Türkçe Doküman",
       "subtitle": "Yazılım alanında sıfırdan eğitim veren Türkçe dokümanlar",
       "desc": "CSS, SCSS, JavaScript, ES6, React, SPA, Pyhton, Shell, Linux, Rust gibi teknik çeviriler ve kod yazım stili rehberlerine kadar bir çok Türkçe dokümanın toplandığı bir proje. Açık kaynak olarak geliştirilmektedir, sizlerde doküman ekleyebilirsiniz.",
     },
     {
       "link": "https://github.com/omergulcicek/bootcamp",
-      "img": "https://omergulcicek.com/img/kodluyoruz.png",
+      "img": "frontendbootcamp",
       "title": "Frontend Bootcamp",
       "subtitle": "Kodluyoruz.org çatısı altında ilerletilen Frontend eğitiminin ders notları",
       "tags": ["html", "css", "scss", "javascript", "es6", "react", "spa"],
@@ -25,7 +25,7 @@ export default function Projects (){
     },
     {
       "link": "https://github.com/omergulcicek/react-page-progress-bar",
-      "img": "https://omergulcicek.com/img/npm.png",
+      "img": "reactpageprogressbar",
       "title": "React Page Progress Bar",
       "subtitle": "Sayfadaki konumu dairesel bir progress bar'da gösterir ve tıklanıldığında üste çıkar",
       "tags": ["react", "npm", "library"],
@@ -33,7 +33,7 @@ export default function Projects (){
     },
     {
       "link": "https://github.com/omergulcicek/omergulcicek.com",
-      "img": "https://omergulcicek.com/img/omergulcicek.png",
+      "img": "omergulcicek.com",
       "title": "omergulcicek.com",
       "subtitle": "Kişisel sitemin kaynak kodları",
       "tags": ["react", "gatsby", "graphql", "styled-component"],
@@ -41,7 +41,7 @@ export default function Projects (){
     },
     {
       "link": "https://github.com/omergulcicek/react",
-      "img": "https://omergulcicek.com/img/react.png",
+      "img": "react",
       "title": "React",
       "subtitle": "React Türkçe çevirisi",
       "button": "github.com/omergulcicek/react",
@@ -50,7 +50,7 @@ export default function Projects (){
     },
     {
       "link": "https://github.com/omergulcicek/es6",
-      "img": "https://omergulcicek.com/img/es6.png",
+      "img": "ecmascript6",
       "title": "ECMAScript 6",
       "subtitle": "ECMAScript 6 Türkçe çevirisi",
       "tags": ["javascript", "es6"],
@@ -58,7 +58,7 @@ export default function Projects (){
     },
     {
       "link": "https://github.com/omergulcicek/article-time-ago",
-      "img": "https://omergulcicek.com/img/npm.png",
+      "img": "articletimeago",
       "title": "Article Time Ago",
       "subtitle": "Belirtilen tarih ile anlık tarih arasındaki süreyi sözel olarak yazar",
       "tags": ["javascript", "npm", "library"],
@@ -66,7 +66,7 @@ export default function Projects (){
     },
     {
       "link": "https://github.com/omergulcicek/frontend-boilerplate",
-      "img": "https://omergulcicek.com/img/css.png",
+      "img": "frontendboilerplate",
       "title": "Frontend Boilerplate",
       "subtitle": "Frontend projeleriniz için bir başlangıç kiti",
       "tags": ["css", "scss", "javascript", "es6", "minify", "autoprefixer", "eslint"],
