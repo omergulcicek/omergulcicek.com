@@ -218,6 +218,21 @@ code {
           justify-content: space-between;
 }
 
+.projects > div {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+  .projects > div {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 hr {
   border-top-color: rgba(0, 0, 0, 0.1);
   margin-bottom: 32px;

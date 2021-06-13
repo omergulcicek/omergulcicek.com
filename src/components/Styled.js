@@ -635,31 +635,20 @@ export const MyDeskGrid = styled.div`
 //#endregion
 
 //#region 3.6 Projects
-
 export const ProjectItem = styled.article`
-  align-items: start;
+  align-items: flex-end;
   background: #fff;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
   border-radius: 16px;
-  display: grid;
-  gap: 32px;
-  grid-gap: 32px;
-  grid-template-columns: 1fr;
-  justify-items: start;
-  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 16px;
   position: relative;
+  transition: var(--g-transition);
 
-  @media (min-width: 992px) {
-    grid-template-columns: repeat(2,1fr);
-
-    &:nth-child(2n) {
-      padding-left:  24px;
-      
-      figure {
-        grid-area: 1/2;
-      }
-    }
+  &:hover {
+    transform: scale(1.01);
   }
 
   a {
@@ -669,7 +658,6 @@ export const ProjectItem = styled.article`
     font-weight: bold;
     margin: 0 32px 8px 0;
     text-decoration: none;
-    width: fit-content;
 
     &:hover {
       color: var(--c-theme);

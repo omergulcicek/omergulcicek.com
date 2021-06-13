@@ -175,6 +175,16 @@ code {
   justify-content: space-between;
 }
 
+.projects > div {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
 hr {
   border-top-color: rgba(0, 0, 0, 0.1);
   margin-bottom: 32px;

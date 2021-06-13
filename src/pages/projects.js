@@ -11,7 +11,9 @@ export default function App() {
     <SEO title="Projelerim" />
 
     <section className="projects">
-      <ProjectsItem />
+      <div>
+        <ProjectsItem />
+      </div>
 
       <ProjectDesc>
         Diğer projelerim için <a href="https://github.com/omergulcicek" target="_blank" rel="noopener noreferrer">GitHub profilimi</a> ziyaret edebilirsin.
