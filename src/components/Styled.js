@@ -22,7 +22,7 @@ import styled from "styled-components"
 // 1. Layout
 //#region 1.1 Header
 export const Header = styled.header`
-  background-color: var(--c-background);
+  background-color: #fff;
   border-bottom: 1px solid transparent;
   border-top: 4px solid var(--c-theme);
   box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
@@ -174,6 +174,7 @@ export const Main = styled.main`
 //#region 1.3 Footer
 export const Footer = styled.footer`
   align-items: center;
+  background-color: #fff;
   border-top: 2px solid rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
