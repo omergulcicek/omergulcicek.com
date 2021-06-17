@@ -1,5 +1,5 @@
 import React from "react"
-import { Details } from "../components/Styled"
+import { Article } from "../components/Styled"
 import "isomorphic-fetch"
 
 import Layout from "../components/Layout"
@@ -13,8 +13,8 @@ const Bootcamp = () => (
     <section className="bootcamp">
       <Title t1="Frontend" t2="Bootcamp" />
 
-      <Details>
-        <summary><div><span>HTML, CSS Seçiciler</span> <date>12 Aralık 2020</date></div></summary>
+      <Article>
+        <div><h2>HTML, CSS Seçiciler</h2> <date>12 Aralık 2020</date></div>
 
         <p>
           Doğru HTML etiketleri kullanıp, nerede span nerede h1 kullanmamız gerektiğini üzerinde durduk.
@@ -31,10 +31,10 @@ const Bootcamp = () => (
           <li>CSS seçiciler - <a href="https://fatihhayrioglu.com/cssde-tanimlamalar-ve-etkinliklerispecificity/" target="_blank" rel="noopener noreferrer">id, class, !important</a> - <a href="https://www.youtube.com/watch?v=YmiMpFaNAx4" target="_blank" rel="noopener noreferrer">inline, inline-block, block</a> - <a href="https://hakantasan.com/index/makaleler/14/css-padding-nedir-margin-nedir" target="_blank" rel="noopener noreferrer">margin, padding</a></li>
           <li><a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">CSS kodunu hangi tarayıcı hangi versiyonda destekliyor?</a></li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>Font, Psd to CSS</span> <date>13 Aralık 2020</date></div></summary>
+      <Article>
+        <div><h2>Font, Psd to CSS</h2> <date>13 Aralık 2020</date></div>
 
         <p>
           Tasarımı koda döktüğümüz işlemin adı Psd to CSS.
@@ -67,10 +67,10 @@ const Bootcamp = () => (
           <li><a href="https://assets.materialup.com/uploads/4ad9b2fa-266a-4611-a31b-19dfab021e5f/preview.jpg" target="_blank" rel="noopener noreferrer">Form Tasarımı</a></li>
           <li><a href="https://i1.wp.com/onaircode.com/wp-content/uploads/2018/06/blog-card.jpg?resize=1080%2C675&ssl=1" target="_blank" rel="noopener noreferrer">Kart Tasarımı</a></li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>Pseudo class</span> <date>19 Aralık 2020</date></div></summary>
+      <Article>
+        <div><h2>Pseudo class</h2> <date>19 Aralık 2020</date></div>
 
         <p>
           Ağırlıklı olarak CSS seçicilerin üstünde durduk.
@@ -83,10 +83,10 @@ const Bootcamp = () => (
           <li><a href="https://www.youtube.com/watch?v=_FLV6X0druY" target="_blank" rel="noopener noreferrer">CSS position</a> - (relative, absolute, fixed)</li>
           <li><a href="https://fatihhayrioglu.com/pseudo-siniflari-ve-pseudo-elementleri/" target="_blank" rel="noopener noreferrer">CSS seçiciler</a> -  (:hover, :focus, :nth-child, <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_nth-child_odd_even" target="_blank" rel="noopener noreferrer">:nth-child(odd)</a> ::before, ::after)</li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>BEM, SASS, variable</span> <date>20 Aralık 2020</date></div></summary>
+      <Article>
+        <div><h2>BEM, SASS, variable</h2> <date>20 Aralık 2020</date></div>
 
         <p>
           Kodu daha sağlıklı, anlaşılır ve kolay yazmamızı sağlayan teknolojileri tanıdık.
@@ -111,10 +111,10 @@ const Bootcamp = () => (
           <li><a href="https://www.uistore.design/items/medi-free-meditation-web-headers-for-figma/" target="_blank" rel="noopener noreferrer">Tasarım koda dökülecek</a> - <a href="https://www.figma.com/downloads/" target="_blank" rel="noopener noreferrer">Figma İndir</a> <br/> (Eğitimde gördüğümüz her şeyi kullanmaya çalışın, BEM, SASS, variable, flex, Google fonts vb.)</li>
           <li><a href="https://tr.khanacademy.org/computing/computer-programming/html-css" target="_blank" rel="noopener noreferrer">Khan Academy Testleri Çözülecek</a></li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>Psd to CSS</span> <date>26-27 Aralık 2020</date></div></summary>
+      <Article>
+        <div><h2>Psd to CSS</h2> <date>26-27 Aralık 2020</date></div>
 
         <p>
         <a href="https://www.uistore.design/items/trafalgar-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Trafalgar Langing</a> tasarımını Semantic HTML, BEM, SASS ve Bootstrap kullanarak koda döktük.
@@ -153,10 +153,10 @@ const Bootcamp = () => (
           <li><a href="https://www.youtube.com/user/uzmanvideo" target="_blank" rel="noopener noreferrer">Prototurk Youtube kanalında HTML, CSS ve Frontend Daily oynatma listeleri</a></li>
           <li><a href="https://www.youtube.com/channel/UC1Z-a8i2Ce4oIEMV-S3iFrg" target="_blank" rel="noopener noreferrer">Adem İlter'in Sıfırdan CSS Eğitim ve HTML+CSS Öğreniyoruz oynatma listeleri</a></li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>Git, JavaScript Temeli</span> <date>9 Ocak 2021</date></div></summary>
+      <Article>
+        <div><h2>Git, JavaScript Temeli</h2> <date>9 Ocak 2021</date></div>
 
         <p>
           Git ile temel komutları gösterip JavaScript temellerini gördük.
@@ -186,10 +186,10 @@ const Bootcamp = () => (
           </span>
           </li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>JavaScript</span> <date>10 Ocak 2021</date></div></summary>
+      <Article>
+        <div><h2>JavaScript</h2> <date>10 Ocak 2021</date></div>
 
         <b>İşlenen Konular;</b>
 
@@ -238,10 +238,10 @@ const Bootcamp = () => (
           </span>
           </li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>JavaScript Pratik</span> <date>16 Ocak 2021</date></div></summary>
+      <Article>
+        <div><h2>JavaScript Pratik</h2> <date>16 Ocak 2021</date></div>
 
         <p>
           Geniş kapsamlı JavaScript örneği üzerinde duruldu ve genel tekrar yapıldı.
@@ -264,10 +264,10 @@ const Bootcamp = () => (
           </span>
           </li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>React'a Giriş</span> <date>17 Ocak 2021</date></div></summary>
+      <Article>
+        <div><h2>React'a Giriş</h2> <date>17 Ocak 2021</date></div>
 
         <p>
           CRA ile React temellerini gördük.
@@ -278,10 +278,10 @@ const Bootcamp = () => (
         <ul>
           <li>React (<a href="https://miro.medium.com/max/1220/1*xqGJ7fECmgHQQZq5AbgeIw.png" target="_blank" rel="noopener noreferrer">Virtual DOM</a>, <a href="https://omergulcicek.com/jsx-nedir" target="_blank" rel="noopener noreferrer">JSX</a>, <a href="https://omergulcicek.github.io/react/kurulum/reactjs-kurulumu" target="_blank" rel="noopener noreferrer">Create React App</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export" target="_blank" rel="noopener noreferrer">export default - import</a>, <a href="https://omergulcicek.github.io/react/hizli-baslangic/component-ve-props" target="_blank" rel="noopener noreferrer">components - props</a>)</li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>React</span> <date>23 Ocak 2021</date></div></summary>
+      <Article>
+        <div><h2>React</h2> <date>23 Ocak 2021</date></div>
 
         <b>İşlenen Konular;</b>
 
@@ -294,10 +294,10 @@ const Bootcamp = () => (
         <ul>
           <li><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" target="_blank" rel="noopener noreferrer">React Developer Tools</a> - (DevTools'ta React componentlerini görmek için)</li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>React Router, JSON Server, Axios</span> <date>24 Ocak 2021</date></div></summary>
+      <Article>
+        <div><h2>React Router, JSON Server, Axios</h2> <date>24 Ocak 2021</date></div>
 
         <b>İşlenen Konular;</b>
 
@@ -321,10 +321,10 @@ const Bootcamp = () => (
           </span>
           </li>
         </ul>
-      </Details>
+      </Article>
 
-      <Details>
-        <summary><div><span>Bitirme Projesi</span> <date>Son Gün: 28 Şubat 2021</date></div></summary>
+      <Article>
+        <div><h2>Bitirme Projesi</h2> <date>Son Gün: 28 Şubat 2021</date></div>
 
         <p>
           Bitirme projesi olarak daha önce geliştirdiğimiz <a href="https://www.uistore.design/items/covid-19-landing-page-for-figma/" target="_blank" rel="noopener noreferrer">Covid19 tasarımı React ile koda dökülecek</a>. İsteyen kişiler şartları sağlayan ve işlediğimiz konuları içeren herhangi bir başka proje geliştirilebilir.
@@ -353,7 +353,7 @@ const Bootcamp = () => (
           <li>Tasarımı 100% tutturmaya çalışmaya gerek yok, bir kaç px'lik kaymalar yada farklar sorun değil, göze batan çok büyük hatalar olmasın kafi; önemli olan React yapısı.</li>
           <li>Sizlere verilen diziyi projenize dahil edip, axios (<i>yada herhangi bir istek atan kütüphane ile</i>) ile ulaşıp kullanın.</li>
         </ul>
-      </Details>
+      </Article>
     </section>
   </Layout>
 )
