@@ -57,4 +57,3 @@ Aşağıda React ile oluşturulmuş basit bir CodePen örneğinde arkaplana gör
 
 - <a href="https://24ways.org/2010/calculating-color-contrast/" target="_blank" rel="noreferrer noopener">Brian Suda - Calculating Color Contrast</a>
 - <a href="https://www.youtube.com/watch?v=tJNltOn-2Yg" target="_blank" rel="noreferrer noopener">Tayfun Erbilen - React ile Brand Colors Uygulaması</a>
-
