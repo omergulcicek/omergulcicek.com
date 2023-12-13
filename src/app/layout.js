@@ -13,8 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr">
       <body className={fontFamily.className}>
-        <Header />
-        <main>{children}</main>
+        <main vaul-drawer-wrapper="true" className="min-h-screen bg-white">
+          <Header />
+
+          <section className="py-8 px-6">{children}</section>
+        </main>
       </body>
     </html>
   )

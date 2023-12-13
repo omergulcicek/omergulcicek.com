@@ -1,25 +1,25 @@
-import Link from "next/link"
+"use client"
 
-import { navigationMenu } from "@/libs/constants"
+import { useState, useEffect } from "react"
+import { useMediaQuery } from "usehooks-ts"
+
+import HeaderMobile from "./headerMobile"
+import HeaderDesktop from "./headerDesktop"
 
 export default function Header() {
-  return (
-    <>
-      <header className="flex">
-        <div>
-          <ul className="flex items-center gap-4">
-            {navigationMenu.map(({ label = "", href = "/" }) => (
-              <li>
-                <Link href={href}>
-                  <span className="text-base leading-10 hover:text-blue-500">
-                    {label}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </header>
-    </>
-  )
+  const [mounted, setMounted] = useState(false)
+
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return false
+
+  if (isDesktop) {
+    return <HeaderDesktop />
+  } else {
+    return <HeaderMobile />
+  }
 }
