@@ -1,6 +1,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
-import { Header } from "@/components"
+import { Header, Container } from "@/components"
 
 const fontFamily = Plus_Jakarta_Sans({ subsets: ["latin"] })
 
@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
         <main vaul-drawer-wrapper="true" className="min-h-screen bg-white">
           <Header />
 
-          <section className="py-8 px-6">{children}</section>
+          <section className="py-8 px-6">
+            <Container>{children}</Container>
+          </section>
         </main>
       </body>
     </html>
