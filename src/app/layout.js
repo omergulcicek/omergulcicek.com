@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <main vaul-drawer-wrapper="true" className="min-h-screen bg-white">
           <Header />
 
-          <section className="py-8 px-6">
+          <section className="py-4 md:py-8">
             <Container>{children}</Container>
           </section>
         </main>

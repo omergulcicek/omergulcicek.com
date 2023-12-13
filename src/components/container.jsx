@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants"
 
 const container = tv({
-  base: "container mx-auto",
+  base: "container mx-auto px-4 md:px-8",
   variants: {
     size: {
       base: "max-w-screen-lg",

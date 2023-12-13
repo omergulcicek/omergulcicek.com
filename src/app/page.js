@@ -1,9 +1,9 @@
-import Title from "@/components/title"
+import { Hero } from "@/components"
 
 export default function Home() {
   return (
     <>
-      <Title>Home</Title>
+      <Hero />
     </>
   )
 }
