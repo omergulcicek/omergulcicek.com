@@ -1,3 +1,9 @@
+import Title from "@/components/title"
+
 export default function Bookmarks() {
-  return <section>Bookmarks</section>
+  return (
+    <>
+      <Title>Bookmarks</Title>
+    </>
+  )
 }

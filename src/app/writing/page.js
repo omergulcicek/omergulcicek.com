@@ -1,3 +1,9 @@
+import Title from "@/components/title"
+
 export default function Writing() {
-  return <section>Writing</section>
+  return (
+    <>
+      <Title>Writing</Title>
+    </>
+  )
 }

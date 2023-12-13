@@ -1,3 +1,9 @@
+import Title from "@/components/title"
+
 export default function Home() {
-  return <section>Home</section>
+  return (
+    <>
+      <Title>Home</Title>
+    </>
+  )
 }

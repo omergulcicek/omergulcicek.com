@@ -1,3 +1,9 @@
+import Title from "@/components/title"
+
 export default function Projects() {
-  return <section>Projects</section>
+  return (
+    <>
+      <Title>Projects</Title>
+    </>
+  )
 }
