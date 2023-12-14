@@ -12,6 +12,10 @@
   }
 }
 
+::selection {
+  background-color: rgb(153 246 228);
+}
+
 body {
   background-color: white;
   color: rgb(var(--foreground-rgb));
