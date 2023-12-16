@@ -3,7 +3,7 @@ import { Drawer } from "vaul"
 
 import Navigation from "components/navigation"
 
-export default function MobileHeader() {
+export default function SwipeMenu() {
   const [isClient, setIsClient] = useState(false)
   const [open, setOpen] = useState(false)
 

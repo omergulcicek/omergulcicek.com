@@ -1,7 +1,7 @@
 import { useMediaQuery } from "usehooks-ts"
 
-import Header from "./headerDesktop"
-import HeaderMobile from "./headerMobile"
+import Header from "./header"
+import HeaderMobile from "components/swipeMenu"
 import Footer from "./footer"
 
 export default function Layout({ children }) {
