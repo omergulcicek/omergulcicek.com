@@ -12,7 +12,7 @@ export default function Hero() {
           initial={{ opacity: 0, translateY: "100px" }}
           animate={{ opacity: 1, translateY: "0px" }}
           transition={{ delay: 0.2 }}
-          className="text-lg md:text-4xl font-semibold"
+          className="text-neutral-950 text-lg md:text-4xl font-semibold"
         >
           Ömer Gülçiçek
         </motion.strong>
@@ -20,9 +20,9 @@ export default function Hero() {
           initial={{ opacity: 0, translateY: "100px" }}
           animate={{ opacity: 1, translateY: "0px" }}
           transition={{ delay: 0.35 }}
-          className="text-4xl md:text-7xl font-bold"
+          className="text-neutral-950 text-4xl md:text-7xl font-bold frontend"
         >
-          Senior Frontend Developer
+          Senior <span className="relative">Frontend</span> Developer
         </motion.h1>
       </motion.div>
     </>

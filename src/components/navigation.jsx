@@ -15,7 +15,7 @@ export default function Navigation({ className, onClick }) {
             <Link
               href={link}
               className={cn(
-                "cursor-pointer transition hover:underline",
+                "text-neutral-950 cursor-pointer transition hover:underline",
                 pathname === link && "text-primary"
               )}
               onClick={onClick}
