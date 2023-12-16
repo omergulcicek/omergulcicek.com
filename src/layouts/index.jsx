@@ -1,17 +1,19 @@
 import { useMediaQuery } from "usehooks-ts"
 
+import { cn } from "lib/utils"
+
 import Header from "./header"
 import HeaderMobile from "components/swipeMenu"
 import Footer from "./footer"
 
-export default function Layout({ children }) {
+export default function Layout({ className, children }) {
   const isDesktop = useMediaQuery("(min-width: 768px)")
 
   return (
     <>
       <main
         vaul-drawer-wrapper=""
-        className="flex flex-col gap-12 min-h-screen bg-white"
+        className={cn("flex flex-col gap-12 min-h-screen bg-white", className)}
       >
         {isDesktop ? <Header /> : <HeaderMobile />}
 
