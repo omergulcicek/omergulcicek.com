@@ -9,7 +9,10 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <main vaul-drawer-wrapper="" className="min-h-screen bg-white">
+      <main
+        vaul-drawer-wrapper=""
+        className="flex flex-col gap-12 min-h-screen bg-white"
+      >
         {isDesktop ? <Header /> : <HeaderMobile />}
 
         <section>{children}</section>
