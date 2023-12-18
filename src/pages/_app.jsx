@@ -26,6 +26,16 @@ const monaSans = localFont({
       style: "italic",
     },
     {
+      path: "./../fonts/MonaSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./../fonts/MonaSans-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
       path: "./../fonts/MonaSans-SemiBold.woff2",
       weight: "600",
       style: "normal",
