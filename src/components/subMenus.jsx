@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { cn } from "lib/utils"
+import { cn, getIcons } from "lib/utils"
 
 export default function SubMenus({ text = "", link = "/", subMenus }) {
   const { pathname } = useRouter()
@@ -10,11 +10,13 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
     <>
       <span
         className={cn(
-          "text-neutral-600 font-medium leading-[64px] block cursor-pointer transition hover:text-black",
+          "flex items-center justify-between gap-1 text-neutral-600 font-medium leading-[64px] cursor-pointer transition hover:text-black",
           pathname === link && "text-black"
         )}
       >
         {text}
+
+        <figure>{getIcons()}</figure>
       </span>
 
       <ul className="flex flex-col absolute top-full bg-white shadow-sm border rounded-xl py-4 -mt-3 -ml-4 transition duration-300 z-10 opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible group-hover/link:translate-y-1">
@@ -23,22 +25,8 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
             href={link}
             className="group/subMenu flex items-center gap-4 h-[72px] w-full pl-8 pr-16"
           >
-            <figure className=" flex items-center justify-center h-9 w-9 bg-neutral-100 rounded-md">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M2.5 0.75H6.5C7.4665 0.75 8.25 1.5335 8.25 2.5V6.5C8.25 7.4665 7.4665 8.25 6.5 8.25H2.5C1.5335 8.25 0.75 7.4665 0.75 6.5V2.5C0.75 1.5335 1.5335 0.75 2.5 0.75ZM13.5 0.75H17.5C18.4665 0.75 19.25 1.5335 19.25 2.5V6.5C19.25 7.4665 18.4665 8.25 17.5 8.25H13.5C12.5335 8.25 11.75 7.4665 11.75 6.5V2.5C11.75 1.5335 12.5335 0.75 13.5 0.75ZM13.5 11.75H17.5C18.4665 11.75 19.25 12.5335 19.25 13.5V17.5C19.25 18.4665 18.4665 19.25 17.5 19.25H13.5C12.5335 19.25 11.75 18.4665 11.75 17.5V13.5C11.75 12.5335 12.5335 11.75 13.5 11.75ZM2.5 11.75H6.5C7.4665 11.75 8.25 12.5335 8.25 13.5V17.5C8.25 18.4665 7.4665 19.25 6.5 19.25H2.5C1.5335 19.25 0.75 18.4665 0.75 17.5V13.5C0.75 12.5335 1.5335 11.75 2.5 11.75Z"
-                  fill="currentColor"
-                  fillOpacity="0.2"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                ></path>
-              </svg>
+            <figure className="flex items-center justify-center h-9 w-9 bg-neutral-100 rounded-md">
+              {getIcons(link.slice(1))}
             </figure>
 
             <div>
