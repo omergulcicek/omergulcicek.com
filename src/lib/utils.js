@@ -12,13 +12,12 @@ import {
   FaReact,
   FaScrewdriverWrench,
   FaTurkishLiraSign,
-  FaUserGraduate,
-  FaRegUser,
   FaLaptop,
   FaUserTie,
   FaMedal,
   FaXTwitter,
   FaGlobe,
+  FaUserGroup,
 } from "react-icons/fa6"
 import { SiVisualstudiocode } from "react-icons/si"
 import { RiBracesFill } from "react-icons/ri"
@@ -27,42 +26,42 @@ export function cn(...args) {
   return twMerge(clsx(...args))
 }
 
-export function getIcons(name = "") {
+export function getIcons({ name = "", color = "currentColor" }) {
   switch (name) {
     case "websites":
-      return <FaGlobe />
+      return <FaGlobe fill={color} />
     case "tweets":
-      return <FaXTwitter />
+      return <FaXTwitter fill={color} />
     case "bootcamp":
-      return <FaMedal />
+      return <FaMedal fill={color} />
     case "frontend":
-      return <RiBracesFill />
+      return <RiBracesFill fill={color} />
     case "vscode":
-      return <SiVisualstudiocode />
+      return <SiVisualstudiocode fill={color} />
     case "workspace":
-      return <FaLaptop />
+      return <FaLaptop fill={color} />
     case "about":
-      return <FaUserTie />
+      return <FaUserTie fill={color} />
     case "roadmap":
-      return <FaMap />
+      return <FaMap fill={color} />
     case "book":
-      return <FaBook />
+      return <FaBook fill={color} />
     case "code":
-      return <FaCode />
+      return <FaCode fill={color} />
     case "tools":
-      return <FaScrewdriverWrench />
+      return <FaScrewdriverWrench fill={color} />
     case "personal-articles":
-      return <FaPencil />
+      return <FaPencil fill={color} />
     case "font":
-      return <FaFont />
+      return <FaFont fill={color} />
     case "technical-articles":
-      return <FaReact />
+      return <FaReact fill={color} />
     case "design":
-      return <FaPaintbrush />
+      return <FaPaintbrush fill={color} />
     case "freelance":
-      return <FaTurkishLiraSign />
+      return <FaTurkishLiraSign fill={color} />
     case "private-lesson":
-      return <FaUserGraduate />
+      return <FaUserGroup fill={color} />
 
     default:
       return <FaAngleDown className="h-3 w-3 fill-neutral-400" />
