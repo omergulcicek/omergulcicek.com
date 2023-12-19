@@ -30,6 +30,7 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
             <Link
               href={link}
               className="group/subMenu flex items-center gap-4 h-[72px] w-full pl-8 pr-16 subMenu"
+              key={text}
             >
               <figure
                 className="relative h-9 w-9 flex items-center justify-center colorBox"

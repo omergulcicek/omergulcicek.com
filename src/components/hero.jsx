@@ -9,7 +9,7 @@ export default function Hero() {
         initial={{ opacity: 0, translateY: "100px" }}
         animate={{ opacity: 1, translateY: "0px" }}
       >
-        <Box className="container flex flex-col items-center justify-center gap-4 p-4 md:p-12 h-[640px] bg-blue-50 border-blue-100">
+        <Box className="container flex flex-col items-center justify-center gap-4 p-4 md:p-12 h-80 md:h-[640px] bg-blue-50 border-blue-100">
           <motion.strong
             initial={{ opacity: 0, translateY: "100px" }}
             animate={{ opacity: 1, translateY: "0px" }}
