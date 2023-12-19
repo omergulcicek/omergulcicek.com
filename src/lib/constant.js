@@ -82,9 +82,21 @@ export const navigationMenu = [
       },
       {
         text: "Kitap",
-        link: "/book",
-        description: "Okuduğum kitap listesi",
+        link: "/books",
+        description: "Okuduğum kitapların listesi",
         color: "#eab308",
+      },
+      {
+        text: "Makaleler",
+        link: "/reading",
+        description: "Okuduğum makalelerin listesi",
+        color: "#ef4444",
+      },
+      {
+        text: "Tasarım",
+        link: "/design",
+        description: "Tasarım ile ilgili kaynaklar",
+        color: "#0f766e",
       },
       {
         text: "Tweets",

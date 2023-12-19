@@ -18,6 +18,7 @@ import {
   FaXTwitter,
   FaGlobe,
   FaUserGroup,
+  FaReadme,
 } from "react-icons/fa6"
 import { SiVisualstudiocode } from "react-icons/si"
 import { RiBracesFill } from "react-icons/ri"
@@ -28,6 +29,8 @@ export function cn(...args) {
 
 export function getIcons({ name = "", color = "currentColor" }) {
   switch (name) {
+    case "reading":
+      return <FaReadme fill={color} />
     case "websites":
       return <FaGlobe fill={color} />
     case "tweets":
@@ -44,7 +47,7 @@ export function getIcons({ name = "", color = "currentColor" }) {
       return <FaUserTie fill={color} />
     case "roadmap":
       return <FaMap fill={color} />
-    case "book":
+    case "books":
       return <FaBook fill={color} />
     case "code":
       return <FaCode fill={color} />

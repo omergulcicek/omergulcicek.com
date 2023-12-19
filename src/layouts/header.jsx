@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
-import Navigation from "components/navigation"
+import Navigation from "components/menu/navigation"
 
 export default function Header() {
   const [isClient, setIsClient] = useState(false)

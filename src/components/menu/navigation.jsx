@@ -1,5 +1,5 @@
-import NavItem from "components/navItem"
-import SubMenus from "components/subMenus"
+import NavItem from "components/menu/navItem"
+import SubMenus from "components/menu/subMenus"
 import { navigationMenu } from "lib/constant"
 import { cn } from "lib/utils"
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Drawer } from "vaul"
 
-import Navigation from "components/navigation"
+import AccordionMenu from "components/menu/accordionMenu"
 
 export default function SwipeMenu() {
   const [isClient, setIsClient] = useState(false)
@@ -29,7 +29,7 @@ export default function SwipeMenu() {
                 omergulcicek.com
               </Drawer.Title>
               <nav>
-                <Navigation
+                <AccordionMenu
                   className="flex-col items-start"
                   onClick={() => setOpen(false)}
                 />
