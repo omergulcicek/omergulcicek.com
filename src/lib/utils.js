@@ -15,7 +15,13 @@ import {
   FaUserGraduate,
   FaRegUser,
   FaLaptop,
+  FaUserTie,
+  FaMedal,
+  FaXTwitter,
+  FaGlobe,
 } from "react-icons/fa6"
+import { SiVisualstudiocode } from "react-icons/si"
+import { RiBracesFill } from "react-icons/ri"
 
 export function cn(...args) {
   return twMerge(clsx(...args))
@@ -23,10 +29,20 @@ export function cn(...args) {
 
 export function getIcons(name = "") {
   switch (name) {
+    case "websites":
+      return <FaGlobe />
+    case "tweets":
+      return <FaXTwitter />
+    case "bootcamp":
+      return <FaMedal />
+    case "frontend":
+      return <RiBracesFill />
+    case "vscode":
+      return <SiVisualstudiocode />
     case "workspace":
       return <FaLaptop />
     case "about":
-      return <FaRegUser />
+      return <FaUserTie />
     case "roadmap":
       return <FaMap />
     case "book":

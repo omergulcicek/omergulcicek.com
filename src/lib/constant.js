@@ -47,7 +47,7 @@ export const navigationMenu = [
       {
         text: "Ben Kimim?",
         link: "/about",
-        description: "İlgi alanlarım",
+        description: "İlgi alanlarım ve sosyal medya hesaplarım",
       },
       {
         text: "Çalışma Alanım",
@@ -61,14 +61,9 @@ export const navigationMenu = [
     description: "Yer işaretleri ve kaynakların koleksiyonu.",
     subMenus: [
       {
-        text: "Uygulamalar ve Araçlar",
+        text: "Araçlar",
         link: "/tools",
-        description: "Kullandığım uygulamalar ve araçlar",
-      },
-      {
-        text: "Yazı Tipleri",
-        link: "/font",
-        description: "Yazı tipi koleksiyonu",
+        description: "Kullandığım uygulamalar",
       },
       {
         text: "Frontend",
@@ -81,14 +76,24 @@ export const navigationMenu = [
         description: "Okuduğum kitap listesi",
       },
       {
+        text: "Tweets",
+        link: "/tweets",
+        description: "Yazılım alanında yararlı tweetler",
+      },
+      {
         text: "VS Code",
         link: "/vscode",
         description: "Visual Studio Code eklentilerim",
       },
       {
-        text: "Yardımcı Araçlar",
-        link: "/tools",
-        description: "Hayatı kolaylaştıran araçlar",
+        text: "Yazı Tipleri",
+        link: "/font",
+        description: "Yazı tipi koleksiyonu",
+      },
+      {
+        text: "Web Siteler",
+        link: "/websites",
+        description: "Karşılaştığım güzel siteler",
       },
     ],
   },
