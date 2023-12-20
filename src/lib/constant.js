@@ -70,7 +70,7 @@ export const navigationMenu = [
     subMenus: [
       {
         text: "Araçlar",
-        link: "/tools",
+        link: "/stack",
         description: "Kullandığım uygulamalar",
         color: "#10b981",
       },

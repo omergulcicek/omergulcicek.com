@@ -51,7 +51,7 @@ export function getIcons({ name = "", color = "currentColor" }) {
       return <FaBook fill={color} />
     case "code":
       return <FaCode fill={color} />
-    case "tools":
+    case "stack":
       return <FaScrewdriverWrench fill={color} />
     case "personal-articles":
       return <FaPencil fill={color} />

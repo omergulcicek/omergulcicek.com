@@ -18,8 +18,9 @@ export default function Layout({ className, children }) {
         {isDesktop ? <Header /> : <HeaderMobile />}
 
         <section>{children}</section>
+
+        <Footer />
       </main>
-      <Footer />
     </>
   )
 }

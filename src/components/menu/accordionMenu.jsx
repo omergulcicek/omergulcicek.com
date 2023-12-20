@@ -21,7 +21,7 @@ export default function Navigation({ className, onClick }) {
               </div>
             </details>
           ) : (
-            <span>{text}</span>
+            <Link href={link}>{text}</Link>
           )
         )}
       </ul>
