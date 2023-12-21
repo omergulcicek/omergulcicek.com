@@ -14,14 +14,18 @@ export default function Navigation({ className, onClick }) {
           subMenus ? (
             <details key={index}>
               <summary>{text}</summary>
-              <div className="flex flex-col gap-2 pt-3">
+              <div className="flex flex-col gap-2 py-3">
                 {subMenus.map(({ text: subText, link: subLink }) => (
-                  <Link href={subLink}>{subText}</Link>
+                  <Link href={subLink} onClick={onClick}>
+                    {subText}
+                  </Link>
                 ))}
               </div>
             </details>
           ) : (
-            <Link href={link}>{text}</Link>
+            <Link href={link} onClick={onClick}>
+              {text}
+            </Link>
           )
         )}
       </ul>
