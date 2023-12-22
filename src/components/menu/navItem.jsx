@@ -11,7 +11,7 @@ export default function NavItem({ text = "", link = "/" }) {
       <Link
         href={link}
         className={cn(
-          "text-neutral-600 font-medium leading-[64px] block transition hover:text-black",
+          "text-neutral-600 font-medium leading-[64px] block transition hover:text-black dark:text-neutral-100  dark:hover:text-neutral-300",
           pathname === link && "text-black"
         )}
       >

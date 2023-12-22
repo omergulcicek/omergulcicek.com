@@ -10,7 +10,7 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
     <>
       <span
         className={cn(
-          "flex items-center justify-between gap-1 text-neutral-600 font-medium leading-[64px] cursor-pointer transition hover:text-black",
+          "flex items-center justify-between gap-1 text-neutral-600 font-medium leading-[64px] cursor-pointer transition hover:text-black dark:text-neutral-100  dark:hover:text-neutral-300",
           pathname === link && "text-black"
         )}
       >
@@ -19,7 +19,7 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
         <figure>{getIcons({})}</figure>
       </span>
 
-      <ul className="flex flex-col absolute top-full bg-white shadow-sm border rounded-xl py-4 -mt-3 -ml-4 transition duration-300 z-10 opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible group-hover/link:translate-y-1">
+      <ul className="flex flex-col absolute top-full bg-white shadow-sm border rounded-xl py-4 -mt-3 -ml-4 transition duration-300 z-10 opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible group-hover/link:translate-y-1 dark:bg-neutral-900 dark:border-neutral-800">
         {subMenus.map(
           ({
             text = "",
@@ -40,7 +40,7 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
               </figure>
 
               <div>
-                <div className="text-base text-neutral-900 font-semibold">
+                <div className="text-base text-neutral-900 font-semibold dark:text-neutral-100  dark:hover:text-neutral-300">
                   {text}
                 </div>
                 <p className="text-xs text-neutral-600">{description}</p>
