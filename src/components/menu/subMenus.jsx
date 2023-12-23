@@ -1,10 +1,12 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { useTheme } from "next-themes"
 
 import { cn, getIcons } from "lib/utils"
 
 export default function SubMenus({ text = "", link = "/", subMenus }) {
   const { pathname } = useRouter()
+  const { theme } = useTheme()
 
   return (
     <>
@@ -26,6 +28,7 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
             description = "",
             link = "/",
             color = "currentColor",
+            isDarkThemeLogoWhite,
           }) => (
             <Link
               href={link}
@@ -36,7 +39,11 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
                 className="relative h-9 w-9 flex items-center justify-center colorBox"
                 style={{ "--color": color }}
               >
-                {getIcons({ name: link.slice(1), color })}
+                {getIcons({
+                  name: link.slice(1),
+                  color:
+                    theme === "dark" && isDarkThemeLogoWhite ? "#fff" : color,
+                })}
               </figure>
 
               <div>

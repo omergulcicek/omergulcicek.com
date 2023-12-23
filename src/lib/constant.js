@@ -103,6 +103,7 @@ export const navigationMenu = [
         link: "/tweets",
         description: "Yazılım alanında yararlı tweetler",
         color: "#0f1419",
+        isDarkThemeLogoWhite: true,
       },
       {
         text: "VS Code",
@@ -115,6 +116,7 @@ export const navigationMenu = [
         link: "/websites",
         description: "Karşılaştığım güzel siteler",
         color: "#171717",
+        isDarkThemeLogoWhite: true,
       },
       {
         text: "Yazı Tipleri",

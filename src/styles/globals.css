@@ -53,10 +53,10 @@ html[data-theme="dark"] body {
   .colorBox::after {
     background-color: var(--color);
     content: "";
-    @apply h-9 w-9 rounded-md block absolute transition duration-300 opacity-5;
+    @apply h-9 w-9 rounded-md block absolute transition duration-300 opacity-5 dark:opacity-10;
   }
 
   .subMenu:hover .colorBox::after {
-    @apply opacity-10;
+    @apply opacity-10 dark:opacity-20;
   }
 }
