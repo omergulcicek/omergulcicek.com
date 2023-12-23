@@ -43,7 +43,9 @@ export default function SubMenus({ text = "", link = "/", subMenus }) {
                 <div className="text-base text-neutral-900 font-semibold dark:text-neutral-100  dark:hover:text-neutral-300">
                   {text}
                 </div>
-                <p className="text-xs text-neutral-600">{description}</p>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400">
+                  {description}
+                </p>
               </div>
 
               <figure className="transition duration-300 opacity-0 absolute right-8 group-hover/subMenu:opacity-100 group-hover/subMenu:translate-x-1">
