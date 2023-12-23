@@ -1,4 +1,5 @@
 import localFont from "next/font/local"
+import { ThemeProvider } from "next-themes"
 
 import Layout from "layouts"
 import "@/tailwindcss"
@@ -60,8 +61,10 @@ const monaSans = localFont({
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout className={monaSans.className}>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider attribute="class">
+      <Layout className={monaSans.className}>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   )
 }

@@ -20,11 +20,9 @@ body {
   line-height: 1.5;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: theme("colors.background.dark");
-    color: theme("colors.text.dark");
-  }
+html[data-theme="dark"] body {
+  background-color: theme("colors.background.dark");
+  color: theme("colors.text.dark");
 }
 
 #__next {

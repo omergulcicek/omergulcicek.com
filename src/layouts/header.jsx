@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 import Navigation from "components/menu/navigation"
+import ThemeSwitch from "components/themeSwitch"
 
 export default function Header() {
   const [isClient, setIsClient] = useState(false)
@@ -21,6 +22,8 @@ export default function Header() {
         className="w-full dark:bg-neutral-900 border-b dark:border-b-neutral-800 z-40"
       >
         <div className="container">
+          <ThemeSwitch />
+
           <nav>
             <Navigation />
           </nav>
