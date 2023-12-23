@@ -21,11 +21,6 @@ body {
   transition: 200ms background-color ease-out;
 }
 
-html[data-theme="dark"] body {
-  background-color: theme("colors.background.dark");
-  color: theme("colors.text.dark");
-}
-
 #__next {
   flex-direction: column;
   display: flex;

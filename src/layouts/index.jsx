@@ -13,7 +13,10 @@ export default function Layout({ className, children }) {
     <>
       <main
         vaul-drawer-wrapper=""
-        className={cn("flex flex-col gap-12 min-h-screen bg-white", className)}
+        className={cn(
+          "flex flex-col gap-12 min-h-screen bg-white dark:bg-neutral-950",
+          className
+        )}
       >
         {isDesktop ? <Header /> : <HeaderMobile />}
 
