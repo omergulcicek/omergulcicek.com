@@ -13,17 +13,27 @@ export default function Navigation({ className, onClick }) {
         {navigationMenu.map(({ text = "", link = "/", subMenus }, index) =>
           subMenus ? (
             <details key={index}>
-              <summary>{text}</summary>
+              <summary className="dark:text-neutral-100 text-black">
+                {text}
+              </summary>
               <div className="flex flex-col gap-2 py-3">
                 {subMenus.map(({ text: subText, link: subLink }) => (
-                  <Link href={subLink} onClick={onClick}>
+                  <Link
+                    href={subLink}
+                    onClick={onClick}
+                    className="dark:text-neutral-100 text-black"
+                  >
                     {subText}
                   </Link>
                 ))}
               </div>
             </details>
           ) : (
-            <Link href={link} onClick={onClick}>
+            <Link
+              href={link}
+              onClick={onClick}
+              className="dark:text-neutral-100 text-black"
+            >
               {text}
             </Link>
           )
