@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Drawer } from "vaul"
 
 import AccordionMenu from "components/menu/accordionMenu"
+import ThemeSwitch from "components/themeSwitch"
 
 export default function SwipeMenu() {
   const [isClient, setIsClient] = useState(false)
@@ -25,8 +26,10 @@ export default function SwipeMenu() {
           <div className="p-4 bg-white rounded-t-[10px] flex-1">
             <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
             <div className="max-w-md mx-auto">
-              <Drawer.Title className="font-medium mb-10">
-                omergulcicek.com
+              <Drawer.Title className="flex items-center justify-between font-medium mb-10">
+                <span>omergulcicek.com</span>
+
+                <ThemeSwitch />
               </Drawer.Title>
               <nav>
                 <AccordionMenu

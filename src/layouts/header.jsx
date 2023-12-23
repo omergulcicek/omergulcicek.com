@@ -21,12 +21,12 @@ export default function Header() {
         transition={{ delay: 0.5 }}
         className="w-full dark:bg-neutral-900 border-b dark:border-b-neutral-800 z-40"
       >
-        <div className="container">
-          <ThemeSwitch />
-
+        <div className="container flex items-center justify-between">
           <nav>
             <Navigation />
           </nav>
+
+          <ThemeSwitch />
         </div>
       </motion.header>
     </>

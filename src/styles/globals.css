@@ -18,6 +18,7 @@ body {
   background-color: theme("colors.background.light");
   color: theme("colors.text.light");
   line-height: 1.5;
+  transition: 200ms background-color ease-out;
 }
 
 html[data-theme="dark"] body {
