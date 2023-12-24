@@ -21,12 +21,6 @@ body {
   transition: 200ms background-color ease-out;
 }
 
-#__next {
-  flex-direction: column;
-  display: flex;
-  min-height: 100vh;
-}
-
 @layer base {
   main {
     @apply flex-grow flex-shrink-0 basis-auto;
