@@ -5,7 +5,7 @@ export default function Tweets() {
   return (
     <>
       <div className="container px-4">
-        <h1 className="text-3xl font-bold underline">Tweets</h1>
+        <h1 className="text-3xl font-bold">Tweets</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12">
           {new Array(6).fill({}).map((e, i) => (
