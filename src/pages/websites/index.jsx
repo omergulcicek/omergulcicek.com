@@ -1,8 +1,10 @@
+import Title from "components/title"
+
 export default function Tools() {
   return (
     <>
       <div className="container">
-        <h1 className="text-3xl font-bold">Web Siteler</h1>
+        <Title>Web Siteler</Title>
       </div>
     </>
   )

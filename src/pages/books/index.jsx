@@ -1,8 +1,10 @@
+import Title from "components/title"
+
 export default function Book() {
   return (
     <>
       <div className="container">
-        <h1 className="text-3xl font-bold">Kitap</h1>
+        <Title>Kitap</Title>
       </div>
     </>
   )
