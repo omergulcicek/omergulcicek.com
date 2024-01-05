@@ -30,6 +30,10 @@ body {
   svg {
     @apply block max-w-full;
   }
+
+  p {
+    @apply text-base leading-6 mb-6 mt-4 md:text-[19px] md:leading-7;
+  }
 }
 
 @layer components {
