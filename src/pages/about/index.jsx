@@ -3,7 +3,7 @@ import Title from "components/title"
 export default function About() {
   return (
     <>
-      <div className="container">
+      <div className="content">
         <Title>Hakkında</Title>
 
         <div>
