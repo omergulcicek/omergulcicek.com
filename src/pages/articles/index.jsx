@@ -20,21 +20,19 @@ export async function getStaticProps() {
   try {
     const files = fs.readdirSync("public/posts")
 
-    const posts = files
-      .filter((e) => e !== ".DS_Store")
-      .map((fileName) => {
-        const slug = fileName.replace(".md", "")
-        const readFile = fs.readFileSync(
-          `public/posts/${fileName}/index.md`,
-          "utf-8"
-        )
-        const { data: frontmatter } = matter(readFile)
+    const posts = files.map((fileName) => {
+      const slug = fileName.replace(".md", "")
+      const readFile = fs.readFileSync(
+        `public/posts/${fileName}/index.md`,
+        "utf-8"
+      )
+      const { data: frontmatter } = matter(readFile)
 
-        return {
-          slug,
-          frontmatter,
-        }
-      })
+      return {
+        slug,
+        frontmatter,
+      }
+    })
 
     return {
       props: {

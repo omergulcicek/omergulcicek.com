@@ -9,7 +9,7 @@ export default function ArticleList({ posts }) {
             key={slug}
             className="text-sm lg:text-lg flex items-center gap-x-8 py-1.5 px-4 transition-colors group hover:text-blue-300 hover:bg-blue-300/10 rounded-md"
           >
-            <Link href={`/post/${slug}`} legacyBehaviour>
+            <Link href={`/articles/${slug}`} legacyBehaviour>
               <span className=" text-neutral-400">{date}</span>
               <h1>{title}</h1>
             </Link>

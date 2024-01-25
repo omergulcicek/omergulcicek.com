@@ -1,7 +1,7 @@
 export const navigationMenu = [
   { text: "Ana Sayfa", link: "/" },
   {
-    text: "Yazılarım",
+    text: "Yazılar",
     link: "/writing",
     subMenus: [
       {
@@ -13,7 +13,7 @@ export const navigationMenu = [
       {
         text: "Kişisel Yazılar",
         description: "Kişisel düşünce, deneyim ve yorumlarım",
-        link: "/personal-articles",
+        link: "/writing",
         color: "#38bdf8",
       },
     ],
