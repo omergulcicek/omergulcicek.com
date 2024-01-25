@@ -13,7 +13,7 @@ export const navigationMenu = [
       {
         text: "Kişisel Yazılar",
         description: "Kişisel düşünce, deneyim ve yorumlarım",
-        link: "/writing",
+        link: "/blog",
         color: "#38bdf8",
       },
     ],

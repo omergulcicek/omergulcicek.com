@@ -8,10 +8,9 @@ export default function Article({ frontmatter, content }) {
   return (
     <>
       <div className="content">
-        <Title>Kişisel Yazılar</Title>
-
         <div className="prose mx-auto mt-8">
-          <h1>{frontmatter?.title}</h1>
+          <Title>{frontmatter?.title}</Title>
+
           <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
         </div>
       </div>

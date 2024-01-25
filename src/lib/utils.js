@@ -53,7 +53,7 @@ export function getIcons({ name = "", color = "currentColor" }) {
       return <FaCode fill={color} />
     case "stack":
       return <FaScrewdriverWrench fill={color} />
-    case "writing":
+    case "blog":
       return <FaPencil fill={color} />
     case "font":
       return <FaFont fill={color} />
