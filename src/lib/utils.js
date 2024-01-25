@@ -70,3 +70,30 @@ export function getIcons({ name = "", color = "currentColor" }) {
       return <FaAngleDown className="h-3 w-3 fill-neutral-400" />
   }
 }
+
+export function formatDate(dateString) {
+  const date = new Date(dateString)
+
+  const months = [
+    "Ocak",
+    "Şubat",
+    "Mart",
+    "Nisan",
+    "Mayıs",
+    "Haziran",
+    "Temmuz",
+    "Ağustos",
+    "Eylül",
+    "Ekim",
+    "Kasım",
+    "Aralık",
+  ]
+
+  const day = date.getDate()
+  const month = date.getMonth()
+  const year = date.getFullYear()
+
+  const turkishDate = day + " " + months[month] + " " + year
+
+  return turkishDate
+}
