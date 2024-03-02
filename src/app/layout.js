@@ -2,7 +2,6 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 
 import { Aside } from "@/features/aside"
-import { Main } from "@/shared/main"
 
 import { cn } from "@/utils/cn"
 
@@ -18,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="tr">
       <body className={cn(inter.className, "flex min-h-dvh")}>
         <Aside />
-        <Main>{children}</Main>
+        <main className="flex-1 flex">{children}</main>
       </body>
     </html>
   )
