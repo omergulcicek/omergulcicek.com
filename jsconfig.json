@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
     "paths": {
-      "@/tailwindcss": ["styles/globals.css"]
+      "@/*": ["./src/*"],
+      "@/data/*": ["./src/data/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/features/*": ["./src/components/features/*"],
+      "@/shared/*": ["./src/components/shared/*"],
+      "@/widgets/*": ["./src/components/widgets/*"],
+      "@/ui/*": ["./src/components/ui/*"]
     }
   }
 }
