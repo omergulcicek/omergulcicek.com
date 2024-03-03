@@ -27,7 +27,9 @@ const Navigation = ({ title, data, onKeyPress = () => {} }) => {
             <NavigationItem
               key={index}
               url={url}
-              isActive={pathname === url}
+              isActive={
+                pathname === url || (url !== "/" && pathname.includes(url))
+              }
               {...others}
             >
               {key && (

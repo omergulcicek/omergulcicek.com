@@ -1,10 +1,18 @@
+"use client"
+
+import { usePathname } from "next/navigation"
+
 import { Container } from "@/shared/container"
+import { Submenu } from "@/features/submenu"
 
 export default function WithSubmenuLayout({ children }) {
+  const pathname = usePathname()
+
   return (
     <>
-      <nav className="w-80 bg-blue-500">Ara menü</nav>
-      <div className="flex-1 bg-red-300">
+      <Submenu />
+
+      <div className="flex-1">
         <Container>{children}</Container>
       </div>
     </>
