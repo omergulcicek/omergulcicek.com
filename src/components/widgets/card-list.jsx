@@ -51,7 +51,7 @@ const MasonryGrid = ({ data }) => {
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
         <CardList data={data1} />
         <CardList data={data2} />
         <CardList data={data3} />

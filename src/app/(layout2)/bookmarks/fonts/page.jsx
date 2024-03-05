@@ -5,7 +5,7 @@ import { fontsData } from "@/data/bookmarks/fontsData"
 
 export default function Fonts() {
   return (
-    <main className="flex flex-col gap-10 mt-10 min-h-screen">
+    <main className="md:container flex flex-col gap-10 mt-10 min-h-screen">
       <Title>Yazı Stilleri</Title>
 
       <CardList data={fontsData} />
