@@ -1,7 +1,7 @@
 const Container = ({ children }) => {
   return (
     <>
-      <div className="mx-auto w-2/3 py-4">{children}</div>
+      <div className="mx-auto w-4/5 py-4">{children}</div>
     </>
   )
 }

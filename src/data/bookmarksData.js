@@ -40,7 +40,7 @@ export const bookmarksData = [
     icon: <Star size={16} />,
   },
   {
-    text: "Yazı Stili",
+    text: "Yazı Stilleri",
     url: "/bookmarks/fonts",
     icon: <BookType size={16} />,
   },

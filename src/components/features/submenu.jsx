@@ -1,26 +1,12 @@
-"use client"
-
-import { usePathname } from "next/navigation"
 import { useMediaQuery } from "@uidotdev/usehooks"
 
 import { Navigation } from "@/features/navigation"
-import { blogData } from "@/data/blogData"
-import { bookmarksData } from "@/data/bookmarksData"
-import { educationData } from "@/data/educationData"
+
+import { useSubmenuData } from "@/hooks/useSubmenuData"
 
 const Submenu = () => {
-  const pathname = usePathname()
   const isDesktop = useMediaQuery("only screen and (min-width : 1228px)")
-
-  let data = null
-
-  if (pathname.includes("/blog")) {
-    data = blogData
-  } else if (pathname.includes("/bookmarks")) {
-    data = bookmarksData
-  } else if (pathname.includes("/education")) {
-    data = educationData
-  }
+  const data = useSubmenuData()
 
   if (!isDesktop) return null
 

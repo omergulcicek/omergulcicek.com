@@ -46,7 +46,6 @@ export const navigationData = [
     icon: <Bookmark size={16} />,
   },
   {
-    key: "/",
     text: "İletişim",
     icon: <MessageCircle size={16} />,
     modal: true,
