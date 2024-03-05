@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Link from "next/link"
 import {
   Dialog,
@@ -13,6 +14,16 @@ import { CopyToClipboard } from "react-copy-to-clipboard"
 import { Copy, ExternalLink, SquarePen } from "lucide-react"
 
 const ContactModal = ({ icon, text, children }) => {
+  const [isCopy, setIsCopy] = useState(false)
+
+  function changeCopyText() {
+    setIsCopy(true)
+
+    setTimeout(() => {
+      setIsCopy(false)
+    }, 1000)
+  }
+
   return (
     <>
       <Dialog>
@@ -52,9 +63,19 @@ const ContactModal = ({ icon, text, children }) => {
                     </Link>
 
                     <CopyToClipboard text={"iletisim@omergulcicek.com"}>
-                      <Button variant="outline" size="sm">
-                        <Copy size={16} />
-                        <span className="ml-2 text-xs">Kopyala</span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => changeCopyText()}
+                      >
+                        {isCopy ? (
+                          <span className="text-xs">Kopyalandı!</span>
+                        ) : (
+                          <>
+                            <Copy size={16} />
+                            <span className="ml-2 text-xs">Kopyala</span>
+                          </>
+                        )}
                       </Button>
                     </CopyToClipboard>
                   </div>
