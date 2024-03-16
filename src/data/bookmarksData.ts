@@ -2,6 +2,11 @@ import { NavMenuTypes } from "@/types";
 
 export const bookmarksData: NavMenuTypes = [
   {
+    title: "Feyz",
+    href: "/bookmarks",
+    description: "Tüm yer imleri",
+  },
+  {
     title: "Araçlar",
     href: "/bookmarks/stack",
     description: "Kullandığım uygulamalar",
