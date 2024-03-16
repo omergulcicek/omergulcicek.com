@@ -1,8 +1,9 @@
 import Hero from "@/ui/hero";
+import Container from "@/shared/container";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-7xl flex-col gap-6 pt-56">
+    <Container className="gap-6 pt-56">
       <Hero>
         <div>
           <Hero.Hello />
@@ -13,6 +14,6 @@ export default function Home() {
           <Hero.Strong /> <Hero.Desc />
         </div>
       </Hero>
-    </main>
+    </Container>
   );
 }
