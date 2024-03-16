@@ -1,5 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import { cn } from "@/utils";
+
 import heroData from "@/data/heroData";
 
 export const Hero = ({ children }: { children: React.ReactNode }) => {
@@ -16,12 +19,17 @@ export const Hello = ({
   const { hi } = heroData;
 
   return (
-    <span
-      className={cn("text-2xl font-light leading-7 text-black/55", className)}
+    <motion.span
+      initial={{ opacity: 0, translateY: "100px" }}
+      animate={{ opacity: 1, translateY: "0px" }}
+      className={cn(
+        "block text-2xl font-light leading-7 text-black/55",
+        className,
+      )}
       {...props}
     >
       {hi}
-    </span>
+    </motion.span>
   );
 };
 
@@ -35,12 +43,14 @@ export const Name = ({
   const { name } = heroData;
 
   return (
-    <h1
+    <motion.h1
+      initial={{ opacity: 0, translateY: "100px" }}
+      animate={{ opacity: 1, translateY: "0px" }}
       className={cn("text-[40px] font-semibold leading-[48px]", className)}
       {...props}
     >
       {name}
-    </h1>
+    </motion.h1>
   );
 };
 
@@ -54,9 +64,15 @@ export const Strong = ({
   const { strong } = heroData;
 
   return (
-    <strong className={cn("font-semibold underline", className)} {...props}>
+    <motion.strong
+      initial={{ opacity: 0, translateX: "-100px" }}
+      animate={{ opacity: 1, translateX: "0px" }}
+      transition={{ delay: 0.5 }}
+      className={cn("font-semibold underline", className)}
+      {...props}
+    >
       {strong}
-    </strong>
+    </motion.strong>
   );
 };
 
@@ -70,9 +86,15 @@ export const Desc = ({
   const { desc } = heroData;
 
   return (
-    <span className={cn("font-light", className)} {...props}>
+    <motion.span
+      initial={{ opacity: 0, translateX: "100px" }}
+      animate={{ opacity: 1, translateX: "0px" }}
+      transition={{ delay: 0.5 }}
+      className={cn("font-light", className)}
+      {...props}
+    >
       {desc}
-    </span>
+    </motion.span>
   );
 };
 

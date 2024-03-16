@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { motion } from "framer-motion";
 import { Copy, Mail, Check, Send } from "lucide-react";
 
 import Container from "@/shared/container";
@@ -17,7 +18,6 @@ import { cn } from "@/utils";
 
 export default function Footer({
   className,
-  ...props
 }: {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>) {
@@ -32,7 +32,12 @@ export default function Footer({
   }
 
   return (
-    <footer className={cn("mt-40 flex w-full py-20", className)} {...props}>
+    <motion.footer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 1 }}
+      className={cn("mt-40 flex w-full py-20", className)}
+    >
       <Container className="max-w-3xl">
         <div className="flex flex-col gap-1 text-base leading-relaxed text-black/40">
           <p>
@@ -124,6 +129,6 @@ export default function Footer({
           <p>© 2024 | Ömer Gülçiçek</p>
         </div>
       </Container>
-    </footer>
+    </motion.footer>
   );
 }

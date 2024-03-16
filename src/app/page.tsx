@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/widgets/hero";
 import Container from "@/shared/container";
 
