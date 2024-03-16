@@ -4,8 +4,8 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Copy, Mail, Check, Send } from "lucide-react";
 
-import Container from "./container";
-import { Button } from "@/components/ui/button";
+import Container from "@/shared/container";
+import { Button } from "@/ui/button";
 import {
   Popover,
   PopoverContent,
@@ -33,7 +33,7 @@ export default function Footer({
 
   return (
     <footer className={cn("mt-40 flex w-full py-20", className)} {...props}>
-      <Container className=" max-w-3xl">
+      <Container className="max-w-3xl">
         <div className="flex flex-col gap-1 text-base leading-relaxed text-black/40">
           <p>
             <Link

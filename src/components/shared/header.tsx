@@ -1,8 +1,7 @@
-import Link from "next/link";
+import Container from "@/shared/container";
+import { NavMenu } from "@/widgets/nav-menu";
 
 import { cn } from "@/utils";
-import Container from "./container";
-import Brand from "@/ui/brand";
 
 export default function Header({
   className,
@@ -12,12 +11,8 @@ export default function Header({
 } & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <header className={cn("flex h-24 w-full", className)} {...props}>
-      <Container className="flex-row items-center justify-between">
-        <Brand />
-
-        <nav>
-          <Link href="/about">About</Link>
-        </nav>
+      <Container className="flex-row items-center justify-center gap-10">
+        <NavMenu />
       </Container>
     </header>
   );
