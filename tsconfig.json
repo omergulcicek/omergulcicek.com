@@ -22,6 +22,7 @@
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
       "@/widgets/*": ["./src/components/widgets/*"],
+      "@/ui/*": ["./src/components/ui/*"],
       "@/utils/*": ["./src/utils/*"],
     }
   },

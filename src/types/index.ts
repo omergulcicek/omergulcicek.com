@@ -1,5 +1,8 @@
 type HeroProps = {
-  title: string;
+  hi: string;
+  name: string;
+  strong: string;
+  desc: string;
 };
 
 export type { HeroProps };
