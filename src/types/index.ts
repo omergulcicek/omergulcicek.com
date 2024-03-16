@@ -1,8 +1,10 @@
-type HeroProps = {
+type HeroTypes = {
   hi: string;
   name: string;
   strong: string;
   desc: string;
 };
 
-export type { HeroProps };
+type NavMenuTypes = { title: string; href: string; description: string }[];
+
+export type { HeroTypes, NavMenuTypes };

@@ -1,6 +1,6 @@
-import { HeroProps } from "@/types";
+import { HeroTypes } from "@/types";
 
-const heroData: HeroProps = {
+const heroData: HeroTypes = {
   hi: "Merhaba, ben",
   name: "Ömer Gülçiçek",
   strong: "Yazılım mühendisiyim.",
