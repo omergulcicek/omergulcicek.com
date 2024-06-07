@@ -7,4 +7,10 @@ type HeroTypes = {
 
 type NavMenuTypes = { title: string; href: string; description: string }[];
 
-export type { HeroTypes, NavMenuTypes };
+type TitleProps = {
+  tag?: "h1" | "h2" | "h3" | "h4";
+  children: React.ReactNode;
+  className?: string;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export type { HeroTypes, NavMenuTypes, TitleProps };
