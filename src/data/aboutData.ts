@@ -9,6 +9,7 @@ export const aboutData: NavMenuTypes = [
   {
     title: "Çalışma Alanım",
     href: "/workspace",
-    description: "Bilgisayar, telefon ve kullandığım ekipmanlarım",
+    description:
+      "Gün içinde ve çalışma hayatında sürekli kullandığım araçların listesi",
   },
 ];
