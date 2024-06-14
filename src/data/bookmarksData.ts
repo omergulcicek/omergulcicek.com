@@ -13,7 +13,7 @@ export const bookmarksData: NavMenuTypes = [
   },
   {
     title: "Frontend",
-    href: "/bookmarks/frontent",
+    href: "/bookmarks/frontend",
     description: "Frontend ile ilgili kaynaklarım",
   },
   {
