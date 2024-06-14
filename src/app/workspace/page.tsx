@@ -1,5 +1,3 @@
-"use client";
-
 import Container from "@/shared/container";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs";
 
