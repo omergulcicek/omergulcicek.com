@@ -38,7 +38,7 @@ export default function Footer({
       transition={{ delay: 1, duration: 1 }}
       className={cn("mt-40 flex w-full py-20", className)}
     >
-      <Container className="max-w-3xl">
+      <Container className="max-w-sm md:max-w-3xl">
         <div className="flex flex-col gap-1 text-base leading-relaxed text-black/40">
           <p>
             <Link
