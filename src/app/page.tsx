@@ -1,6 +1,6 @@
 "use client";
 
-import Hero from "@/components/widgets/hero";
+import Hero from "@/widgets/hero";
 import Container from "@/shared/container";
 
 export default function Home() {
