@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link";
 
-import BookmarksLayout from "@/layouts/bookmarks-layout";
+import Bookmarks from "@/layouts/bookmarks-layout";
 
-export default function About() {
+export default function Books() {
   return (
-    <BookmarksLayout title="Kitap" subtitle="Okuduğum kitapların listesi">
-      <></>
-    </BookmarksLayout>
+    <Bookmarks>
+      <Bookmarks.PageTitle>Kitap</Bookmarks.PageTitle>
+      <Bookmarks.PageSubTitle>
+        Okuduğum kitapların listesi
+      </Bookmarks.PageSubTitle>
+    </Bookmarks>
   );
 }

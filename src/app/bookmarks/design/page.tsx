@@ -4,12 +4,12 @@ import Link from "next/link";
 
 import Bookmarks from "@/layouts/bookmarks-layout";
 
-export default function Reading() {
+export default function Design() {
   return (
     <Bookmarks>
-      <Bookmarks.PageTitle>Makaleler</Bookmarks.PageTitle>
+      <Bookmarks.PageTitle>Tasarım</Bookmarks.PageTitle>
       <Bookmarks.PageSubTitle>
-        Okuduğum makalelerin listesi
+        Tasarım ile ilgili kaynaklarım
       </Bookmarks.PageSubTitle>
     </Bookmarks>
   );

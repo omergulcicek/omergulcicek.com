@@ -29,7 +29,7 @@ export const bookmarksData: NavMenuTypes = [
   {
     title: "Tasarım",
     href: "/bookmarks/design",
-    description: "Tasarım ile ilgili kaynaklar",
+    description: "Tasarım ile ilgili kaynaklarım",
   },
   {
     title: "Tweets",

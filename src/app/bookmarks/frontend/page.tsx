@@ -1,16 +1,18 @@
+"use client";
+
 import Link from "next/link";
 
-import BookmarksLayout from "@/layouts/bookmarks-layout";
+import Bookmarks from "@/layouts/bookmarks-layout";
 
-export default function About() {
+export default function Frontend() {
   return (
     <>
-      <BookmarksLayout
-        title="Frontend"
-        subtitle="Frontend ile ilgili kaynaklarım"
-      >
-        <></>
-      </BookmarksLayout>
+      <Bookmarks>
+        <Bookmarks.PageTitle>Frontend</Bookmarks.PageTitle>
+        <Bookmarks.PageSubTitle>
+          Frontend ile ilgili kaynaklarım
+        </Bookmarks.PageSubTitle>
+      </Bookmarks>
     </>
   );
 }
