@@ -1,13 +1,9 @@
 "use client";
 
-import { Tweet } from "react-tweet";
-
 import Bookmarks from "@/layouts/bookmarks-layout";
-import { tweetData } from "@/data/tweetData";
+import { TweetList } from "@/widgets/tweet-list";
 
 export default function Tweets() {
-  if (!tweetData) return null;
-
   return (
     <Bookmarks>
       <Bookmarks.PageTitle>Tweets</Bookmarks.PageTitle>
@@ -16,11 +12,7 @@ export default function Tweets() {
       </Bookmarks.PageSubTitle>
 
       <Bookmarks.PageContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4">
-          {tweetData.map(({ id }) => (
-            <Tweet key={id} id={id} />
-          ))}
-        </div>
+        <TweetList />
       </Bookmarks.PageContent>
     </Bookmarks>
   );
