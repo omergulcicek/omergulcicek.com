@@ -26,7 +26,9 @@ export function NavMenu() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={cn(navigationMenuTriggerStyle(), "hover:bg-[#181818]")}
+            >
               Ana Sayfa
             </NavigationMenuLink>
           </Link>
@@ -128,7 +130,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
-            className,
+            className
           )}
           {...props}
         >
