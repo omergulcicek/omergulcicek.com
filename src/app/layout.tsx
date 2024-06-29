@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className="flex h-full flex-col">
+    <html lang="tr" className="flex min-h-full flex-col">
       <body className={cn(inter.className, "flex h-full flex-col")}>
         <Header />
         <main className="flex-1">{children}</main>

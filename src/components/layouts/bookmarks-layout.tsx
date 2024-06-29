@@ -12,11 +12,7 @@ export const BookmarksLayout = ({
 }: {
   children: React.ReactNode;
 }) => {
-  return (
-    <>
-      <Container className="mt-10 md:mt-24 max-w-2xl">{children}</Container>
-    </>
-  );
+  return <section className="mt-10 md:mt-24">{children}</section>;
 };
 
 export const PageTitle = ({
@@ -29,14 +25,16 @@ export const PageTitle = ({
   props?: React.HTMLProps<HTMLHeadingElement>;
 }) => {
   return (
-    <motion.h2
-      initial={{ opacity: 0, translateY: "100px" }}
-      animate={{ opacity: 1, translateY: "0px" }}
-      className={cn(className)}
-      {...props}
-    >
-      <Title tag="h2">{children}</Title>
-    </motion.h2>
+    <Container className="max-w-2xl">
+      <motion.h2
+        initial={{ opacity: 0, translateY: "100px" }}
+        animate={{ opacity: 1, translateY: "0px" }}
+        className={cn(className)}
+        {...props}
+      >
+        <Title tag="h2">{children}</Title>
+      </motion.h2>
+    </Container>
   );
 };
 
@@ -50,14 +48,16 @@ export const PageSubTitle = ({
   props?: React.HTMLProps<HTMLHeadingElement>;
 }) => {
   return (
-    <motion.h2
-      initial={{ opacity: 0, translateY: "100px" }}
-      animate={{ opacity: 1, translateY: "0px" }}
-      className={cn(className)}
-      {...props}
-    >
-      <Title tag="h3">{children}</Title>
-    </motion.h2>
+    <Container className="max-w-2xl">
+      <motion.h2
+        initial={{ opacity: 0, translateY: "100px" }}
+        animate={{ opacity: 1, translateY: "0px" }}
+        className={cn(className)}
+        {...props}
+      >
+        <Title tag="h3">{children}</Title>
+      </motion.h2>
+    </Container>
   );
 };
 
@@ -71,14 +71,16 @@ export const PageContent = ({
   props?: React.HTMLProps<HTMLHeadingElement>;
 }) => {
   return (
-    <motion.section
-      initial={{ opacity: 0, translateY: "100px" }}
-      animate={{ opacity: 1, translateY: "0px" }}
-      className={cn(className)}
-      {...props}
-    >
-      {children}
-    </motion.section>
+    <Container className="mt-10 md:mt-24 max-w-6xl">
+      <motion.div
+        initial={{ opacity: 0, translateY: "100px" }}
+        animate={{ opacity: 1, translateY: "0px" }}
+        className={cn(className)}
+        {...props}
+      >
+        {children}
+      </motion.div>
+    </Container>
   );
 };
 

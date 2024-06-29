@@ -16,7 +16,7 @@ export default function Tweets() {
       </Bookmarks.PageSubTitle>
 
       <Bookmarks.PageContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4">
           {tweetData.map(({ id }) => (
             <Tweet key={id} id={id} />
           ))}
