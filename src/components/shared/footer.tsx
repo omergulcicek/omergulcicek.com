@@ -39,12 +39,13 @@ export default function Footer({
       className={cn("mt-40 flex w-full py-20", className)}
     >
       <Container className="max-w-sm md:max-w-3xl">
-        <div className="flex flex-col gap-1 text-base leading-relaxed text-black/40">
+        <div className="flex flex-col gap-1 text-base leading-relaxed text-tertiary-foreground">
           <p>
             <Link
               href="https://nextjs.org/"
               target="_blank"
               rel="noopener noreferrer"
+              className="dark:hover:text-white"
             >
               Next.js
             </Link>
@@ -53,6 +54,7 @@ export default function Footer({
               href="https://www.typescriptlang.org/"
               target="_blank"
               rel="noopener noreferrer"
+              className="dark:hover:text-white"
             >
               TypeScript
             </Link>
@@ -61,6 +63,7 @@ export default function Footer({
               href="https://tailwindcss.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="dark:hover:text-white"
             >
               Tailwind CSS
             </Link>
@@ -69,6 +72,7 @@ export default function Footer({
               href="https://ui.shadcn.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="dark:hover:text-white"
             >
               shadcn/ui
             </Link>{" "}
@@ -78,7 +82,7 @@ export default function Footer({
             Bir selam söyleyin{" "}
             <Popover>
               <PopoverTrigger>
-                <div className="inline-flex cursor-pointer items-center gap-1 transition hover:text-black">
+                <div className="inline-flex cursor-pointer items-center gap-1 transition hover:text-black dark:hover:text-white">
                   <Mail size={14} />
                   <span>iletisim@omergulcicek.com</span>
                 </div>
@@ -122,6 +126,7 @@ export default function Footer({
               href="https://github.com/omergulcicek"
               target="_blank"
               rel="noopener noreferrer"
+              className="dark:hover:text-white"
             >
               Beni GitHub'tan takip et
             </Link>

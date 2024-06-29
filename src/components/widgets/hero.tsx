@@ -23,8 +23,8 @@ export const Hello = ({
       initial={{ opacity: 0, translateY: "100px" }}
       animate={{ opacity: 1, translateY: "0px" }}
       className={cn(
-        "block text-2xl font-light leading-7 text-black/55",
-        className,
+        "block text-2xl font-light leading-7 text-secondary-foreground",
+        className
       )}
       {...props}
     >

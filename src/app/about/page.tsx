@@ -14,7 +14,7 @@ export default function About() {
           href="https://www.alisgidis.com/"
           rel="noopener noreferrer"
           target="_blank"
-          className="text-slate-950 font-medium underline"
+          className="text-slate-950 dark:text-white font-medium underline"
         >
           @Alışgidiş
         </Link>
@@ -35,7 +35,7 @@ export default function About() {
           href="mailto:iletisim@omergulcicek.com"
           rel="noopener noreferrer"
           target="_blank"
-          className="text-slate-950 font-medium underline"
+          className="text-slate-950 dark:text-white font-medium underline"
         >
           iletisim@omergulcicek.com
         </Link>{" "}
