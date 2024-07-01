@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className="flex min-h-full flex-col">
-      <body className={cn(inter.className, "flex h-full flex-col dark")}>
+      <body className={cn(inter.className, "flex h-full flex-col")}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

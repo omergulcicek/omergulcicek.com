@@ -27,7 +27,10 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
-              className={cn(navigationMenuTriggerStyle(), "hover:bg-[#181818]")}
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "hover:bg-accent dark:hover:bg-[#181818] "
+              )}
             >
               Ana Sayfa
             </NavigationMenuLink>
