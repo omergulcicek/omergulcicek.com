@@ -1,0 +1,8 @@
+import { AnimationListLayout } from "@/layouts/animation-list-layout";
+import { designData } from "@/data/designData";
+
+export function DesignList() {
+  if (!designData) return null;
+
+  return <AnimationListLayout data={designData} />;
+}

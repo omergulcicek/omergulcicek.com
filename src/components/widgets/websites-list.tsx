@@ -4,9 +4,5 @@ import { webSitesData } from "@/data/webSitesData";
 export function WebSitesList() {
   if (!webSitesData) return null;
 
-  return (
-    <div className="flex flex-col gap-4">
-      <AnimationListLayout data={webSitesData} />
-    </div>
-  );
+  return <AnimationListLayout data={webSitesData} />;
 }
