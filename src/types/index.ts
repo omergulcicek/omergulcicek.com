@@ -15,4 +15,16 @@ type TitleProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export type { HeroTypes, NavMenuTypes, TweetTypes, TitleProps };
+type AnimationListTypes = {
+  img: string;
+  title: string;
+  url: string;
+}[];
+
+export type {
+  AnimationListTypes,
+  HeroTypes,
+  NavMenuTypes,
+  TweetTypes,
+  TitleProps,
+};

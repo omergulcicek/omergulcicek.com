@@ -1,4 +1,6 @@
-export const webSitesData = [
+import { AnimationListTypes } from "@/types";
+
+export const webSitesData: AnimationListTypes = [
   {
     img: "💀",
     title: "Kişisel Web Sitesi",
