@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { VSCodeList } from "@/widgets/vscode-list";
 
 import Bookmarks from "@/layouts/bookmarks-layout";
 
@@ -11,6 +11,9 @@ export default function VSCode() {
       <Bookmarks.PageSubTitle>
         Visual Studio Code eklentilerim
       </Bookmarks.PageSubTitle>
+      <Bookmarks.PageContent>
+        <VSCodeList />
+      </Bookmarks.PageContent>
     </Bookmarks>
   );
 }
