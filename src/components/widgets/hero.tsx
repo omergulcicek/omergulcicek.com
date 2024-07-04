@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import { cn } from "@/utils";
 
-import heroData from "@/data/heroData";
+import heroData from "@/data/hero-data";
 
 export const Hero = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;

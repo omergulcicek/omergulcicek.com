@@ -18,7 +18,9 @@ type TitleProps = {
 type AnimationListTypes = {
   img: string;
   title: string;
+  description?: string;
   url: string;
+  isExternal?: boolean;
 }[];
 
 export type {

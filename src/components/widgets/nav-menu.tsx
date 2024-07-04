@@ -15,10 +15,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/ui/navigation-menu";
 
-import { writingData } from "@/data/writingData";
-import { educationData } from "@/data/educationData";
-import { aboutData } from "@/data/aboutData";
-import { bookmarksData } from "@/data/bookmarksData";
+import { writingData } from "@/data/writing-data";
+import { educationData } from "@/data/education-data";
+import { aboutData } from "@/data/about-data";
+import { bookmarksData } from "@/data/bookmarks-data";
 
 export function NavMenu() {
   return (

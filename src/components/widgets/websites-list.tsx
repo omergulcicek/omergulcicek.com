@@ -1,8 +1,8 @@
 import { AnimationListLayout } from "@/layouts/animation-list-layout";
-import { webSitesData } from "@/data/webSitesData";
+import { webSiteData } from "@/data/website-data";
 
 export function WebSitesList() {
-  if (!webSitesData) return null;
+  if (!webSiteData) return null;
 
-  return <AnimationListLayout data={webSitesData} />;
+  return <AnimationListLayout data={webSiteData} />;
 }

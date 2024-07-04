@@ -1,54 +1,67 @@
-import { NavMenuTypes } from "@/types";
+import { AnimationListTypes } from "@/types";
 
-export const bookmarksData: NavMenuTypes = [
+export const feyzData: AnimationListTypes = [
   {
-    title: "Feyz",
-    href: "/bookmarks",
-    description: "Tüm yer imleri",
-  },
-  {
+    img: "⚙️",
     title: "Araçlar",
-    href: "/bookmarks/stack",
     description: "Kullandığım uygulamalar",
+    url: "/bookmarks/stack",
+    isExternal: false,
   },
   {
+    img: "👾",
     title: "Frontend",
-    href: "/bookmarks/frontend",
     description: "Frontend ile ilgili kaynaklarım",
+    url: "/bookmarks/frontend",
+    isExternal: false,
   },
   {
+    img: "📚",
     title: "Kitap",
-    href: "/bookmarks/books",
     description: "Okuduğum kitapların listesi",
+    url: "/bookmarks/books",
+    isExternal: false,
   },
   {
+    img: "📑",
     title: "Makaleler",
-    href: "/bookmarks/reading",
     description: "Okuduğum makalelerin listesi",
+    url: "/bookmarks/reading",
+    isExternal: false,
   },
   {
+    img: "🎨",
     title: "Tasarım",
-    href: "/bookmarks/design",
     description: "Tasarım ile ilgili kaynaklarım",
+    url: "/bookmarks/design",
+    isExternal: false,
   },
   {
+    img: "💬",
     title: "Tweets",
-    href: "/bookmarks/tweets",
     description: "Yazılım alanında yararlı tweetler",
+    url: "/bookmarks/tweets",
+    isExternal: false,
   },
   {
+    img: "💻",
     title: "VS Code",
-    href: "/bookmarks/vscode",
     description: "Visual Studio Code eklentilerim",
+    url: "/bookmarks/vscode",
+    isExternal: false,
   },
   {
+    img: "🌐",
     title: "Web Siteler",
-    href: "/bookmarks/websites",
     description: "Karşılaştığım güzel siteler",
+    url: "/bookmarks/websites",
+    isExternal: false,
   },
   {
+    img: "💬",
     title: "Yazı Tipleri",
-    href: "/bookmarks/font",
     description: "Yazı tipi koleksiyonu",
+    url: "/bookmarks/fonts",
+    isExternal: false,
   },
 ];

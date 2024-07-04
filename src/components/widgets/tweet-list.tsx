@@ -1,7 +1,7 @@
 import { Tweet } from "react-tweet";
 import { motion } from "framer-motion";
 
-import { tweetData } from "@/data/tweetData";
+import { tweetData } from "@/data/tweet-data";
 
 export function TweetList() {
   if (!tweetData) return null;
