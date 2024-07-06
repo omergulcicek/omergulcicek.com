@@ -21,6 +21,7 @@ type AnimationListTypes = {
   description?: string;
   url: string;
   isExternal?: boolean;
+  detail?: string;
 }[];
 
 export type {

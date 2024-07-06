@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { BookList } from "@/widgets/book-list";
 
 import Bookmarks from "@/layouts/bookmarks-layout";
 
@@ -11,6 +11,9 @@ export default function Books() {
       <Bookmarks.PageSubTitle>
         Okuduğum kitapların listesi
       </Bookmarks.PageSubTitle>
+      <Bookmarks.PageContent>
+        <BookList />
+      </Bookmarks.PageContent>
     </Bookmarks>
   );
 }

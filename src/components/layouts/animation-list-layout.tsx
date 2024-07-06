@@ -8,7 +8,7 @@ export function AnimationListLayout({ data }: { data: Array<any> }) {
     <div className="flex flex-col gap-4">
       {data?.map(
         (
-          { img, title, description, url, isExternal = true },
+          { img, title, description, url, isExternal = true, detail },
           index: number
         ) => (
           <motion.article
@@ -37,6 +37,12 @@ export function AnimationListLayout({ data }: { data: Array<any> }) {
                   {description}
                 </span>
               </div>
+
+              {detail && (
+                <span className="absolute -right-5 to-50% text-8xl text-gray-200 grayscale font-bold rotate-12 opacity-75">
+                  {detail}
+                </span>
+              )}
             </Link>
           </motion.article>
         )
