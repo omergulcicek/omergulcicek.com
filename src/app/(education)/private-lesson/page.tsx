@@ -1,15 +1,15 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import Container from "@/shared/container";
-import Title from "@/ui/title";
+import Container from "@/shared/container"
+import Title from "@/ui/title"
 
 export default function PrivateLesson() {
-  return (
-    <>
-      <Container className="mt-10 md:mt-24 max-w-2xl">
-        <Title tag="h1">Özel Ders</Title>
-        <Title tag="h2">Birebir yada grupça eğitim</Title>
-      </Container>
-    </>
-  );
+	return (
+		<>
+			<Container className="mt-10 md:mt-24 max-w-2xl">
+				<Title tag="h1">Özel Ders</Title>
+				<Title tag="h2">Birebir yada grupça eğitim</Title>
+			</Container>
+		</>
+	)
 }
