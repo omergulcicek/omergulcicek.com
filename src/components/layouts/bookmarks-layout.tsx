@@ -32,7 +32,7 @@ export const PageTitle = ({
         className={cn(className)}
         {...props}
       >
-        <Title tag="h2">{children}</Title>
+        <Title tag="h1">{children}</Title>
       </motion.h2>
     </Container>
   );

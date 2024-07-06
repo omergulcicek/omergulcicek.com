@@ -10,10 +10,9 @@ export default function Title({
   ...props
 }: TitleProps) {
   const tagClassNames: { [key: string]: string } = {
-    h1: "text-8xl font-extrabold leading-snug",
-    h2: "text-6xl font-bold leading-normal",
-    h3: "text-3xl font-light leading-normal",
-    h4: "text-lg font-medium leading-normal",
+    h1: "text-6xl font-bold leading-normal",
+    h2: "text-3xl font-light leading-normal text-tertiary-foreground",
+    h3: "text-lg font-medium leading-normal text-tertiary-foreground",
   };
 
   const classes = cn(tagClassNames[Tag], className);

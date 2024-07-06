@@ -7,7 +7,8 @@ export default function Roadmap() {
   return (
     <>
       <Container className="mt-10 md:mt-24 max-w-2xl">
-        <Title tag="h2">Yol Haritası</Title>
+        <Title tag="h1">Yol Haritası</Title>
+        <Title tag="h2">Frontend yol haritası</Title>
       </Container>
 
       <div className="mt-10 md:mt-24">

@@ -6,7 +6,7 @@ import Title from "@/ui/title";
 export default function About() {
   return (
     <Container className="mt-10 md:mt-24 max-w-2xl">
-      <Title tag="h2">Hakkında</Title>
+      <Title tag="h1">Hakkında</Title>
 
       <p className="text-lg leading-8 text-neutral-500 my-2">
         Merhaba 👋🏻, İstanbul'da yaşayan bir yazılım mühendisiyim. <br /> Şu anda{" "}
