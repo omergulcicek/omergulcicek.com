@@ -58,7 +58,7 @@ export const feyzData: AnimationListTypes = [
 		isExternal: false
 	},
 	{
-		img: "💬",
+		img: "🔠",
 		title: "Yazı Tipleri",
 		description: "Yazı tipi koleksiyonu",
 		url: "/bookmarks/fonts",

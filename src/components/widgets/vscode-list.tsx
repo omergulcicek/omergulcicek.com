@@ -5,5 +5,9 @@ import { vsCodeData } from "@/data/vs-code-data"
 export function VSCodeList() {
 	if (!vsCodeData) return null
 
-	return <AnimationListLayout data={vsCodeData} />
+	return (
+		<AnimationListLayout
+			data={vsCodeData.sort((a, b) => a.title.localeCompare(b.title))}
+		/>
+	)
 }

@@ -5,5 +5,9 @@ import { bookData } from "@/data/book-data"
 export function BookList() {
 	if (!bookData) return null
 
-	return <AnimationListLayout data={bookData} />
+	return (
+		<AnimationListLayout
+			data={bookData.sort((a, b) => a.title.localeCompare(b.title))}
+		/>
+	)
 }
