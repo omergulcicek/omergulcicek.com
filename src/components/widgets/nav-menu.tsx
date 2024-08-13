@@ -79,7 +79,7 @@ export function NavMenu() {
 								<NavigationMenuLink asChild>
 									<figure className="flex h-full w-full select-none flex-col justify-end overflow-hidden rounded-md transition">
 										<Image
-											src="/profile.jpeg"
+											src="/img/profile.jpg"
 											alt="Ömer Gülçiçek profil fotoğrafı"
 											width={188}
 											height={224}

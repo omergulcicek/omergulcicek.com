@@ -13,8 +13,8 @@ export const deskWorkspace = [
 	},
 	{
 		name: "Koltuk",
-		image: "https://omergulcicek.com/img/desk/adore-chair.png",
-		description: "Adore Manager Techno"
+		image: "/img/ikea-markus.png",
+		description: "IKEA Markus"
 	},
 	{
 		name: "Masa",

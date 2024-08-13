@@ -39,9 +39,9 @@ export default function Workspace() {
 				<TabsContent value="dairy">
 					<div className="grid grid-cols-5"></div>
 				</TabsContent>
-				<TabsContent value="photo">Change your password here.</TabsContent>
-				<TabsContent value="home">Change your password here.</TabsContent>
-				<TabsContent value="gaming">Change your password here.</TabsContent>
+				<TabsContent value="photo"></TabsContent>
+				<TabsContent value="home"></TabsContent>
+				<TabsContent value="gaming"></TabsContent>
 			</Tabs>
 		</Container>
 	)
