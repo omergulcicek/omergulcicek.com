@@ -12,5 +12,8 @@ export const tweetData: TweetTypes = [
 	},
 	{
 		id: "1801387905211904202"
+	},
+	{
+		id: "1826809915433783447"
 	}
 ]
