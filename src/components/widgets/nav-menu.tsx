@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/utils"
-import profileImg from "public/img/profile.jpg"
 
 import {
 	NavigationMenu,
@@ -20,6 +19,8 @@ import { aboutData } from "@/data/about-data"
 import { bookmarksData } from "@/data/bookmarks-data"
 import { educationData } from "@/data/education-data"
 import { writingData } from "@/data/writing-data"
+
+import profileImg from "./../../../public/img/profile.jpg"
 
 export function NavMenu() {
 	console.log(profileImg)
