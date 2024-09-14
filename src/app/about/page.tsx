@@ -50,8 +50,7 @@ export default function About() {
 					Projeler geliştirirken yaratıcılığın sınırlarını zorlamak ve yenilikçi
 					çözümler üretmek bana büyük bir tatmin sağlıyor. Çalışmalarımda
 					sadelik ve ölçeklenebilirliğe odaklanarak, küçük detaylarla güçlü
-					duygusal bağlar kurmayı hedefliyorum. Uzun vadeli düşünme ve kullanıcı
-					deneyimini derinlemesine anlamanın önemini vurguluyorum.
+					duygusal bağlar kurmayı hedefliyorum.
 				</motion.p>
 				<motion.p
 					initial={{ opacity: 0, translateY: "100px" }}
