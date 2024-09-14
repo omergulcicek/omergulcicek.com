@@ -71,9 +71,11 @@ export default function About() {
 					transition={{ delay: 0.45 }}
 					className="text-xl leading-9 font-light"
 				>
-					Yazılım dışında beni en çok mutlu eden şeyler satranç oynamak ve yeni
-					yerler keşfetmek. Tarih, siyaset ve ekonomi alanlarına ilgim var ve bu
-					konularda sürekli olarak kendimi geliştirmeye çalışıyorum.
+					Kod yazmadığım zamanlarda yürüyüş yapmayı ve fotoğraf çekmeyi
+					seviyorum. Haftasonumu İstanbul'a ayırıyorum; gittiğim yerleri
+					fotoğraflayıp, çeşitli bilgiler paylaşıyorum. Satranç, tarih, siyaset
+					ve ekonomi alanlarına ilgim var ve bu konularda sürekli olarak kendimi
+					geliştirmeye çalışıyorum.
 				</motion.p>
 				<motion.p
 					initial={{ opacity: 0, translateY: "100px" }}

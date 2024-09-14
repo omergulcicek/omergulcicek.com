@@ -1,3 +1,5 @@
+"use client"
+
 import Container from "@/shared/container"
 import Hero from "@/widgets/hero"
 
