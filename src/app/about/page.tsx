@@ -5,7 +5,7 @@ import Title from "@/ui/title"
 
 export default function About() {
 	return (
-		<Container className="mt-10 md:mt-24 max-w-2xl">
+		<Container className="mt-10 md:mt-24 max-w-2xl font-light">
 			<Title tag="h1">Hakkında</Title>
 
 			<p className="text-lg leading-8 text-neutral-500 my-2">
@@ -18,8 +18,11 @@ export default function About() {
 				>
 					@Alışgidiş
 				</Link>
-				'te bir NextJS projesi üzerinde çalışıyorum. <br /> UI/UX, Web Vitals ve
-				A11Y Project konularına büyük bir tutku ve ilgi duyuyorum.
+				'te bir NextJS projesi üzerinde çalışıyorum. <br />{" "}
+				<span className="text-black font-medium">UI/UX,</span>{" "}
+				<span className="text-black font-medium">Web Vitals</span> ve{" "}
+				<span className="text-black font-medium">A11Y Project</span> konularına
+				ilgi duyuyorum.
 			</p>
 
 			<p className="text-lg leading-8 text-neutral-500 my-2">
@@ -31,24 +34,27 @@ export default function About() {
 			</p>
 
 			<p className="text-lg leading-8 text-neutral-500 my-2">
-				Turkuaz ve Türkçe Doküman projeleri, açık kaynak çalışmalarımda
-				öncelikli projelerim arasında yer alıyor ve tüm projelerimi açık kaynak
-				olarak paylaşıyorum. Ayrıca, yazılım alanındaki bilgi birikimimi
-				artırmak amacıyla düzenli olarak çeviriler yapıyor ve makaleler
-				yazıyorum.
+				<span className="text-black font-medium">Turkuaz</span> ve{" "}
+				<span className="text-black font-medium">Türkçe Doküman</span>{" "}
+				projeleri, açık kaynak çalışmalarımda öncelikli projelerim arasında yer
+				alıyor ve tüm projelerimi açık kaynak olarak paylaşıyorum. Ayrıca,
+				yazılım alanındaki bilgi birikimimi artırmak amacıyla düzenli olarak
+				çeviriler yapıyor ve makaleler yazıyorum.
 			</p>
 
 			<p className="text-lg leading-8 text-neutral-500 my-2">
-				Yazılım dışında beni en çok mutlu eden şeyler satranç oynamak,
-				arkadaşlarımla vakit geçirmek ve yeni yerler keşfetmek. Tarih, siyaset
-				ve ekonomi alanlarına ilgim var ve bu konularda sürekli olarak kendimi
-				geliştirmeye çalışıyorum.
+				Yazılım dışında beni en çok mutlu eden şeyler satranç oynamak ve yeni
+				yerler keşfetmek. Tarih, siyaset ve ekonomi alanlarına ilgim var ve bu
+				konularda sürekli olarak kendimi geliştirmeye çalışıyorum.
 			</p>
 
 			<p className="text-lg leading-8 text-neutral-500 my-2">
 				Bu siteyi, öğrendiklerimi paylaşmak, yazılım topluluğuna katkıda
 				bulunmak ve başkalarıyla bağlantı kurmak amacıyla oluşturuyorum. <br />{" "}
-				Bana{" "}
+			</p>
+
+			<p className="text-lg leading-8 text-neutral-500 my-2">
+				Bana her zaman{" "}
 				<Link
 					href="mailto:iletisim@omergulcicek.com"
 					rel="noopener noreferrer"
@@ -57,7 +63,7 @@ export default function About() {
 				>
 					iletisim@omergulcicek.com
 				</Link>{" "}
-				adresinden her zaman ulaşabilirsin.
+				adresinden ulaşabilirsin.
 			</p>
 		</Container>
 	)
