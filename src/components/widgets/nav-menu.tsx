@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/utils"
+import profileImg from "public/img/profile.jpg"
 
 import {
 	NavigationMenu,
@@ -21,6 +22,7 @@ import { educationData } from "@/data/education-data"
 import { writingData } from "@/data/writing-data"
 
 export function NavMenu() {
+	console.log(profileImg)
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>
@@ -89,7 +91,7 @@ export function NavMenu() {
 								<NavigationMenuLink asChild>
 									<figure className="flex h-full w-full select-none flex-col justify-end overflow-hidden rounded-md transition">
 										<Image
-											src="/img/profile.jpg"
+											src={profileImg.src}
 											alt="Ömer Gülçiçek profil fotoğrafı"
 											width={188}
 											height={224}
