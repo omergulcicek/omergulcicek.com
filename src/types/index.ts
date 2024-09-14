@@ -5,7 +5,12 @@ type HeroTypes = {
 	desc: string
 }
 
-type NavMenuTypes = { title: string; href: string; description: string }[]
+type NavMenuTypes = {
+	title: string
+	href: string
+	description: string
+	soon?: boolean
+}[]
 
 type TweetTypes = { id: string }[]
 

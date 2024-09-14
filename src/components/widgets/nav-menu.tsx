@@ -46,6 +46,11 @@ export function NavMenu() {
 									key={component.title}
 									title={component.title}
 									href={component.href}
+									className={cn(
+										"relative",
+										component.soon &&
+											"opacity-50 pointer-events-none cursor-default"
+									)}
 								>
 									{component.description}
 								</ListItem>
@@ -57,12 +62,17 @@ export function NavMenu() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Eğitim</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{educationData.map((component) => (
 								<ListItem
 									key={component.title}
 									title={component.title}
 									href={component.href}
+									className={cn(
+										"relative",
+										component.soon &&
+											"opacity-50 pointer-events-none cursor-default"
+									)}
 								>
 									{component.description}
 								</ListItem>
@@ -93,6 +103,11 @@ export function NavMenu() {
 									key={component.title}
 									title={component.title}
 									href={component.href}
+									className={cn(
+										"relative",
+										component.soon &&
+											"opacity-50 pointer-events-none cursor-default"
+									)}
 								>
 									{component.description}
 								</ListItem>
@@ -110,6 +125,11 @@ export function NavMenu() {
 									key={component.title}
 									title={component.title}
 									href={component.href}
+									className={cn(
+										"relative",
+										component.soon &&
+											"opacity-50 pointer-events-none cursor-default"
+									)}
 								>
 									{component.description}
 								</ListItem>

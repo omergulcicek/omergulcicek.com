@@ -4,17 +4,20 @@ export const bookmarksData: NavMenuTypes = [
 	{
 		title: "Feyz",
 		href: "/bookmarks",
-		description: "Tüm yer imleri"
+		description: "Tüm yer imleri",
+		soon: true
 	},
 	{
 		title: "Araçlar",
 		href: "/bookmarks/stack",
-		description: "Kullandığım uygulamalar"
+		description: "Kullandığım uygulamalar",
+		soon: true
 	},
 	{
 		title: "Frontend",
 		href: "/bookmarks/frontend",
-		description: "Frontend ile ilgili kaynaklarım"
+		description: "Frontend ile ilgili kaynaklarım",
+		soon: true
 	},
 	{
 		title: "Kitap",
@@ -24,12 +27,14 @@ export const bookmarksData: NavMenuTypes = [
 	{
 		title: "Makaleler",
 		href: "/bookmarks/reading",
-		description: "Okuduğum makalelerin listesi"
+		description: "Okuduğum makalelerin listesi",
+		soon: true
 	},
 	{
 		title: "Tasarım",
 		href: "/bookmarks/design",
-		description: "Tasarım ile ilgili kaynaklarım"
+		description: "Tasarım ile ilgili kaynaklarım",
+		soon: true
 	},
 	{
 		title: "Tweets",
