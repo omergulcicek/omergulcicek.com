@@ -22,7 +22,6 @@ import { educationData } from "@/data/education-data"
 import { writingData } from "@/data/writing-data"
 
 export function NavMenu() {
-	console.log(profileImg)
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>

@@ -19,8 +19,8 @@
 			}
 		],
 		"paths": {
-			"@/img/*": ["./public/img/*"],
 			"@/*": ["./src/*"],
+			"@/img/*": ["./src/assets/img/*"],
 			"@/widgets/*": ["./src/components/widgets/*"],
 			"@/ui/*": ["./src/components/ui/*"],
 			"@/shared/*": ["./src/components/shared/*"],
