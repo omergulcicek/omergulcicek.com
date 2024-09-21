@@ -19,6 +19,7 @@
 			}
 		],
 		"paths": {
+			"@/img/*": ["./public/img/*"],
 			"@/*": ["./src/*"],
 			"@/widgets/*": ["./src/components/widgets/*"],
 			"@/ui/*": ["./src/components/ui/*"],

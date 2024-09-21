@@ -4,6 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+import profileImg from "@/img/profile.jpg"
 import { cn } from "@/utils"
 
 import {
@@ -19,8 +20,6 @@ import { aboutData } from "@/data/about-data"
 import { bookmarksData } from "@/data/bookmarks-data"
 import { educationData } from "@/data/education-data"
 import { writingData } from "@/data/writing-data"
-
-import profileImg from "./../../../public/img/profile.jpg"
 
 export function NavMenu() {
 	console.log(profileImg)
