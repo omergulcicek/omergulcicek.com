@@ -35,7 +35,7 @@ export default function About() {
 					>
 						@Alışgidiş
 					</Link>
-					'te bir NextJS projesi üzerinde çalışıyorum. <br />{" "}
+					'te bir Next.js projesi üzerinde çalışıyorum. <br />{" "}
 					<strong className="font-medium text-black">UI/UX,</strong>{" "}
 					<strong className="font-medium text-black">Web Vitals</strong> ve{" "}
 					<strong className="font-medium text-black">A11Y Project</strong>{" "}
@@ -47,10 +47,10 @@ export default function About() {
 					transition={{ delay: 0.25 }}
 					className="text-xl leading-9 font-light"
 				>
-					Projeler geliştirirken yaratıcılığın sınırlarını zorlamak ve yenilikçi
-					çözümler üretmek bana büyük bir tatmin sağlıyor. Çalışmalarımda
-					sadelik ve ölçeklenebilirliğe odaklanarak, küçük detaylarla güçlü
-					duygusal bağlar kurmayı hedefliyorum.
+					Projeler geliştirirken yaratıcılığımı zorlamak ve yenilikçi çözümler
+					üretmek bana büyük bir tatmin sağlıyor. Çalışmalarımda sadelik ve
+					ölçeklenebilirliğe odaklanıyor, aynı zamanda küçük detaylara büyük
+					özen gösteriyorum.
 				</motion.p>
 				<motion.p
 					initial={{ opacity: 0, translateY: "100px" }}
@@ -60,10 +60,10 @@ export default function About() {
 				>
 					<strong className="font-medium text-black">Turkuaz</strong> ve{" "}
 					<strong className="font-medium text-black">Türkçe Doküman</strong>{" "}
-					projeleri, açık kaynak çalışmalarımda öncelikli projelerim arasında
-					yer alıyor ve tüm projelerimi açık kaynak olarak paylaşıyorum. Ayrıca,
-					yazılım alanındaki bilgi birikimimi artırmak amacıyla düzenli olarak
-					çeviriler yapıyor ve makaleler yazıyorum.
+					projeleri, çalışmalarımda öncelikli yer alıyor ve tüm projelerimi açık
+					kaynak olarak paylaşıyorum. Ayrıca, yazılım alanındaki bilgi
+					birikimimi artırmak için düzenli olarak çeviriler yapıyor ve makaleler
+					yazıyorum.
 				</motion.p>
 				<motion.p
 					initial={{ opacity: 0, translateY: "100px" }}
@@ -72,9 +72,9 @@ export default function About() {
 					className="text-xl leading-9 font-light"
 				>
 					Kod yazmadığım zamanlarda yürüyüş yapmayı ve fotoğraf çekmeyi
-					seviyorum. Haftasonumu İstanbul'a ayırıyorum; gittiğim yerleri
+					seviyorum. Hafta sonlarımı İstanbul'a ayırıyorum; gittiğim yerleri
 					fotoğraflayıp, çeşitli bilgiler paylaşıyorum. Satranç, tarih, siyaset
-					ve ekonomi alanlarına ilgim var ve bu konularda sürekli olarak kendimi
+					ve ekonomi alanlarına ilgim var ve bu konularda kendimi sürekli
 					geliştirmeye çalışıyorum.
 				</motion.p>
 				<motion.p
