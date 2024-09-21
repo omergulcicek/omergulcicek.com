@@ -9,7 +9,7 @@ import Title from "@/ui/title"
 
 export default function About() {
 	return (
-		<Container className="mt-10 md:mt-24 max-w-3xl">
+		<Container className="px-4 md:px-0 mt-10 md:mt-24 max-w-3xl">
 			<motion.h1
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}
@@ -23,7 +23,7 @@ export default function About() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.15 }}
-					className="text-xl leading-9 font-light"
+					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
 					Merhaba 👋🏻, İstanbul'da yaşayan bir yazılım mühendisiyim. <br /> Şu
 					anda{" "}
@@ -60,7 +60,7 @@ export default function About() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.25 }}
-					className="text-xl leading-9 font-light"
+					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
 					Projeler geliştirirken yaratıcılığımı zorlamak ve yenilikçi çözümler
 					üretmek bana büyük bir tatmin sağlıyor. Çalışmalarımda sadelik ve
@@ -71,7 +71,7 @@ export default function About() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.35 }}
-					className="text-xl leading-9 font-light"
+					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
 					<Link
 						href="https://turkuazcss.com/"
@@ -99,7 +99,7 @@ export default function About() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.45 }}
-					className="text-xl leading-9 font-light"
+					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
 					Kod yazmadığım zamanlarda yürüyüş yapmayı ve{" "}
 					<Link
@@ -119,7 +119,7 @@ export default function About() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.55 }}
-					className="text-xl leading-9 font-light"
+					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
 					Bu siteyi, öğrendiklerimi paylaşmak, yazılım topluluğuna katkıda
 					bulunmak ve başkalarıyla bağlantı kurmak amacıyla oluşturuyorum.
@@ -128,7 +128,7 @@ export default function About() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.65 }}
-					className="text-xl leading-9 font-light"
+					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
 					Bana her zaman{" "}
 					<Link

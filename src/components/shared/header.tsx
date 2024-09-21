@@ -11,7 +11,7 @@ export default function Header({
 	className?: string
 } & React.HTMLAttributes<HTMLDivElement>) {
 	return (
-		<header className={cn("flex h-24 w-full z-20", className)}>
+		<header className={cn("flex md:flex h-24 w-full z-20", className)}>
 			<Container className="flex-row items-center justify-center gap-10 z-20">
 				<NavMenu />
 			</Container>

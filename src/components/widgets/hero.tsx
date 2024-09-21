@@ -23,7 +23,7 @@ export const Hello = ({
 			initial={{ opacity: 0, translateY: "100px" }}
 			animate={{ opacity: 1, translateY: "0px" }}
 			className={cn(
-				"block text-2xl font-light leading-7 text-secondary-foreground",
+				"block text-base md:text-2xl font-light leading-7 text-secondary-foreground",
 				className
 			)}
 			{...props}
@@ -46,7 +46,10 @@ export const Name = ({
 		<motion.h1
 			initial={{ opacity: 0, translateY: "100px" }}
 			animate={{ opacity: 1, translateY: "0px" }}
-			className={cn("text-[40px] font-semibold leading-[48px]", className)}
+			className={cn(
+				"text-2xl md:text-[40px] font-semibold md:leading-[48px]",
+				className
+			)}
 			{...props}
 		>
 			{name}

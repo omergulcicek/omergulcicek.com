@@ -24,7 +24,7 @@ import { writingData } from "@/data/writing-data"
 export function NavMenu() {
 	return (
 		<NavigationMenu>
-			<NavigationMenuList>
+			<NavigationMenuList className="flex-wrap">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
 						<NavigationMenuLink
@@ -41,7 +41,7 @@ export function NavMenu() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Yazılar</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4">
+						<ul className="grid w-full md:w-[400px] gap-3 p-4">
 							{writingData.map((component) => (
 								<ListItem
 									key={component.title}
@@ -63,7 +63,7 @@ export function NavMenu() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Eğitim</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+						<ul className="grid w-full gap-3 p-3 md:p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{educationData.map((component) => (
 								<ListItem
 									key={component.title}
@@ -85,8 +85,8 @@ export function NavMenu() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Hakkında</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-							<li className="row-span-3">
+						<ul className="grid gap-3 p-3 md:p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+							<li className="row-span-3 hidden md:flex">
 								<NavigationMenuLink asChild>
 									<figure className="flex h-full w-full select-none flex-col justify-end overflow-hidden rounded-md transition">
 										<Image
@@ -120,7 +120,7 @@ export function NavMenu() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Yer İmleri</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+						<ul className="grid w-full gap-3 p-3 md:p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
 							{bookmarksData.map((component) => (
 								<ListItem
 									key={component.title}
