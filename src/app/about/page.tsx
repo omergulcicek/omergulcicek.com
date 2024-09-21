@@ -31,14 +31,29 @@ export default function About() {
 						href="https://www.alisgidis.com/"
 						rel="noopener noreferrer"
 						target="_blank"
-						className="text-slate-950 dark:text-white font-medium underline"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
 					>
 						@Alışgidiş
 					</Link>
 					'te bir Next.js projesi üzerinde çalışıyorum. <br />{" "}
 					<strong className="font-medium text-black">UI/UX,</strong>{" "}
-					<strong className="font-medium text-black">Web Vitals</strong> ve{" "}
-					<strong className="font-medium text-black">A11Y Project</strong>{" "}
+					<Link
+						href="https://web.dev/articles/vitals?hl=tr"
+						rel="noopener noreferrer"
+						target="_blank"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
+					>
+						Web Vitals
+					</Link>{" "}
+					ve{" "}
+					<Link
+						href="https://www.a11yproject.com/"
+						rel="noopener noreferrer"
+						target="_blank"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
+					>
+						A11Y Project
+					</Link>{" "}
 					konularına ilgi duyuyorum.
 				</motion.p>
 				<motion.p
@@ -58,8 +73,23 @@ export default function About() {
 					transition={{ delay: 0.35 }}
 					className="text-xl leading-9 font-light"
 				>
-					<strong className="font-medium text-black">Turkuaz</strong> ve{" "}
-					<strong className="font-medium text-black">Türkçe Doküman</strong>{" "}
+					<Link
+						href="https://turkuazcss.com/"
+						rel="noopener noreferrer"
+						target="_blank"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
+					>
+						Turkuaz
+					</Link>{" "}
+					ve{" "}
+					<Link
+						href="https://turkcedokuman.com/"
+						rel="noopener noreferrer"
+						target="_blank"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
+					>
+						Türkçe Doküman
+					</Link>{" "}
 					projeleri, çalışmalarımda öncelikli yer alıyor ve tüm projelerimi açık
 					kaynak olarak paylaşıyorum. Ayrıca, yazılım alanındaki bilgi
 					birikimimi artırmak için düzenli olarak çeviriler yapıyor ve makaleler
@@ -71,8 +101,16 @@ export default function About() {
 					transition={{ delay: 0.45 }}
 					className="text-xl leading-9 font-light"
 				>
-					Kod yazmadığım zamanlarda yürüyüş yapmayı ve fotoğraf çekmeyi
-					seviyorum. Hafta sonlarımı İstanbul'a ayırıyorum; gittiğim yerleri
+					Kod yazmadığım zamanlarda yürüyüş yapmayı ve{" "}
+					<Link
+						href="https://www.instagram.com/omerilekesfet/"
+						rel="noopener noreferrer"
+						target="_blank"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
+					>
+						fotoğraf çekmeyi seviyorum
+					</Link>
+					. Hafta sonlarımı İstanbul'a ayırıyorum; gittiğim yerleri
 					fotoğraflayıp, çeşitli bilgiler paylaşıyorum. Satranç, tarih, siyaset
 					ve ekonomi alanlarına ilgim var ve bu konularda kendimi sürekli
 					geliştirmeye çalışıyorum.
@@ -97,7 +135,7 @@ export default function About() {
 						href="mailto:iletisim@omergulcicek.com"
 						rel="noopener noreferrer"
 						target="_blank"
-						className="text-slate-950 dark:text-white font-medium underline"
+						className="text-slate-950 dark:text-white font-medium hover:underline"
 					>
 						iletisim@omergulcicek.com
 					</Link>{" "}
