@@ -24,11 +24,11 @@ export function BookList() {
 			return
 		}
 
-		const lowerText = text.toLowerCase()
+		const lowerText = text.toLocaleLowerCase()
 		const filteredData = bookData.filter(
 			(data) =>
-				(data.description ?? "").toLowerCase().includes(lowerText) ||
-				(data.title ?? "").toLowerCase().includes(lowerText)
+				(data.description ?? "").toLocaleLowerCase().includes(lowerText) ||
+				(data.title ?? "").toLocaleLowerCase().includes(lowerText)
 		)
 
 		setFilterData(filteredData)
@@ -42,7 +42,7 @@ export function BookList() {
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}
 				transition={{ delay: 0.25 }}
-				className="flex items-center justify-end py-2"
+				className="flex items-center justify-center py-2"
 			>
 				<Input
 					type="text"
