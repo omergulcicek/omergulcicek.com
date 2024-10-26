@@ -42,7 +42,7 @@ export function BookList() {
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}
 				transition={{ delay: 0.25 }}
-				className="flex items-center justify-center py-2"
+				className="flex items-center justify-center mb-4"
 			>
 				<Input
 					type="text"
