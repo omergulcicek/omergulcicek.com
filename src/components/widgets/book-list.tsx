@@ -7,7 +7,9 @@ export function BookList() {
 
 	return (
 		<AnimationListLayout
-			data={bookData.sort((a, b) => a.title.localeCompare(b.title))}
+			data={bookData.sort((a, b) =>
+				(a.description ?? "").localeCompare(b.description ?? "")
+			)}
 		/>
 	)
 }

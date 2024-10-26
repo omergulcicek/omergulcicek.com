@@ -9,7 +9,7 @@ export default function Books() {
 		<Bookmarks>
 			<Bookmarks.PageTitle>Kitap</Bookmarks.PageTitle>
 			<Bookmarks.PageSubTitle>
-				Okuduğum kitapların listesi
+				Kitaplığımdaki kitapların listesi
 			</Bookmarks.PageSubTitle>
 			<Bookmarks.PageContent>
 				<BookList />
