@@ -25,15 +25,19 @@ export function Stock() {
 							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
 								<StockCartItem
 									logo="aselsan--big.svg"
-									name="Aselsan Elektronik Sanayi ve Ticaret A.Ş."
+									name="ASELS: Aselsan Elektronik Sanayi ve Ticaret A.Ş."
 								/>
 								<StockCartItem
 									logo="enka-insaat--big.svg"
-									name="Enka İnşaat ve Sanayi A.Ş."
+									name="ENKAI: Enka İnşaat ve Sanayi A.Ş."
 								/>
 								<StockCartItem
 									logo="turk-hava-yollari--big.svg"
-									name="Türk Hava Yolları A.O"
+									name="THYAO: Türk Hava Yolları A.O"
+								/>
+								<StockCartItem
+									logo="tupras--big.svg"
+									name="TUPRS: Türkiye Petrol Rafinerileri A.Ş."
 								/>
 							</ul>
 						</p>
