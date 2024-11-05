@@ -79,6 +79,16 @@ export function InvestmentFund() {
 						</p>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
+							ETF:
+							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
+								<StockCartItem
+									logo="spdr-sandp500-etf-tr--big.svg"
+									name="SPYG: S&P 500 Growth ETF"
+								/>
+							</ul>
+						</p>
+
+						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Güncel portföyüm şu şekilde:
 						</p>
 					</div>

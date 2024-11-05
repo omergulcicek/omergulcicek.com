@@ -23,22 +23,13 @@ export function Stock() {
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Borsa İstanbul:
 							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
-								<StockCartItem
-									logo="aselsan--big.svg"
-									name="ASELS: Aselsan Elektronik Sanayi ve Ticaret A.Ş."
-								/>
-								<StockCartItem
-									logo="enka-insaat--big.svg"
-									name="ENKAI: Enka İnşaat ve Sanayi A.Ş."
-								/>
+								<StockCartItem logo="aselsan--big.svg" name="Aselsan" />
+								<StockCartItem logo="enka-insaat--big.svg" name="Enka İnşaat" />
 								<StockCartItem
 									logo="turk-hava-yollari--big.svg"
-									name="THYAO: Türk Hava Yolları A.O"
+									name="Türk Hava Yolları"
 								/>
-								<StockCartItem
-									logo="tupras--big.svg"
-									name="TUPRS: Türkiye Petrol Rafinerileri A.Ş."
-								/>
+								<StockCartItem logo="tupras--big.svg" name="Tüpraş" />
 							</ul>
 						</p>
 
@@ -46,7 +37,8 @@ export function Stock() {
 							Amerikan borsaları:
 							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
 								<StockCartItem logo="nvidia--big.svg" name="Nvidia" />
-								<StockCartItem logo="walmart--big.svg" name="Walmart Inc." />
+								<StockCartItem logo="apple--big.svg" name="Apple" />
+								<StockCartItem logo="walmart--big.svg" name="Walmart" />
 							</ul>
 						</p>
 

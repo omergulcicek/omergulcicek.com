@@ -18,7 +18,7 @@ export function FinancialFreedomCart() {
 					>
 						<Link href="/financial-freedom/stock">
 							<div className="bg-red-500/10 text-red-600 p-6 rounded-lg cursor-pointer duration-200 hover:-translate-y-1 active:scale-95">
-								<strong>Hisse</strong>
+								<strong>Hisse Senedi</strong>
 							</div>
 						</Link>
 					</motion.article>
@@ -30,7 +30,7 @@ export function FinancialFreedomCart() {
 					>
 						<Link href="/financial-freedom/investment-fund">
 							<div className="bg-blue-500/10 text-blue-600 p-6 rounded-lg cursor-pointer duration-200 hover:-translate-y-1 active:scale-95">
-								<strong>Fon, ETF</strong>
+								<strong>Fon ve ETF</strong>
 							</div>
 						</Link>
 					</motion.article>
