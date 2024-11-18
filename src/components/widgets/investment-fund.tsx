@@ -20,73 +20,69 @@ export function InvestmentFund() {
 						</p>
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Hisse Senedi Fonu:
-							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
-								<StockCartItem
-									logo="is-bankasi--big.svg"
-									name="BIO: Sürdürülebilirlik Hisse Senedi (TL) Fonu"
-								/>
-								<StockCartItem
-									logo="is-bankasi--big.svg"
-									name="TAU: BIST Banka Endeksi Hisse Senedi (TL) Fonu"
-								/>
-							</ul>
 						</p>
+						<ul className="flex flex-col gap-1 list-disc pl-8">
+							<StockCartItem
+								logo="is-bankasi--big.svg"
+								name="BIO: Sürdürülebilirlik Hisse Senedi Fonu"
+							/>
+							<StockCartItem
+								logo="is-bankasi--big.svg"
+								name="TAU: Banka Endeksi Hisse Senedi Fonu"
+							/>
+						</ul>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Yabancı Hisse Senedi Fonu:
-							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
-								<StockCartItem
-									logo="is-bankasi--big.svg"
-									name="TMG: Yabancı Hisse Senedi Fonu"
-								/>
-								<StockCartItem
-									logo="https://storage.fintables.com/media/uploads/fund-management-logos/akportfoy_icon.png"
-									name="AFT: Yeni Teknolojiler Yabancı Hisse Senedi Fonu"
-								/>
-							</ul>
 						</p>
+						<ul className="flex flex-col gap-1 list-disc pl-8">
+							<StockCartItem
+								logo="is-bankasi--big.svg"
+								name="TMG: Yabancı Hisse Senedi Fonu"
+							/>
+							<StockCartItem
+								logo="https://storage.fintables.com/media/uploads/fund-management-logos/akportfoy_icon.png"
+								name="AFT: Yeni Teknolojiler Yabancı Hisse Senedi Fonu"
+							/>
+						</ul>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Değişken Fonlar:
-							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
-								<StockCartItem
-									logo="https://storage.fintables.com/media/uploads/fund-management-logos/istanbul_portfoy.png"
-									name="IPB: Birinci Değişken Fon"
-								/>
-								<StockCartItem
-									logo="https://storage.fintables.com/media/uploads/fund-management-logos/strateji_portfoy_icon.png"
-									name="AN1: Birinci Değişken Fon"
-								/>
-								<StockCartItem
-									logo="https://storage.fintables.com/media/uploads/fund-management-logos/kare_portfoy_icon.png"
-									name="KRF: Birinci Değişken Fon"
-								/>
-							</ul>
 						</p>
+						<ul className="flex flex-col gap-1 list-disc pl-8">
+							<StockCartItem
+								logo="https://storage.fintables.com/media/uploads/fund-management-logos/istanbul_portfoy.png"
+								name="IPB: Birinci Değişken Fon"
+							/>
+							<StockCartItem
+								logo="https://storage.fintables.com/media/uploads/fund-management-logos/strateji_portfoy_icon.png"
+								name="AN1: Birinci Değişken Fon"
+							/>
+							<StockCartItem
+								logo="https://storage.fintables.com/media/uploads/fund-management-logos/istanbul_portfoy.png"
+								name="IVY: Blockchain Teknolojileri Değişken Fon"
+							/>
+						</ul>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
-							Diğer Fonlar:
-							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
-								<StockCartItem
-									logo="is-bankasi--big.svg"
-									name="IOG: Gümüş Serbest Fon"
-								/>
-								<StockCartItem
-									logo="https://storage.fintables.com/media/uploads/fund-management-logos/istanbul_portfoy.png"
-									name="IVY: Blockchain Teknolojileri Değişken Fon"
-								/>
-							</ul>
+							Serbest Fonlar:
 						</p>
+						<ul className="flex flex-col gap-1 list-disc pl-8">
+							<StockCartItem
+								logo="is-bankasi--big.svg"
+								name="IOG: Gümüş Serbest Fon"
+							/>
+						</ul>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							ETF:
-							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
-								<StockCartItem
-									logo="spdr-sandp500-etf-tr--big.svg"
-									name="SPYG: S&P 500 Growth ETF"
-								/>
-							</ul>
 						</p>
+						<ul className="flex flex-col gap-1 list-disc pl-8">
+							<StockCartItem
+								logo="spdr-sandp500-etf-tr--big.svg"
+								name="SPYG: S&P 500 Growth ETF"
+							/>
+						</ul>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Güncel portföyüm şu şekilde:
@@ -120,7 +116,7 @@ export const StockCartItem = ({
 						width={40}
 					/>
 				</figure>
-				<span className="text-base">{name}</span>
+				<span className="text-base font-light">{name}</span>
 			</li>
 		</>
 	)

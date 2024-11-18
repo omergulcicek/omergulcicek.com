@@ -47,6 +47,8 @@ export function FinancialFreedomCart() {
 						</Link>
 					</motion.article>
 				</section>
+
+				<p>Buraya tüm portföyün pasta grafiği gelecek</p>
 			</Container>
 		</>
 	)

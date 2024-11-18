@@ -52,7 +52,7 @@ export function PrivatePensionSystemContent() {
 						</p>
 					</div>
 
-					<Tweet id={"1853858555750723879"} />
+					<Tweet id={"1854972179391091157"} />
 				</motion.section>
 			</Container>
 		</>
