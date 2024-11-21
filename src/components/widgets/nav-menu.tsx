@@ -88,7 +88,7 @@ export function NavMenu() {
 						<ul className="grid gap-3 p-3 md:p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 							<li className="row-span-3 hidden md:flex">
 								<NavigationMenuLink asChild>
-									<figure className="flex h-full w-full select-none flex-col justify-end overflow-hidden rounded-md transition">
+									<figure className="flex h-full w-full select-none flex-col justify-center overflow-hidden rounded-md transition">
 										<Image
 											src={profileImg.src}
 											alt="Ömer Gülçiçek profil fotoğrafı"
