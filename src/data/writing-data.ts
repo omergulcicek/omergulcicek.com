@@ -12,10 +12,5 @@ export const writingData: NavMenuTypes = [
 		href: "/blog",
 		description: "Kişisel düşünce, deneyim ve yorumlarım",
 		soon: true
-	},
-	{
-		title: "Finansal Özgürlük",
-		href: "/financial-freedom",
-		description: "Hisse, fon, altın ve BES yatırım portföyüm"
 	}
 ]

@@ -12,5 +12,10 @@ export const aboutData: NavMenuTypes = [
 		description:
 			"Gün içinde ve çalışma hayatında sürekli kullandığım araçların listesi",
 		soon: true
+	},
+	{
+		title: "Finansal Özgürlük",
+		href: "/financial-freedom",
+		description: "Hisse, fon, altın ve BES yatırım portföyüm"
 	}
 ]
