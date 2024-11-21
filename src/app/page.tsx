@@ -2,6 +2,7 @@
 
 import Container from "@/shared/container"
 import Hero from "@/widgets/hero"
+import { TechStack } from "@/widgets/tech-stack"
 
 export default function Home() {
 	return (
@@ -16,6 +17,8 @@ export default function Home() {
 					<Hero.Strong /> <Hero.Desc />
 				</div>
 			</Hero>
+
+			<TechStack />
 		</Container>
 	)
 }
