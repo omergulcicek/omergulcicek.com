@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { motion } from "framer-motion"
+import BlurFade from "@/ui/blur-fade"
 
 export function AnimationListLayout({ data }: { data: Array<any> }) {
 	if (!data) return null
@@ -12,11 +12,7 @@ export function AnimationListLayout({ data }: { data: Array<any> }) {
 					{ img, title, description, url, isExternal = true, detail },
 					index: number
 				) => (
-					<motion.article
-						initial={{ opacity: 0, translateY: "100px" }}
-						animate={{ opacity: 1, translateY: "0px" }}
-						transition={{ delay: index * 0.1 }}
-					>
+					<BlurFade key={title} delay={0.25 + index * 0.05} duration={0.1}>
 						<Link
 							href={url}
 							rel={isExternal ? "noopener noreferrer" : ""}
@@ -45,7 +41,7 @@ export function AnimationListLayout({ data }: { data: Array<any> }) {
 								</span>
 							)}
 						</Link>
-					</motion.article>
+					</BlurFade>
 				)
 			)}
 		</div>
