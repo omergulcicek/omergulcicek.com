@@ -1,8 +1,8 @@
 import React from "react"
 
 import { cn } from "@/utils"
-import { motion } from "framer-motion"
 
+import BlurFade from "@/ui/blur-fade"
 import heroData from "@/data/hero-data"
 
 export const Hero = ({ children }: { children: React.ReactNode }) => {
@@ -19,17 +19,17 @@ export const Hello = ({
 	const { hi } = heroData
 
 	return (
-		<motion.span
-			initial={{ opacity: 0, translateY: "100px" }}
-			animate={{ opacity: 1, translateY: "0px" }}
-			className={cn(
-				"block text-base md:text-2xl font-light leading-7 text-secondary-foreground",
-				className
-			)}
-			{...props}
-		>
-			{hi}
-		</motion.span>
+		<BlurFade delay={0.1} inView>
+			<span
+				className={cn(
+					"block text-base md:text-2xl font-light leading-7 text-secondary-foreground",
+					className
+				)}
+				{...props}
+			>
+				{hi}
+			</span>
+		</BlurFade>
 	)
 }
 
@@ -43,17 +43,17 @@ export const Name = ({
 	const { name } = heroData
 
 	return (
-		<motion.h1
-			initial={{ opacity: 0, translateY: "100px" }}
-			animate={{ opacity: 1, translateY: "0px" }}
-			className={cn(
-				"text-2xl md:text-[40px] font-semibold md:leading-[48px]",
-				className
-			)}
-			{...props}
-		>
-			{name}
-		</motion.h1>
+		<BlurFade delay={0.25} inView>
+			<h1
+				className={cn(
+					"text-2xl md:text-[40px] font-semibold md:leading-[48px]",
+					className
+				)}
+				{...props}
+			>
+				{name}
+			</h1>
+		</BlurFade>
 	)
 }
 
@@ -67,15 +67,11 @@ export const Strong = ({
 	const { strong } = heroData
 
 	return (
-		<motion.strong
-			initial={{ opacity: 0, translateX: "-100px" }}
-			animate={{ opacity: 1, translateX: "0px" }}
-			transition={{ delay: 0.5 }}
-			className={cn("font-semibold underline", className)}
-			{...props}
-		>
-			{strong}
-		</motion.strong>
+		<BlurFade delay={0.5} inView>
+			<strong className={cn("font-semibold underline", className)} {...props}>
+				{strong}
+			</strong>
+		</BlurFade>
 	)
 }
 
@@ -89,15 +85,11 @@ export const Desc = ({
 	const { desc } = heroData
 
 	return (
-		<motion.span
-			initial={{ opacity: 0, translateX: "100px" }}
-			animate={{ opacity: 1, translateX: "0px" }}
-			transition={{ delay: 0.5 }}
-			className={cn("font-light", className)}
-			{...props}
-		>
-			{desc}
-		</motion.span>
+		<BlurFade delay={0.5} inView>
+			<span className={cn("font-light", className)} {...props}>
+				{desc}
+			</span>
+		</BlurFade>
 	)
 }
 
