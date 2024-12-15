@@ -20,7 +20,6 @@
 		"lucide-react": "^0.468.0",
 		"next": "^15.1.0",
 		"react": "^19.0.0",
-		"react-copy-to-clipboard": "^5.1.0",
 		"react-dom": "^19.0.0",
 		"react-tweet": "^3.2.1",
 		"react-wrap-balancer": "^1.1.1",

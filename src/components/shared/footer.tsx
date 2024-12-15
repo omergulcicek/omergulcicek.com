@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { CopyToClipboard } from "react-copy-to-clipboard"
+
+// import { CopyToClipboard } from "react-copy-to-clipboard"
 
 import {
 	Popover,
@@ -107,26 +108,26 @@ export default function Footer({
 									</Button>
 								</Link>
 
-								<CopyToClipboard text={"iletisim@omergulcicek.com"}>
-									<Button
-										variant="outline"
-										size="sm"
-										onClick={() => changeCopyText()}
-										className="col-span-1 w-full"
-									>
-										{isCopy ? (
-											<>
-												<Check size={14} />
-												<span className="ml-2 text-xs">Kopyalandı!</span>
-											</>
-										) : (
-											<>
-												<Copy size={14} />
-												<span className="ml-2 text-xs">Kopyala</span>
-											</>
-										)}
-									</Button>
-								</CopyToClipboard>
+								{/* <CopyToClipboard text={"iletisim@omergulcicek.com"}> */}
+								<Button
+									variant="outline"
+									size="sm"
+									onClick={() => changeCopyText()}
+									className="col-span-1 w-full"
+								>
+									{isCopy ? (
+										<>
+											<Check size={14} />
+											<span className="ml-2 text-xs">Kopyalandı!</span>
+										</>
+									) : (
+										<>
+											<Copy size={14} />
+											<span className="ml-2 text-xs">Kopyala</span>
+										</>
+									)}
+								</Button>
+								{/* </CopyToClipboard> */}
 							</PopoverContent>
 						</Popover>
 					</p>
