@@ -14,6 +14,7 @@ export function TweetList() {
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: index * 0.15 + 0.25 }}
+					key={id}
 				>
 					<Tweet key={id} id={id} />
 				</motion.div>

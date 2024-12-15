@@ -22,7 +22,7 @@ export function Stock() {
 							hisse yükselişlerinden doğrudan yararlanabiliyorum. Böylece
 							riskimi azaltırken daha fazla getiri elde etmeyi planlıyorum.
 						</p>
-						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
+						<div className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Borsa İstanbul:
 							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
 								<StockCartItem logo="aselsan--big.svg" name="Aselsan" />
@@ -33,24 +33,24 @@ export function Stock() {
 								/>
 								<StockCartItem logo="tupras--big.svg" name="Tüpraş" />
 							</ul>
-						</p>
+						</div>
 
-						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
+						<div className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Amerikan borsaları:
 							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
 								<StockCartItem logo="nvidia--big.svg" name="Nvidia" />
 								<StockCartItem logo="apple--big.svg" name="Apple" />
 								<StockCartItem logo="walmart--big.svg" name="Walmart" />
 							</ul>
-						</p>
+						</div>
 
-						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
+						<div className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Kripto:
 							<ul className="flex flex-col gap-1 list-disc pl-8 mt-1">
 								<StockCartItem logo="crypto/XTVCBTC--big.svg" name="Bitcoin" />
 								<StockCartItem logo="crypto/XTVCETH--big.svg" name="Ethereum" />
 							</ul>
-						</p>
+						</div>
 
 						<p className="text-base md:text-xl leading-normal md:leading-9 font-light">
 							Güncel portföyüm şu şekilde:
