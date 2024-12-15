@@ -10,7 +10,7 @@ export default function Container({
 } & React.HTMLAttributes<HTMLDivElement>) {
 	return (
 		<div
-			className={cn("mx-auto flex w-full max-w-7xl flex-col", className)}
+			className={cn("flex flex-col w-full max-w-7xl mx-auto", className)}
 			{...props}
 		>
 			{children}
