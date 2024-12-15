@@ -20,6 +20,10 @@ export const stackData = [
 		img: "https://avatars.githubusercontent.com/u/139895814?s=200"
 	},
 	{
+		name: "Framer Motion",
+		img: "https://framerusercontent.com/images/s8byoJvwTkn7Gm2jKWNdTPv9F8Q.svg"
+	},
+	{
 		name: "Styled Components",
 		img: "https://omergulcicek.com/svg/skills/styledcomponents.svg"
 	},
@@ -30,6 +34,10 @@ export const stackData = [
 	{
 		name: "JavaScript",
 		img: "https://omergulcicek.com/svg/skills/javascript.svg"
+	},
+	{
+		name: "TypeScript",
+		img: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
 	},
 	{
 		name: "React",
@@ -50,10 +58,6 @@ export const stackData = [
 	{
 		name: "Zod",
 		img: "https://zod.dev/logo.svg"
-	},
-	{
-		name: "Framer Motion",
-		img: "https://framerusercontent.com/images/s8byoJvwTkn7Gm2jKWNdTPv9F8Q.svg"
 	},
 	{
 		name: "GraphQL",
