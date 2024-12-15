@@ -9,7 +9,7 @@ import Title from "@/ui/title"
 
 export function About() {
 	return (
-		<Container className="px-4 md:px-0 mt-10 md:mt-24 max-w-3xl">
+		<Container className="flex flex-col gap-6 px-4 md:px-0 mt-10 md:mt-24 max-w-3xl">
 			<motion.h1
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}

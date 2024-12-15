@@ -1,5 +1,7 @@
 "use client"
 
+import { Tweet } from "react-tweet"
+
 import { motion } from "framer-motion"
 
 import Container from "@/shared/container"
@@ -88,6 +90,8 @@ export function InvestmentFund() {
 							Güncel portföyüm şu şekilde:
 						</p>
 					</div>
+
+					<Tweet id={"1867910006936674558"} />
 				</motion.section>
 			</Container>
 		</>
