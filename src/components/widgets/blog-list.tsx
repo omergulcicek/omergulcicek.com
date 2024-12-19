@@ -1,9 +1,10 @@
 import Link from "next/link"
 
-import { getBlogPosts } from "@/app/(writing)/blog/utils"
 import { formatDate } from "@/utils"
+import { getBlogPosts } from "@/utils/get-blog-posts"
 
 import Container from "@/shared/container"
+import { MediumIcon } from "@/ui/medium"
 import { BlogPost } from "@/types"
 
 export function BlogList() {
@@ -12,11 +13,18 @@ export function BlogList() {
 	return (
 		<Container className="mt-20">
 			<div className="flex flex-col gap-3">
-				{allBlogs.map(({ folder, date, title, path }) => (
-					<div className="flex flex-col items-start gap-0.5" key={folder}>
-						<p className="text-base text-tertiary-foreground w-40 tabular-nums">
-							{formatDate(date, false)}
-						</p>
+				{allBlogs.map(({ folder, date, title, category, medium, path }) => (
+					<div className="flex flex-col items-start" key={folder}>
+						<div className="flex items-center gap-4 text-sm text-tertiary-foreground tabular-nums">
+							<span className="italic">{formatDate(date, false)}</span> ·
+							<span>{category}</span>
+							{medium && (
+								<>
+									·
+									<MediumIcon path={medium} />
+								</>
+							)}
+						</div>
 						<Link
 							className="flex flex-col space-y-1 mb-4"
 							href={`/blog/${path}`}

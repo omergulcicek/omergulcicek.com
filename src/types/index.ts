@@ -33,6 +33,8 @@ type BlogPost = {
 	folder: string
 	title: string
 	date: string
+	category: string
+	medium: string
 	path: string
 }
 

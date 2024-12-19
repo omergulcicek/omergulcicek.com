@@ -76,7 +76,9 @@ export function getBlogPosts() {
 		.map((post) => ({
 			folder: post.folder,
 			title: post.metadata.title,
+			category: post.metadata.category,
 			date: post.metadata.date,
+			medium: post.metadata.medium,
 			path: post.metadata.path
 		}))
 }
