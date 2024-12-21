@@ -68,7 +68,7 @@ function getMDXDataFromFolders(dir: string) {
 export function getBlogPosts() {
 	return getMDXDataFromFolders(path.join(process.cwd(), "src", "data", "posts"))
 		.sort((a, b) => {
-			if (a && b && new Date(a.metadata.date) > new Date(b.metadata.date)) {
+			if (a && b && new Date(a?.metadata?.date) > new Date(b?.metadata?.date)) {
 				return -1
 			}
 			return 1
