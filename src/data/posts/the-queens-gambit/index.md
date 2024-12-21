@@ -2,7 +2,7 @@
 date: "2020-11-29"
 path: "/the-queens-gambit"
 title: "The Queen's Gambit"
-category: "Dizi Değerlendirmesi"
+category: "Dizi"
 medium: "https://omergulcicek.medium.com/the-queens-gambit-15044bbc40a8"
 ---
 

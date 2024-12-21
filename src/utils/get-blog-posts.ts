@@ -3,6 +3,7 @@ import path from "path"
 
 type Metadata = {
 	category: string
+	subCategories?: string
 	date: string
 	medium: string
 	title: string
@@ -67,7 +68,7 @@ function getMDXDataFromFolders(dir: string) {
 export function getBlogPosts() {
 	return getMDXDataFromFolders(path.join(process.cwd(), "src", "data", "posts"))
 		.sort((a, b) => {
-			if (new Date(a.metadata.date) > new Date(b.metadata.date)) {
+			if (a && b && new Date(a.metadata.date) > new Date(b.metadata.date)) {
 				return -1
 			}
 			return 1
@@ -77,6 +78,7 @@ export function getBlogPosts() {
 			folder: post.folder,
 			title: post.metadata.title,
 			category: post.metadata.category,
+			subCategories: post.metadata.subCategories,
 			date: post.metadata.date,
 			medium: post.metadata.medium,
 			path: post.metadata.path

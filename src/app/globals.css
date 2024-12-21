@@ -79,6 +79,9 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	::-webkit-scrollbar {
+    display: none;
+}
 	::selection {
 		@apply bg-primary text-white dark:bg-white dark:text-primary-foreground;
 	}

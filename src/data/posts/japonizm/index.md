@@ -2,7 +2,7 @@
 date: "2021-02-21"
 path: "/japonizm"
 title: "Japonizm"
-category: "Kitap Değerlendirmesi"
+category: "Kitap"
 medium: "https://omergulcicek.medium.com/japonizm-3b096d73bfc"
 ---
 

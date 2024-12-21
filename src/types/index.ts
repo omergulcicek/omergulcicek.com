@@ -29,11 +29,12 @@ type AnimationListTypes = {
 	detail?: string
 }[]
 
-type BlogPost = {
+type BlogPostTypes = {
 	folder: string
 	title: string
 	date: string
 	category: string
+	subCategories?: string
 	medium: string
 	path: string
 }
@@ -44,5 +45,5 @@ export type {
 	NavMenuTypes,
 	TweetTypes,
 	TitleProps,
-	BlogPost
+	BlogPostTypes
 }

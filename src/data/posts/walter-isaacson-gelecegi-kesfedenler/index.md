@@ -2,7 +2,7 @@
 date: "2017-12-09"
 path: "/walter-isaacson-gelecegi-kesfedenler"
 title: "Walter Isaacson - Geleceği Keşfedenler"
-category: "Kitap Değerlendirmesi"
+category: "Kitap"
 ---
 
 Yazılım alanındaki kişilerin birçoğunun idolleri arasında Steve Jobs üstadımız bulunuyor. Bu tür kişilerin hayatları, yaptıkları hep ilgi çekici olmuştur ve örnek alınmıştır. Bende **Steve Jobs**, **Bill Gates** gibi insanların yaptıklarını yakınen takip ediyorum.

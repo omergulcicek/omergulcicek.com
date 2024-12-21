@@ -2,7 +2,7 @@
 date: "2018-12-03"
 path: "/the-imitation-game"
 title: "The Imitation Game"
-category: "Film Değerlendirmesi"
+category: "Film"
 medium: "https://medium.com/t%C3%BCrkiye/the-imitation-game-204530b0581b"
 ---
 

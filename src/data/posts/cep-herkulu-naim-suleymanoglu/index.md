@@ -2,7 +2,7 @@
 date: "2021-05-08"
 path: "/cep-herkulu-naim-suleymanoglu"
 title: "Cep Herkülü: Naim Süleymanoğlu"
-category: "Film Değerlendirmesi"
+category: "Film"
 medium: "https://omergulcicek.medium.com/cep-herkülü-naim-süleymanoğlu-1d92dc35dc3c"
 ---
 
