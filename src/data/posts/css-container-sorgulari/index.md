@@ -3,6 +3,7 @@ date: "2021-11-26"
 path: "/css-container-sorgulari"
 title: "CSS Container Sorguları"
 category: "Yazılım"
+subCategories: "CSS"
 medium: "https://omergulcicek.medium.com/css-container-sorguları-50f1163fb23d"
 ---
 

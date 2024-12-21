@@ -3,6 +3,7 @@ date: "2022-10-09"
 path: "/2022-css-istatistikleri"
 title: "2022 CSS İstatistikleri"
 category: "Yazılım"
+subCategories: "CSS"
 medium: "https://omergulcicek.medium.com/2022-css-i%CC%87statistikleri-9035c376d3b5"
 ---
 

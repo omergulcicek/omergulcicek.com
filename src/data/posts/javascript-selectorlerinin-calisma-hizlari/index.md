@@ -3,6 +3,7 @@ date: "2021-10-29"
 path: "/javascript-selectorlerinin-calisma-hizlari"
 title: "JavaScript Selectorlerinin Çalışma Hızları"
 category: "Yazılım"
+subCategories: "JavaScript"
 medium: "https://omergulcicek.medium.com/javascript-selectorlerinin-çalışma-hızları-b8f2775b1f8d"
 ---
 

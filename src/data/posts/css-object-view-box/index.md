@@ -3,6 +3,7 @@ date: "2022-06-26"
 path: "/css-object-view-box"
 title: "CSS object-view-box Özelliği ile Görüntüyü Kırpmak"
 category: "Yazılım"
+subCategories: "CSS"
 medium: "https://omergulcicek.medium.com/css-object-view-box-%C3%B6zelli%C4%9Fi-ile-g%C3%B6r%C3%BCnt%C3%BCy%C3%BC-k%C4%B1rpmak-1c9d8bf1fb82"
 ---
 

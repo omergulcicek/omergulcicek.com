@@ -3,6 +3,7 @@ date: "2017-12-30"
 path: "/jsx-nedir"
 title: "JSX Nedir?"
 category: "Yazılım"
+subCategories: "NextJS"
 medium: "https://medium.com/kodcular/jsx-nedir-d7ebd9f93045"
 ---
 

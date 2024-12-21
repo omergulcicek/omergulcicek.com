@@ -3,6 +3,7 @@ date: "2022-01-25"
 path: "/styled-component-ile-dinamik-css-yazmak"
 title: "Styled Component ile Dinamik Css Yazmak"
 category: "Yazılım"
+subCategories: "CSS"
 medium: "https://omergulcicek.medium.com/styled-component-ile-dinamik-css-yazmak-4fa03084bd5c"
 ---
 

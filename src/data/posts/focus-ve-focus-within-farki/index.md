@@ -3,6 +3,7 @@ date: "2020-10-10"
 path: "/focus-ve-focus-within-farki"
 title: "Focus ve Focus-Within Farkı"
 category: "Yazılım"
+subCategories: "CSS"
 medium: "https://medium.com/@omergulcicek/focus-ve-focus-within-fark%C4%B1-df66708fafc7"
 ---
 

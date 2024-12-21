@@ -3,6 +3,7 @@ date: "2020-09-12"
 path: "/logolari-css-ile-hizalama"
 title: "Logoları CSS ile Hizalama"
 category: "Yazılım"
+subCategories: "CSS"
 medium: "https://medium.com/@omergulcicek/logolar%C4%B1-css-ile-hizalama-ec5c1860e88a"
 ---
 

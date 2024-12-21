@@ -3,6 +3,7 @@ date: "2020-11-13"
 path: "/mjml-ile-responsive-mail-template"
 title: "MJML ile Responsive Mail Template"
 category: "Yazılım"
+subCategories: "HTML"
 medium: "https://omergulcicek.medium.com/mjml-ile-responsive-mail-template-4a49d507f0e"
 ---
 

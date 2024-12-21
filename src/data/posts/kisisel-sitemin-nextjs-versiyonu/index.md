@@ -3,6 +3,7 @@ date: "2022-04-22"
 path: "/kisisel-sitemin-nextjs-versiyonu"
 title: "Kişisel Sitemin NextJS Versiyonu"
 category: "Yazılım"
+subCategories: "NextJS"
 medium: "https://omergulcicek.medium.com/ki%C5%9Fisel-sitemin-nextjs-versiyonu-898ade092187"
 ---
 
