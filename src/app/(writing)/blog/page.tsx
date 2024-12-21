@@ -1,8 +1,8 @@
 import { getBlogPosts } from "@/utils/get-blog-posts"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { BlogList } from "@/widgets/blog-list"
-import Title from "@/ui/title"
+import { Title } from "@/ui/title"
 import { BlogPostTypes } from "@/types"
 
 export default function Blog() {

@@ -13,7 +13,7 @@ import { cn } from "@/utils"
 import { motion } from "framer-motion"
 import { Check, Copy, Mail, Send } from "lucide-react"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { Button } from "@/ui/button"
 import { LinkHover as Link } from "@/ui/link"
 

@@ -5,7 +5,7 @@ import Link from "next/link"
 
 import { motion } from "framer-motion"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 
 export function PrivatePensionSystemContent() {
 	return (

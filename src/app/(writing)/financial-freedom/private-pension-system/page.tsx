@@ -1,4 +1,4 @@
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { PrivatePensionSystemContent } from "@/widgets/private-pension-system"
 import {
 	Breadcrumb,
@@ -8,7 +8,7 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator
 } from "@/ui/breadcrumb"
-import Title from "@/ui/title"
+import { Title } from "@/ui/title"
 
 export default function PrivatePensionSystem() {
 	return (

@@ -1,7 +1,7 @@
 import Link from "next/link"
 
-import Container from "@/shared/container"
-import Title from "@/ui/title"
+import { Container } from "@/shared/container"
+import { Title } from "@/ui/title"
 
 export default function Bootcamp() {
 	return (

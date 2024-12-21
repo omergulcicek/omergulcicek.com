@@ -4,7 +4,7 @@ import { Tweet } from "react-tweet"
 
 import { motion } from "framer-motion"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 
 export function Stock() {
 	return (

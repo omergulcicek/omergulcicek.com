@@ -1,6 +1,6 @@
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { FinancialFreedomCart } from "@/widgets/financal-freedom"
-import Title from "@/ui/title"
+import { Title } from "@/ui/title"
 
 export default function FinancialFreedom() {
 	return (

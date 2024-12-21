@@ -6,7 +6,7 @@ import Link from "next/link"
 import { formatDate } from "@/utils"
 import { Trash } from "lucide-react"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { SelectFilter } from "@/widgets/select-filter"
 import BlurFade from "@/ui/blur-fade"
 import { MediumIcon } from "@/ui/medium"

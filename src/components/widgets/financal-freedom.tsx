@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { motion } from "framer-motion"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import ShineBorder from "@/ui/shine-border"
 
 export function FinancialFreedomCart() {

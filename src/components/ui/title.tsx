@@ -4,7 +4,7 @@ import { cn } from "@/utils"
 
 import { TitleProps } from "@/types"
 
-export default function Title({
+export function Title({
 	tag: Tag = "h1",
 	children,
 	className,

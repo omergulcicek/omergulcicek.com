@@ -1,6 +1,6 @@
 import { cn } from "@/utils"
 
-export default function Container({
+export function Container({
 	children,
 	className,
 	...props

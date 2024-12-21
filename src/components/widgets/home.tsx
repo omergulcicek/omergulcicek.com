@@ -3,7 +3,7 @@
 import { cn } from "@/utils"
 import { motion } from "framer-motion"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import Hero from "@/widgets/hero"
 import { TechStack } from "@/widgets/tech-stack"
 import AnimatedShinyText from "@/ui/animated-shiny-text"

@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils"
 
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { NavMenu } from "@/widgets/nav-menu"
 
 export default function Header({

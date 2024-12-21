@@ -1,4 +1,4 @@
-import Container from "@/shared/container"
+import { Container } from "@/shared/container"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs"
 import { deskWorkspace } from "@/data/desk-workspace-data"
 

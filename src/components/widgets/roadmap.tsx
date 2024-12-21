@@ -4,8 +4,8 @@ import Link from "next/link"
 
 import { motion } from "framer-motion"
 
-import Container from "@/shared/container"
-import Title from "@/ui/title"
+import { Container } from "@/shared/container"
+import { Title } from "@/ui/title"
 
 export function Roadmap() {
 	return (
