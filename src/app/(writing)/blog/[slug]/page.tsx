@@ -1,12 +1,20 @@
-import { getPostContent } from "@/utils/get-blogs"
+import getPostMetadata, { getPostContent } from "@/utils/get-blogs"
 import Markdown from "markdown-to-jsx"
 
-export default async function BlogDetail({
-	params
-}: {
-	params: Promise<{ slug: string }>
-}) {
-	const slug = (await params).slug
+export async function generateStaticParams() {
+	const articles = await getPostMetadata()
+
+	if (!articles || articles?.length === 0) {
+		return []
+	}
+
+	return articles.map((article) => ({
+		slug: article.path
+	}))
+}
+
+export default async function BlogDetail({ params }: any) {
+	const { slug } = await params
 	const post = getPostContent(slug)
 
 	return (

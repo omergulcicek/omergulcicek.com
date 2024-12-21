@@ -25,7 +25,15 @@ export default function getPostMetadata() {
 
 export function getPostContent(slug: string) {
 	const basePath = "src/data/posts"
-	const file = basePath + `/${slug}.md`
+
+	const decodedSlug = decodeURIComponent(slug)
+
+	const file = `${basePath}/${decodedSlug}.md`
+
+	if (!fs.existsSync(file)) {
+		throw new Error(`File not found: ${file}`)
+	}
+
 	const content = fs.readFileSync(file, "utf8")
 	const matterResult = matter(content)
 
