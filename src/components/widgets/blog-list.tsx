@@ -71,7 +71,7 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 								</div>
 								<Link
 									className="flex flex-col space-y-1 mb-4"
-									href={`/blog/${path}`}
+									href={`/blog${path}`}
 								>
 									<p className="tracking-tight text-lg">{title}</p>
 								</Link>

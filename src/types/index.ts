@@ -30,7 +30,7 @@ type AnimationListTypes = {
 }[]
 
 type BlogPostTypes = {
-	folder: string
+	folder?: string
 	title: string
 	date: string
 	category: string
