@@ -20,7 +20,10 @@ export default function getPostMetadata() {
 			medium: matterResult.data.medium
 		}
 	})
-	return posts
+
+	return posts.sort(
+		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+	)
 }
 
 export function getPostContent(slug: string) {

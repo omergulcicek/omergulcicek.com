@@ -9,7 +9,7 @@ medium: "https://omergulcicek.medium.com/ki%C5%9Fisel-sitemin-nextjs-versiyonu-8
 
 Düzenli aralıklarla kişisel sitemi farklı yazılım dilleriyle baştan yazıyorum. Teknolojinin yanı sıra, tasarımsal olarakta daha minimal, sade ve şık bir arayüz yapmaya özen gösteriyorum.
 
-v6 olarak isimlendirdiğim bir önceki versiyonda React başlangıç kiti olan <a href="gatsbyjs.com" rel="noopener noreferrer" target="_blank">Gatsby</a> ile geliştirmiştim. Kaynak kodlara <a href="https://github.com/omergulcicek/omergulcicek.com-old-versions/tree/main/v6" rel="noopener noreferrer" target="_blank">GitHub'tan ulaşabilirsiniz</a>.
+v6 olarak isimlendirdiğim bir önceki versiyonda React başlangıç kiti olan <a href="https://www.gatsbyjs.com/" rel="noopener noreferrer" target="_blank">Gatsby</a> ile geliştirmiştim. Kaynak kodlara <a href="https://github.com/omergulcicek/omergulcicek.com-old-versions/tree/main/v6" rel="noopener noreferrer" target="_blank">GitHub'tan ulaşabilirsiniz</a>.
 
 v7 yani NextJS ile geliştirilmiş olan versiyonu yayına almış bulunmaktayım. Detaylar ve performans testleri için okumaya devam edin.
 

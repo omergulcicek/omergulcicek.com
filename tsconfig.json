@@ -27,7 +27,7 @@
         "./src/*"
       ],
       "@/img/*": [
-        "./src/assets/img/*"
+        "./public/img/*"
       ],
       "@/widgets/*": [
         "./src/components/widgets/*"
