@@ -8,6 +8,7 @@ import { Trash } from "lucide-react"
 
 import Container from "@/shared/container"
 import { SelectFilter } from "@/widgets/select-filter"
+import BlurFade from "@/ui/blur-fade"
 import { MediumIcon } from "@/ui/medium"
 import { Tag } from "@/ui/tag"
 import { BlogPostTypes } from "@/types"
@@ -50,27 +51,32 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 
 			<div className="flex flex-col gap-5">
 				{listData.map(
-					({ folder, date, title, category, subCategories, medium, path }) => (
-						<div className="flex flex-col items-start gap-1" key={folder}>
-							<div className="flex items-center gap-2 text-sm text-tertiary-foreground tabular-nums">
-								<span className="italic">{formatDate(date, false)}</span> ·
-								{(category || subCategories) && (
-									<Tag text={subCategories || category} setValue={setValue} />
-								)}
-								{medium && (
-									<>
-										·
-										<MediumIcon path={medium} />
-									</>
-								)}
+					(
+						{ folder, date, title, category, subCategories, medium, path },
+						index
+					) => (
+						<BlurFade key={title} delay={0.25 + index * 0.05} duration={0.1}>
+							<div className="flex flex-col items-start gap-1" key={folder}>
+								<div className="flex items-center gap-2 text-sm text-tertiary-foreground tabular-nums">
+									<span className="italic">{formatDate(date, false)}</span> ·
+									{(category || subCategories) && (
+										<Tag text={subCategories || category} setValue={setValue} />
+									)}
+									{medium && (
+										<>
+											·
+											<MediumIcon path={medium} />
+										</>
+									)}
+								</div>
+								<Link
+									className="flex flex-col space-y-1 mb-4"
+									href={`/blog/${path}`}
+								>
+									<p className="tracking-tight text-lg">{title}</p>
+								</Link>
 							</div>
-							<Link
-								className="flex flex-col space-y-1 mb-4"
-								href={`/blog/${path}`}
-							>
-								<p className="tracking-tight text-lg">{title}</p>
-							</Link>
-						</div>
+						</BlurFade>
 					)
 				)}
 			</div>

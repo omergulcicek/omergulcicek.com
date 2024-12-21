@@ -19,7 +19,6 @@ import {
 import { aboutData } from "@/data/about-data"
 import { bookmarksData } from "@/data/bookmarks-data"
 import { educationData } from "@/data/education-data"
-import { writingData } from "@/data/writing-data"
 
 export function NavMenu() {
 	return (
@@ -39,25 +38,16 @@ export function NavMenu() {
 				</NavigationMenuItem>
 
 				<NavigationMenuItem>
-					<NavigationMenuTrigger>Yazılar</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-full md:w-[400px] gap-3 p-4">
-							{writingData.map((component) => (
-								<ListItem
-									key={component.title}
-									title={component.title}
-									href={component.href}
-									className={cn(
-										"relative",
-										component.soon &&
-											"opacity-50 pointer-events-none cursor-default"
-									)}
-								>
-									{component.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
+					<Link href="/blog" legacyBehavior passHref>
+						<NavigationMenuLink
+							className={cn(
+								navigationMenuTriggerStyle(),
+								"hover:bg-accent dark:hover:bg-[#181818] "
+							)}
+						>
+							Blog
+						</NavigationMenuLink>
+					</Link>
 				</NavigationMenuItem>
 
 				<NavigationMenuItem>
