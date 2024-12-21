@@ -7,7 +7,7 @@ export default function FinancialFreedom() {
 		<>
 			<Container className="mt-10 md:mt-24 max-w-2xl">
 				<Title tag="h1">Finansal Özgürlük</Title>
-				<Title tag="h2">
+				<Title tag="h2" className="text-tertiary-foreground">
 					Hisse, fon, altın, kripto ve BES yatırım portföyüm
 				</Title>
 			</Container>

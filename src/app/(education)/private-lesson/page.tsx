@@ -8,7 +8,9 @@ export default function PrivateLesson() {
 		<>
 			<Container className="mt-10 md:mt-24 max-w-2xl">
 				<Title tag="h1">Özel Ders</Title>
-				<Title tag="h2">Birebir yada grupça eğitim</Title>
+				<Title tag="h2" className="text-tertiary-foreground">
+					Birebir yada grupça eğitim
+				</Title>
 			</Container>
 		</>
 	)

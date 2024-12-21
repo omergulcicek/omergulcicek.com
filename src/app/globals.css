@@ -85,4 +85,8 @@
 	::selection {
 		@apply bg-primary text-white dark:bg-white dark:text-primary-foreground;
 	}
+
+	.prose-sm > span:first-of-type {
+		@apply !hidden
+	}
 }

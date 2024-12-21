@@ -12,7 +12,9 @@ export default function TechnicalArticles() {
 	return (
 		<Container className="mt-10 md:mt-24 max-w-2xl">
 			<Title tag="h1">Teknik Yazılar</Title>
-			<Title tag="h2">HTML, CSS, JavaScript, ES6+, React, NextJS</Title>
+			<Title tag="h2" className="text-tertiary-foreground">
+				HTML, CSS, JavaScript, ES6+, React, NextJS
+			</Title>
 
 			<BlogList data={articles} />
 		</Container>

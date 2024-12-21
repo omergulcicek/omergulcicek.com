@@ -8,7 +8,9 @@ export default function Freelance() {
 		<>
 			<Container className="mt-10 md:mt-24 max-w-2xl">
 				<Title tag="h1">Serbest Çalışma</Title>
-				<Title tag="h2">Freelance iş fırsatları</Title>
+				<Title tag="h2" className="text-tertiary-foreground">
+					Freelance iş fırsatları
+				</Title>
 			</Container>
 		</>
 	)

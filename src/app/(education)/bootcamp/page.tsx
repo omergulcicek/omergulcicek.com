@@ -8,7 +8,9 @@ export default function Bootcamp() {
 		<>
 			<Container className="mt-10 md:mt-24 max-w-2xl">
 				<Title tag="h1">Bootcamp</Title>
-				<Title tag="h2">Frontend kod eğitimi</Title>
+				<Title tag="h2" className="text-tertiary-foreground">
+					Frontend kod eğitimi
+				</Title>
 			</Container>
 		</>
 	)
