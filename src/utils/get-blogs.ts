@@ -1,8 +1,6 @@
 import fs from "fs"
-import React from "react"
 
 import matter from "gray-matter"
-import Markdown from "markdown-to-jsx"
 
 export default function getPostMetadata() {
 	const basePath = "src/data/posts"
@@ -30,5 +28,14 @@ export function getPostContent(slug: string) {
 	const file = basePath + `/${slug}.md`
 	const content = fs.readFileSync(file, "utf8")
 	const matterResult = matter(content)
-	return matterResult
+
+	return {
+		title: matterResult.data.title,
+		path: matterResult.data.path,
+		date: matterResult.data.date,
+		category: matterResult.data.category,
+		subCategories: matterResult.data.subCategories,
+		medium: matterResult.data.medium,
+		content: matterResult.content
+	}
 }

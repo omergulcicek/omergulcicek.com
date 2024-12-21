@@ -12,13 +12,13 @@ export default async function BlogDetail({
 	return (
 		<>
 			<header>
-				<p>{post.data.date}</p>
-				<p>{post.data.category}</p>
-				<p>{post.data.subCategories}</p>
-				<p>{post.data.medium}</p>
+				<p>{post.date}</p>
+				<p>{post.category}</p>
+				<p>{post.subCategories}</p>
+				<p>{post.medium}</p>
 			</header>
 			<article>
-				<h1>{post.data.title}</h1>
+				<h1>{post.title}</h1>
 				<Markdown>{post.content}</Markdown>
 			</article>
 		</>
