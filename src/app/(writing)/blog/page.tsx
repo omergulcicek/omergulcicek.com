@@ -5,7 +5,7 @@ import { BlogList } from "@/widgets/blog-list"
 import { Title } from "@/ui/title"
 
 export default async function Blog() {
-	const articles = getPostMetadata()
+	const articles = await getPostMetadata()
 
 	return (
 		<Container className="mt-10 md:mt-24 max-w-2xl">

@@ -2,7 +2,7 @@ import fs from "fs"
 
 import matter from "gray-matter"
 
-export default function getPostMetadata() {
+export default async function getPostMetadata() {
 	const basePath = "src/data/posts"
 	const files = fs.readdirSync(basePath).filter((file) => file !== ".DS_Store")
 	const markdownPosts = files.filter((file) => file.endsWith(".md"))
@@ -26,7 +26,7 @@ export default function getPostMetadata() {
 	)
 }
 
-export function getPostContent(slug: string) {
+export async function getPostContent(slug: string) {
 	const basePath = "src/data/posts"
 
 	const decodedSlug = decodeURIComponent(slug)
