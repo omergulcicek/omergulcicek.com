@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 		return []
 	}
 
-	return articles.map((article) => ({
+	return articles?.map((article) => ({
 		slug: article.path
 	}))
 }
