@@ -91,7 +91,7 @@ export function InvestmentFund() {
 						</p>
 					</div>
 
-					<Tweet id={"1870374502816682023"} />
+					<Tweet id={"1871619568839663938"} />
 				</motion.section>
 			</Container>
 		</>

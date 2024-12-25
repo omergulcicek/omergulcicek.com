@@ -59,6 +59,8 @@ export default async function BlogDetail({ params }: any) {
 								</div>
 							</>
 						)}
+						<Separator orientation="vertical" />
+						<span>Ömer Gülçiçek</span>
 					</div>
 				</header>
 			</BlurFade>
