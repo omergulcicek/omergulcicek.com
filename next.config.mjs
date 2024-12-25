@@ -6,20 +6,11 @@ import createMDX from "@next/mdx"
  */
 
 const nextConfig = {
-	// output: "export",
+	output: "export",
 	images: {
 		unoptimized: true
 	},
-	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-	async redirects() {
-		return [
-			{
-				source: "/blog/:slug",
-				destination: "/blog/[slug]",
-				permanent: true
-			}
-		]
-	}
+	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"]
 }
 
 const withMDX = createMDX({

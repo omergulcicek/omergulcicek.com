@@ -1,16 +1,14 @@
 import BlogDetail from "@/components/widgets/blog-detail"
 import getPostMetadata, { getPostContent } from "@/utils/get-blogs"
 
-export async function generateStaticParams() {
+export async function getStaticPaths() {
 	const articles = await getPostMetadata()
 
-	if (!articles || articles?.length === 0) {
-		return []
-	}
-
-	return articles?.map((article) => ({
-		slug: article.path
+	const paths = articles.map((article) => ({
+		params: { slug: article.path }
 	}))
+
+	return { paths, fallback: "blocking" }
 }
 
 export default async function BlogDetailPage({ params }: any) {
