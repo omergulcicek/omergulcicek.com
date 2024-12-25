@@ -8,7 +8,6 @@ import { Separator } from "@/ui/separator"
 export default async function BlogDetailHeader({
 	date,
 	category,
-	subCategories,
 	medium
 }: any) {
 	return (
@@ -22,10 +21,10 @@ export default async function BlogDetailHeader({
 
 						<div>Ömer Gülçiçek</div>
 
-						{subCategories && (
+						{category && (
 							<>
 								<Separator orientation="vertical" />
-								<span>{` #${subCategories}`}</span>
+								<span>{` #${category}`}</span>
 							</>
 						)}
 

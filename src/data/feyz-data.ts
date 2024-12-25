@@ -1,6 +1,6 @@
 import { AnimationListTypes } from "@/types"
 
-export const feyzData: AnimationListTypes = [
+export const feyzData: any = [
 	{
 		img: "⚙️",
 		title: "Araçlar",

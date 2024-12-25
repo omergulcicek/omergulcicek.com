@@ -1,6 +1,6 @@
 import { AnimationListTypes } from "@/types"
 
-export const designData: AnimationListTypes = [
+export const designData: any = [
 	{
 		img: "💀",
 		title: "Tasarım 1",

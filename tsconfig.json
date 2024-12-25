@@ -46,7 +46,10 @@
       ],
       "@/data/*": [
         "./src/data/*"
-      ]
+      ],
+      "@/atom-dark-theme": [
+        "./public/atom-dark-theme.css"
+      ],
     },
     "target": "ES2017"
   },

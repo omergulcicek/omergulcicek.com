@@ -54,3 +54,12 @@ export const sortBooks = (books: BookTypes[]): BookTypes[] => {
 		return 0
 	})
 }
+
+export const sortTitle = (data: any[]): any[] => {
+	return data.sort((a, b) => {
+		if (a.title.toLowerCase() < b.title.toLowerCase()) return -1
+		if (a.title.toLowerCase() > b.title.toLowerCase()) return 1
+
+		return 0
+	})
+}

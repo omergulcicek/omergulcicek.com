@@ -27,7 +27,7 @@ export function BookList() {
 
 		const lowerText = text.toLocaleLowerCase()
 		const filteredData = bookData.filter(
-			(data) =>
+			(data: any) =>
 				(data.description ?? "").toLocaleLowerCase().includes(lowerText) ||
 				(data.title ?? "").toLocaleLowerCase().includes(lowerText)
 		)

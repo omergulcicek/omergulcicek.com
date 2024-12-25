@@ -21,12 +21,12 @@ type TitleProps = {
 } & React.HTMLAttributes<HTMLDivElement>
 
 type AnimationListTypes = {
-	img: string
-	title: string
-	description?: string
-	url: string
-	isExternal?: boolean
-	detail?: string
+	img: any
+	title: any
+	description?: any
+	url: any
+	isExternal?: any
+	detail?: any
 }[]
 
 type BlogPostTypes = {

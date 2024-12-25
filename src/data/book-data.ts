@@ -1,6 +1,6 @@
 import { AnimationListTypes } from "@/types"
 
-export const bookData: AnimationListTypes = [
+export const bookData: any = [
 	{
 		img: "https://img.kitapyurdu.com/v1/getImage/fn:11713962/wh:true/wi:220",
 		title: "Ruh Adam",

@@ -1,6 +1,6 @@
 import { AnimationListTypes } from "@/types"
 
-export const webSiteData: AnimationListTypes = [
+export const webSiteData: any = [
 	{
 		img: "https://plus.excalidraw.com/images/logo.svg",
 		title: "Excalidraw",

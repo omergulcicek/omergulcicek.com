@@ -1,6 +1,6 @@
 import { AnimationListTypes } from "@/types"
 
-export const vsCodeData: AnimationListTypes = [
+export const vsCodeData: any = [
 	{
 		img: "https://formulahendry.gallerycdn.vsassets.io/extensions/formulahendry/auto-rename-tag/0.1.10/1644319230173/Microsoft.VisualStudio.Services.Icons.Default",
 		title: "Auto Rename Tag",
