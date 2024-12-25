@@ -13,7 +13,15 @@ export const HoverCardWithLogo = ({
 	img,
 	link,
 	className
-}: any) => {
+}: {
+	title: string
+	content: string
+	fallback: string
+	desc: string
+	img: string
+	link: string
+	className?: string
+}) => {
 	return (
 		<>
 			<HoverCard>

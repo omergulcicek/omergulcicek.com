@@ -9,7 +9,11 @@ export default async function BlogDetailHeader({
 	date,
 	category,
 	medium
-}: any) {
+}: {
+	date: string
+	category?: string
+	medium?: string
+}) {
 	return (
 		<>
 			<BlurFade delay={0.15} duration={0.15}>

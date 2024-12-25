@@ -19,7 +19,7 @@ export default function BlogDetail({ post }: any) {
 		<>
 			<BlogDetailHeader
 				date={post.date}
-				categories={post.subCategories}
+				category={post.subCategories}
 				medium={post.medium}
 			/>
 
