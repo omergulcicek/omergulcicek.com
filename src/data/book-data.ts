@@ -2,6 +2,78 @@ import { AnimationListTypes } from "@/types"
 
 export const bookData: AnimationListTypes = [
 	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11713962/wh:true/wi:220",
+		title: "Ruh Adam",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/ruh-adam-/588450.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11784528/wh:true/wi:220",
+		title: "Deli Kurt",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/deli-kurt/243383.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11691811/wh:true/wi:220",
+		title: "Türk Ülküsü",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/turk-ulkusu/251501.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11713972/wh:true/wi:220",
+		title: "Yolların Sonu",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/yollarin-sonu/595418.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11484359/wh:true/wi:220",
+		title: "Türk Tarihinde Meseleler",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/turk-tarihinde-meseleler/246740.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11630535/wh:true/wi:220",
+		title: "Turancılık Milli Değerler ve Gençlik",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/turancilik-milli-degerler-ve-genclik/251503.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11690531/wh:true/wi:220",
+		title: "Bozkurtlar",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/bozkurtlar/243385.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11535716/wh:true/wi:220",
+		title: "Bir Darbenin Anatomisi",
+		description: "Yılmaz Öztuna",
+		url: "https://www.kitapyurdu.com/kitap/bir-darbenin-anatomisi/13641.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:264011/wh:true/wi:220",
+		title: "Sultan II. Mahmud",
+		description: "Yılmaz Öztuna",
+		url: "https://www.kitapyurdu.com/kitap/sultan-ii-mahmud/342725.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11631173/wh:true/wi:220",
+		title: "II. Abdülhamid Zamanı ve Şahsiyeti",
+		description: "Yılmaz Öztuna",
+		url: "https://www.kitapyurdu.com/kitap/ii-abdulhamid-zamani-ve-sahsiyeti/311444.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:4098795/wh:true/wi:220",
+		title: "Yavuz Sultan Selim",
+		description: "Yılmaz Öztuna",
+		url: "https://www.kitapyurdu.com/kitap/yavuz-sultan-selim/430261.html"
+	},
+	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11638981/wh:true/wi:220",
+		title: "Kanuni Sultan Süleyman",
+		description: "Yılmaz Öztuna",
+		url: "https://www.kitapyurdu.com/kitap/kanuni-sultan-suleyman/335517.html"
+	},
+	{
 		img: "https://r2.1k-cdn.com/sig/size:96/plain/https%3A%2F%2F1k-cdn.com%2Fresimler%2Fkitaplar%2F56586_1705478114_1Ggrf.jpg",
 		title: "İnsanlığın Dirilişi",
 		description: "Sezai Karakoç",

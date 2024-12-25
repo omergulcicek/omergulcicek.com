@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 import { AnimationListLayout } from "@/layouts/animation-list-layout"
+import { sortBooks } from "@/utils"
 import { motion } from "framer-motion"
 
 import { Input } from "@/ui/input"
@@ -52,11 +53,7 @@ export function BookList() {
 				/>
 			</motion.article>
 
-			<AnimationListLayout
-				data={filterData.sort((a, b) =>
-					(a.description ?? "").localeCompare(b.description ?? "")
-				)}
-			/>
+			<AnimationListLayout data={sortBooks(filterData)} />
 		</>
 	)
 }

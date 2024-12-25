@@ -39,8 +39,16 @@ type BlogPostTypes = {
 	path: string
 }
 
+type BookTypes = {
+	img: string
+	title: string
+	description: string
+	url: string
+}
+
 export type {
 	AnimationListTypes,
+	BookTypes,
 	HeroTypes,
 	NavMenuTypes,
 	TweetTypes,

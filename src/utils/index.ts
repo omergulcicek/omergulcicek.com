@@ -1,6 +1,8 @@
 import { clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+import { BookTypes } from "@/types"
+
 export function cn(...args: (string | undefined | false | null)[]) {
 	return clsx(twMerge(...args))
 }
@@ -39,4 +41,16 @@ export function formatDate(date: string, includeRelative = false) {
 	}
 
 	return `${fullDate} (${formattedDate})`
+}
+
+export const sortBooks = (books: BookTypes[]): BookTypes[] => {
+	return books.sort((a, b) => {
+		if (a.description.toLowerCase() < b.description.toLowerCase()) return -1
+		if (a.description.toLowerCase() > b.description.toLowerCase()) return 1
+
+		if (a.title.toLowerCase() < b.title.toLowerCase()) return -1
+		if (a.title.toLowerCase() > b.title.toLowerCase()) return 1
+
+		return 0
+	})
 }
