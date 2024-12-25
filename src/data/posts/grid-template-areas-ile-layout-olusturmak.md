@@ -86,10 +86,15 @@ grid-template-areas:
 
 Kurcalamanız için bir codepen linki bırakıyorum;
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Grid Template Areas" src="https://codepen.io/omergulcicek/embed/LYmNmeY?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/omergulcicek/pen/LYmNmeY">
-  Grid Template Areas</a> by Ömer Gülçiçek (<a href="https://codepen.io/omergulcicek">@omergulcicek</a>)
-  on <a href="https://codepen.io">CodePen</a>.
+<iframe 
+  height="300" 
+  style="width: 100%;" 
+  scrolling="no" 
+  title="Grid Template Areas" 
+  src="https://codepen.io/omergulcicek/embed/LYmNmeY?default-tab=html%2Cresult" 
+  frameborder="no" 
+  loading="lazy" 
+  allowfullscreen="true">
 </iframe>
 
 ---

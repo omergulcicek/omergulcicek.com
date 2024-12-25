@@ -49,7 +49,7 @@ function getContrastYIQ(hexcolor){              // hexcolor = 26a69a
 
 Aşağıda React ile oluşturulmuş basit bir CodePen örneğinde arkaplana göre yazı rengi dinamik olarak hesaplanmaktadır.
 
-<iframe height="840" style="width: 100%;" scrolling="no" title="Renk Konstratı" src="https://codepen.io/omergulcicek/embed/MWpEdaQ?height=265&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="840" style="width: 100%;" scrolling="no" title="Renk Konstratı" src="https://codepen.io/omergulcicek/embed/MWpEdaQ?height=265&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/omergulcicek/pen/MWpEdaQ'>Renk Konstratı</a> by Ömer Gülçiçek
   (<a href='https://codepen.io/omergulcicek'>@omergulcicek</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
