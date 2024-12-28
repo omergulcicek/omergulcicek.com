@@ -7,13 +7,15 @@ export async function generateStaticParams() {
 	try {
 		const articles = await getPostMetadata()
 
-		if (!articles || articles?.length === 0) {
-			return []
-		}
+		return [
+			{
+				slug: ["2022-degerlendirmesi", "/2022-degerlendirmesi"]
+			}
+		]
 
-		return articles?.map((article) => ({
-			slug: article.path
-		}))
+		// return articles?.map((article) => ({
+		// 	slug: article.path
+		// }))
 	} catch (e) {
 		console.error(e)
 		return []
