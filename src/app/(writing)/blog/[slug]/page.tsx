@@ -10,9 +10,6 @@ export async function generateStaticParams() {
 		return [
 			{
 				slug: "2022-degerlendirmesi"
-			},
-			{
-				slug: "/2022-degerlendirmesi"
 			}
 		]
 
