@@ -10,16 +10,6 @@ export async function generateStaticParams() {
 		return articles?.map((article) => ({
 			slug: article.path.slice(1)
 		}))
-
-		// return [
-		// 	{
-		// 		slug: "2022-degerlendirmesi"
-		// 	}
-		// ]
-
-		// return articles?.map((article) => ({
-		// 	slug: article.path
-		// }))
 	} catch (e) {
 		console.error(e)
 		return []
