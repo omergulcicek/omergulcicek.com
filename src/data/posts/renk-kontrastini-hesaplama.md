@@ -14,38 +14,39 @@ CSS tarafında bir yazıya `color: #fff` verdiğimizi düşünelim. Koyu arka pl
 **Brian Suda** isimli bir geliştiricinin geliştirmiş olduğu şu kod işimizi görüyor;
 
 ```js
-function getContrastYIQ(hexcolor){
-	var r = parseInt(hexcolor.substr(0,2),16);
-	var g = parseInt(hexcolor.substr(2,2),16);
-	var b = parseInt(hexcolor.substr(4,2),16);
-	var yiq = ((r*299)+(g*587)+(b*114))/1000;
-	return (yiq >= 128) ? 'black' : 'white';
+function getContrastYIQ(hexcolor) {
+	var r = parseInt(hexcolor.substr(0, 2), 16)
+	var g = parseInt(hexcolor.substr(2, 2), 16)
+	var b = parseInt(hexcolor.substr(4, 2), 16)
+	var yiq = (r * 299 + g * 587 + b * 114) / 1000
+	return yiq >= 128 ? "black" : "white"
 }
 ```
 
-* Bu kodu biraz okuyalım. Öncelikle `hexcolor` adında bir parametre (*rengimizin 6 haneli HEX kodunu*) istiyor.
+- Bu kodu biraz okuyalım. Öncelikle `hexcolor` adında bir parametre (_rengimizin 6 haneli HEX kodunu_) istiyor.
 
-* `.substr(X,2)` fonksiyonu sayesinde `26a69a` diye bir renk gönderirsek `26`, `a6` ve `9a` şeklinde parçalıyor.
+- `.substr(X,2)` fonksiyonu sayesinde `26a69a` diye bir renk gönderirsek `26`, `a6` ve `9a` şeklinde parçalıyor.
 
-* `r`, `g`, `b` değerleri CSS'te 0-255 ve arasındaki değerleri alabiliyor. Bu yüzden oluşturulan 26, a6 ve 9a değerlerini `parseInt(X,16)` fonksiyonu ile 16'lık tabanda bir değere dönüştürüyor.
+- `r`, `g`, `b` değerleri CSS'te 0-255 ve arasındaki değerleri alabiliyor. Bu yüzden oluşturulan 26, a6 ve 9a değerlerini `parseInt(X,16)` fonksiyonu ile 16'lık tabanda bir değere dönüştürüyor.
 
-* Bu işlemlerden sonra `r=38`, `g=166` ve `b=154` olarak hesaplanmış oluyor.
+- Bu işlemlerden sonra `r=38`, `g=166` ve `b=154` olarak hesaplanmış oluyor.
 
-* Son adımda ise `((r*299)+(g*587)+(b*114))/1000` formulü ile rengin kontrast değeri hesaplanıyor. Bu değer `128` ve üstü ise parametre olarak gönderdiğimiz değer açık tonda bir renktir, 128'den küçükse koyu bir renktir.
+- Son adımda ise `((r*299)+(g*587)+(b*114))/1000` formulü ile rengin kontrast değeri hesaplanıyor. Bu değer `128` ve üstü ise parametre olarak gönderdiğimiz değer açık tonda bir renktir, 128'den küçükse koyu bir renktir.
 
 Debug adımlarını gösterecek olursak kod şu şekilde çalışıyor;
 
 ```js
-function getContrastYIQ(hexcolor){              // hexcolor = 26a69a
-	var r = parseInt(hexcolor.substr(0,2),16);  // r = 38
-	var g = parseInt(hexcolor.substr(2,2),16);  // g = 166
-	var b = parseInt(hexcolor.substr(4,2),16);  // b = 154
-	var yiq = ((r*299)+(g*587)+(b*114))/1000;   // yiq = 126.36
-	return (yiq >= 128) ? 'black' : 'white';    // return "white"
+function getContrastYIQ(hexcolor) {
+	// hexcolor = 26a69a
+	var r = parseInt(hexcolor.substr(0, 2), 16) // r = 38
+	var g = parseInt(hexcolor.substr(2, 2), 16) // g = 166
+	var b = parseInt(hexcolor.substr(4, 2), 16) // b = 154
+	var yiq = (r * 299 + g * 587 + b * 114) / 1000 // yiq = 126.36
+	return yiq >= 128 ? "black" : "white" // return "white"
 }
 ```
 
-***
+---
 
 Aşağıda React ile oluşturulmuş basit bir CodePen örneğinde arkaplana göre yazı rengi dinamik olarak hesaplanmaktadır.
 

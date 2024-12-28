@@ -27,35 +27,35 @@ Site geliştirirken sağ tarafta çıkan scroll bar'ları her zaman gizlemeyi te
 
 ```json
 {
-  "name": "YOUR_PACKAGE_NAME", // <- Npm paketinizin adı
-  "version": "0.0.1", // <- Npm paketinizin sürümü
-  "description": "",
-  "main": "./lib/YOUR_COMPONENT.js", // <- React bileşenizin adı
-  "license": "MIT",
-  "scripts": {
-    "build": "webpack"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "devDependencies": {
-    "prop-types": "^15.6.0",
-    "babel-core": "^6.21.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^3.5.1",
-    "path": "^0.12.7",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "style-loader": "^1.1.3",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^3.2.1"
-  },
-  "dependencies": {}
+	"name": "YOUR_PACKAGE_NAME", // <- Npm paketinizin adı
+	"version": "0.0.1", // <- Npm paketinizin sürümü
+	"description": "",
+	"main": "./lib/YOUR_COMPONENT.js", // <- React bileşenizin adı
+	"license": "MIT",
+	"scripts": {
+		"build": "webpack"
+	},
+	"peerDependencies": {
+		"prop-types": "^15.6.0",
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0"
+	},
+	"devDependencies": {
+		"prop-types": "^15.6.0",
+		"babel-core": "^6.21.0",
+		"babel-loader": "^7.1.4",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-react": "^6.16.0",
+		"babel-preset-stage-0": "^6.24.1",
+		"css-loader": "^3.5.1",
+		"path": "^0.12.7",
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0",
+		"style-loader": "^1.1.3",
+		"webpack": "^4.5.0",
+		"webpack-cli": "^3.2.1"
+	},
+	"dependencies": {}
 }
 ```
 
@@ -69,46 +69,46 @@ Son aşamaya geçmeden önce webpack config dosyamızda componentimizin konumunu
 const path = require("path")
 
 module.exports = {
-  mode: "production",
-  entry: "./src/MyCoolButton.js", // <- React bileşenizin konumu
-  output: {
-    path: path.resolve("lib"),
-    filename: "MyCoolButton.js", // <- React bileşenizin adı
-    libraryTarget: "commonjs2",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        exclude: /(node_modules)/,
-        use: "babel-loader",
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
-  },
-  resolve: {
-    alias: {
-      react: path.resolve(__dirname, "./node_modules/react"),
-      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
-    },
-  },
-  externals: {
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React",
-    },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM",
-    },
-  },
+	mode: "production",
+	entry: "./src/MyCoolButton.js", // <- React bileşenizin konumu
+	output: {
+		path: path.resolve("lib"),
+		filename: "MyCoolButton.js", // <- React bileşenizin adı
+		libraryTarget: "commonjs2"
+	},
+	module: {
+		rules: [
+			{
+				test: /\.js?$/,
+				exclude: /(node_modules)/,
+				use: "babel-loader"
+			},
+			{
+				test: /\.css$/,
+				use: ["style-loader", "css-loader"]
+			}
+		]
+	},
+	resolve: {
+		alias: {
+			react: path.resolve(__dirname, "./node_modules/react"),
+			"react-dom": path.resolve(__dirname, "./node_modules/react-dom")
+		}
+	},
+	externals: {
+		react: {
+			commonjs: "react",
+			commonjs2: "react",
+			amd: "React",
+			root: "React"
+		},
+		"react-dom": {
+			commonjs: "react-dom",
+			commonjs2: "react-dom",
+			amd: "ReactDOM",
+			root: "ReactDOM"
+		}
+	}
 }
 ```
 

@@ -43,13 +43,13 @@ MJML etiket sırası önemli, bu sırayı değiştirdiğinizde sizi uyaracaktır
 
 ```html
 <mjml>
-  <mj-body>
-    <mj-section>
-      <mj-column>
-        <!-- İçeriğiniz -->
-      </mj-column>
-    </mj-section>
-  </mj-body>
+	<mj-body>
+		<mj-section>
+			<mj-column>
+				<!-- İçeriğiniz -->
+			</mj-column>
+		</mj-section>
+	</mj-body>
 </mjml>
 ```
 
@@ -57,30 +57,30 @@ Aslında MJML, componentlerini sizin oluşturduğunuz ve bunları `<table>` etik
 
 ```html
 <table
-  cellpadding="0"
-  cellspacing="0"
-  style="border:none;border-radius:3px;"
-  align="center"
+	cellpadding="0"
+	cellspacing="0"
+	style="border:none;border-radius:3px;"
+	align="center"
 >
-  <tbody>
-    <tr>
-      <td
-        style="background-color:#414141;border-radius:3px;color:#ffffff;cursor:auto;"
-        align="center"
-        valign="middle"
-        bgcolor="#414141"
-      >
-        <a
-          class="mj-content"
-          href="#"
-          style="display:inline-block;text-decoration:none;background-color:#414141;border:1px solid #414141;border-radius:3px;color:#ffffff;font-size:13px;font-weight:bold;padding:15px 30px;"
-          target="_blank"
-        >
-          Buton
-        </a>
-      </td>
-    </tr>
-  </tbody>
+	<tbody>
+		<tr>
+			<td
+				style="background-color:#414141;border-radius:3px;color:#ffffff;cursor:auto;"
+				align="center"
+				valign="middle"
+				bgcolor="#414141"
+			>
+				<a
+					class="mj-content"
+					href="#"
+					style="display:inline-block;text-decoration:none;background-color:#414141;border:1px solid #414141;border-radius:3px;color:#ffffff;font-size:13px;font-weight:bold;padding:15px 30px;"
+					target="_blank"
+				>
+					Buton
+				</a>
+			</td>
+		</tr>
+	</tbody>
 </table>
 ```
 

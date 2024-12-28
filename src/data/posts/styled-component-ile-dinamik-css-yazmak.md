@@ -45,28 +45,29 @@ Yukarıdaki kodda `Button` adında bir CSS componenti parametre alacağı `theme
 
 ```js
 const defaults = {
-    color: "#fff",
-    backgroundColor: "#4caf50",
-    borderRadius: "4px",
-    hoverBackgroundColor: "#4caf50"
-};
+	color: "#fff",
+	backgroundColor: "#4caf50",
+	borderRadius: "4px",
+	hoverBackgroundColor: "#4caf50"
+}
 ```
 
 `Object.assign()` yardımıyla API'den özelleştirilmiş bir stil dosyası gelirse defaults ile değiştirilmesini sağlayabiliyoruz.
 
 ```js
-export default function App({theme, children, ...attr}) {
-    // Parametre olarak stil içeren bir theme dosyası alıyoruz
+export default function App({ theme, children, ...attr }) {
+	// Parametre olarak stil içeren bir theme dosyası alıyoruz
 
-    const css = Object.assign(defaults, theme);
-    // Burada API'den bir stil objesi gelirse varsayılan CSS'imizin yerine geçmesini sağlıyoruz
+	const css = Object.assign(defaults, theme)
+	// Burada API'den bir stil objesi gelirse varsayılan CSS'imizin yerine geçmesini sağlıyoruz
 
-    return (
-        <ThemeProvider theme={css}>
-        // Styled Component bileşeni olan ThemeProvider ile dinamik stilli bir buton oluşturuyoruz  
-            <Button {...attr}>{children}</Button>
-        </ThemeProvider>
-    )
+	return (
+		<ThemeProvider theme={css}>
+			// Styled Component bileşeni olan ThemeProvider ile dinamik stilli bir
+			buton oluşturuyoruz
+			<Button {...attr}>{children}</Button>
+		</ThemeProvider>
+	)
 }
 ```
 
@@ -90,6 +91,6 @@ const dataAPI = {
 };
 ```
 
-***
+---
 
 Sonuç olarak bir CSS kodu ezilmiyor. Yani önce default kırmızı olan buton, sonradan inline CSS ile ezilerek maviye dönüşmüyor; direkt mavi bir buton oluşturuluyor.

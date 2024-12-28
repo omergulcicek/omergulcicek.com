@@ -21,12 +21,12 @@ Basit bir tasarımla neyi kastettiğimizi daha iyi anlayalım. Aşağıdaki gör
 
 ```css
 .avatar {
-  margin-right: 16px;
+	margin-right: 16px;
 }
 
 html[dir="rtl"] .avatar {
-  margin-right: 0;
-  margin-left: 16px;
+	margin-right: 0;
+	margin-left: 16px;
 }
 ```
 
@@ -34,7 +34,7 @@ Görüldüğü gibi çok dilli bir sitede sadece avatar ile yazı arasına boşl
 
 ```css
 .avatar {
-  margin-inline-end: 16px;
+	margin-inline-end: 16px;
 }
 ```
 
@@ -95,13 +95,13 @@ Aynı kodu CSS mantıksal özellikleri ile şu şekilde yapabilirdik;
 
 ```css
 .card {
-  padding-inline-start: 2.5rem;
-  padding-inline-end: 1rem;
-  border-inline-start: 6px solid blue;
+	padding-inline-start: 2.5rem;
+	padding-inline-end: 1rem;
+	border-inline-start: 6px solid blue;
 }
 
 .card__icon {
-  margin-inline-end: 1rem;
+	margin-inline-end: 1rem;
 }
 ```
 

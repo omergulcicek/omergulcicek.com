@@ -23,7 +23,10 @@ export default async function BlogDetailHeader({
 					<div className="flex items-center justify-center space-x-4 md:space-x-6 text-sm h-6">
 						<div>{formatDate(date)}</div>
 
-						<Separator orientation="vertical" className="hidden md:inline-flex" />
+						<Separator
+							orientation="vertical"
+							className="hidden md:inline-flex"
+						/>
 
 						<div className="hidden md:inline-flex">Ömer Gülçiçek</div>
 

@@ -1,5 +1,5 @@
 import { cn } from "@/utils"
-import {getIcon} from "@/utils/get-icon"
+import { getIcon } from "@/utils/get-icon"
 
 export const StackItem = ({ img, name }: { img: string; name: string }) => {
 	return (
@@ -9,7 +9,9 @@ export const StackItem = ({ img, name }: { img: string; name: string }) => {
 			)}
 		>
 			{getIcon(img)}
-			<figcaption className="text-sm text-center whitespace-nowrap hidden md:inline-flex">{name}</figcaption>
+			<figcaption className="text-sm text-center whitespace-nowrap hidden md:inline-flex">
+				{name}
+			</figcaption>
 		</figure>
 	)
 }

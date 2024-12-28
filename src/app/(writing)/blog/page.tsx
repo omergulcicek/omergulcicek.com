@@ -1,16 +1,16 @@
+import type { Metadata } from "next"
+
 import getPostMetadata from "@/utils/get-blogs"
 
 import { Container } from "@/shared/container"
 import { BlogList } from "@/widgets/blog-list"
 import { Title } from "@/ui/title"
 
-import type { Metadata } from 'next'
- 
 export const metadata: Metadata = {
-  title: "Kişisel düşünce, deneyim ve yorumlarım | Ömer Gülçiçek",
-  description: "Kişisel düşünce, deneyim ve yorumlarım",
+	title: "Kişisel düşünce, deneyim ve yorumlarım | Ömer Gülçiçek",
+	description: "Kişisel düşünce, deneyim ve yorumlarım",
 	alternates: {
-		canonical: 'https://omergulcicek.com/blog/',
+		canonical: "https://omergulcicek.com/blog/"
 	}
 }
 

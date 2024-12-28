@@ -15,9 +15,9 @@ srcset'in içinde `w` değeri, tarayıcıya her resmin genişliğini söyler.
 
 ```html
 <img
-  src="small.jpg"
-  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-  alt="…"
+	src="small.jpg"
+	srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+	alt="…"
 />
 ```
 
@@ -37,9 +37,9 @@ Bir web tarayıcısı performans açısından en küçük resmi kullanmalıdır 
 
 ```html
 <img
-  src="small.jpg"
-  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-  alt="…"
+	src="small.jpg"
+	srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+	alt="…"
 />
 ```
 
@@ -53,10 +53,10 @@ Bir web tarayıcısı performans açısından en küçük resmi kullanmalıdır 
 
 ```html
 <picture>
-  <source media="(max-width: 600px)" srcset="flower-square.jpg" />
-  <source media="(max-width: 1023px)" srcset="flower-rectangle.jpg" />
-  <source media="(min-width: 1024px)" srcset="flower-large.jpg" />
-  <img src="flower-large.jpg" />
+	<source media="(max-width: 600px)" srcset="flower-square.jpg" />
+	<source media="(max-width: 1023px)" srcset="flower-rectangle.jpg" />
+	<source media="(min-width: 1024px)" srcset="flower-large.jpg" />
+	<img src="flower-large.jpg" />
 </picture>
 ```
 

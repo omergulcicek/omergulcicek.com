@@ -17,9 +17,9 @@ Adım adım grid ile layout'u bölümlendirmeyi ve HTML bileşenlerimizi nasıl 
 
 ```css
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 200px);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3, 200px);
 }
 ```
 
@@ -34,9 +34,9 @@ Ekranda 6 parça alanımız oldu. Bu alanlara grid ile isim vererek, HTML bileş
 
 ```css
 grid-template-areas:
-  "head head"
-  "nav main"
-  "foot foot";
+	"head head"
+	"nav main"
+	"foot foot";
 ```
 
 Dört adet bileşenimiz var; head, nav, main, foot.
@@ -63,13 +63,13 @@ Aynı şekilde;
 
 ```css
 nav {
-  grid-area: nav;
+	grid-area: nav;
 }
 main {
-  grid-area: main;
+	grid-area: main;
 }
 footer {
-  grid-area: foot;
+	grid-area: foot;
 }
 ```
 
@@ -79,9 +79,9 @@ Bu tabii `grid-template-areas`'ın küçük bir özelliği, onlarca özelliği i
 
 ```css
 grid-template-areas:
-  "head head"
-  "foot foot"
-  "nav main";
+	"head head"
+	"foot foot"
+	"nav main";
 ```
 
 Kurcalamanız için bir codepen linki bırakıyorum;

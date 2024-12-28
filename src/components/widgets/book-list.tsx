@@ -43,11 +43,11 @@ export function BookList() {
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}
 				transition={{ delay: 0.25 }}
-				className="flex items-center justify-center mb-4"
+				className="flex items-center justify-center mb-10 md:md-0"
 			>
 				<Input
 					type="text"
-					className="w-full md:w-1/2 lg:w-72"
+					className="w-full md:w-1/2 lg:w-72 text-base placeholder:text-sm"
 					placeholder="Kitap yada yazar ara"
 					onChange={(e) => setText(e.target.value)}
 				/>

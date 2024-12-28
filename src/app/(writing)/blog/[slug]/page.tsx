@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next"
+
 import BlogDetail from "@/components/widgets/blog-detail"
 import getPostMetadata, { getPostContent } from "@/utils/get-blogs"
 
@@ -8,24 +9,24 @@ export async function generateStaticParams() {
 
 		return articles?.map((article: any) => ({
 			slug: article.path.slice(1),
-			title: article.title,
+			title: article.title
 		}))
 	} catch (e) {
 		console.error(e)
-		return [];
+		return []
 	}
 }
 
 export async function generateMetadata({ params }: any) {
 	const { slug } = await params
-	const {title, category, subCategories } = await getPostContent(slug)
+	const { title, category, subCategories } = await getPostContent(slug)
 
 	const description = `${title} - Ömer Gülçiçek, Frontend Developer, ${category}, ${subCategories || ""}`
 
-  return {
-    title : `${title} | Ömer Gülçiçek`,
-		description,
-  }
+	return {
+		title: `${title} | Ömer Gülçiçek`,
+		description
+	}
 }
 
 export default async function BlogDetailPage({ params }: any) {

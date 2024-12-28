@@ -11,7 +11,7 @@ export const BookmarksLayout = ({
 }: {
 	children: React.ReactNode
 }) => {
-	return <section className="mt-10 md:mt-24 px-4 md:px-0">{children}</section>
+	return <section className="mt-10 md:mt-24">{children}</section>
 }
 
 export const PageTitle = ({
@@ -72,7 +72,7 @@ export const PageContent = ({
 	props?: React.HTMLProps<HTMLHeadingElement>
 }) => {
 	return (
-		<Container className="mt-10 md:mt-24 max-w-6xl">
+		<Container className="mt-6 md:mt-24 max-w-6xl">
 			<div className={cn(className)} {...props}>
 				{children}
 			</div>

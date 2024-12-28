@@ -11,8 +11,8 @@ CSS yazarken hayatımızı kolaylaştıran bazı fonksiyonlar var. Bazı durumla
 
 ```css
 .card {
-  width: 70%;
-  min-width: 300px;
+	width: 70%;
+	min-width: 300px;
 }
 ```
 
@@ -20,7 +20,7 @@ CSS `min()` fonksiyonu bu kodu tek satırda çözmeyi sağlıyor;
 
 ```css
 .card {
-  width: min(300px, 70%);
+	width: min(300px, 70%);
 }
 ```
 
@@ -28,13 +28,13 @@ Her iki kodda kartın 300px'den küçük olmayacak şekilde bulunduğu kapsayıc
 
 ```css
 .card {
-  width: 70%;
-  max-width: 1000px;
+	width: 70%;
+	max-width: 1000px;
 }
 
 .card {
-  /* Bu kod yukarıdaki kod ile aynı şekilde çalışır. */
-  width: max(70%, 1000px);
+	/* Bu kod yukarıdaki kod ile aynı şekilde çalışır. */
+	width: max(70%, 1000px);
 }
 ```
 
@@ -46,14 +46,14 @@ clamp fonksiyonu 3 parametre alıyor; min, value ve max değeri.
 
 ```css
 .card {
-  width: 70%;
-  min-width: 300px;
-  max-width: 1000px;
+	width: 70%;
+	min-width: 300px;
+	max-width: 1000px;
 }
 
 .card {
-  /* Bu kod yukarıdaki kod ile aynı şekilde çalışır. */
-  width: clamp(300px, 70%, 1000px);
+	/* Bu kod yukarıdaki kod ile aynı şekilde çalışır. */
+	width: clamp(300px, 70%, 1000px);
 }
 ```
 
@@ -63,11 +63,11 @@ Video'da kullanılan CSS kodları şu şekilde;
 
 ```css
 .logo {
-  width: clamp(350px, 75%, 800px);
+	width: clamp(350px, 75%, 800px);
 }
 
 .title {
-  font-size: clamp(1.5rem, 5vw, 4rem);
+	font-size: clamp(1.5rem, 5vw, 4rem);
 }
 ```
 

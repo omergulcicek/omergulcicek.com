@@ -17,7 +17,7 @@ Google Chrome tarayıcısı, varsayılan olarak bir input'un üzerine geldiğind
 
 ```css
 :focus {
-  outline: -webkit-focus-ring-color auto 1px;
+	outline: -webkit-focus-ring-color auto 1px;
 }
 ```
 
@@ -27,8 +27,8 @@ Varsayılan olarak gelen bu `:focus` özelliğini beğenmediğimden dolayı, `ou
 
 ```css
 :focus {
-  box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.25);
-  outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.25);
+	outline: none;
 }
 ```
 
@@ -42,8 +42,8 @@ Kişisel projem olan Turkuaz ile focus'u test etmek için <a href="https://turku
 
 ```html
 <form>
-  <input type="text" name="ad" />
-  <input type="text" name="soyad" />
+	<input type="text" name="ad" />
+	<input type="text" name="soyad" />
 </form>
 ```
 
@@ -51,7 +51,7 @@ CSS'te `form:focus-within` seçicine kod yazdığımızda, bu form alanının i�
 
 ```css
 form:focus-within {
-  background-color: #26a69a;
+	background-color: #26a69a;
 }
 ```
 

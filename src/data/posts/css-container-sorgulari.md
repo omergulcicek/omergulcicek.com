@@ -43,46 +43,46 @@ Kod kısmına geçecek olursak, bir bileşen üst genişliğine göre adapte ola
 
 ```html
 <section class="container">
-  <div class="article-wrap">
-    <!-- contain özelliğini vereceğimiz kapsayıcı -->
-    <article class="article">
-      <!-- kartın kendisi -->
-      <!-- içerik -->
-    </article>
-  </div>
+	<div class="article-wrap">
+		<!-- contain özelliğini vereceğimiz kapsayıcı -->
+		<article class="article">
+			<!-- kartın kendisi -->
+			<!-- içerik -->
+		</article>
+	</div>
 
-  <div class="article-wrap">
-    <!-- contain özelliğini vereceğimiz kapsayıcı -->
-    <article class="article">
-      <!-- kartın kendisi -->
-      <!-- içerik -->
-    </article>
-  </div>
+	<div class="article-wrap">
+		<!-- contain özelliğini vereceğimiz kapsayıcı -->
+		<article class="article">
+			<!-- kartın kendisi -->
+			<!-- içerik -->
+		</article>
+	</div>
 
-  <!-- diğer kartlar -->
+	<!-- diğer kartlar -->
 </section>
 ```
 
 ```css
 .article-wrap {
-  contain: layout inline-size;
-  /* kartların kapsayıcısına contain özelliği ekledik. */
+	contain: layout inline-size;
+	/* kartların kapsayıcısına contain özelliği ekledik. */
 }
 
 @container (min-width: 400px) {
-  /*
+	/*
     @container sorgusu ile kart bileşeni
     400px'den fazla genişliğe sahip olduğunda
     flex özelliklerini almasını sağlıyoruz.
     Böylece resim ve içerik yan yana geçecek.
   */
 
-  .article {
-    display: flex;
-    flex-wrap: wrap;
-  }
+	.article {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-  /* diğer CSS'ler */
+	/* diğer CSS'ler */
 }
 ```
 

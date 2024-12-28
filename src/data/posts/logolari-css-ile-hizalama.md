@@ -19,29 +19,29 @@ Birbirinden farklı 8 farklı logo; dikey/yatay, büyük/küçük.
 
 ```html
 <ul class="brands">
-  <li class="brands__item">
-    <a href="#">
-      <img src="img/logo.png" alt="logo" />
-    </a>
-  </li>
-  <li><!-- diğer logolar --></li>
+	<li class="brands__item">
+		<a href="#">
+			<img src="img/logo.png" alt="logo" />
+		</a>
+	</li>
+	<li><!-- diğer logolar --></li>
 </ul>
 ```
 
 ```css
 .brands {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .brands__item {
-  background: #eee;
+	background: #eee;
 }
 
 .brands__item img {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 ```
 
@@ -53,9 +53,9 @@ Logo boyutları tutarlı değil. İlk çözüm olarak `width` ekleyerek hepsine 
 
 ```css
 .brands__item img {
-  display: block;
-  max-width: 100%;
-  width: 100px;
+	display: block;
+	max-width: 100%;
+	width: 100px;
 }
 ```
 
@@ -67,9 +67,9 @@ Bu işlem sonucunda logolar sabit genişliğe geçti fakat bu istediğimiz bir s
 
 ```css
 .brands__item img {
-  display: block;
-  height: 70px;
-  max-width: 100%;
+	display: block;
+	height: 70px;
+	max-width: 100%;
 }
 ```
 
@@ -81,9 +81,9 @@ En sağlıklı yol, `width` ve `height` birlikte kullanmak gibi duruyor. Logolar
 
 ```css
 .brands__item img {
-  height: 75px;
-  object-fit: contain;
-  width: 130px;
+	height: 75px;
+	object-fit: contain;
+	width: 130px;
 }
 ```
 
@@ -91,10 +91,10 @@ Sonraki adım, logoları yatay ve dikey olarak ortalamak; Bunun için `flex` kul
 
 ```css
 .brands__item a {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
 }
 ```
 
@@ -114,6 +114,6 @@ Bu problemi ortadan kaldırmak için CSS seçicimizde görsellerin uzantıların
 
 ```css
 .brands__item img[src$=".jpg"] {
-  mix-blend-mode: multiply;
+	mix-blend-mode: multiply;
 }
 ```

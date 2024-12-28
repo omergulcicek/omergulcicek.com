@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 		"Ömer Gülçiçek'in kişisel web sitesi. HTML, CSS, JavaScript, React, Next.js, Tailwind CSS ve diğer teknolojiler hakkında içerikler.",
 	authors: {
 		name: "Ömer Gülçiçek",
-		url: "https://omergulcicek.com",
+		url: "https://omergulcicek.com"
 	},
 	publisher: "Ömer Gülçiçek",
-  robots: {
-    index: true,
-    follow: true,
-  },
+	robots: {
+		index: true,
+		follow: true
+	},
 	alternates: {
-		canonical: 'https://omergulcicek.com',
+		canonical: "https://omergulcicek.com"
 	}
 }
 

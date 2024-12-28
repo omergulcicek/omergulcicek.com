@@ -23,28 +23,28 @@ Bu yöntemde üç adımda istediğimiz sonuca ulaşabiliyoruz.
 
 ```html
 <figure>
-  <img src="/img/omergulcicek.png" alt="" />
+	<img src="/img/omergulcicek.png" alt="" />
 </figure>
 ```
 
 ```css
 figure {
-  aspect-ratio: 1;
-  border-radius: 15px;
-  position: relative;
-  overflow: hidden;
-  width: 350px;
+	aspect-ratio: 1;
+	border-radius: 15px;
+	position: relative;
+	overflow: hidden;
+	width: 350px;
 }
 
 img {
-  bottom: 0;
-  height: 100%;
-  left: -20%;
-  object-fit: cover;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 160%;
+	bottom: 0;
+	height: 100%;
+	left: -20%;
+	object-fit: cover;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 160%;
 }
 ```
 
@@ -58,12 +58,12 @@ Bu yöntemde `<img />` etiketi yerine farklı bir etiket kullanıp arkaplanına 
 
 ```css
 .omer {
-  aspect-ratio: 3 / 2;
-  background-image: url("/img/omer.jpg");
-  background-position: 14% 53%;
-  background-repeat: no-repeat;
-  background-size: 350px auto;
-  width: 150px;
+	aspect-ratio: 3 / 2;
+	background-image: url("/img/omer.jpg");
+	background-position: 14% 53%;
+	background-repeat: no-repeat;
+	background-size: 350px auto;
+	width: 150px;
 }
 ```
 
@@ -83,10 +83,10 @@ Bu özellik görselin üzerinde dikdörtgen çizip o alanı göstermeyi sağlıy
 
 ```css
 img {
-  aspect-ratio: 1;
-  object-fit: cover;
-  object-view-box: inset(25% 20% 15% 0%);
-  width: 300px;
+	aspect-ratio: 1;
+	object-fit: cover;
+	object-view-box: inset(25% 20% 15% 0%);
+	width: 300px;
 }
 ```
 

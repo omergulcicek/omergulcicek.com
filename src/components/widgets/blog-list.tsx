@@ -4,10 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 
 import { formatDate } from "@/utils"
-import { Trash } from "lucide-react"
 
 import { Container } from "@/shared/container"
-import { SelectFilter } from "@/widgets/select-filter"
+import { SelectFilterWidget } from "@/widgets/select-filter"
 import BlurFade from "@/ui/blur-fade"
 import { MediumIcon } from "@/ui/medium"
 import { Tag } from "@/ui/tag"
@@ -31,22 +30,13 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 		: data
 
 	return (
-		<Container className="relative mt-20">
-			<div className="md:absolute top-0 -right-60 hidden md:flex flex-col items-center justify-end">
-				<SelectFilter
+		<section className="relative mt-6 md:mt-20">
+			<div className="md:absolute top-0 -right-60 flex flex-col items-center justify-end mb-10 md:mb-0">
+				<SelectFilterWidget
 					filters={resCategories}
 					value={value}
 					setValue={setValue}
 				/>
-				{value && (
-					<button
-						className="flex items-center gap-2 text-sm leading-9 text-tertiary-foreground hover:text-black cursor-pointer transition"
-						onClick={() => setValue("")}
-					>
-						<Trash size={12} />
-						<span>Temizle</span>
-					</button>
-				)}
 			</div>
 
 			<div className="flex flex-col gap-5">
@@ -80,6 +70,6 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 					)
 				)}
 			</div>
-		</Container>
+		</section>
 	)
 }
