@@ -76,15 +76,6 @@ export default function Footer({
 							className="dark:hover:text-white"
 						>
 							shadcn/ui
-						</Link>
-						{" ve "}
-						<Link
-							href="https://magicui.design/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="dark:hover:text-white"
-						>
-							Magic UI
 						</Link>{" "}
 						ile geliştirildi.
 					</p>
