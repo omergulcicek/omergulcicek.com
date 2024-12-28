@@ -32,7 +32,7 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 
 	return (
 		<Container className="relative mt-20">
-			<div className="md:absolute top-0 -right-60 md:flex flex-col items-center justify-end">
+			<div className="md:absolute top-0 -right-60 hidden md:flex flex-col items-center justify-end">
 				<SelectFilter
 					filters={resCategories}
 					value={value}
