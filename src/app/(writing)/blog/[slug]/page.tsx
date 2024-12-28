@@ -7,11 +7,9 @@ export async function generateStaticParams() {
 	try {
 		const articles = await getPostMetadata()
 
-		console.log(
-			articles?.map((article) => ({
-				slug: article.path.slice(1)
-			}))
-		)
+		return articles?.map((article) => ({
+			slug: article.path.slice(1)
+		}))
 
 		// return [
 		// 	{
