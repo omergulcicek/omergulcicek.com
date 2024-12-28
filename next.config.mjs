@@ -10,7 +10,15 @@ const nextConfig = {
 	images: {
 		unoptimized: true
 	},
-	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"]
+	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+	async rewrites() {
+		return [
+			{
+				source: "/blog/*",
+				destination: "/blog/[slug].html"
+			}
+		]
+	}
 }
 
 const withMDX = createMDX({
