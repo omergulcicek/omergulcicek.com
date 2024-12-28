@@ -10,9 +10,9 @@ import AnimatedShinyText from "@/ui/animated-shiny-text"
 
 export function Home() {
 	return (
-		<Container className="gap-20 mt-32 px-4 md:mt-56 md:px-0">
-			<section className="flex flex-col gap-6">
-				<div className="flex items-start">
+		<Container className="gap-16 md:gap-20 mt-16 px-4 md:mt-56 md:px-0">
+			<section className="flex flex-col gap-2 md:gap-6">
+				{/* <div className="flex items-start">
 					<motion.div
 						initial={{ opacity: 0, filter: "blur(16px)" }}
 						animate={{ opacity: 1, filter: "blur(0)" }}
@@ -28,7 +28,7 @@ export function Home() {
 							</AnimatedShinyText>
 						</div>
 					</motion.div>
-				</div>
+				</div> */}
 
 				<Hero>
 					<div>

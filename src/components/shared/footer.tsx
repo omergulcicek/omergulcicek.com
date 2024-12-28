@@ -37,10 +37,10 @@ export default function Footer({
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ delay: 1, duration: 1 }}
-			className={cn("mt-20 md:mt-40 flex w-full py-20", className)}
+			className={cn("mt-12 md:mt-40 flex w-full py-20", className)}
 		>
 			<Container className="px-4 md:px-0 max-w-sm md:max-w-3xl">
-				<div className="flex flex-col gap-2 md:gap-1 text-base md:text-base leading-relaxed text-tertiary-foreground">
+				<div className="flex flex-col gap-2 md:gap-1 text-xs md:text-base leading-relaxed text-tertiary-foreground">
 					<p>
 						<Link
 							href="https://nextjs.org/"
