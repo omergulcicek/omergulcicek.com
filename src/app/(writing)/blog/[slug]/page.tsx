@@ -7,11 +7,17 @@ export async function generateStaticParams() {
 	try {
 		const articles = await getPostMetadata()
 
-		return [
-			{
-				slug: "2022-degerlendirmesi"
-			}
-		]
+		console.log(
+			articles?.map((article) => ({
+				slug: article.path.slice(1)
+			}))
+		)
+
+		// return [
+		// 	{
+		// 		slug: "2022-degerlendirmesi"
+		// 	}
+		// ]
 
 		// return articles?.map((article) => ({
 		// 	slug: article.path
