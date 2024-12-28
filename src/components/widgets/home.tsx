@@ -36,7 +36,7 @@ export function Home() {
 						<Hero.Name />
 					</div>
 
-					<div className="max-w-2xl text-xl md:text-[32px] md:leading-[44px]">
+					<div className="max-w-2xl text-base md:text-[32px] md:leading-[44px]">
 						<Hero.Strong /> <Hero.Desc />
 					</div>
 				</Hero>

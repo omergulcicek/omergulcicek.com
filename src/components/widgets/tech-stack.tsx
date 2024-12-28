@@ -11,7 +11,7 @@ export function TechStack() {
 	const secondRow = stackData.slice(stackData.length / 2)
 
 	return (
-		<div className="max-w-5xl mx-auto relative flex gap-4 md:mt-10 md:py-20 w-full flex-col items-center justify-center overflow-hidden">
+		<div className="max-w-5xl mx-auto relative flex md:gap-4 mt-10 md:py-20 w-full flex-col items-center justify-center overflow-hidden">
 			<motion.section
 				initial={{ opacity: 0, translateX: "64px" }}
 				animate={{ opacity: 1, translateX: "0px" }}

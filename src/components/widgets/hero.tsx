@@ -46,7 +46,7 @@ export const Name = ({
 		<BlurFade delay={0.25} inView>
 			<h1
 				className={cn(
-					"text-2xl md:text-[40px] font-semibold md:leading-[48px]",
+					"text-xl md:text-[40px] font-semibold md:leading-[48px]",
 					className
 				)}
 				{...props}

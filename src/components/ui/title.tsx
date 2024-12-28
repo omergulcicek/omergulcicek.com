@@ -11,9 +11,9 @@ export function Title({
 	...props
 }: TitleProps) {
 	const tagClassNames: { [key: string]: string } = {
-		h1: "text-3xl md:text-6xl font-bold leading-normal",
-		h2: "text-lg md:text-3xl font-light leading-normal",
-		h3: "text-base md:text-lg font-medium leading-normal"
+		h1: "text-2xl md:text-6xl font-bold leading-normal",
+		h2: "text-base md:text-3xl font-light leading-normal",
+		h3: "text-sm md:text-lg font-medium leading-normal"
 	}
 
 	const classes = cn(tagClassNames[Tag], className)
