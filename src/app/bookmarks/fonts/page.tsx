@@ -1,17 +1,16 @@
-"use client"
+import Fonts from "@/components/widgets/fonts";
 
-import Bookmarks from "@/layouts/bookmarks-layout"
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: "Yazı tipi koleksiyonu | Ömer Gülçiçek",
+	alternates: {
+		canonical: 'https://omergulcicek.com/bookmarks/fonts/',
+	}
+}
 
-import { FontList } from "@/widgets/font-list"
-
-export default function Fonts() {
+export default function FontsPage() {
 	return (
-		<Bookmarks>
-			<Bookmarks.PageTitle>Yazı Tipleri</Bookmarks.PageTitle>
-			<Bookmarks.PageSubTitle>Yazı tipi koleksiyonu</Bookmarks.PageSubTitle>
-			<Bookmarks.PageContent>
-				<FontList />
-			</Bookmarks.PageContent>
-		</Bookmarks>
+		<Fonts />
 	)
 }

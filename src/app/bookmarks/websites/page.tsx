@@ -1,19 +1,15 @@
-"use client"
+import WebSites from '@/components/widgets/websites'
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: "Karşılaştığım güzel siteler | Ömer Gülçiçek",
+  alternates: {
+		canonical: 'https://omergulcicek.com/bookmarks/websites/',
+	}
+}
 
-import Bookmarks from "@/layouts/bookmarks-layout"
-
-import { WebSitesList } from "@/widgets/websites-list"
-
-export default function WebSites() {
+export default function WebSitesPage() {
 	return (
-		<Bookmarks>
-			<Bookmarks.PageTitle>Web Siteler</Bookmarks.PageTitle>
-			<Bookmarks.PageSubTitle>
-				Karşılaştığım güzel siteler
-			</Bookmarks.PageSubTitle>
-			<Bookmarks.PageContent>
-				<WebSitesList />
-			</Bookmarks.PageContent>
-		</Bookmarks>
+		<WebSites />
 	)
 }

@@ -7,8 +7,11 @@ import { Title } from "@/ui/title"
 import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: "Blog | Ömer Gülçiçek",
+  title: "Kişisel düşünce, deneyim ve yorumlarım | Ömer Gülçiçek",
   description: "Kişisel düşünce, deneyim ve yorumlarım",
+	alternates: {
+		canonical: 'https://omergulcicek.com/blog/',
+	}
 }
 
 export default async function Blog() {

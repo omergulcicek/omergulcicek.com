@@ -3,8 +3,10 @@ import { About } from "@/widgets/about"
 import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: "Hakkında | Ömer Gülçiçek",
-  description: "Yazılım mühendisiyim, Frontend Developer olarak çalışıyorum. React/NextJS ve CSS alanlarında uzmanım.",
+  title: "Merhaba, ben Ömer Gülçiçek | Ömer Gülçiçek",
+  alternates: {
+		canonical: 'https://omergulcicek.com/about/',
+	}
 }
 
 export default function AboutPage() {

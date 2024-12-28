@@ -1,19 +1,16 @@
-"use client"
+import VSCode from "@/components/widgets/vs-code";
 
-import Bookmarks from "@/layouts/bookmarks-layout"
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: "Visual Studio Code eklentilerim | Ömer Gülçiçek",
+  alternates: {
+		canonical: 'https://omergulcicek.com/bookmarks/vscode/',
+	}
+}
 
-import { VSCodeList } from "@/widgets/vscode-list"
-
-export default function VSCode() {
+export default function VSCodePage() {
 	return (
-		<Bookmarks>
-			<Bookmarks.PageTitle>VS Code</Bookmarks.PageTitle>
-			<Bookmarks.PageSubTitle>
-				Visual Studio Code eklentilerim
-			</Bookmarks.PageSubTitle>
-			<Bookmarks.PageContent>
-				<VSCodeList />
-			</Bookmarks.PageContent>
-		</Bookmarks>
+		<VSCode />
 	)
 }

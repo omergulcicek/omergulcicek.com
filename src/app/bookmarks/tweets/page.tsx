@@ -1,20 +1,16 @@
-"use client"
+import Tweets from "@/components/widgets/tweets";
 
-import Bookmarks from "@/layouts/bookmarks-layout"
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: "Yazılım alanında yararlı tweetler | Ömer Gülçiçek",
+  alternates: {
+		canonical: 'https://omergulcicek.com/bookmarks/tweets/',
+	}
+}
 
-import { TweetList } from "@/widgets/tweet-list"
-
-export default function Tweets() {
+export default function TweetsPage() {
 	return (
-		<Bookmarks>
-			<Bookmarks.PageTitle>Tweets</Bookmarks.PageTitle>
-			<Bookmarks.PageSubTitle>
-				Yazılım alanında yararlı tweetler
-			</Bookmarks.PageSubTitle>
-
-			<Bookmarks.PageContent>
-				<TweetList />
-			</Bookmarks.PageContent>
-		</Bookmarks>
+		<Tweets />
 	)
 }

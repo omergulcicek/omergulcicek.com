@@ -1,19 +1,17 @@
-"use client"
 
-import Bookmarks from "@/layouts/bookmarks-layout"
+import type { Metadata } from 'next'
 
-import { BookList } from "@/widgets/book-list"
+import Books from '@/components/widgets/books'
+ 
+export const metadata: Metadata = {
+  title: "Kitaplığımdaki kitapların listesi | Ömer Gülçiçek",
+  alternates: {
+		canonical: 'https://omergulcicek.com/bookmarks/books/',
+	}
+}
 
-export default function Books() {
+export default function BooksPage() {
 	return (
-		<Bookmarks>
-			<Bookmarks.PageTitle>Kitap</Bookmarks.PageTitle>
-			<Bookmarks.PageSubTitle>
-				Kitaplığımdaki kitapların listesi
-			</Bookmarks.PageSubTitle>
-			<Bookmarks.PageContent>
-				<BookList />
-			</Bookmarks.PageContent>
-		</Bookmarks>
+		<Books />
 	)
 }

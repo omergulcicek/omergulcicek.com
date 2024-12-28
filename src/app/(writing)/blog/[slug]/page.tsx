@@ -12,6 +12,7 @@ export async function generateStaticParams() {
 		}))
 	} catch (e) {
 		console.error(e)
+		return [];
 	}
 }
 
