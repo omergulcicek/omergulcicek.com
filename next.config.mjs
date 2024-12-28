@@ -14,8 +14,8 @@ const nextConfig = {
 	async rewrites() {
 		return [
 			{
-				source: "/blog/*",
-				destination: "/blog/[slug].html"
+				source: "/blog/:slug",
+				destination: "/:slug"
 			}
 		]
 	}
