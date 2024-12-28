@@ -4,6 +4,13 @@ import { Container } from "@/shared/container"
 import { BlogList } from "@/widgets/blog-list"
 import { Title } from "@/ui/title"
 
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: "Blog | Ömer Gülçiçek",
+  description: "Kişisel düşünce, deneyim ve yorumlarım",
+}
+
 export default async function Blog() {
 	const articles = await getPostMetadata()
 

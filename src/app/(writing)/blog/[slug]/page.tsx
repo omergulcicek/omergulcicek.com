@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: any) {
 	const description = `${title} - Ömer Gülçiçek, Frontend Developer, ${category}, ${subCategories || ""}`
 
   return {
-    title,
+    title : `${title} | Ömer Gülçiçek`,
 		description,
   }
 }
