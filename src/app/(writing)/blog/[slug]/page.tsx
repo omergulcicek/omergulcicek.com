@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogDetailPage({ params }: any) {
-	const { slug } = await params
+	const { slug } = params
 	const post = await getPostContent(slug)
 
 	return (

@@ -6,7 +6,7 @@ import createMDX from "@next/mdx"
  */
 
 const nextConfig = {
-	output: "export",
+	// output: "export",
 	images: {
 		unoptimized: true
 	},
