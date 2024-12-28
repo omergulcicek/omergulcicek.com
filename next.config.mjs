@@ -7,6 +7,7 @@ import createMDX from "@next/mdx"
 
 const nextConfig = {
 	output: "export",
+  trailingSlash: true,
 	images: {
 		unoptimized: true
 	},
