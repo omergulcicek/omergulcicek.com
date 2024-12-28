@@ -1,5 +1,3 @@
-import { Suspense } from "react"
-
 import BlogDetail from "@/components/widgets/blog-detail"
 import getPostMetadata, { getPostContent } from "@/utils/get-blogs"
 
@@ -12,17 +10,12 @@ export async function generateStaticParams() {
 		}))
 	} catch (e) {
 		console.error(e)
-		return []
 	}
 }
 
 export default async function BlogDetailPage({ params }: any) {
-	const { slug } = params
+	const { slug } = await params
 	const post = await getPostContent(slug)
 
-	return (
-		<Suspense fallback={<>...</>}>
-			<BlogDetail post={post} />
-		</Suspense>
-	)
+	return <BlogDetail post={post} />
 }

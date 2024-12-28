@@ -52,6 +52,10 @@ export const stackData = [
 		img: "zustand"
 	},
 	{
+		name: "TanStack Query",
+		img: "tanstack-query"
+	},
+	{
 		name: "Reack Hook Form",
 		img: "react-hook-form"
 	},
