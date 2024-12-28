@@ -4,6 +4,7 @@ import Head from "next/head"
 
 import "./globals.css"
 
+import { DrawerCSSProvider } from "@/layouts/vaul-provider"
 import { cn } from "@/utils"
 
 import Footer from "@/shared/footer"
@@ -41,9 +42,11 @@ export default function RootLayout({
 				<link rel="icon" />
 			</Head>
 			<body className={cn(inter.className, "flex h-full flex-col")}>
-				<Header />
-				<main className="flex-1">{children}</main>
-				<Footer />
+				<DrawerCSSProvider>
+					<Header />
+					<main className="flex-1">{children}</main>
+					<Footer />
+				</DrawerCSSProvider>
 			</body>
 		</html>
 	)

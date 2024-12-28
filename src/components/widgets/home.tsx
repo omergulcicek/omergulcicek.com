@@ -10,7 +10,7 @@ import AnimatedShinyText from "@/ui/animated-shiny-text"
 
 export function Home() {
 	return (
-		<Container className="gap-16 md:gap-20 mt-16 px-4 md:mt-56 md:px-0">
+		<Container className="gap-16 md:gap-20 mt-16 md:mt-56">
 			<section className="flex flex-col gap-2 md:gap-6">
 				{/* <div className="flex items-start">
 					<motion.div

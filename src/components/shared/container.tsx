@@ -11,7 +11,7 @@ export function Container({
 	return (
 		<div
 			className={cn(
-				"flex flex-col w-full max-w-7xl mx-auto px-4 md:px-0",
+				"flex flex-col w-full max-w-7xl mx-auto px-6 md:px-0",
 				className
 			)}
 			{...props}

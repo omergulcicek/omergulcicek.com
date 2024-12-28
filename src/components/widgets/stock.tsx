@@ -9,7 +9,7 @@ import { Container } from "@/shared/container"
 export function Stock() {
 	return (
 		<>
-			<Container className="px-4 md:px-0 mt-10 md:mt-12 max-w-3xl">
+			<Container className="mt-10 md:mt-12 max-w-3xl">
 				<motion.section
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}

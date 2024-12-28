@@ -10,7 +10,7 @@ import ShineBorder from "@/ui/shine-border"
 export function FinancialFreedomCart() {
 	return (
 		<>
-			<Container className="px-4 md:px-0 mt-10 md:mt-20 max-w-3xl">
+			<Container className="mt-10 md:mt-20 max-w-3xl">
 				<section className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
 					<motion.article
 						initial={{ opacity: 0, translateY: "100px" }}
