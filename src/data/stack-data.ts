@@ -1,66 +1,66 @@
 export const stackData = [
 	{
 		name: "HTML5",
-		img: "https://omergulcicek.com/svg/skills/html5.svg"
+		img: "html"
 	},
 	{
 		name: "CSS3",
-		img: "https://omergulcicek.com/svg/skills/css3.svg"
+		img: "css"
 	},
 	{
 		name: "SASS",
-		img: "https://omergulcicek.com/svg/skills/sass.svg"
+		img: "sass"
 	},
 	{
 		name: "Tailwind CSS",
-		img: "https://omergulcicek.com/svg/skills/tailwindcss.svg"
+		img: "tailwindcss"
 	},
 	{
 		name: "shadcn-ui",
-		img: "https://avatars.githubusercontent.com/u/139895814?s=200"
+		img: "shadcn-ui"
 	},
 	{
 		name: "Framer Motion",
-		img: "https://framerusercontent.com/images/s8byoJvwTkn7Gm2jKWNdTPv9F8Q.svg"
+		img: "framer-motion"
 	},
 	{
 		name: "Styled Components",
-		img: "https://omergulcicek.com/svg/skills/styledcomponents.svg"
+		img: "styled-components"
 	},
 	{
 		name: "CSS Modules",
-		img: "https://omergulcicek.com/svg/skills/cssmodules.svg"
+		img: "css-modules"
 	},
 	{
 		name: "JavaScript",
-		img: "https://omergulcicek.com/svg/skills/javascript.svg"
+		img: "javascript"
 	},
 	{
 		name: "TypeScript",
-		img: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+		img: "typescript"
 	},
 	{
 		name: "React",
-		img: "https://omergulcicek.com/svg/skills/react.svg"
+		img: "react"
 	},
 	{
 		name: "Next.js",
-		img: "https://omergulcicek.com/svg/skills/nextjs.svg"
+		img: "nextjs"
 	},
 	{
 		name: "Zustand",
-		img: "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg"
+		img: "zustand"
 	},
 	{
 		name: "Reack Hook Form",
-		img: "https://react-hook-form.com/images/logo/react-hook-form-logo-only.png"
+		img: "react-hook-form"
 	},
 	{
 		name: "Zod",
-		img: "https://zod.dev/logo.svg"
+		img: "zod"
 	},
 	{
 		name: "GraphQL",
-		img: "https://omergulcicek.com/svg/skills/graphql.svg"
+		img: "graphql"
 	}
 ]
