@@ -3,25 +3,25 @@ import { NavMenuTypes } from "@/types"
 export const educationData: NavMenuTypes = [
 	{
 		title: "Serbest Çalışma",
-		href: "/freelance",
+		href: "/freelance/",
 		description: "Freelance iş fırsatları",
 		soon: true
 	},
 	{
 		title: "Özel Ders",
-		href: "/private-lesson",
+		href: "/private-lesson/",
 		description: "Birebir yada grupça eğitim",
 		soon: true
 	},
 	{
 		title: "Bootcamp",
-		href: "/bootcamp",
+		href: "/bootcamp/",
 		description: "Frontend kod eğitimi",
 		soon: true
 	},
 	{
 		title: "Yol Haritası",
-		href: "/roadmap",
+		href: "/roadmap/",
 		description: "Frontend yol haritası"
 	}
 ]

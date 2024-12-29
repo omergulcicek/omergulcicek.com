@@ -1,21 +1,10 @@
 "use client"
 
 import { cn } from "@/utils"
-import { Command } from "lucide-react"
 
 import { Container } from "@/shared/container"
 import { NavMenu } from "@/widgets/nav-menu"
-import { Button } from "@/ui/button"
-import {
-	Drawer,
-	DrawerClose,
-	DrawerContent,
-	DrawerDescription,
-	DrawerFooter,
-	DrawerHeader,
-	DrawerTitle,
-	DrawerTrigger
-} from "@/ui/drawer"
+import { NavMenuMobile } from "@/widgets/nav-menu-mobile"
 
 export default function Header({
 	className
@@ -34,25 +23,7 @@ export default function Header({
 					<NavMenu />
 				</Container>
 
-				<Drawer>
-					<DrawerTrigger asChild>
-						<Button variant="ghost" size="sm" className="size-9 px-0 md:hidden">
-							<Command size={16} />
-						</Button>
-					</DrawerTrigger>
-					<DrawerContent>
-						<DrawerHeader>
-							<DrawerTitle>Are you absolutely sure?</DrawerTitle>
-							<DrawerDescription>
-								This action cannot be undone.
-							</DrawerDescription>
-						</DrawerHeader>
-						<DrawerFooter>
-							<Button>Submit</Button>
-							<DrawerClose>X</DrawerClose>
-						</DrawerFooter>
-					</DrawerContent>
-				</Drawer>
+				<NavMenuMobile />
 			</header>
 		</>
 	)
