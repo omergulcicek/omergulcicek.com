@@ -40,7 +40,7 @@ export default function Footer({
 			className={cn("mt-12 md:mt-40 flex w-full py-20", className)}
 		>
 			<Container className="max-w-sm md:max-w-3xl">
-				<div className="flex flex-col gap-2 md:gap-1 text-xs md:text-base leading-relaxed text-tertiary-foreground">
+				<div className="flex flex-col gap-2 md:gap-1 text-sm md:text-base leading-relaxed text-tertiary-foreground">
 					<p>
 						<Link
 							href="https://nextjs.org/"
@@ -79,7 +79,7 @@ export default function Footer({
 						</Link>{" "}
 						ile geliştirildi.
 					</p>
-					<p className="flex flex-wrap items-center justify-start md:gap-2">
+					<p className="flex flex-wrap items-center justify-start gap-2">
 						Bir selam söyleyin{" "}
 						<Popover>
 							<PopoverTrigger>
