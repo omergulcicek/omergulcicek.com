@@ -1,7 +1,7 @@
 ---
 date: "2024-12-29"
-path: "/nextjs-ve-tailwind-ile-yeni-arayuz"
-title: "Next.js ve Tailwind CSS ile Yeni Arayüz"
+path: "/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi"
+title: "Kişisel Sitemin Yeni Arayüzü: Next.js ve Tailwind CSS ile Geliştirildi"
 category: "Yazılım"
 subCategories: "Next.js, Tailwind CSS"
 medium: ""
