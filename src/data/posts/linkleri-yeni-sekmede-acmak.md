@@ -3,7 +3,7 @@ date: "2020-10-30"
 path: "/linkleri-yeni-sekmede-acmak"
 title: "Linkleri Yeni Sekmede Açmak"
 category: "Yazılım"
-subCategories: "HTML"
+keywords: ["HTML"]
 medium: "https://omergulcicek.medium.com/linkleri-yeni-sekmede-a%C3%A7mak-f51f355d9041"
 ---
 

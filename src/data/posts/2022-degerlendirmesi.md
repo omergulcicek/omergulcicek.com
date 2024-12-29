@@ -3,7 +3,7 @@ date: "2022-12-31"
 path: "/2022-degerlendirmesi"
 title: "2022 Değerlendirmesi"
 category: "Kişisel"
-subCategories: "Yıl notları"
+keywords: ["Yıl notları"]
 medium: ""
 ---
 

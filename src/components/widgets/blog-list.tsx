@@ -17,10 +17,7 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 	const [value, setValue] = useState("")
 
 	const listData = value
-		? data.filter(
-				(e) =>
-					e.category === value || e.subCategories?.split(", ").includes(value)
-			)
+		? data.filter((e) => e.category === value || e.keywords?.includes(value))
 		: data
 
 	return (
@@ -36,15 +33,15 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 			<div className="flex flex-col gap-5">
 				{listData.map(
 					(
-						{ folder, date, title, category, subCategories, medium, path },
+						{ folder, date, title, category, keywords, medium, path },
 						index
 					) => (
 						<BlurFade key={title} delay={0.25 + index * 0.05} duration={0.1}>
 							<div className="flex flex-col items-start md:gap-1" key={folder}>
 								<div className="flex items-center gap-2 text-xs md:text-sm text-tertiary-foreground tabular-nums">
 									<span className="italic">{formatDate(date, false)}</span> ·
-									{(category || subCategories) && (
-										<Tag text={subCategories || category} setValue={setValue} />
+									{(category || keywords) && (
+										<Tag text={keywords || [category]} setValue={setValue} />
 									)}
 									{medium && (
 										<>

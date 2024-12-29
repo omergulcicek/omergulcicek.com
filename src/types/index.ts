@@ -34,7 +34,7 @@ type BlogPostTypes = {
 	title: string
 	date: string
 	category: string
-	subCategories?: string
+	keywords?: string[]
 	medium: string
 	path: string
 }

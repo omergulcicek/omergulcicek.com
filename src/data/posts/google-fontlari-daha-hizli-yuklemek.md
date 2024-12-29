@@ -3,7 +3,7 @@ date: "2020-09-26"
 path: "/google-fontlari-daha-hizli-yuklemek"
 title: "Google Fontları Daha Hızlı Yüklemek"
 category: "Yazılım"
-subCategories: "HTML"
+keywords: ["HTML"]
 medium: "https://medium.com/@omergulcicek/google-fontlar%C4%B1-daha-h%C4%B1zl%C4%B1-y%C3%BCklemek-d2afb28494dc"
 ---
 

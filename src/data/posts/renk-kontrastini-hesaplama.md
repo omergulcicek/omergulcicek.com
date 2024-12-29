@@ -3,7 +3,7 @@ date: "2021-05-29"
 path: "/renk-kontrastini-hesaplama"
 title: "Renk Kontrastını Hesaplama"
 category: "Yazılım"
-subCategories: "JavaScript"
+keywords: ["JavaScript"]
 medium: "https://omergulcicek.medium.com/renk-kontrastını-hesaplama-9a42a1bc7dee"
 ---
 

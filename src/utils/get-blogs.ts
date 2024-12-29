@@ -16,7 +16,7 @@ export default async function getPostMetadata() {
 			path: matterResult.data.path,
 			date: matterResult.data.date,
 			category: matterResult.data.category,
-			subCategories: matterResult.data.subCategories,
+			keywords: matterResult.data.keywords,
 			medium: matterResult.data.medium
 		}
 	})
@@ -45,7 +45,7 @@ export async function getPostContent(slug: string) {
 		path: matterResult.data.path,
 		date: matterResult.data.date,
 		category: matterResult.data.category,
-		subCategories: matterResult.data.subCategories,
+		keywords: matterResult.data.keywords,
 		medium: matterResult.data.medium,
 		content: matterResult.content
 	}

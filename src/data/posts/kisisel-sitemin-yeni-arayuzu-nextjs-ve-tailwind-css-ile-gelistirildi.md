@@ -3,7 +3,7 @@ date: "2024-12-29"
 path: "/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi"
 title: "Kişisel Sitemin Yeni Arayüzü: Next.js ve Tailwind CSS ile Geliştirildi"
 category: "Yazılım"
-subCategories: "Next.js, Tailwind CSS"
+keywords: ["Next.js", "Tailwind CSS"]
 medium: ""
 ---
 

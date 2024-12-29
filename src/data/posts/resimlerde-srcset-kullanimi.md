@@ -3,7 +3,7 @@ date: "2020-09-13"
 path: "/resimlerde-srcset-kullanimi"
 title: "Resimlerde Srcset Kullanımı"
 category: "Yazılım"
-subCategories: "HTML"
+keywords: ["HTML"]
 medium: "https://medium.com/@omergulcicek/resimlerde-srcset-kullan%C4%B1m%C4%B1-acaf458181ac"
 ---
 

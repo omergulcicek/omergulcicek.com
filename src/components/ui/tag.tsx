@@ -7,15 +7,14 @@ export const Tag = ({
 	text,
 	setValue
 }: {
-	text: string
+	text: string[]
 	setValue: (value: string) => void
 }): JSX.Element => {
-	const tags = text.split(",").map((tag) => tag.trim())
-	console.log(tags)
+	if (!text) return <></>
 
 	return (
 		<>
-			{tags.map((tag, index) => (
+			{text?.map((tag, index) => (
 				<Badge
 					key={index}
 					onClick={() => setValue(tag)}

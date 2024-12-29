@@ -3,7 +3,7 @@ date: "2021-03-28"
 path: "/css-mantiksal-ozellikler"
 title: "CSS Mantıksal Özellikler"
 category: "Yazılım"
-subCategories: "CSS"
+keywords: ["CSS"]
 medium: "https://omergulcicek.medium.com/css-mantıksal-özellikler-31cb73ea4473"
 ---
 

@@ -3,7 +3,7 @@ date: "2025-01-01"
 path: "/2025-hedeflerim"
 title: "2025 Hedeflerim"
 category: "Kişisel"
-subCategories: "Yıl notları"
+keywords: ["Yıl notları"]
 medium: ""
 ---
 

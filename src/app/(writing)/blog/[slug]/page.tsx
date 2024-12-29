@@ -19,9 +19,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: any) {
 	const { slug } = await params
-	const { title, category, subCategories } = await getPostContent(slug)
+	const { title, category, keywords } = await getPostContent(slug)
 
-	const description = `${title} - Ömer Gülçiçek, Frontend Developer, ${category}, ${subCategories || ""}`
+	const description = `${title} - Ömer Gülçiçek, Frontend Developer, ${category}, ${keywords || ""}`
 
 	return {
 		title: `${title} | Ömer Gülçiçek`,

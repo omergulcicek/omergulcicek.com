@@ -3,7 +3,7 @@ date: "2021-01-02"
 path: "/2021-hedeflerim"
 title: "2021 Hedeflerim"
 category: "Kişisel"
-subCategories: "Yıl notları"
+keywords: ["Yıl notları"]
 medium: "https://omergulcicek.medium.com/2021-hedeflerim-81f949f3dc80"
 ---
 

@@ -26,7 +26,7 @@ export function cn(...args: (string | undefined | false | null)[]) {
 
 export function formatDate(date: string, includeRelative = false) {
 	let currentDate = new Date()
-	if (!date.includes("T")) {
+	if (!date?.includes("T")) {
 		date = `${date}T00:00:00`
 	}
 	let targetDate = new Date(date)
@@ -82,20 +82,13 @@ export const sortTitle = (data: any[]): any[] => {
 }
 
 export const resCategories = (data: any[]): string[] => {
-	const categories = [...new Set(data.map((e: any) => e.category))]
+	const categories = [...new Set(data.map((item) => item.category))]
 
-	const subCategories = [
-		...new Set(
-			data.flatMap((e: any) =>
-				e.subCategories ? e.subCategories.split(", ") : []
-			)
-		)
-	].filter(
-		(category): category is string =>
-			category !== undefined && category !== null
-	)
+	const keywords = [...new Set(data.flatMap((item) => item.keywords))]
 
-	return [...new Set([...categories, ...subCategories])].sort(
-		(a, b) => customOrder.indexOf(a) - customOrder.indexOf(b)
-	)
+	const combined = [
+		...new Set([...categories, ...keywords].filter((item) => item != null))
+	].sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b))
+
+	return combined
 }

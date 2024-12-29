@@ -1,6 +1,6 @@
 ---
-path: "/gunumuz-turkiyesi"
 date: "2019-01-08"
+path: "/gunumuz-turkiyesi"
 title: "Günümüz Türkiye’si"
 category: "Kişisel"
 medium: "https://medium.com/t%C3%BCrkiye/g%C3%BCn%C3%BCm%C3%BCz-t%C3%BCrkiyesi-46bd7a8c69f6"
