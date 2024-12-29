@@ -17,7 +17,10 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 	const [value, setValue] = useState("")
 
 	const listData = value
-		? data.filter((e) => e.category === value || e.subCategories === value)
+		? data.filter(
+				(e) =>
+					e.category === value || e.subCategories?.split(", ").includes(value)
+			)
 		: data
 
 	return (
