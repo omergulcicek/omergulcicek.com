@@ -43,7 +43,7 @@ Sokak Sokak İstanbul!
 
 Bu sene hayatıma direkt etki edecek ve en beğendiğim şey hayatıma yeni bir hobi katmak oldu. İstanbul'da yaşamak değil, İstanbul'u yaşamak istiyordum yıllardır. **İstanbul**'un her karışını gezdim, fotoğrafladım. Ek olarak il dışı gezilerimde oldu; **Bursa, Edirne, Şırnak, Mardin, Şanlıurfa, Gaziantep, Osmaniye, Mersin, Kırıkkale, Adana**.
 
-2020'de yıllık ortalama **2.037 adım/gün** yapmışım. 2021'de bu istatistik **2.897 adım/gün**; 2023'te ise **4.321 adım/gün** ile harika bir seviyeye çıktım; bu sayının sadece haftaiçi yürümeleriyle olduğunu atlamayalım, haftaiçi genelde evde hareketsiz bir hayatım var.
+2020'de yıllık ortalama **2.037 adım/gün** yapmışım. 2021'de bu istatistik **2.897 adım/gün**; 2023'te ise **4.321 adım/gün** ile harika bir seviyeye çıktım; bu sayının sadece haftasonu yürümeleriyle olduğunu atlamayalım, haftaiçi genelde evde hareketsiz bir hayatım var.
 
 İşte sadece 2022 yılı içerisinde gittiğim yerlerin yakın plan haritası;
 
