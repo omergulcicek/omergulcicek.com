@@ -16,34 +16,32 @@ Her yıl sonunda o yılı değerlendirip, yeni yıla hedeflerimi belirliyorum. 2
 
 ***
 
-Özet olarak 2024 yılı, geçmiş senelere kıyasla çok daha durağan geçti benim için. Bunun sebeplerinden birisi yaklaşık 2 yıldır çalıştığım şirketimden ayrılmam, bir diğer ana sebepte arkadaşlarım evlenip uzaklara taşındığı için ve nişanlımda *-evet nişanlandım-* Diyarbakır'a döndüğü için İstanbul'da biraz yalnız kaldım. Detaylara alt başlıklar altında değineceğim.
+2024 yılı, önceki senelere kıyasla daha durağan geçti. Bunun başlıca sebepleri, 2 yıldır çalıştığım şirketten ayrılmam ve arkadaşlarımın evlenip uzaklara taşınmasıydı. Ayrıca, nişanlımın *-evet nişanlandım-* üniversiteyi bitirip Diyarbakır’a dönmesiyle İstanbul’da yalnız kaldım. Alt başlıklarda detaylı olarak ele alacağım.
 
 ## 🧺 Alınacaklar Listesi
 
-Önceki yıllarda bu başlık altına ev, araba, Macbook, iPhone, PlayStation yazdığımı hatırlıyorum. Bu sene biraz farklı geçti; 2025 yılı içerisinde evlilik planladığım için 2024 yılı benim için kemer sıkma dönemiydi. Beyaz eşya ve bir kaç parça eşya almak dışında doğru düzgün bir harcamam olmadı. En az para harcadığım yıl olabilir.
+Geçmiş yıllarda bu başlık altında ev, araba, Macbook, iPhone, PlayStation gibi büyük alışverişlerim olmuştu. Ancak 2024, evlilik planlarım nedeniyle kemer sıkma yılıydı. Beyaz eşya ve birkaç küçük parça eşya dışında önemli bir harcama yapmadım. Bu yıl, harcama konusunda oldukça dikkatli davrandım.
 
 ## 📝 Blog
 
-2024 yılı kişisel siteme hiç yazı yazamadım. 2025 yılı içerisinde özellikle teknik konular başta olmak üzere çokça yazı yazmayı planlıyorum.
+2024'te kişisel siteme yazı yazma fırsatım olmadı. Ancak 2025'te, özellikle teknik konularda bolca içerik üretmeyi hedefliyorum.
 
 ## 📈 Borsa
 
-Borsa ile 2020 yılında arkadaşlarımın etkisiyle girmiştim. ₺15.000 ile borsaya girip, bir kaç ay sonra ₺10.000 ile çıkmıştım <span className="text-red-600">(%33,3 kayıp)</span>. 2020 değerlendirmesi yazımda borsa ile ilgili şunları yazmıştım:
+Borsa, 2020'de arkadaşlarımın tavsiyesiyle girmeye karar verdiğim bir alandı. Başlangıçta ₺15.000 yatırıp, birkaç ay sonra ₺10.000 ile çıkmıştım (%33,3 kayıp). 2020 değerlendirmemde borsa için yazdıklarımı hatırlayalım:
 
 <div className="text-neutral-500 text-base italic">
 > Aylarca borsayı takip etmek, yorumları okumak kafayı yedirten bir süreç oldu.
 > Sonucunda maalesef istediğimiz sonuçları alamadık ve zararla borsadan çıkma kararı aldım, uzun bir sürede tekrar bulaşmayı planlamıyorum.
 </div>
 
-2024 yılı ise benim adıma borsa, yatırım alanında uzmanlaştığım, her şeyi derinlemesine öğrenip analiz yapabilecek düzeye geldiğim bir yıl oldu. Başta bir çok hisse ile yaklaşık <span className="text-green-700">%30 kâr</span> yaptım. Sonrasında hisselerin tamamından çıkıp yatırımlarıma fonlarda devam ettim. Ağustos itibariyle tüm dünya borsalarının düşüşe geçmesiyle birlikte zarar etmeye başlasamda yıl sonuna doğru zararım telafi oldu. Finansal özgürlük yolunda güzel bir birikim elde ettim.
+2024 yılı ise borsa konusunda oldukça farklı geçti. Yatırım yapmayı öğrendim ve birçok hisse senedinde yaklaşık %30 kar elde ettim. Ancak sonrasında tüm hisselerden çıkıp, fon yatırımlarına yöneldim. Ağustos ayında dünya borsalarındaki düşüş nedeniyle zarar etmeye başladım, ancak yıl sonunda zararım telafi oldu. Ayrıca, nişanlım ve kendim için Kasım ayında BES hesabı açtım ve emeklilik yatırımlarına başladım.
 
-Hisse, fon, altın yatırımlarımın dışında kendim ve nişanlım için Kasım itibariyle BES hesabı açtım, emeklilik içinde yatırımlarıma başladım.
-
-Yaptığım yatırımları ve düşüncelerimi <a href="https://twitter.com/omergulcicek" target="_blank" rel="noopener noreferrer">X (Twitter)</a> hesabım üzerinden paylaşıyorum.
+Yatırım düşüncelerimi <a href="https://twitter.com/omergulcicek" target="_blank" rel="noopener noreferrer">X (Twitter)</a> hesabımda paylaşıyorum.
 
 ## 👨🏻‍💻 İş Hayatı
 
-2022 Ocak itibariyle başladığım **Gordion** firmasından Şubat 2024 itibariyle ayrıldım. 2 yıl 1 ay gibi bir süre geçirdiğim bu firmada çok güzel arkadaşlıklar edindim, çok güzel projelerde yer aldım. Teknik olarak kendime çok şey kattım. Hedeflerim konusunda firma ile anlaşamadığım için ayrılma kararı aldım.
+2022 Ocak ayında başladığım **Gordion** firmasından, Şubat 2024’te ayrıldım. 2 yıl boyunca burada değerli arkadaşlıklar edindim ve önemli projelerde yer aldım. Teknik olarak kendimi geliştirdim. Ancak hedeflerim konusunda firma ile anlaşmazlık yaşadığım için ayrılma kararı aldım.
 
 2024 Mart itibariyle **Fibabanka**'ya bağlı **Alışgidiş** firmasında çalışmaya başladım. Ekip sıfırdan kurulduğu için ilk aylarım biraz durağan geçti. Resmi olarak ünvanım olmamasına rağmen tüm yıl **Fronetend ekibine liderlik yaptım**, projenin tüm teknik sorumluluğunu üstlendim.
 
@@ -53,28 +51,28 @@ Dijital AVM deneyimi sunan bu ilk günlerde günlük 20-30 satış yapılırken 
 
 ## 💐 Nişan
 
-19 Mayıs 2024 tarihi ile nişanlandım. Kısmet ise 2025 yılı içerisinde evlenmeyi planlıyoruz.
+19 Mayıs 2024'te nişanlandım. Kısmetse, 2025 yılı içinde evlenmeyi planlıyoruz.
 
 ![Nişan](/img/blog/2024-12-31/nisan.png)
 
 ## ♟️ Satranç
 
-Her gün azda olsa düzenli olarak satranç oynamaya ve profesyonel satranç oyunlarını izlemeye devam ediyorum.
+Satranç oynamaya ve profesyonel oyunları izlemeye devam ediyorum.
 
-Kişisel rekorum olan **1.314** elo'ya yıl içerisinde tekrar ulaşamadım. Yıl içerisindeki en yüksek puanıma 24 Ocak tarihinde **1.266** elo'ya ulaştım, güncel olarak **1.180** elo'ya sahibim.
+Kişisel rekorum olan **1.314** elo'yu bu yıl tekrar yakalayamadım. Yıl içerisinde en yüksek puanım, 24 Ocak'ta **1.266** elo oldu. Şu an **1.180** elo seviyesindeyim.
 
-Yıl içerisinde toplam **1.091** oyun oynadım; beyaz taşlar ile kazanma oranım **%47**, siyah taşlar ile kazanma oranım **%49**.
+Yıl boyunca toplamda **1.091** oyun oynadım; beyaz taşlarla kazanma oranım **%47**, siyah taşlarla ise **%49**.
 
 ## 🎶 Spotify
 
-Konu müzik olunca neredeyse her yıl olduğu gibi **Sagopa Kajmer** bende hep bir numara.
+Müzik konusunda, her yıl olduğu gibi bu yıl da **Sagopa Kajmer** benim bir numaram oldu.
 
 ![Spotify](/img/blog/2024-12-31/spotify.png)
 
 ## 💻 Yazılım
 
-Bu yıl teknik olarak yeni teknolojiler öğrenmek yerine, mevcut bilgilerimi derinleştirdim. Özellikle **Next.js**, **TypeScript** ve **Tailwind CSS** konusunda ise çok daha fazla bilgi ve deneyime sahibi oldum.
+2024'te, yeni teknolojiler öğrenmek yerine mevcut bilgilerimi derinleştirmeyi tercih ettim. Özellikle **Next.js**, **TypeScript** ve **Tailwind CSS** konularında önemli ilerlemeler kaydettim.
 
-Ayrıca 2024 için GitHub katkılarım:
+Ayrıca 2024 yılı için GitHub katkılarım:
 
 ![Github - Ömer Gülçiçek](/img/blog/2024-12-31/github.png)
