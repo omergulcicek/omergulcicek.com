@@ -39,14 +39,14 @@ export const NavMenuMobile = () => {
 										width={40}
 										height={40}
 										quality={100}
-										className="rounded-full size-10 "
+										className="rounded-full size-10 object-cover border shadow-sm"
 									/>
 								</figure>
-								<div className="flex flex-col items-start">
+								<div className="flex flex-col items-start gap-0.5">
 									<span className="font-semibold tracking-tight">
 										Ömer Gülçiçek
 									</span>
-									<span className="text-neutral-400 text-sm font-medium">
+									<span className="text-neutral-400 text-sm font-normal">
 										Senior Frontend Developer
 									</span>
 								</div>
