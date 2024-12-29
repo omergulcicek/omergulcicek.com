@@ -62,10 +62,10 @@ export const SelectFilter = ({
 						<ChevronsUpDown className="opacity-50" size={16} />
 					</Button>
 				</PopoverTrigger>
-				<PopoverContent className="w-60 p-0">
+				<PopoverContent className="w-60 h-96 p-0">
 					<Command>
 						<CommandInput placeholder="Filtrele..." />
-						<CommandList>
+						<CommandList className="max-h-none">
 							<CommandEmpty>Kategori bulunamadı.</CommandEmpty>
 							<CommandGroup>
 								{filters.map((filter) => (

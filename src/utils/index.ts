@@ -5,15 +5,17 @@ import { BookTypes } from "@/types"
 
 // Blog sayfası için kategorilerin sıralanması
 const customOrder = [
-	"Kitap",
-	"Dizi",
-	"Film",
+	"Kişisel",
+	"Yazılım",
 	"HTML",
 	"CSS",
 	"Tailwind CSS",
 	"JavaScript",
 	"React",
-	"Next.js"
+	"Next.js",
+	"Kitap",
+	"Dizi",
+	"Film"
 ]
 
 export function cn(...args: (string | undefined | false | null)[]) {
@@ -78,9 +80,7 @@ export const sortTitle = (data: any[]): any[] => {
 }
 
 export const resCategories = (data: any[]): string[] => {
-	const categories = [...new Set(data.map((e: any) => e.category))].sort(
-		(a, b) => customOrder.indexOf(a) - customOrder.indexOf(b)
-	)
+	const categories = [...new Set(data.map((e: any) => e.category))]
 
 	const subCategories = [
 		...new Set(
@@ -88,12 +88,12 @@ export const resCategories = (data: any[]): string[] => {
 				e.subCategories ? e.subCategories.split(", ") : []
 			)
 		)
-	]
-		.filter(
-			(category): category is string =>
-				category !== undefined && category !== null
-		)
-		.sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b))
+	].filter(
+		(category): category is string =>
+			category !== undefined && category !== null
+	)
 
-	return [...new Set([...categories, ...subCategories])]
+	return [...new Set([...categories, ...subCategories])].sort(
+		(a, b) => customOrder.indexOf(a) - customOrder.indexOf(b)
+	)
 }
