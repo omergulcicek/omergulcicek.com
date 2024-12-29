@@ -4,7 +4,7 @@ export const writingData: NavMenuTypes = [
 	{
 		title: "Teknik Yazılar",
 		href: "/technical-articles/",
-		description: "HTML, CSS, JavaScript, ES6+, React, NextJS"
+		description: "HTML, CSS, JavaScript, ES6+, React, Next.js"
 	},
 	{
 		title: "Kişisel Yazılar",

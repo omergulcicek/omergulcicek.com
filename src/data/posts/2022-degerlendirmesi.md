@@ -63,7 +63,7 @@ Instagram hesabım: [@omergulcicek](https://www.instagram.com/omergulcicek/)
 2022’de 4 blog yazısı yayınladım (Geçen sene 11); bunların tamamı teknik makalelerdi.
 
 - [Styled Component ile Dinamik Css Yazmak](https://omergulcicek.com/blog/styled-component-ile-dinamik-css-yazmak/)
-- [Kişisel Sitemin NextJS Versiyonu](https://omergulcicek.com/blog/kisisel-sitemin-nextjs-versiyonu/)
+- [Kişisel Sitemin Next.js Versiyonu](https://omergulcicek.com/blog/kisisel-sitemin-nextjs-versiyonu/)
 - [CSS object-view-box Özelliği ile Görüntüyü Kırpmak](https://omergulcicek.com/blog/css-object-view-box/)
 - [grid-template-areas ile Layout Oluşturmak](https://omergulcicek.com/blog/grid-template-areas-ile-layout-olusturmak/)
 

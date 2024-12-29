@@ -172,7 +172,7 @@ export const CategoryIcon = ({ icon }: { icon: string }): JSX.Element => {
 					</svg>
 				</figure>
 			)
-		case "NextJS":
+		case "Next.js":
 			return (
 				<figure>
 					<svg

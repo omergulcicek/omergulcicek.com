@@ -1,25 +1,25 @@
 ---
 date: "2022-04-22"
-path: "/kisisel-sitemin-nextjs-versiyonu"
-title: "Kişisel Sitemin NextJS Versiyonu"
+path: "/kisisel-sitemin-Next.js-versiyonu"
+title: "Kişisel Sitemin Next.js Versiyonu"
 category: "Yazılım"
-subCategories: "NextJS"
-medium: "https://omergulcicek.medium.com/ki%C5%9Fisel-sitemin-nextjs-versiyonu-898ade092187"
+subCategories: "Next.js"
+medium: "https://omergulcicek.medium.com/ki%C5%9Fisel-sitemin-Next.js-versiyonu-898ade092187"
 ---
 
 Düzenli aralıklarla kişisel sitemi farklı yazılım dilleriyle baştan yazıyorum. Teknolojinin yanı sıra, tasarımsal olarakta daha minimal, sade ve şık bir arayüz yapmaya özen gösteriyorum.
 
 v6 olarak isimlendirdiğim bir önceki versiyonda React başlangıç kiti olan <a href="https://www.gatsbyjs.com/" rel="noopener noreferrer" target="_blank">Gatsby</a> ile geliştirmiştim. Kaynak kodlara <a href="https://github.com/omergulcicek/omergulcicek.com-old-versions/tree/main/v6" rel="noopener noreferrer" target="_blank">GitHub'tan ulaşabilirsiniz</a>.
 
-v7 yani NextJS ile geliştirilmiş olan versiyonu yayına almış bulunmaktayım. Detaylar ve performans testleri için okumaya devam edin.
+v7 yani Next.js ile geliştirilmiş olan versiyonu yayına almış bulunmaktayım. Detaylar ve performans testleri için okumaya devam edin.
 
 ## Kullanılan Teknolojiler
 
-NextJS'in yanı sıra, Tailwind Css'i de ilk kez denemiş oldum.
+Next.js'in yanı sıra, Tailwind Css'i de ilk kez denemiş oldum.
 
-### NextJS
+### Next.js
 
-React tecrübemden ötürü NextJS'e geçmek çok kolay oldu. Zaten neredeyse birebir aynısı. Kişisel sitemde SSG _(Static Site Generation)_ render methodunu kullandım. Tüm site çıktısını HTML dosyaları olarak ürettiği için tam performans veriyor. Ayrıca tüm kaynak kod hazır bir şekilde sayfaya yüklendiği için SEO problemi ortadan kalkıyor.
+React tecrübemden ötürü Next.js'e geçmek çok kolay oldu. Zaten neredeyse birebir aynısı. Kişisel sitemde SSG _(Static Site Generation)_ render methodunu kullandım. Tüm site çıktısını HTML dosyaları olarak ürettiği için tam performans veriyor. Ayrıca tüm kaynak kod hazır bir şekilde sayfaya yüklendiği için SEO problemi ortadan kalkıyor.
 
 ### Tailwind CSS
 
@@ -33,7 +33,7 @@ Kaynak kodlara <a href="https://github.com/omergulcicek/omergulcicek.com" rel="n
 
 Blog sayfasında teknik ve kişisel makaleleri filtrelemek adına linkler ekledim. Makale sayısı arttığı için buna ihtiyaç duyulmaya başlanmıştı.
 
-Tasarımsal olarak beyaz sade tasarımları beğeniyorum. Yine bu çizgide kaldım. Genelde her yeni sürümde tema rengimi değiştiririm. NextJS versionunda yeşilin `#16a34a` tonunu kullandım.
+Tasarımsal olarak beyaz sade tasarımları beğeniyorum. Yine bu çizgide kaldım. Genelde her yeni sürümde tema rengimi değiştiririm. Next.js versionunda yeşilin `#16a34a` tonunu kullandım.
 
 ![Yeşil Rengi - omergulcicek.com](/img/blog/2022-04-22/renk.png)
 
