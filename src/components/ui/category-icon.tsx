@@ -1,6 +1,13 @@
 import { JSX } from "react"
 
-import { BookOpenText, Clapperboard, CodeXml, User, Video } from "lucide-react"
+import {
+	BookOpenText,
+	CalendarDays,
+	Clapperboard,
+	CodeXml,
+	User,
+	Video
+} from "lucide-react"
 
 export const CategoryIcon = ({ icon }: { icon: string }): JSX.Element => {
 	switch (icon) {
@@ -12,6 +19,8 @@ export const CategoryIcon = ({ icon }: { icon: string }): JSX.Element => {
 			return <BookOpenText size={12} color="#5cc801" />
 		case "Dizi":
 			return <Video size={12} color="#3575f8" />
+		case "Yıl notları":
+			return <CalendarDays size={12} />
 		case "Yazılım":
 			return <CodeXml size={12} />
 		case "HTML":
