@@ -3,6 +3,7 @@ date: "2022-01-01"
 path: "/2022-hedeflerim"
 title: "2022 Hedeflerim"
 category: "Kişisel"
+subCategories: "Yıl notları"
 medium: "https://omergulcicek.medium.com/2022-hedeflerim-69c889488716"
 ---
 

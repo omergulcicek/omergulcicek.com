@@ -3,6 +3,7 @@ date: "2019-12-31"
 path: "/2019-degerlendirmesi"
 title: "2019 Değerlendirmesi"
 category: "Kişisel"
+subCategories: "Yıl notları"
 medium: ""
 ---
 

@@ -13,6 +13,7 @@ const customOrder = [
 	"JavaScript",
 	"React",
 	"Next.js",
+	"Yıl notları",
 	"Kitap",
 	"Dizi",
 	"Film"

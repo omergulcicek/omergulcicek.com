@@ -3,6 +3,7 @@ date: "2024-12-31"
 path: "/2024-degerlendirmesi"
 title: "2024 Değerlendirmesi"
 category: "Kişisel"
+subCategories: "Yıl notları"
 medium: ""
 ---
 
@@ -47,7 +48,7 @@ Yatırım düşüncelerimi <a href="https://twitter.com/omergulcicek" target="_b
 
 Dijital AVM deneyimi sunan bu ilk günlerde günlük 20-30 satış yapılırken bugünlerde günlük 100+ satış istatisliklerine ulaştık.
 
-![Alışgidiş](/img/blog/2024-12-31/alisgidis.png)
+![Fibabanka - Alışgidiş](/img/blog/2024-12-31/alisgidis.png)
 
 ## 💐 Nişan
 

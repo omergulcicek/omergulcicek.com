@@ -3,6 +3,7 @@ date: "2021-12-31"
 path: "/2021-degerlendirmesi"
 title: "2021 Değerlendirmesi"
 category: "Kişisel"
+subCategories: "Yıl notları"
 medium: ""
 ---
 

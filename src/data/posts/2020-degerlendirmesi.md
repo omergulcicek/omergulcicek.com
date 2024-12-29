@@ -3,6 +3,7 @@ date: "2020-12-31"
 path: "/2020-degerlendirmesi"
 title: "2020 Değerlendirmesi"
 category: "Kişisel"
+subCategories: "Yıl notları"
 medium: "https://omergulcicek.medium.com/2020-de%C4%9Ferlendirmesi-7d9cf6017aee"
 ---
 
