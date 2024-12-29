@@ -29,7 +29,7 @@ Kişisel sitem için henüz bir logo çizebilmiş değilim. Bu konuda çok detay
 
 ### Yazıları Filtreleme
 
-Sitenin yeni versiyonunda, blog sayfasında teknik ve kişisel makaleleri filtrelemek adına kategorilere ek olarak alt kategorilerde ekledim. Makale sayısı arttığı için buna ihtiyaç duyulmaya başlanmıştım.
+Sitenin yeni versiyonunda, blog sayfasında teknik ve kişisel makaleleri filtrelemek adına kategorilere ek olarak alt kategorilerde ekledim. Yazı sayısı arttığı için buna ihtiyaç duydum.
 
 ![Blog kategoriler](/img/blog/2024-12-29/filters.png)
 
