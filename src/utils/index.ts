@@ -9,6 +9,7 @@ const customOrder = [
 	"Yazılım",
 	"HTML",
 	"CSS",
+	"Styled Components",
 	"Tailwind CSS",
 	"JavaScript",
 	"React",

@@ -11,6 +11,7 @@ export const Tag = ({
 	setValue: (value: string) => void
 }): JSX.Element => {
 	const tags = text.split(",").map((tag) => tag.trim())
+	console.log(tags)
 
 	return (
 		<>

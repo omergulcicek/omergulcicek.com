@@ -75,6 +75,12 @@ export const CategoryIcon = ({ icon }: { icon: string }): JSX.Element => {
 					</svg>
 				</figure>
 			)
+		case "Styled Components":
+			return (
+				<>
+					<span>💅</span>
+				</>
+			)
 		case "Tailwind CSS":
 			return (
 				<figure>
