@@ -8,7 +8,7 @@ medium: ""
 
 Her yıl sonunda o yılı değerlendirip, yeni yıla hedeflerimi belirliyorum. 2019'dan bu yana bunu kişisel sitemde yazıyorum; sadece 2023 yılında fire verdim.
 
-Önceki yılların değerlendirmeleri;
+Önceki yılların değerlendirmeleri:
 - <a href="/blog/2022-degerlendirmesi/" target="_blank" rel="noopener noreferrer">2022 Değerlendirmesi</a>
 - <a href="/blog/2021-degerlendirmesi/" target="_blank" rel="noopener noreferrer">2021 Değerlendirmesi</a>
 - <a href="/blog/2020-degerlendirmesi/" target="_blank" rel="noopener noreferrer">2020 Değerlendirmesi</a>
