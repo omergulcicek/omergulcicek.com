@@ -10,14 +10,21 @@ export const Tag = ({
 	text: string
 	setValue: (value: string) => void
 }): JSX.Element => {
+	const tags = text.split(",").map((tag) => tag.trim())
+
 	return (
-		<Badge
-			onClick={() => setValue(text)}
-			variant="secondary"
-			className="flex items-center gap-1 cursor-pointer text-black/75 font-medium hover:underline"
-		>
-			<CategoryIcon icon={text} />
-			<span>{text}</span>
-		</Badge>
+		<>
+			{tags.map((tag, index) => (
+				<Badge
+					key={index}
+					onClick={() => setValue(tag)}
+					variant="secondary"
+					className="flex items-center gap-1 cursor-pointer text-black/75 font-medium hover:underline"
+				>
+					<CategoryIcon icon={tag} />
+					<span>{tag}</span>
+				</Badge>
+			))}
+		</>
 	)
 }

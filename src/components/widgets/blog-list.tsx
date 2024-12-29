@@ -3,9 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 
-import { formatDate } from "@/utils"
+import { formatDate, resCategories } from "@/utils"
 
-import { Container } from "@/shared/container"
 import { SelectFilterWidget } from "@/widgets/select-filter"
 import BlurFade from "@/ui/blur-fade"
 import { MediumIcon } from "@/ui/medium"
@@ -17,14 +16,6 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 
 	const [value, setValue] = useState("")
 
-	const categories = [...new Set(data.map((e) => e.category))]
-
-	const subCategories = [...new Set(data.map((e) => e.subCategories))]
-		.filter((category): category is string => category !== undefined)
-		.sort()
-
-	const resCategories = [...categories, ...subCategories]
-
 	const listData = value
 		? data.filter((e) => e.category === value || e.subCategories === value)
 		: data
@@ -33,7 +24,7 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 		<section className="relative mt-6 md:mt-20">
 			<div className="md:absolute top-0 -right-60 flex flex-col items-center justify-end mb-10 md:mb-0">
 				<SelectFilterWidget
-					filters={resCategories}
+					filters={resCategories(data)}
 					value={value}
 					setValue={setValue}
 				/>

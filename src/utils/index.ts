@@ -3,6 +3,19 @@ import { twMerge } from "tailwind-merge"
 
 import { BookTypes } from "@/types"
 
+// Blog sayfası için kategorilerin sıralanması
+const customOrder = [
+	"Kitap",
+	"Dizi",
+	"Film",
+	"HTML",
+	"CSS",
+	"Tailwind CSS",
+	"JavaScript",
+	"React",
+	"Next.js"
+]
+
 export function cn(...args: (string | undefined | false | null)[]) {
 	return clsx(twMerge(...args))
 }
@@ -62,4 +75,25 @@ export const sortTitle = (data: any[]): any[] => {
 
 		return 0
 	})
+}
+
+export const resCategories = (data: any[]): string[] => {
+	const categories = [...new Set(data.map((e: any) => e.category))].sort(
+		(a, b) => customOrder.indexOf(a) - customOrder.indexOf(b)
+	)
+
+	const subCategories = [
+		...new Set(
+			data.flatMap((e: any) =>
+				e.subCategories ? e.subCategories.split(", ") : []
+			)
+		)
+	]
+		.filter(
+			(category): category is string =>
+				category !== undefined && category !== null
+		)
+		.sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b))
+
+	return [...new Set([...categories, ...subCategories])]
 }

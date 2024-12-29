@@ -1,10 +1,10 @@
 ---
 date: "2022-04-22"
-path: "/kisisel-sitemin-Next.js-versiyonu"
+path: "/kisisel-sitemin-nextjs-versiyonu"
 title: "Kişisel Sitemin Next.js Versiyonu"
 category: "Yazılım"
 subCategories: "Next.js"
-medium: "https://omergulcicek.medium.com/ki%C5%9Fisel-sitemin-Next.js-versiyonu-898ade092187"
+medium: "https://omergulcicek.medium.com/kişisel-sitemin-nextjs-versiyonu-898ade092187"
 ---
 
 Düzenli aralıklarla kişisel sitemi farklı yazılım dilleriyle baştan yazıyorum. Teknolojinin yanı sıra, tasarımsal olarakta daha minimal, sade ve şık bir arayüz yapmaya özen gösteriyorum.
