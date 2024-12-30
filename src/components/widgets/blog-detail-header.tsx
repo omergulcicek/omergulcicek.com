@@ -23,7 +23,7 @@ export default async function BlogDetailHeader({
 	return (
 		<>
 			<BlurFade delay={0.15} duration={0.15}>
-				<div className="flex flex-col gap-1 mb-20">
+				<div className="flex flex-col gap-2 mb-20">
 					<div className="flex items-center gap-6 h-6 mb-4">
 						<span className="text-base text-secondary-foreground">
 							{formatDate(date)}
