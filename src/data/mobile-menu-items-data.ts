@@ -29,7 +29,7 @@ export const mobileMenuItems = [
 		href: "/about/"
 	},
 	{
-		title: "Çalışma Alanım",
+		title: "Ekipmanlarım",
 		icon: Armchair,
 		href: "/workspace/"
 	},

@@ -7,11 +7,10 @@ export const aboutData: NavMenuTypes = [
 		description: "İlgi alanlarım ve sosyal medya hesaplarım"
 	},
 	{
-		title: "Çalışma Alanım",
+		title: "Ekipmanlarım",
 		href: "/workspace/",
 		description:
-			"Gün içinde ve çalışma hayatında sürekli kullandığım araçların listesi",
-		soon: true
+			"Gün içinde ve çalışma hayatında sürekli kullandığım araçların listesi"
 	}
 	// {
 	// 	title: "Finansal Özgürlük",
