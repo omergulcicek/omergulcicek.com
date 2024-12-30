@@ -28,6 +28,7 @@ export default async function BlogDetailHeader({
 						<span className="text-base text-secondary-foreground">
 							{formatDate(date)}
 						</span>
+
 						{medium && (
 							<>
 								<Separator orientation="vertical" />
