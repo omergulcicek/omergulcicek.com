@@ -6,37 +6,28 @@ import BlurFade from "@/components/ui/blur-fade"
 import { formatDate } from "@/utils"
 
 import { Separator } from "@/ui/separator"
+import { Tag } from "@/ui/tag"
+import { Title } from "@/ui/title"
 
 export default async function BlogDetailHeader({
+	title,
 	date,
-	category,
+	keywords,
 	medium
 }: {
+	title: string
 	date: string
-	category?: string
+	keywords?: string[]
 	medium?: string
 }) {
 	return (
 		<>
 			<BlurFade delay={0.15} duration={0.15}>
-				<header>
-					<div className="flex items-center justify-center space-x-4 md:space-x-6 text-sm h-6">
-						<div>{formatDate(date)}</div>
-
-						<Separator
-							orientation="vertical"
-							className="hidden md:inline-flex"
-						/>
-
-						<div className="hidden md:inline-flex">Ömer Gülçiçek</div>
-
-						{category && (
-							<>
-								<Separator orientation="vertical" />
-								<span>{` #${category}`}</span>
-							</>
-						)}
-
+				<div className="flex flex-col gap-1 mb-20">
+					<div className="flex items-center gap-6 h-6 mb-4">
+						<span className="text-base text-secondary-foreground">
+							{formatDate(date)}
+						</span>
 						{medium && (
 							<>
 								<Separator orientation="vertical" />
@@ -45,7 +36,7 @@ export default async function BlogDetailHeader({
 										href={medium}
 										target="_blank"
 										rel="noopener noreferrer"
-										className=" !text-black transition !no-underline hover:!underline"
+										className=" !text-black text-base transition !no-underline hover:!underline"
 									>
 										<div className="flex items-center gap-2">
 											<figure className="flex items-center justify-center size-4 transition duration-300 !my-0">
@@ -66,7 +57,15 @@ export default async function BlogDetailHeader({
 							</>
 						)}
 					</div>
-				</header>
+
+					<Title>{title}</Title>
+
+					{keywords && (
+						<div className="flex items-center gap-2">
+							<Tag text={keywords} />
+						</div>
+					)}
+				</div>
 			</BlurFade>
 		</>
 	)

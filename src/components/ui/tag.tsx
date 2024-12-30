@@ -8,7 +8,7 @@ export const Tag = ({
 	setValue
 }: {
 	text: string[]
-	setValue: (value: string) => void
+	setValue?: (value: string) => void
 }): JSX.Element => {
 	if (!text) return <></>
 
@@ -17,7 +17,7 @@ export const Tag = ({
 			{text?.map((tag, index) => (
 				<Badge
 					key={index}
-					onClick={() => setValue(tag)}
+					onClick={() => setValue && setValue(tag)}
 					variant="secondary"
 					className="flex items-center gap-1 cursor-pointer text-black/75 font-medium hover:underline"
 				>

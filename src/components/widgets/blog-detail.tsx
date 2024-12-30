@@ -17,17 +17,13 @@ export default function BlogDetail({ post }: any) {
 
 	return (
 		<>
-			<BlogDetailHeader
-				date={post.date}
-				category={post.keywords}
-				medium={post.medium}
-			/>
-
 			<article>
-				<BlurFade delay={0.4} duration={0.3}>
-					<h1>{post.title}</h1>
-				</BlurFade>
-
+				<BlogDetailHeader
+					title={post.title}
+					date={post.date}
+					keywords={post.keywords}
+					medium={post.medium}
+				/>
 				<BlurFade delay={0.7} duration={0.5}>
 					<Markdown>{post.content}</Markdown>
 				</BlurFade>
