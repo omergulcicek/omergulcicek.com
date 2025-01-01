@@ -40,7 +40,7 @@ export default function Footer({
 			className={cn("mt-12 md:mt-40 flex w-full py-20", className)}
 		>
 			<Container className="max-w-sm md:max-w-3xl">
-				<div className="flex flex-col gap-2 md:gap-1 text-sm md:text-base leading-relaxed text-tertiary-foreground">
+				<div className="flex flex-col gap-2 md:gap-1 text-sm md:text-base leading-relaxed text-neutral-500">
 					<p>
 						<Link
 							href="https://nextjs.org/"

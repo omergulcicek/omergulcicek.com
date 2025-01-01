@@ -19,7 +19,7 @@ export const MediumIcon = ({ path }: { path: string }) => {
 		>
 			<TooltipProvider>
 				<Tooltip>
-					<TooltipTrigger>
+					<TooltipTrigger aria-label="Medium'da oku">
 						<figure className="flex items-center justify-center size-4 fill-tertiary-foreground hover:fill-black transition duration-300">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

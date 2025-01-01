@@ -38,7 +38,7 @@ export function BlogList({ data }: { data: BlogPostTypes[] }) {
 					) => (
 						<BlurFade key={title} delay={0.25 + index * 0.05} duration={0.1}>
 							<div className="flex flex-col items-start md:gap-1" key={folder}>
-								<div className="flex items-center gap-2 text-xs md:text-sm text-tertiary-foreground tabular-nums">
+								<div className="flex items-center gap-2 text-xs md:text-sm text-neutral-500 tabular-nums">
 									<span className="italic">{formatDate(date, false)}</span> ·
 									{(category || keywords) && (
 										<Tag text={keywords || [category]} setValue={setValue} />

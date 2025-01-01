@@ -54,6 +54,7 @@ export const SelectFilter = ({
 						variant="outline"
 						role="combobox"
 						aria-expanded={open}
+						aria-label="Kategori seç"
 						className="w-full md:w-60 justify-between"
 					>
 						{value

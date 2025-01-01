@@ -54,7 +54,7 @@ export const PageSubTitle = ({
 				className={cn(className)}
 				{...props}
 			>
-				<Title tag="h3" className="text-tertiary-foreground">
+				<Title tag="h3" className="text-neutral-500">
 					{children}
 				</Title>
 			</motion.h2>

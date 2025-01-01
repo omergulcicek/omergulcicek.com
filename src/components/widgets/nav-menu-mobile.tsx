@@ -24,7 +24,12 @@ export const NavMenuMobile = () => {
 		<>
 			<Drawer>
 				<DrawerTrigger asChild>
-					<Button variant="ghost" size="sm" className="size-9 px-0 md:hidden">
+					<Button
+						variant="ghost"
+						size="sm"
+						aria-label="Mobil menüyü aç"
+						className="size-9 px-0 md:hidden"
+					>
 						<Command size={16} />
 					</Button>
 				</DrawerTrigger>
