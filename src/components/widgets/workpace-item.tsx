@@ -6,7 +6,7 @@ export const WorkpaceItem = ({ data }: any) => {
 					<div className="relative flex flex-col items-center gap-5 shadow-sm border rounded-md p-8">
 						<figure className="size-32 overflow-hidden mx-auto">
 							<img
-								src={image}
+								src={`/img/workspace/${image}.png`}
 								alt={title}
 								className="absolute size-32 rounded-md object-contain"
 							/>
