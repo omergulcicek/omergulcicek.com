@@ -2,13 +2,14 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Head from "next/head"
 
-import "./globals.css"
-
 import { DrawerCSSProvider } from "@/layouts/vaul-provider"
 import { cn } from "@/utils"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 import Footer from "@/shared/footer"
 import Header from "@/shared/header"
+
+import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -48,6 +49,7 @@ export default function RootLayout({
 					<Footer />
 				</DrawerCSSProvider>
 			</body>
+			<GoogleAnalytics gaId="G-2SSDRN8Z0R" />
 		</html>
 	)
 }
