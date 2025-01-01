@@ -54,6 +54,12 @@ export const homeWorkspace = [
 		title: "TP-Link Deco X20",
 		description: "Wi-Fi 6 Mesh Sistem",
 		image: "https://static.tp-link.com/Deco-X20-01_large_1598239674599u.jpg"
+	},
+	{
+		title: "Roborock Qrevo Curv",
+		description: "Robot Süpürge",
+		image:
+			"https://tr.roborock.com/cdn/shop/files/Roborock_Qrevo_Curv_360_360_300x.png?v=1734278076"
 	}
 ]
 
