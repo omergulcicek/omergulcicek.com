@@ -21,7 +21,7 @@ export default function Workspace() {
 				animate={{ opacity: 1, translateY: "0px" }}
 				transition={{ delay: 0.05 }}
 			>
-				<Title tag="h1">Ekipmanlarım</Title>
+				<Title tag="h1">Ekipman</Title>
 			</motion.h1>
 
 			<p className="text-lg leading-8 text-neutral-500 my-2">

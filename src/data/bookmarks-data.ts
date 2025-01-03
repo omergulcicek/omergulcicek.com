@@ -20,11 +20,6 @@ export const bookmarksData: NavMenuTypes = [
 		soon: true
 	},
 	{
-		title: "Kitap",
-		href: "/bookmarks/books/",
-		description: "Kitaplığımdaki kitapların listesi"
-	},
-	{
 		title: "Makaleler",
 		href: "/bookmarks/reading/",
 		description: "Okuduğum makalelerin listesi",
