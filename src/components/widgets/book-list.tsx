@@ -39,7 +39,7 @@ export function BookList() {
 
 	return (
 		<>
-			<motion.article
+			<motion.div
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}
 				transition={{ delay: 0.25 }}
@@ -51,7 +51,7 @@ export function BookList() {
 					placeholder="Kitap yada yazar ara"
 					onChange={(e) => setText(e.target.value)}
 				/>
-			</motion.article>
+			</motion.div>
 
 			<AnimationListLayout data={sortBooks(filterData)} />
 		</>

@@ -72,10 +72,8 @@ export const PageContent = ({
 	props?: React.HTMLProps<HTMLHeadingElement>
 }) => {
 	return (
-		<Container className="mt-6 md:mt-24 max-w-6xl">
-			<div className={cn(className)} {...props}>
-				{children}
-			</div>
+		<Container className={cn("mt-6 md:mt-24 max-w-6xl", className)} {...props}>
+			{children}
 		</Container>
 	)
 }
