@@ -2,6 +2,12 @@ import { AnimationListTypes } from "@/types"
 
 export const bookData: any = [
 	{
+		img: "https://img.kitapyurdu.com/v1/getImage/fn:11637963/wh:true/wi:220",
+		title: "Atsız Hikayeler",
+		description: "Nihal Atsız",
+		url: "https://www.kitapyurdu.com/kitap/atsiz-hikayeler/452636.html"
+	},
+	{
 		img: "https://img.kitapyurdu.com/v1/getImage/fn:11713962/wh:true/wi:220",
 		title: "Ruh Adam",
 		description: "Nihal Atsız",
