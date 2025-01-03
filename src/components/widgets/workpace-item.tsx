@@ -3,7 +3,10 @@ export const WorkpaceItem = ({ data }: any) => {
 		<>
 			<div className="grid grid-cols-2 gap-4">
 				{data.map(({ title, description, image }: any) => (
-					<div className="relative flex flex-col items-center gap-5 shadow-sm border rounded-md p-8">
+					<div
+						className="relative flex flex-col items-center gap-5 shadow-sm border rounded-md p-8"
+						key={title}
+					>
 						<figure className="size-32 overflow-hidden mx-auto">
 							<img
 								src={`/img/workspace/${image}.png`}
