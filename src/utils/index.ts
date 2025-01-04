@@ -11,6 +11,7 @@ const customOrder = [
 	"CSS",
 	"Styled Components",
 	"Tailwind CSS",
+	"shadcn/ui",
 	"JavaScript",
 	"React",
 	"Next.js",

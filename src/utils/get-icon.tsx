@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 
-const HTML5 = (props: SVGProps<SVGSVGElement>) => (
+export const HTML5 = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ const HTML5 = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const CSS = (props: SVGProps<SVGSVGElement>) => (
+export const CSS = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const CSS = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const TailwindCSS = (props: SVGProps<SVGSVGElement>) => (
+export const TailwindCSS = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		viewBox="0 0 256 154"
@@ -76,7 +76,7 @@ const TailwindCSS = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const StyledComponents = (props: SVGProps<SVGSVGElement>) => (
+export const StyledComponents = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		viewBox="0 0 318 318"
@@ -113,7 +113,7 @@ const StyledComponents = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const Sass = (props: SVGProps<SVGSVGElement>) => (
+export const Sass = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		viewBox="0 0 512 384"
@@ -129,7 +129,7 @@ const Sass = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const Framer = (props: SVGProps<SVGSVGElement>) => (
+export const Framer = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		viewBox="0 0 256 384"
@@ -144,14 +144,14 @@ const Framer = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const ShadcnUI = (props: SVGProps<SVGSVGElement>) => (
+export const ShadcnUI = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 256 256"
 		{...props}
 	>
-		<path fill="#fff" d="M0 0h256v256H0z" />
+		<path fill="transparent" d="M0 0h256v256H0z" />
 		<path
 			fill="none"
 			stroke="#000"
@@ -162,7 +162,7 @@ const ShadcnUI = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const JavaScript = (props: SVGProps<SVGSVGElement>) => (
+export const JavaScript = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +179,7 @@ const JavaScript = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const TypeScript = (props: SVGProps<SVGSVGElement>) => (
+export const TypeScript = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		viewBox="0 0 256 256"
@@ -200,7 +200,7 @@ const TypeScript = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const React = (props: SVGProps<SVGSVGElement>) => (
+export const React = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		viewBox="0 0 256 228"
@@ -217,7 +217,7 @@ const React = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const Nextjs = (props: SVGProps<SVGSVGElement>) => (
+export const Nextjs = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		width="1em"
@@ -288,7 +288,7 @@ const Nextjs = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const GraphQL = (props: SVGProps<SVGSVGElement>) => (
+export const GraphQL = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +312,7 @@ const GraphQL = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const Zod = (props: SVGProps<SVGSVGElement>) => (
+export const Zod = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -366,7 +366,7 @@ const Zod = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const ReactHookForm = (props: SVGProps<SVGSVGElement>) => (
+export const ReactHookForm = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -386,7 +386,7 @@ const ReactHookForm = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const CSSModules = (props: SVGProps<SVGSVGElement>) => (
+export const CSSModules = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
@@ -453,7 +453,7 @@ const CSSModules = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const Zustand = (props: SVGProps<SVGSVGElement>) => (
+export const Zustand = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		version="1.1"
@@ -1877,7 +1877,7 @@ const Zustand = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const TanstackQuery = (props: SVGProps<SVGSVGElement>) => (
+export const TanstackQuery = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		preserveAspectRatio="xMidYMid"
@@ -1904,7 +1904,7 @@ const TanstackQuery = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-const getIcon = (img: string) => {
+export const getIcon = (img: string) => {
 	switch (img) {
 		case "html":
 			return <HTML5 />
@@ -1944,5 +1944,3 @@ const getIcon = (img: string) => {
 			return "?"
 	}
 }
-
-export { getIcon }
