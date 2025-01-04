@@ -7,28 +7,34 @@ import { formatDate, resCategories } from "@/utils"
 
 import { SelectFilterWidget } from "@/widgets/select-filter"
 import BlurFade from "@/ui/blur-fade"
+import { Button } from "@/ui/button"
 import { MediumIcon } from "@/ui/medium"
 import { Tag } from "@/ui/tag"
 import { BlogPostTypes } from "@/types"
 
-export function BlogList({ data }: { data: BlogPostTypes[] }) {
+export function BlogList({
+	data,
+	articleCounts
+}: {
+	data: BlogPostTypes[]
+	articleCounts: { personal: number; technical: number }
+}) {
 	if (!data) return
 
-	const [value, setValue] = useState("")
+	const [value, setValue] = useState("Teknik")
 
 	const listData = value
 		? data.filter((e) => e.category === value || e.keywords?.includes(value))
 		: data
 
 	return (
-		<section className="relative mt-6 md:mt-20">
-			<div className="md:absolute top-0 -right-60 flex flex-col items-center justify-end mb-10 md:mb-0">
-				<SelectFilterWidget
-					filters={resCategories(data)}
-					value={value}
-					setValue={setValue}
-				/>
-			</div>
+		<section className="relative mt-6 md:mt-10">
+			<SelectFilterWidget
+				filters={resCategories(data)}
+				value={value}
+				setValue={setValue}
+				articleCounts={articleCounts}
+			/>
 
 			<div className="flex flex-col gap-5">
 				{listData.map(

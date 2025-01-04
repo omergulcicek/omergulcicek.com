@@ -2,7 +2,8 @@
 date: "2018-12-03"
 path: "/the-imitation-game"
 title: "The Imitation Game"
-category: "Film"
+category: "Kişisel"
+keywords: ["Film"]
 medium: "https://medium.com/t%C3%BCrkiye/the-imitation-game-204530b0581b"
 ---
 

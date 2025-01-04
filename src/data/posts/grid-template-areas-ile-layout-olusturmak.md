@@ -2,7 +2,7 @@
 date: "2022-09-09"
 path: "/grid-template-areas-ile-layout-olusturmak"
 title: "grid-template-areas ile Layout Oluşturmak"
-category: "Yazılım"
+category: "Teknik"
 keywords: ["CSS"]
 medium: "https://omergulcicek.medium.com/grid-template-areas-ile-layout-olu%C5%9Fturmak-619a93489ebf"
 ---

@@ -2,7 +2,7 @@
 date: "2021-06-27"
 path: "/csste-min-max-ve-clamp-fonksiyonlari"
 title: "CSS'te Min Max ve Clamp Fonksiyonları"
-category: "Yazılım"
+category: "Teknik"
 keywords: ["CSS"]
 medium: "https://omergulcicek.medium.com/csste-min-max-ve-clamp-fonksiyonları-3705078f7f7b"
 ---

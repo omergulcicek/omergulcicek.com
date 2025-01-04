@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 export default async function Blog() {
 	const articles = await getPostMetadata()
 
+	const articleCounts = {
+		personal: articles.filter((e) => e.category === "Kişisel")?.length,
+		technical: articles.filter((e) => e.category === "Teknik")?.length
+	}
+
 	return (
 		<Container className="mt-10 md:mt-24 max-w-2xl">
 			<Title tag="h1">Blog</Title>
@@ -24,7 +29,7 @@ export default async function Blog() {
 				Kişisel düşünce, deneyim ve yorumlarım
 			</Title>
 
-			<BlogList data={articles} />
+			<BlogList data={articles} articleCounts={articleCounts} />
 		</Container>
 	)
 }

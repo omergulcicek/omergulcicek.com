@@ -2,7 +2,7 @@
 date: "2021-01-22"
 path: "/react-componentini-npm-paketi-yapmak"
 title: "React Componentini Npm Paketi Yapmak"
-category: "Yazılım"
+category: "Teknik"
 keywords: ["React"]
 medium: "https://omergulcicek.medium.com/react-componentini-npm-paketi-yapmak-5ff4dbefc189"
 ---

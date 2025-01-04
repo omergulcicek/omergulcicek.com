@@ -6,7 +6,7 @@ import { BookTypes } from "@/types"
 // Blog sayfası için kategorilerin sıralanması
 const customOrder = [
 	"Kişisel",
-	"Yazılım",
+	"Teknik",
 	"HTML",
 	"CSS",
 	"Styled Components",
@@ -19,6 +19,25 @@ const customOrder = [
 	"Kitap",
 	"Dizi",
 	"Film"
+]
+
+export const personalFilters = [
+	"Kişisel",
+	"Yıl notları",
+	"Kitap",
+	"Dizi",
+	"Film"
+]
+export const technicalFilters = [
+	"Teknik",
+	"HTML",
+	"CSS",
+	"Styled Components",
+	"Tailwind CSS",
+	"shadcn/ui",
+	"JavaScript",
+	"React",
+	"Next.js"
 ]
 
 export function cn(...args: (string | undefined | false | null)[]) {

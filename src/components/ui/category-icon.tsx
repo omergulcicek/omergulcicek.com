@@ -22,7 +22,7 @@ export const CategoryIcon = ({ icon }: { icon: string }): JSX.Element => {
 			return <Video size={12} color="#3575f8" />
 		case "Yıl notları":
 			return <CalendarDays size={12} />
-		case "Yazılım":
+		case "Teknik":
 			return <CodeXml size={12} />
 		case "HTML":
 			return (
