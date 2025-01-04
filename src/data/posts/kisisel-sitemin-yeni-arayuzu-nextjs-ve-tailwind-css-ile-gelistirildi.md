@@ -4,7 +4,7 @@ path: "/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi"
 title: "Kişisel Sitemin Yeni Arayüzü: Next.js ve Tailwind CSS ile Geliştirildi"
 category: "Yazılım"
 keywords: ["Next.js", "Tailwind CSS"]
-medium: ""
+medium: "https://medium.com/kodcular/ki%C5%9Fisel-sitemin-yeni-aray%C3%BCz%C3%BC-next-js-ve-tailwind-css-ile-geli%C5%9Ftirildi-8591a3c6655e"
 ---
 
 Merhaba! Uzun bir ara vermiştim, ancak artık kişisel sitemde yeniden yazılar paylaşmaya başladım. Bu yazımda, sitemin yeni versiyonunu neden ve nasıl Next.js ile Tailwind CSS kullanarak geliştirdiğimden bahsetmek istiyorum.
