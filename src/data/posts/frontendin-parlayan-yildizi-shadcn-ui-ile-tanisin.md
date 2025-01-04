@@ -3,7 +3,7 @@ date: "2025-01-04"
 path: "/frontendin-parlayan-yildizi-shadcn-ui-ile-tanisin"
 title: "Frontend'in Parlayan Yıldızı: shadcn/ui ile Tanışın"
 category: "Yazılım"
-keywords: ["CSS", "Tailwind CSS", "shadcn/ui", "React"]
+keywords: ["shadcn/ui" ,"Tailwind CSS", "React"]
 medium: "https://omergulcicek.medium.com/frontendin-parlayan-y%C4%B1ld%C4%B1z%C4%B1-shadcn-ui-ile-tan%C4%B1%C5%9F%C4%B1n-d0e6b821b4ec"
 ---
 
