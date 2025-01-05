@@ -45,7 +45,7 @@ export const HoverCardWithLogo = ({
 								target="_blank"
 								className="text-xs text-blue-500 hover:underline"
 							>
-								{link}
+								{link.replace("?utm_source=omergulcicek.com", "")}
 							</Link>
 						</div>
 					</div>

@@ -42,7 +42,7 @@ export function About() {
 						fallback="FB"
 						img="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/16/cc/05/16cc0561-12cd-8b1e-b6d9-3afc00de7ead/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/460x0w.webp"
 						desc="Hızlı ve Kolay Bankacılık"
-						link="www.fibabanka.com.tr"
+						link="www.fibabanka.com.tr?utm_source=omergulcicek.com"
 					/>{" "}
 					<HoverCardWithLogo
 						title="Alışgidiş"
@@ -50,7 +50,7 @@ export function About() {
 						fallback="AG"
 						img="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/55/15/3e55155f-76b6-bce2-8ee7-9bf4734ae3de/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/460x0w.webp"
 						desc="Dünyanın parmakla gezilen ilk alışveriş merkezi"
-						link="www.alisgidis.com"
+						link="www.alisgidis.com?utm_source=omergulcicek.com"
 						className="w-full"
 					/>{" "}
 					projesinde Sr Frontend Dev olarak çalışıyorum. <br />{" "}
