@@ -132,7 +132,7 @@ export default function Footer({
 							Beni GitHub'tan takip et
 						</Link>
 					</p>
-					<p>© 2024 | Ömer Gülçiçek</p>
+					<p>© {new Date().getFullYear()} | Ömer Gülçiçek</p>
 				</div>
 			</Container>
 		</motion.footer>
