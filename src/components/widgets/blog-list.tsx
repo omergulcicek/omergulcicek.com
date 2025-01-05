@@ -7,8 +7,8 @@ import { formatDate, resCategories } from "@/utils"
 
 import { SelectFilterWidget } from "@/widgets/select-filter"
 import BlurFade from "@/ui/blur-fade"
-import { Button } from "@/ui/button"
 import { MediumIcon } from "@/ui/medium"
+import { Separator } from "@/ui/separator"
 import { Tag } from "@/ui/tag"
 import { BlogPostTypes } from "@/types"
 
@@ -43,17 +43,15 @@ export function BlogList({
 						index
 					) => (
 						<BlurFade key={title} delay={0.25 + index * 0.05} duration={0.1}>
-							<div className="flex flex-col items-start md:gap-1" key={folder}>
-								<div className="flex items-center gap-2 text-xs md:text-sm text-neutral-500 tabular-nums">
-									<span className="italic">{formatDate(date, false)}</span> ·
+							<div
+								className="flex flex-col items-start gap-2 md:gap-1"
+								key={folder}
+							>
+								<div className="flex flex-col md:flex-row items-start md:items-center gap-3 text-xs md:text-sm text-neutral-500 tabular-nums md:h-5">
+									<span className="italic">{formatDate(date, false)}</span>
+									<span className="hidden md:inline-block">·</span>
 									{(category || keywords) && (
 										<Tag text={keywords || [category]} setValue={setValue} />
-									)}
-									{medium && (
-										<>
-											·
-											<MediumIcon path={medium} />
-										</>
 									)}
 								</div>
 								<Link

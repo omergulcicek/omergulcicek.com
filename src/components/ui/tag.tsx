@@ -13,18 +13,18 @@ export const Tag = ({
 	if (!text) return <></>
 
 	return (
-		<>
+		<div className="flex items-center gap-1">
 			{text?.map((tag, index) => (
 				<Badge
 					key={index}
 					onClick={() => setValue && setValue(tag)}
 					variant="secondary"
-					className="flex items-center gap-1 cursor-pointer text-black/75 font-medium hover:underline"
+					className="flex items-center gap-1 cursor-pointer text-black/75 font-medium whitespace-nowrap hover:underline"
 				>
 					<CategoryIcon icon={tag} />
 					<span>{tag}</span>
 				</Badge>
 			))}
-		</>
+		</div>
 	)
 }

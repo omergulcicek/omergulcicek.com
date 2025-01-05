@@ -39,7 +39,7 @@ export function SelectFilterWidget({
 		<>
 			{/* TODO: Mobil filtre */}
 			<div className="flex items-start mb-10 md:h-20">
-				<div className="flex flex-col">
+				<div className="flex flex-col flex-1">
 					<div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-4 md:h-10">
 						<Button
 							variant="link"
@@ -69,7 +69,7 @@ export function SelectFilterWidget({
 					</div>
 
 					{value !== "Kişisel" && value !== "Teknik" && (
-						<p className="font-mono text-sm leading-9 text-tertiary-foreground">
+						<p className="font-mono text-sm md:leading-9 text-tertiary-foreground">
 							<strong>{value}</strong> kategorisi seçildi.
 						</p>
 					)}
@@ -101,7 +101,7 @@ export const FilterDropdown = ({
 
 	return (
 		<>
-			<div className="flex flex-col items-center md:absolute top-0 -right-60">
+			<div className="flex flex-col items-center w-40 md:w-auto md:absolute top-0 right-0 md:-right-60">
 				<Popover open={open} onOpenChange={setOpen}>
 					<PopoverTrigger asChild>
 						<Button
