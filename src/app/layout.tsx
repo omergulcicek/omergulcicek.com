@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Fira_Code, Inter } from "next/font/google"
 import Head from "next/head"
 
 import { DrawerCSSProvider } from "@/layouts/vaul-provider"
@@ -12,6 +12,12 @@ import Header from "@/shared/header"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
+
+const fira_code = Fira_Code({
+	subsets: ["latin"],
+	variable: "--font-fira-code",
+	display: "swap"
+})
 
 export const metadata: Metadata = {
 	title: "Ömer Gülçiçek | Frontend Developer",
@@ -42,7 +48,13 @@ export default function RootLayout({
 				<link rel="shortcut icon" href="/static/favicon.svg" />
 				<link rel="icon" />
 			</Head>
-			<body className={cn(inter.className, "flex h-full flex-col")}>
+			<body
+				className={cn(
+					inter.className,
+					`${fira_code.variable}`,
+					"flex h-full flex-col"
+				)}
+			>
 				<DrawerCSSProvider>
 					<Header />
 					<main className="flex-1">{children}</main>

@@ -89,4 +89,9 @@
 	.prose-sm > span:first-of-type {
 		@apply !hidden;
 	}
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+		font-family: var(--font-fira-code) !important;
+	}
 }
