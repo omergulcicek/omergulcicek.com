@@ -4,7 +4,7 @@ path: "/react-19-ile-gelen-yenilik-use-optimistic-hook-kullanimi"
 title: "React 19 ile Gelen Yenilik: useOptimistic Hook Kullanımı"
 category: "Teknik"
 keywords: ["React"]
-medium: ""
+medium: "https://omergulcicek.medium.com/react-19-ile-gelen-yenilik-useoptimistic-hook-kullan%C4%B1m%C4%B1-eebe5cb6a732"
 ---
 
 ![React useOptimistic](/img/blog/2025-01-06/useOptimistic.png)

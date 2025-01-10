@@ -4,7 +4,7 @@ path: "/react-virtualization-buyuk-verilerin-ekranda-verimli-gosterimi"
 title: "React Virtualization: Büyük Verilerin Ekranda Verimli Gösterimi"
 category: "Teknik"
 keywords: ["React"]
-medium: ""
+medium: "https://omergulcicek.medium.com/react-virtualization-b%C3%BCy%C3%BCk-verilerin-ekranda-verimli-g%C3%B6sterimi-a91b9e6c6e37"
 ---
 
 ## React Virtualization Nedir?
