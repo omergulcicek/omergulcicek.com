@@ -9,7 +9,7 @@ medium: ""
 
 ## React Virtualization Nedir?
 
-React Virtualization, büyük veri setleriyle çalışan React uygulamalarında performans optimizasyonu sağlamaya yönelik bir tekniktir. Özellikle, sayfalarda veya listelerde çok sayıda öğe olduğunda, tüm öğeleri aynı anda render etmek, uygulamanın hızını olumsuz yönde etkileyebilir. Bu noktada, **React Virtualization** kütüphaneleri devreye girer. Bu kütüphaneler, yalnızca görünürdeki öğeleri render ederek, bellek kullanımını ve render süresini önemli ölçüde azaltır.
+React Virtualization, büyük veri setleriyle çalışan React uygulamalarında performans optimizasyonu sağlamaya yönelik bir tekniktir. Özellikle, sayfalarda veya listelerde çok sayıda öğe olduğunda, tüm öğeleri aynı anda render etmek, uygulamanın hızını olumsuz yönde etkileyebilir. Bu noktada, **React Virtualization** paketleri devreye girer. Bu paketler, yalnızca görünürdeki öğeleri render ederek, bellek kullanımını ve render süresini önemli ölçüde azaltır.
 
 ![React Virtualization](/img/blog/2025-01-10/virtualization.png)
 
@@ -17,7 +17,7 @@ Instagram veya Twitter gibi sosyal medya platformlarında kullanıcılar sürekl
 
 React Virtualization’ın nasıl çalıştığını daha basit bir örnekle açıklayalım. Diyelim ki ekranda 1, 2, 3, 4, 5 numaralı öğeler görünmekte. Kullanıcı bir adım daha kaydırdığında, 6 numaralı öğe görünürken, 1 numaralı öğe ekrandan silinir. Böylece, her zaman ekranda yalnızca belirli sayıda öğe yer alır *(bu örnekte 5 öğe)*.
 
-## Yaygın Kullanılan React Virtualization Kütüphaneleri
+## React Virtualization Paketleri
 
 Grafikten görüldüğü gibi, 2024 yılına kadar *(önceki yıllar dahil)* **react-virtualized** paketi yaygın olarak kullanılıyordu. Ancak, 2024 yılından itibaren **react-window** paketinin kullanımı artış göstermeye başladı.
 
