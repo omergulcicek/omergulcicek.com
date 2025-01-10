@@ -19,48 +19,82 @@ React Virtualization’ın nasıl çalıştığını daha basit bir örnekle aç
 
 ## Yaygın Kullanılan React Virtualization Kütüphaneleri
 
-Grafikten görüldüğü üzere, 2024 yılına kadar *(önceki yıllar dahil)* **react-virtualized** paketinin kullanımı oldukça yaygındı. Ancak 2024 yılından itibaren,  **react-window** paketinin kullanımı artmaya başladı. Bu iki kütüphane de performanslı listeleme yapmak için kullanılan popüler React paketleridir.
+Grafikten görüldüğü gibi, 2024 yılına kadar *(önceki yıllar dahil)* **react-virtualized** paketi yaygın olarak kullanılıyordu. Ancak, 2024 yılından itibaren **react-window** paketinin kullanımı artış göstermeye başladı.
 
+Son dönemde ise **TanStack**'in **@tanstack/react-virtual** paketi, öne çıkarak en çok tercih edilen virtualization paketi haline geldi. Bu üç paket, performans odaklı listeleme yapmak için popüler React çözümleri arasında yer almaktadır.
 
-![npm trends: react-virtualized vs react-window](/img/blog/2025-01-10/npm-trends.png)
+![npm trends: react-virtualized vs react-window vs @tanstack/react-virtual](/img/blog/2025-01-10/npm-trends.png)
 
-Son dönemde **react-window** paketinin daha fazla tercih edilmesinin nedenlerinden bazıları şunlardır:
+Bunun nedenlerinden bazıları şunlardır:
 
-- **react-window** paketi, **react-virtualized** paketinden yaklaşık <u>3.5 kat daha hafiftir</u>.
-- **react-window** paketi <u>daha sık güncellenmektedir</u>. Bu yazıyı yazdığım gün itibarıyla, react-window paketi 24 gün önce güncellenmişken, react-virtualized paketi en son 2 yıl önce güncellenmiş.
+- **@tanstack/react-virtual** paketi, **react-window** paketinden yaklaşık <u>5.5 kat</u>, **react-virtualized** paketinden ise yaklaşık <u>19 kat daha hafiftir</u>.
+- **@tanstack/react-virtual** ve **react-window** paketileri <u>daha sık güncellenmektedir</u>. Bu yazıyı yazdığım gün itibarıyla, react-window paketi <u>25 gün önce</u> güncellenmişken, react-virtualized paketi ise en son <u>2 yıl önce</u> güncellenmiş.
 
-Ancak, bunlar react-virtualized paketinin kullanılmaması gerektiği anlamına gelmez. GitHub star sayılarına bakıldığında, **react-virtualized** paketinin 26.500 star ile, 16.000 starı olan **react-window** paketinden daha fazla ilgi gördüğü görülmektedir.
+![npm trends istatistikleri](/img/blog/2025-01-10/npm-trends-stats.png)
 
-Grafik bu şekilde devam ederse, ilerleyen yıllarda **react-window** paketinin daha fazla tercih edileceğini söyleyebiliriz.
+Diğerlerine kıyasla çok daha yeni olan ve yaklaşık 5.700 yıldız alan **@tanstack/react-virtual**, 26.500 yıldıza sahip  **react-virtualized** ve 16.000 yıldıza sahip **react-window** paketlerine göre daha fazla ilgi görmekte.
+
+TanStack'in son zamanlardaki dikkat çekici yükselişi, ilerleyen yıllarda **@tanstack/react-virtual** paketinin daha fazla tercih edileceğine işaret ediyor.
 
 ## Nasıl Kullanılır?
 
 Resmi dokümantasyondaki kod örneğiyle **react-window** paketini nasıl kullanabileceğinizi görelim.
 
 ```javascript
-import { FixedSizeList as List } from 'react-window'
+import { useVirtualizer } from '@tanstack/react-virtual';
 
-const Row = ({ index, style }) => (
-  <div style={style}>Row {index}</div>
-)
+function App() {
+  const parentRef = React.useRef(null)
 
-const Example = () => ( 
-  <List
-    height={150}      // Liste alanının yüksekliği 150px
-    itemCount={1000}  // Toplam öğe sayısı 1000
-    itemSize={35}     // Her öğenin yüksekliği 35px
-    width={300}       // Liste alanının genişliği 300px
-  >
-    {Row}
-  </List>
-)
+  const rowVirtualizer = useVirtualizer({
+    count: 10000,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 35,
+  })
+
+  return (
+    <>
+      <div
+        ref={parentRef}
+        style={{
+          height: `400px`,
+          overflow: 'auto', // Scroll yap!
+        }}
+      >
+        {/* Tüm öğeleri tutacak kapsayıcı eleman */}
+        <div
+          style={{
+            height: `${rowVirtualizer.getTotalSize()}px`,
+            width: '100%',
+            position: 'relative',
+          }}
+        >
+          {/* Virtualizerda yalnızca görünür öğeler, görünümde olacak şekilde manuel olarak konumlandırılır */}
+          {rowVirtualizer.getVirtualItems().map((virtualItem) => (
+            <div
+              key={virtualItem.key}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: `${virtualItem.size}px`,
+                transform: `translateY(${virtualItem.start}px)`,
+              }}
+            >
+              Row {virtualItem.index}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  )
+}
 ```
 
-Bu kodun nasıl çalıştığını incelemek için <a href="https://codesandbox.io/p/sandbox/github/bvaughn/react-window/tree/master/website/sandboxes/variable-size-list-vertical" target="_blank" rel="noreferrer noopener">Codesandbox</a> örneğine göz atabilirsiniz.
+Bu kodun nasıl çalıştığını incelemek için <a href="https://codesandbox.io/p/devbox/github/tanstack/virtual/tree/main/examples/react/fixed?embed=1&theme=dark" target="_blank" rel="noreferrer noopener">Codesandbox</a> örneğine göz atabilirsiniz.
 
-Burada *itemCount*, *itemSize*, *height* ve *width* gibi özellikleri özelleştirebilirsiniz. Ayrıca, *Row* fonksiyonu ile her bir öğenin nasıl render edileceğini belirleyebilirsiniz.
-
-Ayrıca, yatay kaydırma, hem yatay hem dikey kaydırma gibi özelliklerin yanı sıra, memoization gibi ek özellikler de mevcut. Detaylı bilgi için <a href="https://react-window.now.sh/" target="_blank" rel="noreferrer noopener">resmi dokümantasyonu</a> inceleyebilirsiniz.
+Ayrıca, yatay kaydırma, hem yatay hem dikey kaydırma gibi özelliklerin yanı sıra, memoization gibi ek özellikler de mevcut. Detaylı bilgi için <a href="https://tanstack.com/virtual/latest/docs/framework/react/examples/fixed" target="_blank" rel="noreferrer noopener">resmi dokümantasyonu</a> inceleyebilirsiniz.
 
 
 ***
@@ -69,5 +103,5 @@ Ayrıca, yatay kaydırma, hem yatay hem dikey kaydırma gibi özelliklerin yanı
 
 ### Kaynaklar
 
-- <a href="https://github.com/bvaughn/react-window" target="_blank" rel="noreferrer noopener">react-window Github</a>
-- <a href="https://npmtrends.com/react-virtualized-vs-react-window" target="_blank" rel="noreferrer noopener">npm trends: react-virtualized vs react-window</a>
+- <a href="https://tanstack.com/virtual/latest/docs/framework/react/examples/fixed" target="_blank" rel="noreferrer noopener">TanStack Virtual Dokümantasyon</a>
+- <a href="https://npmtrends.com/@tanstack/react-virtual-vs-react-virtualized-vs-react-window" target="_blank" rel="noreferrer noopener">npm trends: @tanstack/react-virtual vs react-virtualized vs react-window</a>
