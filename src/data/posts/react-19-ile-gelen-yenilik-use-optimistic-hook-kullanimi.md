@@ -83,7 +83,7 @@ Bu nedenle, optimistic UI’ı kullanırken dikkatli olmalısınız. İşlem ba�
 
 ***
 
-*Yazının kapak görseli yapay zeka tarafından üretilmiştir, biraz hataları olabilir. 🤖*
+*Yazının kapak görseli yapay zeka tarafından üretilmiştir. 🤖*
 
 ### Kaynaklar
 
