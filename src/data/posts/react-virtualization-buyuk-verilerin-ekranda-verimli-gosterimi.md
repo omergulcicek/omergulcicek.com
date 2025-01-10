@@ -38,7 +38,7 @@ TanStack'in son zamanlardaki dikkat çekici yükselişi, ilerleyen yıllarda **@
 
 ## Nasıl Kullanılır?
 
-Resmi dokümantasyondaki kod örneğiyle **react-window** paketini nasıl kullanabileceğinizi görelim.
+Resmi dokümantasyondaki kod örneğiyle **TanStack Virtual** paketini nasıl kullanabileceğinizi görelim.
 
 ```javascript
 import { useVirtualizer } from '@tanstack/react-virtual';
@@ -103,5 +103,5 @@ Ayrıca, yatay kaydırma, hem yatay hem dikey kaydırma gibi özelliklerin yanı
 
 ### Kaynaklar
 
-- <a href="https://tanstack.com/virtual/latest/docs/framework/react/examples/fixed" target="_blank" rel="noreferrer noopener">TanStack Virtual Dokümantasyon</a>
+- <a href="https://tanstack.com/virtual/latest/docs/introduction" target="_blank" rel="noreferrer noopener">TanStack Virtual Dokümantasyon</a>
 - <a href="https://npmtrends.com/@tanstack/react-virtual-vs-react-virtualized-vs-react-window" target="_blank" rel="noreferrer noopener">npm trends: @tanstack/react-virtual vs react-virtualized vs react-window</a>
