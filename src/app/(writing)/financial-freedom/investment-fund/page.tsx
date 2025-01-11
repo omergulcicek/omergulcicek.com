@@ -32,10 +32,12 @@ export default function InvestmentFundPage() {
 					</BreadcrumbList>
 				</Breadcrumb>
 
-				<Title tag="h1">Fon ve ETF</Title>
-				<Title tag="h2" className="text-tertiary-foreground">
-					Yatırım fon portföyüm ve ETF
+				<Title tag="h1" className="md:mb-4">
+					Fon ve ETF
 				</Title>
+				<p className="text-2xl text-neutral-500">
+					Yatırım fon portföyüm ve ETF
+				</p>
 
 				<InvestmentFund />
 			</Container>

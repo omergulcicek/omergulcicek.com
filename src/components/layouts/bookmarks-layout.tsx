@@ -1,10 +1,11 @@
 "use client"
 
-import { cn } from "@/utils"
 import { motion } from "framer-motion"
 
 import { Container } from "@/shared/container"
 import { Title } from "@/ui/title"
+
+import { cn } from "@/utils"
 
 export const BookmarksLayout = ({
 	children
@@ -31,7 +32,9 @@ export const PageTitle = ({
 				className={cn(className)}
 				{...props}
 			>
-				<Title tag="h1">{children}</Title>
+				<Title tag="h1" className="md:mb-4">
+					{children}
+				</Title>
 			</motion.h2>
 		</Container>
 	)

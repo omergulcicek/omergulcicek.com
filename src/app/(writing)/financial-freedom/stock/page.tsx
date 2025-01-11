@@ -32,10 +32,12 @@ export default function StockPage() {
 					</BreadcrumbList>
 				</Breadcrumb>
 
-				<Title tag="h1">Hisse Senedi</Title>
-				<Title tag="h2" className="text-tertiary-foreground">
-					Yerli yabancı hisse senetleri, altın ve kripto
+				<Title tag="h1" className="md:mb-4">
+					Hisse Senedi
 				</Title>
+				<p className="text-2xl text-neutral-500">
+					Yerli yabancı hisse senetleri, altın ve kripto
+				</p>
 
 				<Stock />
 			</Container>

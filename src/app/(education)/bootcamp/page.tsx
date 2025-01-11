@@ -7,10 +7,10 @@ export default function Bootcamp() {
 	return (
 		<>
 			<Container className="mt-10 md:mt-24 max-w-2xl">
-				<Title tag="h1">Bootcamp</Title>
-				<Title tag="h2" className="text-tertiary-foreground">
-					Frontend kod eğitimi
+				<Title tag="h1" className="md:mb-4">
+					Bootcamp
 				</Title>
+				<p className="text-2xl text-neutral-500">Frontend kod eğitimi</p>
 			</Container>
 		</>
 	)

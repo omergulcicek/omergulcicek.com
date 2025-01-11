@@ -61,7 +61,7 @@ export default function RootLayout({
 					<Footer />
 				</Providers>
 			</body>
-			<GoogleAnalytics gaId="G-2SSDRN8Z0R" />
+			<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ""} />
 		</html>
 	)
 }

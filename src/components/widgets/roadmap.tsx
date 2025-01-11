@@ -14,7 +14,9 @@ export function Roadmap() {
 					animate={{ opacity: 1, translateY: "0px" }}
 					transition={{ delay: 0.05 }}
 				>
-					<Title tag="h1">Yol Haritası</Title>
+					<Title tag="h1" className="md:mb-4">
+						Yol Haritası
+					</Title>
 				</motion.h1>
 
 				<motion.h2

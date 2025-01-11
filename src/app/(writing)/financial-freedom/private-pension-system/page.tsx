@@ -32,10 +32,12 @@ export default function PrivatePensionSystem() {
 					</BreadcrumbList>
 				</Breadcrumb>
 
-				<Title tag="h1">Bireysel Emeklilik Sistemi (BES)</Title>
-				<Title tag="h2" className="text-tertiary-foreground">
-					Bireysel emeklilik sistemi fon dağılımları
+				<Title tag="h1" className="md:mb-4">
+					Bireysel Emeklilik Sistemi (BES)
 				</Title>
+				<p className="text-2xl text-neutral-500">
+					Bireysel emeklilik sistemi fon dağılımları
+				</p>
 
 				<PrivatePensionSystemContent />
 			</Container>

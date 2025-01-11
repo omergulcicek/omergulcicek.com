@@ -16,7 +16,9 @@ export function About() {
 				animate={{ opacity: 1, translateY: "0px" }}
 				transition={{ delay: 0.05 }}
 			>
-				<Title tag="h1">Hakkında</Title>
+				<Title tag="h1" className="md:mb-4">
+					Hakkında
+				</Title>
 			</motion.h1>
 
 			<div className="flex flex-col gap-4 mt-4 font-medium">
