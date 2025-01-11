@@ -18,7 +18,7 @@ export function AnimationListLayout({ data }: { data: Array<any> }) {
 							rel={isExternal ? "noopener noreferrer" : ""}
 							target={isExternal ? "_blank" : "_self"}
 							className="
-              flex gap-10 items-center h-full border rounded-2xl p-4 md:px-10 cursor-pointer transition select-none bg-white hover:bg-gray-50"
+              flex gap-10 items-center h-full border rounded-2xl p-4 md:px-10 cursor-pointer transition select-none bg-popover hover:bg-accent"
 						>
 							<figure>
 								{img.slice(0, 4) === "http" ? (
