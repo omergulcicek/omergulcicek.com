@@ -29,7 +29,7 @@ export function NavMenu() {
 						<NavigationMenuLink
 							className={cn(
 								navigationMenuTriggerStyle(),
-								"hover:bg-accent dark:hover:bg-[#181818] "
+								"bg-transparent dark:hover:bg-[#181818] "
 							)}
 						>
 							Ana Sayfa
@@ -42,7 +42,7 @@ export function NavMenu() {
 						<NavigationMenuLink
 							className={cn(
 								navigationMenuTriggerStyle(),
-								"hover:bg-accent dark:hover:bg-[#181818] "
+								"bg-transparent dark:hover:bg-[#181818] "
 							)}
 						>
 							Blog
@@ -51,7 +51,9 @@ export function NavMenu() {
 				</NavigationMenuItem>
 
 				<NavigationMenuItem>
-					<NavigationMenuTrigger>Eğitim</NavigationMenuTrigger>
+					<NavigationMenuTrigger className="bg-transparent">
+						Eğitim
+					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-full gap-3 p-3 md:p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{educationData.map((component) => (
@@ -73,7 +75,9 @@ export function NavMenu() {
 				</NavigationMenuItem>
 
 				<NavigationMenuItem>
-					<NavigationMenuTrigger>Hakkında</NavigationMenuTrigger>
+					<NavigationMenuTrigger className="bg-transparent">
+						Hakkında
+					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid gap-3 p-3 md:p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 							<li className="row-span-3 hidden md:flex">
@@ -108,7 +112,9 @@ export function NavMenu() {
 				</NavigationMenuItem>
 
 				<NavigationMenuItem>
-					<NavigationMenuTrigger>Yer İmleri</NavigationMenuTrigger>
+					<NavigationMenuTrigger className="bg-transparent">
+						Yer İmleri
+					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-full gap-3 p-3 md:p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
 							{bookmarksData.map((component) => (
@@ -143,7 +149,7 @@ const ListItem = React.forwardRef<
 				<a
 					ref={ref}
 					className={cn(
-						"hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
+						"bg-transparent hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
 						className
 					)}
 					{...props}
