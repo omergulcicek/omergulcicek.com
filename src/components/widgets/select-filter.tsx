@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import { Check, ChevronsUpDown, FilterX } from "lucide-react"
+import { Check, ChevronsUpDown, FilterX, SlidersHorizontal } from "lucide-react"
 
 import { Button } from "@/ui/button"
 import { CategoryIcon } from "@/ui/category-icon"
@@ -16,6 +16,15 @@ import {
 } from "@/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/ui/popover"
 import { Separator } from "@/ui/separator"
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetDescription,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger
+} from "@/ui/sheet"
 
 import { cn, personalFilters, technicalFilters } from "@/utils"
 
@@ -38,8 +47,7 @@ export function SelectFilterWidget({
 
 	return (
 		<>
-			{/* TODO: Mobil filtre */}
-			<div className="flex items-start mb-10 md:h-20">
+			<div className="flex items-center md:items-start mb-10 md:h-20">
 				<div className="flex flex-col flex-1">
 					<div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-4 md:h-10">
 						<Button
@@ -76,12 +84,81 @@ export function SelectFilterWidget({
 					)}
 				</div>
 
+				<FilterSheet
+					filters={filteredFilters}
+					value={value}
+					setValue={setValue}
+				/>
+
 				<FilterDropdown
 					filters={filteredFilters}
 					value={value}
 					setValue={setValue}
 				/>
 			</div>
+		</>
+	)
+}
+
+export const FilterSheet = ({
+	filters,
+	value,
+	setValue
+}: {
+	filters: string[]
+	value: string
+	setValue: (value: string) => void
+}) => {
+	return (
+		<>
+			<Sheet>
+				<SheetTrigger className="flex md:hidden">
+					<Button variant="outline" size="icon">
+						<SlidersHorizontal size={16} />
+					</Button>
+				</SheetTrigger>
+
+				<SheetContent>
+					<SheetHeader className="gap-5">
+						<SheetTitle>Kategori Seç</SheetTitle>
+						<SheetDescription className="flex flex-col items-start gap-5">
+							<p>Yazı filtrelemek için bir şey seçin.</p>
+
+							<div>
+								{filters.map((filter) => (
+									<SheetClose
+										key={filter}
+										className="flex items-center gap-2 w-full p-2 rounded-sm transition cursor-pointer hover:bg-accent"
+										onClick={() => setValue(filter)}
+									>
+										<CategoryIcon icon={filter} />
+										{filter}
+										<Check
+											className={cn(
+												"ml-auto",
+												value === filter ? "opacity-100" : "opacity-0"
+											)}
+										/>
+									</SheetClose>
+								))}
+							</div>
+
+							{value !== "Kişisel" && value !== "Teknik" && (
+								<div className="pt-2 w-full flex items-center justify-center">
+									<Button
+										variant="link"
+										className="flex items-center gap-2 text-sm leading-9 text-tertiary-foreground hover:text-black dark:hover:text-white cursor-pointer transition"
+										onClick={() => setValue("Teknik")}
+									>
+										<FilterX size={16} />
+										<span>Temizle</span>
+									</Button>
+								</div>
+							)}
+						</SheetDescription>
+					</SheetHeader>
+				</SheetContent>
+			</Sheet>
 		</>
 	)
 }
@@ -102,7 +179,7 @@ export const FilterDropdown = ({
 
 	return (
 		<>
-			<div className="flex flex-col items-center w-40 md:w-auto md:absolute top-0 right-0 md:-right-60">
+			<div className="hidden md:flex flex-col items-center w-40 md:w-auto md:absolute top-0 right-0 md:-right-60">
 				<Popover open={open} onOpenChange={setOpen}>
 					<PopoverTrigger asChild>
 						<Button
@@ -150,13 +227,14 @@ export const FilterDropdown = ({
 				</Popover>
 
 				{value !== "Kişisel" && value !== "Teknik" && (
-					<button
+					<Button
+						variant="link"
 						className="flex items-center gap-2 text-sm leading-9 text-tertiary-foreground hover:text-black dark:hover:text-white cursor-pointer transition"
 						onClick={() => setValue("Teknik")}
 					>
 						<FilterX size={16} />
 						<span>Temizle</span>
-					</button>
+					</Button>
 				)}
 			</div>
 		</>
