@@ -11,7 +11,7 @@ import { cn } from "@/utils"
 
 import "./globals.css"
 
-const inter = Geist({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"] })
 
 const fira_code = Fira_Code({
 	subsets: ["latin"],
@@ -50,7 +50,7 @@ export default function RootLayout({
 			</Head>
 			<body
 				className={cn(
-					inter.className,
+					geist.className,
 					`${fira_code.variable}`,
 					"flex h-full flex-col"
 				)}
