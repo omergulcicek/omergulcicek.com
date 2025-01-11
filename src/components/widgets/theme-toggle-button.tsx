@@ -10,8 +10,6 @@ import { Button } from "@/ui/button"
 export function ThemeToggleButton() {
 	const { theme, setTheme } = useTheme()
 
-	console.log(theme)
-
 	if (theme === "dark") {
 		return (
 			<>
