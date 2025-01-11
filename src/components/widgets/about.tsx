@@ -19,7 +19,7 @@ export function About() {
 				<Title tag="h1">Hakkında</Title>
 			</motion.h1>
 
-			<div className="flex flex-col gap-4 mt-4 font-medium text-black/80">
+			<div className="flex flex-col gap-4 mt-4 font-medium">
 				<motion.div
 					initial={{ opacity: 0, translateY: "100px" }}
 					animate={{ opacity: 1, translateY: "0px" }}
@@ -54,10 +54,10 @@ export function About() {
 						className="w-full"
 					/>{" "}
 					projesinde Sr Frontend Dev olarak çalışıyorum. <br />{" "}
-					<strong className="font-medium text-black">UI/UX,</strong>{" "}
-					<strong className="font-medium text-black">Web Vitals</strong> ve{" "}
-					<strong className="font-medium text-black">A11Y Project</strong>{" "}
-					konularına ilgi duyuyorum.
+					<strong className="font-medium">UI/UX,</strong>{" "}
+					<strong className="font-medium">Web Vitals</strong> ve{" "}
+					<strong className="font-medium">A11Y Project</strong> konularına ilgi
+					duyuyorum.
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, translateY: "100px" }}

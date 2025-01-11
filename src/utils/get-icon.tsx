@@ -138,7 +138,7 @@ export const Framer = (props: SVGProps<SVGSVGElement>) => (
 		{...props}
 	>
 		<path
-			fill="#000"
+			className="fill-black dark:fill-white"
 			d="M0 0h256v128H128L0 0Zm0 128h128l128 128H128v128L0 256V128Z"
 		/>
 	</svg>
@@ -390,14 +390,16 @@ export const CSSModules = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		className="size-6 md:size-11"
 		xmlns="http://www.w3.org/2000/svg"
-		height="1e3"
 		viewBox="0 0 1000 1000"
-		width="1e3"
 		version="1.1"
 		{...props}
 	>
 		<g id="layer1" transform="translate(3.7129 -62.36)">
-			<g id="flowRoot3336" transform="matrix(1.8595,0,0,1.8595,-30.174,333.87)">
+			<g
+				id="flowRoot3336"
+				transform="matrix(1.8595,0,0,1.8595,-30.174,333.87)"
+				className="fill-black dark:fill-white"
+			>
 				<path
 					id="path4379"
 					d="m105.49 108.89q12.261 0 19.028 6.46 6.7676 6.46 7.5146 14.678h-8.5254q-1.4502-6.2402-5.8008-9.8877-4.3066-3.6475-12.129-3.6475-9.5361 0-15.425 6.7236-5.8447 6.6797-5.8447 20.522 0 11.338 5.2734 18.413 5.3174 7.0312 15.82 7.0312 9.668 0 14.722-7.4268 2.6807-3.9111 3.999-10.283h8.5254q-1.1426 10.195-7.5586 17.095-7.6904 8.3057-20.742 8.3057-11.25 0-18.896-6.8115-10.063-9.0088-10.063-27.817 0-14.282 7.5586-23.423 8.1738-9.9316 22.544-9.9316zm-1.7578 0z"
@@ -443,7 +445,7 @@ export const CSSModules = (props: SVGProps<SVGSVGElement>) => (
 				id="rect4156"
 				height="695.02"
 				width="695.02"
-				stroke="#000"
+				className="stroke-black dark:stroke-white"
 				y="214.85"
 				x="72.492"
 				strokeWidth="5"
@@ -1877,7 +1879,7 @@ export const Zustand = (props: SVGProps<SVGSVGElement>) => (
 	</svg>
 )
 
-export const TanStackQuery = (props: SVGProps<SVGSVGElement>) => (
+export const TanStackQuery = (props: any) => (
 	<img
 		src="https://tanstack.com/_build/assets/logo-color-600w-Er4SOkq1.png"
 		alt="TanstackQuery"

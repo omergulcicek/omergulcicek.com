@@ -5,6 +5,7 @@ import { cn } from "@/utils"
 import { Container } from "@/shared/container"
 import { NavMenu } from "@/widgets/nav-menu"
 import { NavMenuMobile } from "@/widgets/nav-menu-mobile"
+import { ThemeToggleButton } from "@/widgets/theme-toggle-button"
 
 export default function Header({
 	className
@@ -15,15 +16,18 @@ export default function Header({
 		<>
 			<header
 				className={cn(
-					"sticky top-0 flex items-center h-12 md:h-24 w-full z-20 border-b md:border-b-0 bg-white/95 dark:bg-black px-4",
+					"sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
 					className
 				)}
 			>
-				<Container className="hidden md:flex flex-row items-center justify-center gap-10 z-20">
-					<NavMenu />
-				</Container>
+				<Container className="max-w-4xl">
+					<section className="flex items-center justify-between h-14">
+						<NavMenu />
+						<NavMenuMobile />
 
-				<NavMenuMobile />
+						<ThemeToggleButton />
+					</section>
+				</Container>
 			</header>
 		</>
 	)

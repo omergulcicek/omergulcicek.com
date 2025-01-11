@@ -150,7 +150,7 @@ export const FilterDropdown = ({
 
 				{value !== "Kişisel" && value !== "Teknik" && (
 					<button
-						className="flex items-center gap-2 text-sm leading-9 text-tertiary-foreground hover:text-black cursor-pointer transition"
+						className="flex items-center gap-2 text-sm leading-9 text-tertiary-foreground hover:text-black dark:hover:text-white cursor-pointer transition"
 						onClick={() => setValue("Teknik")}
 					>
 						<FilterX size={16} />

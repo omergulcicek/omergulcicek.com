@@ -4,7 +4,6 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import profileImg from "@/img/profile.jpg"
 import { cn } from "@/utils"
 
 import {
@@ -16,13 +15,14 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle
 } from "@/ui/navigation-menu"
+import profileImg from "@/img/profile.jpg"
 import { aboutData } from "@/data/about-data"
 import { bookmarksData } from "@/data/bookmarks-data"
 import { educationData } from "@/data/education-data"
 
 export function NavMenu() {
 	return (
-		<NavigationMenu>
+		<NavigationMenu className="hidden md:flex">
 			<NavigationMenuList className="flex-wrap">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
