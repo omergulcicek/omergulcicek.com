@@ -29,7 +29,7 @@ export function NavMenu() {
 				<NavigationMenuList className="flex-wrap">
 					<NavigationMenuItem>
 						<Link href="/" legacyBehavior passHref>
-							<figure className="mr-6 cursor-pointer">
+							<figure className="mr-6 cursor-pointer transition active:scale-90">
 								<Rose />
 							</figure>
 						</Link>
