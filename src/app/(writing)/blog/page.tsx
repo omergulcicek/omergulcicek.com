@@ -27,7 +27,7 @@ export default async function Blog() {
 			<Title tag="h1" className="md:mb-4">
 				Blog
 			</Title>
-			<p className="text-2xl text-neutral-500">
+			<p className="text-base md:text-2xl text-neutral-500">
 				Kişisel düşünce, deneyim ve yorumlarım
 			</p>
 

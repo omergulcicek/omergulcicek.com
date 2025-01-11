@@ -51,16 +51,14 @@ export const PageSubTitle = ({
 }) => {
 	return (
 		<Container className="max-w-2xl">
-			<motion.h2
+			<motion.p
 				initial={{ opacity: 0, translateY: "100px" }}
 				animate={{ opacity: 1, translateY: "0px" }}
 				className={cn(className)}
 				{...props}
 			>
-				<Title tag="h3" className="text-neutral-500">
-					{children}
-				</Title>
-			</motion.h2>
+				<p className="text-base md:text-2xl text-neutral-500">{children}</p>
+			</motion.p>
 		</Container>
 	)
 }
