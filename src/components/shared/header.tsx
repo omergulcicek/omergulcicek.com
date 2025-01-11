@@ -1,11 +1,12 @@
 "use client"
 
-import { cn } from "@/utils"
-
 import { Container } from "@/shared/container"
+import { GithubButton } from "@/widgets/github-button"
 import { NavMenu } from "@/widgets/nav-menu"
 import { NavMenuMobile } from "@/widgets/nav-menu-mobile"
 import { ThemeToggleButton } from "@/widgets/theme-toggle-button"
+
+import { cn } from "@/utils"
 
 export default function Header({
 	className
@@ -20,12 +21,15 @@ export default function Header({
 					className
 				)}
 			>
-				<Container className="max-w-4xl">
+				<Container>
 					<section className="flex items-center justify-between h-14">
 						<NavMenu />
 						<NavMenuMobile />
 
-						<ThemeToggleButton />
+						<div className="flex items-center gap-0.5">
+							<ThemeToggleButton />
+							<GithubButton />
+						</div>
 					</section>
 				</Container>
 			</header>

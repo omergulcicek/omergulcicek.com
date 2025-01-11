@@ -1,10 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { Command } from "lucide-react"
 
+import { Me } from "@/widgets/me"
 import { Button } from "@/ui/button"
 import {
 	Drawer,
@@ -17,7 +17,6 @@ import {
 	DrawerTrigger
 } from "@/ui/drawer"
 
-import profileImg from "@/img/profile.jpg"
 import { mobileMenuItems } from "@/data/mobile-menu-items-data"
 
 export const NavMenuMobile = () => {
@@ -37,26 +36,7 @@ export const NavMenuMobile = () => {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>
-							<Link href="/" className="flex items-center gap-3 p-2 w-full">
-								<figure>
-									<Image
-										src={profileImg.src}
-										alt="Ömer Gülçiçek"
-										width={40}
-										height={40}
-										quality={100}
-										className="rounded-full size-10 object-cover border shadow-sm"
-									/>
-								</figure>
-								<div className="flex flex-col items-start gap-0.5">
-									<span className="font-semibold tracking-tight">
-										Ömer Gülçiçek
-									</span>
-									<span className="text-neutral-400 text-sm font-normal">
-										Senior Frontend Developer
-									</span>
-								</div>
-							</Link>
+							<Me />
 						</DrawerTitle>
 						<DrawerDescription>
 							<nav className="flex flex-col gap-1 text-black dark:text-white text-left py-4">
