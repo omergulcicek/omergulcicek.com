@@ -93,5 +93,6 @@
 	code[class*="language-"],
 	pre[class*="language-"] {
 		font-family: var(--font-fira-code) !important;
+		@apply !overflow-x-auto !whitespace-pre-wrap !break-words !max-w-full
 	}
 }

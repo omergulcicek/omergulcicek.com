@@ -19,7 +19,7 @@ export const Tag = ({
 					key={index}
 					onClick={() => setValue && setValue(tag)}
 					variant="secondary"
-					className="flex items-center gap-1 cursor-pointer text-black/75 font-medium whitespace-nowrap hover:underline"
+					className="flex items-center gap-1 cursor-pointer text-black/75 dark:text-white font-medium whitespace-nowrap hover:underline"
 				>
 					<CategoryIcon icon={tag} />
 					<span>{tag}</span>

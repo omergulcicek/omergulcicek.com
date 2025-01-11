@@ -23,7 +23,7 @@ export default async function BlogDetailHeader({
 	return (
 		<>
 			<BlurFade delay={0.15} duration={0.15}>
-				<div className="flex flex-col gap-2 mb-20">
+				<div className="flex flex-col gap-2">
 					<div className="flex items-center gap-6 h-6 mb-4">
 						<span className="text-base text-secondary-foreground">
 							{formatDate(date)}
@@ -37,7 +37,7 @@ export default async function BlogDetailHeader({
 										href={medium}
 										target="_blank"
 										rel="noopener noreferrer"
-										className=" !text-black text-base transition !no-underline hover:!underline"
+										className="text-base transition !no-underline"
 									>
 										<div className="flex items-center gap-2">
 											<figure className="flex items-center justify-center size-4 transition duration-300 !my-0">
@@ -46,12 +46,15 @@ export default async function BlogDetailHeader({
 													viewBox="0 0 640 512"
 													height={16}
 													width={16}
+													className="dark:fill-white"
 												>
 													<path d="M180.5 74.3C80.8 74.3 0 155.6 0 256S80.8 437.7 180.5 437.7 361 356.4 361 256 280.2 74.3 180.5 74.3zm288.3 10.6c-49.8 0-90.2 76.6-90.2 171.1s40.4 171.1 90.3 171.1 90.3-76.6 90.3-171.1H559C559 161.5 518.6 84.9 468.8 84.9zm139.5 17.8c-17.5 0-31.7 68.6-31.7 153.3s14.2 153.3 31.7 153.3S640 340.6 640 256C640 171.4 625.8 102.7 608.3 102.7z" />
 												</svg>
 											</figure>
 
-											<span>Medium'da Oku</span>
+											<span className="text-black dark:text-white">
+												Medium'da Oku
+											</span>
 										</div>
 									</Link>
 								</div>

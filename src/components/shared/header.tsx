@@ -15,7 +15,7 @@ export default function Header({
 		<>
 			<header
 				className={cn(
-					"sticky top-0 flex items-center h-12 md:h-24 w-full z-20 border-b md:border-b-0 bg-white/95 px-4",
+					"sticky top-0 flex items-center h-12 md:h-24 w-full z-20 border-b md:border-b-0 bg-white/95 dark:bg-black px-4",
 					className
 				)}
 			>

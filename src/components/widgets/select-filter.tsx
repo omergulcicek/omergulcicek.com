@@ -45,7 +45,7 @@ export function SelectFilterWidget({
 							variant="link"
 							className={cn(
 								technicalFilters.find((filter) => filter === value) &&
-									"text-black pointer-events-none",
+									"text-black dark:text-white pointer-events-none",
 								"px-0"
 							)}
 							onClick={() => setValue("Teknik")}
@@ -59,7 +59,7 @@ export function SelectFilterWidget({
 							variant="link"
 							className={cn(
 								personalFilters.find((filter) => filter === value) &&
-									"text-black pointer-events-none",
+									"text-black dark:text-white pointer-events-none",
 								"px-0"
 							)}
 							onClick={() => setValue("Kişisel")}

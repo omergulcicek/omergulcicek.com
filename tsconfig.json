@@ -25,6 +25,7 @@
 			"@/ui/*": ["./src/components/ui/*"],
 			"@/shared/*": ["./src/components/shared/*"],
 			"@/layouts/*": ["./src/components/layouts/*"],
+			"@/providers": ["./src/components/providers/index.tsx"],
 			"@/utils/*": ["./src/utils/*"],
 			"@/data/*": ["./src/data/*"],
 			"@/atom-dark-theme": ["./public/atom-dark-theme.css"]

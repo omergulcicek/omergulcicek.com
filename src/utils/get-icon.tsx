@@ -153,8 +153,8 @@ export const ShadcnUI = (props: SVGProps<SVGSVGElement>) => (
 	>
 		<path fill="transparent" d="M0 0h256v256H0z" />
 		<path
+			className="stroke-black dark:stroke-white"
 			fill="none"
-			stroke="#000"
 			strokeWidth={25}
 			strokeLinecap="round"
 			d="M208 128l-80 80M192 40L40 192"

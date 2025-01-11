@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Fira_Code, Inter } from "next/font/google"
 import Head from "next/head"
 
-import { DrawerCSSProvider } from "@/layouts/vaul-provider"
+import { Providers } from "@/providers"
 import { cn } from "@/utils"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
@@ -55,11 +55,11 @@ export default function RootLayout({
 					"flex h-full flex-col"
 				)}
 			>
-				<DrawerCSSProvider>
+				<Providers>
 					<Header />
 					<main className="flex-1">{children}</main>
 					<Footer />
-				</DrawerCSSProvider>
+				</Providers>
 			</body>
 			<GoogleAnalytics gaId="G-2SSDRN8Z0R" />
 		</html>
