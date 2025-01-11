@@ -16,6 +16,7 @@ import {
 	DrawerTitle,
 	DrawerTrigger
 } from "@/ui/drawer"
+
 import profileImg from "@/img/profile.jpg"
 import { mobileMenuItems } from "@/data/mobile-menu-items-data"
 

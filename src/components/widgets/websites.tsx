@@ -1,7 +1,6 @@
 "use client"
 
 import Bookmarks from "@/layouts/bookmarks-layout"
-
 import { WebSitesList } from "@/widgets/websites-list"
 
 export default function WebSites() {

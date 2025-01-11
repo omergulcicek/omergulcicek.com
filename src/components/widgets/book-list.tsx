@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react"
 
-import { AnimationListLayout } from "@/layouts/animation-list-layout"
-import { sortBooks } from "@/utils"
 import { motion } from "framer-motion"
 
+import { AnimationListLayout } from "@/layouts/animation-list-layout"
 import { Input } from "@/ui/input"
+
+import { sortBooks } from "@/utils"
+
 import { bookData } from "@/data/book-data"
 
 export function BookList() {

@@ -13,5 +13,3 @@ export default function RootLayout({
 		</Container>
 	)
 }
-//
-//  prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:font-mono prose-code:rounded

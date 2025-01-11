@@ -1,10 +1,11 @@
 "use client"
 
-import Bookmarks from "@/layouts/bookmarks-layout"
 import { motion } from "framer-motion"
 
+import Bookmarks from "@/layouts/bookmarks-layout"
 import { WorkpaceItem } from "@/widgets/workpace-item"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs"
+
 import {
 	backpackWorkspace,
 	deskWorkspace,

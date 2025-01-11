@@ -1,7 +1,6 @@
 "use client"
 
 import Bookmarks from "@/layouts/bookmarks-layout"
-
 import { TweetList } from "@/widgets/tweet-list"
 
 export default function Tweets() {

@@ -1,5 +1,3 @@
-import type { Metadata } from "next"
-
 import BlogDetail from "@/components/widgets/blog-detail"
 import getPostMetadata, { getPostContent } from "@/utils/get-blogs"
 

@@ -14,6 +14,7 @@
 	"importOrder": [
 		"^(react/(.*)$)|^(react$)|^(react-(.*)$)",
 		"^(next/(.*)$)|^(next$)|^(next-(.*)$)",
+		"^(@next)/(.*)$",
 		"",
 		"<THIRD_PARTY_MODULES>",
 		"",
@@ -22,7 +23,10 @@
 		"^@/shared",
 		"^@/widgets",
 		"^@/ui",
+		"",
 		"^@/hooks",
+		"^@/utils",
+		"",
 		"^@/types",
 		"^@/img",
 		"^@/data",

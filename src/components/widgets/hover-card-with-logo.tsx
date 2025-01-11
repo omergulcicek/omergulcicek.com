@@ -1,9 +1,9 @@
 import Link from "next/link"
 
-import { cn } from "@/utils"
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/ui/avatar"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/ui/hover-card"
+
+import { cn } from "@/utils"
 
 export const HoverCardWithLogo = ({
 	title,

@@ -4,8 +4,6 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import { cn } from "@/utils"
-
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -15,6 +13,9 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle
 } from "@/ui/navigation-menu"
+
+import { cn } from "@/utils"
+
 import profileImg from "@/img/profile.jpg"
 import { aboutData } from "@/data/about-data"
 import { bookmarksData } from "@/data/bookmarks-data"

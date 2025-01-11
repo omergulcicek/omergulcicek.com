@@ -2,9 +2,9 @@
 
 import Link from "next/link"
 
-import BlurFade from "@/components/ui/blur-fade"
 import { formatDate } from "@/utils"
 
+import BlurFade from "@/ui/blur-fade"
 import { Separator } from "@/ui/separator"
 import { Tag } from "@/ui/tag"
 import { Title } from "@/ui/title"

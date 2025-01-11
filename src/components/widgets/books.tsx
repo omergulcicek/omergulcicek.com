@@ -1,7 +1,6 @@
 "use client"
 
 import Bookmarks from "@/layouts/bookmarks-layout"
-
 import { BookList } from "@/widgets/book-list"
 
 export default function Books() {

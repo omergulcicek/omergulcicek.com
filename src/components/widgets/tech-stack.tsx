@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 
 import Marquee from "@/ui/marquee"
 import { StackItem } from "@/ui/stack-item"
+
 import { stackData } from "@/data/stack-data"
 
 export function TechStack() {

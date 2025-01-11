@@ -7,8 +7,6 @@ import { formatDate, resCategories } from "@/utils"
 
 import { SelectFilterWidget } from "@/widgets/select-filter"
 import BlurFade from "@/ui/blur-fade"
-import { MediumIcon } from "@/ui/medium"
-import { Separator } from "@/ui/separator"
 import { Tag } from "@/ui/tag"
 import { BlogPostTypes } from "@/types"
 

@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 
-import { cn, personalFilters, technicalFilters } from "@/utils"
 import { Check, ChevronsUpDown, FilterX } from "lucide-react"
 
 import { Button } from "@/ui/button"
@@ -17,6 +16,8 @@ import {
 } from "@/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/ui/popover"
 import { Separator } from "@/ui/separator"
+
+import { cn, personalFilters, technicalFilters } from "@/utils"
 
 export function SelectFilterWidget({
 	filters,

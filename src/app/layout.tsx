@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 import { Fira_Code, Inter } from "next/font/google"
 import Head from "next/head"
-
-import { Providers } from "@/providers"
-import { cn } from "@/utils"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
+import { cn } from "@/utils"
+
+import { Providers } from "@/providers"
 import Footer from "@/shared/footer"
 import Header from "@/shared/header"
 

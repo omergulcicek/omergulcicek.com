@@ -1,7 +1,6 @@
 "use client"
 
 import Bookmarks from "@/layouts/bookmarks-layout"
-
 import { VSCodeList } from "@/widgets/vscode-list"
 
 export default function VSCode() {

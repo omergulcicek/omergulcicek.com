@@ -1,8 +1,9 @@
 import React from "react"
 
+import BlurFade from "@/ui/blur-fade"
+
 import { cn } from "@/utils"
 
-import BlurFade from "@/ui/blur-fade"
 import heroData from "@/data/hero-data"
 
 export const Hero = ({ children }: { children: React.ReactNode }) => {
