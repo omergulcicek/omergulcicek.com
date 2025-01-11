@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
-import { Fira_Code, Inter } from "next/font/google"
+import { Fira_Code, Geist } from "next/font/google"
 import Head from "next/head"
 import { GoogleAnalytics } from "@next/third-parties/google"
-
-import { cn } from "@/utils"
 
 import { Providers } from "@/providers"
 import Footer from "@/shared/footer"
 import Header from "@/shared/header"
 
+import { cn } from "@/utils"
+
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Geist({ subsets: ["latin"] })
 
 const fira_code = Fira_Code({
 	subsets: ["latin"],
