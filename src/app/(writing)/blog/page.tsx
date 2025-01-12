@@ -23,7 +23,7 @@ export default async function Blog() {
 	}
 
 	return (
-		<Container className="mt-10 md:mt-24 max-w-2xl">
+		<Container className="mt-10 md:mt-24 max-w-3xl">
 			<Title tag="h1" className="md:mb-4">
 				Blog
 			</Title>

@@ -179,7 +179,7 @@ export const FilterDropdown = ({
 
 	return (
 		<>
-			<div className="hidden md:flex flex-col items-center w-40 md:w-auto md:absolute top-0 right-0 md:-right-60">
+			<div className="hidden md:flex flex-col items-center w-40 md:w-auto">
 				<Popover open={open} onOpenChange={setOpen}>
 					<PopoverTrigger asChild>
 						<Button
