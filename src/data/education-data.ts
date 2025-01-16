@@ -4,8 +4,7 @@ export const educationData: NavMenuTypes = [
 	{
 		title: "Serbest Çalışma",
 		href: "/freelance/",
-		description: "Freelance iş fırsatları",
-		soon: true
+		description: "Freelance iş fırsatları"
 	},
 	{
 		title: "Özel Ders",

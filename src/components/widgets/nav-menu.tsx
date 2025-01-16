@@ -61,27 +61,16 @@ export function NavMenu() {
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>
-						<NavigationMenuTrigger className="bg-transparent">
-							Eğitim
-						</NavigationMenuTrigger>
-						<NavigationMenuContent>
-							<ul className="grid w-full gap-3 p-3 md:p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-								{educationData.map((component) => (
-									<ListItem
-										key={component.title}
-										title={component.title}
-										href={component.href}
-										className={cn(
-											"relative",
-											component.soon &&
-												"opacity-50 pointer-events-none cursor-default"
-										)}
-									>
-										{component.description}
-									</ListItem>
-								))}
-							</ul>
-						</NavigationMenuContent>
+						<Link href="/education" legacyBehavior passHref>
+							<NavigationMenuLink
+								className={cn(
+									navigationMenuTriggerStyle(),
+									"bg-transparent dark:hover:bg-[#181818] "
+								)}
+							>
+								Eğitim
+							</NavigationMenuLink>
+						</Link>
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>
