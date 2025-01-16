@@ -43,7 +43,11 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="tr" className="flex min-h-full flex-col">
+		<html
+			lang="tr"
+			className="flex min-h-full flex-col"
+			suppressHydrationWarning
+		>
 			<Head>
 				<link rel="shortcut icon" href="/static/favicon.svg" />
 				<link rel="icon" />
