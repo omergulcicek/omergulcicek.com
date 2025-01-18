@@ -37,7 +37,7 @@ export function Roadmap() {
 					transition={{ delay: 0.4 }}
 					className="text-base md:text-xl leading-normal md:leading-9 font-light"
 				>
-					Detaylar için{" "}
+					Detaylar için hazırlamış olduğum{" "}
 					<Link
 						href="https://roadmap.sh/r/embed?id=65ed002373b4b18a31f6f307"
 						target="_blank"

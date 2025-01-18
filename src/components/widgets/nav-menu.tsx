@@ -61,19 +61,6 @@ export function NavMenu() {
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>
-						<Link href="/education" legacyBehavior passHref>
-							<NavigationMenuLink
-								className={cn(
-									navigationMenuTriggerStyle(),
-									"bg-transparent dark:hover:bg-[#181818] "
-								)}
-							>
-								Eğitim
-							</NavigationMenuLink>
-						</Link>
-					</NavigationMenuItem>
-
-					<NavigationMenuItem>
 						<NavigationMenuTrigger className="bg-transparent">
 							Hakkında
 						</NavigationMenuTrigger>

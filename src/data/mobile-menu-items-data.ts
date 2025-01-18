@@ -18,11 +18,11 @@ export const mobileMenuItems = [
 		icon: PencilLine,
 		href: "/blog/"
 	},
-	// {
-	// 	title: "Eğitim",
-	// 	icon: GraduationCap,
-	// 	href: "/education/"
-	// },
+	{
+		title: "Eğitim",
+		icon: GraduationCap,
+		href: "/education/"
+	},
 	{
 		title: "Hakkında",
 		icon: UserRound,

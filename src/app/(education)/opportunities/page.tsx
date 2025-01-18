@@ -7,13 +7,13 @@ import { PrivateLesson } from "@/widgets/private-lesson"
 import { Roadmap } from "@/widgets/roadmap"
 
 export const metadata: Metadata = {
-	title: "Eğitim | Ömer Gülçiçek",
+	title: "Fırsatlar | Ömer Gülçiçek",
 	alternates: {
-		canonical: "https://omergulcicek.com/education/"
+		canonical: "https://omergulcicek.com/opportunities/"
 	}
 }
 
-export default function EducationPage() {
+export default function OpportunitiesPage() {
 	return (
 		<>
 			<MailText />
