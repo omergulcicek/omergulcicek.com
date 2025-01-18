@@ -151,6 +151,7 @@ export function About() {
 					</motion.div>
 				</div>
 			</Container>
+
 			<Container className="mt-10 md:mt-24 max-w-3xl">
 				<motion.h1
 					initial={{ opacity: 0, translateY: "100px" }}
@@ -174,6 +175,36 @@ export function About() {
 							className="text-slate-950 dark:text-white font-medium hover:underline"
 						>
 							fırsatlar
+						</Link>{" "}
+						sayfasını inceleyin.
+						<br />
+					</motion.div>
+				</motion.h1>
+			</Container>
+
+			<Container className="mt-10 md:mt-24 max-w-3xl">
+				<motion.h1
+					initial={{ opacity: 0, translateY: "100px" }}
+					animate={{ opacity: 1, translateY: "0px" }}
+					transition={{ delay: 1.1 }}
+				>
+					<Title tag="h2" className="md:mb-4">
+						Finansal Özgürlük
+					</Title>
+
+					<motion.div
+						initial={{ opacity: 0, translateY: "100px" }}
+						animate={{ opacity: 1, translateY: "0px" }}
+						transition={{ delay: 1.2 }}
+						className="text-base md:text-xl leading-normal md:leading-9 font-light"
+					>
+						Finansal özgürlük yolunda kişisel deneyimlerimi ve yatırım
+						süreçlerimi paylaşıyorum. Yatırım tavsiyesi içermez. Detaylar için{" "}
+						<Link
+							href="/financial-freedom"
+							className="text-slate-950 dark:text-white font-medium hover:underline"
+						>
+							finansal özgürlük
 						</Link>{" "}
 						sayfasını inceleyin.
 						<br />

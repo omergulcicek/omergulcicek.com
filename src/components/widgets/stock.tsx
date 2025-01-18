@@ -57,7 +57,7 @@ export function Stock() {
 						</p>
 					</div>
 
-					<Tweet id={"1866052525599920302"} />
+					<Tweet id={"1875252592424657094"} />
 				</motion.section>
 			</Container>
 		</>
