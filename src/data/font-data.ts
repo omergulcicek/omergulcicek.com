@@ -2,6 +2,11 @@ import { AnimationListTypes } from "@/types"
 
 export const fontData: any = [
 	{
+		img: "https://raw.githubusercontent.com/tonsky/FiraCode/master/extras/logo.svg",
+		title: "FiraCode",
+		url: "https://github.com/tonsky/FiraCode"
+	},
+	{
 		img: "https://vercel.com/_next/image?url=https%3A%2F%2Fgithub.com%2Fvercel.png&w=48&q=75&dpl=dpl_8PJkTpUc8KqhBRCHWLvnVngp4TZU",
 		title: "Geist",
 		url: "https://vercel.com/font"
