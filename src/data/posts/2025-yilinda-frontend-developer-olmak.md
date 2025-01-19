@@ -4,7 +4,7 @@ path: "/2025-yilinda-frontend-developer-olmak"
 title: "2025 Yılında Frontend Developer Olmak"
 category: "Teknik"
 keywords: ["React", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"]
-medium: ""
+medium: "https://omergulcicek.medium.com/2025-y%C4%B1l%C4%B1nda-frontend-developer-olmak-774e74ae355c"
 ---
 
 ## Frontend dünyası, neler bilmeliyiz?
