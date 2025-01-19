@@ -1,5 +1,5 @@
 ---
-date: "2025-01-19"
+date: "2025-01-20"
 path: "/2025-yilinda-frontend-developer-olmak"
 title: "2025 Yılında Frontend Developer Olmak"
 category: "Teknik"
@@ -17,7 +17,7 @@ CSS tarafında ise uzun süren Bootstrap hegomonyasına Tailwind CSS gibi  taht�
 
 ## Temel: React + TypeScript
 
-![React TypeScript](/img/blog/2025-01-19/react-typescript.png)
+![React TypeScript](/img/blog/2025-01-20/react-typescript.png)
 
 ### React
 
@@ -25,7 +25,7 @@ Yakın zamana kadar Frontend şu soruyu soruyordu: *"React mı, Vue mu, Angular 
 
 npm istatistiklerine ve iş ilanlarına bakıldığında React'in açık ara önde olduğunu görebiliriz. Bende kariyerimde çok kısa Vue.js deneyimim olmasına rağmen en başından beri React'i tercih ettim, yeni başlayanlara da tavsiyem React olacaktır.
 
-![React, Vue, Angular](/img/blog/2025-01-19/react-vue-angular.png)
+![React, Vue, Angular](/img/blog/2025-01-20/react-vue-angular.png)
 
 ### TypeScript
 
@@ -35,7 +35,7 @@ Bir çok kişinin TypeScript'e mesafeli olduğu aşikar. Çünkü JavaScript ile
 
 ## Next.js
 
-![Next.js](/img/blog/2025-01-19/nextjs.png)
+![Next.js](/img/blog/2025-01-20/nextjs.png)
 
 React'ın İsviçre çakısı: <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> React 19'a tam destek, entegre routing, server-side rendering, SEO, font ve resim optimizasyonu vb bir çok özelliği içerisinde barındırır. Next.js ile geliştirdiğiniz projeleri kolayca deploy edebilir, hızlıca geliştirebilirsiniz.
 
@@ -45,7 +45,7 @@ Bunun tek seçenek olduğunu söylemiyorum. <a href="https://remix.run/" target=
 
 ## Tailwind CSS + shadcn/ui
 
-![Tailwind CSS, shadcn/ui](/img/blog/2025-01-19/tailwind-shadcn.png)
+![Tailwind CSS, shadcn/ui](/img/blog/2025-01-20/tailwind-shadcn.png)
 
 İlk zamanlarda <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>'i kullanmaya başladığımda bir çok kişi gibi inline CSS'e dönüş yapmış gibi hissettim ve mesafe koydum. Fakat Tailwind CSS'in gücünü keşfettikçe ve bunu <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">shadcn/ui</a> ile birleştirdiğimde güçlü bir stil mekanizması elde ettim.
 
@@ -54,7 +54,7 @@ Bunun tek seçenek olduğunu söylemiyorum. <a href="https://remix.run/" target=
 
 Client tarafında state yönetimi için <a href="https://zustand-demo.pmnd.rs/" target="_blank" rel="noopener noreferrer">Zustand</a> doğru yoldur. Sıfır bağımlılık, sıfır boilerplate, sıfır karmaşıklık. Sadece birkaç satır kodla bir mağaza oluşturabilirsiniz.
 
-![Zustand, Redux](/img/blog/2025-01-19/zustand-redux.png)
+![Zustand, Redux](/img/blog/2025-01-20/zustand-redux.png)
 
 ## TanStack
 
