@@ -13,7 +13,7 @@ export const Tag = ({
 	if (!text) return <></>
 
 	return (
-		<div className="flex items-center gap-1">
+		<div className="flex flex-wrap items-center gap-1">
 			{text?.map((tag, index) => (
 				<Badge
 					key={index}

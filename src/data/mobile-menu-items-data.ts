@@ -19,11 +19,6 @@ export const mobileMenuItems = [
 		href: "/blog/"
 	},
 	{
-		title: "Eğitim",
-		icon: GraduationCap,
-		href: "/education/"
-	},
-	{
 		title: "Hakkında",
 		icon: UserRound,
 		href: "/about/"
