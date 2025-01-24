@@ -43,7 +43,7 @@ Chrome'da kategorilere ayırarak sakladığım birçok linkim vardı. Bunları k
 
 Bu aslında geçmişte aldığım bir karardı fakat gerçekleştirememiştim. Frontend Developer olmak isteyenler için bir yol haritası oluşturmak istiyordum. Bu tabi ki nacizane kendi tecrübelerim ve gözlemlerim üzerine oluşturduğum bir yol haritası, kişiden kişiye değişebilir.
 
-Üst menü de **eğitim > yol haritası** adımında detaylara ulaşabilirsiniz. Kutulara tıkladığınızda ilgili konu hakkında detaylı bilgiye ulaşabilirsiniz.
+Detaylar için <a href="/opportunities">fırsatlar</a> sayfasını inceleyebilirsiniz. Kutulara tıkladığınızda ilgili konu hakkında detaylı bilgiye ulaşabilirsiniz.
 
 ![Frontend yol haritası](/img/blog/2024-12-29/roadmap.png)
 
