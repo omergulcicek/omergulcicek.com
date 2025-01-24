@@ -2,6 +2,9 @@ import { TweetTypes } from "@/types"
 
 export const tweetData: TweetTypes = [
 	{
+		id: "1879624942075183246"
+	},
+	{
 		id: "1486059026064584711"
 	},
 	{
