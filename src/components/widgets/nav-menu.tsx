@@ -120,6 +120,19 @@ export function NavMenu() {
 							</ul>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
+
+					<NavigationMenuItem>
+						<Link href="/journey" legacyBehavior passHref>
+							<NavigationMenuLink
+								className={cn(
+									navigationMenuTriggerStyle(),
+									"bg-transparent dark:hover:bg-[#181818] "
+								)}
+							>
+								Anlar
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
 				</NavigationMenuList>
 			</NavigationMenu>
 		</>

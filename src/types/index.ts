@@ -46,6 +46,19 @@ type BookTypes = {
 	url: string
 }
 
+interface JourneyEntry {
+	title: string
+	description?: string
+	image?: string
+	logo?: any
+	month: string
+}
+
+interface JourneyData {
+	year: number
+	entries: JourneyEntry[]
+}
+
 export type {
 	AnimationListTypes,
 	BookTypes,
@@ -53,5 +66,6 @@ export type {
 	NavMenuTypes,
 	TweetTypes,
 	TitleProps,
-	BlogPostTypes
+	BlogPostTypes,
+	JourneyData
 }
