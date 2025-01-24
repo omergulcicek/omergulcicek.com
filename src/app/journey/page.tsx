@@ -26,17 +26,19 @@ export default function JourneyPage() {
 						{journeyData.map(({ year, entries }, index) => (
 							<>
 								<article
-									className="relative flex flex-col mb-5 md:mb-8 pl-28"
+									className="relative flex flex-col mb-5 md:mb-8 pl-14 md:pl-28"
 									key={`${year}-${index}`}
 								>
 									<div className="flex flex-col items-end absolute left-0 top-0">
-										<strong className="font-medium text-xl">{year}</strong>
+										<strong className="font-medium text-base md:text-xl">
+											{year}
+										</strong>
 									</div>
 
 									{entries.map(
 										({ title, description, month, image, logo }, index) => (
 											<article
-												className="relative flex flex-col items-start gap-2 pl-12 pb-10"
+												className="relative flex flex-col items-start gap-2 pl-10 md:pl-12 pb-10"
 												key={`${year}-${index}`}
 											>
 												{index !== entries.length - 1 && (
@@ -51,7 +53,7 @@ export default function JourneyPage() {
 													className={cn(
 														"absolute left-0 -translate-x-1 rounded-full overflow-hidden",
 														!logo &&
-															"bg-neutral-800 p-2 [&_svg]:size-4 [&_svg]:text-white"
+															"bg-neutral-800 p-2 [&_svg]:size-3 md:[&_svg]:size-4 [&_svg]:text-white"
 													)}
 												>
 													{logo ? (
@@ -60,6 +62,7 @@ export default function JourneyPage() {
 															alt={title}
 															width={32}
 															height={32}
+															className="size-7 md:size-8"
 														/>
 													) : (
 														<Plus />
