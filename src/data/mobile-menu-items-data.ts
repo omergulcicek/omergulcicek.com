@@ -1,7 +1,7 @@
 import {
 	Armchair,
 	Bookmark,
-	GraduationCap,
+	PartyPopper,
 	PencilLine,
 	Sparkles,
 	UserRound
@@ -32,5 +32,10 @@ export const mobileMenuItems = [
 		title: "Yer İmleri",
 		icon: Bookmark,
 		href: "/bookmarks/"
+	},
+	{
+		title: "Anlar",
+		icon: PartyPopper,
+		href: "/journey/"
 	}
 ]

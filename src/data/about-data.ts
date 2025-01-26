@@ -17,9 +17,4 @@ export const aboutData: NavMenuTypes = [
 		href: "/books/",
 		description: "Kitaplığımdaki kitapların listesi"
 	}
-	// {
-	// 	title: "Finansal Özgürlük",
-	// 	href: "/financial-freedom/",
-	// 	description: "Hisse, fon, altın ve BES yatırım portföyüm"
-	// }
 ]

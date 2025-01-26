@@ -11,11 +11,6 @@ export const journeyData: JourneyData[] = [
 			// 	month: "Şubat",
 			// 	logo: "alisgidis"
 			// },
-			// {
-			// 	title: "Sakarya'da ev kiraladım",
-			// 	description: "Sakarya Adapazarı'nda ev kiraladım",
-			// 	month: "Ocak"
-			// },
 			{
 				title: "Kişisel sitemi yeniledim",
 				description:

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { Command } from "lucide-react"
+import { Component } from "lucide-react"
 
 import { Me } from "@/widgets/me"
 import { Button } from "@/ui/button"
@@ -30,7 +30,7 @@ export const NavMenuMobile = () => {
 						aria-label="Mobil menüyü aç"
 						className="size-8 px-0 md:hidden"
 					>
-						<Command size={16} />
+						<Component size={16} />
 					</Button>
 				</DrawerTrigger>
 				<DrawerContent>
