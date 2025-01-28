@@ -6,6 +6,7 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { Providers } from "@/providers"
 import Footer from "@/shared/footer"
 import Header from "@/shared/header"
+import { BodyLines } from "@/widgets/lines"
 
 import { cn } from "@/utils"
 
@@ -56,12 +57,15 @@ export default function RootLayout({
 				className={cn(
 					geist.className,
 					`${fira_code.variable}`,
-					"flex h-full flex-col"
+					"flex h-full flex-col relative"
 				)}
 			>
 				<Providers>
 					<Header />
-					<main className="flex-1">{children}</main>
+					<main className="flex-1">
+						{children}
+						<BodyLines />
+					</main>
 					<Footer />
 				</Providers>
 			</body>

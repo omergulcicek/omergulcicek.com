@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 
+import { ArticleHeaderLines } from "@/widgets/lines"
 import BlurFade from "@/ui/blur-fade"
 import { Separator } from "@/ui/separator"
 import { Tag } from "@/ui/tag"
@@ -24,9 +25,11 @@ export default async function BlogDetailHeader({
 	return (
 		<>
 			<BlurFade delay={0.15} duration={0.15}>
-				<div className="flex flex-col gap-2">
+				<div className="flex flex-col gap-2 relative">
+					<ArticleHeaderLines />
+
 					<div className="flex items-center gap-6 h-6 mb-4">
-						<span className="text-base text-secondary-foreground">
+						<span className="font-mono text-sm text-secondary-foreground">
 							{formatDate(date)}
 						</span>
 
@@ -38,7 +41,7 @@ export default async function BlogDetailHeader({
 										href={medium}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-base transition !no-underline"
+										className="text-sm transition !no-underline"
 									>
 										<div className="flex items-center gap-2">
 											<figure className="size-4 transition duration-300 !my-0">

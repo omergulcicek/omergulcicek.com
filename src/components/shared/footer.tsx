@@ -9,13 +9,14 @@ import {
 	PopoverContent,
 	PopoverTrigger
 } from "@/components/ui/popover"
-import { cn } from "@/utils"
 import { motion } from "framer-motion"
 import { Check, Copy, Mail, Send } from "lucide-react"
 
 import { Container } from "@/shared/container"
 import { Button } from "@/ui/button"
 import { LinkHover as Link } from "@/ui/link"
+
+import { cn } from "@/utils"
 
 export default function Footer({
 	className
@@ -37,7 +38,7 @@ export default function Footer({
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ delay: 1, duration: 1 }}
-			className={cn("mt-12 md:mt-40 flex w-full py-20", className)}
+			className={cn("my-12 md:my-20 flex w-full", className)}
 		>
 			<Container className="max-w-4xl">
 				<div className="flex flex-col gap-2 md:gap-1 text-sm md:text-base leading-relaxed text-neutral-500">
