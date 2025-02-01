@@ -1,5 +1,6 @@
 "use client"
 
+import { Tweet } from "react-tweet"
 import Link from "next/link"
 
 import { motion } from "framer-motion"
@@ -42,6 +43,14 @@ export function Bootcamp() {
 						verdim. Bu süreçte temel becerilerden ileri seviye teknolojilere
 						kadar rehberlik ettim. Tecrübelerimi aktarmayı seviyorum ve bu tarz
 						fırsatlara her zaman açığım.
+					</motion.div>
+
+					<motion.div
+						initial={{ opacity: 0, translateY: "100px" }}
+						animate={{ opacity: 1, translateY: "0px" }}
+						transition={{ delay: 0.25 }}
+					>
+						<Tweet id={"1339491895312068609"} />
 					</motion.div>
 				</div>
 			</Container>
