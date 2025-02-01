@@ -5,6 +5,7 @@ title: "Tailwind CSS v4.0"
 category: "Teknik"
 keywords: ["Tailwind CSS"]
 medium: ""
+hidden: true
 ---
 
 ![Tailwind CSS v4.0](/img/blog/2025-01-29/tailwind-css-v4.png)

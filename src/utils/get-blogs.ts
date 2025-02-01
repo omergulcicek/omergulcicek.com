@@ -17,13 +17,14 @@ export default async function getPostMetadata() {
 			date: matterResult.data.date,
 			category: matterResult.data.category,
 			keywords: matterResult.data.keywords,
-			medium: matterResult.data.medium
+			medium: matterResult.data.medium,
+			hidden: matterResult.data.hidden
 		}
 	})
 
-	return posts.sort(
-		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-	)
+	return posts
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.filter((post) => !post.hidden)
 }
 
 export async function getPostContent(slug: string) {
