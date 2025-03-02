@@ -4,13 +4,6 @@ export const journeyData: JourneyData[] = [
 	{
 		year: 2025,
 		entries: [
-			// {
-			// 	title: "Frontend takım lideri oldum",
-			// 	description:
-			// 		"Mart 2024 yılından beri çalıştığım Alışgidiş'te Frontend Lead olarak devam edeceğim.",
-			// 	month: "Şubat",
-			// 	logo: "alisgidis"
-			// },
 			{
 				title: "Kişisel sitemi yeniledim",
 				description:
