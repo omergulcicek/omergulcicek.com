@@ -12,7 +12,7 @@ export const webSiteData: any = [
 		url: "https://chir.ag/projects/name-that-color"
 	},
 	{
-		img: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
+		img: "https://cdn-1.webcatalog.io/catalog/uicolors/uicolors-icon-filled-256.webp?v=1714781146665",
 		title: "Tailwind CSS Color Generator",
 		url: "https://uicolors.app/create"
 	}
