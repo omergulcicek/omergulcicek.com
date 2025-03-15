@@ -19,8 +19,6 @@ import { Rose } from "@/utils/get-icon"
 
 import profileImg from "@/img/profile.jpg"
 import { aboutData } from "@/data/about-data"
-import { bookmarksData } from "@/data/bookmarks-data"
-import { educationData } from "@/data/education-data"
 
 export function NavMenu() {
 	return (
@@ -98,27 +96,16 @@ export function NavMenu() {
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>
-						<NavigationMenuTrigger className="bg-transparent">
-							Yer İmleri
-						</NavigationMenuTrigger>
-						<NavigationMenuContent>
-							<ul className="grid w-full gap-3 p-3 md:p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-								{bookmarksData.map((component) => (
-									<ListItem
-										key={component.title}
-										title={component.title}
-										href={component.href}
-										className={cn(
-											"relative",
-											component.soon &&
-												"opacity-50 pointer-events-none cursor-default"
-										)}
-									>
-										{component.description}
-									</ListItem>
-								))}
-							</ul>
-						</NavigationMenuContent>
+						<Link href="/bookmarks" legacyBehavior passHref>
+							<NavigationMenuLink
+								className={cn(
+									navigationMenuTriggerStyle(),
+									"bg-transparent dark:hover:bg-[#181818] flex items-center gap-1"
+								)}
+							>
+								Yer İmleri
+							</NavigationMenuLink>
+						</Link>
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>
@@ -126,7 +113,7 @@ export function NavMenu() {
 							<NavigationMenuLink
 								className={cn(
 									navigationMenuTriggerStyle(),
-									"bg-transparent dark:hover:bg-[#181818] "
+									"bg-transparent dark:hover:bg-[#181818]"
 								)}
 							>
 								Anlar
