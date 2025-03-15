@@ -59,40 +59,16 @@ export function NavMenu() {
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>
-						<NavigationMenuTrigger className="bg-transparent">
-							Hakkında
-						</NavigationMenuTrigger>
-						<NavigationMenuContent>
-							<ul className="grid gap-3 p-3 md:p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-								<li className="row-span-3 hidden md:flex">
-									<NavigationMenuLink asChild>
-										<figure className="flex h-full w-full select-none flex-col justify-center overflow-hidden rounded-md transition">
-											<Image
-												src={profileImg.src}
-												alt="Ömer Gülçiçek profil fotoğrafı"
-												width={188}
-												height={224}
-												quality={100}
-											/>
-										</figure>
-									</NavigationMenuLink>
-								</li>
-								{aboutData.map((component) => (
-									<ListItem
-										key={component.title}
-										title={component.title}
-										href={component.href}
-										className={cn(
-											"relative",
-											component.soon &&
-												"opacity-50 pointer-events-none cursor-default"
-										)}
-									>
-										{component.description}
-									</ListItem>
-								))}
-							</ul>
-						</NavigationMenuContent>
+						<Link href="/about" legacyBehavior passHref>
+							<NavigationMenuLink
+								className={cn(
+									navigationMenuTriggerStyle(),
+									"bg-transparent dark:hover:bg-[#181818] flex items-center gap-1"
+								)}
+							>
+								Hakkında
+							</NavigationMenuLink>
+						</Link>
 					</NavigationMenuItem>
 
 					<NavigationMenuItem>

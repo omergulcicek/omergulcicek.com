@@ -24,11 +24,6 @@ export const mobileMenuItems = [
 		href: "/about/"
 	},
 	{
-		title: "Ekipman",
-		icon: Armchair,
-		href: "/workspace/"
-	},
-	{
 		title: "Yer İmleri",
 		icon: Bookmark,
 		href: "/bookmarks/"
