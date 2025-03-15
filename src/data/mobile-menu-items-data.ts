@@ -1,10 +1,9 @@
 import {
-	Armchair,
 	Bookmark,
 	PartyPopper,
 	PencilLine,
 	Sparkles,
-	UserRound
+	SquareUserRound
 } from "lucide-react"
 
 export const mobileMenuItems = [
@@ -20,7 +19,7 @@ export const mobileMenuItems = [
 	},
 	{
 		title: "Hakkında",
-		icon: UserRound,
+		icon: SquareUserRound,
 		href: "/about/"
 	},
 	{
