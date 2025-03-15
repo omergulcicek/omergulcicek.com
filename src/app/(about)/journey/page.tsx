@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-import { Home, Plus } from "lucide-react"
+import { Plus } from "lucide-react"
 
 import { Container } from "@/shared/container"
 import BlurFade from "@/ui/blur-fade"

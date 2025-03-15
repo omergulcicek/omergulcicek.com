@@ -168,13 +168,41 @@ export function About() {
 						transition={{ delay: 0.95 }}
 						className="text-base md:text-xl leading-normal md:leading-9 font-light"
 					>
-						Freelance iş, birebir yada grupça özel ders talepleriniz için
-						iletişime geçebilirsiniz. Detaylar için{" "}
+						Freelance iş, birebir yada grupça özel ders talepleriniz için{" "}
 						<Link
 							href="/opportunities"
 							className="text-slate-950 dark:text-white font-medium hover:underline"
 						>
 							fırsatlar
+						</Link>{" "}
+						sayfasını inceleyin.
+						<br />
+					</motion.div>
+				</motion.h1>
+			</Container>
+
+			<Container className="mt-10 md:mt-24 max-w-3xl">
+				<motion.h1
+					initial={{ opacity: 0, translateY: "100px" }}
+					animate={{ opacity: 1, translateY: "0px" }}
+					transition={{ delay: 1.05 }}
+				>
+					<Title tag="h2" className="md:mb-4">
+						Anlar
+					</Title>
+
+					<motion.div
+						initial={{ opacity: 0, translateY: "100px" }}
+						animate={{ opacity: 1, translateY: "0px" }}
+						transition={{ delay: 1.15 }}
+						className="text-base md:text-xl leading-normal md:leading-9 font-light"
+					>
+						Hayatımdaki gelişmeleri{" "}
+						<Link
+							href="/journey"
+							className="text-slate-950 dark:text-white font-medium hover:underline"
+						>
+							anlar
 						</Link>{" "}
 						sayfasını inceleyin.
 						<br />
