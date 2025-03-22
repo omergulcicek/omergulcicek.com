@@ -7,6 +7,8 @@ keywords: ["CSS"]
 medium: "https://omergulcicek.medium.com/css-attr-i%CC%87%C3%A7in-yeni-yetkinlikler-47c9b2fabe10"
 ---
 
+![CSS attr() Fonksiyonu](/img/blog/2025-03-22/css-attr.png)
+
 CSS gelişmeye, JavaScript'ten rol çalmaya devam ediyor. CSS'te **attr()** fonksiyonu, eskiden her zaman bir string döndürdüğü için, sadece content özelliğinde veya bazı özel metin efektlerinde kullanılabiliyordu.
 
 ```css
