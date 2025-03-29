@@ -1,5 +1,6 @@
 import {
 	Bookmark,
+	ChartNoAxesGantt,
 	PartyPopper,
 	PencilLine,
 	Sparkles,
@@ -26,6 +27,11 @@ export const mobileMenuItems = [
 		title: "Yer İmleri",
 		icon: Bookmark,
 		href: "/bookmarks/"
+	},
+	{
+		title: "Fırsatlar",
+		icon: ChartNoAxesGantt,
+		href: "/opportunities/"
 	},
 	{
 		title: "Anlar",
