@@ -1881,7 +1881,7 @@ export const Zustand = (props: SVGProps<SVGSVGElement>) => (
 
 export const TanStackQuery = (props: any) => (
 	<img
-		src="https://tanstack.com/_build/assets/logo-color-600w-Er4SOkq1.png"
+		src="https://tanstack.com/_build/assets/splash-light-CHqMsyq8.png"
 		alt="TanstackQuery"
 		className="size-6 md:size-11 pointer-events-none select-none"
 		{...props}
