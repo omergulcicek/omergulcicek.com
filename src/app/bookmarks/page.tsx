@@ -14,7 +14,7 @@ export default function BookmarksPage() {
 					style={{
 						border: "0",
 						width: "100%",
-						height: "450px"
+						height: "664px"
 					}}
 					allowFullScreen
 					src="https://raindrop.io/omergulcicek/embed/me/no-header=true"
