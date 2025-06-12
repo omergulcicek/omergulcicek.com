@@ -54,8 +54,11 @@ const { cardNumber, phone, email, tckn } = useFormFields({
     { name: "tckn", type: "tckn" }
   ],
   registerWithMask,
-  register: form.register
+  form
 })
+
+console.log(cardNumber.value)      // "1234567890123456" (unmasked)
+console.log(cardNumber.maskedValue) // "1234 5678 9012 3456" (masked)
 ```
 
 ```html
