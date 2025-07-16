@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src/",
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -19,9 +20,32 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"],
+      "@/ui": ["components/ui"],
+      "@/features": ["components/features"],
+      "@/widgets": ["components/widgets"],
+      "@/shared": ["components/shared"],
+      "@/icons": ["components/icons"],
+      "@/skeletons": ["components/skeletons"],
+      "@/providers": ["providers"],
+      "@/config": ["config"],
+      "@/constants": ["constants"],
+      "@/data": ["data"],
+      "@/schemas": ["schemas"],
+      "@/helpers": ["helpers"],
+      "@/hooks": ["hooks"],
+      "@/stores": ["stores"],
+      "@/services": ["services"],
+      "@/utils": ["lib/utils"],
+      "@/types": ["types"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "svgr.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
