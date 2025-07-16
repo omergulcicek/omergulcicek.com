@@ -1,10 +1,13 @@
-export default function VerifiedIcon({ className }: { className?: string }) {
+import * as React from "react"
+import { SVGProps } from "react"
+
+export function VerifiedIcon(props: SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 24 24"
-			className={className}
+			{...props}
 		>
 			<path
 				fill="currentColor"

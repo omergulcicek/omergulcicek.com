@@ -13,6 +13,8 @@ export const USER = {
 		github: "https://github.com/omergulcicek",
 		linkedin: "https://linkedin.com/in/omergulcicek",
 		twitter: "https://x.com/omergulcicek",
-		instagram: "https://instagram.com/omerilekesfet"
+		medium: "https://medium.com/@omergulcicek",
+		instagram: "https://instagram.com/omerilekesfet",
+		npm: "https://www.npmjs.com/~omergulcicek"
 	}
 }

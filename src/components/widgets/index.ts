@@ -1,1 +1,7 @@
+export * from "./about"
+export * from "./blog"
 export * from "./hero"
+export * from "./projects"
+export * from "./socials"
+export * from "./verified-user"
+export * from "./experience"

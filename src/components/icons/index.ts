@@ -1,1 +1,6 @@
-export { default as VerifiedIcon } from "./VerifiedIcon";
+export * from "./VerifiedIcon"
+export * from "./XTwitter"
+export * from "./Instagram"
+export * from "./GitHub"
+export * from "./Npm"
+export * from "./LinkedIn"

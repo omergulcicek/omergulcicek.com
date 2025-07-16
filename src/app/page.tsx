@@ -1,9 +1,13 @@
-import { Hero } from "@/widgets"
+import { About, Blog, Experience, Hero, Projects } from "@/widgets"
 
 export default function Home() {
 	return (
-		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+		<div className="p-20 gap-48 flex flex-col mx-auto max-w-3xl">
 			<Hero />
+			<About />
+			<Blog />
+			<Projects />
+			<Experience />
 		</div>
 	)
 }
