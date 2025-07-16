@@ -41,6 +41,7 @@
 		"react-syntax-highlighter": "^15.6.1",
 		"react-tweet": "^3.2.1",
 		"react-wrap-balancer": "^1.1.1",
+		"swiper": "^11.2.10",
 		"tailwind-merge": "^2.5.5",
 		"tailwindcss-animate": "^1.0.7",
 		"vaul": "^1.1.2"

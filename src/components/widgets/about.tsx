@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 
+import { CardCarousel } from "@/components/widgets/carousel"
 import { motion } from "framer-motion"
 
 import { Container } from "@/shared/container"
@@ -151,6 +152,24 @@ export function About() {
 					</motion.div>
 				</div>
 			</Container>
+
+			<motion.section
+				initial={{ opacity: 0, translateY: "100px" }}
+				animate={{ opacity: 1, translateY: "0px" }}
+				transition={{ delay: 0.85 }}
+			>
+				<Container className="mt-10 md:mt-24 max-w-3xl">
+					<CardCarousel
+						images={[
+							{ src: "/4.JPG", alt: "Ömer Gülçiçek" },
+							{ src: "/3.JPG", alt: "Ömer Gülçiçek" },
+							{ src: "/2.JPG", alt: "Ömer Gülçiçek" },
+							{ src: "/1.JPG", alt: "Ömer Gülçiçek" },
+							{ src: "/5.JPG", alt: "Ömer Gülçiçek" }
+						]}
+					/>
+				</Container>
+			</motion.section>
 
 			<Container className="mt-10 md:mt-24 max-w-3xl">
 				<motion.h1
