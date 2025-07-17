@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { Button } from "@/ui"
+import { Section } from "@/widgets"
 
 export function Blog() {
 	const posts = [
@@ -32,9 +33,7 @@ export function Blog() {
 	]
 
 	return (
-		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-medium">Blog</h2>
-
+		<Section title="Blog">
 			<nav className="flex flex-col items-start gap-6">
 				{posts.slice(0, 3).map((post, index) => (
 					<Link
@@ -60,6 +59,6 @@ export function Blog() {
 					<Button variant="outline">Tüm yazıları göster</Button>
 				</Link>
 			</div>
-		</section>
+		</Section>
 	)
 }

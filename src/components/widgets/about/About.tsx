@@ -1,8 +1,8 @@
+import { Section } from "@/widgets"
+
 export function About() {
 	return (
-		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-medium">Hakkımda</h2>
-
+		<Section title="Hakkımda">
 			<div className="flex flex-col gap-4 text-lg leading-relaxed">
 				<p>
 					Merhaba, ben <strong className="font-semibold">Ömer</strong>,{" "}
@@ -27,6 +27,6 @@ export function About() {
 					bağlantı kurmak için oluşturdum.
 				</p>
 			</div>
-		</section>
+		</Section>
 	)
 }

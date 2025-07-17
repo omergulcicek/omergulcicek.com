@@ -8,14 +8,13 @@ import {
 	Badge,
 	Button
 } from "@/ui"
+import { Section } from "@/widgets"
 
 import { EXPERIENCE } from "@/data"
 
 export function Experience() {
 	return (
-		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-semibold tracking-tight">Deneyim</h2>
-
+		<Section title="Deneyim">
 			<div className="flex flex-col gap-2">
 				<Accordion
 					type="single"
@@ -75,6 +74,6 @@ export function Experience() {
 			<div className="flex justify-center">
 				<Button variant="outline">Tüm iş deneyimlerini göster</Button>
 			</div>
-		</section>
+		</Section>
 	)
 }

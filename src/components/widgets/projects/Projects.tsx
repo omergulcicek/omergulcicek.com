@@ -3,14 +3,13 @@ import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 
 import { Button } from "@/ui"
+import { Section } from "@/widgets"
 
 import { PROJECTS } from "@/data/projects"
 
 export function Projects() {
 	return (
-		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-medium">Projeler</h2>
-
+		<Section title="Projeler">
 			<ul className="flex flex-col gap-6">
 				{PROJECTS.slice(0, 3).map((project, index) => (
 					<li
@@ -44,6 +43,6 @@ export function Projects() {
 					<Button variant="outline">Tüm projeleri göster</Button>
 				</Link>
 			</div>
-		</section>
+		</Section>
 	)
 }
