@@ -21,7 +21,7 @@ export const EXPERIENCE = [
 				<p>
 					-{" "}
 					<Link
-						href="https://alisgidis.com"
+						href="https://alisgidis.com?utm_source=omergulcicek.com"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="text-blue-500 underline font-medium underline-offset-4"
@@ -93,7 +93,7 @@ export const EXPERIENCE = [
 				<p>
 					-{" "}
 					<Link
-						href="https://hangikredi.com"
+						href="https://hangikredi.com?utm_source=omergulcicek.com"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="text-blue-500 underline font-medium underline-offset-4"
