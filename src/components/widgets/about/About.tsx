@@ -5,19 +5,19 @@ export function About() {
 		<Section title="Hakkımda">
 			<div className="flex flex-col gap-4 text-lg leading-relaxed">
 				<p>
-					Merhaba, ben <strong className="font-semibold">Ömer</strong>,{" "}
-					<strong className="font-semibold">Sakarya</strong>&apos;da yaşayan bir{" "}
-					<strong className="font-semibold">yazılım mühendisi</strong>yim.{" "}
-					<strong className="font-semibold">Uygulama mimarisi</strong>,{" "}
-					<strong className="font-semibold">performans optimizasyonu</strong>,{" "}
-					<strong className="font-semibold">tasarım sistemleri</strong> ve{" "}
-					<strong className="font-semibold">mikro frontend</strong> yapıları
-					gibi konulara odaklanıyorum. Projeler geliştirirken temiz,
-					ölçeklenebilir frontend&apos;ler oluşturmayı hedefliyorum, her zaman{" "}
-					<strong className="font-semibold">UI/UX</strong>,{" "}
-					<strong className="font-semibold">erişilebilirlik</strong> ve{" "}
-					<strong className="font-semibold">web vitals</strong> gibi kalite
-					odaklı alanları önceliklendiriyorum.
+					Merhaba, ben <strong className="font-medium">Ömer</strong>,{" "}
+					<strong className="font-medium">Sakarya</strong>&apos;da yaşayan bir{" "}
+					<strong className="font-medium">yazılım mühendisi</strong>yim.{" "}
+					<strong className="font-medium">Uygulama mimarisi</strong>,{" "}
+					<strong className="font-medium">performans optimizasyonu</strong>,{" "}
+					<strong className="font-medium">tasarım sistemleri</strong> ve{" "}
+					<strong className="font-medium">mikro frontend</strong> yapıları gibi
+					konulara odaklanıyorum. Projeler geliştirirken temiz, ölçeklenebilir
+					frontend&apos;ler oluşturmayı hedefliyorum, her zaman{" "}
+					<strong className="font-medium">UI/UX</strong>,{" "}
+					<strong className="font-medium">erişilebilirlik</strong> ve{" "}
+					<strong className="font-medium">web vitals</strong> gibi kalite odaklı
+					alanları önceliklendiriyorum.
 				</p>
 				<p>
 					Kod yazmadığım zamanlarda fotoğrafçılıkla ilgileniyorum, satranç,
