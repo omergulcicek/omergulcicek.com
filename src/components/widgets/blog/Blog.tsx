@@ -5,6 +5,11 @@ import { Button } from "@/ui"
 export function Blog() {
 	const posts = [
 		{
+			title: "Nevşehir Tatili",
+			link: "/nevsehir-tatili/",
+			description: "2 Temmuz 2025"
+		},
+		{
 			title: "2025 Yılında Frontend Developer Olmak",
 			link: "/2025-yilinda-frontend-developer-olmak/",
 			description: "19 Haziran 2025"
@@ -18,6 +23,11 @@ export function Blog() {
 			title: "Tailwind CSS v4.0",
 			link: "/tailwind-css-v4/",
 			description: "7 Şubat 2025"
+		},
+		{
+			title: "İzmir, Marmaris, Ölüdeniz Tatili",
+			link: "/izmir-marmaris-oludeniz-tatili/",
+			description: "9 Ağustos 2021"
 		}
 	]
 
