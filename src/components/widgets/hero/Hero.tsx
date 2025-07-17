@@ -22,9 +22,7 @@ export function Hero() {
 				<div className="flex flex-col gap-0.5">
 					<VerifiedUser />
 
-					<p className="text-lg text-muted-foreground select-none">
-						{USER.jobTitle}
-					</p>
+					<p className="text-lg text-muted-foreground">{USER.jobTitle}</p>
 
 					<Socials />
 				</div>
