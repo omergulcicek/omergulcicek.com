@@ -7,7 +7,7 @@ export function About() {
 				<p>
 					Merhaba, ben <strong className="font-medium">Ömer</strong>,{" "}
 					<strong className="font-medium">Sakarya</strong>&apos;da yaşayan bir{" "}
-					<strong className="font-medium">yazılım mühendisi</strong>yim.{" "}
+					<strong className="font-medium">yazılım mühendisi</strong>yim. <br />
 					<strong className="font-medium">Uygulama mimarisi</strong>,{" "}
 					<strong className="font-medium">performans optimizasyonu</strong>,{" "}
 					<strong className="font-medium">tasarım sistemleri</strong> ve{" "}

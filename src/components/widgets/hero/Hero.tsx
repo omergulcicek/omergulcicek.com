@@ -8,7 +8,7 @@ export function Hero() {
 	return (
 		<section>
 			<div className="flex items-end gap-6">
-				<figure className="size-40 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none">
+				<figure className="size-40 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none relative">
 					<Image
 						src={USER.avatar}
 						alt={USER.displayName}
