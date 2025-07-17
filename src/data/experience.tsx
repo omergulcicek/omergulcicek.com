@@ -1,5 +1,6 @@
 import React from "react"
-import Link from "next/link"
+
+import { LinkPreview } from "@/ui"
 
 export const EXPERIENCE = [
 	{
@@ -19,15 +20,13 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					-{" "}
-					<Link
-						href="https://alisgidis.com?utm_source=omergulcicek.com"
-						target="_blank"
-						rel="noopener noreferrer"
+					- Fibabanka iştiraki olan{" "}
+					<LinkPreview
+						url="https://alisgidis.com?utm_source=omergulcicek.com"
 						className="text-blue-500 underline font-medium underline-offset-4"
 					>
 						alisgidis.com
-					</Link>{" "}
+					</LinkPreview>{" "}
 					sitesinin sıfırdan geliştirilmesini yönettim, teknoloji, mimari ve
 					proje yapısı konularında önemli kararlar alarak performans ve
 					ölçeklenebilirliğe güçlü bir odaklanma sağladım.
@@ -92,14 +91,12 @@ export const EXPERIENCE = [
 			<>
 				<p>
 					-{" "}
-					<Link
-						href="https://hangikredi.com?utm_source=omergulcicek.com"
-						target="_blank"
-						rel="noopener noreferrer"
+					<LinkPreview
+						url="https://hangikredi.com?utm_source=omergulcicek.com"
 						className="text-blue-500 underline font-medium underline-offset-4"
 					>
 						hangikredi.com
-					</Link>{" "}
+					</LinkPreview>{" "}
 					sitesinin geliştirilmesine katkıda bulundum, Figma tasarımlarını
 					duyarlı, yüksek performanslı kullanıcı arayüzlerine dönüştürdüm.
 				</p>
