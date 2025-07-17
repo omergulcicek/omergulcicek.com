@@ -48,6 +48,17 @@ export function Experience() {
 									</Badge>
 								))}
 							</ul>
+
+							<ol className="flex flex-col gap-1 mt-2 list-disc list-inside text-sm text-muted-foreground">
+								{experience.responsibilities?.map((responsibility) => (
+									<li
+										key={responsibility}
+										className="text-sm text-muted-foreground"
+									>
+										{responsibility}
+									</li>
+								))}
+							</ol>
 						</div>
 					</div>
 				))}

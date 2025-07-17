@@ -12,7 +12,12 @@ export const EXPERIENCE = [
 			"TypeScript",
 			"TanStack Query",
 			"Tailwind CSS"
-		]
+		],
+		responsibilities: `- [alisgidis.com](https://alisgidis.com) e-ticaret sitesinin frontend mimarisini sıfırdan kurguladım ve geliştirdim.
+			- 5 kişilik frontend ekibine liderlik ettim, teknik yönlendirmelerde bulundum.
+			- Ekip içi bilgi paylaşımını artırmak için teknik sunumlar düzenledim.
+			- Figma tasarımlarını component bazlı, responsive ve performans odaklı şekilde hayata geçirdim.
+		`
 	},
 	{
 		company: "Gordion",
