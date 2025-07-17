@@ -1,8 +1,8 @@
 import Image from "next/image"
 
-import { EXPERIENCE } from "@/constants/experience"
-
 import { Badge, Button } from "@/ui"
+
+import { EXPERIENCE } from "@/data"
 
 export function Experience() {
 	return (
@@ -41,7 +41,7 @@ export function Experience() {
 								{experience.description}
 							</p>
 
-							<ul className="flex flex-wrap gap-2 mt-2">
+							<ul className="flex flex-wrap gap-2 my-2">
 								{experience.technologies.map((technology) => (
 									<Badge key={technology} variant="secondary">
 										{technology}
@@ -49,16 +49,9 @@ export function Experience() {
 								))}
 							</ul>
 
-							<ol className="flex flex-col gap-1 mt-2 list-disc list-inside text-sm text-muted-foreground">
-								{experience.responsibilities?.map((responsibility) => (
-									<li
-										key={responsibility}
-										className="text-sm text-muted-foreground"
-									>
-										{responsibility}
-									</li>
-								))}
-							</ol>
+							<div className="flex flex-col gap-1 text-sm leading-relaxed text-muted-foreground">
+								{experience.responsibilities}
+							</div>
 						</div>
 					</div>
 				))}

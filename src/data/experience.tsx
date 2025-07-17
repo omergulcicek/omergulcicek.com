@@ -1,3 +1,6 @@
+import React from "react"
+import Link from "next/link"
+
 export const EXPERIENCE = [
 	{
 		company: "Alışgidiş",
@@ -13,11 +16,34 @@ export const EXPERIENCE = [
 			"TanStack Query",
 			"Tailwind CSS"
 		],
-		responsibilities: `- [alisgidis.com](https://alisgidis.com) e-ticaret sitesinin frontend mimarisini sıfırdan kurguladım ve geliştirdim.
-			- 5 kişilik frontend ekibine liderlik ettim, teknik yönlendirmelerde bulundum.
-			- Ekip içi bilgi paylaşımını artırmak için teknik sunumlar düzenledim.
-			- Figma tasarımlarını component bazlı, responsive ve performans odaklı şekilde hayata geçirdim.
-		`
+		responsibilities: (
+			<>
+				<p>
+					- Led the development of{" "}
+					<Link
+						href="https://alisgidis.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-blue-500 underline font-medium underline-offset-4"
+					>
+						alisgidis.com
+					</Link>{" "}
+					from the ground up, making key decisions on technologies,
+					architecture, and project structure with a strong focus on performance
+					and scalability.
+				</p>
+				<p>
+					- Managed and guided a 5-person frontend team, providing technical
+					leadership and ensuring code quality, consistency, and delivery
+					timelines.
+				</p>
+				<p>
+					- Implemented responsive, component-based UIs from Figma designs and
+					organized internal knowledge-sharing sessions through technical
+					presentations..
+				</p>
+			</>
+		)
 	},
 	{
 		company: "Gordion",
@@ -32,7 +58,26 @@ export const EXPERIENCE = [
 			"GraphQL",
 			"Styled Components",
 			"Tailwind CSS"
-		]
+		],
+		responsibilities: (
+			<>
+				<p>
+					- Developed a fully dynamic frontend architecture powered entirely by
+					backend-driven content, used in projects that secured partnerships
+					with major clients like Turkish Airlines and Jolly Tur.
+				</p>
+				<p>
+					- Designed and implemented the frontend architecture and UI kits for 3
+					separate projects, establishing consistent and reusable component
+					systems.
+				</p>
+				<p>
+					- Translated Figma designs into responsive, component-based interfaces
+					and conducted internal technical trainings and presentations to
+					promote knowledge sharing.
+				</p>
+			</>
+		)
 	},
 	{
 		company: "HangiKredi",
