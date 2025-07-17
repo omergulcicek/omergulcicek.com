@@ -35,8 +35,8 @@ export function Blog() {
 		<section className="flex flex-col gap-10">
 			<h2 className="text-2xl font-medium">Blog</h2>
 
-			<nav className="flex flex-col gap-6">
-				{posts.map((post, index) => (
+			<nav className="flex flex-col items-start gap-6">
+				{posts.slice(0, 3).map((post, index) => (
 					<Link
 						href={post.link}
 						key={post.title}

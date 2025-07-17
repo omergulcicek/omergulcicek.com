@@ -2,9 +2,9 @@ import Link from "next/link"
 
 import { ExternalLink } from "lucide-react"
 
-import { projects } from "@/constants/projects"
-
 import { Button } from "@/ui"
+
+import { PROJECTS } from "@/data/projects"
 
 export function Projects() {
 	return (
@@ -12,7 +12,7 @@ export function Projects() {
 			<h2 className="text-2xl font-medium">Projects</h2>
 
 			<ul className="flex flex-col gap-6">
-				{projects.map((project, index) => (
+				{PROJECTS.slice(0, 3).map((project, index) => (
 					<li
 						key={project.title}
 						className="flex items-center justify-start gap-4"

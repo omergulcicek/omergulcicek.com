@@ -1,4 +1,4 @@
-export const projects = [
+export const PROJECTS = [
 	{
 		title: "Next.js Boilerplate",
 		description: "Modern Next.js 15 boilerplate with TypeScript & Tailwind CSS",
