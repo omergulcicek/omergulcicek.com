@@ -3,8 +3,8 @@ export function About() {
 		<section className="flex flex-col gap-10">
 			<h2 className="text-2xl font-medium">About</h2>
 
-			<div className="flex flex-col gap-4">
-				<p className="text-lg">
+			<div className="flex flex-col gap-4 text-lg leading-relaxed">
+				<p>
 					Hi, I’m <strong className="font-semibold">Ömer</strong>, a{" "}
 					<strong className="font-semibold">Frontend Engineer</strong> based in{" "}
 					<strong className="font-semibold">Sakarya, Turkey</strong>. I focus on
@@ -19,7 +19,7 @@ export function About() {
 					<strong className="font-semibold">accessibility</strong>, and{" "}
 					<strong className="font-semibold">Web Vitals</strong>.
 				</p>
-				<p className="text-lg">
+				<p>
 					When I&apos;m not coding, I enjoy photography, and I&apos;m curious
 					about chess, history, and economics—constantly striving to learn more
 					in these areas. I created this site to share my experiences,
