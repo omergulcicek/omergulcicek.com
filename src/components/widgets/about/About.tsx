@@ -1,14 +1,16 @@
+import { Balancer } from "react-wrap-balancer"
+
 export function About() {
 	return (
 		<section className="flex flex-col gap-10">
 			<h2 className="text-2xl font-medium">Hakkımda</h2>
 
 			<div className="flex flex-col gap-4 text-lg leading-relaxed">
-				<p>
+				<Balancer>
 					Merhaba, ben <strong className="font-semibold">Ömer</strong>,{" "}
 					<strong className="font-semibold">Sakarya</strong>&apos;da yaşayan bir{" "}
 					<strong className="font-semibold">yazılım mühendisi</strong>yim.{" "}
-					<strong className="font-semibold">uygulama mimarisi</strong>,{" "}
+					<strong className="font-semibold">Uygulama mimarisi</strong>,{" "}
 					<strong className="font-semibold">performans optimizasyonu</strong>,{" "}
 					<strong className="font-semibold">tasarım sistemleri</strong> ve{" "}
 					<strong className="font-semibold">mikro frontend</strong> yapıları
@@ -18,14 +20,14 @@ export function About() {
 					<strong className="font-semibold">erişilebilirlik</strong> ve{" "}
 					<strong className="font-semibold">web vitals</strong> gibi kalite
 					odaklı alanları önceliklendiriyorum.
-				</p>
-				<p>
+				</Balancer>
+				<Balancer>
 					Kod yazmadığım zamanlarda fotoğrafçılıkla ilgileniyorum, satranç,
 					tarih ve ekonomi konularında meraklıyım; bu alanlarda sürekli daha
 					fazla öğrenmeye çalışıyorum. Bu siteyi deneyimlerimi paylaşmak, açık
 					kaynak topluluğuna katkıda bulunmak ve benzer düşünen geliştiricilerle
 					bağlantı kurmak için oluşturdum.
-				</p>
+				</Balancer>
 			</div>
 		</section>
 	)
