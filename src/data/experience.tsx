@@ -19,7 +19,7 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- Led the development of{" "}
+					-{" "}
 					<Link
 						href="https://alisgidis.com"
 						target="_blank"
@@ -28,19 +28,19 @@ export const EXPERIENCE = [
 					>
 						alisgidis.com
 					</Link>{" "}
-					from the ground up, making key decisions on technologies,
-					architecture, and project structure with a strong focus on performance
-					and scalability.
+					sitesinin sıfırdan geliştirilmesini yönettim, teknoloji, mimari ve
+					proje yapısı konularında önemli kararlar alarak performans ve
+					ölçeklenebilirliğe güçlü bir odaklanma sağladım.
 				</p>
 				<p>
-					- Managed and guided a 5-person frontend team, providing technical
-					leadership and ensuring code quality, consistency, and delivery
-					timelines.
+					- 5 kişilik frontend ekibini yönettim ve rehberlik ettim, teknik
+					liderlik sağlayarak kod kalitesi, tutarlılık ve teslim sürelerini
+					garanti altına aldım.
 				</p>
 				<p>
-					- Implemented responsive, component-based UIs from Figma designs and
-					organized internal knowledge-sharing sessions through technical
-					presentations..
+					- Figma tasarımlarından duyarlı, bileşen tabanlı kullanıcı arayüzleri
+					uyguladım ve teknik sunumlar aracılığıyla iç bilgi paylaşım oturumları
+					düzenledim.
 				</p>
 			</>
 		)
@@ -62,19 +62,20 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- Developed a fully dynamic frontend architecture powered entirely by
-					backend-driven content, used in projects that secured partnerships
-					with major clients like Turkish Airlines and Jolly Tur.
+					- Tamamen backend tarafından yönlendirilen içerikle çalışan, Turkish
+					Airlines ve Jolly Tur gibi büyük müşterilerle ortaklık sağlayan
+					projelerde kullanılan tamamen dinamik bir frontend mimarisi
+					geliştirdim.
 				</p>
 				<p>
-					- Designed and implemented the frontend architecture and UI kits for 3
-					separate projects, establishing consistent and reusable component
-					systems.
+					- 3 ayrı proje için frontend mimarisini ve UI kitlerini tasarladım ve
+					uyguladım, tutarlı ve yeniden kullanılabilir bileşen sistemleri
+					oluşturdum.
 				</p>
 				<p>
-					- Translated Figma designs into responsive, component-based interfaces
-					and conducted internal technical trainings and presentations to
-					promote knowledge sharing.
+					- Figma tasarımlarını duyarlı, bileşen tabanlı arayüzlere dönüştürdüm
+					ve bilgi paylaşımını teşvik etmek için iç teknik eğitimler ve sunumlar
+					gerçekleştirdim.
 				</p>
 			</>
 		)
@@ -90,7 +91,7 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- Contributed to the development of{" "}
+					-{" "}
 					<Link
 						href="https://hangikredi.com"
 						target="_blank"
@@ -99,17 +100,18 @@ export const EXPERIENCE = [
 					>
 						hangikredi.com
 					</Link>{" "}
-					, transforming Figma designs into responsive, high-performance user
-					interfaces.
+					sitesinin geliştirilmesine katkıda bulundum, Figma tasarımlarını
+					duyarlı, yüksek performanslı kullanıcı arayüzlerine dönüştürdüm.
 				</p>
 				<p>
-					- Implemented performance optimizations and refactored codebase by
-					introducing reusable JavaScript helper functions to improve
-					maintainability.
+					- Performans optimizasyonları uyguladım ve yeniden kullanılabilir
+					JavaScript yardımcı fonksiyonları tanıtarak kod tabanını yeniden
+					düzenledim, sürdürülebilirliği artırdım.
 				</p>
 				<p>
-					- Delivered internal technical presentations to promote best practices
-					and strengthen frontend development standards across the team.
+					- En iyi uygulamaları teşvik etmek ve ekip genelinde frontend
+					geliştirme standartlarını güçlendirmek için iç teknik sunumlar
+					gerçekleştirdim.
 				</p>
 			</>
 		)
@@ -133,17 +135,17 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- Developed responsive, component-based user interfaces for major
-					e-commerce clients including Vakko, Faraway, Kemal Tanca, Desa, and
-					A101, based on designs provided via Zeplin.
+					- Vakko, Faraway, Kemal Tanca, Desa ve A101 gibi büyük e-ticaret
+					müşterileri için Zeplin üzerinden sağlanan tasarımlara dayalı duyarlı,
+					bileşen tabanlı kullanıcı arayüzleri geliştirdim.
 				</p>
 				<p>
-					- Built all sections with a modular architecture to ensure scalability
-					and reusability across projects.
+					- Tüm bölümleri projeler arasında ölçeklenebilirlik ve yeniden
+					kullanılabilirlik sağlamak için modüler bir mimari ile oluşturdum.
 				</p>
 				<p>
-					- Created comprehensive documentation for the developed components to
-					support maintainability and team-wide adoption.
+					- Geliştirilen bileşenler için sürdürülebilirlik ve ekip genelinde
+					benimsenmeyi desteklemek amacıyla kapsamlı dokümantasyon oluşturdum.
 				</p>
 			</>
 		)
@@ -159,8 +161,9 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- Resolved all frontend issues reported by the team in real time,
-					ensuring uninterrupted development and fast feedback cycles.
+					- Ekip tarafından bildirilen tüm frontend sorunlarını gerçek zamanlı
+					olarak çözdüm, kesintisiz geliştirme ve hızlı geri bildirim döngüleri
+					sağladım.
 				</p>
 			</>
 		)
@@ -176,12 +179,12 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- Worked on the development of an admin panel project using the Kendo
-					UI framework.
+					- Kendo UI framework&apos;ü kullanarak bir admin panel projesinin
+					geliştirilmesi üzerinde çalıştım.
 				</p>
 				<p>
-					- Refactored the entire UI to be fully responsive, enhancing usability
-					across all screen sizes.
+					- Tüm kullanıcı arayüzünü tamamen duyarlı hale getirmek için yeniden
+					düzenledim, tüm ekran boyutlarında kullanılabilirliği artırdım.
 				</p>
 			</>
 		)

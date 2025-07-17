@@ -9,7 +9,7 @@ import { PROJECTS } from "@/data/projects"
 export function Projects() {
 	return (
 		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-medium">Projects</h2>
+			<h2 className="text-2xl font-medium">Projeler</h2>
 
 			<ul className="flex flex-col gap-6">
 				{PROJECTS.slice(0, 3).map((project, index) => (
@@ -41,7 +41,7 @@ export function Projects() {
 
 			<div className="flex justify-center">
 				<Link href="/projects">
-					<Button variant="outline">Show all projects</Button>
+					<Button variant="outline">Tüm projeleri göster</Button>
 				</Link>
 			</div>
 		</section>

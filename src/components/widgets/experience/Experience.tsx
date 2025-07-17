@@ -14,7 +14,7 @@ import { EXPERIENCE } from "@/data"
 export function Experience() {
 	return (
 		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-semibold tracking-tight">Experience</h2>
+			<h2 className="text-2xl font-semibold tracking-tight">Deneyim</h2>
 
 			<div className="flex flex-col gap-2">
 				<Accordion
@@ -73,7 +73,7 @@ export function Experience() {
 			</div>
 
 			<div className="flex justify-center">
-				<Button variant="outline">Show all work experiences</Button>
+				<Button variant="outline">Tüm iş deneyimlerini göster</Button>
 			</div>
 		</section>
 	)

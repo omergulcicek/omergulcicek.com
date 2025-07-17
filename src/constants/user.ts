@@ -6,7 +6,7 @@ export const USER = {
 	avatar: "/omergulcicek.png",
 	jobTitle: "Senior Frontend Engineer",
 	email: "iletisim@omergulcicek.com",
-	location: "Sakarya, Turkey",
+	location: "Sakarya, Türkiye",
 	dateOfBirth: "1993-02-07",
 	socials: {
 		website: "https://omergulcicek.com",

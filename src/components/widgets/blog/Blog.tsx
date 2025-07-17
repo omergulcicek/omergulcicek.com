@@ -57,7 +57,7 @@ export function Blog() {
 
 			<div className="flex justify-center">
 				<Link href="/blog">
-					<Button variant="outline">Show all posts</Button>
+					<Button variant="outline">Tüm yazıları göster</Button>
 				</Link>
 			</div>
 		</section>

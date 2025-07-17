@@ -1,30 +1,30 @@
 export function About() {
 	return (
 		<section className="flex flex-col gap-10">
-			<h2 className="text-2xl font-medium">About</h2>
+			<h2 className="text-2xl font-medium">Hakkımda</h2>
 
 			<div className="flex flex-col gap-4 text-lg leading-relaxed">
 				<p>
-					Hi, I’m <strong className="font-semibold">Ömer</strong>, a{" "}
-					<strong className="font-semibold">Frontend Engineer</strong> based in{" "}
-					<strong className="font-semibold">Sakarya, Turkey</strong>. I focus on
-					topics like{" "}
-					<strong className="font-semibold">application architecture</strong>,{" "}
-					<strong className="font-semibold">performance optimization</strong>,{" "}
-					<strong className="font-semibold">design systems</strong>, and{" "}
-					<strong className="font-semibold">micro frontend</strong> structures.{" "}
-					While building projects, I aim to create clean, scalable frontends,
-					always prioritizing quality-focused areas such as{" "}
+					Merhaba, ben <strong className="font-semibold">Ömer</strong>,{" "}
+					<strong className="font-semibold">Sakarya</strong>&apos;da yaşayan bir{" "}
+					<strong className="font-semibold">yazılım mühendisi</strong>yim.{" "}
+					<strong className="font-semibold">uygulama mimarisi</strong>,{" "}
+					<strong className="font-semibold">performans optimizasyonu</strong>,{" "}
+					<strong className="font-semibold">tasarım sistemleri</strong> ve{" "}
+					<strong className="font-semibold">mikro frontend</strong> yapıları
+					gibi konulara odaklanıyorum. Projeler geliştirirken temiz,
+					ölçeklenebilir frontend&apos;ler oluşturmayı hedefliyorum, her zaman{" "}
 					<strong className="font-semibold">UI/UX</strong>,{" "}
-					<strong className="font-semibold">accessibility</strong>, and{" "}
-					<strong className="font-semibold">Web Vitals</strong>.
+					<strong className="font-semibold">erişilebilirlik</strong> ve{" "}
+					<strong className="font-semibold">web vitals</strong> gibi kalite
+					odaklı alanları önceliklendiriyorum.
 				</p>
 				<p>
-					When I&apos;m not coding, I enjoy photography, and I&apos;m curious
-					about chess, history, and economics—constantly striving to learn more
-					in these areas. I created this site to share my experiences,
-					contribute to the open-source community, and connect with like-minded
-					developers.
+					Kod yazmadığım zamanlarda fotoğrafçılıkla ilgileniyorum, satranç,
+					tarih ve ekonomi konularında meraklıyım; bu alanlarda sürekli daha
+					fazla öğrenmeye çalışıyorum. Bu siteyi deneyimlerimi paylaşmak, açık
+					kaynak topluluğuna katkıda bulunmak ve benzer düşünen geliştiricilerle
+					bağlantı kurmak için oluşturdum.
 				</p>
 			</div>
 		</section>

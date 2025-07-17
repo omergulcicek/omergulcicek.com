@@ -1,18 +1,18 @@
 export const PROJECTS = [
 	{
 		title: "Next.js Boilerplate",
-		description: "Modern Next.js 15 boilerplate with TypeScript & Tailwind CSS",
+		description: "TypeScript ve Tailwind CSS ile modern Next.js 15 şablonu",
 		link: "https://github.com/omergulcicek/nextjs-boilerplate"
 	},
 	{
 		title: "@omergulcicek/forms",
 		description:
-			"Smart masking and validation for React Hook Form with TypeScript support",
+			"TypeScript desteği ile React Hook Form için akıllı maskeleme ve doğrulama",
 		link: "https://github.com/omergulcicek/forms"
 	},
 	{
 		title: "@omergulcicek/password-input",
-		description: "React hook that adds show/hide toggle to password inputs",
+		description: "Şifre girişlerine göster/gizle geçişi ekleyen React hook'u",
 		link: "https://github.com/omergulcicek/password-input"
 	}
 ]
