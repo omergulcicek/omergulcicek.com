@@ -15,19 +15,19 @@ Responsive design harika fakat yetersiz kaldığı noktalar olabiliyor. Bunu bir
 
 Aşağıdaki tasarımda görüldüğü gibi, _Top Articles_ ve _Latest Articles_ başlığı altında `article` bileşenimizi çağıralım. Farkındaysanız soldaki bileşende görsel üstte, başlık ve açıklaması altında kalıyorken; sağdaki bileşenlerde görsel solda, detaylar sağında kalıyor.
 
-![Responsive Design Problemi](/img/blog/2021-11-26/responsive-problem-1.jpg)
+![Responsive Design Problemi](/blog/2021-11-26/responsive-problem-1.jpg)
 
 Responsive kod yazarken `@media` sorguları kullandığımız için CSS koşulumuz **sayfanın genişliğini** baz alarak hesaplama yapacaktır. Haliyle tasarımdaki gibi hem alt alta yada hemde yan yana görüntülemek için sağdaki alanın kapsayıcısına class ekleyerek _(örnekte `.c-article--horizontal` sınıfı)_ oraya özel CSS'ler yazmamız gerekiyor.
 
 Peki bu class'ı yazmazsak nasıl görünecekti? Aynı bileşen kullanıldığı için bulunduğu alana yayılarak daha büyük kartlarımız görünecekti; ama bizim istediğimiz sonuç bu değildi.
 
-![Responsive Design Problemi](/img/blog/2021-11-26/responsive-problem-2.jpg)
+![Responsive Design Problemi](/blog/2021-11-26/responsive-problem-2.jpg)
 
 ## CSS Container Sorguları Bize Nasıl Yardımcı Olacak?
 
 CSS Container sorgularında koşullar **sayfa genişliğine göre değil, kapsayıcı genişliğine göre** hareket edecekti. Görsel üzerinden anlamaya çalışalım;
 
-![Media Query vs Container Query](/img/blog/2021-11-26/container-query.jpg)
+![Media Query vs Container Query](/blog/2021-11-26/container-query.jpg)
 
 Böylece ilk bölümde anlatılan problemlerin önüne geçebileceğiz. Kart daha geniş bir alana geçtiğinde, sayfa genişliğinden bağımsız olacak şekilde farklı stillere bürünebilecekler.
 

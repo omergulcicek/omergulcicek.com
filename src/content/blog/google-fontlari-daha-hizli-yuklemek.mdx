@@ -55,11 +55,11 @@ Karşılaştırma yapabilmek için bu kod yokken sayfanın yüklenme hızına ba
 
 Google Font'a **preconnect** olmadan bağlanmak:
 
-![preconnect olmadan bağlanmak](/img/blog/2020-09-26/without-preconnect.png)
+![preconnect olmadan bağlanmak](/blog/2020-09-26/without-preconnect.png)
 
 Sayfamızın `fonts.gstatic.com`'a istek atacağını bildiğimiz için bu boşa zaman kaybını azaltabiliriz. preconnect ekleyerek kazandığımız süreyi inceleyelim:
 
-![preconnect ile bağlanmak](/img/blog/2020-09-26/with-preconnect.png)
+![preconnect ile bağlanmak](/blog/2020-09-26/with-preconnect.png)
 
 ## Yazı Stilini Kendimiz Barındırmak
 
@@ -67,11 +67,11 @@ preconnect yardımıyla çok iyi bir süre kazandık. Fakat bir yazı stili içi
 
 İlk olarak arama çubuğu üzerinden istediğimiz Google Font'unu seçip, ardından charsets, styles gibi bölümlerden ihtiyaçlarımızı belirleyelim.
 
-![Google Webfonts Helper](/img/blog/2020-09-26/google-webfonts-helper.png)
+![Google Webfonts Helper](/blog/2020-09-26/google-webfonts-helper.png)
 
 Ardından hangi tarayıcıları desteklemek istediğinizi seçmeniz gerekiyor. Burada _Best Support_ TDD, EOT, SVG formatlarını verirken, _Modern Browsers_ ise WOFF ve WOFF2 formatlarını verecektir.
 
-![Google Webfonts Helper](/img/blog/2020-09-26/google-webfonts-helper-2.png)
+![Google Webfonts Helper](/blog/2020-09-26/google-webfonts-helper-2.png)
 
 Ardından özelleştirilmiş font dosyanızı indirin ve projenize dahil edin.
 
@@ -81,13 +81,13 @@ Ardından özelleştirilmiş font dosyanızı indirin ve projenize dahil edin.
 
 `font-display: block` özelliği ile, kısa bir süre için yazılarınız görünmez. Yazı stiliniz hazır olduğunda tüm metin ekranda görüntülenir. Buna FOIT (Flash of Invisible Text) denir.
 
-![font-display block özelliği](/img/blog/2020-09-26/display-block.png)
+![font-display block özelliği](/blog/2020-09-26/display-block.png)
 
 ---
 
 `font-display: swap` özelliği ile, yazı stiliniz yüklenene kadar yedek yazı stili ile yazıyı hızlıca ekranda gösterir. Yazı stili yüklendiğinde ise bunu değiştirir. Buna FOUT (Flash of Unstyled Text) denir. Yazınız ekranda hızlı görüntülenmesine rağmen, yedek yazı stilinde özel yazı stilinize geçerken özellikle yavaş bağlantılarda oluşturacağı değişim hoşunuza gitmeyebilir. Burada önceliği belirlemek size kalmış.
 
-![font-display swap özelliği](/img/blog/2020-09-26/display-swap.png)
+![font-display swap özelliği](/blog/2020-09-26/display-swap.png)
 
 Hangisini kullanmanız gerektiğinde kararsız kaldıysanız `swap` kullanın. Google font'un size verdiği linki incelerseniz swap kullanıldığını göreceksiniz.
 
