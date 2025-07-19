@@ -11,18 +11,27 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-hover-card": "^1.1.14",
+    "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.6",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.6",
     "next": "15.4.1",
     "qss": "^3.0.0",
+    "radix-ui": "^1.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-wrap-balancer": "^1.1.1",
-    "tailwind-merge": "^3.3.1"
+    "rehype-pretty-code": "^0.14.1",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "tailwind-merge": "^3.3.1",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

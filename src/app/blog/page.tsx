@@ -31,6 +31,7 @@ export default function Blog() {
 						</Link>
 					))}
 				</div>
+
 			</Section>
 		</Container>
 	)

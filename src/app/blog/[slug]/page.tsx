@@ -3,8 +3,9 @@ import { notFound } from "next/navigation"
 
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 
+import { processMdxContent } from "@/utils/processMdxContent"
+
 import { Button } from "@/components/ui/button"
-import { MDX } from "@/components/widgets/mdx/MDX"
 import { Prose } from "@/ui"
 import { Container, Section } from "@/widgets"
 
@@ -62,7 +63,12 @@ export default async function BlogPost({
 				<Prose className="px-4">
 					<h1 className="mb-6 font-semibold">{post.metadata.title}</h1>
 
-					<MDX code={post.content} />
+					<div
+						className="prose prose-sm prose-pre:bg-transparent prose-pre:p-0"
+						dangerouslySetInnerHTML={{
+							__html: await processMdxContent(post.content)
+						}}
+					/>
 				</Prose>
 			</Section>
 		</Container>
