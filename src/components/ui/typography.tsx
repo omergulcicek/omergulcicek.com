@@ -20,8 +20,9 @@ function Prose({
 		<Comp
 			data-slot="prose"
 			className={cn(
-				"prose prose-sm max-w-none font-mono text-foreground prose-zinc dark:prose-invert",
+				"prose max-w-none font-mono text-foreground prose-zinc dark:prose-invert",
 				"prose-headings:font-sans prose-headings:font-semibold prose-headings:text-balance",
+				"prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight",
 				"prose-h2:border-b prose-h2:border-edge prose-h2:pb-2 prose-h2:text-2xl",
 				"prose-lead:text-base",
 				"prose-a:font-medium prose-a:break-words prose-a:text-foreground prose-a:underline prose-a:underline-offset-4",
@@ -61,10 +62,6 @@ function Heading<T extends HeadingTypes = "h1">({
 	...props
 }: HeadingProps<T>): React.ReactElement {
 	const Comp = as ?? "h1"
-
-	if (!props.id) {
-		return <Comp className={className} {...props} />
-	}
 
 	return (
 		<Comp

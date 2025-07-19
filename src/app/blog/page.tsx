@@ -16,7 +16,10 @@ export default function Blog() {
 
 	return (
 		<Container>
-			<Section title="Blog">
+			<Section
+				title="Blog"
+				description="Teknik, fikir ve yorumlar üzerine makalelerden oluşan bir koleksiyon"
+			>
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 					{allPosts.slice().map((post) => (
 						<Link
@@ -31,7 +34,6 @@ export default function Blog() {
 						</Link>
 					))}
 				</div>
-
 			</Section>
 		</Container>
 	)

@@ -1,15 +1,28 @@
+import { slugify } from "@/utils/slugify"
+
+import { Heading } from "@/ui"
+
 export function Section({
 	title,
+	description,
 	children
 }: {
 	title?: string
+	description?: string
 	children: React.ReactNode
 }) {
 	return (
 		<section className="flex flex-col gap-10">
 			{title && (
-				<h2 className="text-2xl font-medium tracking-tight">{title}</h2>
+				<Heading
+					id={slugify(title)}
+					className="text-2xl font-medium tracking-tight"
+				>
+					{title}
+				</Heading>
 			)}
+
+			{description && <p className="text-muted-foreground">{description}</p>}
 
 			{children}
 		</section>
