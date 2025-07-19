@@ -139,10 +139,6 @@
 	
 			[data-line] {
 				@apply px-4;
-				
-				span {
-					@apply text-(--shiki-light) dark:text-(--shiki-dark) ;
-				}
 			}
 	
 			[data-highlighted-line] {
