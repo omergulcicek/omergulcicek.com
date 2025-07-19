@@ -125,27 +125,31 @@
 }
 
 @layer components {
-	img {
-		@apply rounded-md my-6;
-	}
-
-	pre {
-		@apply !bg-[#1F2028] !text-[#c8d3f5] text-sm overflow-x-auto py-3 has-data-line-numbers:px-0 rounded-md my-6;
-
-		code {
-			@apply font-mono text-sm leading-relaxed;
+	.prose {
+		img {
+			@apply rounded-md my-6;
 		}
-
-		[data-line] {
-			@apply px-4;
-			
-			span {
-				@apply text-(--shiki-light) dark:text-(--shiki-dark) ;
+		
+		pre {
+			@apply !bg-[#1F2028] !text-[#c8d3f5] text-sm overflow-x-auto py-3 has-data-line-numbers:px-0 rounded-md my-6;
+	
+			code {
+				@apply font-mono text-sm leading-relaxed;
+			}
+	
+			[data-line] {
+				@apply px-4;
+				
+				span {
+					@apply text-(--shiki-light) dark:text-(--shiki-dark) ;
+				}
+			}
+	
+			[data-highlighted-line] {
+				@apply bg-[#c8c8ff1a];
 			}
 		}
-
-		[data-highlighted-line] {
-			@apply bg-[#c8c8ff1a];
-		}
 	}
+
+	
 }

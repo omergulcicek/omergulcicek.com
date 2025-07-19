@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 "use client"
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
@@ -131,7 +132,7 @@ function LogoCarousel({
 	useEffect(() => {
 		const distributedLogos = distributeLogos(allLogos, columnCount)
 		setLogoSets(distributedLogos)
-	}, [allLogos])
+	}, [allLogos, columnCount])
 
 	// Function to update the current time (used for logo cycling)
 	const updateTime = useCallback(() => {

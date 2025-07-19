@@ -38,7 +38,7 @@ function getMDXData(dir: string) {
 }
 
 export function getAllPosts() {
-	return getMDXData(path.join(process.cwd(), "src", "content", "blog")).sort(
+	return getMDXData(path.join(process.cwd(), "src", "content")).sort(
 		(a, b) =>
 			new Date(b.metadata.createdAt).getTime() -
 			new Date(a.metadata.createdAt).getTime()
@@ -53,7 +53,7 @@ export function getPostsByCategory(category: string) {
 	return getAllPosts().filter((post) => post.metadata?.category === category)
 }
 
-export function findNeighbour(posts, slug: string) {
+export function findNeighbour(posts: { slug: string }[], slug: string) {
 	const len = posts.length
 
 	for (let i = 0; i < len; ++i) {
