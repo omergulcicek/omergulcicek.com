@@ -2,7 +2,7 @@ export const USER = {
 	firstName: "Ömer",
 	lastName: "Gülçiçek",
 	displayName: "Ömer Gülçiçek",
-	username: "omergulcicek",
+	username: "@omergulcicek",
 	avatar: "/omergulcicek.png",
 	jobTitle: "Senior Frontend Engineer",
 	email: "iletisim@omergulcicek.com",

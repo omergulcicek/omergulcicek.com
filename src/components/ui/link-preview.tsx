@@ -75,14 +75,10 @@ export const LinkPreview = ({
 		x.set(offsetFromCenter)
 	}
 
+	if (!isMounted) return null
+
 	return (
 		<>
-			{isMounted ? (
-				<div className="hidden">
-					<img src={src} width={width} height={height} alt="hidden image" />
-				</div>
-			) : null}
-
 			<HoverCardPrimitive.Root
 				openDelay={50}
 				closeDelay={100}

@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 
-import { BLOG } from "@/constants/blog"
+import { SITE } from "@/constants/site"
+import { USER } from "@/constants/user"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -16,8 +17,35 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-	title: BLOG.title,
-	description: BLOG.description
+	metadataBase: new URL(SITE.url),
+	alternates: {
+		canonical: "/"
+	},
+	title: {
+		template: `%s | ${SITE.title}`,
+		default: `${USER.displayName} - ${USER.jobTitle}`
+	},
+	description: SITE.description,
+	keywords: SITE.keywords,
+	authors: [
+		{
+			name: "ncdai",
+			url: SITE.url
+		}
+	],
+	creator: "ncdai",
+	openGraph: {
+		siteName: SITE.name,
+		url: "/",
+		type: "profile",
+		firstName: USER.firstName,
+		lastName: USER.lastName,
+		username: USER.username
+	},
+	twitter: {
+		card: "summary_large_image",
+		creator: USER.username
+	}
 }
 
 export default function RootLayout({
@@ -26,7 +54,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="tr">
+		<html lang="tr" suppressHydrationWarning>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
 			>
