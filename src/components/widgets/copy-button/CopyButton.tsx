@@ -28,7 +28,10 @@ export function CopyButton({
 		<Button
 			size="icon"
 			variant="secondary"
-			className={cn("z-10 size-6 rounded-md", className)}
+			className={cn(
+				"z-10 size-6 rounded-md border border-border/50",
+				className
+			)}
 			onClick={() => {
 				navigator.clipboard.writeText(value)
 				setHasCopied(true)

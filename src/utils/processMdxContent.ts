@@ -1,18 +1,27 @@
+import { compileMDX } from "next-mdx-remote/rsc"
+
 import rehypePrettyCode from "rehype-pretty-code"
-import rehypeStringify from "rehype-stringify"
-import remarkParse from "remark-parse"
-import remarkRehype from "remark-rehype"
-import { unified } from "unified"
 
-export async function processMdxContent(content: string): Promise<string> {
-	const file = await unified()
-		.use(remarkParse)
-		.use(remarkRehype)
-		.use(rehypePrettyCode, {
-			// keepBackground: false,
-		})
-		.use(rehypeStringify)
-		.process(content)
+import { components } from "@/widgets"
 
-	return String(file)
+export async function processMdxContent(content: string) {
+	const { content: compiledContent } = await compileMDX({
+		source: content,
+		options: {
+			parseFrontmatter: true,
+			mdxOptions: {
+				rehypePlugins: [
+					[
+						rehypePrettyCode,
+						{
+							theme: "github-light"
+						}
+					]
+				]
+			}
+		},
+		components
+	})
+
+	return compiledContent
 }
