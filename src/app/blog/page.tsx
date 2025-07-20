@@ -3,7 +3,8 @@ import Link from "next/link"
 
 import { dateFormat } from "@/utils/date-format"
 
-import { Container, Section } from "@/widgets"
+import { Container } from "@/shared"
+import { Section } from "@/widgets"
 
 import { getAllPosts } from "@/data/blog-data"
 

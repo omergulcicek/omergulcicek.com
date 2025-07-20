@@ -2,8 +2,9 @@ import { notFound } from "next/navigation"
 
 import { slugify } from "@/utils/slugify"
 
+import { Container } from "@/shared"
 import { Heading, Prose } from "@/ui"
-import { BlogDetailHeader, Container, MDX, Section } from "@/widgets"
+import { BlogDetailHeader, MDX, Section } from "@/widgets"
 
 import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
