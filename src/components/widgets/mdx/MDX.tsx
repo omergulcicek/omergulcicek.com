@@ -1,5 +1,6 @@
 import React from "react"
 
+import { HeadingProps } from "@/types/heading-type"
 import {
 	CodeProps,
 	ImageProps,
@@ -9,6 +10,7 @@ import {
 } from "@/types/mdx-type"
 
 import { processMdxContent } from "@/utils/processMdxContent"
+import { slugify } from "@/utils/slugify"
 
 import {
 	Accordion,
@@ -16,6 +18,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 	Button,
+	Heading,
 	Separator,
 	Tabs,
 	TabsContent,
@@ -36,6 +39,7 @@ const components = {
 	AccordionItem,
 	AccordionTrigger,
 	CopyButton,
+	Heading,
 
 	pre: ({ children, ...props }: PreProps) => {
 		// children'ı string'e çevir
@@ -104,6 +108,30 @@ const components = {
 				{...props}
 			/>
 		</figure>
+	),
+
+	h1: ({ children, ...props }: HeadingProps<"h1">) => (
+		<Heading as="h1" {...props} id={slugify(children as string)}>
+			{children}
+		</Heading>
+	),
+
+	h2: ({ children, ...props }: HeadingProps<"h2">) => (
+		<Heading as="h2" {...props} id={slugify(children as string)}>
+			{children}
+		</Heading>
+	),
+
+	h3: ({ children, ...props }: HeadingProps<"h3">) => (
+		<Heading as="h3" {...props} id={slugify(children as string)}>
+			{children}
+		</Heading>
+	),
+
+	h4: ({ children, ...props }: HeadingProps<"h4">) => (
+		<Heading as="h4" {...props} id={slugify(children as string)}>
+			{children}
+		</Heading>
 	)
 }
 

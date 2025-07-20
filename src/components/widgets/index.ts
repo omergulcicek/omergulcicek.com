@@ -1,6 +1,7 @@
 export * from "./about"
 export * from "./section"
 export * from "./blog"
+export * from "./blog/BlogDetailHeader"
 export * from "./hero"
 export * from "./projects"
 export * from "./socials"

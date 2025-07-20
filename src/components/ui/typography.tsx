@@ -3,6 +3,8 @@ import React from "react"
 import { LinkIcon } from "lucide-react"
 import { Slot as SlotPrimitive } from "radix-ui"
 
+import { HeadingProps, HeadingTypes } from "@/types/heading-type"
+
 import { cn } from "@/lib/utils"
 
 const Slot = SlotPrimitive.Slot
@@ -49,11 +51,6 @@ function Code({ className, ...props }: React.ComponentProps<"code">) {
 			{...props}
 		/>
 	)
-}
-
-type HeadingTypes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-type HeadingProps<T extends HeadingTypes> = React.ComponentProps<T> & {
-	as?: T
 }
 
 function Heading<T extends HeadingTypes = "h1">({
