@@ -59,8 +59,6 @@ export function findNeighbour(
 ) {
 	const len = posts.length
 
-	console.log(posts)
-
 	for (let i = 0; i < len; ++i) {
 		if (posts[i].slug === slug) {
 			return {
