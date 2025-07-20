@@ -8,8 +8,8 @@ import { LinkPreview } from "@/ui"
 
 export function Footer() {
 	return (
-		<header className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 min-h-56">
-			<Container>
+		<footer className="border-t">
+			<Container className="py-12">
 				<div className="flex items-center justify-center">
 					<Balancer className="text-muted-foreground text-sm">
 						<LinkPreview
@@ -29,6 +29,6 @@ export function Footer() {
 					</Balancer>
 				</div>
 			</Container>
-		</header>
+		</footer>
 	)
 }
