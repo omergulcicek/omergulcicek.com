@@ -14,5 +14,6 @@ export const SITE = {
 		"zod",
 		"tanstack-query"
 	],
-	url: "https://omergulcicek.com"
+	url: "https://omergulcicek.com",
+	repository: "https://github.com/omergulcicek/omergulcicek.com"
 }
