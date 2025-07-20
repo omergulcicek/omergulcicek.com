@@ -7,7 +7,7 @@ import "./globals.css"
 import { SITE } from "@/constants/site"
 import { USER } from "@/constants/user"
 
-import { Header } from "@/shared"
+import { Footer, Header } from "@/shared"
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE.url),
@@ -51,6 +51,7 @@ export default function RootLayout({
 			<body className={`${GeistSans.className} antialiased font-sans`}>
 				<Header />
 				<main className="min-h-screen">{children}</main>
+				<Footer />
 			</body>
 		</html>
 	)
