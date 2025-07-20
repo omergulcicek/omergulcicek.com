@@ -31,7 +31,7 @@ export default async function BlogPost({
 			<Section>
 				<BlogDetailHeader previous={previous} next={next} />
 
-				<Prose className="px-4">
+				<Prose>
 					<Heading id={slugify(post.metadata.title)}>
 						{post.metadata.title}
 					</Heading>

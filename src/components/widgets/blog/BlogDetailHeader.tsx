@@ -12,7 +12,7 @@ export function BlogDetailHeader({
 	next: { slug: string; metadata: Record<string, unknown> } | null
 }) {
 	return (
-		<div className="flex items-center justify-between p-2 pl-4">
+		<div className="flex items-center justify-between py-2">
 			<Button className="px-0 text-muted-foreground" variant="link" asChild>
 				<Link href="/blog">
 					<ArrowLeftIcon />
