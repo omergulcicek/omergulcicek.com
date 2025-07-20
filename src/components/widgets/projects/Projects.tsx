@@ -5,7 +5,7 @@ import { ExternalLink } from "lucide-react"
 import { Button } from "@/ui"
 import { Section } from "@/widgets"
 
-import { PROJECTS } from "@/data/projects"
+import { PROJECTS } from "@/data/projects-data"
 
 export function Projects() {
 	return (

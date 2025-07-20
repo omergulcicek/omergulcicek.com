@@ -12,7 +12,7 @@ export function Section({
 	children: React.ReactNode
 }) {
 	return (
-		<section className="flex flex-col gap-10">
+		<section className="flex flex-col gap-10 min-h-28">
 			{title && (
 				<Heading
 					id={slugify(title)}

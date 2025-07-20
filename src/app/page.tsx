@@ -8,7 +8,7 @@ import {
 	Stack
 } from "@/widgets"
 
-import { getLastNewestPosts } from "@/data/blog"
+import { getLastNewestPosts } from "@/data/blog-data"
 
 export default function Home() {
 	const posts = getLastNewestPosts()

@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
+import { dateFormat } from "@/utils/date-format"
+
 import { Container, Section } from "@/widgets"
 
-import { getAllPosts } from "@/data/blog"
+import { getAllPosts } from "@/data/blog-data"
 
 export const metadata: Metadata = {
 	title: "Blog",
@@ -29,7 +31,7 @@ export default function Blog() {
 						>
 							<h2 className="text-lg font-medium">{post.metadata.title}</h2>
 							<span className="text-gray-500 text-sm">
-								{post.metadata.createdAt}
+								{dateFormat(post.metadata.createdAt)}
 							</span>
 						</Link>
 					))}

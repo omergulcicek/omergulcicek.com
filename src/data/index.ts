@@ -1,2 +1,2 @@
-export * from "./experience"
-export * from "./projects"
+export * from "./experience-data"
+export * from "./projects-data"

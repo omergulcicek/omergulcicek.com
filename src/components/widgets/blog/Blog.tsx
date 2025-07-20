@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { BlogProps } from "@/types/blog-type"
 
+import { dateFormat } from "@/utils/date-format"
+
 import { Button } from "@/ui"
 import { Section } from "@/widgets"
 
@@ -20,9 +22,11 @@ export function Blog({ posts }: BlogProps) {
 						</span>
 						<div>
 							<h3 className="text-base font-medium">{post.metadata.title}</h3>
-							<p className="text-sm text-muted-foreground">
-								{post.metadata.createdAt}
-							</p>
+							{post.metadata.createdAt && (
+								<p className="text-sm text-muted-foreground">
+									{dateFormat(post.metadata.createdAt)}
+								</p>
+							)}
 						</div>
 					</Link>
 				))}

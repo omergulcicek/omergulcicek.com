@@ -5,7 +5,7 @@ import { slugify } from "@/utils/slugify"
 import { Heading, Prose } from "@/ui"
 import { BlogDetailHeader, Container, MDX, Section } from "@/widgets"
 
-import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog"
+import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
 import "./prose.css"
 

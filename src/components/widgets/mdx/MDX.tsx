@@ -9,7 +9,7 @@ import {
 	PreProps
 } from "@/types/mdx-type"
 
-import { processMdxContent } from "@/utils/processMdxContent"
+import { processMdxContent } from "@/utils/process-mdx-content"
 import { slugify } from "@/utils/slugify"
 
 import {
