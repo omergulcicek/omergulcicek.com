@@ -37,12 +37,32 @@ const components = {
 	AccordionTrigger,
 	CopyButton,
 
-	pre: ({ children, ...props }: PreProps) => (
-		<div className="relative">
-			<pre {...props}>{children}</pre>
-			<CopyButton value={String(children)} className="absolute top-2 right-2" />
-		</div>
-	),
+	pre: ({ children, ...props }: PreProps) => {
+		// children'ı string'e çevir
+		const getCodeContent = (children: React.ReactNode): string => {
+			if (typeof children === "string") {
+				return children
+			}
+			if (Array.isArray(children)) {
+				return children.map(getCodeContent).join("")
+			}
+			if (React.isValidElement(children)) {
+				const element = children as React.ReactElement
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+				return getCodeContent((element as any).props.children)
+			}
+			return ""
+		}
+
+		const codeContent = getCodeContent(children)
+
+		return (
+			<div className="relative">
+				<pre {...props}>{children}</pre>
+				<CopyButton value={codeContent} className="absolute top-2 right-2" />
+			</div>
+		)
+	},
 
 	code: ({ children, ...props }: CodeProps) => (
 		<code {...props}>{children}</code>
