@@ -45,6 +45,10 @@ export function getAllPosts() {
 	)
 }
 
+export function getLastNewestPosts() {
+	return getAllPosts().slice(0, 3)
+}
+
 export function getPostBySlug(slug: string) {
 	return getAllPosts().find((post) => post.slug === slug)
 }

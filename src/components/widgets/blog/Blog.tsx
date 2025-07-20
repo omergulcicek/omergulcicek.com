@@ -1,53 +1,27 @@
 import Link from "next/link"
 
+import { BlogProps } from "@/types/blog-type"
+
 import { Button } from "@/ui"
 import { Section } from "@/widgets"
 
-export function Blog() {
-	const posts = [
-		{
-			title: "Nevşehir Tatili",
-			link: "/nevsehir-tatili/",
-			description: "2 Temmuz 2025"
-		},
-		{
-			title: "2025 Yılında Frontend Developer Olmak",
-			link: "/2025-yilinda-frontend-developer-olmak/",
-			description: "19 Haziran 2025"
-		},
-		{
-			title: "CSS attr() İçin Yeni Yetkinlikler",
-			link: "/css-attr-icin-yeni-yetkinlikler/",
-			description: "20 Ocak 2025"
-		},
-		{
-			title: "Tailwind CSS v4.0",
-			link: "/tailwind-css-v4/",
-			description: "7 Şubat 2025"
-		},
-		{
-			title: "İzmir, Marmaris, Ölüdeniz Tatili",
-			link: "/izmir-marmaris-oludeniz-tatili/",
-			description: "9 Ağustos 2021"
-		}
-	]
-
+export function Blog({ posts }: BlogProps) {
 	return (
 		<Section title="Blog">
 			<nav className="flex flex-col items-start gap-6">
-				{posts.slice(0, 3).map((post, index) => (
+				{posts.map((post, index) => (
 					<Link
-						href={post.link}
-						key={post.title}
+						key={post.slug}
+						href={`/blog/${post.slug}`}
 						className="flex items-center justify-start gap-4"
 					>
 						<span className="text-muted-foreground tabular-nums">
 							0{index + 1}
 						</span>
 						<div>
-							<h3 className="text-base font-medium">{post.title}</h3>
+							<h3 className="text-base font-medium">{post.metadata.title}</h3>
 							<p className="text-sm text-muted-foreground">
-								{post.description}
+								{post.metadata.createdAt}
 							</p>
 						</div>
 					</Link>
