@@ -7,6 +7,8 @@ import "./globals.css"
 import { SITE } from "@/constants/site"
 import { USER } from "@/constants/user"
 
+import { Header } from "@/shared"
+
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE.url),
 	alternates: {
@@ -47,6 +49,7 @@ export default function RootLayout({
 	return (
 		<html lang="tr" suppressHydrationWarning>
 			<body className={`${GeistSans.className} antialiased font-sans`}>
+				<Header />
 				<main className="min-h-screen">{children}</main>
 			</body>
 		</html>
