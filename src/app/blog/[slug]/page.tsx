@@ -5,7 +5,14 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 
 import { slugify } from "@/utils/slugify"
 
-import { Button, Heading, Prose } from "@/ui"
+import {
+	Button,
+	Heading,
+	Prose,
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger
+} from "@/ui"
 import { Container, MDX, Section } from "@/widgets"
 
 import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog"
@@ -42,21 +49,35 @@ export default async function BlogPost({
 
 					<div className="flex items-center gap-2">
 						{previous && (
-							<Button variant="secondary" size="icon" asChild>
-								<Link href={`/blog/${previous.slug}`}>
-									<ArrowLeftIcon />
-									<span className="sr-only">Previous</span>
-								</Link>
-							</Button>
+							<Tooltip>
+								<TooltipTrigger>
+									<Button variant="secondary" size="icon" asChild>
+										<Link href={`/blog/${previous.slug}`}>
+											<ArrowLeftIcon />
+											<span className="sr-only">Previous</span>
+										</Link>
+									</Button>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p>{previous.metadata.title as string}</p>
+								</TooltipContent>
+							</Tooltip>
 						)}
 
 						{next && (
-							<Button variant="secondary" size="icon" asChild>
-								<Link href={`/blog/${next.slug}`}>
-									<span className="sr-only">Next</span>
-									<ArrowRightIcon />
-								</Link>
-							</Button>
+							<Tooltip>
+								<TooltipTrigger>
+									<Button variant="secondary" size="icon" asChild>
+										<Link href={`/blog/${next.slug}`}>
+											<ArrowRightIcon />
+											<span className="sr-only">Next</span>
+										</Link>
+									</Button>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p>{next.metadata.title as string}</p>
+								</TooltipContent>
+							</Tooltip>
 						)}
 					</div>
 				</div>

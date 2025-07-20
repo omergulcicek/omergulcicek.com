@@ -53,8 +53,13 @@ export function getPostsByCategory(category: string) {
 	return getAllPosts().filter((post) => post.metadata?.category === category)
 }
 
-export function findNeighbour(posts: { slug: string }[], slug: string) {
+export function findNeighbour(
+	posts: { slug: string; metadata: Record<string, unknown> }[],
+	slug: string
+) {
 	const len = posts.length
+
+	console.log(posts)
 
 	for (let i = 0; i < len; ++i) {
 		if (posts[i].slug === slug) {
