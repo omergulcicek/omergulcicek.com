@@ -10,6 +10,28 @@ import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
 import "./prose.css"
 
+export async function generateMetadata({
+	params
+}: {
+	params: Promise<{
+		slug: string
+	}>
+}) {
+	const slug = (await params).slug
+	const post = await getPostBySlug(slug)
+
+	if (!post) {
+		notFound()
+	}
+
+	const { title } = post.metadata
+
+	return {
+		title: title,
+		description: title
+	}
+}
+
 export default async function BlogPost({
 	params
 }: {
