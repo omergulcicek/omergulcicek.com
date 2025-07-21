@@ -1,7 +1,4 @@
-import Balancer from "react-wrap-balancer"
-
 import { SITE } from "@/constants/site"
-import { USER } from "@/constants/user"
 
 import { Container } from "@/shared"
 import { LinkPreview } from "@/ui"
@@ -10,23 +7,49 @@ export function Footer() {
 	return (
 		<footer className="border-t">
 			<Container className="py-12">
-				<div className="flex items-center justify-center">
-					<Balancer className="text-muted-foreground text-sm">
+				<div className="flex flex-col gap-2 text-muted-foreground text-sm">
+					<p>
 						<LinkPreview
-							url={USER.socials.github}
-							className="text-muted-foreground underline underline-offset-4 font-medium"
+							url="https://nextjs.org/"
+							className="text-muted-foreground underline underline-offset-4"
 						>
-							{USER.username}
+							Next.js
+						</LinkPreview>
+						,{" "}
+						<LinkPreview
+							url="https://www.typescriptlang.org/"
+							className="text-muted-foreground underline underline-offset-4"
+						>
+							TypeScript
+						</LinkPreview>
+						,{" "}
+						<LinkPreview
+							url="https://tailwindcss.com/"
+							className="text-muted-foreground underline underline-offset-4"
+						>
+							Tailwind CSS
+						</LinkPreview>
+						,{" "}
+						<LinkPreview
+							url="https://ui.shadcn.com/"
+							className="text-muted-foreground underline underline-offset-4"
+						>
+							shadcn/ui
 						</LinkPreview>{" "}
-						tarafından geliştirildi. Kaynak kod{" "}
+						ile geliştirildi.
+					</p>
+
+					<p>
+						Kaynak kod{" "}
 						<LinkPreview
 							url={SITE.repository}
-							className="text-muted-foreground underline underline-offset-4 font-medium"
+							className="text-muted-foreground underline underline-offset-4"
 						>
 							GitHub
 						</LinkPreview>
 						&apos;da mevcuttur.
-					</Balancer>
+					</p>
+					<p>© 2025 | Ömer Gülçiçek</p>
 				</div>
 			</Container>
 		</footer>
