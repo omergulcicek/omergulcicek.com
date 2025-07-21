@@ -102,7 +102,7 @@ const components = {
 		<img
 			src={src}
 			alt={alt}
-			className="rounded-lg max-w-full h-auto"
+			className="rounded-lg max-w-full h-auto mx-auto"
 			loading="lazy"
 			{...props}
 		/>
