@@ -33,7 +33,8 @@ export function Header() {
 								href={item.href}
 								className={cn(
 									"text-sm font-medium transition-all duration-300",
-									pathname === item.href
+									pathname === item.href ||
+										(pathname.startsWith(item.href) && item.href !== "/")
 										? "text-foreground"
 										: "text-muted-foreground"
 								)}
