@@ -10,6 +10,10 @@ import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
 import "./prose.css"
 
+import { Calendar } from "lucide-react"
+
+import { dateFormat } from "@/utils/date-format"
+
 export async function generateMetadata({
 	params
 }: {
@@ -58,6 +62,13 @@ export default async function BlogPost({
 					<Heading id={slugify(post.metadata.title)}>
 						{post.metadata.title}
 					</Heading>
+
+					<div className="flex items-center gap-2 text-muted-foreground text-sm mb-10">
+						<Calendar className="size-4" />
+						<time dateTime={post.metadata.createdAt}>
+							{dateFormat(post.metadata.createdAt)}
+						</time>
+					</div>
 
 					<article>
 						<MDX content={post.content} />
