@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 
 import { Container } from "@/shared"
+import { CommandPalette } from "@/widgets"
 
 import { NAV_ITEMS } from "@/data"
 
@@ -42,6 +43,7 @@ export function Header() {
 								{item.label}
 							</Link>
 						))}
+						<CommandPalette />
 					</nav>
 				</div>
 			</Container>

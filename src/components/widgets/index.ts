@@ -1,4 +1,5 @@
 export * from "./about"
+export * from "./command-palette"
 export * from "./section"
 export * from "./blog"
 export * from "./blog/BlogDetailHeader"
