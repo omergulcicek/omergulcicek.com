@@ -151,7 +151,8 @@
   font-size: 1.5em;
   margin-top: 2em;
   margin-bottom: 1em;
-  line-height: 1.3333333
+  line-height: 1.6;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .prose :where(h2 strong):not(:where([class~="not-prose"],[class~="not-prose"] *)){

@@ -99,15 +99,13 @@ const components = {
 	},
 
 	img: ({ src, alt, ...props }: ImageProps) => (
-		<figure>
-			<img
-				src={src}
-				alt={alt}
-				className="rounded-lg max-w-full h-auto"
-				loading="lazy"
-				{...props}
-			/>
-		</figure>
+		<img
+			src={src}
+			alt={alt}
+			className="rounded-lg max-w-full h-auto"
+			loading="lazy"
+			{...props}
+		/>
 	),
 
 	h1: ({ children, ...props }: HeadingProps<"h1">) => (
