@@ -62,7 +62,7 @@ export function CommandPalette() {
 				className="flex h-8 items-center gap-2 rounded-full border border-input bg-zinc-50 px-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
 			>
 				<Search className="size-4 text-muted-foreground" />
-				<kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-0.5 rounded border bg-muted px-1.5 font-mono text-sm font-medium text-muted-foreground">
+				<kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-0.5 rounded border bg-white px-1.5 font-mono text-sm font-medium text-muted-foreground">
 					<span>⌘</span>
 					<span>K</span>
 				</kbd>
@@ -82,6 +82,7 @@ export function CommandPalette() {
 							<CommandItem
 								key={item.href}
 								onSelect={() => runCommand(() => router.push(item.href))}
+								className="data-[disabled]:opacity-100"
 							>
 								<item.icon className="mr-2 size-4" />
 								{item.label}
@@ -97,6 +98,7 @@ export function CommandPalette() {
 										runCommand(() => router.push(`/blog/${post.slug}`))
 									}
 									value={post.searchValue}
+									className="data-[disabled]:opacity-100"
 								>
 									<FileText className="mr-2 h-4 w-4" />
 									<div className="flex flex-col">
@@ -119,6 +121,7 @@ export function CommandPalette() {
 									runCommand(() => window.open(project.link, "_blank"))
 								}
 								value={project.searchValue}
+								className="data-[disabled]:opacity-100"
 							>
 								<FolderOpen className="mr-2 h-4 w-4" />
 								<div className="flex flex-col">
