@@ -1,7 +1,8 @@
 export interface BlogPost {
 	metadata: {
-		title?: string
-		createdAt?: string
+		title: string
+		createdAt: string
+		description?: string
 		[key: string]: unknown
 	}
 	slug: string

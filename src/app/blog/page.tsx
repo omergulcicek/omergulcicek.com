@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
-import { dateFormat } from "@/utils/date-format"
+import type { BlogPost } from "@/types/blog-type"
+
+import { dateFormat, groupPostsByYear } from "@/utils/date-format"
 
 import { Container } from "@/shared"
 import { Section } from "@/widgets"
@@ -15,7 +17,8 @@ export const metadata: Metadata = {
 }
 
 export default function Blog() {
-	const allPosts = getAllPosts()
+	const allPosts = getAllPosts() as BlogPost[]
+	const postsByYear = groupPostsByYear(allPosts)
 
 	return (
 		<Container>
@@ -23,31 +26,34 @@ export default function Blog() {
 				title="Blog"
 				description="Teknik, fikir ve yorumlar üzerine makalelerden oluşan bir koleksiyon"
 			>
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-					{allPosts.slice().map((post) => (
-						<Link
-							key={post.slug}
-							href={`/blog/${post.slug}`}
-							className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-4 transition-all duration-300 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-100/50"
-						>
-							<div className="flex flex-col gap-3">
-								<h2 className="text-lg leading-normal font-medium text-gray-900 group-hover:text-black transition-colors duration-200">
-									{post.metadata.title}
-								</h2>
-								{post.metadata.description && (
-									<p className="text-sm text-gray-600 line-clamp-2">
-										{post.metadata.description}
-									</p>
-								)}
-								<div className="flex items-center justify-between pt-2">
-									<span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-										{dateFormat(post.metadata.createdAt)}
-									</span>
-									<div className="h-1 w-8 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200" />
+				<div className="space-y-12">
+					{Object.entries(postsByYear)
+						.reverse()
+						.map(([year, posts]) => (
+							<div key={year} className="space-y-6 flex flex-col gap-1">
+								<strong className="text-3xl font-bold text-gray-900">
+									{year}
+								</strong>
+								<div className="grid grid-cols-1 gap-6">
+									{posts.map((post) => (
+										<Link
+											key={post.slug}
+											href={`/blog/${post.slug}`}
+											className="group relative overflow-hidden"
+										>
+											<div className="flex flex-col gap-1">
+												<span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+													{dateFormat(post.metadata.createdAt)}
+												</span>
+												<h2 className="text-lg leading-normal font-medium text-gray-900 group-hover:text-black transition-colors duration-200">
+													{post.metadata.title}
+												</h2>
+											</div>
+										</Link>
+									))}
 								</div>
 							</div>
-						</Link>
-					))}
+						))}
 				</div>
 			</Section>
 		</Container>
