@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 
-import { ExternalLink, FileText, FolderOpen, Home, Search } from "lucide-react"
+import { ExternalLink, FileText, FolderOpen, Search } from "lucide-react"
 
 import { useBlogData } from "@/hooks/use-blog-data"
 
@@ -83,7 +83,7 @@ export function CommandPalette() {
 								key={item.href}
 								onSelect={() => runCommand(() => router.push(item.href))}
 							>
-								<Home className="mr-2 h-4 w-4" />
+								<item.icon className="mr-2 size-4" />
 								{item.label}
 							</CommandItem>
 						))}
