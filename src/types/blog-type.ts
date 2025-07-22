@@ -4,6 +4,7 @@ export interface BlogPost {
 		createdAt: string
 		description?: string
 		keywords?: string[]
+		tags?: string[]
 		[key: string]: unknown
 	}
 	slug: string

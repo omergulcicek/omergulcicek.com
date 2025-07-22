@@ -3,6 +3,8 @@ import path from "path"
 
 import matter from "gray-matter"
 
+import type { BlogPost } from "@/types/blog-type"
+
 function parseFrontmatter(fileContent: string) {
 	const file = matter(fileContent)
 
@@ -21,7 +23,7 @@ function readMDXFile(filePath: string) {
 	return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir: string) {
+function getMDXData(dir: string): BlogPost[] {
 	const mdxFiles = getMDXFiles(dir)
 
 	return mdxFiles.map((file) => {
@@ -30,14 +32,14 @@ function getMDXData(dir: string) {
 		const slug = path.basename(file, path.extname(file))
 
 		return {
-			metadata,
+			metadata: metadata as BlogPost["metadata"],
 			slug,
 			content
 		}
 	})
 }
 
-export function getAllPosts() {
+export function getAllPosts(): BlogPost[] {
 	return getMDXData(path.join(process.cwd(), "src", "content")).sort(
 		(a, b) =>
 			new Date(b.metadata.createdAt).getTime() -
@@ -45,15 +47,15 @@ export function getAllPosts() {
 	)
 }
 
-export function getLastNewestPosts() {
+export function getLastNewestPosts(): BlogPost[] {
 	return getAllPosts().slice(0, 3)
 }
 
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug: string): BlogPost | undefined {
 	return getAllPosts().find((post) => post.slug === slug)
 }
 
-export function getPostsByCategory(category: string) {
+export function getPostsByCategory(category: string): BlogPost[] {
 	return getAllPosts().filter((post) => post.metadata?.category === category)
 }
 

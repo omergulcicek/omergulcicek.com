@@ -71,7 +71,7 @@ const tagsIconMap: Record<
 	Hedefler: Target,
 	Film: Popcorn,
 	Kişisel: PersonStanding,
-	Toplum: MessageCircle,
+	Yorum: MessageCircle,
 	Teknoloji: Cpu,
 	Dizi: Clapperboard
 }
