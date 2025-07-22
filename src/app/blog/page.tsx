@@ -43,12 +43,9 @@ export default function Blog() {
 													{post.metadata.title}
 												</h2>
 											</Link>
-											<div className="flex items-center gap-2">
-												<span className="text-xs font-medium text-muted-foreground tracking-wide">
+											<div className="flex items-start gap-2">
+												<span className="text-xs font-medium text-muted-foreground tracking-wide whitespace-nowrap">
 													{dateFormat(post.metadata.createdAt)}
-												</span>
-												<span className="text-xs font-medium bg-black/80 text-white px-2 py-1 rounded-md tracking-wide">
-													{post.metadata.category as string}
 												</span>
 												<TagsBadge tags={post.metadata.tags as string[]} />
 											</div>

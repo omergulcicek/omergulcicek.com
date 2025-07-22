@@ -1,3 +1,16 @@
+import {
+	BookMarked,
+	Clapperboard,
+	CodeXml,
+	Cpu,
+	History,
+	MessageCircle,
+	PersonStanding,
+	Popcorn,
+	Target,
+	TentTree
+} from "lucide-react"
+
 import { Badge } from "@/ui"
 
 import {
@@ -8,12 +21,14 @@ import {
 	GraphQL,
 	Html,
 	JavaScript,
+	MJML,
 	Nextjs,
 	NPM,
 	ReactHookForm,
 	ReactIcon,
 	Shadcn,
 	Storybook,
+	StyledComponents,
 	TailwindCss,
 	TanStack,
 	TypeScript,
@@ -46,7 +61,19 @@ const tagsIconMap: Record<
 	TanStack: TanStack,
 	Framer: Framer,
 	GitHub: GitHub,
-	NPM: NPM
+	NPM: NPM,
+	"Styled Components": StyledComponents,
+	MJML: MJML,
+	Değerlendirme: History,
+	Tatil: TentTree,
+	Frontend: CodeXml,
+	Kitap: BookMarked,
+	Hedefler: Target,
+	Film: Popcorn,
+	Kişisel: PersonStanding,
+	Toplum: MessageCircle,
+	Teknoloji: Cpu,
+	Dizi: Clapperboard
 }
 
 export function TagsBadge({ tags }: TagsBadgeProps) {

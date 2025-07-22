@@ -62,8 +62,8 @@ export default async function BlogPost({
 						{post.metadata.title}
 					</Heading>
 
-					<div className="flex items-center justify-between gap-2 text-muted-foreground text-sm mb-4">
-						<div className="flex items-center gap-2">
+					<div className="flex items-start justify-between gap-10 text-muted-foreground text-sm mb-4">
+						<div className="flex items-center gap-2 whitespace-nowrap">
 							<Calendar className="size-4" />
 							<time dateTime={post.metadata.createdAt}>
 								{dateFormat(post.metadata.createdAt)}
