@@ -15,5 +15,6 @@ export const SITE = {
 		"tanstack-query"
 	],
 	url: "https://omergulcicek.com",
-	repository: "https://github.com/omergulcicek/omergulcicek.com"
+	repository: "https://github.com/omergulcicek/omergulcicek.com",
+	analyticsId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 }
