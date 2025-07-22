@@ -1,13 +1,10 @@
 import { notFound } from "next/navigation"
 
-import { Calendar } from "lucide-react"
-
-import { dateFormat } from "@/utils/date-format"
 import { slugify } from "@/utils/slugify"
 
 import { Container } from "@/shared"
 import { Heading, Prose } from "@/ui"
-import { BlogDetailHeader, MDX, Section, TagsBadge } from "@/widgets"
+import { BlogDetailHeader, BlogInfo, MDX, Section } from "@/widgets"
 
 import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
@@ -57,22 +54,16 @@ export default async function BlogPost({
 			<Section>
 				<BlogDetailHeader previous={previous} next={next} />
 
+				<Heading
+					id={slugify(post.metadata.title)}
+					className="text-4xl font-bold mb-1"
+				>
+					{post.metadata.title}
+				</Heading>
+
+				<BlogInfo post={post} />
+
 				<Prose>
-					<Heading id={slugify(post.metadata.title)}>
-						{post.metadata.title}
-					</Heading>
-
-					<div className="flex items-start justify-between gap-10 text-muted-foreground text-sm mb-4">
-						<div className="flex items-center gap-2 whitespace-nowrap">
-							<Calendar className="size-4" />
-							<time dateTime={post.metadata.createdAt}>
-								{dateFormat(post.metadata.createdAt)}
-							</time>
-						</div>
-
-						<TagsBadge tags={post.metadata.tags} />
-					</div>
-
 					<article>
 						<MDX content={post.content} />
 					</article>

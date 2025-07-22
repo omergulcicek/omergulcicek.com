@@ -116,6 +116,9 @@
 	* {
 		@apply border-border outline-ring/50;
 	}
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -136,7 +139,6 @@
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
-
   [id] {
     @apply scroll-mt-22;
   }
