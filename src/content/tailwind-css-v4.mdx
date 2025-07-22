@@ -1,10 +1,10 @@
 ---
 createdAt: "2025-02-07"
 slug: "/tailwind-css-v4"
-title: "Tailwind CSS v4.0"
-category: "Teknik"
-keywords: ["Tailwind CSS"]
-medium: "https://omergulcicek.medium.com/tailwind-css-v4-0-7678b29262f3"
+title: "Tailwind CSS v4"
+category: "teknik"
+tags: ["tailwind-css"]
+medium: ""
 ---
 
 ![Tailwind CSS v4.0](/blog/2025-01-29/tailwind-css-v4.png)
@@ -30,47 +30,3 @@ En temel anlatımıyla Tailwind CSS, HTML ve JavaScript bileşenlerini sınıf i
   <p>Merhaba, dünya!</p>
 </div>
 ```
-
-```css
-.bg-red-500 {
-  background-color: #fb2c36;
-}
-```
-
-Bunun yanı sıra, özel sınıflar da tanımlayabiliriz. Örneğin, aşağıdaki yapılandırmayı kullanarak brand-10 sınıfını tanımladığımızda, Tailwind bu sınıfı farklı CSS özelliklerinde kullanmamıza olanak tanır:
-
-- **bg-brand-10** → *background-color: #FAFFE5;*
-- **text-brand-10** → *color: #FAFFE5;*
-- **fill, stroke, border** gibi diğer CSS özellikleri için de bu rengi kullanabiliriz.
-
-```js
-// tailwind.config.ts
-theme: {
-  extend: {
-    colors: {
-      brand: {
-        "10": "#FAFFE5",
-        "20": "#F5FFCC",
-      },
-    },
-  },
-}
-```
-
-Bu esneklik sayesinde, projelerimizde özel renk paletleri ve stiller oluşturmak çok daha kolay hâle gelir.
-
-## Tailwind CSS v4.0 ile Neler Değişti?
-
-Tailwind CSS v4.0, performans ve esneklik için optimize edilmiş, yeniden tasarlanmış bir yapı sunar ve web platformundaki en yeni özellikleri tam anlamıyla kullanır.
-
-Bu sürümle birlikte gelen bazı önemli değişiklikler şunlardır:
-
-- Yeni yüksek performanslı motor sayesinde derleme süreleri 5 kata kadar hızlandı.
-- Direkt olarak <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer">Vite</a> entegrasyonu sağlandı.
-- Dinamik utility değerleri sayesinde belirli türden keyfi değerler, herhangi bir ek yapılandırmaya gerek kalmadan kullanılabiliyor.
-- Renk paleti, RGB yerine OKLCH kullanacak şekilde güncellendi, bu da daha geniş ve doğru renk seçenekleri sunuyor.
-- CSS *container* sorguları ve *:not()* seçici desteği eklendi.
-
-Bunların yanı sıra, önceki sürüme kıyasla daha az bağımlılık, sıfır yapılandırma gereksinimi ve CSS dosyasına tek satır kod ekleyerek Tailwind'i yükleyebilme gibi birçok yenilik bulunuyor.
-
-Tüm değişiklikler için <a href="https://tailwindcss.com/blog/tailwindcss-v4" target="_blank" rel="noopener noreferrer">Tailwind'in resmi dokümantasyonunu</a> inceleyebilirsiniz.

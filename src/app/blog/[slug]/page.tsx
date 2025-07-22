@@ -1,18 +1,17 @@
 import { notFound } from "next/navigation"
 
+import { Calendar } from "lucide-react"
+
+import { dateFormat } from "@/utils/date-format"
 import { slugify } from "@/utils/slugify"
 
 import { Container } from "@/shared"
 import { Heading, Prose } from "@/ui"
-import { BlogDetailHeader, MDX, Section } from "@/widgets"
+import { BlogDetailHeader, MDX, Section, TagsBadge } from "@/widgets"
 
 import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
 import "./prose.css"
-
-import { Calendar } from "lucide-react"
-
-import { dateFormat } from "@/utils/date-format"
 
 export async function generateMetadata({
 	params
@@ -63,11 +62,15 @@ export default async function BlogPost({
 						{post.metadata.title}
 					</Heading>
 
-					<div className="flex items-center gap-2 text-muted-foreground text-sm mb-10">
-						<Calendar className="size-4" />
-						<time dateTime={post.metadata.createdAt}>
-							{dateFormat(post.metadata.createdAt)}
-						</time>
+					<div className="flex items-center justify-between gap-2 text-muted-foreground text-sm mb-4">
+						<div className="flex items-center gap-2">
+							<Calendar className="size-4" />
+							<time dateTime={post.metadata.createdAt}>
+								{dateFormat(post.metadata.createdAt)}
+							</time>
+						</div>
+
+						<TagsBadge tags={post.metadata.tags} />
 					</div>
 
 					<article>
