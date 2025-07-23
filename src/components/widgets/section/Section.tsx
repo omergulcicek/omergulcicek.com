@@ -4,10 +4,12 @@ import { Heading } from "@/ui"
 
 export function Section({
 	title,
+	type = "h1",
 	description,
 	children
 }: {
 	title?: string
+	type?: string
 	description?: string
 	children: React.ReactNode
 }) {
@@ -16,7 +18,7 @@ export function Section({
 			{title && (
 				<Heading
 					id={slugify(title)}
-					className="text-2xl font-medium tracking-tight"
+					as={type as "h1" | "h2" | "h3" | "h4" | "h5" | "h6"}
 				>
 					{title}
 				</Heading>

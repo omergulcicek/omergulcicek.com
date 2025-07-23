@@ -14,7 +14,7 @@ import { EXPERIENCE } from "@/data"
 
 export function Experience() {
 	return (
-		<Section title="Deneyim">
+		<Section title="Deneyim" type="h2">
 			<div className="flex flex-col gap-2">
 				<Accordion
 					type="single"

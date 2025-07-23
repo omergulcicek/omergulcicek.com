@@ -2,7 +2,7 @@ import { Section } from "@/widgets"
 
 export function About() {
 	return (
-		<Section title="Hakkımda">
+		<Section title="Hakkımda" type="h2">
 			<div className="flex flex-col gap-4 text-lg leading-relaxed">
 				<p>
 					Merhaba, ben <strong className="font-medium">Ömer</strong>,{" "}
@@ -13,10 +13,10 @@ export function About() {
 					<strong className="font-medium">tasarım sistemleri</strong> ve{" "}
 					<strong className="font-medium">mikro frontend</strong> yapıları gibi
 					konulara odaklanıyorum. Projeler geliştirirken temiz, ölçeklenebilir
-					frontend&apos;ler oluşturmayı hedefliyorum, her zaman{" "}
+					frontend&apos;ler oluşturmayı hedefliyorum. Her zaman{" "}
 					<strong className="font-medium">UI/UX</strong>,{" "}
 					<strong className="font-medium">erişilebilirlik</strong> ve{" "}
-					<strong className="font-medium">web vitals</strong> gibi kalite odaklı
+					<strong className="font-medium">Web Vitals</strong> gibi kalite odaklı
 					alanları önceliklendiriyorum.
 				</p>
 				<p>

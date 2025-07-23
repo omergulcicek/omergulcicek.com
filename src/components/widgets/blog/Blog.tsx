@@ -9,7 +9,7 @@ import { Section } from "@/widgets"
 
 export function Blog({ posts }: BlogProps) {
 	return (
-		<Section title="Blog">
+		<Section title="Blog" type="h2">
 			<nav className="flex flex-col items-start gap-6">
 				{posts.map((post, index) => (
 					<Link

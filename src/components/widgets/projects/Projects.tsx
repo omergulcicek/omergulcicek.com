@@ -9,7 +9,7 @@ import { PROJECTS } from "@/data"
 
 export function Projects() {
 	return (
-		<Section title="Projeler">
+		<Section title="Projeler" type="h2">
 			<ul className="flex flex-col gap-6">
 				{PROJECTS.slice(0, 3).map((project, index) => (
 					<li

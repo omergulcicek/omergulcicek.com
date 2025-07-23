@@ -54,10 +54,7 @@ export default async function BlogPost({
 			<Section>
 				<BlogDetailHeader previous={previous} next={next} />
 
-				<Heading
-					id={slugify(post.metadata.title)}
-					className="text-4xl font-bold mb-1"
-				>
+				<Heading as="h1" id={slugify(post.metadata.title)}>
 					{post.metadata.title}
 				</Heading>
 

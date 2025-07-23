@@ -62,7 +62,12 @@ function Heading<T extends HeadingTypes = "h1">({
 
 	return (
 		<Comp
-			className={cn("flex flex-row items-center gap-2", className)}
+			className={cn(
+				"flex flex-row items-center gap-2",
+				as === "h1" && "text-4xl font-semibold tracking-tight",
+				as === "h2" && "text-2xl font-medium",
+				className
+			)}
 			{...props}
 		>
 			<a href={`#${props.id}`} className="peer not-prose">
