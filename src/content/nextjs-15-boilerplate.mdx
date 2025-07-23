@@ -7,4 +7,165 @@ tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"]
 medium: ""
 ---
 
-Yazılacak...
+Merhaba! Bu yazıda, en güncel teknolojileri kullanarak geliştirdiğim **Next.js 15 Boilerplate** projesini sizlerle paylaşmak istiyorum. Bu şablon, modern web uygulamaları geliştirmek için ihtiyacınız olan tüm araçları içeriyor.
+
+## Proje Hakkında
+
+Bu boilerplate, **Next.js 15.3**, **React 19**, **TypeScript** ve **Tailwind CSS** gibi en güncel teknolojileri kullanarak geliştirildi. Proje, hem küçük hem de büyük ölçekli uygulamalar için uygun bir temel sağlıyor.
+
+**GitHub:** [https://github.com/omergulcicek/nextjs-boilerplate](https://github.com/omergulcicek/nextjs-boilerplate)  
+**Canlı Demo:** [https://nextjs15-boilerplate.vercel.app/en](https://nextjs15-boilerplate.vercel.app/en)
+
+⭐ Eğer bu proje size yardımcı oluyorsa, GitHub'ta yıldız vermeyi unutmayın!
+
+## Öne Çıkan Özellikler
+
+### Kullanıcı Deneyimi
+- **Açık/Koyu Tema Desteği**: `next-themes` ile otomatik tema değiştirme
+- **Çoklu Dil Desteği**: `next-intl` ile uluslararasılaştırma
+- **Responsive Tasarım**: Tüm cihazlarda mükemmel görünüm
+- **Yükleme Animasyonları**: Skeleton bileşenleri ile kullanıcı deneyimi
+
+### Geliştirici Deneyimi
+- **TypeScript**: Tip güvenliği ve daha iyi kod kalitesi
+- **ESLint & Prettier**: Kod kalitesi ve tutarlılığı
+- **Husky**: Git hook'ları ile otomatik kontroller
+- **Absolute Imports**: `@` öneki ile kolay import'lar
+
+### State Yönetimi ve Veri İşleme
+- **Zustand**: Hafif ve güçlü state yönetimi
+- **TanStack Query**: Veri çekme, önbellekleme ve mutasyon
+- **React Hook Form**: Performanslı form yönetimi
+- **Zod**: Tip güvenli validasyon
+
+### UI/UX Bileşenleri
+- **shadcn/ui**: Modern ve erişilebilir UI bileşenleri
+- **Lucide Icons**: Tutarlı ve güzel ikonlar
+- **Tailwind CSS**: Hızlı ve esnek stil sistemi
+
+### Yardımcı Araçlar
+- **@omergulcicek/forms**: Akıllı maskeleme ve validasyon
+- **Storage Helpers**: Local, Session ve Cookie yönetimi
+- **Helper Fonksiyonlar**: Tekrar kullanılabilir yardımcı fonksiyonlar
+- **Custom Hooks**: Özel React hook'ları
+
+### İzleme ve Analitik
+- **Sentry**: Hata takibi ve performans izleme
+- **Google Analytics**: Kullanıcı davranış analizi
+- **SEO Optimizasyonu**: Meta etiketler, sitemap ve robots.txt
+
+## Proje Yapısı
+
+Proje, ölçeklenebilir ve sürdürülebilir bir yapıya sahip:
+
+```bash
+src/
+├── app/                   # Next.js App Router
+├── components/            # React bileşenleri
+│   ├── icons/             # SVG ikonlar
+│   ├── features/          # Özellik bazlı bileşenler
+│   ├── shared/            # Paylaşılan bileşenler
+│   ├── skeletons/         # Yükleme bileşenleri
+│   ├── ui/                # Temel UI bileşenleri
+│   └── widgets/           # Gelişmiş UI bileşenleri
+├── constants/             # Proje sabitleri
+├── data/                  # Statik veriler
+├── helpers/               # Yardımcı fonksiyonlar
+├── hooks/                 # Özel React hook'ları
+├── i18n/                  # Çoklu dil ayarları
+├── lib/                   # Ortak yardımcı fonksiyonlar
+├── providers/             # Global context sağlayıcıları
+├── schemas/               # Validasyon şemaları
+├── services/              # API istek fonksiyonları
+├── stores/                # Global state
+└── types/                 # TypeScript tip tanımları
+```
+
+## Dosya Adlandırma Kuralları
+
+Proje, tutarlılık için dosya adlandırma kuralları takip eder:
+
+* Componentler için **LoginForm.tsx** (PascalCase)
+* Hook'lar için **useLogin.ts** (camelCase),
+* Fonksiyon ve şemalar için **form-schema.ts** (kebab-case)
+* Klasör adları için **login-form/** (kebab-case)
+* Sabitler ise büyük harfle **ALPHA_REGEX** (SNAKE_CASE)
+
+## Kurulum ve Kullanım
+
+Projeyi kullanmaya başlamak için:
+
+```bash
+# Projeyi klonlayın
+git clone https://github.com/omergulcicek/nextjs-boilerplate.git
+
+# Bağımlılıkları yükleyin
+npm install
+
+# Geliştirme sunucusunu başlatın
+npm run dev
+```
+
+## Özelleştirme
+
+### Sentry Kurulumu
+Hata takibi için Sentry hesabı oluşturun ve `.env` dosyasına ekleyin:
+
+```bash
+NEXT_PUBLIC_SENTRY_DSN=your-sentry-dsn
+```
+
+### Google Analytics Kurulumu
+Kullanıcı analizi için Google Analytics hesabı oluşturun ve `.env` dosyasına ekleyin:
+
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+## Tema Sistemi
+
+Proje, `next-themes` kullanarak otomatik tema değiştirme özelliği sunar. Kullanıcılar sistem temasını takip edebilir veya manuel olarak tema değiştirebilir.
+
+## Çoklu Dil Desteği
+
+`next-intl` kullanarak Türkçe ve İngilizce dil desteği sağlanmıştır. Yeni diller kolayca eklenebilir.
+
+## Responsive Tasarım
+
+Tailwind CSS ile tüm ekran boyutları için optimize edilmiş responsive tasarım.
+
+## SEO Optimizasyonu
+
+- Meta etiketler
+- Sitemap.xml
+- Robots.txt
+- Lighthouse skor optimizasyonu
+
+## Kalite
+
+- **Storybook**: UI bileşen geliştirme
+- **ESLint**: Kod kalitesi
+- **Prettier**: Kod formatı
+
+## Katkıda Bulunma
+
+Bu proje açık kaynak kodludur ve katkılarınızı bekliyorum.
+
+1. Projeyi fork edin
+2. Feature branch oluşturun
+3. Değişikliklerinizi commit edin
+4. Pull request gönderin
+
+## İletişim
+
+Herhangi bir sorunuz veya öneriniz varsa:
+- GitHub Issues: [https://github.com/omergulcicek/nextjs-boilerplate/issues](https://github.com/omergulcicek/nextjs-boilerplate/issues)
+- Email: [iletisim@omergulcicek.com](mailto:iletisim@omergulcicek.com)
+
+## Sonuç
+
+Bu Next.js 15 Boilerplate, modern web geliştirme için ihtiyacınız olan tüm araçları içeriyor. Güncel teknolojiler, iyi organize edilmiş kod yapısı ve kapsamlı özelliklerle, projelerinizi hızlı ve etkili bir şekilde geliştirebilirsiniz.
+
+⭐ **GitHub'ta yıldız vermeyi unutmayın!**
+
+Bu, projenin daha fazla geliştiriciye ulaşmasına yardımcı olur ve beni yeni projeler için motive eder.

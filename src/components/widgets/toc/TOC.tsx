@@ -2,6 +2,7 @@
 
 import { useMemo } from "react"
 
+import { cn } from "@/lib/utils"
 import { slugify } from "@/utils/slugify"
 
 import {
@@ -43,17 +44,20 @@ export const TOC = ({ content }: TOCProps) => {
 					<span className="font-semibold text-sm">İçindekiler</span>
 				</AccordionTrigger>
 				<AccordionContent className="px-4 pb-4">
-					<nav className="flex flex-col items-start">
+					<ul className="flex flex-col items-start">
 						{headings.map((heading, index) => (
-							<a
+							<li
 								key={index}
-								href={`#${heading.slug}`}
-								className="text-sm text-muted-foreground py-1 transition-colors hover:underline hover:text-foreground"
+								className={cn(
+									"text-sm text-muted-foreground py-1 transition-colors hover:underline hover:text-foreground",
+									heading.level === 3 && "pl-6",
+									heading.level === 4 && "pl-12"
+								)}
 							>
-								{heading.text}
-							</a>
+								<a href={`#${heading.slug}`}>{heading.text}</a>
+							</li>
 						))}
-					</nav>
+					</ul>
 				</AccordionContent>
 			</AccordionItem>
 		</Accordion>
