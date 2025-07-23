@@ -5,8 +5,7 @@ import {
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
-	Badge,
-	Button
+	Badge
 } from "@/ui"
 import { Section } from "@/widgets"
 

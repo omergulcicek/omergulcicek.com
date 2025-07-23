@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 
 import { HeadingProps } from "@/types/heading-type"
 import {
@@ -52,7 +53,7 @@ const components = {
 			}
 			if (React.isValidElement(children)) {
 				const element = children as React.ReactElement
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				return getCodeContent((element as any).props.children)
 			}
 			return ""
@@ -99,11 +100,12 @@ const components = {
 	},
 
 	img: ({ src, alt, ...props }: ImageProps) => (
-		<img
-			src={src}
-			alt={alt}
+		<Image
+			src={src || ""}
+			alt={alt || ""}
+			width={800}
+			height={600}
 			className="rounded-lg max-w-full h-auto mx-auto"
-			loading="lazy"
 			{...props}
 		/>
 	),

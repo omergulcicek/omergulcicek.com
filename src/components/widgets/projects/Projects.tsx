@@ -2,7 +2,7 @@ import Link from "next/link"
 
 import { ExternalLink } from "lucide-react"
 
-import { Button } from "@/ui"
+// import { Button } from "@/ui"
 import { Section } from "@/widgets"
 
 import { PROJECTS } from "@/data"

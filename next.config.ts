@@ -10,10 +10,13 @@ const withMDX = createMDX({
 })
 
 const nextConfig = {
+	output: "export" as const,
 	images: {
-		domains: ["api.microlink.io"]
+		domains: ["api.microlink.io"],
+		unoptimized: true
 	},
-	pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"]
+	pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+	trailingSlash: true
 }
 
 export default withMDX(nextConfig)

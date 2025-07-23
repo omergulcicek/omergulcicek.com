@@ -10,6 +10,13 @@ import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
 
 import "./prose.css"
 
+export async function generateStaticParams() {
+	const posts = getAllPosts()
+	return posts.map((post) => ({
+		slug: post.slug
+	}))
+}
+
 export async function generateMetadata({
 	params
 }: {
