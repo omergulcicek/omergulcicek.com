@@ -40,11 +40,19 @@ function getMDXData(dir: string): BlogPost[] {
 }
 
 export function getAllPosts(): BlogPost[] {
-	return getMDXData(path.join(process.cwd(), "src", "content")).sort(
-		(a, b) =>
-			new Date(b.metadata.createdAt).getTime() -
-			new Date(a.metadata.createdAt).getTime()
-	)
+	const today = new Date()
+	today.setHours(23, 59, 59, 999)
+
+	return getMDXData(path.join(process.cwd(), "src", "content"))
+		.filter((post) => {
+			const postDate = new Date(post.metadata.createdAt)
+			return postDate <= today
+		})
+		.sort(
+			(a, b) =>
+				new Date(b.metadata.createdAt).getTime() -
+				new Date(a.metadata.createdAt).getTime()
+		)
 }
 
 export function getLastNewestPosts(): BlogPost[] {

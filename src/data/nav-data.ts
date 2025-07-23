@@ -1,4 +1,4 @@
-import { FolderGit2, Newspaper, Sparkles, User } from "lucide-react"
+import { Newspaper, Sparkles } from "lucide-react"
 
 export const NAV_ITEMS = [
 	{
@@ -10,15 +10,15 @@ export const NAV_ITEMS = [
 		label: "Blog",
 		href: "/blog",
 		icon: Newspaper
-	},
-	{
-		label: "Projeler",
-		href: "/projects",
-		icon: FolderGit2
-	},
-	{
-		label: "Hakkında",
-		href: "/about",
-		icon: User
 	}
+	// {
+	// 	label: "Projeler",
+	// 	href: "/projects",
+	// 	icon: FolderGit2
+	// },
+	// {
+	// 	label: "Hakkında",
+	// 	href: "/about",
+	// 	icon: User
+	// }
 ]
