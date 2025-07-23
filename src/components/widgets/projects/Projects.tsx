@@ -38,11 +38,11 @@ export function Projects() {
 				))}
 			</ul>
 
-			<div className="flex justify-center">
+			{/* <div className="flex justify-center">
 				<Link href="/projects">
 					<Button variant="outline">Tüm projeleri göster</Button>
 				</Link>
-			</div>
+			</div> */}
 		</Section>
 	)
 }

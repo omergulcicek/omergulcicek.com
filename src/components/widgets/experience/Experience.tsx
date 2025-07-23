@@ -71,9 +71,9 @@ export function Experience() {
 				</Accordion>
 			</div>
 
-			<div className="flex justify-center">
+			{/* <div className="flex justify-center">
 				<Button variant="outline">Tüm iş deneyimlerini göster</Button>
-			</div>
+			</div> */}
 		</Section>
 	)
 }
