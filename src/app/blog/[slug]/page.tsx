@@ -35,7 +35,25 @@ export async function generateMetadata({
 
 	return {
 		title: title,
-		description: title
+		description: title,
+		openGraph: {
+			title: title,
+			description: title,
+			images: [
+				{
+					url: "/omergulcicek.png",
+					width: 1200,
+					height: 630,
+					alt: title
+				}
+			]
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: title,
+			description: title,
+			images: ["/omergulcicek.png"]
+		}
 	}
 }
 

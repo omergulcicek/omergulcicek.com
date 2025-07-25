@@ -23,22 +23,31 @@ export const metadata: Metadata = {
 	keywords: SITE.keywords,
 	authors: [
 		{
-			name: "ncdai",
+			name: "omergulcicek",
 			url: SITE.url
 		}
 	],
-	creator: "ncdai",
+	creator: "omergulcicek",
 	openGraph: {
 		siteName: SITE.name,
 		url: "/",
 		type: "profile",
 		firstName: USER.firstName,
 		lastName: USER.lastName,
-		username: USER.username
+		username: USER.username,
+		images: [
+			{
+				url: "/omergulcicek.png",
+				width: 1200,
+				height: 630,
+				alt: `${USER.displayName} - ${USER.jobTitle}`
+			}
+		]
 	},
 	twitter: {
 		card: "summary_large_image",
-		creator: USER.username
+		creator: USER.username,
+		images: ["/omergulcicek.png"]
 	}
 }
 
