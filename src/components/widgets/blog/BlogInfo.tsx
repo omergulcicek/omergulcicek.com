@@ -9,7 +9,7 @@ import { TagsBadge, TOC } from "@/widgets"
 export function BlogInfo({ post }: { post: BlogPost }) {
 	return (
 		<>
-			<div className="flex items-start justify-between gap-10 text-muted-foreground text-sm">
+			<div className="flex flex-col md:flex-row items-start justify-between gap-2 md:gap-10 text-muted-foreground text-sm">
 				<div className="flex items-center gap-2 whitespace-nowrap">
 					<Calendar className="size-4" />
 					<time dateTime={post.metadata.createdAt}>

@@ -6,7 +6,7 @@ import { Button } from "@/ui"
 
 export function Socials() {
 	return (
-		<nav className="flex items-center mt-2">
+		<nav className="flex items-center mt-1 md:mt-2">
 			{SOCIALS.map((social) => (
 				<Link
 					key={social.title}

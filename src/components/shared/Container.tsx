@@ -10,7 +10,7 @@ export function Container({
 	return (
 		<div
 			className={cn(
-				"py-24 gap-32 flex flex-col mx-auto max-w-2xl relative",
+				"px-8 md:px-0 py-12 md:py-24 gap-16 md:gap-32 flex flex-col mx-auto max-w-2xl relative",
 				className
 			)}
 		>

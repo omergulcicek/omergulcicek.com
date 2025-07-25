@@ -20,7 +20,7 @@ export function Header() {
 
 	return (
 		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<Container className="py-4">
+			<Container className="py-4 md:py-4">
 				<div className="flex items-center justify-between">
 					<Link href="/">
 						<Image

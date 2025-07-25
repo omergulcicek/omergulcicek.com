@@ -3,7 +3,7 @@ import { Section } from "@/widgets"
 export function About() {
 	return (
 		<Section title="Hakkımda" type="h2">
-			<div className="flex flex-col gap-4 text-lg leading-relaxed">
+			<div className="flex flex-col gap-4 text-base md:text-lg leading-relaxed">
 				<p>
 					Merhaba, ben <strong className="font-medium">Ömer</strong>,{" "}
 					<strong className="font-medium">Sakarya</strong>&apos;da yaşayan bir{" "}

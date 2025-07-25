@@ -64,8 +64,8 @@ function Heading<T extends HeadingTypes = "h1">({
 		<Comp
 			className={cn(
 				"flex flex-row items-center gap-2",
-				as === "h1" && "text-4xl font-semibold tracking-tight",
-				as === "h2" && "text-2xl font-medium",
+				as === "h1" && "text-lg md:text-4xl font-semibold tracking-tight",
+				as === "h2" && "text-base md:text-2xl font-medium",
 				className
 			)}
 			{...props}

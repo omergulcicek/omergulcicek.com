@@ -34,7 +34,7 @@ export default function Blog() {
 								key={year}
 								className="space-y-6 flex flex-col gap-1 items-start relative min-h-20"
 							>
-								<span className="text-2xl absolute font-medium top-5 -left-12 -rotate-90 text-gray-300 select-none">
+								<span className="text-2xl absolute font-medium top-5 -left-12 -rotate-90 text-gray-300 select-none hidden md:flex">
 									{year}
 								</span>
 								<div className="flex flex-col gap-6 items-start">
@@ -48,11 +48,13 @@ export default function Blog() {
 													{post.metadata.title}
 												</Link>
 											</h2>
-											<div className="flex items-start gap-2">
+											<div className="flex flex-col md:flex-row items-start gap-2">
 												<span className="text-xs text-italic font-medium leading-[22px] text-muted-foreground tracking-wide whitespace-nowrap">
 													{dateFormat(post.metadata.createdAt)}
 												</span>
-												<span className="text-black/20 leading-[22px]">•</span>
+												<span className="text-black/20 leading-[22px] hidden md:inline-flex">
+													•
+												</span>
 												<TagsBadge tags={post.metadata.tags as string[]} />
 											</div>
 										</div>
