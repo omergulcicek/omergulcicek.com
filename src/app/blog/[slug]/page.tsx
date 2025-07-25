@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation"
 
+import { SITE } from "@/constants/site"
+
+import { extractFirstImage } from "@/utils/extract-first-image"
 import { slugify } from "@/utils/slugify"
 
 import { Container } from "@/shared"
@@ -33,7 +36,11 @@ export async function generateMetadata({
 
 	const { title } = post.metadata
 
+	const firstImage = extractFirstImage(post.content)
+	const ogImage = firstImage || "/omergulcicek.png"
+
 	return {
+		metadataBase: new URL(SITE.url),
 		title: title,
 		description: title,
 		openGraph: {
@@ -41,7 +48,7 @@ export async function generateMetadata({
 			description: title,
 			images: [
 				{
-					url: "/omergulcicek.png",
+					url: ogImage,
 					width: 1200,
 					height: 630,
 					alt: title
@@ -52,7 +59,7 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title: title,
 			description: title,
-			images: ["/omergulcicek.png"]
+			images: [ogImage]
 		}
 	}
 }
