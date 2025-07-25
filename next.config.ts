@@ -10,7 +10,6 @@ const withMDX = createMDX({
 })
 
 const nextConfig = {
-	output: "export" as const,
 	images: {
 		domains: ["api.microlink.io"],
 		unoptimized: true
