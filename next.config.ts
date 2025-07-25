@@ -16,7 +16,20 @@ const nextConfig = {
 		unoptimized: true
 	},
 	pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-	trailingSlash: true
+	trailingSlash: true,
+	async headers() {
+		return [
+			{
+				source: "/(.*)",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=0, must-revalidate"
+					}
+				]
+			}
+		]
+	}
 }
 
 export default withMDX(nextConfig)
