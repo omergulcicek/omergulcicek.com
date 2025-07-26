@@ -4,8 +4,6 @@
 
 [www.omergulcicek.com](https://www.omergulcicek.com/)
 
-***
-
 My personal website and blog built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and deployed on Vercel.
 
 ## 🚀 Tech Stack
