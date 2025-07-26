@@ -1,0 +1,130 @@
+---
+createdAt: "2025-07-27"
+slug: "/sitemin-yeni-arayuzuna-hosgeldiniz"
+title: "Sitemin Yeni Arayüzüne Hoşgeldiniz"
+category: "kişisel"
+tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"]
+medium: ""
+---
+
+Merhaba! Uzun bir aradan sonra kişisel sitemi yeniden tasarladım ve bu yazımda bu yenileme sürecini detaylandırmak istiyorum. Sitemi modern frontend teknolojileriyle ve tasarım diliyle yeniden inşa ettim.
+
+## Neden Bu Zaman?
+
+Geleneksel olarak kişisel sitemi her yılın başında yenilemeyi tercih ederdim. Bu yaklaşım, o yılın en güncel ve popüler frontend teknolojilerini pratik etme fırsatı sunuyordu. Ancak bu sefer farklı bir motivasyonla hareket ettim. İşsizlik dönemimde, bu boşluğu kendimi geliştirmek ve portföyümü güncellemek için değerlendirdim.
+
+## Mimari Değişiklikler
+
+### Container-Based Layout
+
+Önceki versiyonumda full-width tasarım kullanıyordum. Bu sefer daha modern bir yaklaşım benimseyerek container-based layout'a geçiş yaptım.
+
+### Ana Sayfa Yeniden Tasarımı
+
+Eski ana sayfam oldukça minimaldi - sadece bir karşılama mesajı ve tech stack listesi bulunuyordu. Yeni versiyonda ise çok daha zengin bir içerik sunuyorum:
+
+- **Hero Section**: Etkileyici bir giriş bölümü
+- **About**: Kısa bir tanıtım
+- **Tech Stack**: Kullandığım teknolojiler
+- **Deneyim**: İş geçmişim
+- **Son Yazılar**: Blog'dan en güncel içerikler
+- **Son Projeler**: Portföyümden öne çıkan çalışmalar
+
+Bu yaklaşımda [Chánh Đại'nin portföyünden](https://chanhdai.com/) ilham aldım. Minimal ama etkili bir tasarım anlayışını benimsedim.
+
+## Kişiselleştirme ve Avatar
+
+<img src="/blog/2025-07-27/avatar.png" alt="nice-avatar omergulcicek" width="200"/>
+
+Severek takip ettiğim [Adem İlter](https://ademilter.com/)'in geliştirdiği [vue-nice-avatar](https://github.com/ademilter/vue-nice-avatar) projesini kullanarak avatarımı oluşturdum. Bu harika araç sayesinde oluşturduğum avatar'ı:
+
+- **Kişisel sitemde** profil resmi olarak
+- **Favicon** olarak
+- **Sosyal medya profillerimde** tutarlı bir kimlik olarak
+
+kullanıyorum. Bu yaklaşım, sitenin daha kişisel ve samimi bir his vermesini sağlıyor.
+
+Ayrıca, ChatGPT ile bu avatar'ın farklı versiyonlarını oluşturuyorum. Bu versiyonları sitenin uygun yerlerinde kullanarak daha dinamik ve ilgi çekici bir deneyim sunmayı hedefliyorum.
+
+![nice-avatar omergulcicek](/blog/2025-07-27/avatars.jpg)
+
+## Teknoloji Stack'i
+
+### Modern Frontend Ekosistemi
+
+Bu versiyonda en güncel frontend teknolojilerini kullandım:
+
+- **React 19**: En son React sürümü ile performans optimizasyonları
+- **Next.js 15.4**: App Router ve gelişmiş SSR/SSG özellikleri
+- **TypeScript**: Tip güvenliği ve daha iyi geliştirici deneyimi
+- **Tailwind CSS v4**: En son Tailwind sürümü ile gelişmiş utility-first yaklaşım
+- **shadcn/ui**: Modern ve erişilebilir UI bileşenleri
+
+### Markdown İşleme Geliştirmeleri
+
+Blog sistemimde önemli iyileştirmeler yaptım:
+
+- **Özelleştirilmiş Markdown**: Başlık hiyerarşisinden kod renklendirmelerine kadar tam kontrol
+- **Syntax Highlighting**: Shiki ile gelişmiş kod renklendirme
+- **MDX Desteği**: React bileşenlerini markdown içinde kullanabilme
+- **TOC (Table of Contents)**: Blog yazılarında otomatik içindekiler tablosu
+
+### Arama Sistemi
+
+[cmdk](https://cmdk.paco.me/) paketini kullanarak site genelinde arama özelliği ekledim. Bu özellik sayesinde kullanıcılar:
+
+- Blog yazılarında arama yapabilir
+- Projeler arasında gezinme yapabilir
+- Hızlı navigasyon sağlayabilir
+
+## Blog Sistemi İyileştirmeleri
+
+### Yıllara Göre Gruplandırma
+
+Blog yazılarını yıllara göre gruplandırarak daha organize bir yapı oluşturdum. Bu yaklaşım, içerik arşivleme ve navigasyon açısından çok daha kullanıcı dostu.
+
+### Navigasyon Geliştirmeleri
+
+- **Önceki/Sonraki Makale**: Blog detay sayfalarında kolay navigasyon
+- **İlgili Yazılar**: Benzer içerik önerileri
+- **Kategori Filtreleme**: Gelişmiş filtreleme sistemi
+
+## Performans Optimizasyonları
+
+### Bundle Size Optimizasyonu
+
+Modern paketlerin yanı sıra, bundle size'ı minimize etmek için:
+
+- **Tree Shaking**: Kullanılmayan kodların otomatik temizlenmesi
+- **Code Splitting**: Sayfa bazında kod bölme
+- **Image Optimization**: Next.js'in built-in image optimizasyonu
+
+### SEO İyileştirmeleri
+
+- **Structured Data**: JSON-LD schema markup'ları
+- **Meta Tags**: Dinamik meta tag yönetimi
+- **Sitemap**: Otomatik sitemap oluşturma
+
+## Geliştirici Deneyimi
+
+### TypeScript Entegrasyonu
+
+Tüm projeyi TypeScript ile yazdım. Daha önceki son versiyonlarda da TypeScript kullanıyordum. Bu karar:
+
+- Daha güvenli kod yazımı sağlıyor
+- IDE desteğini artırıyor
+- Refactoring süreçlerini kolaylaştırıyor
+
+### Component Architecture
+
+Modüler bir component mimarisi benimsedim:
+
+- **Atomic Design**: Atom, molekül, organizma yaklaşımı
+- **Reusable Components**: Tekrar kullanılabilir bileşenler
+- **Type Safety**: Her component için tip tanımları
+
+## Sonuç
+
+Bu yenileme süreci, sadece teknolojik bir güncelleme değil, aynı zamanda kullanıcı deneyimi ve geliştirici deneyimi açısından da önemli iyileştirmeler getirdi. Modern frontend ekosisteminin en güncel araçlarını kullanarak, hem performans hem de kullanılabilirlik açısından üst düzey bir deneyim sunmayı hedefledim.
+
+Kaynak kodlara [GitHub üzerinden](https://github.com/omergulcicek/omergulcicek.com) ulaşabilirsiniz. Kodumu kullanmakta özgürsünüz!
