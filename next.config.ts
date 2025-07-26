@@ -10,33 +10,13 @@ const withMDX = createMDX({
 })
 
 const nextConfig = {
+	output: "export" as const,
 	images: {
 		domains: ["api.microlink.io"],
 		unoptimized: true
 	},
 	pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-	trailingSlash: true,
-	async headers() {
-		return [
-			{
-				source: "/(.*)",
-				headers: [
-					{
-						key: "Cache-Control",
-						value: "no-cache, no-store, must-revalidate"
-					},
-					{
-						key: "Pragma",
-						value: "no-cache"
-					},
-					{
-						key: "Expires",
-						value: "0"
-					}
-				]
-			}
-		]
-	}
+	trailingSlash: true
 }
 
 export default withMDX(nextConfig)
