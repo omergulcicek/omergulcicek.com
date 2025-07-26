@@ -1,1 +1,5 @@
 export * from "./About"
+export * from "./AboutHobbies"
+export * from "./AboutSkills"
+export * from "./AboutServices"
+export * from "./AboutContact"

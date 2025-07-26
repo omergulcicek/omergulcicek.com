@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { ExternalLink } from "lucide-react"
+import { Link as LinkIcon } from "lucide-react"
 
 // import { Button } from "@/ui"
 import { Section } from "@/widgets"
@@ -10,29 +10,28 @@ import { PROJECTS } from "@/data"
 export function Projects() {
 	return (
 		<Section title="Projeler" type="h2">
-			<ul className="flex flex-col gap-6">
-				{PROJECTS.slice(0, 3).map((project, index) => (
-					<li
-						key={project.title}
-						className="flex items-center justify-start gap-4"
-					>
-						<span className="text-muted-foreground tabular-nums">
-							0{index + 1}
-						</span>
-						<div>
-							<h3 className="text-base font-medium">{project.title}</h3>
-							<p className="text-sm text-muted-foreground">
-								{project.description}
-							</p>
-						</div>
-
+			<ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+				{PROJECTS.slice(0, 3).map((project) => (
+					<li key={project.title}>
 						<Link
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="active:scale-90 transition-transform ml-auto"
+							className="flex flex-col items-start gap-4 border border-border text-sm font-medium hover:bg-neutral-50 transition-colors p-4 md:p-8 rounded-lg"
 						>
-							<ExternalLink className="size-4" />
+							<div>
+								<h3 className="text-base font-semibold">{project.title}</h3>
+								<p className="text-sm text-muted-foreground">
+									{project.description}
+								</p>
+							</div>
+
+							<div className="flex items-center gap-2">
+								<LinkIcon className="size-4" />
+								<span className="underline underline-offset-4 text-blue-500">
+									{project.link.replace("https://", "")}
+								</span>
+							</div>
 						</Link>
 					</li>
 				))}

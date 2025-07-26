@@ -11,17 +11,28 @@ import { Section } from "@/widgets"
 
 import { EXPERIENCE } from "@/data"
 
-export function Experience() {
+interface ExperienceProps {
+	showAll?: boolean
+	title?: string
+}
+
+export function Experience({
+	showAll = false,
+	title = "Deneyim"
+}: ExperienceProps) {
+	const experiences = showAll ? EXPERIENCE : EXPERIENCE.slice(0, 3)
+	const defaultExperience = showAll ? "" : experiences[0].company
+
 	return (
-		<Section title="Deneyim" type="h2">
+		<Section title={title} type="h2">
 			<div className="flex flex-col gap-2">
 				<Accordion
 					type="single"
 					collapsible
 					className="w-full"
-					defaultValue={EXPERIENCE[0].company}
+					defaultValue={defaultExperience}
 				>
-					{EXPERIENCE.slice(0, 3).map((experience) => (
+					{experiences.map((experience) => (
 						<AccordionItem value={experience.company} key={experience.company}>
 							<AccordionTrigger>
 								<div className="flex items-center justify-between w-full">
@@ -69,10 +80,6 @@ export function Experience() {
 					))}
 				</Accordion>
 			</div>
-
-			{/* <div className="flex justify-center">
-				<Button variant="outline">Tüm iş deneyimlerini göster</Button>
-			</div> */}
 		</Section>
 	)
 }
