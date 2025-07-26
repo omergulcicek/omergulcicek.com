@@ -1,4 +1,4 @@
-import { Newspaper, Sparkles, User } from "lucide-react"
+import { Bookmark, Newspaper, Sparkles, User } from "lucide-react"
 
 export const NAV_ITEMS = [
 	{
@@ -11,11 +11,11 @@ export const NAV_ITEMS = [
 		href: "/blog",
 		icon: Newspaper
 	},
-	// {
-	// 	label: "Projeler",
-	// 	href: "/projects",
-	// 	icon: FolderGit2
-	// },
+	{
+		label: "Yer İmleri",
+		href: "/bookmarks",
+		icon: Bookmark
+	},
 	{
 		label: "Hakkımda",
 		href: "/about",
