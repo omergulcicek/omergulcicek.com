@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Image from "next/image"
 
 import { useMediaQuery } from "usehooks-ts"
@@ -11,8 +12,14 @@ import { cn } from "@/lib/utils"
 import { Socials, VerifiedUser } from "@/widgets"
 
 export function Hero() {
-	const isDesktop = useMediaQuery("(min-width: 768px)")
-	const imgSize = isDesktop ? 160 : 112
+	const [mounted, setMounted] = useState(false)
+	const isMobile = useMediaQuery("(max-width: 767px)")
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	const imgSize = mounted && isMobile ? 112 : 160
 
 	return (
 		<section>
@@ -20,7 +27,7 @@ export function Hero() {
 				<figure
 					className={cn(
 						"rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none relative",
-						isDesktop ? "size-40" : "size-28"
+						mounted && isMobile ? "size-28" : "size-40"
 					)}
 				>
 					<Image
