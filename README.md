@@ -6,23 +6,101 @@
 
 ***
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+My personal website and blog built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and deployed on Vercel.
 
-## Getting Started
+## 🚀 Tech Stack
 
-First, run the development server:
+### Core Technologies
+- **[Next.js 15](https://nextjs.org/)** - React framework with App Router
+- **[React 19](https://react.dev/)** - Latest React with concurrent features
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
 
-```bash
-npm run dev
+### UI & Components
+- **[Radix UI](https://www.radix-ui.com/)** - Accessible component primitives
+- **[Shadcn/ui](https://ui.shadcn.com/)** - Beautiful component library
+- **[Framer Motion](https://www.framer.com/motion/)** - Smooth animations
+- **[Lucide React](https://lucide.dev/)** - Beautiful icons
+
+### Content & MDX
+- **[MDX](https://mdxjs.com/)** - Markdown with JSX support
+- **[Gray Matter](https://github.com/jonschlinkert/gray-matter)** - Front matter parsing
+- **[Rehype & Remark](https://unifiedjs.com/)** - Content processing
+- **[Shiki](https://shiki.matsu.io/)** - Syntax highlighting
+
+### Development Tools
+- **[ESLint](https://eslint.org/)** - Code linting
+- **[Prettier](https://prettier.io/)** - Code formatting
+- **[Turbopack](https://turbo.build/pack)** - Fast bundler
+
+## ✨ Features
+
+- **⚡ Performance Optimized** - Built with Next.js 15 and Turbopack
+- **📱 Responsive Design** - Mobile-first approach with Tailwind CSS
+- **🎨 Modern UI** - Clean design with Shadcn/ui components
+- **📝 MDX Blog** - Rich content with code syntax highlighting
+- **🔍 SEO Optimized** - Meta tags, structured data, and sitemap
+- **♿ Accessible** - WCAG compliant with Radix UI primitives
+- **🌙 Dark Mode Ready** - Theme switching capability
+- **📊 Analytics Ready** - Google Analytics integration ready
+
+## 🛠️ Getting Started
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/omergulcicek/omergulcicek.com.git
+   cd omergulcicek.com
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the result.
+
+### Available Scripts
+
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                # Next.js App Router pages
+├── components/         # Reusable UI components
+│   ├── icons/          # Icons components
+│   └── shared/         # Shared layout components
+│   ├── ui/             # Shadcn/ui components
+│   ├── widgets/        # Feature-specific components
+├── constants/          # Application-wide constant values
+├── content/            # MDX blog posts
+├── data/               # Static data and configurations
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── types/              # TypeScript type definitions
+└── utils/              # Helper functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 License
 
-## Learn More
+This project is open source and available under the [MIT License](LICENSE).
 
-To learn more about Next.js, take a look at the following resources:
+## 🤝 Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
+
+Built with ❤️ using Next.js, React, and TypeScript
