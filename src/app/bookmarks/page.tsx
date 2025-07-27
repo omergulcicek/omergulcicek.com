@@ -7,7 +7,7 @@ export default function Bookmarks() {
 	return (
 		<>
 			<Container>
-				<Section title="Yer İmleri" type="h2">
+				<Section title="Yer İmleri">
 					<p>
 						Yer imlerimi{" "}
 						<Link

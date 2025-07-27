@@ -1,35 +1,22 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Image from "next/image"
 
 import { useMediaQuery } from "usehooks-ts"
 
 import { USER } from "@/constants/user"
 
-import { cn } from "@/lib/utils"
-
 import { Socials, VerifiedUser } from "@/widgets"
 
 export function Hero() {
-	const [mounted, setMounted] = useState(false)
 	const isMobile = useMediaQuery("(max-width: 767px)")
 
-	useEffect(() => {
-		setMounted(true)
-	}, [])
-
-	const imgSize = mounted && isMobile ? 112 : 160
+	const imgSize = isMobile ? 112 : 160
 
 	return (
 		<section>
-			<div className="flex items-end gap-6">
-				<figure
-					className={cn(
-						"rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none relative",
-						mounted && isMobile ? "size-28" : "size-40"
-					)}
-				>
+			<div className="flex items-end gap-4 md:gap-6">
+				<figure className="rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none relative size-28 aspect-square md:size-40 flex items-center justify-center">
 					<Image
 						src={USER.avatar}
 						alt={USER.displayName}

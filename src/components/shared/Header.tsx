@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -29,12 +30,23 @@ import { NAV_ITEMS, type NavItem } from "@/data"
 export function Header() {
 	const pathname = usePathname()
 	const isDesktop = useMediaQuery("(min-width: 768px)")
+	const [isLoading, setIsLoading] = useState(true)
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false)
+		}, 200)
+
+		return () => clearTimeout(timer)
+	}, [])
 
 	return (
 		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<Container className="py-4 md:py-4">
 				<div className="flex items-center justify-between">
-					{isDesktop ? (
+					{isLoading ? (
+						<div className="size-8 animate-pulse rounded-full bg-muted" />
+					) : isDesktop ? (
 						<Link href="/">
 							<Image
 								src="/omergulcicek.png"
@@ -44,7 +56,7 @@ export function Header() {
 							/>
 						</Link>
 					) : (
-						<Drawer>
+						<Drawer shouldScaleBackground setBackgroundColorOnScale>
 							<DrawerTrigger asChild>
 								<Button
 									variant="outline"
@@ -88,24 +100,33 @@ export function Header() {
 					)}
 
 					<div className="flex items-center gap-4">
-						{isDesktop && (
-							<nav className="flex items-center gap-4 text-sm font-medium">
-								{NAV_ITEMS.map((item) => (
-									<Link
-										key={item.href}
-										href={item.href}
-										className={cn(
-											"text-sm font-medium transition-all duration-300",
-											pathname === item.href ||
-												(pathname.startsWith(item.href) && item.href !== "/")
-												? "text-foreground"
-												: "text-muted-foreground"
-										)}
-									>
-										{item.label}
-									</Link>
-								))}
-							</nav>
+						{isLoading ? (
+							<div className="hidden md:flex items-center gap-4">
+								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
+								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
+								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
+								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
+							</div>
+						) : (
+							isDesktop && (
+								<nav className="flex items-center gap-4 text-sm font-medium">
+									{NAV_ITEMS.map((item) => (
+										<Link
+											key={item.href}
+											href={item.href}
+											className={cn(
+												"text-sm font-medium transition-all duration-300",
+												pathname === item.href ||
+													(pathname.startsWith(item.href) && item.href !== "/")
+													? "text-foreground"
+													: "text-muted-foreground"
+											)}
+										>
+											{item.label}
+										</Link>
+									))}
+								</nav>
+							)
 						)}
 
 						<div className="flex items-center gap-2">

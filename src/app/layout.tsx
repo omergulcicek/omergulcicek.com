@@ -59,9 +59,13 @@ export default function RootLayout({
 	return (
 		<html lang="tr" suppressHydrationWarning className="scroll-smooth">
 			<body className={`${GeistSans.className} antialiased font-sans`}>
-				<Header />
-				<main className="min-h-screen">{children}</main>
-				<Footer />
+				<div data-vaul-drawer-wrapper="">
+					<div className="relative flex min-h-screen flex-col bg-background">
+						<Header />
+						<main className="min-h-screen">{children}</main>
+						<Footer />
+					</div>
+				</div>
 			</body>
 			{SITE.analyticsId && <GoogleAnalytics gaId={SITE.analyticsId} />}
 		</html>
