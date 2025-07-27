@@ -4,7 +4,7 @@ import { Section } from "@/widgets"
 
 export function AboutSkills() {
 	return (
-		<Section title="Hakkımda" type="h2">
+		<Section title="Hakkımda">
 			<div className="flex flex-col gap-4 text-base md:text-lg leading-relaxed">
 				<p>
 					Modern web uygulamalarının tüm katmanlarında derinlemesine deneyime
