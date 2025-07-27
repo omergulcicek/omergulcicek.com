@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { useEffect, useState } from "react"
@@ -37,6 +38,7 @@ export const AnimatedTestimonials = ({
 			const interval = setInterval(handleNext, 5000)
 			return () => clearInterval(interval)
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [autoplay])
 
 	const randomRotateY = () => {

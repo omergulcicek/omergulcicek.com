@@ -8,7 +8,7 @@ import "./globals.css"
 import { SITE } from "@/constants/site"
 import { USER } from "@/constants/user"
 
-import { Footer, Header } from "@/shared"
+import { Footer, Header, WebVitals } from "@/shared"
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE.url),
@@ -59,6 +59,7 @@ export default function RootLayout({
 	return (
 		<html lang="tr" suppressHydrationWarning className="scroll-smooth">
 			<body className={`${GeistSans.className} antialiased font-sans`}>
+				<WebVitals />
 				<div data-vaul-drawer-wrapper="">
 					<div className="relative flex min-h-screen flex-col bg-background">
 						<Header />
