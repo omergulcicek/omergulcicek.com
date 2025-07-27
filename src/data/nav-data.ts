@@ -1,6 +1,12 @@
-import { Bookmark, Newspaper, Sparkles, User } from "lucide-react"
+import { Bookmark, LucideIcon, Newspaper, Sparkles, User } from "lucide-react"
 
-export const NAV_ITEMS = [
+export interface NavItem {
+	label: string
+	href: string
+	icon: LucideIcon
+}
+
+export const NAV_ITEMS: NavItem[] = [
 	{
 		label: "Ana Sayfa",
 		href: "/",
