@@ -28,7 +28,7 @@ export function Projects() {
 
 							<div className="flex items-center gap-2">
 								<LinkIcon className="size-4" />
-								<span className="underline underline-offset-4 text-blue-500">
+								<span className="underline underline-offset-4 text-blue-600">
 									{project.link.replace("https://", "")}
 								</span>
 							</div>

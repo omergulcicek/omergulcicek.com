@@ -12,7 +12,7 @@ export function AboutContact() {
 					Benimle iletişime geçmek için{" "}
 					<Link
 						href={`mailto:${USER.email}`}
-						className="inline-flex items-center gap-2 text-blue-500 underline font-medium underline-offset-4"
+						className="inline-flex items-center gap-2 text-blue-600 underline font-medium underline-offset-4"
 					>
 						{USER.email}
 					</Link>{" "}

@@ -14,7 +14,10 @@ export function Socials() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<Button variant="ghost">
+					<Button
+						variant="ghost"
+						aria-label={`${social.title} profilini ziyaret et`}
+					>
 						<social.icon className="size-4" />
 					</Button>
 				</Link>

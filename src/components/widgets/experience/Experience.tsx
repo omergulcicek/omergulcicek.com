@@ -64,13 +64,13 @@ export function Experience({
 							</AccordionTrigger>
 							<AccordionContent className="flex flex-col gap-4 pl-10">
 								<h4 className="text-sm font-medium">{experience.role}</h4>
-								<ul className="flex flex-wrap gap-2">
+								<div className="flex flex-wrap gap-2">
 									{experience.technologies.map((technology) => (
 										<Badge key={technology} variant="secondary">
 											{technology}
 										</Badge>
 									))}
-								</ul>
+								</div>
 
 								<div className="flex flex-col gap-1 text-sm leading-relaxed text-muted-foreground">
 									{experience.responsibilities}

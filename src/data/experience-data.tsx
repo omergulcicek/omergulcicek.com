@@ -23,7 +23,7 @@ export const EXPERIENCE = [
 					- Fibabanka iştiraki olan{" "}
 					<LinkPreview
 						url="https://alisgidis.com?utm_source=omergulcicek.com"
-						className="text-blue-500 underline font-medium underline-offset-4"
+						className="text-blue-600 underline font-medium underline-offset-4"
 					>
 						alisgidis.com
 					</LinkPreview>{" "}
@@ -93,7 +93,7 @@ export const EXPERIENCE = [
 					-{" "}
 					<LinkPreview
 						url="https://hangikredi.com?utm_source=omergulcicek.com"
-						className="text-blue-500 underline font-medium underline-offset-4"
+						className="text-blue-600 underline font-medium underline-offset-4"
 					>
 						hangikredi.com
 					</LinkPreview>{" "}

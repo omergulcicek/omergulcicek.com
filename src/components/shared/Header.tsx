@@ -140,6 +140,7 @@ export function Header() {
 									variant="outline"
 									size="sm"
 									className="rounded-full size-8"
+									aria-label="GitHub profilini ziyaret et"
 								>
 									<GitHub className="size-4" />
 								</Button>

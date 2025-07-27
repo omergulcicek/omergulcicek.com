@@ -13,7 +13,7 @@ export default function Bookmarks() {
 						<Link
 							href="https://raindrop.io/omergulcicek"
 							target="_blank"
-							className="text-blue-500 underline font-medium underline-offset-4"
+							className="text-blue-600 underline font-medium underline-offset-4"
 						>
 							raindrop.io
 						</Link>

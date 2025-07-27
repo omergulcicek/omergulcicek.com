@@ -10,7 +10,7 @@ export function AboutServices() {
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				<div className="flex flex-col gap-4 p-6 rounded-lg border bg-card">
 					<div className="flex items-center gap-2">
-						<Code className="size-4 text-blue-500" />
+						<Code className="size-4 text-blue-600" />
 						<h3 className="text-lg font-semibold">Freelance Geliştirme</h3>
 					</div>
 					<p className="text-sm text-muted-foreground">
