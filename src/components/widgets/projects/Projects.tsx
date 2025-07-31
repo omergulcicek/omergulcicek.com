@@ -1,7 +1,8 @@
 import Link from "next/link"
 
-import { Link as LinkIcon } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
+import { Badge } from "@/ui"
 // import { Button } from "@/ui"
 import { Section } from "@/widgets"
 
@@ -10,27 +11,34 @@ import { PROJECTS } from "@/data"
 export function Projects() {
 	return (
 		<Section title="Projeler" type="h2">
-			<ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+			<ul className="grid gap-x-6 md:gap-x-12 gap-y-4 md:grid-cols-2">
 				{PROJECTS.slice(0, 3).map((project) => (
 					<li key={project.title}>
 						<Link
+							className="-mx-4 flex flex-col items-start p-4 transition-colors hover:bg-gray-50 sm:rounded-xl"
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="flex flex-col items-start gap-4 border border-border text-sm font-medium hover:bg-neutral-50 transition-colors p-4 md:p-8 rounded-lg"
 						>
-							<div>
-								<h3 className="text-base font-semibold">{project.title}</h3>
-								<p className="text-sm text-muted-foreground">
-									{project.description}
-								</p>
+							<h2 className="text-base md:text-lg font-semibold">
+								{project.title}
+							</h2>
+							<p className="mt-3 text-base text-gray-700">
+								{project.description}
+							</p>
+							<div className="flex flex-wrap gap-1.5 mt-3">
+								{project.tags.map((tag) => (
+									<Badge variant="outline" key={tag}>
+										{tag}
+									</Badge>
+								))}
 							</div>
-
-							<div className="flex items-center gap-2">
-								<LinkIcon className="size-4" />
-								<span className="underline underline-offset-4 text-blue-600">
-									{project.link.replace("https://", "")}
-								</span>
+							<div
+								aria-hidden="true"
+								className="mt-3 text-sm md:text-base font-semibold flex items-center gap-2"
+							>
+								<span>Detayları gör</span>
+								<ExternalLink className="size-4" />
 							</div>
 						</Link>
 					</li>
