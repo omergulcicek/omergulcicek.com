@@ -1,10 +1,9 @@
 import Link from "next/link"
 
-import { ExternalLink } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
-import { Badge } from "@/ui"
 // import { Button } from "@/ui"
-import { Section } from "@/widgets"
+import { Section, TagsBadge } from "@/widgets"
 
 import { PROJECTS } from "@/data"
 
@@ -20,25 +19,22 @@ export function Projects() {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<h2 className="text-base md:text-lg font-semibold">
+							<h3 className="text-base md:text-lg font-semibold">
 								{project.title}
-							</h2>
-							<p className="mt-3 text-base text-gray-700">
+							</h3>
+
+							<p className="my-3 text-base text-gray-700">
 								{project.description}
 							</p>
-							<div className="flex flex-wrap gap-1.5 mt-3">
-								{project.tags.map((tag) => (
-									<Badge variant="outline" key={tag}>
-										{tag}
-									</Badge>
-								))}
-							</div>
+
+							<TagsBadge tags={project.tags} />
+
 							<div
 								aria-hidden="true"
-								className="mt-3 text-sm md:text-base font-semibold flex items-center gap-2"
+								className="mt-3 text-sm text-blue-600 underline underline-offset-4 flex items-center gap-1"
 							>
 								<span>Detayları gör</span>
-								<ExternalLink className="size-4" />
+								<ChevronRight className="size-4" />
 							</div>
 						</Link>
 					</li>
