@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import { Calendar } from "lucide-react"
 
 import { BlogPost } from "@/types/blog-type"
@@ -15,6 +17,22 @@ export function BlogInfo({ post }: { post: BlogPost }) {
 					<time dateTime={post.metadata.createdAt}>
 						{dateFormat(post.metadata.createdAt)}
 					</time>
+					{typeof post.metadata.medium === "string" &&
+						post.metadata.medium.trim() !== "" && (
+							<>
+								<span>•</span>
+								<span className="text-muted-foreground text-sm">
+									<Link
+										href={post.metadata.medium}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label="Medium'da oku"
+									>
+										Medium&apos;da oku
+									</Link>
+								</span>
+							</>
+						)}
 				</div>
 
 				<TagsBadge tags={post.metadata.tags} />
