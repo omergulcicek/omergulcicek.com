@@ -1,0 +1,89 @@
+---
+createdAt: "2025-08-13"
+slug: "/frontend-calisma-ortamim-cursor-eklentiler"
+title: "Frontend Çalışma Ortamım: Cursor, Eklentiler ve Daha Fazlası"
+category: "teknik"
+tags: ["Frontend"]
+medium: "https://omergulcicek.medium.com/frontend-%C3%A7al%C4%B1%C5%9Fma-ortam%C4%B1m-cursor-eklentiler-ve-daha-fazlas%C4%B1-d0b63064fe25"
+---
+
+Bu makalede kendi frontend geliştirme ortamımı, kullandığım araçları, eklentileri ve proje standartlarımı paylaşmak istiyorum. IDE tercihimden tarayıcı eklentilerime, proje klasör yapımdan kod standartlarıma kadar tüm detayları burada bulabileceksiniz.
+
+Bu paylaşımın başka frontend geliştiricilere fikir vermesi ve kendi çalışma düzenlerini oluştururken ilham olmasını amaçlıyorum.
+
+![Ömer Gülçiçek - Çalışma Masam](/blog/2025-08-13/calisma-masam.JPG)
+
+## Geliştirme Ortamı
+
+Geliştirme sürecimde **13" MacBook Pro M1** kullanıyorum, ilerleyen zamanlarda bunu **Mac mini M4 Pro** modeline yükseltmeyi planlıyorum. Ekipmanlarımı **27" 4K ASUS monitör**, **G513 Carbon klavye** ve **G703 mouse** ile birlikte kullanıyorum.
+
+## Günlük Rutinim
+
+Güncel kalmak için farklı kaynaklardan yararlanıyorum. Takip ettiğim blog yazarlarını Raindrop hesabımda paylaştım. Ayrıca GitHub Trends sayfasında günlük, haftalık ve aylık bazda TypeScript ve SCSS başlıklarını düzenli olarak inceliyorum.
+
+[Takip Ettiğim Bloglar - Raindrop](https://raindrop.io/omergulcicek/takip-ettigim-bloglar-58171252)
+
+[GitHub Trends - TypeScript](https://github.com/trending/typescript?since=weekly&spoken_language_code=)
+
+## Kullandığım IDE
+
+Uzun süre boyunca geliştirme ortamımda **VSCode** kullandım. Ancak **Cursor**’un sunduğu yapay zeka destekli yetenekleri deneyimledikten sonra **Pro üyelik** aldım ve artık ana geliştirme ortamım olarak Cursor kullanıyorum.
+
+Cursor’da özellikle **Ask Mode** benim için çok değerli. Teknik konularda kapsamlı bir geliştirme yapmam gerektiğinde veya fikir aşamasında tartışmaya ihtiyaç duyduğumda önce Ask Mode ile planımı netleştiriyorum, ardından projeyi kodlamaya başlıyorum. Bu sayede hem zaman kazanıyorum hem de daha doğru teknik kararlar alabiliyorum.
+
+Bunlara ek olarak, çoğunlukla **ChatGPT 5** ile sohbet ediyorum. Konular bazen teknik olurken bazen de tamamen günlük planlarım veya bağımsız konular olabiliyor.
+
+## Cursor Rules
+
+Cursor’u kullanırken **kendi kod standartlarımı korumak** adına özel **Rules** girdim. Bu sayede her projede aynı yazım, stil ve standartlar korunuyor.
+
+Ben bu kuralları IDE’ye yazarak tüm projelerimde aktif olacak şekilde ayarladım, ancak istenirse proje bazlı `.cursorrules` dosyası da oluşturulabilir.
+
+[Github - Cursor Rules](https://github.com/omergulcicek/notes/blob/main/config/cursor.md)
+
+## Tarayıcı Eklentilerim
+
+Geliştirme sürecinde ve günlük kullanımda **Chrome** tarayıcısını tercih ediyorum.
+
+[Daily.dev](https://daily.dev/) eklentisini özellikle tavsiye ediyorum. İlgi alanlarınızı seçtiğinizde, her yeni sekme açtığınızda bu alanlarla ilgili en güncel paketler, YouTube videoları ve makaleler gibi içerikleri karşınıza getiriyor.
+
+Kullandığım tüm eklentileri **Raindrop** hesabımda listeliyorum. İncelemek isteyenler buradan ulaşabilir:
+[Raindrop - Uygulama ve Eklentiler](https://raindrop.io/omergulcicek/uygulama-ve-eklentiler-53474205)
+
+## Proje Yapım
+
+Projelerimde kullandığım **folder structure** hibrit bir yapı: **Feature-based + Atomic Design + Layered Architecture**.
+Hem tekrar kullanılabilirliği hem de ölçeklenebilirliği öncelikli tutuyorum.
+
+Next.js projelerinde kullandığım `src` klasörü yapım:
+
+```bash
+src
+├── app
+├── assets
+├── components
+│   ├── icons
+│   ├── features
+│   ├── shared
+│   ├── skeletons
+│   ├── ui
+│   └── widgets
+├── constants
+├── data
+├── helpers
+├── hooks
+├── i18n
+├── lib
+├── providers
+├── schemas
+├── services
+├── stores
+├── types
+└── .middleware
+```
+
+Klasör yapımın detaylı halini [GitHub - Next.js Boilerplate Projesi](https://github.com/omergulcicek/nextjs-boilerplate) linki üzerinden inceleyebilirsiniz.
+
+***
+
+Sizin çalışma ortamınız nasıl? Bana önerebileceğiniz araçlar, eklentiler veya yöntemler varsa bana ulaşabilirsiniz. Görüş ve önerilerinizi duymaktan memnuniyet duyarım.
