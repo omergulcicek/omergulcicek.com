@@ -60,6 +60,7 @@ const tagsIconMap: Record<
 	Zustand: Zustand,
 	Zod: Zod,
 	TanStack: TanStack,
+	"TanStack Query": TanStack,
 	Framer: Framer,
 	GitHub: GitHub,
 	NPM: NPM,

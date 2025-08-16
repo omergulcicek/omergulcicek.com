@@ -3,6 +3,31 @@ import React from "react"
 import { LinkPreview } from "@/ui"
 
 export const EXPERIENCE = [
+	// {
+	// 	company: "Machinarium",
+	// 	icon: "machinarium",
+	// 	role: "Frontend Team Lead",
+	// 	period: "Ağu 2025 - Şimdi",
+	// 	duration: "Devam ediyor",
+	// 	workType: "Remote",
+	// 	technologies: [
+	// 		"React",
+	// 		"NextJS",
+	// 		"TypeScript",
+	// 		"TanStack Query",
+	// 		"Tailwind CSS"
+	// 	],
+	// 	responsibilities: (
+	// 		<>
+	// 			<p>
+	// 				- 6 kişilik frontend ekibini yönettim ve rehberlik ettim, teknik
+	// 				liderlik sağlayarak kod kalitesi, tutarlılık ve teslim sürelerini
+	// 				garanti altına aldım.
+	// 			</p>
+	// 			<p>- Ağırlıklı olarak backoffice projelerinde çalışıyorum.</p>
+	// 		</>
+	// 	)
+	// },
 	{
 		company: "Alışgidiş",
 		icon: "alisgidis",

@@ -4,10 +4,9 @@ import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
-	AccordionTrigger,
-	Badge
+	AccordionTrigger
 } from "@/ui"
-import { Section } from "@/widgets"
+import { Section, TagsBadge } from "@/widgets"
 
 import { EXPERIENCE } from "@/data"
 
@@ -47,7 +46,10 @@ export function Experience({
 											/>
 										</figure>
 										<div className="flex flex-col">
-											<h3 className="font-medium text-base">
+											<strong className="text-sm font-medium">
+												{experience.role}
+											</strong>
+											<h3 className="text-sm font-normal">
 												{experience.company}
 											</h3>
 										</div>
@@ -63,14 +65,7 @@ export function Experience({
 								</div>
 							</AccordionTrigger>
 							<AccordionContent className="flex flex-col gap-4 pl-10">
-								<h4 className="text-sm font-medium">{experience.role}</h4>
-								<div className="flex flex-wrap gap-2">
-									{experience.technologies.map((technology) => (
-										<Badge key={technology} variant="secondary">
-											{technology}
-										</Badge>
-									))}
-								</div>
+								<TagsBadge tags={experience.technologies} />
 
 								<div className="flex flex-col gap-1 text-sm leading-relaxed text-muted-foreground">
 									{experience.responsibilities}

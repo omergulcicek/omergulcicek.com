@@ -45,17 +45,6 @@ export function AboutSkills() {
 					projelerde frontend mimarilerini şekillendirmeyi ve teknoloji
 					stratejileri geliştirmeyi hedefliyorum.
 				</p>
-
-				<p>
-					Bunların yanında açık kaynak projeler geliştiriyor,{" "}
-					<strong>Next.js</strong> tabanlı boilerplate’ler ve yeniden
-					kullanılabilir <strong>npm</strong> paketleri üzerinde çalışıyorum.
-					Geliştirdiğim projelere detaylı şekilde göz atmak isterseniz,{" "}
-					<Link href="/projects" className="underline underline-offset-4">
-						projelerim
-					</Link>{" "}
-					sayfasına bakabilirsin.
-				</p>
 			</div>
 		</Section>
 	)
