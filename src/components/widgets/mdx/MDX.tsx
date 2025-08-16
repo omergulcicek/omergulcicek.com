@@ -13,6 +13,7 @@ import {
 import { processMdxContent } from "@/utils/process-mdx-content"
 import { slugify } from "@/utils/slugify"
 
+import { MdxZoomProvider } from "@/components/widgets/mdx/mdx-zoom-provider"
 import {
 	Accordion,
 	AccordionContent,
@@ -100,14 +101,17 @@ const components = {
 	},
 
 	img: ({ src, alt, ...props }: ImageProps) => (
-		<Image
-			src={src || ""}
-			alt={alt || ""}
-			width={800}
-			height={600}
-			className="rounded-lg max-w-full h-auto mx-auto"
-			{...props}
-		/>
+		<figure className="md:my-6 md:-mx-20">
+			<Image
+				src={src || ""}
+				alt={alt || ""}
+				width={800}
+				height={600}
+				className="rounded-lg max-w-full h-auto mx-auto"
+				data-zoomable
+				{...props}
+			/>
+		</figure>
 	),
 
 	h1: ({ children, ...props }: HeadingProps<"h1">) => (
@@ -137,7 +141,7 @@ const components = {
 
 export async function MDX({ content }: MdxContentProps) {
 	const processedContent = await processMdxContent(content)
-	return <>{processedContent}</>
+	return <MdxZoomProvider>{processedContent}</MdxZoomProvider>
 }
 
 export { components }
