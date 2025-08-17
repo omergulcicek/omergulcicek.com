@@ -1,1 +1,4 @@
-export type TagsIconMapType = Record<string, React.ComponentType>
+export type TagsIconMapType = Record<
+	string,
+	React.ComponentType<{ className?: string }>
+>

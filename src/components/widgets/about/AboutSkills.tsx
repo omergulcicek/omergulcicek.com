@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 import { Section } from "@/widgets"
 
 export function AboutSkills() {
