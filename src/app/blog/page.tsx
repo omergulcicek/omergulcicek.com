@@ -22,10 +22,7 @@ export default function Blog() {
 
 	return (
 		<Container>
-			<Section
-				title="Blog"
-				description="Teknik, fikir ve yorumlar üzerine makalelerden oluşan bir koleksiyon"
-			>
+			<Section title="Blog">
 				<div className="space-y-12 mt-10 relative">
 					{Object.entries(postsByYear)
 						.reverse()

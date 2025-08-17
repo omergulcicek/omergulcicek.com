@@ -5,12 +5,10 @@ import { Heading } from "@/ui"
 export function Section({
 	title,
 	type = "h1",
-	description,
 	children
 }: {
 	title?: string
 	type?: string
-	description?: string
 	children: React.ReactNode
 }) {
 	return (
@@ -23,8 +21,6 @@ export function Section({
 					{title}
 				</Heading>
 			)}
-
-			{description && <p className="text-muted-foreground">{description}</p>}
 
 			{children}
 		</section>
