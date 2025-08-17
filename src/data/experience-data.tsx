@@ -3,31 +3,31 @@ import React from "react"
 import { LinkPreview } from "@/ui"
 
 export const EXPERIENCE = [
-	// {
-	// 	company: "Machinarium",
-	// 	icon: "machinarium",
-	// 	role: "Frontend Team Lead",
-	// 	period: "Ağu 2025 - Şimdi",
-	// 	duration: "Devam ediyor",
-	// 	workType: "Remote",
-	// 	technologies: [
-	// 		"React",
-	// 		"NextJS",
-	// 		"TypeScript",
-	// 		"TanStack Query",
-	// 		"Tailwind CSS"
-	// 	],
-	// 	responsibilities: (
-	// 		<>
-	// 			<p>
-	// 				- 6 kişilik frontend ekibini yönettim ve rehberlik ettim, teknik
-	// 				liderlik sağlayarak kod kalitesi, tutarlılık ve teslim sürelerini
-	// 				garanti altına aldım.
-	// 			</p>
-	// 			<p>- Ağırlıklı olarak backoffice projelerinde çalışıyorum.</p>
-	// 		</>
-	// 	)
-	// },
+	{
+		company: "Machinarium",
+		icon: "machinarium",
+		role: "Frontend Team Lead",
+		period: "Ağu 2025 - Şimdi",
+		duration: "Devam ediyor",
+		workType: "Remote",
+		technologies: [
+			"React",
+			"Next.js",
+			"TypeScript",
+			"TanStack Query",
+			"Tailwind CSS"
+		],
+		responsibilities: (
+			<>
+				<p>
+					- 6 kişilik frontend ekibine liderlik ederek çok sayıda projeyi
+					yönettim; teknik rehberlik sağladım, kod kalitesi ve tutarlılığı
+					garanti altına alarak teslim sürelerinin etkin bir şekilde
+					karşılanmasını sağladım.
+				</p>
+			</>
+		)
+	},
 	{
 		company: "Alışgidiş",
 		icon: "alisgidis",
@@ -37,7 +37,7 @@ export const EXPERIENCE = [
 		workType: "Remote",
 		technologies: [
 			"React",
-			"NextJS",
+			"Next.js",
 			"TypeScript",
 			"TanStack Query",
 			"Tailwind CSS"
@@ -78,7 +78,7 @@ export const EXPERIENCE = [
 		workType: "Remote",
 		technologies: [
 			"React",
-			"NextJS",
+			"Next.js",
 			"GraphQL",
 			"Styled Components",
 			"Tailwind CSS"
@@ -149,7 +149,7 @@ export const EXPERIENCE = [
 			"HTML",
 			"CSS",
 			"LESS",
-			"Javascript",
+			"JavaScript",
 			"jQuery",
 			"ES6",
 			"Jinja"

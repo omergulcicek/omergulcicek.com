@@ -140,7 +140,7 @@
     scrollbar-color: var(--border) transparent;
   }
   [id] {
-    @apply scroll-mt-22;
+    @apply scroll-mt-24;
   }
 }
 

@@ -33,7 +33,7 @@ export function Experience({
 				>
 					{experiences.map((experience) => (
 						<AccordionItem value={experience.company} key={experience.company}>
-							<AccordionTrigger>
+							<AccordionTrigger className="items-center">
 								<div className="flex items-center justify-between w-full">
 									<div className="flex items-center gap-3">
 										<figure className="size-6">
