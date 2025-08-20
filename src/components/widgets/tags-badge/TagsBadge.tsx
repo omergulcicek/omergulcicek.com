@@ -17,16 +17,39 @@ export function TagsBadge({ tags }: TagsBadgeProps) {
 				const IconComponent = tagsIconMap[tag]
 
 				return (
-					<Badge
+					<IconBadge
 						key={tag}
-						variant="secondary"
-						className={`flex items-center gap-1`}
-					>
-						{IconComponent && <IconComponent className="size-3" />}
-						{tag}
-					</Badge>
+						icon={IconComponent ? <IconComponent /> : null}
+						label={tag}
+					/>
 				)
 			})}
 		</div>
+	)
+}
+
+export function IconBadge({
+	icon,
+	label,
+	simple = false
+}: {
+	icon: React.ReactNode
+	label: string
+	simple?: boolean
+}) {
+	if (simple) {
+		return (
+			<span className="flex items-center gap-2 text-sm">
+				{icon}
+				{label}
+			</span>
+		)
+	}
+
+	return (
+		<Badge variant="secondary" className="flex items-center gap-1">
+			{icon}
+			{label}
+		</Badge>
 	)
 }

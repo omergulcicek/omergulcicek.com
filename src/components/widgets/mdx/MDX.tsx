@@ -1,6 +1,8 @@
 import React from "react"
 import Image from "next/image"
 
+import { processMdxContent } from "@/helpers/process-mdx-content"
+
 import { HeadingProps } from "@/types/heading-type"
 import {
 	CodeProps,
@@ -10,7 +12,6 @@ import {
 	PreProps
 } from "@/types/mdx-type"
 
-import { processMdxContent } from "@/utils/process-mdx-content"
 import { slugify } from "@/utils/slugify"
 
 import { MdxZoomProvider } from "@/components/widgets/mdx/mdx-zoom-provider"

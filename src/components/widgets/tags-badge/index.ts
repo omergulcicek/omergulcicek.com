@@ -1,1 +1,1 @@
-export { TagsBadge } from "./TagsBadge"
+export { TagsBadge, IconBadge } from "./TagsBadge"

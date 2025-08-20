@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation"
 
+import { extractFirstImage } from "@/helpers/extract-first-image"
+
 import { SITE } from "@/constants/site"
 
-import { extractFirstImage } from "@/utils/extract-first-image"
 import { slugify } from "@/utils/slugify"
 
 import { Container } from "@/shared"

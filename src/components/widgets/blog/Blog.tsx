@@ -1,8 +1,8 @@
 import Link from "next/link"
 
-import { BlogProps } from "@/types/blog-type"
+import { dateFormat } from "@/helpers/date-format"
 
-import { dateFormat } from "@/utils/date-format"
+import { BlogProps } from "@/types/blog-type"
 
 import { Button } from "@/ui"
 import { Section } from "@/widgets"

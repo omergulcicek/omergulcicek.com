@@ -1,10 +1,9 @@
 import Link from "next/link"
 
+import { dateFormat } from "@/helpers/date-format"
 import { Calendar } from "lucide-react"
 
 import { BlogPost } from "@/types/blog-type"
-
-import { dateFormat } from "@/utils/date-format"
 
 import { TagsBadge, TOC } from "@/widgets"
 
