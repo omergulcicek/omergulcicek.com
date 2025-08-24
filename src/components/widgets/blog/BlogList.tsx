@@ -32,46 +32,63 @@ export function BlogList({ allPosts }: BlogListProps) {
 
 	const allTags = getUniqueSortedTags(allPosts)
 
+	function PostRow({ post }: { post: BlogPost }) {
+		return (
+			<div className={"flex flex-col gap-1"}>
+				<h2 className="text-lg leading-normal font-normal text-gray-900 group-hover:text-black transition-colors duration-200">
+					<Link
+						href={`/blog/${post.slug}`}
+						className="group relative overflow-hidden flex items-start"
+					>
+						{post.metadata.title}
+					</Link>
+				</h2>
+				<div className="flex flex-col md:flex-row items-start gap-2">
+					<span className="text-xs text-italic font-medium leading-[22px] text-muted-foreground tracking-wide whitespace-nowrap">
+						{dateFormat(post.metadata.createdAt)}
+					</span>
+					<span className="text-black/20 leading-[22px] hidden md:inline-flex">
+						•
+					</span>
+					<TagsBadge tags={post.metadata.tags as string[]} />
+				</div>
+			</div>
+		)
+	}
+
 	return (
 		<>
-			<FilterSort tags={allTags} currentSort={sortParam} currentTag={tag} />
-			<div className="space-y-12 mt-10 relative">
-				{Object.entries(postsByYear)
-					.reverse()
-					.map(([year, posts]) => (
-						<div
-							key={year}
-							className="space-y-6 flex flex-col gap-1 items-start relative min-h-20"
-						>
-							<span className="text-2xl absolute font-medium top-5 -left-12 -rotate-90 text-gray-300 select-none hidden md:flex">
-								{year}
-							</span>
-							<div className="flex flex-col gap-6 items-start">
-								{posts.map((post) => (
-									<div className={"flex flex-col gap-1"} key={post.slug}>
-										<h2 className="text-lg leading-normal font-normal text-gray-900 group-hover:text-black transition-colors duration-200">
-											<Link
-												href={`/blog/${post.slug}`}
-												className="group relative overflow-hidden flex items-start"
-											>
-												{post.metadata.title}
-											</Link>
-										</h2>
-										<div className="flex flex-col md:flex-row items-start gap-2">
-											<span className="text-xs text-italic font-medium leading-[22px] text-muted-foreground tracking-wide whitespace-nowrap">
-												{dateFormat(post.metadata.createdAt)}
-											</span>
-											<span className="text-black/20 leading-[22px] hidden md:inline-flex">
-												•
-											</span>
-											<TagsBadge tags={post.metadata.tags as string[]} />
-										</div>
-									</div>
-								))}
+			<FilterSort tags={allTags} currentTag={tag} />
+			{sortParam === "default" && (
+				<div className="space-y-12 mt-10 relative">
+					{Object.entries(postsByYear)
+						.reverse()
+						.map(([year, posts]) => (
+							<div
+								key={year}
+								className="space-y-6 flex flex-col gap-1 items-start relative min-h-20"
+							>
+								<span className="text-2xl absolute font-medium top-5 -left-12 -rotate-90 text-gray-300 select-none hidden md:flex">
+									{year}
+								</span>
+								<div className="flex flex-col gap-6 items-start">
+									{posts.map((post) => (
+										<PostRow key={post.slug} post={post} />
+									))}
+								</div>
 							</div>
+						))}
+				</div>
+			)}
+			{sortParam !== "default" && (
+				<div className="flex flex-col gap-6 items-start mt-10">
+					{sorted.map((post) => (
+						<div key={post.slug} className="flex flex-col gap-6 items-start">
+							<PostRow post={post} />
 						</div>
 					))}
-			</div>
+				</div>
+			)}
 		</>
 	)
 }

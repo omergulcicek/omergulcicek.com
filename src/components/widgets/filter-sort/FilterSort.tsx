@@ -20,19 +20,15 @@ import {
 import { IconBadge } from "@/widgets"
 
 const SORT_OPTIONS: { value: SortOptionType; label: string }[] = [
-	{ value: "date-desc", label: "En Yeni" },
+	{ value: "default", label: "Varsayılan (En Yeni)" },
 	{ value: "date-asc", label: "En Eski" },
 	{ value: "title-asc", label: "Başlık (A→Z)" },
 	{ value: "title-desc", label: "Başlık (Z→A)" }
 ]
 
-export function FilterSort({
-	tags,
-	currentSort,
-	currentTag
-}: FilterSortPropsType) {
+export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 	const [sortValue, setSortValue] = useQueryState("sort", {
-		defaultValue: currentSort
+		defaultValue: "default"
 	})
 	const [tagState, setTagState] = useQueryState("tag")
 
@@ -44,6 +40,8 @@ export function FilterSort({
 		unique.sort((a, b) => a.localeCompare(b))
 		return unique
 	}, [tags])
+
+	const sortSelectValue = (sortValue ?? "default") as string
 
 	return (
 		<div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -84,8 +82,14 @@ export function FilterSort({
 			<div aria-label="Sort posts" className="flex items-center gap-2">
 				<span className="text-sm text-muted-foreground">Sırala</span>
 				<Select
-					value={sortValue as string}
-					onValueChange={(value) => setSortValue(value as SortOptionType)}
+					value={sortSelectValue}
+					onValueChange={(value) => {
+						if (value === "default") {
+							setSortValue(null)
+						} else {
+							setSortValue(value as SortOptionType)
+						}
+					}}
 				>
 					<SelectTrigger className="w-[180px]">
 						<SelectValue placeholder="Sırala" />

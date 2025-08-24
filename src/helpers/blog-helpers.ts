@@ -3,13 +3,14 @@ import type { SortOptionType } from "@/types/filter-sort-type"
 
 export function getValidatedSortOption(input?: string): SortOptionType {
 	switch (input) {
+		case "default":
 		case "date-asc":
 		case "date-desc":
 		case "title-asc":
 		case "title-desc":
 			return input
 		default:
-			return "date-desc"
+			return "default"
 	}
 }
 
@@ -38,9 +39,14 @@ export function sortPosts(posts: BlogPost[], sort: SortOptionType): BlogPost[] {
 					new Date(b.metadata.createdAt).getTime()
 				)
 			case "title-asc":
-				return a.metadata.title.localeCompare(b.metadata.title)
+				return a.metadata.title
+					.trim()
+					.localeCompare(b.metadata.title.trim(), "tr", { sensitivity: "base" })
 			case "title-desc":
-				return b.metadata.title.localeCompare(a.metadata.title)
+				return b.metadata.title
+					.trim()
+					.localeCompare(a.metadata.title.trim(), "tr", { sensitivity: "base" })
+			case "default":
 			case "date-desc":
 			default:
 				return (
