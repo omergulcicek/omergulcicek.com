@@ -46,7 +46,7 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 	return (
 		<div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 			<div aria-label="Filter by tag" className="flex items-center gap-2">
-				<span className="text-sm text-muted-foreground">Kategori</span>
+				<span className="text-sm text-muted-foreground min-w-16">Kategori</span>
 				<Select
 					value={tagSelectValue}
 					onValueChange={(value) => {
@@ -80,7 +80,7 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 			</div>
 
 			<div aria-label="Sort posts" className="flex items-center gap-2">
-				<span className="text-sm text-muted-foreground">Sırala</span>
+				<span className="text-sm text-muted-foreground min-w-16">Sırala</span>
 				<Select
 					value={sortSelectValue}
 					onValueChange={(value) => {

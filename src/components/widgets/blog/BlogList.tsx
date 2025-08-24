@@ -60,7 +60,7 @@ export function BlogList({ allPosts }: BlogListProps) {
 		<>
 			<FilterSort tags={allTags} currentTag={tag} />
 			{sortParam === "default" && (
-				<div className="space-y-12 mt-10 relative">
+				<div className="space-y-6 mt-10 relative">
 					{Object.entries(postsByYear)
 						.reverse()
 						.map(([year, posts]) => (
