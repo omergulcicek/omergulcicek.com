@@ -23,7 +23,6 @@ export function Rating({
 			aria-label={`Rating: ${value}/${max}`}
 			role="img"
 		>
-			<span className="text-sm text-muted-foreground">Değerlendirme:</span>
 			{Array.from({ length: filledCount }).map((_, index) => (
 				<Star
 					key={`filled-${index}`}

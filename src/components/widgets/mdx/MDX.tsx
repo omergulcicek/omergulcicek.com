@@ -28,7 +28,7 @@ import {
 	TabsList,
 	TabsTrigger
 } from "@/ui"
-import { CopyButton, Rating } from "@/widgets"
+import { BookInfo, CopyButton, MediaInfo, Rating } from "@/widgets"
 
 const components = {
 	Button,
@@ -42,6 +42,8 @@ const components = {
 	AccordionItem,
 	AccordionTrigger,
 	CopyButton,
+	BookInfo,
+	MediaInfo,
 	Rating,
 	Heading,
 
@@ -142,7 +144,7 @@ const components = {
 }
 
 export async function MDX({ content }: MdxContentProps) {
-	const processedContent = await processMdxContent(content)
+	const processedContent = await processMdxContent(content, components)
 	return <MdxZoomProvider>{processedContent}</MdxZoomProvider>
 }
 
