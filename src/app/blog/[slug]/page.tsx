@@ -10,12 +10,17 @@ import { Container } from "@/shared"
 import { Heading, Prose } from "@/ui"
 import { BlogDetailHeader, BlogInfo, MDX, Section } from "@/widgets"
 
-import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog-data"
+import {
+	findNeighbour,
+	getAllPosts,
+	getFuturePosts,
+	getPostBySlug
+} from "@/data/blog-data"
 
 import "./prose.css"
 
 export async function generateStaticParams() {
-	const posts = getAllPosts()
+	const posts = [...getAllPosts(), ...getFuturePosts()]
 	return posts.map((post) => ({
 		slug: post.slug
 	}))

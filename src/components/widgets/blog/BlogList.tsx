@@ -18,9 +18,10 @@ import { FilterSort, TagsBadge } from "@/widgets"
 
 interface BlogListProps {
 	allPosts: BlogPost[]
+	futurePosts?: BlogPost[]
 }
 
-export function BlogList({ allPosts }: BlogListProps) {
+export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 	const [sortRaw] = useQueryState("sort")
 	const [tag] = useQueryState("tag")
 
@@ -34,7 +35,7 @@ export function BlogList({ allPosts }: BlogListProps) {
 
 	function PostRow({ post }: { post: BlogPost }) {
 		return (
-			<div className={"flex flex-col gap-1"}>
+			<div className="flex flex-col gap-1">
 				<h2 className="text-lg leading-normal font-normal text-gray-900 group-hover:text-black transition-colors duration-200">
 					<Link
 						href={`/blog/${post.slug}`}
@@ -45,7 +46,9 @@ export function BlogList({ allPosts }: BlogListProps) {
 				</h2>
 				<div className="flex flex-col md:flex-row items-start gap-2">
 					<span className="text-xs text-italic font-medium leading-[22px] text-muted-foreground tracking-wide whitespace-nowrap">
-						{dateFormat(post.metadata.createdAt)}
+						{String(post.metadata.createdAt).toLowerCase() === "future"
+							? "hazırlanıyor..."
+							: dateFormat(post.metadata.createdAt)}
 					</span>
 					<span className="text-black/20 leading-[22px] hidden md:inline-flex">
 						•
@@ -61,6 +64,15 @@ export function BlogList({ allPosts }: BlogListProps) {
 			<FilterSort tags={allTags} currentTag={tag} />
 			{sortParam === "default" && (
 				<div className="space-y-6 mt-10 relative">
+					{futurePosts.length > 0 && (
+						<div className="space-y-6 flex flex-col gap-1 items-start relative min-h-20">
+							<div className="flex flex-col gap-6 items-start">
+								{futurePosts.map((post) => (
+									<PostRow key={post.slug} post={post} />
+								))}
+							</div>
+						</div>
+					)}
 					{Object.entries(postsByYear)
 						.reverse()
 						.map(([year, posts]) => (

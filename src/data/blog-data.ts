@@ -60,7 +60,10 @@ export function getLastNewestPosts(): BlogPost[] {
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-	return getAllPosts().find((post) => post.slug === slug)
+	return (
+		getAllPosts().find((post) => post.slug === slug) ||
+		getFuturePosts().find((post) => post.slug === slug)
+	)
 }
 
 export function getPostsByCategory(category: string): BlogPost[] {
@@ -83,4 +86,16 @@ export function findNeighbour(
 	}
 
 	return { previous: null, next: null }
+}
+
+export function getFuturePosts(): BlogPost[] {
+	return getMDXData(path.join(process.cwd(), "src", "content"))
+		.filter(
+			(post) => String(post.metadata.createdAt).toLowerCase() === "future"
+		)
+		.sort((a, b) =>
+			a.metadata.title
+				.trim()
+				.localeCompare(b.metadata.title.trim(), "tr", { sensitivity: "base" })
+		)
 }
