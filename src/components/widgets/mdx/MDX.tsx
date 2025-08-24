@@ -28,7 +28,7 @@ import {
 	TabsList,
 	TabsTrigger
 } from "@/ui"
-import { CopyButton } from "@/widgets"
+import { CopyButton, Rating } from "@/widgets"
 
 const components = {
 	Button,
@@ -42,6 +42,7 @@ const components = {
 	AccordionItem,
 	AccordionTrigger,
 	CopyButton,
+	Rating,
 	Heading,
 
 	pre: ({ children, ...props }: PreProps) => {
