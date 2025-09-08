@@ -1,0 +1,22 @@
+export const techTags = [
+	"Next.js",
+	"React",
+	"Yapay Zeka",
+	"CSS",
+	"Framer",
+	"Git",
+	"GraphQL",
+	"HTML",
+	"JavaScript",
+	"MJML",
+	"npm",
+	"React Hook Form",
+	"shadcn/ui",
+	"Storybook",
+	"Styled Components",
+	"Tailwind CSS",
+	"TanStack",
+	"TypeScript",
+	"Zod",
+	"Zustand"
+]

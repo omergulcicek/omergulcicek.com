@@ -8,12 +8,14 @@ import type {
 	FilterSortPropsType,
 	SortOptionType
 } from "@/types/filter-sort-type"
-import { tagsIconMap } from "@/constants"
+import { tagsIconMap, techTags } from "@/constants"
 
 import {
 	Select,
 	SelectContent,
+	SelectGroup,
 	SelectItem,
+	SelectLabel,
 	SelectTrigger,
 	SelectValue
 } from "@/ui"
@@ -35,10 +37,17 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 	const tagValue = tagState ?? currentTag ?? undefined
 	const tagSelectValue = tagValue ?? "__all__"
 
-	const tagOptions = useMemo(() => {
+	const { tech, others } = useMemo(() => {
 		const unique = Array.from(new Set(tags)).filter(Boolean)
-		unique.sort((a, b) => a.localeCompare(b))
-		return unique
+
+		const techSet = new Set(techTags)
+		const techList = unique.filter((t) => techSet.has(t))
+		const othersList = unique.filter((t) => !techSet.has(t))
+
+		techList.sort((a, b) => techTags.indexOf(a) - techTags.indexOf(b))
+		othersList.sort((a, b) => a.localeCompare(b))
+
+		return { tech: techList, others: othersList }
 	}, [tags])
 
 	const sortSelectValue = (sortValue ?? "default") as string
@@ -58,23 +67,52 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 						<SelectValue placeholder="Tümü" />
 					</SelectTrigger>
 					<SelectContent className="max-h-[400px] overflow-y-auto">
-						<SelectItem value="__all__">Tümü</SelectItem>
-						{tagOptions.map((tag) => (
-							<SelectItem key={tag} value={tag}>
-								<IconBadge
-									icon={
-										tagsIconMap[tag]
-											? (() => {
-													const Icon = tagsIconMap[tag]
-													return <Icon />
-												})()
-											: null
-									}
-									label={tag}
-									simple
-								/>
-							</SelectItem>
-						))}
+						<SelectGroup>
+							<SelectLabel>Genel</SelectLabel>
+							<SelectItem value="__all__">Tümü</SelectItem>
+						</SelectGroup>
+						{tech.length > 0 && (
+							<SelectGroup>
+								<SelectLabel>Teknolojiler</SelectLabel>
+								{tech.map((tag) => (
+									<SelectItem key={tag} value={tag}>
+										<IconBadge
+											icon={
+												tagsIconMap[tag]
+													? (() => {
+															const Icon = tagsIconMap[tag]
+															return <Icon />
+														})()
+													: null
+											}
+											label={tag}
+											simple
+										/>
+									</SelectItem>
+								))}
+							</SelectGroup>
+						)}
+						{others.length > 0 && (
+							<SelectGroup>
+								<SelectLabel>Kişisel</SelectLabel>
+								{others.map((tag) => (
+									<SelectItem key={tag} value={tag}>
+										<IconBadge
+											icon={
+												tagsIconMap[tag]
+													? (() => {
+															const Icon = tagsIconMap[tag]
+															return <Icon />
+														})()
+													: null
+											}
+											label={tag}
+											simple
+										/>
+									</SelectItem>
+								))}
+							</SelectGroup>
+						)}
 					</SelectContent>
 				</Select>
 			</div>
