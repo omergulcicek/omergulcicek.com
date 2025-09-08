@@ -6,6 +6,7 @@ import { useMediaQuery } from "usehooks-ts"
 
 import { USER } from "@/constants/user"
 
+import { TurkeyRounded } from "@/components/icons"
 import { Socials, VerifiedUser } from "@/widgets"
 
 export function Hero() {
@@ -16,7 +17,7 @@ export function Hero() {
 	return (
 		<section>
 			<div className="flex items-end gap-4 md:gap-6">
-				<figure className="rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none relative size-28 aspect-square md:size-40 flex items-center justify-center">
+				<figure className="relative flex items-center justify-center">
 					<Image
 						src={USER.avatar}
 						alt={USER.displayName}
@@ -24,7 +25,10 @@ export function Hero() {
 						height={imgSize}
 						quality={100}
 						priority
+						className="rounded-full ring-1 ring-border ring-offset-3 ring-offset-background select-none size-28 aspect-square md:size-40"
 					/>
+
+					<TurkeyRounded className="absolute bottom-0 right-0 size-10 fill-primary rounded-full ring-1 ring-border ring-offset-1 ring-offset-background select-none aspect-square bg-white" />
 				</figure>
 
 				<div className="flex flex-col gap-0.5">
