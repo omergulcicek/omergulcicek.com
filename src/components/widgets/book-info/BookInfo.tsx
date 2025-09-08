@@ -4,7 +4,8 @@ import { Check } from "lucide-react"
 
 import type { BookInfoPropsType } from "@/types/book-info.type"
 
-import { InfoRow, Rating } from "@/components/widgets"
+import { InfoRow } from "@/components/widgets/info-row"
+import { Rating } from "@/components/widgets/rating"
 
 export function BookInfo({
 	title,

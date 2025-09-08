@@ -6,9 +6,10 @@ import { SITE } from "@/constants/site"
 
 import { slugify } from "@/utils/slugify"
 
+import { MDX } from "@/components/widgets/mdx"
 import { Container } from "@/shared"
 import { Heading, Prose } from "@/ui"
-import { BlogDetailHeader, BlogInfo, MDX, Section } from "@/widgets"
+import { BlogDetailHeader, BlogInfo, Section } from "@/widgets"
 
 import {
 	findNeighbour,

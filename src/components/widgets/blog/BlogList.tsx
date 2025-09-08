@@ -46,7 +46,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 				</h2>
 				<div className="flex flex-col md:flex-row items-start gap-2">
 					<span className="text-xs text-italic font-medium leading-[22px] text-muted-foreground tracking-wide whitespace-nowrap">
-						{String(post.metadata.createdAt).toLowerCase() === "future"
+						{String(post.metadata.createdAt).toLowerCase() === "soon"
 							? "hazırlanıyor..."
 							: dateFormat(post.metadata.createdAt)}
 					</span>

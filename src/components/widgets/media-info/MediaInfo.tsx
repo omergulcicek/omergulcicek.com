@@ -1,8 +1,11 @@
 "use client"
 
+import { Check } from "lucide-react"
+
 import type { MediaInfoPropsType } from "@/types/media-info.type"
 
-import { InfoRow, Rating } from "@/components/widgets"
+import { InfoRow } from "@/components/widgets/info-row"
+import { Rating } from "@/components/widgets/rating"
 
 export function MediaInfo({
 	title,
@@ -12,7 +15,8 @@ export function MediaInfo({
 	year,
 	director,
 	directorLink,
-	myRating
+	myRating,
+	isFavorite
 }: MediaInfoPropsType) {
 	return (
 		<div className="my-4 overflow-hidden rounded-md border border-dashed">
@@ -30,6 +34,14 @@ export function MediaInfo({
 						<Rating value={myRating} max={5} stars={5} />
 					</div>
 				) : null}
+				{isFavorite && (
+					<div className="flex items-center gap-x-2">
+						<span className="text-muted-foreground basis-24 md:basis-48">
+							Favori
+						</span>
+						<Check className="text-green-500 size-5" />
+					</div>
+				)}
 			</div>
 		</div>
 	)

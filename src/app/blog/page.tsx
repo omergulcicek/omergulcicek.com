@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import type { Metadata } from "next"
 
 import type { BlogPost } from "@/types/blog-type"
@@ -23,7 +24,9 @@ export default function Blog() {
 	return (
 		<Container>
 			<Section title="Blog">
-				<BlogList allPosts={allPosts} futurePosts={futurePosts} />
+				<Suspense fallback={<></>}>
+					<BlogList allPosts={allPosts} futurePosts={futurePosts} />
+				</Suspense>
 			</Section>
 		</Container>
 	)

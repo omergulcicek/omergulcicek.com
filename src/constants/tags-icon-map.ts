@@ -1,5 +1,6 @@
 import {
 	BookMarked,
+	Bot,
 	Clapperboard,
 	CodeXml,
 	Cpu,
@@ -75,5 +76,6 @@ export const tagsIconMap: TagsIconMapType = {
 	Kişisel: PersonStanding,
 	Yorum: MessageCircle,
 	Teknoloji: Cpu,
-	Dizi: Clapperboard
+	Dizi: Clapperboard,
+	"Yapay Zeka": Bot
 }

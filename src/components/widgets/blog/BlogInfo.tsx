@@ -14,7 +14,7 @@ export function BlogInfo({ post }: { post: BlogPost }) {
 				<div className="flex items-center gap-2 whitespace-nowrap">
 					<Calendar className="size-4" />
 					<time dateTime={post.metadata.createdAt}>
-						{String(post.metadata.createdAt).toLowerCase() === "future"
+						{String(post.metadata.createdAt).toLowerCase() === "soon"
 							? "hazırlanıyor..."
 							: dateFormat(post.metadata.createdAt)}
 					</time>

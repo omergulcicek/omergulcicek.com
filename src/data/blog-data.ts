@@ -90,9 +90,7 @@ export function findNeighbour(
 
 export function getFuturePosts(): BlogPost[] {
 	return getMDXData(path.join(process.cwd(), "src", "content"))
-		.filter(
-			(post) => String(post.metadata.createdAt).toLowerCase() === "future"
-		)
+		.filter((post) => String(post.metadata.createdAt).toLowerCase() === "soon")
 		.sort((a, b) =>
 			a.metadata.title
 				.trim()

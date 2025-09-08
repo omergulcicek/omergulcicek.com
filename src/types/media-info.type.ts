@@ -15,4 +15,6 @@ export interface MediaInfoPropsType {
 	directorLink?: string
 	/** Personal score out of 10 */
 	myRating?: number
+	/** Is favorite */
+	isFavorite?: boolean
 }
