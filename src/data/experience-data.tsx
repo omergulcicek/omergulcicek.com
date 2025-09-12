@@ -20,7 +20,7 @@ export const EXPERIENCE = [
 		responsibilities: (
 			<>
 				<p>
-					- 6 kişilik frontend ekibine liderlik ederek çok sayıda projeyi
+					- 10 kişilik frontend ekibine liderlik ederek çok sayıda projeyi
 					yönettim; teknik rehberlik sağladım, kod kalitesi ve tutarlılığı
 					garanti altına alarak teslim sürelerinin etkin bir şekilde
 					karşılanmasını sağladım.
