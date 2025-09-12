@@ -17,5 +17,11 @@ export const PROJECTS = [
 		description: "Şifre girişlerine göster/gizle geçişi ekleyen React hook'u",
 		link: "https://github.com/omergulcicek/password-input",
 		tags: ["React", "TypeScript", "Lucide"]
+	},
+	{
+		title: "calendar",
+		description: "Takvim abonelikleri için ücretsiz açık kaynak takvimler",
+		link: "https://calendar.omergulcicek.com/",
+		tags: ["Frontend"]
 	}
 ]

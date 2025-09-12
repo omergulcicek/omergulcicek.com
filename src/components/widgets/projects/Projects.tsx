@@ -11,7 +11,7 @@ export function Projects() {
 	return (
 		<Section title="Projeler" type="h2">
 			<ul className="grid gap-x-6 md:gap-x-12 gap-y-4 md:grid-cols-2">
-				{PROJECTS.slice(0, 3).map((project) => (
+				{PROJECTS.map((project) => (
 					<li key={project.title}>
 						<Link
 							className="-mx-4 flex flex-col items-start p-4 transition-colors hover:bg-gray-50 sm:rounded-xl"
