@@ -1,11 +1,12 @@
+"use client"
+
 import Link from "next/link"
 
 import { dateFormat } from "@/helpers/date-format"
 
 import { BlogProps } from "@/types/blog-type"
 
-import { Button } from "@/ui"
-import { Section } from "@/widgets"
+import { ArrowButton, Section } from "@/widgets"
 
 export function Blog({ posts }: BlogProps) {
 	return (
@@ -34,7 +35,7 @@ export function Blog({ posts }: BlogProps) {
 
 			<div className="flex justify-center">
 				<Link href="/blog">
-					<Button variant="outline">Tüm yazıları göster</Button>
+					<ArrowButton text="Tüm yazıları göster" />
 				</Link>
 			</div>
 		</Section>

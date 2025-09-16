@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import Link from "next/link"
 
 import {
 	Accordion,
@@ -6,17 +9,19 @@ import {
 	AccordionItem,
 	AccordionTrigger
 } from "@/ui"
-import { Section, TagsBadge } from "@/widgets"
+import { ArrowButton, Section, TagsBadge } from "@/widgets"
 
 import { EXPERIENCE } from "@/data"
 
 interface ExperienceProps {
 	showAll?: boolean
 	title?: string
+	showButton?: boolean
 }
 
 export function Experience({
 	showAll = false,
+	showButton = false,
 	title = "Deneyim"
 }: ExperienceProps) {
 	const experiences = showAll ? EXPERIENCE : EXPERIENCE.slice(0, 3)
@@ -75,6 +80,14 @@ export function Experience({
 					))}
 				</Accordion>
 			</div>
+
+			{showButton && (
+				<div className="flex justify-center">
+					<Link href="/about/#deneyim">
+						<ArrowButton text="Tüm deneyimleri göster" />
+					</Link>
+				</div>
+			)}
 		</Section>
 	)
 }

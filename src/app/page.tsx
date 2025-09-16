@@ -11,7 +11,7 @@ export default function Home() {
 			<Hero />
 			<About />
 			<Stack />
-			<Experience showAll={false} />
+			<Experience showAll={false} showButton />
 			<Blog posts={posts} />
 			<Projects />
 		</Container>

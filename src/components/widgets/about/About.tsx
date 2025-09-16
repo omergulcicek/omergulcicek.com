@@ -1,4 +1,6 @@
-import { Section } from "@/widgets"
+import Link from "next/link"
+
+import { ArrowButton, Section } from "@/widgets"
 
 export function About() {
 	return (
@@ -26,6 +28,11 @@ export function About() {
 					kaynak topluluğuna katkıda bulunmak ve benzer düşünen geliştiricilerle
 					bağlantı kurmak için oluşturdum.
 				</p>
+				<div className="flex justify-center">
+					<Link href="/about/#hakkimda">
+						<ArrowButton text="Detaylı teknik bilgi" />
+					</Link>
+				</div>
 			</div>
 		</Section>
 	)

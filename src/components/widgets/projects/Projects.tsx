@@ -14,26 +14,28 @@ export function Projects() {
 				{PROJECTS.map((project) => (
 					<li key={project.title}>
 						<Link
-							className="-mx-4 flex flex-col items-start p-4 transition-colors hover:bg-gray-50 sm:rounded-xl"
+							className="-mx-4 h-full border border-dashed flex flex-col items-start justify-between p-4 transition-colors hover:bg-gray-50 sm:rounded-xl"
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<h3 className="text-base md:text-lg font-semibold">
-								{project.title}
-							</h3>
+							<div>
+								<h3 className="text-base md:text-lg font-semibold">
+									{project.title}
+								</h3>
 
-							<p className="my-3 text-base text-gray-700">
-								{project.description}
-							</p>
+								<p className="my-3 text-base text-gray-700">
+									{project.description}
+								</p>
 
-							<TagsBadge tags={project.tags} />
+								<TagsBadge tags={project.tags} />
+							</div>
 
 							<div
 								aria-hidden="true"
-								className="mt-3 text-sm text-blue-600 underline underline-offset-4 flex items-center gap-1"
+								className="mt-3 text-sm text-muted-foreground flex items-center justify-end gap-1 w-full"
 							>
-								<span>Detayları gör</span>
+								<span>{project.buttonText}</span>
 								<ChevronRight className="size-4" />
 							</div>
 						</Link>
