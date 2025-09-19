@@ -29,7 +29,7 @@ export function About() {
 					bağlantı kurmak için oluşturdum.
 				</p>
 				<div className="flex justify-center">
-					<Link href="/about/#hakkimda">
+					<Link href="/about">
 						<ArrowButton text="Detaylı teknik bilgi" />
 					</Link>
 				</div>
