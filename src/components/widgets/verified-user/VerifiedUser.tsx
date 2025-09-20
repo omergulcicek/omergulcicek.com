@@ -8,7 +8,7 @@ export function VerifiedUser() {
 			<h1 className="text-2xl md:text-4xl font-semibold tracking-tight">
 				{USER.displayName}
 			</h1>
-			<VerifiedIcon className="size-3 md:size-4 text-blue-600" />
+			<VerifiedIcon className="size-3 md:size-4 text-blue-500" />
 		</div>
 	)
 }
