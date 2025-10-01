@@ -75,7 +75,12 @@ const components = {
 	},
 
 	code: ({ children, ...props }: CodeProps) => (
-		<code {...props}>{children}</code>
+		<code
+			className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold"
+			{...props}
+		>
+			{children}
+		</code>
 	),
 
 	a: ({ href, children, ...props }: LinkProps) => {
@@ -110,8 +115,8 @@ const components = {
 				src={src || ""}
 				alt={alt || ""}
 				width={800}
-				height={600}
-				className="rounded-lg max-w-full h-auto mx-auto"
+				height={520}
+				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto"
 				data-zoomable
 				{...props}
 			/>
@@ -140,6 +145,12 @@ const components = {
 		<Heading as="h4" {...props} id={slugify(children as string)}>
 			{children}
 		</Heading>
+	),
+
+	p: ({ children, ...props }: React.ComponentProps<"p">) => (
+		<p className="leading-7 [&:not(:first-child)]:mt-6" {...props}>
+			{children}
+		</p>
 	)
 }
 

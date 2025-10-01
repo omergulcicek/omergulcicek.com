@@ -1,5 +1,7 @@
 export * from "./accordion"
+export * from "./avatar"
 export * from "./badge"
+export * from "./breadcrumb"
 export * from "./button"
 export * from "./command"
 export * from "./logo-carousel"

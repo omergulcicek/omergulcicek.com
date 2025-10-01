@@ -2,7 +2,36 @@ import Link from "next/link"
 
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 
-import { Button, Tooltip, TooltipContent, TooltipTrigger } from "@/ui"
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+	Button,
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger
+} from "@/ui"
+
+{
+	/* <Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb> */
+}
 
 export function BlogDetailHeader({
 	previous,
