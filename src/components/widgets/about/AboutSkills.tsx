@@ -2,11 +2,13 @@ import {
 	Nextjs,
 	ReactHookForm,
 	ReactIcon,
+	Redux,
 	Shadcn,
 	Storybook,
 	TailwindCss,
 	TanStack,
 	TypeScript,
+	Vercel,
 	Zod,
 	Zustand
 } from "@/components/icons"
@@ -20,16 +22,16 @@ export function AboutSkills() {
 					Modern web uygulamalarının farklı katmanlarında deneyime sahip bir{" "}
 					<span className="text-black">Senior Frontend Engineer</span> olarak,{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						React <ReactIcon className="size-6" />
+						React <ReactIcon className="size-5" />
 					</span>{" "}
 					ve{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						Next.js <Nextjs className="size-6" />
+						Next.js <Nextjs className="size-5" />
 					</span>{" "}
 					ekosisteminde ölçeklenebilir ve sürdürülebilir çözümler
 					geliştiriyorum.{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						TypeScript <TypeScript className="size-6" />
+						TypeScript <TypeScript className="size-5" />
 					</span>{" "}
 					ile tip güvenliğini en baştan sağlayarak, uzun vadeli bakım maliyeti
 					düşük ve güvenilir sistemler kurmaya odaklanıyorum.
@@ -37,25 +39,29 @@ export function AboutSkills() {
 
 				<p>
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						Tailwind CSS <TailwindCss className="size-6" />
+						Tailwind CSS <TailwindCss className="size-5" />
 					</span>{" "}
 					ve{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						shadcn/ui <Shadcn className="size-6" />
+						shadcn/ui <Shadcn className="size-5" />
 					</span>{" "}
 					ile hızlı ve tutarlı arayüzler tasarlarken,{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						Zustand <Zustand className="size-6" />
+						Zustand <Zustand className="size-5" />
 					</span>{" "}
-					ve <span className="text-black">Redux</span> gibi state yönetim
-					araçlarını ihtiyaca göre projelere entegre ediyorum. API katmanında{" "}
+					ve{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						TanStack Query <TanStack className="size-6" />
+						Redux <Redux className="size-5" />
+					</span>{" "}
+					gibi state yönetim araçlarını ihtiyaca göre projelere entegre
+					ediyorum. API katmanında{" "}
+					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
+						TanStack Query <TanStack className="size-5" />
 					</span>{" "}
 					kullanarak cache, background sync ve data fetching stratejileriyle
 					performansı artırıyorum.{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						Storybook <Storybook className="size-6" />
+						Storybook <Storybook className="size-5" />
 					</span>{" "}
 					ile bağımsız, tekrar kullanılabilir component yapıları tasarlayarak
 					ekibin geliştirme hızını artırıyorum.
@@ -67,15 +73,18 @@ export function AboutSkills() {
 					<span className="text-black">code splitting</span> stratejileri
 					uygulayarak kullanıcı deneyimini sürekli iyileştiriyorum.{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						React Hook Form <ReactHookForm className="size-6" />
+						React Hook Form <ReactHookForm className="size-5" />
 					</span>{" "}
 					ile form süreçlerini sadeleştiriyor,{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
-						Zod <Zod className="size-6" />
+						Zod <Zod className="size-5" />
 					</span>{" "}
 					ile runtime validation yönetiyorum.{" "}
-					<span className="text-black">Vercel</span> üzerinde CI/CD süreçleri
-					kurarak güvenilir ve hızlı deployment sağlıyorum.
+					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">
+						Vercel <Vercel className="size-5" />
+					</span>{" "}
+					üzerinde CI/CD süreçleri kurarak güvenilir ve hızlı deployment
+					sağlıyorum.
 				</p>
 
 				<p>
