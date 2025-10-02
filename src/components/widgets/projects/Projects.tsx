@@ -1,43 +1,42 @@
 import Link from "next/link"
 
-import { ChevronRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
+
+import { cn } from "@/lib/utils"
 
 // import { Button } from "@/ui"
-import { Section, TagsBadge } from "@/widgets"
+import { Section } from "@/widgets"
 
 import { PROJECTS } from "@/data"
 
 export function Projects() {
 	return (
 		<Section title="Projeler" type="h2">
-			<ul className="grid gap-x-6 md:gap-x-12 gap-y-4 md:grid-cols-2">
+			<ul className="flex flex-col items-start -mx-6">
 				{PROJECTS.map((project) => (
-					<li key={project.title}>
+					<li key={project.title} className="w-full">
 						<Link
-							className="-mx-4 h-full border border-dashed flex flex-col items-start justify-between p-4 transition-colors hover:bg-gray-50 sm:rounded-xl"
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
+							className="inline-flex items-center justify-between leading-6 rounded hover:bg-neutral-50 transition px-6 py-3 w-full group"
 						>
-							<div>
-								<h3 className="text-base md:text-lg font-semibold">
-									{project.title}
-								</h3>
-
-								<p className="my-3 text-base text-gray-700">
-									{project.description}
-								</p>
-
-								<TagsBadge tags={project.tags} />
+							<div className="flex items-center gap-4">
+								<figure
+									className={cn(
+										"rounded-lg p-1 size-10 inline-flex items-center justify-center shadow",
+										project.color
+									)}
+								>
+									<project.icon className="size-5" />
+								</figure>
+								<div className="flex flex-col text-base">
+									<strong className="font-medium">{project.title}</strong>
+									<p className="text-muted-foreground">{project.description}</p>
+								</div>
 							</div>
 
-							<div
-								aria-hidden="true"
-								className="mt-3 text-sm text-muted-foreground flex items-center justify-end gap-1 w-full"
-							>
-								<span>{project.buttonText}</span>
-								<ChevronRight className="size-4" />
-							</div>
+							<ArrowUpRight className="absolute right-0 size-5 text-muted-foreground group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-200" />
 						</Link>
 					</li>
 				))}

@@ -1,5 +1,6 @@
 import {
 	Css,
+	Cursor,
 	Framer,
 	Git,
 	GraphQL,
@@ -12,6 +13,7 @@ import {
 	Storybook,
 	TailwindCss,
 	TanStack,
+	Trpc,
 	TypeScript,
 	Zod,
 	Zustand
@@ -25,6 +27,8 @@ export const STACK = [
 	{ name: "Git", id: 19, img: Git },
 	{ name: "React", id: 9, img: ReactIcon },
 	{ name: "Nextjs", id: 9, img: Nextjs },
+	{ name: "Cursor", id: 25, img: Cursor },
+	{ name: "Trpc", id: 26, img: Trpc },
 	{ name: "Zustand", id: 24, img: Zustand },
 	{ name: "Tailwind", id: 10, img: TailwindCss },
 	{ name: "Shadcn", id: 13, img: Shadcn },

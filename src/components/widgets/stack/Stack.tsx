@@ -14,7 +14,7 @@ export function Stack() {
 
 	return (
 		<Section>
-			<LogoCarousel allLogos={allLogos} columnCount={4} />
+			<LogoCarousel allLogos={allLogos} columnCount={5} />
 		</Section>
 	)
 }
