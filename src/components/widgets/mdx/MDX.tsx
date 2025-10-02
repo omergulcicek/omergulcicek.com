@@ -116,10 +116,13 @@ const components = {
 				alt={alt || ""}
 				width={800}
 				height={520}
-				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto"
+				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto border"
 				data-zoomable
 				{...props}
 			/>
+			<figcaption className="text-center text-sm text-muted-foreground">
+				{alt}
+			</figcaption>
 		</figure>
 	),
 
