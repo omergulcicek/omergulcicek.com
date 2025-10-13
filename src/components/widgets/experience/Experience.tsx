@@ -38,7 +38,7 @@ export function Experience({
 				>
 					{experiences.map((experience) => (
 						<AccordionItem value={experience.company} key={experience.company}>
-							<AccordionTrigger className="items-center">
+							<AccordionTrigger className="items-center hover:no-underline">
 								<div className="flex items-center justify-between w-full">
 									<div className="flex items-center gap-3">
 										<figure className="size-6">
@@ -51,10 +51,10 @@ export function Experience({
 											/>
 										</figure>
 										<div className="flex flex-col">
-											<strong className="text-sm font-medium">
+											<strong className="text-base font-medium">
 												{experience.role}
 											</strong>
-											<h3 className="text-sm font-normal">
+											<h3 className="text-muted-foreground text-sm font-normal">
 												{experience.company}
 											</h3>
 										</div>

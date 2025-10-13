@@ -22,9 +22,9 @@ export function Blog({ posts }: BlogProps) {
 							0{index + 1}
 						</span>
 						<div>
-							<h3 className="text-base font-medium">{post.metadata.title}</h3>
+							<h3 className="font-medium">{post.metadata.title}</h3>
 							{post.metadata.createdAt && (
-								<p className="text-sm text-muted-foreground">
+								<p className="text-muted-foreground text-sm">
 									{dateFormat(post.metadata.createdAt)}
 								</p>
 							)}

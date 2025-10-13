@@ -8,12 +8,12 @@ export default function Bookmarks() {
 		<>
 			<Container>
 				<Section title="Yer İmleri">
-					<p>
+					<p className="text-muted-foreground">
 						Yer imlerimi{" "}
 						<Link
 							href="https://raindrop.io/omergulcicek"
 							target="_blank"
-							className="text-blue-600 underline font-medium underline-offset-4"
+							className="text-primary underline font-medium underline-offset-4"
 						>
 							raindrop.io
 						</Link>

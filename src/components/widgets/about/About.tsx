@@ -6,7 +6,7 @@ import { ArrowButton, Section } from "@/widgets"
 export function About() {
 	return (
 		<Section title="Hakkımda" type="h2">
-			<div className="flex flex-col gap-4 text-base leading-7 text-neutral-500">
+			<div className="flex flex-col gap-4 text-base leading-7 [&_p]:text-neutral-500">
 				<p>
 					Merhaba, ben <span className="text-black">Ömer</span>,{" "}
 					<span className="text-black inline-flex items-center gap-1.5 mr-1.5">

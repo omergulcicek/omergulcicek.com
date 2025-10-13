@@ -32,7 +32,9 @@ export function Projects() {
 								</figure>
 								<div className="flex flex-col text-base">
 									<strong className="font-medium">{project.title}</strong>
-									<p className="text-muted-foreground">{project.description}</p>
+									<p className="text-muted-foreground text-sm">
+										{project.description}
+									</p>
 								</div>
 							</div>
 
