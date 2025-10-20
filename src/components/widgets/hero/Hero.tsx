@@ -25,7 +25,7 @@ export function Hero() {
 						height={imgSize}
 						quality={100}
 						priority
-						className="rounded-full ring-1 ring-border ring-offset-3 ring-offset-background select-none size-28 aspect-square md:size-40"
+						className="rounded-full ring-1 ring-border ring-offset-3 ring-offset-background select-none size-28 min-w-28 min-h-28 aspect-square md:size-40"
 					/>
 
 					<TurkeyRounded className="absolute bottom-0 right-0 size-10 fill-primary rounded-full ring-1 ring-border ring-offset-1 ring-offset-background select-none aspect-square bg-white" />

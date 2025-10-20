@@ -59,7 +59,7 @@ export function Experience({
 											</h3>
 										</div>
 									</div>
-									<div className="flex flex-col items-end gap-0.5">
+									<div className="hidden md:flex flex-col items-end gap-0.5">
 										<span className="text-xs text-muted-foreground tabular-nums">
 											{experience.period}
 										</span>
