@@ -49,12 +49,24 @@ Takvim URL'leri, basit ve anlaşılır bir arayüzle [calendar.omergulcicek.com]
 
 ![Örnek Macbook takvim ekleme](/blog/2025-09-19/takvim-macbook.png)
 
+### Android (Google Takvim)
+
+**Not:** Google Takvim mobil uygulaması doğrudan URL ile takvim aboneliği eklemeyi desteklemiyor. Bu işlemi **masaüstü tarayıcıdan** yapmanız gerekiyor. Masaüstünden eklediğiniz takvim, hem bilgisayarınızda hem de Android cihazınızda otomatik olarak görünecektir.
+
+1. Bilgisayarınızda [calendar.google.com](https://calendar.google.com) adresini açın.
+2. Sol tarafta "Diğer takvimler"in yanındaki `+` ikonuna tıklayın.
+3. `URL ile` seçeneğini seçin. ([URL ile takvim ekle](https://calendar.google.com/calendar/u/0/r/settings/addbyurl))
+4. Kopyaladığınız URL'i yapıştırın ve `Takvim ekle`'ye tıklayın.
+5. Eklenen takvim sol taraftaki "Diğer takvimler" altında görünecektir.
+
+Takvim eklendikten sonra, aynı Google hesabıyla giriş yaptığınız tüm cihazlarda (Android telefon, tablet ve masaüstü) otomatik olarak senkronize edilir.
+
 Hepsi bu kadar! Bundan sonra takviminiz belirlediğiniz aralıkta otomatik yenilenir; yeni eklemeler ve düzeltmeler cihazınıza yansır.
 
 ## Sık Sorulanlar
 
 - **Takvimim güncel kalır mı?**
-  - Evet. Abonelik URL'i okunan bir kaynaktır; Apple Takvim, ayarladığınız yenileme sıklığına göre otomatik günceller.
+  - Evet. Abonelik URL'i okunan bir kaynaktır; Apple Takvim ve Google Takvim, ayarladığınız yenileme sıklığına göre otomatik günceller.
 
 - **Veriler nereden geliyor?**
   - Kaynak verileri GitHub üzerinde JSON formatında tutuyorum, otomatik olarak `.ics` formatına dönüştürülerek abonelik adresinden sunuluyor.
