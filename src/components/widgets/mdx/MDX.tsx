@@ -28,7 +28,13 @@ import {
 	TabsList,
 	TabsTrigger
 } from "@/ui"
-import { BookInfo, CopyButton, MediaInfo, Rating } from "@/widgets"
+import {
+	BookInfo,
+	ChartAreaLinear,
+	CopyButton,
+	MediaInfo,
+	Rating
+} from "@/widgets"
 
 const components = {
 	Button,
@@ -46,6 +52,7 @@ const components = {
 	MediaInfo,
 	Rating,
 	Heading,
+	ChartAreaLinear,
 
 	pre: ({ children, ...props }: PreProps) => {
 		// children'ı string'e çevir

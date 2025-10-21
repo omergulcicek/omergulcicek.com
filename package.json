@@ -41,6 +41,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-wrap-balancer": "^1.1.1",
+    "recharts": "^2.15.4",
     "rehype-pretty-code": "^0.14.1",
     "rehype-stringify": "^10.0.1",
     "remark-parse": "^11.0.0",
