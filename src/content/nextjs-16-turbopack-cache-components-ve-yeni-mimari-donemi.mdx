@@ -1,0 +1,91 @@
+---
+createdAt: "2025-10-23"
+slug: "/nextjs-16-turbopack-cache-components-ve-yeni-mimari-donemi"
+title: "Next.js 16: Turbopack, Cache Components ve Yeni Mimari Dönemi"
+category: "teknik"
+tags: ["Next.js"]
+medium: "https://omergulcicek.medium.com/next-js-16-turbopack-cache-components-ve-yeni-mimari-d%C3%B6nemi-5ed8018ccde1"
+---
+
+**Next.js 16**, 21 Ekim 2025’te, **Next.js Conf 2025** öncesinde yayınlandı.  
+Bu sürüm, framework’ün **performans**, **önbellekleme** ve **geliştirici deneyimi** alanlarında şimdiye kadarki en büyük adımlarından birini temsil ediyor.
+
+Kararlı hale gelen **Turbopack**, yeni **Cache Components** modeli ve **Next.js Devtools MCP** entegrasyonu ile birlikte, Next.js mimarisi artık çok daha güçlü, modern ve esnek bir yapıya kavuştu.
+
+- [Next.js 16 Blog](https://nextjs.org/blog/next-16)
+- [Next.js Conf 2025](https://www.youtube.com/watch?v=IdIgkiDu-94)
+
+![Next.js 16](/blog/2025-10-23/nextjs-16.png)
+
+## Cache Components ve Partial Pre-Rendering (PPR)
+
+Yeni Cache Components modeliyle birlikte, Next.js artık önbellekleme davranışını açık ve kontrol edilebilir hale getiriyor.
+`"use cache"` yönergesiyle sayfa, bileşen veya fonksiyon bazında önbellekleme yapılabiliyor.
+Bu yapı, Partial Pre-Rendering (PPR) ile birleşerek hem statik hem dinamik render’ı aynı sayfada mümkün kılıyor.
+
+```ts
+const nextConfig = {
+  cacheComponents: true,
+};
+export default nextConfig;
+```
+
+[Daha fazla bilgi için buradaki dokümanları inceleyebilirsiniz.](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents)
+
+## Next.js Devtools MCP (Model Context Protocol)
+
+Next.js 16 ile birlikte gelen **Devtools MCP**, AI destekli hata ayıklama ve bağlamsal analiz özellikleri getiriyor.
+Bu sistem, yapay zekâ ajanlarının uygulama rotalarını, önbellek davranışlarını, hata loglarını ve aktif sayfa bilgisini anlamasını sağlıyor.
+
+[Daha fazla bilgi için buradaki dokümanları inceleyebilirsiniz.](https://nextjs.org/docs/app/guides/mcp)
+
+## Turbopack: Artık Varsayılan
+
+Turbopack, artık tüm yeni projelerde webpack'in yerini aldı ve varsayılan derleyici oldu.
+
+- 2–5x daha hızlı production build
+- 5–10x daha hızlı Fast Refresh
+Ayrıca dosya sistemi önbelleklemesi (File System Caching) özelliğiyle, büyük projelerde bile yeniden başlatmalar arasında daha hızlı derleme sağlanıyor.
+
+Next.js 16'da development request logları, sürenin nerede harcandığını gösterecek şekilde genişletilmiştir.
+
+```bash
+   ▲ Next.js 16 (Turbopack)
+ 
+ ✓ Compiled successfully in 615ms
+ ✓ Finished TypeScript in 1114ms
+ ✓ Collecting page data in 208ms
+ ✓ Generating static pages in 239ms
+ ✓ Finalizing page optimization in 5ms
+```
+
+## React Compiler Desteği
+
+Next.js 16, React Compiler entegrasyonunu kararlı sürüme taşıdı.
+Bu özellik, bileşenlerin otomatik olarak memoize edilmesini sağlayarak gereksiz render’ları ortadan kaldırıyor.
+
+```ts
+const nextConfig = {
+  reactCompiler: true,
+};
+export default nextConfig;
+```
+
+[Daha fazla bilgi için buradaki dokümanları inceleyebilirsiniz.](https://react.dev/learn/react-compiler)
+
+## React 19.2 Entegrasyonu
+
+Next.js 16, **React 19.2** ile geliyor.
+Yeni özellikler arasında `View Transitions`, `useEffectEvent()`, ve `<Activity /> `bileşeni bulunuyor.
+
+Detaylı bilgiler için;
+
+- [View Transitions component](https://react.dev/reference/react/ViewTransition)
+- [useEffectEvent() Hook](https://react.dev/reference/react/useEffectEvent)
+- [Activity component](https://react.dev/reference/react/Activity)
+
+## Son Söz: Next.js 16 ile Yeni Bir Dönem
+
+Next.js 16 bence framework’ün önemli sıçramalarından biri. Özellikle **Cache Components**, **Turbopack**'in kararlı hale gelmesi ve yeni **Caching API**’leriyle birlikte artık sadece hız değil, mimari olarak da ciddi bir olgunluk dönemine girdi. Geliştirici deneyimi çok daha tutarlı, net ve modern hale gelmiş.
+
+İlk adım olarak kendi [Next.js Boilerplate](https://github.com/omergulcicek/nextjs-boilerplate) paketimi yeni sürüme güncelleyeceğim. Ardından [kişisel web sitemi](https://github.com/omergulcicek/omergulcicek.com) de **Next.js 16**’nın tüm yeni özellikleriyle yeniden düzenleyeceğim.
