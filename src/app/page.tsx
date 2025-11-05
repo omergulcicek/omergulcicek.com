@@ -8,7 +8,6 @@ export default function Home() {
 
 	return (
 		<Container>
-			<Hero />
 			<About />
 			<Stack />
 			<Blog posts={posts} />
