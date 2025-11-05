@@ -1,0 +1,74 @@
+---
+createdAt: "2025-11-05"
+slug: "/nizam-nextjs-16-boilerplate-en"
+title: "Nizam - Next.js 16 Boilerplate (EN)"
+category: "technical"
+tags: ["React", "Next.js", "TypeScript", "TanStack", "Tailwind CSS"]
+medium: ""
+---
+
+Introducing my new Next.js 16 boilerplate for building modern web applications quickly, securely, and enjoyably: Nizam.
+
+![Nizam - Next.js 16 Boilerplate](/blog/2025-11-05/nizam.png)
+
+📖 **[Türkçe versiyonu okumak için tıklayın](/blog/nizam-nextjs-16-boilerplate)**
+
+## Why "Nizam"?
+
+"Nizam" means order, structure, and harmony in Turkish. Exactly what we expect from a boilerplate: well-organized, understandable, and scalable foundation. It's also a memorable name that international developers can easily pronounce. The project's name perfectly aligns with its philosophy.
+
+## Why the renewal?
+
+After the experience with the previous version (Next.js 15), I rebuilt the architecture from scratch with the innovations brought by Next.js 16 and React 19, making it leaner and more focused. I removed dependencies like Storybook and Sentry that might not be needed in every project from the core; they're now optional. This way, the boilerplate offers a lightweight core that's "immediately suitable" for most projects, while those who need them can easily integrate them.
+
+## What comes with Nizam
+
+- **Next.js 16 App Router**: File-based routing, server-first patterns, concurrency-friendly architecture.
+- **Type safety and env validation**: Runtime-validated environment variables with `TypeScript 5`, `Zod`, and `@t3-oss/env-nextjs`.
+- **Data layer**: Smart caching, background revalidation, and powerful mutation flows with `TanStack Query 5`.
+- **Internationalization (i18n)**: Locale-aware routing and translation files with `next-intl`.
+- **Theme and UI**: Accessible and fast interfaces with `Tailwind CSS v4` + `shadcn/ui`; light/dark theme with `next-themes`.
+- **State management**: `Zustand` for lightweight global state.
+- **Developer experience**: `ESLint 9`, `Prettier 3`, `Husky`, `lint-staged`, `Knip`; absolute imports (`@/`), bundle analyzer, and SEO helpers.
+
+You can see the details of these features both in the live demo and in the README.
+
+## What's different from the previous version?
+
+- **Updated stack**: `Next.js 16` + `React 19`, `Tailwind CSS v4`, `TanStack Query 5`, and modern toolsets.
+- **Env and security**: Type-safe and runtime-validated env variables with `@t3-oss/env-nextjs` + `Zod`.
+- **Standards and rules**: Clarified new alias usage, file naming, and code writing conventions; standardized editor/AI flow with `.cursor/rules`.
+- **Sustainable repo hygiene**: Clean, traceable versioning and maintenance experience with `Conventional Commits`, `Knip`, and automations.
+- **Leaner core built from scratch**: Parts that "might not be in every FE project" like `Storybook/Sentry` were removed from the core; those who want them can easily add them.
+
+## Why should you use Nizam?
+
+- **Quick start, minimal hassle**: A core suitable for most projects, opinionated but not imposing.
+- **Powerful yet simple**: A foundation that prioritizes performance, a11y, and DX, free from unnecessary dependencies.
+- **Clear rules, consistent code**: Naming, aliases, and conventions bring discipline to the project; its value increases as the team grows.
+- **Real-world ready**: Blocks that are "usually needed" like i18n, theme, SEO, and data layer come ready.
+
+## Quick start
+
+```bash
+git clone --depth=1 https://github.com/omergulcicek/nizam my-project
+cd my-project
+npm install
+npm run dev
+```
+
+You can check the `src/env.ts` file for default `.env` examples and env schema.
+
+## Links
+
+- **Live Demo**: [nizam-boilerplate.vercel.app](https://nizam-boilerplate.vercel.app/en)
+- **GitHub**: [omergulcicek/nizam](https://github.com/omergulcicek/nizam)
+
+The README contains all technical details, project structure, naming recommendations, and tips. Review, clone, and customize it according to your needs.
+
+---
+
+## Support
+
+If you liked the project, you can support it by giving a ⭐ to the GitHub repo. Don't hesitate to open an issue or PR for your feedback and contributions. Thanks!
+

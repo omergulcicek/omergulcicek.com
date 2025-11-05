@@ -1,0 +1,74 @@
+---
+createdAt: "2025-11-05"
+slug: "/nizam-nextjs-16-boilerplate"
+title: "Nizam - Next.js 16 Boilerplate"
+category: "teknik"
+tags: ["React", "Next.js", "TypeScript", "TanStack", "Tailwind CSS"]
+medium: ""
+---
+
+Modern web uygulamalarını hızlı, güvenli ve zevkli şekilde inşa etmek için hazırladığım yeni Next.js 16 boilerplate’imi tanıtıyorum: Nizam.
+
+![Nizam - Next.js 16 Boilerplate](/blog/2025-11-05/nizam.png)
+
+📖 **[Click here to read the English version](/blog/nizam-nextjs-16-boilerplate-en)**
+
+## Neden "Nizam"?
+
+"Nizam" Türkçe’de düzen, yapı ve uyum anlamına geliyor. Tam da bir boilerplate’ten beklediğimiz gibi: iyi organize edilmiş, anlaşılır ve ölçeklenebilir bir temel. Ayrıca yabancı geliştiricilerin de kolayca telaffuz edebileceği, akılda kalıcı bir isim. Projenin adıyla felsefesi birebir örtüşüyor.
+
+## Neden yenilendi?
+
+Önceki sürüm (Next.js 15) deneyiminden sonra, Next.js 16’nın getirdiği yenilikler ve React 19 ile birlikte mimariyi sıfırdan, daha yalın ve odaklı olacak şekilde yeniden kurdum. Storybook ve Sentry gibi her projede gerekmeyebilecek bağımlılıkları çekirdekten çıkardım; artık opsiyonel. Böylece boilerplate, çoğu projeye “direkt uygun” bir hafif çekirdek sunuyor, ihtiyaç duyanlar ise kolayca entegre edebiliyor.
+
+## Nizam ile gelenler
+
+- **Next.js 16 App Router**: Dosya tabanlı yönlendirme, server-first desenler, concurrency dostu mimari.
+- **Tip güvenliği ve env doğrulama**: `TypeScript 5`, `Zod` ve `@t3-oss/env-nextjs` ile runtime doğrulamalı ortam değişkenleri.
+- **Veri katmanı**: `TanStack Query 5` ile akıllı önbellekleme, arka planda yeniden doğrulama ve güçlü mutasyon akışları.
+- **Uluslararasılaştırma (i18n)**: `next-intl` ile locale-aware routing ve çeviri dosyaları.
+- **Tema ve UI**: `Tailwind CSS v4` + `shadcn/ui` ile erişilebilir ve hızlı arayüzler; `next-themes` ile açık/koyu tema.
+- **Durum yönetimi**: Hafif global state için `Zustand`.
+- **Geliştirici deneyimi**: `ESLint 9`, `Prettier 3`, `Husky`, `lint-staged`, `Knip`; absolute importlar (`@/`), paket analizörü ve SEO yardımcıları.
+
+Bu özelliklerin detaylarını hem canlı demoda hem de README’de görebilirsiniz.
+
+## Önceki sürüme göre neler farklı?
+
+- **Güncel yığın**: `Next.js 16` + `React 19`, `Tailwind CSS v4`, `TanStack Query 5` ve modern araç setleri.
+- **Env ve güvenlik**: `@t3-oss/env-nextjs` + `Zod` ile env değişkenleri tip-güvenli ve runtime doğrulamalı.
+- **Standartlar ve kurallar**: Yeni alias kullanımı, dosya adlandırmaları ve kod yazım konvansiyonlarını netleştirdim; `.cursor/rules` ile editör/AI akışını da standardize ettim.
+- **Sürdürülebilir repo hijyeni**: `Conventional Commits`, `Knip` ve otomasyonlarla temiz, izlenebilir bir sürümleme ve bakım deneyimi.
+- **Sıfırdan kurulan daha yalın bir çekirdek**: `Storybook/Sentry` gibi "her FE projesinde olmayabilecek" parçalar çekirdekten çıkarıldı; isteyenler kolayca ekleyebilir.
+
+## Neden Nizam’ı kullanmalısınız?
+
+- **Hızlı başlangıç, minimum uğraş**: Çoğu projeye uygun, görüş bildiren ama dayatmacı olmayan bir çekirdek.
+- **Güçlü ama sade**: Performans, a11y ve DX’i önceleyen, gereksiz bağımlılıklardan arınmış bir temel.
+- **Net kurallar, tutarlı kod**: İsimlendirme, alias ve konvansiyonlar projeye disiplin kazandırır; ekip büyüdükçe değerini artırır.
+- **Gerçek dünyaya hazır**: i18n, tema, SEO ve veri katmanı gibi “genelde gereken” bloklar hazır gelir.
+
+## Hızlı başlangıç
+
+```bash
+git clone --depth=1 https://github.com/omergulcicek/nizam my-project
+cd my-project
+npm install
+npm run dev
+```
+
+Varsayılan `.env` örnekleri ve env şeması için `src/env.ts` dosyasına bakabilirsiniz.
+
+## Bağlantılar
+
+- **Canlı Demo**: [nizam-boilerplate.vercel.app](https://nizam-boilerplate.vercel.app/en)
+- **GitHub**: [omergulcicek/nizam](https://github.com/omergulcicek/nizam)
+
+README'de tüm teknik detaylar, proje yapısı, isimlendirme önerileri ve ipuçları yer alıyor. İnceleyin, klonlayın ve kendi ihtiyaçlarınıza göre özelleştirin.
+
+---
+
+## Destek olun
+
+Projeyi beğendiyseniz GitHub reposuna ⭐ vererek destek olabilirsiniz. Görüş ve katkılarınız için issue veya PR açmaktan çekinmeyin. Teşekkürler!
+
