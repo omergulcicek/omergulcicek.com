@@ -77,5 +77,5 @@ export const tagsIconMap: TagsIconMapType = {
 	Yorum: MessageCircle,
 	Teknoloji: Cpu,
 	Dizi: Clapperboard,
-	"Yapay Zeka": Bot
+	"Yapay Zekâ": Bot
 }
