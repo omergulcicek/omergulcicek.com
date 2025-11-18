@@ -8,9 +8,10 @@ import {
 export const PROJECTS = [
 	{
 		icon: Command,
-		title: "Next.js Boilerplate",
-		description: "TypeScript ve Tailwind CSS ile modern Next.js 15 şablonu",
-		link: "https://nextjs15-boilerplate.vercel.app/en",
+		title: "Nizam - Next.js 16 Boilerplate",
+		description:
+			"Modern Next.js projeleri için açık kaynak bir başlangıç şablonu.",
+		link: "https://nizam-boilerplate.vercel.app/tr",
 		tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "TanStack"],
 		color: "bg-blue-100"
 	},
