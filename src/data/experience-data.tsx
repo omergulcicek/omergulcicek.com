@@ -7,8 +7,8 @@ export const EXPERIENCE = [
 		company: "Machinarium",
 		icon: "machinarium",
 		role: "Frontend Team Lead",
-		period: "Ağu 2025 - Şimdi",
-		duration: "Devam ediyor",
+		period: "Ağu 2025 - Kas 2025",
+		duration: "4 ay",
 		workType: "Remote",
 		technologies: [
 			"React",
