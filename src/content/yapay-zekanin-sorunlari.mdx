@@ -1,0 +1,73 @@
+---
+createdAt: "2025-11-18"
+slug: "/yapay-zekanin-sorunlari"
+title: "Yapay Zekânın Sorunları"
+category: "teknik"
+tags: ["Yapay Zekâ"]
+medium: "https://omergulcicek.medium.com/yapay-zek%C3%A2n%C4%B1n-sorunlar%C4%B1-57ab1bf5e335?postPublishedType=initial"
+---
+
+Bu yazı, Google'da baş mühendis olarak çalışan [Addy Osmani](https://x.com/addyosmani)'nin Zed blogunda yayımlanan **["AI's 70% Problem"](https://zed.dev/blog/ai-70-problem-addy-osmani)** başlıklı makalesinin özetlenmiş Türkçe çevirisi ve üzerine kendi deneyimlerimden eklediğim yorumlarla hazırlanmıştır. AI ile yazılım geliştirirken yaşadığım somut örnekler üzerinden konuyu tartışmak istiyorum.
+
+![Addy Osmani - Yapay Zekânın Sorunları](/blog/2025-11-18/addy-osmani.png)
+
+## Yapay zekânın "%70 problemi" nedir?
+
+Addy Osmani, makalesinde günümüzde AI araçlarının bir problemi çok hızlı şekilde **yaklaşık %70 oranında** çözdüğünü, ancak kalan **%30'luk kısmın** hâlâ en zor ve en kritik yer olduğunu söylüyor. Yani UI'ı ayağa kaldırmak, kodun temelini atmak, ilk versiyonu çıkarmak hızlı; fakat **edge case'ler, güvenlik, prod entegrasyonu, testler ve bakım** kısmı eskisi kadar zor olmaya devam ediyor.
+
+> AI araçlarını ilk kullanmaya başladığımda da benzer bir "hızlı %70, zor %30" hissini çok net yaşadım. Örneğin bir sayfanın arayüzünü ya da basit bir özelliği AI ile dakikalar içinde çıkarabiliyorum. Fakat iş gerçek kullanıcı senaryolarına, hata yönetimine, performansa ve temiz mimariye gelince hâlâ kendim düşünmem, tasarlamam ve refactor etmem gerekiyor.
+
+> Kod yazarken yapay zekaya eğer kurallar vermezseniz, alacağınız çıktı kaliteli olmuyor; astarı yüzünden pahalıya geliyor. 
+
+Osmani'ye göre AI; **iskelet**, **bariz pattern'ler** ve **tekrar eden kod parçaları** için harika bir yardımcı. Ancak:
+
+- Güvenlik açıkları
+- API anahtarlarının yanlış yönetimi
+- Üretim ortamına entegrasyon
+- Bakımı kolay, anlaşılır mimari
+
+gibi konular hâlâ büyük ölçüde insan sorumluluğunda.
+
+> Örneğin kendi projelerimde, AI’nin ürettiği kodu doğrudan production’a almamak gibi yazılı olmayan bir kuralım var. Önce mimariyi ve sınırları kendim belirliyorum, ardından AI’den bu çerçeveye uygun kod istiyorum. Özellikle auth, ödeme ve dosya yükleme gibi hassas alanlarda "AI yazdı, çalışıyor" noktasını asla yeterli görmüyorum. Kod yazmaya ayırdığım vakit AI sayesinde azalsa da bu süreyi yazılan kodun her açıdan kapsamlı developer testini yapmakla geçiriyorum.
+
+## Güven problemi: Benimseme yüksek, güven düşük
+
+AI araçlarının kullanım oranı artarken **güvenin** aynı hızda artmadığını; hatta bazı araştırmalarda düşüşe geçtiğini söylüyor. Geliştiricilerin bir kısmı, AI'nin ürettiği koda **çok az** ya da **hiç güvenmediğini** belirtiyor.
+
+Bu, iki sebeple önemli:
+
+- **Kod üretimi ucuzladı ama kod inceleme pahalandı.**  
+  Artık asıl yük, "Bu kod gerçekten doğru mu, güvenli mi, maintainable mı?" sorusuna kayıyor.
+- **Takımlar, AI'nin yazdığı kodun sorumluluğunu hâlâ insanlar üzerinde görüyor.**  
+  PR'ı sen açıyorsan, son karar yine sende.
+
+> Çalışma hayatında lead’lik yaptığım ekiplerde bu senaryoyu çok kez gördüm. Hızlı task çıkarmak adına AI ile her şeyi yazdırıp doğrudan pushlayanlar oluyor. Kodun gerçekten çalışıp çalışmadığı, ne kadar temiz yazıldığı ve projenin genel mimarisiyle ne kadar uyumlu olduğu ise ikinci planda kalıyor. Böyle olunca amaç sadece taskı bitirmek haline geliyor. Üstelik yazılan kod incelenmediğinde ve anlaşılmadığında, taskı tamamlayan kişi bile yaptığı işin ayrıntılarından bihaber hâle dönüşüyor. Oysa yapay zekâyı sadece bir araç olarak görmek ve kodu okuma, test etme, doğrulama ve pushlama sorumluluklarının hâlâ tamamen bizde olduğunu unutmamak gerekiyor.
+
+## İki adım ileri, bir adım geri döngüsü
+
+Osmani, makalede çok tanıdık bir pattern'den bahsediyor: AI'den bir bug fix istiyorsun; o değişiklik başka bir yeri kırıyor; sonra onu düzeltmeye çalışırken bu kez yeni bug'lar üretiliyor. Yani **"iki adım ileri, bir adım geri"** hatta bazen **"bir adım ileri, iki adım geri"** durumu.
+
+> Bu tarz bir durumla karşılaştığımda, yapılması gerekenleri prompt’ta detaylı şekilde anlatıyorum. İstediğim çıktıyı alamazsam bu kez "şu kısmı şu şekilde düzelt, burayı da bu hâle çevir" gibi daha nokta atışı bir prompt yazıyorum. Yine de görev AI için fazla karmaşıksa ve hâlâ yapamadıysa, süreci adım adım ilerletiyorum: önce ilk adımı yazdırıp test ediyorum, tamamsa üzerine ikinci adıma geçiyorum. Aksi takdirde, bazı durumlarda kendinizi AI’nin içinden çıkamadığı sonsuz döngülerin içinde bulabiliyorsunuz.
+
+## Üretkenlik: Gerçekçi beklenti ne olmalı?
+
+Osmani, sosyal medyada sıkça gördüğümüz "10x olduk, 20x verimlilik" söylemlerine karşı da bir **gerçeklik kontrolü** yapıyor. Geliştirici verimliliği 1 kat, hatta 2 kat arttı. Belki de eskisinden %20 daha fazla görev tamamlayabilirler. Ancak yan etkilerini de görmeye başlıyoruz. Kod incelemesinin yeni darboğaz haline geldiğini görmeye başlıyoruz.
+
+> Kendi deneyimimde de "AI ile her şey 5 kat hızlandı" gibi bir tablo yok. Daha çok şöyle: Tekrarlayan işler, boilerplate, basit refactor ve dokümantasyon tarafında ciddi hızlanıyorum; fakat kritik kararlar, mimari, test stratejisi ve kod review aşamalarında hâlâ ciddi zaman harcıyorum. Bu yüzden toplamda hissedilen kazanım, "daha az yorularak biraz daha hızlı üretmek" seviyesinde kalıyor.
+
+## Junior geliştiriciler için: Öğrenme fırsatı mı, kısayol mu?
+
+Makale, özellikle junior geliştiriciler için önemli bir uyarı da içeriyor:  
+AI'yi yalnızca **"hızlı çözüm ve kopyala-yapıştır aracı"** olarak görmek, uzun vadede gelişimi yavaşlatabilir. Osmani, AI'nin bir **öğrenme yardımcısı** olarak kullanılmasını, üretilen kodun mutlaka anlaşılmasını ve sorgulanmasını öneriyor.
+
+> Burada junior arkadaşlara önerim şu: Bilmediğiniz bir teknolojiyle ilgili yapay zekâya aklınıza takılan her detayı sorun ve yanıtları üzerinde düşünün. Yapay zekâyı sanki özel öğretmeninizmiş gibi konumlayın. Örneğin "Next.js nedir? React’ten farkı nedir? Alternatiflerine göre neden tercih edilmelidir?" gibi soruları bolca sorup kafanızdaki tüm soru işaretlerini giderdikten sonra ufak ufak kod örnekleri yazdırın. Ardından mutlaka kendiniz doküman okuyarak o teknolojiyi deneyimleyin; aksi takdirde bu bilgilerin uçup gitme olasılığı yüksek.
+
+## Sonuç: %70'i AI'ye bırak, son %30'un lideri ol
+
+Özetle makalenin mesajı şu şekilde okunabilir:
+
+- AI, işi başlatmak ve hızlandırmak için harika bir araç.
+- Kodun %30'luk kısmı hâlâ insan sorumluluğunda.
+- Kodun mimarisini, kalitesini ve güvenliğini sahiplenmekten vazgeçmemek gerekiyor.
+
+> Ben kendi çalışma biçimimde AI’yi özellikle başlangıç ve tekrarlayan işler için olabildiğince verimli kullanmaya; buna karşılık kritik kararlar, kod review ve mimari tasarımda ise direksiyonu tamamen elime almaya çalışıyorum. Kısacası, AI’nin harika bir yol arkadaşı olduğuna inanıyorum; ancak sonunda kendimi sahnenin merkezinde konumlandırıyorum.
