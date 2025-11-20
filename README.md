@@ -9,7 +9,7 @@ My personal website and blog built with Next.js, TypeScript, Tailwind CSS, shadc
 ## 🚀 Tech Stack
 
 ### Core Technologies
-- **[Next.js 15](https://nextjs.org/)** - React framework with App Router
+- **[Next.js 16](https://nextjs.org/)** - React framework with App Router
 - **[React 19](https://react.dev/)** - Latest React with concurrent features
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
@@ -33,7 +33,7 @@ My personal website and blog built with Next.js, TypeScript, Tailwind CSS, shadc
 
 ## ✨ Features
 
-- **⚡ Performance Optimized** - Built with Next.js 15 and Turbopack
+- **⚡ Performance Optimized** - Built with Next.js 16 and Turbopack
 - **📱 Responsive Design** - Mobile-first approach with Tailwind CSS
 - **🎨 Modern UI** - Clean design with Shadcn/ui components
 - **📝 MDX Blog** - Rich content with code syntax highlighting
@@ -85,10 +85,11 @@ src/
 ├── constants/          # Application-wide constant values
 ├── content/            # MDX blog posts
 ├── data/               # Static data and configurations
+├── helper/             # Helper functions
 ├── hooks/              # Custom React hooks
 ├── lib/                # Utility functions
 ├── types/              # TypeScript type definitions
-└── utils/              # Helper functions
+└── utils/              # Utils functions
 ```
 
 ## 📄 License
