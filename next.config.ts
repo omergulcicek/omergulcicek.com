@@ -1,18 +1,25 @@
+import type { NextConfig } from "next"
+import type { RemotePattern } from "next/dist/shared/lib/image-config"
 import createMDX from "@next/mdx"
-
-import rehypePrettyCode from "rehype-pretty-code"
 
 const withMDX = createMDX({
 	options: {
 		remarkPlugins: [],
-		rehypePlugins: [rehypePrettyCode]
+		rehypePlugins: ["rehype-pretty-code"]
 	}
 })
 
-const nextConfig = {
-	output: "export" as const,
+const IMAGE_REMOTE_PATTERNS: RemotePattern[] = [
+	{
+		protocol: "https",
+		hostname: "api.microlink.io"
+	}
+]
+
+const nextConfig: NextConfig = {
+	output: "export",
 	images: {
-		domains: ["api.microlink.io"],
+		remotePatterns: IMAGE_REMOTE_PATTERNS,
 		unoptimized: true
 	},
 	pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],

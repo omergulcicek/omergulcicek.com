@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": "src/",
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,7 +16,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -20,24 +24,60 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@/ui": ["components/ui"],
-      "@/features": ["components/features"],
-      "@/widgets": ["components/widgets"],
-      "@/shared": ["components/shared"],
-      "@/icons": ["components/icons"],
-      "@/skeletons": ["components/skeletons"],
-      "@/providers": ["providers"],
-      "@/config": ["config"],
-      "@/constants": ["constants"],
-      "@/data": ["data"],
-      "@/schemas": ["schemas"],
-      "@/helpers": ["helpers"],
-      "@/hooks": ["hooks"],
-      "@/stores": ["stores"],
-      "@/services": ["services"],
-      "@/utils": ["lib/utils"],
-      "@/types": ["types"]
+      "@/*": [
+        "./*"
+      ],
+      "@/ui": [
+        "components/ui"
+      ],
+      "@/features": [
+        "components/features"
+      ],
+      "@/widgets": [
+        "components/widgets"
+      ],
+      "@/shared": [
+        "components/shared"
+      ],
+      "@/icons": [
+        "components/icons"
+      ],
+      "@/skeletons": [
+        "components/skeletons"
+      ],
+      "@/providers": [
+        "providers"
+      ],
+      "@/config": [
+        "config"
+      ],
+      "@/constants": [
+        "constants"
+      ],
+      "@/data": [
+        "data"
+      ],
+      "@/schemas": [
+        "schemas"
+      ],
+      "@/helpers": [
+        "helpers"
+      ],
+      "@/hooks": [
+        "hooks"
+      ],
+      "@/stores": [
+        "stores"
+      ],
+      "@/services": [
+        "services"
+      ],
+      "@/utils": [
+        "lib/utils"
+      ],
+      "@/types": [
+        "types"
+      ]
     }
   },
   "include": [
@@ -45,7 +85,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "svgr.d.ts"
+    "svgr.d.ts",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
