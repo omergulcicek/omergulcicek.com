@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -45,16 +44,34 @@ export function Header() {
 			<Container className="py-4 md:py-4">
 				<div className="flex items-center justify-between">
 					{isLoading ? (
-						<div className="size-8 animate-pulse rounded-full bg-muted" />
+						<div className="hidden md:flex items-center gap-4">
+							{Array.from({ length: 5 }).map((_, i) => (
+								<div
+									key={i}
+									className="h-5 w-14 animate-pulse rounded-sm bg-muted"
+								/>
+							))}
+						</div>
 					) : isDesktop ? (
-						<Link href="/">
-							<Image
-								src="/omergulcicek.png"
-								alt="Ömer Gülçiçek"
-								width={32}
-								height={32}
-							/>
-						</Link>
+						<>
+							<nav className="flex items-center gap-4 text-sm font-medium">
+								{navItemsData.map((item) => (
+									<Link
+										key={item.href}
+										href={item.href}
+										className={cn(
+											"text-sm font-medium transition-all duration-300",
+											pathname === item.href ||
+												(pathname.startsWith(item.href) && item.href !== "/")
+												? "text-foreground"
+												: "text-muted-foreground"
+										)}
+									>
+										{item.label}
+									</Link>
+								))}
+							</nav>
+						</>
 					) : (
 						<Drawer shouldScaleBackground setBackgroundColorOnScale>
 							<DrawerTrigger asChild>
@@ -100,35 +117,6 @@ export function Header() {
 					)}
 
 					<div className="flex items-center gap-4">
-						{isLoading ? (
-							<div className="hidden md:flex items-center gap-4">
-								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
-								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
-								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
-								<div className="h-5 w-14 animate-pulse rounded-sm bg-muted" />
-							</div>
-						) : (
-							isDesktop && (
-								<nav className="flex items-center gap-4 text-sm font-medium">
-									{navItemsData.map((item) => (
-										<Link
-											key={item.href}
-											href={item.href}
-											className={cn(
-												"text-sm font-medium transition-all duration-300",
-												pathname === item.href ||
-													(pathname.startsWith(item.href) && item.href !== "/")
-													? "text-foreground"
-													: "text-muted-foreground"
-											)}
-										>
-											{item.label}
-										</Link>
-									))}
-								</nav>
-							)
-						)}
-
 						<div className="flex items-center gap-2">
 							<CommandPalette />
 							<Link

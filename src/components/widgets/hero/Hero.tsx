@@ -7,7 +7,7 @@ import { useMediaQuery } from "usehooks-ts"
 import { USER } from "@/constants/user"
 
 import { TurkeyRounded } from "@/components/icons"
-import { Socials, VerifiedUser } from "@/widgets"
+import { JobSeekingBadge, VerifiedUser } from "@/widgets"
 
 export function Hero() {
 	const isMobile = useMediaQuery("(max-width: 767px)")
@@ -16,7 +16,7 @@ export function Hero() {
 
 	return (
 		<section>
-			<div className="flex items-end gap-4 md:gap-6">
+			<div className="flex items-center gap-4 md:gap-6">
 				<figure className="relative flex items-center justify-center">
 					<Image
 						src={USER.avatar}
@@ -31,14 +31,14 @@ export function Hero() {
 					<TurkeyRounded className="absolute bottom-0 right-0 size-10 fill-primary rounded-full ring-1 ring-border ring-offset-1 ring-offset-background select-none aspect-square bg-white" />
 				</figure>
 
-				<div className="flex flex-col gap-0.5">
+				<div className="flex flex-col h-full justify-start gap-0.5">
 					<VerifiedUser />
 
 					<p className="text-base md:text-lg text-muted-foreground">
 						{USER.jobTitle}
 					</p>
 
-					<Socials />
+					<JobSeekingBadge className="mt-1 -ml-1" />
 				</div>
 			</div>
 		</section>

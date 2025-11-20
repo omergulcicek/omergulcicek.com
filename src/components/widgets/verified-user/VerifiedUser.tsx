@@ -1,6 +1,6 @@
-import { USER } from "@/constants/user"
+import { USER } from "@/constants"
 
-import { VerifiedIcon } from "@/components/icons/VerifiedIcon"
+import { VerifiedIcon } from "@/icons"
 
 export function VerifiedUser() {
 	return (
