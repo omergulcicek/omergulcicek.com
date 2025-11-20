@@ -1,5 +1,5 @@
 import { Container } from "@/shared"
-import { About, Blog, Experience, Hero, Projects, Stack } from "@/widgets"
+import { About, Blog, Experience, Projects, Stack } from "@/widgets"
 
 import { getLastNewestPosts } from "@/data/blog.data"
 

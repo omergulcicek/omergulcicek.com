@@ -9,7 +9,7 @@ import {
 	AccordionItem,
 	AccordionTrigger
 } from "@/ui"
-import { ArrowButton, Section, TagsBadge } from "@/widgets"
+import { ArrowButton, JobSeekingBadge, Section, TagsBadge } from "@/widgets"
 
 import { experienceData } from "@/data"
 
@@ -17,24 +17,25 @@ interface ExperienceProps {
 	showAll?: boolean
 	title?: string
 	showButton?: boolean
+	defaultValue?: string
 }
 
 export function Experience({
 	showAll = false,
 	showButton = false,
-	title = "Deneyim"
+	title = "Deneyim",
+	defaultValue = ""
 }: ExperienceProps) {
 	const experiences = showAll ? experienceData : experienceData.slice(0, 3)
-	const defaultExperience = showAll ? "" : experiences[0].company
 
 	return (
-		<Section title={title} type="h2">
+		<Section title={title} type="h2" titleAddon={<JobSeekingBadge />}>
 			<div className="flex flex-col gap-2">
 				<Accordion
 					type="single"
 					collapsible
 					className="w-full"
-					defaultValue={defaultExperience}
+					defaultValue={defaultValue}
 				>
 					{experiences.map((experience) => (
 						<AccordionItem value={experience.company} key={experience.company}>
