@@ -7,7 +7,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app"
 import { SITE } from "@/constants/site"
 import { USER } from "@/constants/user"
 
-import { Footer, Header, WebVitals } from "@/shared"
+import { Footer, Header, ThemeProvider, WebVitals } from "@/shared"
 
 import "./globals.css"
 
@@ -58,18 +58,20 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="tr" suppressHydrationWarning className="scroll-smooth">
+		<html lang="tr" suppressHydrationWarning>
 			<body className={`${GeistSans.className} antialiased font-sans`}>
-				<WebVitals />
-				<NuqsAdapter>
-					<div data-vaul-drawer-wrapper="">
-						<div className="relative flex min-h-screen flex-col bg-background">
-							<Header />
-							<main className="min-h-screen">{children}</main>
-							<Footer />
+				<ThemeProvider>
+					<WebVitals />
+					<NuqsAdapter>
+						<div data-vaul-drawer-wrapper="">
+							<div className="relative flex min-h-screen flex-col bg-background">
+								<Header />
+								<main className="min-h-screen">{children}</main>
+								<Footer />
+							</div>
 						</div>
-					</div>
-				</NuqsAdapter>
+					</NuqsAdapter>
+				</ThemeProvider>
 			</body>
 			{SITE.analyticsId && <GoogleAnalytics gaId={SITE.analyticsId} />}
 		</html>

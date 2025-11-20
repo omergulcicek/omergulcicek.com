@@ -19,9 +19,10 @@ import {
 	DrawerContent,
 	DrawerHeader,
 	DrawerTitle,
-	DrawerTrigger
+	DrawerTrigger,
+	Separator
 } from "@/ui"
-import { CommandPalette } from "@/widgets"
+import { CommandPalette, ThemeToggle } from "@/widgets"
 
 import { GitHub } from "@/icons"
 import { navItemsData, type NavItem } from "@/data"
@@ -40,8 +41,8 @@ export function Header() {
 	}, [])
 
 	return (
-		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<Container className="py-4 md:py-4">
+		<header className="sticky top-0 z-50 md:py-1 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+			<Container className="py-4 md:py-4 max-w-3xl">
 				<div className="flex items-center justify-between">
 					{isLoading ? (
 						<div className="hidden md:flex items-center gap-4">
@@ -117,8 +118,9 @@ export function Header() {
 					)}
 
 					<div className="flex items-center gap-4">
-						<div className="flex items-center gap-2">
+						<div className="flex items-center gap-1 h-4">
 							<CommandPalette />
+							<Separator orientation="vertical" className="h-2 mx-2" />
 							<Link
 								href={USER.socials.github}
 								target="_blank"
@@ -133,6 +135,8 @@ export function Header() {
 									<GitHub className="size-4" />
 								</Button>
 							</Link>
+							<Separator orientation="vertical" className="h-2 mx-2" />
+							<ThemeToggle />
 						</div>
 					</div>
 				</div>
