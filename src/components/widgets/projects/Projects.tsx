@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils"
 // import { Button } from "@/ui"
 import { Section } from "@/widgets"
 
-import { PROJECTS } from "@/data"
+import { projectsData } from "@/data"
 
 export function Projects() {
 	return (
 		<Section title="Projeler" type="h2">
 			<ul className="flex flex-col items-start -mx-6">
-				{PROJECTS.map((project) => (
+				{projectsData.map((project) => (
 					<li key={project.title} className="w-full">
 						<Link
 							href={project.link}

@@ -19,7 +19,7 @@ import {
 	Zustand
 } from "@/icons"
 
-export const STACK = [
+export const stackData = [
 	{ name: "Html", id: 18, img: Html },
 	{ name: "Css", id: 17, img: Css },
 	{ name: "JavaScript", id: 21, img: JavaScript },

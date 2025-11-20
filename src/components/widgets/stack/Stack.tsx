@@ -7,10 +7,10 @@ import { Logo } from "@/types/logo-type"
 import { LogoCarousel } from "@/ui"
 import { Section } from "@/widgets"
 
-import { STACK } from "@/data"
+import { stackData } from "@/data"
 
 export function Stack() {
-	const allLogos: Logo[] = useMemo(() => STACK, [])
+	const allLogos: Logo[] = useMemo(() => stackData, [])
 
 	return (
 		<Section>

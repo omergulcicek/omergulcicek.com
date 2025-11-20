@@ -6,7 +6,7 @@ export interface NavItem {
 	icon: LucideIcon
 }
 
-export const NAV_ITEMS: NavItem[] = [
+export const navItemsData: NavItem[] = [
 	{
 		label: "Ana Sayfa",
 		href: "/",

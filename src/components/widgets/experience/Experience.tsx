@@ -11,7 +11,7 @@ import {
 } from "@/ui"
 import { ArrowButton, Section, TagsBadge } from "@/widgets"
 
-import { EXPERIENCE } from "@/data"
+import { experienceData } from "@/data"
 
 interface ExperienceProps {
 	showAll?: boolean
@@ -24,7 +24,7 @@ export function Experience({
 	showButton = false,
 	title = "Deneyim"
 }: ExperienceProps) {
-	const experiences = showAll ? EXPERIENCE : EXPERIENCE.slice(0, 3)
+	const experiences = showAll ? experienceData : experienceData.slice(0, 3)
 	const defaultExperience = showAll ? "" : experiences[0].company
 
 	return (

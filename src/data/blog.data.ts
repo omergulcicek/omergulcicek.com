@@ -3,7 +3,7 @@ import path from "path"
 
 import matter from "gray-matter"
 
-import type { BlogPost } from "@/types/blog-type"
+import type { BlogPostType } from "@/types/blog.type"
 
 function parseFrontmatter(fileContent: string) {
 	const file = matter(fileContent)
@@ -23,7 +23,7 @@ function readMDXFile(filePath: string) {
 	return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir: string): BlogPost[] {
+function getMDXData(dir: string): BlogPostType[] {
 	const mdxFiles = getMDXFiles(dir)
 
 	return mdxFiles.map((file) => {
@@ -32,14 +32,14 @@ function getMDXData(dir: string): BlogPost[] {
 		const slug = path.basename(file, path.extname(file))
 
 		return {
-			metadata: metadata as BlogPost["metadata"],
+			metadata: metadata as BlogPostType["metadata"],
 			slug,
 			content
 		}
 	})
 }
 
-export function getAllPosts(): BlogPost[] {
+export function getAllPosts(): BlogPostType[] {
 	const today = new Date()
 	today.setHours(23, 59, 59, 999)
 
@@ -55,18 +55,18 @@ export function getAllPosts(): BlogPost[] {
 		)
 }
 
-export function getLastNewestPosts(): BlogPost[] {
+export function getLastNewestPosts(): BlogPostType[] {
 	return getAllPosts().slice(0, 5)
 }
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
+export function getPostBySlug(slug: string): BlogPostType | undefined {
 	return (
 		getAllPosts().find((post) => post.slug === slug) ||
 		getFuturePosts().find((post) => post.slug === slug)
 	)
 }
 
-export function getPostsByCategory(category: string): BlogPost[] {
+export function getPostsByCategory(category: string): BlogPostType[] {
 	return getAllPosts().filter((post) => post.metadata?.category === category)
 }
 
@@ -88,7 +88,7 @@ export function findNeighbour(
 	return { previous: null, next: null }
 }
 
-export function getFuturePosts(): BlogPost[] {
+export function getFuturePosts(): BlogPostType[] {
 	return getMDXData(path.join(process.cwd(), "src", "content"))
 		.filter((post) => String(post.metadata.createdAt).toLowerCase() === "soon")
 		.sort((a, b) =>

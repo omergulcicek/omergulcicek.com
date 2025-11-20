@@ -16,8 +16,8 @@ import {
 	CommandList
 } from "@/ui"
 
-import { NAV_ITEMS } from "@/data/nav-data"
-import { PROJECTS } from "@/data/projects-data"
+import { navItemsData } from "@/data/nav.data"
+import { projectsData } from "@/data/projects.data"
 
 export function CommandPalette() {
 	const [open, setOpen] = useState(false)
@@ -50,7 +50,7 @@ export function CommandPalette() {
 	}))
 
 	// Tüm projeleri arama için hazırla
-	const allProjects = PROJECTS.map((project) => ({
+	const allProjects = projectsData.map((project) => ({
 		...project,
 		searchValue: `${project.title} ${project.description}`.toLowerCase()
 	}))
@@ -78,7 +78,7 @@ export function CommandPalette() {
 								: "Sonuç bulunamadı."}
 					</CommandEmpty>
 					<CommandGroup heading="Sayfalar">
-						{NAV_ITEMS.map((item) => (
+						{navItemsData.map((item) => (
 							<CommandItem
 								key={item.href}
 								onSelect={() => runCommand(() => router.push(item.href))}

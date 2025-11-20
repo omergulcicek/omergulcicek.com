@@ -5,7 +5,7 @@ import {
 	TextCursorInput
 } from "lucide-react"
 
-export const PROJECTS = [
+export const projectsData = [
 	{
 		icon: Command,
 		title: "Nizam - Next.js 16 Boilerplate",

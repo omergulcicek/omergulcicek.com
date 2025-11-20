@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/types/blog-type"
+import type { BlogPostType } from "@/types/blog.type"
 import type { SortOptionType } from "@/types/filter-sort-type"
 
 export function getValidatedSortOption(input?: string): SortOptionType {
@@ -14,7 +14,7 @@ export function getValidatedSortOption(input?: string): SortOptionType {
 	}
 }
 
-export function getUniqueSortedTags(posts: BlogPost[]): string[] {
+export function getUniqueSortedTags(posts: BlogPostType[]): string[] {
 	return Array.from(
 		new Set(
 			posts.flatMap((p) => (p.metadata.tags as string[] | undefined) ?? [])
@@ -22,14 +22,20 @@ export function getUniqueSortedTags(posts: BlogPost[]): string[] {
 	).sort((a, b) => a.localeCompare(b))
 }
 
-export function filterPostsByTag(posts: BlogPost[], tag?: string): BlogPost[] {
+export function filterPostsByTag(
+	posts: BlogPostType[],
+	tag?: string
+): BlogPostType[] {
 	if (!tag) return posts
 	return posts.filter((post) =>
 		(post.metadata.tags as string[] | undefined)?.includes(tag)
 	)
 }
 
-export function sortPosts(posts: BlogPost[], sort: SortOptionType): BlogPost[] {
+export function sortPosts(
+	posts: BlogPostType[],
+	sort: SortOptionType
+): BlogPostType[] {
 	const copy = [...posts]
 	return copy.sort((a, b) => {
 		switch (sort) {

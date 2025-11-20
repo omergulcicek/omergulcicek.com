@@ -1,12 +1,12 @@
 import { Suspense } from "react"
 import type { Metadata } from "next"
 
-import type { BlogPost } from "@/types/blog-type"
+import type { BlogPostType } from "@/types/blog.type"
 
 import { Container } from "@/shared"
 import { BlogList, Section } from "@/widgets"
 
-import { getAllPosts, getFuturePosts } from "@/data/blog-data"
+import { getAllPosts, getFuturePosts } from "@/data/blog.data"
 
 export const metadata: Metadata = {
 	title: "Blog",
@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 }
 
 export default function Blog() {
-	const allPosts = getAllPosts() as BlogPost[]
+	const allPosts = getAllPosts() as BlogPostType[]
 	const futurePosts =
 		process.env.NODE_ENV === "production"
-			? ([] as BlogPost[])
-			: (getFuturePosts() as BlogPost[])
+			? ([] as BlogPostType[])
+			: (getFuturePosts() as BlogPostType[])
 
 	return (
 		<Container>

@@ -4,11 +4,11 @@ import Link from "next/link"
 
 import { dateFormat } from "@/helpers/date-format"
 
-import { BlogProps } from "@/types/blog-type"
+import type { BlogPropsType } from "@/types/blog.type"
 
 import { ArrowButton, Section } from "@/widgets"
 
-export function Blog({ posts }: BlogProps) {
+export function Blog({ posts }: BlogPropsType) {
 	return (
 		<Section title="Blog" type="h2">
 			<nav className="flex flex-col items-start gap-6">

@@ -1,4 +1,4 @@
-export interface BlogPost {
+export interface BlogPostType {
 	metadata: {
 		title: string
 		createdAt: string
@@ -11,6 +11,6 @@ export interface BlogPost {
 	content: string
 }
 
-export interface BlogProps {
-	posts: BlogPost[]
+export interface BlogPropsType {
+	posts: BlogPostType[]
 }

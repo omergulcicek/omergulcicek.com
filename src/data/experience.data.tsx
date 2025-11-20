@@ -2,7 +2,7 @@ import React from "react"
 
 import { LinkPreview } from "@/ui"
 
-export const EXPERIENCE = [
+export const experienceData = [
 	{
 		company: "Machinarium",
 		icon: "machinarium",

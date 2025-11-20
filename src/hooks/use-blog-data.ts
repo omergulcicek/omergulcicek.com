@@ -2,19 +2,10 @@
 
 import { useEffect, useState } from "react"
 
-interface BlogPost {
-	slug: string
-	metadata: {
-		title: string
-		description?: string
-		category?: string
-		createdAt: string
-	}
-	content: string
-}
+import type { BlogPostType } from "@/types/blog.type"
 
 export function useBlogData() {
-	const [posts, setPosts] = useState<BlogPost[]>([])
+	const [posts, setPosts] = useState<BlogPostType[]>([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState<string | null>(null)
 

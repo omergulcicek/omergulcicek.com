@@ -25,7 +25,7 @@ import {
 import { CommandPalette } from "@/widgets"
 
 import { GitHub } from "@/icons"
-import { NAV_ITEMS, type NavItem } from "@/data"
+import { navItemsData, type NavItem } from "@/data"
 
 export function Header() {
 	const pathname = usePathname()
@@ -72,7 +72,7 @@ export function Header() {
 								</DrawerHeader>
 								<div className="px-4 pb-4">
 									<nav className="flex flex-col gap-2">
-										{NAV_ITEMS.map((item: NavItem) => {
+										{navItemsData.map((item: NavItem) => {
 											const Icon = item.icon
 											return (
 												<DrawerClose asChild key={item.href}>
@@ -110,7 +110,7 @@ export function Header() {
 						) : (
 							isDesktop && (
 								<nav className="flex items-center gap-4 text-sm font-medium">
-									{NAV_ITEMS.map((item) => (
+									{navItemsData.map((item) => (
 										<Link
 											key={item.href}
 											href={item.href}

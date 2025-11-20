@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-import { getAllPosts } from "@/data/blog-data"
+import { getAllPosts } from "@/data/blog.data"
 
 export const dynamic = "force-static"
 

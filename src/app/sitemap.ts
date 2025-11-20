@@ -2,15 +2,15 @@ import type { MetadataRoute } from "next"
 
 import { SITE } from "@/constants/site"
 
-import { NAV_ITEMS } from "@/data"
-import { getAllPosts } from "@/data/blog-data"
+import { navItemsData } from "@/data"
+import { getAllPosts } from "@/data/blog.data"
 
 export const dynamic = "force-static"
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = SITE.url
 
-	const staticPages = NAV_ITEMS.map((item) => ({
+	const staticPages = navItemsData.map((item) => ({
 		url: `${baseUrl}${item.href}`,
 		lastModified: new Date(),
 		changeFrequency: (item.href === "/" ? "daily" : "weekly") as

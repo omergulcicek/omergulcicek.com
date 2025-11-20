@@ -11,14 +11,14 @@ import {
 import { dateFormat, groupPostsByYear } from "@/helpers/date-format"
 import { useQueryState } from "nuqs"
 
-import type { BlogPost } from "@/types/blog-type"
+import type { BlogPostType } from "@/types/blog.type"
 import type { SortOptionType } from "@/types/filter-sort-type"
 
 import { FilterSort, TagsBadge } from "@/widgets"
 
 interface BlogListProps {
-	allPosts: BlogPost[]
-	futurePosts?: BlogPost[]
+	allPosts: BlogPostType[]
+	futurePosts?: BlogPostType[]
 }
 
 export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
@@ -33,7 +33,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 
 	const allTags = getUniqueSortedTags(allPosts)
 
-	function PostRow({ post }: { post: BlogPost }) {
+	function PostRow({ post }: { post: BlogPostType }) {
 		return (
 			<div className="flex flex-col gap-1">
 				<h2 className="text-lg leading-normal font-normal text-gray-900 group-hover:text-black transition-colors duration-200">

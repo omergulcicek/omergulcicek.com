@@ -16,7 +16,7 @@ import {
 	getAllPosts,
 	getFuturePosts,
 	getPostBySlug
-} from "@/data/blog-data"
+} from "@/data/blog.data"
 
 import "./prose.css"
 
