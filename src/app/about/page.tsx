@@ -1,13 +1,25 @@
 import { Container } from "@/shared"
-import { AboutContact, AboutHobbies, AboutSkills, Experience } from "@/widgets"
+import {
+	AboutContact,
+	AboutHobbies,
+	AboutIntro,
+	AboutProductionCulture,
+	AboutServices,
+	AboutTechnicalApproach,
+	AboutVision,
+	Experience
+} from "@/widgets"
 
 export default function About() {
 	return (
-		<Container>
-			<AboutSkills />
-			<AboutHobbies />
+		<Container className="leading-7 [&_p]:text-neutral-500">
+			<AboutIntro />
+			<AboutTechnicalApproach />
+			<AboutProductionCulture />
 			<Experience showAll />
-			{/* <AboutServices /> */}
+			<AboutServices />
+			<AboutHobbies />
+			<AboutVision />
 			<AboutContact />
 		</Container>
 	)

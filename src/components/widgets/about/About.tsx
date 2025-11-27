@@ -7,42 +7,32 @@ export function About() {
 		<Section>
 			<div className="flex flex-col gap-4 text-base leading-7 [&_p]:text-neutral-500">
 				<p>
-					Merhaba, ben <span className="text-black">Ömer</span>,{" "}
-					<span className="text-black inline-flex items-center gap-1.5">
-						Sakarya
-					</span>
-					&apos;da yaşayan bir{" "}
-					<span className="text-black">yazılım mühendisi</span>yim.{" "}
-				</p>
-				<p>
-					Modern web teknolojileriyle{" "}
-					<span className="text-black">
+					<span className="text-primary">Modern web teknolojileriyle</span>{" "}
+					<span className="text-primary">
 						ölçeklenebilir, performanslı ve kullanıcı odaklı arayüzler
 					</span>{" "}
-					geliştiriyorum. <span className="text-black">Uygulama mimarisi</span>,{" "}
-					<span className="text-black">performans optimizasyonu</span>,{" "}
-					<span className="text-black">tasarım sistemleri</span> ve{" "}
-					<span className="text-black">mikro frontend yapıları</span> üzerine
-					odaklanıyorum. Amacım,{" "}
-					<span className="text-black">temiz ve sürdürülebilir arayüzler</span>{" "}
-					inşa ederken <span className="text-black">UI/UX</span>,{" "}
-					<span className="text-black">erişilebilirlik</span> ve{" "}
-					<span className="text-black">Web Vitals</span> gibi kalite ölçütlerini
-					önceliklendirmek.
+					geliştiriyorum. <span className="text-primary">React</span>,{" "}
+					<span className="text-primary">Next.js</span> ve{" "}
+					<span className="text-primary">TypeScript</span> ekosisteminde{" "}
+					<span className="text-primary">mimari tasarım</span>,{" "}
+					<span className="text-primary">tasarım sistemleri</span> ve{" "}
+					<span className="text-primary">sürdürülebilir frontend yapıları</span>{" "}
+					üzerine çalışıyor; ekiplerin{" "}
+					<span className="text-primary">teknik kararlarına</span> yön veren bir
+					rol üstleniyorum.
 				</p>
-
 				<p>
-					Kod yazmadığım zamanlarda{" "}
-					<span className="text-black">fotoğrafçılıkla</span> ilgileniyor,{" "}
-					<span className="text-black">satranç</span>,{" "}
-					<span className="text-black">tarih</span> ve{" "}
-					<span className="text-black">ekonomi</span> alanlarında kendimi
-					geliştiriyorum.
-				</p>
-
-				<p>
-					Bu siteyi deneyimlerimi paylaşmak, açık kaynak dünyasına katkıda
-					bulunmak ve benzer tutkuları paylaşan insanlarla buluşmak için kurdum.
+					Çeşitli sektörlerde geliştirdiğim modern uygulamaları{" "}
+					<span className="text-primary">UI/UX</span>,{" "}
+					<span className="text-primary">erişilebilirlik</span> ve{" "}
+					<span className="text-primary">Web Vitals</span> odaklı bir yaklaşımla
+					inşa ediyorum. Kod dışında{" "}
+					<span className="text-primary">fotoğraf</span>,{" "}
+					<span className="text-primary">satranç</span> ve{" "}
+					<span className="text-primary">tarih</span> alanlarıyla ilgileniyor;{" "}
+					<span className="text-primary">açık kaynak projeler</span> ve{" "}
+					<span className="text-primary">blog yazılarıyla</span> topluluğa katkı
+					sağlıyorum.
 				</p>
 				<div className="flex justify-center">
 					<Link href="/about">

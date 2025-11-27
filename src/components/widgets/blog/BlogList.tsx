@@ -36,7 +36,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 	function PostRow({ post }: { post: BlogPostType }) {
 		return (
 			<div className="flex flex-col gap-1">
-				<h2 className="text-lg leading-normal font-normal text-gray-900 group-hover:text-black transition-colors duration-200">
+				<h2 className="text-lg leading-normal font-normal text-gray-900 dark:text-white group-hover:text-black transition-colors duration-200">
 					<Link
 						href={`/blog/${post.slug}`}
 						className="group relative overflow-hidden flex items-start"

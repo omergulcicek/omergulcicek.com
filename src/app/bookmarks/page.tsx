@@ -1,9 +1,16 @@
+"use client"
+
+import { useTheme } from "next-themes"
 import Link from "next/link"
 
 import { Container } from "@/shared"
 import { Section } from "@/widgets"
 
 export default function Bookmarks() {
+	const { theme } = useTheme()
+
+	const mode = theme === "dark" ? "dark" : "light"
+
 	return (
 		<>
 			<Container>
@@ -26,14 +33,10 @@ export default function Bookmarks() {
 			<Container className="max-w-6xl md:py-0">
 				<Section type="h2">
 					<iframe
-						style={{
-							border: "0",
-							width: "100%",
-							height: "664px"
-						}}
+						className="w-full h-[664px]"
 						allowFullScreen
-						src="https://raindrop.io/omergulcicek/embed/me/no-header=true&theme=light"
-					></iframe>
+						src={`https://raindrop.io/omergulcicek/embed/me/no-header=true&theme=${mode}`}
+					/>
 				</Section>
 			</Container>
 		</>

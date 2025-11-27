@@ -1,10 +1,10 @@
 import { Container } from "@/shared"
 import { Section } from "@/widgets"
 
-export default function Projects() {
+export default function Academy() {
 	return (
 		<Container>
-			<Section title="Projeler">
+			<Section title="Akademi">
 				<p></p>
 			</Section>
 		</Container>
