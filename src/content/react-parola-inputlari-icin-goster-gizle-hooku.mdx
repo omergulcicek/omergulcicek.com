@@ -28,6 +28,7 @@ Paketi canlı olarak denemek için: <a href="https://omergulcicek-password-input
 - **Esneklik**: Herhangi bir CSS framework veya özel stillerle çalışma
 
 ### Kurulum
+
 ```bash
 npm install @omergulcicek/password-input
 ```
@@ -40,13 +41,13 @@ Aşağıdaki gibi kolayca entegre edebilirsin:
 import { usePasswordInput } from "@omergulcicek/password-input"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
-  password: true
-});
+	password: true
+})
 
 return (
-  <InputWrapper {...wrapperProps}>
-    <input {...inputProps} />
-  </InputWrapper>
+	<InputWrapper {...wrapperProps}>
+		<input {...inputProps} />
+	</InputWrapper>
 )
 ```
 
@@ -62,18 +63,18 @@ Varsayılan ikon Lucide React ikonlarıdır. İstersen kendi ikonlarını veya m
 import { usePasswordInput } from "@omergulcicek/password-input"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
-  password: {
-    icons: {
-      show: <span className="text-xs">Show</span>,
-      hide: <span className="text-xs">Hide</span>,
-    }
-  }
-});
+	password: {
+		icons: {
+			show: <span className="text-xs">Show</span>,
+			hide: <span className="text-xs">Hide</span>
+		}
+	}
+})
 
 return (
-  <InputWrapper {...wrapperProps}>
-    <input {...inputProps} />
-  </InputWrapper>
+	<InputWrapper {...wrapperProps}>
+		<input {...inputProps} />
+	</InputWrapper>
 )
 ```
 
@@ -84,18 +85,18 @@ import { usePasswordInput } from "@omergulcicek/password-input"
 import { House, Star } from "lucide-react"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
-  password: {
-    icons: {
-      show: <House className="size-4" />,
-      hide: <Star className="size-4" />,
-    }
-  }
-});
+	password: {
+		icons: {
+			show: <House className="size-4" />,
+			hide: <Star className="size-4" />
+		}
+	}
+})
 
 return (
-  <InputWrapper {...wrapperProps}>
-    <input {...inputProps} />
-  </InputWrapper>
+	<InputWrapper {...wrapperProps}>
+		<input {...inputProps} />
+	</InputWrapper>
 )
 ```
 
@@ -105,18 +106,18 @@ return (
 import { usePasswordInput } from "@omergulcicek/password-input"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
-  password: true,
-  classNames: {
-    wrapper: "my-custom-wrapper", // outer container div
-    suffix: "my-custom-suffix",     // right-side icon container
-    button: "my-custom-button"    // toggle button element
-  }
-});
+	password: true,
+	classNames: {
+		wrapper: "my-custom-wrapper", // outer container div
+		suffix: "my-custom-suffix", // right-side icon container
+		button: "my-custom-button" // toggle button element
+	}
+})
 
 return (
-  <InputWrapper {...wrapperProps}>
-    <input {...inputProps} />
-  </InputWrapper>
+	<InputWrapper {...wrapperProps}>
+		<input {...inputProps} />
+	</InputWrapper>
 )
 ```
 
@@ -126,22 +127,23 @@ Bu fonksiyon, sınıf isimlerini birleştirmek için kullanılır. Opsiyonel bir
 
 ```javascript
 import { usePasswordInput } from "@omergulcicek/password-input"
+
 import { cn } from "@/lib/utils" // your class name utility
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
-  password: true,
-  classNames: {
-    wrapper: "my-custom-wrapper",
-    suffix: "my-custom-suffix", 
-    button: "my-custom-button"
-  },
-  cn // optional
-});
+	password: true,
+	classNames: {
+		wrapper: "my-custom-wrapper",
+		suffix: "my-custom-suffix",
+		button: "my-custom-button"
+	},
+	cn // optional
+})
 
 return (
-  <InputWrapper {...wrapperProps} className="border rounded-md">
-    <input {...inputProps} className="px-3 py-2 w-full" />
-  </InputWrapper>
+	<InputWrapper {...wrapperProps} className="border rounded-md">
+		<input {...inputProps} className="px-3 py-2 w-full" />
+	</InputWrapper>
 )
 ```
 
@@ -149,7 +151,7 @@ return (
 
 Bu paket, React projelerinde parola inputları için göster/gizle işlevselliğini kolayca eklemek amacıyla tasarlandı. TypeScript desteği ile birlikte, esnek ve özelleştirilebilir bir çözüm sunuyor. Ayrıca, farklı ikon setleri ve stillerle uyumlu çalışabilmesi sayesinde projelerinizde rahatlıkla kullanabilirsiniz.
 
-***
+---
 
 ### Katkıda Bulun
 

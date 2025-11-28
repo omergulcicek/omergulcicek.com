@@ -7,7 +7,7 @@ import { useMediaQuery } from "usehooks-ts"
 import { USER } from "@/constants/user"
 
 import { TurkeyRounded } from "@/components/icons"
-import { JobSeekingBadge, VerifiedUser } from "@/widgets"
+import { JobSeekingBadge, Socials, VerifiedUser } from "@/widgets"
 
 export function Hero() {
 	const isMobile = useMediaQuery("(max-width: 767px)")
@@ -38,7 +38,8 @@ export function Hero() {
 						{USER.jobTitle}
 					</p>
 
-					<JobSeekingBadge className="mt-1 -ml-1" />
+					<Socials />
+					{/* <JobSeekingBadge className="mt-1 -ml-1" /> */}
 				</div>
 			</div>
 		</section>

@@ -13,7 +13,7 @@ CSS gelişmeye, JavaScript'ten rol çalmaya devam ediyor. CSS'te **attr()** fon
 
 ```css
 div::after {
-  content: attr(data-title); 
+	content: attr(data-title);
 }
 ```
 
@@ -29,11 +29,11 @@ attr(<attr-name> <attr-type>? , <fallback-value>?)
 
 ```css
 div {
-  font-size: attr(data-font-size type(<length>));
-  grid-column-start: attr(data-column-start type(<integer>));
+	font-size: attr(data-font-size type(<length>));
+	grid-column-start: attr(data-column-start type(<integer>));
 
-  /* data-color özelliği yoksa, black değerini alır. */
-  color: attr(data-color type(<color>), black);
+	/* data-color özelliği yoksa, black değerini alır. */
+	color: attr(data-color type(<color>), black);
 }
 ```
 
@@ -41,37 +41,49 @@ div {
 
 ```html
 <angle>
-<color>
-<custom-ident>
-<image>
-<integer>
-<length>
-<length-percentage>
-<number>
-<percentage>
-<resolution>
-<string>
-<time>
-<transform-function>
-<url>
-``` 
+	<color>
+		<custom-ident>
+			<image>
+				<integer>
+					<length>
+						<length-percentage>
+							<number>
+								<percentage>
+									<resolution>
+										<string>
+											<time>
+												<transform-function>
+													<url></url>
+												</transform-function>
+											</time>
+										</string>
+									</resolution>
+								</percentage>
+							</number>
+						</length-percentage>
+					</length>
+				</integer>
+			</image>
+		</custom-ident>
+	</color>
+</angle>
+```
 
-
-***
+---
 
 ## Kullanım Örneği
 
 ```html
-<div data-rotation="-3"> -3 derece çevrildim</div>
+<div data-rotation="-3">-3 derece çevrildim</div>
 <div data-rotation="2">ve ben 2 derece</div>
 <div>ben ise 1.5 derecelik yedek değeri kullanıyorum</div>
 ```
 
 ```css
 div {
-  width: fit-content;
-  transform-origin: 50% 50%;
-  rotate: attr(data-rotation deg, 1.5deg);
+	width: fit-content;
+	transform-origin: 50% 50%;
+	rotate: attr(data-rotation deg, 1.5deg);
 }
 ```
 
@@ -97,12 +109,31 @@ Mobil tarayıcılar içinde durum aynı, sadece **Android Browser** ve **Android
 
 ![CSS attr() Fonksiyonu](/blog/2025-03-22/can-i-use-css-attr.png)
 
-***
+---
 
 Yazının kapak görseli yapay zeka tarafından üretilmiştir. 🤖
 
 ## Kaynaklar
 
-- <a href="https://frontendmasters.com/blog/how-to-use-attr-in-css-for-columns-colors-and-font-size/" target="_blank" rel="noreferrer noopener">FrontendMasters - How to Use attr() in CSS for Columns, Colors, and Font-Size</a>
-- <a href="https://codepen.io/chriscoyier" target="_blank" rel="noreferrer noopener">Chris Coyier CodePen</a>
-- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/attr" target="_blank" rel="noreferrer noopener">MDN Web Docs - attr()</a>
+- <a
+  	href="https://frontendmasters.com/blog/how-to-use-attr-in-css-for-columns-colors-and-font-size/"
+  	target="_blank"
+  	rel="noreferrer noopener"
+  >
+  	FrontendMasters - How to Use attr() in CSS for Columns, Colors, and
+  	Font-Size
+  </a>
+- <a
+  	href="https://codepen.io/chriscoyier"
+  	target="_blank"
+  	rel="noreferrer noopener"
+  >
+  	Chris Coyier CodePen
+  </a>
+- <a
+  	href="https://developer.mozilla.org/en-US/docs/Web/CSS/attr"
+  	target="_blank"
+  	rel="noreferrer noopener"
+  >
+  	MDN Web Docs - attr()
+  </a>

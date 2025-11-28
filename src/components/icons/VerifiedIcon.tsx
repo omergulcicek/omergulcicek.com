@@ -1,4 +1,3 @@
-import * as React from "react"
 import { SVGProps } from "react"
 
 export function VerifiedIcon(props: SVGProps<SVGSVGElement>) {

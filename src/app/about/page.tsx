@@ -12,7 +12,7 @@ import {
 
 export default function About() {
 	return (
-		<Container className="leading-7 [&_p]:text-neutral-500">
+		<Container className="leading-7 [&_p]:text-muted-foreground">
 			<AboutIntro />
 			<AboutTechnicalApproach />
 			<AboutProductionCulture />

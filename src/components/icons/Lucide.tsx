@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 
 export const Lucide = (props: SVGProps<SVGSVGElement>) => (

@@ -1,10 +1,13 @@
 "use client"
 
 import { GitHubCalendar } from "react-github-calendar"
+import { useTheme } from "next-themes"
 
 import { Section } from "@/widgets"
 
 export function AboutProductionCulture() {
+	const { theme } = useTheme()
+
 	return (
 		<Section title="Üretim Kültürü" type="h2">
 			<p>
@@ -24,7 +27,7 @@ export function AboutProductionCulture() {
 			<div className="py-4">
 				<GitHubCalendar
 					username="omergulcicek"
-					colorScheme="light"
+					colorScheme={theme === "dark" ? "dark" : "light"}
 					labels={{
 						months: [
 							"Oca",

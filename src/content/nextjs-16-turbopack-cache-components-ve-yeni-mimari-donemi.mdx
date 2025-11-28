@@ -25,9 +25,9 @@ Bu yapı, Partial Pre-Rendering (PPR) ile birleşerek hem statik hem dinamik ren
 
 ```ts
 const nextConfig = {
-  cacheComponents: true,
-};
-export default nextConfig;
+	cacheComponents: true
+}
+export default nextConfig
 ```
 
 [Daha fazla bilgi için buradaki dokümanları inceleyebilirsiniz.](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents)
@@ -45,13 +45,13 @@ Turbopack, artık tüm yeni projelerde webpack'in yerini aldı ve varsayılan de
 
 - 2–5x daha hızlı production build
 - 5–10x daha hızlı Fast Refresh
-Ayrıca dosya sistemi önbelleklemesi (File System Caching) özelliğiyle, büyük projelerde bile yeniden başlatmalar arasında daha hızlı derleme sağlanıyor.
+  Ayrıca dosya sistemi önbelleklemesi (File System Caching) özelliğiyle, büyük projelerde bile yeniden başlatmalar arasında daha hızlı derleme sağlanıyor.
 
 Next.js 16'da development request logları, sürenin nerede harcandığını gösterecek şekilde genişletilmiştir.
 
 ```bash
    ▲ Next.js 16 (Turbopack)
- 
+
  ✓ Compiled successfully in 615ms
  ✓ Finished TypeScript in 1114ms
  ✓ Collecting page data in 208ms
@@ -66,9 +66,9 @@ Bu özellik, bileşenlerin otomatik olarak memoize edilmesini sağlayarak gereks
 
 ```ts
 const nextConfig = {
-  reactCompiler: true,
-};
-export default nextConfig;
+	reactCompiler: true
+}
+export default nextConfig
 ```
 
 [Daha fazla bilgi için buradaki dokümanları inceleyebilirsiniz.](https://react.dev/learn/react-compiler)

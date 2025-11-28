@@ -19,7 +19,7 @@ export function Projects() {
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center justify-between leading-6 rounded hover:bg-neutral-50 transition px-6 py-3 w-full group"
+							className="inline-flex items-center justify-between leading-6 rounded hover:bg-muted transition px-6 py-3 w-full group"
 						>
 							<div className="flex items-center gap-4">
 								<figure
@@ -28,7 +28,7 @@ export function Projects() {
 										project.color
 									)}
 								>
-									<project.icon className="size-5" />
+									<project.icon className="size-5 text-black" />
 								</figure>
 								<div className="flex flex-col text-base">
 									<strong className="font-medium">{project.title}</strong>

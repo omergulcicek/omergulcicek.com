@@ -33,7 +33,7 @@ export default function Bookmarks() {
 			<Container className="max-w-6xl md:py-0">
 				<Section type="h2">
 					<iframe
-						className="w-full h-[664px]"
+						className="w-full h-[460px]"
 						allowFullScreen
 						src={`https://raindrop.io/omergulcicek/embed/me/no-header=true&theme=${mode}`}
 					/>

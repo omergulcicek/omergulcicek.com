@@ -97,7 +97,7 @@ const components = {
 					href={href}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-blue-600 hover:text-blue-800 underline"
+					className="underline underline-offset-4"
 					{...props}
 				>
 					{children}
@@ -106,11 +106,7 @@ const components = {
 		}
 
 		return (
-			<a
-				href={href}
-				className="text-blue-600 hover:text-blue-800 underline"
-				{...props}
-			>
+			<a href={href} className="underline underline-offset-4" {...props}>
 				{children}
 			</a>
 		)

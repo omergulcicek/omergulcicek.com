@@ -42,7 +42,7 @@ export function Experience({
 							<AccordionTrigger className="items-center hover:no-underline">
 								<div className="flex items-center justify-between w-full">
 									<div className="flex items-center gap-3">
-										<figure className="size-6">
+										<figure className="size-6 border">
 											<Image
 												src={`/company/${experience.icon}.jpeg`}
 												alt={experience.company}

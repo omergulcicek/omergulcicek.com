@@ -18,12 +18,16 @@ Ben optimistic UI’ı özetle "mış gibi" olarak adlandırıyorum, yani bir ş
 Aşağıdaki örneği inceleyelim. Bir butona tıklandığında sağdaki optimistic UI ile geliştirilmiş kod, backend’den yanıt gelmesini beklemeden sayıyı artırır. Soldaki normal kullanım ise backend’den yanıtın gelmesini bekler.
 
 ![React useOptimistic hook](/blog/2025-01-06/optimistic-ui.gif)
+
 ## Kullanımı
 
 Öncelikle klasik React hook'ları gibi bir hook tanımlıyoruz.
 
 ```javascript
-const [optimisticState, applyOptimisticUpdate] = useOptimistic(initialState, updaterFunction);
+const [optimisticState, applyOptimisticUpdate] = useOptimistic(
+	initialState,
+	updaterFunction
+)
 ```
 
 - **initialState**: Optimistic state'in başlangıç değeri
@@ -32,60 +36,76 @@ const [optimisticState, applyOptimisticUpdate] = useOptimistic(initialState, upd
 Örnek bir kullanım:
 
 ```javascript
-import { useState } from 'react';
-import { useOptimistic } from 'react';
-import { fakeApiToAddTodo } from '@/api';
+import { useOptimistic, useState } from "react"
+
+import { fakeApiToAddTodo } from "@/api"
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
-  const [optimisticTodos, addOptimisticTodo] =
-	useOptimistic(todos,(todos, newTodo) => [...todos, newTodo]);
+	const [todos, setTodos] = useState([])
+	const [optimisticTodos, addOptimisticTodo] = useOptimistic(
+		todos,
+		(todos, newTodo) => [...todos, newTodo]
+	)
 
-const handleAddTodo = async (newTodo) => {
-	/* Parametre olarak gelen yeni değeri backend'e göndermeden önce
+	const handleAddTodo = async (newTodo) => {
+		/* Parametre olarak gelen yeni değeri backend'e göndermeden önce
 	optimistic state'e ekleyelim */
-	addOptimisticTodo(newTodo);
+		addOptimisticTodo(newTodo)
 
-	/* Bu aşamada UI'da kullanıcı bu işlemin tamamlandığını görecek
+		/* Bu aşamada UI'da kullanıcı bu işlemin tamamlandığını görecek
 	fakat henüz API isteği başlatılmadı bile */
 
-	try {
-		// Yeni todo'yu backend'e gönderiyouz
-		await fakeApiToAddTodo(newTodo);
-	} catch (error) {
-		// API isteği başarısız olursa, optimistic ui işlemini geri alıyoruz
-		setTodos((prevTodos) => prevTodos.filter((todo) => todo !== newTodo));
+		try {
+			// Yeni todo'yu backend'e gönderiyouz
+			await fakeApiToAddTodo(newTodo)
+		} catch (error) {
+			// API isteği başarısız olursa, optimistic ui işlemini geri alıyoruz
+			setTodos((prevTodos) => prevTodos.filter((todo) => todo !== newTodo))
+		}
 	}
-};
 
-  return (
-    <div>
-      <ul>
-        {optimisticTodos.map((todo, index) => (
-          <li key={index}>{todo}</li>
-        ))}
-      </ul>
-      <button onClick={() => handleAddTodo(`New Todo ${Date.now()}`)}>Add Todo</button>
-    </div>
-  );
+	return (
+		<div>
+			<ul>
+				{optimisticTodos.map((todo, index) => (
+					<li key={index}>{todo}</li>
+				))}
+			</ul>
+			<button onClick={() => handleAddTodo(`New Todo ${Date.now()}`)}>
+				Add Todo
+			</button>
+		</div>
+	)
 }
 
-export default TodoList;
+export default TodoList
 ```
 
 Kodu satır satır yorumlarla açıkladım. Görüldüğü gibi, `addOptimisticTodo` fonksiyonu sayesinde optimistic state’i güncelliyoruz. Bu işlem, backend’e istek yapılmadan önce gerçekleşiyor. Eğer backend’den yanıt başarısız olursa, optimistic state’i geri alıyoruz.
 
 Bu hook, kullanıcıya daha akıcı ve hızlı bir deneyim sunmak için oldukça kullanışlıdır. Ancak, her zaman kullanmak doğru bir yaklaşım olmayabilir.
 
-Örneğin, bir ödeme işlemi sırasında optimistic UI kullanmak, kullanıcıya yanlış bilgi verebilir. Kullanıcı *"Ödemeniz başarılı"* mesajını gördüğünde, işlem aslında başarısız olduysa bu durum kafa karışıklığına ve kullanıcı memnuniyetsizliğine yol açabilir.
+Örneğin, bir ödeme işlemi sırasında optimistic UI kullanmak, kullanıcıya yanlış bilgi verebilir. Kullanıcı _"Ödemeniz başarılı"_ mesajını gördüğünde, işlem aslında başarısız olduysa bu durum kafa karışıklığına ve kullanıcı memnuniyetsizliğine yol açabilir.
 
 Bu nedenle, optimistic UI’ı kullanırken dikkatli olmalısınız. İşlem başarısız olduğunda kullanıcıya bu durumu açık bir şekilde gösterebilmek için uygun geri dönüş mekanizmalarını tasarlamak oldukça önemlidir.
 
-***
+---
 
-*Yazının kapak görseli yapay zeka tarafından üretilmiştir. 🤖*
+_Yazının kapak görseli yapay zeka tarafından üretilmiştir. 🤖_
 
 ## Kaynaklar
 
-- <a href="https://react.dev/blog/2024/12/05/react-19#whats-new-in-react-19" target="_blank" rel="noreferrer noopener">React v19 Blog</a>
-- <a href="https://medium.com/zestgeek/mastering-reacts-useoptimistic-hook-a-comprehensive-guide-with-examples-75b4637fe760" target="_blank" rel="noreferrer noopener">Love Trivedi - Mastering React’s useOptimistic Hook</a>
+- <a
+  	href="https://react.dev/blog/2024/12/05/react-19#whats-new-in-react-19"
+  	target="_blank"
+  	rel="noreferrer noopener"
+  >
+  	React v19 Blog
+  </a>
+- <a
+  	href="https://medium.com/zestgeek/mastering-reacts-useoptimistic-hook-a-comprehensive-guide-with-examples-75b4637fe760"
+  	target="_blank"
+  	rel="noreferrer noopener"
+  >
+  	Love Trivedi - Mastering React’s useOptimistic Hook
+  </a>

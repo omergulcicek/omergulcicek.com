@@ -1,63 +1,16 @@
-import * as React from "react"
 import { SVGProps } from "react"
 
 export const Cursor = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="1em"
-		height="1em"
-		style={{ flex: "none", lineHeight: "1" }}
-		viewBox="0 0 24 24"
+		id="Ebene_1"
+		version="1.1"
+		viewBox="0 0 466.73 532.09"
 		{...props}
 	>
 		<path
-			fill="url(#lobe-icons-cursorundefined-fill-0)"
-			d="m11.925 24 10.425-6-10.425-6L1.5 18z"
-		></path>
-		<path
-			fill="url(#lobe-icons-cursorundefined-fill-1)"
-			d="M22.35 18V6L11.925 0v12z"
-		></path>
-		<path
-			fill="url(#lobe-icons-cursorundefined-fill-2)"
-			d="M11.925 0 1.5 6v12l10.425-6z"
-		></path>
-		<path fill="#555" d="M22.35 6 11.925 24V12z"></path>
-		<path d="m22.35 6-10.425 6L1.5 6z"></path>
-		<defs>
-			<linearGradient
-				id="lobe-icons-cursorundefined-fill-0"
-				x1="11.925"
-				x2="11.925"
-				y1="12"
-				y2="24"
-				gradientUnits="userSpaceOnUse"
-			>
-				<stop offset="0.16" stopOpacity="0.39"></stop>
-				<stop offset="0.658" stopOpacity="0.8"></stop>
-			</linearGradient>
-			<linearGradient
-				id="lobe-icons-cursorundefined-fill-1"
-				x1="22.35"
-				x2="11.925"
-				y1="6.037"
-				y2="12.15"
-				gradientUnits="userSpaceOnUse"
-			>
-				<stop offset="0.182" stopOpacity="0.31"></stop>
-				<stop offset="0.715" stopOpacity="0"></stop>
-			</linearGradient>
-			<linearGradient
-				id="lobe-icons-cursorundefined-fill-2"
-				x1="11.925"
-				x2="1.5"
-				y1="0"
-				y2="18"
-				gradientUnits="userSpaceOnUse"
-			>
-				<stop stopOpacity="0.6"></stop>
-				<stop offset="0.667" stopOpacity="0.22"></stop>
-			</linearGradient>
-		</defs>
+			className="fill-[#26251e] dark:fill-[#edecec]"
+			d="M457.43,125.94L244.42,2.96c-6.84-3.95-15.28-3.95-22.12,0L9.3,125.94c-5.75,3.32-9.3,9.46-9.3,16.11v247.99c0,6.65,3.55,12.79,9.3,16.11l213.01,122.98c6.84,3.95,15.28,3.95,22.12,0l213.01-122.98c5.75-3.32,9.3-9.46,9.3-16.11v-247.99c0-6.65-3.55-12.79-9.3-16.11h-.01ZM444.05,151.99l-205.63,356.16c-1.39,2.4-5.06,1.42-5.06-1.36v-233.21c0-4.66-2.49-8.97-6.53-11.31L24.87,145.67c-2.4-1.39-1.42-5.06,1.36-5.06h411.26c5.84,0,9.49,6.33,6.57,11.39h-.01Z"
+		/>
 	</svg>
 )

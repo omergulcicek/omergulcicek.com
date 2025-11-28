@@ -9,24 +9,28 @@ My personal website and blog built with Next.js, TypeScript, Tailwind CSS, shadc
 ## 🚀 Tech Stack
 
 ### Core Technologies
+
 - **[Next.js 16](https://nextjs.org/)** - React framework with App Router
 - **[React 19](https://react.dev/)** - Latest React with concurrent features
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
 
 ### UI & Components
+
 - **[Radix UI](https://www.radix-ui.com/)** - Accessible component primitives
 - **[Shadcn/ui](https://ui.shadcn.com/)** - Beautiful component library
 - **[Framer Motion](https://www.framer.com/motion/)** - Smooth animations
 - **[Lucide React](https://lucide.dev/)** - Beautiful icons
 
 ### Content & MDX
+
 - **[MDX](https://mdxjs.com/)** - Markdown with JSX support
 - **[Gray Matter](https://github.com/jonschlinkert/gray-matter)** - Front matter parsing
 - **[Rehype & Remark](https://unifiedjs.com/)** - Content processing
 - **[Shiki](https://shiki.matsu.io/)** - Syntax highlighting
 
 ### Development Tools
+
 - **[ESLint](https://eslint.org/)** - Code linting
 - **[Prettier](https://prettier.io/)** - Code formatting
 - **[Turbopack](https://turbo.build/pack)** - Fast bundler
@@ -47,17 +51,20 @@ My personal website and blog built with Next.js, TypeScript, Tailwind CSS, shadc
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/omergulcicek/omergulcicek.com.git
    cd omergulcicek.com
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```

@@ -40,34 +40,35 @@ Aşağıdaki gibi kolayca entegre edebilirsin:
 
 ```javascript
 import { useForm } from "react-hook-form"
-import { useHookFormMask } from "use-mask-input"
+
 import { useFormFields } from "@omergulcicek/forms"
+import { useHookFormMask } from "use-mask-input"
 
 const form = useForm()
 const registerWithMask = useHookFormMask(form.register)
 
 const { cardNumber, phone, email, tckn } = useFormFields({
-  fields: [
-    { name: "cardNumber", type: "cardNumber" },
-    { name: "phone", type: "phone" },
-    { name: "email", type: "email" },
-    { name: "tckn", type: "tckn" }
-  ],
-  registerWithMask,
-  form
+	fields: [
+		{ name: "cardNumber", type: "cardNumber" },
+		{ name: "phone", type: "phone" },
+		{ name: "email", type: "email" },
+		{ name: "tckn", type: "tckn" }
+	],
+	registerWithMask,
+	form
 })
 
-console.log(cardNumber.value)      // "1234567890123456" (unmasked)
+console.log(cardNumber.value) // "1234567890123456" (unmasked)
 console.log(cardNumber.maskedValue) // "1234 5678 9012 3456" (masked)
 ```
 
 ```html
-<form onSubmit={form.handleSubmit(console.log)}>
-  <input {...cardNumber} placeholder="**** **** **** ****" />
-  <input {...phone} placeholder="(5xx) xxx xx xx" />
-  <input {...email} placeholder="email@example.com" />
-  <input {...tckn} placeholder="12345678950" />
-  <button type="submit">Gönder</button>
+<form onSubmit="{form.handleSubmit(console.log)}">
+	<input {...cardNumber} placeholder="**** **** **** ****" />
+	<input {...phone} placeholder="(5xx) xxx xx xx" />
+	<input {...email} placeholder="email@example.com" />
+	<input {...tckn} placeholder="12345678950" />
+	<button type="submit">Gönder</button>
 </form>
 ```
 
@@ -76,20 +77,20 @@ console.log(cardNumber.maskedValue) // "1234 5678 9012 3456" (masked)
 shadcn/ui bileşenleriyle de tam uyumlu çalışır:
 
 ```javascript
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
 
-<form onSubmit={form.handleSubmit(console.log)} className="space-y-4">
-  <div>
-    <Label htmlFor="cardNumber">Kart Numarası</Label>
-    <Input {...cardNumber} placeholder="**** **** **** ****" />
-  </div>
-  <div>
-    <Label htmlFor="phone">Telefon</Label>
-    <Input {...phone} placeholder="(5xx) xxx xx xx" />
-  </div>
-  <Button type="submit">Gönder</Button>
+;<form onSubmit={form.handleSubmit(console.log)} className="space-y-4">
+	<div>
+		<Label htmlFor="cardNumber">Kart Numarası</Label>
+		<Input {...cardNumber} placeholder="**** **** **** ****" />
+	</div>
+	<div>
+		<Label htmlFor="phone">Telefon</Label>
+		<Input {...phone} placeholder="(5xx) xxx xx xx" />
+	</div>
+	<Button type="submit">Gönder</Button>
 </form>
 ```
 
@@ -100,7 +101,7 @@ import { Button } from "@/components/ui/button"
 - TypeScript ile güvenli ve hatasız kod yaz
 - Türkiye'ye özel TCKN ve telefon gibi alanlar hazır
 
-***
+---
 
 ### Katkıda Bulun
 

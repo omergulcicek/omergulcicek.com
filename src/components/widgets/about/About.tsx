@@ -5,7 +5,7 @@ import { ArrowButton, Section } from "@/widgets"
 export function About() {
 	return (
 		<Section>
-			<div className="flex flex-col gap-4 text-base leading-7 [&_p]:text-neutral-500">
+			<div className="flex flex-col gap-4 text-base leading-7 [&_p]:text-muted-foreground">
 				<p>
 					<span className="text-primary">Modern web teknolojileriyle</span>{" "}
 					<span className="text-primary">

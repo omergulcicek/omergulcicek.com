@@ -50,7 +50,13 @@ const element = <h1>Merhaba, {formatName(user)}!</h1>
 ReactDOM.render(element, document.getElementById("root"))
 ```
 
-<a href="https://reactjs.org/redirect-to-codepen/introducing-jsx" target="_blank" rel="noopener noreferrer">CodePen’de Deneyin</a>
+<a
+	href="https://reactjs.org/redirect-to-codepen/introducing-jsx"
+	target="_blank"
+	rel="noopener noreferrer"
+>
+	CodePen’de Deneyin
+</a>
 
 ## Fonksiyonları JSX’e Yerleştirmek
 
@@ -130,16 +136,12 @@ Yani bizim yazdığımız tüm JSX ifadeleri Babel tarafından derlenerek saf Ja
 Bu iki örnek aynıdır:
 
 ```js
-const element = (
-  <h1 className='greeting'>
-    Merhaba Dünya!
-  </h1>
-);
+const element = <h1 className="greeting">Merhaba Dünya!</h1>
 const element = React.createElement(
-  'h1',
-  {className: 'greeting'},
-  'Merhaba Dünya!'
-);
+	"h1",
+	{ className: "greeting" },
+	"Merhaba Dünya!"
+)
 ```
 
 _React.createElement()_ hatasız kod yazmanıza yardımcı olmak için birkaç kontrol gerçekleştirir ancak aslında böyle bir nesne oluşturur:
