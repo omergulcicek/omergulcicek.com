@@ -119,7 +119,7 @@ const components = {
 				alt={alt || ""}
 				width={800}
 				height={520}
-				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto border"
+				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto border border-muted-foreground"
 				data-zoomable
 				{...props}
 			/>

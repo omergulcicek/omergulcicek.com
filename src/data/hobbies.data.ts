@@ -47,5 +47,12 @@ export const hobbiesData = [
 		name: "Resim",
 		designation: "Resim yapmayı seviyorum",
 		src: "/avatars/draw.png"
+	},
+	{
+		quote:
+			"Eski sanatlarımızın zarafetini çok seviyorum. Ebru, hat, kaligrafi, vitray ve çini gibi geleneksel sanatlarla uğraşmak bana huzur veriyor.",
+		name: "Geleneksel Sanatlar",
+		designation: "Kültürel ve geleneksel el sanatları",
+		src: "/avatars/traditional-art.png"
 	}
 ]

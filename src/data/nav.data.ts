@@ -1,7 +1,6 @@
 import {
 	Book,
 	Bookmark,
-	Code,
 	LucideIcon,
 	Newspaper,
 	Sparkles,
@@ -30,11 +29,11 @@ export const navItemsData: NavItem[] = [
 		href: "/bookmarks",
 		icon: Bookmark
 	},
-	{
-		label: "Akademi",
-		href: "/academy",
-		icon: Book
-	},
+	// {
+	// 	label: "Akademi",
+	// 	href: "/academy",
+	// 	icon: Book
+	// },
 	{
 		label: "Hakkımda",
 		href: "/about",
