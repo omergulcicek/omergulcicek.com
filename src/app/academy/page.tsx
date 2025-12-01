@@ -5,7 +5,7 @@ export default function Academy() {
 	return (
 		<Container>
 			<Section title="Akademi">
-				<p></p>
+				<p>Akademi sayfası geliştiriliyor...</p>
 			</Section>
 		</Container>
 	)
