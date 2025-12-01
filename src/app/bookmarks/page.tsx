@@ -24,9 +24,9 @@ export default function Bookmarks() {
 						>
 							raindrop.io
 						</Link>
-						&apos;da saklıyorum. Kullandığım ekipmanlar, kod yazarken
-						kullandığım eklentiler, okuduğum kitaplar ve beğendiğim siteleri
-						burada saklıyorum.
+						'da saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı,
+						okuduğum makaleleri, günlük takip ettiğim blogları, teknik
+						içerikleri ve kullandığım uygulama–eklentileri burada tutuyorum.
 					</p>
 				</Section>
 			</Container>

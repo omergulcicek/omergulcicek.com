@@ -41,27 +41,27 @@ export function Header() {
 	}, [])
 
 	return (
-		<header className="sticky top-0 z-50 md:py-1 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<Container className="py-4 md:py-4 max-w-3xl">
+		<header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+			<Container className="py-4 md:py-4 max-w-4xl">
 				<div className="flex items-center justify-between">
 					{isLoading ? (
-						<div className="hidden md:flex items-center gap-4">
-							{Array.from({ length: 5 }).map((_, i) => (
+						<div className="hidden md:flex items-center gap-4 py-2">
+							{Array.from({ length: 4 }).map((_, i) => (
 								<div
 									key={i}
-									className="h-5 w-14 animate-pulse rounded-sm bg-muted"
+									className="h-4 w-18 animate-pulse rounded-sm bg-muted"
 								/>
 							))}
 						</div>
 					) : isDesktop ? (
 						<>
-							<nav className="flex items-center gap-4 text-sm font-medium">
+							<nav className="flex items-center">
 								{navItemsData.map((item) => (
 									<Link
 										key={item.href}
 										href={item.href}
 										className={cn(
-											"text-sm font-medium transition-all duration-300",
+											"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md transition-all hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 px-3 h-8",
 											pathname === item.href ||
 												(pathname.startsWith(item.href) && item.href !== "/")
 												? "text-foreground"
@@ -76,11 +76,7 @@ export function Header() {
 					) : (
 						<Drawer shouldScaleBackground setBackgroundColorOnScale>
 							<DrawerTrigger asChild>
-								<Button
-									variant="outline"
-									size="sm"
-									className="rounded-full size-8"
-								>
+								<Button variant="ghost" size="sm">
 									<Menu className="size-4" />
 								</Button>
 							</DrawerTrigger>
@@ -118,24 +114,23 @@ export function Header() {
 					)}
 
 					<div className="flex items-center gap-4">
-						<div className="flex items-center gap-1 h-4">
+						<div className="flex items-center gap-1.5 h-4">
 							<CommandPalette />
-							<Separator orientation="vertical" className="h-2 mx-2" />
+							<Separator orientation="vertical" className="h-2 ml-2" />
 							<Link
 								href={USER.socials.github}
 								target="_blank"
 								rel="noreferrer noopener"
 							>
 								<Button
-									variant="outline"
+									variant="ghost"
 									size="sm"
-									className="rounded-full size-8"
 									aria-label="GitHub profilini ziyaret et"
 								>
 									<GitHub className="size-4" />
 								</Button>
 							</Link>
-							<Separator orientation="vertical" className="h-2 mx-2" />
+							<Separator orientation="vertical" className="h-2" />
 							<ThemeToggle />
 						</div>
 					</div>

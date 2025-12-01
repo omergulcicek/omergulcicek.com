@@ -14,10 +14,13 @@ export function About() {
 					geliştiriyorum. <span className="text-primary">React</span>,{" "}
 					<span className="text-primary">Next.js</span> ve{" "}
 					<span className="text-primary">TypeScript</span> ekosisteminde{" "}
+					<span className="text-primary">
+						AI destekli araçları çalışma süreçlerime entegre ederek
+					</span>{" "}
 					<span className="text-primary">mimari tasarım</span>,{" "}
 					<span className="text-primary">tasarım sistemleri</span> ve{" "}
 					<span className="text-primary">sürdürülebilir frontend yapıları</span>{" "}
-					üzerine çalışıyor; ekiplerin{" "}
+					üzerine odaklanıyor; ekiplerin{" "}
 					<span className="text-primary">teknik kararlarına</span> yön veren bir
 					rol üstleniyorum.
 				</p>
@@ -34,6 +37,7 @@ export function About() {
 					<span className="text-primary">blog yazılarıyla</span> topluluğa katkı
 					sağlıyorum.
 				</p>
+
 				<div className="flex justify-center">
 					<Link href="/about">
 						<ArrowButton text="Detaylı teknik bilgi" />

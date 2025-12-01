@@ -17,13 +17,7 @@ export function ThemeToggle() {
 
 	if (!isMounted) {
 		return (
-			<Button
-				variant="outline"
-				size="sm"
-				className="rounded-full size-8"
-				aria-label="Tema yükleniyor"
-				disabled
-			>
+			<Button variant="ghost" size="sm" aria-label="Tema yükleniyor" disabled>
 				<Moon className="size-4" />
 			</Button>
 		)
@@ -38,9 +32,8 @@ export function ThemeToggle() {
 	return (
 		<Button
 			type="button"
-			variant="outline"
+			variant="ghost"
 			size="sm"
-			className="rounded-full size-8"
 			onClick={handleToggle}
 			aria-label={isDark ? "Aydınlık temaya geç" : "Karanlık temaya geç"}
 		>
