@@ -2,6 +2,7 @@ export const techTags = [
 	"Next.js",
 	"React",
 	"Yapay Zekâ",
+	"Frontend",
 	"CSS",
 	"Framer",
 	"Git",
