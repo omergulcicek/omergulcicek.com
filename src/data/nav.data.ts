@@ -1,6 +1,7 @@
 import {
 	Book,
 	Bookmark,
+	LayoutGrid,
 	LucideIcon,
 	Newspaper,
 	Sparkles,
@@ -24,16 +25,21 @@ export const navItemsData: NavItem[] = [
 		href: "/blog",
 		icon: Newspaper
 	},
-	{
-		label: "Yer İmleri",
-		href: "/bookmarks",
-		icon: Bookmark
-	},
 	// {
 	// 	label: "Akademi",
 	// 	href: "/academy",
 	// 	icon: Book
 	// },
+	{
+		label: "Projeler",
+		href: "/projects",
+		icon: LayoutGrid
+	},
+	{
+		label: "Yer İmleri",
+		href: "/bookmarks",
+		icon: Bookmark
+	},
 	{
 		label: "Hakkımda",
 		href: "/about",

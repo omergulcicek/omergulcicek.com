@@ -1,13 +1,16 @@
 import {
 	CalendarDays,
 	Command,
+	PaintbrushVertical,
 	RectangleEllipsis,
+	SquareLibrary,
 	TextCursorInput
 } from "lucide-react"
 
 export const projectsData = [
 	{
 		icon: Command,
+		image: "/projects/nizam.png",
 		title: "Nizam - Next.js 16 Boilerplate",
 		description:
 			"Modern Next.js projeleri için açık kaynak bir başlangıç şablonu.",
@@ -17,6 +20,7 @@ export const projectsData = [
 	},
 	{
 		icon: TextCursorInput,
+		image: "/projects/nizam.png",
 		title: "@omergulcicek/forms",
 		description:
 			"TypeScript desteği ile React Hook Form için akıllı maskeleme ve doğrulama",
@@ -26,6 +30,7 @@ export const projectsData = [
 	},
 	{
 		icon: RectangleEllipsis,
+		image: "/projects/nizam.png",
 		title: "@omergulcicek/password-input",
 		description: "Şifre girişlerine göster/gizle geçişi ekleyen React hook'u",
 		link: "https://github.com/omergulcicek/password-input",
@@ -34,10 +39,29 @@ export const projectsData = [
 	},
 	{
 		icon: CalendarDays,
+		image: "/projects/nizam.png",
 		title: "calendar",
 		description: "Takvim abonelikleri için ücretsiz açık kaynak takvimler",
 		link: "https://calendar.omergulcicek.com/",
 		tags: ["Frontend"],
 		color: "bg-purple-100"
+	},
+	{
+		icon: PaintbrushVertical,
+		image: "/projects/nizam.png",
+		title: "Turkuaz",
+		description: "Hızlı ve kolay web sayfaları geliştirin",
+		link: "https://turkuazcss.com/",
+		tags: ["CSS"],
+		color: "bg-teal-100"
+	},
+	{
+		icon: SquareLibrary,
+		image: "/projects/nizam.png",
+		title: "Türkçe Doküman",
+		description: "Yazılım geliştirme için Türkçe kaynaklar",
+		link: "https://turkcedokuman.com/",
+		tags: ["Blog"],
+		color: "bg-orange-100"
 	}
 ]

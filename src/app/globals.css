@@ -151,7 +151,7 @@
 		}
 
 		pre {
-			@apply my-6 overflow-x-auto rounded-md border border-border/50 !bg-[#fafafa] !p-4 text-sm !text-[#c8d3f5] has-data-line-numbers:px-0;
+			@apply my-6 overflow-x-auto rounded-md border border-border/50 !bg-[#fafafa] dark:!bg-[#282C34] !p-4 text-sm !text-[#c8d3f5] has-data-line-numbers:px-0;
 
 			code {
 				@apply font-mono text-sm leading-relaxed;

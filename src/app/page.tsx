@@ -12,8 +12,8 @@ export default function Home() {
 			<About />
 			<Stack />
 			<Blog posts={posts} />
-			<Experience showAll={false} showButton />
 			<Projects />
+			<Experience showAll={false} showButton />
 		</Container>
 	)
 }

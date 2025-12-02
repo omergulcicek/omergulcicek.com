@@ -456,7 +456,7 @@
 	--tw-prose-kbd-shadows: 17 24 39;
 	--tw-prose-code: var(--text-primary);
 	--tw-prose-pre-code: #e5e7eb;
-	--tw-prose-pre-bg: #1f2937;
+	--tw-prose-pre-bg: var(--bg-pre);
 	--tw-prose-th-borders: #d1d5db;
 	--tw-prose-td-borders: #e5e7eb;
 	--tw-prose-invert-body: #d1d5db;

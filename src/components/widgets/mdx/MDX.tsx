@@ -55,7 +55,6 @@ const components = {
 	ChartAreaLinear,
 
 	pre: ({ children, ...props }: PreProps) => {
-		// children'ı string'e çevir
 		const getCodeContent = (children: React.ReactNode): string => {
 			if (typeof children === "string") {
 				return children
@@ -119,7 +118,7 @@ const components = {
 				alt={alt || ""}
 				width={800}
 				height={520}
-				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto border border-muted-foreground"
+				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto border"
 				data-zoomable
 				{...props}
 			/>

@@ -2,10 +2,11 @@ import { compileMDX } from "next-mdx-remote/rsc"
 
 import rehypePrettyCode from "rehype-pretty-code"
 
+import type { MdxComponentsMapType } from "@/types/mdx-components.type"
+
 export async function processMdxContent(
 	content: string,
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	components: Record<string, any>
+	components: MdxComponentsMapType
 ) {
 	const { content: compiledContent } = await compileMDX({
 		source: content,
@@ -16,7 +17,10 @@ export async function processMdxContent(
 					[
 						rehypePrettyCode,
 						{
-							theme: "github-light"
+							theme: {
+								light: "github-light",
+								dark: "one-dark-pro"
+							}
 						}
 					]
 				]

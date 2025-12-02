@@ -42,7 +42,7 @@ export function Header() {
 
 	return (
 		<header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<Container className="py-4 md:py-4 max-w-4xl">
+			<Container className="py-4 md:py-4 max-w-5xl">
 				<div className="flex items-center justify-between">
 					{isLoading ? (
 						<div className="hidden md:flex items-center gap-4 py-2">

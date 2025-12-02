@@ -4,7 +4,9 @@ import { useTheme } from "next-themes"
 import Link from "next/link"
 
 import { Container } from "@/shared"
-import { Section } from "@/widgets"
+import { BookmarkCard, Section } from "@/widgets"
+
+import { bookmarksData } from "@/data"
 
 export default function Bookmarks() {
 	const { theme } = useTheme()
@@ -31,13 +33,11 @@ export default function Bookmarks() {
 				</Section>
 			</Container>
 			<Container className="max-w-6xl md:py-0">
-				<Section type="h2">
-					<iframe
-						className="w-full h-[460px]"
-						allowFullScreen
-						src={`https://raindrop.io/omergulcicek/embed/me/no-header=true&theme=${mode}`}
-					/>
-				</Section>
+				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+					{bookmarksData.map((bookmark) => (
+						<BookmarkCard key={bookmark.title} {...bookmark} />
+					))}
+				</div>
 			</Container>
 		</>
 	)
