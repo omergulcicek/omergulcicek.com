@@ -20,7 +20,7 @@ export const projectsData = [
 	},
 	{
 		icon: TextCursorInput,
-		image: "/projects/nizam.png",
+		image: "/projects/forms.png",
 		title: "@omergulcicek/forms",
 		description:
 			"TypeScript desteği ile React Hook Form için akıllı maskeleme ve doğrulama",
@@ -30,7 +30,7 @@ export const projectsData = [
 	},
 	{
 		icon: RectangleEllipsis,
-		image: "/projects/nizam.png",
+		image: "/projects/password.png",
 		title: "@omergulcicek/password-input",
 		description: "Şifre girişlerine göster/gizle geçişi ekleyen React hook'u",
 		link: "https://github.com/omergulcicek/password-input",
@@ -39,7 +39,7 @@ export const projectsData = [
 	},
 	{
 		icon: CalendarDays,
-		image: "/projects/nizam.png",
+		image: "/projects/calendar.png",
 		title: "calendar",
 		description: "Takvim abonelikleri için ücretsiz açık kaynak takvimler",
 		link: "https://calendar.omergulcicek.com/",
@@ -48,7 +48,7 @@ export const projectsData = [
 	},
 	{
 		icon: PaintbrushVertical,
-		image: "/projects/nizam.png",
+		image: "/projects/turkuaz.png",
 		title: "Turkuaz",
 		description: "Hızlı ve kolay web sayfaları geliştirin",
 		link: "https://turkuazcss.com/",
@@ -57,7 +57,7 @@ export const projectsData = [
 	},
 	{
 		icon: SquareLibrary,
-		image: "/projects/nizam.png",
+		image: "/projects/turkcedokuman.png",
 		title: "Türkçe Doküman",
 		description: "Yazılım geliştirme için Türkçe kaynaklar",
 		link: "https://turkcedokuman.com/",
