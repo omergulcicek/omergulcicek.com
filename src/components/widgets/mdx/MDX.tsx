@@ -4,6 +4,7 @@ import Image from "next/image"
 import { processMdxContent } from "@/helpers/process-mdx-content"
 
 import { HeadingProps } from "@/types/heading-type"
+import type { MdxComponentsMapType } from "@/types/mdx-components.type"
 import {
 	CodeProps,
 	ImageProps,
@@ -32,6 +33,7 @@ import {
 	BookInfo,
 	ChartAreaLinear,
 	CopyButton,
+	ImagesCarousel,
 	MediaInfo,
 	Rating
 } from "@/widgets"
@@ -53,6 +55,7 @@ const components = {
 	Rating,
 	Heading,
 	ChartAreaLinear,
+	ImagesCarousel,
 
 	pre: ({ children, ...props }: PreProps) => {
 		const getCodeContent = (children: React.ReactNode): string => {
@@ -160,7 +163,10 @@ const components = {
 }
 
 export async function MDX({ content }: MdxContentProps) {
-	const processedContent = await processMdxContent(content, components)
+	const processedContent = await processMdxContent(
+		content,
+		components as unknown as MdxComponentsMapType
+	)
 	return <MdxZoomProvider>{processedContent}</MdxZoomProvider>
 }
 

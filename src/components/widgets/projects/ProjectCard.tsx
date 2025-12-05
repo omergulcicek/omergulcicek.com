@@ -43,7 +43,7 @@ export function ProjectCard({
 							index === 0 && "origin-top-left",
 							index === 1 && "origin-top-left",
 							index === 2 && "origin-top w-2/3 mt-32",
-							index === 3 && "origin-top-left",
+							index === 3 && "origin-left",
 							index === 4 && "",
 							index === 5 && "origin-top-right"
 						)}

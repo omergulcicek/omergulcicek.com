@@ -24,7 +24,7 @@ export const projectsData = [
 		title: "@omergulcicek/forms",
 		description:
 			"TypeScript desteği ile React Hook Form için akıllı maskeleme ve doğrulama",
-		link: "https://github.com/omergulcicek/forms",
+		link: "https://omergulcicek-forms.vercel.app/",
 		tags: ["React", "TypeScript", "React Hook Form"],
 		color: "bg-green-100"
 	},
@@ -33,7 +33,7 @@ export const projectsData = [
 		image: "/projects/password.png",
 		title: "@omergulcicek/password-input",
 		description: "Şifre girişlerine göster/gizle geçişi ekleyen React hook'u",
-		link: "https://github.com/omergulcicek/password-input",
+		link: "https://omergulcicek-password-input.vercel.app/",
 		tags: ["React", "TypeScript", "Lucide"],
 		color: "bg-red-100"
 	},
@@ -42,7 +42,7 @@ export const projectsData = [
 		image: "/projects/calendar.png",
 		title: "calendar",
 		description: "Takvim abonelikleri için ücretsiz açık kaynak takvimler",
-		link: "https://calendar.omergulcicek.com/",
+		link: "https://omergulcicek-calendar.vercel.app/",
 		tags: ["Frontend"],
 		color: "bg-purple-100"
 	},

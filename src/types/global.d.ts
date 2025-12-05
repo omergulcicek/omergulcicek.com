@@ -1,3 +1,5 @@
+import type { EmblaCarouselType, EmblaPluginType } from "embla-carousel"
+
 declare global {
 	interface Window {
 		gtag: (
@@ -11,6 +13,28 @@ declare global {
 			}
 		) => void
 	}
+}
+
+declare module "embla-carousel-autoplay" {
+	interface AutoplayOptionsType {
+		delay?: number
+		stopOnInteraction?: boolean | "reset"
+		stopOnMouseEnter?: boolean
+		stopOnFocusIn?: boolean
+		playOnInit?: boolean
+		stopOnInteractionCallback?: (emblaApi: EmblaCarouselType) => void
+	}
+
+	interface AutoplayPluginType extends EmblaPluginType {
+		play: (jump?: boolean) => void
+		stop: () => void
+		reset: () => void
+		isPlaying: () => boolean
+	}
+
+	const Autoplay: (options?: AutoplayOptionsType) => AutoplayPluginType
+
+	export default Autoplay
 }
 
 export {}
