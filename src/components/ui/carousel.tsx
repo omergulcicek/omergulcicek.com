@@ -134,6 +134,7 @@ const CarouselContent = React.forwardRef<HTMLDivElement, CarouselContentProps>(
 				{React.Children.map(children, (child) => {
 					if (!React.isValidElement(child)) return child
 					return React.cloneElement(child, {
+						// @ts-ignore
 						className: cn("pl-4", child.props.className)
 					})
 				})}

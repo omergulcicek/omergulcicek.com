@@ -38,7 +38,7 @@ export function Stretch() {
 			>
 				<div
 					className="absolute border-2 border-blue-500 bg-blue-500/20 transition-all duration-300 flex items-center justify-center text-primary font-semibold"
-					// @ts-expect-error - stretch is a new CSS property
+					// @ts-ignore - stretch is a new CSS property
 					style={{
 						width: mode === "stretch" ? "stretch" : "100%",
 						height: mode === "stretch" ? "stretch" : "100%",
