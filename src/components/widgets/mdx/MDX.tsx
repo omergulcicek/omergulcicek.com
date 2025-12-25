@@ -32,11 +32,17 @@ import {
 import {
 	BookInfo,
 	ChartAreaLinear,
+	ClipPath,
 	CopyButton,
+	CornerShape,
 	ImagesCarousel,
 	LinksReview,
 	MediaInfo,
-	Rating
+	PickerIcon,
+	Rating,
+	SiblingIndex,
+	Stretch,
+	TextBox
 } from "@/widgets"
 
 const components = {
@@ -58,6 +64,12 @@ const components = {
 	ChartAreaLinear,
 	ImagesCarousel,
 	LinksReview,
+	CornerShape,
+	ClipPath,
+	PickerIcon,
+	SiblingIndex,
+	Stretch,
+	TextBox,
 
 	pre: ({ children, ...props }: PreProps) => {
 		const getCodeContent = (children: React.ReactNode): string => {

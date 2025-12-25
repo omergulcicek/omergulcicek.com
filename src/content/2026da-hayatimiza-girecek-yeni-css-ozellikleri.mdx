@@ -1,0 +1,64 @@
+---
+createdAt: "soon"
+slug: "/2026da-hayatimiza-girecek-yeni-css-ozellikleri"
+title: "2026'da Hayatımıza Girecek Yeni CSS Özellikleri"
+category: "css"
+tags: ["CSS"]
+medium: "https://omergulcicek.medium.com/2026da-hayat%C4%B1m%C4%B1za-girecek-yeni-css-%C3%B6zellikleri-f48158357b77"
+---
+
+2026 yılı, CSS dünyası için birçok heyecan verici yenilik getiriyor. Bu yazıda, web geliştiricilerin mutlaka bilmesi gereken yeni CSS özelliklerini ele alacağız.
+
+**⚠️ Tarayıcı Desteği Uyarısı**
+
+Bu makalede bahsedilen CSS özellikleri, yeni ve deneysel özelliklerdir. Bazı özellikler sadece en güncel tarayıcı sürümlerinde çalışmaktadır. Eğer interaktif örnekleri göremiyorsanız veya beklenen şekilde çalışmıyorsa, lütfen tarayıcınızı en son sürüme güncelleyin. Özellikle Chromium tabanlı tarayıcılar (Chrome, Edge) bu özellikler için en iyi desteği sunmaktadır.
+
+## corner-shape: Köşeleri Şekillendirme
+
+CSS'in yeni `corner-shape` özelliği, `border-radius` ile birlikte kullanılarak köşeleri farklı şekillerde şekillendirmemize olanak tanıyor. Bu özellik sayesinde artık sadece alıştığımız `rounded` *(yuvarlatılmış köşeler)* değil, `bevel` *(kesik köşeler)*, `scoop` *(içe çekilmiş köşeler)*, `notch` *(çentikli köşeler)* ve `squircle` gibi modern köşe şekilleri oluşturabiliyoruz.
+
+<CornerShape />
+
+Bu özellik özellikle modern UI tasarımlarında, brutalist estetik ve cyberpunk temalı arayüzlerde oldukça popüler hale geliyor. Ayrıca tooltip'ler, sale tag'leri ve arrow breadcrumb'lar gibi UI elementlerinde de kullanılabiliyor.
+
+## clip-path: Görsel Kırpma
+
+CSS'in `clip-path` özelliği, bir elementin hangi bölümünün görünür olacağını belirleyen bir kırpma bölgesi oluşturur. Bu özellik sayesinde elementleri çeşitli geometrik şekillerle kırpabilir, modern ve yaratıcı tasarımlar oluşturabiliriz.
+
+<ClipPath />
+
+`clip-path` özelliği `circle()`, `ellipse()`, `polygon()`, `inset()` ve `path()` gibi farklı şekil fonksiyonlarıyla kullanılabilir.
+
+## ::picker-icon: Dropdown İkonunu Özelleştirme
+
+CSS'in yeni `::picker-icon` pseudo-element'i, özelleştirilebilir `<select>` elementlerinin dropdown ikonunu stillendirmemize olanak tanıyor. Bu özellik sayesinde varsayılan üçgen ikon yerine checkmark, plus, arrow veya herhangi bir özel ikon kullanabiliyoruz.
+
+<PickerIcon />
+
+`::picker-icon` özelliği kullanmak için `<select>` elementinin `appearance: base-select` olarak ayarlanması gerekiyor. Bu özellik ile birlikte, özelleştirilebilir select elementleri için birçok yeni CSS seçicisine de erişebiliyoruz:
+
+- **`select:open`** - Dropdown açık olduğunda select elementini stillendirme
+- **`select:open::picker-icon`** - Dropdown açık olduğunda picker icon'unu stillendirme (örneğin rotasyon animasyonu için)
+- **`option:checked`** - Seçili option elementini stillendirme
+- **`option::checkmark`** - Option'lardaki checkmark ikonunu özelleştirme
+
+## width/height: stretch: Taşmayı Önleme
+
+CSS'in yeni `stretch` değeri, `width` ve `height` özelliklerinde kullanılarak elementlerin padding ve margin'i hesaba katarak taşmasını önler. `100%` değeri, padding ve margin'i hesaba katmadığı için taşmaya neden olabilir, ancak `stretch` değeri bu sorunu çözer.
+
+<Stretch />
+
+## text-box: Metin Hizalaması
+
+CSS'in yeni `text-box` özelliği, metin elementlerinin block-start ve block-end kenarlarındaki fazla boşluğu (leading) kırparak, görsellerle metinlerin daha iyi hizalanmasını sağlar. Bu özellik özellikle görsel ve metin yan yana olduğunda, line-height'tan kaynaklanan boşlukların neden olduğu hizalama sorunlarını çözer.
+
+<TextBox />
+
+## sibling-index(): Sıralı Animasyonlar
+
+CSS'in yeni `sibling-index()` fonksiyonu, her elementin kardeş elementler arasındaki pozisyonunu döndürür (1'den başlar). Bu fonksiyon sayesinde JavaScript veya Framer Motion gibi kütüphaneler olmadan, sadece CSS ile sıralı animasyonlar oluşturabilirsiniz.
+
+<SiblingIndex />
+
+`sibling-index()` fonksiyonu özellikle `animation-delay` ile birlikte kullanıldığında güçlü bir kombinasyon oluşturur. `calc(sibling-index() * 100ms)` gibi bir değerle, her element sırayla animasyonlu şekilde görünebilir. Bu sayede kart listeleri, grid layout'lar ve diğer sıralı UI elementleri için JavaScript'e ihtiyaç duymadan animasyonlar oluşturabilirsiniz.
+
