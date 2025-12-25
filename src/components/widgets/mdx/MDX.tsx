@@ -34,6 +34,7 @@ import {
 	ChartAreaLinear,
 	CopyButton,
 	ImagesCarousel,
+	LinksReview,
 	MediaInfo,
 	Rating
 } from "@/widgets"
@@ -56,6 +57,7 @@ const components = {
 	Heading,
 	ChartAreaLinear,
 	ImagesCarousel,
+	LinksReview,
 
 	pre: ({ children, ...props }: PreProps) => {
 		const getCodeContent = (children: React.ReactNode): string => {
