@@ -5,6 +5,7 @@ export interface BlogPostType {
 		description?: string
 		keywords?: string[]
 		tags?: string[]
+		interactive?: boolean
 		[key: string]: unknown
 	}
 	slug: string

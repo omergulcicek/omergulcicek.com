@@ -63,7 +63,7 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 						else setTagState(value)
 					}}
 				>
-					<SelectTrigger className="w-[180px]">
+					<SelectTrigger className="w-[200px]">
 						<SelectValue placeholder="Tümü" />
 					</SelectTrigger>
 					<SelectContent className="max-h-[400px] overflow-y-auto">

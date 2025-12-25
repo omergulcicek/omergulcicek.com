@@ -14,6 +14,11 @@ import { useQueryState } from "nuqs"
 import type { BlogPostType } from "@/types/blog.type"
 import type { SortOptionType } from "@/types/filter-sort-type"
 
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger
+} from "@/components/ui/tooltip"
 import { FilterSort, TagsBadge } from "@/widgets"
 
 interface BlogListProps {
@@ -53,6 +58,23 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 					<span className="text-black/20 leading-[22px] hidden md:inline-flex">
 						•
 					</span>
+					{post.metadata.interactive && (
+						<>
+							<Tooltip>
+								<TooltipTrigger asChild>
+									<span className="cursor-pointer text-xl leading-[22px]">
+										✨
+									</span>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p>Bu makale interaktiftir</p>
+								</TooltipContent>
+							</Tooltip>
+							<span className="text-black/20 leading-[22px] hidden md:inline-flex">
+								•
+							</span>
+						</>
+					)}
 					<TagsBadge tags={post.metadata.tags as string[]} />
 				</div>
 			</div>
