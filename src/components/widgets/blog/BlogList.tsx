@@ -44,7 +44,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 				<h2 className="text-lg leading-normal font-normal text-gray-900 dark:text-white group-hover:text-black transition-colors duration-200">
 					<Link
 						href={`/blog/${post.slug}`}
-						className="group relative overflow-hidden flex items-start"
+						className="cursor-pointer group relative overflow-hidden flex items-start"
 					>
 						{post.metadata.title}
 					</Link>

@@ -116,6 +116,9 @@
 	* {
 		@apply border-border outline-ring/50;
 	}
+	*:focus-visible {
+		@apply outline-2 outline-offset-2 outline-ring;
+	}
 	html {
 		scroll-behavior: smooth;
 	}
@@ -124,6 +127,13 @@
 	}
 	button {
 		@apply cursor-pointer;
+	}
+	a {
+		@apply cursor-pointer;
+	}
+	@font-face {
+		font-family: var(--font-geist-sans);
+		font-display: swap;
 	}
 	::-webkit-scrollbar {
 		width: 5px;

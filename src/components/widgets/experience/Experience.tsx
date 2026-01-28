@@ -48,6 +48,7 @@ export function Experience({
 												alt={experience.company}
 												width={24}
 												height={24}
+												loading="lazy"
 												quality={100}
 											/>
 										</figure>

@@ -80,9 +80,8 @@ const components = {
 				return children.map(getCodeContent).join("")
 			}
 			if (React.isValidElement(children)) {
-				const element = children as React.ReactElement
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
-				return getCodeContent((element as any).props.children)
+				const element = children as React.ReactElement<{ children?: React.ReactNode }>
+				return getCodeContent(element.props.children)
 			}
 			return ""
 		}
@@ -136,6 +135,8 @@ const components = {
 				width={800}
 				height={520}
 				className="rounded-lg max-w-full max-h-[520px] w-auto h-auto mx-auto border"
+				loading="lazy"
+				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
 				data-zoomable
 				{...props}
 			/>

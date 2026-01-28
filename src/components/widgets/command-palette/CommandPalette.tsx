@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation"
 
 import { ExternalLink, FileText, FolderOpen, Search } from "lucide-react"
 
-import { useBlogData } from "@/hooks/use-blog-data"
-
 import {
 	CommandDialog,
 	CommandEmpty,
@@ -19,7 +17,13 @@ import {
 import { navItemsData } from "@/data/nav.data"
 import { projectsData } from "@/data/projects.data"
 
-export function CommandPalette() {
+import type { BlogPostType } from "@/types/blog.type"
+
+interface CommandPaletteProps {
+	posts: BlogPostType[]
+}
+
+export function CommandPalette({ posts }: CommandPaletteProps) {
 	const [open, setOpen] = useState(false)
 	const router = useRouter()
 
@@ -39,8 +43,6 @@ export function CommandPalette() {
 		setOpen(false)
 		command()
 	}
-
-	const { posts, loading, error } = useBlogData()
 
 	// Tüm blog yazılarını arama için hazırla
 	const allPosts = posts.map((post) => ({
@@ -70,13 +72,7 @@ export function CommandPalette() {
 			<CommandDialog open={open} onOpenChange={setOpen}>
 				<CommandInput placeholder="Sayfa, blog yazısı veya proje ara..." />
 				<CommandList>
-					<CommandEmpty>
-						{loading
-							? "Yükleniyor..."
-							: error
-								? "Hata: " + error
-								: "Sonuç bulunamadı."}
-					</CommandEmpty>
+					<CommandEmpty>Sonuç bulunamadı.</CommandEmpty>
 					<CommandGroup heading="Sayfalar">
 						{navItemsData.map((item) => (
 							<CommandItem
@@ -89,30 +85,28 @@ export function CommandPalette() {
 							</CommandItem>
 						))}
 					</CommandGroup>
-					{!loading && !error && (
-						<CommandGroup heading="Blog Yazıları">
-							{allPosts.map((post) => (
-								<CommandItem
-									key={post.slug}
-									onSelect={() =>
-										runCommand(() => router.push(`/blog/${post.slug}`))
-									}
-									value={post.searchValue}
-									className="data-[disabled]:opacity-100"
-								>
-									<FileText className="mr-2 h-4 w-4" />
-									<div className="flex flex-col">
-										<span>{post.metadata.title}</span>
-										{post.metadata.description && (
-											<span className="text-xs text-muted-foreground">
-												{post.metadata.description}
-											</span>
-										)}
-									</div>
-								</CommandItem>
-							))}
-						</CommandGroup>
-					)}
+					<CommandGroup heading="Blog Yazıları">
+						{allPosts.map((post) => (
+							<CommandItem
+								key={post.slug}
+								onSelect={() =>
+									runCommand(() => router.push(`/blog/${post.slug}`))
+								}
+								value={post.searchValue}
+								className="data-[disabled]:opacity-100"
+							>
+								<FileText className="mr-2 h-4 w-4" />
+								<div className="flex flex-col">
+									<span>{post.metadata.title}</span>
+									{post.metadata.description && (
+										<span className="text-xs text-muted-foreground">
+											{post.metadata.description}
+										</span>
+									)}
+								</div>
+							</CommandItem>
+						))}
+					</CommandGroup>
 					<CommandGroup heading="Projeler">
 						{allProjects.map((project) => (
 							<CommandItem

@@ -50,6 +50,8 @@ export function ImagesCarousel({ images }: ImagesCarouselProps) {
 								alt={image.alt}
 								width={664}
 								height={384}
+								loading="lazy"
+								sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
 								className="h-96 w-[664px] object-contain !my-0"
 							/>
 						</CarouselItem>

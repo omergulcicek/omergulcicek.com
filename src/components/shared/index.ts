@@ -1,5 +1,7 @@
 export * from "./Container"
+export * from "./ErrorBoundary"
 export * from "./Footer"
 export * from "./Header"
+export * from "./StructuredData"
 export * from "./WebVitals"
 export * from "./ThemeProvider"

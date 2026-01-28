@@ -16,6 +16,13 @@ const IMAGE_REMOTE_PATTERNS: RemotePattern[] = [
 	}
 ]
 
+const withBundleAnalyzer = process.env.ANALYZE === "true"
+	? // eslint-disable-next-line @typescript-eslint/no-require-imports
+	  require("@next/bundle-analyzer")({
+			enabled: true
+		})
+	: (config: NextConfig) => config
+
 const nextConfig: NextConfig = {
 	output: "export",
 	images: {
@@ -26,4 +33,4 @@ const nextConfig: NextConfig = {
 	trailingSlash: true
 }
 
-export default withMDX(nextConfig)
+export default withBundleAnalyzer(withMDX(nextConfig))

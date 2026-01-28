@@ -38,6 +38,8 @@ export function ProjectCard({
 					<Image
 						src={project.image}
 						alt={project.title}
+						loading="lazy"
+						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
 						className={cn(
 							"object-cover group-hover:scale-150 transition-transform duration-700 ease-in-out rounded",
 							index === 0 && "origin-top-left",

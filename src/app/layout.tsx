@@ -7,7 +7,15 @@ import { NuqsAdapter } from "nuqs/adapters/next/app"
 import { SITE } from "@/constants/site"
 import { USER } from "@/constants/user"
 
-import { Footer, Header, ThemeProvider, WebVitals } from "@/shared"
+import {
+	Footer,
+	Header,
+	StructuredData,
+	ThemeProvider,
+	WebVitals
+} from "@/shared"
+
+import { getAllPosts } from "@/data/blog.data"
 
 import "./globals.css"
 
@@ -57,16 +65,22 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode
 }>) {
+	const posts = getAllPosts()
+
 	return (
 		<html lang="tr" suppressHydrationWarning>
 			<body className={`${GeistSans.className} antialiased font-sans`}>
+				<StructuredData type="website" />
+				<StructuredData type="person" />
 				<ThemeProvider>
 					<WebVitals />
 					<NuqsAdapter>
 						<div data-vaul-drawer-wrapper="">
 							<div className="relative flex min-h-screen flex-col bg-background">
-								<Header />
-								<main className="min-h-screen">{children}</main>
+								<Header posts={posts} />
+								<main id="main-content" className="min-h-screen">
+									{children}
+								</main>
 								<Footer />
 							</div>
 						</div>

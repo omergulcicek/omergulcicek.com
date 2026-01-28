@@ -1,0 +1,106 @@
+---
+createdAt: "2026-01-28"
+slug: "/react-ai-stack-2026"
+title: "2026 için React ve AI Stack'i"
+category: "web geliştirme"
+tags: ["Frontend", "Yapay Zekâ"]
+medium: "https://medium.com/@omergulcicek/2026-i%C3%A7in-react-ve-ai-stacki-f3f9cc815674"
+---
+
+*Bu yazı, [Builder.io](https://www.builder.io/blog/react-ai-stack-2026) sitesinde yayınlanan "The React + AI Stack for 2026" başlıklı makalenin çevirisidir. Orijinal makale [Vishwas Gopinath](https://vishwas.dev/) tarafından yayınlanmıştır. Çeviri sırasında kendi deneyimlerim ve görüşlerimi de katarak içeriği revize ettim.*
+
+![2026 için React ve AI Stack'i](/blog/2026-01-28/react-stack.png)
+
+Yapay zekâ, kod yazma şeklimizi değiştirdi ve sessizce bir kazanan seçti. 2025 Stack Overflow Developer Survey'e göre, profesyonel geliştiricilerin %51'i artık AI araçlarını günlük olarak kullanıyor. AI'dan bir UI oluşturmasını istediğinizde, neredeyse her zaman **React**'e yöneliyor. Bunun sebebi milyonlarca GitHub deposunda eğitilen LLM'ler için **React** bu veri setinde baskın durumda.
+
+## Çekirdek: React + TypeScript
+
+**[TypeScript](https://www.typescriptlang.org)**, JavaScript'e tip güvenliği ekleyerek hataları çalışmadan önce yakalamanı, refactoring'i kolaylaştırmanı ve büyük kod tabanlarını daha güvenle yönetmeni sağlar. Tipler aynı zamanda AI asistanlarına da net bir yol haritası sunar.
+
+## Framework: Next.js veya TanStack Start
+
+İhtiyacınıza göre iki sağlam seçenek var.
+
+**[Next.js](https://nextjs.org)** olgun ve yaygın seçenek. En geniş ekosisteme sahip, tam React Server Components desteği sunuyor ve Vercel tarafında partial pre-rendering gibi özelliklerle gelişmeye devam ediyor. RSC, streaming ve savaşta test edilmiş bir framework arıyorsanız, **Next.js** doğru adres.
+
+**[TanStack Start](https://tanstack.com/start)** ise daha az sihir, daha fazla kontrol vaat ediyor. Verinin nasıl yükleneceği, nerede çalışacağı ve neyin render edileceği sizin elinizde. Tip güvenliği çok güçlü ve **TanStack** ekosisteminin geri kalanıyla *(Query, Router, Table, Form vb.)* kusursuz uyumlu.
+
+2025'in sonlarından itibaren ben de kişisel tercihimi **Next.js** yerine **TanStack Start**'tan yana kullandım ve ilk günden beri memnunum. **Next.js**'in bol kod örneği ve ekosistemi sayesinde AI araçları onu daha iyi "anlıyor"; **TanStack** tarafında bu konuda bazen zayıf kaldığını hissettiğim oldu. Dokümantasyonun da biraz daha olgunlaşması gerektiğini düşünüyorum. Buna rağmen **DX** (developer experience) açısından esnekliği ve sunduğu özellikler beni cezbediyor. Performanstan da oldukça memnunum; kişisel projelerimde **TanStack Start**'ı ilk tercih olarak kullanmaya devam etmeyi planlıyorum. Tüm **TanStack** ekosistemini birlikte kullanmak (Start, Query, Router, Table, Form vb.) bana **Apple** ekosistemini *(MacBook, iPhone, Watch hepsi birbirine entegre ve tek dil konuşuyor)* kullanmak gibi hissettiriyor.
+
+## Stil: Tailwind CSS
+
+**[Tailwind CSS](https://tailwindcss.com)** utility-first CSS tartışmasını kazandı. AI araçları **Tailwind** sınıflarını rahatça üretebiliyor, ölçeklenmesi iyi ve projelerde gereksiz CSS şişkinliğini azaltıyor.
+
+İlk çıktığında **Tailwind**'e mesafeliydim, adeta inline CSS yazıyormuşum gibi geliyordu. Zamanla vazgeçilmezim oldu ve bir anlamda **Bootstrap**'ın tahtını aldı. Artık yeni bir proje kurduğumda boilerplate'e **Tailwind** eklemek ilk yaptığım işlerden biri.
+
+## UI Bileşenleri: shadcn/ui
+
+**[shadcn/ui](https://ui.shadcn.com)** bileşenleri paket olarak değil, doğrudan projenize kopyalıyor, yani koda tam sahipsiniz ve istediğiniz gibi değiştirebiliyorsunuz. Arada soyutlama katmanı olmadığı için AI araçları da bu dosyaları okuyup düzenleyebiliyor. Yeni `npx shadcn create` akışıyla özelleştirme bir adım öteye taşındı. Yakın zamanda ise Radix UI olan bileşent tabanına Base UI desteği de eklendi.
+
+**shadcn/ui**'nin gelişimi beni heyecanlandırıyor; yeni özellikler ve iyileştirmeler için merakla takip ediyorum.
+
+## Veri Çekme: TanStack Query
+
+**[TanStack Query](https://tanstack.com/query)** sunucu state için de facto standart. Cache, arka plan refetch, stale ve error state'leri tek yerde topluyor; zihinsel model oturduktan sonra senkronizasyon kaynaklı hataları büyük ölçüde eliyor. **React** ile veri çekiyorsanız ilk bakmanız gereken yer burası.
+
+## Routing: TanStack Router
+
+**[TanStack Router](https://tanstack.com/router)** rotalar, params ve search params için gördüğüm en güçlü tip güvenliğini sunuyor; hatalar runtime'a düşmeden **TypeScript** tarafında yakalanıyor. **Next.js** kullanıyorsanız App Router yeterli ve RSC ile uyumlu. Vite tabanlı veya **TanStack Start** stack'inde ise **TanStack Router** net seçim.
+
+## Durum Yönetimi: Zustand
+
+**[Zustand](https://zustand.docs.pmnd.rs)** minimal boilerplate ile hook tabanlı, Redux karmaşası olmadan client state yönetimi sunuyor; basit başlıyor, ihtiyaç arttıkça ölçekleniyor.
+
+## Formlar: React Hook Form
+
+**[React Hook Form](https://react-hook-form.com)** Zod vb. doğrulama kütüphaneleriyle sorunsuz entegre ve temiz bir API ile form state'ini yönetmek için hâlâ en sağlam seçeneklerden biri.
+
+Yıllardır **React Hook Form** kullanıyorum ve memnunum. Kişisel projelerimde **TanStack** ekosisteminde olduğum için **TanStack Form**'a geçtim; her iki kütüphane de AI araçlarıyla çok uyumlu çalışıyor.
+
+## Test: Vitest + React Testing Library + Playwright
+
+**[Vitest](https://vitest.dev)** ES modules ile sorunsuz çalışan, Vite pipeline ile uyumlu ve hızlı bir test runner; birim ve entegrasyon testleri için günlük kullanımda rahat. **[React Testing Library](https://testing-library.com/react)** bileşenleri kullanıcı davranışına göre sorgulamanızı sağlayarak testleri sürdürülebilir kılıyor ve erişilebilirlik problemlerini yan ürün olarak ortaya çıkarıyor. **[Playwright](https://playwright.dev)** ise çoklu tarayıcı, görsel ve mobil emülasyon desteğiyle E2E katmanını kararlı ve tekrarlanabilir şekilde kapatıyor.
+
+## AI SDK: Vercel AI SDK veya TanStack AI
+
+**[Vercel AI SDK](https://sdk.vercel.ai)** streaming, tool calling ve chat UI için hazır hook'lar sunuyor; OpenAI, Anthropic ve diğer sağlayıcılarla out-of-the-box çalışıyor. **AI Elements** ile mesaj thread'leri, reasoning panelleri ve ses arayüzleri için **shadcn/ui** tabanlı 20+ bileşen geliyor, LLM destekli ürünlerde hızlı prototipleme ve production UI için ciddi zaman kazandırıyor.
+
+**[TanStack AI](https://tanstack.com/ai)** daha yeni; sağlayıcıdan bağımsız tek arayüz ve tam **TypeScript** tip güvenliği vaat ediyor. TanStack ekosistemine geçiş yaptım fakat TanStack AI'ı henüz deneyimleyemedim. **TanStack** ekibinin Query ve Router'daki siciline bakınca, zamanla bu alanda da referans olma ihtimali yüksek.
+
+## Tip Güvenli API'ler: tRPC
+
+**[tRPC](https://trpc.io)**, frontend'inizin sunucu fonksiyonlarını tam **TypeScript** tip güvenliğiyle doğrudan çağırmasına izin verir. Dokümante edilecek REST endpoint'leri yok. Manuel olarak senkronize edilecek tipler yok. Mantığınızı bir kez tanımlarsınız ve her iki tarafta da kullanırsınız. Tam stack **TypeScript** uygulaması oluşturuyorsanız, **tRPC** bir kategori hatayı ortadan kaldırır ve geliştirmeyi hızlandırır.
+
+## Doğrulama: Zod
+
+**[Zod](https://zod.dev)**, **TypeScript** doğrulaması için güvenli seçim. En büyük ekosisteme, en çok öğreticiye sahip ve her şeyle entegre oluyor. **React Hook Form**, **TanStack Form**, **tRPC**, API route'ları. **Zod** hepsiyle çalışır. Bundle boyutu kritikse daha hafif alternatifler var, ancak çoğu proje için **Zod**'un ekosistem avantajı ekstra kilobaytları ağır basar.
+
+## Backend Servisleri: Supabase veya Convex
+
+**[Supabase](https://supabase.com)** PostgreSQL üzerine inşa edilmiştir. Auth, storage, gerçek zamanlı abonelikler ve otomatik oluşturulmuş API'ler elde edersiniz. AI özellikleri için, pgvector vektör benzerlik aramasını halleder ve ilişkisel verilerinizin yanında embedding'leri saklayabilirsiniz.
+
+Kişisel oyun projemde ilk kez **Supabase** kullandım ve çok memnun kaldım. Arayüzü ve performansı beni tatmin etti; kişisel projelerimde kullanmaya devam edeceğim. Backend derdimi büyük ölçüde ortadan kaldırdı, özellikle **Auth** katmanının hazır gelmesi büyük dertten kurtarıyor ve doğrudan SQL ile frontend'e odaklanmamı sağlıyor.
+
+**[Convex](https://convex.dev)**, reaktivite-öncelikli bir yaklaşım benimser. Sorgular, veriler değiştiğinde otomatik olarak **React** bileşenlerinize senkronize olur. **TypeScript** entegrasyonu yerel gibi hissettirir. Yerleşik vektör araması, bir RAG bileşeni ve AI agent iş akışları, LLM destekli uygulamalar için zaten orada.
+
+## Animasyon: Motion
+
+**[Motion](https://motion.dev)** *(eski adıyla Framer Motion)* declarative API ile karmaşık ve layout animasyonlarını yönetir; CSS geçişleri yeterli gelmediğinde **React** tarafında ilk bakılacak kütüphane.
+
+## Tablo: TanStack Table
+
+**[TanStack Table](https://tanstack.com/table)** headless ve tam tip güvenli; sıralama, filtreleme ve sayfalama mantığını sağlar, UI kararlarını size bırakır. Veri ağırlıklı ekranlarda kendi markup ve stillerinizle kullanılacak standart seçenek.
+
+## Bileşen Geliştirme: Storybook
+
+**[Storybook](https://storybook.js.org)** bileşenleri izole geliştirme, görsel test ve otomatik dokümantasyon için kullanılır; geliştirici ve tasarımcıların uygulamayı ayağa kaldırmadan UI üzerinde çalışmasını sağlar.
+
+## AI Destekli Geliştirme
+
+**[Claude Code](https://claude.ai/)**, Anthropic'in agentic kodlama aracıdır. Terminalde, VS Code'da bir uzantı olarak veya doğrudan web'de çalışır. Codebase'inize işaret edin ve değişiklikleri planlayabilir, kod yazabilir, testleri çalıştırabilir ve saatlerce görevler üzerinde döngü yapabilir. Yalnız çalışmayı veya yalnızca geliştirici ekiplerinde çalışmayı tercih ediyorsanız, bu harika bir seçenektir.
+
+**[Cursor](https://cursor.sh)**, geleneksel IDE iş akışını tercih ediyorsanız başka bir harika seçenektir.
+
+**MCP (Model Context Protocol)** ile AI asistanları harici veri kaynaklarına, API'lere ve araçlara güvenli şekilde bağlanabiliyor. Frontend geliştirmede ben **Figma**, **Context7**, **Next.js**, **shadcn** ve **Supabase** MCP'lerini kullanıyorum; tasarım token'ları, dokümantasyon ve backend kaynaklarına doğrudan erişim sağlıyor.
+
+VS Code kullanırken **Cursor**'a geçtim ve bir yılı aşkındır kullanıyorum. Son dönemde aşırı token tüketimi ve sürekli değişen -bazılarına alışmakta zorlandığım- UI güncellemeleri can sıkmaya başladı. Yakın vadede farklı bir arayüze veya araca yönelebilirim.
