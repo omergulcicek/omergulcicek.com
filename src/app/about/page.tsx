@@ -6,8 +6,7 @@ import {
 	AboutProductionCulture,
 	AboutServices,
 	AboutTechnicalApproach,
-	AboutVision,
-	Experience
+	AboutVision
 } from "@/widgets"
 
 export default function About() {
@@ -16,7 +15,6 @@ export default function About() {
 			<AboutIntro />
 			<AboutTechnicalApproach />
 			<AboutProductionCulture />
-			<Experience showAll />
 			<AboutServices />
 			<AboutHobbies />
 			<AboutVision />

@@ -19,7 +19,9 @@ export function TagsBadge({ tags }: TagsBadgeProps) {
 				return (
 					<IconBadge
 						key={tag}
-						icon={IconComponent ? <IconComponent /> : null}
+						icon={
+							IconComponent ? <IconComponent width={12} height={12} /> : null
+						}
 						label={tag}
 					/>
 				)

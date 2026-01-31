@@ -80,7 +80,9 @@ const components = {
 				return children.map(getCodeContent).join("")
 			}
 			if (React.isValidElement(children)) {
-				const element = children as React.ReactElement<{ children?: React.ReactNode }>
+				const element = children as React.ReactElement<{
+					children?: React.ReactNode
+				}>
 				return getCodeContent(element.props.children)
 			}
 			return ""
@@ -98,7 +100,7 @@ const components = {
 
 	code: ({ children, ...props }: CodeProps) => (
 		<code
-			className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold"
+			className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-prose-foreground"
 			{...props}
 		>
 			{children}
@@ -112,7 +114,7 @@ const components = {
 					href={href}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="underline underline-offset-4"
+					className="underline underline-offset-4 text-prose-foreground"
 					{...props}
 				>
 					{children}
@@ -121,7 +123,11 @@ const components = {
 		}
 
 		return (
-			<a href={href} className="underline underline-offset-4" {...props}>
+			<a
+				href={href}
+				className="underline underline-offset-4 text-prose-foreground"
+				{...props}
+			>
 				{children}
 			</a>
 		)
@@ -171,7 +177,10 @@ const components = {
 	),
 
 	p: ({ children, ...props }: React.ComponentProps<"p">) => (
-		<p className="leading-7 [&:not(:first-child)]:mt-6" {...props}>
+		<p
+			className="text-base leading-7 not-first:mt-6 text-prose-body"
+			{...props}
+		>
 			{children}
 		</p>
 	)

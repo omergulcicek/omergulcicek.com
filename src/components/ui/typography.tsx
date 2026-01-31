@@ -22,12 +22,12 @@ function Prose({
 		<Comp
 			data-slot="prose"
 			className={cn(
-				"prose max-w-none font-mono text-foreground prose-zinc dark:prose-invert",
-				"prose-headings:font-sans prose-headings:font-semibold prose-headings:text-balance",
+				"prose max-w-none font-mono text-prose-body prose-zinc dark:prose-invert",
+				"prose-headings:font-sans prose-headings:font-semibold prose-headings:text-balance prose-headings:text-prose-foreground",
 				"prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight",
 				"prose-h2:border-b prose-h2:border-edge prose-h2:pb-2 prose-h2:text-2xl",
 				"prose-lead:text-base",
-				"prose-a:font-medium prose-a:break-words prose-a:text-foreground prose-a:underline prose-a:underline-offset-4",
+				"prose-a:font-medium prose-a:break-words prose-a:text-prose-foreground prose-a:underline prose-a:underline-offset-4",
 				"prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none",
 				"prose-hr:border-edge",
 				className
@@ -63,11 +63,11 @@ function Heading<T extends HeadingTypes = "h1">({
 	return (
 		<Comp
 			className={cn(
-				"flex flex-row items-center gap-2 scroll-m-20",
-				as === "h1" && "text-4xl font-extrabold tracking-tight text-balance",
-				as === "h2" && "text-3xl font-semibold tracking-tight",
-				as === "h3" && "text-2xl font-semibold tracking-tight",
-				as === "h4" && "text-xl font-semibold tracking-tight",
+				"flex flex-row items-center gap-2 scroll-m-20 text-prose-foreground",
+				as === "h1" && "text-4xl font-semibold tracking-tight text-balance",
+				as === "h2" && "text-2xl font-semibold tracking-tight",
+				as === "h3" && "text-xl font-semibold tracking-tight",
+				as === "h4" && "text-lg font-semibold tracking-tight",
 				className
 			)}
 			{...props}

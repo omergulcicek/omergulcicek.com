@@ -34,7 +34,7 @@ export function Hero() {
 				<div className="flex flex-col h-full justify-start gap-0.5">
 					<VerifiedUser />
 
-					<p className="text-base md:text-lg text-muted-foreground">
+					<p className="text-muted-foreground text-base md:text-lg">
 						{USER.jobTitle}
 					</p>
 

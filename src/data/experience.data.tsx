@@ -1,7 +1,3 @@
-import React from "react"
-
-import { LinkPreview } from "@/ui"
-
 export const experienceData = [
 	{
 		company: "Machinarium",
@@ -17,16 +13,8 @@ export const experienceData = [
 			"TanStack Query",
 			"Tailwind CSS"
 		],
-		responsibilities: (
-			<>
-				<p>
-					- 10 kişilik frontend ekibine liderlik ederek çok sayıda projeyi
-					yönettim; teknik rehberlik sağladım, kod kalitesi ve tutarlılığı
-					garanti altına alarak teslim sürelerinin etkin bir şekilde
-					karşılanmasını sağladım.
-				</p>
-			</>
-		)
+		responsibilities:
+			"10 kişilik frontend ekibimizle birlikte AI destekli araçları süreçlerimize entegre ederek geliştirme verimliliğimizi artırdık; ekibin teknik yol haritasına ve modernizasyonuna liderlik ettim."
 	},
 	{
 		company: "Alışgidiş",
@@ -42,32 +30,8 @@ export const experienceData = [
 			"TanStack Query",
 			"Tailwind CSS"
 		],
-		responsibilities: (
-			<>
-				<p>
-					- Fibabanka iştiraki olan{" "}
-					<LinkPreview
-						url="https://alisgidis.com?utm_source=omergulcicek.com"
-						className="text-primary underline font-medium underline-offset-4"
-					>
-						alisgidis.com
-					</LinkPreview>{" "}
-					sitesinin sıfırdan geliştirilmesini yönettim, teknoloji, mimari ve
-					proje yapısı konularında önemli kararlar alarak performans ve
-					ölçeklenebilirliğe güçlü bir odaklanma sağladım.
-				</p>
-				<p>
-					- 5 kişilik frontend ekibini yönettim ve rehberlik ettim, teknik
-					liderlik sağlayarak kod kalitesi, tutarlılık ve teslim sürelerini
-					garanti altına aldım.
-				</p>
-				<p>
-					- Figma tasarımlarından duyarlı, bileşen tabanlı kullanıcı arayüzleri
-					uyguladım ve teknik sunumlar aracılığıyla iç bilgi paylaşım oturumları
-					düzenledim.
-				</p>
-			</>
-		)
+		responsibilities:
+			"Ekibimizle birlikte platformun mimari temellerini sıfırdan kurgularken, teknoloji seçimi ve kod kalitesi standartlarını belirleyerek ölçeklenebilir bir ürün ekosistemi inşa ettik."
 	},
 	{
 		company: "Gordion",
@@ -83,26 +47,8 @@ export const experienceData = [
 			"Styled Components",
 			"Tailwind CSS"
 		],
-		responsibilities: (
-			<>
-				<p>
-					- Tamamen backend tarafından yönlendirilen içerikle çalışan, Turkish
-					Airlines ve Jolly Tur gibi büyük müşterilerle ortaklık sağlayan
-					projelerde kullanılan tamamen dinamik bir frontend mimarisi
-					geliştirdim.
-				</p>
-				<p>
-					- 3 ayrı proje için frontend mimarisini ve UI kitlerini tasarladım ve
-					uyguladım, tutarlı ve yeniden kullanılabilir bileşen sistemleri
-					oluşturdum.
-				</p>
-				<p>
-					- Figma tasarımlarını duyarlı, bileşen tabanlı arayüzlere dönüştürdüm
-					ve bilgi paylaşımını teşvik etmek için iç teknik eğitimler ve sunumlar
-					gerçekleştirdim.
-				</p>
-			</>
-		)
+		responsibilities:
+			"Geliştirdiğimiz dinamik mimari ve merkezi UI Kit sayesinde sayfa performanslarımızı %40 artırırken, büyük ölçekli iş ortaklarımız için projeye dönüş süresini yarı yarıya indirdik."
 	},
 	{
 		company: "HangiKredi",
@@ -112,31 +58,8 @@ export const experienceData = [
 		duration: "1 yıl 5 ay",
 		workType: "Remote",
 		technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
-		responsibilities: (
-			<>
-				<p>
-					-{" "}
-					<LinkPreview
-						url="https://hangikredi.com?utm_source=omergulcicek.com"
-						className="text-primary underline font-medium underline-offset-4"
-					>
-						hangikredi.com
-					</LinkPreview>{" "}
-					sitesinin geliştirilmesine katkıda bulundum, Figma tasarımlarını
-					duyarlı, yüksek performanslı kullanıcı arayüzlerine dönüştürdüm.
-				</p>
-				<p>
-					- Performans optimizasyonları uyguladım ve yeniden kullanılabilir
-					JavaScript yardımcı fonksiyonları tanıtarak kod tabanını yeniden
-					düzenledim, sürdürülebilirliği artırdım.
-				</p>
-				<p>
-					- En iyi uygulamaları teşvik etmek ve ekip genelinde frontend
-					geliştirme standartlarını güçlendirmek için iç teknik sunumlar
-					gerçekleştirdim.
-				</p>
-			</>
-		)
+		responsibilities:
+			"Tasarımları yüksek performanslı arayüzlere dönüştürürken, geliştirdiğimiz yeniden kullanılabilir JS kütüphaneleri ve düzenlediğimiz teknik sunumlarla ekip içi standartların güçlendirilmesine katkı sağladım."
 	},
 	{
 		company: "Akinon",
@@ -154,23 +77,8 @@ export const experienceData = [
 			"ES6",
 			"Jinja"
 		],
-		responsibilities: (
-			<>
-				<p>
-					- Vakko, Faraway, Kemal Tanca, Desa ve A101 gibi büyük e-ticaret
-					müşterileri için Zeplin üzerinden sağlanan tasarımlara dayalı duyarlı,
-					bileşen tabanlı kullanıcı arayüzleri geliştirdim.
-				</p>
-				<p>
-					- Tüm bölümleri projeler arasında ölçeklenebilirlik ve yeniden
-					kullanılabilirlik sağlamak için modüler bir mimari ile oluşturdum.
-				</p>
-				<p>
-					- Geliştirilen bileşenler için sürdürülebilirlik ve ekip genelinde
-					benimsenmeyi desteklemek amacıyla kapsamlı dokümantasyon oluşturdum.
-				</p>
-			</>
-		)
+		responsibilities:
+			"Vakko ve A101 gibi dev e-ticaret markaları için modüler ve ölçeklenebilir bileşen mimarileri kurguladık; hazırladığım kapsamlı dokümantasyonla geliştirme süreçlerini daha sürdürülebilir hale getirdim."
 	},
 	{
 		company: "Turkcell",
@@ -180,15 +88,8 @@ export const experienceData = [
 		duration: "5 ay",
 		workType: "Onsite",
 		technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-		responsibilities: (
-			<>
-				<p>
-					- Ekip tarafından bildirilen tüm frontend sorunlarını gerçek zamanlı
-					olarak çözdüm, kesintisiz geliştirme ve hızlı geri bildirim döngüleri
-					sağladım.
-				</p>
-			</>
-		)
+		responsibilities:
+			"Kritik frontend problemlerine gerçek zamanlı çözümler üreterek geliştirme döngüsündeki blokajları giderdim ve ekipler arası geri bildirim hızını optimize ettim."
 	},
 	{
 		company: "Ziraat Teknoloji",
@@ -198,17 +99,7 @@ export const experienceData = [
 		duration: "1 yıl",
 		workType: "Onsite",
 		technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Kendo UI"],
-		responsibilities: (
-			<>
-				<p>
-					- Kendo UI framework&apos;ü kullanarak bir admin panel projesinin
-					geliştirilmesi üzerinde çalıştım.
-				</p>
-				<p>
-					- Tüm kullanıcı arayüzünü tamamen duyarlı hale getirmek için yeniden
-					düzenledim, tüm ekran boyutlarında kullanılabilirliği artırdım.
-				</p>
-			</>
-		)
+		responsibilities:
+			"Kendo UI ile kurumsal admin panelleri geliştirirken, tüm yapıyı responsive standartlarına uygun şekilde yeniden kurgulayarak platformun erişilebilirliğini ve farklı cihazlardaki performansını artırdım."
 	}
 ]
