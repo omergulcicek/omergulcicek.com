@@ -49,7 +49,7 @@ export function Footer() {
 						</LinkPreview>
 						&apos;da mevcuttur.
 					</p>
-					<p>© 2025 | Ömer Gülçiçek</p>
+					<p>© {new Date().getFullYear()} | Ömer Gülçiçek</p>
 				</div>
 			</Container>
 		</footer>

@@ -1,6 +1,5 @@
 "use client"
 
-import { useTheme } from "next-themes"
 import Link from "next/link"
 
 import { Container } from "@/shared"
@@ -9,10 +8,6 @@ import { BookmarkCard, Section } from "@/widgets"
 import { bookmarksData } from "@/data"
 
 export default function Bookmarks() {
-	const { theme } = useTheme()
-
-	const mode = theme === "dark" ? "dark" : "light"
-
 	return (
 		<>
 			<Container>
@@ -32,7 +27,7 @@ export default function Bookmarks() {
 					</p>
 				</Section>
 			</Container>
-			<Container className="max-w-6xl md:py-0">
+			<Container className="max-w-5xl md:py-0">
 				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
 					{bookmarksData.map((bookmark) => (
 						<BookmarkCard key={bookmark.title} {...bookmark} />

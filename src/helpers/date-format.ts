@@ -4,8 +4,8 @@ import "dayjs/locale/tr"
 
 dayjs.locale("tr")
 
-export function dateFormat(date: string) {
-	return dayjs(date).locale("tr").format("DD MMMM YYYY")
+export function dateFormat(date: string, format: string = "DD MMMM YYYY") {
+	return dayjs(date).locale("tr").format(format)
 }
 
 export function groupPostsByYear<

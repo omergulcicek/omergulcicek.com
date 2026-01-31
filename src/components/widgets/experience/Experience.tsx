@@ -3,6 +3,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { slugify } from "@/utils/slugify"
+
+import { Heading } from "@/components/ui/typography"
 import { ArrowButton, JobSeekingBadge, Section, TagsBadge } from "@/widgets"
 
 import { experienceData } from "@/data"
@@ -15,29 +18,38 @@ interface ExperienceProps {
 
 export function Experience({
 	showAll = false,
-	showButton = false,
-	title = "Deneyim"
+	showButton = false
 }: ExperienceProps) {
 	const experiences = showAll ? experienceData : experienceData.slice(0, 3)
+	const showTitle = showButton && experiences.length > 0
 	const showTags = !showButton && experiences.length > 0
 
 	return (
-		<Section title={title} type="h2" titleAddon={<JobSeekingBadge />}>
+		<div className="flex flex-col gap-4">
+			{showTitle && (
+				<Heading id={slugify("Deneyimler")} as={"h2"}>
+					Deneyimler
+				</Heading>
+			)}
+
 			<div className="flex flex-col gap-2">
-				<p className="text-sm text-muted-foreground mb-10">
+				<p className="text-muted-foreground">
 					8 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek
 					performanslı mimariler kurgulayarak sürdürülebilir kullanıcı
 					deneyimleri inşa ediyorum.
 				</p>
-				<div className="flex flex-col gap-8 mt-4">
+				<div className="flex flex-col gap-6 md:gap-8 mt-10">
 					{experiences.map((experience) => (
-						<div key={experience.company} className="flex gap-6 items-start">
-							<span className="text-xs text-muted-foreground tabular-nums shrink-0 pt-0.5 min-w-28 md:min-w-32">
+						<div
+							key={experience.company}
+							className="flex flex-col sm:flex-row sm:gap-6 gap-2 items-stretch sm:items-start"
+						>
+							<span className="text-sm text-muted-foreground tabular-nums shrink-0 pt-0.5 sm:min-w-24 order-first sm:order-0">
 								{experience.period}
 							</span>
-							<div className="flex flex-col gap-2 min-w-0">
-								<div className="flex items-center gap-2 flex-wrap">
-									<span className="font-medium text-foreground">
+							<div className="flex flex-col gap-2 min-w-0 flex-1">
+								<div className="flex items-center gap-2 flex-wrap my-1 md:my-0">
+									<span className="font-medium text-foreground text-base">
 										{experience.role}
 									</span>
 									<span className="text-muted-foreground text-sm">·</span>
@@ -51,7 +63,7 @@ export function Experience({
 											quality={100}
 										/>
 									</figure>
-									<span className="font-medium text-foreground">
+									<span className="font-medium text-foreground text-base">
 										{experience.company}
 									</span>
 								</div>
@@ -68,12 +80,12 @@ export function Experience({
 			</div>
 
 			{showButton && (
-				<div className="flex justify-center mt-6">
+				<div className="flex justify-center mt-4 md:mt-6">
 					<Link href="/experiences">
 						<ArrowButton text="Tüm deneyimleri göster" />
 					</Link>
 				</div>
 			)}
-		</Section>
+		</div>
 	)
 }

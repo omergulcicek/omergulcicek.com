@@ -12,23 +12,20 @@ export function Blog({ posts }: BlogPropsType) {
 	return (
 		<Section title="Blog" type="h2">
 			<nav className="flex flex-col items-start gap-6">
-				{posts.map((post, index) => (
+				{posts.map((post) => (
 					<Link
 						key={post.slug}
 						href={`/blog/${post.slug}`}
-						className="flex items-center justify-start gap-4"
+						className="flex items-center justify-start gap-4 group"
 					>
-						<span className="text-muted-foreground tabular-nums">
-							0{index + 1}
-						</span>
-						<div>
-							<h3 className="font-medium">{post.metadata.title}</h3>
-							{post.metadata.createdAt && (
-								<p className="text-muted-foreground text-sm">
-									{dateFormat(post.metadata.createdAt)}
-								</p>
-							)}
-						</div>
+						{post.metadata.createdAt && (
+							<span className="text-muted-foreground shrink-0 tabular-nums text-sm">
+								{dateFormat(post.metadata.createdAt, "DD/MM/YY")}
+							</span>
+						)}
+						<h3 className="group-hover:underline group-hover:underline-offset-4 transition-all duration-200">
+							{post.metadata.title}
+						</h3>
 					</Link>
 				))}
 			</nav>

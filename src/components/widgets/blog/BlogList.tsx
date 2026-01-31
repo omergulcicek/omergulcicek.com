@@ -14,6 +14,7 @@ import { useQueryState } from "nuqs"
 import type { BlogPostType } from "@/types/blog.type"
 import type { SortOptionType } from "@/types/filter-sort-type"
 
+import { Separator } from "@/components/ui/separator"
 import {
 	Tooltip,
 	TooltipContent,
@@ -39,27 +40,27 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 	const allTags = getUniqueSortedTags(allPosts)
 
 	function PostRow({ post }: { post: BlogPostType }) {
+		const dateLabel =
+			String(post.metadata.createdAt).toLowerCase() === "soon"
+				? "hazırlanıyor..."
+				: dateFormat(post.metadata.createdAt, "DD/MM/YY")
+
 		return (
-			<div className="flex flex-col gap-1">
-				<h2 className="text-lg leading-normal font-normal text-gray-900 dark:text-white group-hover:text-black transition-colors duration-200">
-					<Link
-						href={`/blog/${post.slug}`}
-						className="cursor-pointer group relative overflow-hidden flex items-start"
-					>
-						{post.metadata.title}
-					</Link>
-				</h2>
-				<div className="flex flex-col md:flex-row items-start gap-2">
-					<span className="text-xs text-italic font-medium leading-[22px] text-muted-foreground tracking-wide whitespace-nowrap">
-						{String(post.metadata.createdAt).toLowerCase() === "soon"
-							? "hazırlanıyor..."
-							: dateFormat(post.metadata.createdAt)}
-					</span>
-					<span className="text-black/20 leading-[22px] hidden md:inline-flex">
-						•
-					</span>
-					{post.metadata.interactive && (
-						<>
+			<div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 items-start">
+				<span className="text-muted-foreground shrink-0 tabular-nums text-sm pt-0.5">
+					{dateLabel}
+				</span>
+				<div className="min-w-0">
+					<h2 className="text-lg leading-normal font-normal text-gray-900 dark:text-white transition-colors duration-200">
+						<Link
+							href={`/blog/${post.slug}`}
+							className="cursor-pointer group block group-hover:underline group-hover:underline-offset-4"
+						>
+							{post.metadata.title}
+						</Link>
+					</h2>
+					<div className="flex flex-wrap items-center gap-2 mt-1">
+						{post.metadata.interactive && (
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<span className="cursor-pointer text-xl leading-[22px]">
@@ -70,12 +71,9 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 									<p>Bu makale interaktiftir</p>
 								</TooltipContent>
 							</Tooltip>
-							<span className="text-black/20 leading-[22px] hidden md:inline-flex">
-								•
-							</span>
-						</>
-					)}
-					<TagsBadge tags={post.metadata.tags as string[]} />
+						)}
+						<TagsBadge tags={post.metadata.tags as string[]} />
+					</div>
 				</div>
 			</div>
 		)
@@ -100,11 +98,15 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 						.map(([year, posts]) => (
 							<div
 								key={year}
-								className="space-y-6 flex flex-col gap-1 items-start relative min-h-20"
+								className="my-5 flex flex-col gap-4 items-stretch"
 							>
-								<span className="text-2xl absolute font-medium top-5 -left-12 -rotate-90 text-gray-300 select-none hidden md:flex">
-									{year}
-								</span>
+								{/* <div className="flex items-center gap-3">
+									<Separator className="flex-1" />
+									<span className="text-lg text-muted-foreground shrink-0">
+										{year}
+									</span>
+									<Separator className="flex-1" />
+								</div> */}
 								<div className="flex flex-col gap-6 items-start">
 									{posts.map((post) => (
 										<PostRow key={post.slug} post={post} />

@@ -1,10 +1,12 @@
 import { Container } from "@/shared"
-import { Experience } from "@/widgets"
+import { Experience, JobSeekingBadge, Section } from "@/widgets"
 
 export default function ExperiencesPage() {
 	return (
 		<Container>
-			<Experience showAll />
+			<Section title="Deneyimler" titleAddon={<JobSeekingBadge />}>
+				<Experience showAll />
+			</Section>
 		</Container>
 	)
 }

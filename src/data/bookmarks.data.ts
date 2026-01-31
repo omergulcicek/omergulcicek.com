@@ -33,7 +33,7 @@ export const bookmarksData = [
 	},
 	{
 		title: "Kişisel",
-		description: "Edebiyat, ekonomi, medya, ingilizce vb.",
+		description: "Edebiyat, ekonomi, videolar",
 		link: "/kisisel-58170823",
 		color: "bg-rose-500",
 		bgColor:
@@ -49,7 +49,7 @@ export const bookmarksData = [
 	},
 	{
 		title: "Teknik",
-		description: "AI promptları, kod örnekleri, teknik içerikler",
+		description: "Kod, tasarım, tweetler",
 		link: "/teknik-58171314",
 		color: "bg-zinc-500",
 		bgColor:

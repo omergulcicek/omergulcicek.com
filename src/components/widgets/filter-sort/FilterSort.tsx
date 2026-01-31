@@ -81,7 +81,7 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 												tagsIconMap[tag]
 													? (() => {
 															const Icon = tagsIconMap[tag]
-															return <Icon />
+															return <Icon width={16} height={16} />
 														})()
 													: null
 											}
