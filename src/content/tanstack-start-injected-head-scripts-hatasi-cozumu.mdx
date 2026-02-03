@@ -1,0 +1,118 @@
+---
+languages: ["tr"]
+createdAt: "2026-02-03"
+slug: "/tanstack-start-injected-head-scripts-hatasi-cozumu"
+title: "TanStack Start: tanstack-start-injected-head-scripts Hatası ve Çözümü"
+category: "teknik"
+tags: ["TanStack", "TanStack Start", "Supabase", "Vite"]
+medium: "https://medium.com/@omergulcicek/tanstack-start-tanstack-start-injected-head-scripts-hatas%C4%B1-ve-%C3%A7%C3%B6z%C3%BCm%C3%BC-69de117093a0"
+---
+
+📖 **[Click here to read the English version](/blog/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error)**
+
+**Next.js** ile uzun süre çalıştıktan sonra, **type-safety** ve **streaming** odaklı modern full-stack framework'ü olan **TanStack Start** ilgimi çekti. Aslında bu geçişteki en büyük motivasyonum, daha önce **TanStack Query** ve **TanStack Table** gibi kütüphaneleri kullanmış olmamdı; bu araçların sağladığı harika geliştirici deneyimi ve başarıdan ötürü ekosistemin yeni üyesi olan Start'ı da mutlaka öğrenmek istiyordum. Uçtan uca tip güvenliği, sunucu fonksiyonları ve Vite tabanlı hızlı geliştirme döngüsü gerçekten heyecan verici. Fakat **Supabase** ile bir oyun projesi geliştirirken karşılaştığım bir hata, bana hem teknik derinlik hem de "hazır cevap" tuzağı hakkında önemli dersler verdi.
+
+## Problem Senaryosu: Sayfa Patladı, Konsol Kıpkırmızı
+
+Supabase kullanarak geliştirdiğim sayfada bir anda her şey bozuldu. Sayfa yüklenirken konsolda şu hata belirdi:
+
+```bash
+[vite]: Rollup failed to resolve import "tanstack-start-injected-head-scripts:v"
+from ".../node_modules/@tanstack/start-server-core/dist/esm/loadVirtualModule.js"
+```
+
+![tanstack-start-injected-head-scripts](/blog/2026-02-03/injected.png)
+
+Bazen **Pre-transform error** olarak da görünüyordu: `Failed to resolve import "tanstack-start-injected-head-scripts:v"`. Geliştirme ortamında bazen sessiz kalıyor, `vite build` ile production build alırken kesin şekilde patlıyordu. Hata mesajı, `@tanstack/start-server-core` içindeki sanal modül çözümlemesiyle ilgiliydi ve ilk bakışta framework veya Vite/Rollup tarafında bir bug gibi görünüyordu.
+
+## AI ile Çatışma: Halının Altına Süpürmek
+
+Sorunu çözmek için AI asistanlarına (ChatGPT, Gemini ve Cursor) danıştım. Öneriler genelde şu yöndeydi:
+
+- **Hata mesajını gizle:** `build.rollupOptions.external` veya Vite config içinde bu import'u external yap, uyarıyı kapat.
+- **Hydration / script hatalarını yok say:** "Bu tür hatalar bazen olur, suppress edebilirsin" tarzı yorumlar.
+
+Bu "çözümler" sorunu çözmek yerine **halının altına süpürmek**ti. Bir kez external / suppress yoluna girdiğimde site inanılmaz yavaşladı ve davranışlar tutarsız hale geldi. Demek ki sorun, mesajı gizlemekle değil, **kök nedeni** bulmakla çözülecekti.
+
+Bu deneyim şunu netleştirdi: **Dokümantasyonu okumak ve elle debug yapmak, AI'ın hazır cevaplarından çoğu zaman daha üstün.** AI hızlı bir başlangıç noktası sunabilir ama kök neden analizi ve mimari kararlar için yetersiz kalabiliyor.
+
+## Sorunun Asıl Kaynağı: Yanlış Context, Yanlış Instance
+
+Bu hata mesajı bazen farklı sebeplerden de çıkabilir; burada anlattığım çözüm, Supabase (veya benzeri bir client) ile server/client sınırının karıştığı senaryoya özgü.
+
+Hata mesajı "injected head scripts" ve "virtual module" diye görünse de, **asıl problem framework değildi.** Problem, **Supabase (veya Clerk vb) client'ı ile sunucu tarafı (server-side) bir sayfada aynı fonksiyonun veya client örneğinin (instance) yanlış context içinde kullanılmasıydı.**
+
+Yani:
+
+- **Server** tarafında çalışması gereken bir şey (veritabanı, Supabase admin/client) **client** bundle'ına karışıyor veya client'tan doğrudan çağrılıyordu.
+- Ya da tam tersi: client-only bir instance, sunucu render path'inde kullanılıyordu.
+
+Bu karışıklık, TanStack Start'un sanal modül ve script enjeksiyonu mekanizmasını tetikliyor; Rollup/Vite da "tanstack-start-injected-head-scripts:v" modülünü beklenen yerde bulamayınca build kırılıyordu. Yani **semptom** "injected head scripts", **kök neden** ise **server/client ayrımının ihlali** idi.
+
+### Hatalı Kullanım
+
+Aynı Supabase client örneğini veya veritabanı çağrılarını hem sunucu hem istemci tarafında kullanmak:
+
+```ts
+// ❌ Hatalı: Client ve server'da aynı instance / aynı fonksiyon
+// Bu dosya client bundle'a da giriyor, server context'i karışıyor
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+export async function getGameData(id: string) {
+  const { data } = await supabase.from("games").select("*").eq("id", id).single();
+  return data;
+}
+```
+
+Bu fonksiyon veya client, client tarafında da import edilip kullanılıyorsa (örneğin bir sayfa bileşeninde veya loader'da yanlış yerde), TanStack Start'un server/client ayrımı bozuluyor ve "injected head scripts" benzeri çözümleme hataları ortaya çıkabiliyor.
+
+## Gerçek Çözüm: Server/Client Arayüzünü Net Ayır
+
+**Client tarafında**, sunucu fonksiyonlarını veya veritabanı client'ını doğrudan import edip çağırmayın. Bunun yerine:
+
+1. **API / veritabanı işlemlerini** yalnızca **server-side** bir dosyada tanımlayın (örneğin `createServerFn` veya sadece sunucuda çalışan modüller).
+2. **Client tarafına** sadece **temiz bir arayüz** sunun: örneğin server fonksiyonlarını import edip kullanın; Supabase client'ı sadece sunucu kodunda oluşturulup kullanılsın.
+
+Böylece client bundle'a server-only kod ve Supabase instance'ı karışmaz; TanStack Start'un sanal modülleri de doğru context'te çözülür.
+
+### Doğru Kullanım
+
+```ts
+// ✅ Doğru: Sadece server tarafında çalışan modül
+// Örn: app/utils/db.server.ts veya server-only bir modül
+import { createClient } from "@supabase/supabase-js";
+
+function getSupabaseServer() {
+  return createClient(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
+
+export async function getGameData(id: string) {
+  const supabase = getSupabaseServer();
+  const { data } = await supabase.from("games").select("*").eq("id", id).single();
+  return data;
+}
+```
+
+```ts
+// ✅ Doğru: Client tarafı sadece server fonksiyonunu çağırır
+// createServerFn ile sarılı bir arayüz kullanın
+import { createServerFn } from "@tanstack/start";
+import { getGameData } from "./db.server";
+
+export const fetchGameData = createServerFn().handler(async ({ data: { id } }) => {
+  return getGameData(id);
+});
+```
+
+Client bileşenleri yalnızca `fetchGameData` gibi server fn'leri çağırır; Supabase client'ı ve `getGameData` implementasyonu yalnızca sunucuda çalışır. Bu ayrım hem `tanstack-start-injected-head-scripts` hatasını çözer hem de güvenlik ve performans açısından doğru mimariyi kurar.
+
+## Topluluk Etkisi
+
+Bu analiz ve çözümü [GitHub'daki ilgili issue (#5196)](https://github.com/TanStack/router/issues/5196) altında [yorum olarak paylaştım](https://github.com/TanStack/router/issues/5196#issuecomment-3690214286). Aynı hatayı yaşayan birçok geliştirici beğeni bıraktı. Bu da gösteriyor ki sorun sadece "config'de bir satır" değil; **server/client sınırını doğru kurmak** birçok TanStack Start + Supabase (veya benzeri backend) projesi için kritik.
+
+Özetle: **TanStack Start ile çalışırken "tanstack-start-injected-head-scripts" benzeri hatalar gördüğünüzde, önce server ve client tarafında hangi instance'ın nerede kullanıldığını kontrol edin.** Supabase (veya başka bir client) yalnızca sunucu tarafında kullanılmalı, client'a sadece server fonksiyonları üzerinden temiz bir arayüz sunulmalı. Bu hem hatayı çözer hem de mimarinizi sağlamlaştırır.

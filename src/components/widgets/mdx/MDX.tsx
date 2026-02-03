@@ -38,6 +38,7 @@ import {
 	ImagesCarousel,
 	LinksReview,
 	MediaInfo,
+	MdxTable,
 	PickerIcon,
 	Rating,
 	SiblingIndex,
@@ -70,6 +71,7 @@ const components = {
 	SiblingIndex,
 	Stretch,
 	TextBox,
+	MdxTable,
 
 	pre: ({ children, ...props }: PreProps) => {
 		const getCodeContent = (children: React.ReactNode): string => {

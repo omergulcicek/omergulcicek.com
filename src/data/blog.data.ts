@@ -5,10 +5,9 @@ import matter from "gray-matter"
 
 import type { BlogPostType } from "@/types/blog.type"
 
-// Simple memoization for blog posts
 let cachedPosts: BlogPostType[] | null = null
 let cacheTimestamp: number = 0
-const CACHE_DURATION = 3600000 // 1 hour in milliseconds
+const CACHE_DURATION = process.env.NODE_ENV === "development" ? 0 : 3600000
 
 function parseFrontmatter(fileContent: string) {
 	const file = matter(fileContent)
@@ -62,17 +61,17 @@ const getAllPostsUncached = (): BlogPostType[] => {
 
 export function getAllPosts(): BlogPostType[] {
 	const now = Date.now()
-	
+
 	// Return cached data if still valid
 	if (cachedPosts && now - cacheTimestamp < CACHE_DURATION) {
 		return cachedPosts
 	}
-	
+
 	// Fetch fresh data and cache it
 	const posts = getAllPostsUncached()
 	cachedPosts = posts
 	cacheTimestamp = now
-	
+
 	return posts
 }
 

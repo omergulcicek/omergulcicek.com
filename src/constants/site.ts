@@ -4,7 +4,7 @@ export const SITE = {
 	name: "Ömer Gülçiçek",
 	title: "Ömer Gülçiçek",
 	description:
-		"Ömer Gülçiçek — Senior Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler geliştiriyorum; blog yazıları ve projelerimi paylaşıyorum.",
+		"Ömer Gülçiçek - Senior Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler geliştiriyorum; blog yazıları ve projelerimi paylaşıyorum.",
 	keywords: [
 		"frontend",
 		"frontend developer",

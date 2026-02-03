@@ -8,7 +8,7 @@ import type {
 	FilterSortPropsType,
 	SortOptionType
 } from "@/types/filter-sort-type"
-import { tagsIconMap, techTags } from "@/constants"
+import { librariesAndTools, mainStack, tagsIconMap } from "@/constants"
 
 import {
 	Select,
@@ -37,17 +37,28 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 	const tagValue = tagState ?? currentTag ?? undefined
 	const tagSelectValue = tagValue ?? "__all__"
 
-	const { tech, others } = useMemo(() => {
+	const { vitrin, librariesAndToolsList, others } = useMemo(() => {
 		const unique = Array.from(new Set(tags)).filter(Boolean)
 
-		const techSet = new Set(techTags)
-		const techList = unique.filter((t) => techSet.has(t))
-		const othersList = unique.filter((t) => !techSet.has(t))
+		const mainStackSet = new Set(mainStack)
+		const librariesSet = new Set(librariesAndTools)
+		const vitrinList = unique.filter((t) => mainStackSet.has(t))
+		const librariesList = unique.filter((t) => librariesSet.has(t))
+		const othersList = unique.filter(
+			(t) => !mainStackSet.has(t) && !librariesSet.has(t)
+		)
 
-		techList.sort((a, b) => techTags.indexOf(a) - techTags.indexOf(b))
+		vitrinList.sort((a, b) => mainStack.indexOf(a) - mainStack.indexOf(b))
+		librariesList.sort(
+			(a, b) => librariesAndTools.indexOf(a) - librariesAndTools.indexOf(b)
+		)
 		othersList.sort((a, b) => a.localeCompare(b))
 
-		return { tech: techList, others: othersList }
+		return {
+			vitrin: vitrinList,
+			librariesAndToolsList: librariesList,
+			others: othersList
+		}
 	}, [tags])
 
 	const sortSelectValue = (sortValue ?? "default") as string
@@ -71,10 +82,31 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 							<SelectLabel>Genel</SelectLabel>
 							<SelectItem value="__all__">Tümü</SelectItem>
 						</SelectGroup>
-						{tech.length > 0 && (
+						{vitrin.length > 0 && (
 							<SelectGroup>
-								<SelectLabel>Teknolojiler</SelectLabel>
-								{tech.map((tag) => (
+								<SelectLabel>Vitrin</SelectLabel>
+								{vitrin.map((tag) => (
+									<SelectItem key={tag} value={tag}>
+										<IconBadge
+											icon={
+												tagsIconMap[tag]
+													? (() => {
+															const Icon = tagsIconMap[tag]
+															return <Icon width={16} height={16} />
+														})()
+													: null
+											}
+											label={tag}
+											simple
+										/>
+									</SelectItem>
+								))}
+							</SelectGroup>
+						)}
+						{librariesAndToolsList.length > 0 && (
+							<SelectGroup>
+								<SelectLabel>Kütüphane & Araçlar</SelectLabel>
+								{librariesAndToolsList.map((tag) => (
 									<SelectItem key={tag} value={tag}>
 										<IconBadge
 											icon={
@@ -102,7 +134,7 @@ export function FilterSort({ tags, currentTag }: FilterSortPropsType) {
 												tagsIconMap[tag]
 													? (() => {
 															const Icon = tagsIconMap[tag]
-															return <Icon />
+															return <Icon width={16} height={16} />
 														})()
 													: null
 											}

@@ -1,0 +1,118 @@
+---
+languages: ["en"]
+createdAt: "2026-02-03"
+slug: "/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error"
+title: "TanStack Start: Resolving the tanstack-start-injected-head-scripts Error"
+category: "teknik"
+tags: ["TanStack", "TanStack Start", "Supabase", "Vite"]
+medium: "https://medium.com/@omergulcicek/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error-c1eecbf31735"
+---
+
+📖 **[Türkçe versiyonu okumak için tıklayın](/blog/tanstack-start-injected-head-scripts-hatasi-cozumu)**
+
+After working with **Next.js** for a long time, **TanStack Start**-the modern full-stack framework focused on **type-safety** and **streaming**-caught my attention. My main motivation for this shift was having already used libraries like **TanStack Query** and **TanStack Table**; the great developer experience and success of these tools made me want to learn Start, the ecosystem’s new member. End-to-end type safety, server functions, and a Vite-based fast development cycle are genuinely exciting. However, an error I ran into while building a game project with **Supabase** taught me important lessons about both technical depth and the "quick fix" trap.
+
+## Problem Scenario: The Application Crashed, Console on Fire
+
+The application suddenly crashed on a page I was building with Supabase. When the page loaded, this error appeared in the console:
+
+```bash
+[vite]: Rollup failed to resolve import "tanstack-start-injected-head-scripts:v"
+from ".../node_modules/@tanstack/start-server-core/dist/esm/loadVirtualModule.js"
+```
+
+![tanstack-start-injected-head-scripts](/blog/2026-02-03/injected.png)
+
+Sometimes it showed up as a **Pre-transform error** as well: `Failed to resolve import "tanstack-start-injected-head-scripts:v"`. It would fail intermittently in development, but it would consistently fail when running `vite build` for production. The message pointed to virtual module resolution inside `@tanstack/start-server-core`, and at first glance it looked like a framework or Vite/Rollup bug.
+
+## Clashing with AI: Sweeping It Under the Rug
+
+To fix it, I consulted AI assistants (ChatGPT, Gemini, and Cursor). The suggestions usually went like this:
+
+- **Hide the error:** Mark this import as external in `build.rollupOptions.external` or in the Vite config, silence the warning.
+- **Ignore hydration/script errors:** "These kinds of errors happen sometimes, you can suppress them."
+
+Those superficial fixes were **sweeping the problem under the rug**. Once I went down the external/suppress path, the site became noticeably slower and behavior got inconsistent. So the fix was not to hide the message but to **find the root cause**.
+
+This experience made one thing clear: **Reading the docs and debugging by hand often beats generic AI suggestions.** AI can give a fast starting point, but it often falls short for root-cause analysis and architectural decisions.
+
+## The Real Source: Wrong Context, Wrong Instance
+
+This error can appear for different reasons; the solution described here applies to the scenario where the **server/client boundary** gets blurred with Supabase (or a similar client).
+
+Even though the message talks about "injected head scripts" and "virtual module," **the real problem was not the framework.** The problem was **using the same Supabase (or Clerk, etc.) client or function in the wrong context**-e.g. on a server-side page or in a place where server and client usage were mixed.
+
+In other words:
+
+- Something that should run only on the **server** (database, Supabase admin/client) was ending up in the **client** bundle or being called directly from the client.
+- Or the opposite: a client-only instance was used in the server render path.
+
+That confusion triggers TanStack Start’s virtual module and script injection; Rollup/Vite then couldn’t resolve the `"tanstack-start-injected-head-scripts:v"` module where it expected it, so the build failed. So the **symptom** was "injected head scripts," but the **root cause** was **violating the server/client boundary**.
+
+### Incorrect Usage
+
+Using the same Supabase client instance or database calls on both server and client:
+
+```ts
+// ❌ Wrong: Same instance / same function on client and server
+// This file gets pulled into the client bundle, server context gets mixed in
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+export async function getGameData(id: string) {
+  const { data } = await supabase.from("games").select("*").eq("id", id).single();
+  return data;
+}
+```
+
+If this function or client is also imported and used on the client (e.g. in a page component or in a loader in the wrong place), TanStack Start’s server/client separation breaks and you get resolution errors like "injected head scripts."
+
+## The Real Fix: Keep the Server/Client Boundary Clear
+
+On the **client**, do not import and call server-only code or the database client directly. Instead:
+
+1. Define **API / database logic** only in **server-side** code (e.g. `createServerFn` or modules that run only on the server).
+2. Expose a **clean interface** to the client: e.g. call server functions from the client; create and use the Supabase client only in server code.
+
+That way, server-only code and the Supabase instance stay out of the client bundle, and TanStack Start’s virtual modules resolve in the right context.
+
+### Correct Usage
+
+```ts
+// ✅ Correct: Module that runs only on the server
+// e.g. app/utils/db.server.ts or a server-only module
+import { createClient } from "@supabase/supabase-js";
+
+function getSupabaseServer() {
+  return createClient(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
+
+export async function getGameData(id: string) {
+  const supabase = getSupabaseServer();
+  const { data } = await supabase.from("games").select("*").eq("id", id).single();
+  return data;
+}
+```
+
+```ts
+// ✅ Correct: Client only calls the server function
+// Use an interface wrapped with createServerFn
+import { createServerFn } from "@tanstack/start";
+import { getGameData } from "./db.server";
+
+export const fetchGameData = createServerFn().handler(async ({ data: { id } }) => {
+  return getGameData(id);
+});
+```
+
+Client components only call server functions like `fetchGameData`; the Supabase client and `getGameData` implementation run only on the server. This separation both fixes the `tanstack-start-injected-head-scripts` error and establishes the right architecture for security and performance.
+
+## Community Impact
+
+I shared this analysis and solution as a [comment on the related GitHub issue (#5196)](https://github.com/TanStack/router/issues/5196#issuecomment-3690214286). Many developers who hit the same error left positive feedback. That shows the issue isn’t just "one line in the config"-**setting up the server/client boundary correctly** is critical for many TanStack Start + Supabase (or similar backend) projects.
+
+In short: **When you see "tanstack-start-injected-head-scripts"-style errors with TanStack Start, first check which instance is used where on the server and client.** Supabase (or any similar client) should be used only on the server; expose a clean interface to the client via server functions. That fixes the error and strengthens your architecture.

@@ -1,0 +1,123 @@
+---
+languages: ["tr"]
+createdAt: "2026-02-01"
+slug: "/react-state-yonetim-mimarisi"
+title: "React State Yönetim Mimarisi"
+category: "teknik"
+tags: ["React", "Redux", "Zustand", "TanStack Query"]
+medium: "https://medium.com/@omergulcicek/react-state-y%C3%B6netim-mimarisi-cec5ad6043fb"
+---
+
+State yönetimi tartışmaları genellikle "Hangi kütüphaneyi kullanmalıyım?" sorusuyla başlar. Oysa asıl soru şudur: **Yönettiğim state'in doğası ne?** Bu soruya net bir yanıt vermeden seçilen araçlar, mimariyi geliştirmek yerine sadece karmaşıklığı artırır. Üst düzey bir state stratejisi oluşturmak için önce state'in türünü tanımlamak, ardından React'ın yerleşik çözümlerini değerlendirmek, abonelik (subscription) mekanizmalarını anlamak ve araçları en son aşamada birer optimizasyon katmanı olarak konumlandırmak gerekir.
+
+## 1. Temel Yapı: State'in Doğası
+
+Mimari kararların temelini şu sınıflandırma oluşturur:
+
+- **UI state:** Yalnızca arayüz etkileşimlerini yöneten stateler (modal açma/kapama, dropdown, form alanları, akordiyon). Kapsamı genellikle tek bir bileşen veya dar bir alt ağaçla sınırlıdır.
+- **Server Cache:** Aslında sunucuda yer alan ancak istemcide hızlı erişim için tutulan verilerdir. Kullanıcı profili, veri listeleri veya API yanıtları bu kapsama girer. Bu bir "state" değil, **cache**'tir; veri geçersiz kılma (invalidation), yeniden çekme (refetch) ve "stale-while-revalidate" gibi problemler state kütüphanelerinin değil, cache katmanının uzmanlık alanıdır.
+- **İş Akışı / Domain State:** Kritik iş süreçleri (taslak → gönderildi → tamamlandı), çok adımlı akışlar ve zaman içinde izlenmesi/hata ayıklanması (debug) gereken state geçişleridir.
+- **Yüksek Frekanslı Etkileşimler:** Sürüklenebilir arayüzler, gerçek zamanlı grafikler veya çok sayıda widget içeren paneller. Burada asıl mesele sadece verinin nerede durduğu değil, "kimin hangi veriye abone olduğu ve render sıklığı"dır.
+
+![React Prop](/blog/2026-02-01/passing-props.png)
+
+Bu dört kategoriyi netleştirmeden "global store" kullanmaya veya "her şeyi Context'e taşımaya" karar vermek aceleci bir yaklaşımdır. Önce state türünü belirleyin; araç seçimi bu karardan sonra kendiliğinden şekillenecektir.
+
+## 2. Varsayılan Yaklaşım: React ve Colocation
+
+React, özünde bir state yönetim aracıdır. Bileşen ağacınızı `<App />`'dan `<input />`'a kadar hiyerarşik bir yapıda kurguluyorsanız, state'i de bu yapıya uygun şekilde **yerel (local)** tutmak ve **colocation** (bir arada konumlandırma) prensibine sadık kalmak temel stratejiniz olmalıdır.
+
+- **Öncelik yerel state'tedir:** Modal state'i, form değerleri veya bir bileşenin geçici verileri tek bir noktada kalmalıdır; paylaşım ihtiyacı olmayan verileri global store'a taşımak gereksiz karmaşıklığa (over-engineering) yol açar.
+- **Paylaşım gerekiyorsa:** React dokümanlarındaki **Lifting State Up** (state'i yukarı taşıma) yöntemi genellikle yeterlidir. State'i, veriyi hem okuyacak hem de güncelleyecek bileşenlerin ortak üst bileşenine konumlandırın.
+- **Prop drilling yönetimi:** Prop geçişleri sizi rahatsız etmeye başladığında ilk savunma hattınız **bileşen kompozisyonu (component composition)** olmalıdır. State'e ihtiyaç duyan bileşenleri, state sahibi bileşene `children` veya slot olarak geçerek ara bileşenleri bu yükten kurtarabilirsiniz. Bu yetmezse **Context** devreye girer. Context'in temel amacı "tüm uygulama state'ini" yönetmek değil, prop drilling'i çözmektir. Context'e çok erken başvurmak, basit prop geçişlerinden daha maliyetli olabilir. **Sık değişen, çok sayıda abonesi olan ve sadece belirli bir parçası kullanılan state'ler Context için uygun adaylar değildir.**
+- **Server cache state değildir:** Sunucudaki veriyi "global state" gibi yönetmek mimari hatalara yol açar. Cache invalidation (geçersiz kılma), refetch (yeniden çekme) ve optimistic update (iyimser güncelleme) gibi ihtiyaçlar için **TanStack Query** kullanmak, state kütüphane seçiminden daha doğru bir adımdır. 2026 itibarıyla sunucu verisi yönetiminde TanStack Query kullanımı standartlaşmıştır.
+
+![React Context](/blog/2026-02-01/context.png)
+
+Özetle: **Önce React'ın yerleşik imkanlarını kullanın.** `useState`, `useReducer`, `Lifting State Up`, kompozisyon ve `Context` ile birçok uygulama rahatça yönetilebilir. Global bir store, ancak "state türü" ve "abonelik/performans ihtiyaçları" bu varsayılan sınırları zorladığında gündeme gelmelidir.
+
+## 3. Kırılma Noktası: Abonelik ve Render Performansı
+
+Yerel state ve Context ile mimariyi doğru kurgulasanız bile, bazen arayüz yavaşlayabilir veya gereksiz render sayıları artabilir. Bu aşamada sorun genellikle mimariden ziyade **abonelik (subscription) yönetimidir.**
+
+Sık karşılaşılan iki temel belirti şunlardır:
+
+1.  **Veri değişiyor ancak arayüz güncellenmiyor:** Bu state genellikle veri akışındaki bir kopukluğa veya React’ın değişikliği fark edemediği bir abonelik hatasına işaret eder.
+2.  **İlgili veri değişmediği halde arayüz yeniden render ediliyor:** Bunun nedeni, bileşenlerin çok geniş bir state bloğuna (örneğin tüm Context objesine) abone olması veya her render döngüsünde yeni bir referans üreten bir değere bağlı kalmasıdır. Sonuç; gereksiz re-render'lar ve performans kaybıdır.
+
+Bu yüzden "Global state nerede durmalı?" sorusunun yanına, **"Kim, hangi veriye abone? Değişmeyen bir veri, referans hatası yüzünden mi render tetikliyor?"** sorusu eklenmelidir. Context içerisinde tek bir büyük obje kullanıyorsanız, o objenin herhangi bir alanı değiştiğinde Context’i tüketen **tüm** bileşenler yeniden render olur. 
+
+Çözüm; **selector tabanlı abonelik** kullanmak veya state'i mantıksal parçalara bölerek ayrı Provider'lar oluşturmaktır. Kısacası, granülerlik ve abonelik tasarımı, kütüphane seçiminden çok daha kritik bir karardır. Aynı mantık hata ayıklama (debug) süreçleri için de geçerlidir: Değişikliklerin nasıl izleneceği ve büyük ekiplerde öngörülebilir güncelleme desenleri, doğrudan seçtiğiniz abonelik ve aksiyon modeliyle şekillenir.
+
+## 4. Araçlar: Optimizasyon Katmanı
+
+Araç seçimi, bu felsefenin bir uzantısıdır: Önce state türünü belirleyin, React’ın yerleşik çözümlerini değerlendirin ve abonelik ihtiyaçlarını analiz edin. Ancak bu aşamalardan sonra "hangi kütüphane?" sorusuna yanıt arayın. Aşağıdaki tablo, state **türüne** ve **ihtiyaçlarınıza** göre bir yol haritası sunar; unutmayın ki tek bir "en iyi" seçenek yoktur.
+
+<MdxTable
+	headers={["State Türü", "Önerilen Yaklaşım", "Kullanım Senaryosu / Not"]}
+	rows={[
+		[
+			<strong>Basit UI</strong>,
+			"useState / useReducer",
+			"Formlar, widget'lar veya tek bileşenlik state'ler; harici store gereksizdir."
+		],
+		[
+			<strong>Uygulama Geneli (Ambient)</strong>,
+			"Context",
+			"Tema, dil seçimi veya auth; nadiren değişir. Provider değeri mutlaka memoize edilmelidir."
+		],
+		[
+			<strong>Global UI</strong>,
+			"Zustand",
+			"Filtreler ve paylaşılan arayüz state'leri. Selector desteğiyle performanslı, düşük boilerplate."
+		],
+		[
+			<strong>Kompleks İş Akışları</strong>,
+			"Redux Toolkit",
+			"Event log, zaman yolculuğu (time travel) ve büyük ekipler için standart pattern'ler."
+		],
+		[
+			<strong>Atomik / Türetilmiş State</strong>,
+			"Jotai",
+			"Birçok küçük birimden oluşan ve birbirine bağlı türetilmiş değerler için idealdir."
+		],
+		[
+			<strong>Yüksek Etkileşimli Domain</strong>,
+			"MobX / Valtio",
+			"Sürüklenebilir paneller veya karmaşık editörler; Proxy tabanlı reaktif güncellemeler sağlar."
+		]
+	]}
+/>
+
+Küçük ve orta ölçekli projelerde en verimli kombinasyon genellikle şudur: **Yerel state + Context (ambient) + TanStack Query (server cache) + Zustand (global UI)**. Bu yapı, "önce React'ı tüket" felsefesine sadık kalırken performans ve ölçeklenebilirlik ihtiyaçlarını da karşılar.
+
+## Sonuç: Stratejik Yaklaşım ve Pratik Uygulama
+
+React'ta state yönetimi, sadece popüler bir kütüphaneyi seçmek değil; verinin doğasını anlayıp onu doğru katmanda konumlandırma sürecidir. Modern projelerde en yüksek verimi sağlayan standart yaklaşım; sunucu verilerini **TanStack Query** ile, global UI state'lerini ise **Zustand** ile yönetmektir. Bu ikili, React'ın yerleşik yetenekleriyle (useState, Context, composition) birleştiğinde hem esnek hem de yüksek performanslı bir mimari sunar.
+
+Sürdürülebilir bir yapı için şu hiyerarşiyi takip etmek kritik önem taşır:
+1. **State'in Doğasını Belirleyin:** Verinin türünü (UI, sunucu, iş akışı) netleştirin.
+2. **React'ı Varsayılan Kabul Edin:** useState, Lifting State Up ve bileşen kompozisyonunu sonuna kadar kullanın.
+3. **Abonelik Maliyetini Yönetin:** Sadece ilgili verinin render tetiklediğinden emin olun; gerekirse selector yapısına geçin.
+4. **Doğru Aracı Seçin:**
+* **Veri API'den geliyorsa:** [TanStack Query](https://tanstack.com/query/latest).
+* **Global ve nadir değişen ayarlar** (tema, dil, auth) ise: [Context API](https://react.dev/learn/passing-data-deeply-with-context).
+* **Sık değişen veya paylaşılan UI state'leri** ise: [Zustand](https://zustand.docs.pmnd.rs/).
+* **Bileşene özel, geçici state'ler** (form, modal) ise: [useState](https://react.dev/reference/react/useState) / [useReducer](https://react.dev/reference/react/useReducer).
+
+Bu stratejik sıralamayı takip ettiğinizde, projeniz ne kadar büyürse büyüsün kontrol edilebilir ve performanslı bir mimariyi koruyabilirsiniz.
+
+## Nizam Boilerplate
+
+Bu makalede bahsettiğim **"doğru state, doğru araç"** felsefesini ve modern Next.js mimarisini temel alan, kendi geliştirdiğim boilerplate projesine göz atabilirsiniz:
+
+**[Nizam](https://github.com/omergulcicek/nizam)**: Next.js projeleri için standartları belirlenmiş, ölçeklenebilir ve nizamlı bir başlangıç kiti.
+
+State yönetiminden dosya yapısına kadar, en iyi pratiklerin (best practices) kodlanmış halini incelemek ve projelerinizde kullanmak isterseniz GitHub üzerinden yıldızlayarak destek olabilirsiniz ⭐.
+
+---
+
+## Kaynaklar
+
+1. [Choosing the Right State Strategy in React](https://jsdev.space/react-state-management/) - JavaScript Development Space  
+2. [Application State Management with React](https://kentcdodds.com/blog/application-state-management-with-react) - Kent C. Dodds
