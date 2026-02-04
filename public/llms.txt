@@ -1,6 +1,6 @@
 # omergulcicek.com
 
-> Personal website and blog of Ömer Gülçiçek, Senior Frontend Engineer. React, Next.js, TypeScript, and modern web development. Technical articles (Turkish), project showcases, experience timeline, and bookmarks. Built with Next.js 16, MDX, Tailwind CSS, and shadcn/ui.
+> Personal website and blog of Omer Gulcicek, Senior Frontend Engineer. React, Next.js, TypeScript, and modern web development. Technical articles (Turkish), project showcases, experience timeline, and bookmarks. Built with Next.js 16, MDX, Tailwind CSS, and shadcn/ui.
 
 Site sections: Home (/), Blog (/blog), Experiences (/experiences), Projects (/projects), Bookmarks (/bookmarks), About (/about). Blog posts are in Turkish unless stated otherwise. Primary topics: React, Next.js, CSS, frontend architecture, state management, TanStack, form validation, accessibility, and developer tooling.
 
@@ -11,35 +11,35 @@ Site sections: Home (/), Blog (/blog), Experiences (/experiences), Projects (/pr
 - [Projects](https://omergulcicek.com/projects): Open source and side projects
 - [Bookmarks](https://omergulcicek.com/bookmarks): Curated links and resources
 
-## Blog – Technical (React, Next.js, Frontend)
+## Blog - Technical (React, Next.js, Frontend)
 
-- [Makineler İçin Dokümantasyon: llms.txt ile AI-Native Dönemi](https://omergulcicek.com/blog/makineler-icin-dokumantasyon-llms-txt-ai-native): llms.txt standard and AI-friendly documentation
-- [React State Yönetim Mimarisi](https://omergulcicek.com/blog/react-state-yonetim-mimarisi): React state management architecture
-- [Next.js 16: Turbopack, Cache Components ve Yeni Mimari Dönemi](https://omergulcicek.com/blog/nextjs-16-turbopack-cache-components-ve-yeni-mimari-donemi): Next.js 16 and new architecture
+- [Documentation for Machines: llms.txt and the AI-Native Era](https://omergulcicek.com/blog/makineler-icin-dokumantasyon-llms-txt-ai-native): llms.txt standard and AI-friendly documentation
+- [React State Management Architecture](https://omergulcicek.com/blog/react-state-yonetim-mimarisi): React state management architecture
+- [Next.js 16: Turbopack, Cache Components and the New Architecture Era](https://omergulcicek.com/blog/nextjs-16-turbopack-cache-components-ve-yeni-mimari-donemi): Next.js 16 and new architecture
 - [TanStack Start: Resolving the tanstack-start-injected-head-scripts Error](https://omergulcicek.com/blog/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error): TanStack Start troubleshooting
-- [React 19 ile Gelen Yenilik: useOptimistic Hook Kullanımı](https://omergulcicek.com/blog/react-19-ile-gelen-yenilik-use-optimistic-hook-kullanimi): useOptimistic hook in React 19
-- [2026 için React ve AI Stack'i](https://omergulcicek.com/blog/react-ai-stack-2026): React and AI stack for 2026
-- [Frontend'in Parlayan Yıldızı: shadcn/ui ile Tanışın](https://omergulcicek.com/blog/frontendin-parlayan-yildizi-shadcn-ui-ile-tanisin): Introduction to shadcn/ui
+- [React 19: Using the useOptimistic Hook](https://omergulcicek.com/blog/react-19-ile-gelen-yenilik-use-optimistic-hook-kullanimi): useOptimistic hook in React 19
+- [React and AI Stack for 2026](https://omergulcicek.com/blog/react-ai-stack-2026): React and AI stack for 2026
+- [Frontend's Rising Star: Meet shadcn/ui](https://omergulcicek.com/blog/frontendin-parlayan-yildizi-shadcn-ui-ile-tanisin): Introduction to shadcn/ui
 - [Nizam - Next.js 16 Boilerplate](https://omergulcicek.com/blog/nizam-nextjs-16-boilerplate): Next.js 16 boilerplate project
-- [React Hook Form İçin Akıllı Mask ve Doğrulama](https://omergulcicek.com/blog/react-hook-form-icin-akilli-mask-ve-dogrulama): Form masking and validation with React Hook Form
+- [Smart Mask and Validation for React Hook Form](https://omergulcicek.com/blog/react-hook-form-icin-akilli-mask-ve-dogrulama): Form masking and validation with React Hook Form
 
-## Blog – CSS & Styling
+## Blog - CSS & Styling
 
-- [2026'da Hayatımıza Girecek Yeni CSS Özellikleri](https://omergulcicek.com/blog/2026da-hayatimiza-girecek-yeni-css-ozellikleri): New CSS features in 2026
-- [CSS Container Sorguları](https://omergulcicek.com/blog/css-container-sorgulari): CSS container queries
-- [CSS Mantıksal Özellikler](https://omergulcicek.com/blog/css-mantiksal-ozellikler): CSS logical properties
+- [New CSS Features Coming in 2026](https://omergulcicek.com/blog/2026da-hayatimiza-girecek-yeni-css-ozellikleri): New CSS features in 2026
+- [CSS Container Queries](https://omergulcicek.com/blog/css-container-sorgulari): CSS container queries
+- [CSS Logical Properties](https://omergulcicek.com/blog/css-mantiksal-ozellikler): CSS logical properties
 - [Tailwind CSS v4](https://omergulcicek.com/blog/tailwind-css-v4): Tailwind CSS v4 overview
 
-## Blog – Career & Environment
+## Blog - Career & Environment
 
-- [2025 Yılında Frontend Developer Olmak](https://omergulcicek.com/blog/2025-yilinda-frontend-developer-olmak): Frontend development in 2025
-- [Frontend Çalışma Ortamım: Cursor, Eklentiler](https://omergulcicek.com/blog/frontend-calisma-ortamim-cursor-eklentiler): Cursor and dev environment
-- [Kaliteli Yazılımcı Nasıl Olunur?](https://omergulcicek.com/blog/kateliteli-yazilimci-nasil-olunur): Software quality and practices
+- [Being a Frontend Developer in 2025](https://omergulcicek.com/blog/2025-yilinda-frontend-developer-olmak): Frontend development in 2025
+- [My Frontend Setup: Cursor, Extensions](https://omergulcicek.com/blog/frontend-calisma-ortamim-cursor-eklentiler): Cursor and dev environment
+- [How to Become a Quality Software Developer?](https://omergulcicek.com/blog/kateliteli-yazilimci-nasil-olunur): Software quality and practices
 
 ## Optional
 
 - [Blog index](https://omergulcicek.com/blog): Full list of all blog posts
-- [AI Çağında Frontend Bitti mi?](https://omergulcicek.com/blog/ai-caginda-frontend-bitti-mi)
-- [React Virtualization: Büyük Verilerin Ekranda Verimli Gösterimi](https://omergulcicek.com/blog/react-virtualization-buyuk-verilerin-ekranda-verimli-gosterimi)
-- [Yıllık değerlendirme ve hedef yazıları](https://omergulcicek.com/blog): See blog index for 2019–2026 reviews and goals
+- [Is Frontend Over in the AI Era?](https://omergulcicek.com/blog/ai-caginda-frontend-bitti-mi)
+- [React Virtualization: Efficient On-Screen Display of Large Data](https://omergulcicek.com/blog/react-virtualization-buyuk-verilerin-ekranda-verimli-gosterimi)
+- [Annual reviews and goal posts](https://omergulcicek.com/blog): See blog index for 2019-2026 reviews and goals
 - [Repository](https://github.com/omergulcicek/omergulcicek.com): Source code of this site

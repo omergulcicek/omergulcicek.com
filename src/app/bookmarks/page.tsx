@@ -23,7 +23,7 @@ export default function Bookmarks() {
 						</Link>
 						'da saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı,
 						okuduğum makaleleri, günlük takip ettiğim blogları, teknik
-						içerikleri ve kullandığım uygulama–eklentileri burada tutuyorum.
+						içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.
 					</p>
 				</Section>
 			</Container>
