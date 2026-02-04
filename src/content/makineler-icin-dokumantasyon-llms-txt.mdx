@@ -1,0 +1,78 @@
+---
+languages: ["tr"]
+createdAt: "2026-02-04"
+slug: "/makineler-icin-dokumantasyon-llms-txt"
+title: "Makineler İçin Dokümantasyon: llms.txt"
+category: "teknik"
+tags: ["Yapay Zekâ"]
+---
+
+🇬🇧 **[Click to read the English version](/blog/documentation-for-machines-llms-txt)**
+
+Web dünyasında uzun süredir iki ana kitleye içerik üretiyoruz: **İnsanlar** ve **Arama Motorları**. İnsanlar için şık tasarımlar ve navigasyon menüleri; Google botları içinse `robots.txt` ve `sitemap.xml` dosyaları hazırladık. Artık üçüncü bir kitlemiz var: **Yapay Zeka Ajanları.**
+
+![Makineler İçin Dokümantasyon: llms.txt](/blog/2026-02-04/llms.png)
+
+Cursor, Windsurf, Perplexity veya ChatGPT... Bu araçlar projenizi ziyaret ettiğinde karşılarına çıkan karmaşık HTML yapısı ve "gürültülü" içerikler, onların verimini düşürüyor. İşte tam bu noktada, makineler için yeni bir standart doğuyor: **llms.txt**.
+
+## Neden Geleneksel Dokümantasyon Yetmiyor?
+
+Geleneksel web sayfaları; reklamlar, JavaScript etkileşimleri ve iç içe geçmiş HTML etiketleriyle doludur. Bir AI ajanı bu sayfayı okumaya çalıştığında, sınırlı olan **bağlam penceresini (context window)** bu gereksiz "gürültü" ile doldurur.
+
+AI modelleri için en büyük darboğaz **Semantik Belirsizlik**tir. Model, navigasyon menüsündeki bir link ile projenizin temel fonksiyonunu anlatan metni aynı ağırlıkta görebilir. Bu da hatalı kod üretimine veya yanlış yönlendirmelere yol açar.
+
+## llms.txt Nedir?
+
+`llms.txt`, projenizin kök dizinine yerleştirilen, AI modellerinin en iyi anladığı format olan **Markdown** ile yazılmış bir rehber dosyasıdır.
+
+Analojiyi şöyle kurabiliriz:
+
+* **Robots.txt:** Nereye girmemelisin? *(Erişim)*
+* **Sitemap.xml:** Neler var? *(Keşif)*
+* **llms.txt:** Bunu nasıl anlamalısın? *(Rehberlik)*
+
+### Yapısal Standartlar
+
+Mükemmel bir `llms.txt` dosyası şu hiyerarşiyi izler:
+
+1. **H1 Başlığı:** Projenin adı (Tek zorunlu alan).
+2. **Özet Blokları (`>`):** Projenin amacını anlatan rafine bir manifesto.
+3. **Hiyerarşik Dizinleme (H2):** Kritik dokümanların Markdown bağlantıları.
+4. **Optional Bölümü:** Sadece derinlemesine analiz gerektiğinde AI'ın bakacağı ikincil bilgiler.
+
+## Stratejik İkili: llms.txt ve llms-full.txt
+
+Karmaşık projelerde tek bir dosya yeterli olmayabilir. Standart burada iki katman sunar:
+
+* **llms.txt (Özet/Harita):** AI ajanı için bir "İçindekiler" sayfasıdır. Hangi dokümana bakması gerektiğini seçmesine yardımcı olur.
+* **llms-full.txt (Tam İçerik):** Tüm dokümantasyonun tek bir Markdown dosyasında birleştirilmiş halidir. Geniş bağlam pencereli modeller (Gemini 1.5 Pro, Claude 3.5 Sonnet) için "sıfır gecikmeli" bir referans kaynağı sunar.
+
+## LLMO: Yapay Zeka İçin SEO
+
+Gelecekte projelerimizin başarısı, yapay zekanın bizi ne kadar iyi anladığına bağlı olacak. **LLMO (Large Language Model Optimization)** dediğimiz bu yeni disiplinde `llms.txt`, projenizin AI yanıtlarında doğru temsil edilmesini ve atıf almasını sağlar.
+
+Markdown formatına geçerek HTML'deki "token vergisini" (token tax) ortadan kaldırıyoruz. Bu, **%90'a varan token tasarrufu** ve AI'ın bağlamı **10 kat daha hızlı** anlaması demektir. Biz buna "Agresif Sıkıştırma" diyoruz; veriyi değil, gürültüyü sıkıştırıyoruz.
+
+## llms.txt Örnekleri
+
+Popüler projelerin `llms.txt` uygulamalarını aşağıdaki linkler üzerinden inceleyebilirsiniz.
+
+- [React - llms.txt](https://react.dev/llms.txt)
+- [Next.js - llms.txt](https://nextjs.org/llms.txt)
+- [TanStack - llms.txt](https://tanstack.com/llms.txt)
+- [shadcn/ui - llms.txt](https://ui.shadcn.com/llms.txt)
+
+### Nizam - Next.js 16 Boilerplate
+
+Modern geliştirme standartlarını bir araya getirdiğim Nizam boilerplate projesinde, `llms.txt` yapısını mimarinin merkezine konumlandırdım. `/public` dizini altında sunulan bu rehber, yapay zeka ajanlarının projeyi saniyeler içinde analiz etmesine olanak tanıyor.
+
+Bu yapı sayesinde yapay zeka; projenin klasör hiyerarşisini tahmin etmeye çalışmak yerine mimari tercihleri, kullanılan kütüphaneleri ve veri akış şemalarını doğrudan "birinci ağızdan" öğreniyor. `llms.txt` kullanmak, bir projeye sadece dosya eklemekten ziyade; geliştirme sürecinde insan ve yapay zeka arasında ortak bir akıl (shared context) inşa etmektir.
+
+Nizam projemdeki [llms.txt dosyasını incelemek için tıklayın.](https://nizam-boilerplate.vercel.app/llms.txt)
+
+## Kaynaklar
+
+- [llmstxt.org](https://llmstxt.org/)
+- [ScaleMath](https://scalemath.com/blog/llms-txt/)
+- [Answer.ai](https://www.answer.ai/posts/2024-09-03-llmstxt.html)
+- [ZenML](https://www.zenml.io/blog/llms-txt)

@@ -1,0 +1,82 @@
+---
+languages: ["en"]
+createdAt: "2026-02-04"
+slug: "/documentation-for-machines-llms-txt"
+title: "Documentation for Machines: llms.txt"
+category: "teknik"
+tags: ["Yapay Zekâ"]
+---
+
+🇹🇷 **[Türkçe versiyonu okumak için tıklayın](/blog/makineler-icin-dokumantasyon-llms-txt)**
+
+For years we have been producing content for two primary audiences on the web: **humans** and **search engines**. We build polished UIs and navigation for people; we maintain `robots.txt` and `sitemap.xml` for crawlers. A third audience has emerged: **LLM-powered agents.**
+
+![Documentation for Machines: llms.txt](/blog/2026-02-04/llms.png)
+
+When tools like Cursor, Windsurf, Perplexity, or ChatGPT hit your project, they are faced with complex DOM trees and noisy markup. That directly hurts their effectiveness. The response is a machine-oriented standard that fits right into **context engineering** and **LLM optimization**: **llms.txt**.
+
+## Why Traditional Documentation Falls Short for LLMs
+
+Traditional web pages are full of ads, client-side interactivity, and nested HTML. When an LLM agent consumes such a page, it burns through a **limited context window** on boilerplate and noise instead of signal.
+
+The main bottleneck for models is **semantic ambiguity**. A link in the nav and a paragraph that describes your project’s core purpose can be weighted similarly. That leads to wrong code suggestions, incorrect assumptions, or irrelevant paths. As frontend engineers, we already care about **context engineering**—curating what goes into the model’s context. llms.txt is a concrete artifact for that.
+
+## What Is llms.txt?
+
+`llms.txt` is a single, Markdown-based guide placed at your project root—the format LLMs handle best. It tells agents how to interpret and use your project.
+
+A simple mental model:
+
+* **robots.txt:** Where should you not go? *(Access)*
+* **sitemap.xml:** What exists? *(Discovery)*
+* **llms.txt:** How should you understand this? *(Guidance)*
+
+### Structural Conventions
+
+A well-structured `llms.txt` follows this hierarchy:
+
+1. **H1:** Project name (the only required field).
+2. **Summary blockquotes (`>`):** A concise manifesto of the project’s purpose.
+3. **H2 sections:** Pointers to critical docs via Markdown links.
+4. **Optional section:** Secondary or deep-dive material the model should use only when needed.
+
+This structure is **context engineering** in practice: you define priority and scope so the model spends tokens on the right information.
+
+## The Two-Tier Setup: llms.txt and llms-full.txt
+
+For larger codebases, a single file may not be enough. The convention is two layers:
+
+* **llms.txt (index / map):** A table of contents for the agent. It helps the model choose which documents to pull into context.
+* **llms-full.txt (full content):** The entire documentation in one Markdown file. For models with large context windows (e.g. Gemini 1.5 Pro, Claude 3.5 Sonnet), it acts as a single, low-latency reference.
+
+Splitting index and full content is a standard **LLM optimization** pattern: reduce retrieval steps and token waste while keeping the option to go deep when necessary.
+
+## LLMO: LLM Optimization for Frontend and Docs
+
+Project success will increasingly depend on how well LLMs understand and represent our work. In **LLMO (Large Language Model Optimization)**, `llms.txt` is a first-class artifact: it improves how your project is represented in AI-generated answers and increases the chance of correct attribution.
+
+By serving documentation in Markdown instead of rendered HTML, we remove the **token tax** of markup. That can mean **up to ~90% token savings** and **much faster** context comprehension. We are compressing noise, not signal—a form of aggressive, intentional context design.
+
+## llms.txt in the Wild
+
+You can inspect how popular projects implement `llms.txt`:
+
+- [React – llms.txt](https://react.dev/llms.txt)
+- [Next.js – llms.txt](https://nextjs.org/llms.txt)
+- [TanStack – llms.txt](https://tanstack.com/llms.txt)
+- [shadcn/ui – llms.txt](https://ui.shadcn.com/llms.txt)
+
+### Nizam – Next.js 16 Boilerplate
+
+In my Nizam boilerplate, I treat `llms.txt` as part of the core architecture. The guide lives under `/public`, so any LLM agent can ingest the project’s structure and conventions in seconds.
+
+With this in place, the model learns architecture choices, key libraries, and data flow from a single, authoritative source instead of inferring from folder layout. Adopting `llms.txt` is less about adding a file and more about building **shared context** between humans and AI in the development loop.
+
+[View the llms.txt file in the Nizam project.](https://nizam-boilerplate.vercel.app/llms.txt)
+
+## Further Reading
+
+- [llmstxt.org](https://llmstxt.org/)
+- [scalemath](https://scalemath.com/blog/llms-txt/)
+- [Answer.ai](https://www.answer.ai/posts/2024-09-03-llmstxt.html)
+- [ZenML](https://www.zenml.io/blog/llms-txt)
