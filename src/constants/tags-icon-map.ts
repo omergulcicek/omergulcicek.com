@@ -4,12 +4,10 @@ import {
 	Clapperboard,
 	CodeXml,
 	Cpu,
-	History,
 	MessageCircle,
 	Milestone,
 	PersonStanding,
 	Popcorn,
-	Target,
 	TentTree
 } from "lucide-react"
 
@@ -84,11 +82,9 @@ export const tagsIconMap: TagsIconMapType = {
 	LESS: Less,
 	Lucide: Lucide,
 	MJML: MJML,
-	Değerlendirme: History,
 	Tatil: TentTree,
 	Frontend: CodeXml,
 	Kitap: BookMarked,
-	Hedefler: Target,
 	"Yıl Değerlendirmesi": Milestone,
 	Film: Popcorn,
 	Kişisel: PersonStanding,

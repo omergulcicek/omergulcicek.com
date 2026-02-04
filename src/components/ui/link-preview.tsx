@@ -9,7 +9,7 @@ import {
 	motion,
 	useMotionValue,
 	useSpring
-} from "motion/react"
+} from "framer-motion"
 import { encode } from "qss"
 
 import { cn } from "@/lib/utils"

@@ -3,7 +3,7 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { Logo } from "@/types/logo-type"
 
@@ -109,7 +109,9 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
 							}
 						}}
 					>
-						<CurrentLogo className="w-20 h-20 md:w-32 md:h-32 max-w-[80%] max-h-[80%] object-contain" />
+						<div className="flex size-12 shrink-0 items-center justify-center md:size-20">
+							<CurrentLogo className="size-full max-w-full max-h-full object-contain" />
+						</div>
 					</motion.div>
 				</AnimatePresence>
 			</motion.div>
