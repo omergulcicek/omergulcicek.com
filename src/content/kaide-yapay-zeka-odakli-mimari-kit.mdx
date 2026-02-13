@@ -1,0 +1,61 @@
+---
+languages: ["tr"]
+createdAt: "2026-02-14"
+slug: "/kaide-yapay-zeka-odakli-mimari-kit"
+title: "Kaide: Yapay Zekâ Odaklı Mimari Kit"
+category: "teknik"
+tags: ["Yapay Zekâ", "React", "Next.js", "TanStack"]
+---
+
+Yapay zekâ, kod yazma alışkanlıklarımızı kökten değiştirdi. Artık sadece kod yazan değil, yapay zekâ asistanlarını yöneten, onlara doğru bağlamı sunan ve çıktılarını denetleyen operatörler haline geliyoruz. İşte tam bu noktada, yapay zekâ ile çalışma verimliliğini en üst düzeye çıkarmak için araştırmalara başladım.
+
+![Kaide: AI-native agents](/blog/2026-02-14/kaide.png)
+
+**Kaide**, modern React uygulamaları için geliştirilmiş, yapay zekâ (AI) odaklı bir mimari kitidir. Özellikle Cursor gibi yapay zekâ destekli editörler ve LLM'ler ile çalışırken, modelin proje bağlamını kaybetmesini önlemek, halüsinasyonları azaltmak ve yüksek disiplinli bir kod yapısı oluşturmak amacıyla tasarlanmıştır.
+
+## İsmin Hikayesi
+
+Projelerimde genellikle tek kelimelik, Türkçe ve projenin amacını doğrudan çağrıştıran isimler seçmeye dikkat ediyorum. Tıpkı [Nizam](/blog/nizam-nextjs-16-boilerplate/) projemde olduğu gibi, bu mimari kit için de anlamlı bir isim arayışındaydım.
+
+"Kaide" kelimesi; kural, temel ve esas anlamına geldiği için projenin vaadiyle birebir örtüşüyordu. Ancak asıl karar vermemi sağlayan detay, kelimenin tam ortasında gizli olan **"ai"** (k**ai**de) vurgusuydu. Hem yapay zekâ odaklı bir temel sunması hem de npm'de bu ismin henüz alınmamış olması, onu bu proje için en doğru tercih haline getirdi.
+
+## Yapay Zekâ Mimari Kurallara İhtiyaç Duyar?
+
+Yapay zekâ ile kod yazarken karşılaşılan en büyük sorunlardan biri, doğru bağlamın ve kısıtlamaların sağlanamamasıdır. Çoğu geliştirici, prompt girerken modele bir **persona** atamayı, neyi yapması gerektiğinin yanı sıra **neleri yapmaması** gerektiğini belirtmeyi atlar. Oysa kaliteli bir çıktı alabilmek için bu detaylar kritiktir. Eksik yönergelerle çalışan yapay zekâ, boşlukları kendi yorumlarıyla doldurmaya çalışır; bu da genellikle halüsinasyonlara, proje standartlarına uymayan kodlara veya istenenin çok dışında sonuçlara yol açar.
+
+Kaide, tam bu noktada devreye girerek sizi uzun ve karmaşık prompt yazma yükünden kurtarır. Projenize entegre edildiğinde; **persona**, **mimari kurallar**, **kod standartları** ve **yasaklar** zaten tanımlı haldedir.
+
+## Doğru Prompt Stratejisi
+
+Kaide ile çalışırken en sık yapılan hata, yapay zekaya "nasıl" kod yazması gerektiğini (kütüphane seçimleri, dosya yapısı, test kuralları vb.) dikte etmektir; oysa Kaide'nin temel amacı bu teknik yükü sizin omuzlarınızdan almaktır. Doğru bir prompt stratejisinde, halihazırda `AGENTS.md` içerisinde tanımlı olan "Staff Architect" personasına veya `.mdc` dosyalarında mühürlenmiş mimari yasalara atıf yapmanıza gerek yoktur; çünkü bu kurallar yapay zekanın işlem çekirdeğine zaten entegre edilmiştir. Yapmanız gereken tek şey, teknik detaylarda boğulmadan doğrudan "ne yapılacağına" odaklanmak ve görevi tanımlamaktır.
+
+Örneğin; *"Bana Next.js 16 ile Zod doğrulamalı, shadcn bileşenleri kullanan, features yapısına uygun, server action'lı ve Vitest testleri yazılmış bir kullanıcı kayıt formu yap"*. Bu kadar teknik detayı tek tek hatırlatmak, yapay zekâyı basit bir "bot" seviyesine indirger. Oysa siz teknik detayları bırakıp sadece iş hedefine odaklanmalısınız.
+
+Bunun yerine sadece; *"Kullanıcı listesini görüntülemek için bir `Users` sayfası oluştur. Veriler `/api/users` endpoint'inden çekilecek ve bir tablo içerisinde gösterilecek."* komutunu vermek, tüm çarkları doğru sırayla hareket ettirir. Bu süreçte siz sadece vizyonu sunarsınız, yapay zekâ ise anayasadaki kuralları uygulayarak bu vizyonu teknik bir gerçeğe dönüştürür.
+
+## Teknoloji Yığını
+
+Kaide, modern web geliştirme standartlarını benimser:
+
+* **Framework**: Next.js ya da TanStack Start
+* **Server State:** TanStack Query
+* **Client State:** Zustand
+* **Validasyon:** Zod
+* **Test:** Vitest + RTL
+* **Stil:** Tailwind CSS
+
+## Kurulum
+
+Kaide'yi kullanmaya başlamak oldukça basittir. CLI aracı sayesinde saniyeler içinde projenize entegre edebilirsiniz:
+
+```bash
+npx kaide init
+````
+
+Bu komut, gerekli konfigürasyon dosyalarını ve kuralları projenize otomatik olarak ekler.
+
+## Sonuç
+
+Kaide, yapay zekâyı basit bir kod üreteci olmaktan çıkarıp, projenizin kurallarını bilen ve uygulayan yetkin bir ekip arkadaşına dönüştürmeyi hedefler. Eğer siz de yapay zekâ ile kod yazarken kontrolü elden bırakmak istemiyor ve mimari bütünlüğü korumak istiyorsanız, Kaide'ye bir şans verin.
+
+⭐ GitHub üzerinden **yıldız** vererek destek olabilirsiniz: [github.com/omergulcicek/kaide](https://github.com/omergulcicek/kaide)
