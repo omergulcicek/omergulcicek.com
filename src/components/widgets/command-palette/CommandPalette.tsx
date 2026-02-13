@@ -78,7 +78,7 @@ export function CommandPalette({ posts }: CommandPaletteProps) {
 							<CommandItem
 								key={item.href}
 								onSelect={() => runCommand(() => router.push(item.href))}
-								className="data-[disabled]:opacity-100"
+								className="data-disabled:opacity-100"
 							>
 								<item.icon className="mr-2 size-4" />
 								{item.label}
@@ -93,7 +93,7 @@ export function CommandPalette({ posts }: CommandPaletteProps) {
 									runCommand(() => router.push(`/blog/${post.slug}`))
 								}
 								value={post.searchValue}
-								className="data-[disabled]:opacity-100"
+								className="data-disabled:opacity-100"
 							>
 								<FileText className="mr-2 h-4 w-4" />
 								<div className="flex flex-col">
@@ -115,7 +115,7 @@ export function CommandPalette({ posts }: CommandPaletteProps) {
 									runCommand(() => window.open(project.link, "_blank"))
 								}
 								value={project.searchValue}
-								className="data-[disabled]:opacity-100"
+								className="data-disabled:opacity-100"
 							>
 								<FolderOpen className="mr-2 h-4 w-4" />
 								<div className="flex flex-col">

@@ -42,12 +42,13 @@ export function ProjectCard({
 						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
 						className={cn(
 							"object-cover group-hover:scale-150 transition-transform duration-700 ease-in-out rounded",
-							index === 0 && "origin-top-left",
+							index === 0 && "origin-left",
 							index === 1 && "origin-top-left",
-							index === 2 && "origin-top w-2/3 mt-32",
-							index === 3 && "origin-left",
-							index === 4 && "",
-							index === 5 && "origin-top-right"
+							index === 2 && "origin-top-left",
+							index === 3 && "origin-top w-2/3 mt-32",
+							index === 4 && "origin-left",
+							index === 5 && "",
+							index === 6 && "origin-top-right"
 						)}
 						width={320}
 						height={320}

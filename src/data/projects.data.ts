@@ -1,4 +1,5 @@
 import {
+	Scale,
 	CalendarDays,
 	Command,
 	PaintbrushVertical,
@@ -8,6 +9,15 @@ import {
 } from "lucide-react"
 
 export const projectsData = [
+	{
+		icon: Scale,
+		image: "/projects/kaide.png",
+		title: "Kaide",
+		description: "AI-native AGENTS ve kural setleri üzerine kurulu modern React mimari kiti.",
+		link: "https://github.com/omergulcicek/kaide",
+		tags: ["AI", "Architecture", "React", "Cursor"],
+		color: "bg-orange-100"
+	},
 	{
 		icon: Command,
 		image: "/projects/nizam.png",
@@ -62,6 +72,6 @@ export const projectsData = [
 		description: "Yazılım geliştirme için Türkçe kaynaklar",
 		link: "https://turkcedokuman.com/",
 		tags: ["Blog"],
-		color: "bg-orange-100"
+		color: "bg-slate-100"
 	}
 ]

@@ -1,0 +1,63 @@
+---
+languages: ["en"]
+createdAt: "2026-02-14"
+slug: "/kaide-ai-native-architecture-kit"
+title: "Kaide: AI-Native Architecture Kit"
+category: "teknik"
+tags: ["Yapay Zekâ", "React", "Next.js", "TanStack"]
+---
+
+🇹🇷 **[Türkçe versiyonu okumak için tıklayın](/blog/kaide-yapay-zeka-odakli-mimari-kit/)**
+
+AI has fundamentally shifted our coding paradigms. We are transitioning from being mere code writers to operators who orchestrate AI assistants, providing them with the right context and auditing their output. It was at this inflection point that I began researching how to maximize efficiency when working with AI.
+
+![Kaide: AI-native agents](/blog/2026-02-14/kaide.png)
+
+**Kaide** is an AI-native architecture kit engineered for modern React applications. It is specifically designed to prevent context loss, mitigate hallucinations, and enforce a highly disciplined code structure when working with AI-powered editors like Cursor and LLMs.
+
+## The Story Behind the Name
+
+I generally opt for single-word, Turkish names for my projects that directly evoke their purpose. Just as with my [Nizam](/blog/nizam-nextjs-16-boilerplate/) project, I was looking for a meaningful name for this architecture kit.
+
+The word "Kaide" means rule, foundation, or pedestal, which aligns perfectly with the project's promise. However, the deciding factor was the **"ai"** hidden right in the middle (k**ai**de). Offering an AI-focused foundation and the fact that the name was available on npm made it the obvious choice.
+
+## Does AI Need Architectural Rules?
+
+One of the biggest friction points in AI-assisted coding is the lack of proper context and constraints. Most developers skip assigning a **persona** or specifying **negative constraints** (what *not* to do) in their prompts. Yet, these details are critical for high-quality output. When working with incomplete instructions, AI attempts to fill the gaps with its own assumptions, often leading to hallucinations, code that violates project standards, or results that drift far from the intent.
+
+Kaide steps in right here, relieving you of the burden of crafting complex, repetitive prompts. When integrated into your project, the **persona**, **architectural rules**, **coding standards**, and **restrictions** are already defined.
+
+## The Right Prompt Strategy
+
+The most common mistake when working with Kaide is dictating "how" the AI should write code (library choices, file structure, testing rules, etc.). Kaide's core purpose is to abstract this technical cognitive load away from you. In a proper prompt strategy, you don't need to reference the "Staff Architect" persona defined in `AGENTS.md` or the architectural laws sealed in `.mdc` files; these rules are already injected into the AI's processing core. Your only job is to focus on "what" needs to be done without getting bogged down in implementation details.
+
+For example, instead of saying: *"Build a user registration form using Next.js 16 with Zod validation, shadcn components, following the features folder structure, using server actions, and including Vitest tests."* — listing these technical details one by one reduces the AI to the level of a basic "bot." You should let go of the implementation details and focus on the business objective.
+
+Instead, simply say: *"Create a `Users` page to display the user list. Fetch data from the `/api/users` endpoint and display it in a table."* This command sets all the gears in motion in the correct order. You provide the vision; the AI applies the constitutional rules to turn that vision into technical reality.
+
+## Tech Stack
+
+Kaide embraces modern web development standards:
+
+* **Framework**: Next.js or TanStack Start
+* **Server State:** TanStack Query
+* **Client State:** Zustand
+* **Validation:** Zod
+* **Testing:** Vitest + RTL
+* **Style:** Tailwind CSS
+
+## Installation
+
+Getting started with Kaide is straightforward. You can integrate it into your project in seconds via the CLI:
+
+```bash
+npx kaide init
+```
+
+This command automatically injects the necessary configuration files and rules into your project.
+
+## Conclusion
+
+Kaide aims to elevate AI from a simple code generator to a competent teammate that understands and enforces your project's rules. If you want to maintain control and architectural integrity while coding with AI, give Kaide a shot.
+
+⭐ You can support the project by starring it on GitHub: [github.com/omergulcicek/kaide](https://github.com/omergulcicek/kaide)
