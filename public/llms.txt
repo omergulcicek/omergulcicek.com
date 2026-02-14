@@ -1,6 +1,6 @@
 # omergulcicek.com
 
-> Personal website and blog of Omer Gulcicek, Senior Frontend Engineer. React, Next.js, TypeScript, and modern web development. Technical articles (Turkish), project showcases, experience timeline, and bookmarks. Built with Next.js 16, MDX, Tailwind CSS, and shadcn/ui.
+> Personal website and blog of Omer Gulcicek, Staff Frontend Engineer. React, Next.js, TypeScript, and modern web development. Technical articles (Turkish), project showcases, experience timeline, and bookmarks. Built with Next.js 16, MDX, Tailwind CSS, and shadcn/ui.
 
 Site sections: Home (/), Blog (/blog), Experiences (/experiences), Projects (/projects), Bookmarks (/bookmarks), About (/about). Blog posts are in Turkish unless stated otherwise. Primary topics: React, Next.js, CSS, frontend architecture, state management, TanStack, form validation, accessibility, and developer tooling.
 

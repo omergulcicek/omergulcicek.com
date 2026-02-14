@@ -4,7 +4,7 @@ export const USER = {
 	displayName: "Ömer Gülçiçek",
 	username: "@omergulcicek",
 	avatar: "/omer.jpg",
-	jobTitle: "Senior Frontend Engineer",
+	jobTitle: "Staff Frontend Engineer",
 	email: "iletisim@omergulcicek.com",
 	location: "Sakarya, Türkiye",
 	dateOfBirth: "1993-02-07",

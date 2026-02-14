@@ -11,8 +11,8 @@ export function AboutIntro() {
 				<span className="text-primary">Sakarya</span>da yaşıyorum.{" "}
 				<span className="text-primary">1993 doğumluyum</span> ve{" "}
 				<span className="text-primary">Yazılım Mühendisliği</span> mezunuyum.{" "}
-				<span className="text-primary">Senior Frontend Engineer</span> olarak
-				çalışıyorum.
+				<span className="text-primary">Senior/Lead Frontend Engineer</span>{" "}
+				olarak çalışıyorum.
 			</p>
 		</Section>
 	)

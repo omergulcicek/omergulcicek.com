@@ -10,6 +10,23 @@ export function Footer() {
 				<div className="flex flex-col gap-2 text-muted-foreground text-sm">
 					<p>
 						<LinkPreview
+							url="https://github.com/omergulcicek/kaide"
+							className="text-muted-foreground underline underline-offset-4"
+						>
+							kaide
+						</LinkPreview>{" "}
+						ve{" "}
+						<LinkPreview
+							url="https://github.com/omergulcicek/nizam"
+							className="text-muted-foreground underline underline-offset-4"
+						>
+							nizam
+						</LinkPreview>{" "}
+						alt yapısıyla geliştirildi.
+					</p>
+
+					<p>
+						<LinkPreview
 							url="https://nextjs.org/"
 							className="text-muted-foreground underline underline-offset-4"
 						>
