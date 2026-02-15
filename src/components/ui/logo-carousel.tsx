@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react"
 
 import { AnimatePresence, motion } from "framer-motion"
 
-import { Logo } from "@/types/logo-type"
+import { Logo } from "@/types/logo.types"
 
 // Utility function to randomly shuffle an array
 // This is used to mix up the order of logos for a more dynamic display

@@ -1,23 +1,21 @@
 import { notFound } from "next/navigation"
 
-import { extractFirstImage } from "@/helpers/extract-first-image"
-import { extractExcerpt } from "@/helpers/extract-excerpt"
+import { slugify } from "@/helpers/slugify"
 
-import { SITE } from "@/constants/site"
-
-import { slugify } from "@/utils/slugify"
-
-import { MDX } from "@/components/widgets/mdx"
-import { Container, StructuredData } from "@/shared"
-import { Heading, Prose } from "@/ui"
-import { BlogDetailHeader, BlogInfo, Section } from "@/widgets"
+import { SITE } from "@/constants/site.constants"
 
 import {
 	findNeighbour,
 	getAllPosts,
 	getFuturePosts,
 	getPostBySlug
-} from "@/data/blog.data"
+} from "@/lib/blog-posts"
+
+import { Container, Section, StructuredData } from "@/shared"
+import { Heading, Prose } from "@/ui"
+import { BlogDetailHeader, BlogInfo, MDX } from "@/features/blog"
+import { extractExcerpt } from "@/features/blog/helpers/extract-excerpt"
+import { extractFirstImage } from "@/features/blog/helpers/extract-first-image"
 
 import "./prose.css"
 
@@ -99,10 +97,7 @@ export default async function BlogPost({
 
 	return (
 		<>
-			<StructuredData
-				type="article"
-				article={post}
-			/>
+			<StructuredData type="article" article={post} />
 			<StructuredData
 				type="breadcrumb"
 				breadcrumbs={[

@@ -7,7 +7,7 @@ import {
 	AboutServices,
 	AboutTechnicalApproach,
 	AboutVision
-} from "@/widgets"
+} from "@/features/about"
 
 export default function About() {
 	return (

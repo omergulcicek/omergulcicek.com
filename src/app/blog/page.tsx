@@ -1,20 +1,20 @@
 import { Suspense } from "react"
-import dynamic from "next/dynamic"
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 
-import type { BlogPostType } from "@/types/blog.type"
+import { SITE } from "@/constants/site.constants"
 
-import { SITE } from "@/constants/site"
+import { getAllPosts, getFuturePosts } from "@/lib/blog-posts"
 
-import { Container } from "@/shared"
-import { Section } from "@/widgets"
-
-import { getAllPosts, getFuturePosts } from "@/data/blog.data"
-
-import { BlogListSkeleton } from "@/components/widgets/blog/BlogListSkeleton"
+import { Container, Section } from "@/shared"
+import { BlogListSkeleton } from "@/features/blog"
+import type { BlogPostType } from "@/features/blog/types/blog.types"
 
 const BlogList = dynamic(
-	() => import("@/components/widgets/blog/BlogList").then((mod) => ({ default: mod.BlogList })),
+	() =>
+		import("@/features/blog/components/blog-list/BlogList").then((mod) => ({
+			default: mod.BlogList
+		})),
 	{
 		loading: () => <BlogListSkeleton />
 	}

@@ -1,9 +1,7 @@
 "use client"
 
-import { Container } from "@/shared"
-import { ProjectCard, Section } from "@/widgets"
-
-import { projectsData } from "@/data"
+import { Container, Section } from "@/shared"
+import { ProjectCard, projectsData } from "@/features/projects"
 
 export default function Projects() {
 	return (

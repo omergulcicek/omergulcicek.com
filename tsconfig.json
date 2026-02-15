@@ -1,7 +1,5 @@
 {
 	"compilerOptions": {
-		"baseUrl": "src/",
-		"target": "ES2017",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
@@ -21,24 +19,26 @@
 		],
 		"paths": {
 			"@/*": ["./*"],
-			"@/ui": ["components/ui"],
-			"@/features": ["components/features"],
-			"@/widgets": ["components/widgets"],
-			"@/shared": ["components/shared"],
-			"@/icons": ["components/icons"],
-			"@/skeletons": ["components/skeletons"],
-			"@/providers": ["providers"],
 			"@/config": ["config"],
 			"@/constants": ["constants"],
 			"@/data": ["data"],
-			"@/schemas": ["schemas"],
+			"@/features": ["features"],
 			"@/helpers": ["helpers"],
 			"@/hooks": ["hooks"],
-			"@/stores": ["stores"],
+			"@/icons": ["components/icons"],
+			"@/lib": ["lib"],
+			"@/providers": ["providers"],
+			"@/schemas": ["schemas"],
 			"@/services": ["services"],
-			"@/utils": ["lib/utils"],
-			"@/types": ["types"]
-		}
+			"@/shared": ["components/shared"],
+			"@/skeletons": ["components/skeletons"],
+			"@/stores": ["stores"],
+			"@/types": ["types"],
+			"@/ui": ["components/ui"],
+			"@/utils": ["lib/utils"]
+		},
+		"baseUrl": "src/",
+		"target": "ES2017"
 	},
 	"include": [
 		"next-env.d.ts",

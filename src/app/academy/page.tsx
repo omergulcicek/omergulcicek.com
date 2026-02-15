@@ -1,5 +1,4 @@
-import { Container } from "@/shared"
-import { Section } from "@/widgets"
+import { Container, Section } from "@/shared"
 
 export default function Academy() {
 	return (

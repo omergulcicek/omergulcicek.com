@@ -1,6 +1,2 @@
-export * from "./experience.data"
 export * from "./nav.data"
-export * from "./projects.data"
 export * from "./stack.data"
-export * from "./hobbies.data"
-export * from "./bookmarks.data"

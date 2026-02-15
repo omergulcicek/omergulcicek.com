@@ -1,5 +1,5 @@
-import { Container } from "@/shared"
-import { Experience, JobSeekingBadge, Section } from "@/widgets"
+import { Container, JobSeekingBadge, Section } from "@/shared"
+import { Experience } from "@/features/experience"
 
 export default function ExperiencesPage() {
 	return (

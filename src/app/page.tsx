@@ -1,7 +1,11 @@
-import { Container } from "@/shared"
-import { About, Blog, Experience, Hero, Projects, Stack } from "@/widgets"
+import { getLastNewestPosts } from "@/lib/blog-posts"
 
-import { getLastNewestPosts } from "@/data/blog.data"
+import { Container, Stack } from "@/shared"
+import { About } from "@/features/about"
+import { Blog } from "@/features/blog"
+import { Experience } from "@/features/experience"
+import { Hero } from "@/features/home"
+import { Projects } from "@/features/projects"
 
 export default function Home() {
 	const posts = getLastNewestPosts()

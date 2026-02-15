@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next"
 
-import { SITE } from "@/constants/site"
+import { SITE } from "@/constants/site.constants"
+
+import { getAllPosts } from "@/lib/blog-posts"
 
 import { navItemsData } from "@/data"
-import { getAllPosts } from "@/data/blog.data"
 
 export const dynamic = "force-static"
 

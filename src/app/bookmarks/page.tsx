@@ -2,10 +2,8 @@
 
 import Link from "next/link"
 
-import { Container } from "@/shared"
-import { BookmarkCard, Section } from "@/widgets"
-
-import { bookmarksData } from "@/data"
+import { Container, Section } from "@/shared"
+import { BookmarkCard, bookmarksData } from "@/features/bookmarks"
 
 export default function Bookmarks() {
 	return (

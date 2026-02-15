@@ -4,8 +4,10 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { GeistSans } from "geist/font/sans"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
-import { SITE } from "@/constants/site"
-import { USER } from "@/constants/user"
+import { SITE } from "@/constants/site.constants"
+import { USER } from "@/constants/user.constants"
+
+import { getAllPosts } from "@/lib/blog-posts"
 
 import {
 	Footer,
@@ -14,8 +16,6 @@ import {
 	ThemeProvider,
 	WebVitals
 } from "@/shared"
-
-import { getAllPosts } from "@/data/blog.data"
 
 import "./globals.css"
 

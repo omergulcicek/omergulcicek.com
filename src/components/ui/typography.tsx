@@ -3,7 +3,7 @@ import React from "react"
 import { LinkIcon } from "lucide-react"
 import { Slot as SlotPrimitive } from "radix-ui"
 
-import { HeadingProps, HeadingTypes } from "@/types/heading-type"
+import { HeadingProps, HeadingTypes } from "@/types/heading.types"
 
 import { cn } from "@/lib/utils"
 
