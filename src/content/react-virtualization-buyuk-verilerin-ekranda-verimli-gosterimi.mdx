@@ -12,7 +12,7 @@ medium: "https://omergulcicek.medium.com/react-virtualization-b%C3%BCy%C3%BCk-ve
 
 React Virtualization, büyük veri setleriyle çalışan React uygulamalarında performans optimizasyonu sağlamaya yönelik bir tekniktir. Özellikle, sayfalarda veya listelerde çok sayıda öğe olduğunda, tüm öğeleri aynı anda render etmek, uygulamanın hızını olumsuz yönde etkileyebilir. Bu noktada, **React Virtualization** paketleri devreye girer. Bu paketler, yalnızca görünürdeki öğeleri render ederek, bellek kullanımını ve render süresini önemli ölçüde azaltır.
 
-![React Virtualization](/blog/2025-01-10/virtualization.png)
+![React Virtualization](/blog/2025/01-10/virtualization.png)
 
 Instagram veya Twitter gibi sosyal medya platformlarında kullanıcılar sürekli olarak içeriklere göz atar ve sayfa kaydırıldıkça yeni içerikler yüklenir. Bu tür platformlarda, ekranın üzerinde yalnızca sınırlı sayıda içerik görüntülenebilirken, kullanıcı yukarıya veya aşağıya doğru kaydırdıkça **görünmeyen öğeler DOM'dan kaldırılır ve yenileri eklenir**. Bu sayede, yalnızca ekranda görünen öğeler render edilerek, bellek ve işlemci kaynakları verimli kullanılır. React Virtualization, bu tür uygulamalarda kaydırma deneyimini kesintisiz ve hızlı hale getirmek için ideal bir çözümdür.
 
@@ -24,14 +24,14 @@ Grafikten görüldüğü gibi, 2024 yılına kadar _(önceki yıllar dahil)_ **r
 
 Son dönemde ise **TanStack**'in **@tanstack/react-virtual** paketi, öne çıkarak en çok tercih edilen virtualization paketi haline geldi. Bu üç paket, performans odaklı listeleme yapmak için popüler React çözümleri arasında yer almaktadır.
 
-![npm trends: react-virtualized vs react-window vs @tanstack/react-virtual](/blog/2025-01-10/npm-trends.png)
+![npm trends: react-virtualized vs react-window vs @tanstack/react-virtual](/blog/2025/01-10/npm-trends.png)
 
 Bunun nedenlerinden bazıları şunlardır:
 
 - **@tanstack/react-virtual** paketi, **react-window** paketinden yaklaşık <u>5.5 kat</u>, **react-virtualized** paketinden ise yaklaşık <u>19 kat daha hafiftir</u>.
 - **@tanstack/react-virtual** ve **react-window** paketileri <u>daha sık güncellenmektedir</u>. Bu yazıyı yazdığım gün itibarıyla, react-window paketi <u>25 gün önce</u> güncellenmişken, react-virtualized paketi ise en son <u>2 yıl önce</u> güncellenmiş.
 
-![npm trends istatistikleri](/blog/2025-01-10/npm-trends-stats.png)
+![npm trends istatistikleri](/blog/2025/01-10/npm-trends-stats.png)
 
 Diğerlerine kıyasla çok daha yeni olan ve yaklaşık 5.700 yıldız alan **@tanstack/react-virtual**, 26.500 yıldıza sahip **react-virtualized** ve 16.000 yıldıza sahip **react-window** paketlerine göre daha fazla ilgi görmekte.
 

@@ -12,13 +12,13 @@ Web site geliştirirken varsayılan olarak yazı dilimiz soldan sağa (_Left to 
 
 CSS mantıklar özelliklerin temel fikri, CSS özelliklerinde fiziksel yönleri kullanmayacak olmamızdır. Bunun yerine HTML belgesinin yazım yönüne bağlı olan özellikleri kullanacağız. Bu özelliklere mantıksal özellik deniyor ve tarayıcı desteği oldukça iyi (<a href="https://caniuse.com/css-logical-props" target="_blank" rel="noreferrer noopener">tarayıcıların CSS Logical Properties desteği</a>).
 
-![CSS Logical Properties desteği](/blog/2021-03-28/css-logical-properties.png)
+![CSS Logical Properties desteği](/blog/2021/03-28/css-logical-properties.png)
 
 ## Mantıksal Özellikler Olmadan Önce
 
 Basit bir tasarımla neyi kastettiğimizi daha iyi anlayalım. Aşağıdaki görseli koda dökerken, ilk olarak avatarın sağına boşluk vermek gerekecekti; eğer yazı dili sağdan sola ise bu boşluğu soldan vermeliydik.
 
-![CSS Logical Properties desteği](/blog/2021-03-28/ltr-rtl.jpg)
+![CSS Logical Properties desteği](/blog/2021/03-28/ltr-rtl.jpg)
 
 ```css
 .avatar {
@@ -47,13 +47,13 @@ Bu kod, HTML belgesinin yönüne bağlı olarak farklı şekilde çalışacaktı
 
 Türkçe, İngilizce, Arapça gibi diller yatay boyuttur; yani soldan sağa yada sağdan sola yazılırlar. Fakat Japonca ise yukarıdan aşağı yazılır, yani dikey boyuttur. `inline` yazının okunma yönünü belirtir.
 
-![CSS Logical Properties desteği](/blog/2021-03-28/inline-block.jpg)
+![CSS Logical Properties desteği](/blog/2021/03-28/inline-block.jpg)
 
 `start` ve `end` ise okunma yönüne göre yazının başını yada sonunu belirtir.
 
 Örnek olarak aşağıdaki görselde avatar ile yazının arasına aralık vermek istediğimizde `margin-inline-end` kodu işimizi görecektir. Türkçe, İngilizce gibi dillerde yazı soldan sağa okunduğu için `end` kodu sağdan manasına gelecektir ve avatarın sağına boşluk verecektir; yani `inline-end` burada `margin-right` işlevi görecektir. Arapça gibi okuma yönünün sağdan sola olduğu dillerde ise `end` kodu soldan manasına gelecektir ve avatarın soluna boşluk verecektir; yani `inline-end` burada `margin-left` işlevi görecektir.
 
-![CSS Logical Properties desteği](/blog/2021-03-28/margin-inline-end.jpg)
+![CSS Logical Properties desteği](/blog/2021/03-28/margin-inline-end.jpg)
 
 ## Mantıksal Olarak Hangi Özellikleri Kullanabiliriz?
 

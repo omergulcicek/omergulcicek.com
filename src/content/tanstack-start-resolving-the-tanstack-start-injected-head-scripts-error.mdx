@@ -21,7 +21,7 @@ The application suddenly crashed on a page I was building with Supabase. When th
 from ".../node_modules/@tanstack/start-server-core/dist/esm/loadVirtualModule.js"
 ```
 
-![tanstack-start-injected-head-scripts](/blog/2026-02-03/injected.png)
+![tanstack-start-injected-head-scripts](/blog/2026/02-03/injected.png)
 
 Sometimes it showed up as a **Pre-transform error** as well: `Failed to resolve import "tanstack-start-injected-head-scripts:v"`. It would fail intermittently in development, but it would consistently fail when running `vite build` for production. The message pointed to virtual module resolution inside `@tanstack/start-server-core`, and at first glance it looked like a framework or Vite/Rollup bug.
 

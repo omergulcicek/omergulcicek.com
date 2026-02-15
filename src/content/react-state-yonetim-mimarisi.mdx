@@ -19,7 +19,7 @@ Mimari kararların temelini şu sınıflandırma oluşturur:
 - **İş Akışı / Domain State:** Kritik iş süreçleri (taslak → gönderildi → tamamlandı), çok adımlı akışlar ve zaman içinde izlenmesi/hata ayıklanması (debug) gereken state geçişleridir.
 - **Yüksek Frekanslı Etkileşimler:** Sürüklenebilir arayüzler, gerçek zamanlı grafikler veya çok sayıda widget içeren paneller. Burada asıl mesele sadece verinin nerede durduğu değil, "kimin hangi veriye abone olduğu ve render sıklığı"dır.
 
-![React Prop](/blog/2026-02-01/passing-props.png)
+![React Prop](/blog/2026/02-01/passing-props.png)
 
 Bu dört kategoriyi netleştirmeden "global store" kullanmaya veya "her şeyi Context'e taşımaya" karar vermek aceleci bir yaklaşımdır. Önce state türünü belirleyin; araç seçimi bu karardan sonra kendiliğinden şekillenecektir.
 
@@ -32,7 +32,7 @@ React, özünde bir state yönetim aracıdır. Bileşen ağacınızı `<App />`'
 - **Prop drilling yönetimi:** Prop geçişleri sizi rahatsız etmeye başladığında ilk savunma hattınız **bileşen kompozisyonu (component composition)** olmalıdır. State'e ihtiyaç duyan bileşenleri, state sahibi bileşene `children` veya slot olarak geçerek ara bileşenleri bu yükten kurtarabilirsiniz. Bu yetmezse **Context** devreye girer. Context'in temel amacı "tüm uygulama state'ini" yönetmek değil, prop drilling'i çözmektir. Context'e çok erken başvurmak, basit prop geçişlerinden daha maliyetli olabilir. **Sık değişen, çok sayıda abonesi olan ve sadece belirli bir parçası kullanılan state'ler Context için uygun adaylar değildir.**
 - **Server cache state değildir:** Sunucudaki veriyi "global state" gibi yönetmek mimari hatalara yol açar. Cache invalidation (geçersiz kılma), refetch (yeniden çekme) ve optimistic update (iyimser güncelleme) gibi ihtiyaçlar için **TanStack Query** kullanmak, state kütüphane seçiminden daha doğru bir adımdır. 2026 itibarıyla sunucu verisi yönetiminde TanStack Query kullanımı standartlaşmıştır.
 
-![React Context](/blog/2026-02-01/context.png)
+![React Context](/blog/2026/02-01/context.png)
 
 Özetle: **Önce React'ın yerleşik imkanlarını kullanın.** `useState`, `useReducer`, `Lifting State Up`, kompozisyon ve `Context` ile birçok uygulama rahatça yönetilebilir. Global bir store, ancak "state türü" ve "abonelik/performans ihtiyaçları" bu varsayılan sınırları zorladığında gündeme gelmelidir.
 

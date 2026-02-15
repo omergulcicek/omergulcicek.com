@@ -21,7 +21,7 @@ Supabase kullanarak geliştirdiğim sayfada bir anda her şey bozuldu. Sayfa yü
 from ".../node_modules/@tanstack/start-server-core/dist/esm/loadVirtualModule.js"
 ```
 
-![tanstack-start-injected-head-scripts](/blog/2026-02-03/injected.png)
+![tanstack-start-injected-head-scripts](/blog/2026/02-03/injected.png)
 
 Bazen **Pre-transform error** olarak da görünüyordu: `Failed to resolve import "tanstack-start-injected-head-scripts:v"`. Geliştirme ortamında bazen sessiz kalıyor, `vite build` ile production build alırken kesin şekilde patlıyordu. Hata mesajı, `@tanstack/start-server-core` içindeki sanal modül çözümlemesiyle ilgiliydi ve ilk bakışta framework veya Vite/Rollup tarafında bir bug gibi görünüyordu.
 
