@@ -145,6 +145,18 @@
 }
 
 @layer components {
+	@keyframes ramazan-doodle {
+		0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+
+    0%, 50%, 100% { 
+        filter: drop-shadow(0 0 2px rgba(251, 191, 36, 0.3)); 
+    }
+    25%, 75% { 
+        filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.7)); 
+    }
+	}
+
 	.prose {
 		img {
 			@apply my-6 rounded-md;
