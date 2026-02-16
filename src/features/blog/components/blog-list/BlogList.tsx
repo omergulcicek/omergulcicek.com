@@ -1,18 +1,9 @@
 "use client"
 
-import Link from "next/link"
-
-import { Languages } from "lucide-react"
 import { useQueryState } from "nuqs"
 
-import { dateFormat, groupPostsByYear } from "@/lib/date-format"
+import { groupPostsByYear } from "@/lib/date-format"
 
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger
-} from "@/components/ui/tooltip"
-import { TagsBadge } from "@/shared"
 import { FilterSort } from "@/features/blog/components/filter-sort"
 import {
 	filterPostsByTag,
@@ -22,6 +13,8 @@ import {
 } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPostType } from "@/features/blog/types/blog.types"
 import type { SortOptionType } from "@/features/blog/types/filter-sort.types"
+
+import { BlogListPostRow } from "./BlogListPostRow"
 
 interface BlogListProps {
 	allPosts: BlogPostType[]
@@ -40,64 +33,6 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 
 	const allTags = getUniqueSortedTags(allPosts)
 
-	function PostRow({ post }: { post: BlogPostType }) {
-		const dateLabel =
-			String(post.metadata.createdAt).toLowerCase() === "soon"
-				? "hazırlanıyor..."
-				: dateFormat(post.metadata.createdAt, "DD/MM/YY")
-		const isEn = (post.metadata.languages ?? []).includes("en")
-
-		return (
-			<div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 items-start">
-				<div className="flex flex-col gap-0.5 shrink-0">
-					<span className="text-muted-foreground tabular-nums text-sm pt-0.5">
-						{dateLabel}
-					</span>
-					{isEn && (
-						<Tooltip>
-							<TooltipTrigger asChild>
-								<span className="cursor-pointer flex items-center gap-1 text-muted-foreground text-xs">
-									<Languages className="size-5 shrink-0 text-blue-600" />
-									English
-								</span>
-							</TooltipTrigger>
-							<TooltipContent>
-								<p>Read in English</p>
-							</TooltipContent>
-						</Tooltip>
-					)}
-					{post.metadata.interactive && (
-						<div>
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<span className="cursor-pointer text-xl leading-[22px]">
-										✨
-									</span>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Bu makale interaktiftir</p>
-								</TooltipContent>
-							</Tooltip>
-						</div>
-					)}
-				</div>
-				<div className="min-w-0">
-					<h2 className="group text-lg leading-normal font-normal text-gray-900 dark:text-white transition-colors duration-200">
-						<Link
-							href={`/blog/${post.slug}`}
-							className="cursor-pointer block group-hover:underline group-hover:underline-offset-4"
-						>
-							{post.metadata.title}
-						</Link>
-					</h2>
-					<div className="flex flex-wrap items-center gap-2 mt-1">
-						<TagsBadge tags={post.metadata.tags as string[]} />
-					</div>
-				</div>
-			</div>
-		)
-	}
-
 	return (
 		<>
 			<FilterSort tags={allTags} currentTag={tag} />
@@ -107,7 +42,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 						<div className="space-y-6 flex flex-col gap-1 items-start relative min-h-20">
 							<div className="flex flex-col gap-6 items-start">
 								{futurePosts.map((post) => (
-									<PostRow key={post.slug} post={post} />
+									<BlogListPostRow key={post.slug} post={post} />
 								))}
 							</div>
 						</div>
@@ -119,16 +54,9 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 								key={year}
 								className="my-5 flex flex-col gap-4 items-stretch"
 							>
-								{/* <div className="flex items-center gap-3">
-									<Separator className="flex-1" />
-									<span className="text-lg text-muted-foreground shrink-0">
-										{year}
-									</span>
-									<Separator className="flex-1" />
-								</div> */}
 								<div className="flex flex-col gap-6 items-start">
 									{posts.map((post) => (
-										<PostRow key={post.slug} post={post} />
+										<BlogListPostRow key={post.slug} post={post} />
 									))}
 								</div>
 							</div>
@@ -139,7 +67,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 				<div className="flex flex-col gap-6 items-start mt-10">
 					{sorted.map((post) => (
 						<div key={post.slug} className="flex flex-col gap-6 items-start">
-							<PostRow post={post} />
+							<BlogListPostRow post={post} />
 						</div>
 					))}
 				</div>

@@ -2,8 +2,9 @@
 
 import { useMemo } from "react"
 
-import { cn } from "@/lib/utils"
 import { slugify } from "@/helpers/slugify"
+
+import { cn } from "@/lib/utils"
 
 import {
 	Accordion,
@@ -47,7 +48,7 @@ export const TOC = ({ content }: TOCProps) => {
 					<ul className="flex flex-col items-start">
 						{headings.map((heading, index) => (
 							<li
-								key={index}
+								key={heading.slug}
 								className={cn(
 									"text-sm text-muted-foreground py-1 transition-colors hover:underline hover:text-foreground",
 									heading.level === 3 && "pl-6",

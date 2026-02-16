@@ -20,4 +20,3 @@ export const TurkeyRounded = (props: SVGProps<SVGSVGElement>) => (
 		</g>
 	</svg>
 )
-export default TurkeyRounded

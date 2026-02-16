@@ -30,11 +30,9 @@ export const metadata: Metadata = {
 }
 
 export default function Blog() {
-	const allPosts = getAllPosts() as BlogPostType[]
+	const allPosts = getAllPosts()
 	const futurePosts =
-		process.env.NODE_ENV === "production"
-			? ([] as BlogPostType[])
-			: (getFuturePosts() as BlogPostType[])
+		process.env.NODE_ENV === "production" ? [] : getFuturePosts()
 
 	return (
 		<Container>

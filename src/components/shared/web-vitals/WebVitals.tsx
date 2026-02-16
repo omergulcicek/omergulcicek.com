@@ -6,7 +6,6 @@ type ReportWebVitalsCallback = Parameters<typeof useReportWebVitals>[0]
 
 const handleWebVitals: ReportWebVitalsCallback = (metric) => {
 	if (process.env.NODE_ENV === "development") {
-		console.log("Web Vitals:", metric)
 	}
 
 	if (typeof window !== "undefined" && window.gtag) {

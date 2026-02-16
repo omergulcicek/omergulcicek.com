@@ -3,6 +3,7 @@ import path from "path"
 
 import matter from "gray-matter"
 
+import { BlogPostMetadataSchema } from "@/features/blog/schemas/blog.schema"
 import type { BlogPostType } from "@/features/blog/types/blog.types"
 
 let cachedPosts: BlogPostType[] | null = null
@@ -13,7 +14,7 @@ function parseFrontmatter(fileContent: string) {
 	const file = matter(fileContent)
 
 	return {
-		metadata: file.data,
+		metadata: BlogPostMetadataSchema.parse(file.data),
 		content: file.content
 	}
 }
@@ -36,7 +37,7 @@ function getMDXData(dir: string): BlogPostType[] {
 		const slug = path.basename(file, path.extname(file))
 
 		return {
-			metadata: metadata as BlogPostType["metadata"],
+			metadata,
 			slug,
 			content
 		}
@@ -62,12 +63,10 @@ const getAllPostsUncached = (): BlogPostType[] => {
 export function getAllPosts(): BlogPostType[] {
 	const now = Date.now()
 
-	// Return cached data if still valid
 	if (cachedPosts && now - cacheTimestamp < CACHE_DURATION) {
 		return cachedPosts
 	}
 
-	// Fetch fresh data and cache it
 	const posts = getAllPostsUncached()
 	cachedPosts = posts
 	cacheTimestamp = now

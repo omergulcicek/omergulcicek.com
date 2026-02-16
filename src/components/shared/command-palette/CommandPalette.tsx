@@ -43,14 +43,12 @@ export function CommandPalette({ posts }: CommandPaletteProps) {
 		command()
 	}
 
-	// Tüm blog yazılarını arama için hazırla
 	const allPosts = posts.map((post) => ({
 		...post,
 		searchValue:
 			`${post.metadata.title} ${post.metadata.description || ""} ${post.metadata.category || ""}`.toLowerCase()
 	}))
 
-	// Tüm projeleri arama için hazırla
 	const allProjects = projectsData.map((project) => ({
 		...project,
 		searchValue: `${project.title} ${project.description}`.toLowerCase()

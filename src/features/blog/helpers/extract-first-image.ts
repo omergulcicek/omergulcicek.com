@@ -5,7 +5,6 @@
  */
 
 export function extractFirstImage(content: string): string | null {
-	// Markdown/MDX görsel syntax'ını yakala: ![alt](url)
 	const imageRegex = /!\[.*?\]\((.*?)\)/g
 	const match = imageRegex.exec(content)
 

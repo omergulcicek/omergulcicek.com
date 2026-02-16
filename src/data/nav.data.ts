@@ -1,11 +1,11 @@
 import {
 	Bookmark,
-	History,
-	LayoutGrid,
+	Component,
+	HatGlasses,
 	LucideIcon,
-	Newspaper,
-	Sparkles,
-	User
+	Milestone,
+	Quote,
+	Sparkles
 } from "lucide-react"
 
 export interface NavItem {
@@ -23,22 +23,17 @@ export const navItemsData: NavItem[] = [
 	{
 		label: "Blog",
 		href: "/blog",
-		icon: Newspaper
+		icon: Quote
 	},
-	// {
-	// 	label: "Akademi",
-	// 	href: "/academy",
-	// 	icon: Book
-	// },
 	{
 		label: "Deneyimler",
 		href: "/experiences",
-		icon: History
+		icon: Milestone
 	},
 	{
 		label: "Projeler",
 		href: "/projects",
-		icon: LayoutGrid
+		icon: Component
 	},
 	{
 		label: "Yer İmleri",
@@ -48,6 +43,6 @@ export const navItemsData: NavItem[] = [
 	{
 		label: "Hakkımda",
 		href: "/about",
-		icon: User
+		icon: HatGlasses
 	}
 ]

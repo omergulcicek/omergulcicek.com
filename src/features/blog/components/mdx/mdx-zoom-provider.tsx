@@ -15,8 +15,8 @@ export function MdxZoomProvider({ children }: MdxZoomProviderPropsType) {
 		if (!container) return
 
 		const images = Array.from(
-			container.querySelectorAll("img[data-zoomable]")
-		) as HTMLElement[]
+			container.querySelectorAll<HTMLImageElement>("img[data-zoomable]")
+		)
 		if (images.length === 0) return
 
 		const zoom = mediumZoom(images, {

@@ -4,6 +4,8 @@ import React from "react"
 
 import { Button } from "@/ui"
 
+const SIBLING_BOX_KEYS = Array.from({ length: 12 }, (_, i) => `box-${i}`)
+
 export function SiblingIndex() {
 	const [key, setKey] = React.useState(0)
 
@@ -37,9 +39,9 @@ export function SiblingIndex() {
 			</div>
 			<div className="w-full rounded-lg border-2 border-dashed p-6 bg-muted/30">
 				<div key={key} className="grid grid-cols-4 gap-4">
-					{Array.from({ length: 12 }, (_, i) => (
+					{SIBLING_BOX_KEYS.map((boxKey, i) => (
 						<div
-							key={i}
+							key={boxKey}
 							className="h-20 rounded-lg bg-linear-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-semibold shadow-lg"
 							style={{
 								// @ts-ignore - sibling-index is a new CSS function

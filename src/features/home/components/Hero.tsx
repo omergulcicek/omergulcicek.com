@@ -39,7 +39,6 @@ export function Hero() {
 					</p>
 
 					<Socials />
-					{/* <JobSeekingBadge className="mt-1 -ml-1" /> */}
 				</div>
 			</div>
 		</section>

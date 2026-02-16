@@ -16,17 +16,17 @@ export function MdxTable({ headers, rows }: MdxTablePropsType) {
 			<Table>
 				<TableHeader>
 					<TableRow>
-						{headers.map((header, index) => (
-							<TableHead key={index}>{header}</TableHead>
+						{headers.map((header) => (
+							<TableHead key={header}>{header}</TableHead>
 						))}
 					</TableRow>
 				</TableHeader>
 				<TableBody>
 					{rows.map((row, rowIndex) => (
-						<TableRow key={rowIndex}>
+						<TableRow key={String(row[0] || rowIndex)}>
 							{row.map((cell, cellIndex) => (
 								<TableCell
-									key={cellIndex}
+									key={`${rowIndex}-${cellIndex}`}
 									className="whitespace-normal text-prose-body"
 								>
 									{cell}
