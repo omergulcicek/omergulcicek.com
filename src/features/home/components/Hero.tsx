@@ -44,9 +44,9 @@ export function Hero() {
 								<Image
 									src={RAMAZAN_DOODLE_SRC}
 									alt="Ramazan ayı doodle"
-									width={40}
-									height={40}
-									className="absolute -bottom-10 -right-6 size-20 animate-[ramazan-doodle_5s_ease-in-out_infinite]"
+									width={80}
+									height={80}
+									className="absolute -bottom-8 -right-5 md:-bottom-10 md:-right-6 size-16 md:size-20 animate-[ramazan-doodle_5s_ease-in-out_infinite]"
 								/>
 							</TooltipTrigger>
 							<TooltipContent side="bottom">
