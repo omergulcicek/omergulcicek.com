@@ -29,6 +29,9 @@ export const metadata: Metadata = {
 		default: `${USER.displayName} - ${USER.jobTitle}`
 	},
 	description: SITE.description,
+	icons: {
+		icon: "/favicon.svg"
+	},
 	keywords: SITE.keywords,
 	authors: [
 		{

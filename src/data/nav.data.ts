@@ -26,14 +26,14 @@ export const navItemsData: NavItem[] = [
 		icon: Quote
 	},
 	{
-		label: "Deneyimler",
-		href: "/experiences",
-		icon: Milestone
-	},
-	{
 		label: "Projeler",
 		href: "/projects",
 		icon: Component
+	},
+	{
+		label: "Deneyimler",
+		href: "/experiences",
+		icon: Milestone
 	},
 	{
 		label: "Yer İmleri",

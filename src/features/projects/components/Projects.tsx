@@ -2,10 +2,6 @@
 
 import Link from "next/link"
 
-import { ArrowUpRight } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-
 import { ArrowButton, Section } from "@/shared"
 import { projectsData } from "@/features/projects/data/projects.data"
 

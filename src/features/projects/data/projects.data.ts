@@ -31,13 +31,13 @@ export const projectsData = [
 	},
 	{
 		icon: TextCursorInput,
-		image: "/projects/forms.png",
-		title: "@omergulcicek/forms",
+		image: "/projects/beti.png",
+		title: "Beti",
 		description:
-			"TypeScript desteği ile React Hook Form için akıllı maskeleme ve doğrulama",
-		link: "https://github.com/omergulcicek/forms",
+			"React Hook Form için hafif, sıfır bağımlılığa sahip bir maskeleme paketi.",
+		link: "https://github.com/omergulcicek/beti",
 		tags: ["React", "TypeScript", "React Hook Form"],
-		color: "bg-green-100"
+		color: "bg-red-100"
 	},
 	{
 		icon: RectangleEllipsis,
@@ -46,7 +46,7 @@ export const projectsData = [
 		description: "Şifre girişlerine göster/gizle geçişi ekleyen React hook'u",
 		link: "https://github.com/omergulcicek/password-input",
 		tags: ["React", "TypeScript", "Lucide"],
-		color: "bg-red-100"
+		color: "bg-green-100"
 	},
 	{
 		icon: CalendarDays,
