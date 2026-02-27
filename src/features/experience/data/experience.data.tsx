@@ -14,7 +14,7 @@ export const experienceData = [
 			"Tailwind CSS"
 		],
 		responsibilities:
-			"10 kişilik frontend ekibimizle birlikte AI destekli araçları süreçlerimize entegre ederek geliştirme verimliliğimizi artırdık; ekibin teknik yol haritasına ve modernizasyonuna liderlik ettim."
+			"10 kişilik frontend ekibine teknik liderlik ederek AI destekli araçları süreçlerimize entegre ettim. Ortak bileşen kütüphanesi ve modüler yapılarla e-ticaret ekosistemindeki (PIM, CMS, OMS) teknik tutarsızlıkları gidererek geliştirici verimliliğini artırdım."
 	},
 	{
 		company: "Alışgidiş",
@@ -31,7 +31,7 @@ export const experienceData = [
 			"Tailwind CSS"
 		],
 		responsibilities:
-			"Ekibimizle birlikte platformun mimari temellerini sıfırdan kurgularken, teknoloji seçimi ve kod kalitesi standartlarını belirleyerek ölçeklenebilir bir ürün ekosistemi inşa ettik."
+			"Platformun ölçeklenebilir mimari temellerini sıfırdan kurguladım; Atomic Design prensipleriyle hazırladığım UI kütüphanesi ve Lighthouse optimizasyonları sayesinde geliştirme hızını %25 artırırken SEO verimliliğini 90+ skor seviyesine taşıdım."
 	},
 	{
 		company: "Gordion",
@@ -48,7 +48,7 @@ export const experienceData = [
 			"Tailwind CSS"
 		],
 		responsibilities:
-			"Geliştirdiğimiz dinamik mimari ve merkezi UI Kit sayesinde sayfa performanslarımızı %40 artırırken, büyük ölçekli iş ortaklarımız için projeye dönüş süresini yarı yarıya indirdik."
+			"Modern mühendislik pratiklerini ekip kültürüne entegre ederek teknik borcu minimize ettim; geliştirdiğimiz merkezi UI Kit ve GraphQL entegrasyonu sayesinde sayfa performanslarını %40 artırırken projeye dönüş sürelerini yarı yarıya indirdik."
 	},
 	{
 		company: "HangiKredi",
@@ -59,7 +59,18 @@ export const experienceData = [
 		workType: "Remote",
 		technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
 		responsibilities:
-			"Tasarımları yüksek performanslı arayüzlere dönüştürürken, geliştirdiğimiz yeniden kullanılabilir JS kütüphaneleri ve düzenlediğimiz teknik sunumlarla ekip içi standartların güçlendirilmesine katkı sağladım."
+			"hangikredi.com platformunu uçtan uca geliştirerek performans iyileştirmelerine öncülük ettim; yüksek performanslı arayüzler ve yeniden kullanılabilir JS kütüphaneleriyle ekip içi standartların güçlendirilmesini sağladım."
+	},
+	{
+		company: "Kodluyoruz",
+		icon: "kodluyoruz",
+		role: "Frontend Eğitmeni",
+		period: "Ara 20 - Şub 21",
+		duration: "2 ay",
+		workType: "Remote",
+		technologies: ["HTML", "CSS", "JavaScript", "Git", "React"],
+		responsibilities:
+			"Kodluyoruz ekibinde 30 öğrenciye sıfırdan Frontend 101 eğitimi verdim; HTML, CSS, SASS, JavaScript, Git ve React konularını öğrettim, PSD to CSS tekrarları yaptırdım."
 	},
 	{
 		company: "Akinon",
@@ -78,7 +89,7 @@ export const experienceData = [
 			"Jinja"
 		],
 		responsibilities:
-			"Vakko ve A101 gibi dev e-ticaret markaları için modüler ve ölçeklenebilir bileşen mimarileri kurguladık; hazırladığım kapsamlı dokümantasyonla geliştirme süreçlerini daha sürdürülebilir hale getirdim."
+			"Vakko ve A101 gibi dev e-ticaret markaları için modüler bileşen mimarileri kurguladım; Zeplin tasarımlarını yüksek sadakatle hayata geçirirken hazırladığım teknik dokümantasyonla süreç sürdürülebilirliğine katkı sağladım."
 	},
 	{
 		company: "Turkcell",
@@ -89,7 +100,7 @@ export const experienceData = [
 		workType: "Onsite",
 		technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
 		responsibilities:
-			"Kritik frontend problemlerine gerçek zamanlı çözümler üreterek geliştirme döngüsündeki blokajları giderdim ve ekipler arası geri bildirim hızını optimize ettim."
+			"Kritik frontend problemlerine gerçek zamanlı çözümler üreterek geliştirme döngüsündeki blokajları giderdim; canlı sistemdeki hataları anlık olarak optimize ederek ekipler arası geri bildirim hızını artırdım."
 	},
 	{
 		company: "Ziraat Teknoloji",
@@ -100,6 +111,6 @@ export const experienceData = [
 		workType: "Onsite",
 		technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Kendo UI"],
 		responsibilities:
-			"Kendo UI ile kurumsal admin panelleri geliştirirken, tüm yapıyı responsive standartlarına uygun şekilde yeniden kurgulayarak platformun erişilebilirliğini ve farklı cihazlardaki performansını artırdım."
+			"Kendo UI tabanlı kurumsal admin paneli projelerini uçtan uca geliştirip yönettim; mevcut arayüzleri tamamen responsive hale getirerek platformun kullanıcı deneyimini modern standartlara taşıdım."
 	}
 ]

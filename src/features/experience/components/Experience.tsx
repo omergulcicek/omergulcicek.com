@@ -1,12 +1,34 @@
 "use client"
 
+import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
 import { slugify } from "@/helpers/slugify"
+import { DownloadIcon, EyeIcon } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger
+} from "@/components/ui/dialog"
+import {
+	Drawer,
+	DrawerClose,
+	DrawerContent,
+	DrawerDescription,
+	DrawerFooter,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerTrigger
+} from "@/components/ui/drawer"
 import { Heading } from "@/components/ui/typography"
-import { ArrowButton, JobSeekingBadge, Section, TagsBadge } from "@/shared"
+import { ArrowButton, TagsBadge } from "@/shared"
 import { experienceData } from "@/features/experience/data/experience.data"
 
 interface ExperienceProps {
@@ -22,6 +44,7 @@ export function Experience({
 	const experiences = showAll ? experienceData : experienceData.slice(0, 3)
 	const showTitle = showButton && experiences.length > 0
 	const showTags = !showButton && experiences.length > 0
+	const showDownloadButton = !showButton && experiences.length > 0
 
 	return (
 		<div className="flex flex-col gap-4">
@@ -37,6 +60,11 @@ export function Experience({
 					performanslı mimariler kurgulayarak sürdürülebilir kullanıcı
 					deneyimleri inşa ediyorum.
 				</p>
+				{showDownloadButton && (
+					<div className="mt-4">
+						<ResumeModal />
+					</div>
+				)}
 				<div className="flex flex-col gap-6 md:gap-8 mt-10">
 					{experiences.map((experience) => (
 						<div
@@ -87,4 +115,101 @@ export function Experience({
 			)}
 		</div>
 	)
+}
+
+function ResumeModal() {
+	const [open, setOpen] = React.useState(false)
+	const isDesktop = useMediaQuery("(min-width: 768px)")
+	const resumeUrl = "/omer-gulcicek-cv.pdf"
+
+	if (isDesktop) {
+		return (
+			<Dialog open={open} onOpenChange={setOpen}>
+				<DialogTrigger asChild>
+					<Button variant="outline" size="sm" className="gap-2">
+						<EyeIcon className="size-4" />
+						Özgeçmişi İncele
+					</Button>
+				</DialogTrigger>
+				<DialogContent className="min-w-3xl h-[95vh] flex flex-col">
+					<DialogHeader>
+						<DialogTitle>Özgeçmiş Önizleme</DialogTitle>
+						<DialogDescription>
+							Özgeçmişimi buradan inceleyebilir veya indirebilirsiniz.
+						</DialogDescription>
+					</DialogHeader>
+					<div className="flex-1 w-full bg-muted rounded-md overflow-hidden border">
+						<iframe
+							src={resumeUrl}
+							className="w-full h-full"
+							title="Özgeçmiş Önizleme"
+						/>
+					</div>
+					<DialogFooter>
+						<Button asChild className="gap-2">
+							<a href={resumeUrl} download="omer-gulcicek-cv.pdf">
+								<DownloadIcon className="size-4" />
+								İndir
+							</a>
+						</Button>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
+		)
+	}
+
+	return (
+		<Drawer open={open} onOpenChange={setOpen}>
+			<DrawerTrigger asChild>
+				<Button variant="outline" size="sm" className="gap-2">
+					<EyeIcon className="size-4" />
+					Özgeçmişi İncele
+				</Button>
+			</DrawerTrigger>
+			<DrawerContent className="h-[90vh]">
+				<DrawerHeader className="text-left">
+					<DrawerTitle>Özgeçmiş Önizleme</DrawerTitle>
+					<DrawerDescription>
+						Özgeçmişimi buradan inceleyebilir veya indirebilirsiniz.
+					</DrawerDescription>
+				</DrawerHeader>
+				<div className="flex-1 w-full bg-muted overflow-hidden border-y">
+					<iframe
+						src={resumeUrl}
+						className="w-full h-full"
+						title="Özgeçmiş Önizleme"
+					/>
+				</div>
+				<DrawerFooter className="pt-2">
+					<Button asChild className="gap-2">
+						<a href={resumeUrl} download="omer-gulcicek-cv.pdf">
+							<DownloadIcon className="size-4" />
+							İndir
+						</a>
+					</Button>
+					<DrawerClose asChild>
+						<Button variant="outline">Kapat</Button>
+					</DrawerClose>
+				</DrawerFooter>
+			</DrawerContent>
+		</Drawer>
+	)
+}
+
+function useMediaQuery(query: string) {
+	const [value, setValue] = React.useState(false)
+
+	React.useEffect(() => {
+		function onChange(event: MediaQueryListEvent) {
+			setValue(event.matches)
+		}
+
+		const result = matchMedia(query)
+		result.addEventListener("change", onChange)
+		setValue(result.matches)
+
+		return () => result.removeEventListener("change", onChange)
+	}, [query])
+
+	return value
 }
