@@ -1,40 +1,43 @@
 ---
 languages: ["tr"]
-createdAt: "soon"
-slug: "/frontend-ekosistemi-insa-etmek-bir-modern-zanaat-hikayesi"
-title: "Frontend Ekosistemi İnşa Etmek: Bir Modern Zanaat Hikayesi"
+createdAt: "2026-04-05"
+slug: "/frontend-ekosistemi-insa-etmek-zanaattan-muhendislige-bir-yolculuk"
+title: "Frontend Ekosistemi İnşa Etmek: Zanaattan Mühendisliğe Bir Yolculuk"
 category: "teknik"
-tags: ["Frontend"]
+tags: ["Frontend", "ViraStack"]
 medium: ""
 ---
 
-Frontend dünyasında her gün yeni bir paket çıkıyor ancak ben, "hazır paket kullan geç" kültürü yerine, yapıları anlayarak inşa etme felsefesini benimsiyorum. Bu yazı; araçların sadece kullanıcısı olmak yerine, o mutfağa girerek kendi standartlarımı nasıl kurguladığımı ve bu süreçteki modern zanaat yolculuğumu anlatıyor.
+Frontend dünyasında her gün binlerce paket yayınlanıyor. Ancak benim için bu süreç, **"hazır olanı kullan geç"** kolaylığından ziyade, her satırın arkasındaki matematiği anlama ve kendi standartlarımı kurgulama tutkusuyla başladı. Bu yazı; kişisel bir meraktan doğan isimlendirmelerin, nasıl global bir mühendislik ekosistemine -[**ViraStack**](https://github.com/virastack)'e- dönüştüğünün hikayesidir.
 
-Birçok kişi için bu süreç "tekerleği yeniden icat etmek" gibi görünebilir. Ancak benim için bu, **tekerleği yeniden icat etmek değil, tekerleğin nasıl döndüğünü anlamaktır.**
+### İlk Göz Ağrısı: Turkuaz CSS
 
-### Mutfağa İlk Giriş: Turkuaz ve Keşif Süreci
-Her şey [Bootstrap](https://getbootstrap.com/), [Materialize](https://materializecss.com/) ve [Bulma](https://bulma.io/) gibi devlerin kaynak kodları arasında kaybolduğum o günlerde başladı. Ekranımda onlarca sekme; bir yandan grid sistemlerinin matematiksel arka planını, diğer yandan farklı kütüphanelerin CSS değişkenlerini nasıl kurguladığını en ince ayrıntısına kadar inceliyordum. 
+Her şey [Bootstrap](https://getbootstrap.com/) ve [Materialize](https://materializecss.com/) gibi devlerin kaynak kodlarında kaybolduğum günlerde başladı. Amacım onlarla yarışmak değil, bir UI kütüphanesinin arka planda nasıl nefes aldığını anlamaktı. Bu merakın ilk somut çıktısı [Turkuaz](https://github.com/omergulcicek/turkuaz) oldu. Turkuaz sayesinde CSS’in teknik derinliklerini keşfettim ve zorluklarını bizzat deneyimledim. Bugün artık modern standartlar ([Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)) yerleştiği için bu projeyi rafa kaldırmış olsam da Turkuaz, bana bugünkü vizyonumu kazandıran ilk göz ağrım olarak kaldı.
 
-Amacım bu devlerle yarışıp pastadan pay almak değildi. Asıl derdim; bir kütüphanenin arka planda nasıl çalıştığını, ölçeklenebilir bir mimarinin nasıl kurulduğunu ve "en iyisi" denilen yapıların hangi noktalarda taviz verdiğini anlamaktı. [Turkuaz](https://github.com/omergulcicek/turkuaz), bu derin merakın çıktısıydı. Bugün artık [Tailwind CSS](https://tailwindcss.com/) ve [shadcn/ui](https://ui.shadcn.com/) gibi modern yaklaşımlar standart haline geldiği için projenin geliştirmesini durdurdum ve yakında repoyu arşivleyeceğim. Ancak Turkuaz, bana bugünkü vizyonumu kazandıran ilk göz ağrım olarak yerini koruyacak.
+![ViraStack logo](/blog/2026/04-05/virastack.jpeg)
 
-### İsimlerin Ruhu ve Hikayesi
-Ekosistemimde bir projeye isim vermek, kod yazmak kadar mesai harcadığım zihinsel bir süreç. Bir ürün sadece fonksiyonuyla değil, kimliğiyle de yaşamalı. Marka isminde Türkçeye sadık kalmaya, ASCII standartlarına uymaya ve küresel arenada yabancı bir meslektaşımın dilini dolaştırmayacak fonetikler seçmeye gayret ediyorum.
+### İsimlerin Ruhu ve Karşılaşılan Bariyerler
 
-Bu isimlendirme disiplini Turkuaz ile başladı. Projeyi geliştirirken bir yandan da manalı bir isim arayışındaydım. Aslında renklerle aram pek iyi değildir; hatta o güne kadar "Turkuaz" diye bir rengin varlığından bile haberdar değildim. Sevdiğim bir sanatçının röportajında en sevdiği rengin turkuaz olduğunu söylemesiyle bu kelimeyi keşfettim. Kelime tarihini incelediğimde ismin Fransızca "Türk" kelimesinden türediğini ve Akdeniz sahillerinin renginden esinlendiğini gördüm. İçinde "Türk" kelimesini barındırması ve bir rengin UI kütüphanesiyle estetik uyumu, ismin Turkuaz olmasını sağladı.
+Turkuaz'dan sonra her projeye karakterini yansıtan Türkçe isimler verdim. Next.js mimarisini disipline eden Nizam, yapay zekayı bir asistan gibi eğiten mimari kurallar seti Kaide ve React Hook Form için geliştirdiğim hafif maskeleme paketi Beti bu dönemin ürünleriydi. Bu isimler kısa, akılda kalıcı ve ASCII standartlarına uygun olsa da; zayıf keşfedilebilirlik ve dokümantasyonu incelemeden projenin amacının anlaşılamaması gibi sorunları da beraberinde getirdi.
 
-### Nizam, Kaide ve Ekosistemin Devamı
+**`@omergulcicek/beti`** gibi bireysel isim-soyisim içeren paketler, geliştiricilerde **"kişisel bir deneme"** algısı yaratıyor ve güven bariyeri oluşturuyordu. Bu durum, nitelikli bir mühendislik çalışmasının hak ettiği ilgiyi görmesini engelliyordu. Ayrıca bu derin Türkçe isimlerin global arenasinda telaffuzu zor, SEO karşılığı zayıf ve domain erişilebilirliği kısıtlıydı. Profesyonel bir büyüme için bireysel repolardan, topluluk odaklı ve ölçeklenebilir bir organizasyon yapısına geçmek zorundaydım.
 
-Turkuaz'dan sonra gelen her parça, bu isimlendirme felsefesini teknik bir disiplinle birleştirdi:
+### ViraStack: Bir Ekosistemin Doğuşu
 
-* **[Turkuaz](https://github.com/omergulcicek/turkuaz):** Türk rengi olarak bilinen bu ismin estetiği, geliştirdiğim UI kütüphanesinin görsel dünyasıyla tam bir uyum yakalıyor.
-* **[Nizam](https://github.com/omergulcicek/nizam):** Düzen anlamına gelen ismine sadık kalarak; **Next.js**, **TypeScript** ve **Feature-based** mimariyi disiplinli bir başlangıç noktasında birleştiren yapı.
-* **[Kaide](https://github.com/omergulcicek/kaide):** Kural anlamına gelen, isminin içinde "AI" (K**ai**de) ibaresini barındıran bu set; yapay zekayı kendi kod stilimi bilen bir asistana dönüştüren kurallar bütünü.
-* **[Beti](https://github.com/omergulcicek/beti):** Eski Türkçede ve edebî dilde yazı, metin, yazılı eser anlamına gelir. React Hook Form için hafif, sıfır bağımlılığa sahip bir maskeleme paketi.
+Zanaatkarlıktan mühendisliğe geçiş, stratejik bir karar gerektiriyordu. İsim arayışımda Türkçe kökenli, fonetik olarak güçlü ve yabancıların da kolayca telaffuz edebileceği bir kelime aradım. Sonunda **Vira** isminde karar kıldım. Bana Karadeniz'in o mücadeleci ruhunu, balıkçıların **"Vira Bismillah"** diyerek yola çıkışını çağrıştırıyordu. Hem kısa hem de **Meta**, **Vite** veya **Vue** gibi teknolojik bir tınısı vardı. **Vira** ismi tek başına dolu olduğu için, bu yapıyı bir "stack" disipliniyle birleştirerek [**ViraStack**](https://github.com/virastack) organizasyonunu kurdum.
 
-### Neden Hazırı Seçmiyorum?
-Bu teknik olarak gelişmek için seçtiğim bir yol. Nizam'ı kurarken harcadığım mesai bana olası mimari hataları önceden görme yetisi kazandırdı. Kaide ile prompt mühendisliğini ve yapay zekâ ile nasıl konuşmam gerektiğini, Turkuaz ise CSS'i derinlemesine kavramamı sağladı.
+### Peki, Bunlarla Neden Uğraşıyorum?
 
-### Sonuç: Ezberden Uzak Bir Uzmanlık
-Frontend ekosistemi inşa etmek benim için bir egzersiz değil, uzmanlaşma yolculuğu. Hazır çözümleri tercih etmememin sebebi onları küçümsemek değil, arkalarındaki matematiği kendi dünyamda kurma tutkusudur. Bir mühendis ancak nedenini bildiği satıra "benim kodum" diyebilir.
+**ViraStack** sadece bir isim değişikliği değil, bir vizyon değişikliği. Bu benim öğrenme biçimim; bir işin mutfağına girip detaylara ve kaliteye en uç noktada hakim olmayı seviyorum. Her projeyi markalaştırarak o fikri benimsiyor, böylece sadece kod yazmakla kalmayıp bir standart inşa ediyorum. Eskiden Turkuaz ile CSS dünyasını araştırırken; bugün **ViraStack** çatısı altında **React mimarileri**, **Hook yapıları** ve **Yapay Zeka protokolleri** gibi konularda en güncel standartları keşfetmeye itiliyorum. Tüm paketleri birbirine kenetli, tutarlı ve üst kalite bir alet çantası olarak kurgulamaya özen gösteriyorum. SEO dostu isimlendirmeler ve organizasyonel yapı sayesinde, artık bireysel bir çabanın ötesinde, topluluğa ait ve güven veren bir ekosistem inşa ediyorum.
 
-Bu ekosistem tamamlandığında, elimde sadece bir alet çantası değil; her ismi özenle seçilmiş, çalıştığım her projede en ince ayrıntısına kadar dert edip üzerine kafa yorduğum bir felsefe kalacak. Çünkü mesele sadece tekerleği döndürmek değil, o tekerleğin hangi **kaide** üzerine, hangi **nizam** ile inşa edildiğidir.
+### Sonuç: Geleceğe Vira!
+
+Frontend ekosistemi inşa etmek benim için sadece kod yazmak değil; her parçası özenle düşünülmüş, tutarlı bir düzen kurmaktır. **ViraStack** ile sadece bir ekosistem inşa etmekle kalmıyor; bu yapının hangi kurallar **(AI Rules)** üzerine kurulacağını ve hangi standart başlangıç yapılarıyla **(Boilerplate)** ayağa kaldırılacağını uçtan uca tasarlıyorum. Bu yolculuğun teknik mimarisini, geliştirdiğim paketlerin derinliklerini ve ekosistemin işleyişini bir sonraki makalede kapsamlı bir şekilde ele alacağım.
+
+ViraStack ekosistemi, topluluktan gelen geri bildirimlerle büyümeye devam ediyor. Projeleri GitHub üzerinden yıldızlayarak ve sosyal medyada takip ederek bu açık kaynak yolculuğuna destek olabilirsiniz:
+
+* **GitHub:** [github.com/virastack](https://github.com/virastack) (*Yıldızlayarak destek olun ⭐*)
+* **X (Twitter):** [x.com/virastack](https://x.com/virastack)
+* **LinkedIn:** [linkedin.com/virastack](https://linkedin.com/company/virastack)
+
+Yeni proje fikirleriniz veya teknik sorularınız için bana her zaman bu kanallar üzerinden ulaşabilirsiniz. Geleceğe vira!

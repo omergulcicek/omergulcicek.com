@@ -2,6 +2,7 @@ export const mainStack = [
 	"React",
 	"Next.js",
 	"TanStack",
+	"ViraStack",
 	"TypeScript",
 	"Yapay Zekâ",
 	"Frontend"

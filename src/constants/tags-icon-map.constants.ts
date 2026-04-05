@@ -41,6 +41,7 @@ import {
 	TailwindCss,
 	TanStack,
 	TypeScript,
+	ViraStack,
 	Vite,
 	Zod,
 	Zustand
@@ -91,5 +92,6 @@ export const tagsIconMap: TagsIconMapType = {
 	Yorum: MessageCircle,
 	Teknoloji: Cpu,
 	Dizi: Clapperboard,
-	"Yapay Zekâ": Bot
+	"Yapay Zekâ": Bot,
+	ViraStack: ViraStack
 }
