@@ -35,6 +35,7 @@ import { LinksReview } from "@/features/blog/components/links-review"
 import { MdxTable } from "@/features/blog/components/mdx-table"
 import { MediaInfo } from "@/features/blog/components/media-info"
 import { Rating } from "@/features/blog/components/rating"
+import { ViraStackMigrationNotice } from "@/features/blog/components/virastack-migration-notice"
 
 export const components = {
 	Button,
@@ -62,6 +63,7 @@ export const components = {
 	Stretch,
 	TextBox,
 	MdxTable,
+	ViraStackMigrationNotice,
 
 	pre: ({ children, ...props }: PreProps) => {
 		const getCodeContent = (node: React.ReactNode): string => {
