@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 import { Container, Section } from "@/shared"
 import { ProjectCard, projectsData } from "@/features/projects"
 
@@ -9,8 +11,15 @@ export default function Projects() {
 			<Section title="Projeler">
 				<p className="text-muted-foreground">
 					Açık kaynak projelerimi{" "}
-					<strong className="text-primary">ViraStack</strong> adlı bir GitHub
-					organizasyonu altında topladım.
+					<Link
+						href="https://github.com/virastack"
+						rel="noopener noreferrer"
+						target="_blank"
+						className="text-primary underline font-medium underline-offset-4"
+					>
+						ViraStack
+					</Link>{" "}
+					adlı bir GitHub organizasyonu altında topladım.
 				</p>
 				<p className="text-muted-foreground">
 					ViraStack, React ve Next.js ekosistemini yüksek disiplinli
