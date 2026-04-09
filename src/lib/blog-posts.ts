@@ -75,7 +75,7 @@ export function getAllPosts(): BlogPostType[] {
 }
 
 export function getLastNewestPosts(): BlogPostType[] {
-	return getAllPosts().slice(0, 5)
+	return getAllPosts().slice(0, 3)
 }
 
 export function getPostBySlug(slug: string): BlogPostType | undefined {

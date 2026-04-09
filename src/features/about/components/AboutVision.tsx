@@ -7,8 +7,9 @@ export function AboutVision() {
 				Uzun vadede, özellikle büyük ve kurumsal yapılarda; frontend mimarisinin
 				tüm sorumluluğunu üstlenen, ekiplerin yapılandırılması ve
 				yönlendirilmesinde aktif rol alan ve teknoloji stratejilerini belirleyen
-				bir <span className="text-primary">Frontend Architect</span> rolüne
-				yönelmeyi hedefliyorum.
+				bir{" "}
+				<span className="font-medium text-foreground">Frontend Architect</span>{" "}
+				rolüne yönelmeyi hedefliyorum.
 			</p>
 		</Section>
 	)

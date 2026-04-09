@@ -7,7 +7,7 @@ export function AboutTechnicalApproach() {
 		<Section title="Teknik Yaklaşım" type="h2">
 			<p>
 				Modern frontend mimarisinin farklı katmanlarında çalışıyor;{" "}
-				<span className="text-primary">
+				<span className="font-medium text-foreground">
 					ölçeklenebilir, tip güvenliği yüksek ve uzun vadede sürdürülebilir
 					yapılar
 				</span>{" "}
@@ -18,14 +18,14 @@ export function AboutTechnicalApproach() {
 			</p>
 
 			<p>
-				<span className="text-primary">
+				<span className="font-medium text-foreground">
 					Performans, DX odaklı geliştirme ve temiz, ölçeklenebilir bir folder
 					structure
 				</span>{" "}
 				benim için temel prensipler arasında. Karmaşık yapıları anlaşılır hâle
 				getirmeye, teknik borcu azaltmaya ve projelere güçlü bir mimari temel
 				oluşturmaya odaklanıyorum. Çalışırken{" "}
-				<span className="text-primary">
+				<span className="font-medium text-foreground">
 					netlik, sadelik ve sürdürülebilirlik
 				</span>{" "}
 				merkezli bir yaklaşım benimsiyorum.

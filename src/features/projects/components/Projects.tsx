@@ -11,7 +11,7 @@ export function Projects() {
 	return (
 		<Section title="Projeler" type="h2">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
-				{projectsData.slice(0, 2).map((project, index) => (
+				{projectsData.slice(0, 4).map((project, index) => (
 					<ProjectCard key={project.title} project={project} index={index} />
 				))}
 			</div>

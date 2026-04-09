@@ -12,9 +12,12 @@ export function AboutProductionCulture() {
 		<Section title="Üretim Kültürü" type="h2">
 			<p>
 				Güncel frontend yaklaşımlarını pratik araçlara dönüştüren{" "}
-				<span className="text-primary">açık kaynak projeler</span>{" "}
-				geliştiriyorum. Özellikle <span className="text-primary">Nizam</span>{" "}
-				gibi modern <span className="text-primary">Next.js boilerplate</span>{" "}
+				<span className="font-medium text-foreground">
+					açık kaynak projeler
+				</span>{" "}
+				geliştiriyorum. Özellikle{" "}
+				<span className="font-medium text-foreground">Nizam</span> gibi modern{" "}
+				<span className="font-medium text-foreground">Next.js boilerplate</span>{" "}
 				yapıları ve çeşitli yardımcı araçlar üzerinde çalışarak açık kaynak
 				kültürüne katkı sağlıyorum.
 			</p>
@@ -24,7 +27,7 @@ export function AboutProductionCulture() {
 				toplulukla etkileşim kuruyorum.
 			</p>
 
-			<div className="py-4">
+			<div className="py-4 flex items-center justify-center">
 				<GitHubCalendar
 					username="omergulcicek"
 					colorScheme={theme === "dark" ? "dark" : "light"}

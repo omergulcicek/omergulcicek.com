@@ -1,7 +1,7 @@
 import Link from "next/link"
 
-import { Heading } from "@/ui"
 import { Section } from "@/shared"
+import { Heading } from "@/ui"
 
 export function AboutServices() {
 	return (
@@ -10,11 +10,11 @@ export function AboutServices() {
 				<article className="flex flex-col gap-4">
 					<Heading as="h3">Freelance Geliştirme</Heading>
 					<p>
-						<span className="text-primary">React</span> ve{" "}
-						<span className="text-primary">Next.js</span> ile modern, hızlı ve
-						ölçeklenebilir web uygulamaları geliştiriyorum. Ürününüze teknik
-						katkı sağlamak veya yeni bir proje başlatmak isterseniz iletişim
-						bölümünden bana ulaşabilirsiniz.
+						<span className="font-medium text-foreground">React</span> ve{" "}
+						<span className="font-medium text-foreground">Next.js</span> ile
+						modern, hızlı ve ölçeklenebilir web uygulamaları geliştiriyorum.
+						Ürününüze teknik katkı sağlamak veya yeni bir proje başlatmak
+						isterseniz iletişim bölümünden bana ulaşabilirsiniz.
 					</p>
 				</article>
 
@@ -26,7 +26,7 @@ export function AboutServices() {
 							href="https://kodluyoruz.org"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2 text-primary underline font-medium underline-offset-4"
+							className="inline-flex items-center gap-2 font-medium text-foreground underline font-medium underline-offset-4"
 						>
 							kodluyoruz.org
 						</Link>{" "}
