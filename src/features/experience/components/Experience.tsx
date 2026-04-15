@@ -5,7 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { slugify } from "@/helpers/slugify"
+import { motion } from "framer-motion"
 import { DownloadIcon, EyeIcon } from "lucide-react"
+
+import { useMotionEnvironment } from "@/lib/motion-environment"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -41,6 +44,7 @@ export function Experience({
 	showAll = false,
 	showButton = false
 }: ExperienceProps) {
+	const { shouldUseSoftMotion } = useMotionEnvironment()
 	const experiences = showAll ? experienceData : experienceData.slice(0, 3)
 	const showTitle = showButton && experiences.length > 0
 	const showTags = !showButton && experiences.length > 0
@@ -55,9 +59,10 @@ export function Experience({
 			)}
 
 			<div className="flex flex-col gap-2">
-				<p className="text-muted-foreground">
-					8 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek
-					performanslı mimariler kurgulayarak sürdürülebilir kullanıcı
+				<p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+					8 yılı aşkın tecrübemle, <span className="text-primary">React</span>{" "}
+					ekosisteminde <span className="text-primary">AI destekli</span> ve
+					yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı
 					deneyimleri inşa ediyorum.
 				</p>
 				{showDownloadButton && (
@@ -66,9 +71,24 @@ export function Experience({
 					</div>
 				)}
 				<div className="flex flex-col gap-6 md:gap-8 mt-10">
-					{experiences.map((experience) => (
-						<div
+					{experiences.map((experience, animationOrder) => (
+						<motion.div
 							key={experience.company}
+							initial={
+								shouldUseSoftMotion
+									? { opacity: 1, y: 0 }
+									: { opacity: 0, y: 32 }
+							}
+							animate={{ opacity: 1, y: 0 }}
+							transition={
+								shouldUseSoftMotion
+									? { duration: 0 }
+									: {
+											duration: 0.48,
+											delay: animationOrder * 0.05,
+											ease: [0.22, 1, 0.36, 1]
+										}
+							}
 							className="flex flex-col sm:flex-row sm:gap-6 gap-2 items-stretch sm:items-start"
 						>
 							<span className="text-sm text-muted-foreground tabular-nums shrink-0 pt-0.5 sm:min-w-24 order-first sm:order-0">
@@ -101,7 +121,7 @@ export function Experience({
 									{experience.responsibilities}
 								</p>
 							</div>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			</div>

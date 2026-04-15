@@ -66,8 +66,8 @@ function Heading<T extends HeadingTypes = "h1">({
 				"flex flex-row items-center gap-2 scroll-m-20 text-prose-foreground",
 				as === "h1" && "text-4xl font-semibold tracking-tight text-balance",
 				as === "h2" && "text-2xl font-semibold tracking-tight",
-				as === "h3" && "text-xl font-semibold tracking-tight",
-				as === "h4" && "text-lg font-semibold tracking-tight",
+				as === "h3" && "text-lg font-normal tracking-tight",
+				as === "h4" && "text-base font-normal tracking-tight",
 				className
 			)}
 			{...props}

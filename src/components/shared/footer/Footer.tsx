@@ -5,9 +5,9 @@ import { LinkPreview } from "@/ui"
 
 export function Footer() {
 	return (
-		<footer className="border-t">
-			<Container className="py-12">
-				<div className="flex flex-col gap-2 text-muted-foreground text-sm">
+		<footer className="border-t mt-20">
+			<Container className="py-12 md:py-16">
+				<div className="flex flex-col items-center gap-2 text-muted-foreground text-sm text-center">
 					<p>
 						<LinkPreview
 							url="https://virastack.com"

@@ -170,7 +170,7 @@ export const components = {
 
 	p: ({ children, ...props }: React.ComponentProps<"p">) => (
 		<p
-			className="text-base leading-7 not-first:mt-6 text-prose-body"
+			className="text-muted-foreground text-base leading-relaxed md:text-lg mb-8 md:mb-12"
 			{...props}
 		>
 			{children}

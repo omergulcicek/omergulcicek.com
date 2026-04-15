@@ -38,7 +38,7 @@ export const TOC = ({ content }: TOCProps) => {
 		<Accordion
 			type="single"
 			collapsible
-			className="w-full bg-secondary rounded-lg"
+			className="w-full bg-secondary rounded-lg mt-4"
 		>
 			<AccordionItem value="toc">
 				<AccordionTrigger className="px-4 py-3 hover:no-underline [& h3]:hidden">

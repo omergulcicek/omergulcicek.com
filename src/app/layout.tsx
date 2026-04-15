@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
-import { GeistSans } from "geist/font/sans"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { SITE } from "@/constants/site.constants"
@@ -18,6 +18,12 @@ import {
 } from "@/shared"
 
 import "./globals.css"
+
+const inter = Inter({
+	subsets: ["latin-ext"],
+	variable: "--font-inter",
+	display: "swap"
+})
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE.url),
@@ -72,7 +78,7 @@ export default function RootLayout({
 
 	return (
 		<html lang="tr" suppressHydrationWarning>
-			<body className={`${GeistSans.className} antialiased font-sans`}>
+			<body className={`${inter.className} antialiased font-sans`}>
 				<StructuredData type="website" />
 				<StructuredData type="person" />
 				<ThemeProvider>

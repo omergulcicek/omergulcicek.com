@@ -8,7 +8,6 @@ import { getAllPosts, getFuturePosts } from "@/lib/blog-posts"
 
 import { Container, Section } from "@/shared"
 import { BlogListSkeleton } from "@/features/blog"
-import type { BlogPostType } from "@/features/blog/types/blog.types"
 
 const BlogList = dynamic(
 	() =>
@@ -36,7 +35,7 @@ export default function Blog() {
 
 	return (
 		<Container>
-			<Section title="Blog">
+			<Section title="Blog" className="pt-10 md:pt-24">
 				<Suspense fallback={<BlogListSkeleton />}>
 					<BlogList allPosts={allPosts} futurePosts={futurePosts} />
 				</Suspense>

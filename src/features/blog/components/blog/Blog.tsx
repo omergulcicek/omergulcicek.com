@@ -22,14 +22,14 @@ export function Blog({ posts }: BlogPropsType) {
 								{dateFormat(post.metadata.createdAt, "DD/MM/YY")}
 							</span>
 						)}
-						<h3 className="group-hover:underline group-hover:underline-offset-4 transition-all duration-200">
+						<h3 className="leading-7 text-primary text-base md:text-lg group-hover:underline group-hover:underline-offset-4 transition-all duration-200">
 							{post.metadata.title}
 						</h3>
 					</Link>
 				))}
 			</nav>
 
-			<div className="flex justify-center">
+			<div className="flex justify-center mt-10">
 				<Link href="/blog">
 					<ArrowButton text="Tüm yazıları göster" />
 				</Link>

@@ -1,6 +1,5 @@
 .prose {
 	color: var(--tw-prose-body);
-	max-width: 768px;
 }
 
 .prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
@@ -27,8 +26,8 @@
 
 .prose
 	:where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-	color: var(--tw-prose-bold);
-	font-weight: 550;
+	color: var(--primary);
+	font-weight: 400;
 }
 
 .prose

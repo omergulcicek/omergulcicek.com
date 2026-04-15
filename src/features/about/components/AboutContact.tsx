@@ -8,11 +8,11 @@ export function AboutContact() {
 	return (
 		<Section title="İletişim" type="h2">
 			<div className="flex flex-col gap-4">
-				<p className="text-muted-foreground">
+				<p className="text-muted-foreground text-base leading-relaxed md:text-lg">
 					Benimle iletişime geçmek için{" "}
 					<Link
 						href={`mailto:${USER.email}`}
-						className="inline-flex items-center gap-2 font-medium text-foreground underline font-medium underline-offset-4"
+						className="text-primary underline underline-offset-4"
 					>
 						{USER.email}
 					</Link>{" "}

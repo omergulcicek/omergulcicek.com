@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useMediaQuery } from "usehooks-ts"
 
 import { USER } from "@/constants/user.constants"
+import { useMotionEnvironment } from "@/lib/motion-environment"
 
 import { CommandPalette, Container, ThemeToggle } from "@/shared"
 import { Button, Separator } from "@/ui"
@@ -22,6 +23,7 @@ interface HeaderProps {
 }
 
 export function Header({ posts }: HeaderProps) {
+	const { supportsViewTransitions } = useMotionEnvironment()
 	const isDesktop = useMediaQuery("(min-width: 768px)")
 	const [isLoading, setIsLoading] = useState(true)
 
@@ -37,15 +39,16 @@ export function Header({ posts }: HeaderProps) {
 		<>
 			<a
 				href="#main-content"
-				className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+				className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
 			>
 				Ana içeriğe geç
 			</a>
 			<header
 				role="banner"
-				className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+				data-vt-enabled={supportsViewTransitions}
+				className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 above-fold-native-enter motion-gpu vt-header-shell"
 			>
-				<Container className="py-4 md:py-4 max-w-5xl">
+				<Container className="py-4 md:py-4 max-w-6xl">
 					<div className="flex items-center justify-between">
 						{isLoading ? (
 							<HeaderSkeleton />

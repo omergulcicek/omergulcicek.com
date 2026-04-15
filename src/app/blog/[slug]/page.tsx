@@ -12,8 +12,14 @@ import {
 } from "@/lib/blog-posts"
 
 import { Container, Section, StructuredData } from "@/shared"
-import { Heading, Prose } from "@/ui"
-import { BlogDetailHeader, BlogInfo, MDX } from "@/features/blog"
+import { Prose } from "@/ui"
+import {
+	BlogDetailHeader,
+	BlogInfo,
+	BlogPostStagger,
+	BlogPostTitle,
+	MDX
+} from "@/features/blog"
 import { extractExcerpt } from "@/features/blog/helpers/extract-excerpt"
 import { extractFirstImage } from "@/features/blog/helpers/extract-first-image"
 
@@ -107,20 +113,25 @@ export default async function BlogPost({
 				]}
 			/>
 			<Container>
-				<Section>
-					<BlogDetailHeader previous={previous} next={next} />
-
-					<Heading as="h1" id={slugify(post.metadata.title)}>
-						{post.metadata.title}
-					</Heading>
-
-					<BlogInfo post={post} />
-
-					<Prose>
-						<article>
-							<MDX content={post.content} />
-						</article>
-					</Prose>
+				<Section className="pt-10 md:pt-24">
+					<BlogPostStagger
+						header={<BlogDetailHeader previous={previous} next={next} />}
+						title={
+							<BlogPostTitle
+								slug={post.slug}
+								title={post.metadata.title}
+								id={slugify(post.metadata.title)}
+							/>
+						}
+						info={<BlogInfo post={post} />}
+						prose={
+							<Prose>
+								<article>
+									<MDX content={post.content} />
+								</article>
+							</Prose>
+						}
+					/>
 				</Section>
 			</Container>
 		</>

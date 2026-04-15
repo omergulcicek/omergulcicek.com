@@ -1,4 +1,5 @@
 export * from "./About"
+export * from "./AboutPageContent"
 export * from "./AboutHobbies"
 export * from "./AboutServices"
 export * from "./AboutContact"

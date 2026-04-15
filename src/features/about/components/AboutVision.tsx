@@ -3,13 +3,12 @@ import { Section } from "@/shared"
 export function AboutVision() {
 	return (
 		<Section title="Vizyon" type="h2">
-			<p>
+			<p className="text-muted-foreground text-base leading-relaxed md:text-lg">
 				Uzun vadede, özellikle büyük ve kurumsal yapılarda; frontend mimarisinin
 				tüm sorumluluğunu üstlenen, ekiplerin yapılandırılması ve
 				yönlendirilmesinde aktif rol alan ve teknoloji stratejilerini belirleyen
-				bir{" "}
-				<span className="font-medium text-foreground">Frontend Architect</span>{" "}
-				rolüne yönelmeyi hedefliyorum.
+				bir <span className="text-primary">Frontend Architect</span> rolüne
+				yönelmeyi hedefliyorum.
 			</p>
 		</Section>
 	)

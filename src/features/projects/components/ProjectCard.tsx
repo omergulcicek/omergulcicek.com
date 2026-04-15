@@ -3,7 +3,17 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { motion } from "framer-motion"
+
+import { useMotionEnvironment } from "@/lib/motion-environment"
 import { cn } from "@/lib/utils"
+
+const WAVE_STAGGER_SEC = 0.16
+
+function getEntranceWave(index: number) {
+	if (index === 0) return 0
+	return Math.ceil(index / 2)
+}
 
 export function ProjectCard({
 	project,
@@ -20,18 +30,35 @@ export function ProjectCard({
 	}
 	index: number
 }) {
+	const { shouldUseSoftMotion } = useMotionEnvironment()
+	const delay = getEntranceWave(index) * WAVE_STAGGER_SEC
+
 	return (
 		<Link
-			key={project.title}
 			href={project.link}
 			target="_blank"
 			rel="noopener noreferrer"
 			className="group"
 		>
-			<article className="flex flex-col gap-2">
+			<motion.article
+				className="flex flex-col gap-2 motion-gpu"
+				initial={
+					shouldUseSoftMotion ? { opacity: 1, y: 0 } : { opacity: 0.2, y: 32 }
+				}
+				animate={{ opacity: 1, y: 0 }}
+				transition={
+					shouldUseSoftMotion
+						? { duration: 0 }
+						: {
+								duration: 0.48,
+								delay,
+								ease: [0.22, 1, 0.36, 1]
+							}
+				}
+			>
 				<figure
 					className={cn(
-						"h-72 w-full rounded-2xl overflow-hidden border flex items-center justify-center",
+						"h-32 md:h-72 w-full rounded-2xl overflow-hidden border flex items-center justify-center",
 						project.color
 					)}
 				>
@@ -59,7 +86,7 @@ export function ProjectCard({
 					<strong className="font-medium">{project.title}</strong>
 					<p className="text-muted-foreground text-sm">{project.description}</p>
 				</div>
-			</article>
+			</motion.article>
 		</Link>
 	)
 }

@@ -2,11 +2,13 @@ import Link from "next/link"
 
 import { SOCIALS } from "@/constants/socials.constants"
 
+import { cn } from "@/lib/utils"
+
 import { Button } from "@/ui"
 
-export function Socials() {
+export function Socials({ className }: { className?: string }) {
 	return (
-		<nav className="flex items-center mt-1 md:mt-2">
+		<nav className={cn("flex items-center mt-1 md:mt-0", className)}>
 			{SOCIALS.map((social) => (
 				<Link
 					key={social.title}

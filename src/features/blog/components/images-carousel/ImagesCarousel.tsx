@@ -38,7 +38,7 @@ export function ImagesCarousel({ images }: ImagesCarouselProps) {
 					loop: true
 				}}
 				plugins={[autoplayPlugin.current]}
-				className="w-full max-w-3xl mx-auto"
+				className="w-full max-w-6xl mx-auto"
 				onMouseEnter={autoplayPlugin.current.stop}
 				onMouseLeave={autoplayPlugin.current.reset}
 			>

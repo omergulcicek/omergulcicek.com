@@ -1,4 +1,5 @@
 export * from "./components/About"
+export * from "./components/AboutPageContent"
 export * from "./components/AboutHobbies"
 export * from "./components/AboutServices"
 export * from "./components/AboutContact"

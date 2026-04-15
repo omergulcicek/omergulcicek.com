@@ -2,9 +2,11 @@
 
 import Link from "next/link"
 
+import { motion } from "framer-motion"
 import { Languages } from "lucide-react"
 
 import { dateFormat } from "@/lib/date-format"
+import { useMotionEnvironment } from "@/lib/motion-environment"
 
 import {
 	Tooltip,
@@ -14,15 +16,39 @@ import {
 import { TagsBadge } from "@/shared"
 import type { BlogPostType } from "@/features/blog/types/blog.types"
 
-export function BlogListPostRow({ post }: { post: BlogPostType }) {
+interface BlogListPostRowProps {
+	post: BlogPostType
+	animationOrder?: number
+}
+
+export function BlogListPostRow({
+	post,
+	animationOrder = 0
+}: BlogListPostRowProps) {
 	const dateLabel =
 		String(post.metadata.createdAt).toLowerCase() === "soon"
 			? "hazırlanıyor..."
 			: dateFormat(post.metadata.createdAt, "DD/MM/YY")
 	const isEn = (post.metadata.languages ?? []).includes("en")
+	const { shouldUseSoftMotion } = useMotionEnvironment()
 
 	return (
-		<div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 items-start">
+		<motion.div
+			initial={
+				shouldUseSoftMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }
+			}
+			animate={{ opacity: 1, y: 0 }}
+			transition={
+				shouldUseSoftMotion
+					? { duration: 0 }
+					: {
+							duration: 0.48,
+							delay: animationOrder * 0.05,
+							ease: [0.22, 1, 0.36, 1]
+						}
+			}
+			className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 items-start"
+		>
 			<div className="flex flex-col gap-0.5 shrink-0">
 				<span className="text-muted-foreground tabular-nums text-sm pt-0.5">
 					{dateLabel}
@@ -68,6 +94,6 @@ export function BlogListPostRow({ post }: { post: BlogPostType }) {
 					<TagsBadge tags={post.metadata.tags ?? []} />
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	)
 }

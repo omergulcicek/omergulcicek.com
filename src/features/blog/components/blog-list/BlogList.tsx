@@ -30,6 +30,7 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 	const filtered = filterPostsByTag(allPosts, tag || undefined)
 	const sorted = sortPosts(filtered, sortParam)
 	const postsByYear = groupPostsByYear(sorted)
+	let animationOrder = 0
 
 	const allTags = getUniqueSortedTags(allPosts)
 
@@ -42,7 +43,11 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 						<div className="space-y-6 flex flex-col gap-1 items-start relative min-h-20">
 							<div className="flex flex-col gap-6 items-start">
 								{futurePosts.map((post) => (
-									<BlogListPostRow key={post.slug} post={post} />
+									<BlogListPostRow
+										key={post.slug}
+										post={post}
+										animationOrder={animationOrder++}
+									/>
 								))}
 							</div>
 						</div>
@@ -56,7 +61,11 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 							>
 								<div className="flex flex-col gap-6 items-start">
 									{posts.map((post) => (
-										<BlogListPostRow key={post.slug} post={post} />
+										<BlogListPostRow
+											key={post.slug}
+											post={post}
+											animationOrder={animationOrder++}
+										/>
 									))}
 								</div>
 							</div>
@@ -65,9 +74,9 @@ export function BlogList({ allPosts, futurePosts = [] }: BlogListProps) {
 			)}
 			{sortParam !== "default" && (
 				<div className="flex flex-col gap-6 items-start mt-10">
-					{sorted.map((post) => (
+					{sorted.map((post, index) => (
 						<div key={post.slug} className="flex flex-col gap-6 items-start">
-							<BlogListPostRow post={post} />
+							<BlogListPostRow post={post} animationOrder={index} />
 						</div>
 					))}
 				</div>
