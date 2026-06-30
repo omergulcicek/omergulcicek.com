@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@fontsource-variable/inter";
+@import "./styles/blog-prose.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -117,6 +118,11 @@
 		@apply border-border outline-ring/50;
 	}
 
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
+	}
+
 	body {
 		@apply bg-background font-sans text-foreground antialiased;
 	}
@@ -173,9 +179,18 @@
 	.github-calendar {
 		font-variant-numeric: tabular-nums;
 	}
+
+	.medium-zoom-overlay,
+	.medium-zoom-image--opened {
+		z-index: 60;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
 	.animate-marquee,
 	.animate-marquee-vertical {
 		animation: none;

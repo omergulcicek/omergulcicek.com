@@ -3,6 +3,7 @@ import type {
 	BlogPost,
 	BlogSort
 } from "@/features/blog/types/blog.types"
+import { normalizeBlogSlug } from "@/features/blog/helpers/blog-slug"
 import { BLOG_CATEGORY_LABELS } from "@/features/blog/constants/blog.constants"
 
 export function formatBlogDate(value: string) {
@@ -199,4 +200,32 @@ export function applyBlogFilters(
 	)
 
 	return sortBlogPosts(filtered, sort)
+}
+
+export type BlogNeighbour = Pick<BlogPost, "slug" | "title">
+
+export function findBlogNeighbours(posts: BlogPost[], slug: string) {
+	const normalizedSlug = normalizeBlogSlug(slug)
+	const index = posts.findIndex((post) => post.slug === normalizedSlug)
+
+	if (index === -1) {
+		return { previous: null, next: null }
+	}
+
+	return {
+		previous:
+			index > 0
+				? ({
+						slug: posts[index - 1].slug,
+						title: posts[index - 1].title
+					} satisfies BlogNeighbour)
+				: null,
+		next:
+			index < posts.length - 1
+				? ({
+						slug: posts[index + 1].slug,
+						title: posts[index + 1].title
+					} satisfies BlogNeighbour)
+				: null
+	}
 }

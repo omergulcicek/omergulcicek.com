@@ -7,6 +7,7 @@ import { Html5 } from "@/components/ui/svgs/html5"
 import { Javascript } from "@/components/ui/svgs/javascript"
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
 import { ReactDark } from "@/components/ui/svgs/reactDark"
+import { ReactHookForm } from "@/components/ui/svgs/reactHookForm"
 import { ReactLight } from "@/components/ui/svgs/reactLight"
 import { ShadcnUi } from "@/components/ui/svgs/shadcnUi"
 import { ShadcnUiDark } from "@/components/ui/svgs/shadcnUiDark"
@@ -134,14 +135,10 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "react-hook-form":
 			return (
-				<img
-					src="/logos/react-hook-form.png"
-					alt={label}
-					width={56}
-					height={56}
-					loading="lazy"
-					decoding="async"
-					className={cn("image-outline", iconClassName)}
+				<ReactHookForm
+					className={iconClassName}
+					role="img"
+					aria-label={label}
 				/>
 			)
 		case "storybook":

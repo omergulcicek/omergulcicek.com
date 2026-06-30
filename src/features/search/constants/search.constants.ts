@@ -1,7 +1,6 @@
 import {
 	Bookmark,
 	Component,
-	GraduationCap,
 	HatGlasses,
 	Milestone,
 	Quote,
@@ -23,6 +22,7 @@ export type SearchPageItem = {
 	label: string
 	href: string
 	icon: LucideIcon
+	external?: boolean
 }
 
 export type SearchActionItem = {
@@ -39,7 +39,7 @@ const PAGE_ICONS: Record<string, LucideIcon> = {
 	"/experiences": Milestone,
 	"/services": Wrench,
 	"/bookmarks": Bookmark,
-	"/academy": GraduationCap
+	[EXTERNAL_LINKS.virastack]: Component
 }
 
 const HEADER_HREFS = new Set<string>(HEADER_NAV.map((item) => item.href))
@@ -53,7 +53,8 @@ export const SEARCH_PAGES: SearchPageItem[] = [
 	...FOOTER_NAV.filter((item) => !HEADER_HREFS.has(item.href)).map((item) => ({
 		label: item.label,
 		href: item.href,
-		icon: PAGE_ICONS[item.href] ?? Sparkles
+		icon: PAGE_ICONS[item.href] ?? Sparkles,
+		external: item.external
 	}))
 ]
 

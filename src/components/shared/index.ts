@@ -21,6 +21,8 @@ export {
 	pageShellClass,
 	pageStackGapClass,
 	pageTitleClass,
+	blogProseClass,
+	blogTocClass,
 	proseEmphasisClass,
 	proseFlowClass,
 	proseParagraphClass,

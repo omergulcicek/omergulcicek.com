@@ -1,18 +1,82 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router"
 
-import { PageStub } from "@/components/shared/PageStub"
+import { NotFoundPage } from "@/components/shared/not-found-page"
+import {
+	getBlogPostDetailFn,
+	getBlogPostsFn
+} from "@/features/blog/api/blog-post.api"
+import { BlogPostDetailPage } from "@/features/blog/components/blog-post-detail-page"
+import { resolveBlogSlugRedirect } from "@/features/blog/constants/blog-redirects.constants"
+import {
+	findBlogNeighbours,
+	slugToRouteParam
+} from "@/features/blog/helpers/blog-helpers"
+import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
 
 export const Route = createFileRoute("/blog/$slug")({
-	component: BlogPostPage
+	loader: async ({ params }) => {
+		const canonicalSlug = resolveBlogSlugRedirect(
+			routeParamToBlogSlug(params.slug)
+		)
+
+		if (canonicalSlug !== routeParamToBlogSlug(params.slug)) {
+			throw redirect({
+				to: "/blog/$slug",
+				params: { slug: slugToRouteParam(canonicalSlug) }
+			})
+		}
+
+		const slug = routeParamToBlogSlug(params.slug)
+		const [post, posts] = await Promise.all([
+			getBlogPostDetailFn({ data: { slug } }),
+			getBlogPostsFn()
+		])
+
+		if (!post) {
+			throw notFound()
+		}
+
+		const neighbours = findBlogNeighbours(posts, post.slug)
+
+		return {
+			post,
+			isDev: import.meta.env.DEV,
+			previous: neighbours.previous,
+			next: neighbours.next
+		}
+	},
+	head: ({ loaderData }) => {
+		if (!loaderData) {
+			return {}
+		}
+
+		const { post } = loaderData
+
+		return {
+			meta: [
+				{ title: `${post.title} · Blog` },
+				{ name: "description", content: post.description }
+			],
+			...(post.canonicalUrl
+				? {
+						links: [{ rel: "canonical", href: post.canonicalUrl }]
+					}
+				: {})
+		}
+	},
+	notFoundComponent: NotFoundPage,
+	component: BlogPostRoutePage
 })
 
-function BlogPostPage() {
-	const { slug } = Route.useParams()
+function BlogPostRoutePage() {
+	const { post, isDev, previous, next } = Route.useLoaderData()
 
 	return (
-		<PageStub
-			title="Blog yazısı"
-			description={`Slug: /${slug} — Faz 3'te detay sayfası eklenecek.`}
+		<BlogPostDetailPage
+			post={post}
+			isDev={isDev}
+			previous={previous}
+			next={next}
 		/>
 	)
 }

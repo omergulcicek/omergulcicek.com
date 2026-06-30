@@ -1,7 +1,11 @@
+import { useEffect, useRef, useState } from "react"
+import { ChevronDown } from "lucide-react"
+
 import { BlogCategoryPills } from "@/features/blog/components/blog-category-pills"
 import { BlogSortControl } from "@/features/blog/components/blog-sort-control"
 import { BlogTagChips } from "@/features/blog/components/blog-tag-chips"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
+import { blogFilterTagsCollapsedClass } from "@/features/blog/constants/blog-filter-chip.styles"
 import type { BlogCategory, BlogSort } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
@@ -30,10 +34,39 @@ export function BlogListFilters({
 	onClearFilters,
 	className
 }: BlogListFiltersProps) {
+	const [tagsExpanded, setTagsExpanded] = useState(false)
+	const [hasTagOverflow, setHasTagOverflow] = useState(false)
+	const tagsContainerRef = useRef<HTMLDivElement>(null)
+	const hasTags = tags.length > 0
+	const showTagsToggle = tagsExpanded || hasTagOverflow
+
+	useEffect(() => {
+		const container = tagsContainerRef.current
+
+		if (!container || !hasTags) {
+			setHasTagOverflow(false)
+			return
+		}
+
+		const updateOverflow = () => {
+			setHasTagOverflow(container.scrollHeight > container.clientHeight + 1)
+		}
+
+		updateOverflow()
+
+		const resizeObserver = new ResizeObserver(updateOverflow)
+		resizeObserver.observe(container)
+
+		return () => {
+			resizeObserver.disconnect()
+		}
+	}, [hasTags, tags, tagsExpanded])
+
 	return (
 		<section
 			className={cn(
-				"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col gap-4 rounded-xl border border-border/60 bg-background/95 p-4 shadow-sm supports-backdrop-filter:bg-background/60 backdrop-blur",
+				"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col rounded-xl border border-border/60 bg-background/95 p-4 shadow-sm supports-backdrop-filter:bg-background/60 backdrop-blur",
+				hasTags ? "gap-3" : "gap-0",
 				className
 			)}
 			aria-label={BLOG_UI.filtersAriaLabel}
@@ -53,11 +86,38 @@ export function BlogListFilters({
 				</div>
 				<BlogSortControl value={sort} onChange={onSortChange} />
 			</div>
-			<BlogTagChips
-				tags={tags}
-				selectedTag={selectedTag}
-				onSelect={onTagSelect}
-			/>
+			{hasTags ? (
+				<div className="flex flex-col gap-2">
+					<div
+						ref={tagsContainerRef}
+						className={cn(!tagsExpanded && blogFilterTagsCollapsedClass)}
+					>
+						<BlogTagChips
+							tags={tags}
+							selectedTag={selectedTag}
+							onSelect={onTagSelect}
+						/>
+					</div>
+					{showTagsToggle ? (
+						<button
+							type="button"
+							aria-expanded={tagsExpanded}
+							aria-label={BLOG_UI.tagsToggleAriaLabel}
+							className="focus-link text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-xs underline-offset-4 transition-colors hover:underline"
+							onClick={() => setTagsExpanded((expanded) => !expanded)}
+						>
+							<ChevronDown
+								className={cn(
+									"size-3 shrink-0 transition-transform duration-200",
+									tagsExpanded ? "rotate-180" : undefined
+								)}
+								aria-hidden
+							/>
+							{tagsExpanded ? BLOG_UI.hideTags : BLOG_UI.showTags}
+						</button>
+					) : null}
+				</div>
+			) : null}
 		</section>
 	)
 }

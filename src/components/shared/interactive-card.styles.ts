@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils"
 
-const cardDoubleFrameClass =
+export const surfaceDoubleFrameClass =
 	"rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-[#fcfcfc] dark:ring-offset-[#0f0f0f]"
 
 export const surfaceCardClass = cn(
-	cardDoubleFrameClass,
+	surfaceDoubleFrameClass,
 	"bg-[#fff] p-4 dark:bg-[#0b0b0b]"
 )
 
 export const interactiveCardBaseClass = cn(
 	"group flex flex-col gap-3 p-4 transition-[border-color,box-shadow] duration-150 ease-out",
-	cardDoubleFrameClass
+	surfaceDoubleFrameClass
 )
 
 export const interactiveCardLiveClass =

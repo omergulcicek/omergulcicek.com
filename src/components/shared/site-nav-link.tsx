@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router"
+import { ExternalLink } from "lucide-react"
 import type { ComponentPropsWithoutRef } from "react"
 
 import { cn } from "@/lib/utils"
@@ -8,34 +9,48 @@ const siteNavLinkBaseClass = "focus-link text-sm transition-colors underline-off
 const siteNavLinkActiveClass =
 	"text-foreground font-medium underline decoration-foreground/50"
 
-const siteNavLinkInactiveByVariant = {
-	header: "text-muted-foreground hover:text-foreground",
-	footer: "text-muted-foreground hover:underline"
-} as const
-
-type SiteNavLinkVariant = keyof typeof siteNavLinkInactiveByVariant
+const siteNavLinkInactiveClass = "text-muted-foreground hover:text-foreground"
 
 type SiteNavLinkProps = {
 	href: string
 	label: string
 	exact?: boolean
-	variant?: SiteNavLinkVariant
+	external?: boolean
 } & Pick<ComponentPropsWithoutRef<typeof Link>, "className">
 
 export function SiteNavLink({
 	href,
 	label,
 	exact,
-	variant = "header",
+	external,
 	className
 }: SiteNavLinkProps) {
+	if (external) {
+		return (
+			<a
+				href={href}
+				className={cn(
+					siteNavLinkBaseClass,
+					siteNavLinkInactiveClass,
+					"inline-flex items-center gap-1",
+					className
+				)}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{label}
+				<ExternalLink className="size-3 shrink-0" aria-hidden />
+			</a>
+		)
+	}
+
 	return (
 		<Link
 			to={href}
 			className={cn(siteNavLinkBaseClass, className)}
 			activeOptions={exact ? { exact: true } : undefined}
 			inactiveProps={{
-				className: siteNavLinkInactiveByVariant[variant]
+				className: siteNavLinkInactiveClass
 			}}
 			activeProps={{
 				className: siteNavLinkActiveClass,

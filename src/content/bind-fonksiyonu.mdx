@@ -7,7 +7,6 @@ title: "Bind() Fonksiyonu"
 description: "Merhaba ! Son haftalarda sürekli olarak React JS üzerine yoğunlaşıyorum ve kendimi bu alanda geliştirmeye devam ediyorum. React JS dokümantasyonunu..."
 category: "technical"
 tags: ["JavaScript", "React"]
-coverImage: "/blog/2017/12-23/17-1.png"
 readingTimeMinutes: 2
 canonicalUrl: "https://omergulcicek.com/blog/bind-fonksiyonu"
 contentHash: "0f465309d922df9b"
@@ -67,8 +66,6 @@ var checkNumericRange = function (value) {
 
 Yukarıdaki **checkNumericRange** adlı fonksiyon, parametre olarak aldığı değeri kontrol ediyor. Eğer _number_ değişken türünde değilse **false** return edecek; eğer değişken türü _number_ ise **this.minumum** ve **this.maximum** değerleri arasında olup olmadığını boolean olarak (_true yada false_) return edecek. Fakat bu fonksiyonun içerisinde maximum ve minumum değişkenleri tanımlı değil. Haliyle fonksiyonu bu haliyle kullanmaya çalıştığımızda sürekli **false** return edilecek.
 
-![Bind fonksiyonu olmadan](/blog/2017/12-23/17-1.png)
-
 İçerisinde _minumum_ ve _maximum_ değişkenlerini barındıran bir obje oluşturalım.
 
 ```javascript
@@ -82,8 +79,6 @@ var checkNumericRange = checkNumericRange.bind(range);
 ```
 
 Artık **range** objesi ile **checkNumericRange** fonksiyonumuz birbirine bağlandığı için, fonksiyon içerisinde bulunmayan minumum ve maximum değişkenlerini range objesinden alacak ve fonksiyonumuz doğru sonuçlar verecektir.
-
-![Bind Fonksiyonu](/blog/2017/12-23/17-2.png)
 
 Haliyle React JS'de onClick ve onChange fonksiyonlarını kullanırken bu butonları (_this elementini_) fonksiyonlar ile sürekli bind etmenin sebebini kafamızda daha iyi oturtmuş oluyoruz.
 

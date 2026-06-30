@@ -55,7 +55,7 @@ export function Footer() {
 								key={item.href}
 								href={item.href}
 								label={item.label}
-								variant="footer"
+								external={item.external}
 							/>
 						))}
 					</nav>

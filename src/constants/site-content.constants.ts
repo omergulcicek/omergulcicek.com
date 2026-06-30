@@ -34,9 +34,6 @@ export const SITE_CONTENT = {
 		"Yer imlerimi raindrop.io/omergulcicek'da saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı, okuduğum makaleleri, günlük takip ettiğim blogları, teknik içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.",
 	bookmarksRaindropCta: "Tümünü göster",
 	bookmarksRaindropUrl: "https://raindrop.io/omergulcicek",
-	academyTitle: "Akademi",
-	academyDescription:
-		"Bu sayfa yakında. Frontend eğitim içerikleri ve kaynaklar burada toplanacak.",
 	experiencesIntro:
 		"8 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
 	resumeModalTitle: "Özgeçmiş Önizleme",

@@ -5,11 +5,11 @@ import {
 	Brain,
 	Clapperboard,
 	CodeXml,
-	Footprints,
 	Globe,
 	Milestone,
 	Popcorn,
 	Rocket,
+	Sparkles,
 	TentTree
 } from "lucide-react"
 
@@ -108,7 +108,7 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 	},
 	Deneyim: {
 		kind: "icon",
-		icon: Footprints,
+		icon: Sparkles,
 		iconClassName: "text-teal-600 dark:text-teal-400"
 	},
 	Düşünce: {

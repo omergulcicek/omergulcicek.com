@@ -13,7 +13,6 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
-import { Route as AcademyRouteImport } from './routes/academy'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
@@ -38,11 +37,6 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
 const BookmarksRoute = BookmarksRouteImport.update({
   id: '/bookmarks',
   path: '/bookmarks',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AcademyRoute = AcademyRouteImport.update({
-  id: '/academy',
-  path: '/academy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -75,7 +69,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
-  '/academy': typeof AcademyRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
   '/projects': typeof ProjectsRoute
@@ -87,7 +80,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
-  '/academy': typeof AcademyRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
   '/projects': typeof ProjectsRoute
@@ -100,7 +92,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
-  '/academy': typeof AcademyRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
   '/projects': typeof ProjectsRoute
@@ -114,7 +105,6 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
-    | '/academy'
     | '/bookmarks'
     | '/experiences'
     | '/projects'
@@ -126,7 +116,6 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
-    | '/academy'
     | '/bookmarks'
     | '/experiences'
     | '/projects'
@@ -138,7 +127,6 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
-    | '/academy'
     | '/bookmarks'
     | '/experiences'
     | '/projects'
@@ -151,7 +139,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AboutRoute: typeof AboutRoute
-  AcademyRoute: typeof AcademyRoute
   BookmarksRoute: typeof BookmarksRoute
   ExperiencesRoute: typeof ExperiencesRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -188,13 +175,6 @@ declare module '@tanstack/react-router' {
       path: '/bookmarks'
       fullPath: '/bookmarks'
       preLoaderRoute: typeof BookmarksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/academy': {
-      id: '/academy'
-      path: '/academy'
-      fullPath: '/academy'
-      preLoaderRoute: typeof AcademyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -239,7 +219,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   AboutRoute: AboutRoute,
-  AcademyRoute: AcademyRoute,
   BookmarksRoute: BookmarksRoute,
   ExperiencesRoute: ExperiencesRoute,
   ProjectsRoute: ProjectsRoute,

@@ -1,9 +1,17 @@
-export const FOOTER_NAV = [
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+
+export type FooterNavItem = {
+	label: string
+	href: string
+	external?: boolean
+}
+
+export const FOOTER_NAV: readonly FooterNavItem[] = [
 	{ label: "Deneyimler", href: "/experiences" },
 	{ label: "Hizmetler", href: "/services" },
 	{ label: "Yer İmleri", href: "/bookmarks" },
-	{ label: "Akademi", href: "/academy" }
-] as const
+	{ label: "ViraStack", href: EXTERNAL_LINKS.virastack, external: true }
+]
 
 export const FOOTER_BUILD_CREDIT =
 	"ViraStack, TanStack Start, Tailwind CSS ve shadcn/ui ile geliştirildi."

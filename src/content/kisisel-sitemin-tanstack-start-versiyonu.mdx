@@ -1,0 +1,35 @@
+---
+locale: "tr"
+publishedAt: "2026-07-01"
+published: true
+slug: "/kisisel-sitemin-tanstack-start-versiyonu"
+title: "Kişisel Sitemin TanStack Start Versiyonu"
+description: "Kişisel sitemi TanStack Start ve Supabase ile yeniledim; geliştirmeyi yapay zekâ desteğiyle yürüttüm. Site Yenileme serisinin dördüncü yazısı."
+category: "technical"
+tags: ["Site Yenileme", "TanStack", "Supabase"]
+series: "site-yenileme"
+seriesOrder: 4
+readingTimeMinutes: 2
+canonicalUrl: "https://omergulcicek.com/blog/kisisel-sitemin-tanstack-start-versiyonu"
+contentHash: "c18b9b9da230a1aa"
+---
+
+[Site Yenileme](/blog?tag=Site+Yenileme) serisinin bu bölümünde kişisel sitemi bir kez daha güncelledim. Bir önceki sürüm zaten güncel teknoloji ve paketlerle ayaktaydı; tasarım dili ve genel düzen için köklü bir değişikliğe ihtiyaç duymadım. **Her şeyi sıfırdan icat etmedim** — değişenler framework, veri kaynağı, geliştirme süreci ve birkaç arayüz dokunuşu.
+
+## Ne Aynı Kaldı?
+
+Önceki Next.js sürümündeki genel düzen korundu: **feature-based** klasör yapısı (`src/features/`), **shadcn/ui** ve **Tailwind CSS 4** bir arada, blog deneyimi de aynı. Yine _minimal ve sade_ bir çizgide kaldım.
+
+## TanStack Start
+
+En büyük değişiklik **Next.js App Router** yerine **TanStack Start**'a geçmem oldu. Son yıllarda kişisel projelerde hem farklı teknolojilere hakim olmak hem de sempati duyduğum ekosistemlerle çalışmak istediğim için sitelerimi TanStack ile geliştiriyorum.
+
+## Supabase ve Yapay Zekâ Destekli Geliştirme
+
+Bu sürümü _yapay zekâ destekli geliştirme_ _(AI-assisted development)_ süreciyle tamamladım: satır satır kod yazmak yerine yapay zekâyı yöneterek ilerledim. Süreçte **[ViraStack AI](https://github.com/virastack/ai-rules)**, **[make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better)** ve **[emil-design-eng](https://github.com/emilkowalski/skill)** skill dosyalarını birlikte kullandım.
+
+Veri tarafında blog yazıları artık markdown dosyaları değil, **Supabase Postgres** üzerinde. Yaklaşık 100 markdown dosyasını metadata ile birlikte yapay zekâ desteğiyle veritabanına taşıdım. Eskiden site _SSG_ _(Static Site Generation)_ kullanıyordu, şimdi _SSR_ _(Server-Side Rendering)_ ile çalışıyor — ileride okunma sayısı, beğeni ve yorum gibi etkileşimleri eklemek de mümkün hale geldi.
+
+***
+
+Kaynak kod: [github.com/omergulcicek/omergulcicek.com](https://github.com/omergulcicek/omergulcicek.com)

@@ -67,12 +67,20 @@ export function CommandPaletteDialog() {
 							value={`${page.label} ${page.href}`}
 							onSelect={() =>
 								runCommand(() => {
+									if (page.external) {
+										window.open(page.href, "_blank", "noopener,noreferrer")
+										return
+									}
+
 									void navigate({ to: page.href })
 								})
 							}
 						>
 							<page.icon className="mr-2 size-4" />
 							{page.label}
+							{page.external ? (
+								<ExternalLink className="ml-auto size-4 shrink-0" />
+							) : null}
 						</CommandItem>
 					))}
 				</CommandGroup>

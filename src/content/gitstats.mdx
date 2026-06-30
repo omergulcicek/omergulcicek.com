@@ -7,7 +7,6 @@ title: "GitStats"
 description: "Merhaba ! GitHub'ta herhangi bir projede Insights sekmesinden Contributors linkine tıklarsak, o projeye kimin ne kadar katkı yaptığını detaylı olarak..."
 category: "technical"
 tags: ["GitHub", "JavaScript"]
-coverImage: "/blog/2017/11-18/13-1.png"
 readingTimeMinutes: 2
 canonicalUrl: "https://omergulcicek.com/blog/gitstats"
 contentHash: "95c219a238f25625"
@@ -18,8 +17,6 @@ Merhaba !
 GitHub'ta herhangi bir projede **Insights** sekmesinden **Contributors** linkine tıklarsak, o projeye kimin ne kadar katkı yaptığını detaylı olarak görebiliriz. Kişinin projeye kaç kod satır kod ekleyip/sildiğini yada kaç commit yaptığını rakamsal olarak ve tarih çizelgesinde grafiksel olarakta görebiliyoruz.
 
 Örnek olarak [Google'ın Fonts projesi](https://github.com/google/fonts/graphs/contributors)ni seçtim. Burada her kullanıcı bilgileri _Box_ sınıfı içerisinde tutulmuş. Şimdi biraz daha teknik bilgi gerektiren kısma geçip, bu veriler ile nasıl yüzdelik hesaplaması yapabileceğimizi gösterelim.
-
-![GitHub Contributions](/blog/2017/11-18/13-1.png)
 
 ### Başlarken
 
@@ -73,9 +70,7 @@ Array.prototype.forEach.call(lists, function (el, i) {
 });
 ```
 
-JavaScript'te console.log() fonksiyonu ile ekrana objeyi yazabiliriz fakat daha açıklayıcı olması açısından console.table() fonksiyonunu kullanmayı daha doğru buldum. Google'ın fonts projesinde testimizi yapıyorduk. GitStats kodlarını konsola yazdığımızda aşağıdaki gibi bir tablo ile hangi kullanıcının ne kadar katkı sağladığını görebiliyoruz.
-
-![GitHub Contributions Statistics](/blog/2017/11-18/13-2.png)
+JavaScript'te console.log() fonksiyonu ile ekrana objeyi yazabiliriz fakat daha açıklayıcı olması açısından console.table() fonksiyonunu kullanmayı daha doğru buldum. Google'ın fonts projesinde testimizi yapıyorduk. GitStats kodlarını konsola yazdığımızda hangi kullanıcının ne kadar katkı sağladığını tablo halinde görebiliyoruz.
 
 ### GitHub Rest API
 

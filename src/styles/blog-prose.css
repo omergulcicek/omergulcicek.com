@@ -1,0 +1,149 @@
+.blog-prose {
+	@apply text-base leading-relaxed text-pretty text-muted-foreground;
+}
+
+.blog-prose :where(p) {
+	@apply mt-4 text-muted-foreground leading-relaxed text-pretty;
+}
+
+.blog-prose :where(strong) {
+	@apply font-medium text-foreground;
+}
+
+.blog-prose :where(a) {
+	@apply rounded-sm text-foreground underline underline-offset-[3px] outline-none;
+	text-decoration-color: color-mix(in oklch, currentColor 40%, transparent);
+	transition: text-decoration-color 150ms ease;
+}
+
+.blog-prose :where(a:hover) {
+	text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+}
+
+.blog-prose :where(a:focus-visible) {
+	@apply ring-[3px] ring-ring/50;
+}
+
+.blog-prose :where(h2) {
+	@apply mt-12 mb-4 text-balance text-base font-semibold tracking-tight text-foreground;
+}
+
+.blog-prose :where(h2 + *) {
+	@apply mt-0;
+}
+
+.blog-prose :where(h3) {
+	@apply mt-8 mb-3 text-balance text-base font-medium tracking-tight text-foreground;
+}
+
+.blog-prose :where(h4) {
+	@apply mt-6 mb-2 text-sm font-medium tracking-tight text-foreground;
+}
+
+.blog-prose :where(ul, ol) {
+	@apply mt-4 mb-0 space-y-2 ps-5;
+}
+
+.blog-prose :where(ul) {
+	@apply list-disc;
+}
+
+.blog-prose :where(ol) {
+	@apply list-decimal;
+}
+
+.blog-prose :where(li) {
+	@apply text-muted-foreground leading-relaxed;
+}
+
+.blog-prose :where(li > ul, li > ol) {
+	@apply mt-2;
+}
+
+.blog-prose :where(blockquote) {
+	@apply mt-6 border-s border-border ps-4 text-muted-foreground italic;
+}
+
+.blog-prose :where(hr) {
+	@apply my-12 border-border;
+}
+
+.blog-prose :where(img, video) {
+	@apply my-10 h-auto w-full cursor-zoom-in rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-[#fcfcfc] md:my-20 dark:ring-offset-[#0f0f0f];
+}
+
+.blog-prose :where(figure.blog-image-figure) {
+	@apply my-10 md:my-20;
+}
+
+.blog-prose :where(h2 + figure.blog-image-figure, h3 + figure.blog-image-figure) {
+	@apply mt-8 md:mt-20;
+}
+
+.blog-prose :where(p + figure.blog-image-figure, ul + figure.blog-image-figure, ol + figure.blog-image-figure) {
+	@apply mt-10 md:mt-20;
+}
+
+.blog-prose :where(li > figure.blog-image-figure) {
+	@apply mt-8 mb-10 md:mt-20 md:mb-20;
+}
+
+.blog-prose :where(figure.blog-image-figure + p, figure.blog-image-figure + ul, figure.blog-image-figure + ol, figure.blog-image-figure + h2, figure.blog-image-figure + h3) {
+	@apply mt-10 md:mt-20;
+}
+
+.blog-prose :where(figure.blog-image-figure > img) {
+	@apply my-0;
+}
+
+.blog-prose :where(figure.blog-image-figure > figcaption) {
+	@apply mt-3 text-center text-sm text-pretty text-muted-foreground;
+}
+
+.blog-prose :where(img[data-bleed="wide"], .blog-bleed) {
+	@apply relative left-1/2 mx-auto block h-auto w-auto max-h-[520px] max-w-[min(100vw-2rem,64rem)] -translate-x-1/2;
+}
+
+.blog-prose :where(code:not(pre code)) {
+	@apply rounded-md border border-border bg-muted/40 px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal text-foreground;
+}
+
+.blog-prose :where(pre) {
+	@apply my-6 overflow-x-auto rounded-xl border border-border bg-muted/20 p-4 text-sm leading-relaxed;
+}
+
+.blog-prose :where(pre code) {
+	@apply border-0 bg-transparent p-0 font-mono font-normal;
+}
+
+.blog-prose :where(pre code span[style*="--shiki-light"]) {
+	@apply text-(--shiki-light) dark:text-(--shiki-dark);
+}
+
+.blog-prose :where(figure[data-rehype-pretty-code-figure]) {
+	@apply my-6;
+}
+
+.blog-prose :where(figure[data-rehype-pretty-code-figure] > pre) {
+	@apply my-0 overflow-x-auto rounded-xl border border-border bg-muted/20 p-4 text-sm leading-relaxed;
+}
+
+.blog-prose :where(table) {
+	@apply my-8 w-full border-collapse text-sm;
+}
+
+.blog-prose :where(th, td) {
+	@apply border border-border px-3 py-2 text-left;
+}
+
+.blog-prose :where(th) {
+	@apply font-semibold text-foreground;
+}
+
+.blog-prose :where(:first-child) {
+	@apply mt-0;
+}
+
+.blog-prose :where(:last-child:not(.blog-image-figure):not(img):not(video)) {
+	@apply mb-0;
+}

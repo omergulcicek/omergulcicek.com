@@ -62,6 +62,14 @@ export const BLOG_UI = {
 	sortAriaLabel: "Sıralama",
 	draftsHeading: "Taslaklar",
 	clearFilters: "Filtreleri temizle",
+	showTags: "Tüm etiketleri göster",
+	hideTags: "Daha az göster",
+	tagsToggleAriaLabel: "Etiket filtrelerini göster veya gizle",
 	emptyState: "Seçili filtrelere uygun yazı bulunamadı.",
-	listAriaLabel: "Blog yazıları"
+	listAriaLabel: "Blog yazıları",
+	previousPost: "Önceki yazı",
+	nextPost: "Sonraki yazı",
+	tocLabel: "İçindekiler",
+	tocAriaLabel: "Yazı içindekileri",
+	closeImageZoom: "Görseli kapat"
 } as const
