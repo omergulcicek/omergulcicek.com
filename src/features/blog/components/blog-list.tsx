@@ -8,9 +8,7 @@ import {
 	canClearBlogFilters,
 	getAvailableTags,
 	getSortedYearEntries,
-	hasActiveBlogFilters,
-	partitionDraftPosts,
-	partitionFeaturedPosts
+	partitionDraftPosts
 } from "@/features/blog/helpers/blog-helpers"
 import { useBlogSearchParams } from "@/features/blog/hooks/use-blog-search-params"
 import { pageSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
@@ -52,16 +50,11 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 		query,
 		sort
 	})
-	const filtersActive = hasActiveBlogFilters({ category, tag, query })
 	const showClearFilters = canClearBlogFilters({ category, tag, query, sort })
-	const showFeaturedSection = !filtersActive && sort === "newest"
 	const { drafts, published } = partitionDraftPosts(filteredPosts)
-	const { featured, regular } = partitionFeaturedPosts(published)
-	const listPosts = showFeaturedSection ? regular : published
-	const yearEntries = getSortedYearEntries(listPosts, sort)
+	const yearEntries = getSortedYearEntries(published, sort)
 	const showDrafts = isDev && drafts.length > 0
-	const hasLeadSection =
-		showDrafts || (showFeaturedSection && featured.length > 0)
+	const hasLeadSection = showDrafts
 
 	return (
 		<div className={cn("flex flex-col", pageStackGapClass, className)}>
@@ -96,19 +89,6 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 										post={post}
 										showDraftBadge
 									/>
-								))}
-							</div>
-						</section>
-					) : null}
-
-					{showFeaturedSection && featured.length > 0 ? (
-						<section className={pageSectionClass}>
-							<h2 className="text-muted-foreground text-sm font-medium">
-								{BLOG_UI.featuredHeading}
-							</h2>
-							<div className="flex flex-col gap-3">
-								{featured.map((post) => (
-									<BlogListPostRow key={post.slug} post={post} />
 								))}
 							</div>
 						</section>

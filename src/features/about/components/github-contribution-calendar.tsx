@@ -29,7 +29,7 @@ export function GitHubContributionCalendar() {
 						aria-hidden
 					/>
 				) : (
-					<div className={cn("github-calendar", "w-full")}>
+					<div className={cn("github-calendar", "w-fit")}>
 						<GitHubCalendar
 							username="omergulcicek"
 							colorScheme={theme === "dark" ? "dark" : "light"}

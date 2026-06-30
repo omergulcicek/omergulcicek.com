@@ -60,7 +60,6 @@ export const BLOG_UI = {
 	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",
 	sortAriaLabel: "Sıralama",
-	featuredHeading: "Öne çıkan",
 	draftsHeading: "Taslaklar",
 	clearFilters: "Filtreleri temizle",
 	emptyState: "Seçili filtrelere uygun yazı bulunamadı.",

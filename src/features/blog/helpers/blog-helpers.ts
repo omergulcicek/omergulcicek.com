@@ -103,13 +103,6 @@ export function canClearBlogFilters({
 	return hasActiveBlogFilters({ category, tag, query }) || sort !== "newest"
 }
 
-export function partitionFeaturedPosts(posts: BlogPost[]) {
-	const featured = posts.filter((post) => post.featured)
-	const regular = posts.filter((post) => !post.featured)
-
-	return { featured, regular }
-}
-
 export function sortBlogPosts(posts: BlogPost[], sort: BlogSort) {
 	const copy = [...posts]
 

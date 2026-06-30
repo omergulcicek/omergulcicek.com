@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-router"
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router"
 
+import { NotFoundPage } from "@/components/shared/not-found-page"
 import { SiteLayout } from "@/components/shared/SiteLayout"
 import { SITE } from "@/constants/site.constants"
 
@@ -16,6 +17,7 @@ import "@/styles.css"
 const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.classList.add("dark");}}catch(e){}})();`
 
 export const Route = createRootRoute({
+	notFoundComponent: NotFoundPage,
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },

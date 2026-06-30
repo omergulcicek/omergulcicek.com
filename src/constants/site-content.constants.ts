@@ -51,7 +51,12 @@ export const SITE_CONTENT = {
 		experiences: "Deneyimlerim — kariyer geçmişi ve CV",
 		services: "Hizmetler — geliştirme, Danışmanlık ve frontend eğitimi"
 	},
-	footerNavTitle: "Keşfet"
+	footerNavTitle: "Keşfet",
+	notFoundTitle: "Sayfa bulunamadı",
+	notFoundDescription:
+		"Aradığın sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.",
+	notFoundHomeCta: "Ana sayfaya dön",
+	notFoundBlogCta: "Blog'a git"
 } as const
 
 export const EXTERNAL_LINKS = {
