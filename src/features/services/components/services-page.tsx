@@ -7,21 +7,26 @@ import {
 	ProseIconLink,
 	ProseLink
 } from "@/components/shared/prose-link"
-import { proseFlowClass, proseParagraphClass } from "@/components/shared/prose.styles"
+import {
+	pageSectionClass,
+	pageShellClass,
+	proseFlowClass,
+	proseParagraphClass
+} from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 import { SERVICES_CONTENT } from "@/features/services/constants/services.constants"
 
 export function ServicesPage() {
 	return (
-		<Container className="flex flex-col gap-12 py-10 md:gap-16 md:py-16">
+		<Container className={pageShellClass}>
 			<PageHeader title={SERVICES_CONTENT.pageTitle} showOpenToWork>
 				<p className={proseParagraphClass}>
 					Geliştirme, Danışmanlık ve frontend eğitimi sunuyorum.
 				</p>
 			</PageHeader>
 
-			<section className="flex flex-col gap-6">
+			<section className={pageSectionClass}>
 				<SectionHeading>{SERVICES_CONTENT.developmentSectionTitle}</SectionHeading>
 				<div className={proseFlowClass}>
 					<p className={proseParagraphClass}>
@@ -40,7 +45,7 @@ export function ServicesPage() {
 				</div>
 			</section>
 
-			<section className="flex flex-col gap-6">
+			<section className={pageSectionClass}>
 				<SectionHeading>{SERVICES_CONTENT.educationSectionTitle}</SectionHeading>
 				<div className={proseFlowClass}>
 					<p className={proseParagraphClass}>

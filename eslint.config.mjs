@@ -4,7 +4,7 @@ import reactRefresh from "eslint-plugin-react-refresh"
 import tseslint from "typescript-eslint"
 
 export default tseslint.config(
-	{ ignores: ["dist", ".output", "src/routeTree.gen.ts", "_legacy"] },
+	{ ignores: ["dist", ".output", "src/routeTree.gen.ts", "_legacy", "scripts"] },
 	js.configs.recommended,
 	...tseslint.configs.recommended,
 	{

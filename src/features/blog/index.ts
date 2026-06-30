@@ -1,3 +1,6 @@
 export { BlogPage } from "@/features/blog/components/blog-page"
 export { BlogList } from "@/features/blog/components/blog-list"
 export { MOCK_BLOG_POSTS } from "@/features/blog/constants/mock-blog-posts.constants"
+export { BLOG_SLUG_REDIRECTS, resolveBlogSlugRedirect } from "@/features/blog/constants/blog-redirects.constants"
+export { BLOG_SERIES, BLOG_SERIES_LABELS } from "@/features/blog/constants/blog-series.constants"
+export { blogPostMetadataSchema } from "@/features/blog/schemas/blog.schema"

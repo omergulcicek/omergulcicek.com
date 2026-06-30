@@ -1,6 +1,5 @@
-import { Link } from "@tanstack/react-router"
-
 import { BrandMark } from "@/components/shared/brand-mark"
+import { SiteNavLink } from "@/components/shared/site-nav-link"
 import { Container } from "@/components/shared/Container"
 import { ProseLink } from "@/components/shared/prose-link"
 import { sectionHeadingClass } from "@/components/shared/prose.styles"
@@ -52,13 +51,12 @@ export function Footer() {
 						aria-label={SITE_CONTENT.footerNavTitle}
 					>
 						{FOOTER_NAV.map((item) => (
-							<Link
+							<SiteNavLink
 								key={item.href}
-								to={item.href}
-								className="hover:underline"
-							>
-								{item.label}
-							</Link>
+								href={item.href}
+								label={item.label}
+								variant="footer"
+							/>
 						))}
 					</nav>
 				</div>

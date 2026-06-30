@@ -2,6 +2,11 @@ import fs from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 
+import {
+	listMdxFiles,
+	parseFrontmatter
+} from "./lib/blog-content-utils.mjs"
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.join(__dirname, "..")
 const contentDir = path.join(rootDir, "src/content")
@@ -9,56 +14,6 @@ const outputPath = path.join(
 	rootDir,
 	"src/features/blog/constants/mock-blog-posts.constants.ts"
 )
-
-function parseFrontmatter(fileContent) {
-	if (!fileContent.startsWith("---")) {
-		return { data: {}, content: fileContent }
-	}
-
-	const endIndex = fileContent.indexOf("---", 3)
-
-	if (endIndex === -1) {
-		return { data: {}, content: fileContent }
-	}
-
-	const frontmatter = fileContent.slice(3, endIndex).trim()
-	const content = fileContent.slice(endIndex + 3).trim()
-	const data = {}
-
-	for (const line of frontmatter.split("\n")) {
-		const separatorIndex = line.indexOf(":")
-
-		if (separatorIndex === -1) {
-			continue
-		}
-
-		const key = line.slice(0, separatorIndex).trim()
-		const rawValue = line.slice(separatorIndex + 1).trim()
-
-		if (rawValue.startsWith("[") && rawValue.endsWith("]")) {
-			data[key] = rawValue
-				.slice(1, -1)
-				.split(",")
-				.map((value) => value.trim().replace(/^["']|["']$/g, ""))
-				.filter(Boolean)
-			continue
-		}
-
-		if (rawValue === "true") {
-			data[key] = true
-			continue
-		}
-
-		if (rawValue === "false") {
-			data[key] = false
-			continue
-		}
-
-		data[key] = rawValue.replace(/^["']|["']$/g, "")
-	}
-
-	return { data, content }
-}
 
 function escapeString(value) {
 	return value
@@ -69,6 +24,20 @@ function escapeString(value) {
 
 function formatPostObject(post) {
 	const optionalFields = []
+
+	if (post.coverImage) {
+		optionalFields.push(`\t\tcoverImage: "${escapeString(post.coverImage)}"`)
+	}
+
+	if (post.readingTimeMinutes) {
+		optionalFields.push(`\t\treadingTimeMinutes: ${post.readingTimeMinutes}`)
+	}
+
+	if (post.canonicalUrl) {
+		optionalFields.push(
+			`\t\tcanonicalUrl: "${escapeString(post.canonicalUrl)}"`
+		)
+	}
 
 	if (post.interactive) {
 		optionalFields.push("\t\tinteractive: true")
@@ -90,8 +59,18 @@ function formatPostObject(post) {
 		)
 	}
 
+	if (post.translatedTo) {
+		optionalFields.push(
+			`\t\ttranslatedTo: "${escapeString(post.translatedTo)}"`
+		)
+	}
+
 	if (post.series) {
 		optionalFields.push(`\t\tseries: "${escapeString(post.series)}"`)
+	}
+
+	if (post.seriesOrder) {
+		optionalFields.push(`\t\tseriesOrder: ${post.seriesOrder}`)
 	}
 
 	const optionalBlock =
@@ -115,10 +94,7 @@ function formatPostObject(post) {
 	return lines.join("\n")
 }
 
-const files = fs
-	.readdirSync(contentDir)
-	.filter((file) => file.endsWith(".mdx"))
-	.sort((left, right) => left.localeCompare(right, "tr"))
+const files = listMdxFiles(contentDir)
 
 const posts = files.map((file) => {
 	const filePath = path.join(contentDir, file)
@@ -133,11 +109,16 @@ const posts = files.map((file) => {
 		locale: data.locale,
 		published: data.published === true,
 		publishedAt: data.publishedAt,
+		coverImage: data.coverImage,
+		readingTimeMinutes: data.readingTimeMinutes,
+		canonicalUrl: data.canonicalUrl,
 		interactive: data.interactive === true,
 		featured: data.featured === true,
 		mediumUrl: data.mediumUrl,
 		translationOf: data.translationOf,
-		series: data.series
+		translatedTo: data.translatedTo,
+		series: data.series,
+		seriesOrder: data.seriesOrder
 	}
 })
 
@@ -154,3 +135,5 @@ ${posts.map((post) => formatPostObject(post)).join(",\n")}
 `
 
 fs.writeFileSync(outputPath, output)
+
+console.log(`Generated ${posts.length} mock blog posts.`)

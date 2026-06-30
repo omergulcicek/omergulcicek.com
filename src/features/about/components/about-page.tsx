@@ -1,6 +1,6 @@
 import { GitHubIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
-import { OpenToWorkBadge } from "@/components/shared/open-to-work-badge"
+import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import {
 	ProseIconLink,
@@ -8,6 +8,9 @@ import {
 	ProseRouterLink
 } from "@/components/shared/prose-link"
 import {
+	pageSectionClass,
+	pageShellClass,
+	pageStackGapClass,
 	proseFlowClass,
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
@@ -22,14 +25,9 @@ import { cn } from "@/lib/utils"
 
 export function AboutPage() {
 	return (
-		<div className="flex flex-col gap-12 py-10 md:gap-16 md:py-16">
-			<Container className="flex flex-col gap-12 md:gap-16">
-				<section className="flex flex-col gap-4">
-					<div className="flex flex-wrap items-center gap-3">
-						<SectionHeading>{ABOUT_CONTENT.title}</SectionHeading>
-						<OpenToWorkBadge />
-					</div>
-
+		<div className={pageShellClass}>
+			<Container className={cn("flex flex-col", pageStackGapClass)}>
+				<PageHeader title={ABOUT_CONTENT.title} showOpenToWork>
 					<div className={proseFlowClass}>
 						<p className={proseParagraphClass}>
 							Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
@@ -52,13 +50,13 @@ export function AboutPage() {
 							<em>bilinçli ve kontrollü</em> şekilde kullanıyorum.
 						</p>
 					</div>
-				</section>
+				</PageHeader>
 			</Container>
 
 			<StackStrip items={STACK_ITEMS} />
 
-			<section className="flex flex-col gap-6 md:gap-8">
-				<Container className="flex flex-col gap-4">
+			<section className={pageSectionClass}>
+				<Container className={pageSectionClass}>
 					<SectionHeading>Üretim Kültürü</SectionHeading>
 					<div className={proseFlowClass}>
 						<p className={proseParagraphClass}>
@@ -82,8 +80,8 @@ export function AboutPage() {
 				<GitHubContributionCalendar />
 			</section>
 
-			<Container className="flex flex-col gap-12 md:gap-16">
-				<section className="flex flex-col gap-6">
+			<Container className={cn("flex flex-col", pageStackGapClass)}>
+				<section className={pageSectionClass}>
 					<SectionHeading>Hobiler</SectionHeading>
 					<HobbyList />
 				</section>

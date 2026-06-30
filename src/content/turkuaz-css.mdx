@@ -7,6 +7,10 @@ title: "Turkuaz CSS"
 description: "Merhaba ! Web geliştirme ile ilgileniyorsanız framework'leri mutlaka duymuş yada kullanmışsınızdır. Artık günümüzde responsive olmayan bir tasarım..."
 category: "technical"
 tags: ["CSS"]
+coverImage: "/blog/2017/05-07/1-2.png"
+readingTimeMinutes: 3
+canonicalUrl: "https://omergulcicek.com/blog/turkuaz-css"
+contentHash: "fb9e449b3e59aad3"
 ---
 
 Merhaba !
@@ -42,12 +46,12 @@ Turkuaz Css içerisinde birçok bileşeni barındırır. Bazı bileşenler için
 
 Turkuaz Css, herhangi bir ikon kütüphanesi ile uyum içerisinde çalışır; istenilen ikon, butonların içerisinde kullanılabilir.
 
-<p className="my2 yazi-ortala">
-	<a className="buton kucuk">kucuk</a>
-	<a className="buton">normal</a>
-	<a className="buton orta">orta</a>
-	<a className="buton buyuk">buyuk</a>
-</p>
+```html
+<a class="buton kucuk">kucuk</a>
+<a class="buton">normal</a>
+<a class="buton orta">orta</a>
+<a class="buton buyuk">buyuk</a>
+```
 
 Yaklaşık 150'den fazla renk ile hem arka plan rengi, hemde yazı rengi üzerinde değişiklikler yapabiliriz. Bunun için [renkler](http://turkuazcss.com/dokumantasyon#renkler) sayfasından beğendiğiniz rengi sınıfa eklemeniz gerekmekte; örnek olarak mavinin 8. tonunu butonda kullanmak için aşağıdaki kod yeterlidir.
 
@@ -55,17 +59,15 @@ Yaklaşık 150'den fazla renk ile hem arka plan rengi, hemde yazı rengi üzerin
 <a class="buton mavi8">Buton</a>
 ```
 
-<p className="mb1">
-	<a className="buton mavi8">Buton</a>
-</p>
-
 Örneğin şık bir menü oluşturmak için nav tag'ına **menu** sınıfını vermek ve içerisine a tag'ları ile linkleri oluşturmak yeterlidir. Menüyü istenildiği gibi renklendirebilirsiniz. Menüyü ekranın sol yada sağından gelmesini isterseniz, yapmanız gereken tek şey **menu** sınıfı yerine **mobil** yazmanız. Bir tetikleyici ile mobil menünüz kullanıma hazır hale gelecektir (_Detaylı bilgi için [tıklayın.](http://turkuazcss.com/dokumantasyon#menu)_).
 
-<nav className="menu mavi8 my2">
+```html
+<nav class="menu">
 	<a>Anasayfa</a>
 	<a>Hakkında</a>
 	<a>İletişim</a>
 </nav>
+```
 
 Henüz ilk sürümün (_v1.0.0_) test aşamasında olan Turkuaz Css, hataların tespit edilip düzelmesinin ardından kullanıma sunulacaktır. Test aşamasından sonra ücretsiz olarak kullanıma sunulacak temalar hazırlanmaya başlanacaktır. Bu temalar statik, wordpress uyumlu ve çeşitli php framework'leri ile kullanıma hazır hale getirilecektir (_Bu konuda destek olmak isterseniz iletişime geçebilirsiniz_). Ayrıca sizlerde tema hazırlayıp gönderirseniz site üzerinden bunları isim belirterek paylaşabilirim.
 

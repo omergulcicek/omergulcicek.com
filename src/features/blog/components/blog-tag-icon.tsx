@@ -2,13 +2,14 @@ import type { ComponentType, SVGProps } from "react"
 import {
 	BookMarked,
 	Bot,
+	Brain,
 	Clapperboard,
 	CodeXml,
-	Eye,
+	Footprints,
 	Globe,
 	Milestone,
 	Popcorn,
-	Sparkles,
+	Rocket,
 	TentTree
 } from "lucide-react"
 
@@ -100,19 +101,24 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 		icon: TentTree,
 		iconClassName: "text-emerald-500 dark:text-emerald-400"
 	},
-	Gözlem: {
-		kind: "icon",
-		icon: Eye,
-		iconClassName: "text-slate-600 dark:text-slate-400"
-	},
 	"Site Yenileme": {
 		kind: "icon",
 		icon: Globe,
 		iconClassName: "text-cyan-600 dark:text-cyan-400"
 	},
-	Hobi: {
+	Deneyim: {
 		kind: "icon",
-		icon: Sparkles,
+		icon: Footprints,
+		iconClassName: "text-teal-600 dark:text-teal-400"
+	},
+	Düşünce: {
+		kind: "icon",
+		icon: Brain,
+		iconClassName: "text-indigo-500 dark:text-indigo-400"
+	},
+	Proje: {
+		kind: "icon",
+		icon: Rocket,
 		iconClassName: "text-fuchsia-500 dark:text-fuchsia-400"
 	}
 }

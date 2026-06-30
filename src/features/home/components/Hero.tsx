@@ -2,14 +2,19 @@ import { Mail } from "lucide-react"
 
 import { GitHubIcon } from "@/components/icons"
 import { ProseIconLink, ProseLink } from "@/components/shared/prose-link"
-import { proseFlowClass, proseParagraphClass } from "@/components/shared/prose.styles"
+import {
+	pageSectionClass,
+	pageTitleClass,
+	proseFlowClass,
+	proseParagraphClass
+} from "@/components/shared/prose.styles"
 import { SocialLinks } from "@/components/shared/SocialLinks"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
 import { cn } from "@/lib/utils"
 
 export function Hero() {
 	return (
-		<section className="flex flex-col gap-4">
+		<section className={pageSectionClass}>
 			<figure className="relative aspect-square w-full overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
 				<img
 					src="/omergulcicek.JPG"
@@ -23,7 +28,7 @@ export function Hero() {
 			</figure>
 			<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 				<div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-					<h1 className="text-balance text-foreground text-base font-semibold">
+					<h1 className={pageTitleClass}>
 						{SITE_CONTENT.displayName}
 					</h1>
 					<p className="text-muted-foreground text-base font-normal">

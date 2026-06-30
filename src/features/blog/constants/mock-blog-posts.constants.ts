@@ -9,17 +9,38 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Kitap"],
 		locale: "tr",
 		published: false,
-		publishedAt: "2026-06-30"
+		publishedAt: "2026-06-30",
+		coverImage: "/blog/future/imparatorun-imgesi.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/imparatorun-imgesi"
+	},
+	{
+		slug: "/virastack-ai",
+		title: "ViraStack AI: Yapay Zekâya Mimari Disiplin",
+		description: "ViraStack AI, React projelerinde yapay zekânın ürettiği kodu mimari kurallarla disipline eden .mdc bağlam dosyaları ve üretim protokolleri sunar.",
+		category: "technical",
+		tags: ["ViraStack", "Yapay Zekâ"],
+		locale: "tr",
+		published: true,
+		publishedAt: "2026-06-30",
+		coverImage: "/blog/2026/04-05/virastack.jpeg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/virastack-ai",
+		series: "virastack",
+		seriesOrder: 2
 	},
 	{
 		slug: "/footy-ile-rekabete-hazir-misin",
 		title: "Futbol Bilgini Sahaya Yansıt: Footy ile Rekabete Hazır Mısın?",
 		description: "Gerçek futbol tutkunlarını tek bir çatı altında toplayan, futbol bilgisini eğlenceye ve kıyasıya bir rekabete dönüştüren Footy platformu yayında!",
 		category: "personal",
-		tags: ["Hobi"],
+		tags: ["Proje"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-06-28",
+		coverImage: "/blog/2026/06-28/futbol-manyagi.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/footy-ile-rekabete-hazir-misin",
 		mediumUrl: "https://omergulcicek.medium.com/futbol-bilgini-sahaya-yans%C4%B1t-footy-ile-rekabete-haz%C4%B1r-m%C4%B1s%C4%B1n-6877cba0208e"
 	},
 	{
@@ -27,10 +48,13 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		title: "İlgi Alanlarınızı Tek Tıkla Takviminize Ekleyin",
 		description: "Daha önce Takvim Abonelikleriyle Zamanı Zenginleştirin yazımda duyurduğum tematik takvim abonelikleri projesini baştan aşağı yeniledim. İçerik...",
 		category: "personal",
-		tags: ["Hobi"],
+		tags: ["Proje"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-06-28",
+		coverImage: "/blog/2026/06-28/takvim-onizleme.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/ilgi-alanlarinizi-tek-tikla-takviminize-ekleyin",
 		mediumUrl: "https://medium.com/@omergulcicek/i%CC%87lgi-alanlar%C4%B1n%C4%B1z%C4%B1-tek-t%C4%B1kla-takviminize-ekleyin-98ea44e1ee52"
 	},
 	{
@@ -38,42 +62,56 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		title: "Medya Kuşatması ve Ruhsuz Eğitim: Manevi Boşluktaki Zombi Nesil",
 		description: "Okullardaki şiddetin temelindeki manevi boşluğu, ruhsuz eğitim sistemini ve medya kuşatmasıyla zombileşen gençliği irdeleyen bir zihniyet analizi.",
 		category: "personal",
-		tags: ["Gözlem"],
+		tags: ["Düşünce"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2026-04-16"
+		publishedAt: "2026-04-16",
+		coverImage: "/blog/2026/04-16/diziler.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/medya-kusatmasi-ve-ruhsuz-egitim-manevi-bosluktaki-zombi-nesil"
 	},
 	{
 		slug: "/dijital-bir-hayalet-gunlugu",
 		title: "Dijital Bir Hayalet Günlüğü",
 		description: "Algoritmalar, derin içerik ve görünürlük: Barış Manço örneğinden bugünün dijital varlık mücadelesine.",
 		category: "personal",
-		tags: ["Gözlem"],
+		tags: ["Düşünce"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2026-04-09"
+		publishedAt: "2026-04-09",
+		coverImage: "/blog/2026/04-08/omer-demirbag.jpeg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/dijital-bir-hayalet-gunlugu"
 	},
 	{
 		slug: "/frontend-ekosistemi-insa-etmek",
-		title: "Frontend Ekosistemi İnşa Etmek: Zanaattan Mühendisliğe Bir Yolculuk",
-		description: "Frontend dünyasında her gün binlerce paket yayınlanıyor. Ancak benim için bu süreç, 'hazır olanı kullan geç' kolaylığından ziyade, her satırın...",
+		title: "ViraStack: Frontend Ekosistemi",
+		description: "ViraStack nasıl doğdu? Turkuaz CSS'ten açık kaynak bir frontend ekosistemine uzanan kişisel yolculuğum ve bu yapının arkasındaki motivasyon.",
 		category: "technical",
 		tags: ["ViraStack"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-04-05",
+		coverImage: "/blog/2026/04-05/virastack.jpeg",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/frontend-ekosistemi-insa-etmek",
 		featured: true,
-		mediumUrl: "https://omergulcicek.medium.com/frontend-ekosistemi-insa-etmek-78111c2d96dc"
+		mediumUrl: "https://omergulcicek.medium.com/frontend-ekosistemi-insa-etmek-78111c2d96dc",
+		series: "virastack",
+		seriesOrder: 1
 	},
 	{
 		slug: "/gelenekten-gelecege-ramazan-adabi-ve-teknik-hedefler",
 		title: "Gelenekten Geleceğe: Ramazan Adabı",
-		description: "Bu sene Ramazan'ı her anlamda hakkını vererek yaşamak, kendime hem ruhsal hem kültürel anlamda bir şeyler katmak niyetindeyim. Eski Ramazan kültürünü bugüne taşımanın yollarını not ettim.",
+		description: "Bu sene Ramazan'ı her anlamda hakkını vererek yaşamak, kendime hem ruhsal hem kültürel anlamda bir şeyler katmak niyetindeyim. Eski Ramazan kültürünü bugüne...",
 		category: "personal",
-		tags: [],
+		tags: ["Düşünce"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-02-17",
+		coverImage: "/blog/2026/02-17/ramazan.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/gelenekten-gelecege-ramazan-adabi-ve-teknik-hedefler",
 		mediumUrl: "https://medium.com/@omergulcicek/gelenekten-gelece%C4%9Fe-ramazan-adab%C4%B1-ve-teknik-hedefler-589dfd1d8b72"
 	},
 	{
@@ -85,6 +123,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "en",
 		published: true,
 		publishedAt: "2026-02-14",
+		coverImage: "/blog/2026/02-14/kaide.png",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/kaide-ai-native-architecture-kit",
 		featured: true,
 		translationOf: "/kaide-yapay-zeka-odakli-mimari-kit"
 	},
@@ -97,7 +138,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-02-14",
-		mediumUrl: "https://omergulcicek.medium.com/kaide-yapay-zek%C3%A2-odakl%C4%B1-mimari-kit-d323a9b81552"
+		coverImage: "/blog/2026/02-14/kaide.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/kaide-yapay-zeka-odakli-mimari-kit",
+		mediumUrl: "https://omergulcicek.medium.com/kaide-yapay-zek%C3%A2-odakl%C4%B1-mimari-kit-d323a9b81552",
+		translatedTo: "/kaide-ai-native-architecture-kit"
 	},
 	{
 		slug: "/documentation-for-machines-llms-txt",
@@ -108,28 +153,39 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "en",
 		published: true,
 		publishedAt: "2026-02-04",
+		coverImage: "/blog/2026/02-04/llms.png",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/documentation-for-machines-llms-txt",
 		translationOf: "/makineler-icin-dokumantasyon-llms-txt"
 	},
 	{
 		slug: "/makineler-icin-dokumantasyon-llms-txt",
 		title: "Makineler İçin Dokümantasyon: llms.txt",
-		description: "Web dünyasında artık yapay zeka ajanları da hedef kitlemiz. llms.txt formatı ile LLM'ler için projelerimizi nasıl daha okunabilir hale getireceğimizi inceliyoruz.",
+		description: "Web dünyasında artık yapay zeka ajanları da hedef kitlemiz. llms.txt formatı ile LLM'ler için projelerimizi nasıl daha okunabilir hale getireceğimizi...",
 		category: "technical",
 		tags: ["Yapay Zekâ"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2026-02-04"
+		publishedAt: "2026-02-04",
+		coverImage: "/blog/2026/02-04/llms.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/makineler-icin-dokumantasyon-llms-txt",
+		translatedTo: "/documentation-for-machines-llms-txt"
 	},
 	{
 		slug: "/tanstack-start-injected-head-scripts-hatasi-cozumu",
 		title: "TanStack Start: tanstack-start-injected-head-scripts Hatası ve Çözümü",
-		description: "TanStack Start projelerinde karşılaşılan 'Injected head scripts' hidrasyon hatasının nedenleri ve Supabase gibi script enjekte eden eklentilerle çözüm yöntemleri.",
+		description: "TanStack Start projelerinde karşılaşılan 'Injected head scripts' hidrasyon hatasının nedenleri ve Supabase gibi script enjekte eden eklentilerle çözüm...",
 		category: "technical",
 		tags: ["TanStack", "Supabase", "Vite"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-02-03",
-		mediumUrl: "https://medium.com/@omergulcicek/tanstack-start-tanstack-start-injected-head-scripts-hatas%C4%B1-ve-%C3%A7%C3%B6z%C3%BCm%C3%BC-69de117093a0"
+		coverImage: "/blog/2026/02-03/injected.png",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/tanstack-start-injected-head-scripts-hatasi-cozumu",
+		mediumUrl: "https://medium.com/@omergulcicek/tanstack-start-tanstack-start-injected-head-scripts-hatas%C4%B1-ve-%C3%A7%C3%B6z%C3%BCm%C3%BC-69de117093a0",
+		translatedTo: "/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error"
 	},
 	{
 		slug: "/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error",
@@ -140,6 +196,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "en",
 		published: true,
 		publishedAt: "2026-02-03",
+		coverImage: "/blog/2026/02-03/injected.png",
+		readingTimeMinutes: 5,
+		canonicalUrl: "https://omergulcicek.com/blog/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error",
 		mediumUrl: "https://medium.com/@omergulcicek/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error-c1eecbf31735",
 		translationOf: "/tanstack-start-injected-head-scripts-hatasi-cozumu"
 	},
@@ -151,7 +210,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Dizi"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2026-02-02"
+		publishedAt: "2026-02-02",
+		coverImage: "/blog/future/see.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/see"
 	},
 	{
 		slug: "/react-state-yonetim-mimarisi",
@@ -162,30 +224,40 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-02-01",
+		coverImage: "/blog/2026/02-01/passing-props.png",
+		readingTimeMinutes: 6,
+		canonicalUrl: "https://omergulcicek.com/blog/react-state-yonetim-mimarisi",
 		mediumUrl: "https://medium.com/@omergulcicek/react-state-y%C3%B6netim-mimarisi-cec5ad6043fb"
 	},
 	{
 		slug: "/react-ai-stack-2026",
 		title: "2026 için React ve AI Stack'i",
-		description: "Yapay zekanın kod yazma süreçlerimizi nasıl değiştirdiğini ve 2026'ya girerken neden React + AI araçlarının endüstri standardı haline geldiğini inceleyen detaylı bir çeviri.",
+		description: "Yapay zekanın kod yazma süreçlerimizi nasıl değiştirdiğini ve 2026'ya girerken neden React + AI araçlarının endüstri standardı haline geldiğini inceleyen...",
 		category: "technical",
 		tags: ["Frontend", "Yapay Zekâ"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-01-28",
+		coverImage: "/blog/2026/01-28/react-stack.png",
+		readingTimeMinutes: 6,
+		canonicalUrl: "https://omergulcicek.com/blog/react-ai-stack-2026",
 		featured: true,
 		mediumUrl: "https://medium.com/@omergulcicek/2026-i%C3%A7in-react-ve-ai-stacki-f3f9cc815674"
 	},
 	{
-		slug: "/2025ten-2026ya-degerlendirme-ve-Yıl Değerlendirmesi",
-		title: "2025'ten 2026'ya: Değerlendirme ve Yıl Değerlendirmesi",
+		slug: "/2025ten-2026ya-degerlendirme-ve-hedefler",
+		title: "2025'ten 2026'ya: Değerlendirme ve Hedefler",
 		description: "2025, hayatımın hem kişisel hem profesyonel tarafında keskin dönüşümlerin yaşandığı, zorlayıcı ama öğretici bir yıl oldu. Yerleşik düzenimin...",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2026-01-01",
-		series: "yillik"
+		coverImage: "/blog/2025/12-31/github-3.png",
+		readingTimeMinutes: 6,
+		canonicalUrl: "https://omergulcicek.com/blog/2025ten-2026ya-degerlendirme-ve-hedefler",
+		series: "yillik-degerlendirme",
+		seriesOrder: 10
 	},
 	{
 		slug: "/2026da-hayatimiza-girecek-yeni-css-ozellikleri",
@@ -196,6 +268,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-12-25",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2026da-hayatimiza-girecek-yeni-css-ozellikleri",
 		interactive: true,
 		featured: true,
 		mediumUrl: "https://omergulcicek.medium.com/2026da-hayat%C4%B1m%C4%B1za-girecek-yeni-css-%C3%B6zellikleri-f48158357b77"
@@ -209,6 +283,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-12-01",
+		coverImage: "/blog/2025/12-01/frontend.png",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/ai-caginda-frontend-bitti-mi",
 		mediumUrl: "https://omergulcicek.medium.com/ai-%C3%A7a%C4%9F%C4%B1nda-frontend-bitti-mi-17fedba66f96?postPublishedType=initial"
 	},
 	{
@@ -219,7 +296,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Film"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2025-11-28"
+		publishedAt: "2025-11-28",
+		coverImage: "/blog/2025/11-28/yan-yana.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/yan-yana"
 	},
 	{
 		slug: "/yapay-zekanin-sorunlari",
@@ -230,6 +310,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-11-18",
+		coverImage: "/blog/2025/11-18/addy-osmani.png",
+		readingTimeMinutes: 5,
+		canonicalUrl: "https://omergulcicek.com/blog/yapay-zekanin-sorunlari",
 		mediumUrl: "https://omergulcicek.medium.com/yapay-zek%C3%A2n%C4%B1n-sorunlar%C4%B1-57ab1bf5e335?postPublishedType=initial"
 	},
 	{
@@ -241,7 +324,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-11-06",
-		mediumUrl: "https://omergulcicek.medium.com/nizam-next-js-16-boilerplate-3015d8945f39"
+		coverImage: "/blog/2025/11-05/nizam.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/nizam-nextjs-16-boilerplate",
+		mediumUrl: "https://omergulcicek.medium.com/nizam-next-js-16-boilerplate-3015d8945f39",
+		translatedTo: "/nizam-nextjs-16-boilerplate-en"
 	},
 	{
 		slug: "/nizam-nextjs-16-boilerplate-en",
@@ -252,6 +339,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "en",
 		published: true,
 		publishedAt: "2025-11-05",
+		coverImage: "/blog/2025/11-05/nizam.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/nizam-nextjs-16-boilerplate-en",
 		mediumUrl: "https://omergulcicek.medium.com/nizam-next-js-16-boilerplate-en-59fdf4872f3f",
 		translationOf: "/nizam-nextjs-16-boilerplate"
 	},
@@ -264,18 +354,24 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-10-23",
+		coverImage: "/blog/2025/10-23/nextjs-16.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/nextjs-16-turbopack-cache-components-ve-yeni-mimari-donemi",
 		featured: true,
 		mediumUrl: "https://omergulcicek.medium.com/next-js-16-turbopack-cache-components-ve-yeni-mimari-d%C3%B6nemi-5ed8018ccde1"
 	},
 	{
-		slug: "/google-maps-listelerim",
+		slug: "/google-harita-listelerim",
 		title: "Google Maps Listelerim",
 		description: "Bir şehirde dolaşırken bazen rastgele bir sokağın köşesinde gizli bir kafe, eski bir türbe ya da unutulmuş bir müze çıkıverir karşınıza - özellikle...",
 		category: "personal",
-		tags: ["Seyahat"],
+		tags: ["Proje"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-10-20",
+		coverImage: "/blog/2025/10-20/google-maps.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/google-harita-listelerim",
 		mediumUrl: "https://omergulcicek.medium.com/google-maps-listelerim-83291fedbc9d"
 	},
 	{
@@ -287,6 +383,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-10-14",
+		coverImage: "/blog/2025/10-14/yazilimci.png",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/kaliteli-yazilimci-nasil-olunur",
 		mediumUrl: "https://omergulcicek.medium.com/kaliteli-yaz%C4%B1l%C4%B1mc%C4%B1-nas%C4%B1l-olunur-9b357ae2bc3c"
 	},
 	{
@@ -297,17 +396,23 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Kitap"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2025-10-02"
+		publishedAt: "2025-10-02",
+		coverImage: "/blog/2025/10-02/fatih.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/fatih-sultan-mehmed-dogunun-ve-batinin-efendisi"
 	},
 	{
 		slug: "/takvim-abonelikleriyle-zamani-zenginlestirin",
 		title: "Takvim Abonelikleriyle Zamanı Zenginleştirin",
 		description: "Apple Takvim'e tek tıkla abone olabileceğiniz, özenle derlenmiş tematik takvimler hazırladım. Her bir etkinlikte kısa açıklamalar, gerekiyorsa kaynak...",
 		category: "personal",
-		tags: ["Hobi"],
+		tags: ["Proje"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-09-19",
+		coverImage: "/blog/2025/09-19/takvim-ornek.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/takvim-abonelikleriyle-zamani-zenginlestirin",
 		mediumUrl: "https://omergulcicek.medium.com/takvim-abonelikleriyle-zaman%C4%B1-zenginle%C5%9Ftirin-7977730e99a3"
 	},
 	{
@@ -315,10 +420,12 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		title: "Günümüz Türkiyesi 2025",
 		description: "Uzun zamandır gözlem yapıp, gözlemlerimi yazıya dökmeyi seviyorum. Bu metin; aklımda birikenleri, sokakta, ekranda, işte gördüklerimi not aldığım bir...",
 		category: "personal",
-		tags: ["Gözlem"],
+		tags: ["Düşünce"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2025-09-16"
+		publishedAt: "2025-09-16",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/gunumuz-turkiyesi-2025"
 	},
 	{
 		slug: "/frontend-calisma-ortamim-cursor-eklentiler",
@@ -329,6 +436,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-08-13",
+		coverImage: "/blog/2025/08-13/calisma-masam.JPG",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/frontend-calisma-ortamim-cursor-eklentiler",
 		mediumUrl: "https://omergulcicek.medium.com/frontend-%C3%A7al%C4%B1%C5%9Fma-ortam%C4%B1m-cursor-eklentiler-ve-daha-fazlas%C4%B1-d0b63064fe25"
 	},
 	{
@@ -340,8 +450,12 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-07-27",
+		coverImage: "/blog/2025/07-27/avatars.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/sitemin-yeni-arayuzune-hosgeldiniz",
 		mediumUrl: "https://omergulcicek.medium.com/sitemin-yeni-aray%C3%BCz%C3%BCne-ho%C5%9Fgeldiniz-126ce241ea47",
-		series: "site-yenileme"
+		series: "site-yenileme",
+		seriesOrder: 3
 	},
 	{
 		slug: "/nevsehir-tatili",
@@ -352,6 +466,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-07-26",
+		coverImage: "/blog/2025/07-26/balon.JPG",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/nevsehir-tatili",
 		mediumUrl: "https://omergulcicek.medium.com/nev%C5%9Fehir-tatili-16233f3723be"
 	},
 	{
@@ -363,6 +480,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-07-23",
+		coverImage: "/blog/2025/07-23/boilerplate.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/nextjs-15-boilerplate",
 		mediumUrl: "https://omergulcicek.medium.com/next-js-15-boilerplate-7d34c8be6b16"
 	},
 	{
@@ -374,6 +494,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-06-19",
+		coverImage: "/blog/2025/06-16/password-input.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/react-parola-inputlari-icin-goster-gizle-hooku",
 		mediumUrl: "https://omergulcicek.medium.com/react-parola-inputlar%C4%B1-i%C3%A7in-g%C3%B6ster-gizle-hooku-1f0085624887"
 	},
 	{
@@ -385,17 +508,23 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-06-09",
+		coverImage: "/blog/2025/06-09/forms-mask.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/react-hook-form-icin-akilli-mask-ve-dogrulama",
 		mediumUrl: "https://medium.com/kodcular/react-hook-form-i%C3%A7in-ak%C4%B1ll%C4%B1-mask-ve-do%C4%9Frulama-97dfe79d9123"
 	},
 	{
 		slug: "/css-attr-icin-yeni-yetkinlikler",
 		title: "CSS attr() İçin Yeni Yetkinlikler",
-		description: "CSS attr() fonksiyonunun yeni yetkinlikleri sayesinde renkler, uzunluklar ve sayısal değerler CSS değişkenlerine ihtiyaç duymadan doğrudan HTML üzerinden tanımlanabiliyor.",
+		description: "CSS attr() fonksiyonunun yeni yetkinlikleri sayesinde renkler, uzunluklar ve sayısal değerler CSS değişkenlerine ihtiyaç duymadan doğrudan HTML üzerinden...",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-03-22",
+		coverImage: "/blog/2025/03-22/css-attr.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/css-attr-icin-yeni-yetkinlikler",
 		mediumUrl: "https://omergulcicek.medium.com/css-attr-i%CC%87%C3%A7in-yeni-yetkinlikler-47c9b2fabe10"
 	},
 	{
@@ -407,6 +536,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-02-07",
+		coverImage: "/blog/2025/01-29/tailwind-css-v4.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/tailwind-css-v4",
 		mediumUrl: "https://omergulcicek.medium.com/tailwind-css-v4-0-7678b29262f3?source=user_profile_page"
 	},
 	{
@@ -418,6 +550,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-01-20",
+		coverImage: "/blog/2025/01-20/react-typescript.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2025-yilinda-frontend-developer-olmak",
 		mediumUrl: "https://omergulcicek.medium.com/2025-y%C4%B1l%C4%B1nda-frontend-developer-olmak-774e74ae355c"
 	},
 	{
@@ -429,17 +564,23 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-01-10",
+		coverImage: "/blog/2025/01-10/virtualization.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/react-virtualization-buyuk-verilerin-ekranda-verimli-gosterimi",
 		mediumUrl: "https://omergulcicek.medium.com/react-virtualization-b%C3%BCy%C3%BCk-verilerin-ekranda-verimli-g%C3%B6sterimi-a91b9e6c6e37"
 	},
 	{
 		slug: "/react-19-ile-gelen-yenilik-use-optimistic-hook-kullanimi",
 		title: "React 19 ile Gelen Yenilik: useOptimistic Hook Kullanımı",
-		description: "React 19 ile hayatımıza giren useOptimistic hook'u sayesinde, sunucu yanıtını beklemeden UI güncellemelerini anında yansıtarak kullanıcı deneyimini iyileştiriyoruz.",
+		description: "React 19 ile hayatımıza giren useOptimistic hook'u sayesinde, sunucu yanıtını beklemeden UI güncellemelerini anında yansıtarak kullanıcı deneyimini...",
 		category: "technical",
 		tags: ["React"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-01-06",
+		coverImage: "/blog/2025/01-06/useOptimistic.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/react-19-ile-gelen-yenilik-use-optimistic-hook-kullanimi",
 		mediumUrl: "https://omergulcicek.medium.com/react-19-ile-gelen-yenilik-useoptimistic-hook-kullan%C4%B1m%C4%B1-eebe5cb6a732"
 	},
 	{
@@ -451,6 +592,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-01-04",
+		coverImage: "/blog/2025/01-04/shadcn-ui.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/frontendin-parlayan-yildizi-shadcn-ui-ile-tanisin",
 		mediumUrl: "https://omergulcicek.medium.com/frontendin-parlayan-y%C4%B1ld%C4%B1z%C4%B1-shadcn-ui-ile-tan%C4%B1%C5%9F%C4%B1n-d0e6b821b4ec"
 	},
 	{
@@ -462,7 +606,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-01-01",
-		series: "yillik"
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/2025-hedeflerim",
+		series: "yillik-degerlendirme",
+		seriesOrder: 9
 	},
 	{
 		slug: "/2024-degerlendirmesi",
@@ -473,7 +620,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2024-12-31",
-		series: "yillik"
+		coverImage: "/blog/2024/12-31/alisgidis.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2024-degerlendirmesi",
+		series: "yillik-degerlendirme",
+		seriesOrder: 8
 	},
 	{
 		slug: "/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi",
@@ -484,8 +635,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2024-12-29",
-		mediumUrl: "https://omergulcicek.medium.com/kişisel-sitemin-yeni-arayüzü-next-js-ve-tailwind-css-ile-geliştirildi-8c8c8c8c8c8c",
-		series: "site-yenileme"
+		coverImage: "/blog/2024/12-29/filters.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi",
+		series: "site-yenileme",
+		seriesOrder: 2
 	},
 	{
 		slug: "/2022-degerlendirmesi",
@@ -496,7 +650,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-12-31",
-		series: "yillik"
+		coverImage: "/blog/2022/12-31/maps.jpg",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2022-degerlendirmesi",
+		series: "yillik-degerlendirme",
+		seriesOrder: 7
 	},
 	{
 		slug: "/2022-css-istatistikleri",
@@ -507,7 +665,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-10-09",
-		mediumUrl: "https://omergulcicek.medium.com/2022-css-istatistikleri-8c8c8c8c8c8c"
+		coverImage: "/blog/2022/10-09/en-populer-css-siniflari.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/2022-css-istatistikleri"
 	},
 	{
 		slug: "/grid-template-areas-ile-layout-olusturmak",
@@ -518,7 +678,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-09-09",
-		mediumUrl: "https://omergulcicek.medium.com/grid-template-areas-ile-layout-oluşturmak-8c8c8c8c8c8c"
+		coverImage: "/blog/2022/09-09/grid-template-areas-ile-layout-olusturmak-1.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/grid-template-areas-ile-layout-olusturmak"
 	},
 	{
 		slug: "/css-object-view-box",
@@ -529,7 +691,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-06-26",
-		mediumUrl: "https://omergulcicek.medium.com/css-object-view-box-8c8c8c8c8c8c"
+		coverImage: "/blog/2022/06-26/crop-image-css.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/css-object-view-box"
 	},
 	{
 		slug: "/kisisel-sitemin-nextjs-versiyonu",
@@ -540,8 +704,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-04-22",
-		mediumUrl: "https://omergulcicek.medium.com/kişisel-sitemin-next-js-versiyonu-8c8c8c8c8c8c",
-		series: "site-yenileme"
+		coverImage: "/blog/2022/04-22/renk.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/kisisel-sitemin-nextjs-versiyonu",
+		series: "site-yenileme",
+		seriesOrder: 1
 	},
 	{
 		slug: "/styled-component-ile-dinamik-css-yazmak",
@@ -552,7 +719,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-01-25",
-		mediumUrl: "https://omergulcicek.medium.com/styled-component-ile-dinamik-css-yazmak-8c8c8c8c8c8c"
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/styled-component-ile-dinamik-css-yazmak"
 	},
 	{
 		slug: "/2022-hedeflerim",
@@ -563,8 +731,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2022-01-01",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2022-hedeflerim",
 		mediumUrl: "https://omergulcicek.medium.com/2022-hedeflerim-69c889488716",
-		series: "yillik"
+		series: "yillik-degerlendirme",
+		seriesOrder: 6
 	},
 	{
 		slug: "/2021-degerlendirmesi",
@@ -575,7 +746,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-12-31",
-		series: "yillik"
+		coverImage: "/blog/2021/12-31/duolingo-2021.jpg",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2021-degerlendirmesi",
+		series: "yillik-degerlendirme",
+		seriesOrder: 5
 	},
 	{
 		slug: "/css-container-sorgulari",
@@ -586,7 +761,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-11-26",
-		mediumUrl: "https://omergulcicek.medium.com/css-container-sorguları-8c8c8c8c8c8c"
+		coverImage: "/blog/2021/11-26/responsive-problem-1.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/css-container-sorgulari"
 	},
 	{
 		slug: "/javascript-selectorlerinin-calisma-hizlari",
@@ -597,7 +774,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-10-29",
-		mediumUrl: "https://omergulcicek.medium.com/javascript-selectorlerinin-çalışma-hızları-8c8c8c8c8c8c"
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/javascript-selectorlerinin-calisma-hizlari"
 	},
 	{
 		slug: "/izmir-marmaris-oludeniz-tatili",
@@ -607,7 +785,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Seyahat"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2021-08-09"
+		publishedAt: "2021-08-09",
+		coverImage: "/blog/2021/08-09/izmir.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/izmir-marmaris-oludeniz-tatili"
 	},
 	{
 		slug: "/csste-min-max-ve-clamp-fonksiyonlari",
@@ -618,7 +799,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-06-27",
-		mediumUrl: "https://omergulcicek.medium.com/css'te-min-max-ve-clamp-fonksiyonları-8c8c8c8c8c8c"
+		coverImage: "/blog/2021/06-27/min-max-ve-clamp-caniuse.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/csste-min-max-ve-clamp-fonksiyonlari"
 	},
 	{
 		slug: "/renk-kontrastini-hesaplama",
@@ -629,7 +812,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-05-29",
-		mediumUrl: "https://omergulcicek.medium.com/renk-kontrastını-hesaplama-8c8c8c8c8c8c"
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/renk-kontrastini-hesaplama"
 	},
 	{
 		slug: "/cep-herkulu-naim-suleymanoglu",
@@ -640,6 +824,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-05-08",
+		coverImage: "/blog/2021/05-08/naim.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/cep-herkulu-naim-suleymanoglu",
 		mediumUrl: "https://omergulcicek.medium.com/cep-herkülü-naim-süleymanoğlu-1d92dc35dc3c"
 	},
 	{
@@ -651,17 +838,22 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-03-28",
-		mediumUrl: "https://omergulcicek.medium.com/css-mantıksal-özellikler-8c8c8c8c8c8c"
+		coverImage: "/blog/2021/03-28/css-logical-properties.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/css-mantiksal-ozellikler"
 	},
 	{
 		slug: "/miyop-lazer-goz-ameliyati",
 		title: "Miyop Lazer Göz Ameliyatı",
 		description: "Tam hatırlamıyorum ama sanırım ortaokulun son zamanlarından beri gözlük kullanıyorum, yani neredeyse tüm gençliğimi gözlüklü geçirdim. Havuz/denize...",
 		category: "personal",
-		tags: ["Gözlem"],
+		tags: ["Deneyim"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-03-26",
+		coverImage: "/blog/2021/03-26/ameliyattan-ciktiktan-sonra.jpg",
+		readingTimeMinutes: 6,
+		canonicalUrl: "https://omergulcicek.com/blog/miyop-lazer-goz-ameliyati",
 		mediumUrl: "https://omergulcicek.medium.com/miyop-lazer-göz-ameliyatı-c1052dba0d82"
 	},
 	{
@@ -669,10 +861,13 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		title: "MacBook Pro M1 Deneyimlerim",
 		description: "Apple Kasım 2020 itibari ile kendi üretimi olan M1 işlemcisini duyurdu; Macbook Air/Pro/Mini modellerini de M1 CPU ile baştan geliştirildi....",
 		category: "personal",
-		tags: ["Hobi"],
+		tags: ["Deneyim"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2021-02-22"
+		publishedAt: "2021-02-22",
+		coverImage: "/blog/2021/02-22/macbook-pro.jpg",
+		readingTimeMinutes: 5,
+		canonicalUrl: "https://omergulcicek.com/blog/macbook-pro-m1-deneyimlerim"
 	},
 	{
 		slug: "/japonizm",
@@ -683,6 +878,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-02-21",
+		coverImage: "/blog/2021/02-21/japonizm.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/japonizm",
 		mediumUrl: "https://omergulcicek.medium.com/japonizm-3b096d73bfc"
 	},
 	{
@@ -694,7 +892,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-01-22",
-		mediumUrl: "https://omergulcicek.medium.com/react-componentini-npm-paketi-yapmak-8c8c8c8c8c8c"
+		coverImage: "/blog/2021/01-22/react-npm-template.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/react-componentini-npm-paketi-yapmak"
 	},
 	{
 		slug: "/2021-hedeflerim",
@@ -705,7 +905,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2021-01-02",
-		series: "yillik"
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2021-hedeflerim",
+		series: "yillik-degerlendirme",
+		seriesOrder: 4
 	},
 	{
 		slug: "/2020-degerlendirmesi",
@@ -716,8 +919,12 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-12-31",
+		coverImage: "/blog/2020/12-31/volkswagen.jpg",
+		readingTimeMinutes: 5,
+		canonicalUrl: "https://omergulcicek.com/blog/2020-degerlendirmesi",
 		mediumUrl: "https://omergulcicek.medium.com/2020-de%C4%9Ferlendirmesi-7d9cf6017aee",
-		series: "yillik"
+		series: "yillik-degerlendirme",
+		seriesOrder: 3
 	},
 	{
 		slug: "/the-queens-gambit",
@@ -728,6 +935,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-11-29",
+		coverImage: "/blog/2020/11-29/bobby-fischer.jpg",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/the-queens-gambit",
 		mediumUrl: "https://omergulcicek.medium.com/the-queens-gambit-15044bbc40a8"
 	},
 	{
@@ -739,7 +949,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-11-13",
-		mediumUrl: "https://omergulcicek.medium.com/mjml-ile-responsive-mail-template-8c8c8c8c8c8c"
+		coverImage: "/blog/2020/11-13/mjml.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/mjml-ile-responsive-mail-template"
 	},
 	{
 		slug: "/linkleri-yeni-sekmede-acmak",
@@ -750,7 +962,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-10-30",
-		mediumUrl: "https://omergulcicek.medium.com/linkleri-yeni-sekmede-açmak-8c8c8c8c8c8c"
+		coverImage: "/blog/2020/10-30/blank.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/linkleri-yeni-sekmede-acmak"
 	},
 	{
 		slug: "/focus-ve-focus-within-farki",
@@ -761,7 +975,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-10-10",
-		mediumUrl: "https://omergulcicek.medium.com/focus-ve-focus-within-farkı-8c8c8c8c8c8c"
+		coverImage: "/blog/2020/10-10/focus.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/focus-ve-focus-within-farki"
 	},
 	{
 		slug: "/google-fontlari-daha-hizli-yuklemek",
@@ -772,7 +988,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-09-26",
-		mediumUrl: "https://omergulcicek.medium.com/google-fontları-daha-hızlı-yüklemek-8c8c8c8c8c8c"
+		coverImage: "/blog/2020/09-26/without-preconnect.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/google-fontlari-daha-hizli-yuklemek"
 	},
 	{
 		slug: "/resimlerde-srcset-kullanimi",
@@ -783,7 +1001,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-09-13",
-		mediumUrl: "https://omergulcicek.medium.com/resimlerde-srcset-kullanımı-8c8c8c8c8c8c"
+		coverImage: "/blog/2020/09-13/kedi.jpeg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/resimlerde-srcset-kullanimi"
 	},
 	{
 		slug: "/logolari-css-ile-hizalama",
@@ -794,7 +1014,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2020-09-12",
-		mediumUrl: "https://omergulcicek.medium.com/logoları-css-ile-hizalama-8c8c8c8c8c8c"
+		coverImage: "/blog/2020/09-12/hizalama-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/logolari-css-ile-hizalama"
 	},
 	{
 		slug: "/2019-degerlendirmesi",
@@ -805,17 +1027,24 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2019-12-31",
-		series: "yillik"
+		coverImage: "/blog/2019/12-31/calendar.png",
+		readingTimeMinutes: 4,
+		canonicalUrl: "https://omergulcicek.com/blog/2019-degerlendirmesi",
+		series: "yillik-degerlendirme",
+		seriesOrder: 2
 	},
 	{
 		slug: "/gunumuz-turkiyesi-2019",
 		title: "Günümüz Türkiyesi 2019",
 		description: "Sürekli gözlem yapıp, gözlemlerimi değerlendirmeyi severim. Uzun süredir içimden kendimle konuştuğum bazı konuları Twitter hesabımdan paylaştım....",
 		category: "personal",
-		tags: ["Gözlem"],
+		tags: ["Düşünce"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2019-01-08",
+		coverImage: "/blog/2019/01-08/memur.jpeg",
+		readingTimeMinutes: 6,
+		canonicalUrl: "https://omergulcicek.com/blog/gunumuz-turkiyesi-2019",
 		mediumUrl: "https://medium.com/t%C3%BCrkiye/g%C3%BCn%C3%BCm%C3%BCz-t%C3%BCrkiyesi-46bd7a8c69f6"
 	},
 	{
@@ -827,6 +1056,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2018-12-03",
+		coverImage: "/blog/2018/12-03/benedict-cumberbatch.jpeg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/the-imitation-game",
 		mediumUrl: "https://medium.com/t%C3%BCrkiye/the-imitation-game-204530b0581b"
 	},
 	{
@@ -838,7 +1070,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2018-01-01",
-		series: "yillik"
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/2018-yili-hedeflerim",
+		series: "yillik-degerlendirme",
+		seriesOrder: 1
 	},
 	{
 		slug: "/jsx-nedir",
@@ -849,7 +1084,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-12-30",
-		mediumUrl: "https://omergulcicek.medium.com/jsx-nedir-8c8c8c8c8c8c"
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/jsx-nedir"
 	},
 	{
 		slug: "/bind-fonksiyonu",
@@ -859,7 +1095,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["JavaScript", "React"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-12-23"
+		publishedAt: "2017-12-23",
+		coverImage: "/blog/2017/12-23/17-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/bind-fonksiyonu"
 	},
 	{
 		slug: "/walter-isaacson-gelecegi-kesfedenler",
@@ -869,7 +1108,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Kitap"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-12-09"
+		publishedAt: "2017-12-09",
+		coverImage: "/blog/2017/12-09/walter-isaacson-gelecegi-kesfedenler.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/walter-isaacson-gelecegi-kesfedenler"
 	},
 	{
 		slug: "/resimleri-gorunurse-yuklemek",
@@ -879,7 +1121,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["JavaScript"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-12-08"
+		publishedAt: "2017-12-08",
+		coverImage: "/blog/2017/12-08/15-1.gif",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/resimleri-gorunurse-yuklemek"
 	},
 	{
 		slug: "/gitstats-v2-github-api",
@@ -889,7 +1134,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["GitHub", "JavaScript"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-11-20"
+		publishedAt: "2017-11-20",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/gitstats-v2-github-api"
 	},
 	{
 		slug: "/gitstats",
@@ -899,7 +1146,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["GitHub", "JavaScript"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-11-18"
+		publishedAt: "2017-11-18",
+		coverImage: "/blog/2017/11-18/13-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/gitstats"
 	},
 	{
 		slug: "/devtools-ile-javascript-debug",
@@ -909,17 +1159,22 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["JavaScript"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-11-14"
+		publishedAt: "2017-11-14",
+		coverImage: "/blog/2017/11-14/12-1.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/devtools-ile-javascript-debug"
 	},
 	{
 		slug: "/is-bulmak",
 		title: "İş Bulmak",
 		description: "30'dan önce 30 30'dan önce 30 listemde, 30 yaşına gelene kadar yapmak istediklerimi listeledim. Bu listeleri birçok blogger arkadaşımız hazırlamış....",
 		category: "personal",
-		tags: ["Gözlem"],
+		tags: ["Deneyim"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-10-13"
+		publishedAt: "2017-10-13",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/is-bulmak"
 	},
 	{
 		slug: "/photopea-com",
@@ -929,7 +1184,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Frontend"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-10-07"
+		publishedAt: "2017-10-07",
+		coverImage: "/blog/2017/10-07/10-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/photopea-com"
 	},
 	{
 		slug: "/jquery-ile-css-important",
@@ -939,7 +1197,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-09-30"
+		publishedAt: "2017-09-30",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/jquery-ile-css-important"
 	},
 	{
 		slug: "/position-sticky",
@@ -949,7 +1209,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-08-19"
+		publishedAt: "2017-08-19",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/position-sticky"
 	},
 	{
 		slug: "/change-title",
@@ -959,7 +1221,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["JavaScript", "GitHub"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-08-05"
+		publishedAt: "2017-08-05",
+		coverImage: "/blog/2017/08-05/7-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/change-title"
 	},
 	{
 		slug: "/box-shadowa-guclu-alternatif-drop-shadow",
@@ -969,7 +1234,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-07-28"
+		publishedAt: "2017-07-28",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/box-shadowa-guclu-alternatif-drop-shadow"
 	},
 	{
 		slug: "/css-framework-anket-sonuclari",
@@ -979,7 +1246,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-07-26"
+		publishedAt: "2017-07-26",
+		coverImage: "/blog/2017/07-26/5-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/css-framework-anket-sonuclari"
 	},
 	{
 		slug: "/reading-time-paketi",
@@ -989,7 +1259,10 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["npm"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-07-25"
+		publishedAt: "2017-07-25",
+		coverImage: "/blog/2017/07-25/4-1.png",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/reading-time-paketi"
 	},
 	{
 		slug: "/sait-kosk-hemdem",
@@ -999,17 +1272,22 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["Kitap"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-07-22"
+		publishedAt: "2017-07-22",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/sait-kosk-hemdem"
 	},
 	{
 		slug: "/kartvizit-tasarimim",
 		title: "Kartvizit Tasarımım",
 		description: "Selamünaleyküm. Uzun zamandır kendime kartvizit yapmayı çok istedim. Sıfırdan çizecek tasarım bilgim olmadığı için hazır tasarımlara yöneldim....",
 		category: "personal",
-		tags: ["Hobi"],
+		tags: ["Proje"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-05-15"
+		publishedAt: "2017-05-15",
+		coverImage: "/blog/2017/05-15/2-1.png",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/kartvizit-tasarimim"
 	},
 	{
 		slug: "/turkuaz-css",
@@ -1019,6 +1297,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
-		publishedAt: "2017-05-07"
+		publishedAt: "2017-05-07",
+		coverImage: "/blog/2017/05-07/1-2.png",
+		readingTimeMinutes: 3,
+		canonicalUrl: "https://omergulcicek.com/blog/turkuaz-css"
 	}
 ]

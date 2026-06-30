@@ -7,7 +7,10 @@ title: "CSS Object View Box"
 description: "CSS'te bir resmin istediğimiz bir bölümünü kırpmamız için doğal bir yöntem yoktu. Ya resmi saran farklı bir elemente ihtiyacımız vardı (_ gibi_) yada..."
 category: "technical"
 tags: ["CSS"]
-mediumUrl: "https://omergulcicek.medium.com/css-object-view-box-8c8c8c8c8c8c"
+coverImage: "/blog/2022/06-26/crop-image-css.png"
+readingTimeMinutes: 1
+canonicalUrl: "https://omergulcicek.com/blog/css-object-view-box"
+contentHash: "be454c2bbe7a5b9b"
 ---
 
 CSS'te bir resmin istediğimiz bir bölümünü kırpmamız için doğal bir yöntem yoktu. Ya resmi saran farklı bir elemente ihtiyacımız vardı (_`<figure>` gibi_) yada `background-image` kodu ile resmin pozisyonunu ve boyutunu ayarlamak gerekiyordu.
@@ -49,7 +52,7 @@ img {
 	top: 0;
 	width: 160%;
 }
-```
+```html
 
 ## Resme Background Vermek
 
@@ -76,7 +79,7 @@ Yukarıdaki iki yöntem eskiden kullanmak zorunda olduğumuz seçeneklerdi. Faka
 
 ## Object-View-Box Özelliğinin Tanıtımı
 
-`object-view-box` özelliği henüz çok yeni; Chrome Canary'de mevcut fakat <a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/-s-nu3A-qAo/m/YYlxSLKkAgAJ?pli=1" target="_blank" rel="noreferrer noopener">Google Chrome'a 104. versiyondan itibaren geleceği</a> söyleniyor.
+`object-view-box` özelliği henüz çok yeni; Chrome Canary'de mevcut fakat [Google Chrome'a 104. versiyondan itibaren geleceği](https://groups.google.com/a/chromium.org/g/blink-dev/c/-s-nu3A-qAo/m/YYlxSLKkAgAJ?pli=1) söyleniyor.
 
 Bu özellik görselin üzerinde dikdörtgen çizip o alanı göstermeyi sağlıyor. 4 taraftan (_üst, sağ, alt, sol_) ne kadarlık bir alanı göstermek istediğimizi belirteceğiz.
 
@@ -101,10 +104,4 @@ Buradaki `inset()` kodunun mantığı şu; üstten 25%, sağdan 20%, alttan 15%'
 
 ### Kaynak
 
-- <a
-  	href="https://ishadeed.com/article/css-object-view-box/"
-  	target="_blank"
-  	rel="noreferrer noopener"
-  >
-  	Ahmad Shadeed - First Look At The CSS object-view-box Property
-  </a>
+- [Ahmad Shadeed - First Look At The CSS object-view-box Property](https://ishadeed.com/article/css-object-view-box/)

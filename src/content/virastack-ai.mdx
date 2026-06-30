@@ -1,0 +1,58 @@
+---
+locale: "tr"
+publishedAt: "2026-06-30"
+published: true
+slug: "/virastack-ai"
+title: "ViraStack AI: Yapay Zekâya Mimari Disiplin"
+description: "ViraStack AI, React projelerinde yapay zekânın ürettiği kodu mimari kurallarla disipline eden .mdc bağlam dosyaları ve üretim protokolleri sunar."
+category: "technical"
+tags: ["ViraStack", "Yapay Zekâ"]
+series: "virastack"
+seriesOrder: 2
+coverImage: "/blog/2026/04-05/virastack.jpeg"
+readingTimeMinutes: 2
+canonicalUrl: "https://omergulcicek.com/blog/virastack-ai"
+contentHash: "8c360b8c9705f79a"
+---
+
+Yapay zekâ ile kod yazmak hızlı; fakat kuralsız çalıştığında çıktı çoğu zaman **çalışır görünür, üretime hazır değildir**. `useEffect` içinde doğrudan `fetch`, tip güvenliği olmayan API yanıtları, skeleton ve hata sınırı olmayan bileşenler — bunların hepsi tanıdık senaryolar. Sorun modelin yetersizliği değil; modele **hangi standartlarda kod yazacağının** her seferinde yeniden anlatılmaması.
+
+**ViraStack AI**, modern React projeleri için bu boşluğu dolduran bir kural setidir. Cursor ve benzeri yapay zekâ destekli editörlerde, projenize `.cursor/rules` altında bağlam dosyaları (`.mdc`) ve `AGENTS.md` persona tanımı ekleyerek modeli belirli bir mühendislik disiplinine bağlar.
+
+![ViraStack AI](/blog/2026/04-05/virastack.jpeg)
+
+## Nedir?
+
+[ViraStack](https://virastack.com), frontend geliştiriciler için açık kaynak araçlar üreten bir ekosistemdir. **ViraStack AI** ise bu ekosistemin yapay zekâ odaklı katmanıdır: mimari kalıpları, kod standartlarını ve yasakları önceden tanımlı `.mdc` dosyaları olarak projenize yerleştirir.
+
+Kurallar yalnızca genel tavsiye değil; **Constraints** ve **Bans** bölümleriyle ne yapılacağını ve neyin kesinlikle yapılmayacağını açıkça belirtir. Örneğin sessiz `catch` blokları, yarım bırakılmış kod, parent-relative import veya iş mantığında `TODO` kullanımı yasaktır.
+
+## Ne yapar?
+
+ViraStack AI, yapay zekânın ürettiği kodu şu alanlarda disipline eder:
+
+- **Özellik odaklı yapı** — `src/features/[feature]/` organizasyonu, tip ve sabit dosya isimlendirmeleri
+- **Sunucu state** — TanStack Query, query key factory, `AbortSignal` desteği
+- **Tip güvenliği** — Zod şemalarından türetilen uçtan uca doğrulama
+- **UI standartları** — loading skeleton, hata senaryoları, erişilebilirlik ve performans kuralları
+- **Framework bağlamı** — Next.js veya TanStack Start için ayrı `.mdc` dosyaları; ilgili dosyalarda otomatik yüklenir
+
+Kurallar `USE WHEN` ve `globs` tanımlarıyla bağlama duyarlıdır. API katmanında çalışırken TanStack Query kuralları, form dosyalarında form kuralları devreye girer; model her görevde tüm kuralları okumak zorunda kalmaz.
+
+## Nasıl çalışır?
+
+Kurulum tek komutla yapılır:
+
+```bash
+npx @virastack/ai-rules init
+```
+
+Bu komut `.cursor/rules` altına birçok kural dosyası, `AGENTS.md` ve `docs/` yapısını projenize ekler. Sonrasında yapay zekâya görev verirken mimari detayları tekrar tekrar prompt'a yazmanız gerekmez; kurallar editörün işlem çekirdeğine zaten entegre olur.
+
+Doğru kullanımda odak **ne yapılacağına** kayar. *"Kullanıcı listesini tabloda göster, veri `/api/users` endpoint'inden gelsin"* demek yeterlidir; özellik yapısı, önbellekleme, hata yönetimi kurallar tarafından karşılanır.
+
+## Standart çıktıdan farkı
+
+Kuralsız bir model genelde işlevsel ama gevşek kod üretir: tip doğrulaması yok, cache stratejisi yok, hata sınırı yok. ViraStack AI ile aynı görevde çıktı; query key factory, şema doğrulaması, skeleton ve hata durumu içeren, projeye entegre edilebilir bir bileşene dönüşür. Fark prompt uzunluğunda değil; **önceden mühürlenmiş standartlarda** yatar. Bu da prompt yükünü azaltır, halüsinasyon riskini düşürür ve ekip içinde yapay zekâ çıktılarının tutarlılığını artırır.
+
+Detaylı karşılaştırma ve canlı önizleme için [virastack.com/tr/ai-rules](https://www.virastack.com/tr/ai-rules) sayfasına bakabilirsiniz. Kaynak kod ve katkı: [github.com/virastack/ai-rules](https://github.com/virastack/ai-rules).

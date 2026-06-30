@@ -5,7 +5,7 @@ import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import { ProseIconLink, ProseLink } from "@/components/shared/prose-link"
-import { proseParagraphClass } from "@/components/shared/prose.styles"
+import { proseParagraphClass, pageSectionClass, pageShellClass } from "@/components/shared/prose.styles"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
 import { FeaturedProjectCard } from "@/features/projects/components/featured-project-card"
 import {
@@ -20,7 +20,7 @@ export function ProjectsPage() {
 	const archiveProjects = getProjectsByGroup("archive")
 
 	return (
-		<Container className="flex flex-col gap-12 py-10 md:gap-16 md:py-16">
+		<Container className={pageShellClass}>
 			<PageHeader title="Projeler">
 				<p className={proseParagraphClass}>
 					Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum{" "}
@@ -29,7 +29,7 @@ export function ProjectsPage() {
 				</p>
 			</PageHeader>
 
-			<section className="flex flex-col gap-6">
+			<section className={pageSectionClass}>
 				<ProjectsSectionHeading>
 					{SITE_CONTENT.projectsSectionApps}
 				</ProjectsSectionHeading>
@@ -40,7 +40,7 @@ export function ProjectsPage() {
 				</div>
 			</section>
 
-			<section className="flex flex-col gap-6">
+			<section className={pageSectionClass}>
 				<ProjectsSectionHeading>
 					{SITE_CONTENT.projectsSectionVirastack}
 				</ProjectsSectionHeading>
@@ -81,7 +81,7 @@ export function ProjectsPage() {
 				</div>
 			</section>
 
-			<section className="flex flex-col gap-4">
+			<section className={pageSectionClass}>
 				<ProjectsSectionHeading>
 					{SITE_CONTENT.projectsSectionArchive}
 				</ProjectsSectionHeading>

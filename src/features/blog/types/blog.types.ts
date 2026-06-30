@@ -13,11 +13,16 @@ export type BlogPost = {
 	locale: BlogLocale
 	published: boolean
 	publishedAt: string
+	coverImage?: string
+	readingTimeMinutes?: number
+	canonicalUrl?: string
 	featured?: boolean
 	interactive?: boolean
 	mediumUrl?: string
 	translationOf?: string
+	translatedTo?: string
 	series?: string
+	seriesOrder?: number
 }
 
 export type BlogCategoryFilter = BlogCategory | null

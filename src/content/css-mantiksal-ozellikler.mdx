@@ -7,12 +7,15 @@ title: "CSS Mantıksal Özellikler"
 description: "Web site geliştirirken varsayılan olarak yazı dilimiz soldan sağa (_Left to Right - LTR_) kullanıyoruz. Arapça gibi sağdan sola doğru okuma yönü olan..."
 category: "technical"
 tags: ["CSS"]
-mediumUrl: "https://omergulcicek.medium.com/css-mantıksal-özellikler-8c8c8c8c8c8c"
+coverImage: "/blog/2021/03-28/css-logical-properties.png"
+readingTimeMinutes: 2
+canonicalUrl: "https://omergulcicek.com/blog/css-mantiksal-ozellikler"
+contentHash: "ee274ca9670a95d0"
 ---
 
 Web site geliştirirken varsayılan olarak yazı dilimiz soldan sağa (_Left to Right - LTR_) kullanıyoruz. Arapça gibi sağdan sola doğru okuma yönü olan diller için site geliştiriyorsak, `<html>` etiketinize `dir` özelliği ekleyerek yazı dilinin sağdan sola olacağını belirtmelisiniz (`<html dir="rtl">`).
 
-CSS mantıklar özelliklerin temel fikri, CSS özelliklerinde fiziksel yönleri kullanmayacak olmamızdır. Bunun yerine HTML belgesinin yazım yönüne bağlı olan özellikleri kullanacağız. Bu özelliklere mantıksal özellik deniyor ve tarayıcı desteği oldukça iyi (<a href="https://caniuse.com/css-logical-props" target="_blank" rel="noreferrer noopener">tarayıcıların CSS Logical Properties desteği</a>).
+CSS mantıklar özelliklerin temel fikri, CSS özelliklerinde fiziksel yönleri kullanmayacak olmamızdır. Bunun yerine HTML belgesinin yazım yönüne bağlı olan özellikleri kullanacağız. Bu özelliklere mantıksal özellik deniyor ve tarayıcı desteği oldukça iyi ([tarayıcıların CSS Logical Properties desteği](https://caniuse.com/css-logical-props)).
 
 ![CSS Logical Properties desteği](/blog/2021/03-28/css-logical-properties.png)
 
@@ -59,7 +62,7 @@ Türkçe, İngilizce, Arapça gibi diller yatay boyuttur; yani soldan sağa yada
 
 ## Mantıksal Olarak Hangi Özellikleri Kullanabiliriz?
 
-Liste oldukça geniş, fakat genel olarak `border`, `margin`, `padding` ve `text-align` diyebiliriz. Tüm listeye <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties#reference" target="_blank" rel="noreferrer noopener">developer mozilla sitesinden</a> ulaşabilirsiniz.
+Liste oldukça geniş, fakat genel olarak `border`, `margin`, `padding` ve `text-align` diyebiliriz. Tüm listeye [developer mozilla sitesinden](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties#reference) ulaşabilirsiniz.
 
 Örnek olması açısından mantıksal özelliklerin olmadığı ve olduğu iki kodu inceleyelim.
 
@@ -114,24 +117,6 @@ Satırın okunma yönüne göre sonuna bir not yazmak istemizi düşünelim. Nor
 
 ## Kaynaklar
 
-- <a
-  	href="https://ishadeed.com/article/css-logical-properties/"
-  	target="_blank"
-  	rel="noreferrer noopener"
-  >
-  	Ahmad Shadeed - Css Logical Properties
-  </a>
-- <a
-  	href="https://caniuse.com/css-logical-props"
-  	target="_blank"
-  	rel="noreferrer noopener"
-  >
-  	caniuse.com/css-logical-props
-  </a>
-- <a
-  	href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties#reference"
-  	target="_blank"
-  	rel="noreferrer noopener"
-  >
-  	developer.mozilla.org
-  </a>
+- [Ahmad Shadeed - Css Logical Properties](https://ishadeed.com/article/css-logical-properties/)
+- [caniuse.com/css-logical-props](https://caniuse.com/css-logical-props)
+- [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties#reference)

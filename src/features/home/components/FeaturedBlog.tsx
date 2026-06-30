@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router"
 
 import { ArrowLink } from "@/components/shared/ArrowLink"
+import { pageSectionClass } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { HOME_FEATURED_BLOG_PLACEHOLDER } from "@/features/home/constants/home-blog.constants"
@@ -12,7 +13,7 @@ function formatBlogDate(value: string) {
 
 export function FeaturedBlog() {
 	return (
-		<section className="flex flex-col gap-6">
+		<section className={pageSectionClass}>
 			<SectionHeading>{SITE_CONTENT.homeSections.blog}</SectionHeading>
 			<nav className="flex flex-col items-start gap-6" aria-label="Son blog yazıları">
 				{HOME_FEATURED_BLOG_PLACEHOLDER.map((post) => (

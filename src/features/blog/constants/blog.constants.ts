@@ -40,9 +40,10 @@ export const BLOG_TAG_POOL = [
 	"Kitap",
 	"Dizi",
 	"Film",
-	"Hobi",
 	"Seyahat",
-	"Gözlem"
+	"Deneyim",
+	"Düşünce",
+	"Proje"
 ] as const
 
 export const BLOG_UI = {

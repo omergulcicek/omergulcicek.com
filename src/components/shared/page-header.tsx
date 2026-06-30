@@ -1,10 +1,8 @@
 import type { ReactNode } from "react"
 
 import { OpenToWorkBadge } from "@/components/shared/open-to-work-badge"
+import { pageTitleClass } from "@/components/shared/prose.styles"
 import { cn } from "@/lib/utils"
-
-const pageTitleClass =
-	"text-balance text-lg font-semibold tracking-tight text-foreground"
 
 type PageHeaderProps = {
 	title: string

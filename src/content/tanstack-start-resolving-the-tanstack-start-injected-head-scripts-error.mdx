@@ -7,11 +7,13 @@ title: "TanStack Start: Resolving the tanstack-start-injected-head-scripts Error
 description: "Causes and solutions for the 'Injected head scripts' hydration error encountered in TanStack Start projects, especially when using plugins like Supabase."
 category: "technical"
 tags: ["TanStack", "Supabase", "Vite"]
+coverImage: "/blog/2026/02-03/injected.png"
+readingTimeMinutes: 5
+canonicalUrl: "https://omergulcicek.com/blog/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error"
 mediumUrl: "https://medium.com/@omergulcicek/tanstack-start-resolving-the-tanstack-start-injected-head-scripts-error-c1eecbf31735"
 translationOf: "/tanstack-start-injected-head-scripts-hatasi-cozumu"
+contentHash: "96f3598793c87fc0"
 ---
-
-🇹🇷 **[Türkçe versiyonu okumak için tıklayın](/blog/tanstack-start-injected-head-scripts-hatasi-cozumu)**
 
 After working with **Next.js** for a long time, **TanStack Start**-the modern full-stack framework focused on **type-safety** and **streaming**-caught my attention. My main motivation for this shift was having already used libraries like **TanStack Query** and **TanStack Table**; the great developer experience and success of these tools made me want to learn Start, the ecosystem’s new member. End-to-end type safety, server functions, and a Vite-based fast development cycle are genuinely exciting. However, an error I ran into while building a game project with **Supabase** taught me important lessons about both technical depth and the "quick fix" trap.
 
@@ -67,7 +69,7 @@ export async function getGameData(id: string) {
   const { data } = await supabase.from("games").select("*").eq("id", id).single();
   return data;
 }
-```
+```javascript
 
 If this function or client is also imported and used on the client (e.g. in a page component or in a loader in the wrong place), TanStack Start’s server/client separation breaks and you get resolution errors like "injected head scripts."
 

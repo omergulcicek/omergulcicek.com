@@ -1,12 +1,13 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
+import { pageShellClass, proseParagraphClass } from "@/components/shared/prose.styles"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 
 export function AcademyPage() {
 	return (
-		<Container className="py-10 md:py-16">
+		<Container className={pageShellClass}>
 			<PageHeader title={SITE_CONTENT.academyTitle}>
-				<p className="text-muted-foreground text-base leading-relaxed">
+				<p className={proseParagraphClass}>
 					{SITE_CONTENT.academyDescription}
 				</p>
 			</PageHeader>

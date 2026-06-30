@@ -1,36 +1,11 @@
-import { Link } from "@tanstack/react-router"
-
 import { BrandMark } from "@/components/shared/brand-mark"
 import { Container } from "@/components/shared/Container"
+import { SiteNavLink } from "@/components/shared/site-nav-link"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { CommandPaletteTrigger } from "@/features/search/components/CommandPalette"
 import { Separator } from "@/components/ui/separator"
-
-function NavLink({
-	href,
-	label,
-	exact
-}: {
-	href: string
-	label: string
-	exact?: boolean
-}) {
-	return (
-		<Link
-			to={href}
-			className="focus-link text-muted-foreground hover:text-foreground text-sm transition-colors"
-			activeOptions={exact ? { exact: true } : undefined}
-			activeProps={{
-				className: "text-foreground font-medium",
-				"aria-current": "page"
-			}}
-		>
-			{label}
-		</Link>
-	)
-}
 
 export function Header() {
 	return (
@@ -51,7 +26,7 @@ export function Header() {
 								aria-label="Ana menü"
 							>
 								{HEADER_NAV.map((item) => (
-									<NavLink
+									<SiteNavLink
 										key={item.href}
 										href={item.href}
 										label={item.label}

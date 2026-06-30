@@ -25,5 +25,5 @@ export function ArchiveProjectList({ projects }: { projects: Project[] }) {
 }
 
 export function ProjectsSectionHeading({ children }: { children: string }) {
-	return <SectionHeading className="mt-2">{children}</SectionHeading>
+	return <SectionHeading>{children}</SectionHeading>
 }

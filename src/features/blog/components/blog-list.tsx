@@ -13,6 +13,7 @@ import {
 	partitionFeaturedPosts
 } from "@/features/blog/helpers/blog-helpers"
 import { useBlogSearchParams } from "@/features/blog/hooks/use-blog-search-params"
+import { pageSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
@@ -63,7 +64,7 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 		showDrafts || (showFeaturedSection && featured.length > 0)
 
 	return (
-		<div className={cn("flex flex-col gap-10", className)}>
+		<div className={cn("flex flex-col", pageStackGapClass, className)}>
 			<BlogListFilters
 				category={category}
 				tags={availableTags}
@@ -80,11 +81,11 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 				<BlogEmptyState onClearFilters={clearFilters} />
 			) : (
 				<div
-					className="flex flex-col gap-10"
+					className={cn("flex flex-col", pageStackGapClass)}
 					aria-label={BLOG_UI.listAriaLabel}
 				>
 					{showDrafts ? (
-						<section className="flex flex-col gap-6">
+						<section className={pageSectionClass}>
 							<h2 className="text-muted-foreground text-sm font-medium">
 								{BLOG_UI.draftsHeading}
 							</h2>
@@ -101,7 +102,7 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 					) : null}
 
 					{showFeaturedSection && featured.length > 0 ? (
-						<section className="flex flex-col gap-6">
+						<section className={pageSectionClass}>
 							<h2 className="text-muted-foreground text-sm font-medium">
 								{BLOG_UI.featuredHeading}
 							</h2>
@@ -117,7 +118,7 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 						<section
 							key={year}
 							className={cn(
-								"flex flex-col gap-6",
+								pageSectionClass,
 								hasLeadSection || index > 0
 									? "border-t border-border/60 pt-10"
 									: undefined

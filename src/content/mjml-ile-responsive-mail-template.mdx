@@ -7,24 +7,21 @@ title: "MJML ile Responsive Mail Template"
 description: "Frontend Developer'ların en büyük baş belası sanırım mail template kodlamaktır. Hem her CSS koduna izin vermiyor, hemde e-posta servisleri (_Gmail,..."
 category: "technical"
 tags: ["HTML"]
-mediumUrl: "https://omergulcicek.medium.com/mjml-ile-responsive-mail-template-8c8c8c8c8c8c"
+coverImage: "/blog/2020/11-13/mjml.png"
+readingTimeMinutes: 2
+canonicalUrl: "https://omergulcicek.com/blog/mjml-ile-responsive-mail-template"
+contentHash: "52263481154041d3"
 ---
 
 Frontend Developer'ların en büyük baş belası sanırım mail template kodlamaktır. Hem her CSS koduna izin vermiyor, hemde e-posta servisleri (_Gmail, Outlook, Yandex Mail vb._) arasındaki destek uyumsuzlukları başınızı ağrıtıyor. Hele birde kodlayacağınız arayüzün responsive olması istendiyse vay halinize!
 
-Neyse ki <a href="https://mjml.io/" target="_blank" rel="noreferrer noopener">MJML</a> var; MJML responsive mail arayüz kodlamayı oldukça kolay hale getiriyor. <a href="https://mjml.io/templates" target="_blank" rel="noreferrer noopener">Templates</a> sayfasında oluşturdukları hazır şablonları kullanabilir yada sıfırdan mail template'inizi geliştirebilirsiniz.
+Neyse ki [MJML](https://mjml.io/) var; MJML responsive mail arayüz kodlamayı oldukça kolay hale getiriyor. [Templates](https://mjml.io/templates) sayfasında oluşturdukları hazır şablonları kullanabilir yada sıfırdan mail template'inizi geliştirebilirsiniz.
 
 ![MJML Kod Syntax'ı](/blog/2020/11-13/mjml.png)
 
 ## Kısa Bir MJML Eğitim Turu
 
-<a
-	href="https://mjml.io/getting-started/1"
-	target="_blank"
-	rel="noreferrer noopener"
->
-	Getting started
-</a>
+[Getting started](https://mjml.io/getting-started/1)
 sayfasına girdiğinizde kısa bir eğitim veriliyor.
 
 Eğitim özeti şu şekilde;
@@ -39,18 +36,10 @@ Eğitim özeti şu şekilde;
 
 ## Kurulum
 
-<a
-	href="https://mjml.io/documentation/"
-	target="_blank"
-	rel="noreferrer noopener"
->
-	Dokümantasyon
-</a>
+[Dokümantasyon](https://mjml.io/documentation/)
 sayfasında da belirtildiği gibi ister `npm install mjml` (_yada yarn_) yada
 kurulum yapmak istemiyorsanız
-<a href="https://mjml.io/try-it-live" target="_blank" rel="noreferrer noopener">
-	online düzenleyici
-</a>
+[online düzenleyici](https://mjml.io/try-it-live)
 ile geliştirebilirsiniz.
 
 Online düzenleyici oldukça başarılı, kodu anlık ekrana yansıtması ve hatalı kullanım yaptığınızda uyarıları işinizi kolaylaştırıyor; sağ üstteki butonlar yardımıyla mobil/masaüstü tasarım çıktısını görebiliyor ve HTML çıktısına kolayca ulaşabiliyorsunuz.
@@ -73,7 +62,7 @@ MJML etiket sırası önemli, bu sırayı değiştirdiğinizde sizi uyaracaktır
 		</mj-section>
 	</mj-body>
 </mjml>
-```
+```html
 
 Aslında MJML, componentlerini sizin oluşturduğunuz ve bunları `<table>` etiketlerine dönüşmesine yardımcı olan bir framework. Örneğin `<mj-button>Buton</mj-button>` etiketleri ile bir buton oluşturduğunuzda MJML bunu aşağıdaki koda derliyor;
 
@@ -92,14 +81,7 @@ Aslında MJML, componentlerini sizin oluşturduğunuz ve bunları `<table>` etik
 				valign="middle"
 				bgcolor="#414141"
 			>
-				<a
-					class="mj-content"
-					href="#"
-					style="display:inline-block;text-decoration:none;background-color:#414141;border:1px solid #414141;border-radius:3px;color:#ffffff;font-size:13px;font-weight:bold;padding:15px 30px;"
-					target="_blank"
-				>
-					Buton
-				</a>
+				[Buton](#)
 			</td>
 		</tr>
 	</tbody>
@@ -120,16 +102,10 @@ MJML etiketlerine ekleyeceğiniz `css-class` attribute ile `<mj-style>` etiketi 
 
 ## Daha Fazlası
 
-Mail template içerisinde akordiyon mu? (<a href="https://mjml.io/try-it-live/components/accordion" target="_blank" rel="noreferrer noopener">Akordiyon örneği</a>)
+Mail template içerisinde akordiyon mu? ([Akordiyon örneği](https://mjml.io/try-it-live/components/accordion))
 
 Etiketlerde kullanabileceğiniz CSS attribute'leri ve onlarce örnek için dokümantasyonu inceleyebilirsiniz.
 
 ## Kaynaklar
 
-- <a
-  	href="https://mjml.io/documentation"
-  	target="_blank"
-  	rel="noreferrer noopener"
-  >
-  	https://mjml.io/documentation
-  </a>
+- [https://mjml.io/documentation](https://mjml.io/documentation)
