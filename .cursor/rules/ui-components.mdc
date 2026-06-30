@@ -14,6 +14,7 @@ alwaysApply: false
 - **States:** Implement Skeleton (matching dimensions), EmptyState, and ErrorState for data-driven parts.
 - **UX:** Avoid empty screens; always provide meaningful states.
 - **Styling:** Use Tailwind CSS, `cn()`, and Design Tokens. No Hex/RGB or arbitrary values (use Tailwind scale strictly)
+- **Link & card SSOT:** Prose links → `ProseLink` / `ProseIconLink` / `ProseRouterLink` (`src/components/shared/prose-link.tsx`). Typography → `proseParagraphClass`, `ProseEmphasis`, `SectionHeading` (`src/components/shared/prose.styles.ts`). Interactive card surfaces → `getInteractiveCardClassName` + `FeaturedProjectCard`. See `docs/UI-PATTERNS.md`.
 - **A11y:** Enforce semantic HTML, `aria` attributes, and keyboard accessibility.
 - **Exports:** Use Named exports only.
 

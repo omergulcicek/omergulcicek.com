@@ -1,3 +1,1 @@
-export * from "./components/Projects"
-export * from "./components/ProjectCard"
-export * from "./data/projects.data"
+export { ProjectsPage } from "@/features/projects/components/projects-page"

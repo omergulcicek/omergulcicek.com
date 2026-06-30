@@ -14,8 +14,8 @@
 
 Implementation details for Next.js and TanStack Start are strictly segregated. Framework-specific patterns are delegated to their respective .mdc rules.
 
-- **Next.js 16:** See `.cursor/rules/frontend/nextjs.mdc`
-- **TanStack Start:** See `.cursor/rules/frontend/tanstack-start.mdc`
+- **Next.js 16:** See `.cursor/rules/nextjs.mdc`
+- **TanStack Start:** See `.cursor/rules/tanstack-start.mdc`
 
 **Shared Layer:** Reserved strictly for framework-agnostic code (`shared/schemas`, `ui-primitives`).
 
@@ -26,7 +26,6 @@ Adhere strictly to the following tree structure. Creating arbitrary folders is F
 ```text
 src/
 ├── app/ | routes/
-├── content/
 ├── features/
 │   └── [feature-name]/
 │       ├── api/
@@ -69,6 +68,7 @@ Apply the following metric hierarchy to determine code location:
 - **Helpers:** Pure TypeScript functions that strictly transform input to output without side effects. MUST NOT contain any package imports. (e.g., `isBrowser()`).
 - **Data:** Feature-specific static data (lists, config objects, constants). ONLY allowed within `features/[feature]/data/`.
 - **Lib:** Contains project-specific configured instances of external libraries (axios, date-fns, js-cookie, etc.). Files containing package imports MUST be placed here. Pure TS functions without package imports belong in `helpers`. (e.g., `isToday()` using date-fns goes to `lib`, `isBrowser()` goes to `helpers`).
+- **Media URLs:** Blog image paths resolve at render time via `src/lib/media/get-media-url.ts` (`getMediaUrl`). Provider is controlled by `VITE_MEDIA_PROVIDER` — see `docs/supabase-migration.md` → Medya sağlayıcı.
 - **Zod Schemas:** All feature-related schemas MUST be stored in `features/[feature]/schemas/`. API functions and UI components MUST import from this single source to prevent duplication.
 
 ## Imports
@@ -91,20 +91,33 @@ Rendering strategies (RSC vs Client) and Data Fetching patterns are governed by 
 - **No HTTP in UI:** UI layer is FORBIDDEN from using `axios` or `fetch` directly. Consume only `features/api` functions.
 - **Insecure Scripts:** All content MUST adhere to the project's Content Security Policy; `unsafe-inline` and `unsafe-eval` are strictly forbidden.
 
+## UI Patterns (Links & Cards)
+
+Prose links and interactive project cards have a single implementation — do not duplicate Tailwind class strings in features.
+
+| Pattern | SSOT | Doc |
+| --- | --- | --- |
+| Prose typography | `proseParagraphClass`, `ProseEmphasis`, `SectionHeading`, `PageHeader` | `docs/UI-PATTERNS.md` |
+| Inline / prose links | `ProseLink`, `ProseIconLink`, `ProseRouterLink` → `src/components/shared/prose-link.tsx` | `docs/UI-PATTERNS.md` |
+| Project card surface | `getInteractiveCardClassName` → `src/components/shared/interactive-card.styles.ts` | `docs/UI-PATTERNS.md` |
+| Project card component | `FeaturedProjectCard` → `src/features/projects/components/featured-project-card.tsx` | `docs/PROJECTS.md` |
+
+Home (`FeaturedProjects`) and `/projects` share `FeaturedProjectCard` — no forked card markup.
+
 ## Canonical Rules (MDC Refs)
 
 This document is the architectural map. Enforceable laws are located in:
 
+- `Ref: .cursor/rules/api.mdc`
 - `Ref: .cursor/rules/core-principles.mdc`
-- `Ref: .cursor/rules/frontend/api.mdc`
-- `Ref: .cursor/rules/frontend/forms.mdc`
-- `Ref: .cursor/rules/frontend/i18n.mdc`
-- `Ref: .cursor/rules/frontend/nextjs.mdc`
-- `Ref: .cursor/rules/frontend/performance.mdc`
-- `Ref: .cursor/rules/frontend/react-best-practices.mdc`
-- `Ref: .cursor/rules/frontend/state-management.mdc`
-- `Ref: .cursor/rules/frontend/tanstack-query.mdc`
-- `Ref: .cursor/rules/frontend/tanstack-start.mdc`
-- `Ref: .cursor/rules/frontend/testing.mdc`
-- `Ref: .cursor/rules/frontend/typescript.mdc`
-- `Ref: .cursor/rules/frontend/ui-components.mdc`
+- `Ref: .cursor/rules/forms.mdc`
+- `Ref: .cursor/rules/i18n.mdc`
+- `Ref: .cursor/rules/nextjs.mdc`
+- `Ref: .cursor/rules/performance.mdc`
+- `Ref: .cursor/rules/react-best-practices.mdc`
+- `Ref: .cursor/rules/state-management.mdc`
+- `Ref: .cursor/rules/tanstack-query.mdc`
+- `Ref: .cursor/rules/tanstack-start.mdc`
+- `Ref: .cursor/rules/testing.mdc`
+- `Ref: .cursor/rules/typescript.mdc`
+- `Ref: .cursor/rules/ui-components.mdc`

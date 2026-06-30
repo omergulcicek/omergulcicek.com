@@ -1,9 +1,20 @@
-import type { z } from "zod"
+export type BlogCategory = "technical" | "personal"
 
-import type { BlogPostSchema } from "@/features/blog/schemas/blog.schema"
+export type BlogLocale = "tr" | "en"
 
-export type BlogPostType = z.infer<typeof BlogPostSchema>
+export type BlogSort = "newest" | "oldest"
 
-export interface BlogPropsType {
-	posts: BlogPostType[]
+export type BlogPost = {
+	slug: string
+	title: string
+	description: string
+	category: BlogCategory
+	tags: string[]
+	locale: BlogLocale
+	published: boolean
+	publishedAt: string
+	featured?: boolean
+	interactive?: boolean
 }
+
+export type BlogCategoryFilter = BlogCategory | null

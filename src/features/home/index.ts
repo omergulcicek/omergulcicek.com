@@ -1,1 +1,6 @@
-export * from "./components/Hero"
+export { ExperienceSummary } from "./components/ExperienceSummary"
+export { FeaturedBlog } from "./components/FeaturedBlog"
+export { FeaturedProjects } from "./components/FeaturedProjects"
+export { Hero } from "./components/Hero"
+export { HomePage } from "./components/HomePage"
+export { StackStrip } from "./components/StackStrip"

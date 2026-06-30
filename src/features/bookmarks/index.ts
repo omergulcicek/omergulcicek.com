@@ -1,2 +1,1 @@
-export * from "./components/BookmarkCard"
-export * from "./data/bookmarks.data"
+export { BookmarksPage } from "@/features/bookmarks/components/bookmarks-page"

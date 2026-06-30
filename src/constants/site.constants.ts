@@ -1,49 +1,12 @@
-import { env } from "@/env"
-
 export const SITE = {
 	name: "Ömer Gülçiçek",
 	title: "Ömer Gülçiçek",
+	jobTitle: "Frontend Engineer",
+	defaultTitle: "Ömer Gülçiçek — Frontend Engineer",
 	description:
-		"Ömer Gülçiçek - Staff Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler geliştiriyorum; blog yazıları ve projelerimi paylaşıyorum.",
-	keywords: [
-		"frontend",
-		"frontend developer",
-		"frontend mühendisliği",
-		"senior frontend engineer",
-		"staff frontend engineer",
-		"react",
-		"react 19",
-		"nextjs",
-		"next.js 16",
-		"typescript",
-		"tailwindcss",
-		"tailwind css",
-		"shadcn/ui",
-		"react-hook-form",
-		"zod",
-		"tanstack query",
-		"zustand",
-		"vercel",
-		"web performance",
-		"core web vitals",
-		"lighthouse",
-		"seo",
-		"a11y",
-		"erişilebilirlik",
-		"ui/ux",
-		"design system",
-		"component design",
-		"optimistic ui",
-		"virtualization",
-		"form validation",
-		"modern frontend",
-		"react best practices",
-		"nextjs best practices",
-		"teknoloji blogu",
-		"turkish tech blog",
-		"ömer gülçiçek"
-	],
+		"Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack).",
 	url: "https://omergulcicek.com",
 	repository: "https://github.com/omergulcicek/omergulcicek.com",
-	analyticsId: env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-}
+	locale: "tr_TR",
+	defaultOgImage: "/omergulcicek.JPG"
+} as const

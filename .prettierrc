@@ -10,15 +10,9 @@
 	"quoteProps": "as-needed",
 	"bracketSpacing": true,
 	"htmlWhitespaceSensitivity": "ignore",
-
 	"importOrder": [
 		"^(react/(.*)$)|^(react$)|^(react-(.*)$)",
-		"^(next/(.*)$)|^(next$)|^(next-(.*)$)",
-		"^(@next)/(.*)$",
-		"",
-		"^(@radix-ui)/(.*)$",
 		"^(@tanstack)/(.*)$",
-		"^(zustand/(.*)$)|^(zustand$)",
 		"<THIRD_PARTY_MODULES>",
 		"",
 		"^@/types",
@@ -26,36 +20,24 @@
 		"^@/constants",
 		"",
 		"^@/providers",
-		"^@/layouts",
 		"",
 		"^@/stores",
 		"^@/schemas",
-		"^@/services",
 		"^@/hooks",
 		"^@/lib",
-		"^@/utils",
 		"",
 		"^@/components",
-		"^@/shared",
-		"^@/ui",
-		"^@/widgets",
 		"^@/features",
-		"^@/skeletons",
-		"",
-		"^@/icons",
-		"^@/img",
-		"^@/data",
 		"",
 		"^[./]"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true,
 	"importOrderCaseInsensitive": true,
-
 	"plugins": [
 		"prettier-plugin-tailwindcss",
 		"@ianvs/prettier-plugin-sort-imports"
 	],
-	"tailwindStylesheet": "./src/app/globals.css",
+	"tailwindStylesheet": "./src/styles.css",
 	"tailwindFunctions": ["clsx", "cva"]
 }

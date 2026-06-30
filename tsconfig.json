@@ -1,52 +1,23 @@
 {
 	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
+		"target": "ES2022",
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
 		"jsx": "react-jsx",
-		"incremental": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
+		"strict": true,
+		"strictNullChecks": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./*"],
-			"@/config": ["config"],
-			"@/constants": ["constants"],
-			"@/data": ["data"],
-			"@/features": ["features"],
-			"@/helpers": ["helpers"],
-			"@/hooks": ["hooks"],
-			"@/icons": ["components/icons"],
-			"@/lib": ["lib"],
-			"@/providers": ["providers"],
-			"@/schemas": ["schemas"],
-			"@/services": ["services"],
-			"@/shared": ["components/shared"],
-			"@/skeletons": ["components/skeletons"],
-			"@/stores": ["stores"],
-			"@/types": ["types"],
-			"@/ui": ["components/ui"],
-			"@/utils": ["lib/utils"]
+			"@/*": ["./src/*"]
 		},
-		"baseUrl": "src/",
-		"target": "ES2017"
+		"types": ["vite/client"]
 	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts",
-		"svgr.d.ts",
-		".next/dev/types/**/*.ts"
-	],
-	"exclude": ["node_modules"]
+	"include": ["src/**/*", "vite.config.ts"],
+	"exclude": ["node_modules", "dist", ".output", "_legacy"]
 }

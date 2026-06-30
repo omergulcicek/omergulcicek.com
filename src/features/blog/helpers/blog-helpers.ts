@@ -1,64 +1,108 @@
-import type { BlogPostType } from "@/features/blog/types/blog.types"
-import type { SortOptionType } from "@/features/blog/types/filter-sort.types"
+import type {
+	BlogCategoryFilter,
+	BlogPost,
+	BlogSort
+} from "@/features/blog/types/blog.types"
 
-export function getValidatedSortOption(input?: string): SortOptionType {
-	switch (input) {
-		case "default":
-		case "date-asc":
-		case "date-desc":
-		case "title-asc":
-		case "title-desc":
-			return input
-		default:
-			return "default"
+export function formatBlogDate(value: string) {
+	const [year, month, day] = value.split("-")
+	return `${day}/${month}/${year.slice(2)}`
+}
+
+export function slugToRouteParam(slug: string) {
+	return slug.replace(/^\//, "")
+}
+
+export function getVisiblePosts(posts: BlogPost[], isDev: boolean) {
+	if (isDev) {
+		return posts
 	}
+
+	return posts.filter((post) => post.published)
 }
 
-export function getUniqueSortedTags(posts: BlogPostType[]): string[] {
-	return Array.from(
-		new Set(
-			posts.flatMap((p) => (p.metadata.tags as string[] | undefined) ?? [])
-		)
-	).sort((a, b) => a.localeCompare(b))
+export function partitionDraftPosts(posts: BlogPost[]) {
+	const drafts = posts.filter((post) => !post.published)
+	const published = posts.filter((post) => post.published)
+
+	return { drafts, published }
 }
 
-export function filterPostsByTag(
-	posts: BlogPostType[],
-	tag?: string
-): BlogPostType[] {
-	if (!tag) return posts
-	return posts.filter((post) =>
-		(post.metadata.tags as string[] | undefined)?.includes(tag)
-	)
+export function filterPostsByCategory(
+	posts: BlogPost[],
+	category: BlogCategoryFilter
+) {
+	if (!category) {
+		return posts
+	}
+
+	return posts.filter((post) => post.category === category)
 }
 
-export function sortPosts(
-	posts: BlogPostType[],
-	sort: SortOptionType
-): BlogPostType[] {
+export function filterPostsByTags(posts: BlogPost[], tags: string[]) {
+	if (tags.length === 0) {
+		return posts
+	}
+
+	return posts.filter((post) => tags.every((tag) => post.tags.includes(tag)))
+}
+
+export function sortBlogPosts(posts: BlogPost[], sort: BlogSort) {
 	const copy = [...posts]
-	return copy.sort((a, b) => {
-		switch (sort) {
-			case "date-asc":
-				return (
-					new Date(a.metadata.createdAt).getTime() -
-					new Date(b.metadata.createdAt).getTime()
-				)
-			case "title-asc":
-				return a.metadata.title
-					.trim()
-					.localeCompare(b.metadata.title.trim(), "tr", { sensitivity: "base" })
-			case "title-desc":
-				return b.metadata.title
-					.trim()
-					.localeCompare(a.metadata.title.trim(), "tr", { sensitivity: "base" })
-			case "default":
-			case "date-desc":
-			default:
-				return (
-					new Date(b.metadata.createdAt).getTime() -
-					new Date(a.metadata.createdAt).getTime()
-				)
-		}
+
+	return copy.sort((left, right) => {
+		const leftTime = new Date(left.publishedAt).getTime()
+		const rightTime = new Date(right.publishedAt).getTime()
+
+		return sort === "oldest" ? leftTime - rightTime : rightTime - leftTime
 	})
+}
+
+export function groupPostsByYear(posts: BlogPost[]) {
+	return posts.reduce<Record<string, BlogPost[]>>((groups, post) => {
+		const year = post.publishedAt.slice(0, 4)
+		const existing = groups[year] ?? []
+		groups[year] = [...existing, post]
+		return groups
+	}, {})
+}
+
+export function getSortedYearEntries(
+	posts: BlogPost[],
+	sort: BlogSort
+): [string, BlogPost[]][] {
+	const groups = groupPostsByYear(posts)
+	const years = Object.keys(groups).sort((left, right) =>
+		sort === "oldest"
+			? Number(left) - Number(right)
+			: Number(right) - Number(left)
+	)
+
+	return years.map((year) => [year, groups[year]])
+}
+
+export function getAvailableTags(posts: BlogPost[], tagPool: readonly string[]) {
+	const usedTags = new Set(posts.flatMap((post) => post.tags))
+
+	return tagPool.filter((tag) => usedTags.has(tag))
+}
+
+export function applyBlogFilters(
+	posts: BlogPost[],
+	{
+		category,
+		tags,
+		sort
+	}: {
+		category: BlogCategoryFilter
+		tags: string[]
+		sort: BlogSort
+	}
+) {
+	const filtered = filterPostsByTags(
+		filterPostsByCategory(posts, category),
+		tags
+	)
+
+	return sortBlogPosts(filtered, sort)
 }
