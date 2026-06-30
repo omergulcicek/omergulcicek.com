@@ -1,0 +1,74 @@
+---
+locale: "tr"
+publishedAt: "2017-05-07"
+published: true
+slug: "/turkuaz-css"
+title: "Turkuaz CSS"
+description: "Merhaba ! Web geliştirme ile ilgileniyorsanız framework'leri mutlaka duymuş yada kullanmışsınızdır. Artık günümüzde responsive olmayan bir tasarım..."
+category: "technical"
+tags: ["CSS"]
+---
+
+Merhaba !
+
+Web geliştirme ile ilgileniyorsanız framework'leri mutlaka duymuş yada kullanmışsınızdır. Artık günümüzde responsive olmayan bir tasarım üretmek söz konusu değil. Her seferinde sıfırdan kodlama yapmak yerine, bazı konularda framework'lerden yardım almak işimizi kolaylaştıracak ve bize zaman kazandıracaktır.
+
+Bu makale, Turkuaz Css hakkında detaylı giriş bilgisini aktarmak amacıyla hazırlanmıştır.
+
+### Turkuaz Css nedir?
+
+Turkuaz Css, daha hızlı ve kolay web sayfaları geliştirmek için tasarlanan güçlü bir Framework'tür. Daha az div yapısı ile rakiplerine göre daha şık tasarımlar ortaya çıkarmayı hedeflemektedir. Özelleştirilebilir kod düzeni, çeşitli örnekleri ve 150'den fazla renk seçeneği ile kolayca web sayfaları tasarlamanıza olanak sağlar.
+
+### Dil desteği
+
+Turkuaz Css ile kodlama yaparken İngilizce bilmek, İngilizce dokümanları çeviri yapmak yada başkalarından yardım almak zorunda değilsiniz. **Türkçe** sınıf isimlendirmeleriyle birlikte, **İngilizce** olarakta kod yazmanıza da olanak sağlar. Her iki dille de aynı çıktıları alabilir ve istediğiniz dil ile kodlamaya başlayabilirsiniz. Her iki dilde de aynı bileşenler ve örneklendirmeler site üzerinde gösterilmiştir.
+
+### Grid yapısı ve tarayıcı uyumluluğu
+
+Üzerinde çalıştığınız her web projesinin duyarlı olması ve tüm tarayıcılarda düzgün çalışması gerekir. Projenizde kod tekrarını önlemek, web sitenizin çeşitli ekran boyutlarına uyum sağlaması, tarayıcı uyumluluğu, sayfalar arasında tasarım ve kod tutarlılığı sağlamalısınız. Turkuaz Css ile tüm tarayıcılara uyumlu kodlar yazabilirsiniz.
+Ayrıca, flexbox uyumlu grid sistemi sayesinde flex'in sağladığı avantajlardan faydalanabilirsiniz.
+
+### Turkuaz Css ile projeye başlamak
+
+Turkuaz Css ile projenize başlamak için öncelikle ana sayfası üzerinden gerekli dosyaları indirmek gereklidir ([İndir](http://turkuazcss.com/)).
+
+![Turkuaz Css Zip](/blog/2017/05-07/1-2.png)
+
+İndirilen zip dosyası içerisinde css, javascript, yazı fontu ve basit bir html dosyası ile birlikte gelecektir. Başlamak yeterince kolaydır. [Dokümantasyon](http://turkuazcss.com/dokumantasyon#butonlar) sayfasından onlarca çeşit bileşenden ihtiyacınız olanı kullanabilirsiniz.
+
+Ayrıca Turkuaz Css, GitHub üzerinden açık kaynak olarak çeşitli [temalar](https://github.com/omergulcicek/turkuazcss/tree/master/temalar) üretip, bunları **ücretsiz** olarak kullanıma sunacaktır (_[takipte kalın](http://turkuazcss.com/temalar)_).
+
+Turkuaz Css içerisinde birçok bileşeni barındırır. Bazı bileşenler için 4 farklı boyut tanımlanmıştır. Örnek olarak, bir buton oluşturmak için **a** tag'ına **buton** sınıfını eklemek yeterlidir. Boyutunu düzenlemek için sınıfına **kucuk**, **orta** yada **buyuk** sınıflarından birisini ekleyebiliriz.
+
+Turkuaz Css, herhangi bir ikon kütüphanesi ile uyum içerisinde çalışır; istenilen ikon, butonların içerisinde kullanılabilir.
+
+<p className="my2 yazi-ortala">
+	<a className="buton kucuk">kucuk</a>
+	<a className="buton">normal</a>
+	<a className="buton orta">orta</a>
+	<a className="buton buyuk">buyuk</a>
+</p>
+
+Yaklaşık 150'den fazla renk ile hem arka plan rengi, hemde yazı rengi üzerinde değişiklikler yapabiliriz. Bunun için [renkler](http://turkuazcss.com/dokumantasyon#renkler) sayfasından beğendiğiniz rengi sınıfa eklemeniz gerekmekte; örnek olarak mavinin 8. tonunu butonda kullanmak için aşağıdaki kod yeterlidir.
+
+```html
+<a class="buton mavi8">Buton</a>
+```
+
+<p className="mb1">
+	<a className="buton mavi8">Buton</a>
+</p>
+
+Örneğin şık bir menü oluşturmak için nav tag'ına **menu** sınıfını vermek ve içerisine a tag'ları ile linkleri oluşturmak yeterlidir. Menüyü istenildiği gibi renklendirebilirsiniz. Menüyü ekranın sol yada sağından gelmesini isterseniz, yapmanız gereken tek şey **menu** sınıfı yerine **mobil** yazmanız. Bir tetikleyici ile mobil menünüz kullanıma hazır hale gelecektir (_Detaylı bilgi için [tıklayın.](http://turkuazcss.com/dokumantasyon#menu)_).
+
+<nav className="menu mavi8 my2">
+	<a>Anasayfa</a>
+	<a>Hakkında</a>
+	<a>İletişim</a>
+</nav>
+
+Henüz ilk sürümün (_v1.0.0_) test aşamasında olan Turkuaz Css, hataların tespit edilip düzelmesinin ardından kullanıma sunulacaktır. Test aşamasından sonra ücretsiz olarak kullanıma sunulacak temalar hazırlanmaya başlanacaktır. Bu temalar statik, wordpress uyumlu ve çeşitli php framework'leri ile kullanıma hazır hale getirilecektir (_Bu konuda destek olmak isterseniz iletişime geçebilirsiniz_). Ayrıca sizlerde tema hazırlayıp gönderirseniz site üzerinden bunları isim belirterek paylaşabilirim.
+
+Bunlara ek olarak çok şık tasarlanmış menü, modal, akordiyon menü, tab menü ve birçok bileşen için [turkuazcss.com](http://turkuazcss.com) sitesini ziyaret edebilirsiniz. Ayrıca [github](https://github.com/omergulcicek/turkuazcss) üzerinden star'layarak destek olabilirsiniz.
+
+![Turkuaz Css Github](/blog/2017/05-07/1-3.png)

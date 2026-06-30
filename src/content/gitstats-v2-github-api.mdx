@@ -1,0 +1,67 @@
+---
+locale: "tr"
+publishedAt: "2017-11-20"
+published: true
+slug: "/gitstats-v2-github-api"
+title: "GitStats v2 - GitHub API"
+description: "Merhaba ! Bir önceki blog yazımda GitHub'ta bir projeye katkı yapan kişilerin isimlerini, kaç commit katkı yaptıklarını ve yüzdelik olarak katkısını..."
+category: "technical"
+tags: ["GitHub", "JavaScript"]
+---
+
+Merhaba !
+
+[Bir önceki blog yazımda](/blog/gitstats/) GitHub'ta bir projeye katkı yapan kişilerin isimlerini, kaç commit katkı yaptıklarını ve yüzdelik olarak katkısını tablo olarak yazdıran kodu anlatmıştım. Tamamen saf JavaScript'te bir şeyler geliştirmek adına böyle bir şey denemiştim ve paylaşmak istedim. Fakat kodu yazıp, GitHub'ta paylaştıktan sonra yaptığım hataları farkedip hemen yeni bir güncelleme ile önce kodda düzenlemeler gerçekleştirdim. Ardındanda aynı kodu GitHub API'si kullanmanın çok daha doğru olacağına karar verip, [GitStats](/blog/gitstats/) makalesinin sonuna GitHub Rest API başlığı altında, API kullanarak aynı kodu güncelleyeceğimi belirtmiştim, iş bu makalede buna değişeneceğim. Uzun bir giriş oldu, işin teknik kısmına geçeyim.
+
+### GitHub REST API
+
+Öncelikle [developer.github.com/v3/](https://developer.github.com/v3/) sayfasını ziyaret edelim. Bu dokümantasyonda apiyi kullanarak neler yapabileceğiniz örneklerle güzelce anlatılmış. [GitStats](https://github.com/omergulcicek/gitstats) kodlarını yazarken kullanıcının adı ve commit sayılarına ihtiyacımız oluyordu. Aynı verileri API kullanarak çekelim.
+
+[api.github.com](https://api.github.com/) sitesine girdiğimizde bizi bir JSON karşılıyor.
+
+```html
+https://api.github.com/repos/{owner}/{repo}
+```
+
+Burada görüldüğü gibi, bir repository bilgilerine ulaşmak için yukarıdaki link yapısını kullanmamız gerekiyor. Kişisel projem olan [Turkuaz Css](https://turkuazcss.com)'in github api linki şu şekilde;
+
+```html
+https://api.github.com/repos/omergulcicek/turkuazcss
+```
+
+Bu JSON verisinde projenin kurucusundan, adına, açıklamasından, star ve fork sayısına vb. birçok veriye ulaşmanız mümkün. **GitStats** mini projesi için gerekli olan contributor'lara ulaşmak için linkin sonuna **/contributors** ekliyoruz.
+
+```html
+https://api.github.com/repos/omergulcicek/turkuazcss/contributors
+```
+
+### GitHub REST API İle Verileri Çekmek
+
+[Turkuaz Css katkıda bulunanlar](https://api.github.com/repos/omergulcicek/turkuazcss/contributors) linkinde ihtiyacımız olan veriler mevcut. **login** değişkeninde katkıda bulunan kişinin kullanıcı adı, **contributors** değişkeninde ise commit sayısı yazıyor.
+
+Şimdi tek yapmamız gereken bu api linkine Ajax isteği göndermek ve sitedeki bilgileri JSON olarak işlemek.
+
+İlk olarak projenin kurucusu ve adını sonradan değişmesi kolay olsun diye bir değişkende tuttum.
+
+```javascript
+var repo = "omergulcicek/turkuazcss";
+```
+
+Sayfaya Ajax isteği göndermek saf JavaScript ile aşağıdaki gibi;
+
+```javascript
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+	if (this.readyState == 4 && this.status == 200) {
+		myObj = JSON.parse(this.responseText);
+	}
+};
+xmlhttp.open("GET", "https://api.github.com/repos/" + repo + "/contributors", true);
+xmlhttp.send();
+```
+
+Diğer kodlarımız zaten [bir önceki yazımda](/blog/gitstats/) belirtmiş olduğum değişken, fonksiyon ve döngülere tekrardan burada değinmek istemiyorum. O yazıyıda okumanız, yapıyı anlamanız adına daha güzel olacaktır.
+
+İki kodları birleştirdiğimizde, minik projemizi bitirmiş oluyoruz. Bir önceki haliyle proje sadece konsolda ilgili sayfada tabloda çıktı verebiliyorken, GitHub REST API sayesinde istediğimiz yerde kullanabileceğimiz şekilde örnek bir projeyi tamamlamış olduk.
+
+İlgili kodlara [GitHub profilim](https://github.com/omergulcicek/gitstats) üzerinden ulaşabilirsiniz. Eksikleri bana feedback yaparsanız yada projeye pull request yaparak gelişimine katkı sağlayabilirsiniz.

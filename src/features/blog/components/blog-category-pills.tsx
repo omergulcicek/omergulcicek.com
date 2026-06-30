@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { BLOG_CATEGORY_OPTIONS, BLOG_UI } from "@/features/blog/constants/blog.constants"
+import { blogFilterChipDesktopClass } from "@/features/blog/constants/blog-filter-chip.styles"
 import type { BlogCategory } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
@@ -30,6 +31,7 @@ export function BlogCategoryPills({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
+						className={blogFilterChipDesktopClass}
 						onClick={() => onChange(option.value)}
 					>
 						{option.label}

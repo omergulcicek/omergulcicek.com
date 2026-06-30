@@ -113,7 +113,7 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 					height={56}
 					loading="lazy"
 					decoding="async"
-					className={iconClassName}
+					className={cn("image-outline", iconClassName)}
 				/>
 			)
 		case "cursor":
@@ -141,7 +141,7 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 					height={56}
 					loading="lazy"
 					decoding="async"
-					className={iconClassName}
+					className={cn("image-outline", iconClassName)}
 				/>
 			)
 		case "storybook":

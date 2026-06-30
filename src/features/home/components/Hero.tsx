@@ -18,12 +18,12 @@ export function Hero() {
 					height={672}
 					fetchPriority="high"
 					decoding="async"
-					className="absolute inset-0 size-full object-cover object-bottom select-none"
+					className="image-outline absolute inset-0 size-full object-cover object-bottom select-none"
 				/>
 			</figure>
 			<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 				<div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-					<h1 className="text-foreground text-base font-semibold">
+					<h1 className="text-balance text-foreground text-base font-semibold">
 						{SITE_CONTENT.displayName}
 					</h1>
 					<p className="text-muted-foreground text-base font-normal">

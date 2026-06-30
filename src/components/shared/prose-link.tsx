@@ -3,10 +3,10 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react"
 
 import { cn } from "@/lib/utils"
 
-const proseLinkBaseClass = "text-foreground underline"
+const proseLinkBaseClass = "focus-link text-foreground underline"
 
 const proseLinkMutedClass =
-	"text-muted-foreground text-sm underline-offset-4 hover:underline"
+	"focus-link text-muted-foreground text-sm underline-offset-4 hover:underline"
 
 type ProseLinkVariant = "default" | "muted"
 
@@ -78,8 +78,8 @@ export function ProseIconLink({
 			href={href}
 			className={cn(
 				variant === "muted"
-					? "text-muted-foreground inline-flex items-center gap-1.5 text-sm underline-offset-4 hover:underline"
-					: "text-foreground inline-flex items-center gap-1.5",
+					? "focus-link text-muted-foreground inline-flex items-center gap-1.5 text-sm underline-offset-4 hover:underline"
+					: "focus-link text-foreground inline-flex items-center gap-1.5",
 				className
 			)}
 			target={target ?? externalAttrs.target}

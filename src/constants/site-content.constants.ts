@@ -14,10 +14,11 @@ export const SITE_CONTENT = {
 	homeBlogCta: "Tüm yazıları göster",
 	homeExperiencesCta: "Tüm deneyimleri göster",
 	resumeButton: "Özgeçmişi İncele",
-	commandPalettePlaceholder: "Sayfa veya proje ara...",
+	commandPalettePlaceholder: "Sayfa, yazı veya proje ara...",
 	commandPaletteEmpty: "Sonuç bulunamadı.",
 	commandGroups: {
 		pages: "Sayfalar",
+		blog: "Blog",
 		projects: "Projeler",
 		bookmarks: "Yer İmleri",
 		actions: "Eylemler"

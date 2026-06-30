@@ -50,6 +50,14 @@
 }
 
 :root {
+	--shadow-border:
+		0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+		0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+		0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+	--shadow-border-hover:
+		0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+		0px 1px 2px -1px rgba(0, 0, 0, 0.08),
+		0px 2px 4px 0px rgba(0, 0, 0, 0.06);
 	--radius: 0.625rem;
 	--background: #fcfcfc;
 	--foreground: oklch(0.145 0 0);
@@ -77,6 +85,8 @@
 }
 
 .dark {
+	--shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.08);
+	--shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.13);
 	--background: #0f0f0f;
 	--foreground: oklch(0.985 0 0);
 	--card: oklch(0.145 0 0);
@@ -140,11 +150,44 @@
 	.group:hover .group-hover\:underline:hover {
 		text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
 	}
+
+	.image-outline {
+		@apply outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10;
+	}
+
+	.surface-card {
+		box-shadow: var(--shadow-border);
+		transition-property: box-shadow;
+		transition-duration: 150ms;
+		transition-timing-function: ease-out;
+	}
+
+	.surface-card-interactive:hover {
+		box-shadow: var(--shadow-border-hover);
+	}
+
+	.focus-link {
+		@apply rounded-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50;
+	}
+
+	.github-calendar {
+		font-variant-numeric: tabular-nums;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.animate-marquee,
 	.animate-marquee-vertical {
 		animation: none;
+	}
+
+	.animate-pulse,
+	.animate-ping {
+		animation: none;
+	}
+
+	[data-slot="dialog-overlay"],
+	[data-slot="dialog-content"] {
+		animation: none !important;
 	}
 }

@@ -28,15 +28,21 @@ export const BLOG_TAG_POOL = [
 	"Frontend",
 	"CSS",
 	"JavaScript",
+	"HTML",
 	"Tailwind CSS",
 	"shadcn/ui",
 	"Supabase",
 	"Vite",
-	"Yıl Özeti",
+	"npm",
+	"GitHub",
+	"Site Yenileme",
+	"Yıl Değerlendirmesi",
 	"Kitap",
 	"Dizi",
+	"Film",
+	"Hobi",
 	"Seyahat",
-	"Kişisel"
+	"Gözlem"
 ] as const
 
 export const BLOG_UI = {
@@ -44,13 +50,18 @@ export const BLOG_UI = {
 	pageDescription:
 		"Teknik ve kişisel yazılar — React, Next.js, CSS, frontend mimarisi ve daha fazlası.",
 	draftBadge: "Taslak",
-	englishBadge: "EN",
+	englishLabel: "English",
 	englishTooltip: "Read in English",
-	maxVisibleTags: 2,
+	interactiveLabel: "İnteraktif",
+	mediumLinkLabel: "Medium'da oku",
+	maxVisibleTags: 3,
 	filtersAriaLabel: "Blog filtreleri",
 	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",
 	sortAriaLabel: "Sıralama",
+	featuredHeading: "Öne çıkan",
+	draftsHeading: "Taslaklar",
+	clearFilters: "Filtreleri temizle",
 	emptyState: "Seçili filtrelere uygun yazı bulunamadı.",
 	listAriaLabel: "Blog yazıları"
 } as const

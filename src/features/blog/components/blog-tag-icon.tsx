@@ -4,14 +4,20 @@ import {
 	Bot,
 	Clapperboard,
 	CodeXml,
+	Eye,
+	Globe,
 	Milestone,
-	PersonStanding,
+	Popcorn,
+	Sparkles,
 	TentTree
 } from "lucide-react"
 
 import { CssOld } from "@/components/ui/svgs/cssOld"
+import { Github } from "@/components/ui/svgs/github"
+import { Html5 } from "@/components/ui/svgs/html5"
 import { Javascript } from "@/components/ui/svgs/javascript"
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
+import { Npm } from "@/components/ui/svgs/npm"
 import { ReactDark } from "@/components/ui/svgs/reactDark"
 import { ReactLight } from "@/components/ui/svgs/reactLight"
 import { ShadcnUi } from "@/components/ui/svgs/shadcnUi"
@@ -46,6 +52,8 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 	React: { kind: "theme", light: ReactLight, dark: ReactDark },
 	"Next.js": { kind: "icon", icon: NextjsIconDark, invertOnDark: true },
 	TanStack: { kind: "icon", icon: Tanstack },
+	"TanStack Query": { kind: "icon", icon: Tanstack },
+	"TanStack Start": { kind: "icon", icon: Tanstack },
 	ViraStack: { kind: "icon", icon: Virastack },
 	TypeScript: { kind: "icon", icon: Typescript },
 	"Yapay Zekâ": {
@@ -59,12 +67,15 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 		iconClassName: "text-sky-500 dark:text-sky-400"
 	},
 	CSS: { kind: "icon", icon: CssOld },
+	HTML: { kind: "icon", icon: Html5 },
 	JavaScript: { kind: "icon", icon: Javascript },
 	"Tailwind CSS": { kind: "icon", icon: Tailwindcss },
 	"shadcn/ui": { kind: "theme", light: ShadcnUi, dark: ShadcnUiDark },
 	Supabase: { kind: "icon", icon: Supabase },
 	Vite: { kind: "icon", icon: Vite },
-	"Yıl Özeti": {
+	GitHub: { kind: "icon", icon: Github },
+	npm: { kind: "icon", icon: Npm },
+	"Yıl Değerlendirmesi": {
 		kind: "icon",
 		icon: Milestone,
 		iconClassName: "text-amber-500 dark:text-amber-400"
@@ -79,15 +90,30 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 		icon: Clapperboard,
 		iconClassName: "text-rose-500 dark:text-rose-400"
 	},
+	Film: {
+		kind: "icon",
+		icon: Popcorn,
+		iconClassName: "text-rose-500 dark:text-rose-400"
+	},
 	Seyahat: {
 		kind: "icon",
 		icon: TentTree,
 		iconClassName: "text-emerald-500 dark:text-emerald-400"
 	},
-	Kişisel: {
+	Gözlem: {
 		kind: "icon",
-		icon: PersonStanding,
-		iconClassName: "text-indigo-500 dark:text-indigo-400"
+		icon: Eye,
+		iconClassName: "text-slate-600 dark:text-slate-400"
+	},
+	"Site Yenileme": {
+		kind: "icon",
+		icon: Globe,
+		iconClassName: "text-cyan-600 dark:text-cyan-400"
+	},
+	Hobi: {
+		kind: "icon",
+		icon: Sparkles,
+		iconClassName: "text-fuchsia-500 dark:text-fuchsia-400"
 	}
 }
 

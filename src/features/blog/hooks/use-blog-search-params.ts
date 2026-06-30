@@ -1,5 +1,5 @@
+import { useEffect, useRef } from "react"
 import {
-	parseAsArrayOf,
 	parseAsString,
 	parseAsStringLiteral,
 	useQueryState,
@@ -14,44 +14,92 @@ const blogSortParser = parseAsStringLiteral(["newest", "oldest"]).withDefault(
 	"newest"
 )
 
-const blogTagsParser = parseAsArrayOf(parseAsString).withDefault([])
+const blogTagParser = parseAsString
+
+const blogQueryParser = parseAsString
+
+const blogFilterHistory = { history: "push" as const }
 
 export const blogSearchParamsParsers = {
 	category: blogCategoryParser,
-	tags: blogTagsParser,
-	sort: blogSortParser
+	tag: blogTagParser,
+	sort: blogSortParser,
+	q: blogQueryParser
 }
 
 export function useBlogCategoryParam() {
 	return useQueryState("category", blogCategoryParser)
 }
 
-export function useBlogTagsParam() {
-	return useQueryState("tags", blogTagsParser)
+export function useBlogTagParam() {
+	return useQueryState("tag", blogTagParser)
 }
 
 export function useBlogSortParam() {
 	return useQueryState("sort", blogSortParser)
 }
 
+const blogSubFilterReset = { history: "replace" as const }
+
 export function useBlogSearchParams() {
 	const [params, setParams] = useQueryStates(blogSearchParamsParsers)
-	const tags = params.tags ?? []
+	const prevCategoryRef = useRef<BlogCategory | null | undefined>(undefined)
+	const tag = params.tag ?? null
+	const query = params.q ?? null
+	const category = (params.category ?? null) as BlogCategory | null
+
+	const clearSubFilters = () =>
+		setParams({ tag: null, sort: null }, blogSubFilterReset)
+
+	useEffect(() => {
+		if (prevCategoryRef.current === undefined) {
+			prevCategoryRef.current = category
+			return
+		}
+
+		if (prevCategoryRef.current === category) {
+			return
+		}
+
+		prevCategoryRef.current = category
+
+		if (tag === null && params.sort === "newest") {
+			return
+		}
+
+		void setParams({ tag: null, sort: null }, blogSubFilterReset)
+	}, [category, params.sort, setParams, tag])
 
 	return {
-		category: params.category as BlogCategory | null,
-		tags,
+		category,
+		tag,
 		sort: params.sort as BlogSort,
-		setCategory: (category: BlogCategory | null) =>
-			setParams({ category }),
-		setTags: (tags: string[]) => setParams({ tags }),
-		setSort: (sort: BlogSort) => setParams({ sort }),
-		toggleTag: (tag: string) => {
-			const nextTags = tags.includes(tag)
-				? tags.filter((value) => value !== tag)
-				: [...tags, tag]
+		query,
+		setCategory: (nextCategory: BlogCategory | null) => {
+			if (nextCategory === category) {
+				return
+			}
 
-			setParams({ tags: nextTags })
-		}
+			setParams(
+				{ category: nextCategory, tag: null, sort: null },
+				blogFilterHistory
+			)
+		},
+		setTag: (nextTag: string | null) =>
+			setParams({ tag: nextTag }, blogFilterHistory),
+		setSort: (nextSort: BlogSort) =>
+			setParams({ sort: nextSort }, blogFilterHistory),
+		setQuery: (q: string | null) => setParams({ q }),
+		selectTag: (nextTag: string) => {
+			setParams({ tag: tag === nextTag ? null : nextTag }, blogFilterHistory)
+		},
+		clearSubFilters,
+		clearFilters: () =>
+			setParams({
+				category: null,
+				tag: null,
+				q: null,
+				sort: null
+			})
 	}
 }

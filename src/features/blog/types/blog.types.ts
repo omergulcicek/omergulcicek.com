@@ -15,6 +15,9 @@ export type BlogPost = {
 	publishedAt: string
 	featured?: boolean
 	interactive?: boolean
+	mediumUrl?: string
+	translationOf?: string
+	series?: string
 }
 
 export type BlogCategoryFilter = BlogCategory | null

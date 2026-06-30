@@ -176,7 +176,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 				<div className="flex items-start justify-between gap-3">
 					<h3
 						className={cn(
-							"text-base font-medium",
+							"text-balance text-base font-medium",
 							isComingSoon && "text-muted-foreground"
 						)}
 					>
@@ -191,7 +191,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 						/>
 					)}
 				</div>
-				<p className="text-muted-foreground text-sm leading-relaxed">
+				<p className="text-muted-foreground text-pretty text-sm leading-relaxed">
 					{project.description}
 				</p>
 			</div>

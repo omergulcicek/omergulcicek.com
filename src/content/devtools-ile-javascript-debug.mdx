@@ -1,0 +1,62 @@
+---
+locale: "tr"
+publishedAt: "2017-11-14"
+published: true
+slug: "/devtools-ile-javascript-debug"
+title: "DevTools ile JavaScript Debug"
+description: "Merhaba ! Yeni bir JavaScript geliştiricisiyseniz, yazdığınız kodda çıkacak olan hataları nasıl çözeceğiniz konusunda zorlanabilirsiniz. İlk zamanlar..."
+category: "technical"
+tags: ["JavaScript"]
+---
+
+Merhaba !
+
+Yeni bir JavaScript geliştiricisiyseniz, yazdığınız kodda çıkacak olan hataları nasıl çözeceğiniz konusunda zorlanabilirsiniz. İlk zamanlar bende birçoğumuz gibi **alert();** yada **console.log();** kullanarak hataları çözmeye çalışırdım. Değişkenleri konsola yazdırıp doğru mu tanımlanıyor gibisinden sürekli kontrol edip ardından bu log'ları koddan temizlerdim. Bu cazip gelebilir, fakat çok daha sağlıklı ve mantıklı bir yol var; JavaScript kodunu debug yapmak !
+
+Bu makale, doğru yolla koddan hata ayıklamakla ilgilidir. Google Chrome DevTools'u kullanmaya başlayacak yada daha hakim olacaksınız.
+
+### Hatalı Bir Kod
+
+Öncelikle şunu bilmemiz gerekiyor, hata kötü bir şey değildir. Hata bizleri geliştirir, farklı bakış açıları kazandırır. Bu hatalarımızdan tecrübe edinip, daha sonraki zamanlarda yazdığımız kodda bu tecrübelerimiz ile daha temiz, düzgün kod yazmalıyız.
+
+İlk olarak, demo olarak Google'ın bir linkini kulanalım, yeni sekmede açarak aşağıdaki adımları site üzerinde test edelim. [Test linkini aç](https://googlechrome.github.io/devtools-samples/debug-js/get-started)
+
+![Google DevTools ile JavaScript Debugger](/blog/2017/11-14/12-1.png)
+
+Ekranda 2 adet input bulunmakta, alttaki butona basıldığı takdirde bu iki rakamın toplamını yazdırmak istiyoruz.
+
+_Number1_ yazan yere 3 yazalım, _Number2_ yazan yere 7 yazalım. Alttaki butona tıkladığımız ise şöyle bir çıktı alacağız.
+
+**3 + 7 = 37**
+
+Fakat bu sonuç yanlış, sonucun 10 olması gerekirdi. Peki hatamız nerede, nasıl test etmeliyiz?
+
+### Breakpoint Kullanmak
+
+Google Chrome'un DevTools aracı, frontend geliştiriciler için büyük bir nimet. JavaScript kodumuzu debug ederek aşama aşama tüm değişkenlerin hangi değerleri aldığını görebiliriz.
+
+Üstte toplama işleminin hatalı sonuç verdiğini görmüştük. Sorunu çözmek için ilk olarak DevTools ekranını açalım. <kbd>F12</kbd> yada <kbd>CTRL + SHIFT + I</kbd> ile DevTools'u açabiliriz. Ardından **Sources** tab'ına tıklayalım.
+
+![JavaScript Debugger](/blog/2017/11-14/12-2.png)
+
+![Google DevTools ile JavaScript Debugger](/blog/2017/11-14/12-3.png)
+
+Ardından Mouse > Click kısmını seçili hale getirelim. Bu, bir click olayını dinlemeye alır. Kodda bir click işlemi gerçekleştiği anda debugger devreye girecek ve ilk çalışan kod satırı vurgulanır. Ekranda _"Paused in debugger"_ yazısı belirecek ve yanında iki buton bulunacak. İlk buton (![Google DevTools Debugger](/blog/2017/11-14/12-4.png)) bir sonraki breakpoint'e gider, diğer buton ise (![Google DevTools Debugger](/blog/2017/11-14/12-5.png)) adım adım kodu işler.
+
+### Değişkenleri Kontrol Etmek
+
+Bir kod satırına breakpoint koymak için satır numarasına tıklamak yeterlidir. Örnek olarak 32. satıra bir breakpoint koyalım. <kbd>F8</kbd> butonu ile debug işlemine devam ettiğimizde _updateLabel()_ fonksiyonumuzun içerisindeki değişkenlerin hangi değerleri aldığını görebiliriz. Ayrıca değişkenlerin üzerine gelerekte detaylı bilgiye erişebiliriz.
+
+![Google DevTools ile JavaScript Debugger Değişkenler](/blog/2017/11-14/12-6.png)
+
+Görüldüğü üzere **addend1** ve **addend2** değişkenlerinin 3 ve 7 değerlerini aldı, fakat **sum** değişkeni 37 değerini aldı. <kbd>ESC</kbd> tuşuna basarak konsol ekranını açalım ve **typeof addend1**, **typeof sum** yazarak bu değişkenlerin string tipinde olduğnu görebiliriz. 2 değişkende string olarak alındığı için toplandığında rakamların yan yana gelerek 3+7=37 sonucunu vermesi gayet doğal. Değerleri integer'a çevirerek, istediğimiz sonuca ulaşabiliriz.
+
+```javascript
+var sum = parseInt(addend1) + parseInt(addend2);
+```
+
+![Google DevTools ile JavaScript Debugger Typeof](/blog/2017/11-14/12-7.png)
+
+### Sonuç
+
+Google DevTools'a hakim olmak ve debug yapmaya alışmak sizi daha profesyonel yapacaktır. Karşılaştığınız hataları çözümlemede daha kısa yollardan çözüme ulaşabileceksiniz. Daha önce kullanmadıysanız, konsol ve debugger'ı sürekli kullanmayı alışkanlık haline getirmenizi tavsiye ederim; iyi kodlamalar !

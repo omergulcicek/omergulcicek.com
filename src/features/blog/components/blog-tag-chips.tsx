@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { BlogTagIcon } from "@/features/blog/components/blog-tag-icon"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
+import { blogFilterChipWithIconDesktopClass } from "@/features/blog/constants/blog-filter-chip.styles"
 import { cn } from "@/lib/utils"
 
 type BlogTagChipsProps = {
 	tags: readonly string[]
-	selectedTags: string[]
-	onToggle: (tag: string) => void
+	selectedTag: string | null
+	onSelect: (tag: string) => void
 	className?: string
 }
 
 export function BlogTagChips({
 	tags,
-	selectedTags,
-	onToggle,
+	selectedTag,
+	onSelect,
 	className
 }: BlogTagChipsProps) {
 	if (tags.length === 0) {
@@ -27,7 +28,7 @@ export function BlogTagChips({
 			aria-label={BLOG_UI.tagAriaLabel}
 		>
 			{tags.map((tag) => {
-				const isActive = selectedTags.includes(tag)
+				const isActive = selectedTag === tag
 
 				return (
 					<Button
@@ -36,7 +37,8 @@ export function BlogTagChips({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
-						onClick={() => onToggle(tag)}
+						className={blogFilterChipWithIconDesktopClass}
+						onClick={() => onSelect(tag)}
 					>
 						<BlogTagIcon tag={tag} className="size-3 shrink-0" />
 						{tag}

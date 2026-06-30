@@ -4,7 +4,7 @@ import { HOBBIES } from "@/features/about/constants/about.constants"
 import { cn } from "@/lib/utils"
 
 const hobbyAvatarClass =
-	"size-12 shrink-0 overflow-hidden rounded-full ring-1 ring-border ring-offset-3 ring-offset-background"
+	"size-12 shrink-0 overflow-hidden rounded-full"
 
 const cellClass = "py-2 align-middle first:pr-3"
 
@@ -24,7 +24,7 @@ export function HobbyList() {
 									height={48}
 									loading="lazy"
 									decoding="async"
-									className="size-full object-cover"
+									className="image-outline size-full object-cover"
 								/>
 							</figure>
 						</td>
@@ -37,7 +37,7 @@ export function HobbyList() {
 						>
 							—
 						</td>
-						<td className={cn(cellClass, "text-base leading-relaxed")}>
+						<td className={cn(cellClass, "text-pretty text-base leading-relaxed")}>
 							<span>{hobby.text}</span>
 							{hobby.href ? (
 								<>

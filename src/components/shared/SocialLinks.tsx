@@ -28,7 +28,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
 					SOCIAL_ICON_COLORS[social.label as keyof typeof SOCIAL_ICON_COLORS]
 
 				return (
-					<Button key={social.href} variant="ghost" size="sm" asChild>
+					<Button key={social.href} variant="ghost" size="icon-sm" asChild>
 						<a
 							href={social.href}
 							target="_blank"

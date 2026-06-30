@@ -5,7 +5,7 @@ import { Container } from "@/components/shared/Container"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
-import { CommandPalette } from "@/features/search/components/CommandPalette"
+import { CommandPaletteTrigger } from "@/features/search/components/CommandPalette"
 import { Separator } from "@/components/ui/separator"
 
 function NavLink({
@@ -20,10 +20,11 @@ function NavLink({
 	return (
 		<Link
 			to={href}
-			className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+			className="focus-link text-muted-foreground hover:text-foreground text-sm transition-colors"
 			activeOptions={exact ? { exact: true } : undefined}
 			activeProps={{
-				className: "text-foreground font-medium"
+				className: "text-foreground font-medium",
+				"aria-current": "page"
 			}}
 		>
 			{label}
@@ -60,7 +61,7 @@ export function Header() {
 							</nav>
 						</div>
 						<div className="flex items-center gap-1.5">
-							<CommandPalette />
+							<CommandPaletteTrigger />
 							<Separator orientation="vertical" className="mx-1 h-4" />
 							<ThemeToggle />
 						</div>

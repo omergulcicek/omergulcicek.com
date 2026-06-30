@@ -4,7 +4,7 @@ import { OpenToWorkBadge } from "@/components/shared/open-to-work-badge"
 import { cn } from "@/lib/utils"
 
 const pageTitleClass =
-	"text-lg font-semibold tracking-tight text-foreground"
+	"text-balance text-lg font-semibold tracking-tight text-foreground"
 
 type PageHeaderProps = {
 	title: string

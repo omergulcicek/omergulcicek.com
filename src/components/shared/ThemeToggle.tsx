@@ -8,7 +8,12 @@ export function ThemeToggle() {
 
 	if (!isMounted) {
 		return (
-			<Button variant="ghost" size="sm" aria-label="Tema yükleniyor" disabled>
+			<Button
+				variant="ghost"
+				size="icon-sm"
+				aria-label="Tema yükleniyor"
+				disabled
+			>
 				<Moon className="size-4" />
 			</Button>
 		)
@@ -20,7 +25,7 @@ export function ThemeToggle() {
 		<Button
 			type="button"
 			variant="ghost"
-			size="sm"
+			size="icon-sm"
 			onClick={toggleTheme}
 			aria-label={isDark ? "Aydınlık temaya geç" : "Karanlık temaya geç"}
 		>

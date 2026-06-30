@@ -8,37 +8,55 @@ import { cn } from "@/lib/utils"
 type BlogListFiltersProps = {
 	category: BlogCategory | null
 	tags: readonly string[]
-	selectedTags: string[]
+	selectedTag: string | null
 	sort: BlogSort
+	showClearFilters: boolean
 	onCategoryChange: (category: BlogCategory | null) => void
-	onTagToggle: (tag: string) => void
+	onTagSelect: (tag: string) => void
 	onSortChange: (sort: BlogSort) => void
+	onClearFilters: () => void
 	className?: string
 }
 
 export function BlogListFilters({
 	category,
 	tags,
-	selectedTags,
+	selectedTag,
 	sort,
+	showClearFilters,
 	onCategoryChange,
-	onTagToggle,
+	onTagSelect,
 	onSortChange,
+	onClearFilters,
 	className
 }: BlogListFiltersProps) {
 	return (
 		<section
-			className={cn("flex flex-col gap-4", className)}
+			className={cn(
+				"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col gap-4 rounded-xl border border-border/60 bg-background/95 p-4 shadow-sm supports-backdrop-filter:bg-background/60 backdrop-blur",
+				className
+			)}
 			aria-label={BLOG_UI.filtersAriaLabel}
 		>
 			<div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-				<BlogCategoryPills value={category} onChange={onCategoryChange} />
+				<div className="flex flex-wrap items-center gap-2">
+					<BlogCategoryPills value={category} onChange={onCategoryChange} />
+					{showClearFilters ? (
+						<button
+							type="button"
+							className="focus-link text-muted-foreground hover:text-foreground text-xs underline-offset-4 transition-colors hover:underline"
+							onClick={onClearFilters}
+						>
+							{BLOG_UI.clearFilters}
+						</button>
+					) : null}
+				</div>
 				<BlogSortControl value={sort} onChange={onSortChange} />
 			</div>
 			<BlogTagChips
 				tags={tags}
-				selectedTags={selectedTags}
-				onToggle={onTagToggle}
+				selectedTag={selectedTag}
+				onSelect={onTagSelect}
 			/>
 		</section>
 	)
