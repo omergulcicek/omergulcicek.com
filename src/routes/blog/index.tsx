@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { createStandardSchemaV1 } from "nuqs"
 
-import { SITE } from "@/constants/site.constants"
 import { getBlogPostsFn } from "@/features/blog/api/blog-post.api"
 import { BlogPage } from "@/features/blog"
 import { blogSearchParamsParsers } from "@/features/blog/hooks/use-blog-search-params"
+import { buildPageHead } from "@/lib/seo/build-page-head"
+import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
+
+const seo = STATIC_PAGE_SEO.blog
 
 export const Route = createFileRoute("/blog/")({
 	validateSearch: createStandardSchemaV1(blogSearchParamsParsers, {
@@ -17,16 +20,12 @@ export const Route = createFileRoute("/blog/")({
 			isDev: import.meta.env.DEV
 		}
 	},
-	head: () => ({
-		meta: [
-			{ title: `Blog · ${SITE.name}` },
-			{
-				name: "description",
-				content:
-					"Teknik ve kişisel yazılar — React, Next.js, CSS, frontend mimarisi ve daha fazlası."
-			}
-		]
-	}),
+	head: () =>
+		buildPageHead({
+			title: seo.title,
+			description: seo.description,
+			path: seo.path
+		}),
 	component: BlogIndexPage
 })
 

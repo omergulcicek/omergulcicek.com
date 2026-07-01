@@ -1,0 +1,22 @@
+# omergulcicek.com
+
+> Personal website and blog of Ömer Gülçiçek, Frontend Engineer. React, Next.js, TypeScript, TanStack Start, and modern web development. Technical articles (mostly Turkish), project showcases, experience timeline, and curated bookmarks. Built with TanStack Start, Tailwind CSS 4, and shadcn/ui.
+
+Primary sections: Home (/), Blog (/blog), Projects (/projects), About (/about), Experiences (/experiences), Services (/services), Bookmarks (/bookmarks). Blog posts cover React, Next.js, CSS, frontend architecture, state management, TanStack, forms, accessibility, and developer tooling.
+
+## Main pages
+
+- [About](https://omergulcicek.com/about): Bio, tech stack, GitHub activity, and contact links
+- [Experiences](https://omergulcicek.com/experiences): Career timeline and downloadable CV
+- [Projects](https://omergulcicek.com/projects): Personal apps and ViraStack open-source tools
+- [Services](https://omergulcicek.com/services): Freelance development and frontend training
+- [Bookmarks](https://omergulcicek.com/bookmarks): Curated frontend resources on Raindrop
+
+## Blog
+
+- [Blog index](https://omergulcicek.com/blog): Full list of published articles
+
+## Optional
+
+- [ViraStack](https://virastack.com): Open-source frontend ecosystem by Ömer Gülçiçek
+- [Source code](https://github.com/omergulcicek/omergulcicek.com): Repository for this site

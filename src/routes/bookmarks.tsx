@@ -1,17 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 import { BookmarksPage } from "@/features/bookmarks"
+import { buildPageHead } from "@/lib/seo/build-page-head"
+import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
+
+const seo = STATIC_PAGE_SEO.bookmarks
 
 export const Route = createFileRoute("/bookmarks")({
-	head: () => ({
-		meta: [
-			{ title: "Yer İmleri · Ömer Gülçiçek" },
-			{
-				name: "description",
-				content:
-					"Raindrop'ta topladığım frontend kaynakları, bloglar ve okuma listesi."
-			}
-		]
-	}),
+	head: () =>
+		buildPageHead({
+			title: seo.title,
+			description: seo.description,
+			path: seo.path
+		}),
 	component: BookmarksPage
 })

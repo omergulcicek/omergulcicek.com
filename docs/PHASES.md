@@ -6,7 +6,7 @@
 
 **Lansman kuralı:** RSS, dinamik OG, llms.txt, GA ve WebVitals bitmeden production'a çıkılmaz. Fazlar organizasyon içindir; MVP tek seferde yayınlanır.
 
-**Eksik listesi (öncelik sırası):** [`SITE-GAPS.md`](./SITE-GAPS.md) — legacy vs yeni kıyası, kesinlikle yap / yap / yapsan da olur.
+**Eksik listesi (öncelik sırası):** [`SITE-GAPS.md`](./SITE-GAPS.md) — legacy vs yeni kıyası, kesinlikle yap / yap / yapsan da olur, [Supabase beklerken](./SITE-GAPS.md#supabase-beklerken-blog-list--detay-hariç) işleri.
 
 ---
 
@@ -14,7 +14,7 @@
 
 Build oturumunda sırayla oku:
 
-`PROJECT-BRIEF.md` → `TECH-STACK.md` → `SITE-CONTENT.md` → `PROJECTS.md` → `BLOG.md` → `supabase-migration.md` → `ABOUT.md` → `EXPERIENCES.md` → `SERVICES.md` → `BOOKMARKS.md` → `ACADEMY.md` → `SEARCH.md` → `architecture-guide.md`
+`PROJECT-BRIEF.md` → `TECH-STACK.md` → `SITE-CONTENT.md` → `PROJECTS.md` → `BLOG.md` → `supabase-migration.md` → `ABOUT.md` → `EXPERIENCES.md` → `SERVICES.md` → `BOOKMARKS.md` → `SEARCH.md` → `architecture-guide.md`
 
 ---
 
@@ -72,7 +72,7 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 - [ ] `SiteLayout` — `<main id="main-content">` landmark
 - [ ] `Header` — marka: `@lucide/lab` rose ikonu yalnızca (metin yok) → `/`; nav: Ana Sayfa · Blog · Projeler · Hakkımda
 - [ ] Header'da tema düğmesi + ⌘K tetikleyici; **GitHub ikonu yok**
-- [ ] `Footer` — sol: `BrandMark` + build credit + kaynak kod + telif (alt alta); sağ: ikincil nav (Deneyimler → Hizmetler → Yer İmleri → Akademi, alt alta)
+- [ ] `Footer` — sol: `BrandMark` + build credit + kaynak kod + telif (alt alta); sağ: ikincil nav (Deneyimler → Hizmetler → Yer İmleri → ViraStack, alt alta)
 - [ ] Tipografi — hero isim/unvan/metin `text-base` (16px); isim + unvan `font-medium` (500); bölüm başlıkları `text-base` (`SITE-CONTENT.md`)
 - [ ] Tema geçişi: Açık → Koyu; `localStorage` + `__root.tsx` flash önleme script'i
 
@@ -138,10 +138,6 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 - [x] 7 kategori (Blog, Eklenti, Frontend, Kitaplık, Kişisel, Makale, Teknik)
 - [x] Raindrop koleksiyon linkleri + önizleme (`BOOKMARKS.md`)
-
-### `/academy` — Akademi
-
-- [x] Stub sayfa — “yakında” (`ACADEMY.md`)
 
 ### Genel
 

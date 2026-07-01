@@ -1,3 +1,5 @@
+import { env } from "@/env"
+
 export const SITE = {
 	name: "Ömer Gülçiçek",
 	title: "Ömer Gülçiçek",
@@ -8,5 +10,7 @@ export const SITE = {
 	url: "https://omergulcicek.com",
 	repository: "https://github.com/omergulcicek/omergulcicek.com",
 	locale: "tr_TR",
-	defaultOgImage: "/omergulcicek.JPG"
+	twitterHandle: "@omergulcicek",
+	defaultOgImage: "/omergulcicek.JPG",
+	analyticsId: env.VITE_GA_ID
 } as const

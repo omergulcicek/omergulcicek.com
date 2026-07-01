@@ -12,6 +12,7 @@ import {
 	slugToRouteParam
 } from "@/features/blog/helpers/blog-helpers"
 import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
+import { buildBlogPostHead } from "@/lib/seo/build-page-head"
 
 export const Route = createFileRoute("/blog/$slug")({
 	loader: async ({ params }) => {
@@ -52,17 +53,13 @@ export const Route = createFileRoute("/blog/$slug")({
 
 		const { post } = loaderData
 
-		return {
-			meta: [
-				{ title: `${post.title} · Blog` },
-				{ name: "description", content: post.description }
-			],
-			...(post.canonicalUrl
-				? {
-						links: [{ rel: "canonical", href: post.canonicalUrl }]
-					}
-				: {})
-		}
+		return buildBlogPostHead({
+			title: post.title,
+			description: post.description,
+			path: `/blog/${slugToRouteParam(post.slug)}`,
+			canonicalUrl: post.canonicalUrl,
+			ogImage: post.coverImage
+		})
 	},
 	notFoundComponent: NotFoundPage,
 	component: BlogPostRoutePage

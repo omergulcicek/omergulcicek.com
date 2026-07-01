@@ -1,0 +1,22 @@
+{
+	"name": "Ömer Gülçiçek",
+	"short_name": "Ömer",
+	"description": "Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack).",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#3b82f6",
+	"lang": "tr",
+	"dir": "ltr",
+	"orientation": "portrait",
+	"categories": ["productivity", "utilities"],
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
+}

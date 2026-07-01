@@ -1,6 +1,6 @@
 # omergulcicek.com — Site İçerikleri
 
-> Onaylı UI metinleri bu dosyada. Sayfa içerik SSOT: Hakkımda → `docs/ABOUT.md` · Deneyimler → `docs/EXPERIENCES.md` · Hizmetler → `docs/SERVICES.md` · Yer İmleri → `docs/BOOKMARKS.md` · Akademi → `docs/ACADEMY.md` · Arama → `docs/SEARCH.md`.
+> Onaylı UI metinleri bu dosyada. Sayfa içerik SSOT: Hakkımda → `docs/ABOUT.md` · Deneyimler → `docs/EXPERIENCES.md` · Hizmetler → `docs/SERVICES.md` · Yer İmleri → `docs/BOOKMARKS.md` · Arama → `docs/SEARCH.md`.
 
 ---
 
@@ -59,7 +59,7 @@ Header'da yok. Sıra implementasyonda korunur (`src/constants/footer-nav.constan
 | 1    | Deneyimler | `/experiences` |
 | 2    | Hizmetler  | `/services`    |
 | 3    | Yer İmleri | `/bookmarks`   |
-| 4    | Akademi    | `/academy`     |
+| 4    | ViraStack  | (harici link)  |
 
 Sayfa gövde metinleri → ilgili `docs/*.md` dosyaları.
 
@@ -171,7 +171,6 @@ Implementasyon: `src/constants/site.constants.ts`. Tam teknik metadata (OG, site
 | `/experiences` | Deneyimler | Kariyer geçmişi, teknoloji etiketleri ve CV. |
 | `/services` | Hizmetler | Freelance geliştirme ve frontend eğitimi. |
 | `/bookmarks` | Yer İmleri | Raindrop'ta topladığım frontend kaynakları, bloglar ve okuma listesi. |
-| `/academy` | Akademi | Frontend eğitim içerikleri — yakında. |
 
 Blog yazısı: `titleTemplate` → `React AI Stack 2026 · Ömer Gülçiçek`.
 

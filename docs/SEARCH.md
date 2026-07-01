@@ -19,7 +19,7 @@ Legacy referans: `_legacy/src/components/shared/command-palette/CommandPalette.t
 
 | Grup | Öğeler | Faz |
 | --- | --- | --- |
-| Sayfalar | Ana Sayfa, Blog, Projeler, Hakkımda, Deneyimler, Hizmetler, Yer İmleri, Akademi | Faz 1 |
+| Sayfalar | Ana Sayfa, Blog, Projeler, Hakkımda, Deneyimler, Hizmetler, Yer İmleri | Faz 1 |
 | Projeler | Başlık + açıklama (`docs/PROJECTS.md` kataloğu) | Faz 1 |
 | Yer İmleri | 7 kategori başlık + açıklama (`docs/BOOKMARKS.md`); seçilince `/bookmarks` | Faz 1 |
 | Hızlı eylemler | E-posta, GitHub, ViraStack | Faz 1 |

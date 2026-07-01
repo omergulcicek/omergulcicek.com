@@ -1,0 +1,90 @@
+import { SITE } from "@/constants/site.constants"
+
+type BuildPageHeadOptions = {
+	title: string
+	description: string
+	path: string
+	ogType?: "website" | "article"
+	ogImage?: string
+	canonicalUrl?: string
+	robots?: string
+	useTitleTemplate?: boolean
+}
+
+function resolveAbsoluteUrl(pathOrUrl: string): string {
+	if (pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")) {
+		return pathOrUrl
+	}
+
+	const normalizedPath = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`
+	return `${SITE.url}${normalizedPath}`
+}
+
+function resolvePageTitle(title: string, useTitleTemplate: boolean): string {
+	if (!useTitleTemplate || title.includes("·")) {
+		return title
+	}
+
+	return `${title} · ${SITE.name}`
+}
+
+export function buildPageHead({
+	title,
+	description,
+	path,
+	ogType = "website",
+	ogImage,
+	canonicalUrl,
+	robots,
+	useTitleTemplate = true
+}: BuildPageHeadOptions) {
+	const resolvedTitle = resolvePageTitle(title, useTitleTemplate)
+	const canonical = canonicalUrl ?? resolveAbsoluteUrl(path)
+	const image = resolveAbsoluteUrl(ogImage ?? SITE.defaultOgImage)
+
+	return {
+		meta: [
+			{ title: resolvedTitle },
+			{ name: "description", content: description },
+			...(robots ? [{ name: "robots", content: robots }] : []),
+			{ property: "og:site_name", content: SITE.name },
+			{ property: "og:title", content: resolvedTitle },
+			{ property: "og:description", content: description },
+			{ property: "og:type", content: ogType },
+			{ property: "og:url", content: canonical },
+			{ property: "og:locale", content: SITE.locale },
+			{ property: "og:image", content: image },
+			{ property: "og:image:alt", content: `${SITE.name} — ${SITE.jobTitle}` },
+			{ name: "twitter:card", content: "summary_large_image" },
+			{ name: "twitter:creator", content: SITE.twitterHandle },
+			{ name: "twitter:title", content: resolvedTitle },
+			{ name: "twitter:description", content: description },
+			{ name: "twitter:image", content: image }
+		],
+		links: [{ rel: "canonical", href: canonical }]
+	}
+}
+
+export function buildBlogPostHead({
+	title,
+	description,
+	path,
+	canonicalUrl,
+	ogImage
+}: {
+	title: string
+	description: string
+	path: string
+	canonicalUrl?: string
+	ogImage?: string
+}) {
+	return buildPageHead({
+		title,
+		description,
+		path,
+		ogType: "article",
+		canonicalUrl,
+		ogImage,
+		useTitleTemplate: true
+	})
+}

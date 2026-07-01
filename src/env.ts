@@ -6,11 +6,17 @@ const mediaProviderSchema = z.enum([
 	"supabase-transform"
 ])
 
+const gaIdSchema = z
+	.string()
+	.regex(/^G-[A-Z0-9]+$/, "VITE_GA_ID must be a valid GA4 measurement ID")
+	.optional()
+
 const clientEnvSchema = z
 	.object({
 		VITE_MEDIA_PROVIDER: mediaProviderSchema.default("local"),
 		VITE_SUPABASE_URL: z.string().url().optional(),
-		VITE_SUPABASE_ANON_KEY: z.string().min(1).optional()
+		VITE_SUPABASE_ANON_KEY: z.string().min(1).optional(),
+		VITE_GA_ID: gaIdSchema
 	})
 	.superRefine((value, context) => {
 		if (
@@ -29,7 +35,8 @@ const clientEnvSchema = z
 export const env = clientEnvSchema.parse({
 	VITE_MEDIA_PROVIDER: import.meta.env.VITE_MEDIA_PROVIDER,
 	VITE_SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL || undefined,
-	VITE_SUPABASE_ANON_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY || undefined
+	VITE_SUPABASE_ANON_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY || undefined,
+	VITE_GA_ID: import.meta.env.VITE_GA_ID || undefined
 })
 
 export type MediaProvider = z.infer<typeof mediaProviderSchema>

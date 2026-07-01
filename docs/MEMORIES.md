@@ -14,7 +14,7 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 - **Layout:** Sayfa `max-w-2xl`; en fazla iki genişlik katmanı (prose + bleed). Blog görselleri ve stack slider bleed'de; viewport full değil.
 - **About:** Yeni versiyon kalıcı; legacy Vizyon/İletişim/uzun teknik metin bilinçli kaldırıldı. Hobiler statik liste.
 - **Header:** Marka yalnızca `@lucide/lab` rose ikonu — "Ömer" metni yok. GitHub ikonu yok; sosyaller hero'da.
-- **Footer:** Sol — `BrandMark` (rose ikonu) + build credit + kaynak kod + telif (alt alta); sağ — ikincil nav Deneyimler → Hizmetler → Yer İmleri → Akademi (alt alta). LinkPreview yok.
+- **Footer:** Sol — `BrandMark` (rose ikonu) + build credit + kaynak kod + telif (alt alta); sağ — ikincil nav Deneyimler → Hizmetler → Yer İmleri → ViraStack (harici, alt alta). LinkPreview yok.
 - **Tipografi:** Hero isim/unvan/metin 16px; isim + unvan font-weight 500. Bölüm başlıkları 16px.
 - **Bookmarks:** 7 legacy başlık (Blog, Eklenti, Frontend, Kitaplık, Kişisel, Makale, Teknik); Raindrop slug'ları legacy'den; Donanım/İçerik Arşivi sitede yok.
 - **DB:** Tablo/sütun/enum İngilizce; UI Türkçe. Kategori: `technical` | `personal`.

@@ -1,0 +1,48 @@
+# omergulcicek.com — Full site map for LLM agents
+
+> Personal website and blog of Ömer Gülçiçek (Frontend Engineer). Stack: TanStack Start, React 19, TypeScript, Tailwind CSS 4, shadcn/ui, MDX blog pipeline. Locale: Turkish (tr-TR) for site chrome; some blog posts are in English.
+
+## Identity
+
+- Name: Ömer Gülçiçek
+- Role: Frontend Engineer
+- Site: https://omergulcicek.com
+- Email: iletisim@omergulcicek.com
+- GitHub: https://github.com/omergulcicek
+- X: https://x.com/omergulcicek
+- LinkedIn: https://linkedin.com/in/omergulcicek
+- ViraStack: https://virastack.com
+
+## Navigation
+
+| Path | Title | Summary |
+| --- | --- | --- |
+| / | Home | Hero, featured projects, tech stack strip, recent blog posts, experience summary |
+| /blog | Blog | Filterable list of technical and personal articles |
+| /blog/{slug} | Article | Individual MDX blog post with tags, series, and prose styling |
+| /projects | Projects | Personal apps (Footy, Takvim) and ViraStack packages |
+| /about | About | Bio, open-to-work badge, stack grid, GitHub calendar, hobbies |
+| /experiences | Experiences | Work history timeline, technology tags, CV download |
+| /services | Services | Freelance development and frontend training offerings |
+| /bookmarks | Bookmarks | Seven Raindrop categories of curated frontend resources |
+
+## Features
+
+- Command palette search (⌘K / Ctrl+K): pages, projects, bookmarks, blog posts, quick actions
+- Dark/light theme with localStorage persistence
+- Open to Work badge and bilingual CV modal (TR/EN) on experiences page
+- Blog filters via URL state (tags, series, search)
+
+## Content topics (blog)
+
+React, Next.js, TanStack Start, TypeScript, CSS, Tailwind CSS, frontend architecture, state management, React Hook Form, Zod, accessibility, performance, Core Web Vitals, AI-assisted development, ViraStack tooling.
+
+## Machine-readable files
+
+- [llms.txt](https://omergulcicek.com/llms.txt): Concise index
+- [sitemap.xml](https://omergulcicek.com/sitemap.xml): Static page URLs (blog posts added when published)
+- [robots.txt](https://omergulcicek.com/robots.txt): Crawler rules
+
+## Source
+
+- Repository: https://github.com/omergulcicek/omergulcicek.com

@@ -1,6 +1,6 @@
 # omergulcicek.com — Proje Özeti
 
-> **Agent onboarding:** Sırayla oku: `docs/PROJECT-BRIEF.md` → `docs/TECH-STACK.md` → `docs/SITE-CONTENT.md` → `docs/PROJECTS.md` → `docs/BLOG.md` → `docs/supabase-migration.md` → `docs/ABOUT.md` → `docs/EXPERIENCES.md` → `docs/SERVICES.md` → `docs/BOOKMARKS.md` → `docs/ACADEMY.md` → `docs/SEARCH.md` → `docs/architecture-guide.md`. Burada kayıtlı kararları kullanıcı açıkça değiştirmek istemedikçe yeniden sorma.
+> **Agent onboarding:** Sırayla oku: `docs/PROJECT-BRIEF.md` → `docs/TECH-STACK.md` → `docs/SITE-CONTENT.md` → `docs/PROJECTS.md` → `docs/BLOG.md` → `docs/supabase-migration.md` → `docs/ABOUT.md` → `docs/EXPERIENCES.md` → `docs/SERVICES.md` → `docs/BOOKMARKS.md` → `docs/SEARCH.md` → `docs/architecture-guide.md`. Burada kayıtlı kararları kullanıcı açıkça değiştirmek istemedikçe yeniden sorma.
 
 ## Proje Nedir?
 
@@ -22,7 +22,6 @@ Dokümantasyon tamamlanana kadar geliştirme **duraklatıldı**. Hedef: doküman
 | `docs/EXPERIENCES.md`        | **Deneyimler SSOT** — zaman çizelgesi, CV                               |
 | `docs/SERVICES.md`           | **Hizmetler SSOT** — freelance ve eğitim                                |
 | `docs/BOOKMARKS.md`          | **Yer imleri SSOT** — Raindrop koleksiyonları, önizleme linkleri        |
-| `docs/ACADEMY.md`            | **Akademi SSOT** — stub sayfa (v1 boş)                                  |
 | `docs/SEARCH.md`             | **⌘K Command Palette SSOT** — MVP zorunlu                               |
 | `docs/supabase-migration.md` | **Supabase SSOT** — şema, Storage, taşıma, yayın mantığı                |
 | `docs/architecture-guide.md` | Klasör yapısı, ViraStack kalıpları                                     |
@@ -154,7 +153,7 @@ Metinler `docs/SITE-CONTENT.md` → Header. Header'da **GitHub ikonu yok** (yaln
 | 1    | Deneyimler  | `/experiences` |
 | 2    | Hizmetler   | `/services`    |
 | 3    | Yer İmleri  | `/bookmarks`   |
-| 4    | Akademi     | `/academy`     |
+| 4    | ViraStack   | (harici)       |
 
 LinkPreview **yok**.
 
@@ -212,7 +211,6 @@ Tam spec → **`docs/BLOG.md`** · Supabase → **`docs/supabase-migration.md`**
 - [x] `docs/EXPERIENCES.md` — deneyim zaman çizelgesi
 - [x] `docs/SERVICES.md` — freelance ve eğitim
 - [x] `docs/BOOKMARKS.md` — yer imleri, Raindrop, önizlemeler
-- [x] `docs/ACADEMY.md` — stub sayfa
 - [x] `docs/SEARCH.md` — ⌘K Command Palette
 - [x] `docs/supabase-migration.md` — Supabase şema ve taşıma
 - [x] `docs/SITE-CONTENT.md` — UI metinleri SSOT (footer, SEO, hata sayfaları dahil)
@@ -262,8 +260,6 @@ Tam spec → **`docs/BLOG.md`** · Supabase → **`docs/supabase-migration.md`**
 - [ ] `/experiences` — `docs/EXPERIENCES.md`: zaman çizelgesi, CV, open-to-work badge
 - [ ] `/services` — `docs/SERVICES.md`: freelance + eğitim kartları
 - [ ] `/bookmarks` — `docs/BOOKMARKS.md`: 7 kategori + Raindrop + önizlemeler
-- [ ] `/academy` — `docs/ACADEMY.md`: stub (yakında)
-
 ### Faz 3 — Blog (çekirdek)
 
 - [ ] Supabase şeması + migration (`docs/supabase-migration.md`)
@@ -336,7 +332,6 @@ docs/
 ├── EXPERIENCES.md       # Deneyim zaman çizelgesi
 ├── SERVICES.md          # Hizmetler
 ├── BOOKMARKS.md         # Yer imleri
-├── ACADEMY.md           # Akademi stub
 ├── SEARCH.md            # ⌘K Command Palette
 ├── supabase-migration.md # DB, Storage, taşıma
 ├── architecture-guide.md
@@ -373,7 +368,7 @@ Geliştirme ve kurulum komutları → `**docs/TECH-STACK.md**`
 | Header marka        | `@lucide/lab` rose ikonu yalnızca — "Ömer" metni yok                      |
 | Header GitHub       | Yok — sosyaller yalnızca hero'da                                          |
 | Footer layout       | Sol: `BrandMark` + credit bloğu (alt alta); sağ: ikincil nav (alt alta)    |
-| Footer nav sırası   | Deneyimler → Hizmetler → Yer İmleri → Akademi                             |
+| Footer nav sırası   | Deneyimler → Hizmetler → Yer İmleri → ViraStack (harici)                  |
 | Footer kaynak kod   | Evet — düz GitHub linki; açık kaynak kültürü; LinkPreview yok             |
 | Hero tipografi      | İsim, unvan, paragraflar 16px; isim + unvan font-weight 500               |
 | Bölüm başlıkları    | 16px (`text-base`)                                                        |
@@ -410,7 +405,7 @@ Geliştirme ve kurulum komutları → `**docs/TECH-STACK.md**`
 **Tam build oturumunu** başlatmak için kopyala-yapıştır:
 
 ```
-docs/PROJECT-BRIEF.md, docs/TECH-STACK.md, docs/SITE-CONTENT.md, docs/PROJECTS.md, docs/BLOG.md, docs/supabase-migration.md, docs/ABOUT.md, docs/EXPERIENCES.md, docs/SERVICES.md, docs/BOOKMARKS.md, docs/ACADEMY.md, docs/SEARCH.md ve docs/architecture-guide.md dosyalarını baştan sona oku.
+docs/PROJECT-BRIEF.md, docs/TECH-STACK.md, docs/SITE-CONTENT.md, docs/PROJECTS.md, docs/BLOG.md, docs/supabase-migration.md, docs/ABOUT.md, docs/EXPERIENCES.md, docs/SERVICES.md, docs/BOOKMARKS.md, docs/SEARCH.md ve docs/architecture-guide.md dosyalarını baştan sona oku.
 Faz 0: npx @virastack/ai-rules init && npx skills add jakubkrehel/make-interfaces-feel-better && npx skills add emilkowalski/skill (henüz yoksa).
 .cursor/rules/ altındaki ViraStack kurallarına uy. v1'de Framer Motion yok; CSS hover/focus serbest; make-interfaces-feel-better öncelikli.
 Production öncesi RSS, OG, llms, GA, WebVitals zorunlu. DB isimleri İngilizce. Taslaklar dev'de görünür, production'da gizli.
