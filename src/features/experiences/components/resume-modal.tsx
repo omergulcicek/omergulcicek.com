@@ -23,6 +23,20 @@ function getCvPreviewUrl(href: string) {
 	return `${href}#view=FitH&toolbar=0&navpanes=0`
 }
 
+const CV_LOCALE_LABELS = {
+	tr: {
+		mobile: SITE_CONTENT.resumeLanguageTr,
+		desktop: SITE_CONTENT.resumeLanguageTrShort
+	},
+	en: {
+		mobile: SITE_CONTENT.resumeLanguageEn,
+		desktop: SITE_CONTENT.resumeLanguageEnShort
+	}
+} as const satisfies Record<
+	CvLocale,
+	{ mobile: string; desktop: string }
+>
+
 export function ResumeModal() {
 	const [open, setOpen] = useState(false)
 	const [locale, setLocale] = useState<CvLocale>(DEFAULT_CV_LOCALE)
@@ -43,19 +57,21 @@ export function ResumeModal() {
 					{SITE_CONTENT.resumeButton}
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="flex h-[65vh] w-[calc(100%-2rem)] max-w-4xl flex-col gap-3 overflow-hidden p-4 sm:p-6">
+			<DialogContent className="flex h-[90vh] w-[calc(100%-2rem)] max-w-4xl flex-col gap-3 overflow-hidden p-4 md:h-[65vh] md:gap-3 md:p-6">
 				<DialogHeader className="shrink-0 gap-3">
-					<div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:pr-8">
-						<div className="flex flex-col gap-2">
-							<DialogTitle>{SITE_CONTENT.resumeModalTitle}</DialogTitle>
-							<DialogDescription>
+					<div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:pr-8">
+						<div className="flex min-w-0 flex-col gap-1.5 md:gap-2">
+							<DialogTitle className="text-base md:text-lg">
+								{SITE_CONTENT.resumeModalTitle}
+							</DialogTitle>
+							<DialogDescription className="text-xs md:text-sm">
 								{SITE_CONTENT.resumeModalDescription}
 							</DialogDescription>
 						</div>
 						<div
 							role="group"
 							aria-label={SITE_CONTENT.resumeLanguageGroup}
-							className="bg-muted inline-flex shrink-0 rounded-md border p-0.5"
+							className="bg-muted flex w-full shrink-0 rounded-md border p-0.5 md:inline-flex md:w-auto"
 						>
 							{(["tr", "en"] as const).map((value) => (
 								<Button
@@ -64,16 +80,19 @@ export function ResumeModal() {
 									variant="ghost"
 									size="sm"
 									className={cn(
-										"h-7 min-w-10 px-3",
+										"h-8 flex-1 px-2 text-xs md:h-7 md:min-w-10 md:flex-none md:px-3 md:text-sm",
 										locale === value &&
 											"bg-background text-foreground shadow-xs hover:bg-background"
 									)}
 									aria-pressed={locale === value}
 									onClick={() => setLocale(value)}
 								>
-									{value === "tr"
-										? SITE_CONTENT.resumeLanguageTr
-										: SITE_CONTENT.resumeLanguageEn}
+									<span className="md:hidden">
+										{CV_LOCALE_LABELS[value].mobile}
+									</span>
+									<span className="hidden md:inline">
+										{CV_LOCALE_LABELS[value].desktop}
+									</span>
 								</Button>
 							))}
 						</div>

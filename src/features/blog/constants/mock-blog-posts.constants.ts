@@ -2,19 +2,6 @@ import type { BlogPost } from "@/features/blog/types/blog.types"
 
 export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
-		slug: "/imparatorun-imgesi",
-		title: "İmparator'un İmgesi",
-		description: "Gizem Magemizoğlu'nun kaleminden, Fatih Sultan Mehmed'in kamusal imajı ve imparatorluk siyasetini inceleyen ufuk açıcı bir eser.",
-		category: "personal",
-		tags: ["Kitap"],
-		locale: "tr",
-		published: false,
-		publishedAt: "2026-06-30",
-		coverImage: "/blog/future/imparatorun-imgesi.png",
-		readingTimeMinutes: 1,
-		canonicalUrl: "https://omergulcicek.com/blog/imparatorun-imgesi"
-	},
-	{
 		slug: "/virastack-ai",
 		title: "ViraStack AI: Yapay Zekâya Mimari Disiplin",
 		description: "ViraStack AI, React projelerinde yapay zekânın ürettiği kodu mimari kurallarla disipline eden .mdc bağlam dosyaları ve üretim protokolleri sunar.",

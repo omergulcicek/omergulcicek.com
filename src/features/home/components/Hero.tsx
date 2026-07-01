@@ -2,6 +2,7 @@ import { Mail } from "lucide-react"
 
 import { GitHubIcon } from "@/components/icons"
 import { ProseIconLink, ProseLink } from "@/components/shared/prose-link"
+import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	pageSectionClass,
 	pageTitleClass,
@@ -31,7 +32,7 @@ export function Hero() {
 					<h1 className={pageTitleClass}>
 						{SITE_CONTENT.displayName}
 					</h1>
-					<p className="text-muted-foreground text-base font-normal">
+					<p className="text-muted-foreground text-sm font-normal md:text-base">
 						{SITE_CONTENT.jobTitle}
 					</p>
 				</div>
@@ -42,7 +43,7 @@ export function Hero() {
 					Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; projelerim
 					aracılığıyla insanlara faydalı olup onların deneyimlerine değer
 					katmayı seviyorum.{" "}
-					<ProseLink href={EXTERNAL_LINKS.virastack}>ViraStack</ProseLink> ile
+					<VirastackLink>ViraStack</VirastackLink> ile
 					frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak
 					bir ekosistem inşa ediyorum.
 				</p>

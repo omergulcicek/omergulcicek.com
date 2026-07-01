@@ -2,13 +2,14 @@ import type { SVGProps } from "react"
 
 const ReactHookForm = (props: SVGProps<SVGSVGElement>) => (
 	<svg
-		{...props}
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 200 200"
 		fillRule="evenodd"
+		{...props}
 	>
 		<path
 			d="M157.995 8.5c10.08 0 19.206 4.087 25.812 10.692S194.5 34.924 194.5 45.003h0v111.994c0 10.08-4.086 19.206-10.692 25.812a36.39 36.39 0 0 1-25.813 10.691h0-112.99c-10.08 0-19.206-4.087-25.812-10.692S8.5 167.076 8.5 156.997h0V45.003c0-10.08 4.086-19.206 10.692-25.812A36.39 36.39 0 0 1 45.005 8.5h0z"
+			stroke="#fff"
 			fill="#ec5990"
 		/>
 		<path

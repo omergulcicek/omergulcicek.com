@@ -1,6 +1,15 @@
 import { Link } from "@tanstack/react-router"
 import type { ComponentPropsWithoutRef, ReactNode } from "react"
 
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger
+} from "@/components/ui/tooltip"
+import {
+	formatLinkTooltip,
+	shouldShowLinkTooltip
+} from "@/lib/format-link-tooltip"
 import { cn } from "@/lib/utils"
 
 const proseLinkBaseClass = "focus-link text-foreground underline"
@@ -21,13 +30,27 @@ function getExternalLinkAttrs(href?: string) {
 	}
 }
 
-function getProseLinkClassName(
-	variant: ProseLinkVariant,
-	className?: string
-) {
+function getProseLinkClassName(variant: ProseLinkVariant, className?: string) {
 	return cn(
 		variant === "muted" ? proseLinkMutedClass : proseLinkBaseClass,
 		className
+	)
+}
+
+function withLinkTooltip(
+	href: string | undefined,
+	label: ReactNode,
+	link: ReactNode
+) {
+	if (!href || !shouldShowLinkTooltip(href, label)) {
+		return link
+	}
+
+	return (
+		<Tooltip>
+			<TooltipTrigger asChild>{link}</TooltipTrigger>
+			<TooltipContent side="top">{formatLinkTooltip(href)}</TooltipContent>
+		</Tooltip>
 	)
 }
 
@@ -41,19 +64,24 @@ export function ProseLink({
 	href,
 	target,
 	rel,
+	children,
 	...props
 }: ProseLinkProps) {
 	const externalAttrs = getExternalLinkAttrs(href)
 
-	return (
+	const link = (
 		<a
 			href={href}
 			className={getProseLinkClassName(variant, className)}
 			target={target ?? externalAttrs.target}
 			rel={rel ?? externalAttrs.rel}
 			{...props}
-		/>
+		>
+			{children}
+		</a>
 	)
+
+	return withLinkTooltip(href, children, link)
 }
 
 type ProseIconLinkProps = ComponentPropsWithoutRef<"a"> & {
@@ -73,7 +101,7 @@ export function ProseIconLink({
 }: ProseIconLinkProps) {
 	const externalAttrs = getExternalLinkAttrs(href)
 
-	return (
+	const link = (
 		<a
 			href={href}
 			className={cn(
@@ -92,6 +120,8 @@ export function ProseIconLink({
 			</span>
 		</a>
 	)
+
+	return withLinkTooltip(href, children, link)
 }
 
 type ProseRouterLinkProps = ComponentPropsWithoutRef<typeof Link> & {

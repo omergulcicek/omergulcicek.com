@@ -2,7 +2,7 @@ import { RaindropIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseIconLink } from "@/components/shared/prose-link"
-import { pageShellClass, proseParagraphClass } from "@/components/shared/prose.styles"
+import { pageShellClass, proseParagraphClass, cardGridClass } from "@/components/shared/prose.styles"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { BookmarkCategoryCard } from "@/features/bookmarks/components/bookmark-category-card"
 import { BOOKMARK_CATEGORIES } from "@/features/bookmarks/constants/bookmarks.constants"
@@ -25,7 +25,7 @@ export function BookmarksPage() {
 				</p>
 			</PageHeader>
 
-			<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+			<div className={cardGridClass}>
 				{BOOKMARK_CATEGORIES.map((category) => (
 					<BookmarkCategoryCard key={category.id} category={category} />
 				))}

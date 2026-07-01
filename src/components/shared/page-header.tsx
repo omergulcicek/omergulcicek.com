@@ -18,7 +18,7 @@ export function PageHeader({
 	className
 }: PageHeaderProps) {
 	return (
-		<header className={cn("flex flex-col gap-4", className)}>
+		<header className={cn("flex flex-col gap-3 md:gap-4", className)}>
 			<div className="flex flex-wrap items-center gap-3">
 				<h1 className={pageTitleClass}>{title}</h1>
 				{showOpenToWork ? <OpenToWorkBadge /> : null}

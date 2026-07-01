@@ -1,15 +1,6 @@
-import {
-	Bookmark,
-	Component,
-	HatGlasses,
-	Milestone,
-	Quote,
-	Sparkles,
-	Wrench
-} from "lucide-react"
-
 import { FOOTER_NAV } from "@/constants/footer-nav.constants"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
+import { getNavPageIcon } from "@/constants/nav-icons.constants"
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 import { MOCK_BLOG_POSTS } from "@/features/blog/constants/mock-blog-posts.constants"
 import { getVisiblePosts, slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
@@ -31,29 +22,18 @@ export type SearchActionItem = {
 	external?: boolean
 }
 
-const PAGE_ICONS: Record<string, LucideIcon> = {
-	"/": Sparkles,
-	"/blog": Quote,
-	"/projects": Component,
-	"/about": HatGlasses,
-	"/experiences": Milestone,
-	"/services": Wrench,
-	"/bookmarks": Bookmark,
-	[EXTERNAL_LINKS.virastack]: Component
-}
-
 const HEADER_HREFS = new Set<string>(HEADER_NAV.map((item) => item.href))
 
 export const SEARCH_PAGES: SearchPageItem[] = [
 	...HEADER_NAV.map((item) => ({
 		label: item.label,
 		href: item.href,
-		icon: PAGE_ICONS[item.href] ?? Sparkles
+		icon: getNavPageIcon(item.href)
 	})),
 	...FOOTER_NAV.filter((item) => !HEADER_HREFS.has(item.href)).map((item) => ({
 		label: item.label,
 		href: item.href,
-		icon: PAGE_ICONS[item.href] ?? Sparkles,
+		icon: getNavPageIcon(item.href),
 		external: item.external
 	}))
 ]

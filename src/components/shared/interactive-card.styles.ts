@@ -3,18 +3,22 @@ import { cn } from "@/lib/utils"
 export const surfaceDoubleFrameClass =
 	"rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-[#fcfcfc] dark:ring-offset-[#0f0f0f]"
 
-export const surfaceCardClass = cn(
-	surfaceDoubleFrameClass,
-	"bg-[#fff] p-4 dark:bg-[#0b0b0b]"
-)
-
 export const interactiveCardBaseClass = cn(
-	"group flex flex-col gap-3 p-4 transition-[border-color,box-shadow] duration-150 ease-out",
+	"group flex flex-col gap-2 p-3 transition-[border-color,box-shadow] duration-150 ease-out md:gap-3 md:p-4",
 	surfaceDoubleFrameClass
 )
 
-export const interactiveCardLiveClass =
-	"bg-[#fff] hover:border-foreground/10 hover:ring-foreground/8 dark:bg-[#0b0b0b]"
+export const interactiveSurfaceBgClass = "bg-white dark:bg-[#0b0b0b]"
+
+export const interactiveSurfaceHoverBgClass =
+	"hover:bg-white dark:hover:bg-[#0b0b0b]"
+
+export const interactiveSurfaceHoverBorderClass = "hover:border-foreground/10"
+
+export const interactiveCardLiveClass = cn(
+	interactiveSurfaceBgClass,
+	"hover:border-foreground/10 hover:ring-foreground/8"
+)
 
 export const interactiveCardMutedClass =
 	"border-dashed border-border/70 bg-muted/20 ring-border/60 hover:border-border hover:bg-muted/30 hover:ring-border"
@@ -34,5 +38,10 @@ export function getInteractiveCardClassName(isMuted = false) {
 
 export const interactiveListRowClass = cn(
 	"group rounded-xl border border-transparent ring-1 ring-transparent ring-offset-4 ring-offset-[#fcfcfc] transition-[border-color,background-color] duration-150 ease-out dark:ring-offset-[#0f0f0f]",
-	"hover:border-foreground/10 hover:bg-[#fff] hover:ring-foreground/8 dark:hover:bg-[#0b0b0b]"
+	interactiveSurfaceHoverBorderClass,
+	interactiveSurfaceHoverBgClass,
+	"hover:ring-foreground/8"
 )
+
+export const interactiveListRowBleedClass =
+	"-mx-2.5 w-[calc(100%+1.25rem)] px-2.5 py-2.5 md:-mx-3 md:w-[calc(100%+1.5rem)] md:px-3 md:py-3"

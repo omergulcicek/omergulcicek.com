@@ -27,7 +27,7 @@ export function BookmarkCategoryCard({ category }: BookmarkCategoryCardProps) {
 			aria-label={`${category.title} — ${category.description} — ${SITE_CONTENT.bookmarksRaindropCta}`}
 			className={cn(
 				getInteractiveCardClassName(),
-				"flex-row items-stretch gap-3 sm:gap-4"
+				"flex-row items-stretch gap-2.5 md:gap-4"
 			)}
 		>
 			<div className={cn(surfaceCardIconFrameClass, "self-start")}>
@@ -39,7 +39,7 @@ export function BookmarkCategoryCard({ category }: BookmarkCategoryCardProps) {
 			</div>
 			<div className="flex min-w-0 flex-1 flex-col">
 				<div className="flex items-start justify-between gap-3">
-					<h2 className="text-base leading-relaxed font-medium">
+					<h2 className="text-sm leading-relaxed font-medium md:text-base">
 						{category.title}
 					</h2>
 					<ChevronRight
@@ -47,7 +47,7 @@ export function BookmarkCategoryCard({ category }: BookmarkCategoryCardProps) {
 						aria-hidden
 					/>
 				</div>
-				<p className="text-muted-foreground mt-0.5 text-pretty text-sm leading-relaxed">
+				<p className="text-muted-foreground mt-0.5 text-pretty text-xs leading-relaxed md:text-sm">
 					{category.description}
 				</p>
 			</div>

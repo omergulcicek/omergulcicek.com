@@ -1,12 +1,11 @@
-import { Globe } from "lucide-react"
-
 import { GitHubIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
-import { ProseIconLink, ProseLink } from "@/components/shared/prose-link"
-import { proseParagraphClass, pageSectionClass, pageShellClass } from "@/components/shared/prose.styles"
-import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import { ProseIconLink } from "@/components/shared/prose-link"
+import { VirastackLink } from "@/components/shared/virastack-link"
+import { proseParagraphClass, pageSectionClass, pageShellClass, cardGridClass } from "@/components/shared/prose.styles"
+import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { FeaturedProjectCard } from "@/features/projects/components/featured-project-card"
 import {
 	ArchiveProjectList,
@@ -24,7 +23,7 @@ export function ProjectsPage() {
 			<PageHeader title="Projeler">
 				<p className={proseParagraphClass}>
 					Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum{" "}
-					<ProseLink href={EXTERNAL_LINKS.virastack}>ViraStack</ProseLink>{" "}
+					<VirastackLink>ViraStack</VirastackLink>{" "}
 					ekosistemindeki araçlar.
 				</p>
 			</PageHeader>
@@ -33,7 +32,7 @@ export function ProjectsPage() {
 				<ProjectsSectionHeading>
 					{SITE_CONTENT.projectsSectionApps}
 				</ProjectsSectionHeading>
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+				<div className={cardGridClass}>
 					{personalProjects.map((project) => (
 						<FeaturedProjectCard key={project.id} project={project} />
 					))}
@@ -46,7 +45,7 @@ export function ProjectsPage() {
 				</ProjectsSectionHeading>
 				<div className="flex flex-col gap-4">
 					<p className={proseParagraphClass}>
-						<ProseLink href={EXTERNAL_LINKS.virastack}>ViraStack</ProseLink>, bir
+						Virastack, bir
 						frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya
 						getiren <em>açık kaynak bir ekosistem</em>:{" "}
 						<ProseEmphasis>Next.js ve TanStack başlangıç şablonları</ProseEmphasis>
@@ -56,12 +55,7 @@ export function ProjectsPage() {
 					</p>
 					<p className={proseParagraphClass}>
 						Ekosistemi{" "}
-						<ProseIconLink
-							href={EXTERNAL_LINKS.virastack}
-							icon={<Globe className="size-3.5 shrink-0" strokeWidth={2} />}
-						>
-							virastack.com
-						</ProseIconLink>{" "}
+						<VirastackLink>ViraStack</VirastackLink>{" "}
 						üzerinden keşfedebilir ya da{" "}
 						<ProseIconLink
 							href="https://github.com/virastack"
@@ -74,7 +68,7 @@ export function ProjectsPage() {
 						organizasyonundaki projelere göz atabilirsiniz.
 					</p>
 				</div>
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+				<div className={cardGridClass}>
 					{virastackProjects.map((project) => (
 						<FeaturedProjectCard key={project.id} project={project} />
 					))}

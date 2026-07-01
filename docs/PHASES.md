@@ -6,6 +6,8 @@
 
 **Lansman kuralı:** RSS, dinamik OG, llms.txt, GA ve WebVitals bitmeden production'a çıkılmaz. Fazlar organizasyon içindir; MVP tek seferde yayınlanır.
 
+**Eksik listesi (öncelik sırası):** [`SITE-GAPS.md`](./SITE-GAPS.md) — legacy vs yeni kıyası, kesinlikle yap / yap / yapsan da olur.
+
 ---
 
 ## Dokümantasyon Okuma Sırası

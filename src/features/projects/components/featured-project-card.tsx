@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils"
 
 import type { Project } from "@/features/projects/types/project.types"
 
-const projectIconClass = "size-10"
+const projectIconClass = "size-8 md:size-10"
 const projectIconStroke = 1.75
 
 type ProjectVisualConfig =
@@ -98,7 +98,7 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 
 function ComingSoonBadge() {
 	return (
-		<span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-amber-500/25 bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-400">
+		<span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-amber-500/25 bg-amber-500/10 px-1.5 py-0.5 text-xs font-medium text-amber-700 md:gap-1.5 md:px-2 dark:text-amber-400">
 			<span className="relative flex size-1.5" aria-hidden>
 				<span className="absolute inline-flex size-full animate-ping rounded-full bg-amber-400 opacity-75 motion-reduce:animate-none" />
 				<span className="relative inline-flex size-1.5 rounded-full bg-amber-500" />
@@ -169,14 +169,14 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 			aria-label={`${project.title} — ${project.description}${isComingSoon ? ` (${SITE_CONTENT.projectsBadgeComingSoon})` : ""}`}
 			className={getInteractiveCardClassName(isComingSoon)}
 		>
-			<div className="flex h-28 items-center justify-center">
+			<div className="flex h-20 items-center justify-center md:h-28">
 				<FeaturedProjectVisual project={project} isComingSoon={isComingSoon} />
 			</div>
-			<div className="flex flex-col gap-2">
-				<div className="flex items-start justify-between gap-3">
+			<div className="flex flex-col gap-1.5 md:gap-2">
+				<div className="flex items-start justify-between gap-2 md:gap-3">
 					<h3
 						className={cn(
-							"text-balance text-base font-medium",
+							"text-balance text-sm font-medium md:text-base",
 							isComingSoon && "text-muted-foreground"
 						)}
 					>
@@ -191,7 +191,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 						/>
 					)}
 				</div>
-				<p className="text-muted-foreground text-pretty text-sm leading-relaxed">
+				<p className="text-muted-foreground text-pretty text-xs leading-relaxed md:text-sm">
 					{project.description}
 				</p>
 			</div>

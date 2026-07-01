@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"
 
 import { ArrowLink } from "@/components/shared/ArrowLink"
-import { pageSectionClass } from "@/components/shared/prose.styles"
+import { cardGridClass, pageSectionClass } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { FeaturedProjectCard } from "@/features/projects/components/featured-project-card"
@@ -13,7 +13,7 @@ export function FeaturedProjects() {
 	return (
 		<section className={pageSectionClass}>
 			<SectionHeading>{SITE_CONTENT.homeSections.projects}</SectionHeading>
-			<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+			<div className={cardGridClass}>
 				{projects.map((project) => (
 					<FeaturedProjectCard key={project.id} project={project} />
 				))}

@@ -26,7 +26,7 @@ export const SITE_CONTENT = {
 	skipToContent: "Ana içeriğe geç",
 	projectsPageIntro:
 		"Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar.",
-	projectsSectionApps: "Uygulamalar",
+	projectsSectionApps: "Kişisel projeler",
 	projectsSectionVirastack: "ViraStack",
 	projectsSectionArchive: "Arşiv",
 	projectsBadgeComingSoon: "Yakında",
@@ -42,8 +42,10 @@ export const SITE_CONTENT = {
 	resumeDownload: "İndir",
 	resumeClose: "Kapat",
 	resumeLanguageGroup: "Özgeçmiş dili",
-	resumeLanguageTr: "TR",
-	resumeLanguageEn: "EN",
+	resumeLanguageTr: "Türkçe CV",
+	resumeLanguageEn: "English CV",
+	resumeLanguageTrShort: "TR",
+	resumeLanguageEnShort: "EN",
 	aboutLinks: {
 		experiences: "Deneyimlerim — kariyer geçmişi ve CV",
 		services: "Hizmetler — geliştirme, Danışmanlık ve frontend eğitimi"

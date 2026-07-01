@@ -12,6 +12,8 @@ export type Hobby = {
 	title: string
 	text: string
 	href?: string
+	linkIcon?: "instagram" | "chess"
+	linkLabel?: string
 }
 
 export const HOBBIES: Hobby[] = [
@@ -20,14 +22,18 @@ export const HOBBIES: Hobby[] = [
 		avatar: "/avatars/photographer.png",
 		title: "Fotoğraf",
 		text: "Gezdiğim yerleri paylaşmayı seviyorum.",
-		href: "https://instagram.com/omerilekesfet"
+		href: "https://instagram.com/omerilekesfet",
+		linkIcon: "instagram",
+		linkLabel: "Instagram"
 	},
 	{
 		id: "chess",
 		avatar: "/avatars/chess.png",
 		title: "Satranç",
 		text: "5+0 blitz oynuyorum.",
-		href: "https://chess.com/member/omergulcicek"
+		href: "https://chess.com/member/omergulcicek",
+		linkIcon: "chess",
+		linkLabel: "Chess.com"
 	},
 	{
 		id: "football",

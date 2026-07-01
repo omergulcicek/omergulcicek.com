@@ -4,9 +4,9 @@ import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import {
 	ProseIconLink,
-	ProseLink,
 	ProseRouterLink
 } from "@/components/shared/prose-link"
+import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	pageSectionClass,
 	pageShellClass,
@@ -37,7 +37,7 @@ export function AboutPage() {
 							Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; işimle
 							insanlara faydalı olmayı ve deneyimlerine değer katmayı seviyorum.
 							Şu aralar kişisel projelerimin yanı sıra{" "}
-							<ProseLink href={EXTERNAL_LINKS.virastack}>ViraStack</ProseLink>{" "}
+							<VirastackLink>ViraStack</VirastackLink>{" "}
 							ekosistemine odaklanıyorum.
 						</p>
 						<p className={proseParagraphClass}>

@@ -261,9 +261,10 @@ Slug rota: `/blog/react-ai-stack-2026` (URL'de baştaki `/` route param'da strip
 
 ## Agent Notları
 
-1. DB tablo/sütun/enum İngilizce; görünen etiketler Türkçe.
-2. `published` dışında otomatik yayın filtresi kullanma.
-3. Development'ta taslakları göster; production'da gizle.
-4. Legacy `FilterSort` dropdown kullanılmaz — chip modeli.
-5. Thumbnail liste satırına eklenmez.
-6. Görsel URL'leri için yalnızca `getMediaUrl` kullan; MDX'e tam Supabase URL yazma.
+1. Yazı tonu ve stil: `docs/blog-voice.md` (SSOT).
+2. DB tablo/sütun/enum İngilizce; görünen etiketler Türkçe.
+3. `published` dışında otomatik yayın filtresi kullanma.
+4. Development'ta taslakları göster; production'da gizle.
+5. Legacy `FilterSort` dropdown kullanılmaz — chip modeli.
+6. Thumbnail liste satırına eklenmez.
+7. Görsel URL'leri için yalnızca `getMediaUrl` kullan; MDX'e tam Supabase URL yazma.

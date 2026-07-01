@@ -13,9 +13,9 @@ import { cn } from "@/lib/utils"
 
 export function Footer() {
 	return (
-		<footer className="mt-20 border-t">
-			<Container className="py-12 md:py-16">
-				<div className="grid grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-8">
+		<footer className="mt-12 border-t md:mt-20">
+			<Container className="py-8 md:py-16">
+				<div className="grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-8 md:gap-4">
 					<div className="order-1 flex h-5 items-center sm:col-start-1 sm:row-start-1">
 						<BrandMark />
 					</div>
@@ -24,7 +24,7 @@ export function Footer() {
 							{SITE_CONTENT.footerNavTitle}
 						</p>
 					</div>
-					<div className="text-muted-foreground order-2 flex flex-col gap-2 text-sm sm:order-none sm:col-start-1 sm:row-start-2">
+					<div className="text-muted-foreground order-2 flex flex-col gap-2 text-xs sm:order-none sm:col-start-1 sm:row-start-2 md:text-sm">
 						<p>
 							<ProseLink href={EXTERNAL_LINKS.virastack}>ViraStack</ProseLink>
 							,{" "}
@@ -47,7 +47,7 @@ export function Footer() {
 						<p>{getFooterCopyright()}</p>
 					</div>
 					<nav
-						className="text-muted-foreground order-4 flex flex-col gap-2 text-sm sm:order-none sm:col-start-2 sm:row-start-2"
+						className="text-muted-foreground order-4 flex flex-col gap-2 text-xs sm:order-none sm:col-start-2 sm:row-start-2 md:text-sm"
 						aria-label={SITE_CONTENT.footerNavTitle}
 					>
 						{FOOTER_NAV.map((item) => (

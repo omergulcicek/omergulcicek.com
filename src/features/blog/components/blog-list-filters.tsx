@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
+import { Separator } from "@/components/ui/separator"
 import { BlogCategoryPills } from "@/features/blog/components/blog-category-pills"
 import { BlogSortControl } from "@/features/blog/components/blog-sort-control"
 import { BlogTagChips } from "@/features/blog/components/blog-tag-chips"
@@ -65,15 +66,19 @@ export function BlogListFilters({
 	return (
 		<section
 			className={cn(
-				"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col rounded-xl border border-border/60 bg-background/95 p-4 shadow-sm supports-backdrop-filter:bg-background/60 backdrop-blur",
-				hasTags ? "gap-3" : "gap-0",
+				"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col rounded-xl border border-border/60 bg-background/95 p-3 shadow-sm supports-backdrop-filter:bg-background/60 backdrop-blur md:p-4",
+				hasTags ? "gap-2 md:gap-3" : "gap-0",
 				className
 			)}
 			aria-label={BLOG_UI.filtersAriaLabel}
 		>
-			<div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-				<div className="flex flex-wrap items-center gap-2">
-					<BlogCategoryPills value={category} onChange={onCategoryChange} />
+			<div className="flex min-h-8 flex-nowrap items-center justify-between md:min-h-0 md:gap-2">
+				<div className="flex flex-wrap items-center gap-1.5 md:gap-2">
+					<BlogCategoryPills
+						className="gap-1.5 md:gap-2"
+						value={category}
+						onChange={onCategoryChange}
+					/>
 					{showClearFilters ? (
 						<button
 							type="button"
@@ -84,7 +89,15 @@ export function BlogListFilters({
 						</button>
 					) : null}
 				</div>
-				<BlogSortControl value={sort} onChange={onSortChange} />
+				<Separator
+					orientation="vertical"
+					className="mx-0.5 h-5 shrink-0 self-center md:hidden data-[orientation=vertical]:h-5"
+				/>
+				<BlogSortControl
+					className="gap-1.5 md:gap-2"
+					value={sort}
+					onChange={onSortChange}
+				/>
 			</div>
 			{hasTags ? (
 				<div className="flex flex-col gap-2">

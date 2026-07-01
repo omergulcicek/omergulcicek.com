@@ -4,7 +4,7 @@ publishedAt: "2026-06-30"
 published: true
 slug: "/virastack-ai"
 title: "ViraStack AI: Yapay Zekâya Mimari Disiplin"
-description: "ViraStack AI, React projelerinde yapay zekânın ürettiği kodu mimari kurallarla disipline eden .mdc bağlam dosyaları ve üretim protokolleri sunar."
+description: "Yapay zekâyla kod yazarken her seferinde aynı kuralları baştan anlatmak zorunda kalmayın. ViraStack AI, tutarlı kod üretimi için açık kaynak bir kural seti."
 category: "technical"
 tags: ["ViraStack", "Yapay Zekâ"]
 series: "virastack"
@@ -15,46 +15,30 @@ canonicalUrl: "https://omergulcicek.com/blog/virastack-ai"
 contentHash: "8c360b8c9705f79a"
 ---
 
-Yapay zekâ ile kod yazmak hızlı; fakat kuralsız çalıştığında çıktı çoğu zaman **çalışır görünür, üretime hazır değildir**. `useEffect` içinde doğrudan `fetch`, tip güvenliği olmayan API yanıtları, skeleton ve hata sınırı olmayan bileşenler — bunların hepsi tanıdık senaryolar. Sorun modelin yetersizliği değil; modele **hangi standartlarda kod yazacağının** her seferinde yeniden anlatılmaması.
+Yapay zekâ ile kod yazmak hızlı; fakat kuralsız çalıştığında çıktı çoğu zaman **çalışır görünür, üretime hazır değildir**. Tip güvenliği zayıf bileşenler, düşünülmemiş yükleme durumları, unutulmuş hata senaryoları — hepsi tanıdık senaryolar. Sorun modelin yetersizliği değil; modele **hangi standartlarda kod yazacağının** her seferinde yeniden anlatılmaması.
 
-**ViraStack AI**, modern React projeleri için bu boşluğu dolduran bir kural setidir. Cursor ve benzeri yapay zekâ destekli editörlerde, projenize `.cursor/rules` altında bağlam dosyaları (`.mdc`) ve `AGENTS.md` persona tanımı ekleyerek modeli belirli bir mühendislik disiplinine bağlar.
+**ViraStack AI**, modern React projeleri için bu boşluğu dolduran açık kaynak bir kural setidir. Cursor gibi yapay zekâ destekli editörlere entegre olur ve asistanı projenizin mühendislik disiplinine bağlar.
 
 ![ViraStack AI](/blog/2026/04-05/virastack.jpeg)
 
-## Mimari Kurallar
+## Ne Yapıyor?
 
-[ViraStack](https://virastack.com), frontend geliştiriciler için açık kaynak araçlar üreten bir ekosistem. Bu ekosistemin yapay zekâ odaklı katmanı olan **ViraStack AI** ise projenizdeki kod mimarisini ve best-practice'leri önceden tanımlanmış `.mdc` dosyalarıyla modele öğretiyor.
+[ViraStack](https://virastack.com), frontend geliştiriciler için açık kaynak araçlar üreten bir ekosistem. **ViraStack AI** ise bu ekosistemin yapay zekâ katmanı: klasör yapısından veri çekme pratiklerine, form ve arayüz standartlarından framework kurallarına kadar projede nasıl kod yazılacağını önceden tanımlar.
 
-Bu kurallar sadece "tavsiye" niteliğinde değil. İçerdiği kısıtlama ve yasaklarla yapay zekânın sınırlarını net olarak çiziyor. Örneğin; sessiz `catch` blokları bırakması, iş mantığını `TODO` ile geçiştirmesi veya parent-relative import (`../../`) kullanması kesin olarak yasaklanıyor.
-
-## Neleri Standartlaştırıyor?
-
-ViraStack AI, yapay zekânın kod üretimini şu alanlarda düzene sokuyor:
-
-- **Klasör Yapısı:** Özellik odaklı (`src/features/[feature]/`) organizasyon ve dosya isimlendirme standartları.
-- **Sunucu Durumu (Server State):** TanStack Query kullanımı, query key factory ve `AbortSignal` entegrasyonu.
-- **Tip Güvenliği:** Zod şemalarından türetilen tiplerle güçlü doğrulama.
-- **UI/UX Standartları:** Yükleme durumları (skeleton), hata senaryoları ve erişilebilirlik kuralları.
-- **Framework Bağlamı:** Next.js veya TanStack Start gibi framework'lere özel kuralların sadece ilgili dizinlerde devreye girmesi.
-
-Üstelik bu yapı bağlama duyarlı çalışıyor. Yapay zekâ, sadece API katmanında çalışırken veri çekme kurallarını okuyor, form geliştirirken form standartlarını devreye sokuyor. Böylece modeli gereksiz kurallarla yormamış oluyorsunuz.
+Kurallar tavsiye niteliğinde değil; asistanın sınırlarını net çizer. Hangi dosyada çalışıyorsanız yalnızca ilgili kurallar devreye girer — modeli gereksiz detaylarla yormazsınız.
 
 ## Kurulum
 
-Kurulum tek bir komutla yapılıyor:
+Tek komut yeterli:
 
 ```bash
 npx @virastack/ai-rules init
 ```
 
-Bu komut, `.cursor/rules` klasörünüze gerekli kuralları, `AGENTS.md` dosyasını ve mimari referans belgelerini ekliyor. Kurulumdan sonra, yapay zekâya görev verirken mimari detayları sürekli prompt olarak yazmanıza gerek kalmıyor; kurallar editöre doğrudan entegre oluyor.
-
-Artık tek yapmanız gereken **ne yapılacağına** odaklanmak. *"Kullanıcı listesini tabloda göster, veriyi `/api/users` endpoint'inden çek"* dediğinizde; klasör yapısı, cache stratejisi ve hata yönetimi ViraStack AI kuralları sayesinde otomatik uygulanıyor.
+Kurulumdan sonra mimari detayları her seferinde prompt olarak yazmanıza gerek kalmaz. *"Kullanıcı listesini tabloda göster, veriyi `/api/users` endpoint'inden çek"* demeniz yeterli; klasör yapısı, cache stratejisi ve hata yönetimi kurallar sayesinde otomatik uygulanır.
 
 ## Üretime Hazır Çıktı
 
-Kuralsız çalışan bir yapay zekâ genellikle işlevsel ama "gevşek" kod üretir: Tip tanımları zayıftır, cache düşünülmez veya hata sınırları unutulur.
-
-ViraStack AI ile ise aynı prompt bambaşka bir sonuca dönüşür. Üretilen kod; mimariye uygun, şema doğrulaması yapılmış, yükleme durumu (skeleton) düşünülmüş ve **doğrudan üretime hazır** bir bileşen olarak gelir. Asıl kazanım sadece prompt yazma süresini kısaltmak değil, ekibin yapay zekâ ile hep aynı kalitede ve standartta kod üretmesini sağlamaktır.
+Kuralsız bir asistan işlevsel ama standartsız kod üretir. ViraStack AI ile aynı prompt bambaşka bir sonuca dönüşür: mimariye uygun, doğrulanmış, yükleme durumu düşünülmüş ve **doğrudan üretime hazır** bileşenler. Kazanım yalnızca hız değil; ekibin yapay zekâ ile hep aynı kalitede kod üretmesidir.
 
 Detaylı karşılaştırma tablolarını [virastack.com/tr/ai-rules](https://www.virastack.com/tr/ai-rules) adresinden inceleyebilir, açık kaynak projenin gelişimine [github.com/virastack/ai-rules](https://github.com/virastack/ai-rules) üzerinden katkıda bulunabilirsiniz.

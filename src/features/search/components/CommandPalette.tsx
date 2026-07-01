@@ -29,11 +29,11 @@ export function CommandPaletteTrigger() {
 			variant="outline"
 			size="sm"
 			onClick={() => setOpen(true)}
-			className="h-8 gap-2 rounded-full pr-2 pl-2.5 font-medium shadow-sm"
+			className="h-8 gap-2 rounded-full pr-2 pl-2.5 font-medium shadow-sm mr-2"
 			aria-label="Arama paletini aç"
 		>
 			<Search className="text-muted-foreground size-4" />
-			<kbd className="bg-background text-muted-foreground pointer-events-none hidden h-5 items-center gap-0.5 rounded border px-1.5 font-mono text-xs font-medium sm:inline-flex">
+			<kbd className="bg-background text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-0.5 rounded border px-1.5 font-mono text-xs font-medium">
 				<span>⌘</span>
 				<span>K</span>
 			</kbd>

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Medium } from "@/components/ui/svgs/medium"
 import {
 	interactiveCardChevronClass,
+	interactiveListRowBleedClass,
 	interactiveListRowClass
 } from "@/components/shared/interactive-card.styles"
 import { BlogTagBadge } from "@/features/blog/components/blog-tag-badge"
@@ -35,7 +36,8 @@ export function BlogListPostRow({
 		<article
 			className={cn(
 				interactiveListRowClass,
-				"relative grid grid-cols-[auto_1fr] items-start gap-x-4 gap-y-1 px-3 py-3 md:grid-cols-[6rem_1fr]",
+				"relative flex flex-col gap-1 md:gap-1.5",
+				interactiveListRowBleedClass,
 				className
 			)}
 		>
@@ -45,9 +47,9 @@ export function BlogListPostRow({
 				className="absolute inset-0 z-0 rounded-xl"
 				aria-label={post.title}
 			/>
-			<div className="pointer-events-none relative z-10 flex w-full shrink-0 flex-col gap-1 md:w-24">
+			<div className="pointer-events-none relative z-10 flex w-full shrink-0 flex-col gap-1">
 				<time
-					className="text-muted-foreground pt-0.5 text-sm"
+					className="text-muted-foreground text-xs md:text-sm"
 					dateTime={post.publishedAt}
 				>
 					{formatBlogDate(post.publishedAt)}
@@ -76,9 +78,9 @@ export function BlogListPostRow({
 					<Badge variant="secondary">{BLOG_UI.draftBadge}</Badge>
 				) : null}
 			</div>
-			<div className="pointer-events-none relative z-10 min-w-0">
+			<div className="pointer-events-none relative z-10 min-w-0 w-full">
 				<div className="flex items-start gap-2">
-					<h2 className="min-w-0 flex-1 text-base leading-7 font-normal">
+					<h2 className="min-w-0 flex-1 text-sm leading-6 font-normal md:text-base md:leading-7">
 						{post.title}
 					</h2>
 					<ChevronRight
@@ -86,7 +88,7 @@ export function BlogListPostRow({
 						aria-hidden
 					/>
 				</div>
-				<p className="text-muted-foreground mt-1 text-pretty text-sm leading-6">
+				<p className="text-muted-foreground mt-1 text-pretty text-xs leading-5 md:text-sm md:leading-6">
 					{post.description}
 				</p>
 				{visibleTags.length > 0 || post.mediumUrl ? (
