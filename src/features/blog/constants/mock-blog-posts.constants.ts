@@ -2,9 +2,36 @@ import type { BlogPost } from "@/features/blog/types/blog.types"
 
 export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
+		slug: "/apex",
+		title: "Apex",
+		description: "Tek başına yola çıkan bir dağcının keşif yolculuğu, kısa sürede ölümcül bir kovalamacaya dönüşüyor.",
+		category: "personal",
+		tags: ["Film"],
+		locale: "tr",
+		published: true,
+		publishedAt: "2026-07-01",
+		coverImage: "/blog/2026/07-01/apex.jpg",
+		readingTimeMinutes: 2,
+		canonicalUrl: "https://omergulcicek.com/blog/apex"
+	},
+	{
+		slug: "/nextjsten-tanstack-ve-supabasee-gecis",
+		title: "Next.js'ten TanStack ve Supabase'e Geçiş",
+		description: "Kişisel sitemi güncel teknolojilere taşıdım; Next.js ve MDX yapısını TanStack ve Supabase ile yeniden kurguladım.",
+		category: "technical",
+		tags: ["Site Yenileme", "TanStack", "Supabase"],
+		locale: "tr",
+		published: true,
+		publishedAt: "2026-07-01",
+		readingTimeMinutes: 1,
+		canonicalUrl: "https://omergulcicek.com/blog/nextjsten-tanstack-ve-supabasee-gecis",
+		series: "site-yenileme",
+		seriesOrder: 4
+	},
+	{
 		slug: "/virastack-ai",
 		title: "ViraStack AI: Yapay Zekâya Mimari Disiplin",
-		description: "ViraStack AI, React projelerinde yapay zekânın ürettiği kodu mimari kurallarla disipline eden .mdc bağlam dosyaları ve üretim protokolleri sunar.",
+		description: "Yapay zekâyla kod yazarken her seferinde aynı kuralları baştan anlatmak zorunda kalmayın. ViraStack AI, tutarlı kod üretimi için açık kaynak bir kural seti.",
 		category: "technical",
 		tags: ["ViraStack", "Yapay Zekâ"],
 		locale: "tr",
@@ -17,8 +44,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		seriesOrder: 2
 	},
 	{
-		slug: "/footy-ile-rekabete-hazir-misin",
-		title: "Futbol Bilgini Sahaya Yansıt: Footy ile Rekabete Hazır Mısın?",
+		slug: "/footy-futbol-bilgini-sahaya-yansit",
+		title: "Footy: Futbol Bilgini Sahaya Yansıt",
 		description: "Gerçek futbol tutkunlarını tek bir çatı altında toplayan, futbol bilgisini eğlenceye ve kıyasıya bir rekabete dönüştüren Footy platformu yayında!",
 		category: "personal",
 		tags: ["Proje"],
@@ -27,13 +54,13 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		publishedAt: "2026-06-28",
 		coverImage: "/blog/2026/06-28/futbol-manyagi.png",
 		readingTimeMinutes: 2,
-		canonicalUrl: "https://omergulcicek.com/blog/footy-ile-rekabete-hazir-misin",
+		canonicalUrl: "https://omergulcicek.com/blog/footy-futbol-bilgini-sahaya-yansit",
 		mediumUrl: "https://omergulcicek.medium.com/futbol-bilgini-sahaya-yans%C4%B1t-footy-ile-rekabete-haz%C4%B1r-m%C4%B1s%C4%B1n-6877cba0208e"
 	},
 	{
 		slug: "/ilgi-alanlarinizi-tek-tikla-takviminize-ekleyin",
 		title: "İlgi Alanlarınızı Tek Tıkla Takviminize Ekleyin",
-		description: "Daha önce Takvim Abonelikleriyle Zamanı Zenginleştirin yazımda duyurduğum tematik takvim abonelikleri projesini baştan aşağı yeniledim. İçerik...",
+		description: "Tematik takvim abonelikleri projesinin güncellenmesiyle ilgili alanlarına tek tıkla takviminize nasıl ekleyeceğiniz.",
 		category: "personal",
 		tags: ["Proje"],
 		locale: "tr",
@@ -47,7 +74,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/medya-kusatmasi-ve-ruhsuz-egitim-manevi-bosluktaki-zombi-nesil",
 		title: "Medya Kuşatması ve Ruhsuz Eğitim: Manevi Boşluktaki Zombi Nesil",
-		description: "Okullardaki şiddetin temelindeki manevi boşluğu, ruhsuz eğitim sistemini ve medya kuşatmasıyla zombileşen gençliği irdeleyen bir zihniyet analizi.",
+		description: "Toplumun manevi köklerini yitirdiği bir dönemde medya, eğitim ve gençlik üzerine kaleme aldığım sert bir bakış.",
 		category: "personal",
 		tags: ["Düşünce"],
 		locale: "tr",
@@ -60,7 +87,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/dijital-bir-hayalet-gunlugu",
 		title: "Dijital Bir Hayalet Günlüğü",
-		description: "Algoritmalar, derin içerik ve görünürlük: Barış Manço örneğinden bugünün dijital varlık mücadelesine.",
+		description: "Algoritmaların popülizm iştahı ile derin içerik arasında sıkışan dijital üreticiliğe dair samimi bir bakış.",
 		category: "personal",
 		tags: ["Düşünce"],
 		locale: "tr",
@@ -90,7 +117,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/gelenekten-gelecege-ramazan-adabi-ve-teknik-hedefler",
 		title: "Gelenekten Geleceğe: Ramazan Adabı",
-		description: "Bu sene Ramazan'ı her anlamda hakkını vererek yaşamak, kendime hem ruhsal hem kültürel anlamda bir şeyler katmak niyetindeyim. Eski Ramazan kültürünü bugüne...",
+		description: "Unutulmaya yüz tutmuş gelenekleri modern hayata taşıma niyetiyle hazırladığım kültürel Ramazan notları.",
 		category: "personal",
 		tags: ["Düşünce"],
 		locale: "tr",
@@ -148,7 +175,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/makineler-icin-dokumantasyon-llms-txt",
 		title: "Makineler İçin Dokümantasyon: llms.txt",
-		description: "Web dünyasında artık yapay zeka ajanları da hedef kitlemiz. llms.txt formatı ile LLM'ler için projelerimizi nasıl daha okunabilir hale getireceğimizi...",
+		description: "LLM'ler ve yapay zekâ ajanları için llms.txt formatının ne olduğunu ve projelere nasıl entegre edilebileceğini anlatan rehber.",
 		category: "technical",
 		tags: ["Yapay Zekâ"],
 		locale: "tr",
@@ -162,7 +189,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/tanstack-start-injected-head-scripts-hatasi-cozumu",
 		title: "TanStack Start: tanstack-start-injected-head-scripts Hatası ve Çözümü",
-		description: "TanStack Start projelerinde karşılaşılan 'Injected head scripts' hidrasyon hatasının nedenleri ve Supabase gibi script enjekte eden eklentilerle çözüm...",
+		description: "TanStack Start projelerinde karşılaşılan injected head scripts hidrasyon hatasının kök nedeni ve uygulanan çözüm.",
 		category: "technical",
 		tags: ["TanStack", "Supabase", "Vite"],
 		locale: "tr",
@@ -192,7 +219,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/see",
 		title: "See",
-		description: "Apple TV+ yapımı olan See, uzak bir gelecekte insanlığın görme yetisini kaybettiği ve 'görmenin' bir efsane, hatta tehlikeli bir günah sayıldığı bir...",
+		description: "Görmenin günah sayıldığı distopik bir dünyada geçen Apple TV+ dizisi See hakkında spoiler içermeyen kısa değerlendirme.",
 		category: "personal",
 		tags: ["Dizi"],
 		locale: "tr",
@@ -205,7 +232,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/react-state-yonetim-mimarisi",
 		title: "React State Yönetim Mimarisi",
-		description: "State yönetimi tartışmaları genellikle 'Hangi kütüphaneyi kullanmalıyım?' sorusuyla başlar. Oysa asıl soru şudur: Yönettiğim state'in doğası ne? Bu...",
+		description: "Hangi kütüphane sorusundan önce state'in doğasını tanımlamayı merkeze alan üst düzey React state mimarisi yaklaşımı.",
 		category: "technical",
 		tags: ["React", "TanStack"],
 		locale: "tr",
@@ -217,9 +244,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		mediumUrl: "https://medium.com/@omergulcicek/react-state-y%C3%B6netim-mimarisi-cec5ad6043fb"
 	},
 	{
-		slug: "/react-ai-stack-2026",
-		title: "2026 için React ve AI Stack'i",
-		description: "Yapay zekanın kod yazma süreçlerimizi nasıl değiştirdiğini ve 2026'ya girerken neden React + AI araçlarının endüstri standardı haline geldiğini inceleyen...",
+		slug: "/2026-icin-react-ve-yapay-zeka-stacki",
+		title: "2026 için React ve Yapay Zekâ Stack'i",
+		description: "2026'da React ve yapay zekâ araçlarını birlikte konumlandırmaya dair Builder.io makalesinin deneyimle zenginleştirilmiş çevirisi.",
 		category: "technical",
 		tags: ["Frontend", "Yapay Zekâ"],
 		locale: "tr",
@@ -227,14 +254,13 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		publishedAt: "2026-01-28",
 		coverImage: "/blog/2026/01-28/react-stack.png",
 		readingTimeMinutes: 6,
-		canonicalUrl: "https://omergulcicek.com/blog/react-ai-stack-2026",
-		featured: true,
-		mediumUrl: "https://medium.com/@omergulcicek/2026-i%C3%A7in-react-ve-ai-stacki-f3f9cc815674"
+		canonicalUrl: "https://omergulcicek.com/blog/2026-icin-react-ve-yapay-zeka-stacki",
+		featured: true
 	},
 	{
 		slug: "/2025ten-2026ya-degerlendirme-ve-hedefler",
 		title: "2025'ten 2026'ya: Değerlendirme ve Hedefler",
-		description: "2025, hayatımın hem kişisel hem profesyonel tarafında keskin dönüşümlerin yaşandığı, zorlayıcı ama öğretici bir yıl oldu. Yerleşik düzenimin...",
+		description: "Yerleşik düzenin değiştiği, üretkenliğin ve önceliklerin yeniden tanımlandığı bir dönemin ardından önümüze baktığım kapsamlı yazı.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -249,7 +275,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2026da-hayatimiza-girecek-yeni-css-ozellikleri",
 		title: "2026'da Hayatımıza Girecek Yeni CSS Özellikleri",
-		description: "2026 yılı, CSS dünyası için birçok heyecan verici yenilik getiriyor. Bu yazıda, web geliştiricilerin mutlaka bilmesi gereken yeni CSS özelliklerini...",
+		description: "Tarayıcı desteği ve pratik kullanım açısından yakın dönemde hayatımıza girebilecek CSS yeniliklerine dair teknik bir derleme.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -262,9 +288,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		mediumUrl: "https://omergulcicek.medium.com/2026da-hayat%C4%B1m%C4%B1za-girecek-yeni-css-%C3%B6zellikleri-f48158357b77"
 	},
 	{
-		slug: "/ai-caginda-frontend-bitti-mi",
-		title: "AI Çağında Frontend Bitti mi?",
-		description: "Herkes 'frontend bitti, öldü' diyor. Pandemi dönemindeki agresif işe alımların ardından şişen ekipler, ekonomik daralmayla birlikte küçülmeye ve ardı...",
+		slug: "/yapay-zeka-caginda-frontend-bitti-mi",
+		title: "Yapay Zekâ Çağında Frontend Bitti mi?",
+		description: "'Frontend bitti' söyleminin ötesinde, sektör daralması mı dönüşüm mü olduğunu sorgulayan güncel bir mesleki değerlendirme.",
 		category: "technical",
 		tags: ["Frontend", "Yapay Zekâ"],
 		locale: "tr",
@@ -272,13 +298,12 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		publishedAt: "2025-12-01",
 		coverImage: "/blog/2025/12-01/frontend.png",
 		readingTimeMinutes: 4,
-		canonicalUrl: "https://omergulcicek.com/blog/ai-caginda-frontend-bitti-mi",
-		mediumUrl: "https://omergulcicek.medium.com/ai-%C3%A7a%C4%9F%C4%B1nda-frontend-bitti-mi-17fedba66f96?postPublishedType=initial"
+		canonicalUrl: "https://omergulcicek.com/blog/yapay-zeka-caginda-frontend-bitti-mi"
 	},
 	{
 		slug: "/yan-yana",
-		title: "Soyut Dışavurumcu Bir Dostluğun Anatomisi Veyahut Yan Yana",
-		description: "2011 yapımı Can Dostum'un uyarlaması olan Yan Yana, Haluk Bilginer ve Feyyaz Yiğit'in buluşmasıyla daha ilk anlarda güçlü bir dikkat uyandırıyor....",
+		title: "Yan Yana",
+		description: "Can Dostum'dan uyarlanan Yan Yana filminde Haluk Bilginer ve Feyyaz Yiğit'in performansına dair spoiler'sız kısa bir bakış.",
 		category: "personal",
 		tags: ["Film"],
 		locale: "tr",
@@ -291,7 +316,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/yapay-zekanin-sorunlari",
 		title: "Yapay Zekânın Sorunları",
-		description: "Bu yazı, Google'da baş mühendis olarak çalışan Addy Osmani'nin Zed blogunda yayımlanan 'AI's 70% Problem' başlıklı makalesinin özetlenmiş Türkçe...",
+		description: "Addy Osmani'nin AI's 70% Problem yazısından süzülen özet ve yapay zekâ destekli geliştirmede yaşadığım somut deneyimler.",
 		category: "technical",
 		tags: ["Yapay Zekâ"],
 		locale: "tr",
@@ -304,7 +329,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	},
 	{
 		slug: "/nizam-nextjs-16-boilerplate",
-		title: "Nizam - Next.js 16 Boilerplate",
+		title: "Nizam: Next.js 16 Boilerplate",
 		description: "Modern web uygulamalarını hızlı, güvenli ve ölçeklenebilir bir şekilde inşa etmek için hazırladığım Next.js 16 boilerplate projesi: Nizam.",
 		category: "technical",
 		tags: ["Next.js", "TanStack"],
@@ -319,7 +344,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	},
 	{
 		slug: "/nizam-nextjs-16-boilerplate-en",
-		title: "Nizam - Next.js 16 Boilerplate (EN)",
+		title: "Nizam: Next.js 16 Boilerplate",
 		description: "Introducing Nizam: A Next.js 16 boilerplate designed to build modern web applications quickly, securely, and enjoyably.",
 		category: "technical",
 		tags: ["Next.js", "TanStack"],
@@ -335,7 +360,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/nextjs-16-turbopack-cache-components-ve-yeni-mimari-donemi",
 		title: "Next.js 16: Turbopack, Cache Components ve Yeni Mimari Dönemi",
-		description: "Next.js 16, 21 Ekim 2025’te, Next.js Conf 2025 öncesinde yayınlandı. Bu sürüm, framework’ün performans, önbellekleme ve geliştirici deneyimi...",
+		description: "Next.js 16 sürümünde Turbopack, Cache Components ve App Router tarafındaki mimari yeniliklere dair teknik bir bakış.",
 		category: "technical",
 		tags: ["Next.js"],
 		locale: "tr",
@@ -348,23 +373,23 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		mediumUrl: "https://omergulcicek.medium.com/next-js-16-turbopack-cache-components-ve-yeni-mimari-d%C3%B6nemi-5ed8018ccde1"
 	},
 	{
-		slug: "/google-harita-listelerim",
-		title: "Google Maps Listelerim",
-		description: "Bir şehirde dolaşırken bazen rastgele bir sokağın köşesinde gizli bir kafe, eski bir türbe ya da unutulmuş bir müze çıkıverir karşınıza - özellikle...",
+		slug: "/google-maps-kisisel-listelerim",
+		title: "Google Maps: Kişisel Listelerim",
+		description: "Gezdiğim yerleri Google Maps kişisel listeleriyle nasıl kaydettiğimi ve bu alışkanlığın seyahat ritmine etkisini anlatan notlar.",
 		category: "personal",
-		tags: ["Proje"],
+		tags: ["Deneyim"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-10-20",
 		coverImage: "/blog/2025/10-20/google-maps.png",
 		readingTimeMinutes: 1,
-		canonicalUrl: "https://omergulcicek.com/blog/google-harita-listelerim",
+		canonicalUrl: "https://omergulcicek.com/blog/google-maps-kisisel-listelerim",
 		mediumUrl: "https://omergulcicek.medium.com/google-maps-listelerim-83291fedbc9d"
 	},
 	{
 		slug: "/kaliteli-yazilimci-nasil-olunur",
 		title: "Kaliteli Yazılımcı Nasıl Olunur?",
-		description: "10 yılı aşkın süredir yazılım sektöründeyim. Bu süreçte farklı ölçeklerde birçok şirkette çalıştım; kimi zaman harika ekiplerle verimli işler...",
+		description: "On yılı aşkın sektör deneyiminden süzülen; teknik beceri, üretkenlik ve iletişim ekseninde kaliteli yazılımcılık üzerine düşünceler.",
 		category: "technical",
 		tags: ["Frontend"],
 		locale: "tr",
@@ -378,7 +403,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/fatih-sultan-mehmed-dogunun-ve-batinin-efendisi",
 		title: "Fâtih Sultan Mehmed - Doğu’nun ve Batı’nın Efendisi",
-		description: "İlber Ortaylı, Türkiye’nin büyük tarihçi yazarlarından ve yorumcularından biri olarak, tarihimizin en önemli hükümdarı Fatih Sultan Mehmed’i kaleme...",
+		description: "İlber Ortaylı'nın kaleminden Fatih Sultan Mehmed'i fetihlerinin ötesinde bir lider ve düşünce insanı olarak okumak.",
 		category: "personal",
 		tags: ["Kitap"],
 		locale: "tr",
@@ -389,23 +414,22 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		canonicalUrl: "https://omergulcicek.com/blog/fatih-sultan-mehmed-dogunun-ve-batinin-efendisi"
 	},
 	{
-		slug: "/takvim-abonelikleriyle-zamani-zenginlestirin",
-		title: "Takvim Abonelikleriyle Zamanı Zenginleştirin",
-		description: "Apple Takvim'e tek tıkla abone olabileceğiniz, özenle derlenmiş tematik takvimler hazırladım. Her bir etkinlikte kısa açıklamalar, gerekiyorsa kaynak...",
+		slug: "/takvim-abonelikleri-zamani-zenginlestirin",
+		title: "Takvim Abonelikleri: Zamanı Zenginleştirin",
+		description: "Apple Takvim'e tek tıkla abone olunabilen tematik etkinlik takvimleri projesi; ilgi alanlarınızı rutininize taşıma fikri.",
 		category: "personal",
-		tags: ["Proje"],
+		tags: ["Deneyim"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2025-09-19",
 		coverImage: "/blog/2025/09-19/takvim-ornek.png",
 		readingTimeMinutes: 2,
-		canonicalUrl: "https://omergulcicek.com/blog/takvim-abonelikleriyle-zamani-zenginlestirin",
-		mediumUrl: "https://omergulcicek.medium.com/takvim-abonelikleriyle-zaman%C4%B1-zenginle%C5%9Ftirin-7977730e99a3"
+		canonicalUrl: "https://omergulcicek.com/blog/takvim-abonelikleri-zamani-zenginlestirin"
 	},
 	{
 		slug: "/gunumuz-turkiyesi-2025",
 		title: "Günümüz Türkiyesi 2025",
-		description: "Uzun zamandır gözlem yapıp, gözlemlerimi yazıya dökmeyi seviyorum. Bu metin; aklımda birikenleri, sokakta, ekranda, işte gördüklerimi not aldığım bir...",
+		description: "Sert konuşmadan ama meseleyi es geçmeden; sokak, ekran ve iş hayatından süzülen güncel gözlemler ile çözüm önerileri.",
 		category: "personal",
 		tags: ["Düşünce"],
 		locale: "tr",
@@ -417,7 +441,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/frontend-calisma-ortamim-cursor-eklentiler",
 		title: "Frontend Çalışma Ortamım: Cursor, Eklentiler ve Daha Fazlası",
-		description: "Bu makalede kendi frontend geliştirme ortamımı, kullandığım araçları, eklentileri ve proje standartlarımı paylaşmak istiyorum. IDE tercihimden...",
+		description: "Cursor'dan tarayıcı eklentilerine, klasör yapısından kod standartlarına uzanan kişisel frontend çalışma ortamımın paylaşımı.",
 		category: "technical",
 		tags: ["Yapay Zekâ"],
 		locale: "tr",
@@ -429,9 +453,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		mediumUrl: "https://omergulcicek.medium.com/frontend-%C3%A7al%C4%B1%C5%9Fma-ortam%C4%B1m-cursor-eklentiler-ve-daha-fazlas%C4%B1-d0b63064fe25"
 	},
 	{
-		slug: "/sitemin-yeni-arayuzune-hosgeldiniz",
-		title: "Sitemin Yeni Arayüzüne Hoşgeldiniz",
-		description: "Merhaba! Uzun bir aradan sonra kişisel sitemi yeniden tasarladım ve bu yazımda bu yenileme sürecini detaylandırmak istiyorum. Sitemi modern frontend...",
+		slug: "/nextjs-15-ile-tasarim-ve-mimari-yenilemesi",
+		title: "Next.js 15 ile Tasarım ve Mimari Yenilemesi",
+		description: "Kişisel sitemi yeniden tasarladım; full-width düzenden container layout'a geçip ana sayfa, avatar ve arama deneyimini yeniden kurguladım.",
 		category: "technical",
 		tags: ["Site Yenileme", "Next.js"],
 		locale: "tr",
@@ -439,7 +463,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		publishedAt: "2025-07-27",
 		coverImage: "/blog/2025/07-27/avatars.png",
 		readingTimeMinutes: 3,
-		canonicalUrl: "https://omergulcicek.com/blog/sitemin-yeni-arayuzune-hosgeldiniz",
+		canonicalUrl: "https://omergulcicek.com/blog/nextjs-15-ile-tasarim-ve-mimari-yenilemesi",
 		mediumUrl: "https://omergulcicek.medium.com/sitemin-yeni-aray%C3%BCz%C3%BCne-ho%C5%9Fgeldiniz-126ce241ea47",
 		series: "site-yenileme",
 		seriesOrder: 3
@@ -447,7 +471,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/nevsehir-tatili",
 		title: "Nevşehir Tatili",
-		description: "2025 Temmuz'un ilk haftasında, Kapadokya'nın büyüleyici atmosferini keşfetmek için Nevşehir'e doğru yola çıktım. 4 gecelik bu tatilde balon seyri,...",
+		description: "2025 yazında Kapadokya'nın atmosferini keşfetmek için Nevşehir'e yapılan kısa tatilin kişisel notları.",
 		category: "personal",
 		tags: ["Seyahat"],
 		locale: "tr",
@@ -461,7 +485,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/nextjs-15-boilerplate",
 		title: "Next.js 15 Boilerplate",
-		description: "Merhaba! Bu yazıda, en güncel teknolojileri kullanarak geliştirdiğim Next.js 15 Boilerplate projesini sizlerle paylaşmak istiyorum. Bu şablon, modern...",
+		description: "Next.js 15, TanStack Query ve güncel frontend araçlarıyla kurduğum açık kaynak boilerplate projesinin mimari ve özellikleri.",
 		category: "technical",
 		tags: ["Next.js", "TypeScript", "shadcn/ui"],
 		locale: "tr",
@@ -475,7 +499,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/react-parola-inputlari-icin-goster-gizle-hooku",
 		title: "React Parola Inputları İçin Göster/Gizle Hooku",
-		description: "@omergulcicek/password-input React projelerinde parola inputları için göster/gizle işlevselliği eklemek için bir çok şey yapmamız gerekiyor. State...",
+		description: "Parola alanlarına göster/gizle işlevi eklemek için geliştirdiğim @omergulcicek/password-input hook'unun kullanım rehberi.",
 		category: "technical",
 		tags: ["React", "npm"],
 		locale: "tr",
@@ -489,7 +513,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/react-hook-form-icin-akilli-mask-ve-dogrulama",
 		title: "React Hook Form İçin Akıllı Mask ve Doğrulama",
-		description: "@omergulcicek/forms React projelerinde form doğrulama ve input mask işlemleriyle uğraşmak çoğu zaman zahmetli olabiliyor. Bu ihtiyacı karşılamak için...",
+		description: "@omergulcicek/forms paketiyle React Hook Form projelerinde maskeleme ve doğrulama işlemlerini kolaylaştırmanın pratik kullanımı.",
 		category: "technical",
 		tags: ["React", "npm"],
 		locale: "tr",
@@ -503,7 +527,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/css-attr-icin-yeni-yetkinlikler",
 		title: "CSS attr() İçin Yeni Yetkinlikler",
-		description: "CSS attr() fonksiyonunun yeni yetkinlikleri sayesinde renkler, uzunluklar ve sayısal değerler CSS değişkenlerine ihtiyaç duymadan doğrudan HTML üzerinden...",
+		description: "attr() fonksiyonunun string dışı değerler döndürmeye başlamasıyla CSS'te açılan yeni kullanım olanaklarına dair pratik bir inceleme.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -531,7 +555,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2025-yilinda-frontend-developer-olmak",
 		title: "2025 Yılında Frontend Developer Olmak",
-		description: "Frontend dünyası, neler bilmeliyiz? Frontend dünyası, geçmişte Bootstrap ve jQuery'in hakimiyetindeydi. Hızla gelişen JavaScript sayesinde React,...",
+		description: "Bootstrap'tan Tailwind'e, jQuery'den React ekosistemine uzanan frontend dünyasında bugün ne bilmek gerektiğine dair güncel bir rehber.",
 		category: "technical",
 		tags: ["Next.js", "TanStack", "TypeScript"],
 		locale: "tr",
@@ -545,7 +569,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/react-virtualization-buyuk-verilerin-ekranda-verimli-gosterimi",
 		title: "React Virtualization: Büyük Verilerin Ekranda Verimli Gösterimi",
-		description: "React Virtualization Nedir? React Virtualization, büyük veri setleriyle çalışan React uygulamalarında performans optimizasyonu sağlamaya yönelik bir...",
+		description: "Binlerce satırlık listelerde React Virtualization ile yalnızca görünen öğeleri render ederek performans kazanmanın mantığı.",
 		category: "technical",
 		tags: ["React"],
 		locale: "tr",
@@ -559,7 +583,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/react-19-ile-gelen-yenilik-use-optimistic-hook-kullanimi",
 		title: "React 19 ile Gelen Yenilik: useOptimistic Hook Kullanımı",
-		description: "React 19 ile hayatımıza giren useOptimistic hook'u sayesinde, sunucu yanıtını beklemeden UI güncellemelerini anında yansıtarak kullanıcı deneyimini...",
+		description: "React 19'un useOptimistic hook'u ile sunucu yanıtını beklemeden UI güncelleme akışını kurmanın pratik örneği.",
 		category: "technical",
 		tags: ["React"],
 		locale: "tr",
@@ -572,8 +596,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	},
 	{
 		slug: "/frontendin-parlayan-yildizi-shadcn-ui-ile-tanisin",
-		title: "Frontend'in Parlayan Yıldızı: shadcn/ui ile Tanışın",
-		description: "shadcn/ui, geliştiricilerin uygulamalarına hızlı ve kolay bir şekilde entegre edebilecekleri, güzel tasarlanmış ve yeniden kullanılabilir...",
+		title: "Frontend''in Parlayan Yıldızı: shadcn/ui ile Tanışın",
+		description: "Radix UI ve Tailwind üzerine kurulu shadcn/ui'nin bileşen modelini, avantajlarını ve kullanım yaklaşımını tanıtan rehber.",
 		category: "technical",
 		tags: ["shadcn/ui"],
 		locale: "tr",
@@ -587,7 +611,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2025-hedeflerim",
 		title: "2025 Hedeflerim",
-		description: "Yeni bir yıl, yeni hayaller, yeni hedefler... 🧺 Alınacaklar Listesi Bu yıl, inşallah evlilik yolunda önemli adımlar atmayı planlıyorum....",
+		description: "Hayatın merkezinin kayacağı bir döneme hazırlanırken tuttuğum dengeli, somut ve ölçülebilir yol haritası.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -601,7 +625,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2024-degerlendirmesi",
 		title: "2024 Değerlendirmesi",
-		description: "Her yıl sonunda o yılı değerlendirip, yeni yıla hedeflerimi belirliyorum. 2019'dan bu yana bunu kişisel sitemde yazıyorum; sadece 2023 yılında fire...",
+		description: "Tempo düşerken hayatın yönünün değiştiği bir dönemin üzerine tuttuğum, kariyerden kişisel hayata uzanan samimi notlar.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -614,9 +638,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		seriesOrder: 8
 	},
 	{
-		slug: "/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi",
-		title: "Kişisel Sitemin Yeni Arayüzü Next.js ve Tailwind CSS ile Geliştirildi",
-		description: "Merhaba! Uzun bir ara vermiştim, ancak artık kişisel sitemde yeniden yazılar paylaşmaya başladım. Bu yazımda, sitemin yeni versiyonunu neden ve nasıl...",
+		slug: "/nextjs-ve-shadcn-ui-ile-site-yenilemesi",
+		title: "Next.js ve shadcn/ui ile Site Yenilemesi",
+		description: "Kişisel sitemi uzun aradan sonra yeniledim; shadcn/ui tabanlı arayüze yer imleri ve frontend yol haritasını ekledim.",
 		category: "technical",
 		tags: ["Site Yenileme", "Next.js"],
 		locale: "tr",
@@ -624,14 +648,14 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		publishedAt: "2024-12-29",
 		coverImage: "/blog/2024/12-29/filters.png",
 		readingTimeMinutes: 2,
-		canonicalUrl: "https://omergulcicek.com/blog/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi",
+		canonicalUrl: "https://omergulcicek.com/blog/nextjs-ve-shadcn-ui-ile-site-yenilemesi",
 		series: "site-yenileme",
 		seriesOrder: 2
 	},
 	{
 		slug: "/2022-degerlendirmesi",
 		title: "2022 Değerlendirmesi",
-		description: "2022'yi geride bıraktık. Dolu dolu ve en verimli senelerimden birisi oldu. Yıl içerisindeki hedeflerimin temelinde daha hareketli, gezgin, sosyal bir...",
+		description: "Şehri yaşamak, üretmek ve sosyalleşmek arasında geçen hareketli bir dönemin enerjisini yansıtan kişisel yılsonu yazısı.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -646,7 +670,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2022-css-istatistikleri",
 		title: "2022 CSS İstatistikleri",
-		description: "2022 yılı geride kalırken, CSS ile ilgili güzel istatistikler açıklandı. Bunları birlikte inceleyelim. En Sık Kullanılan CSS Class'ları 2020 ve...",
+		description: "HTTP Archive verilerinden süzülen güncel CSS kullanım istatistikleri; sınıflar, özellikler ve trendler üzerine veriye dayalı bir bakış.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -659,7 +683,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/grid-template-areas-ile-layout-olusturmak",
 		title: "Grid Template Areas ile Layout Oluşturmak",
-		description: "CSS Grid ile layout'u oluşturmak çok kolay ve fonksiyonel. Bu makalede grid özelliklerinden olan özelliği ile HTML bileşenlerimizi nasıl component...",
+		description: "CSS Grid'in grid-template-areas özelliğiyle okunabilir ve esnek layout'lar kurmanın pratik bir yaklaşımı.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -672,7 +696,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/css-object-view-box",
 		title: "CSS Object View Box",
-		description: "CSS'te bir resmin istediğimiz bir bölümünü kırpmamız için doğal bir yöntem yoktu. Ya resmi saran farklı bir elemente ihtiyacımız vardı (_ gibi_) yada...",
+		description: "Görüntüleri ek sarmalayıcı olmadan kırpmak için object-view-box özelliğinin ne sunduğunu ve nasıl kullanıldığını gösteren rehber.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -683,9 +707,9 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		canonicalUrl: "https://omergulcicek.com/blog/css-object-view-box"
 	},
 	{
-		slug: "/kisisel-sitemin-nextjs-versiyonu",
-		title: "Kişisel Sitemin Next.js Versiyonu",
-		description: "Düzenli aralıklarla kişisel sitemi farklı yazılım dilleriyle baştan yazıyorum. Teknolojinin yanı sıra, tasarımsal olarakta daha minimal, sade ve şık...",
+		slug: "/gatsbyden-nextjse-gecis",
+		title: "Gatsby'den Next.js'e Geçiş",
+		description: "Kişisel sitemi yeniledim; Gatsby tabanlı statik yapıyı Next.js SSG ve Tailwind CSS ile yeniden kurguladım.",
 		category: "technical",
 		tags: ["Site Yenileme", "Next.js"],
 		locale: "tr",
@@ -693,14 +717,14 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 		publishedAt: "2022-04-22",
 		coverImage: "/blog/2022/04-22/renk.png",
 		readingTimeMinutes: 2,
-		canonicalUrl: "https://omergulcicek.com/blog/kisisel-sitemin-nextjs-versiyonu",
+		canonicalUrl: "https://omergulcicek.com/blog/gatsbyden-nextjse-gecis",
 		series: "site-yenileme",
 		seriesOrder: 1
 	},
 	{
 		slug: "/styled-component-ile-dinamik-css-yazmak",
 		title: "Styled Component ile Dinamik CSS Yazmak",
-		description: "Çalıştığım projede tasarımı dinamik olarak render edilen componentlere ihtiyacımız oldu. Detaylandırmak gerekirse, default bir butonumuz var fakat bu...",
+		description: "JSON'dan gelen stilleri Styled Components ile dinamik olarak render eden component mimarisinin problemi ve çözümü.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -712,7 +736,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2022-hedeflerim",
 		title: "2022 Hedeflerim",
-		description: "Yeni bir yıl, yeni hayaller, yeni hedefler... Geride bıraktığımız senede hedeflerimi büyük oranda başarmıştım. Yeni yılda çok daha hareketli, gezgin,...",
+		description: "Rutinden çıkıp şehri keşfetmeye, sosyalleşmeye ve üretmeye odaklandığım daha hareketli bir dönemin yol haritası.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -727,7 +751,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2021-degerlendirmesi",
 		title: "2021 Değerlendirmesi",
-		description: "Bu makalede aşağıdaki başlıklar var: - 2021'nin Kısa Özeti - Alınacaklar Listesi - İngilizce - İş ve Eğitim - Satranç - Kitap - Yazılım - Sağlık -...",
+		description: "Mesai sonrasını hayatın farklı alanlarına ayırdığım bir dönemin samimi muhasebesi.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -742,7 +766,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/css-container-sorgulari",
 		title: "CSS Container Sorguları",
-		description: "Responsive Design kavramı 25 Mayıs 2010 tarihinde Ethan Marcotte adlı bir arayüz tasarımcısı sayesinde hayatımıza girmişti. Responsive Web Design...",
+		description: "Medya sorgularına complement olarak bileşen bazında responsive davranış kurmayı sağlayan CSS container queries'e giriş.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -755,7 +779,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/javascript-selectorlerinin-calisma-hizlari",
 		title: "JavaScript Selectorlerinin Çalışma Hızları",
-		description: "Her yiğidin yoğurt yiğişi ayrıdır, bir kodu birden çok şekilde yazabilirsiniz. Hepsi doğru çıktığı verebilir fakat performans anlamında birbirlerine...",
+		description: "querySelector, getElementById ve benzeri DOM seçicilerinin performans farklarını ölçerek karşılaştıran teknik inceleme.",
 		category: "technical",
 		tags: ["JavaScript"],
 		locale: "tr",
@@ -767,7 +791,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/izmir-marmaris-oludeniz-tatili",
 		title: "İzmir, Marmaris, Ölüdeniz Tatili",
-		description: "15 Temmuz sabahı bavullarımızı alıp 4 üniversite arkadaşım ile Fethiye'ye doğru yola çıktık. Güzergah üzerinde önce İzmir'i gezdik, ardından Marmaris...",
+		description: "Üniversite arkadaşlarımla İzmir, Marmaris ve Ölüdeniz güzergahında geçen yaz tatilinin kısa anıları.",
 		category: "personal",
 		tags: ["Seyahat"],
 		locale: "tr",
@@ -779,8 +803,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	},
 	{
 		slug: "/csste-min-max-ve-clamp-fonksiyonlari",
-		title: "CSS'te Min, Max ve Clamp Fonksiyonları",
-		description: "CSS yazarken hayatımızı kolaylaştıran bazı fonksiyonlar var. Bazı durumlarda kullanılan genişlik, font-size gibi değerlerin dinamik olarak...",
+		title: "CSS''te Min, Max ve Clamp Fonksiyonları",
+		description: "Dinamik boyutlandırmada min(), max() ve clamp() fonksiyonlarını gerçek senaryolar üzerinden anlatan CSS rehberi.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -793,7 +817,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/renk-kontrastini-hesaplama",
 		title: "Renk Kontrastını Hesaplama",
-		description: "Bu makalede, arka plan rengine bağlı olarak yazı rengini değiştirmeyi göreceğiz. CSS tarafında bir yazıya verdiğimizi düşünelim. Koyu arka plan...",
+		description: "Arka plan rengine göre yazı rengini JavaScript ile dinamik seçerek okunabilirliği artırmanın pratik yöntemi.",
 		category: "technical",
 		tags: ["JavaScript"],
 		locale: "tr",
@@ -805,7 +829,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/cep-herkulu-naim-suleymanoglu",
 		title: "Cep Herkülü: Naim Süleymanoğlu",
-		description: "2019 Kasım ayında gösterime girmiş olan, dünya rekortmeni Naim Süleymanoğlu'nın filmini çokça görmeme rağmen yeni izleyebildim. Ben Naim...",
+		description: "Naim Süleymanoğlu'nun sinematografik hikayesini izledikten sonra film hakkında kısa, spoiler içermeyen izlenimlerim.",
 		category: "personal",
 		tags: ["Film"],
 		locale: "tr",
@@ -819,7 +843,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/css-mantiksal-ozellikler",
 		title: "CSS Mantıksal Özellikler",
-		description: "Web site geliştirirken varsayılan olarak yazı dilimiz soldan sağa (_Left to Right - LTR_) kullanıyoruz. Arapça gibi sağdan sola doğru okuma yönü olan...",
+		description: "LTR ve RTL dillerde aynı mantığı koruyarak layout yazmayı kolaylaştıran CSS logical properties'e pratik bir giriş.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -832,7 +856,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/miyop-lazer-goz-ameliyati",
 		title: "Miyop Lazer Göz Ameliyatı",
-		description: "Tam hatırlamıyorum ama sanırım ortaokulun son zamanlarından beri gözlük kullanıyorum, yani neredeyse tüm gençliğimi gözlüklü geçirdim. Havuz/denize...",
+		description: "Miyop lazer göz ameliyatına karar verme sürecim, operasyon deneyimim ve sonrasında yaşadığım günlük hayat değişiklikleri.",
 		category: "personal",
 		tags: ["Deneyim"],
 		locale: "tr",
@@ -846,7 +870,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/macbook-pro-m1-deneyimlerim",
 		title: "MacBook Pro M1 Deneyimlerim",
-		description: "Apple Kasım 2020 itibari ile kendi üretimi olan M1 işlemcisini duyurdu; Macbook Air/Pro/Mini modellerini de M1 CPU ile baştan geliştirildi....",
+		description: "Intel'den M1 MacBook Pro'ya geçişte performans, pil ömrü ve günlük geliştirme deneyimine dair kişisel izlenimler.",
 		category: "personal",
 		tags: ["Deneyim"],
 		locale: "tr",
@@ -859,7 +883,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/japonizm",
 		title: "Japonizm",
-		description: "Japonya, teknolojisi ve çalışkanlığıyla her zaman gönlümde taht kuran ülkelerden birisidir. Japonya imparatorunun makam odasını gördükten sonrada...",
+		description: "Teknolojisi, disiplini ve kültürüyle Japonya'ya duyduğum ilgiyi ve gözlemlerimi kaleme aldığım kişisel bir yazı.",
 		category: "personal",
 		tags: ["Kitap"],
 		locale: "tr",
@@ -873,7 +897,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/react-componentini-npm-paketi-yapmak",
 		title: "React Componentini NPM Paketi Yapmak",
-		description: "Site geliştirirken sağ tarafta çıkan scroll bar'ları her zaman gizlemeyi tercih ettim. Çok sağlıklı bir yol olmayabilir fakat sayfanın tasarımını...",
+		description: "Yuvarlak progress bar bileşeninden yola çıkarak bir React paketini npm'e yayınlama sürecinin adım adım anlatımı.",
 		category: "technical",
 		tags: ["React", "npm"],
 		locale: "tr",
@@ -886,7 +910,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2021-hedeflerim",
 		title: "2021 Hedeflerim",
-		description: "Yeni bir yıl, yeni hayaller, yeni hedefler... 2021 yılı için yeni hedefler belirleyip kendime bir liste oluşturmak istiyorum. Genelde bu tür...",
+		description: "Abartmadan ve gerçekçi kalarak, hayatın farklı alanlarına yayılmış niyetleri planlama alışkanlığımın yeni dönem notları.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -900,7 +924,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2020-degerlendirmesi",
 		title: "2020 Değerlendirmesi",
-		description: "Her yıl gelenek haline getirdiğim biten yılın değerlendirmesi ve yeni yıl hedefleri makaleme bu senede devam ediyorum. Blog sitemin teknik alt...",
+		description: "Pandemi düzeninde geçen bir yılın notları; kariyer yolculuğumdan kişisel ilgi alanlarıma uzanan geleneksel yılsonu yazım.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -916,7 +940,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/the-queens-gambit",
 		title: "The Queen's Gambit",
-		description: "Netflix yapımı The Queen's Gambit, toplam 7 bölümden oluşan bir mini dizi; yani devamı gelmeyecek. Türkçeye kraliçenin gambiti olarak çevriliyor olsa...",
+		description: "Netflix mini dizisi The Queen's Gambit üzerine satranç, anlatı ve prodüksiyon açısından spoiler'a düşmeden kısa bir değerlendirme.",
 		category: "personal",
 		tags: ["Dizi"],
 		locale: "tr",
@@ -930,7 +954,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/mjml-ile-responsive-mail-template",
 		title: "MJML ile Responsive Mail Template",
-		description: "Frontend Developer'ların en büyük baş belası sanırım mail template kodlamaktır. Hem her CSS koduna izin vermiyor, hemde e-posta servisleri (_Gmail,...",
+		description: "E-posta template kodlamasını daha taşınabilir hale getiren MJML ile responsive mail şablonu oluşturmanın temelleri.",
 		category: "technical",
 		tags: ["HTML"],
 		locale: "tr",
@@ -943,7 +967,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/linkleri-yeni-sekmede-acmak",
 		title: "Linkleri Yeni Sekmede Açmak",
-		description: "HTML geliştirme yaparken bir linki yeni sayfada açılmasını istediğimizde linke attribute olarak ekleriz. React geliştirme yaparken eğer yukarıdaki...",
+		description: "target=_blank kullanımının erişilebilirlik ve güvenlik boyutlarıyla birlikte doğru uygulanışına dair kısa bir not.",
 		category: "technical",
 		tags: ["HTML"],
 		locale: "tr",
@@ -956,7 +980,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/focus-ve-focus-within-farki",
 		title: "Focus ve Focus-Within Farkı",
-		description: "CSS'te , , , gibi bazı pseudo class'lar (sözde sınıf) vardır. Bugün pseudo class'lardan ve in farkını göreceğiz. Makale sonunda iki farklı örnek...",
+		description: ":focus ile :focus-within pseudo class'larının davranış farkını erişilebilirlik odaklı örneklerle karşılaştıran kısa rehber.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -969,7 +993,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/google-fontlari-daha-hizli-yuklemek",
 		title: "Google Fontları Daha Hızlı Yüklemek",
-		description: "Web sitenizde Google Font kullanıyorsanız, basit birkaç adım ile daha hızlı yükleme sürelerine ulaşabilirsiniz. Öncelikle bu sitede kullandığım Inter...",
+		description: "Google Fonts entegrasyonunda birkaç küçük optimizasyonla font yüklemesini hızlandırmanın pratik yolları.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -982,7 +1006,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/resimlerde-srcset-kullanimi",
 		title: "Resimlerde srcset Kullanımı",
-		description: "HTTP Arşivine göre, tipik bir mobil web sayfasının ağırlığı 2.6 MB'nin üzerindedir ve bu ağırlığın üçte ikisinden fazlası resimlerdir. Resimleri en...",
+		description: "Farklı ekran yoğunlukları için srcset ve sizes ile responsive görüntü optimizasyonuna pratik bir giriş.",
 		category: "technical",
 		tags: ["HTML"],
 		locale: "tr",
@@ -995,7 +1019,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/logolari-css-ile-hizalama",
 		title: "Logoları CSS ile Hizalama",
-		description: "Bir frontend geliştirici olarak, kişisel sitenizin portfolyo sayfasında müşterilerinizin logolarını listelediğiniz bir bölüm oluşturmuş...",
+		description: "Portfolyo sayfalarında farklı boyutlu müşteri logolarını CSS ile hizalı ve tutarlı göstermenin pratik yöntemi.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -1008,7 +1032,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2019-degerlendirmesi",
 		title: "2019 Değerlendirmesi",
-		description: "2018'in sonunda yeni yıl hedeflerimi belirtmiştim. Bunlarda ne kadar başarılı olduğumu Z raporu gibi oluşturmak istedim. İlk olarak 2019'da neleri...",
+		description: "Alışkanlıklar, hedef takibi ve yazılım dışına açılan bir dönemin samimi geriye bakışı.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -1023,7 +1047,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/gunumuz-turkiyesi-2019",
 		title: "Günümüz Türkiyesi 2019",
-		description: "Sürekli gözlem yapıp, gözlemlerimi değerlendirmeyi severim. Uzun süredir içimden kendimle konuştuğum bazı konuları Twitter hesabımdan paylaştım....",
+		description: "Olumsuzluğa kapılmadan ülkenin güncel tablosuna baktığım; sevdiğim için eleştiriyorum diyerek yazdığım düşünce yazısı.",
 		category: "personal",
 		tags: ["Düşünce"],
 		locale: "tr",
@@ -1037,7 +1061,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/the-imitation-game",
 		title: "The Imitation Game",
-		description: "2014 yılında çekilmiş olan “The Imitation Game” adlı filmi izledim, beğendim ve kaçırdığım detaylar olabilir diye sonraki gün filmi tekrar izledim....",
+		description: "Alan Turing'in hikayesini anlatan The Imitation Game filmi hakkında Benedict Cumberbatch'lı yapım üzerine kısa izlenimler.",
 		category: "personal",
 		tags: ["Film"],
 		locale: "tr",
@@ -1051,7 +1075,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/2018-yili-hedeflerim",
 		title: "2018 Yılı Hedeflerim",
-		description: "Merhaba ! İyisiyle kötüsüyle 2017 yılınıda geride bıraktık. Bu makalede geride bıraktığımız yıl içerisinde yaşadıklarımı anlatıp, yeni yıldaki...",
+		description: "İlk iş deneyimlerinden React projelerine uzanan bir dönemin ardından, yeni yıla taşıdığım teknik ve kişisel niyetlerin planı.",
 		category: "personal",
 		tags: ["Yıl Değerlendirmesi"],
 		locale: "tr",
@@ -1065,7 +1089,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/jsx-nedir",
 		title: "JSX Nedir?",
-		description: "Böyle bir değişken tanımladığımızı düşünün: Bu string yada HTML değildir. Buna JSX denir, JavaScript için bir syntax uzantısıdır. JSX, React...",
+		description: "React dünyasının en temel yapı taşlarından JSX'in ne olduğunu, neden var olduğunu ve nasıl çalıştığını anlatan giriş yazısı.",
 		category: "technical",
 		tags: ["React"],
 		locale: "tr",
@@ -1077,20 +1101,19 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/bind-fonksiyonu",
 		title: "Bind() Fonksiyonu",
-		description: "Merhaba ! Son haftalarda sürekli olarak React JS üzerine yoğunlaşıyorum ve kendimi bu alanda geliştirmeye devam ediyorum. React JS dokümantasyonunu...",
+		description: "React örnekleri üzerinden JavaScript bind() fonksiyonunun ne işe yaradığını ve this bağlamını nasıl yönettiğini anlatan kısa bir rehber.",
 		category: "technical",
 		tags: ["JavaScript", "React"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-12-23",
-		coverImage: "/blog/2017/12-23/17-1.png",
 		readingTimeMinutes: 2,
 		canonicalUrl: "https://omergulcicek.com/blog/bind-fonksiyonu"
 	},
 	{
 		slug: "/walter-isaacson-gelecegi-kesfedenler",
 		title: "Walter Isaacson - Geleceği Keşfedenler",
-		description: "Yazılım alanındaki kişilerin birçoğunun idolleri arasında Steve Jobs üstadımız bulunuyor. Bu tür kişilerin hayatları, yaptıkları hep ilgi çekici...",
+		description: "Walter Isaacson'un Geleceği Keşfedenler kitabından Steve Jobs, Bill Gates ve dönemin teknoloji öncülerine dair okuma notları.",
 		category: "personal",
 		tags: ["Kitap"],
 		locale: "tr",
@@ -1103,20 +1126,19 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/resimleri-gorunurse-yuklemek",
 		title: "Resimleri Görünürse Yüklemek",
-		description: "Merhaba ! Farzedelim ki sitenize giren ziyaretçi yavaş bir internete sahip. Haliyle sitenize girdiğinde yüksek çözünürlüklü fotoğrafları hemen...",
+		description: "Viewport dışındaki görselleri gereksiz yere yüklememek için lazy loading yaklaşımının temel mantığı ve uygulaması.",
 		category: "technical",
 		tags: ["JavaScript"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-12-08",
-		coverImage: "/blog/2017/12-08/15-1.gif",
-		readingTimeMinutes: 2,
+		readingTimeMinutes: 1,
 		canonicalUrl: "https://omergulcicek.com/blog/resimleri-gorunurse-yuklemek"
 	},
 	{
 		slug: "/gitstats-v2-github-api",
 		title: "GitStats v2 - GitHub API",
-		description: "Merhaba ! Bir önceki blog yazımda GitHub'ta bir projeye katkı yapan kişilerin isimlerini, kaç commit katkı yaptıklarını ve yüzdelik olarak katkısını...",
+		description: "GitHub API ile proje katkı istatistiklerini çeken GitStats aracının ikinci versiyonu ve geliştirme sürecindeki dersler.",
 		category: "technical",
 		tags: ["GitHub", "JavaScript"],
 		locale: "tr",
@@ -1128,33 +1150,31 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/gitstats",
 		title: "GitStats",
-		description: "Merhaba ! GitHub'ta herhangi bir projede Insights sekmesinden Contributors linkine tıklarsak, o projeye kimin ne kadar katkı yaptığını detaylı olarak...",
+		description: "GitHub projelerindeki katkı dağılımını saf JavaScript ile tabloya döken küçük bir araç ve kullanım rehberi.",
 		category: "technical",
 		tags: ["GitHub", "JavaScript"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-11-18",
-		coverImage: "/blog/2017/11-18/13-1.png",
 		readingTimeMinutes: 2,
 		canonicalUrl: "https://omergulcicek.com/blog/gitstats"
 	},
 	{
 		slug: "/devtools-ile-javascript-debug",
 		title: "DevTools ile JavaScript Debug",
-		description: "Merhaba ! Yeni bir JavaScript geliştiricisiyseniz, yazdığınız kodda çıkacak olan hataları nasıl çözeceğiniz konusunda zorlanabilirsiniz. İlk zamanlar...",
+		description: "console.log'a mahkum kalmadan Chrome DevTools ile JavaScript hatalarını adım adım izlemenin temel yolları.",
 		category: "technical",
 		tags: ["JavaScript"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-11-14",
-		coverImage: "/blog/2017/11-14/12-1.png",
 		readingTimeMinutes: 3,
 		canonicalUrl: "https://omergulcicek.com/blog/devtools-ile-javascript-debug"
 	},
 	{
 		slug: "/is-bulmak",
 		title: "İş Bulmak",
-		description: "30'dan önce 30 30'dan önce 30 listemde, 30 yaşına gelene kadar yapmak istediklerimi listeledim. Bu listeleri birçok blogger arkadaşımız hazırlamış....",
+		description: "30'dan önce 30 listemin 21. maddesi: iş bulma ve başvuru sürecinde edindiğim deneyimlerden süzülen kişisel notlar.",
 		category: "personal",
 		tags: ["Deneyim"],
 		locale: "tr",
@@ -1166,20 +1186,19 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/photopea-com",
 		title: "Photopea.com",
-		description: "Merhaba ! Frontend Developer'lar olarak büyük çoğunluğumuz Adobe Photoshop'a, bir arayüzü html'e dökecek kadar hakimiz. Fakat şirketlerimizdeki...",
+		description: "Adobe Photoshop'a ücretsiz alternatif Photopea ile arayüz geliştiricilerinin günlük iş akışına nasıl entegre edilebileceği.",
 		category: "technical",
 		tags: ["Frontend"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-10-07",
-		coverImage: "/blog/2017/10-07/10-1.png",
 		readingTimeMinutes: 2,
 		canonicalUrl: "https://omergulcicek.com/blog/photopea-com"
 	},
 	{
 		slug: "/jquery-ile-css-important",
 		title: "jQuery ile CSS important",
-		description: "Merhaba ! CSS'te ki söz hiyerarşisi şu şekildedir. İlk öncelik, (_varsa_) inline css olarak yazılmış css kodundadır. Ardından css dosyamızdaki...",
+		description: "jQuery ile inline stillere !important eklemenin CSS özgüllük hiyerarşisi içindeki yeri ve pratik kullanımı.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -1191,7 +1210,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/position-sticky",
 		title: "Position: Sticky",
-		description: "Merhaba ! CSS'te position özelliğinin _absolute_, _relative_, _fixed_ gibi sık kullandığımız özellikleri yanında pek görmediğimiz ama çok işe yarayan...",
+		description: "CSS position sticky özelliğinin scroll davranışı, kullanım sınırları ve pratik senaryolar üzerinden anlatımı.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -1203,20 +1222,19 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/change-title",
 		title: "Başlık Değiştirme",
-		description: "Merhaba ! Twitter'da gezerken Emir Karşıyakalı'nın bir tweet'ine denk geldim. enuygun.com sitesinde işlem yaparken farklı bir tab'a geçtiğinizde...",
+		description: "Sekmeler arasında kalan süreyi sayfa başlığında gösterme fikrini koddan geçirerek nasıl uygulayabileceğinizi anlatan küçük bir JavaScript örneği.",
 		category: "technical",
 		tags: ["JavaScript", "GitHub"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-08-05",
-		coverImage: "/blog/2017/08-05/7-1.png",
 		readingTimeMinutes: 2,
 		canonicalUrl: "https://omergulcicek.com/blog/change-title"
 	},
 	{
 		slug: "/box-shadowa-guclu-alternatif-drop-shadow",
-		title: "Box Shadow'a güçlü alternatif: Drop Shadow",
-		description: "Merhaba ! Çoğunuzunda bildiği gibi CSS ile bir nesneye gölge vermek için box-shadow kullanırız. Fakat box-shadow'un hatalı gölgelendirme yaptığı...",
+		title: "Box Shadow''a güçlü alternatif: Drop Shadow",
+		description: "Box-shadow'un yetersiz kaldığı senaryolarda filter drop-shadow ile daha gerçekçi gölge vermenin pratik çözümü.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
@@ -1228,33 +1246,31 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/css-framework-anket-sonuclari",
 		title: "CSS Framework Anket Sonuçları",
-		description: "Facebook üzerinden CSS Framework anketi yapmıştım. Anketin (_bu makaleyi yazarken_) 118 yanıtı var. Tek tek sorulara verilen yanıtları inceleyelim....",
+		description: "Topluluk anketi sonuçları üzerinden CSS framework tercihlerine, alışkanlıklara ve sektörel eğilimlere dair veriye dayalı bir yorum.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-07-26",
-		coverImage: "/blog/2017/07-26/5-1.png",
 		readingTimeMinutes: 2,
 		canonicalUrl: "https://omergulcicek.com/blog/css-framework-anket-sonuclari"
 	},
 	{
 		slug: "/reading-time-paketi",
 		title: "Reading Time Paketi",
-		description: "Merhaba ! Sitemin arayüzünü yenilerken başka bir blog sitesinde, yazılan makalelerin üstünde tahmini olarak okunma süresinin yazdığını gördüm....",
+		description: "Blog yazılarına tahmini okuma süresi eklemek için geliştirdiğim reading-time paketinin kullanımı ve motivasyonu.",
 		category: "technical",
 		tags: ["npm"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-07-25",
-		coverImage: "/blog/2017/07-25/4-1.png",
 		readingTimeMinutes: 2,
 		canonicalUrl: "https://omergulcicek.com/blog/reading-time-paketi"
 	},
 	{
 		slug: "/sait-kosk-hemdem",
 		title: "Sait Köşk - Hemdem",
-		description: "30 yaşından önce yapmak istediğim şeyleri, 30'dan önce 30 listemde sıralamıştım. Listede ki maddelerin birisi de toplam 100 kitap okumaktı. Tavsiye...",
+		description: "Sait Köşk'ün Hemdem kitabına dair kısa okuma notları; okuma listemdeki 11. kitap üzerine samimi bir izlenim.",
 		category: "personal",
 		tags: ["Kitap"],
 		locale: "tr",
@@ -1266,26 +1282,24 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "/kartvizit-tasarimim",
 		title: "Kartvizit Tasarımım",
-		description: "Selamünaleyküm. Uzun zamandır kendime kartvizit yapmayı çok istedim. Sıfırdan çizecek tasarım bilgim olmadığı için hazır tasarımlara yöneldim....",
+		description: "Kendi kartvizitimi sıfırdan tasarlayıp basma sürecindeki tasarım tercihleri ve kişisel deneyimlerim.",
 		category: "personal",
 		tags: ["Proje"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-05-15",
-		coverImage: "/blog/2017/05-15/2-1.png",
 		readingTimeMinutes: 1,
 		canonicalUrl: "https://omergulcicek.com/blog/kartvizit-tasarimim"
 	},
 	{
 		slug: "/turkuaz-css",
 		title: "Turkuaz CSS",
-		description: "Merhaba ! Web geliştirme ile ilgileniyorsanız framework'leri mutlaka duymuş yada kullanmışsınızdır. Artık günümüzde responsive olmayan bir tasarım...",
+		description: "Kendi geliştirdiğim Turkuaz CSS framework'ünün motivasyonu, özellikleri ve responsive arayüz geliştirmedeki yeri.",
 		category: "technical",
 		tags: ["CSS"],
 		locale: "tr",
 		published: true,
 		publishedAt: "2017-05-07",
-		coverImage: "/blog/2017/05-07/1-2.png",
 		readingTimeMinutes: 3,
 		canonicalUrl: "https://omergulcicek.com/blog/turkuaz-css"
 	}

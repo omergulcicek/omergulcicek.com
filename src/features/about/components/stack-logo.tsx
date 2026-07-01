@@ -18,6 +18,7 @@ import { Typescript } from "@/components/ui/svgs/typescript"
 import { Virastack } from "@/components/ui/svgs/virastack"
 import { Vite } from "@/components/ui/svgs/vite"
 import { Zod } from "@/components/ui/svgs/zod"
+import { OptimizedImage } from "@/components/shared/optimized-image"
 import { cn } from "@/lib/utils"
 
 type StackLogoProps = {
@@ -106,13 +107,11 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "zustand":
 			return (
-				<img
+				<OptimizedImage
 					src="/logos/zustand.svg"
 					alt={label}
 					width={56}
 					height={56}
-					loading="lazy"
-					decoding="async"
 					className={iconClassName}
 				/>
 			)
@@ -134,13 +133,12 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "react-hook-form":
 			return (
-				<img
+				<OptimizedImage
 					src="/logos/react-hook-form.svg"
 					alt={label}
 					width={56}
 					height={56}
 					loading="eager"
-					decoding="async"
 					className={iconClassName}
 				/>
 			)

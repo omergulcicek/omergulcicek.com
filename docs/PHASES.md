@@ -2,7 +2,7 @@
 
 > **Agent onboarding:** Build oturumuna başlamadan önce bu dosyayı oku. Detaylar ilgili SSOT dokümanlarında; burada yalnızca sıra ve checklist.
 
-**Mevcut durum (2026-06-29):** Faz 1 ve Faz 2 tamamlandı. Sıradaki: Faz 3 — Blog çekirdeği.
+**Mevcut durum (2026-07-01):** Faz 1 ve Faz 2 tamamlandı. Blog yerel MDX pipeline ile çalışıyor; Supabase taşıması ve Faz 4 lansman maddeleri (RSS, deploy, Lighthouse) sırada.
 
 **Lansman kuralı:** RSS, dinamik OG, llms.txt, GA ve WebVitals bitmeden production'a çıkılmaz. Fazlar organizasyon içindir; MVP tek seferde yayınlanır.
 
@@ -24,39 +24,39 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### A. TanStack Start Kurulumu
 
-- [ ] TanStack Start projesi oluştur (Vite + SSR, file-based routing: `src/routes/`)
-- [ ] `pnpm install` — bağımlılıklar kuruldu
-- [ ] `package.json` script'leri: `dev`, `build`, `preview`, `lint`, `check-types`, `generate-routes`
-- [ ] Path alias `@/` → `src/` (`tsconfig.json`)
-- [ ] `.gitignore`, `.prettierrc`, `eslint.config` yapılandırması
-- [ ] `components.json` — shadcn/ui + `@svgl/*` registry
-- [ ] Tailwind CSS 4 + `src/styles.css` — OKLCH renk değişkenleri (açık/koyu)
-- [ ] Inter font (`@fontsource-variable/inter`)
-- [ ] `src/env.ts` — Zod ile env doğrulama (`.env.example` ile uyumlu)
-- [ ] `public/` — legacy asset'ler taşınır (`omergulcicek.JPG`, `projects/`, `favicon.svg` vb.)
-- [ ] `pnpm dev` çalışıyor (`:3000`)
-- [ ] `pnpm lint && pnpm check-types` geçiyor
+- [x] TanStack Start projesi oluştur (Vite + SSR, file-based routing: `src/routes/`)
+- [x] `pnpm install` — bağımlılıklar kuruldu
+- [x] `package.json` script'leri: `dev`, `build`, `preview`, `lint`, `check-types`, `generate-routes`
+- [x] Path alias `@/` → `src/` (`tsconfig.json`)
+- [x] `.gitignore`, `.prettierrc`, `eslint.config` yapılandırması
+- [x] `components.json` — shadcn/ui + `@svgl/*` registry
+- [x] Tailwind CSS 4 + `src/styles.css` — OKLCH renk değişkenleri (açık/koyu)
+- [x] Inter font (`@fontsource-variable/inter`, `src/styles/inter-font.css`)
+- [x] `src/env.ts` — Zod ile env doğrulama (`.env.example` ile uyumlu)
+- [x] `public/` — legacy asset'ler taşınır (`omergulcicek.JPG`, `projects/`, `favicon.svg` vb.)
+- [x] `pnpm dev` çalışıyor (`:3000`)
+- [x] `pnpm lint && pnpm check-types` geçiyor
 
 **Referans:** `docs/TECH-STACK.md` · `docs/architecture-guide.md`
 
 ### B. ViraStack AI Rules + Skills
 
-- [ ] `npx @virastack/ai-rules init` — `.cursor/rules/*.mdc` doğrulandı
-- [ ] `npx skills add jakubkrehel/make-interfaces-feel-better` (**zorunlu** — v1 statik UI cila)
-- [ ] `npx skills add emilkowalski/skill` (**zorunlu** — v2 motion; kurulu olmalı, v1'de kullanılmaz)
-- [ ] Skill doğrulama: `.cursor/rules/` + her iki skill yüklü
+- [x] `npx @virastack/ai-rules init` — `.cursor/rules/*.mdc` doğrulandı
+- [x] `npx skills add jakubkrehel/make-interfaces-feel-better` (**zorunlu** — v1 statik UI cila)
+- [x] `npx skills add emilkowalski/skill` (**zorunlu** — v2 motion; kurulu olmalı, v1'de kullanılmaz)
+- [x] Skill doğrulama: `.cursor/rules/` + her iki skill yüklü
 
 **Referans:** `docs/TECH-STACK.md` → AI Araçları ve Kurallar
 
 ### C. Mimari İskelet
 
-- [ ] `src/features/` klasör yapısı (`architecture-guide.md` ağacı)
-- [ ] `src/components/shared/` — `Container`, `SiteLayout` iskeleti
-- [ ] `src/constants/` — `header-nav`, `footer-nav`, `social`, `site-flags` iskeleti
-- [ ] `src/lib/utils.ts` — `cn()`
-- [ ] `src/lib/media/` — mevcut `getMediaUrl` entegre (`VITE_MEDIA_PROVIDER=local`)
-- [ ] Tüm sayfa rotaları için stub route'lar (`src/routes/`)
-- [ ] `pnpm generate-routes` çalışıyor
+- [x] `src/features/` klasör yapısı (`architecture-guide.md` ağacı)
+- [x] `src/components/shared/` — `Container`, `SiteLayout` iskeleti
+- [x] `src/constants/` — `header-nav`, `footer-nav`, `social`, `site-flags` iskeleti
+- [x] `src/lib/utils.ts` — `cn()`
+- [x] `src/lib/media/` — mevcut `getMediaUrl` entegre (`VITE_MEDIA_PROVIDER=local`)
+- [x] Tüm sayfa rotaları için route'lar (`src/routes/`)
+- [x] `pnpm generate-routes` çalışıyor
 
 ---
 
@@ -68,37 +68,37 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### Layout ve Navigasyon
 
-- [ ] `Container` — `max-w-2xl`, `px-4 sm:px-6`, ortalanmış
-- [ ] `SiteLayout` — `<main id="main-content">` landmark
-- [ ] `Header` — marka: `@lucide/lab` rose ikonu yalnızca (metin yok) → `/`; nav: Ana Sayfa · Blog · Projeler · Hakkımda
-- [ ] Header'da tema düğmesi + ⌘K tetikleyici; **GitHub ikonu yok**
-- [ ] `Footer` — sol: `BrandMark` + build credit + kaynak kod + telif (alt alta); sağ: ikincil nav (Deneyimler → Hizmetler → Yer İmleri → ViraStack, alt alta)
-- [ ] Tipografi — hero isim/unvan/metin `text-base` (16px); isim + unvan `font-medium` (500); bölüm başlıkları `text-base` (`SITE-CONTENT.md`)
-- [ ] Tema geçişi: Açık → Koyu; `localStorage` + `__root.tsx` flash önleme script'i
+- [x] `Container` — `max-w-2xl`, `px-4 sm:px-6`, ortalanmış
+- [x] `SiteLayout` — `<main id="main-content">` landmark
+- [x] `Header` — marka: `@lucide/lab` rose ikonu yalnızca (metin yok) → `/`; nav: Ana Sayfa · Blog · Projeler · Hakkımda
+- [x] Header'da tema düğmesi + ⌘K tetikleyici + **GitHub ikonu**
+- [x] `Footer` — üst: `BrandMark`; orta: Keşfet + ViraStack (iki sütun); alt: build credit + kaynak kod + telif
+- [x] Tipografi — hero isim/unvan/metin `text-base` (16px); isim + unvan `font-medium` (500); bölüm başlıkları `text-base` (`SITE-CONTENT.md`)
+- [x] Tema geçişi: Açık → Koyu; `localStorage` + `__root.tsx` flash önleme script'i
 
 ### Ana Sayfa (`/`)
 
-- [ ] **Hero** — portre (`public/omergulcicek.JPG`), isim, unvan (Frontend Engineer), sosyal linkler, 2 paragraf
-- [ ] `hero-doodle.constants.ts` — boolean toggle'lar, varsayılan `false` (render Faz 5'te)
-- [ ] **Öne çıkan projeler (2)** — Footy + Takvim; showcase **kapalı** (yalnızca kart)
-- [ ] **Mini stack strip** — ~8–10 logo; Magic UI Marquee (`@magicui/marquee`); SVGL ikonları
-- [ ] **Öne çıkan blog (3)** — metin listesi (blog hazır olana kadar placeholder)
-- [ ] **Deneyim özeti (3)** — şirket logosu + 1 satır (CV düğmesi yalnızca `/experiences`)
+- [x] **Hero** — portre (`public/omergulcicek-672.webp`), isim, unvan (Frontend Engineer), sosyal linkler, 2 paragraf
+- [x] `hero-doodle.constants.ts` — boolean toggle'lar, varsayılan `false` (render Faz 5'te)
+- [x] **Öne çıkan projeler (2)** — Footy + Takvim; showcase **kapalı** (yalnızca kart)
+- [x] **Mini stack strip** — ~8–10 logo; Magic UI Marquee (`@magicui/marquee`); SVGL ikonları
+- [x] **Öne çıkan blog (3)** — `getBlogPostsFn` ile gerçek veri
+- [x] **Deneyim özeti (3)** — şirket logosu + 1 satır (CV düğmesi yalnızca `/experiences`)
 
 ### ⌘K Command Palette (MVP — kısmi)
 
-- [ ] `cmdk` + shadcn `Command` — modal dialog
-- [ ] Sayfa araması (8 rota)
-- [ ] Proje araması (`projects.constants.ts`)
-- [ ] Yer imleri araması — 7 kategori (`bookmarks.constants.ts`)
-- [ ] Hızlı eylemler (e-posta, GitHub, ViraStack)
-- [ ] Blog yazıları grubu: blog hazır olana kadar gizli (`SEARCH.md`)
+- [x] `cmdk` + shadcn `Command` — modal dialog
+- [x] Sayfa araması (8 rota)
+- [x] Proje araması (`projects.constants.ts`)
+- [x] Yer imleri araması — 7 kategori (`bookmarks.constants.ts`)
+- [x] Hızlı eylemler (e-posta, GitHub, ViraStack)
+- [ ] Blog yazıları grubu: `MOCK_BLOG_POSTS` → gerçek veri kaynağı (`SEARCH.md`)
 
 ### Kurallar (Faz 1)
 
-- [ ] v1'de **Framer Motion yok** — CSS hover/focus/transition serbest
-- [ ] Görünen Türkçe metinler `SITE-CONTENT.md`'den; metin uydurma yok
-- [ ] `pnpm lint && pnpm check-types` geçiyor
+- [x] v1'de **Framer Motion yok** — CSS hover/focus/transition serbest
+- [x] Görünen Türkçe metinler `SITE-CONTENT.md`'den; metin uydurma yok
+- [x] `pnpm lint && pnpm check-types` geçiyor
 
 ---
 
@@ -165,21 +165,21 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### Medya (Aşama 1 — local)
 
-- [ ] `public/blog` ← `_legacy/public/blog` (symlink veya kopya)
-- [ ] `VITE_MEDIA_PROVIDER=local`
+- [x] `public/blog` ← `_legacy/public/blog` (symlink veya kopya)
+- [x] `VITE_MEDIA_PROVIDER=local`
 - [ ] `getMediaUrl` — MDX `img` bileşeninde kullanım
 
 ### Blog Ön Yüz
 
-- [ ] TanStack Start MDX pipeline (Shiki, remark/rehype)
-- [ ] `/blog` — SSR liste; kategori pill + tag chip filtreler; sıralama `newest`/`oldest`
-- [ ] nuqs URL state — paylaşılabilir filtre params
-- [ ] Taslaklar: dev'de listede (**Taslak** badge); production'da gizli
-- [ ] `/blog/[slug]` — yazı detayı: BlogInfo, komşu yazılar, görsel zoom
-- [ ] **chanhdai TOC minimap** (kesin)
+- [x] TanStack Start MDX pipeline (Shiki, remark/rehype)
+- [x] `/blog` — SSR liste; kategori pill + tag chip filtreler; sıralama `newest`/`oldest`
+- [x] nuqs URL state — paylaşılabilir filtre params
+- [x] Taslaklar: dev'de listede (**Taslak** badge); production'da gizli
+- [x] `/blog/[slug]` — yazı detayı: BlogInfo, komşu yazılar, görsel zoom
+- [x] **chanhdai TOC minimap** (kesin)
 - [ ] Temel MDX bileşenleri: prose, kod (Shiki), img — tam set **Faz 4'te**
 - [ ] TanStack Query SSR prefetch + dehydrate + cache header'ları
-- [ ] Ana sayfa öne çıkan blog (3) — gerçek veriyle bağlandı
+- [x] Ana sayfa öne çıkan blog (3) — gerçek veriyle bağlandı
 
 ### ⌘K — Blog Araması
 
@@ -212,18 +212,18 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 - [ ] RSS feed (`published = true` only)
 - [ ] Dinamik OG görselleri (route veya edge function)
-- [ ] `llms.txt` / `llms-full.txt`
-- [ ] `sitemap.xml` — yalnızca yayında yazılar
-- [ ] `robots.txt`
-- [ ] Sayfa metadata — tüm rotalar (`SITE-CONTENT.md` SEO SSOT)
+- [x] `llms.txt` / `llms-full.txt`
+- [x] `sitemap.xml` — statik rotalar; blog slug'ları eklenmedi
+- [x] `robots.txt`
+- [x] Sayfa metadata — tüm rotalar (`SITE-CONTENT.md` SEO SSOT)
 - [ ] Taslaklar: `noindex`, sitemap/RSS/⌘K dışı
 
 ### Analytics ve Performans
 
-- [ ] Google Analytics entegrasyonu
-- [ ] Web Vitals raporlama (`web-vitals`)
+- [x] Google Analytics entegrasyonu
+- [x] Web Vitals raporlama (`web-vitals`)
 - [ ] Lighthouse 100 — `pnpm build && pnpm preview`, gizli mod
-- [ ] Görseller: lazy load, AVIF/WebP where applicable
+- [x] Görseller: lazy load, AVIF/WebP where applicable (`OptimizedImage`, hero LCP preload)
 
 ### Deploy
 

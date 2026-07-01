@@ -5,36 +5,42 @@ import { ProseIconLink, ProseLink } from "@/components/shared/prose-link"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	pageSectionClass,
+	heroSubtitleClass,
 	pageTitleClass,
 	proseFlowClass,
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
 import { SocialLinks } from "@/components/shared/SocialLinks"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import { HERO_IMAGE } from "@/features/home/constants/hero-image.constants"
 import { cn } from "@/lib/utils"
 
 export function Hero() {
 	return (
 		<section className={pageSectionClass}>
 			<figure className="relative aspect-square w-full overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
-				<img
-					src="/omergulcicek.JPG"
-					alt={SITE_CONTENT.displayName}
-					width={672}
-					height={672}
-					fetchPriority="high"
-					decoding="async"
-					className="image-outline absolute inset-0 size-full object-cover object-bottom select-none"
-				/>
+				<picture>
+					<source
+						type="image/webp"
+						srcSet={`${HERO_IMAGE.sources.webp["1x"]} 1x, ${HERO_IMAGE.sources.webp["2x"]} 2x`}
+					/>
+					<img
+						src={HERO_IMAGE.sources.jpeg}
+						alt={HERO_IMAGE.alt}
+						width={HERO_IMAGE.width}
+						height={HERO_IMAGE.height}
+						fetchPriority="high"
+						decoding="async"
+						className="image-outline absolute inset-0 size-full object-cover object-bottom select-none"
+					/>
+				</picture>
 			</figure>
 			<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 				<div className="flex flex-wrap items-center gap-x-3 gap-y-1">
 					<h1 className={pageTitleClass}>
 						{SITE_CONTENT.displayName}
 					</h1>
-					<p className="text-muted-foreground text-sm font-normal md:text-base">
-						{SITE_CONTENT.jobTitle}
-					</p>
+					<p className={heroSubtitleClass}>{SITE_CONTENT.jobTitle}</p>
 				</div>
 				<SocialLinks className="sm:shrink-0" />
 			</div>

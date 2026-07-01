@@ -138,3 +138,9 @@ export function getProjectsByGroup(group: Project["group"]) {
 		(a, b) => a.sortOrder - b.sortOrder
 	)
 }
+
+export function getPublishedVirastackProjects() {
+	return getProjectsByGroup("virastack").filter(
+		(project) => project.status === "package"
+	)
+}

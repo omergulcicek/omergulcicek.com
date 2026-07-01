@@ -142,18 +142,11 @@ Marka: `@lucide/lab` **rose** ikonu yalnızca — **metin yok**; link `/`, `aria
 | 4    | Hakkımda             | `/about`    |                         |
 
 
-Metinler `docs/SITE-CONTENT.md` → Header. Header'da **GitHub ikonu yok** (yalnızca tema + ⌘K). Implementasyon: `src/constants/header-nav.constants.ts`.
+Metinler `docs/SITE-CONTENT.md` → Header. Header'da **GitHub ikonu** (tema + ⌘K yanında). Implementasyon: `src/constants/header-nav.constants.ts`, `src/components/shared/Header.tsx`.
 
 ### Footer
 
-İki sütun: **sol** — `BrandMark` (header ile aynı rose ikonu), build credit, kaynak kod, telif (üstten alta); **sağ** — ikincil nav (üstten alta). Metinler ve sıra → `docs/SITE-CONTENT.md` → Footer. Implementasyon: `src/components/shared/brand-mark.tsx`, `src/constants/footer-nav.constants.ts`.
-
-| Sıra | Etiket      | Rota           |
-| ---- | ----------- | -------------- |
-| 1    | Deneyimler  | `/experiences` |
-| 2    | Hizmetler   | `/services`    |
-| 3    | Yer İmleri  | `/bookmarks`   |
-| 4    | ViraStack   | (harici)       |
+Üst: `BrandMark`. Orta: **Keşfet** + **ViraStack** (iki sütun nav). Alt: build credit, kaynak kod, telif (meta şeridi). Metinler ve sıra → `docs/SITE-CONTENT.md` → Footer. Implementasyon: `src/components/shared/brand-mark.tsx`, `src/components/shared/Footer.tsx`, `src/constants/footer-nav.constants.ts`.
 
 LinkPreview **yok**.
 
@@ -222,12 +215,12 @@ Tam spec → **`docs/BLOG.md`** · Supabase → **`docs/supabase-migration.md`**
 - [x] `_legacy/` eski Next.js sitesi yedeği
 - [x] TanStack Start iskeleti (temiz, template şişkinliği yok)
 - [x] ViraStack AI Rules
-- [ ] Inter font, CSS değişkenleri, açık/koyu tema
+- [x] Inter font, CSS değişkenleri, açık/koyu tema
 - [x] `Container`, `SiteLayout`, `Header`, `Footer`
-- [x] Header: Blog · Projeler · Hakkımda + tema düğmesi *(Ana Sayfa nav öğesi bekliyor — SITE-CONTENT'e bak)*
-- [x] Footer: ikincil nav + build credit satırı
+- [x] Header: Ana Sayfa · Blog · Projeler · Hakkımda + tema düğmesi + GitHub + ⌘K
+- [x] Footer: Keşfet + ViraStack nav + alt meta şeridi
 - [x] Ana sayfada hero + projeler bölümü (metinler SITE-CONTENT ile uyumlu)
-- [x] Tüm sayfalar için stub route'lar (çoğu boş)
+- [x] Tüm sayfa route'ları içerikle dolu (blog dahil; Supabase taşıması bekliyor)
 - [x] `<main>` landmark, `components.json` içinde SVGL registry
 
 ---
@@ -236,38 +229,38 @@ Tam spec → **`docs/BLOG.md`** · Supabase → **`docs/supabase-migration.md`**
 
 ### Faz 0 — Ortam Hazırlığı
 
-- [ ] `pnpm install`
-- [ ] `npx @virastack/ai-rules init` (`.cursor/rules/` doğrula)
-- [ ] `npx skills add jakubkrehel/make-interfaces-feel-better` (**zorunlu**)
-- [ ] `npx skills add emilkowalski/skill` (**zorunlu**)
-- [ ] `docs/TECH-STACK.md`, `docs/SITE-CONTENT.md`, `docs/BLOG.md`, `docs/architecture-guide.md` okundu
+- [x] `pnpm install`
+- [x] `npx @virastack/ai-rules init` (`.cursor/rules/` doğrula)
+- [x] `npx skills add jakubkrehel/make-interfaces-feel-better` (**zorunlu**)
+- [x] `npx skills add emilkowalski/skill` (**zorunlu**)
+- [x] `docs/TECH-STACK.md`, `docs/SITE-CONTENT.md`, `docs/BLOG.md`, `docs/architecture-guide.md` okundu
 
 ### Faz 1 — Kabuk ve Ana Sayfa
 
-- [ ] Hero — portre foto + metin + sosyal (`docs/SITE-CONTENT.md`; animasyonsuz)
-- [ ] `hero-doodle.constants.ts` — boolean toggle'lar, varsayılan `false` (render Faz 5)
-- [ ] Mini stack strip (Magic UI Marquee + SVGL)
-- [ ] Footer — `BrandMark` + build credit + kaynak kod + telif (`docs/SITE-CONTENT.md`)
-- [ ] ⌘K Command Palette — sayfa + proje + yer imi + eylem (`docs/SEARCH.md`)
-- [ ] Ana sayfada öne çıkan projeler (2 kart; showcase kapalı) + `/projects` sayfası
-- [ ] Ana sayfada öne çıkan blog yazıları (blog hazır olana kadar placeholder)
-- [ ] Ana sayfada deneyim özeti (3); CV düğmesi yalnızca `/experiences`
+- [x] Hero — portre foto + metin + sosyal (`docs/SITE-CONTENT.md`; animasyonsuz)
+- [x] `hero-doodle.constants.ts` — boolean toggle'lar, varsayılan `false` (render Faz 5)
+- [x] Mini stack strip (Magic UI Marquee + SVGL)
+- [x] Footer — `BrandMark` + Keşfet/ViraStack nav + meta şeridi (`docs/SITE-CONTENT.md`)
+- [x] ⌘K Command Palette — sayfa + proje + yer imi + eylem (`docs/SEARCH.md`)
+- [x] Ana sayfada öne çıkan projeler (2 kart; showcase kapalı) + `/projects` sayfası
+- [x] Ana sayfada öne çıkan blog yazıları (`getBlogPostsFn`)
+- [x] Ana sayfada deneyim özeti (3); CV düğmesi yalnızca `/experiences`
 
 ### Faz 2 — Temel Sayfalar
 
-- [ ] `/about` — `docs/ABOUT.md`: hikâye, stack grid (statik), GitHub calendar, hobiler (statik liste)
-- [ ] `/projects` — kişisel + ViraStack gruplu
-- [ ] `/experiences` — `docs/EXPERIENCES.md`: zaman çizelgesi, CV, open-to-work badge
-- [ ] `/services` — `docs/SERVICES.md`: freelance + eğitim kartları
-- [ ] `/bookmarks` — `docs/BOOKMARKS.md`: 7 kategori + Raindrop + önizlemeler
+- [x] `/about` — `docs/ABOUT.md`: hikâye, stack grid (statik), GitHub calendar, hobiler (statik liste)
+- [x] `/projects` — kişisel + ViraStack gruplu
+- [x] `/experiences` — `docs/EXPERIENCES.md`: zaman çizelgesi, CV, open-to-work badge
+- [x] `/services` — `docs/SERVICES.md`: freelance + eğitim kartları
+- [x] `/bookmarks` — `docs/BOOKMARKS.md`: 7 kategori + Raindrop + önizlemeler
 ### Faz 3 — Blog (çekirdek)
 
 - [ ] Supabase şeması + migration (`docs/supabase-migration.md`)
 - [ ] Taşıma script'i: `_legacy/src/content/*.mdx` → Supabase
-- [ ] Blog görselleri: `public/blog/` + `getMediaUrl` (`VITE_MEDIA_PROVIDER=local`)
-- [ ] TanStack Start MDX pipeline (Shiki, remark/rehype); `img` → `getMediaUrl`
-- [ ] Blog listesi SSR + **kategori pill + tag chip** filtreler; sıralama `newest`/`oldest`
-- [ ] Blog yazı detayı: BlogInfo, komşu yazılar, zoom, **chanhdai TOC minimap**
+- [x] Blog görselleri: `public/blog/` + `getMediaUrl` (`VITE_MEDIA_PROVIDER=local`)
+- [x] TanStack Start MDX pipeline (Shiki, remark/rehype); `src/content/*.mdx`
+- [x] Blog listesi SSR + **kategori pill + tag chip** filtreler; sıralama `newest`/`oldest`
+- [x] Blog yazı detayı: BlogInfo, komşu yazılar, zoom, **chanhdai TOC minimap**
 - [ ] MDX — yalnızca temel bileşenler (prose, kod, img); tam set **Faz 4**
 - [ ] TanStack Query SSR prefetch + cache header'ları
 - [ ] ⌘K blog yazı araması
@@ -282,9 +275,9 @@ Tam spec → **`docs/BLOG.md`** · Supabase → **`docs/supabase-migration.md`**
 - [ ] MDX bileşen seti — legacy referans; kod kopyalanmaz; kullanıcı son inceleme
 - [ ] RSS feed
 - [ ] Dinamik OG görselleri
-- [ ] `llms.txt` / `llms-full.txt`
-- [ ] Sitemap, robots, sayfa metadata (`docs/SITE-CONTENT.md` SEO SSOT; `published = true` only)
-- [ ] Google Analytics + WebVitals
+- [x] `llms.txt` / `llms-full.txt`
+- [x] Sitemap, robots, sayfa metadata (`docs/SITE-CONTENT.md` SEO SSOT; `published = true` only) — blog slug'ları sitemap'e eklenmedi
+- [x] Google Analytics + WebVitals
 - [ ] Lighthouse 100 (`pnpm build && pnpm preview`, gizli mod)
 - [ ] Vercel deploy + domain geçişi
 
@@ -366,9 +359,10 @@ Geliştirme ve kurulum komutları → `**docs/TECH-STACK.md**`
 | Unvan               | **Frontend Engineer** (kesin) — Staff kullanılmaz                        |
 | Hero fotoğrafı      | Evet — `public/omergulcicek.JPG` (legacy ile aynı)                        |
 | Header marka        | `@lucide/lab` rose ikonu yalnızca — "Ömer" metni yok                      |
-| Header GitHub       | Yok — sosyaller yalnızca hero'da                                          |
-| Footer layout       | Sol: `BrandMark` + credit bloğu (alt alta); sağ: ikincil nav (alt alta)    |
-| Footer nav sırası   | Deneyimler → Hizmetler → Yer İmleri → ViraStack (harici)                  |
+| Header GitHub       | Evet — tema + ⌘K yanında; hero'da da `SocialLinks`                        |
+| Footer layout       | Üst: `BrandMark`; orta: Keşfet + ViraStack (iki sütun); alt: credit bloğu |
+| Footer Keşfet sırası | Deneyimler → Yolculuk → Araçlar → Çalışma Alanı → Hizmetler → Yer İmleri |
+| Footer ViraStack    | `status: package` projeler + Tüm projeler (`/projects`); `coming_soon` yok |
 | Footer kaynak kod   | Evet — düz GitHub linki; açık kaynak kültürü; LinkPreview yok             |
 | Hero tipografi      | İsim, unvan, paragraflar 16px; isim + unvan font-weight 500               |
 | Bölüm başlıkları    | 16px (`text-base`)                                                        |

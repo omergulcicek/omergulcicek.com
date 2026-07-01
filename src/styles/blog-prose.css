@@ -1,3 +1,5 @@
+@reference "../styles.css";
+
 .blog-prose {
 	@apply text-base leading-relaxed text-pretty text-muted-foreground;
 }
@@ -22,6 +24,30 @@
 
 .blog-prose :where(a:focus-visible) {
 	@apply ring-[3px] ring-ring/50;
+}
+
+.blog-prose :where(h2, h3) {
+	scroll-margin-top: 6rem;
+}
+
+.blog-prose :where(h2[id] > .heading-anchor-wrap, h3[id] > .heading-anchor-wrap) {
+	@apply inline-flex items-center gap-2;
+}
+
+.blog-prose :where(.heading-anchor) {
+	@apply inline-flex shrink-0 text-muted-foreground/70 opacity-0 transition-opacity duration-150 rounded-sm;
+}
+
+.blog-prose :where(.heading-anchor:hover) {
+	@apply text-foreground;
+}
+
+.blog-prose :where(.heading-anchor:focus-visible) {
+	@apply opacity-100 ring-[3px] ring-ring/50 outline-none;
+}
+
+.blog-prose :where(h2[id]:hover .heading-anchor, h3[id]:hover .heading-anchor, h2[id]:focus-within .heading-anchor, h3[id]:focus-within .heading-anchor) {
+	opacity: 1;
 }
 
 .blog-prose :where(h2) {

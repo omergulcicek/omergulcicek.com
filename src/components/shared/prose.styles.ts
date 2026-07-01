@@ -8,6 +8,15 @@ export const proseEmphasisClass = "font-medium text-foreground"
 export const pageTitleClass =
 	"text-balance text-base font-semibold tracking-tight text-foreground md:text-lg"
 
+export const heroSubtitleClass =
+	"text-balance text-muted-foreground text-sm font-normal md:text-base"
+
+export const cardTitleClass =
+	"text-balance text-sm font-medium md:text-base"
+
+export const listTitleClass =
+	"text-balance min-w-0 flex-1 text-sm leading-6 font-normal md:text-base md:leading-7"
+
 export const sectionHeadingClass =
 	"text-balance text-sm font-semibold tracking-tight text-foreground md:text-base"
 

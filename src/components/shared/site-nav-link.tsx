@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router"
 import { ExternalLink } from "lucide-react"
 import type { ComponentPropsWithoutRef } from "react"
 
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 const siteNavLinkBaseClass = "focus-link text-sm transition-colors underline-offset-4"
@@ -28,7 +29,7 @@ export function SiteNavLink({
 	if (external) {
 		return (
 			<a
-				href={href}
+				href={withOutboundUtm(href)}
 				className={cn(
 					siteNavLinkBaseClass,
 					siteNavLinkInactiveClass,

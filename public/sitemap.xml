@@ -26,6 +26,21 @@
 		<priority>0.7</priority>
 	</url>
 	<url>
+		<loc>https://omergulcicek.com/journey</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://omergulcicek.com/stack</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://omergulcicek.com/workspace</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
 		<loc>https://omergulcicek.com/services</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>

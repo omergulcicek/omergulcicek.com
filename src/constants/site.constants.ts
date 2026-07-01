@@ -11,6 +11,6 @@ export const SITE = {
 	repository: "https://github.com/omergulcicek/omergulcicek.com",
 	locale: "tr_TR",
 	twitterHandle: "@omergulcicek",
-	defaultOgImage: "/omergulcicek.JPG",
+	defaultOgImage: "/omergulcicek-672.jpg",
 	analyticsId: env.VITE_GA_ID
 } as const

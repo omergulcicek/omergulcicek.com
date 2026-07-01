@@ -14,12 +14,14 @@ import {
 	type LucideIcon
 } from "lucide-react"
 
+import { cardTitleClass } from "@/components/shared/prose.styles"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import {
 	getInteractiveCardClassName,
 	interactiveCardChevronClass
 } from "@/components/shared/interactive-card.styles"
 import { cn } from "@/lib/utils"
+import { withOutboundUtm } from "@/lib/outbound-url"
 
 import type { Project } from "@/features/projects/types/project.types"
 
@@ -163,7 +165,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 
 	return (
 		<a
-			href={project.href}
+			href={withOutboundUtm(project.href)}
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label={`${project.title} — ${project.description}${isComingSoon ? ` (${SITE_CONTENT.projectsBadgeComingSoon})` : ""}`}
@@ -175,8 +177,9 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 			<div className="flex flex-col gap-1.5 md:gap-2">
 				<div className="flex items-start justify-between gap-2 md:gap-3">
 					<h3
+						id={project.id}
 						className={cn(
-							"text-balance text-sm font-medium md:text-base",
+							cardTitleClass,
 							isComingSoon && "text-muted-foreground"
 						)}
 					>

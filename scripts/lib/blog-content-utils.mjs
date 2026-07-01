@@ -35,7 +35,22 @@ export const BLOG_TAG_POOL = [
 export const SLUG_REDIRECTS = {
 	"/2025ten-2026ya-degerlendirme-ve-Yıl Değerlendirmesi":
 		"/2025ten-2026ya-degerlendirme-ve-hedefler",
-	"/google-maps-listelerim": "/google-harita-listelerim"
+	"/footy-ile-rekabete-hazir-misin": "/footy-futbol-bilgini-sahaya-yansit",
+	"/react-ai-stack-2026": "/2026-icin-react-ve-yapay-zeka-stacki",
+	"/ai-caginda-frontend-bitti-mi": "/yapay-zeka-caginda-frontend-bitti-mi",
+	"/google-maps-listelerim": "/google-maps-kisisel-listelerim",
+	"/google-harita-listelerim": "/google-maps-kisisel-listelerim",
+	"/takvim-abonelikleriyle-zamani-zenginlestirin":
+		"/takvim-abonelikleri-zamani-zenginlestirin",
+	"/kisisel-sitemin-nextjs-versiyonu": "/gatsbyden-nextjse-gecis",
+	"/kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi":
+		"/nextjs-ve-shadcn-ui-ile-site-yenilemesi",
+	"/sitemin-yeni-arayuzune-hosgeldiniz":
+		"/nextjs-15-ile-tasarim-ve-mimari-yenilemesi",
+	"/sitemin-yeni-arayuzuna-hosgeldiniz":
+		"/nextjs-15-ile-tasarim-ve-mimari-yenilemesi",
+	"/kisisel-sitemin-tanstack-start-versiyonu":
+		"/nextjsten-tanstack-ve-supabasee-gecis"
 }
 
 export const SLUG_FIXES = Object.fromEntries(
@@ -43,7 +58,20 @@ export const SLUG_FIXES = Object.fromEntries(
 )
 
 export const FILE_RENAMES = {
-	"kateliteli-yazilimci-nasil-olunur.mdx": "kaliteli-yazilimci-nasil-olunur.mdx"
+	"kateliteli-yazilimci-nasil-olunur.mdx": "kaliteli-yazilimci-nasil-olunur.mdx",
+	"footy-ile-rekabete-hazir-misin.mdx": "footy-futbol-bilgini-sahaya-yansit.mdx",
+	"react-ai-stack-2026.mdx": "2026-icin-react-ve-yapay-zeka-stacki.mdx",
+	"ai-caginda-frontend-bitti-mi.mdx": "yapay-zeka-caginda-frontend-bitti-mi.mdx",
+	"google-harita-listelerim.mdx": "google-maps-kisisel-listelerim.mdx",
+	"takvim-abonelikleriyle-zamani-zenginlestirin.mdx":
+		"takvim-abonelikleri-zamani-zenginlestirin.mdx",
+	"kisisel-sitemin-nextjs-versiyonu.mdx": "gatsbyden-nextjse-gecis.mdx",
+	"kisisel-sitemin-yeni-arayuzu-nextjs-ve-tailwind-css-ile-gelistirildi.mdx":
+		"nextjs-ve-shadcn-ui-ile-site-yenilemesi.mdx",
+	"sitemin-yeni-arayuzune-hosgeldiniz.mdx":
+		"nextjs-15-ile-tasarim-ve-mimari-yenilemesi.mdx",
+	"kisisel-sitemin-tanstack-start-versiyonu.mdx":
+		"nextjsten-tanstack-ve-supabasee-gecis.mdx"
 }
 
 export const TITLE_FIXES = {
@@ -84,6 +112,18 @@ export function parseFrontmatter(fileContent) {
 
 		const key = line.slice(0, separatorIndex).trim()
 		const rawValue = line.slice(separatorIndex + 1).trim()
+
+		if (key === "tags") {
+			if (rawValue === "[]") {
+				data[key] = []
+				continue
+			}
+
+			if (rawValue === '""' || rawValue === "''" || rawValue === "") {
+				data[key] = []
+				continue
+			}
+		}
 
 		if (rawValue.startsWith("[") && rawValue.endsWith("]")) {
 			data[key] = rawValue

@@ -10,6 +10,8 @@ import {
 	getRaindropCollectionUrl,
 	type BookmarkCategory
 } from "@/features/bookmarks/constants/bookmarks.constants"
+import { cardTitleClass } from "@/components/shared/prose.styles"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 type BookmarkCategoryCardProps = {
@@ -21,7 +23,7 @@ export function BookmarkCategoryCard({ category }: BookmarkCategoryCardProps) {
 
 	return (
 		<a
-			href={collectionUrl}
+			href={withOutboundUtm(collectionUrl)}
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label={`${category.title} — ${category.description} — ${SITE_CONTENT.bookmarksRaindropCta}`}
@@ -39,7 +41,7 @@ export function BookmarkCategoryCard({ category }: BookmarkCategoryCardProps) {
 			</div>
 			<div className="flex min-w-0 flex-1 flex-col">
 				<div className="flex items-start justify-between gap-3">
-					<h2 className="text-sm leading-relaxed font-medium md:text-base">
+					<h2 id={category.id} className={cardTitleClass}>
 						{category.title}
 					</h2>
 					<ChevronRight

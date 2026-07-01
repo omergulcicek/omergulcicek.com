@@ -9,8 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkspaceRouteImport } from './routes/workspace'
+import { Route as StackRouteImport } from './routes/stack'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as AboutRouteImport } from './routes/about'
@@ -19,6 +22,16 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
+const WorkspaceRoute = WorkspaceRouteImport.update({
+  id: '/workspace',
+  path: '/workspace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StackRoute = StackRouteImport.update({
+  id: '/stack',
+  path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -27,6 +40,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -71,8 +89,11 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
+  '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/stack': typeof StackRoute
+  '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -82,8 +103,11 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
+  '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/stack': typeof StackRoute
+  '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -94,8 +118,11 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
+  '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/stack': typeof StackRoute
+  '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -107,8 +134,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/bookmarks'
     | '/experiences'
+    | '/journey'
     | '/projects'
     | '/services'
+    | '/stack'
+    | '/workspace'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
@@ -118,8 +148,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/bookmarks'
     | '/experiences'
+    | '/journey'
     | '/projects'
     | '/services'
+    | '/stack'
+    | '/workspace'
     | '/blog/$slug'
     | '/blog'
   id:
@@ -129,8 +162,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/bookmarks'
     | '/experiences'
+    | '/journey'
     | '/projects'
     | '/services'
+    | '/stack'
+    | '/workspace'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -141,14 +177,31 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BookmarksRoute: typeof BookmarksRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  JourneyRoute: typeof JourneyRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  StackRoute: typeof StackRoute
+  WorkspaceRoute: typeof WorkspaceRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/workspace': {
+      id: '/workspace'
+      path: '/workspace'
+      fullPath: '/workspace'
+      preLoaderRoute: typeof WorkspaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stack': {
+      id: '/stack'
+      path: '/stack'
+      fullPath: '/stack'
+      preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -161,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -221,8 +281,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BookmarksRoute: BookmarksRoute,
   ExperiencesRoute: ExperiencesRoute,
+  JourneyRoute: JourneyRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  StackRoute: StackRoute,
+  WorkspaceRoute: WorkspaceRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }

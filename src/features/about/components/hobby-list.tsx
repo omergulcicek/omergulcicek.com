@@ -1,5 +1,6 @@
 import { ChessPawn } from "lucide-react"
 
+import { OptimizedImage } from "@/components/shared/optimized-image"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import { surfaceDoubleFrameClass } from "@/components/shared/interactive-card.styles"
 import { ProseIconLink } from "@/components/shared/prose-link"
@@ -50,13 +51,11 @@ export function HobbyList() {
 					className="flex items-start gap-4 py-1 md:grid md:grid-cols-[3rem_5rem_auto_1fr] md:items-center md:gap-x-4 md:py-4"
 				>
 					<figure className={hobbyAvatarClass}>
-						<img
+						<OptimizedImage
 							src={hobby.avatar}
 							alt=""
 							width={48}
 							height={48}
-							loading="lazy"
-							decoding="async"
 							className="image-outline size-full object-cover"
 						/>
 					</figure>

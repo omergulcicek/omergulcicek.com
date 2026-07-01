@@ -45,6 +45,30 @@ export const STATIC_PAGE_SEO = {
 		changeFrequency: "monthly",
 		priority: 0.7
 	},
+	journey: {
+		path: "/journey",
+		title: "Yolculuk",
+		description:
+			"Kariyer ve kişisel dönüm noktalarım; yıllara göre kısa anılar ve önemli anlar.",
+		changeFrequency: "monthly",
+		priority: 0.6
+	},
+	stack: {
+		path: "/stack",
+		title: "Araçlar",
+		description:
+			"Günlük iş akışımda kullandığım yazılım, uygulama ve yardımcı araçlar.",
+		changeFrequency: "monthly",
+		priority: 0.6
+	},
+	workspace: {
+		path: "/workspace",
+		title: "Çalışma Alanı",
+		description:
+			"Çalışma masamdaki donanım, mobilya ve aksesuarlar; kurulum ve tercihlerim.",
+		changeFrequency: "monthly",
+		priority: 0.6
+	},
 	services: {
 		path: "/services",
 		title: "Hizmetler",

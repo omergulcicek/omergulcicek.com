@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
 import { SOCIAL_LINKS } from "@/constants/social.constants"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 const SOCIAL_ICONS = {
@@ -30,7 +31,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
 				return (
 					<Button key={social.href} variant="ghost" size="icon-sm" asChild>
 						<a
-							href={social.href}
+							href={withOutboundUtm(social.href)}
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label={`${social.label} profilini ziyaret et`}

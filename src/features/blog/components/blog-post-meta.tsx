@@ -7,6 +7,7 @@ import {
 } from "@/features/blog/constants/blog.constants"
 import { formatBlogDate } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 import { Calendar, Clock, Languages } from "lucide-react"
 
@@ -67,7 +68,7 @@ export function BlogPostMeta({
 					<>
 						<span aria-hidden>·</span>
 						<a
-							href={post.mediumUrl}
+							href={withOutboundUtm(post.mediumUrl)}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="focus-link text-foreground hover:text-foreground/80 inline-flex items-center gap-1.5 transition-colors"

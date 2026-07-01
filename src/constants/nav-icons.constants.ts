@@ -1,12 +1,15 @@
 import {
 	Bookmark,
 	Briefcase,
+	Footprints,
 	Handshake,
 	Home,
 	LayoutGrid,
+	Monitor,
 	Newspaper,
 	Package,
-	UserRound
+	UserRound,
+	Wrench
 } from "lucide-react"
 
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
@@ -19,6 +22,9 @@ export const NAV_PAGE_ICONS: Record<string, LucideIcon> = {
 	"/projects": LayoutGrid,
 	"/about": UserRound,
 	"/experiences": Briefcase,
+	"/journey": Footprints,
+	"/stack": Wrench,
+	"/workspace": Monitor,
 	"/services": Handshake,
 	"/bookmarks": Bookmark,
 	[EXTERNAL_LINKS.virastack]: Package

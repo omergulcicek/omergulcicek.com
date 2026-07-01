@@ -2,9 +2,11 @@ import { useEffect, useRef } from "react"
 import mediumZoom from "medium-zoom"
 
 import { blogProseClass } from "@/components/shared/prose.styles"
+import { enhanceBlogProseHeadings } from "@/features/blog/helpers/enhance-blog-prose-headings"
 import { enhanceBlogProseImages } from "@/features/blog/helpers/enhance-blog-prose-images"
 import { cn } from "@/lib/utils"
 
+import "@/styles/blog-prose.css"
 import "medium-zoom/dist/style.css"
 
 type BlogProseProps = {
@@ -23,6 +25,7 @@ export function BlogProse({ html, className }: BlogProseProps) {
 		}
 
 		enhanceBlogProseImages(container)
+		enhanceBlogProseHeadings(container)
 
 		const zoom = mediumZoom(
 			container.querySelectorAll<HTMLImageElement>("img[data-zoomable]"),

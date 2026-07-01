@@ -7,6 +7,7 @@ import {
 	TooltipTrigger
 } from "@/components/ui/tooltip"
 import { formatLinkTooltip } from "@/lib/format-link-tooltip"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 type IconLinkButtonProps = {
@@ -29,7 +30,7 @@ export function IconLinkButton({
 			<TooltipTrigger asChild>
 				<Button variant="ghost" size="icon-sm" asChild className={cn("shrink-0", className)}>
 					<a
-						href={href}
+						href={withOutboundUtm(href)}
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={ariaLabel}

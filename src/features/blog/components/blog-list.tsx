@@ -11,8 +11,10 @@ import {
 	partitionDraftPosts
 } from "@/features/blog/helpers/blog-helpers"
 import { useBlogSearchParams } from "@/features/blog/hooks/use-blog-search-params"
+import { AnchoredHeading } from "@/components/shared/anchored-heading"
 import { pageSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import type { BlogPost } from "@/features/blog/types/blog.types"
+import { slugifyHeading } from "@/lib/slugify-heading"
 import { cn } from "@/lib/utils"
 
 type BlogListProps = {
@@ -79,9 +81,14 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 				>
 					{showDrafts ? (
 						<section className={pageSectionClass}>
-							<h2 className="text-muted-foreground text-sm font-medium">
+							<AnchoredHeading
+								as="h2"
+								id={slugifyHeading(BLOG_UI.draftsHeading)}
+								anchorLabel={`${BLOG_UI.draftsHeading} bölümüne git`}
+								className="text-muted-foreground text-sm font-medium"
+							>
 								{BLOG_UI.draftsHeading}
-							</h2>
+							</AnchoredHeading>
 							<div className="flex flex-col gap-3">
 								{drafts.map((post) => (
 									<BlogListPostRow
@@ -104,9 +111,14 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 									: undefined
 							)}
 						>
-							<h2 className="text-muted-foreground text-sm font-medium tabular-nums">
+							<AnchoredHeading
+								as="h2"
+								id={year}
+								anchorLabel={`${year} bölümüne git`}
+								className="text-muted-foreground text-sm font-medium tabular-nums"
+							>
 								{year}
-							</h2>
+							</AnchoredHeading>
 							<div className="flex flex-col gap-3">
 								{yearPosts.map((post) => (
 									<BlogListPostRow key={post.slug} post={post} />

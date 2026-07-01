@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/command"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { useCommandPalette } from "@/features/search/components/command-palette-provider"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import {
 	SEARCH_ACTIONS,
 	SEARCH_BLOG_POSTS,
@@ -68,7 +69,11 @@ export function CommandPaletteDialog() {
 							onSelect={() =>
 								runCommand(() => {
 									if (page.external) {
-										window.open(page.href, "_blank", "noopener,noreferrer")
+										window.open(
+											withOutboundUtm(page.href),
+											"_blank",
+											"noopener,noreferrer"
+										)
 										return
 									}
 
@@ -115,7 +120,11 @@ export function CommandPaletteDialog() {
 							value={`${project.title} ${project.description}`}
 							onSelect={() =>
 								runCommand(() => {
-									window.open(project.href, "_blank", "noopener,noreferrer")
+									window.open(
+										withOutboundUtm(project.href),
+										"_blank",
+										"noopener,noreferrer"
+									)
 								})
 							}
 						>
@@ -158,7 +167,11 @@ export function CommandPaletteDialog() {
 							value={action.label}
 							onSelect={() =>
 								runCommand(() => {
-									window.open(action.href, "_blank", "noopener,noreferrer")
+									window.open(
+										withOutboundUtm(action.href),
+										"_blank",
+										"noopener,noreferrer"
+									)
 								})
 							}
 						>

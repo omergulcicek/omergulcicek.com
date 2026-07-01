@@ -51,6 +51,8 @@ export const SITE_CONTENT = {
 		services: "Hizmetler — geliştirme, Danışmanlık ve frontend eğitimi"
 	},
 	footerNavTitle: "Keşfet",
+	footerVirastackTitle: "ViraStack",
+	footerVirastackAllProjects: "Tüm projeler",
 	notFoundTitle: "Sayfa bulunamadı",
 	notFoundDescription:
 		"Aradığın sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.",

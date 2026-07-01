@@ -3,7 +3,7 @@
 > Ana yol haritası ve faz sırası: [`PHASES.md`](./PHASES.md)  
 > Kaynak: `_legacy/` (v14 Next.js) ile güncel TanStack Start (v15) karşılaştırması; modern FE / product engineer siteleri referans.
 
-**Güncelleme:** 2026-07-01 (SEO paketi, GA, Web Vitals, llms — statik rotalar)
+**Güncelleme:** 2026-07-01 (SEO paketi, GA, Web Vitals, llms, görsel optimizasyon, text-balance — statik rotalar)
 
 Parantez içindeki faz notları (`Faz 3`, `Faz 4` vb.) ilgili madde `PHASES.md` içinde de tanımlıysa oraya işaret eder.
 
@@ -23,15 +23,15 @@ Lansman öncesi blocker. Yeni site bu maddeler tamamlanmadan eski siteyi geçeme
 - [x] `llms.txt` + `llms-full.txt` — yeni site için sıfırdan (`public/`) (Faz 4)
 - [ ] İnteraktif MDX bileşenlerini yeni blog pipeline'a port et — chart, carousel, clip-path, corner-shape vb. (Faz 4)
 - [ ] Bleed CSS — `wide` / `full` görseller (`max-w-3xl` → `max-w-5xl`) (Faz 4)
-- [ ] Görsel optimizasyonu — `next/image` eşdeğeri veya CDN + `srcset` / lazy load (Faz 4)
+- [x] Görsel optimizasyonu — `OptimizedImage` bileşeni (`srcset` / lazy load / `picture`); hero ayrı LCP preload (`Faz 4`)
 - [x] Sayfa bazlı tam `head` meta — canonical, OG, Twitter (hreflang: i18n yok, atlandı) (Faz 4)
 - [x] Statik sayfalar OG + Twitter meta — `/about`, `/projects`, `/experiences`, `/services`, `/bookmarks`
 - [x] Ana sayfa JSON-LD — `Person` + `WebSite` schema (blog `BlogPosting` ayrı)
 - [x] `env.ts` — GA env anahtarı Zod doğrulama (`VITE_GA_ID`) + `.env.example`
 - [ ] Vercel deploy — GitHub bağlantısı, production env, domain geçişi (Faz 4)
 - [ ] Production build + Lighthouse / Core Web Vitals doğrulaması — blog sayfaları hariç rotalar dahil (Faz 4)
-- [ ] Blog içerik ve asset migration'ını bitir — `public/blog/`, tüm slug'lar, görseller (Faz 3)
-- [ ] Supabase blog taşıması veya MDX pipeline'ın production-ready olduğunu doğrula (Faz 3)
+- [ ] Blog içerik ve asset migration'ını bitir — `public/blog/` mevcut; Supabase taşıması bekliyor (Faz 3)
+- [ ] Supabase blog taşıması veya MDX pipeline'ın production-ready olduğunu doğrula (Faz 3) — yerel MDX (`src/content/`) çalışıyor; Supabase bekliyor
 
 ---
 
@@ -43,7 +43,7 @@ Lansman sonrası kısa vadede; site kalitesini belirgin yükseltir.
 - [ ] RSS / Atom feed — `published = true` only (Faz 4)
 - [ ] Newsletter veya bülten CTA (cassidoo / leerob modeli)
 - [ ] Blog okuma ilerlemesi + paylaşım butonları
-- [ ] `text-wrap: balance` veya `react-wrap-balancer` — başlık ve hero metinleri
+- [x] `text-wrap: balance` — başlık, hero unvan, kart ve liste başlıkları (`prose.styles.ts`)
 - [ ] Bundle analyzer + performans bütçesi (`ANALYZE=true` script)
 - [ ] Speaking / talks bölümü (varsa konuşmalar listesi)
 - [ ] ViraStack'i ana sayfada daha görünür case study kartı
@@ -51,7 +51,7 @@ Lansman sonrası kısa vadede; site kalitesini belirgin yükseltir.
 - [ ] Test coverage — en az blog helpers, slug redirect, routing
 - [x] Web Vitals raporlama (`web-vitals` paketi) (Faz 4)
 - [ ] Dinamik OG görselleri — route veya edge function (Faz 4)
-- [ ] Header ↔ `SITE-CONTENT.md` uyumu — header'da GitHub ikonu (dokümanda yok)
+- [x] Header ↔ `SITE-CONTENT.md` uyumu — GitHub ikonu header'da (tema + ⌘K yanında)
 - [ ] Projeler sayfası — `docs/PROJECTS.md` metin ve showcase uyumu
 - [ ] İçerik sayfaları SSOT denetimi — about, services, experiences, bookmarks metinleri
 - [ ] İnteraktif MDX bileşenlerini izole sandbox'ta geliştir — blog detay UI'sız ön çalışma
@@ -93,9 +93,9 @@ Farklılaştırıcı; blocker değil.
 - [x] Web Vitals raporlama → [Yap](#yap)
 - [x] Statik sayfalar OG meta → [Kesinlikle yap](#kesinlikle-yap)
 - [x] Ana sayfa JSON-LD → [Kesinlikle yap](#kesinlikle-yap)
-- [ ] `public/blog/` asset kopyası — Supabase sonrası
+- [x] `public/blog/` asset kopyası
 - [ ] Vercel deploy iskeleti → [Kesinlikle yap](#kesinlikle-yap)
-- [ ] Hero / proje görsel optimizasyon bileşeni → [Kesinlikle yap](#kesinlikle-yap) (görsel optimizasyonu)
+- [x] Hero / proje görsel optimizasyon bileşeni → [Kesinlikle yap](#kesinlikle-yap) (`OptimizedImage`; hero LCP ayrı)
 - [ ] İnteraktif MDX izole sandbox → [Yap](#yap)
 
 ### Supabase çözülene kadar ertele
@@ -104,7 +104,7 @@ Farklılaştırıcı; blocker değil.
 - [ ] Dinamik OG (tüm blog yazıları)
 - [ ] Engagement: view, like, comment
 - [ ] `sitemap.xml` blog URL'leri (tam liste)
-- [ ] Ana sayfa öne çıkan blog — `getBlogPostsFn` veri hattı (list/detay ile aynı)
+- [x] Ana sayfa öne çıkan blog — `getBlogPostsFn` veri hattı (list/detay ile aynı)
 - [ ] Supabase blog taşıması → [Kesinlikle yap](#kesinlikle-yap)
 
 ---

@@ -10,6 +10,7 @@ import {
 	formatLinkTooltip,
 	shouldShowLinkTooltip
 } from "@/lib/format-link-tooltip"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 const proseLinkBaseClass = "focus-link text-foreground underline"
@@ -68,10 +69,11 @@ export function ProseLink({
 	...props
 }: ProseLinkProps) {
 	const externalAttrs = getExternalLinkAttrs(href)
+	const resolvedHref = href ? withOutboundUtm(href) : href
 
 	const link = (
 		<a
-			href={href}
+			href={resolvedHref}
 			className={getProseLinkClassName(variant, className)}
 			target={target ?? externalAttrs.target}
 			rel={rel ?? externalAttrs.rel}
@@ -100,10 +102,11 @@ export function ProseIconLink({
 	...props
 }: ProseIconLinkProps) {
 	const externalAttrs = getExternalLinkAttrs(href)
+	const resolvedHref = href ? withOutboundUtm(href) : href
 
 	const link = (
 		<a
-			href={href}
+			href={resolvedHref}
 			className={cn(
 				variant === "muted"
 					? "focus-link text-muted-foreground inline-flex items-center gap-1.5 text-sm underline-offset-4 hover:underline"

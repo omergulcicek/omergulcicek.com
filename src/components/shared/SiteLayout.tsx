@@ -1,10 +1,14 @@
-import type { ReactNode } from "react"
+import { lazy, Suspense, type ReactNode } from "react"
 
 import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { CommandPaletteDialog } from "@/features/search/components/CommandPalette"
 import { CommandPaletteProvider } from "@/features/search/components/command-palette-provider"
+
+const CommandPaletteDialog = lazy(async () => {
+	const module = await import("@/features/search/components/CommandPalette")
+	return { default: module.CommandPaletteDialog }
+})
 
 type SiteLayoutProps = {
 	children: ReactNode
@@ -23,7 +27,9 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 						{children}
 					</main>
 					<Footer />
-					<CommandPaletteDialog />
+					<Suspense fallback={null}>
+						<CommandPaletteDialog />
+					</Suspense>
 				</div>
 			</TooltipProvider>
 		</CommandPaletteProvider>

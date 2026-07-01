@@ -21,7 +21,7 @@
 | Projeler  | `/projects` |
 | Hakkımda  | `/about`    |
 
-Header'da ayrıca: tema düğmesi + ⌘K arama (`docs/SEARCH.md`). **Header'da GitHub ikonu yok** — sosyal linkler yalnızca hero'da.
+Header'da ayrıca: tema düğmesi + ⌘K arama + **GitHub ikonu** (`IconLinkButton` → `EXTERNAL_LINKS.github`, `aria-label`: GitHub profilini ziyaret et). Hero'da da sosyal linkler (`SocialLinks`) bulunur.
 
 **Unvan (kesin):** `Frontend Engineer` — hero, SEO, metadata; `Staff Frontend Engineer` kullanılmaz.
 
@@ -31,35 +31,57 @@ Implementasyon: `src/constants/header-nav.constants.ts`.
 
 ## Footer
 
-İki sütun layout (`flex` / `justify-between`). LinkPreview **yok** — düz `<a>`, `text-muted-foreground`, `underline-offset-4`.
+Üst bölüm: tek satır grid — rose `1` · Keşfet `2` · ViraStack `2` (`sm:grid-cols-5`; mobilde alt alta). Alt: meta şeridi (build credit, kaynak kod, telif) — `border-t` ile ayrılmış. LinkPreview **yok** — düz `<a>`, `text-muted-foreground`, `underline-offset-4`.
 
-### Sol — credit bloğu (üstten alta)
+### Üst — marka
 
 | Sıra | İçerik | Anahtar |
 | ---- | ------ | ------- |
 | 1 | Marka (gül ikonu) | `BrandMark` |
-| 2 | Build credit | `footerBuildCredit` |
-| 3 | Kaynak kod | `footerSourceCode` |
-| 4 | Telif | `footerCopyright` |
 
 **Marka (`BrandMark`):** Header ile aynı — `@lucide/lab` **rose** ikonu (`lucide-react` `Icon`); yalnızca ikon, metin yok. Link `/` · `aria-label`: Ana sayfa. Implementasyon: `src/components/shared/brand-mark.tsx`.
+
+### Orta — nav satırı (1 : 2 : 2)
+
+Header'da yok. Sıra implementasyonda korunur (`src/constants/footer-nav.constants.ts`, ViraStack listesi `getPublishedVirastackProjects()`).
+
+**Keşfet (`footerNavTitle`):**
+
+| Sıra | Etiket         | Rota           |
+| ---- | -------------- | -------------- |
+| 1    | Deneyimler     | `/experiences` |
+| 2    | Yolculuk       | `/journey`     |
+| 3    | Araçlar        | `/stack`       |
+| 4    | Çalışma Alanı  | `/workspace`   |
+| 5    | Hizmetler      | `/services`    |
+| 6    | Yer İmleri     | `/bookmarks`   |
+
+**ViraStack (`footerVirastackTitle`):** Başlık [virastack.com](https://virastack.com)'a link. Altında yalnızca `status: package` projeler (`docs/PROJECTS.md`); sıra `sortOrder`. Son satır: **Tüm projeler** → `/projects` (`footerVirastackAllProjects`).
+
+| Sıra | Etiket                    | Rota / link |
+| ---- | ------------------------- | ----------- |
+| 1    | AI Rules                  | GitHub      |
+| 2    | Next.js Boilerplate       | GitHub      |
+| 3    | Input Mask                | GitHub      |
+| 4    | Password Toggle           | GitHub      |
+| 5    | Modern Web in 3 Minutes   | GitHub      |
+| 6    | Tüm projeler              | `/projects` |
+
+`coming_soon` paketler footer'da **yok**.
+
+### Alt — meta şeridi (üstten alta)
+
+| Sıra | İçerik | Anahtar |
+| ---- | ------ | ------- |
+| 1 | Build credit | `footerBuildCredit` |
+| 2 | Kaynak kod | `footerSourceCode` |
+| 3 | Telif | `footerCopyright` |
 
 **Build credit (`footerBuildCredit`):** [ViraStack](https://virastack.com), [TanStack Start](https://tanstack.com/start), [Tailwind CSS](https://tailwindcss.com) ve [shadcn/ui](https://ui.shadcn.com) ile geliştirildi.
 
 **Kaynak kod (`footerSourceCode`):** Kaynak kod [GitHub](https://github.com/omergulcicek/omergulcicek.com)'da. Build credit'ten ayrı satır; düz link, hover önizlemesi yok.
 
 **Telif (`footerCopyright`):** © {yıl} Ömer Gülçiçek — `{yıl}` runtime'da `new Date().getFullYear()`.
-
-### Sağ — ikincil nav (üstten alta)
-
-Header'da yok. Sıra implementasyonda korunur (`src/constants/footer-nav.constants.ts`).
-
-| Sıra | Etiket     | Rota           |
-| ---- | ---------- | -------------- |
-| 1    | Deneyimler | `/experiences` |
-| 2    | Hizmetler  | `/services`    |
-| 3    | Yer İmleri | `/bookmarks`   |
-| 4    | ViraStack  | (harici link)  |
 
 Sayfa gövde metinleri → ilgili `docs/*.md` dosyaları.
 

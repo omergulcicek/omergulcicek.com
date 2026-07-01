@@ -3,6 +3,7 @@ import {
 	interactiveListRowClass,
 	surfaceCardIconFrameClass
 } from "@/components/shared/interactive-card.styles"
+import { OptimizedImage } from "@/components/shared/optimized-image"
 import { TechnologyBadges } from "@/features/experiences/components/technology-badges"
 import type { Experience } from "@/features/experiences/constants/experiences.constants"
 import { cn } from "@/lib/utils"
@@ -25,18 +26,16 @@ export function ExperienceItem({
 			)}
 		>
 			<div className={surfaceCardIconFrameClass}>
-				<img
+				<OptimizedImage
 					src={`/company/${experience.icon}.jpeg`}
 					alt=""
 					width={24}
 					height={24}
-					loading="lazy"
-					decoding="async"
 					className="image-outline size-6 overflow-hidden rounded object-cover"
 				/>
 			</div>
 			<div className="min-w-0 flex-1">
-				<p className="text-sm leading-relaxed font-medium md:text-base">
+				<p className="text-balance text-sm leading-relaxed font-medium md:text-base">
 					{experience.role}
 				</p>
 				<p className="mt-0.5 text-xs leading-relaxed md:text-sm">

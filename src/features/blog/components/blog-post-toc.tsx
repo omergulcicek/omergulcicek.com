@@ -1,6 +1,7 @@
 import { blogTocClass } from "@/components/shared/prose.styles"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import type { BlogHeading } from "@/features/blog/types/blog-heading.types"
+import { navigateToHeading } from "@/lib/navigate-to-heading"
 import { cn } from "@/lib/utils"
 
 type BlogPostTocProps = {
@@ -33,6 +34,20 @@ export function BlogPostToc({ headings, className }: BlogPostTocProps) {
 						<a
 							href={`#${heading.id}`}
 							className="focus-link text-foreground hover:text-foreground/80 underline-offset-4 hover:underline"
+							onClick={(event) => {
+								if (
+									event.metaKey ||
+									event.ctrlKey ||
+									event.shiftKey ||
+									event.altKey ||
+									event.button !== 0
+								) {
+									return
+								}
+
+								event.preventDefault()
+								navigateToHeading(heading.id)
+							}}
 						>
 							{heading.text}
 						</a>

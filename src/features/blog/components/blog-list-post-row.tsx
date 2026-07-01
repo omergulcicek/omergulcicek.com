@@ -14,7 +14,9 @@ import {
 	formatBlogDate,
 	slugToRouteParam
 } from "@/features/blog/helpers/blog-helpers"
+import { listTitleClass } from "@/components/shared/prose.styles"
 import type { BlogPost } from "@/features/blog/types/blog.types"
+import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 type BlogListPostRowProps = {
@@ -66,23 +68,13 @@ export function BlogListPostRow({
 						<span>{BLOG_UI.englishLabel}</span>
 					</span>
 				) : null}
-				{post.interactive ? (
-					<span className="text-muted-foreground flex items-center gap-1 text-xs">
-						<span className="text-sm leading-none" aria-hidden>
-							✨
-						</span>
-						<span>{BLOG_UI.interactiveLabel}</span>
-					</span>
-				) : null}
 				{showDraftBadge && !post.published ? (
 					<Badge variant="secondary">{BLOG_UI.draftBadge}</Badge>
 				) : null}
 			</div>
 			<div className="pointer-events-none relative z-10 min-w-0 w-full">
 				<div className="flex items-start gap-2">
-					<h2 className="min-w-0 flex-1 text-sm leading-6 font-normal md:text-base md:leading-7">
-						{post.title}
-					</h2>
+					<h2 className={listTitleClass}>{post.title}</h2>
 					<ChevronRight
 						className={cn(interactiveCardChevronClass, "mt-1.5")}
 						aria-hidden
@@ -91,8 +83,18 @@ export function BlogListPostRow({
 				<p className="text-muted-foreground mt-1 text-pretty text-xs leading-5 md:text-sm md:leading-6">
 					{post.description}
 				</p>
-				{visibleTags.length > 0 || post.mediumUrl ? (
+				{post.interactive ||
+				visibleTags.length > 0 ||
+				post.mediumUrl ? (
 					<div className="mt-2 flex flex-wrap items-center gap-2">
+						{post.interactive ? (
+							<span className="text-muted-foreground flex items-center gap-1 text-xs">
+								<span className="text-sm leading-none" aria-hidden>
+									✨
+								</span>
+								<span>{BLOG_UI.interactiveLabel}</span>
+							</span>
+						) : null}
 						{visibleTags.map((tag) => (
 							<BlogTagBadge key={tag} tag={tag} />
 						))}
@@ -107,7 +109,7 @@ export function BlogListPostRow({
 						) : null}
 						{post.mediumUrl ? (
 							<a
-								href={post.mediumUrl}
+								href={withOutboundUtm(post.mediumUrl)}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="focus-link text-foreground hover:text-foreground/80 pointer-events-auto inline-flex transition-colors"

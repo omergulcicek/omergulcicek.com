@@ -1,5 +1,3 @@
-import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
-
 export type FooterNavItem = {
 	label: string
 	href: string
@@ -8,9 +6,11 @@ export type FooterNavItem = {
 
 export const FOOTER_NAV: readonly FooterNavItem[] = [
 	{ label: "Deneyimler", href: "/experiences" },
+	{ label: "Yolculuk", href: "/journey" },
+	{ label: "Araçlar", href: "/stack" },
+	{ label: "Çalışma Alanı", href: "/workspace" },
 	{ label: "Hizmetler", href: "/services" },
-	{ label: "Yer İmleri", href: "/bookmarks" },
-	{ label: "ViraStack", href: EXTERNAL_LINKS.virastack, external: true }
+	{ label: "Yer İmleri", href: "/bookmarks" }
 ]
 
 export const FOOTER_BUILD_CREDIT =
