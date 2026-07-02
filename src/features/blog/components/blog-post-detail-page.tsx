@@ -8,8 +8,10 @@ import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detai
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
 import { BlogPostToc } from "@/features/blog/components/blog-post-toc"
 import { BlogProse } from "@/features/blog/components/blog-prose"
+import { BlogShareActionsBar } from "@/features/blog/components/blog-share-actions"
 import { BlogStructuredData } from "@/features/blog/components/blog-structured-data"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
+import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPostDetail } from "@/features/blog/repositories/blog-repository.types"
 import { cn } from "@/lib/utils"
 
@@ -26,13 +28,15 @@ export function BlogPostDetailPage({
 	previous,
 	next
 }: BlogPostDetailPageProps) {
+	const sharePath = `/blog/${slugToRouteParam(post.slug)}`
+
 	return (
 		<>
 			<BlogStructuredData post={post} />
 			<div className={pageShellClass}>
 				<Container className={cn("flex flex-col", pageStackGapClass)}>
 					<BlogPostDetailHeader previous={previous} next={next} />
-					<div className="flex flex-col gap-4">
+					<article data-blog-article className="flex flex-col gap-4">
 						<header className="flex flex-col gap-4">
 							<h1
 								className={cn(
@@ -42,11 +46,20 @@ export function BlogPostDetailPage({
 							>
 								{post.title}
 							</h1>
-							<BlogPostMeta post={post} showDraftBadge={isDev} />
+							<BlogPostMeta
+								post={post}
+								showDraftBadge={isDev}
+								shareActions={
+									<BlogShareActionsBar
+										path={sharePath}
+										title={post.title}
+									/>
+								}
+							/>
 						</header>
 						<BlogPostToc headings={post.headings} />
 						<BlogProse key={post.slug} html={post.contentHtml} />
-					</div>
+					</article>
 				</Container>
 			</div>
 		</>

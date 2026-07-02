@@ -52,13 +52,15 @@ export const Route = createFileRoute("/blog/$slug")({
 		}
 
 		const { post } = loaderData
+		const robots = !post.published ? "noindex, nofollow" : undefined
 
 		return buildBlogPostHead({
 			title: post.title,
 			description: post.description,
 			path: `/blog/${slugToRouteParam(post.slug)}`,
 			canonicalUrl: post.canonicalUrl,
-			ogImage: post.coverImage
+			ogImage: post.coverImage,
+			robots
 		})
 	},
 	notFoundComponent: NotFoundPage,

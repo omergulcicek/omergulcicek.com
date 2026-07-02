@@ -6,6 +6,7 @@ import { FeaturedBlog } from "@/features/home/components/FeaturedBlog"
 import { FeaturedProjects } from "@/features/home/components/FeaturedProjects"
 import { Hero } from "@/features/home/components/Hero"
 import { StackStrip } from "@/features/home/components/StackStrip"
+import { VirastackCaseStudyCard } from "@/features/home/components/virastack-case-study-card"
 import { cn } from "@/lib/utils"
 
 type HomePageProps = {
@@ -17,10 +18,11 @@ export function HomePage({ featuredPosts }: HomePageProps) {
 		<div className={pageShellClass}>
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
 				<Hero />
-				<FeaturedProjects />
 			</Container>
 			<StackStrip />
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
+				<FeaturedProjects />
+				<VirastackCaseStudyCard />
 				<FeaturedBlog posts={featuredPosts} />
 				<ExperienceSummary />
 			</Container>

@@ -55,6 +55,7 @@ export const BLOG_UI = {
 	englishTooltip: "Read in English",
 	interactiveLabel: "İnteraktif",
 	mediumLinkLabel: "Medium'da oku",
+	mediumLinkShortLabel: "Medium",
 	maxVisibleTags: 3,
 	filtersAriaLabel: "Blog filtreleri",
 	categoryAriaLabel: "Kategori filtresi",
@@ -72,7 +73,12 @@ export const BLOG_UI = {
 	tocLabel: "İçindekiler",
 	tocAriaLabel: "Yazı içindekileri",
 	tocMinimapAriaLabel: "Yazı bölümleri minimap",
-	closeImageZoom: "Görseli kapat"
+	closeImageZoom: "Görseli kapat",
+	shareLabel: "Paylaş",
+	copyLink: "Bağlantıyı kopyala",
+	linkCopied: "Bağlantı kopyalandı",
+	shareOnX: "X'te paylaş",
+	shareOnLinkedIn: "LinkedIn'de paylaş"
 } as const
 
 export const BLOG_TOC_MIN_HEADINGS = 3

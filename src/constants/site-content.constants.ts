@@ -26,10 +26,12 @@ export const SITE_CONTENT = {
 	skipToContent: "Ana içeriğe geç",
 	projectsPageIntro:
 		"Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar.",
-	projectsSectionApps: "Kişisel projeler",
+	projectsSectionApps: "Uygulamalar",
 	projectsSectionVirastack: "ViraStack",
 	projectsSectionArchive: "Arşiv",
 	projectsBadgeComingSoon: "Yakında",
+	virastackSectionIntro:
+		"ViraStack, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren AI Rules ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.",
 	bookmarksIntro:
 		"Yer imlerimi raindrop.io/omergulcicek'da saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı, okuduğum makaleleri, günlük takip ettiğim blogları, teknik içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.",
 	bookmarksRaindropCta: "Tümünü göster",

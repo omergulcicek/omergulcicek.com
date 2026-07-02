@@ -70,13 +70,15 @@ export function buildBlogPostHead({
 	description,
 	path,
 	canonicalUrl,
-	ogImage
+	ogImage,
+	robots
 }: {
 	title: string
 	description: string
 	path: string
 	canonicalUrl?: string
 	ogImage?: string
+	robots?: string
 }) {
 	return buildPageHead({
 		title,
@@ -85,6 +87,7 @@ export function buildBlogPostHead({
 		ogType: "article",
 		canonicalUrl,
 		ogImage,
+		robots,
 		useTitleTemplate: true
 	})
 }

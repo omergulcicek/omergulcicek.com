@@ -130,7 +130,11 @@
 }
 
 .blog-prose :where(img[data-bleed="wide"], .blog-bleed) {
-	@apply relative left-1/2 mx-auto block h-auto w-auto max-h-[520px] max-w-[min(100vw-2rem,64rem)] -translate-x-1/2;
+	@apply relative left-1/2 mx-auto block h-auto w-auto max-h-[520px] max-w-[min(100vw-2rem,48rem)] -translate-x-1/2 sm:max-w-[min(100vw-2rem,56rem)] lg:max-w-5xl;
+}
+
+.blog-prose :where(img[data-bleed="full"], .blog-bleed-full) {
+	@apply relative left-1/2 mx-auto block h-auto w-auto max-h-[640px] max-w-[min(100vw-1rem,64rem)] -translate-x-1/2 sm:max-w-[min(100vw-1.5rem,72rem)] lg:max-w-[min(100vw-2rem,80rem)];
 }
 
 .blog-prose :where(code:not(pre code)) {

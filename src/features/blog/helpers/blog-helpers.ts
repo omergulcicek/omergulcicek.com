@@ -229,3 +229,54 @@ export function findBlogNeighbours(posts: BlogPost[], slug: string) {
 				: null
 	}
 }
+
+export function getSeriesPosts(posts: BlogPost[], series: string) {
+	return posts
+		.filter((post) => post.series === series)
+		.sort((left, right) => (left.seriesOrder ?? 0) - (right.seriesOrder ?? 0))
+}
+
+export type BlogSeriesContext = {
+	label: string
+	previous: BlogNeighbour | null
+	next: BlogNeighbour | null
+	index: number
+	total: number
+}
+
+export function findSeriesContext(
+	posts: BlogPost[],
+	post: BlogPost,
+	seriesLabels: Record<string, string>
+): BlogSeriesContext | null {
+	if (!post.series) {
+		return null
+	}
+
+	const seriesPosts = getSeriesPosts(posts, post.series)
+	const index = seriesPosts.findIndex((entry) => entry.slug === post.slug)
+
+	if (index === -1) {
+		return null
+	}
+
+	return {
+		label: seriesLabels[post.series] ?? post.series,
+		previous:
+			index > 0
+				? ({
+						slug: seriesPosts[index - 1].slug,
+						title: seriesPosts[index - 1].title
+					} satisfies BlogNeighbour)
+				: null,
+		next:
+			index < seriesPosts.length - 1
+				? ({
+						slug: seriesPosts[index + 1].slug,
+						title: seriesPosts[index + 1].title
+					} satisfies BlogNeighbour)
+				: null,
+		index: index + 1,
+		total: seriesPosts.length
+	}
+}
