@@ -4,7 +4,7 @@ publishedAt: "2025-06-09"
 published: true
 slug: "/react-hook-form-icin-akilli-mask-ve-dogrulama"
 title: "React Hook Form İçin Akıllı Mask ve Doğrulama"
-description: "@omergulcicek/forms paketiyle React Hook Form projelerinde maskeleme ve doğrulama işlemlerini kolaylaştırmanın pratik kullanımı."
+description: "@virastack/input-mask paketiyle React Hook Form projelerinde maskeleme ve doğrulama işlemlerini kolaylaştırmanın pratik kullanımı."
 category: "technical"
 tags: ["React", "npm"]
 coverImage: "/blog/2025/06-09/forms-mask.png"
@@ -14,15 +14,31 @@ mediumUrl: "https://medium.com/kodcular/react-hook-form-i%C3%A7in-ak%C4%B1ll%C4%
 contentHash: "6695462a5ed8cd2d"
 ---
 
-## @omergulcicek/forms
+<BlogNotice title="Paket taşındı" variant="warning">
+	Bu makaledeki <strong>@omergulcicek/forms</strong> paketi artık{" "}
+	<a
+		href="https://www.npmjs.com/package/@virastack/input-mask"
+		target="_blank"
+		rel="noopener noreferrer"
+	>@virastack/input-mask</a>{" "}
+	olarak{" "}
+	<a
+		href="https://www.virastack.com/tr/input-mask"
+		target="_blank"
+		rel="noopener noreferrer"
+	>ViraStack</a>{" "}
+	altında yayınlanıyor. Güncel dokümantasyon ve kurulum için siteyi ziyaret edin.
+</BlogNotice>
 
-React projelerinde form doğrulama ve input mask işlemleriyle uğraşmak çoğu zaman zahmetli olabiliyor. Bu ihtiyacı karşılamak için geliştirdiğim **@omergulcicek/forms** paketi ile, TypeScript desteğiyle birlikte kolayca maskeleme ve doğrulama işlemlerini yönetebilirsin.
+## @virastack/input-mask (eski adı @omergulcicek/forms)
+
+React projelerinde form doğrulama ve input mask işlemleriyle uğraşmak çoğu zaman zahmetli olabiliyor. Bu ihtiyacı karşılamak için geliştirdiğim **@virastack/input-mask** (eski adı @virastack/input-mask) paketi ile, TypeScript desteğiyle birlikte kolayca maskeleme ve doğrulama işlemlerini yönetebilirsin.
 
 ### 🚀 Canlı Önizleme
 
-Paketi canlı olarak denemek için: [omergulcicek-forms.vercel.app](https://omergulcicek-forms.vercel.app)
+Paketi canlı olarak denemek için: [virastack.com/tr/input-mask](https://www.virastack.com/tr/input-mask)
 
-![npm package @omergulcicek/forms](/blog/2025/06-09/forms-mask.png)
+![npm package @virastack/input-mask](/blog/2025/06-09/forms-mask.png)
 
 ### Özellikler
 
@@ -37,7 +53,7 @@ Paketi canlı olarak denemek için: [omergulcicek-forms.vercel.app](https://omer
 Peer dependency olarak react, react-hook-form ve use-mask-input gerektirir.
 
 ```bash
-npm install @omergulcicek/forms
+npm install @virastack/input-mask
 npm install react react-hook-form use-mask-input
 ```
 
@@ -48,7 +64,7 @@ Aşağıdaki gibi kolayca entegre edebilirsin:
 ```javascript
 import { useForm } from "react-hook-form"
 
-import { useFormFields } from "@omergulcicek/forms"
+import { useFormFields } from "@virastack/input-mask"
 import { useHookFormMask } from "use-mask-input"
 
 const form = useForm()
@@ -101,7 +117,7 @@ import { Label } from "@/components/ui/label"
 </form>
 ```
 
-### Neden @omergulcicek/forms?
+### Neden @virastack/input-mask?
 
 - Form alanlarını hızlıca tanımla, mask ve doğrulama otomatik gelsin
 - Modern arayüzlerle sorunsuz çalışır
@@ -112,4 +128,4 @@ import { Label } from "@/components/ui/label"
 
 ### Katkıda Bulun
 
-GitHub üzerinden açık kaynak olarak geliştirmekteyim. Herhangi bir sorunla karşılaştığınızda issue açabilir veya PR gönderebilirsiniz. GitHub üzerinden repo'yu yıldızlayıp bana destek olabilirsiniz.
+GitHub üzerinden açık kaynak olarak geliştirmekteyim: [github.com/virastack/input-mask](https://github.com/virastack/input-mask). Herhangi bir sorunla karşılaştığınızda issue açabilir veya PR gönderebilirsiniz. GitHub üzerinden repo'yu yıldızlayıp bana destek olabilirsiniz.

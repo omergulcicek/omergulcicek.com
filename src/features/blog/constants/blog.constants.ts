@@ -71,5 +71,8 @@ export const BLOG_UI = {
 	nextPost: "Sonraki yazı",
 	tocLabel: "İçindekiler",
 	tocAriaLabel: "Yazı içindekileri",
+	tocMinimapAriaLabel: "Yazı bölümleri minimap",
 	closeImageZoom: "Görseli kapat"
 } as const
+
+export const BLOG_TOC_MIN_HEADINGS = 3

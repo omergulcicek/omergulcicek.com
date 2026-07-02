@@ -6,6 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server"
 import rehypePrettyCode from "rehype-pretty-code"
 import remarkGfm from "remark-gfm"
 
+import { blogMdxComponents } from "@/features/blog/lib/blog-mdx-components"
 import { remarkStripCustomMdxComponents } from "@/features/blog/lib/remark-strip-custom-mdx-components"
 
 const mdxEvaluateOptions: EvaluateOptions = {
@@ -31,5 +32,7 @@ const mdxEvaluateOptions: EvaluateOptions = {
 export async function compileMdxToHtml(content: string) {
 	const { default: MDXContent } = await evaluate(content, mdxEvaluateOptions)
 
-	return renderToStaticMarkup(createElement(MDXContent))
+	return renderToStaticMarkup(
+		createElement(MDXContent, { components: blogMdxComponents })
+	)
 }

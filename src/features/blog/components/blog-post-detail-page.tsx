@@ -45,7 +45,7 @@ export function BlogPostDetailPage({
 							<BlogPostMeta post={post} showDraftBadge={isDev} />
 						</header>
 						<BlogPostToc headings={post.headings} />
-						<BlogProse html={post.contentHtml} />
+						<BlogProse key={post.slug} html={post.contentHtml} />
 					</div>
 				</Container>
 			</div>

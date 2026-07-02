@@ -1,8 +1,13 @@
 import type { BlogHeading, BlogHeadingLevel } from "@/features/blog/types/blog-heading.types"
+import { decodeHtmlEntities } from "@/lib/decode-html-entities"
 import { slugifyHeading } from "@/lib/slugify-heading"
 
 function stripHtmlTags(value: string) {
 	return value.replace(/<[^>]+>/g, "").trim()
+}
+
+function extractHeadingText(innerHtml: string) {
+	return decodeHtmlEntities(stripHtmlTags(innerHtml))
 }
 
 export function slugifyBlogHeading(value: string) {
@@ -26,6 +31,13 @@ function buildBlogImageFigure(attributes: string) {
 
 const blogParagraphImagePattern =
 	/<p>((?:(?!<\/p>)[\s\S])*?)<img([^>]*?)\/?>((?:(?!<\/p>)[\s\S])*?)<\/p>/i
+
+const reactPreloadLinkPattern =
+	/<link\b[^>]*\brel=["']preload["'][^>]*\/?>/gi
+
+function stripReactPreloadLinks(html: string) {
+	return html.replace(reactPreloadLinkPattern, "")
+}
 
 function wrapBlogImagesWithCaptions(html: string) {
 	let result = html
@@ -67,7 +79,8 @@ function wrapBlogImagesWithCaptions(html: string) {
 export function enrichBlogContentHtml(html: string) {
 	const headings: BlogHeading[] = []
 	const usedIds = new Set<string>()
-	const htmlWithFigures = wrapBlogImagesWithCaptions(html)
+	const sanitizedHtml = stripReactPreloadLinks(html)
+	const htmlWithFigures = wrapBlogImagesWithCaptions(sanitizedHtml)
 
 	const enrichedHtml = htmlWithFigures.replace(
 		/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi,
@@ -77,7 +90,7 @@ export function enrichBlogContentHtml(html: string) {
 			}
 
 			const level = Number(levelValue) as BlogHeadingLevel
-			const text = stripHtmlTags(innerHtml)
+			const text = extractHeadingText(innerHtml)
 
 			if (!text) {
 				return match

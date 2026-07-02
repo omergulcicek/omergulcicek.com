@@ -4,7 +4,7 @@ publishedAt: "2025-06-19"
 published: true
 slug: "/react-parola-inputlari-icin-goster-gizle-hooku"
 title: "React Parola Inputları İçin Göster/Gizle Hooku"
-description: "Parola alanlarına göster/gizle işlevi eklemek için geliştirdiğim @omergulcicek/password-input hook'unun kullanım rehberi."
+description: "Parola alanlarına göster/gizle işlevi eklemek için geliştirdiğim @virastack/password-toggle hook'unun kullanım rehberi."
 category: "technical"
 tags: ["React", "npm"]
 coverImage: "/blog/2025/06-16/password-input.png"
@@ -14,17 +14,33 @@ mediumUrl: "https://omergulcicek.medium.com/react-parola-inputlar%C4%B1-i%C3%A7i
 contentHash: "45baad1405a92321"
 ---
 
-## @omergulcicek/password-input
+<BlogNotice title="Paket taşındı" variant="warning">
+	Bu makaledeki <strong>@omergulcicek/password-input</strong> paketi artık{" "}
+	<a
+		href="https://www.npmjs.com/package/@virastack/password-toggle"
+		target="_blank"
+		rel="noopener noreferrer"
+	>@virastack/password-toggle</a>{" "}
+	olarak{" "}
+	<a
+		href="https://www.virastack.com/tr/password-toggle"
+		target="_blank"
+		rel="noopener noreferrer"
+	>ViraStack</a>{" "}
+	altında yayınlanıyor. Güncel dokümantasyon ve kurulum için siteyi ziyaret edin.
+</BlogNotice>
+
+## @virastack/password-toggle (eski adı @omergulcicek/password-input)
 
 React projelerinde parola inputları için göster/gizle işlevselliği eklemek için bir çok şey yapmamız gerekiyor. State tanımlamak, onClick eventleri yazmak, ikonları yönetmek gibi işlemler zaman alıcı ve tekrarlayıcı olabilir. Özellikle TypeScript ile çalışırken, bu işlemleri daha da karmaşık hale getirebilir.
 
-Bu ihtiyacı karşılamak için geliştirdiğim **@omergulcicek/password-input** paketi ile, TypeScript desteğiyle birlikte kolayca parola alanlarını yönetebilirsin.
+Bu ihtiyacı karşılamak için geliştirdiğim **@virastack/password-toggle** (eski adı @omergulcicek/password-input) paketi ile, TypeScript desteğiyle birlikte kolayca parola alanlarını yönetebilirsin.
 
 ### 🚀 Canlı Önizleme
 
-Paketi canlı olarak denemek için: [omergulcicek-password-input.vercel.app/](https://omergulcicek-password-input.vercel.app/)
+Paketi canlı olarak denemek için: [virastack.com/tr/password-toggle](https://www.virastack.com/tr/password-toggle)
 
-![npm package @omergulcicek/password-input](/blog/2025/06-16/password-input.png)
+![npm package @virastack/password-toggle](/blog/2025/06-16/password-input.png)
 
 ### Özellikler
 
@@ -37,7 +53,7 @@ Paketi canlı olarak denemek için: [omergulcicek-password-input.vercel.app/](ht
 ### Kurulum
 
 ```bash
-npm install @omergulcicek/password-input
+npm install @virastack/password-toggle
 ```
 
 ### Kullanım
@@ -45,7 +61,7 @@ npm install @omergulcicek/password-input
 Aşağıdaki gibi kolayca entegre edebilirsin:
 
 ```javascript
-import { usePasswordInput } from "@omergulcicek/password-input"
+import { usePasswordInput } from "@virastack/password-toggle"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
 	password: true
@@ -67,7 +83,7 @@ Varsayılan ikon Lucide React ikonlarıdır. İstersen kendi ikonlarını veya m
 #### Özelleştirilmiş Metinler
 
 ```javascript
-import { usePasswordInput } from "@omergulcicek/password-input"
+import { usePasswordInput } from "@virastack/password-toggle"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
 	password: {
@@ -88,7 +104,7 @@ return (
 #### Özelleştirilmiş İkon
 
 ```javascript
-import { usePasswordInput } from "@omergulcicek/password-input"
+import { usePasswordInput } from "@virastack/password-toggle"
 import { House, Star } from "lucide-react"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
@@ -110,7 +126,7 @@ return (
 #### Özelleştirilmiş sınıf isimleri
 
 ```javascript
-import { usePasswordInput } from "@omergulcicek/password-input"
+import { usePasswordInput } from "@virastack/password-toggle"
 
 const { inputProps, InputWrapper, wrapperProps } = usePasswordInput({
 	password: true,
@@ -133,7 +149,7 @@ return (
 Bu fonksiyon, sınıf isimlerini birleştirmek için kullanılır. Opsiyonel bir alandır. Projenizde var olan bir cn() fonksiyonunu kullanmak isterseniz, bu şekilde entegre edebilirsiniz:
 
 ```javascript
-import { usePasswordInput } from "@omergulcicek/password-input"
+import { usePasswordInput } from "@virastack/password-toggle"
 
 import { cn } from "@/lib/utils" // your class name utility
 
@@ -154,7 +170,7 @@ return (
 )
 ```
 
-### Neden @omergulcicek/password-input?
+### Neden @virastack/password-toggle?
 
 Bu paket, React projelerinde parola inputları için göster/gizle işlevselliğini kolayca eklemek amacıyla tasarlandı. TypeScript desteği ile birlikte, esnek ve özelleştirilebilir bir çözüm sunuyor. Ayrıca, farklı ikon setleri ve stillerle uyumlu çalışabilmesi sayesinde projelerinizde rahatlıkla kullanabilirsiniz.
 
@@ -162,4 +178,4 @@ Bu paket, React projelerinde parola inputları için göster/gizle işlevselliğ
 
 ### Katkıda Bulun
 
-GitHub üzerinden açık kaynak olarak geliştirmekteyim. Herhangi bir sorunla karşılaştığınızda issue açabilir veya PR gönderebilirsiniz. GitHub üzerinden repo'yu yıldızlayıp bana destek olabilirsiniz.
+GitHub üzerinden açık kaynak olarak geliştirmekteyim: [github.com/virastack/password-toggle](https://github.com/virastack/password-toggle). Herhangi bir sorunla karşılaştığınızda issue açabilir veya PR gönderebilirsiniz. GitHub üzerinden repo'yu yıldızlayıp bana destek olabilirsiniz.

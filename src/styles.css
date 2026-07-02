@@ -29,6 +29,11 @@
 	--color-border: var(--border);
 	--color-input: var(--input);
 	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
 	--animate-marquee: marquee var(--duration) infinite linear;
 	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
@@ -77,6 +82,11 @@
 	--border: oklch(0.922 0 0);
 	--input: oklch(0.922 0 0);
 	--ring: oklch(0.708 0 0);
+	--chart-1: oklch(0.646 0.222 41.116);
+	--chart-2: oklch(0.6 0.118 184.704);
+	--chart-3: oklch(0.398 0.07 227.392);
+	--chart-4: oklch(0.828 0.189 84.429);
+	--chart-5: oklch(0.769 0.188 70.08);
 	--github-calendar-empty: #ebedf0;
 	--github-calendar-level-1: #9be9a8;
 	--github-calendar-level-2: #56d364;
@@ -105,6 +115,11 @@
 	--border: oklch(0.269 0 0);
 	--input: oklch(0.269 0 0);
 	--ring: oklch(0.439 0 0);
+	--chart-1: oklch(0.488 0.243 264.376);
+	--chart-2: oklch(0.696 0.17 162.48);
+	--chart-3: oklch(0.769 0.188 70.08);
+	--chart-4: oklch(0.627 0.265 303.9);
+	--chart-5: oklch(0.645 0.246 16.439);
 	--github-calendar-empty: color-mix(in oklab, var(--background) 55%, var(--border));
 	--github-calendar-level-1: #0e4429;
 	--github-calendar-level-2: #006d32;
@@ -177,11 +192,6 @@
 
 	.github-calendar {
 		font-variant-numeric: tabular-nums;
-	}
-
-	.medium-zoom-overlay,
-	.medium-zoom-image--opened {
-		z-index: 60;
 	}
 }
 

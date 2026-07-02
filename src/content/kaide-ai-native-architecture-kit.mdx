@@ -15,17 +15,33 @@ translationOf: "/kaide-yapay-zeka-odakli-mimari-kit"
 contentHash: "26ee8095f9d1e857"
 ---
 
-<ViraStackMigrationNotice locale="en" />
+<BlogNotice title="Project renamed" variant="warning">
+	The <strong>Kaide</strong> project in this article is now published as{" "}
+	<a
+		href="https://www.virastack.com/en/ai-rules/"
+		target="_blank"
+		rel="noopener noreferrer"
+	>ViraStack AI</a>
+	. See the{" "}
+	<a href="/blog/virastack-ai">ViraStack AI article</a> and the{" "}
+	<a
+		href="https://github.com/virastack/ai-rules"
+		target="_blank"
+		rel="noopener noreferrer"
+	>GitHub repository</a>{" "}
+	for current setup and docs. Older <em>Kaide</em> names in the post are kept for
+	historical context.
+</BlogNotice>
 
 AI has fundamentally shifted our coding paradigms. We are transitioning from being mere code writers to operators who orchestrate AI assistants, providing them with the right context and auditing their output. It was at this inflection point that I began researching how to maximize efficiency when working with AI.
 
 ![Kaide: AI-native agents](/blog/2026/02-14/kaide.png)
 
-**Kaide** is an AI-native architecture kit engineered for modern React applications. It is specifically designed to prevent context loss, mitigate hallucinations, and enforce a highly disciplined code structure when working with AI-powered editors like Cursor and LLMs.
+**Kaide** (now ViraStack AI) is an AI-native architecture kit engineered for modern React applications. It is specifically designed to prevent context loss, mitigate hallucinations, and enforce a highly disciplined code structure when working with AI-powered editors like Cursor and LLMs.
 
 ## The Story Behind the Name
 
-I generally opt for single-word, Turkish names for my projects that directly evoke their purpose. Just as with my [Nizam](/blog/nizam-nextjs-16-boilerplate/) project, I was looking for a meaningful name for this architecture kit.
+I generally opt for single-word, Turkish names for my projects that directly evoke their purpose. Just as with my [Nizam (ViraStack Next.js Boilerplate)](/blog/nizam-nextjs-16-boilerplate/) project, I was looking for a meaningful name for this architecture kit.
 
 The word "Kaide" means rule, foundation, or pedestal, which aligns perfectly with the project's promise. However, the deciding factor was the **"ai"** hidden right in the middle (k**ai**de). Offering an AI-focused foundation and the fact that the name was available on npm made it the obvious choice.
 
@@ -59,7 +75,7 @@ Kaide embraces modern web development standards:
 Getting started with Kaide is straightforward. You can integrate it into your project in seconds via the CLI:
 
 ```bash
-npx kaide init
+npx @virastack/ai-rules init
 ```
 
 This command automatically injects the necessary configuration files and rules into your project.
@@ -68,4 +84,4 @@ This command automatically injects the necessary configuration files and rules i
 
 Kaide aims to elevate AI from a simple code generator to a competent teammate that understands and enforces your project's rules. If you want to maintain control and architectural integrity while coding with AI, give Kaide a shot.
 
-⭐ You can support the project by starring it on GitHub: [github.com/omergulcicek/kaide](https://github.com/omergulcicek/kaide)
+⭐ You can support the project by starring it on GitHub: [github.com/virastack/ai-rules](https://github.com/virastack/ai-rules)
