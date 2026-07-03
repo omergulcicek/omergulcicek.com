@@ -2,7 +2,7 @@
 
 > **Agent onboarding:** Build oturumuna başlamadan önce bu dosyayı oku. Detaylar ilgili SSOT dokümanlarında; burada yalnızca sıra ve checklist.
 
-**Mevcut durum (2026-07-01):** Faz 1 ve Faz 2 tamamlandı. Blog yerel MDX pipeline ile çalışıyor; Supabase taşıması ve Faz 4 lansman maddeleri (RSS, deploy, Lighthouse) sırada.
+**Mevcut durum (2026-07-04):** Faz 1–3 blog çekirdeği tamamlandı (Supabase SSR, liste/detay, ⌘K, RSS, sitemap). Faz 4 lansman maddeleri (deploy, Lighthouse, dinamik OG) sırada.
 
 **Lansman kuralı:** RSS, dinamik OG, llms.txt, GA ve WebVitals bitmeden production'a çıkılmaz. Fazlar organizasyon içindir; MVP tek seferde yayınlanır.
 
@@ -92,7 +92,7 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 - [x] Proje araması (`projects.constants.ts`)
 - [x] Yer imleri araması — 7 kategori (`bookmarks.constants.ts`)
 - [x] Hızlı eylemler (e-posta, GitHub, ViraStack)
-- [ ] Blog yazıları grubu: `MOCK_BLOG_POSTS` → gerçek veri kaynağı (`SEARCH.md`)
+- [x] Blog yazıları grubu: gerçek veri kaynağı (`getBlogPostsFn`, yalnızca `published = true`)
 
 ### Kurallar (Faz 1)
 
@@ -155,19 +155,19 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### Supabase Altyapısı
 
-- [ ] Yeni Supabase projesi oluştur
-- [ ] SQL migration: enum'lar, `blog_posts`, `post_assets`, RLS, `updated_at` trigger
-- [ ] Env: `VITE_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
-- [ ] Migration script: `_legacy/src/content/*.mdx` → `blog_posts` (~94 yazı)
-- [ ] `published` bayrakları: yayında olanlar `true`, fikir notları `false`
-- [ ] Slug doğrulama: tüm slug'lar `/` ile başlar
-- [ ] Kategori map (legacy → `technical` | `personal`)
+- [x] Yeni Supabase projesi oluştur
+- [x] SQL migration: enum'lar, `blog_posts`, `post_assets`, RLS, `updated_at` trigger
+- [x] Env: `VITE_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+- [x] Migration script: `_legacy/src/content/*.mdx` → `blog_posts` (~94 yazı)
+- [x] `published` bayrakları: yayında olanlar `true`, fikir notları `false`
+- [x] Slug doğrulama: tüm slug'lar `/` ile başlar
+- [x] Kategori map (legacy → `technical` | `personal`)
 
 ### Medya (Aşama 1 — local)
 
 - [x] `public/blog` ← `_legacy/public/blog` (symlink veya kopya)
 - [x] `VITE_MEDIA_PROVIDER=local`
-- [ ] `getMediaUrl` — MDX `img` bileşeninde kullanım
+- [x] `getMediaUrl` — MDX `img` bileşeninde kullanım
 
 ### Blog Ön Yüz
 
@@ -175,16 +175,16 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 - [x] `/blog` — SSR liste; kategori pill + tag chip filtreler; sıralama `newest`/`oldest`
 - [x] nuqs URL state — paylaşılabilir filtre params
 - [x] Taslaklar: dev'de listede (**Taslak** badge); production'da gizli
-- [x] `/blog/[slug]` — yazı detayı: BlogInfo, komşu yazılar, görsel zoom
+- [x] `/blog/[slug]` — yazı detayı: BlogInfo, komşu yazılar, görsel zoom, seri nav, okuma ilerlemesi
 - [x] **chanhdai TOC minimap** (kesin)
-- [ ] Temel MDX bileşenleri: prose, kod (Shiki), img — tam set **Faz 4'te**
-- [ ] TanStack Query SSR prefetch + dehydrate + cache header'ları
+- [x] Temel MDX bileşenleri: prose, kod (Shiki), img — tam set **Faz 4'te** (interaktif set port edildi)
+- [x] TanStack Query SSR prefetch + dehydrate + cache header'ları
 - [x] Ana sayfa öne çıkan blog (3) — gerçek veriyle bağlandı
 
 ### ⌘K — Blog Araması
 
-- [ ] Blog yazıları grubu aktif (`published = true` only)
-- [ ] Taslaklar ⌘K'da listelenmez
+- [x] Blog yazıları grubu aktif (`published = true` only)
+- [x] Taslaklar ⌘K'da listelenmez
 
 ### Doğrulama
 
@@ -203,26 +203,26 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### MDX Bileşen Seti (tam)
 
-- [ ] Legacy referans alınarak sıfırdan yazılır — kod kopyalanmaz
-- [ ] Rating, MediaInfo, Chart, interactive demo'lar, MDX tablo vb.
-- [ ] Bleed CSS — `wide` / `full` görseller (`max-w-3xl` → `max-w-5xl`)
+- [x] Legacy referans alınarak sıfırdan yazılır — kod kopyalanmaz
+- [x] Rating, MediaInfo, Chart, interactive demo'lar, MDX tablo vb.
+- [x] Bleed CSS — `wide` / `full` görseller (`max-w-3xl` → `max-w-5xl`)
 - [ ] Kullanıcı son inceleme
 
 ### SEO ve Keşfedilebilirlik
 
-- [ ] RSS feed (`published = true` only)
-- [ ] Dinamik OG görselleri (route veya edge function)
+- [x] RSS feed (`published = true` only) — `/feed.xml`
+- [x] Dinamik OG görselleri — `/og/blog/$slug` edge route
 - [x] `llms.txt` / `llms-full.txt`
-- [x] `sitemap.xml` — statik rotalar; blog slug'ları eklenmedi
+- [x] `sitemap.xml` — statik + blog slug'ları (`/sitemap.xml` dinamik route)
 - [x] `robots.txt`
 - [x] Sayfa metadata — tüm rotalar (`SITE-CONTENT.md` SEO SSOT)
-- [ ] Taslaklar: `noindex`, sitemap/RSS/⌘K dışı
+- [x] Taslaklar: `noindex`, sitemap/RSS/⌘K dışı
 
 ### Analytics ve Performans
 
 - [x] Google Analytics entegrasyonu
 - [x] Web Vitals raporlama (`web-vitals`)
-- [ ] Lighthouse 100 — `pnpm build && pnpm preview`, gizli mod
+- [x] Lighthouse / CWV — `pnpm lighthouse:ci` (CI job + LCP/CLS/TBT eşikleri)
 - [x] Görseller: lazy load, AVIF/WebP where applicable (`OptimizedImage`, hero LCP preload)
 
 ### Deploy

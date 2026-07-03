@@ -11,9 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkspaceRouteImport } from './routes/workspace'
 import { Route as StackRouteImport } from './routes/stack'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as AboutRouteImport } from './routes/about'
@@ -22,6 +24,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as DevMdxSandboxRouteImport } from './routes/dev/mdx-sandbox'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as OgBlogSlugRouteImport } from './routes/og/blog/$slug'
 
 const WorkspaceRoute = WorkspaceRouteImport.update({
   id: '/workspace',
@@ -31,6 +34,11 @@ const WorkspaceRoute = WorkspaceRouteImport.update({
 const StackRoute = StackRouteImport.update({
   id: '/stack',
   path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -46,6 +54,11 @@ const ProjectsRoute = ProjectsRouteImport.update({
 const JourneyRoute = JourneyRouteImport.update({
   id: '/journey',
   path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedDotxmlRoute = FeedDotxmlRouteImport.update({
+  id: '/feed.xml',
+  path: '/feed.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -88,6 +101,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OgBlogSlugRoute = OgBlogSlugRouteImport.update({
+  id: '/og/blog/$slug',
+  path: '/og/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,14 +113,17 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/blog/': typeof BlogIndexRoute
+  '/og/blog/$slug': typeof OgBlogSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,14 +131,17 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/blog': typeof BlogIndexRoute
+  '/og/blog/$slug': typeof OgBlogSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -126,14 +150,17 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bookmarks': typeof BookmarksRoute
   '/experiences': typeof ExperiencesRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/blog/': typeof BlogIndexRoute
+  '/og/blog/$slug': typeof OgBlogSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -143,14 +170,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/bookmarks'
     | '/experiences'
+    | '/feed.xml'
     | '/journey'
     | '/projects'
     | '/services'
+    | '/sitemap.xml'
     | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
     | '/blog/'
+    | '/og/blog/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -158,14 +188,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/bookmarks'
     | '/experiences'
+    | '/feed.xml'
     | '/journey'
     | '/projects'
     | '/services'
+    | '/sitemap.xml'
     | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
     | '/blog'
+    | '/og/blog/$slug'
   id:
     | '__root__'
     | '/'
@@ -173,14 +206,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/bookmarks'
     | '/experiences'
+    | '/feed.xml'
     | '/journey'
     | '/projects'
     | '/services'
+    | '/sitemap.xml'
     | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
     | '/blog/'
+    | '/og/blog/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -189,14 +225,17 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BookmarksRoute: typeof BookmarksRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  FeedDotxmlRoute: typeof FeedDotxmlRoute
   JourneyRoute: typeof JourneyRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StackRoute: typeof StackRoute
   WorkspaceRoute: typeof WorkspaceRoute
   BlogSlugRoute: typeof BlogSlugRoute
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  OgBlogSlugRoute: typeof OgBlogSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -213,6 +252,13 @@ declare module '@tanstack/react-router' {
       path: '/stack'
       fullPath: '/stack'
       preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -234,6 +280,13 @@ declare module '@tanstack/react-router' {
       path: '/journey'
       fullPath: '/journey'
       preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feed.xml': {
+      id: '/feed.xml'
+      path: '/feed.xml'
+      fullPath: '/feed.xml'
+      preLoaderRoute: typeof FeedDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -292,6 +345,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/og/blog/$slug': {
+      id: '/og/blog/$slug'
+      path: '/og/blog/$slug'
+      fullPath: '/og/blog/$slug'
+      preLoaderRoute: typeof OgBlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -301,14 +361,17 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BookmarksRoute: BookmarksRoute,
   ExperiencesRoute: ExperiencesRoute,
+  FeedDotxmlRoute: FeedDotxmlRoute,
   JourneyRoute: JourneyRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StackRoute: StackRoute,
   WorkspaceRoute: WorkspaceRoute,
   BlogSlugRoute: BlogSlugRoute,
   DevMdxSandboxRoute: DevMdxSandboxRoute,
   BlogIndexRoute: BlogIndexRoute,
+  OgBlogSlugRoute: OgBlogSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

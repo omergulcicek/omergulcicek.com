@@ -5,6 +5,7 @@ import {
 	pageTitleClass
 } from "@/components/shared/prose.styles"
 import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detail-header"
+import { BlogReadingProgress } from "@/features/blog/components/blog-reading-progress.client"
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
 import { BlogPostToc } from "@/features/blog/components/blog-post-toc"
 import { BlogProse } from "@/features/blog/components/blog-prose"
@@ -32,6 +33,7 @@ export function BlogPostDetailPage({
 
 	return (
 		<>
+			<BlogReadingProgress />
 			<BlogStructuredData post={post} />
 			<div className={pageShellClass}>
 				<Container className={cn("flex flex-col", pageStackGapClass)}>

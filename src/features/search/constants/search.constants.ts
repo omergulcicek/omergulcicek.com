@@ -2,8 +2,6 @@ import { FOOTER_NAV } from "@/constants/footer-nav.constants"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
 import { getNavPageIcon } from "@/constants/nav-icons.constants"
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
-import { MOCK_BLOG_POSTS } from "@/features/blog/constants/mock-blog-posts.constants"
-import { getVisiblePosts, slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import { PROJECTS } from "@/features/projects/constants/projects.constants"
 import { BOOKMARK_CATEGORIES } from "@/features/bookmarks/constants/bookmarks.constants"
 
@@ -61,16 +59,6 @@ export const SEARCH_BOOKMARK_CATEGORIES = BOOKMARK_CATEGORIES.map((category) => 
 	title: category.title,
 	description: category.description,
 	href: "/bookmarks"
-}))
-
-export const SEARCH_BLOG_POSTS = getVisiblePosts(
-	MOCK_BLOG_POSTS,
-	import.meta.env.DEV
-).map((post) => ({
-	slug: slugToRouteParam(post.slug),
-	title: post.title,
-	description: post.description,
-	tags: post.tags
 }))
 
 export const SEARCH_PROJECTS = PROJECTS.map((project) => ({

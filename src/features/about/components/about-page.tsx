@@ -18,16 +18,21 @@ import { SectionHeading } from "@/components/shared/SectionHeading"
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 import { ABOUT_CONTENT } from "@/features/about/constants/about.constants"
 import { STACK_ITEMS } from "@/features/about/constants/stack.constants"
-import { GitHubContributionCalendar } from "@/features/about/components/github-contribution-calendar"
+import { GitHubContributionCalendar } from "@/features/about/components/github-contribution-calendar.client"
 import { HobbyList } from "@/features/about/components/hobby-list"
 import { StackStrip } from "@/features/home/components/StackStrip"
+import type { GitHubContribution } from "@/features/about/schemas/github-contribution.schema"
 import { cn } from "@/lib/utils"
 
-export function AboutPage() {
+type AboutPageProps = {
+	contributions: GitHubContribution[]
+}
+
+export function AboutPage({ contributions }: AboutPageProps) {
 	return (
 		<div className={pageShellClass}>
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
-				<PageHeader title={ABOUT_CONTENT.title} showOpenToWork>
+				<PageHeader title={ABOUT_CONTENT.title}>
 					<div className={proseFlowClass}>
 						<p className={proseParagraphClass}>
 							Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
@@ -77,7 +82,7 @@ export function AboutPage() {
 					</div>
 				</Container>
 
-				<GitHubContributionCalendar />
+				<GitHubContributionCalendar contributions={contributions} />
 			</section>
 
 			<Container className={cn("flex flex-col", pageStackGapClass)}>

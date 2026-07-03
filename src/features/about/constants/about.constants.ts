@@ -19,7 +19,7 @@ export type Hobby = {
 export const HOBBIES: Hobby[] = [
 	{
 		id: "photography",
-		avatar: "/avatars/photographer.png",
+		avatar: "/avatars/photographer.webp",
 		title: "Fotoğraf",
 		text: "Gezdiğim yerleri paylaşmayı seviyorum.",
 		href: "https://instagram.com/omerilekesfet",
@@ -28,7 +28,7 @@ export const HOBBIES: Hobby[] = [
 	},
 	{
 		id: "chess",
-		avatar: "/avatars/chess.png",
+		avatar: "/avatars/chess.webp",
 		title: "Satranç",
 		text: "5+0 blitz oynuyorum.",
 		href: "https://chess.com/member/omergulcicek",
@@ -37,25 +37,25 @@ export const HOBBIES: Hobby[] = [
 	},
 	{
 		id: "football",
-		avatar: "/avatars/footballer.png",
+		avatar: "/avatars/footballer.webp",
 		title: "Futbol",
 		text: "Halı sahada stoper."
 	},
 	{
 		id: "walk",
-		avatar: "/avatars/walk.png",
+		avatar: "/avatars/walk.webp",
 		title: "Yürüyüş",
 		text: "Bir şehri sokak sokak keşfetmeyi seviyorum."
 	},
 	{
 		id: "book",
-		avatar: "/avatars/book.png",
+		avatar: "/avatars/book.webp",
 		title: "Kitap",
 		text: "Tarih ve tasavvuf okumaları."
 	},
 	{
 		id: "draw",
-		avatar: "/avatars/draw.png",
+		avatar: "/avatars/draw.webp",
 		title: "Resim",
 		text: "Karakalem ve geleneksel sanatlar."
 	}

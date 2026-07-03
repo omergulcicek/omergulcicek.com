@@ -5,7 +5,6 @@ import {
 	interactiveCardChevronClass,
 	surfaceCardIconFrameClass
 } from "@/components/shared/interactive-card.styles"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
 import {
 	getRaindropCollectionUrl,
 	type BookmarkCategory
@@ -26,7 +25,6 @@ export function BookmarkCategoryCard({ category }: BookmarkCategoryCardProps) {
 			href={withOutboundUtm(collectionUrl)}
 			target="_blank"
 			rel="noopener noreferrer"
-			aria-label={`${category.title} — ${category.description} — ${SITE_CONTENT.bookmarksRaindropCta}`}
 			className={cn(
 				getInteractiveCardClassName(),
 				"flex-row items-stretch gap-2.5 md:gap-4"

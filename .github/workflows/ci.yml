@@ -31,3 +31,7 @@ jobs:
       - run: pnpm test
 
       - run: pnpm build
+
+      - run: pnpm lighthouse:ci
+        env:
+          BLOG_DATA_SOURCE: mdx

@@ -78,7 +78,12 @@ export const BLOG_UI = {
 	copyLink: "Bağlantıyı kopyala",
 	linkCopied: "Bağlantı kopyalandı",
 	shareOnX: "X'te paylaş",
-	shareOnLinkedIn: "LinkedIn'de paylaş"
+	shareOnLinkedIn: "LinkedIn'de paylaş",
+	errorTitle: "Bir şeyler ters gitti",
+	errorDescription:
+		"Blog içeriği yüklenirken bir sorun oluştu. Kısa süre sonra tekrar deneyebilirsin.",
+	errorRetry: "Tekrar dene",
+	readingProgressAriaLabel: "Okuma ilerlemesi"
 } as const
 
 export const BLOG_TOC_MIN_HEADINGS = 3

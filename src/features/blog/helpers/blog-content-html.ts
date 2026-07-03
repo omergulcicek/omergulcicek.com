@@ -1,5 +1,6 @@
 import type { BlogHeading, BlogHeadingLevel } from "@/features/blog/types/blog-heading.types"
 import { decodeHtmlEntities } from "@/lib/decode-html-entities"
+import { resolveBlogImageSrc } from "@/lib/media/resolve-blog-media-url"
 import { slugifyHeading } from "@/lib/slugify-heading"
 
 function stripHtmlTags(value: string) {
@@ -76,13 +77,24 @@ function wrapBlogImagesWithCaptions(html: string) {
 	return result
 }
 
+function rewriteBlogImageSources(html: string) {
+	return html.replace(
+		/<img([^>]*?\bsrc=)(["'])([^"']+)\2([^>]*)>/gi,
+		(_match, prefix: string, quote: string, src: string, suffix: string) => {
+			const resolvedSrc = resolveBlogImageSrc(src)
+			return `<img${prefix}${quote}${resolvedSrc}${quote}${suffix}>`
+		}
+	)
+}
+
 export function enrichBlogContentHtml(html: string) {
 	const headings: BlogHeading[] = []
 	const usedIds = new Set<string>()
 	const sanitizedHtml = stripReactPreloadLinks(html)
 	const htmlWithFigures = wrapBlogImagesWithCaptions(sanitizedHtml)
+	const htmlWithMediaUrls = rewriteBlogImageSources(htmlWithFigures)
 
-	const enrichedHtml = htmlWithFigures.replace(
+	const enrichedHtml = htmlWithMediaUrls.replace(
 		/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi,
 		(match, levelValue, attributes, innerHtml) => {
 			if (!isBlogHeadingLevel(levelValue)) {

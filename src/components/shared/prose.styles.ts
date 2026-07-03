@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils"
+
 export const proseParagraphClass =
 	"text-sm leading-relaxed text-pretty text-muted-foreground md:text-base"
 
@@ -11,8 +13,7 @@ export const pageTitleClass =
 export const heroSubtitleClass =
 	"text-balance text-muted-foreground text-sm font-normal md:text-base"
 
-export const cardTitleClass =
-	"text-balance text-sm font-medium md:text-base"
+export const cardTitleClass = "text-balance text-sm font-medium md:text-base"
 
 export const listTitleClass =
 	"text-balance min-w-0 flex-1 text-sm leading-6 font-normal md:text-base md:leading-7"
@@ -20,7 +21,7 @@ export const listTitleClass =
 export const sectionHeadingClass =
 	"text-balance text-sm font-semibold tracking-tight text-foreground md:text-base"
 
-export const pageStackGapClass = "gap-8 md:gap-16"
+export const pageStackGapClass = "gap-8"
 
 export const pageShellClass = `flex flex-col py-8 md:py-16 ${pageStackGapClass}`
 
@@ -29,8 +30,6 @@ export const pageSectionClass = "flex flex-col gap-4 md:gap-6"
 export const cardGridClass = "grid grid-cols-2 gap-3 md:gap-6"
 
 export const bleedSectionClass = "mx-auto w-full max-w-5xl px-4 sm:px-6"
-
-import { cn } from "@/lib/utils"
 
 export const blogProseClass = "blog-prose"
 

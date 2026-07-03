@@ -40,7 +40,8 @@ React, Next.js, TanStack Start, TypeScript, CSS, Tailwind CSS, frontend architec
 ## Machine-readable files
 
 - [llms.txt](https://omergulcicek.com/llms.txt): Concise index
-- [sitemap.xml](https://omergulcicek.com/sitemap.xml): Static page URLs (blog posts added when published)
+- [sitemap.xml](https://omergulcicek.com/sitemap.xml): Static pages + published blog post URLs (dynamic)
+- [feed.xml](https://omergulcicek.com/feed.xml): RSS feed (published posts only)
 - [robots.txt](https://omergulcicek.com/robots.txt): Crawler rules
 
 ## Source

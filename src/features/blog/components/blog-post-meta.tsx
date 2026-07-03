@@ -37,7 +37,7 @@ export function BlogPostMeta({
 				<span className="inline-flex items-center gap-1.5">
 					<Calendar className="size-4 shrink-0" aria-hidden />
 					<time dateTime={post.publishedAt}>
-						{formatBlogDate(post.publishedAt)}
+						{formatBlogDate(post.publishedAt, { includeYear: true })}
 					</time>
 				</span>
 				<span aria-hidden>·</span>

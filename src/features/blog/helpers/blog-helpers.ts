@@ -6,12 +6,16 @@ import type {
 import { normalizeBlogSlug } from "@/features/blog/helpers/blog-slug"
 import { BLOG_CATEGORY_LABELS } from "@/features/blog/constants/blog.constants"
 
-export function formatBlogDate(value: string) {
+export function formatBlogDate(
+	value: string,
+	options?: { includeYear?: boolean }
+) {
 	const date = new Date(`${value}T12:00:00`)
 
 	return new Intl.DateTimeFormat("tr-TR", {
 		day: "numeric",
-		month: "long"
+		month: "long",
+		...(options?.includeYear ? { year: "numeric" } : {})
 	}).format(date)
 }
 

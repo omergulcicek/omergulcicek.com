@@ -11,11 +11,12 @@ import {
 	CommandList
 } from "@/components/ui/command"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { mapPostsToSearchItems } from "@/features/blog/helpers/map-posts-to-search-items"
+import { useGetBlogPosts } from "@/features/blog/hooks/use-get-blog-posts"
 import { useCommandPalette } from "@/features/search/components/command-palette-provider"
 import { withOutboundUtm } from "@/lib/outbound-url"
 import {
 	SEARCH_ACTIONS,
-	SEARCH_BLOG_POSTS,
 	SEARCH_BOOKMARK_CATEGORIES,
 	SEARCH_PAGES,
 	SEARCH_PROJECTS
@@ -31,7 +32,6 @@ export function CommandPaletteTrigger() {
 			size="sm"
 			onClick={() => setOpen(true)}
 			className="h-8 gap-2 rounded-full pr-2 pl-2.5 font-medium shadow-sm mr-2"
-			aria-label="Arama paletini aç"
 		>
 			<Search className="text-muted-foreground size-4" />
 			<kbd className="bg-background text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-0.5 rounded border px-1.5 font-mono text-xs font-medium">
@@ -45,6 +45,8 @@ export function CommandPaletteTrigger() {
 export function CommandPaletteDialog() {
 	const { open, setOpen } = useCommandPalette()
 	const navigate = useNavigate()
+	const { data: blogPosts } = useGetBlogPosts()
+	const searchBlogPosts = mapPostsToSearchItems(blogPosts)
 
 	const runCommand = (command: () => void) => {
 		setOpen(false)
@@ -90,7 +92,7 @@ export function CommandPaletteDialog() {
 					))}
 				</CommandGroup>
 				<CommandGroup heading={SITE_CONTENT.commandGroups.blog}>
-					{SEARCH_BLOG_POSTS.map((post) => (
+					{searchBlogPosts.map((post) => (
 						<CommandItem
 							key={post.slug}
 							value={`${post.title} ${post.description} ${post.tags.join(" ")}`}

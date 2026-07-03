@@ -37,7 +37,7 @@ export const SITE_CONTENT = {
 	bookmarksRaindropCta: "Tümünü göster",
 	bookmarksRaindropUrl: "https://raindrop.io/omergulcicek",
 	experiencesIntro:
-		"8 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
+		"10 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
 	resumeModalTitle: "Özgeçmiş Önizleme",
 	resumeModalDescription:
 		"Özgeçmişimi buradan inceleyebilir veya indirebilirsiniz.",
@@ -59,7 +59,9 @@ export const SITE_CONTENT = {
 	notFoundDescription:
 		"Aradığın sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.",
 	notFoundHomeCta: "Ana sayfaya dön",
-	notFoundBlogCta: "Blog'a git"
+	notFoundBlogCta: "Blog'a git",
+	routeErrorCodeLabel: "Hata",
+	routeErrorRetry: "Tekrar dene"
 } as const
 
 export const EXTERNAL_LINKS = {

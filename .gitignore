@@ -38,3 +38,6 @@ _legacy/.next
 
 # generated blog migration artifacts
 scripts/output
+
+# lighthouse
+lighthouse-reports

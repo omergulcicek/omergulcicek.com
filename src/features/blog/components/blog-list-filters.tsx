@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 
 import { Separator } from "@/components/ui/separator"
@@ -36,32 +36,8 @@ export function BlogListFilters({
 	className
 }: BlogListFiltersProps) {
 	const [tagsExpanded, setTagsExpanded] = useState(false)
-	const [hasTagOverflow, setHasTagOverflow] = useState(false)
-	const tagsContainerRef = useRef<HTMLDivElement>(null)
 	const hasTags = tags.length > 0
-	const showTagsToggle = tagsExpanded || hasTagOverflow
-
-	useEffect(() => {
-		const container = tagsContainerRef.current
-
-		if (!container || !hasTags) {
-			setHasTagOverflow(false)
-			return
-		}
-
-		const updateOverflow = () => {
-			setHasTagOverflow(container.scrollHeight > container.clientHeight + 1)
-		}
-
-		updateOverflow()
-
-		const resizeObserver = new ResizeObserver(updateOverflow)
-		resizeObserver.observe(container)
-
-		return () => {
-			resizeObserver.disconnect()
-		}
-	}, [hasTags, tags, tagsExpanded])
+	const showTagsToggle = hasTags
 
 	return (
 		<section
@@ -101,10 +77,7 @@ export function BlogListFilters({
 			</div>
 			{hasTags ? (
 				<div className="flex flex-col gap-2">
-					<div
-						ref={tagsContainerRef}
-						className={cn(!tagsExpanded && blogFilterTagsCollapsedClass)}
-					>
+					<div className={cn(!tagsExpanded && blogFilterTagsCollapsedClass)}>
 						<BlogTagChips
 							tags={tags}
 							selectedTag={selectedTag}
@@ -115,7 +88,6 @@ export function BlogListFilters({
 						<button
 							type="button"
 							aria-expanded={tagsExpanded}
-							aria-label={BLOG_UI.tagsToggleAriaLabel}
 							className="focus-link text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-xs underline-offset-4 transition-colors hover:underline"
 							onClick={() => setTagsExpanded((expanded) => !expanded)}
 						>

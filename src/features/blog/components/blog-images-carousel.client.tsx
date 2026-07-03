@@ -14,9 +14,18 @@ import {
 	registerBlogProseZoomableRoot
 } from "@/features/blog/helpers/blog-prose-image-zoom"
 import type { BlogImagesCarouselProps } from "@/features/blog/types/images-carousel.types"
+import { resolveBlogImageSrc } from "@/lib/media/resolve-blog-media-url"
 import { cn } from "@/lib/utils"
 
+function resolveCarouselImages(images: BlogImagesCarouselProps["images"]) {
+	return images.map((image) => ({
+		...image,
+		src: resolveBlogImageSrc(image.src)
+	}))
+}
+
 export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
+	const resolvedImages = resolveCarouselImages(images)
 	const figureRef = useRef<HTMLElement>(null)
 	const autoplayPlugin = useRef(
 		Autoplay({
@@ -48,7 +57,7 @@ export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
 			<Carousel
 				opts={{
 					align: "start",
-					loop: images.length > 1
+					loop: resolvedImages.length > 1
 				}}
 				plugins={[autoplayPlugin.current]}
 				className="blog-images-carousel__viewport"
@@ -56,7 +65,7 @@ export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
 				onMouseLeave={autoplayPlugin.current.reset}
 			>
 				<CarouselContent className="-ml-3 md:-ml-4">
-					{images.map((image) => (
+					{resolvedImages.map((image) => (
 						<CarouselItem
 							key={image.src}
 							className="basis-[88%] pl-3 sm:basis-[70%] md:basis-1/2 md:pl-4 lg:basis-1/3"
@@ -81,7 +90,7 @@ export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				{images.length > 1 ? (
+				{resolvedImages.length > 1 ? (
 					<>
 						<CarouselPrevious />
 						<CarouselNext />

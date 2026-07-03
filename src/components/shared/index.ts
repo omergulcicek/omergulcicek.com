@@ -12,6 +12,7 @@ export {
 } from "./interactive-card.styles"
 export { getNotFoundHead } from "./not-found-page.constants"
 export { NotFoundPage } from "./not-found-page"
+export { RouteErrorPage } from "./route-error-page"
 export { OptimizedImage } from "./optimized-image"
 export { OpenToWorkBadge } from "./open-to-work-badge"
 export { PageHeader } from "./page-header"

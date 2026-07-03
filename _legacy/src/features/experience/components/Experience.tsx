@@ -60,7 +60,7 @@ export function Experience({
 
 			<div className="flex flex-col gap-2">
 				<p className="text-muted-foreground text-base leading-relaxed md:text-lg">
-					8 yılı aşkın tecrübemle, <span className="text-primary">React</span>{" "}
+					10 yılı aşkın tecrübemle, <span className="text-primary">React</span>{" "}
 					ekosisteminde <span className="text-primary">AI destekli</span> ve
 					yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı
 					deneyimleri inşa ediyorum.

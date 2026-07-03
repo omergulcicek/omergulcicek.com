@@ -2,6 +2,7 @@ import { SITE } from "@/constants/site.constants"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
 type BlogStructuredDataProps = {
 	post: BlogPost
@@ -9,11 +10,10 @@ type BlogStructuredDataProps = {
 
 export function BlogStructuredData({ post }: BlogStructuredDataProps) {
 	const articleUrl = `${SITE.url}/blog/${slugToRouteParam(post.slug)}`
-	const imageUrl = post.coverImage
-		? post.coverImage.startsWith("http")
-			? post.coverImage
-			: `${SITE.url}${post.coverImage}`
-		: `${SITE.url}${SITE.defaultOgImage}`
+	const imageUrl = resolveBlogOgImageUrl({
+		slug: post.slug,
+		coverImage: post.coverImage
+	})
 
 	const articleSchema = {
 		"@context": "https://schema.org",

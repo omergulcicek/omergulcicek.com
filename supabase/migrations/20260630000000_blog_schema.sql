@@ -19,6 +19,8 @@ CREATE TABLE blog_posts (
 	published boolean NOT NULL DEFAULT false,
 	published_at timestamptz,
 	og_image_path text,
+	series text,
+	series_order int,
 	created_at timestamptz NOT NULL DEFAULT now(),
 	updated_at timestamptz NOT NULL DEFAULT now(),
 	CONSTRAINT blog_posts_slug_starts_with_slash CHECK (slug LIKE '/%'),

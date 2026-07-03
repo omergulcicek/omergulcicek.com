@@ -231,16 +231,19 @@ Slug rota: `/blog/react-ai-stack-2026` (URL'de baştaki `/` route param'da strip
 
 | Madde | Faz |
 | --- | --- |
-| Supabase migration + SSR blog | 3 |
-| MDX pipeline + temel bileşenler | 3 |
-| chanhdai TOC minimap | 3 |
-| Kategori pill + tag chip filtreler | 3 |
-| MDX tam bileşen seti | 4 |
-| RSS feed | 4 |
-| Dinamik OG görselleri | 4 |
-| `llms.txt` / `llms-full.txt` | 4 |
-| Sitemap (yalnızca `published = true`) | 4 |
-| ⌘K blog yazı araması | 3 |
+| Supabase migration + SSR blog | 3 | ✅ |
+| MDX pipeline + temel bileşenler | 3 | ✅ |
+| chanhdai TOC minimap | 3 | ✅ |
+| Kategori pill + tag chip filtreler | 3 | ✅ |
+| MDX tam bileşen seti | 4 | ✅ |
+| RSS feed | 4 | ✅ |
+| Dinamik OG görselleri | 4 | ✅ |
+| `llms.txt` / `llms-full.txt` | 4 | ✅ |
+| Sitemap (yalnızca `published = true`) | 4 | ✅ |
+| ⌘K blog yazı araması | 3 | ✅ |
+| Seri navigasyonu (detay) | 3 | — (UI kaldırıldı) |
+| Okuma ilerlemesi | 4 | ✅ |
+| `errorComponent` (blog route) | 3 | ✅ |
 
 ---
 
