@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { BookmarkChipLabelText } from "@/features/bookmarks/components/bookmark-chip-label"
 import {
 	BOOKMARK_UI,
 	LIBRARY_BOOKMARK_SORT_LABELS,
@@ -41,6 +42,7 @@ export function BookmarkSortControl({
 		>
 			{options.map((option) => {
 				const isActive = value === option
+				const label = getBookmarkSortLabel(option)
 
 				return (
 					<Button
@@ -49,10 +51,11 @@ export function BookmarkSortControl({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
+						aria-label={label.desktop}
 						className={blogFilterChipDesktopClass}
 						onClick={() => onChange(option)}
 					>
-						{getBookmarkSortLabel(option)}
+						<BookmarkChipLabelText label={label} />
 					</Button>
 				)
 			})}

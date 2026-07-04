@@ -1,15 +1,11 @@
-import type { ReactNode } from "react"
+"use client"
+
 import { useEffect } from "react"
 
+import { ClientOnly } from "@/components/shared/client-only"
 import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
 
-type MotionEnvironmentClientProps = {
-	children: ReactNode
-}
-
-export function MotionEnvironmentClient({
-	children
-}: MotionEnvironmentClientProps) {
+function MotionEnvironmentBootInner() {
 	const { shouldUseSoftMotion, supportsViewTransitions } =
 		useMotionEnvironment()
 
@@ -19,5 +15,13 @@ export function MotionEnvironmentClient({
 		root.dataset.viewTransitions = supportsViewTransitions ? "true" : "false"
 	}, [shouldUseSoftMotion, supportsViewTransitions])
 
-	return children
+	return null
+}
+
+export function MotionEnvironmentBoot() {
+	return (
+		<ClientOnly fallback={null}>
+			<MotionEnvironmentBootInner />
+		</ClientOnly>
+	)
 }

@@ -8,5 +8,5 @@ export {
 	MOTION_SPRING_SNAP,
 	MOTION_STAGGER_DELAY
 } from "@/lib/motion/motion.constants"
-export { MotionEnvironmentClient } from "@/lib/motion/motion-environment.client"
+export { MotionEnvironmentBoot } from "@/lib/motion/motion-environment-boot.client"
 export { useMotionEnvironment } from "@/lib/motion/use-motion-environment"

@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button"
+import { BookmarkChipLabelText } from "@/features/bookmarks/components/bookmark-chip-label"
 import { blogFilterChipDesktopClass } from "@/features/blog/constants/blog-filter-chip.styles"
-import { BOOKMARK_UI, getSortedBookmarkCategories } from "@/features/bookmarks/constants/bookmarks.constants"
+import {
+	BOOKMARK_CATEGORY_CHIP_LABELS,
+	BOOKMARK_UI,
+	getSortedBookmarkCategories
+} from "@/features/bookmarks/constants/bookmarks.constants"
 import type { BookmarkCategoryId } from "@/features/bookmarks/types/bookmarks.types"
 import { cn } from "@/lib/utils"
 
@@ -23,6 +28,7 @@ export function BookmarkCategoryChips({
 		>
 			{getSortedBookmarkCategories().map((category) => {
 				const isActive = value === category.id
+				const label = BOOKMARK_CATEGORY_CHIP_LABELS[category.id]
 
 				return (
 					<Button
@@ -31,10 +37,11 @@ export function BookmarkCategoryChips({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
+						aria-label={label.desktop}
 						className={blogFilterChipDesktopClass}
 						onClick={() => onChange(category.id)}
 					>
-						{category.title}
+						<BookmarkChipLabelText label={label} />
 					</Button>
 				)
 			})}

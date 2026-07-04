@@ -2102,17 +2102,34 @@ export const BOOKMARK_GRID_COLUMN_COUNT = {
 
 export const BOOKMARK_MEDIA_RATING_TAGS = ["Film", "Dizi"] as const
 
-export const LIBRARY_BOOKMARK_SORT_LABELS: Record<LibraryBookmarkSort, string> = {
-	title: "Başlığa göre",
-	author: "Yazara göre"
+export type BookmarkChipLabel = {
+	desktop: string
+	mobile: string
+}
+
+export const BOOKMARK_CATEGORY_CHIP_LABELS: Record<
+	BookmarkCategoryId,
+	BookmarkChipLabel
+> = {
+	frontend: { desktop: "Frontend", mobile: "Frontend" },
+	library: { desktop: "Kitaplık", mobile: "Kitap" },
+	media: { desktop: "Medya", mobile: "Medya" }
+}
+
+export const LIBRARY_BOOKMARK_SORT_LABELS: Record<
+	LibraryBookmarkSort,
+	BookmarkChipLabel
+> = {
+	title: { desktop: "Başlığa göre", mobile: "Başlık" },
+	author: { desktop: "Yazara göre", mobile: "Yazar" }
 }
 
 export const MEDIA_RATING_BOOKMARK_SORT_LABELS: Record<
 	MediaRatingBookmarkSort,
-	string
+	BookmarkChipLabel
 > = {
-	"rating-desc": "En yüksek",
-	"rating-asc": "En düşük"
+	"rating-desc": { desktop: "En yüksek", mobile: "Yüksek" },
+	"rating-asc": { desktop: "En düşük", mobile: "Düşük" }
 }
 
 export const BOOKMARK_UI = {

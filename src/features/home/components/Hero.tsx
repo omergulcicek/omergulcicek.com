@@ -82,7 +82,7 @@ export function Hero() {
 						srcSet={`${HERO_IMAGE.sources.webp["1x"]} 1x, ${HERO_IMAGE.sources.webp["2x"]} 2x`}
 					/>
 					<img
-						src={HERO_IMAGE.sources.jpeg}
+						src={HERO_IMAGE.sources.webp["1x"]}
 						alt={HERO_IMAGE.alt}
 						width={HERO_IMAGE.width}
 						height={HERO_IMAGE.height}

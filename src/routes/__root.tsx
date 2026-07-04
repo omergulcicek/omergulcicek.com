@@ -17,13 +17,9 @@ import { SiteLayout } from "@/components/shared/SiteLayout"
 import { WebVitalsReporter } from "@/components/shared/web-vitals-reporter"
 import { SITE } from "@/constants/site.constants"
 import type { RouterContext } from "@/router"
-
-import interLatinExtWoff2 from "@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2?url"
-import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
+import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
 
 import "@/styles.css"
-
-const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.classList.add("dark");}}catch(e){}})();`
 
 export const Route = createRootRouteWithContext<RouterContext>()({
 	notFoundComponent: NotFoundPage,
@@ -35,20 +31,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 			{ name: "author", content: SITE.name }
 		],
 		links: [
-			{
-				rel: "preload",
-				href: interLatinWoff2,
-				as: "font",
-				type: "font/woff2",
-				crossOrigin: "anonymous"
-			},
-			{
-				rel: "preload",
-				href: interLatinExtWoff2,
-				as: "font",
-				type: "font/woff2",
-				crossOrigin: "anonymous"
-			},
 			{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
 			{ rel: "manifest", href: "/site.webmanifest" },
 			{
@@ -75,18 +57,23 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+	const theme = resolveDocumentTheme()
+
 	return (
-		<html lang="tr" suppressHydrationWarning>
+		<html
+			lang="tr"
+			className={theme === "dark" ? "dark" : undefined}
+			suppressHydrationWarning
+		>
 			<head>
-				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 				<HeadContent />
 			</head>
 			<body>
+				{children}
+				<Scripts />
 				<GoogleAnalytics />
 				<GoogleAnalyticsPageTracker />
 				<WebVitalsReporter />
-				{children}
-				<Scripts />
 			</body>
 		</html>
 	)

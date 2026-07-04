@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
 
-type Theme = "light" | "dark"
-
-const STORAGE_KEY = "theme"
+import { persistThemePreference } from "@/lib/theme/persist-theme-preference"
+import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
+import { THEME_STORAGE_KEY, type Theme } from "@/lib/theme/theme.types"
 
 type ThemeListener = () => void
 
@@ -15,7 +15,7 @@ function getPreferredTheme(): Theme {
 		return "light"
 	}
 
-	const stored = window.localStorage.getItem(STORAGE_KEY)
+	const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
 
 	if (stored === "dark" || stored === "light") {
 		return stored
@@ -42,14 +42,14 @@ function getThemeSnapshot(): Theme {
 }
 
 function getServerThemeSnapshot(): Theme {
-	return "light"
+	return resolveDocumentTheme()
 }
 
 function setSharedTheme(nextTheme: Theme) {
 	currentTheme = nextTheme
 
 	if (typeof window !== "undefined") {
-		window.localStorage.setItem(STORAGE_KEY, nextTheme)
+		persistThemePreference(nextTheme)
 	}
 
 	applyTheme(nextTheme)
@@ -63,6 +63,7 @@ function initializeTheme() {
 
 	isThemeInitialized = true
 	currentTheme = getPreferredTheme()
+	persistThemePreference(currentTheme)
 	applyTheme(currentTheme)
 	emitThemeChange()
 }

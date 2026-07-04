@@ -18,7 +18,7 @@ export function BrandMark({ className, variant = "icon" }: BrandMarkProps) {
 		<Link
 			to={HEADER_BRAND.href}
 			search={clearedRouteSearch}
-			aria-label={HEADER_BRAND.ariaLabel}
+			aria-label={variant === "icon" ? HEADER_BRAND.ariaLabel : undefined}
 			className={cn(
 				"text-foreground hover:text-foreground/80 transition-colors",
 				variant === "profile" && "inline-flex items-center gap-2",
