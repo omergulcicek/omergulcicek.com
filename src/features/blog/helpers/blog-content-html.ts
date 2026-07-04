@@ -1,6 +1,6 @@
 import type { BlogHeading, BlogHeadingLevel } from "@/features/blog/types/blog-heading.types"
 import { decodeHtmlEntities } from "@/lib/decode-html-entities"
-import { resolveBlogImageSrc } from "@/lib/media/resolve-blog-media-url"
+import { buildBlogProseResponsiveImage } from "@/lib/media/build-blog-responsive-image"
 import { slugifyHeading } from "@/lib/slugify-heading"
 
 function stripHtmlTags(value: string) {
@@ -77,14 +77,74 @@ function wrapBlogImagesWithCaptions(html: string) {
 	return result
 }
 
+function stripImageResponsiveAttributes(attributes: string) {
+	return attributes
+		.replace(/\s*\bsrcset=(["'])[^"']*\1/gi, "")
+		.replace(/\s*\bsizes=(["'])[^"']*\1/gi, "")
+}
+
+function extractSrcFromAttributes(attributes: string) {
+	return attributes.match(/\bsrc=(["'])([^"']+)\1/i)?.[2] ?? null
+}
+
+function replaceSrcInAttributes(attributes: string, src: string) {
+	if (/\bsrc=(["'])/i.test(attributes)) {
+		return attributes.replace(/\bsrc=(["'])[^"']*\1/i, `src="${src}"`)
+	}
+
+	return `${attributes} src="${src}"`
+}
+
+function appendResponsiveImageAttributes(
+	attributes: string,
+	srcSet?: string,
+	sizes?: string
+) {
+	if (!srcSet || !sizes) {
+		return attributes
+	}
+
+	return `${attributes} srcset="${srcSet}" sizes="${sizes}"`
+}
+
+function hasImageAttribute(attributes: string, name: string) {
+	return new RegExp(`\\b${name}\\s*=`, "i").test(attributes)
+}
+
+function appendProseImageLoadingAttributes(attributes: string) {
+	let nextAttributes = attributes
+
+	if (!hasImageAttribute(nextAttributes, "loading")) {
+		nextAttributes = `${nextAttributes} loading="lazy"`
+	}
+
+	if (!hasImageAttribute(nextAttributes, "decoding")) {
+		nextAttributes = `${nextAttributes} decoding="async"`
+	}
+
+	return nextAttributes
+}
+
 function rewriteBlogImageSources(html: string) {
-	return html.replace(
-		/<img([^>]*?\bsrc=)(["'])([^"']+)\2([^>]*)>/gi,
-		(_match, prefix: string, quote: string, src: string, suffix: string) => {
-			const resolvedSrc = resolveBlogImageSrc(src)
-			return `<img${prefix}${quote}${resolvedSrc}${quote}${suffix}>`
+	return html.replace(/<img([^>]*?)>/gi, (_match, attributes: string) => {
+		const originalSrc = extractSrcFromAttributes(attributes)
+
+		if (!originalSrc) {
+			return _match
 		}
-	)
+
+		const responsive = buildBlogProseResponsiveImage(originalSrc)
+		let nextAttributes = stripImageResponsiveAttributes(attributes)
+		nextAttributes = replaceSrcInAttributes(nextAttributes, responsive.src)
+		nextAttributes = appendResponsiveImageAttributes(
+			nextAttributes,
+			responsive.srcSet,
+			responsive.sizes
+		)
+		nextAttributes = appendProseImageLoadingAttributes(nextAttributes)
+
+		return `<img${nextAttributes}>`
+	})
 }
 
 export function enrichBlogContentHtml(html: string) {

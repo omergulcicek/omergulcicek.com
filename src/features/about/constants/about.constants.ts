@@ -1,3 +1,5 @@
+import { buildAvatarThumbPath } from "@/lib/media/build-static-thumb-image"
+
 export const ABOUT_CONTENT = {
 	title: "Hakkımda",
 	links: [
@@ -19,7 +21,7 @@ export type Hobby = {
 export const HOBBIES: Hobby[] = [
 	{
 		id: "photography",
-		avatar: "/avatars/photographer.webp",
+		avatar: buildAvatarThumbPath("photographer"),
 		title: "Fotoğraf",
 		text: "Gezdiğim yerleri paylaşmayı seviyorum.",
 		href: "https://instagram.com/omerilekesfet",
@@ -28,7 +30,7 @@ export const HOBBIES: Hobby[] = [
 	},
 	{
 		id: "chess",
-		avatar: "/avatars/chess.webp",
+		avatar: buildAvatarThumbPath("chess"),
 		title: "Satranç",
 		text: "5+0 blitz oynuyorum.",
 		href: "https://chess.com/member/omergulcicek",
@@ -37,25 +39,25 @@ export const HOBBIES: Hobby[] = [
 	},
 	{
 		id: "football",
-		avatar: "/avatars/footballer.webp",
+		avatar: buildAvatarThumbPath("footballer"),
 		title: "Futbol",
 		text: "Halı sahada stoper."
 	},
 	{
 		id: "walk",
-		avatar: "/avatars/walk.webp",
+		avatar: buildAvatarThumbPath("walk"),
 		title: "Yürüyüş",
 		text: "Bir şehri sokak sokak keşfetmeyi seviyorum."
 	},
 	{
 		id: "book",
-		avatar: "/avatars/book.webp",
+		avatar: buildAvatarThumbPath("book"),
 		title: "Kitap",
 		text: "Tarih ve tasavvuf okumaları."
 	},
 	{
 		id: "draw",
-		avatar: "/avatars/draw.webp",
+		avatar: buildAvatarThumbPath("draw"),
 		title: "Resim",
 		text: "Karakalem ve geleneksel sanatlar."
 	}

@@ -57,6 +57,9 @@ export const BLOG_UI = {
 	mediumLinkLabel: "Medium'da oku",
 	mediumLinkShortLabel: "Medium",
 	maxVisibleTags: 3,
+	initialVisiblePosts: 24,
+	loadMorePosts: 24,
+	loadMorePostsLabel: "Daha fazla yazı göster",
 	filtersAriaLabel: "Blog filtreleri",
 	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",
@@ -82,8 +85,7 @@ export const BLOG_UI = {
 	errorTitle: "Bir şeyler ters gitti",
 	errorDescription:
 		"Blog içeriği yüklenirken bir sorun oluştu. Kısa süre sonra tekrar deneyebilirsin.",
-	errorRetry: "Tekrar dene",
-	readingProgressAriaLabel: "Okuma ilerlemesi"
+	errorRetry: "Tekrar dene"
 } as const
 
 export const BLOG_TOC_MIN_HEADINGS = 3

@@ -1,0 +1,130 @@
+@view-transition {
+	navigation: none;
+}
+
+@keyframes motion-enter-fade-scale {
+	from {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes motion-enter-fade-scale-hero {
+	from {
+		opacity: 0.2;
+		transform: scale(0.97);
+		filter: blur(6px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+		filter: blur(0);
+	}
+}
+
+@keyframes motion-soft-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes motion-vt-fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes motion-vt-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@layer components {
+	.motion-enter {
+		opacity: 0;
+		transform: scale(0.98);
+		animation: motion-enter-fade-scale 280ms cubic-bezier(0.23, 1, 0.32, 1) both;
+	}
+
+	.motion-enter-hero-image {
+		opacity: 0;
+		transform: scale(0.97);
+		animation: motion-enter-fade-scale-hero 520ms cubic-bezier(0.23, 1, 0.32, 1)
+			both;
+	}
+
+	.vt-header-shell {
+		view-transition-name: header-shell;
+	}
+
+	.vt-hero-image {
+		view-transition-name: hero-image;
+	}
+
+	.vt-hero-content-title {
+		view-transition-name: hero-content-title;
+	}
+
+	.vt-hero-content-social {
+		view-transition-name: hero-content-social;
+	}
+
+	.vt-about-block {
+		view-transition-name: about-block;
+	}
+
+	::view-transition-old(root) {
+		animation: motion-vt-fade-out 180ms cubic-bezier(0.23, 1, 0.32, 1) both;
+	}
+
+	::view-transition-new(root) {
+		animation: motion-vt-fade-in 220ms cubic-bezier(0.23, 1, 0.32, 1) both;
+	}
+
+	::view-transition-old(header-shell),
+	::view-transition-new(header-shell) {
+		animation: none;
+	}
+
+	:root[data-reduced-motion="true"] .motion-enter,
+	:root[data-reduced-motion="true"] .motion-enter-hero-image {
+		transform: none;
+		filter: none;
+		animation: motion-soft-fade-in 200ms cubic-bezier(0.23, 1, 0.32, 1) both;
+	}
+
+	:root[data-reduced-motion="true"] ::view-transition-group(*),
+	:root[data-reduced-motion="true"] ::view-transition-old(*),
+	:root[data-reduced-motion="true"] ::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.motion-enter,
+	.motion-enter-hero-image {
+		transform: none;
+		filter: none;
+		animation: motion-soft-fade-in 200ms cubic-bezier(0.23, 1, 0.32, 1) both;
+	}
+
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}

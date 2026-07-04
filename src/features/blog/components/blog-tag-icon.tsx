@@ -13,6 +13,7 @@ import {
 	TentTree
 } from "lucide-react"
 
+import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
 import { CssOld } from "@/components/ui/svgs/cssOld"
 import { Github } from "@/components/ui/svgs/github"
 import { Html5 } from "@/components/ui/svgs/html5"
@@ -131,14 +132,13 @@ export function BlogTagIcon({ tag, className }: BlogTagIconProps) {
 	}
 
 	if (entry.kind === "theme") {
-		const LightIcon = entry.light
-		const DarkIcon = entry.dark
-
 		return (
-			<>
-				<LightIcon className={cn(className, "dark:hidden")} aria-hidden />
-				<DarkIcon className={cn(className, "hidden dark:block")} aria-hidden />
-			</>
+			<ThemeAwareDualIcon
+				light={entry.light}
+				dark={entry.dark}
+				className={className}
+				label={tag}
+			/>
 		)
 	}
 

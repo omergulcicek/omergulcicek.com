@@ -19,6 +19,7 @@ import { Virastack } from "@/components/ui/svgs/virastack"
 import { Vite } from "@/components/ui/svgs/vite"
 import { Zod } from "@/components/ui/svgs/zod"
 import { OptimizedImage } from "@/components/shared/optimized-image"
+import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
 import { cn } from "@/lib/utils"
 
 type StackLogoProps = {
@@ -51,17 +52,12 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			return <Git className={iconClassName} role="img" aria-label={label} />
 		case "react":
 			return (
-				<>
-					<ReactLight
-						className={cn(iconClassName, "dark:hidden")}
-						role="img"
-						aria-label={label}
-					/>
-					<ReactDark
-						className={cn(iconClassName, "hidden dark:block")}
-						aria-hidden
-					/>
-				</>
+				<ThemeAwareDualIcon
+					light={ReactLight}
+					dark={ReactDark}
+					className={iconClassName}
+					label={label}
+				/>
 			)
 		case "nextjs":
 			return (
@@ -83,17 +79,12 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			return <Vite className={iconClassName} role="img" aria-label={label} />
 		case "shadcn":
 			return (
-				<>
-					<ShadcnUi
-						className={cn(iconClassName, "dark:hidden")}
-						role="img"
-						aria-label={label}
-					/>
-					<ShadcnUiDark
-						className={cn(iconClassName, "hidden dark:block")}
-						aria-hidden
-					/>
-				</>
+				<ThemeAwareDualIcon
+					light={ShadcnUi}
+					dark={ShadcnUiDark}
+					className={iconClassName}
+					label={label}
+				/>
 			)
 		case "zod":
 			return <Zod className={iconClassName} role="img" aria-label={label} />

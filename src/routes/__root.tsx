@@ -8,7 +8,6 @@ import {
 } from "@tanstack/react-router"
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router"
 
-import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
 import {
 	GoogleAnalytics,
 	GoogleAnalyticsPageTracker
@@ -28,9 +27,6 @@ const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");if(
 
 export const Route = createRootRouteWithContext<RouterContext>()({
 	notFoundComponent: NotFoundPage,
-	loader: async ({ context }) => {
-		await context.queryClient.ensureQueryData(blogPostsQueryOptions())
-	},
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },

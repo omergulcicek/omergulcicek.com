@@ -20,7 +20,11 @@ import { SERVICES_CONTENT } from "@/features/services/constants/services.constan
 export function ServicesPage() {
 	return (
 		<Container className={pageShellClass}>
-			<PageHeader title={SERVICES_CONTENT.pageTitle} showOpenToWork>
+			<PageHeader
+				title={SERVICES_CONTENT.pageTitle}
+				showOpenToWork
+				openToWorkPlacement="inline"
+			>
 				<p className={proseParagraphClass}>
 					Geliştirme, Danışmanlık ve frontend eğitimi sunuyorum.
 				</p>

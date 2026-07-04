@@ -1,13 +1,6 @@
 import { serializeBlogWidgetProps } from "@/features/blog/helpers/blog-widget-props"
-import { resolveBlogImageSrc } from "@/lib/media/resolve-blog-media-url"
+import { resolveCarouselImages } from "@/features/blog/helpers/resolve-carousel-images"
 import type { BlogImagesCarouselProps } from "@/features/blog/types/images-carousel.types"
-
-function resolveCarouselImages(images: BlogImagesCarouselProps["images"]) {
-	return images.map((image) => ({
-		...image,
-		src: resolveBlogImageSrc(image.src)
-	}))
-}
 
 function BlogImagesCarouselFallback({ images }: BlogImagesCarouselProps) {
 	const resolvedImages = resolveCarouselImages(images)
@@ -18,6 +11,8 @@ function BlogImagesCarouselFallback({ images }: BlogImagesCarouselProps) {
 				<img
 					key={image.src}
 					src={image.src}
+					srcSet={image.srcSet}
+					sizes={image.sizes}
 					alt={image.alt}
 					loading="lazy"
 					decoding="async"

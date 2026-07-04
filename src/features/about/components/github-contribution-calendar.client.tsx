@@ -1,12 +1,9 @@
-import { ActivityCalendar } from "react-activity-calendar"
+import { lazy, Suspense } from "react"
 
 import { bleedSectionClass } from "@/components/shared/prose.styles"
 import {
-	GITHUB_CALENDAR_BLOCK_MARGIN,
-	GITHUB_CALENDAR_BLOCK_SIZE,
 	GITHUB_CALENDAR_CONTAINER_HEIGHT_PX,
 	GITHUB_CALENDAR_CONTENT_HEIGHT_PX,
-	GITHUB_CALENDAR_THEME,
 	GITHUB_CALENDAR_WIDTH_PX
 } from "@/features/about/constants/github-calendar.constants"
 import type { GitHubContribution } from "@/features/about/schemas/github-contribution.schema"
@@ -17,10 +14,31 @@ type GitHubContributionCalendarProps = {
 	contributions: GitHubContribution[]
 }
 
+function GitHubCalendarSkeleton() {
+	return (
+		<div
+			className="bg-muted/40 w-full max-w-[699px] animate-pulse rounded-md"
+			style={{
+				minHeight: GITHUB_CALENDAR_CONTENT_HEIGHT_PX,
+				height: GITHUB_CALENDAR_CONTENT_HEIGHT_PX
+			}}
+			aria-hidden
+		/>
+	)
+}
+
+const LazyGitHubContributionCalendarInner = lazy(async () => {
+	const module = await import(
+		"@/features/about/components/github-contribution-calendar-inner.client"
+	)
+
+	return { default: module.GitHubContributionCalendarInner }
+})
+
 export function GitHubContributionCalendar({
 	contributions
 }: GitHubContributionCalendarProps) {
-	const { theme } = useTheme()
+	const { isMounted } = useTheme()
 
 	return (
 		<section className={bleedSectionClass} aria-label="GitHub katkı takvimi">
@@ -42,36 +60,15 @@ export function GitHubContributionCalendar({
 						minHeight: GITHUB_CALENDAR_CONTENT_HEIGHT_PX
 					}}
 				>
-					<ActivityCalendar
-						data={contributions}
-						colorScheme={theme === "dark" ? "dark" : "light"}
-						theme={GITHUB_CALENDAR_THEME}
-						labels={{
-							months: [
-								"Oca",
-								"Şub",
-								"Mar",
-								"Nis",
-								"May",
-								"Haz",
-								"Tem",
-								"Ağu",
-								"Eyl",
-								"Eki",
-								"Kas",
-								"Ara"
-							],
-							totalCount: "Son yıl içerisinde {{count}} katkı",
-							legend: {
-								less: "Az",
-								more: "Çok"
-							}
-						}}
-						blockSize={GITHUB_CALENDAR_BLOCK_SIZE}
-						blockMargin={GITHUB_CALENDAR_BLOCK_MARGIN}
-						weekStart={1}
-						maxLevel={4}
-					/>
+					{isMounted ? (
+						<Suspense fallback={<GitHubCalendarSkeleton />}>
+							<LazyGitHubContributionCalendarInner
+								contributions={contributions}
+							/>
+						</Suspense>
+					) : (
+						<GitHubCalendarSkeleton />
+					)}
 				</div>
 			</div>
 		</section>

@@ -13,16 +13,9 @@ import {
 	openBlogProseImageZoom,
 	registerBlogProseZoomableRoot
 } from "@/features/blog/helpers/blog-prose-image-zoom"
+import { resolveCarouselImages } from "@/features/blog/helpers/resolve-carousel-images"
 import type { BlogImagesCarouselProps } from "@/features/blog/types/images-carousel.types"
-import { resolveBlogImageSrc } from "@/lib/media/resolve-blog-media-url"
 import { cn } from "@/lib/utils"
-
-function resolveCarouselImages(images: BlogImagesCarouselProps["images"]) {
-	return images.map((image) => ({
-		...image,
-		src: resolveBlogImageSrc(image.src)
-	}))
-}
 
 export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
 	const resolvedImages = resolveCarouselImages(images)
@@ -73,6 +66,8 @@ export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
 							<div className="blog-images-carousel__slide">
 								<img
 									src={image.src}
+									srcSet={image.srcSet}
+									sizes={image.sizes}
 									alt={image.alt}
 									loading="lazy"
 									decoding="async"

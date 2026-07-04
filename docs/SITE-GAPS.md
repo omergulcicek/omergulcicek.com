@@ -3,7 +3,7 @@
 > Ana yol haritası ve faz sırası: [`PHASES.md`](./PHASES.md)  
 > Kaynak: `_legacy/` (v14 Next.js) ile güncel TanStack Start (v15) karşılaştırması; modern FE / product engineer siteleri referans.
 
-**Güncelleme:** 2026-07-04 (Supabase blog veri hattı, RSS, dinamik sitemap, ⌘K, seri nav, okuma ilerlemesi)
+**Güncelleme:** 2026-07-04 (Supabase blog veri hattı, RSS, dinamik sitemap, ⌘K, seri nav, okuma ilerlemesi; **Faz 6** SEO/Lighthouse performans checklist eklendi)
 
 Parantez içindeki faz notları (`Faz 3`, `Faz 4` vb.) ilgili madde `PHASES.md` içinde de tanımlıysa oraya işaret eder.
 
@@ -39,6 +39,12 @@ Lansman öncesi blocker. Yeni site bu maddeler tamamlanmadan eski siteyi geçeme
 
 Lansman sonrası kısa vadede; site kalitesini belirgin yükseltir.
 
+> **Faz 6 (SEO + Lighthouse):** Detaylı checklist → [`PHASES.md` → Faz 6](./PHASES.md#faz-6--seo-ve-lighthouse-performans-iyileştirmeleri). Kullanıcı incelemesi bekleniyor.
+
+- [ ] Lighthouse CI yeşil — performance ≥ 90, LCP ≤ 2.5s, TBT ≤ 200ms (Faz 6)
+- [ ] Statik görsel WebP pipeline + responsive blog `srcset` (Faz 6)
+- [ ] Client bundle / hydration küçültme — calendar, carousel, GA deferred (Faz 6)
+- [ ] JSON-LD ve blog meta denetimi (Faz 6)
 - [ ] View Transitions veya hafif giriş animasyonları — `prefers-reduced-motion` uyumlu (Faz 5)
 - [x] RSS / Atom feed — `published = true` only (Faz 4) — `/feed.xml` dinamik route
 - [ ] Newsletter veya bülten CTA (cassidoo / leerob modeli)

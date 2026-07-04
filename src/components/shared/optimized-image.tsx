@@ -10,6 +10,7 @@ type OptimizedImageProps = {
 	width: number
 	height: number
 	className?: string
+	sizes?: string
 	loading?: "lazy" | "eager"
 	decoding?: "async" | "sync" | "auto"
 	fetchPriority?: "high" | "low" | "auto"
@@ -22,6 +23,7 @@ export function OptimizedImage({
 	width,
 	height,
 	className,
+	sizes,
 	loading = "lazy",
 	decoding = "async",
 	fetchPriority,
@@ -35,6 +37,7 @@ export function OptimizedImage({
 			height={height}
 			loading={loading}
 			decoding={decoding}
+			{...(sizes ? { sizes } : {})}
 			{...(fetchPriority ? { fetchPriority } : {})}
 			className={className}
 		/>

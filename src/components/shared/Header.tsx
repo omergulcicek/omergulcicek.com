@@ -22,7 +22,7 @@ export function Header() {
 			>
 				{SITE_CONTENT.skipToContent}
 			</a>
-			<header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 backdrop-blur">
+			<header className="motion-enter vt-header-shell bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 backdrop-blur">
 				<Container className="py-3 md:py-4">
 					<div className="flex items-center justify-between gap-3 md:gap-4">
 						<div className="flex items-center gap-3 md:gap-6">

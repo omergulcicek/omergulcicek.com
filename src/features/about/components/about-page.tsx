@@ -1,3 +1,5 @@
+import { lazy, Suspense } from "react"
+
 import { GitHubIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
@@ -20,9 +22,17 @@ import { ABOUT_CONTENT } from "@/features/about/constants/about.constants"
 import { STACK_ITEMS } from "@/features/about/constants/stack.constants"
 import { GitHubContributionCalendar } from "@/features/about/components/github-contribution-calendar.client"
 import { HobbyList } from "@/features/about/components/hobby-list"
-import { StackStrip } from "@/features/home/components/StackStrip"
 import type { GitHubContribution } from "@/features/about/schemas/github-contribution.schema"
 import { cn } from "@/lib/utils"
+
+const StackStrip = lazy(async () => {
+	const module = await import("@/features/home/components/StackStrip")
+	return { default: module.StackStrip }
+})
+
+function StackStripFallback() {
+	return <div className="h-24" aria-hidden />
+}
 
 type AboutPageProps = {
 	contributions: GitHubContribution[]
@@ -32,7 +42,7 @@ export function AboutPage({ contributions }: AboutPageProps) {
 	return (
 		<div className={pageShellClass}>
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
-				<PageHeader title={ABOUT_CONTENT.title}>
+				<PageHeader title={ABOUT_CONTENT.title} className="vt-about-block">
 					<div className={proseFlowClass}>
 						<p className={proseParagraphClass}>
 							Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
@@ -58,7 +68,9 @@ export function AboutPage({ contributions }: AboutPageProps) {
 				</PageHeader>
 			</Container>
 
-			<StackStrip items={STACK_ITEMS} />
+			<Suspense fallback={<StackStripFallback />}>
+				<StackStrip items={STACK_ITEMS} />
+			</Suspense>
 
 			<section className={pageSectionClass}>
 				<Container className={pageSectionClass}>

@@ -1,4 +1,5 @@
-import { useEffect } from "react"
+import { useEffect, useMemo, useState } from "react"
+import { Button } from "@/components/ui/button"
 import { BlogEmptyState } from "@/features/blog/components/blog-empty-state"
 import { BlogListFilters } from "@/features/blog/components/blog-list-filters"
 import { BlogListPostRow } from "@/features/blog/components/blog-list-post-row"
@@ -55,6 +56,23 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 	const showClearFilters = canClearBlogFilters({ category, tag, query, sort })
 	const { drafts, published } = partitionDraftPosts(filteredPosts)
 	const yearEntries = getSortedYearEntries(published, sort)
+	const flatPublished = useMemo(
+		() => yearEntries.flatMap(([, yearPosts]) => yearPosts),
+		[yearEntries]
+	)
+	const [visiblePostCount, setVisiblePostCount] = useState<number>(
+		BLOG_UI.initialVisiblePosts
+	)
+
+	useEffect(() => {
+		setVisiblePostCount(BLOG_UI.initialVisiblePosts)
+	}, [category, tag, query, sort])
+
+	const visiblePublishedSlugs = useMemo(
+		() => new Set(flatPublished.slice(0, visiblePostCount).map((post) => post.slug)),
+		[flatPublished, visiblePostCount]
+	)
+	const hasMorePosts = flatPublished.length > visiblePostCount
 	const showDrafts = isDev && drafts.length > 0
 	const hasLeadSection = showDrafts
 
@@ -89,7 +107,7 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 							>
 								{BLOG_UI.draftsHeading}
 							</AnchoredHeading>
-							<div className="flex flex-col gap-3">
+							<div className="flex flex-col gap-3 overflow-visible">
 								{drafts.map((post) => (
 									<BlogListPostRow
 										key={post.slug}
@@ -101,7 +119,16 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 						</section>
 					) : null}
 
-					{yearEntries.map(([year, yearPosts], index) => (
+					{yearEntries.map(([year, yearPosts], index) => {
+						const visibleYearPosts = yearPosts.filter((post) =>
+							visiblePublishedSlugs.has(post.slug)
+						)
+
+						if (visibleYearPosts.length === 0) {
+							return null
+						}
+
+						return (
 						<section
 							key={year}
 							className={cn(
@@ -119,13 +146,31 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 							>
 								{year}
 							</AnchoredHeading>
-							<div className="flex flex-col gap-3">
-								{yearPosts.map((post) => (
+							<div className="flex flex-col gap-3 overflow-visible">
+								{visibleYearPosts.map((post) => (
 									<BlogListPostRow key={post.slug} post={post} />
 								))}
 							</div>
 						</section>
-					))}
+						)
+					})}
+
+					{hasMorePosts ? (
+						<div className="flex justify-center pt-2">
+							<Button
+								type="button"
+								variant="outline"
+								size="sm"
+								onClick={() =>
+									setVisiblePostCount(
+										(count) => count + BLOG_UI.loadMorePosts
+									)
+								}
+							>
+								{BLOG_UI.loadMorePostsLabel}
+							</Button>
+						</div>
+					) : null}
 				</div>
 			)}
 		</div>

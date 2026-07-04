@@ -2,7 +2,7 @@
 
 > **Agent onboarding:** Build oturumuna başlamadan önce bu dosyayı oku. Detaylar ilgili SSOT dokümanlarında; burada yalnızca sıra ve checklist.
 
-**Mevcut durum (2026-07-04):** Faz 1–3 blog çekirdeği tamamlandı (Supabase SSR, liste/detay, ⌘K, RSS, sitemap). Faz 4 lansman maddeleri (deploy, Lighthouse, dinamik OG) sırada.
+**Mevcut durum (2026-07-04):** Faz 1–4 çekirdeği tamamlandı (Supabase SSR, liste/detay, ⌘K, RSS, sitemap, dinamik OG). Deploy sırada. **Faz 6** — SEO ve Lighthouse performans iyileştirmeleri (kullanıcı incelemesi) devam ediyor.
 
 **Lansman kuralı:** RSS, dinamik OG, llms.txt, GA ve WebVitals bitmeden production'a çıkılmaz. Fazlar organizasyon içindir; MVP tek seferde yayınlanır.
 
@@ -247,12 +247,12 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### Motion ve Animasyon (v2)
 
-- [ ] Framer Motion kurulumu
-- [ ] View Transitions API — sayfa geçişleri
-- [ ] Stack carousel kaydırması (`/about`)
-- [ ] Hero stagger / giriş animasyonları (subtle)
-- [ ] `prefers-reduced-motion` desteği
-- [ ] **emil-design-eng** skill ile motion review
+- [x] Framer Motion kurulumu
+- [x] View Transitions API — sayfa geçişleri
+- [x] Stack carousel kaydırması (`/about`) — Magic UI Marquee, mevcut
+- [x] Hero stagger / giriş animasyonları (subtle)
+- [x] `prefers-reduced-motion` desteği
+- [x] **emil-design-eng** skill ile motion review
 
 ### Ana Sayfa Cila
 
@@ -268,6 +268,60 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ---
 
+## Faz 6 — SEO ve Lighthouse Performans İyileştirmeleri
+
+**Hedef:** CI eşiklerini karşılayan Core Web Vitals; SEO meta ve yapılandırılmış veri denetimi. Faz 4 altyapısı üzerine iteratif iyileştirme — **kullanıcı son inceleme**.
+
+**SSOT:** `SITE-CONTENT.md` (SEO) · `PROJECT-BRIEF.md` (performans hedefleri) · `lighthouserc.cjs` (CI eşikleri)
+
+**Mevcut baseline (`pnpm lighthouse:ci`, 2026-07-04, son koşu):** Performance 56–88 (eşik 90 — geçmiyor); LCP 3.3–11.7s (eşik 2.5s — geçmiyor); TBT 0ms ✓; CLS 0 ✓; SEO 100 ✓; best-practices 96 ✓; `/blog/virastack-ai` accessibility 94 (eşik 95 — geçmiyor).
+
+### Lighthouse CI — tüm URL'ler
+
+CI rotaları: `/`, `/blog`, `/blog/virastack-ai`, `/about`, `/projects`, `/experiences`, `/services`, `/bookmarks`
+
+- [ ] `categories:performance` ≥ 0.90 — tüm URL'ler (56–88; geçmiyor)
+- [ ] `largest-contentful-paint` ≤ 2500ms — tüm URL'ler (3.3–11.7s; geçmiyor)
+- [x] `total-blocking-time` ≤ 200ms — tüm URL'ler (0ms)
+- [x] `cumulative-layout-shift` ≤ 0.1 — tüm URL'ler (0)
+- [ ] `categories:accessibility` ≥ 0.95 — tüm URL'ler (`/blog/virastack-ai` 94)
+- [x] `categories:seo` ≥ 0.95 — korunur (100)
+- [x] `categories:best-practices` ≥ 0.95 — korunur (96)
+- [ ] `pnpm lighthouse:ci` yeşil — kullanıcı doğrulaması (a11y + perf + LCP hâlâ kırık)
+
+### Görsel ve LCP
+
+- [x] Statik asset WebP pipeline — `scripts/optimize-static-images.mjs` + `public/` thumb varyantları (`build` öncesi `optimize:images`)
+- [x] Hero portre — LCP preload, doğru `fetchpriority` / boyut (`index.tsx` preload, `omergulcicek-672.webp`)
+- [x] Blog kapak / carousel — responsive `srcset` (`build-blog-responsive-image.ts`, `resolve-carousel-images.ts`)
+- [x] Şirket logoları, hobi avatarları, ViraStack logo — küçük WebP varyantları (48px / 96px / 112px)
+- [x] MDX içi görseller — lazy load, uygun boyut, `getMediaUrl` ile tutarlı çözümleme (`enrichBlogContentHtml` → `loading="lazy"` + `decoding="async"`)
+
+### JS bundle ve hydration
+
+- [x] Ağır client bileşenler — `ClientOnly` / lazy + SSR fallback (Hero, GitHub calendar, carousel)
+- [x] Google Analytics — deferred / lazy yükleme (`requestIdleCallback`, `google-analytics.tsx`)
+- [x] Blog detay — okuma ilerlemesi kaldırıldı; paylaşım tek client bileşende
+- [x] Font yükleme — Inter latin/latin-ext subset + `font-display: swap` + preload (`inter-font.css`, `__root.tsx`)
+- [x] Bundle analyzer — `pnpm analyze` (`vite build --mode analyze`, `dist/bundle-stats.html`)
+
+### SEO derinleştirme
+
+- [x] JSON-LD denetimi — `Person` + `WebSite` (ana sayfa), `BlogPosting` + breadcrumb (yazı detay)
+- [ ] Blog detay — canonical, `article:*` OG, Twitter kartları, kapak görseli boyutu (canonical + Twitter + `og:type=article` var; `article:published_time` vb. eksik)
+- [x] Sitemap — blog slug'ları + `lastmod` (`publishedAt`, yalnızca `published = true`)
+- [ ] RSS — yalnızca `published = true`; kapak URL'leri geçerli (`published` filtresi ✓; item'larda kapak/enclosure yok)
+- [x] İç linkleme — komşu yazılar, breadcrumb JSON-LD
+- [x] Taslaklar — `noindex`, sitemap/RSS/⌘K dışı (regresyon yok)
+
+### Doğrulama
+
+- [ ] Production build + preview (`pnpm build && pnpm preview`) — gizli mod manuel audit
+- [ ] Mobil viewport — tüm CI URL'leri
+- [ ] Kullanıcı son inceleme — bu faz checklist'i
+
+---
+
 ## Faz Özeti
 
 | Faz | Kapsam | Lansman blocker? |
@@ -278,6 +332,7 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 | **Faz 3** | Supabase, blog taşıma, liste + detay, temel MDX | Evet |
 | **Faz 4** | Tam MDX, RSS, OG, llms, sitemap, GA, WebVitals, deploy | Evet |
 | **Faz 5** | Motion, doodle, ayet, engagement, i18n | Hayır |
+| **Faz 6** | Lighthouse CWV, görsel/bundle optimizasyonu, SEO denetimi | Hayır (kalite) |
 
 ---
 

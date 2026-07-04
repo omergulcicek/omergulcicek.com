@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils"
+
 import { Container } from "@/components/shared/Container"
 import {
 	pageShellClass,
@@ -5,7 +7,6 @@ import {
 	pageTitleClass
 } from "@/components/shared/prose.styles"
 import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detail-header"
-import { BlogReadingProgress } from "@/features/blog/components/blog-reading-progress.client"
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
 import { BlogPostToc } from "@/features/blog/components/blog-post-toc"
 import { BlogProse } from "@/features/blog/components/blog-prose"
@@ -14,7 +15,6 @@ import { BlogStructuredData } from "@/features/blog/components/blog-structured-d
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPostDetail } from "@/features/blog/repositories/blog-repository.types"
-import { cn } from "@/lib/utils"
 
 type BlogPostDetailPageProps = {
 	post: BlogPostDetail
@@ -33,7 +33,6 @@ export function BlogPostDetailPage({
 
 	return (
 		<>
-			<BlogReadingProgress />
 			<BlogStructuredData post={post} />
 			<div className={pageShellClass}>
 				<Container className={cn("flex flex-col", pageStackGapClass)}>
@@ -52,10 +51,7 @@ export function BlogPostDetailPage({
 								post={post}
 								showDraftBadge={isDev}
 								shareActions={
-									<BlogShareActionsBar
-										path={sharePath}
-										title={post.title}
-									/>
+									<BlogShareActionsBar path={sharePath} title={post.title} />
 								}
 							/>
 						</header>

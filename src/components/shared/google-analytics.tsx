@@ -32,7 +32,29 @@ export function GoogleAnalytics() {
 			return
 		}
 
-		loadGoogleAnalytics(gaId)
+		let cancelled = false
+
+		const load = () => {
+			if (!cancelled) {
+				loadGoogleAnalytics(gaId)
+			}
+		}
+
+		if ("requestIdleCallback" in window) {
+			const idleId = window.requestIdleCallback(load, { timeout: 3000 })
+
+			return () => {
+				cancelled = true
+				window.cancelIdleCallback(idleId)
+			}
+		}
+
+		const timeoutId = globalThis.setTimeout(load, 2000)
+
+		return () => {
+			cancelled = true
+			globalThis.clearTimeout(timeoutId)
+		}
 	}, [gaId])
 
 	return null

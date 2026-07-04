@@ -37,7 +37,7 @@ export function getInteractiveCardClassName(isMuted = false) {
 }
 
 export const interactiveListRowClass = cn(
-	"group rounded-xl border border-transparent ring-1 ring-transparent ring-offset-4 ring-offset-[#fcfcfc] transition-[border-color,background-color] duration-150 ease-out dark:ring-offset-[#0f0f0f]",
+	"group relative rounded-xl border border-transparent ring-1 ring-transparent ring-offset-4 ring-offset-[#fcfcfc] transition-[border-color,background-color] duration-150 ease-out hover:z-10 dark:ring-offset-[#0f0f0f]",
 	interactiveSurfaceHoverBorderClass,
 	interactiveSurfaceHoverBgClass,
 	"hover:ring-foreground/8"

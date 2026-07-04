@@ -56,6 +56,7 @@ export function HobbyList() {
 							alt=""
 							width={48}
 							height={48}
+							sizes="48px"
 							className="image-outline size-full object-cover"
 						/>
 					</figure>

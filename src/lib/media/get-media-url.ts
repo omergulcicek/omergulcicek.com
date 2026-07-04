@@ -58,7 +58,7 @@ export function getMediaUrl(
 		return getSupabaseObjectUrl(path)
 	}
 
-	if (provider === "supabase-transform") {
+	if (provider === "supabase-transform" || options?.transform?.width) {
 		return getSupabaseTransformUrl(path, options?.transform)
 	}
 
@@ -69,7 +69,7 @@ export function getMediaSrcSet(
 	path: string,
 	options: GetMediaSrcSetOptions
 ): string {
-	if (env.VITE_MEDIA_PROVIDER !== "supabase-transform") {
+	if (env.VITE_MEDIA_PROVIDER === "local") {
 		return ""
 	}
 

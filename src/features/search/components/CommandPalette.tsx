@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 import { Bookmark, ExternalLink, FolderOpen, Mail, Quote, Search } from "lucide-react"
 
@@ -11,8 +12,8 @@ import {
 	CommandList
 } from "@/components/ui/command"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
 import { mapPostsToSearchItems } from "@/features/blog/helpers/map-posts-to-search-items"
-import { useGetBlogPosts } from "@/features/blog/hooks/use-get-blog-posts"
 import { useCommandPalette } from "@/features/search/components/command-palette-provider"
 import { withOutboundUtm } from "@/lib/outbound-url"
 import {
@@ -45,7 +46,10 @@ export function CommandPaletteTrigger() {
 export function CommandPaletteDialog() {
 	const { open, setOpen } = useCommandPalette()
 	const navigate = useNavigate()
-	const { data: blogPosts } = useGetBlogPosts()
+	const { data: blogPosts = [] } = useQuery({
+		...blogPostsQueryOptions(),
+		enabled: open
+	})
 	const searchBlogPosts = mapPostsToSearchItems(blogPosts)
 
 	const runCommand = (command: () => void) => {
@@ -79,7 +83,7 @@ export function CommandPaletteDialog() {
 										return
 									}
 
-									void navigate({ to: page.href })
+									void navigate({ to: page.href, viewTransition: false })
 								})
 							}
 						>
@@ -100,7 +104,8 @@ export function CommandPaletteDialog() {
 								runCommand(() => {
 									void navigate({
 										to: "/blog/$slug",
-										params: { slug: post.slug }
+										params: { slug: post.slug },
+										viewTransition: false
 									})
 								})
 							}
@@ -148,7 +153,10 @@ export function CommandPaletteDialog() {
 							value={`${category.title} ${category.description}`}
 							onSelect={() =>
 								runCommand(() => {
-									void navigate({ to: category.href })
+									void navigate({
+										to: category.href,
+										viewTransition: false
+									})
 								})
 							}
 						>

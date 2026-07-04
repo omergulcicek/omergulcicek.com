@@ -4,8 +4,9 @@ import { Container } from "@/components/shared/Container"
 import { pageShellClass } from "@/components/shared/prose.styles"
 import { BlogProse } from "@/features/blog/components/blog-prose"
 import { blogMdxComponentNames } from "@/features/blog/constants/blog-mdx-component-names.constants"
-import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
 import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
+import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
+import { buildPageHead } from "@/lib/seo/build-page-head"
 
 const MDX_SANDBOX_FIXTURES = {
 	notice: `<BlogNotice title="Sandbox" variant="info">
@@ -17,10 +18,17 @@ Bu sayfa yalnızca geliştirme ortamında MDX bileşenlerini test etmek içindir
 
 export const Route = createFileRoute("/dev/mdx-sandbox")({
 	beforeLoad: () => {
-		if (!import.meta.env.DEV) {
+		if (import.meta.env.PROD) {
 			throw notFound()
 		}
 	},
+	head: () =>
+		buildPageHead({
+			title: "MDX Sandbox",
+			description: "Development-only MDX component preview.",
+			path: "/dev/mdx-sandbox",
+			robots: "noindex, nofollow"
+		}),
 	loader: async () => {
 		const compiled = await Promise.all(
 			Object.entries(MDX_SANDBOX_FIXTURES).map(async ([key, content]) => {

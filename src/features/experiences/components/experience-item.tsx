@@ -4,6 +4,7 @@ import {
 	surfaceCardIconFrameClass
 } from "@/components/shared/interactive-card.styles"
 import { OptimizedImage } from "@/components/shared/optimized-image"
+import { buildCompanyLogoThumbPath } from "@/lib/media/build-static-thumb-image"
 import { TechnologyBadges } from "@/features/experiences/components/technology-badges"
 import type { Experience } from "@/features/experiences/constants/experiences.constants"
 import { cn } from "@/lib/utils"
@@ -27,10 +28,11 @@ export function ExperienceItem({
 		>
 			<div className={surfaceCardIconFrameClass}>
 				<OptimizedImage
-					src={`/company/${experience.icon}.jpeg`}
+					src={buildCompanyLogoThumbPath(experience.icon)}
 					alt=""
 					width={24}
 					height={24}
+					sizes="24px"
 					className="image-outline size-6 overflow-hidden rounded object-cover"
 				/>
 			</div>

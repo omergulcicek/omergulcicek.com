@@ -25,7 +25,7 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 - **Blog TOC:** chanhdai minimap (kesin).
 - **Blog görselleri:** Aşamalı — `local` (`public/blog/`) → `supabase` → `supabase-transform`; `getMediaUrl` + `VITE_MEDIA_PROVIDER`.
 - **MDX tam set:** Faz 4; Faz 3 yalnızca temel render.
-- **SEO (RSS, OG, llms, sitemap, GA):** Faz 4.
+- **SEO (RSS, OG, llms, sitemap, GA):** Faz 4 altyapı; derin denetim + Lighthouse CWV hedefleri **Faz 6**.
 - **Hero doodle / ayet:** Faz 5; constants Faz 1'de kapalı.
 - **Engagement:** view/like/comment site lansmanından sonra; yorum şimdilik geç.
 - **v1 motion:** Framer Motion yok; CSS hover/focus serbest.
@@ -36,4 +36,5 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 - 2026-06 — Dokümantasyon SSOT tamamlandı; `docs/supabase-migration.md` eklendi.
 - 2026-06 — Blog görselleri aşamalı medya sağlayıcı: `src/lib/media/`, varsayılan `local`.
 - 2026-06-29 — `SITE-CONTENT.md` tamamlandı (footer, SEO, hata sayfaları). `BOOKMARKS.md` 7 kategori SSOT. Faz haritası güncellendi (MDX/SEO Faz 4, cila Faz 5).
+- 2026-07-04 — **Faz 6** eklendi: SEO ve Lighthouse performans iyileştirmeleri (CI eşikleri, görsel/bundle optimizasyonu, kullanıcı incelemesi).
 - 2026-06-29 — Header rose ikonu (metin yok); footer iki sütun; hero + bölüm başlıkları 16px tipografi kararları.

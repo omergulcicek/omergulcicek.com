@@ -2,9 +2,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.62,
+    "actual": 0.65,
     "values": [
-      0.62
+      0.65
     ],
     "operator": ">=",
     "passed": false,
@@ -16,9 +16,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 7366.6029,
+    "actual": 5709.664319215957,
     "values": [
-      7366.6029
+      5709.664319215957
     ],
     "operator": "<=",
     "passed": false,
@@ -31,9 +31,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.57,
+    "actual": 0.56,
     "values": [
-      0.57
+      0.56
     ],
     "operator": ">=",
     "passed": false,
@@ -45,9 +45,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 9106.384,
+    "actual": 11697.462000000001,
     "values": [
-      9106.384
+      11697.462000000001
     ],
     "operator": "<=",
     "passed": false,
@@ -60,9 +60,52 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.79,
+    "actual": 0.62,
     "values": [
-      0.79
+      0.62
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://127.0.0.1:4173/blog/virastack-ai"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.95,
+    "actual": 0.94,
+    "values": [
+      0.94
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "accessibility",
+    "auditId": "categories",
+    "level": "error",
+    "url": "http://127.0.0.1:4173/blog/virastack-ai"
+  },
+  {
+    "name": "maxNumericValue",
+    "expected": 2500,
+    "actual": 10872.068200000002,
+    "values": [
+      10872.068200000002
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "largest-contentful-paint",
+    "level": "warn",
+    "url": "http://127.0.0.1:4173/blog/virastack-ai",
+    "auditTitle": "Largest Contentful Paint",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.64,
+    "values": [
+      0.64
     ],
     "operator": ">=",
     "passed": false,
@@ -74,9 +117,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 4378.5135,
+    "actual": 6703.96065,
     "values": [
-      4378.5135
+      6703.96065
     ],
     "operator": "<=",
     "passed": false,
@@ -89,9 +132,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.68,
+    "actual": 0.75,
     "values": [
-      0.68
+      0.75
     ],
     "operator": ">=",
     "passed": false,
@@ -103,9 +146,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 5493.9133,
+    "actual": 6156.5664,
     "values": [
-      5493.9133
+      6156.5664
     ],
     "operator": "<=",
     "passed": false,
@@ -118,9 +161,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.63,
+    "actual": 0.85,
     "values": [
-      0.63
+      0.85
     ],
     "operator": ">=",
     "passed": false,
@@ -132,9 +175,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 6618.4442,
+    "actual": 3325.6404999999995,
     "values": [
-      6618.4442
+      3325.6404999999995
     ],
     "operator": "<=",
     "passed": false,
@@ -147,9 +190,38 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.71,
+    "actual": 0.66,
     "values": [
-      0.71
+      0.66
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://127.0.0.1:4173/services"
+  },
+  {
+    "name": "maxNumericValue",
+    "expected": 2500,
+    "actual": 5882.0802,
+    "values": [
+      5882.0802
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "largest-contentful-paint",
+    "level": "warn",
+    "url": "http://127.0.0.1:4173/services",
+    "auditTitle": "Largest Contentful Paint",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.88,
+    "values": [
+      0.88
     ],
     "operator": ">=",
     "passed": false,
@@ -161,9 +233,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 5112.5544,
+    "actual": 3479.9395,
     "values": [
-      5112.5544
+      3479.9395
     ],
     "operator": "<=",
     "passed": false,

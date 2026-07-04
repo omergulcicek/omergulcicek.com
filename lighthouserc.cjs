@@ -8,6 +8,7 @@ module.exports = {
 			url: [
 				"http://127.0.0.1:4173/",
 				"http://127.0.0.1:4173/blog",
+				"http://127.0.0.1:4173/blog/virastack-ai",
 				"http://127.0.0.1:4173/about",
 				"http://127.0.0.1:4173/projects",
 				"http://127.0.0.1:4173/experiences",
