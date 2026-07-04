@@ -43,6 +43,7 @@
 		"lucide-react": "^0.564.0",
 		"medium-zoom": "^1.1.0",
 		"motion": "^12.42.2",
+		"nitro": "3.0.260610-beta",
 		"nuqs": "^2.8.9",
 		"radix-ui": "^1.6.0",
 		"react": "^19.2.0",
