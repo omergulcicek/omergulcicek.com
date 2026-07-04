@@ -44,23 +44,31 @@ export function BookmarksListFilters({
 	className
 }: BookmarksListFiltersProps) {
 	const [tagsExpanded, setTagsExpanded] = useState(false)
-	const [hasTagOverflow, setHasTagOverflow] = useState(false)
+	const [collapsedHasOverflow, setCollapsedHasOverflow] = useState(false)
 	const tagsContainerRef = useRef<HTMLDivElement>(null)
 	const hasTags = tags.length > 0
-	const showTagsToggle = tagsExpanded || hasTagOverflow
+	const showTagsToggle = collapsedHasOverflow
 	const sortOptions = getBookmarkSortOptions(categoryId, selectedTag)
 	const showSort = sortOptions.length > 0 && sort !== null
+
+	useEffect(() => {
+		setTagsExpanded(false)
+	}, [categoryId, tags])
 
 	useEffect(() => {
 		const container = tagsContainerRef.current
 
 		if (!container || !hasTags) {
-			setHasTagOverflow(false)
+			setCollapsedHasOverflow(false)
 			return
 		}
 
 		const updateOverflow = () => {
-			setHasTagOverflow(container.scrollHeight > container.clientHeight + 1)
+			if (tagsExpanded) {
+				return
+			}
+
+			setCollapsedHasOverflow(container.scrollHeight > container.clientHeight + 1)
 		}
 
 		updateOverflow()

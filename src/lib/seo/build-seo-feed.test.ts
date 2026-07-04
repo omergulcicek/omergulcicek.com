@@ -44,5 +44,7 @@ describe("buildRssFeedXml", () => {
 		expect(xml).toContain("<title>Sample Post</title>")
 		expect(xml).not.toContain("<title>Draft</title>")
 		expect(xml).toContain('rel="self"')
+		expect(xml).toContain("<enclosure")
+		expect(xml).toContain("https://omergulcicek.com/og/blog/sample-post")
 	})
 })

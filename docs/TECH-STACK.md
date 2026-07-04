@@ -126,10 +126,10 @@ pnpm dev
 
 Doğrulama:
 
-- [ ] `.cursor/rules/` altında ViraStack `.mdc` dosyaları mevcut
-- [ ] `make-interfaces-feel-better` skill yüklü
-- [ ] `emil-design-eng` skill yüklü (`emilkowalski/skill`)
-- [ ] `pnpm lint && pnpm check-types` geçiyor
+- [x] `.cursor/rules/` altında ViraStack `.mdc` dosyaları mevcut
+- [x] `make-interfaces-feel-better` skill yüklü
+- [x] `emil-design-eng` skill yüklü (`emilkowalski/skill`)
+- [x] `pnpm lint && pnpm check-types` geçiyor
 
 ---
 

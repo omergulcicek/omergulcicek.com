@@ -3,6 +3,7 @@ import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
+import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
 function escapeXml(value: string): string {
 	return value
@@ -25,6 +26,11 @@ export function buildRssFeedXml(posts: BlogPost[]): string {
 	const items = publishedPosts
 		.map((post) => {
 			const url = `${SITE.url}/blog/${slugToRouteParam(post.slug)}`
+			const coverUrl = resolveBlogOgImageUrl({
+				slug: post.slug,
+				coverImage: post.coverImage
+			})
+			const enclosure = `<enclosure url="${escapeXml(coverUrl)}" type="image/jpeg" />`
 
 			return `\t<item>
 \t\t<title>${escapeXml(post.title)}</title>
@@ -32,6 +38,7 @@ export function buildRssFeedXml(posts: BlogPost[]): string {
 \t\t<guid isPermaLink="true">${escapeXml(url)}</guid>
 \t\t<description>${escapeXml(post.description)}</description>
 \t\t<pubDate>${escapeXml(toRfc822Date(post.publishedAt))}</pubDate>
+\t\t${enclosure}
 \t</item>`
 		})
 		.join("\n")

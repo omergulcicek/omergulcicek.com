@@ -65,13 +65,19 @@ export function buildPageHead({
 	}
 }
 
+function toArticleIsoDate(value: string): string {
+	return new Date(`${value}T12:00:00.000Z`).toISOString()
+}
+
 export function buildBlogPostHead({
 	title,
 	description,
 	path,
 	canonicalUrl,
 	ogImage,
-	robots
+	robots,
+	publishedAt,
+	author = SITE.name
 }: {
 	title: string
 	description: string
@@ -79,8 +85,10 @@ export function buildBlogPostHead({
 	canonicalUrl?: string
 	ogImage?: string
 	robots?: string
+	publishedAt?: string
+	author?: string
 }) {
-	return buildPageHead({
+	const pageHead = buildPageHead({
 		title,
 		description,
 		path,
@@ -90,4 +98,20 @@ export function buildBlogPostHead({
 		robots,
 		useTitleTemplate: true
 	})
+
+	if (!publishedAt) {
+		return pageHead
+	}
+
+	const publishedTime = toArticleIsoDate(publishedAt)
+
+	return {
+		...pageHead,
+		meta: [
+			...pageHead.meta,
+			{ property: "article:published_time", content: publishedTime },
+			{ property: "article:modified_time", content: publishedTime },
+			{ property: "article:author", content: author }
+		]
+	}
 }

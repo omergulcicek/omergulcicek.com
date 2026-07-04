@@ -6,7 +6,6 @@ import {
 	Drawer,
 	DrawerClose,
 	DrawerContent,
-	DrawerHeader,
 	DrawerTitle,
 	DrawerTrigger
 } from "@/components/ui/drawer"
@@ -42,9 +41,7 @@ export function HeaderNavDrawer() {
 				</Button>
 			</DrawerTrigger>
 			<DrawerContent>
-				<DrawerHeader className="text-left">
-					<DrawerTitle>Menü</DrawerTitle>
-				</DrawerHeader>
+				<DrawerTitle className="sr-only">Menü</DrawerTitle>
 				<nav
 					aria-label="Mobil menü"
 					className="flex flex-col gap-1 px-4 pb-6"

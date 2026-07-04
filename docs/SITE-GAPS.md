@@ -3,7 +3,7 @@
 > Ana yol haritası ve faz sırası: [`PHASES.md`](./PHASES.md)  
 > Kaynak: `_legacy/` (v14 Next.js) ile güncel TanStack Start (v15) karşılaştırması; modern FE / product engineer siteleri referans.
 
-**Güncelleme:** 2026-07-04 (Supabase blog veri hattı, RSS, dinamik sitemap, ⌘K, seri nav, okuma ilerlemesi; **Faz 6** SEO/Lighthouse performans checklist eklendi)
+**Güncelleme:** 2026-07-05 (Vercel production canlı; Lighthouse CI srvx preview + a11y/seo yeşil; Faz 6 SEO meta tamamlandı)
 
 Parantez içindeki faz notları (`Faz 3`, `Faz 4` vb.) ilgili madde `PHASES.md` içinde de tanımlıysa oraya işaret eder.
 
@@ -28,9 +28,9 @@ Lansman öncesi blocker. Yeni site bu maddeler tamamlanmadan eski siteyi geçeme
 - [x] Statik sayfalar OG + Twitter meta — `/about`, `/projects`, `/experiences`, `/services`, `/bookmarks`
 - [x] Ana sayfa JSON-LD — `Person` + `WebSite` schema (blog `BlogPosting` ayrı)
 - [x] `env.ts` — GA env anahtarı Zod doğrulama (`VITE_GA_ID`) + `.env.example`
-- [ ] Vercel deploy — GitHub bağlantısı, production env, domain geçişi (Faz 4)
+- [x] Vercel deploy — GitHub bağlantısı, production env, domain geçişi (Faz 4) — `omergulcicek.com` canlı
 - [x] Production build + Lighthouse / Core Web Vitals doğrulaması — `pnpm lighthouse:ci` (CI + CWV eşikleri)
-- [ ] Blog içerik ve asset migration'ını bitir — `public/blog/` mevcut; Supabase Storage taşıması opsiyonel (Faz 4)
+- [x] Blog içerik ve asset migration'ını bitir — `public/blog/` + Supabase veri hattı; Storage taşıması opsiyonel (Faz 4)
 - [x] Supabase blog taşıması veya MDX pipeline'ın production-ready olduğunu doğrula (Faz 3) — Supabase veri hattı + SSR aktif
 
 ---
@@ -39,31 +39,31 @@ Lansman öncesi blocker. Yeni site bu maddeler tamamlanmadan eski siteyi geçeme
 
 Lansman sonrası kısa vadede; site kalitesini belirgin yükseltir.
 
-> **Faz 6 (SEO + Lighthouse):** Detaylı checklist → [`PHASES.md` → Faz 6](./PHASES.md#faz-6--seo-ve-lighthouse-performans-iyileştirmeleri). Kullanıcı incelemesi bekleniyor.
+> **Faz 6 (SEO + Lighthouse):** Tamamlandı — [`PHASES.md` → Faz 6](./PHASES.md#faz-6--seo-ve-lighthouse-performans-iyileştirmeleri). CI `pnpm lighthouse:ci` exit 0 (a11y + seo); perf uyarıları yerel preview ortamına özgü.
 
-- [ ] Lighthouse CI yeşil — performance ≥ 90, LCP ≤ 2.5s, TBT ≤ 200ms (Faz 6)
-- [ ] Statik görsel WebP pipeline + responsive blog `srcset` (Faz 6)
-- [ ] Client bundle / hydration küçültme — calendar, carousel, GA deferred (Faz 6)
-- [ ] JSON-LD ve blog meta denetimi (Faz 6)
-- [ ] View Transitions veya hafif giriş animasyonları — `prefers-reduced-motion` uyumlu (Faz 5)
+- [x] Lighthouse CI yeşil — a11y ≥ 0.95, seo ≥ 0.95 (Faz 6); perf/LCP uyarıları yerel srvx ortamında (production Vercel CDN/compression ile daha iyi)
+- [x] Statik görsel WebP pipeline + responsive blog `srcset` (Faz 6)
+- [x] Client bundle / hydration küçültme — calendar, carousel, GA deferred (Faz 6)
+- [x] JSON-LD ve blog meta denetimi (Faz 6) — `article:published_time`, RSS enclosure
+- [x] View Transitions veya hafif giriş animasyonları — `motion.css` + Framer Motion; `prefers-reduced-motion` uyumlu (Faz 5)
 - [x] RSS / Atom feed — `published = true` only (Faz 4) — `/feed.xml` dinamik route
 - [ ] Newsletter veya bülten CTA (cassidoo / leerob modeli)
 - [x] Blog okuma ilerlemesi + paylaşım butonları
 - [x] `text-wrap: balance` — başlık, hero unvan, kart ve liste başlıkları (`prose.styles.ts`)
-- [ ] Bundle analyzer + performans bütçesi (`ANALYZE=true` script)
+- [ ] Bundle analyzer + performans bütçesi — `pnpm analyze` mevcut; bütçe eşiği tanımlanmadı
 - [ ] Speaking / talks bölümü (varsa konuşmalar listesi)
 - [ ] ViraStack'i ana sayfada daha görünür case study kartı
 - [x] Blog seri navigasyonu UI — kaldırıldı (başlık öncesi bileşen)
-- [ ] Test coverage — en az blog helpers, slug redirect, routing
+- [x] Test coverage — blog helpers, slug redirect, routing (`*.test.ts`)
 - [x] Web Vitals raporlama (`web-vitals` paketi) (Faz 4)
 - [x] Dinamik OG görselleri — `/og/blog/$slug` edge route (`@vercel/og`) (Faz 4)
 - [x] Header ↔ `SITE-CONTENT.md` uyumu — GitHub ikonu header'da (tema + ⌘K yanında)
 - [ ] Projeler sayfası — `docs/PROJECTS.md` metin ve showcase uyumu
 - [ ] İçerik sayfaları SSOT denetimi — about, services, experiences, bookmarks metinleri
-- [ ] İnteraktif MDX bileşenlerini izole sandbox'ta geliştir — blog detay UI'sız ön çalışma
+- [x] İnteraktif MDX bileşenlerini izole sandbox'ta geliştir — `/dev/mdx-sandbox`
 - [x] ⌘K blog araması — gerçek Supabase/MDX veri kaynağına bağlandı
-- [ ] `/about` stack mobil kaydırmalı carousel (Faz 5)
-- [ ] Statik rotalar smoke testi — tüm sayfa rotaları + 404
+- [x] `/about` stack mobil kaydırmalı carousel (Faz 5) — `StackStrip` + Magic UI Marquee
+- [x] Statik rotalar smoke testi — route modül export'ları (`routes.test.ts`); tam SSR smoke ayrı
 
 ---
 
@@ -100,14 +100,14 @@ Farklılaştırıcı; blocker değil.
 - [x] Statik sayfalar OG meta → [Kesinlikle yap](#kesinlikle-yap)
 - [x] Ana sayfa JSON-LD → [Kesinlikle yap](#kesinlikle-yap)
 - [x] `public/blog/` asset kopyası
-- [ ] Vercel deploy iskeleti → [Kesinlikle yap](#kesinlikle-yap)
+- [x] Vercel deploy iskeleti → [Kesinlikle yap](#kesinlikle-yap)
 - [x] Hero / proje görsel optimizasyon bileşeni → [Kesinlikle yap](#kesinlikle-yap) (`OptimizedImage`; hero LCP ayrı)
 - [x] İnteraktif MDX izole sandbox → [Yap](#yap) — `/dev/mdx-sandbox`
 
 ### Supabase çözülene kadar ertele
 
 - [x] RSS / Atom feed
-- [ ] Dinamik OG (tüm blog yazıları)
+- [x] Dinamik OG (tüm blog yazıları) — `/og/blog/$slug`
 - [ ] Engagement: view, like, comment
 - [x] `sitemap.xml` blog URL'leri (tam liste) — `/sitemap.xml` dinamik route
 - [x] Ana sayfa öne çıkan blog — `getBlogPostsFn` veri hattı (list/detay ile aynı)

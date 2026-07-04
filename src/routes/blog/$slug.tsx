@@ -54,6 +54,7 @@ export const Route = createFileRoute("/blog/$slug")({
 				title: post.title,
 				description: post.description,
 				published: post.published,
+				publishedAt: post.publishedAt,
 				canonicalUrl: post.canonicalUrl,
 				coverImage: ogImage,
 				slug: post.slug
@@ -79,6 +80,7 @@ export const Route = createFileRoute("/blog/$slug")({
 			path: `/blog/${slugToRouteParam(seo.slug)}`,
 			canonicalUrl: seo.canonicalUrl,
 			ogImage: seo.coverImage,
+			publishedAt: seo.publishedAt,
 			robots
 		})
 	},

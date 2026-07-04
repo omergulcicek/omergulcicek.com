@@ -3,7 +3,7 @@ module.exports = {
 	ci: {
 		collect: {
 			numberOfRuns: 1,
-			startServerCommand: "pnpm preview --host 127.0.0.1 --port 4173",
+			startServerCommand: "pnpm preview:ci",
 			startServerReadyPattern: "4173",
 			url: [
 				"http://127.0.0.1:4173/",

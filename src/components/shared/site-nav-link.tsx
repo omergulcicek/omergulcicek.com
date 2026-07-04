@@ -6,7 +6,8 @@ import { withOutboundUtm } from "@/lib/outbound-url"
 import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
-const siteNavLinkBaseClass = "focus-link text-sm transition-colors underline-offset-4"
+const siteNavLinkBaseClass =
+	"focus-link inline-flex min-h-6 items-center py-1 text-sm transition-colors underline-offset-4"
 
 const siteNavLinkActiveClass =
 	"text-foreground font-medium underline decoration-foreground/50"

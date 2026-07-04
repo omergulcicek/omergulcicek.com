@@ -2,9 +2,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.65,
+    "actual": 0.78,
     "values": [
-      0.65
+      0.78
     ],
     "operator": ">=",
     "passed": false,
@@ -16,9 +16,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 5709.664319215957,
+    "actual": 4044.3430000000008,
     "values": [
-      5709.664319215957
+      4044.3430000000008
     ],
     "operator": "<=",
     "passed": false,
@@ -31,9 +31,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.56,
+    "actual": 0.83,
     "values": [
-      0.56
+      0.83
     ],
     "operator": ">=",
     "passed": false,
@@ -45,9 +45,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 11697.462000000001,
+    "actual": 3412.9794,
     "values": [
-      11697.462000000001
+      3412.9794
     ],
     "operator": "<=",
     "passed": false,
@@ -60,9 +60,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.62,
+    "actual": 0.86,
     "values": [
-      0.62
+      0.86
     ],
     "operator": ">=",
     "passed": false,
@@ -72,25 +72,11 @@
     "url": "http://127.0.0.1:4173/blog/virastack-ai"
   },
   {
-    "name": "minScore",
-    "expected": 0.95,
-    "actual": 0.94,
-    "values": [
-      0.94
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditProperty": "accessibility",
-    "auditId": "categories",
-    "level": "error",
-    "url": "http://127.0.0.1:4173/blog/virastack-ai"
-  },
-  {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 10872.068200000002,
+    "actual": 3366.9611999999997,
     "values": [
-      10872.068200000002
+      3366.9611999999997
     ],
     "operator": "<=",
     "passed": false,
@@ -103,9 +89,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.64,
+    "actual": 0.73,
     "values": [
-      0.64
+      0.73
     ],
     "operator": ">=",
     "passed": false,
@@ -117,9 +103,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 6703.96065,
+    "actual": 5495.21845,
     "values": [
-      6703.96065
+      5495.21845
     ],
     "operator": "<=",
     "passed": false,
@@ -130,25 +116,11 @@
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
   },
   {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0.75,
-    "values": [
-      0.75
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditProperty": "performance",
-    "auditId": "categories",
-    "level": "warn",
-    "url": "http://127.0.0.1:4173/projects"
-  },
-  {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 6156.5664,
+    "actual": 2870.652,
     "values": [
-      6156.5664
+      2870.652
     ],
     "operator": "<=",
     "passed": false,
@@ -161,9 +133,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.85,
+    "actual": 0.89,
     "values": [
-      0.85
+      0.89
     ],
     "operator": ">=",
     "passed": false,
@@ -175,9 +147,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 3325.6404999999995,
+    "actual": 3084.9827999999998,
     "values": [
-      3325.6404999999995
+      3084.9827999999998
     ],
     "operator": "<=",
     "passed": false,
@@ -188,40 +160,26 @@
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
   },
   {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0.66,
-    "values": [
-      0.66
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditProperty": "performance",
-    "auditId": "categories",
-    "level": "warn",
-    "url": "http://127.0.0.1:4173/services"
-  },
-  {
     "name": "maxNumericValue",
-    "expected": 2500,
-    "actual": 5882.0802,
+    "expected": 0.1,
+    "actual": 0.102795789529839,
     "values": [
-      5882.0802
+      0.102795789529839
     ],
     "operator": "<=",
     "passed": false,
-    "auditId": "largest-contentful-paint",
+    "auditId": "cumulative-layout-shift",
     "level": "warn",
     "url": "http://127.0.0.1:4173/services",
-    "auditTitle": "Largest Contentful Paint",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+    "auditTitle": "Cumulative Layout Shift",
+    "auditDocumentationLink": "https://web.dev/articles/cls"
   },
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.88,
+    "actual": 0.68,
     "values": [
-      0.88
+      0.68
     ],
     "operator": ">=",
     "passed": false,
@@ -233,9 +191,9 @@
   {
     "name": "maxNumericValue",
     "expected": 2500,
-    "actual": 3479.9395,
+    "actual": 2819.9260000000004,
     "values": [
-      3479.9395
+      2819.9260000000004
     ],
     "operator": "<=",
     "passed": false,
@@ -244,5 +202,20 @@
     "url": "http://127.0.0.1:4173/bookmarks",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+  },
+  {
+    "name": "maxNumericValue",
+    "expected": 0.1,
+    "actual": 0.4495747266099636,
+    "values": [
+      0.4495747266099636
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "cumulative-layout-shift",
+    "level": "warn",
+    "url": "http://127.0.0.1:4173/bookmarks",
+    "auditTitle": "Cumulative Layout Shift",
+    "auditDocumentationLink": "https://web.dev/articles/cls"
   }
 ]
