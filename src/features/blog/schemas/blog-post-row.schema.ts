@@ -14,16 +14,13 @@ export const blogPostListRowSchema = z.object({
 	locale: blogLocaleSchema,
 	medium_url: z.string().nullable(),
 	interactive: z.boolean(),
-	featured: z.boolean(),
 	published: z.boolean(),
-	published_at: z.string().nullable(),
-	og_image_path: z.string().nullable(),
-	series: z.string().nullable(),
-	series_order: z.number().nullable()
+	published_at: z.string().nullable()
 })
 
 export const blogPostDetailRowSchema = blogPostListRowSchema.extend({
-	content: z.string().min(1)
+	content: z.string().min(1),
+	og_image_path: z.string().nullable()
 })
 
 export type BlogPostListRow = z.infer<typeof blogPostListRowSchema>

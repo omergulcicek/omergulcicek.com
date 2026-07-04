@@ -3,12 +3,46 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { ProseRouterLink } from "@/components/shared/prose-link"
 import { Button } from "@/components/ui/button"
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger
+} from "@/components/ui/tooltip"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+
 type BlogPostDetailHeaderProps = {
 	previous: BlogNeighbour | null
 	next: BlogNeighbour | null
+}
+
+type BlogNeighbourButtonProps = {
+	neighbour: BlogNeighbour
+	direction: "previous" | "next"
+}
+
+function BlogNeighbourButton({ neighbour, direction }: BlogNeighbourButtonProps) {
+	const Icon = direction === "previous" ? ChevronLeft : ChevronRight
+	const navLabel =
+		direction === "previous" ? BLOG_UI.previousPost : BLOG_UI.nextPost
+
+	return (
+		<Tooltip>
+			<TooltipTrigger asChild>
+				<Button variant="secondary" size="icon-sm" asChild>
+					<Link
+						to="/blog/$slug"
+						params={{ slug: slugToRouteParam(neighbour.slug) }}
+						aria-label={`${navLabel}: ${neighbour.title}`}
+					>
+						<Icon aria-hidden />
+					</Link>
+				</Button>
+			</TooltipTrigger>
+			<TooltipContent side="top">{neighbour.title}</TooltipContent>
+		</Tooltip>
+	)
 }
 
 export function BlogPostDetailHeader({
@@ -29,36 +63,10 @@ export function BlogPostDetailHeader({
 			{previous || next ? (
 				<div className="flex items-center gap-2">
 					{previous ? (
-						<Button
-							variant="secondary"
-							size="icon-sm"
-							asChild
-							title={previous.title}
-						>
-							<Link
-								to="/blog/$slug"
-								params={{ slug: slugToRouteParam(previous.slug) }}
-								aria-label={`${BLOG_UI.previousPost}: ${previous.title}`}
-							>
-								<ChevronLeft aria-hidden />
-							</Link>
-						</Button>
+						<BlogNeighbourButton neighbour={previous} direction="previous" />
 					) : null}
 					{next ? (
-						<Button
-							variant="secondary"
-							size="icon-sm"
-							asChild
-							title={next.title}
-						>
-							<Link
-								to="/blog/$slug"
-								params={{ slug: slugToRouteParam(next.slug) }}
-								aria-label={`${BLOG_UI.nextPost}: ${next.title}`}
-							>
-								<ChevronRight aria-hidden />
-							</Link>
-						</Button>
+						<BlogNeighbourButton neighbour={next} direction="next" />
 					) : null}
 				</div>
 			) : null}

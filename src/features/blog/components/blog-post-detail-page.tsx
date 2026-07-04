@@ -1,11 +1,7 @@
 import { cn } from "@/lib/utils"
 
 import { Container } from "@/components/shared/Container"
-import {
-	pageShellClass,
-	pageStackGapClass,
-	pageTitleClass
-} from "@/components/shared/prose.styles"
+import { pageTitleClass } from "@/components/shared/prose.styles"
 import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detail-header"
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
 import { BlogPostToc } from "@/features/blog/components/blog-post-toc"
@@ -34,8 +30,8 @@ export function BlogPostDetailPage({
 	return (
 		<>
 			<BlogStructuredData post={post} />
-			<div className={pageShellClass}>
-				<Container className={cn("flex flex-col", pageStackGapClass)}>
+			<div className="flex flex-col gap-12 py-8 md:py-16">
+				<Container className="flex flex-col gap-12">
 					<BlogPostDetailHeader previous={previous} next={next} />
 					<article data-blog-article className="flex flex-col gap-4">
 						<header className="flex flex-col gap-4">

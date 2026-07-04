@@ -10,6 +10,7 @@ import type {
 	BlogPostDetail,
 	BlogRepository
 } from "@/features/blog/repositories/blog-repository.types"
+import { fetchBlogPostNeighbours } from "@/features/blog/repositories/fetch-blog-post-neighbours"
 import {
 	blogPostDetailRowSchema,
 	blogPostListRowsSchema
@@ -17,9 +18,9 @@ import {
 import { createSupabaseServerClient } from "@/lib/supabase/create-supabase-server-client"
 
 const LIST_COLUMNS =
-	"slug, title, description, category, tags, locale, medium_url, interactive, featured, published, published_at, og_image_path, series, series_order"
+	"slug, title, description, category, tags, locale, medium_url, interactive, published, published_at"
 
-const DETAIL_COLUMNS = `${LIST_COLUMNS}, content`
+const DETAIL_COLUMNS = `${LIST_COLUMNS}, content, og_image_path`
 
 type SupabaseBlogRepositoryOptions = {
 	isDev: boolean
@@ -107,6 +108,17 @@ export function createSupabaseBlogRepository({
 				contentHtml: compiled.contentHtml,
 				headings: compiled.headings
 			} satisfies BlogPostDetail
+		},
+
+		async getPostNeighbours(slug) {
+			const normalizedSlug = normalizeBlogSlug(slug)
+			const supabase = createSupabaseServerClient()
+
+			return fetchBlogPostNeighbours({
+				supabase,
+				slug: normalizedSlug,
+				isDev
+			})
 		}
 	}
 }

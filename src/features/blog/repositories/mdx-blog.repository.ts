@@ -16,7 +16,7 @@ import type {
 	BlogRepository
 } from "@/features/blog/repositories/blog-repository.types"
 import type { BlogPost } from "@/features/blog/types/blog.types"
-import { sortBlogPosts } from "@/features/blog/helpers/blog-helpers"
+import { findBlogNeighbours, sortBlogPosts } from "@/features/blog/helpers/blog-helpers"
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content")
 
@@ -124,6 +124,13 @@ export function createMdxBlogRepository({
 				contentHtml: compiled.contentHtml,
 				headings: compiled.headings
 			} satisfies BlogPostDetail
+		},
+
+		async getPostNeighbours(slug) {
+			const normalizedSlug = normalizeBlogSlug(slug)
+			const posts = toVisiblePosts(loadParsedPosts(), isDev)
+
+			return findBlogNeighbours(posts, normalizedSlug)
 		}
 	}
 }

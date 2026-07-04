@@ -34,12 +34,8 @@ export function mapBlogPostListRow(row: BlogPostListRow): BlogPost {
 		locale: row.locale,
 		published: row.published,
 		publishedAt: formatPublishedAt(row.published_at),
-		coverImage: normalizeCoverImage(row.og_image_path),
-		featured: row.featured,
 		interactive: row.interactive,
 		mediumUrl: row.medium_url ?? undefined,
-		series: row.series ?? undefined,
-		seriesOrder: row.series_order ?? undefined,
 		canonicalUrl: `${SITE.url}/blog${slug}`
 	}
 }
@@ -47,6 +43,7 @@ export function mapBlogPostListRow(row: BlogPostListRow): BlogPost {
 export function mapBlogPostDetailRow(row: BlogPostDetailRow): BlogPost {
 	return {
 		...mapBlogPostListRow(row),
+		coverImage: normalizeCoverImage(row.og_image_path),
 		readingTimeMinutes: computeReadingTimeMinutes(row.content)
 	}
 }

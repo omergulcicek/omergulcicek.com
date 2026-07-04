@@ -6,6 +6,11 @@ import { visualizer } from "rollup-plugin-visualizer"
 import { defineConfig } from "vite"
 import tsconfigPaths from "vite-tsconfig-paths"
 
+import { getBlogPrerenderRoutes } from "./src/features/blog/helpers/get-blog-prerender-routes"
+
+const blogPrerenderRoutes = getBlogPrerenderRoutes()
+const blogPrerenderPathSet = new Set(blogPrerenderRoutes)
+
 export default defineConfig(({ mode }) => ({
 	server: {
 		port: 3000
@@ -40,7 +45,27 @@ export default defineConfig(({ mode }) => ({
 	},
 	plugins: [
 		tsconfigPaths(),
-		tanstackStart(),
+		tanstackStart({
+			prerender: {
+				enabled: true,
+				crawlLinks: false,
+				filter: ({ path }) => {
+					if (path.startsWith("/dev")) {
+						return false
+					}
+
+					if (path.startsWith("/blog")) {
+						return blogPrerenderPathSet.has(path)
+					}
+
+					return true
+				}
+			},
+			pages: blogPrerenderRoutes.map((path) => ({
+				path,
+				prerender: { enabled: true }
+			}))
+		}),
 		nitro({ preset: "vercel" }),
 		viteReact(),
 		tailwindcss(),

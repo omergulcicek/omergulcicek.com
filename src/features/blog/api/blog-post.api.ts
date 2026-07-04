@@ -24,3 +24,11 @@ export const getBlogPostDetailFn = createServerFn({ method: "GET" })
 
 		return repository.getPostBySlug(data.slug)
 	})
+
+export const getBlogPostNeighboursFn = createServerFn({ method: "GET" })
+	.validator(blogSlugInputSchema)
+	.handler(async ({ data }) => {
+		const repository = getBlogRepository(process.env.NODE_ENV === "development")
+
+		return repository.getPostNeighbours(data.slug)
+	})

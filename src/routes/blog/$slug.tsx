@@ -1,15 +1,18 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router"
 
 import { NotFoundPage } from "@/components/shared/not-found-page"
+import { getBlogPostNeighboursFn } from "@/features/blog/api/blog-post.api"
 import { blogPostDetailQueryOptions } from "@/features/blog/api/get-blog-post-detail.api"
-import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
 import { BlogPostDetailPage } from "@/features/blog/components/blog-post-detail-page"
 import { BlogRouteError } from "@/features/blog/components/blog-route-error"
+import {
+	BLOG_PAGE_CACHE_CONTROL,
+	BLOG_PAGE_DEV_CACHE_CONTROL
+} from "@/features/blog/constants/blog-cache.constants"
 import { resolveBlogSlugRedirect } from "@/features/blog/constants/blog-redirects.constants"
-import { findBlogNeighbours, slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
 import { useGetBlogPostDetail } from "@/features/blog/hooks/use-get-blog-post-detail"
-import type { BlogPost } from "@/features/blog/types/blog.types"
 import { buildBlogPostHead } from "@/lib/seo/build-page-head"
 import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
@@ -28,24 +31,15 @@ export const Route = createFileRoute("/blog/$slug")({
 
 		const slug = routeParamToBlogSlug(params.slug)
 
-		const [post] = await Promise.all([
+		const [post, neighbours] = await Promise.all([
 			context.queryClient.ensureQueryData(blogPostDetailQueryOptions(slug)),
-			context.queryClient.ensureQueryData(blogPostsQueryOptions())
+			getBlogPostNeighboursFn({ data: { slug } })
 		])
 
 		if (!post) {
 			throw notFound()
 		}
 
-		const posts = context.queryClient.getQueryData<BlogPost[]>(
-			blogPostsQueryOptions().queryKey
-		)
-
-		if (!posts) {
-			throw notFound()
-		}
-
-		const neighbours = findBlogNeighbours(posts, post.slug)
 		const ogImage = resolveBlogOgImageUrl({
 			slug: post.slug,
 			coverImage: post.coverImage
@@ -66,6 +60,11 @@ export const Route = createFileRoute("/blog/$slug")({
 			}
 		}
 	},
+	headers: () => ({
+		"Cache-Control": import.meta.env.PROD
+			? BLOG_PAGE_CACHE_CONTROL
+			: BLOG_PAGE_DEV_CACHE_CONTROL
+	}),
 	head: ({ loaderData }) => {
 		if (!loaderData?.seo) {
 			return {}
