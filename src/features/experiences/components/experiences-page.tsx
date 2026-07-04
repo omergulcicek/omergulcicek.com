@@ -1,5 +1,6 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
+import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import {
 	pageShellClass,
 	proseParagraphClass
@@ -17,10 +18,11 @@ export function ExperiencesPage() {
 				openToWorkPlacement="inline"
 			>
 				<p className={proseParagraphClass}>
-					10 yılı aşkın tecrübemle, <span className="text-primary">React</span>{" "}
-					ekosisteminde <span className="text-primary">AI destekli</span> ve
-					yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı
-					deneyimleri inşa ediyorum.
+					<em>10 yılı aşkın</em> tecrübemle,{" "}
+					<ProseEmphasis>React</ProseEmphasis> ekosisteminde{" "}
+					<em>AI destekli</em> ve{" "}
+					<ProseEmphasis>yüksek performanslı mimariler</ProseEmphasis>{" "}
+					kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
 				</p>
 			</PageHeader>
 

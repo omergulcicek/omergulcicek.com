@@ -21,7 +21,9 @@ export const listTitleClass =
 export const sectionHeadingClass =
 	"text-balance text-sm font-semibold tracking-tight text-foreground md:text-base"
 
-export const pageStackGapClass = "gap-8"
+export const sectionHeadingSpacingClass = "mt-8 md:mt-12"
+
+export const pageStackGapClass = "gap-12 md:gap-16"
 
 export const pageShellClass = `flex flex-col py-8 md:py-16 ${pageStackGapClass}`
 

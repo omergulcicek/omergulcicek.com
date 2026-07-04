@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 					as: "image" as const,
 					href: preload.href,
 					type: preload.type,
-					media: preload.media,
+					...("media" in preload ? { media: preload.media } : {}),
 					fetchPriority: "high" as const
 				}))
 			]

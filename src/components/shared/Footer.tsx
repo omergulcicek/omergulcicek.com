@@ -1,8 +1,11 @@
 import { BrandMark } from "@/components/shared/brand-mark"
 import { SiteNavLink } from "@/components/shared/site-nav-link"
-import { Container } from "@/components/shared/Container"
+import { interactiveSurfaceBgClass } from "@/components/shared/interactive-card.styles"
 import { ProseLink } from "@/components/shared/prose-link"
-import { sectionHeadingClass } from "@/components/shared/prose.styles"
+import {
+	bleedSectionClass,
+	sectionHeadingClass
+} from "@/components/shared/prose.styles"
 import {
 	FOOTER_NAV,
 	FOOTER_SOURCE_CODE,
@@ -19,15 +22,15 @@ export function Footer() {
 	const virastackProjects = getPublishedVirastackProjects()
 
 	return (
-		<footer className="mt-12 border-t md:mt-20">
-			<Container className="py-8 md:py-12">
+		<footer className={cn("mt-12 border-t md:mt-20", interactiveSurfaceBgClass)}>
+			<div className={cn(bleedSectionClass, "py-8 md:py-12")}>
 				<div className="flex flex-col gap-8 md:gap-10">
-					<div className="grid grid-cols-1 gap-8 sm:grid-cols-5 sm:gap-x-8 md:gap-x-12">
-						<div className="flex w-fit flex-col sm:col-span-1">
-							<BrandMark />
+					<div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-x-8 md:gap-x-12">
+						<div className="flex min-w-0 flex-col gap-3">
+							<BrandMark variant="profile" />
 						</div>
 
-						<div className="flex min-w-0 flex-col gap-3 sm:col-span-2">
+						<div className="flex min-w-0 flex-col gap-3">
 							<p className={cn(sectionHeadingClass, "leading-5")}>
 								{SITE_CONTENT.footerNavTitle}
 							</p>
@@ -46,7 +49,7 @@ export function Footer() {
 							</nav>
 						</div>
 
-						<div className="flex min-w-0 flex-col gap-3 sm:col-span-2">
+						<div className="flex min-w-0 flex-col gap-3">
 							<p className={cn(sectionHeadingClass, "leading-5")}>
 								{SITE_CONTENT.footerVirastackTitle}
 							</p>
@@ -98,7 +101,7 @@ export function Footer() {
 						<p>{getFooterCopyright()}</p>
 					</div>
 				</div>
-			</Container>
+			</div>
 		</footer>
 	)
 }

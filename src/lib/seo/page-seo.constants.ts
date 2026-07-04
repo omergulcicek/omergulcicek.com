@@ -53,14 +53,6 @@ export const STATIC_PAGE_SEO = {
 		changeFrequency: "monthly",
 		priority: 0.6
 	},
-	stack: {
-		path: "/stack",
-		title: "Araçlar",
-		description:
-			"Günlük iş akışımda kullandığım yazılım, uygulama ve yardımcı araçlar.",
-		changeFrequency: "monthly",
-		priority: 0.6
-	},
 	workspace: {
 		path: "/workspace",
 		title: "Çalışma Alanı",

@@ -5,3 +5,6 @@ export const blogFilterChipWithIconDesktopClass =
 
 export const blogFilterTagsCollapsedClass =
 	"max-h-8 overflow-hidden md:max-h-14"
+
+export const listFilterPanelClass =
+	"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col p-3 md:p-4"

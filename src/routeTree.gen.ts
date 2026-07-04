@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkspaceRouteImport } from './routes/workspace'
-import { Route as StackRouteImport } from './routes/stack'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -29,11 +28,6 @@ import { Route as OgBlogSlugRouteImport } from './routes/og/blog/$slug'
 const WorkspaceRoute = WorkspaceRouteImport.update({
   id: '/workspace',
   path: '/workspace',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StackRoute = StackRouteImport.update({
-  id: '/stack',
-  path: '/stack',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -118,7 +112,6 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
@@ -136,7 +129,6 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
@@ -155,7 +147,6 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
@@ -175,7 +166,6 @@ export interface FileRouteTypes {
     | '/projects'
     | '/services'
     | '/sitemap.xml'
-    | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
@@ -193,7 +183,6 @@ export interface FileRouteTypes {
     | '/projects'
     | '/services'
     | '/sitemap.xml'
-    | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
@@ -211,7 +200,6 @@ export interface FileRouteTypes {
     | '/projects'
     | '/services'
     | '/sitemap.xml'
-    | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
@@ -230,7 +218,6 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  StackRoute: typeof StackRoute
   WorkspaceRoute: typeof WorkspaceRoute
   BlogSlugRoute: typeof BlogSlugRoute
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
@@ -245,13 +232,6 @@ declare module '@tanstack/react-router' {
       path: '/workspace'
       fullPath: '/workspace'
       preLoaderRoute: typeof WorkspaceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stack': {
-      id: '/stack'
-      path: '/stack'
-      fullPath: '/stack'
-      preLoaderRoute: typeof StackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -366,7 +346,6 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  StackRoute: StackRoute,
   WorkspaceRoute: WorkspaceRoute,
   BlogSlugRoute: BlogSlugRoute,
   DevMdxSandboxRoute: DevMdxSandboxRoute,

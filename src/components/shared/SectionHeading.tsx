@@ -1,7 +1,10 @@
 import type { ReactNode } from "react"
 
 import { AnchoredHeading } from "@/components/shared/anchored-heading"
-import { sectionHeadingClass } from "@/components/shared/prose.styles"
+import {
+	sectionHeadingClass,
+	sectionHeadingSpacingClass
+} from "@/components/shared/prose.styles"
 import { slugifyHeading } from "@/lib/slugify-heading"
 import { cn } from "@/lib/utils"
 
@@ -33,7 +36,11 @@ export function SectionHeading({
 			as="h2"
 			id={headingId}
 			anchorLabel={anchorLabel}
-			className={cn(sectionHeadingClass, className)}
+			className={cn(
+				sectionHeadingClass,
+				sectionHeadingSpacingClass,
+				className
+			)}
 		>
 			{children}
 		</AnchoredHeading>

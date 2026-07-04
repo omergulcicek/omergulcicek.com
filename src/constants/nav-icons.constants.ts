@@ -8,8 +8,7 @@ import {
 	Monitor,
 	Newspaper,
 	Package,
-	UserRound,
-	Wrench
+	UserRound
 } from "lucide-react"
 
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
@@ -23,7 +22,6 @@ export const NAV_PAGE_ICONS: Record<string, LucideIcon> = {
 	"/about": UserRound,
 	"/experiences": Briefcase,
 	"/journey": Footprints,
-	"/stack": Wrench,
 	"/workspace": Monitor,
 	"/services": Handshake,
 	"/bookmarks": Bookmark,

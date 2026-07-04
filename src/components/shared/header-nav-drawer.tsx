@@ -11,6 +11,7 @@ import {
 	DrawerTrigger
 } from "@/components/ui/drawer"
 import { MOBILE_DRAWER_NAV } from "@/constants/header-nav.constants"
+import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
 function isNavItemActive(
@@ -60,6 +61,7 @@ export function HeaderNavDrawer() {
 							<DrawerClose asChild key={item.href}>
 								<Link
 									to={item.href}
+									search={clearedRouteSearch}
 									className={cn(
 										"focus-link flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
 										isActive

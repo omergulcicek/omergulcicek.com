@@ -8,7 +8,6 @@ import { Route as JourneyRoute } from "@/routes/journey"
 import { Route as NotFoundRoute } from "@/routes/$"
 import { Route as ProjectsRoute } from "@/routes/projects"
 import { Route as ServicesRoute } from "@/routes/services"
-import { Route as StackRoute } from "@/routes/stack"
 import { Route as WorkspaceRoute } from "@/routes/workspace"
 import { Route as BlogIndexRoute } from "@/routes/blog/index"
 import { Route as BlogSlugRoute } from "@/routes/blog/$slug"
@@ -23,7 +22,6 @@ const ROUTES = [
 	NotFoundRoute,
 	ProjectsRoute,
 	ServicesRoute,
-	StackRoute,
 	WorkspaceRoute,
 	BlogIndexRoute,
 	BlogSlugRoute,

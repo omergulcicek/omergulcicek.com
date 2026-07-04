@@ -75,7 +75,7 @@ function HeroContentStatic() {
 export function Hero() {
 	return (
 		<section className={pageSectionClass}>
-			<figure className="motion-enter-hero-image vt-hero-image relative aspect-square w-full overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
+			<figure className="motion-enter-hero-image vt-hero-image relative size-54 shrink-0 overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
 				<picture>
 					<source
 						type="image/webp"
@@ -89,7 +89,7 @@ export function Hero() {
 						fetchPriority="high"
 						loading="eager"
 						decoding="async"
-						sizes="(max-width: 671px) 672px, 672px"
+						sizes={`${HERO_IMAGE.width}px`}
 						className="image-outline absolute inset-0 size-full object-cover object-bottom select-none"
 					/>
 				</picture>

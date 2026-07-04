@@ -10,6 +10,11 @@ export const interactiveCardBaseClass = cn(
 
 export const interactiveSurfaceBgClass = "bg-white dark:bg-[#0b0b0b]"
 
+export const surfacePanelClass = cn(
+	surfaceDoubleFrameClass,
+	interactiveSurfaceBgClass
+)
+
 export const interactiveSurfaceHoverBgClass =
 	"hover:bg-white dark:hover:bg-[#0b0b0b]"
 

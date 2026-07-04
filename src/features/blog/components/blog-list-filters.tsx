@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
 import { Separator } from "@/components/ui/separator"
+import { surfacePanelClass } from "@/components/shared/interactive-card.styles"
 import { BlogCategoryPills } from "@/features/blog/components/blog-category-pills"
 import { BlogSortControl } from "@/features/blog/components/blog-sort-control"
 import { BlogTagChips } from "@/features/blog/components/blog-tag-chips"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
-import { blogFilterTagsCollapsedClass } from "@/features/blog/constants/blog-filter-chip.styles"
+import { blogFilterTagsCollapsedClass, listFilterPanelClass } from "@/features/blog/constants/blog-filter-chip.styles"
 import type { BlogCategory, BlogSort } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
@@ -66,7 +67,8 @@ export function BlogListFilters({
 	return (
 		<section
 			className={cn(
-				"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col rounded-xl border border-border/60 bg-background/95 p-3 shadow-sm supports-backdrop-filter:bg-background/60 backdrop-blur md:p-4",
+				surfacePanelClass,
+				listFilterPanelClass,
 				hasTags ? "gap-2 md:gap-3" : "gap-0",
 				className
 			)}

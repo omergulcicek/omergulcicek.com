@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
-import { Bookmark, ExternalLink, FolderOpen, Mail, Quote, Search } from "lucide-react"
+import { Bookmark, ExternalLink, FolderOpen, Quote, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -16,6 +16,7 @@ import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
 import { mapPostsToSearchItems } from "@/features/blog/helpers/map-posts-to-search-items"
 import { useCommandPalette } from "@/features/search/components/command-palette-provider"
 import { withOutboundUtm } from "@/lib/outbound-url"
+import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
 import {
 	SEARCH_ACTIONS,
 	SEARCH_BOOKMARK_CATEGORIES,
@@ -83,14 +84,18 @@ export function CommandPaletteDialog() {
 										return
 									}
 
-									void navigate({ to: page.href, viewTransition: false })
+									void navigate({
+										to: page.href,
+										search: clearedRouteSearch,
+										viewTransition: false
+									})
 								})
 							}
 						>
-							<page.icon className="mr-2 size-4" />
+							<page.icon className="size-3.5 text-black" />
 							{page.label}
 							{page.external ? (
-								<ExternalLink className="ml-auto size-4 shrink-0" />
+								<ExternalLink className="ml-auto size-3.5 shrink-0 text-black" />
 							) : null}
 						</CommandItem>
 					))}
@@ -110,10 +115,10 @@ export function CommandPaletteDialog() {
 								})
 							}
 						>
-							<Quote className="mr-2 size-4" />
+							<Quote className="size-3.5 text-black" />
 							<div className="flex min-w-0 flex-1 flex-col">
 								<span>{post.title}</span>
-								<span className="text-muted-foreground truncate text-xs">
+								<span className="truncate text-[11px] text-black">
 									{post.description}
 								</span>
 							</div>
@@ -135,14 +140,14 @@ export function CommandPaletteDialog() {
 								})
 							}
 						>
-							<FolderOpen className="mr-2 size-4" />
+							<FolderOpen className="size-3.5 text-black" />
 							<div className="flex min-w-0 flex-1 flex-col">
 								<span>{project.title}</span>
-								<span className="text-muted-foreground truncate text-xs">
+								<span className="truncate text-[11px] text-black">
 									{project.description}
 								</span>
 							</div>
-							<ExternalLink className="ml-2 size-4 shrink-0" />
+							<ExternalLink className="ml-auto size-3.5 shrink-0 text-black" />
 						</CommandItem>
 					))}
 				</CommandGroup>
@@ -154,16 +159,17 @@ export function CommandPaletteDialog() {
 							onSelect={() =>
 								runCommand(() => {
 									void navigate({
-										to: category.href,
+										to: "/bookmarks",
+										search: { category: category.categoryId },
 										viewTransition: false
 									})
 								})
 							}
 						>
-							<Bookmark className="mr-2 size-4" />
+							<Bookmark className="size-3.5 text-black" />
 							<div className="flex min-w-0 flex-1 flex-col">
 								<span>{category.title}</span>
-								<span className="text-muted-foreground truncate text-xs">
+								<span className="truncate text-[11px] text-black">
 									{category.description}
 								</span>
 							</div>
@@ -171,24 +177,28 @@ export function CommandPaletteDialog() {
 					))}
 				</CommandGroup>
 				<CommandGroup heading={SITE_CONTENT.commandGroups.actions}>
-					{SEARCH_ACTIONS.map((action) => (
-						<CommandItem
-							key={action.href}
-							value={action.label}
-							onSelect={() =>
-								runCommand(() => {
-									window.open(
-										withOutboundUtm(action.href),
-										"_blank",
-										"noopener,noreferrer"
-									)
-								})
-							}
-						>
-							<Mail className="mr-2 size-4" />
-							{action.label}
-						</CommandItem>
-					))}
+					{SEARCH_ACTIONS.map((action) => {
+						const ActionIcon = action.icon
+
+						return (
+							<CommandItem
+								key={action.href}
+								value={action.label}
+								onSelect={() =>
+									runCommand(() => {
+										window.open(
+											withOutboundUtm(action.href),
+											"_blank",
+											"noopener,noreferrer"
+										)
+									})
+								}
+							>
+								<ActionIcon className={action.iconClassName} />
+								{action.label}
+							</CommandItem>
+						)
+					})}
 				</CommandGroup>
 			</CommandList>
 		</CommandDialog>
