@@ -1,12 +1,17 @@
 import {
 	BOOKMARK_CATEGORIES,
-	DEFAULT_BOOKMARK_CATEGORY_ID
+	DEFAULT_BOOKMARK_CATEGORY_ID,
+	getBookmarkSortOptions
 } from "@/features/bookmarks/constants/bookmarks.constants"
 import type {
 	Bookmark,
-	BookmarkCategoryId
+	BookmarkCategoryId,
+	BookmarkSort
 } from "@/features/bookmarks/types/bookmarks.types"
-import { BOOKMARK_CATEGORY_IDS } from "@/features/bookmarks/types/bookmarks.types"
+import {
+	BOOKMARK_CATEGORY_IDS,
+	BOOKMARK_SORTS
+} from "@/features/bookmarks/types/bookmarks.types"
 
 export function isBookmarkCategoryId(value: string): value is BookmarkCategoryId {
 	return (BOOKMARK_CATEGORY_IDS as readonly string[]).includes(value)
@@ -137,18 +142,118 @@ function compareBookmarksByTitle(left: Bookmark, right: Bookmark) {
 	})
 }
 
-function sortBookmarksForCategory(bookmarks: readonly Bookmark[]) {
-	return [...bookmarks].sort(compareBookmarksByTitle)
+function compareBookmarksByAuthor(left: Bookmark, right: Bookmark) {
+	const leftAuthor = left.author ?? ""
+	const rightAuthor = right.author ?? ""
+	const authorCompare = leftAuthor.localeCompare(rightAuthor, BOOKMARK_TAG_LOCALE, {
+		sensitivity: "base"
+	})
+
+	if (authorCompare !== 0) {
+		return authorCompare
+	}
+
+	return compareBookmarksByTitle(left, right)
+}
+
+function parseBookmarkImdbRating(bookmark: Bookmark) {
+	if (!bookmark.imdbRating) {
+		return Number.NEGATIVE_INFINITY
+	}
+
+	const rating = Number.parseFloat(bookmark.imdbRating)
+
+	return Number.isFinite(rating) ? rating : Number.NEGATIVE_INFINITY
+}
+
+function compareBookmarksByImdbRating(
+	left: Bookmark,
+	right: Bookmark,
+	direction: "asc" | "desc"
+) {
+	const leftRating = parseBookmarkImdbRating(left)
+	const rightRating = parseBookmarkImdbRating(right)
+	const ratingCompare =
+		direction === "desc" ? rightRating - leftRating : leftRating - rightRating
+
+	if (ratingCompare !== 0) {
+		return ratingCompare
+	}
+
+	return compareBookmarksByTitle(left, right)
+}
+
+export function isBookmarkSort(value: string): value is BookmarkSort {
+	return (BOOKMARK_SORTS as readonly string[]).includes(value)
+}
+
+export function isBookmarkSortVisible(
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+) {
+	return getBookmarkSortOptions(categoryId, tag).length > 0
+}
+
+export function getDefaultBookmarkSort(
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+): BookmarkSort {
+	const options = getBookmarkSortOptions(categoryId, tag)
+
+	if (options.length === 0) {
+		return "title"
+	}
+
+	return options[0]
+}
+
+export function resolveBookmarkSort(
+	sort: BookmarkSort | null | undefined,
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+): BookmarkSort | null {
+	if (!isBookmarkSortVisible(categoryId, tag)) {
+		return null
+	}
+
+	const options = getBookmarkSortOptions(categoryId, tag)
+
+	if (sort && options.includes(sort)) {
+		return sort
+	}
+
+	return getDefaultBookmarkSort(categoryId, tag)
+}
+
+function sortBookmarks(bookmarks: readonly Bookmark[], sort: BookmarkSort | null) {
+	if (!sort) {
+		return [...bookmarks].sort(compareBookmarksByTitle)
+	}
+
+	return [...bookmarks].sort((left, right) => {
+		switch (sort) {
+			case "title":
+				return compareBookmarksByTitle(left, right)
+			case "author":
+				return compareBookmarksByAuthor(left, right)
+			case "rating-desc":
+				return compareBookmarksByImdbRating(left, right, "desc")
+			case "rating-asc":
+				return compareBookmarksByImdbRating(left, right, "asc")
+		}
+	})
 }
 
 export function applyBookmarkFilters(
 	bookmarks: readonly Bookmark[],
 	{
 		categoryId,
-		tag
+		tag,
+		sort
 	}: {
 		categoryId: BookmarkCategoryId
 		tag: string | null
+		sort?: BookmarkSort | null
 	}
 ) {
 	const filtered = getBookmarksForCategory(bookmarks, categoryId).filter((bookmark) => {
@@ -159,7 +264,9 @@ export function applyBookmarkFilters(
 		return bookmark.tags.includes(tag)
 	})
 
-	return sortBookmarksForCategory(filtered)
+	const resolvedSort = resolveBookmarkSort(sort, categoryId, tag)
+
+	return sortBookmarks(filtered, resolvedSort)
 }
 
 export function getBookmarkCategoryById(categoryId: BookmarkCategoryId) {

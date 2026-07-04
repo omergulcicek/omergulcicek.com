@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { blogFilterChipWithIconDesktopClass } from "@/features/blog/constants/blog-filter-chip.styles"
-import { BookmarkCategoryAccent } from "@/features/bookmarks/components/bookmark-category-accent"
+import { blogFilterChipDesktopClass } from "@/features/blog/constants/blog-filter-chip.styles"
 import { BOOKMARK_UI, getSortedBookmarkCategories } from "@/features/bookmarks/constants/bookmarks.constants"
 import type { BookmarkCategoryId } from "@/features/bookmarks/types/bookmarks.types"
 import { cn } from "@/lib/utils"
@@ -32,10 +31,9 @@ export function BookmarkCategoryChips({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
-						className={blogFilterChipWithIconDesktopClass}
+						className={blogFilterChipDesktopClass}
 						onClick={() => onChange(category.id)}
 					>
-						<BookmarkCategoryAccent accent={category.accent} />
 						{category.title}
 					</Button>
 				)

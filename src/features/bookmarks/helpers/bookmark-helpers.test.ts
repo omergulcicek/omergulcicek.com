@@ -8,8 +8,10 @@ import {
 	getBookmarkTagLabel,
 	getBookmarkAuthorCredit,
 	getBookmarkDisplayTitle,
+	isBookmarkSortVisible,
 	normalizeBookmarkTagUrlValue,
 	resolveBookmarkCategoryId,
+	resolveBookmarkSort,
 	resolveBookmarkTag
 } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
@@ -193,6 +195,109 @@ describe("bookmark helpers", () => {
 			"İslam Düşüncesi",
 			"Zeytin Dağı"
 		])
+	})
+
+	it("sorts library bookmarks by author", () => {
+		const libraryBookmarks: Bookmark[] = [
+			{
+				id: "library-z",
+				title: "Zeytin Dağı",
+				url: "https://example.com/z",
+				author: "Ziya Gökalp",
+				categoryId: "library",
+				tags: ["Osmanlı"]
+			},
+			{
+				id: "library-a",
+				title: "Ayasofya'nın Gizli Tarihi",
+				url: "https://example.com/a",
+				author: "Ahmet Kaya",
+				categoryId: "library",
+				tags: ["Osmanlı"]
+			},
+			{
+				id: "library-i",
+				title: "İslam Düşüncesi",
+				url: "https://example.com/i",
+				author: "Mehmet Akif",
+				categoryId: "library",
+				tags: ["Osmanlı"]
+			}
+		]
+
+		expect(
+			applyBookmarkFilters(libraryBookmarks, {
+				categoryId: "library",
+				tag: "Osmanlı",
+				sort: "author"
+			}).map((bookmark) => bookmark.author)
+		).toEqual(["Ahmet Kaya", "Mehmet Akif", "Ziya Gökalp"])
+	})
+
+	it("sorts media bookmarks by imdb rating", () => {
+		const mediaBookmarks: Bookmark[] = [
+			{
+				id: "media-low",
+				title: "Low Rated",
+				url: "https://example.com/low",
+				imdbRating: "7.0",
+				categoryId: "media",
+				tags: ["Film"]
+			},
+			{
+				id: "media-high",
+				title: "High Rated",
+				url: "https://example.com/high",
+				imdbRating: "9.1",
+				categoryId: "media",
+				tags: ["Film"]
+			},
+			{
+				id: "media-mid",
+				title: "Mid Rated",
+				url: "https://example.com/mid",
+				imdbRating: "8.4",
+				categoryId: "media",
+				tags: ["Film"]
+			}
+		]
+
+		expect(
+			applyBookmarkFilters(mediaBookmarks, {
+				categoryId: "media",
+				tag: "Film",
+				sort: "rating-desc"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["High Rated", "Mid Rated", "Low Rated"])
+
+		expect(
+			applyBookmarkFilters(mediaBookmarks, {
+				categoryId: "media",
+				tag: "Film",
+				sort: "rating-asc"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Low Rated", "Mid Rated", "High Rated"])
+	})
+
+	it("controls bookmark sort visibility by category and tag", () => {
+		expect(isBookmarkSortVisible("frontend", null)).toBe(false)
+		expect(isBookmarkSortVisible("frontend", "npm")).toBe(false)
+		expect(isBookmarkSortVisible("library", null)).toBe(true)
+		expect(isBookmarkSortVisible("library", "Osmanlı")).toBe(true)
+		expect(isBookmarkSortVisible("media", null)).toBe(false)
+		expect(isBookmarkSortVisible("media", "Youtube")).toBe(false)
+		expect(isBookmarkSortVisible("media", "Film")).toBe(true)
+		expect(isBookmarkSortVisible("media", "Dizi")).toBe(true)
+	})
+
+	it("resolves bookmark sort for the active filter context", () => {
+		expect(resolveBookmarkSort(null, "library", null)).toBe("title")
+		expect(resolveBookmarkSort("author", "library", null)).toBe("author")
+		expect(resolveBookmarkSort("rating-desc", "library", null)).toBe("title")
+		expect(resolveBookmarkSort(null, "media", "Film")).toBe("rating-desc")
+		expect(resolveBookmarkSort("rating-asc", "media", "Dizi")).toBe("rating-asc")
+		expect(resolveBookmarkSort("title", "media", "Youtube")).toBeNull()
+		expect(resolveBookmarkSort("title", "frontend", null)).toBeNull()
 	})
 
 	it("adds flag emojis to language tag labels", () => {

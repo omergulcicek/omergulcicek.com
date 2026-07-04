@@ -1,8 +1,15 @@
 import type {
 	Bookmark,
-	BookmarkCategoryId
+	BookmarkCategoryId,
+	BookmarkSort,
+	LibraryBookmarkSort,
+	MediaRatingBookmarkSort
 } from "@/features/bookmarks/types/bookmarks.types"
-import { BOOKMARK_CATEGORY_IDS } from "@/features/bookmarks/types/bookmarks.types"
+import {
+	BOOKMARK_CATEGORY_IDS,
+	LIBRARY_BOOKMARK_SORTS,
+	MEDIA_RATING_BOOKMARK_SORTS
+} from "@/features/bookmarks/types/bookmarks.types"
 
 export type BookmarkCategory = {
 	id: BookmarkCategoryId
@@ -901,11 +908,12 @@ export const BOOKMARKS: Bookmark[] = [
 			tags: ["Siteler"]
 		},
 	{
-			id: "personal-imdb-com-title-tt4154756",
+			id: "personal-imdb-com-title-tt4154796",
 			title: "Avengers Serisi",
-			url: "https://www.imdb.com/title/tt4154756/",
-			imageUrl: bookmarkImage("personal-imdb-com-title-tt4154756"),
+			url: "https://www.imdb.com/title/tt4154796/",
+			imageUrl: bookmarkImage("personal-imdb-com-title-tt4154796"),
 			description: "Süper kahramanların insanlığı korumak için verdiği epik mücadele.",
+			imdbRating: "8.4",
 			categoryId: "media",
 			tags: ["Film"]
 		},
@@ -915,6 +923,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt0468569/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt0468569"),
 			description: "Batman'in Joker'e karşı adalet ve ahlak sorgulayan karanlık mücadelesi.",
+			imdbRating: "9.1",
 			categoryId: "media",
 			tags: ["Film"]
 		},
@@ -924,6 +933,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt7286456/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt7286456"),
 			description: "Dışlanmış Arthur Fleck'in Joker'e dönüşümünü anlatan psikolojik dram.",
+			imdbRating: "8.3",
 			categoryId: "media",
 			tags: ["Film"]
 		},
@@ -933,6 +943,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt1831164/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt1831164"),
 			description: "Kireçburnu'nun absürt ve gerçeküstü maceralarını anlatan durum komedisi.",
+			imdbRating: "9.0",
 			categoryId: "media",
 			tags: ["Dizi"]
 		},
@@ -942,6 +953,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt1475582/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt1475582"),
 			description: "Sherlock ve Watson'ın karmaşık suçları çözdüğü polisiye.",
+			imdbRating: "9.0",
 			categoryId: "media",
 			tags: ["Dizi"]
 		},
@@ -951,6 +963,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt0167260/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt0167260"),
 			description: "Frodo'nun Tek Yüzük'ü yok etmek için çıktığı destansı yolculuk.",
+			imdbRating: "9.0",
 			categoryId: "media",
 			tags: ["Film"]
 		},
@@ -960,6 +973,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt1795096/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt1795096"),
 			description: "Behzat Ç. ve ekibinin Ankara suç dünyasıyla tavizsiz mücadelesi.",
+			imdbRating: "8.8",
 			categoryId: "media",
 			tags: ["Dizi"]
 		},
@@ -969,6 +983,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt7920978/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt7920978"),
 			description: "Emekli memurun geçmişiyle hesaplaşırken adaleti kendi eliyle araması.",
+			imdbRating: "9.0",
 			categoryId: "media",
 			tags: ["Dizi"]
 		},
@@ -978,6 +993,7 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt7949218/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt7949218"),
 			description: "Kör bir dünyada gören ikizlerin doğumuyla sarsılan kabileler arası mücadele.",
+			imdbRating: "7.6",
 			categoryId: "media",
 			tags: ["Dizi"]
 		},
@@ -987,8 +1003,210 @@ export const BOOKMARKS: Bookmark[] = [
 			url: "https://www.imdb.com/title/tt31323988/",
 			imageUrl: bookmarkImage("personal-imdb-com-title-tt31323988"),
 			description: "Fatih Sultan Mehmed'in İstanbul fetih hayali ve saray mücadeleleri.",
+			imdbRating: "7.9",
 			categoryId: "media",
 			tags: ["Dizi"]
+		},
+	{
+			id: "personal-imdb-com-title-tt0252488",
+			title: "Hababam Sınıfı Sınıfta Kaldı",
+			url: "https://www.imdb.com/title/tt0252488/",
+			imageUrl: bookmarkImage("personal-imdb-com-title-tt0252488"),
+			description: "Sahte diploması ortaya çıkan Hababam Sınıfı'nın yeni öğretmenlerle verdiği efsanevi mücadele.",
+			imdbRating: "8.9",
+			categoryId: "media",
+			tags: ["Film"]
+		},
+	{
+			id: "personal-imdb-com-title-tt10431500",
+			title: "Yedinci Koğuştaki Mucize",
+			url: "https://www.imdb.com/title/tt10431500/",
+			imageUrl: bookmarkImage("personal-imdb-com-title-tt10431500"),
+			description: "Haksız yere hapse giren babanın kızıyla olan bağını anlatan duygusal dram.",
+			imdbRating: "8.2",
+			categoryId: "media",
+			tags: ["Film"]
+		},
+	{
+			id: "personal-imdb-com-title-tt6316138",
+			title: "Ayla",
+			url: "https://www.imdb.com/title/tt6316138/",
+			imageUrl: bookmarkImage("personal-imdb-com-title-tt6316138"),
+			description: "Kore Savaşı'nda küçük bir kızla kurulan bağın yıllarca süren hikayesini anlatan biyografik dram.",
+			imdbRating: "8.2",
+			categoryId: "media",
+			tags: ["Film"]
+		},
+	{
+			id: "media-youtube--gc2twgghfa",
+			title: "Brezilya - Portekiz: Euro 2004",
+			url: "https://www.youtube.com/watch?v=-Gc2twGGHFA",
+			author: "This Is Football",
+			imageUrl: bookmarkImage("media-youtube--gc2twgghfa"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-rs8xja8ctoq",
+			title: "Fransa 2018 Dünya Kupası Müziği",
+			url: "https://www.youtube.com/watch?v=rs8xJa8ctOQ",
+			author: "GLOBAL BUZZ",
+			imageUrl: bookmarkImage("media-youtube-rs8xja8ctoq"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-6ey6xucwf0y",
+			title: "Aurora - Vitality: IEM Krakow 2026",
+			url: "https://www.youtube.com/watch?v=6Ey6xUCWF0Y",
+			author: "rootthegamer",
+			imageUrl: bookmarkImage("media-youtube-6ey6xucwf0y"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-5x2yp2wm16i",
+			title: "Mehmed: Fetihler Sultanı 59. Bölüm",
+			url: "https://youtu.be/5X2yp2Wm16I?si=qwuSoZU9fb4g4BlG&t=2067",
+			author: "Mehmed: Fetihler Sultanı",
+			imageUrl: bookmarkImage("media-youtube-5x2yp2wm16i"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-hvmbmwuheaw",
+			title: "You'll Never Walk Alone",
+			url: "https://www.youtube.com/watch?v=HVmbMWUhEaw",
+			author: "Sky Sports Premier League",
+			imageUrl: bookmarkImage("media-youtube-hvmbmwuheaw"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-m22nwszycce",
+			title: "Muhammad Ali - George Foreman: Rumble in the Jungle",
+			url: "https://www.youtube.com/watch?v=M22nWSzyccE",
+			author: "ElTerribleProduction",
+			imageUrl: bookmarkImage("media-youtube-m22nwszycce"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-lmwpop3pulg",
+			title: "Barcelona - Real Madrid: 2010/2011",
+			url: "https://www.youtube.com/watch?v=LmwPop3Pulg",
+			author: "LALIGA EA SPORTS",
+			imageUrl: bookmarkImage("media-youtube-lmwpop3pulg"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-4rpm6g6odvg",
+			title: "Hedef Kızılelma Belgeseli",
+			url: "https://www.youtube.com/watch?v=4RPm6g6odVg",
+			author: "Baykar Technologies",
+			imageUrl: bookmarkImage("media-youtube-4rpm6g6odvg"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-ueec_ebjgfu",
+			title: "Akıncı Belgeseli",
+			url: "https://www.youtube.com/watch?v=UEec_EbJgfU",
+			author: "Baykar Technologies",
+			imageUrl: bookmarkImage("media-youtube-ueec_ebjgfu"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-x7158uqk1yi",
+			title: "Brezilya - Fransa: 2006 Dünya Kupası",
+			url: "https://www.youtube.com/watch?v=X7158uQk1yI",
+			author: "FIFA",
+			imageUrl: bookmarkImage("media-youtube-x7158uqk1yi"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-u1oivnfpfii",
+			title: "Roger Federer - Rafael Nadal: Battle of Surfaces 2007",
+			url: "https://www.youtube.com/watch?v=u1oivnfpfII",
+			author: "Raz Ols",
+			imageUrl: bookmarkImage("media-youtube-u1oivnfpfii"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-81txboyjrjw",
+			title: "Habib Nurmagomedov - Conor McGregor: UFC 229",
+			url: "https://www.youtube.com/watch?v=81tXbOYJRJw",
+			author: "UFC Eurasia",
+			imageUrl: bookmarkImage("media-youtube-81txboyjrjw"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-mhsg2m25pzy",
+			title: "Roger Federer - Rafael Nadal: Wimbledon 2008 Final",
+			url: "https://www.youtube.com/watch?v=mHsg2M25PzY",
+			author: "Wimbledon",
+			imageUrl: bookmarkImage("media-youtube-mhsg2m25pzy"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-g-swvee9him",
+			title: "Eternal Fire - Spirit: BLAST Premier Bounty Final",
+			url: "https://www.youtube.com/watch?v=g-swVEE9hiM",
+			author: "BLAST Premier",
+			imageUrl: bookmarkImage("media-youtube-g-swvee9him"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-uo1chltdryq",
+			title: "Türkiye - Arjantin: CS:GO Major Final",
+			url: "https://www.youtube.com/watch?v=uo1chlTDrYQ",
+			author: "Robert Brown",
+			imageUrl: bookmarkImage("media-youtube-uo1chltdryq"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-jqvx5i4cso8",
+			title: "XANTARES Nerede?!",
+			url: "https://www.youtube.com/watch?v=JqVx5I4CsO8",
+			author: "ESL Counter-Strike",
+			imageUrl: bookmarkImage("media-youtube-jqvx5i4cso8"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-pxygbwx4dks",
+			title: "Teşekkürler CS:GO",
+			url: "https://www.youtube.com/watch?v=pXyGBwx4dks",
+			author: "Virre CS2",
+			imageUrl: bookmarkImage("media-youtube-pxygbwx4dks"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-ijbde6pkw2o",
+			title: "Liverpool - Milan: 2005 Şampiyonlar Ligi Finali",
+			url: "https://www.youtube.com/watch?v=iJbDE6PKW2o",
+			author: "GoalGlory Classics",
+			imageUrl: bookmarkImage("media-youtube-ijbde6pkw2o"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
+			id: "media-youtube-fexzy4evllo",
+			title: "Kobe Bryant: 81 Sayı vs Raptors",
+			url: "https://www.youtube.com/watch?v=FeXZY4eVLlo",
+			author: "NBA",
+			imageUrl: bookmarkImage("media-youtube-fexzy4evllo"),
+			categoryId: "media",
+			tags: ["Youtube"]
 		},
 	{
 			id: "library-osmanli-turkcesi-kilavuzu2-106298",
@@ -1877,6 +2095,26 @@ export const BOOKMARKS: Bookmark[] = [
 		}
 ]
 
+export const BOOKMARK_GRID_COLUMN_COUNT = {
+	mobile: 2,
+	desktop: 5
+} as const
+
+export const BOOKMARK_MEDIA_RATING_TAGS = ["Film", "Dizi"] as const
+
+export const LIBRARY_BOOKMARK_SORT_LABELS: Record<LibraryBookmarkSort, string> = {
+	title: "Başlığa göre",
+	author: "Yazara göre"
+}
+
+export const MEDIA_RATING_BOOKMARK_SORT_LABELS: Record<
+	MediaRatingBookmarkSort,
+	string
+> = {
+	"rating-desc": "En yüksek",
+	"rating-asc": "En düşük"
+}
+
 export const BOOKMARK_UI = {
 	pageTitle: "Yer İmleri",
 	pageDescription:
@@ -1884,12 +2122,32 @@ export const BOOKMARK_UI = {
 	filtersAriaLabel: "Yer imi filtreleri",
 	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",
+	sortAriaLabel: "Sıralama",
 	listAriaLabel: "Yer imleri listesi",
 	emptyState: "Seçili etikete uygun yer imi bulunamadı.",
 	showTags: "Tüm etiketleri göster",
 	hideTags: "Daha az göster",
 	tagsToggleAriaLabel: "Etiket filtrelerini göster veya gizle"
 } as const
+
+export function getBookmarkSortOptions(
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+): readonly BookmarkSort[] {
+	if (categoryId === "library") {
+		return LIBRARY_BOOKMARK_SORTS
+	}
+
+	if (
+		categoryId === "media" &&
+		tag !== null &&
+		(BOOKMARK_MEDIA_RATING_TAGS as readonly string[]).includes(tag)
+	) {
+		return MEDIA_RATING_BOOKMARK_SORTS
+	}
+
+	return []
+}
 
 export function getSortedBookmarkCategories() {
 	return [...BOOKMARK_CATEGORIES].sort((left, right) => left.sortOrder - right.sortOrder)

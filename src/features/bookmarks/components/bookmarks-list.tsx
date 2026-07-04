@@ -2,10 +2,8 @@ import { useCallback, useEffect, useRef } from "react"
 
 import { bleedSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import { Container } from "@/components/shared/Container"
-import { BookmarkListRow } from "@/features/bookmarks/components/bookmark-list-row"
-import { BookmarksEmptyState } from "@/features/bookmarks/components/bookmarks-empty-state"
+import { BookmarksListGrid } from "@/features/bookmarks/components/bookmarks-list-grid.client"
 import { BookmarksListFilters } from "@/features/bookmarks/components/bookmarks-list-filters"
-import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
 	applyBookmarkFilters,
 	areBookmarkTagsEqual,
@@ -25,7 +23,7 @@ type BookmarksListProps = {
 }
 
 export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
-	const { category, tag, setFilters, setTag, ensureTag, clearSearch } =
+	const { category, tag, sort, setFilters, setTag, setSort, ensureTag, clearSearch } =
 		useBookmarksSearchParams()
 	const availableTags = getAvailableBookmarkTags(bookmarks, category)
 	const selectedTag = resolveBookmarkTag(availableTags, tag)
@@ -61,7 +59,8 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 
 	const filteredBookmarks = applyBookmarkFilters(bookmarks, {
 		categoryId: category,
-		tag: selectedTag
+		tag: selectedTag,
+		sort
 	})
 
 	return (
@@ -71,24 +70,18 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 					categoryId={category}
 					tags={availableTags}
 					selectedTag={selectedTag}
+					sort={sort}
 					onCategoryChange={handleCategoryChange}
 					onTagSelect={setTag}
+					onSortChange={setSort}
 				/>
 			</Container>
 
 			<div className={bleedSectionClass}>
-				{filteredBookmarks.length === 0 ? (
-					<BookmarksEmptyState />
-				) : (
-					<div
-						className="grid grid-cols-2 gap-x-4 gap-y-6 overflow-visible md:grid-cols-5 md:gap-x-4 md:gap-y-5"
-						aria-label={BOOKMARK_UI.listAriaLabel}
-					>
-						{filteredBookmarks.map((bookmark) => (
-							<BookmarkListRow key={bookmark.id} bookmark={bookmark} />
-						))}
-					</div>
-				)}
+				<BookmarksListGrid
+					bookmarks={filteredBookmarks}
+					filterKey={`${category}-${selectedTag ?? "all"}-${sort ?? "default"}`}
+				/>
 			</div>
 		</div>
 	)

@@ -7,7 +7,12 @@ import { BlogCategoryPills } from "@/features/blog/components/blog-category-pill
 import { BlogSortControl } from "@/features/blog/components/blog-sort-control"
 import { BlogTagChips } from "@/features/blog/components/blog-tag-chips"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
-import { blogFilterTagsCollapsedClass, listFilterPanelClass } from "@/features/blog/constants/blog-filter-chip.styles"
+import {
+	blogFilterTagsCollapsedClass,
+	blogFilterTagsContainerClass,
+	blogFilterTagsExpandedClass,
+	listFilterPanelClass
+} from "@/features/blog/constants/blog-filter-chip.styles"
 import type { BlogCategory, BlogSort } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
@@ -84,7 +89,7 @@ export function BlogListFilters({
 					{showClearFilters ? (
 						<button
 							type="button"
-							className="focus-link text-muted-foreground hover:text-foreground text-xs underline-offset-4 transition-colors hover:underline"
+							className="focus-link text-muted-foreground hover:text-foreground text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
 							onClick={onClearFilters}
 						>
 							{BLOG_UI.clearFilters}
@@ -105,7 +110,10 @@ export function BlogListFilters({
 				<div className="flex flex-col gap-2">
 					<div
 						ref={tagsContainerRef}
-						className={cn(!tagsExpanded && blogFilterTagsCollapsedClass)}
+						className={cn(
+							blogFilterTagsContainerClass,
+							tagsExpanded ? blogFilterTagsExpandedClass : blogFilterTagsCollapsedClass
+						)}
 					>
 						<BlogTagChips
 							tags={tags}
@@ -123,7 +131,7 @@ export function BlogListFilters({
 						>
 							<ChevronDown
 								className={cn(
-									"size-3 shrink-0 transition-transform duration-200",
+									"size-3 shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
 									tagsExpanded ? "rotate-180" : undefined
 								)}
 								aria-hidden

@@ -3,10 +3,7 @@ import {
 	blogFilterChipDesktopClass,
 	blogFilterChipWithIconDesktopClass
 } from "@/features/blog/constants/blog-filter-chip.styles"
-import {
-	BookmarkTagIcon,
-	hasBookmarkTagIcon
-} from "@/features/bookmarks/components/bookmark-tag-icon"
+import { BookmarkTagIcon } from "@/features/bookmarks/components/bookmark-tag-icon"
 import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
 	getBookmarkAllTagLabel,
@@ -54,7 +51,6 @@ export function BookmarkTagChips({
 			</Button>
 			{tags.map((tag) => {
 				const isActive = selectedTag === tag
-				const hasIcon = hasBookmarkTagIcon(tag)
 
 				return (
 					<Button
@@ -63,13 +59,10 @@ export function BookmarkTagChips({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
-						className={cn(
-							blogFilterChipDesktopClass,
-							hasIcon && blogFilterChipWithIconDesktopClass
-						)}
+						className={blogFilterChipWithIconDesktopClass}
 						onClick={() => onSelect(tag)}
 					>
-						{hasIcon ? <BookmarkTagIcon tag={tag} className="size-3 shrink-0" /> : null}
+						<BookmarkTagIcon tag={tag} className="size-3 shrink-0" />
 						{getBookmarkTagLabel(tag)}
 					</Button>
 				)

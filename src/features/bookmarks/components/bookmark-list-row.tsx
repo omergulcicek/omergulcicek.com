@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Star } from "lucide-react"
 
 import { OptimizedImage } from "@/components/shared/optimized-image"
 import {
@@ -39,14 +39,28 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 				aria-label={displayTitle}
 			/>
 			{bookmark.imageUrl ? (
-				<OptimizedImage
-					src={bookmark.imageUrl}
-					alt=""
-					width={120}
-					height={120}
-					sizes="(max-width: 768px) 50vw, 20vw"
-					className="image-outline pointer-events-none relative z-10 aspect-square w-full rounded-sm object-contain"
-				/>
+				<div className="pointer-events-none relative z-10 aspect-square w-full">
+					<OptimizedImage
+						src={bookmark.imageUrl}
+						alt=""
+						width={120}
+						height={120}
+						sizes="(max-width: 768px) 50vw, 20vw"
+						className="image-outline size-full rounded-sm object-contain"
+					/>
+					{bookmark.imdbRating ? (
+						<span
+							className="absolute right-1 bottom-px inline-flex items-center gap-0.5 rounded-sm bg-background/85 px-1 py-0.5 text-xs font-medium tabular-nums backdrop-blur-sm"
+							aria-label={`IMDB puanı: ${bookmark.imdbRating}`}
+						>
+							<Star
+								className="size-3 fill-amber-500 text-amber-500"
+								aria-hidden
+							/>
+							{bookmark.imdbRating}
+						</span>
+					) : null}
+				</div>
 			) : null}
 			<div className="pointer-events-none relative z-10 flex min-w-0 flex-col">
 				<div className="flex items-start justify-between gap-2">

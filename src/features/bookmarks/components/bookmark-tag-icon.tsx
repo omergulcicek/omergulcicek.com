@@ -1,7 +1,17 @@
 import type { ComponentType, SVGProps } from "react"
+import {
+	BookOpen,
+	Castle,
+	Clapperboard,
+	Crown,
+	Earth,
+	Globe,
+	Moon,
+	Popcorn
+} from "lucide-react"
 
-import { Chrome } from "@/components/ui/svgs/chrome"
-import { CursorLight } from "@/components/ui/svgs/cursorLight"
+import { Npm } from "@/components/ui/svgs/npm"
+import { Youtube } from "@/components/ui/svgs/youtube"
 import { cn } from "@/lib/utils"
 
 type BookmarkTagIconProps = {
@@ -9,30 +19,58 @@ type BookmarkTagIconProps = {
 	className?: string
 }
 
-const BOOKMARK_TAG_ICON_MAP: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-	Chrome: Chrome,
-	Cursor: CursorLight
+type BookmarkTagIconEntry = {
+	icon: ComponentType<SVGProps<SVGSVGElement>>
+	iconClassName?: string
 }
 
-const BOOKMARK_TAG_ICON_CLASS_MAP: Record<string, string> = {
-	Cursor: "text-[#181717] dark:text-white"
-}
-
-export function hasBookmarkTagIcon(tag: string) {
-	return tag in BOOKMARK_TAG_ICON_MAP
+const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
+	Siteler: {
+		icon: Globe,
+		iconClassName: "text-cyan-600 dark:text-cyan-400"
+	},
+	npm: { icon: Npm },
+	Youtube: { icon: Youtube },
+	Dizi: {
+		icon: Clapperboard,
+		iconClassName: "text-rose-500 dark:text-rose-400"
+	},
+	Film: {
+		icon: Popcorn,
+		iconClassName: "text-rose-500 dark:text-rose-400"
+	},
+	"Dünya Tarihi": {
+		icon: Earth,
+		iconClassName: "text-sky-600 dark:text-sky-400"
+	},
+	İslam: {
+		icon: Moon,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	Osmanlı: {
+		icon: Castle,
+		iconClassName: "text-amber-700 dark:text-amber-400"
+	},
+	Cumhuriyet: {
+		icon: Crown,
+		iconClassName: "text-red-600 dark:text-red-400"
+	},
+	Edebiyat: {
+		icon: BookOpen,
+		iconClassName: "text-orange-600 dark:text-orange-400"
+	}
 }
 
 export function BookmarkTagIcon({ tag, className }: BookmarkTagIconProps) {
-	const Icon = BOOKMARK_TAG_ICON_MAP[tag]
+	const entry = BOOKMARK_TAG_ICON_MAP[tag]
 
-	if (!Icon) {
+	if (!entry) {
 		return null
 	}
 
+	const Icon = entry.icon
+
 	return (
-		<Icon
-			className={cn(className, BOOKMARK_TAG_ICON_CLASS_MAP[tag])}
-			aria-hidden
-		/>
+		<Icon className={cn(className, entry.iconClassName)} aria-hidden />
 	)
 }
