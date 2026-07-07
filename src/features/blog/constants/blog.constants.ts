@@ -22,6 +22,7 @@ export const BLOG_TAG_POOL = [
 	"React",
 	"Next.js",
 	"TanStack",
+	"Zustand",
 	"ViraStack",
 	"TypeScript",
 	"Yapay Zekâ",

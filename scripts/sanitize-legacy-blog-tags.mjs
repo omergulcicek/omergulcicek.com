@@ -36,12 +36,12 @@ const REMOVED_TAGS = new Set([
 	"PHP",
 	"Redux",
 	"Sait Köşk",
+	"State",
 	"Styled Components",
 	"Tasarım",
 	"Teknoloji",
 	"Turkuaz",
-	"Ziraat Teknoloji",
-	"Zustand"
+	"Ziraat Teknoloji"
 ])
 
 function parseTagsBlock(rawTags) {

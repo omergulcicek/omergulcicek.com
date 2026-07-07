@@ -6,7 +6,7 @@ slug: "/react-state-yonetim-mimarisi"
 title: "React State Yönetim Mimarisi"
 description: "Hangi kütüphane sorusundan önce state'in doğasını tanımlamayı merkeze alan üst düzey React state mimarisi yaklaşımı."
 category: "technical"
-tags: ["React", "TanStack"]
+tags: ["React", "TanStack", "Zustand"]
 coverImage: "/blog/2026/02-01/passing-props.png"
 readingTimeMinutes: 6
 canonicalUrl: "https://omergulcicek.com/blog/react-state-yonetim-mimarisi"
@@ -108,7 +108,7 @@ Sürdürülebilir bir yapı için şu hiyerarşiyi takip etmek kritik önem taş
 4. **Doğru Aracı Seçin:**
 * **Veri API'den geliyorsa:** [TanStack Query](https://tanstack.com/query/latest).
 * **Global ve nadir değişen ayarlar** (tema, dil, auth) ise: [Context API](https://react.dev/learn/passing-data-deeply-with-context).
-* **Sık değişen veya paylaşılan UI state'leri** ise: [Zustand](https://zustand.docs.pmnd.rs/).
+* **Sık değişen veya paylaşılan UI state'leri** ise: [Zustand](https://zustand.docs.pmnd.rs/) (İleri düzey kullanım için [Zustand ve React Context](/blog/zustand-ve-react-context) yazısına göz atabilirsiniz).
 * **Bileşene özel, geçici state'ler** (form, modal) ise: [useState](https://react.dev/reference/react/useState) / [useReducer](https://react.dev/reference/react/useReducer).
 
 Bu stratejik sıralamayı takip ettiğinizde, projeniz ne kadar büyürse büyüsün kontrol edilebilir ve performanslı bir mimariyi koruyabilirsiniz.

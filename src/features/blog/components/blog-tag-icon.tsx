@@ -49,6 +49,10 @@ type BlogTagIconEntry =
 			light: ComponentType<SVGProps<SVGSVGElement>>
 			dark: ComponentType<SVGProps<SVGSVGElement>>
 	  }
+	| {
+			kind: "image"
+			src: string
+	  }
 
 const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 	React: { kind: "theme", light: ReactLight, dark: ReactDark },
@@ -56,6 +60,7 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 	TanStack: { kind: "icon", icon: Tanstack },
 	"TanStack Query": { kind: "icon", icon: Tanstack },
 	"TanStack Start": { kind: "icon", icon: Tanstack },
+	Zustand: { kind: "image", src: "/logos/zustand.svg" },
 	ViraStack: { kind: "icon", icon: Virastack },
 	TypeScript: { kind: "icon", icon: Typescript },
 	"Yapay Zekâ": {
@@ -138,6 +143,17 @@ export function BlogTagIcon({ tag, className }: BlogTagIconProps) {
 				dark={entry.dark}
 				className={className}
 				label={tag}
+			/>
+		)
+	}
+
+	if (entry.kind === "image") {
+		return (
+			<img
+				src={entry.src}
+				alt=""
+				className={cn(className, "object-contain")}
+				aria-hidden
 			/>
 		)
 	}

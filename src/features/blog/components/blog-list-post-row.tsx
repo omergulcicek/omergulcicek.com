@@ -56,18 +56,6 @@ export function BlogListPostRow({
 				>
 					{formatBlogDate(post.publishedAt)}
 				</time>
-				{post.locale === "en" ? (
-					<span
-						className="text-muted-foreground flex items-center gap-1 text-xs"
-						title={BLOG_UI.englishTooltip}
-					>
-						<Languages
-							className="size-4 shrink-0 text-blue-600 dark:text-blue-400"
-							aria-hidden
-						/>
-						<span>{BLOG_UI.englishLabel}</span>
-					</span>
-				) : null}
 				{showDraftBadge && !post.published ? (
 					<Badge variant="secondary">{BLOG_UI.draftBadge}</Badge>
 				) : null}
@@ -84,6 +72,7 @@ export function BlogListPostRow({
 					{post.description}
 				</p>
 				{post.interactive ||
+				post.locale === "en" ||
 				visibleTags.length > 0 ||
 				post.mediumUrl ? (
 					<div className="mt-2 flex flex-wrap items-center gap-2">
@@ -93,6 +82,18 @@ export function BlogListPostRow({
 									✨
 								</span>
 								<span>{BLOG_UI.interactiveLabel}</span>
+							</span>
+						) : null}
+						{post.locale === "en" ? (
+							<span
+								className="text-muted-foreground flex items-center gap-1 text-xs"
+								title={BLOG_UI.englishTooltip}
+							>
+								<Languages
+									className="size-4 shrink-0 text-blue-600 dark:text-blue-400"
+									aria-hidden
+								/>
+								<span>{BLOG_UI.englishLabel}</span>
 							</span>
 						) : null}
 						{visibleTags.map((tag) => (
