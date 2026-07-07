@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 
 import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
+import { StackLogo } from "@/features/about/components/stack-logo"
 import { CssOld } from "@/components/ui/svgs/cssOld"
 import { Github } from "@/components/ui/svgs/github"
 import { Html5 } from "@/components/ui/svgs/html5"
@@ -49,6 +50,10 @@ type BlogTagIconEntry =
 			light: ComponentType<SVGProps<SVGSVGElement>>
 			dark: ComponentType<SVGProps<SVGSVGElement>>
 	  }
+	| {
+			kind: "stack"
+			stackId: string
+	  }
 
 const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 	React: { kind: "theme", light: ReactLight, dark: ReactDark },
@@ -74,6 +79,7 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 	"Tailwind CSS": { kind: "icon", icon: Tailwindcss },
 	"shadcn/ui": { kind: "theme", light: ShadcnUi, dark: ShadcnUiDark },
 	Supabase: { kind: "icon", icon: Supabase },
+	Zustand: { kind: "stack", stackId: "zustand" },
 	Vite: { kind: "icon", icon: Vite },
 	GitHub: { kind: "icon", icon: Github },
 	npm: { kind: "icon", icon: Npm },
@@ -139,6 +145,12 @@ export function BlogTagIcon({ tag, className }: BlogTagIconProps) {
 				className={className}
 				label={tag}
 			/>
+		)
+	}
+
+	if (entry.kind === "stack") {
+		return (
+			<StackLogo stackId={entry.stackId} label={tag} className={className} />
 		)
 	}
 

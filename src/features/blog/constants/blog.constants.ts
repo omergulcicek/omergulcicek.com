@@ -20,6 +20,7 @@ export const BLOG_SORT_OPTIONS: BlogSort[] = ["newest", "oldest"]
 
 export const BLOG_TAG_POOL = [
 	"React",
+	"Zustand",
 	"Next.js",
 	"TanStack",
 	"ViraStack",
