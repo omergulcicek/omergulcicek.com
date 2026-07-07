@@ -16,6 +16,7 @@
 		"validate-blog-content": "node scripts/validate-blog-content.mjs",
 		"export-blog-content": "node scripts/export-blog-content.mjs",
 		"import-blog-supabase": "node scripts/import-blog-to-supabase.mjs",
+		"add-zustand-blog": "node scripts/add-zustand-context-blog.mjs",
 		"generate-blog-import-sql": "node scripts/generate-blog-import-sql.mjs",
 		"test": "vitest",
 		"test:run": "vitest run",
