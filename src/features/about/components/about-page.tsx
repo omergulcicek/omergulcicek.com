@@ -8,6 +8,7 @@ import {
 	ProseIconLink,
 	ProseRouterLink
 } from "@/components/shared/prose-link"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	pageSectionClass,
@@ -40,39 +41,43 @@ type AboutPageProps = {
 
 export function AboutPage({ contributions }: AboutPageProps) {
 	return (
-		<div className={pageShellClass}>
-			<Container className={cn("flex flex-col", pageStackGapClass)}>
-				<PageHeader title={ABOUT_CONTENT.title} className="vt-about-block">
-					<div className={proseFlowClass}>
-						<p className={proseParagraphClass}>
-							Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
-							mühendisiyim.
-						</p>
-						<p className={proseParagraphClass}>
-							Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; işimle
-							insanlara faydalı olmayı ve deneyimlerine değer katmayı seviyorum.
-							Şu aralar kişisel projelerimin yanı sıra{" "}
-							<VirastackLink>ViraStack</VirastackLink>{" "}
-							ekosistemine odaklanıyorum.
-						</p>
-						<p className={proseParagraphClass}>
-							Yıllardır farklı ölçeklerde frontend projelerinde çalışıyorum;{" "}
-							<ProseEmphasis>
-								mimari, performans ve geliştirici deneyimine
-							</ProseEmphasis>{" "}
-							önem veriyorum. Ekibin daha güvenle ilerlemesini sağlamayı da
-							önemsiyorum. Yapay zekâyı da bu disiplinin içinde,{" "}
-							<em>bilinçli ve kontrollü</em> şekilde kullanıyorum.
-						</p>
-					</div>
-				</PageHeader>
-			</Container>
+		<StaggerContainer className={pageShellClass}>
+			<StaggerItem>
+				<Container className={cn("flex flex-col", pageStackGapClass)}>
+					<PageHeader title={ABOUT_CONTENT.title} className="vt-about-block">
+						<div className={proseFlowClass}>
+							<p className={proseParagraphClass}>
+								Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
+								mühendisiyim.
+							</p>
+							<p className={proseParagraphClass}>
+								Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; işimle
+								insanlara faydalı olmayı ve deneyimlerine değer katmayı seviyorum.
+								Şu aralar kişisel projelerimin yanı sıra{" "}
+								<VirastackLink>ViraStack</VirastackLink>{" "}
+								ekosistemine odaklanıyorum.
+							</p>
+							<p className={proseParagraphClass}>
+								Yıllardır farklı ölçeklerde frontend projelerinde çalışıyorum;{" "}
+								<ProseEmphasis>
+									mimari, performans ve geliştirici deneyimine
+								</ProseEmphasis>{" "}
+								önem veriyorum. Ekibin daha güvenle ilerlemesini sağlamayı da
+								önemsiyorum. Yapay zekâyı da bu disiplinin içinde,{" "}
+								<em>bilinçli ve kontrollü</em> şekilde kullanıyorum.
+							</p>
+						</div>
+					</PageHeader>
+				</Container>
+			</StaggerItem>
 
-			<Suspense fallback={<StackStripFallback />}>
-				<StackStrip items={STACK_ITEMS} />
-			</Suspense>
+			<StaggerItem>
+				<Suspense fallback={<StackStripFallback />}>
+					<StackStrip items={STACK_ITEMS} />
+				</Suspense>
+			</StaggerItem>
 
-			<section className={pageSectionClass}>
+			<StaggerItem className={pageSectionClass}>
 				<Container className={pageSectionClass}>
 					<SectionHeading>Üretim Kültürü</SectionHeading>
 					<div className={proseFlowClass}>
@@ -95,25 +100,27 @@ export function AboutPage({ contributions }: AboutPageProps) {
 				</Container>
 
 				<GitHubContributionCalendar contributions={contributions} />
-			</section>
+			</StaggerItem>
 
-			<Container className={cn("flex flex-col", pageStackGapClass)}>
-				<section className={pageSectionClass}>
-					<SectionHeading>Hobiler</SectionHeading>
-					<HobbyList />
-				</section>
+			<StaggerItem>
+				<Container className={cn("flex flex-col", pageStackGapClass)}>
+					<section className={pageSectionClass}>
+						<SectionHeading>Hobiler</SectionHeading>
+						<HobbyList />
+					</section>
 
-				<ul className={cn("flex flex-col", proseFlowClass)}>
-					<li className={proseParagraphClass}>
-						<ProseRouterLink to="/experiences">Deneyimlerim</ProseRouterLink> —
-						kariyer geçmişi ve CV
-					</li>
-					<li className={proseParagraphClass}>
-						<ProseRouterLink to="/services">Hizmetler</ProseRouterLink> —
-						geliştirme, Danışmanlık ve frontend eğitimi
-					</li>
-				</ul>
-			</Container>
-		</div>
+					<ul className={cn("flex flex-col", proseFlowClass)}>
+						<li className={proseParagraphClass}>
+							<ProseRouterLink to="/experiences">Deneyimlerim</ProseRouterLink> —
+							kariyer geçmişi ve CV
+						</li>
+						<li className={proseParagraphClass}>
+							<ProseRouterLink to="/services">Hizmetler</ProseRouterLink> —
+							geliştirme, Danışmanlık ve frontend eğitimi
+						</li>
+					</ul>
+				</Container>
+			</StaggerItem>
+		</StaggerContainer>
 	)
 }

@@ -1,5 +1,6 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
 import {
 	pageSectionClass,
 	pageShellClass,
@@ -12,26 +13,30 @@ export function WorkspacePage() {
 	const { deskPhoto } = WORKSPACE_CONTENT
 
 	return (
-		<Container className={pageShellClass}>
-			<PageHeader title={WORKSPACE_CONTENT.pageTitle}>
-				<p className={proseParagraphClass}>{WORKSPACE_CONTENT.pageDescription}</p>
-			</PageHeader>
+		<Container>
+			<StaggerContainer className={pageShellClass}>
+				<StaggerItem>
+					<PageHeader title={WORKSPACE_CONTENT.pageTitle}>
+						<p className={proseParagraphClass}>{WORKSPACE_CONTENT.pageDescription}</p>
+					</PageHeader>
+				</StaggerItem>
 
-			<section className={pageSectionClass}>
-				<figure className="overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
-					<img
-						src={deskPhoto.src}
-						alt={deskPhoto.alt}
-						width={deskPhoto.width}
-						height={deskPhoto.height}
-						loading="lazy"
-						decoding="async"
-						className="image-outline block size-full object-cover"
-					/>
-				</figure>
+				<StaggerItem className={pageSectionClass}>
+					<figure className="overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
+						<img
+							src={deskPhoto.src}
+							alt={deskPhoto.alt}
+							width={deskPhoto.width}
+							height={deskPhoto.height}
+							loading="lazy"
+							decoding="async"
+							className="image-outline block size-full object-cover"
+						/>
+					</figure>
 
-				<WorkspaceGearTable />
-			</section>
+					<WorkspaceGearTable />
+				</StaggerItem>
+			</StaggerContainer>
 		</Container>
 	)
 }

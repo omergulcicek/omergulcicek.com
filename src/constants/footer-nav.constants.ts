@@ -7,7 +7,7 @@ export type FooterNavItem = {
 export const FOOTER_NAV: readonly FooterNavItem[] = [
 	{ label: "Deneyimler", href: "/experiences" },
 	{ label: "Yolculuk", href: "/journey" },
-	{ label: "Çalışma Alanı", href: "/workspace" },
+	// { label: "Çalışma Alanı", href: "/workspace" },
 	{ label: "Hizmetler", href: "/services" },
 	{ label: "Yer İmleri", href: "/bookmarks" }
 ]

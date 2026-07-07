@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils"
 
 import { Container } from "@/components/shared/Container"
 import { pageTitleClass } from "@/components/shared/prose.styles"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
 import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detail-header"
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
 import { BlogPostToc } from "@/features/blog/components/blog-post-toc"
@@ -31,29 +32,33 @@ export function BlogPostDetailPage({
 		<>
 			<BlogStructuredData post={post} />
 			<div className="flex flex-col gap-12 py-8 md:py-16">
-				<Container className="flex flex-col gap-12">
-					<BlogPostDetailHeader previous={previous} next={next} />
-					<article data-blog-article className="flex flex-col gap-4">
-						<header className="flex flex-col gap-4">
-							<h1
-								className={cn(
-									pageTitleClass,
-									"text-balance text-xl md:text-2xl"
-								)}
-							>
-								{post.title}
-							</h1>
-							<BlogPostMeta
-								post={post}
-								showDraftBadge={isDev}
-								shareActions={
-									<BlogShareActionsBar path={sharePath} title={post.title} />
-								}
-							/>
-						</header>
-						<BlogPostToc headings={post.headings} />
-						<BlogProse key={post.slug} html={post.contentHtml} />
-					</article>
+				<Container>
+					<StaggerContainer className="flex flex-col gap-12">
+						<StaggerItem>
+							<BlogPostDetailHeader previous={previous} next={next} />
+						</StaggerItem>
+						<StaggerItem data-blog-article className="flex flex-col gap-4">
+							<header className="flex flex-col gap-4">
+								<h1
+									className={cn(
+										pageTitleClass,
+										"text-balance text-xl md:text-2xl"
+									)}
+								>
+									{post.title}
+								</h1>
+								<BlogPostMeta
+									post={post}
+									showDraftBadge={isDev}
+									shareActions={
+										<BlogShareActionsBar path={sharePath} title={post.title} />
+									}
+								/>
+							</header>
+							<BlogPostToc headings={post.headings} />
+							<BlogProse key={post.slug} html={post.contentHtml} />
+						</StaggerItem>
+					</StaggerContainer>
 				</Container>
 			</div>
 		</>

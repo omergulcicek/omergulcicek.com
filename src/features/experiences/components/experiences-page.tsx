@@ -1,6 +1,7 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
 import {
 	pageShellClass,
 	proseParagraphClass
@@ -11,26 +12,32 @@ import { EXPERIENCES } from "@/features/experiences/constants/experiences.consta
 
 export function ExperiencesPage() {
 	return (
-		<Container className={pageShellClass}>
-			<PageHeader
-				title="Deneyimler"
-				showOpenToWork
-				openToWorkPlacement="inline"
-			>
-				<p className={proseParagraphClass}>
-					<em>10 yılı aşkın</em> tecrübemle,{" "}
-					<ProseEmphasis>React</ProseEmphasis> ekosisteminde{" "}
-					<em>AI destekli</em> ve{" "}
-					<ProseEmphasis>yüksek performanslı mimariler</ProseEmphasis>{" "}
-					kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
-				</p>
-			</PageHeader>
+		<Container>
+			<StaggerContainer className={pageShellClass}>
+				<StaggerItem>
+					<PageHeader
+						title="Deneyimler"
+						showOpenToWork
+						openToWorkPlacement="inline"
+					>
+						<p className={proseParagraphClass}>
+							<em>10 yılı aşkın</em> tecrübemle,{" "}
+							<ProseEmphasis>React</ProseEmphasis> ekosisteminde{" "}
+							<em>AI destekli</em> ve{" "}
+							<ProseEmphasis>yüksek performanslı mimariler</ProseEmphasis>{" "}
+							kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
+						</p>
+					</PageHeader>
+				</StaggerItem>
 
-			<div>
-				<ResumeModal />
-			</div>
+				<StaggerItem>
+					<ResumeModal />
+				</StaggerItem>
 
-			<ExperienceList experiences={EXPERIENCES} showTechnologies />
+				<StaggerItem>
+					<ExperienceList experiences={EXPERIENCES} showTechnologies />
+				</StaggerItem>
+			</StaggerContainer>
 		</Container>
 	)
 }

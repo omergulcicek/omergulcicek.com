@@ -2,6 +2,7 @@ import { GitHubIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseIconLink } from "@/components/shared/prose-link"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	proseParagraphClass,
@@ -23,62 +24,66 @@ export function ProjectsPage() {
 	const archiveProjects = getProjectsByGroup("archive")
 
 	return (
-		<Container className={pageShellClass}>
-			<PageHeader title="Projeler">
-				<p className={proseParagraphClass}>
-					Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum{" "}
-					<VirastackLink>ViraStack</VirastackLink>{" "}
-					ekosistemindeki araçlar.
-				</p>
-			</PageHeader>
+		<Container>
+			<StaggerContainer className={pageShellClass}>
+				<StaggerItem>
+					<PageHeader title="Projeler">
+						<p className={proseParagraphClass}>
+							Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum{" "}
+							<VirastackLink>ViraStack</VirastackLink>{" "}
+							ekosistemindeki araçlar.
+						</p>
+					</PageHeader>
+				</StaggerItem>
 
-			<section className={pageSectionClass}>
-				<ProjectsSectionHeading>
-					{SITE_CONTENT.projectsSectionApps}
-				</ProjectsSectionHeading>
-				<div className={cardGridClass}>
-					{personalProjects.map((project) => (
-						<FeaturedProjectCard key={project.id} project={project} />
-					))}
-				</div>
-			</section>
+				<StaggerItem className={pageSectionClass}>
+					<ProjectsSectionHeading>
+						{SITE_CONTENT.projectsSectionApps}
+					</ProjectsSectionHeading>
+					<div className={cardGridClass}>
+						{personalProjects.map((project) => (
+							<FeaturedProjectCard key={project.id} project={project} />
+						))}
+					</div>
+				</StaggerItem>
 
-			<section id="virastack" className={pageSectionClass}>
-				<ProjectsSectionHeading>
-					{SITE_CONTENT.projectsSectionVirastack}
-				</ProjectsSectionHeading>
-				<div className="flex flex-col gap-4">
-					<p className={proseParagraphClass}>
-						{SITE_CONTENT.virastackSectionIntro}
-					</p>
-					<p className={proseParagraphClass}>
-						Ekosistemi{" "}
-						<VirastackLink>ViraStack</VirastackLink>{" "}
-						üzerinden keşfedebilir ya da{" "}
-						<ProseIconLink
-							href="https://github.com/virastack"
-							icon={
-								<GitHubIcon className="size-3.5 shrink-0 text-[#181717] dark:text-[#f0f6fc]" />
-							}
-						>
-							GitHub
-						</ProseIconLink>{" "}
-						organizasyonundaki projelere göz atabilirsiniz.
-					</p>
-				</div>
-				<div className={cardGridClass}>
-					{virastackProjects.map((project) => (
-						<FeaturedProjectCard key={project.id} project={project} />
-					))}
-				</div>
-			</section>
+				<StaggerItem id="virastack" className={pageSectionClass}>
+					<ProjectsSectionHeading>
+						{SITE_CONTENT.projectsSectionVirastack}
+					</ProjectsSectionHeading>
+					<div className="flex flex-col gap-4">
+						<p className={proseParagraphClass}>
+							{SITE_CONTENT.virastackSectionIntro}
+						</p>
+						<p className={proseParagraphClass}>
+							Ekosistemi{" "}
+							<VirastackLink>ViraStack</VirastackLink>{" "}
+							üzerinden keşfedebilir ya da{" "}
+							<ProseIconLink
+								href="https://github.com/virastack"
+								icon={
+									<GitHubIcon className="size-3.5 shrink-0 text-[#181717] dark:text-[#f0f6fc]" />
+								}
+							>
+								GitHub
+							</ProseIconLink>{" "}
+							organizasyonundaki projelere göz atabilirsiniz.
+						</p>
+					</div>
+					<div className={cardGridClass}>
+						{virastackProjects.map((project) => (
+							<FeaturedProjectCard key={project.id} project={project} />
+						))}
+					</div>
+				</StaggerItem>
 
-			<section className={pageSectionClass}>
-				<ProjectsSectionHeading>
-					{SITE_CONTENT.projectsSectionArchive}
-				</ProjectsSectionHeading>
-				<ArchiveProjectList projects={archiveProjects} />
-			</section>
+				<StaggerItem className={pageSectionClass}>
+					<ProjectsSectionHeading>
+						{SITE_CONTENT.projectsSectionArchive}
+					</ProjectsSectionHeading>
+					<ArchiveProjectList projects={archiveProjects} />
+				</StaggerItem>
+			</StaggerContainer>
 		</Container>
 	)
 }

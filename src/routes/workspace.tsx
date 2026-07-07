@@ -11,7 +11,8 @@ export const Route = createFileRoute("/workspace")({
 		buildPageHead({
 			title: seo.title,
 			description: seo.description,
-			path: seo.path
+			path: seo.path,
+			robots: "noindex, nofollow"
 		}),
 	component: WorkspacePage
 })

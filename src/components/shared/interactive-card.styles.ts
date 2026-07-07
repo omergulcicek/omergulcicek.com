@@ -29,7 +29,7 @@ export const interactiveCardMutedClass =
 	"border-dashed border-border/70 bg-muted/20 ring-border/60 hover:border-border hover:bg-muted/30 hover:ring-border"
 
 export const interactiveCardChevronClass =
-	"text-muted-foreground size-4 shrink-0 scale-[0.25] opacity-0 transition-[transform,opacity] duration-200 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-100 group-hover:opacity-100 motion-reduce:transition-none"
+	"text-muted-foreground size-4 shrink-0 scale-[0.25] opacity-0 blur-[4px] transition-[transform,opacity,filter] duration-200 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-100 group-hover:opacity-100 group-hover:blur-none motion-reduce:transition-none"
 
 export const surfaceCardIconFrameClass =
 	"mt-0.5 shrink-0 rounded-md border border-border/60 bg-muted/40 p-1.5"
