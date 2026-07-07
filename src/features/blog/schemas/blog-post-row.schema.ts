@@ -20,6 +20,8 @@ export const blogPostListRowSchema = z.object({
 
 export const blogPostDetailRowSchema = blogPostListRowSchema.extend({
 	content: z.string().min(1),
+	content_html: z.string().nullable(),
+	headings: z.any().nullable(),
 	og_image_path: z.string().nullable()
 })
 

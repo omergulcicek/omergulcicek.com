@@ -1,11 +1,9 @@
-import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
 import {
 	mapBlogPostDetailRow,
 	mapBlogPostListRow
 } from "@/features/blog/helpers/map-blog-post-row"
 import { normalizeBlogSlug } from "@/features/blog/helpers/blog-slug"
 import { sortBlogPosts } from "@/features/blog/helpers/blog-helpers"
-import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
 import type {
 	BlogPostDetail,
 	BlogRepository
@@ -21,28 +19,10 @@ import { createSupabaseServerClient } from "@/lib/supabase/create-supabase-serve
 const LIST_COLUMNS =
 	"slug, title, description, category, tags, locale, medium_url, interactive, published, published_at"
 
-const DETAIL_COLUMNS = `${LIST_COLUMNS}, content, og_image_path`
+const DETAIL_COLUMNS = `${LIST_COLUMNS}, content, content_html, headings, og_image_path`
 
 type SupabaseBlogRepositoryOptions = {
 	isDev: boolean
-}
-
-type CompiledPostContent = ReturnType<typeof enrichBlogContentHtml>
-
-const htmlCache = new Map<string, CompiledPostContent>()
-
-async function compilePostContent(slug: string, content: string) {
-	const cached = htmlCache.get(slug)
-
-	if (cached) {
-		return cached
-	}
-
-	const html = await compileMdxToHtml(content)
-	const enriched = enrichBlogContentHtml(html)
-	htmlCache.set(slug, enriched)
-
-	return enriched
 }
 
 export function createSupabaseBlogRepository({
@@ -102,12 +82,25 @@ export function createSupabaseBlogRepository({
 				return null
 			}
 
-			const compiled = await compilePostContent(normalizedSlug, row.content)
+			let contentHtml = row.content_html
+			let headings = row.headings
+
+			if (!contentHtml || !headings) {
+				// Fallback to runtime compilation if not migrated yet
+				const { compileMdxToHtml } = await import("@/features/blog/lib/compile-mdx-content")
+				const { enrichBlogContentHtml } = await import("@/features/blog/helpers/blog-content-html")
+				
+				const html = await compileMdxToHtml(row.content)
+				const enriched = enrichBlogContentHtml(html)
+				
+				contentHtml = enriched.contentHtml
+				headings = enriched.headings
+			}
 
 			return {
 				...blogPost,
-				contentHtml: compiled.contentHtml,
-				headings: compiled.headings
+				contentHtml: contentHtml,
+				headings: headings
 			} satisfies BlogPostDetail
 		},
 

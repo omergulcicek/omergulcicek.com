@@ -32,11 +32,13 @@ const clientEnvSchema = z
 		}
 	})
 
+const metaEnv = typeof import.meta !== "undefined" && import.meta.env ? import.meta.env : process.env
+
 export const env = clientEnvSchema.parse({
-	VITE_MEDIA_PROVIDER: import.meta.env.VITE_MEDIA_PROVIDER,
-	VITE_SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL || undefined,
-	VITE_SUPABASE_ANON_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY || undefined,
-	VITE_GA_ID: import.meta.env.VITE_GA_ID || undefined
+	VITE_MEDIA_PROVIDER: metaEnv.VITE_MEDIA_PROVIDER,
+	VITE_SUPABASE_URL: metaEnv.VITE_SUPABASE_URL || undefined,
+	VITE_SUPABASE_ANON_KEY: metaEnv.VITE_SUPABASE_ANON_KEY || undefined,
+	VITE_GA_ID: metaEnv.VITE_GA_ID || undefined
 })
 
 export type MediaProvider = z.infer<typeof mediaProviderSchema>

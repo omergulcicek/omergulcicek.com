@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react"
+import { lazy, Suspense, useEffect, useRef, useState } from "react"
 
 import { bleedSectionClass } from "@/components/shared/prose.styles"
 import {
@@ -39,6 +39,28 @@ export function GitHubContributionCalendar({
 	contributions
 }: GitHubContributionCalendarProps) {
 	const { isMounted } = useTheme()
+	const [isInView, setIsInView] = useState(false)
+	const containerRef = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		if (!isMounted) return
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (entries[0]?.isIntersecting) {
+					setIsInView(true)
+					observer.disconnect()
+				}
+			},
+			{ rootMargin: "200px" }
+		)
+
+		if (containerRef.current) {
+			observer.observe(containerRef.current)
+		}
+
+		return () => observer.disconnect()
+	}, [isMounted])
 
 	return (
 		<section className={bleedSectionClass} aria-label="GitHub katkı takvimi">
@@ -47,6 +69,7 @@ export function GitHubContributionCalendar({
 				üzerine gelindiğinde günlük katkı sayısı görüntülenir.
 			</p>
 			<div
+				ref={containerRef}
 				className="text-muted-foreground flex w-full justify-center overflow-x-auto overflow-y-hidden py-2"
 				style={{
 					minHeight: GITHUB_CALENDAR_CONTAINER_HEIGHT_PX,
@@ -60,7 +83,7 @@ export function GitHubContributionCalendar({
 						minHeight: GITHUB_CALENDAR_CONTENT_HEIGHT_PX
 					}}
 				>
-					{isMounted ? (
+					{isMounted && isInView ? (
 						<Suspense fallback={<GitHubCalendarSkeleton />}>
 							<LazyGitHubContributionCalendarInner
 								contributions={contributions}

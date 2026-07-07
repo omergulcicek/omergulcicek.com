@@ -19,7 +19,7 @@ export type BookmarkCategory = {
 	accent: string
 }
 
-export const DEFAULT_BOOKMARK_CATEGORY_ID = "frontend" satisfies BookmarkCategoryId
+export const DEFAULT_BOOKMARK_CATEGORY_ID = "blog" satisfies BookmarkCategoryId
 
 export { BOOKMARK_CATEGORY_IDS }
 

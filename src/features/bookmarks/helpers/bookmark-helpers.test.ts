@@ -49,8 +49,8 @@ const sampleBookmarks: Bookmark[] = [
 
 describe("bookmark helpers", () => {
 	it("falls back to the default category for invalid values", () => {
-		expect(resolveBookmarkCategoryId("invalid")).toBe("frontend")
-		expect(resolveBookmarkCategoryId(null)).toBe("frontend")
+		expect(resolveBookmarkCategoryId("invalid")).toBe("blog")
+		expect(resolveBookmarkCategoryId(null)).toBe("blog")
 	})
 
 	it("maps the legacy personal category to media", () => {
