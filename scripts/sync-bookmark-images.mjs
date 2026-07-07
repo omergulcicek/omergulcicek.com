@@ -10,6 +10,82 @@ const size = 120
 
 const bookmarkImages = [
 	{
+			id: "blog-addy-osmani-com-blog",
+			url: "https://rdl.ink/render/https%3A%2F%2Faddyosmani.com%2Fblog%2F"
+		},
+	{
+			id: "blog-ishadeed-com-articles",
+			url: "https://ishadeed.com/assets/social/card-generic.jpg"
+		},
+	{
+			id: "blog-anthropic-com-research",
+			url: "https://rdl.ink/render/https%3A%2F%2Fwww.anthropic.com%2Fresearch"
+		},
+	{
+			id: "blog-builder-io-blog",
+			url: "https://rdl.ink/render/https%3A%2F%2Fwww.builder.io%2Fblog"
+		},
+	{
+			id: "blog-css-irl-info",
+			url: "https://rdl.ink/render/https%3A%2F%2Fcss-irl.info%2F"
+		},
+	{
+			id: "blog-css-tricks-com",
+			url: "https://rdl.ink/render/https%3A%2F%2Fcss-tricks.com%2F"
+		},
+	{
+			id: "blog-daron-blog",
+			url: "https://rdl.ink/render/https%3A%2F%2Fdaron.blog%2F"
+		},
+	{
+			id: "blog-fatihhayrioglu-com",
+			url: "https://rdl.ink/render/https%3A%2F%2Ffatihhayrioglu.com%2F"
+		},
+	{
+			id: "blog-raindrop-io-ahmetsehacar",
+			url: "https://rdl.ink/render/https%3A%2F%2Fraindrop.io%2Fahmetsehacar"
+		},
+	{
+			id: "blog-jakub-kr",
+			url: "https://rdl.ink/render/https%3A%2F%2Fjakub.kr%2F"
+		},
+	{
+			id: "blog-medium-com-kodcular",
+			url: "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://medium.com/kodcular&size=128"
+		},
+	{
+			id: "blog-nextradar-dev-content-nextjs",
+			url: "https://rdl.ink/render/https%3A%2F%2Fnextradar.dev%2Fcontent%2Fnextjs"
+		},
+	{
+			id: "blog-smashingmagazine-com-articles",
+			url: "https://rdl.ink/render/https%3A%2F%2Fwww.smashingmagazine.com%2Farticles%2F"
+		},
+	{
+			id: "blog-taniarascia-com-blog",
+			url: "https://rdl.ink/render/https%3A%2F%2Fwww.taniarascia.com%2Fblog%2F"
+		},
+	{
+			id: "blog-tidewave-net-categories-nextjs",
+			url: "https://rdl.ink/render/https%3A%2F%2Ftidewave.net%2Fcategories%2Fnextjs"
+		},
+	{
+			id: "blog-tkdodo-eu-blog-all",
+			url: "https://rdl.ink/render/https%3A%2F%2Ftkdodo.eu%2Fblog%2Fall"
+		},
+	{
+			id: "blog-medium-com-turkiye",
+			url: "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://medium.com/t%C3%BCrkiye&size=128"
+		},
+	{
+			id: "blog-una-im",
+			url: "https://rdl.ink/render/https%3A%2F%2Funa.im%2F"
+		},
+	{
+			id: "blog-upstash-com-blog",
+			url: "https://rdl.ink/render/https%3A%2F%2Fupstash.com%2Fblog"
+		},
+	{
 			id: "frontend-evilcharts-com-docs",
 			url: "https://evilcharts.com/og/og-image.png"
 		},
@@ -131,7 +207,7 @@ const bookmarkImages = [
 		},
 	{
 			id: "frontend-square-lndev-me",
-			url: "https://square.lndev.me/banner.png"
+			url: "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://square.lndev.me&size=128"
 		},
 	{
 			id: "frontend-npmjs-com-package-tonl",

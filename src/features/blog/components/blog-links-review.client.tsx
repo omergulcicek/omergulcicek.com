@@ -3,11 +3,8 @@ import { ChevronDown } from "lucide-react"
 
 import { surfaceDoubleFrameClass } from "@/components/shared/interactive-card.styles"
 import type { BlogLinksReviewProps } from "@/features/blog/types/links-review.types"
+import { isExternalHref } from "@/lib/is-external-href"
 import { cn } from "@/lib/utils"
-
-function isExternalHref(href: string) {
-	return /^https?:\/\//i.test(href)
-}
 
 export function BlogLinksReviewClient({ title, links }: BlogLinksReviewProps) {
 	const [open, setOpen] = useState(false)

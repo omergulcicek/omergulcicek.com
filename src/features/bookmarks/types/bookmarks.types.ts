@@ -1,4 +1,4 @@
-export const BOOKMARK_CATEGORY_IDS = ["frontend", "library", "media"] as const
+export const BOOKMARK_CATEGORY_IDS = ["blog", "frontend", "library", "media"] as const
 
 export type BookmarkCategoryId = (typeof BOOKMARK_CATEGORY_IDS)[number]
 

@@ -15,6 +15,7 @@ import {
 	blogPostDetailRowSchema,
 	blogPostListRowsSchema
 } from "@/features/blog/schemas/blog-post-row.schema"
+import { getRuntimeIsDev } from "@/lib/runtime/is-dev-runtime"
 import { createSupabaseServerClient } from "@/lib/supabase/create-supabase-server-client"
 
 const LIST_COLUMNS =
@@ -124,5 +125,5 @@ export function createSupabaseBlogRepository({
 }
 
 export const supabaseBlogRepository = createSupabaseBlogRepository({
-	isDev: process.env.NODE_ENV === "development"
+	isDev: getRuntimeIsDev()
 })

@@ -61,35 +61,62 @@ const LIBRARY_BOOKMARK_TAG_ORDER = [
 	"Edebiyat"
 ] as const
 
+const BLOG_BOOKMARK_TAG_ORDER = ["Kişi", "Yayın", "Kurum"] as const
+
 function sortBookmarkTags(tags: readonly string[], categoryId: BookmarkCategoryId) {
-	if (categoryId !== "library") {
-		return [...tags].sort((left, right) =>
-			left.localeCompare(right, BOOKMARK_TAG_LOCALE)
+	if (categoryId === "library") {
+		const order = new Map<string, number>(
+			LIBRARY_BOOKMARK_TAG_ORDER.map((tag, index) => [tag, index] as const)
 		)
+
+		return [...tags].sort((left, right) => {
+			const leftIndex = order.get(left)
+			const rightIndex = order.get(right)
+
+			if (leftIndex !== undefined && rightIndex !== undefined) {
+				return leftIndex - rightIndex
+			}
+
+			if (leftIndex !== undefined) {
+				return -1
+			}
+
+			if (rightIndex !== undefined) {
+				return 1
+			}
+
+			return left.localeCompare(right, BOOKMARK_TAG_LOCALE)
+		})
 	}
 
-	const order = new Map<string, number>(
-		LIBRARY_BOOKMARK_TAG_ORDER.map((tag, index) => [tag, index] as const)
+	if (categoryId === "blog") {
+		const order = new Map<string, number>(
+			BLOG_BOOKMARK_TAG_ORDER.map((tag, index) => [tag, index] as const)
+		)
+
+		return [...tags].sort((left, right) => {
+			const leftIndex = order.get(left)
+			const rightIndex = order.get(right)
+
+			if (leftIndex !== undefined && rightIndex !== undefined) {
+				return leftIndex - rightIndex
+			}
+
+			if (leftIndex !== undefined) {
+				return -1
+			}
+
+			if (rightIndex !== undefined) {
+				return 1
+			}
+
+			return left.localeCompare(right, BOOKMARK_TAG_LOCALE)
+		})
+	}
+
+	return [...tags].sort((left, right) =>
+		left.localeCompare(right, BOOKMARK_TAG_LOCALE)
 	)
-
-	return [...tags].sort((left, right) => {
-		const leftIndex = order.get(left)
-		const rightIndex = order.get(right)
-
-		if (leftIndex !== undefined && rightIndex !== undefined) {
-			return leftIndex - rightIndex
-		}
-
-		if (leftIndex !== undefined) {
-			return -1
-		}
-
-		if (rightIndex !== undefined) {
-			return 1
-		}
-
-		return left.localeCompare(right, BOOKMARK_TAG_LOCALE)
-	})
 }
 
 const BOOKMARK_TAG_LOCALE = "tr"

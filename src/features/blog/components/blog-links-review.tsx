@@ -3,11 +3,8 @@ import { ChevronDown } from "lucide-react"
 import { surfaceDoubleFrameClass } from "@/components/shared/interactive-card.styles"
 import { serializeBlogWidgetProps } from "@/features/blog/helpers/blog-widget-props"
 import type { BlogLinksReviewProps } from "@/features/blog/types/links-review.types"
+import { isExternalHref } from "@/lib/is-external-href"
 import { cn } from "@/lib/utils"
-
-function isExternalHref(href: string) {
-	return /^https?:\/\//i.test(href)
-}
 
 function BlogLinksReviewFallback({ title, links }: BlogLinksReviewProps) {
 	return (

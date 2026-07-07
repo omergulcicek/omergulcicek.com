@@ -112,6 +112,38 @@ describe("bookmark helpers", () => {
 		])
 	})
 
+	it("returns blog tags in the configured order", () => {
+		const blogBookmarks: Bookmark[] = [
+			{
+				id: "blog-kurum",
+				title: "Upstash Blog",
+				url: "https://upstash.com/blog",
+				categoryId: "blog",
+				tags: ["Kurum"]
+			},
+			{
+				id: "blog-kisi",
+				title: "TkDodo",
+				url: "https://tkdodo.eu/blog/all",
+				categoryId: "blog",
+				tags: ["Kişi"]
+			},
+			{
+				id: "blog-yayin",
+				title: "CSS-Tricks",
+				url: "https://css-tricks.com/",
+				categoryId: "blog",
+				tags: ["Yayın"]
+			}
+		]
+
+		expect(getAvailableBookmarkTags(blogBookmarks, "blog")).toEqual([
+			"Kişi",
+			"Yayın",
+			"Kurum"
+		])
+	})
+
 	it("resolves to all when the current tag is missing", () => {
 		expect(resolveBookmarkTag(["npm", "Siteler"], null)).toBeNull()
 		expect(resolveBookmarkTag(["npm", "Siteler"], "missing")).toBeNull()
@@ -310,6 +342,7 @@ describe("bookmark helpers", () => {
 		expect(getBookmarkAllTagLabel("media")).toBe("Tüm medya")
 		expect(getBookmarkAllTagLabel("library")).toBe("Tüm kitaplık")
 		expect(getBookmarkAllTagLabel("frontend")).toBe("Tüm frontend")
+		expect(getBookmarkAllTagLabel("blog")).toBe("Tüm blog")
 	})
 
 	it("formats bookmark display titles with subtitles", () => {

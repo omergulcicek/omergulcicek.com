@@ -1,5 +1,6 @@
 import type { BlogHeading, BlogHeadingLevel } from "@/features/blog/types/blog-heading.types"
 import { decodeHtmlEntities } from "@/lib/decode-html-entities"
+import { isExternalHref } from "@/lib/is-external-href"
 import { buildBlogProseResponsiveImage } from "@/lib/media/build-blog-responsive-image"
 import { slugifyHeading } from "@/lib/slugify-heading"
 
@@ -147,14 +148,73 @@ function rewriteBlogImageSources(html: string) {
 	})
 }
 
+function hasAnchorAttribute(attributes: string, name: string) {
+	return new RegExp(`\\b${name}\\s*=`, "i").test(attributes)
+}
+
+function appendAnchorAttribute(
+	attributes: string,
+	name: string,
+	value: string
+) {
+	if (hasAnchorAttribute(attributes, name)) {
+		return attributes
+	}
+
+	return `${attributes} ${name}="${value}"`
+}
+
+function ensureAnchorNoopenerRel(attributes: string) {
+	const relMatch = attributes.match(/\brel=(["'])([^"']*)\1/i)
+
+	if (!relMatch) {
+		return `${attributes} rel="noopener noreferrer"`
+	}
+
+	const relValue = relMatch[2]
+	const tokens = relValue.split(/\s+/).filter(Boolean)
+	const normalizedTokens = new Set(tokens.map((token) => token.toLowerCase()))
+
+	if (normalizedTokens.has("noopener") && normalizedTokens.has("noreferrer")) {
+		return attributes
+	}
+
+	if (!normalizedTokens.has("noopener")) {
+		tokens.push("noopener")
+	}
+
+	if (!normalizedTokens.has("noreferrer")) {
+		tokens.push("noreferrer")
+	}
+
+	return attributes.replace(relMatch[0], `rel="${tokens.join(" ")}"`)
+}
+
+function enrichExternalLinksInHtml(html: string) {
+	return html.replace(/<a\b([^>]*?)>/gi, (match, attributes: string) => {
+		const href = attributes.match(/\bhref=(["'])([^"']*)\1/i)?.[2]
+
+		if (!href || !isExternalHref(href)) {
+			return match
+		}
+
+		let nextAttributes = attributes
+		nextAttributes = appendAnchorAttribute(nextAttributes, "target", "_blank")
+		nextAttributes = ensureAnchorNoopenerRel(nextAttributes)
+
+		return `<a${nextAttributes}>`
+	})
+}
+
 export function enrichBlogContentHtml(html: string) {
 	const headings: BlogHeading[] = []
 	const usedIds = new Set<string>()
 	const sanitizedHtml = stripReactPreloadLinks(html)
 	const htmlWithFigures = wrapBlogImagesWithCaptions(sanitizedHtml)
 	const htmlWithMediaUrls = rewriteBlogImageSources(htmlWithFigures)
+	const htmlWithExternalLinks = enrichExternalLinksInHtml(htmlWithMediaUrls)
 
-	const enrichedHtml = htmlWithMediaUrls.replace(
+	const enrichedHtml = htmlWithExternalLinks.replace(
 		/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi,
 		(match, levelValue, attributes, innerHtml) => {
 			if (!isBlogHeadingLevel(levelValue)) {

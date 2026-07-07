@@ -17,6 +17,7 @@ import type {
 } from "@/features/blog/repositories/blog-repository.types"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { findBlogNeighbours, sortBlogPosts } from "@/features/blog/helpers/blog-helpers"
+import { getRuntimeIsDev } from "@/lib/runtime/is-dev-runtime"
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content")
 
@@ -31,7 +32,7 @@ type MdxBlogRepositoryOptions = {
 
 let cachedPosts: ParsedMdxPost[] | null = null
 let cacheTimestamp = 0
-const CACHE_DURATION_MS = process.env.NODE_ENV === "development" ? 0 : 3_600_000
+const CACHE_DURATION_MS = getRuntimeIsDev() ? 0 : 3_600_000
 
 type CompiledPostContent = ReturnType<typeof enrichBlogContentHtml>
 
@@ -136,5 +137,5 @@ export function createMdxBlogRepository({
 }
 
 export const mdxBlogRepository = createMdxBlogRepository({
-	isDev: process.env.NODE_ENV === "development"
+	isDev: getRuntimeIsDev()
 })

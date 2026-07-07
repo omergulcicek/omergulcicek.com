@@ -1,13 +1,16 @@
 import type { ComponentType, SVGProps } from "react"
 import {
 	BookOpen,
+	Building2,
 	Castle,
 	Clapperboard,
 	Crown,
 	Earth,
 	Globe,
 	Moon,
-	Popcorn
+	Newspaper,
+	Popcorn,
+	User
 } from "lucide-react"
 
 import { Npm } from "@/components/ui/svgs/npm"
@@ -58,6 +61,18 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 	Edebiyat: {
 		icon: BookOpen,
 		iconClassName: "text-orange-600 dark:text-orange-400"
+	},
+	Kişi: {
+		icon: User,
+		iconClassName: "text-violet-600 dark:text-violet-400"
+	},
+	Yayın: {
+		icon: Newspaper,
+		iconClassName: "text-sky-600 dark:text-sky-400"
+	},
+	Kurum: {
+		icon: Building2,
+		iconClassName: "text-zinc-600 dark:text-zinc-400"
 	}
 }
 

@@ -25,22 +25,29 @@ export { BOOKMARK_CATEGORY_IDS }
 
 export const BOOKMARK_CATEGORIES: BookmarkCategory[] = [
 	{
-		id: "frontend",
+		id: "blog",
 		sortOrder: 1,
+		title: "Blog",
+		description: "Günlük takip ettiğim bloglar",
+		accent: "oklch(0.70 0.19 45)"
+	},
+	{
+		id: "frontend",
+		sortOrder: 2,
 		title: "Frontend",
 		description: "npm paketleri ve kütüphaneler",
 		accent: "oklch(0.62 0.19 300)"
 	},
 	{
 		id: "library",
-		sortOrder: 2,
+		sortOrder: 3,
 		title: "Kitaplık",
 		description: "Kitaplarım ve okuduğum kitaplar",
 		accent: "oklch(0.75 0.15 85)"
 	},
 	{
 		id: "media",
-		sortOrder: 3,
+		sortOrder: 4,
 		title: "Medya",
 		description: "Film, dizi ve videolar",
 		accent: "oklch(0.65 0.20 15)"
@@ -52,6 +59,177 @@ function bookmarkImage(id: string) {
 }
 
 export const BOOKMARKS: Bookmark[] = [
+	{
+			id: "blog-addy-osmani-com-blog",
+			title: "AddyOsmani.com",
+			url: "https://addyosmani.com/blog/",
+			imageUrl: bookmarkImage("blog-addy-osmani-com-blog"),
+			description: "Google'da Chrome mühendisi; performans, JavaScript ve web mühendisliği yazıları.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-ishadeed-com-articles",
+			title: "Ahmad Shadeed",
+			url: "https://ishadeed.com/articles/",
+			imageUrl: bookmarkImage("blog-ishadeed-com-articles"),
+			description: "CSS uzmanı; modern CSS, layout ve görsel açıklamalı derinlemesine makaleler.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-anthropic-com-research",
+			title: "Anthropic Research",
+			url: "https://www.anthropic.com/research",
+			imageUrl: bookmarkImage("blog-anthropic-com-research"),
+			description: "Anthropic'in araştırma sayfası; AI modelleri, güvenlik ve teknik duyurular.",
+			categoryId: "blog",
+			tags: ["Kurum"]
+		},
+	{
+			id: "blog-builder-io-blog",
+			title: "Builder.io",
+			url: "https://www.builder.io/blog",
+			imageUrl: bookmarkImage("blog-builder-io-blog"),
+			description: "Builder.io resmi blogu; görsel geliştirme, headless CMS ve frontend mimarisi.",
+			categoryId: "blog",
+			tags: ["Kurum"]
+		},
+	{
+			id: "blog-css-irl-info",
+			title: "CSS { In Real Life }",
+			url: "https://css-irl.info/",
+			imageUrl: bookmarkImage("blog-css-irl-info"),
+			description: "Michelle Barker'ın blogu; pratik CSS, layout ve erişilebilirlik yazıları.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-css-tricks-com",
+			title: "CSS-Tricks",
+			url: "https://css-tricks.com/",
+			imageUrl: bookmarkImage("blog-css-tricks-com"),
+			description: "Frontend ve CSS odaklı rehberler, ipuçları ve teknik makaleler.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
+			id: "blog-daron-blog",
+			title: "Daron Blog",
+			url: "https://daron.blog/",
+			imageUrl: bookmarkImage("blog-daron-blog"),
+			description: "AWS Serverless Hero Daron Yöndem; bulut, serverless ve .NET yazıları.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-fatihhayrioglu-com",
+			title: "Fatih Hayrioğlu",
+			url: "https://fatihhayrioglu.com/",
+			imageUrl: bookmarkImage("blog-fatihhayrioglu-com"),
+			description: "Frontend geliştirici; Türkçe JavaScript, CSS ve web teknolojileri yazıları.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-raindrop-io-ahmetsehacar",
+			title: "Ahmet Seha Acar",
+			url: "https://raindrop.io/ahmetsehacar",
+			imageUrl: bookmarkImage("blog-raindrop-io-ahmetsehacar"),
+			description: "Raindrop arşivi; yazılım ve teknoloji odaklı paylaşılan link koleksiyonu.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-jakub-kr",
+			title: "Jakub Krehel",
+			url: "https://jakub.kr/",
+			imageUrl: bookmarkImage("blog-jakub-kr"),
+			description: "Design engineer; arayüz detayları, animasyon ve etkileşim tasarımı.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-medium-com-kodcular",
+			title: "Kodcular",
+			url: "https://medium.com/kodcular",
+			imageUrl: bookmarkImage("blog-medium-com-kodcular"),
+			description: "Medium yayını; Türkçe yazılım geliştirme ve teknoloji makaleleri.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
+			id: "blog-nextradar-dev-content-nextjs",
+			title: "NextRadar",
+			url: "https://nextradar.dev/content/nextjs",
+			imageUrl: bookmarkImage("blog-nextradar-dev-content-nextjs"),
+			description: "Next.js ekosisteminden haberler, kaynaklar ve içerik derlemesi.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
+			id: "blog-smashingmagazine-com-articles",
+			title: "Smashing Magazine",
+			url: "https://www.smashingmagazine.com/articles/",
+			imageUrl: bookmarkImage("blog-smashingmagazine-com-articles"),
+			description: "Web tasarım ve frontend için derinlemesine makaleler ve rehberler.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
+			id: "blog-taniarascia-com-blog",
+			title: "Tania Rascia",
+			url: "https://www.taniarascia.com/blog/",
+			imageUrl: bookmarkImage("blog-taniarascia-com-blog"),
+			description: "Yazılım geliştirici; JavaScript, React ve web temelleri öğreticileri.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-tidewave-net-categories-nextjs",
+			title: "Tide Wave",
+			url: "https://tidewave.net/categories/nextjs",
+			imageUrl: bookmarkImage("blog-tidewave-net-categories-nextjs"),
+			description: "Next.js odaklı newsletter; framework haberleri, rehberler ve kaynaklar.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
+			id: "blog-tkdodo-eu-blog-all",
+			title: "TkDodo",
+			url: "https://tkdodo.eu/blog/all",
+			imageUrl: bookmarkImage("blog-tkdodo-eu-blog-all"),
+			description: "TanStack Query maintainer'ı; React Query ve modern frontend yazıları.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-medium-com-turkiye",
+			title: "Türkçe Yayın",
+			url: "https://medium.com/t%C3%BCrkiye",
+			imageUrl: bookmarkImage("blog-medium-com-turkiye"),
+			description: "Medium Türkiye; Türkçe teknoloji, kültür ve güncel konu yazıları.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
+			id: "blog-una-im",
+			title: "Una Kravets",
+			url: "https://una.im/",
+			imageUrl: bookmarkImage("blog-una-im"),
+			description: "UI/CSS uzmanı; design systems, animasyon ve modern CSS deneyleri.",
+			categoryId: "blog",
+			tags: ["Kişi"]
+		},
+	{
+			id: "blog-upstash-com-blog",
+			title: "Upstash Blog",
+			url: "https://upstash.com/blog",
+			imageUrl: bookmarkImage("blog-upstash-com-blog"),
+			description: "Upstash resmi blogu; serverless Redis, Kafka ve edge backend rehberleri.",
+			categoryId: "blog",
+			tags: ["Kurum"]
+		},
 	{
 			id: "frontend-evilcharts-com-docs",
 			title: "Evil Charts",
@@ -2111,6 +2289,7 @@ export const BOOKMARK_CATEGORY_CHIP_LABELS: Record<
 	BookmarkCategoryId,
 	BookmarkChipLabel
 > = {
+	blog: { desktop: "Blog", mobile: "Blog" },
 	frontend: { desktop: "Frontend", mobile: "Frontend" },
 	library: { desktop: "Kitaplık", mobile: "Kitap" },
 	media: { desktop: "Medya", mobile: "Medya" }
