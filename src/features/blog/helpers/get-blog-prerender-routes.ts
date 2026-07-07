@@ -1,38 +1,63 @@
-import fs from "node:fs"
-import path from "node:path"
-
-import matter from "gray-matter"
-
-const CONTENT_DIR = path.join(process.cwd(), "src", "content")
+import { createClient } from "@supabase/supabase-js"
 
 function slugToRouteParam(slug: string) {
 	return slug.replace(/^\//, "")
 }
 
-export function getBlogPrerenderRoutes(): string[] {
+function readSupabaseConfig() {
+	const url = process.env.SUPABASE_URL ?? process.env.VITE_SUPABASE_URL
+	const apiKey =
+		process.env.SUPABASE_SERVICE_ROLE_KEY ??
+		process.env.SUPABASE_ANON_KEY ??
+		process.env.VITE_SUPABASE_ANON_KEY
+
+	return { url, apiKey }
+}
+
+function canQuerySupabase() {
+	const { url, apiKey } = readSupabaseConfig()
+	return Boolean(url && apiKey)
+}
+
+export async function getBlogPrerenderRoutes(): Promise<string[]> {
 	const routes = ["/blog"]
 
-	if (!fs.existsSync(CONTENT_DIR)) {
+	if (!canQuerySupabase()) {
 		return routes
 	}
 
-	for (const fileName of fs.readdirSync(CONTENT_DIR)) {
-		if (!fileName.endsWith(".mdx")) {
-			continue
+	const { url, apiKey } = readSupabaseConfig()
+
+	if (!url || !apiKey) {
+		return routes
+	}
+
+	try {
+		const supabase = createClient(url, apiKey, {
+			auth: {
+				autoRefreshToken: false,
+				persistSession: false
+			}
+		})
+
+		const { data, error } = await supabase
+			.from("blog_posts")
+			.select("slug")
+			.eq("published", true)
+
+		if (error || !data) {
+			return routes
 		}
 
-		const raw = fs.readFileSync(path.join(CONTENT_DIR, fileName), "utf8")
-		const { data } = matter(raw)
+		for (const row of data) {
+			if (typeof row.slug !== "string" || row.slug.length === 0) {
+				continue
+			}
 
-		if (data.published !== true) {
-			continue
+			routes.push(`/blog/${slugToRouteParam(row.slug)}`)
 		}
-
-		if (typeof data.slug !== "string" || data.slug.length === 0) {
-			continue
-		}
-
-		routes.push(`/blog/${slugToRouteParam(data.slug)}`)
+	} catch {
+		return routes
 	}
 
 	return routes

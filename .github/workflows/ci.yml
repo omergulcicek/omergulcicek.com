@@ -26,12 +26,8 @@ jobs:
 
       - run: pnpm check-types
 
-      - run: pnpm validate-blog-content
-
       - run: pnpm test
 
       - run: pnpm build
 
       - run: pnpm lighthouse:ci
-        env:
-          BLOG_DATA_SOURCE: mdx

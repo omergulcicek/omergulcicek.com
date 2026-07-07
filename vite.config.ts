@@ -8,10 +8,11 @@ import tsconfigPaths from "vite-tsconfig-paths"
 
 import { getBlogPrerenderRoutes } from "./src/features/blog/helpers/get-blog-prerender-routes"
 
-const blogPrerenderRoutes = getBlogPrerenderRoutes()
-const blogPrerenderPathSet = new Set(blogPrerenderRoutes)
+export default defineConfig(async ({ mode }) => {
+	const blogPrerenderRoutes = await getBlogPrerenderRoutes()
+	const blogPrerenderPathSet = new Set(blogPrerenderRoutes)
 
-export default defineConfig(({ mode }) => ({
+	return {
 	server: {
 		port: 3000
 	},
@@ -19,7 +20,7 @@ export default defineConfig(({ mode }) => ({
 		sourcemap: false,
 		rollupOptions: {
 			output: {
-				manualChunks(id) {
+				manualChunks(id: string) {
 					if (id.includes("recharts")) {
 						return "recharts"
 					}
@@ -77,4 +78,5 @@ export default defineConfig(({ mode }) => ({
 				open: false
 			})
 	].filter(Boolean)
-}))
+	}
+})
