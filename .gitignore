@@ -32,10 +32,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# legacy (reference only, not part of active build)
-_legacy/node_modules
-_legacy/.next
-
 # generated blog migration artifacts
 scripts/output
 
