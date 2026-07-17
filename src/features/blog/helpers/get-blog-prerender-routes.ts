@@ -20,7 +20,7 @@ function canQuerySupabase() {
 }
 
 export async function getBlogPrerenderRoutes(): Promise<string[]> {
-	const routes = ["/blog", "/blog/"]
+	const routes = ["/blog/"]
 
 	if (!canQuerySupabase()) {
 		return routes

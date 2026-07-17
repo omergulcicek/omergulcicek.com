@@ -1,17 +1,19 @@
 import { Button } from "@/components/ui/button"
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
+import { GitHubIcon, LinkedInIcon, NpmIcon, XIcon } from "@/components/icons"
 import { SOCIAL_LINKS } from "@/constants/social.constants"
 import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
 
 const SOCIAL_ICONS = {
 	GitHub: GitHubIcon,
+	npm: NpmIcon,
 	LinkedIn: LinkedInIcon,
 	X: XIcon
 } as const
 
 const SOCIAL_ICON_COLORS = {
 	GitHub: "text-[#181717] dark:text-[#f0f6fc]",
+	npm: "",
 	LinkedIn: "",
 	X: "text-foreground"
 } as const

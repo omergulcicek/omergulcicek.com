@@ -55,6 +55,10 @@ export default defineConfig(async ({ mode }) => {
 						return false
 					}
 
+					if (path === "/blog") {
+						return false
+					}
+
 					if (path.startsWith("/blog")) {
 						return blogPrerenderPathSet.has(path)
 					}

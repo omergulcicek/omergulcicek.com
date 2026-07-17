@@ -4,6 +4,10 @@ export const SOCIAL_LINKS = [
 		href: "https://github.com/omergulcicek"
 	},
 	{
+		label: "npm",
+		href: "https://www.npmjs.com/~omergulcicek"
+	},
+	{
 		label: "LinkedIn",
 		href: "https://linkedin.com/in/omergulcicek"
 	},
