@@ -4,14 +4,8 @@ import { Container } from "@/components/shared/Container"
 import { HeaderNavDrawer } from "@/components/shared/header-nav-drawer"
 import { IconLinkButton } from "@/components/shared/icon-link-button"
 import { SiteNavLink } from "@/components/shared/site-nav-link"
-import { ThemeToggle } from "@/components/shared/ThemeToggle"
-import { Separator } from "@/components/ui/separator"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
-import { CommandPaletteTrigger } from "@/features/search/components/CommandPalette"
-
-const headerActionSeparatorClassName =
-	"mx-0.5 h-5 shrink-0 self-center data-[orientation=vertical]:h-5"
 
 export function Header() {
 	return (
@@ -44,25 +38,13 @@ export function Header() {
 								))}
 							</nav>
 						</div>
-						<div className="flex h-8 items-center gap-1">
-							<CommandPaletteTrigger />
-							<Separator
-								orientation="vertical"
-								className={headerActionSeparatorClassName}
-							/>
-							<IconLinkButton
-								href={EXTERNAL_LINKS.github}
-								ariaLabel="GitHub profilini ziyaret et"
-								tooltipSide="bottom"
-							>
-								<GitHubIcon className="size-4 text-[#181717] dark:text-[#f0f6fc]" />
-							</IconLinkButton>
-							<Separator
-								orientation="vertical"
-								className={headerActionSeparatorClassName}
-							/>
-							<ThemeToggle />
-						</div>
+						<IconLinkButton
+							href={EXTERNAL_LINKS.github}
+							ariaLabel="GitHub profilini ziyaret et"
+							tooltipSide="bottom"
+						>
+							<GitHubIcon className="size-4 text-[#181717] dark:text-[#f0f6fc]" />
+						</IconLinkButton>
 					</div>
 				</Container>
 			</header>

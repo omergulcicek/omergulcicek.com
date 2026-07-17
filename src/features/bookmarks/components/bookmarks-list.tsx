@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react"
+import { useCallback, useEffect } from "react"
 
 import { bleedSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import { Container } from "@/components/shared/Container"
@@ -23,18 +23,10 @@ type BookmarksListProps = {
 }
 
 export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
-	const { category, tag, sort, setFilters, setTag, setSort, ensureTag, clearSearch } =
+	const { category, tag, sort, setFilters, setTag, setSort, ensureTag } =
 		useBookmarksSearchParams()
 	const availableTags = getAvailableBookmarkTags(bookmarks, category)
 	const selectedTag = resolveBookmarkTag(availableTags, tag)
-	const clearSearchRef = useRef(clearSearch)
-	clearSearchRef.current = clearSearch
-
-	useEffect(() => {
-		return () => {
-			clearSearchRef.current()
-		}
-	}, [])
 
 	useEffect(() => {
 		if (selectedTag === null) {

@@ -24,8 +24,36 @@ import {
 	SEARCH_PROJECTS
 } from "@/features/search/constants/search.constants"
 
-export function CommandPaletteTrigger() {
+type CommandPaletteTriggerProps = {
+	variant?: "default" | "dock"
+}
+
+export function CommandPaletteTrigger({
+	variant = "default"
+}: CommandPaletteTriggerProps) {
 	const { setOpen } = useCommandPalette()
+
+	if (variant === "dock") {
+		return (
+			<Button
+				type="button"
+				variant="ghost"
+				size="sm"
+				onClick={() => setOpen(true)}
+				aria-label={SITE_CONTENT.siteDockSearchAria}
+				className="h-7 gap-1.5 rounded-full px-2 text-xs font-medium text-muted-foreground hover:text-foreground"
+			>
+				<Search className="size-3.5 shrink-0" />
+				<span className="hidden max-w-36 truncate sm:inline">
+					{SITE_CONTENT.siteDockSearchLabel}
+				</span>
+				<kbd className="bg-muted/80 text-muted-foreground pointer-events-none inline-flex h-4 items-center gap-0.5 rounded border px-1 font-mono text-xs font-medium leading-none">
+					<span>⌘</span>
+					<span>K</span>
+				</kbd>
+			</Button>
+		)
+	}
 
 	return (
 		<Button
@@ -33,9 +61,9 @@ export function CommandPaletteTrigger() {
 			variant="outline"
 			size="sm"
 			onClick={() => setOpen(true)}
-			className="h-8 gap-2 rounded-full pr-2 pl-2.5 font-medium shadow-sm mr-2"
+			className="mr-2 h-8 gap-2 rounded-full pr-2 pl-2.5 font-medium shadow-sm"
 		>
-			<Search className="text-muted-foreground size-4" />
+			<Search className="size-4 text-muted-foreground" />
 			<kbd className="bg-background text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-0.5 rounded border px-1.5 font-mono text-xs font-medium">
 				<span>⌘</span>
 				<span>K</span>
@@ -92,10 +120,10 @@ export function CommandPaletteDialog() {
 								})
 							}
 						>
-							<page.icon className="size-3.5 text-black" />
+							<page.icon className="size-3.5 text-muted-foreground" />
 							{page.label}
 							{page.external ? (
-								<ExternalLink className="ml-auto size-3.5 shrink-0 text-black" />
+								<ExternalLink className="ml-auto size-3.5 shrink-0 text-muted-foreground" />
 							) : null}
 						</CommandItem>
 					))}
@@ -115,10 +143,10 @@ export function CommandPaletteDialog() {
 								})
 							}
 						>
-							<Quote className="size-3.5 text-black" />
+							<Quote className="size-3.5 text-muted-foreground" />
 							<div className="flex min-w-0 flex-1 flex-col">
 								<span>{post.title}</span>
-								<span className="truncate text-[11px] text-black">
+								<span className="truncate text-[11px] text-muted-foreground">
 									{post.description}
 								</span>
 							</div>
@@ -140,14 +168,14 @@ export function CommandPaletteDialog() {
 								})
 							}
 						>
-							<FolderOpen className="size-3.5 text-black" />
+							<FolderOpen className="size-3.5 text-muted-foreground" />
 							<div className="flex min-w-0 flex-1 flex-col">
 								<span>{project.title}</span>
-								<span className="truncate text-[11px] text-black">
+								<span className="truncate text-[11px] text-muted-foreground">
 									{project.description}
 								</span>
 							</div>
-							<ExternalLink className="ml-auto size-3.5 shrink-0 text-black" />
+							<ExternalLink className="ml-auto size-3.5 shrink-0 text-muted-foreground" />
 						</CommandItem>
 					))}
 				</CommandGroup>
@@ -160,16 +188,18 @@ export function CommandPaletteDialog() {
 								runCommand(() => {
 									void navigate({
 										to: "/bookmarks",
-										search: { category: category.categoryId },
+										search: {
+											category: category.categoryId
+										},
 										viewTransition: false
 									})
 								})
 							}
 						>
-							<Bookmark className="size-3.5 text-black" />
+							<Bookmark className="size-3.5 text-muted-foreground" />
 							<div className="flex min-w-0 flex-1 flex-col">
 								<span>{category.title}</span>
-								<span className="truncate text-[11px] text-black">
+								<span className="truncate text-[11px] text-muted-foreground">
 									{category.description}
 								</span>
 							</div>

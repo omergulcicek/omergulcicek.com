@@ -16,6 +16,7 @@ import {
 	ArchiveProjectList,
 	ProjectsSectionHeading
 } from "@/features/projects/components/project-cards"
+// import { VirastackDither } from "@/features/projects/components/virastack-dither.client"
 import { getProjectsByGroup } from "@/features/projects/constants/projects.constants"
 
 export function ProjectsPage() {
@@ -55,6 +56,7 @@ export function ProjectsPage() {
 						<p className={proseParagraphClass}>
 							{SITE_CONTENT.virastackSectionIntro}
 						</p>
+						{/* <VirastackDither /> */}
 						<p className={proseParagraphClass}>
 							Ekosistemi{" "}
 							<VirastackLink>ViraStack</VirastackLink>{" "}

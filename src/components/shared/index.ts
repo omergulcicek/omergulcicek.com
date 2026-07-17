@@ -41,6 +41,7 @@ export {
 	proseLinkMutedClass
 } from "./prose-link"
 export { SectionHeading } from "./SectionHeading"
+export { SiteDock } from "./site-dock"
 export { SiteLayout } from "./SiteLayout"
 export { SiteNavLink } from "./site-nav-link"
 export { SocialLinks } from "./SocialLinks"

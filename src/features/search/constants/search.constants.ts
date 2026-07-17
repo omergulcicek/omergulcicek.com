@@ -50,7 +50,7 @@ export const SEARCH_ACTIONS: SearchActionItem[] = [
 		label: "E-posta gönder",
 		href: EXTERNAL_LINKS.email,
 		icon: Mail,
-		iconClassName: `${SEARCH_ACTION_ICON_CLASS} text-black`,
+		iconClassName: `${SEARCH_ACTION_ICON_CLASS} text-muted-foreground`,
 		external: true
 	},
 	{

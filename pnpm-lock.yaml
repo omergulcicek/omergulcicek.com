@@ -11,6 +11,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.2.6
         version: 5.2.8
+      '@its-thepoe/dither-react':
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@lucide/lab':
         specifier: ^0.1.2
         version: 0.1.2
@@ -837,6 +840,12 @@ packages:
     engines: {node: '>=20.9.0'}
     cpu: [x64]
     os: [win32]
+
+  '@its-thepoe/dither-react@0.2.0':
+    resolution: {integrity: sha512-4OfIo5NFqInB4Ex8XPVIaGsqhgAGu3zaa/29rvlrhut92syITP+gCiCVmOfiJLe1xCeua1+gsEPR5raIxXLh4Q==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -5907,6 +5916,11 @@ snapshots:
 
   '@img/sharp-win32-x64@0.35.3':
     optional: true
+
+  '@its-thepoe/dither-react@0.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

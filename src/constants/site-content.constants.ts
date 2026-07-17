@@ -24,6 +24,11 @@ export const SITE_CONTENT = {
 		actions: "Eylemler"
 	},
 	skipToContent: "Ana içeriğe geç",
+	siteDockToolbarAria: "Site araçları",
+	siteDockSearchLabel: "Bir şey ara...",
+	siteDockSearchAria: "Arama paletini aç",
+	siteDockScrollToTop: "Yukarı çık",
+	siteDockScrollProgress: "Sayfa kaydırma durumu",
 	projectsPageIntro:
 		"Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar.",
 	projectsSectionApps: "Uygulamalar",

@@ -33,8 +33,6 @@ const bookmarkFilterHistory = { history: "push" as const }
 
 const bookmarkTagReset = { history: "replace" as const }
 
-const bookmarkSearchClear = { history: "replace" as const }
-
 const bookmarkSortReset = { history: "replace" as const }
 
 export const bookmarksSearchParamsParsers = {
@@ -158,10 +156,6 @@ export function useBookmarksSearchParams() {
 		[setParams, tag]
 	)
 
-	const clearSearch = useCallback(() => {
-		setParams(null, bookmarkSearchClear)
-	}, [setParams])
-
 	return {
 		category,
 		tag,
@@ -169,7 +163,6 @@ export function useBookmarksSearchParams() {
 		setFilters,
 		setTag,
 		setSort,
-		ensureTag,
-		clearSearch
+		ensureTag
 	}
 }
