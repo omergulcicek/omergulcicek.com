@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkspaceRouteImport } from './routes/workspace'
+import { Route as StackRouteImport } from './routes/stack'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SetupRouteImport } from './routes/setup'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as JourneyRouteImport } from './routes/journey'
@@ -30,9 +32,19 @@ const WorkspaceRoute = WorkspaceRouteImport.update({
   path: '/workspace',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StackRoute = StackRouteImport.update({
+  id: '/stack',
+  path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SetupRoute = SetupRouteImport.update({
+  id: '/setup',
+  path: '/setup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -111,7 +123,9 @@ export interface FileRoutesByFullPath {
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/setup': typeof SetupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
@@ -128,7 +142,9 @@ export interface FileRoutesByTo {
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/setup': typeof SetupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
@@ -146,7 +162,9 @@ export interface FileRoutesById {
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/setup': typeof SetupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
@@ -165,7 +183,9 @@ export interface FileRouteTypes {
     | '/journey'
     | '/projects'
     | '/services'
+    | '/setup'
     | '/sitemap.xml'
+    | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
@@ -182,7 +202,9 @@ export interface FileRouteTypes {
     | '/journey'
     | '/projects'
     | '/services'
+    | '/setup'
     | '/sitemap.xml'
+    | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
@@ -199,7 +221,9 @@ export interface FileRouteTypes {
     | '/journey'
     | '/projects'
     | '/services'
+    | '/setup'
     | '/sitemap.xml'
+    | '/stack'
     | '/workspace'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
@@ -217,7 +241,9 @@ export interface RootRouteChildren {
   JourneyRoute: typeof JourneyRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  SetupRoute: typeof SetupRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StackRoute: typeof StackRoute
   WorkspaceRoute: typeof WorkspaceRoute
   BlogSlugRoute: typeof BlogSlugRoute
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
@@ -234,11 +260,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkspaceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stack': {
+      id: '/stack'
+      path: '/stack'
+      fullPath: '/stack'
+      preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/setup': {
+      id: '/setup'
+      path: '/setup'
+      fullPath: '/setup'
+      preLoaderRoute: typeof SetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -345,7 +385,9 @@ const rootRouteChildren: RootRouteChildren = {
   JourneyRoute: JourneyRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  SetupRoute: SetupRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StackRoute: StackRoute,
   WorkspaceRoute: WorkspaceRoute,
   BlogSlugRoute: BlogSlugRoute,
   DevMdxSandboxRoute: DevMdxSandboxRoute,

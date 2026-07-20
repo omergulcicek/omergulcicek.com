@@ -200,3 +200,41 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 		</a>
 	)
 }
+
+export function FeaturedProjectListItem({ project }: FeaturedProjectCardProps) {
+	const isComingSoon = project.status === "coming_soon"
+
+	return (
+		<a
+			href={withOutboundUtm(project.href)}
+			target="_blank"
+			rel="noopener noreferrer"
+			className="group flex flex-col md:flex-row md:items-center gap-1 md:gap-4 py-2"
+		>
+			<div className="flex items-center gap-2 md:gap-3 shrink-0 md:w-[240px]">
+				<h3
+					id={`${project.id}-list`}
+					className={cn(
+						cardTitleClass,
+						isComingSoon && "text-muted-foreground",
+						"truncate md:text-sm"
+					)}
+				>
+					{project.title}
+				</h3>
+				{isComingSoon && <ComingSoonBadge />}
+			</div>
+			<div className="flex items-center gap-3 min-w-0 flex-1 justify-between md:justify-start">
+				<p className="text-muted-foreground truncate text-left text-xs md:text-sm">
+					{project.description}
+				</p>
+				{!isComingSoon && (
+					<ChevronRight
+						className={cn(interactiveCardChevronClass, "hidden md:block ml-auto")}
+						aria-hidden
+					/>
+				)}
+			</div>
+		</a>
+	)
+}

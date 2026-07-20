@@ -1,13 +1,21 @@
 import { CssOld } from "@/components/ui/svgs/cssOld"
 import { CursorLight } from "@/components/ui/svgs/cursorLight"
-import { Framer } from "@/components/ui/svgs/framer"
+import { Figma } from "@/components/ui/svgs/figma"
+import { Gemini } from "@/components/ui/svgs/gemini"
 import { Git } from "@/components/ui/svgs/git"
 import { Graphql } from "@/components/ui/svgs/graphql"
 import { Html5 } from "@/components/ui/svgs/html5"
 import { Javascript } from "@/components/ui/svgs/javascript"
+import { Motion } from "@/components/ui/svgs/motion"
+import { MotionDark } from "@/components/ui/svgs/motionDark"
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
+import { Nodejs } from "@/components/ui/svgs/nodejs"
+import { Postgresql } from "@/components/ui/svgs/postgresql"
+import { RadixUiDark } from "@/components/ui/svgs/radixUiDark"
+import { RadixUiLight } from "@/components/ui/svgs/radixUiLight"
 import { ReactDark } from "@/components/ui/svgs/reactDark"
 import { ReactLight } from "@/components/ui/svgs/reactLight"
+import { Redux } from "@/components/ui/svgs/redux"
 import { ShadcnUi } from "@/components/ui/svgs/shadcnUi"
 import { ShadcnUiDark } from "@/components/ui/svgs/shadcnUiDark"
 import { Storybook } from "@/components/ui/svgs/storybook"
@@ -50,6 +58,8 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "git":
 			return <Git className={iconClassName} role="img" aria-label={label} />
+		case "figma":
+			return <Figma className={iconClassName} role="img" aria-label={label} />
 		case "react":
 			return (
 				<ThemeAwareDualIcon
@@ -77,6 +87,15 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "vite":
 			return <Vite className={iconClassName} role="img" aria-label={label} />
+		case "radix":
+			return (
+				<ThemeAwareDualIcon
+					light={RadixUiLight}
+					dark={RadixUiDark}
+					className={iconClassName}
+					label={label}
+				/>
+			)
 		case "shadcn":
 			return (
 				<ThemeAwareDualIcon
@@ -92,6 +111,14 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			return (
 				<Supabase className={iconClassName} role="img" aria-label={label} />
 			)
+		case "nodejs":
+			return (
+				<Nodejs className={iconClassName} role="img" aria-label={label} />
+			)
+		case "postgresql":
+			return (
+				<Postgresql className={iconClassName} role="img" aria-label={label} />
+			)
 		case "graphql":
 			return (
 				<Graphql className={iconClassName} role="img" aria-label={label} />
@@ -106,6 +133,8 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 					className={iconClassName}
 				/>
 			)
+		case "redux":
+			return <Redux className={iconClassName} role="img" aria-label={label} />
 		case "cursor":
 			return (
 				<CursorLight
@@ -114,12 +143,17 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 					aria-label={label}
 				/>
 			)
-		case "framer":
+		case "gemini":
 			return (
-				<Framer
-					className={cn(iconClassName, "fill-foreground")}
-					role="img"
-					aria-label={label}
+				<Gemini className={iconClassName} role="img" aria-label={label} />
+			)
+		case "motion":
+			return (
+				<ThemeAwareDualIcon
+					light={Motion}
+					dark={MotionDark}
+					className={iconClassName}
+					label={label}
 				/>
 			)
 		case "react-hook-form":

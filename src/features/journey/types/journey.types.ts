@@ -4,6 +4,7 @@ export type JourneyEntry = {
 	description: string
 	imageSrc?: string
 	imageAlt?: string
+	imageObjectPosition?: string
 }
 
 export type JourneyYearGroup = {

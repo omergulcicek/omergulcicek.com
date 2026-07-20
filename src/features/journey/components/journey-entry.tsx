@@ -45,6 +45,11 @@ function JourneyEntryImage({ entry }: { entry: JourneyEntry }) {
 					loading="lazy"
 					decoding="async"
 					className="image-outline block aspect-video size-full object-cover"
+					style={
+						entry.imageObjectPosition
+							? { objectPosition: entry.imageObjectPosition }
+							: undefined
+					}
 				/>
 			</figure>
 		)

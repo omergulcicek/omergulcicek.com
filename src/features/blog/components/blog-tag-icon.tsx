@@ -14,7 +14,7 @@ import {
 } from "lucide-react"
 
 import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
-import { StackLogo } from "@/features/about/components/stack-logo"
+import { StackLogo } from "@/features/stack/components/stack-logo"
 import { CssOld } from "@/components/ui/svgs/cssOld"
 import { Github } from "@/components/ui/svgs/github"
 import { Html5 } from "@/components/ui/svgs/html5"

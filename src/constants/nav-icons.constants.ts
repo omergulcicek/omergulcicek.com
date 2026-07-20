@@ -22,7 +22,7 @@ export const NAV_PAGE_ICONS: Record<string, LucideIcon> = {
 	"/about": UserRound,
 	"/experiences": Briefcase,
 	"/journey": Footprints,
-	"/workspace": Monitor,
+	"/setup": Monitor,
 	"/services": Handshake,
 	"/bookmarks": Bookmark,
 	[EXTERNAL_LINKS.virastack]: Package

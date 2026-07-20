@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react"
+
 export type OptimizedImageSource = {
 	type: string
 	srcSet: string
@@ -10,6 +12,7 @@ type OptimizedImageProps = {
 	width: number
 	height: number
 	className?: string
+	style?: CSSProperties
 	sizes?: string
 	loading?: "lazy" | "eager"
 	decoding?: "async" | "sync" | "auto"
@@ -23,6 +26,7 @@ export function OptimizedImage({
 	width,
 	height,
 	className,
+	style,
 	sizes,
 	loading = "lazy",
 	decoding = "async",
@@ -40,6 +44,7 @@ export function OptimizedImage({
 			{...(sizes ? { sizes } : {})}
 			{...(fetchPriority ? { fetchPriority } : {})}
 			className={className}
+			style={style}
 		/>
 	)
 

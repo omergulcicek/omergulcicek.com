@@ -4,8 +4,8 @@ import {
 	GITHUB_CALENDAR_BLOCK_MARGIN,
 	GITHUB_CALENDAR_BLOCK_SIZE,
 	GITHUB_CALENDAR_THEME
-} from "@/features/about/constants/github-calendar.constants"
-import type { GitHubContribution } from "@/features/about/schemas/github-contribution.schema"
+} from "@/features/projects/constants/github-calendar.constants"
+import type { GitHubContribution } from "@/features/projects/schemas/github-contribution.schema"
 import { useTheme } from "@/hooks/use-theme"
 
 type GitHubContributionCalendarInnerProps = {

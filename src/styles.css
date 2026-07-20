@@ -140,6 +140,7 @@
 
 	body {
 		@apply bg-background font-sans text-foreground antialiased;
+		font-variant-numeric: slashed-zero;
 	}
 
 	button:not(:disabled),
@@ -192,8 +193,12 @@
 	}
 
 	.github-calendar {
-		font-variant-numeric: tabular-nums;
+		font-variant-numeric: tabular-nums slashed-zero;
 	}
+}
+
+@utility tabular-nums {
+	font-variant-numeric: tabular-nums slashed-zero;
 }
 
 @media (prefers-reduced-motion: reduce) {

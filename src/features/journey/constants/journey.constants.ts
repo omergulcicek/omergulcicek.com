@@ -82,8 +82,9 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 				title: "Bedelli askerliği bitirdim",
 				description:
 					"Ankara Mamak'ta tamamladım; disiplinli düzene harika uyum sağladım ve hoş zaman geçirdim.",
-				imageSrc: "/img/journey/2019-askerlik.jpeg",
-				imageAlt: "Askerlik künyem"
+				imageSrc: "/img/journey/2019-askerlik.webp",
+				imageAlt: "Kamuflaj üniformalı askerlik fotoğrafı",
+				imageObjectPosition: "center 25%"
 			}
 		]
 	},
@@ -129,7 +130,10 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 			{
 				id: "1993-dogum",
 				title: "Dünyaya geldim",
-				description: "7 Şubat'ta İstanbul'da doğdum."
+				description: "7 Şubat'ta İstanbul'da doğdum.",
+				imageSrc: "/img/journey/1993-dogum.webp",
+				imageAlt: "Annemle bebek fotoğrafım",
+				imageObjectPosition: "top"
 			}
 		]
 	}

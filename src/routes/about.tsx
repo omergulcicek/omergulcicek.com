@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 import { AboutPage } from "@/features/about"
-import { getGitHubContributionsFn } from "@/features/about/api/get-github-contributions.api"
 import {
 	BLOG_PAGE_CACHE_CONTROL,
 	BLOG_PAGE_DEV_CACHE_CONTROL
@@ -12,11 +11,6 @@ import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
 const seo = STATIC_PAGE_SEO.about
 
 export const Route = createFileRoute("/about")({
-	loader: async () => {
-		const contributions = await getGitHubContributionsFn()
-
-		return { contributions }
-	},
 	headers: () => ({
 		"Cache-Control": import.meta.env.PROD
 			? BLOG_PAGE_CACHE_CONTROL
@@ -32,7 +26,5 @@ export const Route = createFileRoute("/about")({
 })
 
 function AboutRoutePage() {
-	const { contributions } = Route.useLoaderData()
-
-	return <AboutPage contributions={contributions} />
+	return <AboutPage />
 }

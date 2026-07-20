@@ -1,18 +1,14 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react"
+import { lazy, startTransition, Suspense, useEffect, useRef, useState } from "react"
 
 import { bleedSectionClass } from "@/components/shared/prose.styles"
 import {
 	GITHUB_CALENDAR_CONTAINER_HEIGHT_PX,
 	GITHUB_CALENDAR_CONTENT_HEIGHT_PX,
 	GITHUB_CALENDAR_WIDTH_PX
-} from "@/features/about/constants/github-calendar.constants"
-import type { GitHubContribution } from "@/features/about/schemas/github-contribution.schema"
+} from "@/features/projects/constants/github-calendar.constants"
+import { useGitHubContributions } from "@/features/projects/hooks/use-github-contributions"
 import { useTheme } from "@/hooks/use-theme"
 import { cn } from "@/lib/utils"
-
-type GitHubContributionCalendarProps = {
-	contributions: GitHubContribution[]
-}
 
 function GitHubCalendarSkeleton() {
 	return (
@@ -29,18 +25,22 @@ function GitHubCalendarSkeleton() {
 
 const LazyGitHubContributionCalendarInner = lazy(async () => {
 	const module = await import(
-		"@/features/about/components/github-contribution-calendar-inner.client"
+		"@/features/projects/components/github-contribution-calendar-inner.client"
 	)
 
 	return { default: module.GitHubContributionCalendarInner }
 })
 
-export function GitHubContributionCalendar({
-	contributions
-}: GitHubContributionCalendarProps) {
+export function GitHubContributionCalendar() {
 	const { isMounted } = useTheme()
 	const [isInView, setIsInView] = useState(false)
+	const [canRenderCalendar, setCanRenderCalendar] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
+
+	const shouldFetch = isMounted && isInView
+	const { data: contributions, isSuccess } = useGitHubContributions({
+		enabled: shouldFetch
+	})
 
 	useEffect(() => {
 		if (!isMounted) return
@@ -61,6 +61,34 @@ export function GitHubContributionCalendar({
 
 		return () => observer.disconnect()
 	}, [isMounted])
+
+	useEffect(() => {
+		if (!isSuccess || !contributions) return
+
+		const enableCalendar = () => {
+			startTransition(() => {
+				setCanRenderCalendar(true)
+			})
+		}
+
+		if ("requestIdleCallback" in window) {
+			const idleId = window.requestIdleCallback(enableCalendar, {
+				timeout: 1500
+			})
+
+			return () => {
+				window.cancelIdleCallback(idleId)
+			}
+		}
+
+		const timeoutId = globalThis.setTimeout(enableCalendar, 100)
+
+		return () => {
+			globalThis.clearTimeout(timeoutId)
+		}
+	}, [contributions, isSuccess])
+
+	const showCalendar = shouldFetch && canRenderCalendar && contributions
 
 	return (
 		<section className={bleedSectionClass} aria-label="GitHub katkı takvimi">
@@ -83,7 +111,7 @@ export function GitHubContributionCalendar({
 						minHeight: GITHUB_CALENDAR_CONTENT_HEIGHT_PX
 					}}
 				>
-					{isMounted && isInView ? (
+					{showCalendar ? (
 						<Suspense fallback={<GitHubCalendarSkeleton />}>
 							<LazyGitHubContributionCalendarInner
 								contributions={contributions}

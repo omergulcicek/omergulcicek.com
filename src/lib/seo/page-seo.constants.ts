@@ -53,14 +53,6 @@ export const STATIC_PAGE_SEO = {
 		changeFrequency: "monthly",
 		priority: 0.6
 	},
-	workspace: {
-		path: "/workspace",
-		title: "Çalışma Alanı",
-		description:
-			"Çalışma masamdaki donanım, mobilya ve aksesuarlar; kurulum ve tercihlerim.",
-		changeFrequency: "monthly",
-		priority: 0.6
-	},
 	services: {
 		path: "/services",
 		title: "Hizmetler",
@@ -74,6 +66,14 @@ export const STATIC_PAGE_SEO = {
 		description:
 			"Raindrop'ta topladığım frontend kaynakları, bloglar ve okuma listesi.",
 		changeFrequency: "weekly",
+		priority: 0.6
+	},
+	setup: {
+		path: "/setup",
+		title: "Kurulum",
+		description:
+			"Kod yazarken kullandığım editör kurulumu ve ürün geliştirirken tercih ettiğim teknolojiler.",
+		changeFrequency: "monthly",
 		priority: 0.6
 	}
 } as const satisfies Record<string, PageSeoEntry>

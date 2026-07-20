@@ -13,5 +13,9 @@ export const Route = createFileRoute("/projects")({
 			description: seo.description,
 			path: seo.path
 		}),
-	component: ProjectsPage
+	component: ProjectsRoutePage
 })
+
+function ProjectsRoutePage() {
+	return <ProjectsPage />
+}

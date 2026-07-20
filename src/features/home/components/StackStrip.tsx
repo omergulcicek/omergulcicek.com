@@ -1,8 +1,8 @@
 import { Marquee } from "@/components/ui/marquee"
 import { bleedSectionClass } from "@/components/shared/prose.styles"
-import { StackLogo } from "@/features/about/components/stack-logo"
-import type { StackItem } from "@/features/about/constants/stack.constants"
-import { HOME_STACK_ITEMS } from "@/features/about/constants/stack.constants"
+import { StackLogo } from "@/features/stack/components/stack-logo"
+import type { StackItem } from "@/features/stack/constants/stack.constants"
+import { HOME_STACK_ITEMS } from "@/features/stack/constants/stack.constants"
 import { cn } from "@/lib/utils"
 
 type StackStripProps = {

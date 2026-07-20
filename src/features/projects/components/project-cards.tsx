@@ -24,6 +24,12 @@ export function ArchiveProjectList({ projects }: { projects: Project[] }) {
 	)
 }
 
-export function ProjectsSectionHeading({ children }: { children: string }) {
-	return <SectionHeading>{children}</SectionHeading>
+export function ProjectsSectionHeading({
+	children,
+	className
+}: {
+	children: string
+	className?: string
+}) {
+	return <SectionHeading className={className}>{children}</SectionHeading>
 }
