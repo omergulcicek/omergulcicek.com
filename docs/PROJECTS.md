@@ -70,8 +70,8 @@ Sıra implementasyonda `sortOrder` ile korunur.
 
 | `id` | `title` | `description` | `status` | `href` | `featured` | `showcase` |
 | --- | --- | --- | --- | --- | --- | --- |
-| `footy` | Footy | Futbol bilgini sına — Bil Bakalım, Skor Avcısı, Kupon Ustası, Kadro Bulmacası. | `live` | `https://footyplay.vercel.app/` | ✓ | `inline` → `footy-prediction` |
-| `takvim` | Takvim | Takvim abonelikleri için ücretsiz, açık kaynak arayüzler ve içerik. | `live` | `https://takvim-abonelik.vercel.app/` | ✓ | `inline` → `calendar-mini` |
+| `footy` | Footy | Futbol bilgini sına — Bil Bakalım, Skor Avcısı, Kupon Ustası, Kadro Bulmacası. | `live` | `https://footy.omergulcicek.com/` | ✓ | `inline` → `footy-prediction` |
+| `takvim` | Takvim | Takvim abonelikleri için ücretsiz, açık kaynak arayüzler ve içerik. | `live` | `https://takvim.omergulcicek.com/` | ✓ | `inline` → `calendar-mini` |
 
 ### ViraStack — `group: virastack`
 

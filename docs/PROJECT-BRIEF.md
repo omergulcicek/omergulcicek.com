@@ -166,7 +166,7 @@ LinkPreview **yok**.
 
 ### Alt alan adları (gelecek)
 
-- Yan projeler için `futbol.omergulcicek.com`, `takvim.omergulcicek.com`
+- Yan projeler için `footy.omergulcicek.com`, `takvim.omergulcicek.com`
 
 ---
 

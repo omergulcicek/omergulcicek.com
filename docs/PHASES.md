@@ -264,7 +264,7 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 - [ ] Özel tema paneli
 - [ ] Engagement: view, like, comment (Supabase tabloları — site bittikten sonra)
 - [ ] i18n (çoklu dil)
-- [ ] Alt alan adları: `futbol.omergulcicek.com`, `takvim.omergulcicek.com`
+- [x] Alt alan adları: `footy.omergulcicek.com`, `takvim.omergulcicek.com`
 
 ---
 

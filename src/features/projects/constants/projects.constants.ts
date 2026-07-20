@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
 			"Futbol bilgini sına — Bil Bakalım, Skor Avcısı, Kupon Ustası, Kadro Bulmacası.",
 		group: "personal",
 		status: "live",
-		href: "https://footyplay.vercel.app/",
+		href: "https://footy.omergulcicek.com/",
 		sortOrder: 1,
 		featured: true
 	},
@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
 			"Takvim abonelikleri için ücretsiz, açık kaynak arayüzler ve içerik.",
 		group: "personal",
 		status: "live",
-		href: "https://takvim-abonelik.vercel.app/",
+		href: "https://takvim.omergulcicek.com/",
 		sortOrder: 2,
 		featured: true
 	},
