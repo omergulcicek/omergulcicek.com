@@ -5,10 +5,7 @@ import {
 	BLOG_PAGE_CACHE_CONTROL,
 	BLOG_PAGE_DEV_CACHE_CONTROL
 } from "@/features/blog/constants/blog-cache.constants"
-import { buildPageHead } from "@/lib/seo/build-page-head"
-import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
-
-const seo = STATIC_PAGE_SEO.about
+import { buildStaticPageHead } from "@/lib/seo/build-page-head"
 
 export const Route = createFileRoute("/about")({
 	headers: () => ({
@@ -16,12 +13,7 @@ export const Route = createFileRoute("/about")({
 			? BLOG_PAGE_CACHE_CONTROL
 			: BLOG_PAGE_DEV_CACHE_CONTROL
 	}),
-	head: () =>
-		buildPageHead({
-			title: seo.title,
-			description: seo.description,
-			path: seo.path
-		}),
+	head: () => buildStaticPageHead("about"),
 	component: AboutRoutePage
 })
 

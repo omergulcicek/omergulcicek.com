@@ -25,6 +25,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as DevMdxSandboxRouteImport } from './routes/dev/mdx-sandbox'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as OgPagePageKeyRouteImport } from './routes/og/page/$pageKey'
 import { Route as OgBlogSlugRouteImport } from './routes/og/blog/$slug'
 
 const WorkspaceRoute = WorkspaceRouteImport.update({
@@ -107,6 +108,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OgPagePageKeyRoute = OgPagePageKeyRouteImport.update({
+  id: '/og/page/$pageKey',
+  path: '/og/page/$pageKey',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OgBlogSlugRoute = OgBlogSlugRouteImport.update({
   id: '/og/blog/$slug',
   path: '/og/blog/$slug',
@@ -131,6 +137,7 @@ export interface FileRoutesByFullPath {
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/blog/': typeof BlogIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
+  '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/blog': typeof BlogIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
+  '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/blog/': typeof BlogIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
+  '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
     | '/dev/mdx-sandbox'
     | '/blog/'
     | '/og/blog/$slug'
+    | '/og/page/$pageKey'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/dev/mdx-sandbox'
     | '/blog'
     | '/og/blog/$slug'
+    | '/og/page/$pageKey'
   id:
     | '__root__'
     | '/'
@@ -229,6 +240,7 @@ export interface FileRouteTypes {
     | '/dev/mdx-sandbox'
     | '/blog/'
     | '/og/blog/$slug'
+    | '/og/page/$pageKey'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,6 +261,7 @@ export interface RootRouteChildren {
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
   BlogIndexRoute: typeof BlogIndexRoute
   OgBlogSlugRoute: typeof OgBlogSlugRoute
+  OgPagePageKeyRoute: typeof OgPagePageKeyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -365,6 +378,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/og/page/$pageKey': {
+      id: '/og/page/$pageKey'
+      path: '/og/page/$pageKey'
+      fullPath: '/og/page/$pageKey'
+      preLoaderRoute: typeof OgPagePageKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/og/blog/$slug': {
       id: '/og/blog/$slug'
       path: '/og/blog/$slug'
@@ -393,6 +413,7 @@ const rootRouteChildren: RootRouteChildren = {
   DevMdxSandboxRoute: DevMdxSandboxRoute,
   BlogIndexRoute: BlogIndexRoute,
   OgBlogSlugRoute: OgBlogSlugRoute,
+  OgPagePageKeyRoute: OgPagePageKeyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

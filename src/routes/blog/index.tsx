@@ -10,10 +10,7 @@ import {
 } from "@/features/blog/constants/blog-cache.constants"
 import { useGetBlogPosts } from "@/features/blog/hooks/use-get-blog-posts"
 import { blogSearchParamsParsers } from "@/features/blog/hooks/use-blog-search-params"
-import { buildPageHead } from "@/lib/seo/build-page-head"
-import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
-
-const seo = STATIC_PAGE_SEO.blog
+import { buildStaticPageHead } from "@/lib/seo/build-page-head"
 
 export const Route = createFileRoute("/blog/")({
 	validateSearch: createStandardSchemaV1(blogSearchParamsParsers, {
@@ -31,12 +28,7 @@ export const Route = createFileRoute("/blog/")({
 			? BLOG_PAGE_CACHE_CONTROL
 			: BLOG_PAGE_DEV_CACHE_CONTROL
 	}),
-	head: () =>
-		buildPageHead({
-			title: seo.title,
-			description: seo.description,
-			path: seo.path
-		}),
+	head: () => buildStaticPageHead("blog"),
 	errorComponent: BlogRouteError,
 	component: BlogIndexPage
 })

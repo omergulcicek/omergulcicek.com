@@ -1,4 +1,9 @@
 import { SITE } from "@/constants/site.constants"
+import {
+	STATIC_PAGE_SEO,
+	type StaticPageSeoKey
+} from "@/lib/seo/page-seo.constants"
+import { resolvePageOgImageUrl } from "@/lib/seo/resolve-page-og-image-url"
 
 type BuildPageHeadOptions = {
 	title: string
@@ -114,4 +119,24 @@ export function buildBlogPostHead({
 			{ property: "article:author", content: author }
 		]
 	}
+}
+
+type BuildStaticPageHeadOptions = {
+	useTitleTemplate?: boolean
+}
+
+export function buildStaticPageHead(
+	pageKey: StaticPageSeoKey,
+	options?: BuildStaticPageHeadOptions
+) {
+	const seo = STATIC_PAGE_SEO[pageKey]
+	const useTitleTemplate = options?.useTitleTemplate ?? pageKey !== "home"
+
+	return buildPageHead({
+		title: seo.title,
+		description: seo.description,
+		path: seo.path,
+		ogImage: resolvePageOgImageUrl({ pageKey }),
+		useTitleTemplate
+	})
 }

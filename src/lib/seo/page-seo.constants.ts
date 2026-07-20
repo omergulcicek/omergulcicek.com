@@ -78,4 +78,6 @@ export const STATIC_PAGE_SEO = {
 	}
 } as const satisfies Record<string, PageSeoEntry>
 
+export type StaticPageSeoKey = keyof typeof STATIC_PAGE_SEO
+
 export const STATIC_SITEMAP_PAGES: PageSeoEntry[] = Object.values(STATIC_PAGE_SEO)
