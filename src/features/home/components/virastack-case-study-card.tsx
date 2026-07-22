@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router"
-import { Bot, ChevronRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
-import { cardTitleClass, pageSectionClass } from "@/components/shared/prose.styles"
-import { SectionHeading } from "@/components/shared/SectionHeading"
 import {
 	getInteractiveCardClassName,
 	interactiveCardChevronClass
 } from "@/components/shared/interactive-card.styles"
+import { cardTitleClass, pageSectionClass } from "@/components/shared/prose.styles"
+import { SectionHeading } from "@/components/shared/SectionHeading"
+import { VirastackLogo } from "@/components/shared/virastack-logo"
 
 export function VirastackCaseStudyCard() {
 	return (
@@ -18,8 +19,8 @@ export function VirastackCaseStudyCard() {
 				className={getInteractiveCardClassName()}
 			>
 				<div className="flex items-start gap-4">
-					<span className="bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 inline-flex size-12 shrink-0 items-center justify-center rounded-xl">
-						<Bot className="size-7" strokeWidth={1.75} aria-hidden />
+					<span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-muted">
+						<VirastackLogo className="size-7" />
 					</span>
 					<div className="flex min-w-0 flex-1 flex-col gap-2">
 						<div className="flex items-start justify-between gap-2 md:gap-3">

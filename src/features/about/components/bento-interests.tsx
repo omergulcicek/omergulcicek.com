@@ -88,7 +88,7 @@ const FAVORITE_ICONS: Record<
 function getInterestCardClassName(colorClass: string, isLink: boolean) {
 	return cn(
 		surfaceDoubleFrameClass,
-		"flex flex-col gap-3 rounded-2xl p-5",
+		"flex flex-col gap-3 rounded-2xl p-4 md:p-5",
 		colorClass || "bg-card/50",
 		isLink &&
 			"group transition-[border-color,box-shadow] hover:border-foreground/10 hover:ring-foreground/8"
@@ -126,7 +126,7 @@ function InterestCard({
 
 export function BentoInterests() {
 	return (
-		<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+		<div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
 			{HOBBIES.map((hobby) => {
 				const isLink = Boolean(hobby.href)
 				const visual = HOBBY_ICONS[hobby.id]

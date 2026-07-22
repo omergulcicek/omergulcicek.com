@@ -14,14 +14,17 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 				title: "ViraStack'i kurdum",
 				description:
 					"Açık kaynak frontend işlerimi tek çatı altında topladım; şablonlardan paketlere uzanan bir yol haritası çıkardım.",
-				imageSrc: "/img/journey/2025-virastack.jpeg",
+				imageSrc: "/img/journey/2025-virastack.png",
 				imageAlt: "ViraStack logosu"
 			},
 			{
 				id: "2025-renault-clio",
 				title: "Renault Clio araba aldım",
 				description:
-					"Aktif olarak kullandığım ilk aracım oldu; ulaşım rutinimin bir parçası haline geldi."
+					"Aktif olarak kullandığım ilk aracım oldu; ulaşım rutinimin bir parçası haline geldi.",
+				imageSrc: "/img/journey/2025-renault-clio.jpg",
+				imageAlt: "Renault Clio ile birlikte",
+				imageObjectPosition: "center calc(100% + 100px)"
 			},
 			{
 				id: "2025-sakarya",
@@ -55,9 +58,7 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 			{
 				id: "2021-macbook",
 				title: "İlk Apple MacBook bilgisayarım",
-				description: "M1 işlemcili; hâlâ aktif olarak kullanmaya devam ediyorum.",
-				imageSrc: "/img/journey/2021-macbook.jpg",
-				imageAlt: "Macbook Pro M1"
+				description: "M1 işlemcili; hâlâ aktif olarak kullanmaya devam ediyorum."
 			}
 		]
 	},
@@ -95,8 +96,9 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 				id: "2017-ziraat",
 				title: "Ziraat Teknoloji'de işe başladım",
 				description: "İlk yazılım işim; frontend'e burada adım attım.",
-				imageSrc: "/img/journey/2017-ziraat.jpeg",
-				imageAlt: "Ziraat Teknoloji"
+				imageSrc: "/img/journey/2017-ziraat.png",
+				imageAlt: "Ziraat Teknoloji binası önünde selfie",
+				imageObjectPosition: "center 40%"
 			}
 		]
 	},
@@ -107,9 +109,7 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 				id: "2016-turkuaz",
 				title: "İlk açık kaynak projem: Turkuaz",
 				description:
-					"Kendi CSS kütüphanemi yazdım; ilk açık kaynak projem, ilk göz ağrım oldu.",
-				imageSrc: "/img/journey/2016-turkuaz.png",
-				imageAlt: "Turkuaz CSS"
+					"Kendi CSS kütüphanemi yazdım; ilk açık kaynak projem, ilk göz ağrım oldu."
 			}
 		]
 	},
@@ -120,7 +120,10 @@ export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 				id: "2012-universite",
 				title: "Yazılım mühendisliğine başladım",
 				description:
-					"Hayallerimi gerçekleştirmek için ilk adımı attım."
+					"Hayallerimi gerçekleştirmek için ilk adımı attım.",
+				imageSrc: "/img/journey/2012-universite.png",
+				imageAlt: "Üniversite mezuniyet töreninde selfie",
+				imageObjectPosition: "center 20%"
 			}
 		]
 	},
