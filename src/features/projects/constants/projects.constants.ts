@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
 			"Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/modern-web-in-3-minutes",
+		href: "https://github.com/virastack/guide",
 		sortOrder: 7
 	},
 	{

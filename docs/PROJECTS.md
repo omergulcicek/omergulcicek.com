@@ -83,7 +83,7 @@ Sıra implementasyonda `sortOrder` ile korunur.
 | `nextjs-boilerplate` | Next.js Boilerplate | Tailwind CSS 4 ve TypeScript ile üretime hazır Next.js 16+ başlangıç şablonu. | `package` | `https://github.com/virastack/nextjs-boilerplate` | `inline` → `boilerplate-diff` |
 | `input-mask` | Input Mask | React Hook Form için hafif, bağımlılıksız input maskeleme. | `package` | `https://github.com/virastack/mask` | `inline` → `input-mask` |
 | `password-toggle` | Password Toggle | React için erişilebilir ve özelleştirilebilir şifre görünürlük hook'u. | `package` | `https://github.com/virastack/password` | `inline` → `password-toggle` |
-| `modern-web-in-3-minutes` | Modern Web in 3 Minutes | Üç dakikada modern web geliştirme standartlarına giriş. | `package` | `https://github.com/virastack/modern-web-in-3-minutes` | `none` |
+| `modern-web-in-3-minutes` | Modern Web in 3 Minutes | Üç dakikada modern web geliştirme standartlarına giriş. | `package` | `https://github.com/virastack/guide` | `none` |
 
 **Yakında** (`status: coming_soon`)
 
