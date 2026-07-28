@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
 		sortOrder: 3
 	},
 	{
-		id: "ai-rules",
+		id: "ai",
 		title: "ViraStack AI",
 		description:
 			"Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla.",
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
 		sortOrder: 4
 	},
 	{
-		id: "input-mask",
+		id: "mask",
 		title: "ViraStack Mask",
 		description:
 			"React'te input formatlama ve durum senkronizasyonu için hafif standart.",
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
 		sortOrder: 5
 	},
 	{
-		id: "password-toggle",
+		id: "password",
 		title: "ViraStack Password",
 		description:
 			"React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u.",
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
 		sortOrder: 6
 	},
 	{
-		id: "modern-web-in-3-minutes",
+		id: "guide",
 		title: "ViraStack Guide",
 		description:
 			"Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk.",

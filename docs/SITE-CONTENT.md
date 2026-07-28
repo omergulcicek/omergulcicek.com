@@ -60,14 +60,12 @@ Header'da yok. Sıra implementasyonda korunur (`src/constants/footer-nav.constan
 
 | Sıra | Etiket                    | Rota / link |
 | ---- | ------------------------- | ----------- |
-| 1    | AI Rules                  | GitHub      |
-| 2    | Next.js Boilerplate       | GitHub      |
-| 3    | Input Mask                | GitHub      |
-| 4    | Password Toggle           | GitHub      |
-| 5    | Modern Web in 3 Minutes   | GitHub      |
+| 1    | ViraStack Start (CLI)     | GitHub      |
+| 2    | ViraStack AI              | GitHub      |
+| 3    | ViraStack Mask            | GitHub      |
+| 4    | ViraStack Password        | GitHub      |
+| 5    | ViraStack Guide           | GitHub      |
 | 6    | Tüm projeler              | `/projects` |
-
-`coming_soon` paketler footer'da **yok**.
 
 ### Alt — meta şeridi (üstten alta)
 
@@ -245,7 +243,7 @@ Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum [ViraStack](
 
 ### ViraStack bölümü (`virastackSectionIntro`)
 
-**ViraStack**, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren AI Rules ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.
+**ViraStack**, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.
 
 Bağlantılar: [virastack.com](https://virastack.com) · [GitHub](https://github.com/virastack)
 

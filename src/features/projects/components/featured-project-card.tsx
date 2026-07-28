@@ -48,7 +48,7 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		Icon: CalendarDays,
 		className: "text-orange-400 dark:text-orange-300"
 	},
-	"ai-rules": {
+	ai: {
 		kind: "lucide",
 		Icon: Bot,
 		className: "text-fuchsia-500"
@@ -58,17 +58,17 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		Icon: Terminal,
 		className: "text-teal-500"
 	},
-	"input-mask": {
+	mask: {
 		kind: "lucide",
 		Icon: TextCursorInput,
 		className: "text-indigo-500"
 	},
-	"password-toggle": {
+	password: {
 		kind: "lucide",
 		Icon: Asterisk,
 		className: "text-rose-500"
 	},
-	"modern-web-in-3-minutes": {
+	guide: {
 		kind: "lucide",
 		Icon: BookOpen,
 		className: "text-amber-500"

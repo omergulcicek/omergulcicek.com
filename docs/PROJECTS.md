@@ -21,7 +21,7 @@ Veri build zamanında sabittir; SSR'da doğrudan import edilir. Client-only fetc
 
 | Alan | Tip | Açıklama |
 | --- | --- | --- |
-| `id` | string | Benzersiz anahtar (`footy`, `ai-rules`) |
+| `id` | string | Benzersiz anahtar (`footy`, `ai`) |
 | `title` | string | Proje adı |
 | `description` | string | 1 cümle; kart ve liste önizlemesi |
 | `group` | enum | `personal` \| `virastack` \| `archive` |
@@ -80,20 +80,10 @@ Sıra implementasyonda `sortOrder` ile korunur.
 | `id` | `title` | `description` | `status` | `href` | `showcase` |
 | --- | --- | --- | --- | --- | --- |
 | `start` | ViraStack Start (CLI) | Modern React için üretime hazır iskelet oluşturma CLI'si. Next.js ve TanStack Start şablonlarını arayüzden kur. | `package` | `https://github.com/virastack/start` | `none` |
-| `ai-rules` | ViraStack AI | Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla. | `package` | `https://github.com/virastack/ai` | `none` |
-| `input-mask` | ViraStack Mask | React'te input formatlama ve durum senkronizasyonu için hafif standart. | `package` | `https://github.com/virastack/mask` | `none` |
-| `password-toggle` | ViraStack Password | React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u. | `package` | `https://github.com/virastack/password` | `none` |
-| `modern-web-in-3-minutes` | ViraStack Guide | Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk. | `package` | `https://github.com/virastack/guide` | `none` |
-
-**Yakında** (`status: coming_soon`)
-
-| `id` | `title` | `description` | `href` |
-| --- | --- | --- | --- |
-| `tanstack-boilerplate` | ViraStack TanStack Boilerplate | Tailwind CSS 4 ve TypeScript ile üretime hazır TanStack Start şablonu. | `https://github.com/virastack/tanstack-boilerplate` |
-| `standards` | ViraStack Standards | Yapılandırma gerektirmeyen ESLint ve Prettier paketi. | `https://github.com/virastack/standards` |
-| `error-guard` | ViraStack Error Guard | React için profesyonel hata yönetimi ve akıllı kurtarma. | `https://github.com/virastack/error-guard` |
-
-Yakında projeler ViraStack bloğunun altında, yayında olanlardan sonra listelenir. Her satırda **Yakında** badge görünür.
+| `ai` | ViraStack AI | Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla. | `package` | `https://github.com/virastack/ai` | `none` |
+| `mask` | ViraStack Mask | React'te input formatlama ve durum senkronizasyonu için hafif standart. | `package` | `https://github.com/virastack/mask` | `none` |
+| `password` | ViraStack Password | React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u. | `package` | `https://github.com/virastack/password` | `none` |
+| `guide` | ViraStack Guide | Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk. | `package` | `https://github.com/virastack/guide` | `none` |
 
 ### Arşiv — `group: archive`
 
@@ -114,11 +104,11 @@ UI string'leri `docs/SITE-CONTENT.md` → Projeler ile senkron tutulur.
 
 ### ViraStack bölümü — `virastackSectionIntro` (1 paragraf, 2 cümle + linkler)
 
-> **ViraStack**, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren AI Rules ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.
+> **ViraStack**, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.
 >
 > [virastack.com](https://virastack.com) · [GitHub](https://github.com/virastack)
 
-**Konumlandırma:** ViraStack bir GitHub organizasyonu olarak depoları barındırır; ziyaretçiye anlatılan mesaj **frontend ekosistemi**dir (şablon → AI Rules → paketler). Legacy'deki 3 paragraf manifesto kullanılmaz.
+**Konumlandırma:** ViraStack bir GitHub organizasyonu olarak depoları barındırır; ziyaretçiye anlatılan mesaj **frontend ekosistemi**dir (şablon → ViraStack AI → paketler). Legacy'deki 3 paragraf manifesto kullanılmaz.
 
 ---
 
@@ -130,7 +120,7 @@ UI string'leri `docs/SITE-CONTENT.md` → Projeler ile senkron tutulur.
 
 - Kısa giriş metni + [ViraStack](https://virastack.com) / [GitHub org](https://github.com/virastack) bağlantısı
 - Kişisel ürünler (Footy, Takvim) — öne çıkan kartlar
-- ViraStack bloğu — compact liste (yayında + yakında)
+- ViraStack bloğu — compact liste
 - Arşiv — muted link listesi
 
 **Sayfada olmayanlar:** tag chip, filtre, arama, thumbnail grid (blog gibi düz metin listesi değil).
@@ -154,8 +144,7 @@ Footy ve Takvim — `FeaturedProjectCard` grid (`sm:grid-cols-2`). Lucide ikonla
 Alt başlık: **ViraStack** (`projectsSectionVirastack`)
 
 - `virastackSectionIntro` — ekosistem tanımı + `ProseLink` (virastack.com · GitHub)
-- Aynı `FeaturedProjectCard` grid; yayında ve yakında projeler birlikte
-- `coming_soon`: dashed border, muted ikon, amber **Yakında** badge (`projectsBadgeComingSoon`)
+- Aynı `FeaturedProjectCard` grid
 
 ### Bölüm 3 — Arşiv
 
@@ -184,11 +173,11 @@ ViraStack ekosistemindeki araçlar.
 …intro + virastack.com · GitHub (ProseLink)…
 
 ┌──────────────────┐  ┌──────────────────┐
-│  [icon] AI Rules │  │  [icon] Start    │
+│  [icon] ViraStack AI │  │  [icon] Start    │
 └──────────────────┘  └──────────────────┘
-┌ ─ ─ ─ ─ ─ ─ ─ ─ ┐  …
-│ Yakında badge   │
-└ ─ ─ ─ ─ ─ ─ ─ ─ ┘
+┌──────────────────┐  ┌──────────────────┐
+│  [icon] Mask     │  │  [icon] Guide    │
+└──────────────────┘  └──────────────────┘
 
 ── Arşiv ────────────────────────────────────
 
@@ -229,6 +218,5 @@ Kart ikonları `FeaturedProjectCard` içindeki `PROJECT_VISUALS` haritasında (L
 
 1. Sayfa girişi ve ViraStack bölüm metinleri `docs/SITE-CONTENT.md` → Projeler SSOT'undan gelmeli; bölüm başlıkları aynı dosyadaki tablodan.
 2. `tags` alanı **eklenmez**; filtre UI yok.
-3. `coming_soon` projeler gizlenmez — aktif çalışma sinyali olarak listelenir.
-4. Prose linklerde `ProseLink` kullan; `text-primary underline-offset-4` yasak (`docs/UI-PATTERNS.md`).
-5. Tüm dış linkler `ProseLink` ile; `http` href'lerde `target="_blank"` + `rel="noopener noreferrer"` otomatik.
+3. Prose linklerde `ProseLink` kullan; `text-primary underline-offset-4` yasak (`docs/UI-PATTERNS.md`).
+4. Tüm dış linkler `ProseLink` ile; `http` href'lerde `target="_blank"` + `rel="noopener noreferrer"` otomatik.
