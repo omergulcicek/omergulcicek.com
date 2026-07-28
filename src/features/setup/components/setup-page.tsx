@@ -48,7 +48,7 @@ export function SetupPage() {
 						<p className={proseParagraphClass}>
 							AI model tercihim Gemini. Agent&apos;ı{" "}
 							<ProseLink href={SETUP_EDITOR_LINKS.virastackAiRules}>
-								ViraStack AI Rules
+								ViraStack AI
 							</ProseLink>{" "}
 							ile mimari temel,{" "}
 							<ProseLink href={SETUP_EDITOR_LINKS.emilSkills}>

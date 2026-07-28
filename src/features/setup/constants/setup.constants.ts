@@ -12,7 +12,7 @@ export const SETUP_EDITOR_LINKS = {
 	firaCode: "https://github.com/tonsky/FiraCode",
 	settings:
 		"https://github.com/omergulcicek/notes/blob/main/config/cursor.md#cursor-settingsjson",
-	virastackAiRules: "https://github.com/virastack/ai-rules",
+	virastackAiRules: "https://github.com/virastack/ai",
 	emilSkills: "https://github.com/emilkowalski/skills",
 	makeInterfacesFeelBetter:
 		"https://github.com/jakubkrehel/make-interfaces-feel-better"

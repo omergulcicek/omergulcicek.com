@@ -32,7 +32,7 @@ export function VirastackCaseStudyCard() {
 						</div>
 						<p className="text-muted-foreground text-pretty text-xs leading-relaxed md:text-sm">
 							Frontend geliştiriciler için şablonlardan npm paketlerine uzanan açık
-							kaynak ekosistem — AI Rules, Next.js ve TanStack boilerplate&apos;leri.
+							kaynak ekosistem: ViraStack Start CLI, ViraStack AI ve React paketleri.
 						</p>
 					</div>
 				</div>

@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
 		id: "footy",
 		title: "Footy",
 		description:
-			"Futbol bilgini sına — Bil Bakalım, Skor Avcısı, Kupon Ustası, Kadro Bulmacası.",
+			"Futbol bilgini sına: Bil Bakalım, Skor Avcısı, Kupon Ustası ve Kadro Bulmacası.",
 		group: "personal",
 		status: "live",
 		href: "https://footy.omergulcicek.com/",
@@ -24,90 +24,54 @@ export const PROJECTS: Project[] = [
 		featured: true
 	},
 	{
-		id: "ai-rules",
-		title: "AI Rules",
+		id: "start",
+		title: "ViraStack Start (CLI)",
 		description:
-			"Modern React uygulamaları için yapay zekâ odaklı mimari kurallar ve Cursor rules.",
+			"Modern React için üretime hazır iskelet oluşturma CLI'si. Next.js ve TanStack Start şablonlarını arayüzden kur.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/ai-rules",
+		href: "https://github.com/virastack/start",
 		sortOrder: 3
 	},
 	{
-		id: "nextjs-boilerplate",
-		title: "Next.js Boilerplate",
+		id: "ai-rules",
+		title: "ViraStack AI",
 		description:
-			"Tailwind CSS 4 ve TypeScript ile üretime hazır Next.js 16+ başlangıç şablonu.",
+			"Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/nextjs-boilerplate",
+		href: "https://github.com/virastack/ai",
 		sortOrder: 4
 	},
 	{
 		id: "input-mask",
-		title: "Input Mask",
-		description: "React Hook Form için hafif, bağımlılıksız input maskeleme.",
+		title: "ViraStack Mask",
+		description:
+			"React'te input formatlama ve durum senkronizasyonu için hafif standart.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/input-mask",
+		href: "https://github.com/virastack/mask",
 		sortOrder: 5
 	},
 	{
 		id: "password-toggle",
-		title: "Password Toggle",
+		title: "ViraStack Password",
 		description:
-			"React için erişilebilir ve özelleştirilebilir şifre görünürlük hook'u.",
+			"React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/password-toggle",
+		href: "https://github.com/virastack/password",
 		sortOrder: 6
 	},
 	{
 		id: "modern-web-in-3-minutes",
-		title: "Modern Web in 3 Minutes",
-		description: "Üç dakikada modern web geliştirme standartlarına giriş.",
+		title: "ViraStack Guide",
+		description:
+			"Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk.",
 		group: "virastack",
 		status: "package",
 		href: "https://github.com/virastack/modern-web-in-3-minutes",
 		sortOrder: 7
-	},
-	{
-		id: "tanstack-boilerplate",
-		title: "TanStack Boilerplate",
-		description:
-			"Tailwind CSS 4 ve TypeScript ile üretime hazır TanStack Start şablonu.",
-		group: "virastack",
-		status: "coming_soon",
-		href: "https://github.com/virastack/tanstack-boilerplate",
-		sortOrder: 8
-	},
-	{
-		id: "start-cli",
-		title: "Start (CLI)",
-		description:
-			"ViraStack mimarilerini başlatmak için otomatik iskelet oluşturma aracı.",
-		group: "virastack",
-		status: "coming_soon",
-		href: "https://github.com/virastack/cli",
-		sortOrder: 9
-	},
-	{
-		id: "standards",
-		title: "Standards",
-		description: "Yapılandırma gerektirmeyen ESLint ve Prettier paketi.",
-		group: "virastack",
-		status: "coming_soon",
-		href: "https://github.com/virastack/standards",
-		sortOrder: 10
-	},
-	{
-		id: "error-guard",
-		title: "Error Guard",
-		description: "React için profesyonel hata yönetimi ve akıllı kurtarma.",
-		group: "virastack",
-		status: "coming_soon",
-		href: "https://github.com/virastack/error-guard",
-		sortOrder: 11
 	},
 	{
 		id: "turkuaz",
@@ -116,7 +80,7 @@ export const PROJECTS: Project[] = [
 		group: "archive",
 		status: "archived",
 		href: "https://github.com/omergulcicek/turkuaz",
-		sortOrder: 12
+		sortOrder: 8
 	},
 	{
 		id: "turkcedokuman",
@@ -125,7 +89,7 @@ export const PROJECTS: Project[] = [
 		group: "archive",
 		status: "archived",
 		href: "https://github.com/omergulcicek/turkcedokuman.com",
-		sortOrder: 13
+		sortOrder: 9
 	}
 ]
 

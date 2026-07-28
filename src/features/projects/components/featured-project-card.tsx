@@ -1,4 +1,4 @@
-import { soccerBall, squareCode } from "@lucide/lab"
+import { soccerBall } from "@lucide/lab"
 import {
 	Asterisk,
 	BookOpen,
@@ -6,9 +6,6 @@ import {
 	CalendarDays,
 	ChevronRight,
 	Icon,
-	Layers,
-	ListChecks,
-	ShieldAlert,
 	Terminal,
 	TextCursorInput,
 	type LucideIcon
@@ -56,10 +53,10 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		Icon: Bot,
 		className: "text-fuchsia-500"
 	},
-	"nextjs-boilerplate": {
-		kind: "lab",
-		iconNode: squareCode,
-		className: "text-sky-500"
+	start: {
+		kind: "lucide",
+		Icon: Terminal,
+		className: "text-teal-500"
 	},
 	"input-mask": {
 		kind: "lucide",
@@ -75,26 +72,6 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		kind: "lucide",
 		Icon: BookOpen,
 		className: "text-amber-500"
-	},
-	"tanstack-boilerplate": {
-		kind: "lucide",
-		Icon: Layers,
-		className: "text-cyan-500"
-	},
-	"start-cli": {
-		kind: "lucide",
-		Icon: Terminal,
-		className: "text-teal-500"
-	},
-	standards: {
-		kind: "lucide",
-		Icon: ListChecks,
-		className: "text-emerald-500"
-	},
-	"error-guard": {
-		kind: "lucide",
-		Icon: ShieldAlert,
-		className: "text-red-500"
 	}
 }
 
