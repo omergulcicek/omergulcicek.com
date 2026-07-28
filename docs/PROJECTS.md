@@ -79,20 +79,19 @@ Sıra implementasyonda `sortOrder` ile korunur.
 
 | `id` | `title` | `description` | `status` | `href` | `showcase` |
 | --- | --- | --- | --- | --- | --- |
-| `ai-rules` | AI Rules | Modern React uygulamaları için yapay zekâ odaklı mimari kurallar ve Cursor rules. | `package` | `https://github.com/virastack/ai-rules` | `inline` → `rules-preview` |
-| `nextjs-boilerplate` | Next.js Boilerplate | Tailwind CSS 4 ve TypeScript ile üretime hazır Next.js 16+ başlangıç şablonu. | `package` | `https://github.com/virastack/nextjs-boilerplate` | `inline` → `boilerplate-diff` |
-| `input-mask` | Input Mask | React Hook Form için hafif, bağımlılıksız input maskeleme. | `package` | `https://github.com/virastack/mask` | `inline` → `input-mask` |
-| `password-toggle` | Password Toggle | React için erişilebilir ve özelleştirilebilir şifre görünürlük hook'u. | `package` | `https://github.com/virastack/password` | `inline` → `password-toggle` |
-| `modern-web-in-3-minutes` | Modern Web in 3 Minutes | Üç dakikada modern web geliştirme standartlarına giriş. | `package` | `https://github.com/virastack/guide` | `none` |
+| `start` | ViraStack Start (CLI) | Modern React için üretime hazır iskelet oluşturma CLI'si. Next.js ve TanStack Start şablonlarını arayüzden kur. | `package` | `https://github.com/virastack/start` | `none` |
+| `ai-rules` | ViraStack AI | Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla. | `package` | `https://github.com/virastack/ai` | `none` |
+| `input-mask` | ViraStack Mask | React'te input formatlama ve durum senkronizasyonu için hafif standart. | `package` | `https://github.com/virastack/mask` | `none` |
+| `password-toggle` | ViraStack Password | React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u. | `package` | `https://github.com/virastack/password` | `none` |
+| `modern-web-in-3-minutes` | ViraStack Guide | Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk. | `package` | `https://github.com/virastack/guide` | `none` |
 
 **Yakında** (`status: coming_soon`)
 
 | `id` | `title` | `description` | `href` |
 | --- | --- | --- | --- |
-| `tanstack-boilerplate` | TanStack Boilerplate | Tailwind CSS 4 ve TypeScript ile üretime hazır TanStack Start şablonu. | `https://github.com/virastack/tanstack-boilerplate` |
-| `start-cli` | Start (CLI) | ViraStack mimarilerini başlatmak için otomatik iskelet oluşturma aracı. | `https://github.com/virastack/cli` |
-| `standards` | Standards | Yapılandırma gerektirmeyen ESLint ve Prettier paketi. | `https://github.com/virastack/standards` |
-| `error-guard` | Error Guard | React için profesyonel hata yönetimi ve akıllı kurtarma. | `https://github.com/virastack/error-guard` |
+| `tanstack-boilerplate` | ViraStack TanStack Boilerplate | Tailwind CSS 4 ve TypeScript ile üretime hazır TanStack Start şablonu. | `https://github.com/virastack/tanstack-boilerplate` |
+| `standards` | ViraStack Standards | Yapılandırma gerektirmeyen ESLint ve Prettier paketi. | `https://github.com/virastack/standards` |
+| `error-guard` | ViraStack Error Guard | React için profesyonel hata yönetimi ve akıllı kurtarma. | `https://github.com/virastack/error-guard` |
 
 Yakında projeler ViraStack bloğunun altında, yayında olanlardan sonra listelenir. Her satırda **Yakında** badge görünür.
 
@@ -185,7 +184,7 @@ ViraStack ekosistemindeki araçlar.
 …intro + virastack.com · GitHub (ProseLink)…
 
 ┌──────────────────┐  ┌──────────────────┐
-│  [icon] AI Rules │  │  [icon] Next.js  │
+│  [icon] AI Rules │  │  [icon] Start    │
 └──────────────────┘  └──────────────────┘
 ┌ ─ ─ ─ ─ ─ ─ ─ ─ ┐  …
 │ Yakında badge   │
