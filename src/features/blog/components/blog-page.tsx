@@ -1,6 +1,6 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
-import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { proseParagraphClass } from "@/components/shared/prose.styles"
 import { BlogList } from "@/features/blog/components/blog-list"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"

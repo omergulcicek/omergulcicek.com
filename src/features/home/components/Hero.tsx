@@ -1,7 +1,7 @@
+import { ClientOnly } from "@tanstack/react-router"
 import { Mail } from "lucide-react"
 
 import { GitHubIcon } from "@/components/icons"
-import { ClientOnly } from "@/components/shared/client-only"
 import { ProseIconLink, ProseLink } from "@/components/shared/prose-link"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
@@ -13,7 +13,7 @@ import {
 } from "@/components/shared/prose.styles"
 import { SocialLinks } from "@/components/shared/SocialLinks"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
-import { HeroContentMotion } from "@/features/home/components/hero-content-motion.client"
+import { HeroContentMotion } from "@/features/home/components/hero-content-motion"
 import { HERO_IMAGE } from "@/features/home/constants/hero-image.constants"
 import { cn } from "@/lib/utils"
 

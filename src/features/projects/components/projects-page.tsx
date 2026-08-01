@@ -2,7 +2,7 @@ import { GitHubIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseIconLink } from "@/components/shared/prose-link"
-import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	proseParagraphClass,
@@ -16,8 +16,8 @@ import {
 	ArchiveProjectList,
 	ProjectsSectionHeading
 } from "@/features/projects/components/project-cards"
-import { ProjectSection } from "@/features/projects/components/project-section.client"
-import { GitHubContributionCalendar } from "@/features/projects/components/github-contribution-calendar.client"
+import { ProjectSection } from "@/features/projects/components/project-section"
+import { GitHubContributionCalendar } from "@/features/projects/components/github-contribution-calendar"
 import { getProjectsByGroup } from "@/features/projects/constants/projects.constants"
 
 export function ProjectsPage() {

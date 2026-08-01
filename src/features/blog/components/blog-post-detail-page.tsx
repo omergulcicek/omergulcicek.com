@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 import { Container } from "@/components/shared/Container"
 import { pageTitleClass } from "@/components/shared/prose.styles"
-import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detail-header"
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
 import { BlogPostToc } from "@/features/blog/components/blog-post-toc"

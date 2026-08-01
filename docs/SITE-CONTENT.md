@@ -60,11 +60,11 @@ Header'da yok. Sıra implementasyonda korunur (`src/constants/footer-nav.constan
 
 | Sıra | Etiket                    | Rota / link |
 | ---- | ------------------------- | ----------- |
-| 1    | ViraStack Start (CLI)     | GitHub      |
-| 2    | ViraStack AI              | GitHub      |
-| 3    | ViraStack Mask            | GitHub      |
-| 4    | ViraStack Password        | GitHub      |
-| 5    | ViraStack Guide           | GitHub      |
+| 1    | ViraStack Start           | virastack.com/start |
+| 2    | ViraStack AI              | virastack.com/ai |
+| 3    | ViraStack Mask            | virastack.com/mask |
+| 4    | ViraStack Password        | virastack.com/password |
+| 5    | ViraStack Guide           | virastack.com/guide |
 | 6    | Tüm projeler              | `/projects` |
 
 ### Alt — meta şeridi (üstten alta)

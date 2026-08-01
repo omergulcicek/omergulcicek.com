@@ -4,7 +4,7 @@ import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import {
 	ProseRouterLink
 } from "@/components/shared/prose-link"
-import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
 	bleedSectionClass,

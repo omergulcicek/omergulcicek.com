@@ -23,11 +23,11 @@ import { Supabase } from "@/components/ui/svgs/supabase"
 import { Tanstack } from "@/components/ui/svgs/tanstack"
 import { Tailwindcss } from "@/components/ui/svgs/tailwindcss"
 import { Typescript } from "@/components/ui/svgs/typescript"
-import { Virastack } from "@/components/ui/svgs/virastack"
 import { Vite } from "@/components/ui/svgs/vite"
 import { Zod } from "@/components/ui/svgs/zod"
 import { OptimizedImage } from "@/components/shared/optimized-image"
 import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
+import { VIRASTACK_LOGO } from "@/lib/media/build-static-thumb-image"
 import { cn } from "@/lib/utils"
 
 type StackLogoProps = {
@@ -126,10 +126,18 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 		case "zustand":
 			return (
 				<OptimizedImage
-					src="/logos/zustand.svg"
+					src="/logos/zustand-56.webp"
 					alt={label}
 					width={56}
 					height={56}
+					loading="eager"
+					decoding="async"
+					sources={[
+						{
+							type: "image/webp",
+							srcSet: "/logos/zustand-56.webp 1x, /logos/zustand-112.webp 2x"
+						}
+					]}
 					className={iconClassName}
 				/>
 			)
@@ -173,7 +181,21 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "virastack":
 			return (
-				<Virastack className={iconClassName} role="img" aria-label={label} />
+				<OptimizedImage
+					src={VIRASTACK_LOGO.src}
+					alt={label}
+					width={VIRASTACK_LOGO.width}
+					height={VIRASTACK_LOGO.height}
+					loading="eager"
+					decoding="async"
+					sources={[
+						{
+							type: "image/webp",
+							srcSet: VIRASTACK_LOGO.srcSet
+						}
+					]}
+					className={iconClassName}
+				/>
 			)
 		default:
 			return (

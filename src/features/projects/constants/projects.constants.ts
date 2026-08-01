@@ -25,52 +25,49 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		id: "start",
-		title: "ViraStack Start (CLI)",
+		title: "ViraStack Start",
 		description:
-			"Modern React için üretime hazır iskelet oluşturma CLI'si. Next.js ve TanStack Start şablonlarını arayüzden kur.",
+			"Üretime hazır Next.js ve TanStack başlangıç şablonları.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/start",
+		href: "https://virastack.com/start",
 		sortOrder: 3
 	},
 	{
 		id: "ai",
 		title: "ViraStack AI",
-		description:
-			"Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla.",
+		description: "Ajan uyumlu kurallar ve mimari kit.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/ai",
+		href: "https://virastack.com/ai",
 		sortOrder: 4
 	},
 	{
 		id: "mask",
 		title: "ViraStack Mask",
-		description:
-			"React'te input formatlama ve durum senkronizasyonu için hafif standart.",
+		description: "Formlar için erişilebilir input maskeleri.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/mask",
+		href: "https://virastack.com/mask",
 		sortOrder: 5
 	},
 	{
 		id: "password",
 		title: "ViraStack Password",
-		description:
-			"React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u.",
+		description: "Erişilebilir parola görünürlük toggle'ı.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/password",
+		href: "https://virastack.com/password",
 		sortOrder: 6
 	},
 	{
 		id: "guide",
 		title: "ViraStack Guide",
 		description:
-			"Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk.",
+			"Modern web standartlarını adım adım gösteren interaktif rehber.",
 		group: "virastack",
 		status: "package",
-		href: "https://github.com/virastack/guide",
+		href: "https://virastack.com/guide",
 		sortOrder: 7
 	},
 	{

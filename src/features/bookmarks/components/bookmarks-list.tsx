@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react"
 
 import { bleedSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import { Container } from "@/components/shared/Container"
-import { BookmarksListGrid } from "@/features/bookmarks/components/bookmarks-list-grid.client"
+import { BookmarksListGrid } from "@/features/bookmarks/components/bookmarks-list-grid"
 import { BookmarksListFilters } from "@/features/bookmarks/components/bookmarks-list-filters"
 import {
 	applyBookmarkFilters,

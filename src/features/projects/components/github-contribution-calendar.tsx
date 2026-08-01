@@ -25,7 +25,7 @@ function GitHubCalendarSkeleton() {
 
 const LazyGitHubContributionCalendarInner = lazy(async () => {
 	const module = await import(
-		"@/features/projects/components/github-contribution-calendar-inner.client"
+		"@/features/projects/components/github-contribution-calendar-inner"
 	)
 
 	return { default: module.GitHubContributionCalendarInner }

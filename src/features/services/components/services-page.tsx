@@ -7,7 +7,7 @@ import {
 	ProseIconLink,
 	ProseLink
 } from "@/components/shared/prose-link"
-import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import {
 	pageSectionClass,
 	pageShellClass,

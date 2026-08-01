@@ -1,13 +1,13 @@
 import { soccerBall } from "@lucide/lab"
 import {
-	Asterisk,
 	BookOpen,
-	Bot,
 	CalendarDays,
 	ChevronRight,
+	Form,
 	Icon,
-	Terminal,
-	TextCursorInput,
+	Rocket,
+	Sparkles,
+	SquareAsterisk,
 	type LucideIcon
 } from "lucide-react"
 
@@ -48,24 +48,24 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		Icon: CalendarDays,
 		className: "text-orange-400 dark:text-orange-300"
 	},
-	ai: {
-		kind: "lucide",
-		Icon: Bot,
-		className: "text-fuchsia-500"
-	},
 	start: {
 		kind: "lucide",
-		Icon: Terminal,
+		Icon: Rocket,
 		className: "text-teal-500"
+	},
+	ai: {
+		kind: "lucide",
+		Icon: Sparkles,
+		className: "text-fuchsia-500"
 	},
 	mask: {
 		kind: "lucide",
-		Icon: TextCursorInput,
+		Icon: Form,
 		className: "text-indigo-500"
 	},
 	password: {
 		kind: "lucide",
-		Icon: Asterisk,
+		Icon: SquareAsterisk,
 		className: "text-rose-500"
 	},
 	guide: {
@@ -73,6 +73,45 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		Icon: BookOpen,
 		className: "text-amber-500"
 	}
+}
+
+const VIRASTACK_TITLE_ACCENT_CLASS: Record<string, string> = {
+	start: "text-teal-500",
+	ai: "text-fuchsia-500",
+	mask: "text-indigo-500",
+	password: "text-rose-500",
+	guide: "text-amber-500"
+}
+
+function ProjectTitle({
+	project,
+	className,
+	id
+}: {
+	project: Project
+	className?: string
+	id?: string
+}) {
+	const accentClass = VIRASTACK_TITLE_ACCENT_CLASS[project.id]
+	const virastackTitleMatch =
+		project.group === "virastack"
+			? /^ViraStack (.+)$/.exec(project.title)
+			: null
+
+	if (!virastackTitleMatch || !accentClass) {
+		return (
+			<h3 id={id} className={className}>
+				{project.title}
+			</h3>
+		)
+	}
+
+	return (
+		<h3 id={id} className={className}>
+			ViraStack{" "}
+			<em className={cn("italic", accentClass)}>{virastackTitleMatch[1]}</em>
+		</h3>
+	)
 }
 
 function ComingSoonBadge() {
@@ -152,15 +191,14 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 			</div>
 			<div className="flex flex-col gap-1.5 md:gap-2">
 				<div className="flex items-start justify-between gap-2 md:gap-3">
-					<h3
+					<ProjectTitle
+						project={project}
 						id={project.id}
 						className={cn(
 							cardTitleClass,
 							isComingSoon && "text-muted-foreground"
 						)}
-					>
-						{project.title}
-					</h3>
+					/>
 					{isComingSoon ? (
 						<ComingSoonBadge />
 					) : (
@@ -189,16 +227,15 @@ export function FeaturedProjectListItem({ project }: FeaturedProjectCardProps) {
 			className="group flex flex-col md:flex-row md:items-center gap-1 md:gap-4 py-2"
 		>
 			<div className="flex items-center gap-2 md:gap-3 shrink-0 md:w-[240px]">
-				<h3
+				<ProjectTitle
+					project={project}
 					id={`${project.id}-list`}
 					className={cn(
 						cardTitleClass,
 						isComingSoon && "text-muted-foreground",
 						"truncate md:text-sm"
 					)}
-				>
-					{project.title}
-				</h3>
+				/>
 				{isComingSoon && <ComingSoonBadge />}
 			</div>
 			<div className="flex items-center gap-3 min-w-0 flex-1 justify-between md:justify-start">

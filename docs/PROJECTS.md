@@ -79,11 +79,11 @@ Sıra implementasyonda `sortOrder` ile korunur.
 
 | `id` | `title` | `description` | `status` | `href` | `showcase` |
 | --- | --- | --- | --- | --- | --- |
-| `start` | ViraStack Start (CLI) | Modern React için üretime hazır iskelet oluşturma CLI'si. Next.js ve TanStack Start şablonlarını arayüzden kur. | `package` | `https://github.com/virastack/start` | `none` |
-| `ai` | ViraStack AI | Modern React için AI-native mimari kiti. Disiplinli agent kuralları tek komutla. | `package` | `https://github.com/virastack/ai` | `none` |
-| `mask` | ViraStack Mask | React'te input formatlama ve durum senkronizasyonu için hafif standart. | `package` | `https://github.com/virastack/mask` | `none` |
-| `password` | ViraStack Password | React için tam erişilebilir ve özelleştirilebilir şifre görünürlük hook'u. | `package` | `https://github.com/virastack/password` | `none` |
-| `guide` | ViraStack Guide | Modern web uygulamalarının nasıl inşa edildiğini gösteren etkileşimli, adım adım bir yolculuk. | `package` | `https://github.com/virastack/guide` | `none` |
+| `start` | ViraStack Start | Üretime hazır Next.js ve TanStack başlangıç şablonları. | `package` | `https://virastack.com/start` | `none` |
+| `ai` | ViraStack AI | Ajan uyumlu kurallar ve mimari kit. | `package` | `https://virastack.com/ai` | `none` |
+| `mask` | ViraStack Mask | Formlar için erişilebilir input maskeleri. | `package` | `https://virastack.com/mask` | `none` |
+| `password` | ViraStack Password | Erişilebilir parola görünürlük toggle'ı. | `package` | `https://virastack.com/password` | `none` |
+| `guide` | ViraStack Guide | Modern web standartlarını adım adım gösteren interaktif rehber. | `package` | `https://virastack.com/guide` | `none` |
 
 ### Arşiv — `group: archive`
 

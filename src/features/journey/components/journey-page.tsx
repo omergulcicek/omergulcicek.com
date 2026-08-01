@@ -1,6 +1,6 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
-import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion.client"
+import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { pageShellClass, proseParagraphClass } from "@/components/shared/prose.styles"
 import { JourneyTimeline } from "@/features/journey/components/journey-timeline"
 import { JOURNEY_CONTENT } from "@/features/journey/constants/journey.constants"

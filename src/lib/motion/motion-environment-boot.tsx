@@ -1,8 +1,8 @@
 "use client"
 
+import { ClientOnly } from "@tanstack/react-router"
 import { useEffect } from "react"
 
-import { ClientOnly } from "@/components/shared/client-only"
 import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
 
 function MotionEnvironmentBootInner() {
