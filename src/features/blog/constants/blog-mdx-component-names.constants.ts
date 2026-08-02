@@ -11,5 +11,7 @@ export const blogMdxComponentNames = [
 	"PickerIcon",
 	"SiblingIndex",
 	"Stretch",
-	"TextBox"
+	"TextBox",
+	"ViraMaskDemo",
+	"ViraPasswordDemo"
 ] as const

@@ -94,6 +94,28 @@ async function hydrateLinksReview(mount: HTMLElement) {
 	return { root, mount }
 }
 
+async function hydrateViraMaskDemo(mount: HTMLElement) {
+	const { BlogViraMaskDemoClient } = await import(
+		"@/features/blog/components/blog-mask-interactive.client"
+	)
+	const root = createRoot(mount)
+
+	root.render(createElement(BlogViraMaskDemoClient))
+
+	return { root, mount }
+}
+
+async function hydrateViraPasswordDemo(mount: HTMLElement) {
+	const { BlogViraPasswordDemoClient } = await import(
+		"@/features/blog/components/blog-password-interactive.client"
+	)
+	const root = createRoot(mount)
+
+	root.render(createElement(BlogViraPasswordDemoClient))
+
+	return { root, mount }
+}
+
 export async function hydrateBlogProseWidgets(container: HTMLElement) {
 	const widgetRoots: BlogProseWidgetRoot[] = []
 	const mounts = container.querySelectorAll<HTMLElement>("[data-blog-widget]")
@@ -114,6 +136,12 @@ export async function hydrateBlogProseWidgets(container: HTMLElement) {
 				break
 			case "links-review":
 				hydrated = await hydrateLinksReview(mount)
+				break
+			case "vira-mask-demo":
+				hydrated = await hydrateViraMaskDemo(mount)
+				break
+			case "vira-password-demo":
+				hydrated = await hydrateViraPasswordDemo(mount)
 				break
 			case "corner-shape":
 			case "clip-path":

@@ -44,6 +44,12 @@ importers:
       '@vercel/og':
         specifier: ^0.11.1
         version: 0.11.1
+      '@virastack/mask':
+        specifier: ^1.1.1
+        version: 1.1.1(react-dom@19.2.7(react@19.2.7))(react-hook-form@7.84.0(react@19.2.7))(react@19.2.7)
+      '@virastack/password':
+        specifier: ^1.0.2
+        version: 1.0.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -89,6 +95,9 @@ importers:
       react-dom:
         specifier: ^19.2.0
         version: 19.2.7(react@19.2.7)
+      react-hook-form:
+        specifier: ^7.84.0
+        version: 7.84.0(react@19.2.7)
       recharts:
         specifier: ^3.8.0
         version: 3.8.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.7)(react@19.2.7)(redux@5.0.1)
@@ -2355,6 +2364,21 @@ packages:
     resolution: {integrity: sha512-02rXXRABFq1B03w3aNhcVfxkY+8Ba5QFi4ax0zS0oOiD/LL9WUd/LA7BjVPakrQmVhIBjuo2oBM5U25R9IuXMg==}
     engines: {node: '>=16'}
 
+  '@virastack/mask@1.1.1':
+    resolution: {integrity: sha512-WMYPYzqI24We/MZ37Mgy5bp6p3lZ8rwYrq8PsBN2i21k7a4PVu6PuIOc0z+v8wwJZuNIiGeG5FH1R78H+8cYTA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
+      react-hook-form: '>=7'
+
+  '@virastack/password@1.0.2':
+    resolution: {integrity: sha512-L6mtYc1ZIgHZXdKJ0hX2TYJQTFs7hwC7egOJNwEKAsD69z58BQDAXH9vpAfHkVbBTJ5QsyQ9k3BPCxYmw5+AIw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
+
   '@vitejs/plugin-react@4.7.0':
     resolution: {integrity: sha512-gUu9hwfWvvEDBBmgtAowQCojwZmJ5mcLn3aufeCsitijs3+f2NsrPtlAWIR6OPiqljl96GVCUbLe0HyqIpVaoA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4373,6 +4397,12 @@ packages:
     resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
     peerDependencies:
       react: ^19.2.7
+
+  react-hook-form@7.84.0:
+    resolution: {integrity: sha512-+hWvQP6GLco56mDwrbU4XnHix8t1z90ltZsDIrREl+jnQFQxYLX8oAzqe/Xn8nHpmoXTY5M6oEXrAhbP1qevNQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-is@19.2.7:
     resolution: {integrity: sha512-kZFnouyVv7eP/Phmrlo9FK+zcAdriZJvzxXHF1Sl1P377WSGe2G/JxVolhTrB/jeV47lKImhNUsijjHAAbcl/A==}
@@ -7603,6 +7633,17 @@ snapshots:
     optionalDependencies:
       sharp: 0.34.5
 
+  '@virastack/mask@1.1.1(react-dom@19.2.7(react@19.2.7))(react-hook-form@7.84.0(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+      react-hook-form: 7.84.0(react@19.2.7)
+
+  '@virastack/password@1.0.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+
   '@vitejs/plugin-react@4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))':
     dependencies:
       '@babel/core': 7.29.7
@@ -9915,6 +9956,10 @@ snapshots:
     dependencies:
       react: 19.2.7
       scheduler: 0.27.0
+
+  react-hook-form@7.84.0(react@19.2.7):
+    dependencies:
+      react: 19.2.7
 
   react-is@19.2.7: {}
 

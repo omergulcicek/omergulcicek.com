@@ -10,6 +10,8 @@ import {
 	TextBox
 } from "@/features/blog/components/blog-css-interactive"
 import { ImagesCarousel } from "@/features/blog/components/blog-images-carousel"
+import { ViraMaskDemo } from "@/features/blog/components/blog-mask-interactive"
+import { ViraPasswordDemo } from "@/features/blog/components/blog-password-interactive"
 import { MdxTable } from "@/features/blog/components/blog-mdx-table"
 import { LinksReview } from "@/features/blog/components/blog-links-review"
 import { MediaInfo } from "@/features/blog/components/blog-media-info"
@@ -28,7 +30,9 @@ export const blogMdxComponents = {
 	PickerIcon,
 	SiblingIndex,
 	Stretch,
-	TextBox
+	TextBox,
+	ViraMaskDemo,
+	ViraPasswordDemo
 } as const
 
 export { blogMdxComponentNames }

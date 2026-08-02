@@ -23,4 +23,24 @@ describe("compileMdxToHtml", () => {
 		expect(enriched.contentHtml).toContain("Durum")
 		expect(enriched.contentHtml).toContain("OK")
 	})
+
+	it("renders ViraMaskDemo mount for interactive posts", async () => {
+		const html = await compileMdxToHtml(`## Demo
+
+<ViraMaskDemo />
+`)
+
+		expect(html).toContain('data-blog-widget="vira-mask-demo"')
+		expect(html).toContain("blog-mask-interactive-demo")
+	})
+
+	it("renders ViraPasswordDemo mount for interactive posts", async () => {
+		const html = await compileMdxToHtml(`## Demo
+
+<ViraPasswordDemo />
+`)
+
+		expect(html).toContain('data-blog-widget="vira-password-demo"')
+		expect(html).toContain("blog-password-interactive-demo")
+	})
 })
