@@ -21,8 +21,7 @@ Sitenin önceki sürümleri: [omergulcicek.com-old-versions](https://github.com/
 
 ---
 
-[![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com/start/)
-[![ViraStack AI](https://img.shields.io/badge/ViraStack-AI-%23d946ef)](https://virastack.com/ai)
+[![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com/start/) ve [![ViraStack AI](https://img.shields.io/badge/ViraStack-AI-%23d946ef)](https://virastack.com/ai) ile geliştirildi.
 
 ## License
 
