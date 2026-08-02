@@ -1,13 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./styles/inter-font.css";
+@import "./styles/ibm-plex-mono-font.css";
 @import "./styles/motion.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
 	--font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-	--font-mono: ui-monospace, monospace;
+	--font-mono: "IBM Plex Mono", ui-monospace, monospace;
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);

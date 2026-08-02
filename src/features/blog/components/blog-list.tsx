@@ -142,7 +142,7 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 								as="h2"
 								id={year}
 								anchorLabel={`${year} bölümüne git`}
-								className="text-muted-foreground text-sm font-medium tabular-nums"
+								className="text-muted-foreground font-mono text-sm font-medium tabular-nums"
 							>
 								{year}
 							</AnchoredHeading>

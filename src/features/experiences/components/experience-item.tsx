@@ -43,7 +43,7 @@ export function ExperienceItem({
 				<p className="mt-0.5 text-xs leading-relaxed md:text-sm">
 					<span className="font-medium">{experience.company}</span>
 					<span className="text-muted-foreground"> · </span>
-					<span className="text-muted-foreground tabular-nums">
+					<span className="text-muted-foreground font-mono tabular-nums">
 						{experience.period}
 					</span>
 				</p>

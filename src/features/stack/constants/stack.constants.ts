@@ -84,11 +84,11 @@ export const STACK_ITEMS: StackItem[] = [
 		href: "https://tailwindcss.com/"
 	},
 	{
-		id: "radix",
-		label: "Radix UI",
-		svglSlug: "radix-ui",
+		id: "base-ui",
+		label: "Base UI",
+		svglSlug: "base-ui",
 		order: 205,
-		href: "https://www.radix-ui.com/"
+		href: "https://base-ui.com/"
 	},
 	{
 		id: "shadcn",
@@ -212,7 +212,7 @@ export const STACK_CATEGORIES: StackCategory[] = [
 			"vite",
 			"tanstack",
 			"tailwind",
-			"radix",
+			"base-ui",
 			"shadcn",
 			"motion",
 			"react-hook-form",
@@ -285,7 +285,7 @@ const HOME_STACK_IDS = [
 	"tailwind",
 	"tanstack",
 	"vite",
-	"radix",
+	"base-ui",
 	"shadcn",
 	"zod",
 	"zustand",

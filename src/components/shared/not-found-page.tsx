@@ -13,7 +13,9 @@ export function NotFoundPage() {
 	return (
 		<Container className={pageShellClass}>
 			<div className="flex flex-col gap-4">
-				<p className="text-muted-foreground text-sm tabular-nums">404</p>
+				<p className="text-muted-foreground font-mono text-sm tabular-nums">
+					404
+				</p>
 				<PageHeader title={SITE_CONTENT.notFoundTitle}>
 					<p className={proseParagraphClass}>
 						{SITE_CONTENT.notFoundDescription}

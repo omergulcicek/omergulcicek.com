@@ -32,7 +32,9 @@ export function RouteErrorPage({
 	return (
 		<Container className={pageShellClass}>
 			<div className="flex flex-col gap-4">
-				<p className="text-muted-foreground text-sm tabular-nums">{codeLabel}</p>
+				<p className="text-muted-foreground font-mono text-sm tabular-nums">
+					{codeLabel}
+				</p>
 				<PageHeader title={title}>
 					<p className={proseParagraphClass}>{description}</p>
 					{showErrorDetails ? (

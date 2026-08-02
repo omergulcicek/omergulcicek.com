@@ -11,7 +11,7 @@ export const pageTitleClass =
 	"text-balance text-base font-semibold tracking-tight text-foreground md:text-lg"
 
 export const heroSubtitleClass =
-	"text-balance text-muted-foreground text-sm font-normal md:text-base"
+	"text-balance font-mono text-muted-foreground text-sm font-normal md:text-base"
 
 export const cardTitleClass = "text-balance text-sm font-medium md:text-base"
 

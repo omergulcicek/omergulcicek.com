@@ -1225,6 +1225,15 @@ export const BOOKMARKS: Bookmark[] = [
 			tags: ["Film"]
 		},
 	{
+			id: "media-youtube-cdf6d19etmc",
+			title: "Maradona Warm-Up: UEFA Cup Semi-Final 1989",
+			url: "https://www.youtube.com/watch?v=Cdf6D19Etmc",
+			author: "TheUnComfortZONE",
+			imageUrl: bookmarkImage("media-youtube-cdf6d19etmc"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
+	{
 			id: "media-youtube--gc2twgghfa",
 			title: "Brezilya - Portekiz: Euro 2004",
 			url: "https://www.youtube.com/watch?v=-Gc2twGGHFA",

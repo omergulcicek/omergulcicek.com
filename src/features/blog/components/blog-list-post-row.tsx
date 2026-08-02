@@ -51,7 +51,7 @@ export function BlogListPostRow({
 			/>
 			<div className="pointer-events-none relative z-10 flex w-full shrink-0 flex-col gap-1">
 				<time
-					className="text-muted-foreground text-xs md:text-sm"
+					className="text-muted-foreground font-mono text-xs tabular-nums md:text-sm"
 					dateTime={post.publishedAt}
 				>
 					{formatBlogDate(post.publishedAt)}

@@ -11,8 +11,8 @@ import { MotionDark } from "@/components/ui/svgs/motionDark"
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
 import { Nodejs } from "@/components/ui/svgs/nodejs"
 import { Postgresql } from "@/components/ui/svgs/postgresql"
-import { RadixUiDark } from "@/components/ui/svgs/radixUiDark"
-import { RadixUiLight } from "@/components/ui/svgs/radixUiLight"
+import { BaseUi } from "@/components/ui/svgs/baseUi"
+import { BaseUiDark } from "@/components/ui/svgs/baseUiDark"
 import { ReactDark } from "@/components/ui/svgs/reactDark"
 import { ReactLight } from "@/components/ui/svgs/reactLight"
 import { Redux } from "@/components/ui/svgs/redux"
@@ -87,11 +87,11 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "vite":
 			return <Vite className={iconClassName} role="img" aria-label={label} />
-		case "radix":
+		case "base-ui":
 			return (
 				<ThemeAwareDualIcon
-					light={RadixUiLight}
-					dark={RadixUiDark}
+					light={BaseUi}
+					dark={BaseUiDark}
 					className={iconClassName}
 					label={label}
 				/>
