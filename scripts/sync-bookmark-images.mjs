@@ -34,6 +34,10 @@ const bookmarkImages = [
 			url: "https://rdl.ink/render/https%3A%2F%2Fcss-tricks.com%2F"
 		},
 	{
+			id: "blog-daktilo1984-com",
+			url: "https://rdl.ink/render/https%3A%2F%2Fdaktilo1984.com%2F"
+		},
+	{
 			id: "blog-daron-blog",
 			url: "https://rdl.ink/render/https%3A%2F%2Fdaron.blog%2F"
 		},

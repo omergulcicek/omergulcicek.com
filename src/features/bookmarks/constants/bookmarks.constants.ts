@@ -114,6 +114,15 @@ export const BOOKMARKS: Bookmark[] = [
 			tags: ["Yayın"]
 		},
 	{
+			id: "blog-daktilo1984-com",
+			title: "Daktilo1984",
+			url: "https://daktilo1984.com/",
+			imageUrl: bookmarkImage("blog-daktilo1984-com"),
+			description: "Politika, ekonomi ve kültür odaklı bağımsız düşünce yayını; yazı, video ve podcast.",
+			categoryId: "blog",
+			tags: ["Yayın"]
+		},
+	{
 			id: "blog-daron-blog",
 			title: "Daron Blog",
 			url: "https://daron.blog/",
