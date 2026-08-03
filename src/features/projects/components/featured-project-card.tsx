@@ -1,4 +1,4 @@
-import { soccerBall } from "@lucide/lab"
+import { soccerPitch } from "@lucide/lab"
 import {
 	BookOpen,
 	CalendarDays,
@@ -33,15 +33,15 @@ type ProjectVisualConfig =
 	  }
 	| {
 			kind: "lab"
-			iconNode: typeof soccerBall
+			iconNode: typeof soccerPitch
 			className: string
 	  }
 
 const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 	footy: {
 		kind: "lab",
-		iconNode: soccerBall,
-		className: "text-emerald-600 dark:text-emerald-500"
+		iconNode: soccerPitch,
+		className: "text-green-500"
 	},
 	takvim: {
 		kind: "lucide",
