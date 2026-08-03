@@ -46,7 +46,7 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 	takvim: {
 		kind: "lucide",
 		Icon: CalendarDays,
-		className: "text-orange-400 dark:text-orange-300"
+		className: "text-blue-500"
 	},
 	start: {
 		kind: "lucide",
