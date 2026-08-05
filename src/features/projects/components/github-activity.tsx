@@ -655,7 +655,7 @@ export function GitHubActivity({
 								<motion.span
 									className="grid size-4 place-items-center text-muted-foreground"
 									initial={false}
-									animate={{ rotate: open ? 0 : 180 }}
+									animate={{ rotate: open ? 180 : 0 }}
 									transition={transition}
 								>
 									<ChevronDown className="size-4" aria-hidden />
