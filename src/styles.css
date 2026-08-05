@@ -193,9 +193,6 @@
 		@apply rounded-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50;
 	}
 
-	.github-calendar {
-		font-variant-numeric: tabular-nums slashed-zero;
-	}
 }
 
 @utility tabular-nums {

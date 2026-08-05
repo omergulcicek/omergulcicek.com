@@ -25,10 +25,6 @@ export default defineConfig(async ({ mode }) => {
 						return "recharts"
 					}
 
-					if (id.includes("react-activity-calendar")) {
-						return "activity-calendar"
-					}
-
 					if (id.includes("embla-carousel")) {
 						return "embla-carousel"
 					}
