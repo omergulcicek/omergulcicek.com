@@ -13,6 +13,7 @@ import {
 } from "@/constants/footer-nav.constants"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
 import { getPublishedVirastackProjects } from "@/features/projects/constants/projects.constants"
+import { VirastackProductName } from "@/features/projects/components/virastack-product-name"
 import { cn } from "@/lib/utils"
 
 const footerNavClass =
@@ -22,7 +23,12 @@ export function Footer() {
 	const virastackProjects = getPublishedVirastackProjects()
 
 	return (
-		<footer className={cn("mt-12 border-t md:mt-20", interactiveSurfaceBgClass)}>
+		<footer
+			className={cn(
+				"mt-12 border-t pb-[calc(2.75rem+max(0.75rem,env(safe-area-inset-bottom)))] md:mt-20",
+				interactiveSurfaceBgClass
+			)}
+		>
 			<div className={cn(bleedSectionClass, "py-8 md:py-12")}>
 				<div className="flex flex-col gap-8 md:gap-10">
 					<div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-x-8 md:gap-x-12">
@@ -63,7 +69,12 @@ export function Footer() {
 										href={project.href}
 										label={project.title}
 										external
-									/>
+									>
+										<VirastackProductName
+											projectId={project.id}
+											title={project.title}
+										/>
+									</SiteNavLink>
 								))}
 								<SiteNavLink
 									href="/projects#virastack"

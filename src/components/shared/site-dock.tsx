@@ -31,7 +31,7 @@ export function SiteDock() {
 		>
 			<div
 				className={cn(
-					"pointer-events-auto flex h-10 items-center gap-0.5 rounded-full border bg-background/95 py-1 pl-1.5 pr-2 shadow-lg backdrop-blur",
+					"pointer-events-auto flex h-11 items-center gap-1.5 rounded-full border bg-background/95 py-1 pl-1.5 pr-2 shadow-lg backdrop-blur",
 					"supports-backdrop-filter:bg-background/80"
 				)}
 				role="toolbar"
@@ -61,7 +61,7 @@ export function SiteDock() {
 							</Button>
 						) : (
 							<div
-								className="flex size-6 items-center justify-center transition-transform duration-150 ease-out active:scale-[0.96]"
+								className="hit-area flex size-9 items-center justify-center transition-transform duration-150 ease-out active:scale-[0.96]"
 								role="progressbar"
 								aria-label={SITE_CONTENT.siteDockScrollProgress}
 								aria-valuemin={0}

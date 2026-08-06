@@ -112,7 +112,7 @@ export function BlogListPostRow({
 								href={withOutboundUtm(post.mediumUrl)}
 								target="_blank"
 								rel="noopener noreferrer"
-							className="focus-link text-foreground hover:text-foreground/80 pointer-events-auto inline-flex size-6 items-center justify-center transition-colors"
+							className="hit-area focus-link text-foreground hover:text-foreground/80 pointer-events-auto inline-flex size-9 items-center justify-center transition-colors"
 							aria-label={BLOG_UI.mediumLinkLabel}
 							title={BLOG_UI.mediumLinkLabel}
 						>

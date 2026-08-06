@@ -18,7 +18,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 			<TooltipProvider>
 				<div
 					data-vaul-drawer-wrapper=""
-					className="relative flex min-h-dvh min-h-screen flex-col bg-background pb-[calc(3.5rem+env(safe-area-inset-bottom))]"
+					className="relative flex min-h-dvh min-h-screen flex-col bg-background"
 				>
 					<Header />
 					<main id="main-content" className="flex-1">

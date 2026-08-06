@@ -20,6 +20,7 @@ import {
 import { cn } from "@/lib/utils"
 import { withOutboundUtm } from "@/lib/outbound-url"
 
+import { VirastackProductName } from "@/features/projects/components/virastack-product-name"
 import type { Project } from "@/features/projects/types/project.types"
 
 const projectIconClass = "size-8 md:size-10"
@@ -75,14 +76,6 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 	}
 }
 
-const VIRASTACK_TITLE_ACCENT_CLASS: Record<string, string> = {
-	start: "text-teal-500",
-	ai: "text-fuchsia-500",
-	mask: "text-indigo-500",
-	password: "text-rose-500",
-	guide: "text-amber-500"
-}
-
 function ProjectTitle({
 	project,
 	className,
@@ -92,24 +85,13 @@ function ProjectTitle({
 	className?: string
 	id?: string
 }) {
-	const accentClass = VIRASTACK_TITLE_ACCENT_CLASS[project.id]
-	const virastackTitleMatch =
-		project.group === "virastack"
-			? /^ViraStack (.+)$/.exec(project.title)
-			: null
-
-	if (!virastackTitleMatch || !accentClass) {
-		return (
-			<h3 id={id} className={className}>
-				{project.title}
-			</h3>
-		)
-	}
-
 	return (
 		<h3 id={id} className={className}>
-			ViraStack{" "}
-			<em className={cn("italic", accentClass)}>{virastackTitleMatch[1]}</em>
+			{project.group === "virastack" ? (
+				<VirastackProductName projectId={project.id} title={project.title} />
+			) : (
+				project.title
+			)}
 		</h3>
 	)
 }

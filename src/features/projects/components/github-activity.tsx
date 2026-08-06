@@ -50,9 +50,11 @@ const useIsoLayoutEffect =
 	typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const
-const SPRING = { type: "spring", bounce: 0.2, duration: 0.62 } as const
-const HEADER_SPRING = { ...SPRING, bounce: 0.45 } as const
-const ROW_SPRING = { ...SPRING, bounce: 0.26, delay: 0.08 } as const
+const SPRING = { type: "spring", bounce: 0.15, duration: 0.5 } as const
+const HEADER_SPRING = { ...SPRING, bounce: 0.2 } as const
+const ROW_SPRING = { ...SPRING, bounce: 0.18, delay: 0.08 } as const
+const PANEL_RADIUS = 16
+const PANEL_INSET = 12
 const ROW_OFFSET = 16
 const CELL_FADE = { duration: 0.2, ease: EASE_OUT } as const
 const TOOLTIP_FADE = { duration: 0.14, ease: EASE_OUT } as const
@@ -183,10 +185,17 @@ function useGitHubUser(login?: string) {
 		repos: RepoContribution[]
 	}>()
 	const [error, setError] = React.useState<Error | null>(null)
+	const [isLoading, setIsLoading] = React.useState(Boolean(login))
 
 	React.useEffect(() => {
-		if (!login) return
+		if (!login) {
+			setIsLoading(false)
+			return
+		}
+
 		let active = true
+		setIsLoading(true)
+		setError(null)
 
 		Promise.all([fetchCalendar(login), fetchRepos(login)])
 			.then(([contributions, repos]) => {
@@ -194,15 +203,23 @@ function useGitHubUser(login?: string) {
 				if (contributions) {
 					setData({ contributions, repos })
 					setError(null)
+					return
 				}
+
+				setData(undefined)
+				setError(new Error("GitHub katkıları yüklenemedi"))
 			})
 			.catch((cause: unknown) => {
 				if (!active) return
+				setData(undefined)
 				setError(
 					cause instanceof Error
 						? cause
 						: new Error("GitHub aktiviteleri yüklenemedi", { cause })
 				)
+			})
+			.finally(() => {
+				if (active) setIsLoading(false)
 			})
 
 		return () => {
@@ -210,7 +227,7 @@ function useGitHubUser(login?: string) {
 		}
 	}, [login])
 
-	return { data, error }
+	return { data, error, isLoading }
 }
 
 function emptyDays(weeks: number): Contribution[] {
@@ -411,7 +428,7 @@ const ContributionGrid = ({
 				))}
 			</div>
 
-			<AnimatePresence>
+			<AnimatePresence initial={false}>
 				{hovered && (
 					<Tooltip
 						key="tooltip"
@@ -524,18 +541,23 @@ export function GitHubActivity({
 	}
 
 	const needsFetch = !contributionsProp.length || !reposProp.length
-	const { data: fetched, error: fetchError } = useGitHubUser(
-		needsFetch ? username : undefined
-	)
+	const {
+		data: fetched,
+		error: fetchError,
+		isLoading
+	} = useGitHubUser(needsFetch ? username : undefined)
 	const placeholder = React.useMemo(
-		() => (username ? emptyDays(weeksFor(months)) : []),
-		[username, months]
+		() => emptyDays(weeksFor(months)),
+		[months]
 	)
 
+	const isFetching = Boolean(username) && needsFetch && isLoading
+	const hasFetchFailed = Boolean(fetchError)
 	const contributions = contributionsProp.length
 		? contributionsProp
 		: (fetched?.contributions ?? placeholder)
 	const repos = reposProp.length ? reposProp : (fetched?.repos ?? [])
+	const showGrid = !hasFetchFailed
 
 	const scale = React.useMemo(() => toScale(accent), [accent])
 	const transition = reduceMotion ? { duration: 0 } : SPRING
@@ -556,9 +578,13 @@ export function GitHubActivity({
 
 	const parsedYear = Number(contributions.at(-1)?.date.slice(0, 4))
 	const displayYear = year ?? (Number.isFinite(parsedYear) ? parsedYear : null)
-	const heading = displayYear
-		? `${displayYear} yılında ${total} katkı`
-		: `${total} katkı`
+	const heading = isFetching
+		? "Katkılar yükleniyor…"
+		: hasFetchFailed
+			? "Katkılar yüklenemedi"
+			: displayYear
+				? `${displayYear} yılında ${total} katkı`
+				: `${total} katkı`
 
 	const gap = gapFor(cellSize)
 	const columns = Math.min(
@@ -575,43 +601,55 @@ export function GitHubActivity({
 			data-slot="github-activity"
 			className={cn(
 				"relative max-w-full overflow-hidden rounded-[28px] bg-card p-4",
-				repos.length > 0 && "pb-[76px]",
+				repos.length > 0 && !hasFetchFailed && "pb-[76px]",
 				className
 			)}
 			style={{ width, ...style }}
 			{...props}
 		>
-			{fetchError ? (
-				<p className="sr-only" role="alert">
-					{fetchError.message}
-				</p>
-			) : null}
-
 			<p className="mb-4 px-1.5 text-base font-medium text-foreground">
 				{heading}
 			</p>
 
-			<ContributionGrid
-				contributions={contributions}
-				scale={scale}
-				cellSize={cellSize}
-				months={months}
-				showMonths={showMonths}
-				label={heading}
-				reduceMotion={reduceMotion}
-			/>
+			{hasFetchFailed ? (
+				<p
+					className="text-muted-foreground px-1.5 text-sm"
+					role="alert"
+				>
+					{fetchError?.message ?? "GitHub katkıları şu an gösterilemiyor."}
+				</p>
+			) : null}
 
-			{repos.length > 0 && (
+			{showGrid ? (
+				<div
+					className={cn(isFetching && "animate-pulse opacity-70")}
+					aria-busy={isFetching || undefined}
+				>
+					<ContributionGrid
+						contributions={contributions}
+						scale={scale}
+						cellSize={cellSize}
+						months={months}
+						showMonths={showMonths}
+						label={heading}
+						reduceMotion={reduceMotion}
+					/>
+				</div>
+			) : null}
+
+			{repos.length > 0 && !hasFetchFailed ? (
 				<motion.div
 					layout
 					id={`${uid}-panel`}
 					data-slot="github-activity-panel"
 					data-state={open ? "open" : "closed"}
-					className={cn(
-						"absolute inset-x-3 bottom-3 overflow-hidden bg-card/90 backdrop-blur-xl",
-						open && "top-3"
-					)}
-					style={{ borderRadius: 18 }}
+					className="absolute overflow-hidden bg-card/90 backdrop-blur-xl"
+					style={{
+						borderRadius: PANEL_RADIUS,
+						insetInline: PANEL_INSET,
+						bottom: PANEL_INSET,
+						...(open ? { top: PANEL_INSET } : {})
+					}}
 					transition={transition}
 				>
 					<motion.div
@@ -650,7 +688,7 @@ export function GitHubActivity({
 										? "En aktif depoları gizle"
 										: "En aktif depoları göster"
 								}
-								className="grid size-7 shrink-0 place-items-center rounded-full bg-card"
+								className="hit-area grid size-9 shrink-0 place-items-center rounded-full bg-card transition-transform duration-150 ease-out active:scale-[0.96]"
 							>
 								<motion.span
 									className="grid size-4 place-items-center text-muted-foreground"
@@ -686,7 +724,7 @@ export function GitHubActivity({
 						)}
 					</AnimatePresence>
 				</motion.div>
-			)}
+			) : null}
 		</div>
 	)
 }

@@ -5,6 +5,7 @@
 @import "./styles/motion.css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant fine-hover (@media (hover: hover) and (pointer: fine));
 
 @theme inline {
 	--font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
@@ -191,6 +192,10 @@
 
 	.focus-link {
 		@apply rounded-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50;
+	}
+
+	.hit-area {
+		@apply relative after:absolute after:top-1/2 after:left-1/2 after:size-10 after:-translate-1/2 after:content-[''];
 	}
 
 }

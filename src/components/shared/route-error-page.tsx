@@ -63,14 +63,14 @@ export function RouteErrorPage({
 					<Link to="/" className={routeErrorLinkClass}>
 						{SITE_CONTENT.notFoundHomeCta}
 						<ChevronRight
-							className="size-4 transition-transform group-hover:translate-x-0.5"
+							className="size-4 transition-transform fine-hover:group-hover:translate-x-0.5"
 							aria-hidden
 						/>
 					</Link>
 					<Link to="/blog" className={routeErrorLinkClass}>
 						{SITE_CONTENT.notFoundBlogCta}
 						<ChevronRight
-							className="size-4 transition-transform group-hover:translate-x-0.5"
+							className="size-4 transition-transform fine-hover:group-hover:translate-x-0.5"
 							aria-hidden
 						/>
 					</Link>

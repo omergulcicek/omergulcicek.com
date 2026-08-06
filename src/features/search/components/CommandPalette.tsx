@@ -41,7 +41,7 @@ export function CommandPaletteTrigger({
 				size="sm"
 				onClick={() => setOpen(true)}
 				aria-label={SITE_CONTENT.siteDockSearchAria}
-				className="h-7 gap-1.5 rounded-full px-2 text-xs font-medium text-muted-foreground hover:text-foreground"
+				className="h-9 min-w-9 gap-1.5 rounded-full px-2.5 text-xs font-medium text-muted-foreground hover:text-foreground"
 			>
 				<Search className="size-3.5 shrink-0" />
 				<span className="hidden max-w-36 truncate sm:inline">

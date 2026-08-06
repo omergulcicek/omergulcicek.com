@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router"
 import { ExternalLink } from "lucide-react"
-import type { ComponentPropsWithoutRef } from "react"
+import type { ComponentPropsWithoutRef, ReactNode } from "react"
 
 import { withOutboundUtm } from "@/lib/outbound-url"
 import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
@@ -19,6 +19,7 @@ type SiteNavLinkProps = {
 	label: string
 	exact?: boolean
 	external?: boolean
+	children?: ReactNode
 } & Pick<ComponentPropsWithoutRef<typeof Link>, "className">
 
 export function SiteNavLink({
@@ -26,8 +27,11 @@ export function SiteNavLink({
 	label,
 	exact,
 	external,
+	children,
 	className
 }: SiteNavLinkProps) {
+	const content = children ?? label
+
 	if (external) {
 		return (
 			<a
@@ -40,8 +44,9 @@ export function SiteNavLink({
 				)}
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label={children ? label : undefined}
 			>
-				{label}
+				{content}
 				<ExternalLink className="size-3 shrink-0" aria-hidden />
 			</a>
 		)
@@ -60,8 +65,9 @@ export function SiteNavLink({
 				className: siteNavLinkActiveClass,
 				"aria-current": "page"
 			}}
+			aria-label={children ? label : undefined}
 		>
-			{label}
+			{content}
 		</Link>
 	)
 }

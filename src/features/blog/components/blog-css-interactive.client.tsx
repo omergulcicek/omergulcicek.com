@@ -150,7 +150,7 @@ function getPickerIconStyles(selectedType: PickerIconType) {
 		}
 		.blog-css-interactive-demo__picker-select::picker-icon {
 			content: "${pickerIconContent[selectedType]}";
-			transition: all 0.3s ease;
+			transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 		}
 	`
 }

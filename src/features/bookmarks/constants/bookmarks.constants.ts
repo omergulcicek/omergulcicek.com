@@ -240,6 +240,15 @@ export const BOOKMARKS: Bookmark[] = [
 			tags: ["Kurum"]
 		},
 	{
+			id: "frontend-mesurer-dev",
+			title: "Mesurer",
+			url: "https://mesurer.dev/",
+			imageUrl: bookmarkImage("frontend-mesurer-dev"),
+			description: "Localhost'ta ölçü ve hizalama aracı",
+			categoryId: "frontend",
+			tags: ["npm"]
+		},
+	{
 			id: "frontend-evilcharts-com-docs",
 			title: "Evil Charts",
 			url: "https://evilcharts.com/docs",
