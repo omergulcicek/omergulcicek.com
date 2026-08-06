@@ -5,10 +5,14 @@ import { useTheme } from "@/hooks/use-theme"
 import { cn } from "@/lib/utils"
 
 type ThemeToggleProps = {
+	className?: string
 	size?: "icon-xs" | "icon-sm"
 }
 
-export function ThemeToggle({ size = "icon-sm" }: ThemeToggleProps) {
+export function ThemeToggle({
+	className,
+	size = "icon-sm"
+}: ThemeToggleProps) {
 	const { theme, isMounted, toggleTheme } = useTheme()
 	const iconClassName = size === "icon-xs" ? "size-3.5" : "size-4"
 
@@ -19,6 +23,7 @@ export function ThemeToggle({ size = "icon-sm" }: ThemeToggleProps) {
 				size={size}
 				aria-label="Tema yükleniyor"
 				disabled
+				className={className}
 			>
 				<span className={cn("relative", iconClassName)} aria-hidden="true">
 					<Moon className={cn("absolute inset-0", iconClassName)} />
@@ -36,6 +41,7 @@ export function ThemeToggle({ size = "icon-sm" }: ThemeToggleProps) {
 			size={size}
 			onClick={toggleTheme}
 			aria-label={isDark ? "Aydınlık temaya geç" : "Karanlık temaya geç"}
+			className={className}
 		>
 			<span className={cn("relative", iconClassName)} aria-hidden="true">
 				<Sun

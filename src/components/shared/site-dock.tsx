@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils"
 const SCROLL_TO_TOP_THRESHOLD = 95
 const dockSeparatorClassName =
 	"mx-0.5 h-4 shrink-0 self-center data-[orientation=vertical]:h-4"
+const dockActionButtonClassName =
+	"size-7 rounded-full bg-muted text-foreground hover:bg-muted/80 dark:hover:bg-muted/80"
 
 function scrollToTop() {
 	window.scrollTo({ top: 0, behavior: "smooth" })
@@ -31,7 +33,7 @@ export function SiteDock() {
 		>
 			<div
 				className={cn(
-					"pointer-events-auto flex h-11 items-center gap-1.5 rounded-full border bg-background/95 py-1 pl-1.5 pr-2 shadow-lg backdrop-blur",
+					"pointer-events-auto flex items-center gap-1 rounded-full border bg-background/95 p-1 shadow-lg backdrop-blur",
 					"supports-backdrop-filter:bg-background/80"
 				)}
 				role="toolbar"
@@ -42,7 +44,10 @@ export function SiteDock() {
 					orientation="vertical"
 					className={dockSeparatorClassName}
 				/>
-				<ThemeToggle size="icon-xs" />
+				<ThemeToggle
+					size="icon-xs"
+					className={dockActionButtonClassName}
+				/>
 				{showProgress ? (
 					<>
 						<Separator
@@ -56,12 +61,13 @@ export function SiteDock() {
 								size="icon-xs"
 								onClick={scrollToTop}
 								aria-label={SITE_CONTENT.siteDockScrollToTop}
+								className={dockActionButtonClassName}
 							>
 								<ArrowUp className="size-3.5" />
 							</Button>
 						) : (
 							<div
-								className="hit-area flex size-9 items-center justify-center transition-transform duration-150 ease-out active:scale-[0.96]"
+								className="hit-area flex size-7 items-center justify-center rounded-full bg-muted transition-transform duration-150 ease-out active:scale-[0.96]"
 								role="progressbar"
 								aria-label={SITE_CONTENT.siteDockScrollProgress}
 								aria-valuemin={0}
