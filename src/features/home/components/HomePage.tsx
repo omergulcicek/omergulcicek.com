@@ -33,8 +33,8 @@ export function HomePage({ featuredPosts }: HomePageProps) {
 				<StackStrip />
 			</Suspense>
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
-				<FeaturedProjects />
 				<VirastackCaseStudyCard />
+				<FeaturedProjects />
 				<FeaturedBlog posts={featuredPosts} />
 				<ExperienceSummary />
 			</Container>
