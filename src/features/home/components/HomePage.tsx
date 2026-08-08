@@ -34,8 +34,8 @@ export function HomePage({ featuredPosts }: HomePageProps) {
 			</Suspense>
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
 				<VirastackCaseStudyCard />
-				<FeaturedProjects />
 				<FeaturedBlog posts={featuredPosts} />
+				<FeaturedProjects />
 				<ExperienceSummary />
 			</Container>
 		</div>
