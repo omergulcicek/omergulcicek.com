@@ -1,22 +1,21 @@
-import { soccerPitch } from "@lucide/lab"
 import {
 	BookOpen,
-	CalendarDays,
 	ChevronRight,
 	Form,
-	Icon,
 	Rocket,
 	Sparkles,
 	SquareAsterisk,
 	type LucideIcon
 } from "lucide-react"
 
+import { OptimizedImage } from "@/components/shared/optimized-image"
 import { cardTitleClass } from "@/components/shared/prose.styles"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import {
 	getInteractiveCardClassName,
 	interactiveCardChevronClass
 } from "@/components/shared/interactive-card.styles"
+import { PROJECT_COVERS } from "@/lib/media/build-static-thumb-image"
 import { cn } from "@/lib/utils"
 import { withOutboundUtm } from "@/lib/outbound-url"
 
@@ -25,6 +24,7 @@ import type { Project } from "@/features/projects/types/project.types"
 
 const projectIconClass = "size-8 md:size-10"
 const projectIconStroke = 1.75
+const projectCoverClass = "image-outline size-16 rounded-lg object-contain md:size-24"
 
 type ProjectVisualConfig =
 	| {
@@ -33,21 +33,18 @@ type ProjectVisualConfig =
 			className: string
 	  }
 	| {
-			kind: "lab"
-			iconNode: typeof soccerPitch
-			className: string
+			kind: "image"
+			cover: (typeof PROJECT_COVERS)[keyof typeof PROJECT_COVERS]
 	  }
 
 const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 	footy: {
-		kind: "lab",
-		iconNode: soccerPitch,
-		className: "text-green-500"
+		kind: "image",
+		cover: PROJECT_COVERS.footy
 	},
 	takvim: {
-		kind: "lucide",
-		Icon: CalendarDays,
-		className: "text-blue-500"
+		kind: "image",
+		cover: PROJECT_COVERS.takvim
 	},
 	start: {
 		kind: "lucide",
@@ -132,13 +129,20 @@ function FeaturedProjectVisual({
 		)
 	}
 
-	if (visual.kind === "lab") {
+	if (visual.kind === "image") {
 		return (
-			<Icon
-				iconNode={visual.iconNode}
-				className={cn(projectIconClass, visual.className, mutedClass)}
-				strokeWidth={projectIconStroke}
-				aria-hidden
+			<OptimizedImage
+				src={visual.cover.src}
+				alt=""
+				width={visual.cover.width}
+				height={visual.cover.height}
+				sources={[
+					{
+						type: "image/webp",
+						srcSet: visual.cover.srcSet
+					}
+				]}
+				className={cn(projectCoverClass, mutedClass)}
 			/>
 		)
 	}

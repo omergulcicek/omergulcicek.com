@@ -35,8 +35,29 @@ async function optimizeVirastackLogo() {
 	)
 }
 
+async function optimizeProjectCover(name) {
+	const inputPath = path.join(publicDir, `project/${name}.png`)
+
+	await writeWebp(
+		`project/${name}-112.webp`,
+		sharp(inputPath).resize(112, 112, {
+			fit: "contain",
+			background: { r: 0, g: 0, b: 0, alpha: 0 }
+		})
+	)
+	await writeWebp(
+		`project/${name}-224.webp`,
+		sharp(inputPath).resize(224, 224, {
+			fit: "contain",
+			background: { r: 0, g: 0, b: 0, alpha: 0 }
+		})
+	)
+}
+
 async function main() {
 	await optimizeVirastackLogo()
+	await optimizeProjectCover("footy")
+	await optimizeProjectCover("takvim")
 }
 
 main().catch((error) => {
