@@ -4,41 +4,34 @@ import {
 	blogFilterChipWithIconDesktopClass
 } from "@/features/blog/constants/blog-filter-chip.styles"
 import { BookmarkTagIcon } from "@/features/bookmarks/components/bookmark-tag-icon"
-import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
-import {
-	getBookmarkAllTagLabel,
-	getBookmarkTagLabel
-} from "@/features/bookmarks/helpers/bookmark-helpers"
-import type { BookmarkCategoryId } from "@/features/bookmarks/types/bookmarks.types"
+import { getBookmarkAllTagLabel, getBookmarkTagLabel } from "@/features/bookmarks/helpers/bookmark-helpers"
 import { cn } from "@/lib/utils"
 
 type BookmarkTagChipsProps = {
-	categoryId: BookmarkCategoryId
 	tags: readonly string[]
 	selectedTag: string | null
 	onSelect: (tag: string | null) => void
+	counts: ReadonlyMap<string, number>
+	ariaLabel: string
 	className?: string
 }
 
 export function BookmarkTagChips({
-	categoryId,
 	tags,
 	selectedTag,
 	onSelect,
+	counts,
+	ariaLabel,
 	className
 }: BookmarkTagChipsProps) {
 	if (tags.length === 0) {
 		return null
 	}
 
-	const allTagLabel = getBookmarkAllTagLabel(categoryId)
+	const allTagLabel = getBookmarkAllTagLabel()
 
 	return (
-		<div
-			className={cn("flex flex-wrap gap-2", className)}
-			role="group"
-			aria-label={BOOKMARK_UI.tagAriaLabel}
-		>
+		<div className={cn("flex flex-wrap gap-2", className)} role="group" aria-label={ariaLabel}>
 			<Button
 				type="button"
 				size="xs"
@@ -51,6 +44,8 @@ export function BookmarkTagChips({
 			</Button>
 			{tags.map((tag) => {
 				const isActive = selectedTag === tag
+				const count = counts.get(tag) ?? 0
+				const label = getBookmarkTagLabel(tag)
 
 				return (
 					<Button
@@ -59,11 +54,12 @@ export function BookmarkTagChips({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
+						aria-label={`${label} ${count}`}
 						className={blogFilterChipWithIconDesktopClass}
 						onClick={() => onSelect(tag)}
 					>
 						<BookmarkTagIcon tag={tag} className="size-3 shrink-0" />
-						{getBookmarkTagLabel(tag)}
+						{label} <span className="tabular-nums">{count}</span>
 					</Button>
 				)
 			})}

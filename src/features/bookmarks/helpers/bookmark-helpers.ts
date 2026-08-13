@@ -1,6 +1,10 @@
 import {
 	BOOKMARK_CATEGORIES,
+	BOOKMARK_UI,
 	DEFAULT_BOOKMARK_CATEGORY_ID,
+	YOUTUBE_BOOKMARK_SUBTAG_BY_ID,
+	YOUTUBE_BOOKMARK_SUBTAGS,
+	YOUTUBE_BOOKMARK_TAG,
 	getBookmarkSortOptions
 } from "@/features/bookmarks/constants/bookmarks.constants"
 import type {
@@ -42,15 +46,145 @@ export function getAvailableBookmarkTags(
 	bookmarks: readonly Bookmark[],
 	categoryId: BookmarkCategoryId
 ) {
-	const tags = new Set<string>()
+	return sortBookmarkTags([...getBookmarkTagCounts(bookmarks, categoryId).keys()], categoryId)
+}
+
+export function getBookmarkTagCounts(
+	bookmarks: readonly Bookmark[],
+	categoryId: BookmarkCategoryId
+): ReadonlyMap<string, number> {
+	const counts = new Map<string, number>()
 
 	for (const bookmark of getBookmarksForCategory(bookmarks, categoryId)) {
 		for (const tag of bookmark.tags) {
-			tags.add(tag)
+			counts.set(tag, (counts.get(tag) ?? 0) + 1)
 		}
 	}
 
-	return sortBookmarkTags([...tags], categoryId)
+	return counts
+}
+
+function getScopedBookmarksForSubtags(
+	bookmarks: readonly Bookmark[],
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+) {
+	return getBookmarksForCategory(bookmarks, categoryId).filter((bookmark) => {
+		if (!tag) {
+			return true
+		}
+
+		return bookmark.tags.includes(tag)
+	})
+}
+
+export function getYoutubeBookmarkSubtag(bookmark: Bookmark) {
+	return YOUTUBE_BOOKMARK_SUBTAG_BY_ID[bookmark.id] ?? null
+}
+
+function getBookmarkSubtagValue(
+	bookmark: Bookmark,
+	categoryId: BookmarkCategoryId
+) {
+	if (categoryId === "library") {
+		return bookmark.author ?? null
+	}
+
+	if (categoryId === "media") {
+		return getYoutubeBookmarkSubtag(bookmark)
+	}
+
+	return null
+}
+
+export function getBookmarkSubtagCounts(
+	bookmarks: readonly Bookmark[],
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+): ReadonlyMap<string, number> {
+	if (categoryId !== "library" && !(categoryId === "media" && tag === YOUTUBE_BOOKMARK_TAG)) {
+		return new Map()
+	}
+
+	const counts = new Map<string, number>()
+
+	for (const bookmark of getScopedBookmarksForSubtags(bookmarks, categoryId, tag)) {
+		const subtag = getBookmarkSubtagValue(bookmark, categoryId)
+
+		if (!subtag) {
+			continue
+		}
+
+		counts.set(subtag, (counts.get(subtag) ?? 0) + 1)
+	}
+
+	return counts
+}
+
+function sortBookmarkSubtags(
+	subtags: readonly string[],
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+) {
+	if (categoryId === "library") {
+		return [...subtags].sort((left, right) =>
+			left.localeCompare(right, BOOKMARK_TAG_LOCALE, { sensitivity: "base" })
+		)
+	}
+
+	if (categoryId === "media" && tag === YOUTUBE_BOOKMARK_TAG) {
+		const order = new Map<string, number>(
+			YOUTUBE_BOOKMARK_SUBTAGS.map((subtag, index) => [subtag, index])
+		)
+
+		return [...subtags].sort((left, right) => {
+			const leftIndex = order.get(left)
+			const rightIndex = order.get(right)
+
+			if (leftIndex !== undefined && rightIndex !== undefined) {
+				return leftIndex - rightIndex
+			}
+
+			if (leftIndex !== undefined) {
+				return -1
+			}
+
+			if (rightIndex !== undefined) {
+				return 1
+			}
+
+			return left.localeCompare(right, BOOKMARK_TAG_LOCALE)
+		})
+	}
+
+	return [...subtags]
+}
+
+export function getAvailableBookmarkSubtags(
+	bookmarks: readonly Bookmark[],
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+) {
+	return sortBookmarkSubtags(
+		[...getBookmarkSubtagCounts(bookmarks, categoryId, tag).keys()],
+		categoryId,
+		tag
+	)
+}
+
+export function getBookmarkSubtagAriaLabel(
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+) {
+	if (categoryId === "library") {
+		return BOOKMARK_UI.authorAriaLabel
+	}
+
+	if (categoryId === "media" && tag === YOUTUBE_BOOKMARK_TAG) {
+		return BOOKMARK_UI.youtubeSubtagAriaLabel
+	}
+
+	return BOOKMARK_UI.tagAriaLabel
 }
 
 const LIBRARY_BOOKMARK_TAG_ORDER = [
@@ -276,19 +410,25 @@ export function applyBookmarkFilters(
 	{
 		categoryId,
 		tag,
+		subtag,
 		sort
 	}: {
 		categoryId: BookmarkCategoryId
 		tag: string | null
+		subtag?: string | null
 		sort?: BookmarkSort | null
 	}
 ) {
 	const filtered = getBookmarksForCategory(bookmarks, categoryId).filter((bookmark) => {
-		if (!tag) {
+		if (tag && !bookmark.tags.includes(tag)) {
+			return false
+		}
+
+		if (!subtag) {
 			return true
 		}
 
-		return bookmark.tags.includes(tag)
+		return getBookmarkSubtagValue(bookmark, categoryId) === subtag
 	})
 
 	const resolvedSort = resolveBookmarkSort(sort, categoryId, tag)
@@ -309,14 +449,8 @@ export function getBookmarkTagLabel(tag: string) {
 	return BOOKMARK_TAG_LABELS[tag] ?? tag
 }
 
-export function getBookmarkAllTagLabel(categoryId: BookmarkCategoryId) {
-	const category = getBookmarkCategoryById(categoryId)
-
-	if (!category) {
-		return "Tümü"
-	}
-
-	return `Tüm ${category.title.toLocaleLowerCase(BOOKMARK_TAG_LOCALE)}`
+export function getBookmarkAllTagLabel() {
+	return BOOKMARK_UI.allFilterLabel
 }
 
 export function getBookmarkDisplayTitle(bookmark: Bookmark) {

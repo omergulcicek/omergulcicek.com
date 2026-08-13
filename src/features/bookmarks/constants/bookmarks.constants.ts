@@ -2307,6 +2307,41 @@ export const BOOKMARK_GRID_COLUMN_COUNT = {
 
 export const BOOKMARK_MEDIA_RATING_TAGS = ["Film", "Dizi"] as const
 
+export const YOUTUBE_BOOKMARK_TAG = "Youtube"
+
+export const YOUTUBE_BOOKMARK_SUBTAGS = [
+	"Futbol",
+	"Oyun",
+	"Spor",
+	"Dövüş",
+	"Dizi ve Belgesel"
+] as const
+
+export type YoutubeBookmarkSubtag = (typeof YOUTUBE_BOOKMARK_SUBTAGS)[number]
+
+export const YOUTUBE_BOOKMARK_SUBTAG_BY_ID: Record<string, YoutubeBookmarkSubtag> = {
+	"media-youtube-cdf6d19etmc": "Futbol",
+	"media-youtube--gc2twgghfa": "Futbol",
+	"media-youtube-rs8xja8ctoq": "Futbol",
+	"media-youtube-hvmbmwuheaw": "Futbol",
+	"media-youtube-lmwpop3pulg": "Futbol",
+	"media-youtube-x7158uqk1yi": "Futbol",
+	"media-youtube-ijbde6pkw2o": "Futbol",
+	"media-youtube-6ey6xucwf0y": "Oyun",
+	"media-youtube-g-swvee9him": "Oyun",
+	"media-youtube-uo1chltdryq": "Oyun",
+	"media-youtube-jqvx5i4cso8": "Oyun",
+	"media-youtube-pxygbwx4dks": "Oyun",
+	"media-youtube-u1oivnfpfii": "Spor",
+	"media-youtube-mhsg2m25pzy": "Spor",
+	"media-youtube-fexzy4evllo": "Spor",
+	"media-youtube-m22nwszycce": "Dövüş",
+	"media-youtube-81txboyjrjw": "Dövüş",
+	"media-youtube-4rpm6g6odvg": "Dizi ve Belgesel",
+	"media-youtube-ueec_ebjgfu": "Dizi ve Belgesel",
+	"media-youtube-5x2yp2wm16i": "Dizi ve Belgesel"
+}
+
 export type BookmarkChipLabel = {
 	desktop: string
 	mobile: string
@@ -2345,6 +2380,9 @@ export const BOOKMARK_UI = {
 	filtersAriaLabel: "Yer imi filtreleri",
 	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",
+	authorAriaLabel: "Yazar filtresi",
+	youtubeSubtagAriaLabel: "YouTube kategori filtresi",
+	allFilterLabel: "Tümü",
 	sortAriaLabel: "Sıralama",
 	listAriaLabel: "Yer imleri listesi",
 	emptyState: "Seçili etikete uygun yer imi bulunamadı.",

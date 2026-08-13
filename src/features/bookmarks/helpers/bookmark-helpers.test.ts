@@ -4,7 +4,10 @@ import {
 	applyBookmarkFilters,
 	areBookmarkTagsEqual,
 	getBookmarkAllTagLabel,
+	getAvailableBookmarkSubtags,
 	getAvailableBookmarkTags,
+	getBookmarkSubtagCounts,
+	getBookmarkTagCounts,
 	getBookmarkTagLabel,
 	getBookmarkAuthorCredit,
 	getBookmarkDisplayTitle,
@@ -338,11 +341,8 @@ describe("bookmark helpers", () => {
 		expect(getBookmarkTagLabel("Chrome")).toBe("Chrome")
 	})
 
-	it("formats all-tag labels per category", () => {
-		expect(getBookmarkAllTagLabel("media")).toBe("Tüm medya")
-		expect(getBookmarkAllTagLabel("library")).toBe("Tüm kitaplık")
-		expect(getBookmarkAllTagLabel("frontend")).toBe("Tüm frontend")
-		expect(getBookmarkAllTagLabel("blog")).toBe("Tüm blog")
+	it("formats all-tag labels as Tümü", () => {
+		expect(getBookmarkAllTagLabel()).toBe("Tümü")
 	})
 
 	it("formats bookmark display titles with subtitles", () => {
@@ -391,5 +391,163 @@ describe("bookmark helpers", () => {
 				tags: ["Dünya Tarihi"]
 			})
 		).toBe("Mary Beard (Çevirmen: İrem Sağlamer)")
+	})
+
+	it("counts bookmarks per tag in the selected category", () => {
+		expect(Object.fromEntries(getBookmarkTagCounts(sampleBookmarks, "frontend"))).toEqual({
+			npm: 2,
+			Siteler: 1
+		})
+	})
+
+	it("lists library authors alphabetically with counts", () => {
+		const libraryBookmarks: Bookmark[] = [
+			{
+				id: "library-z",
+				title: "Zeytin Dağı",
+				url: "https://example.com/z",
+				author: "Ziya Gökalp",
+				categoryId: "library",
+				tags: ["Osmanlı"]
+			},
+			{
+				id: "library-a1",
+				title: "Ayasofya",
+				url: "https://example.com/a1",
+				author: "Ahmet Kaya",
+				categoryId: "library",
+				tags: ["Osmanlı"]
+			},
+			{
+				id: "library-a2",
+				title: "İkinci Kitap",
+				url: "https://example.com/a2",
+				author: "Ahmet Kaya",
+				categoryId: "library",
+				tags: ["Edebiyat"]
+			},
+			{
+				id: "library-i",
+				title: "İslam Düşüncesi",
+				url: "https://example.com/i",
+				author: "Mehmet Akif",
+				categoryId: "library",
+				tags: ["Osmanlı"]
+			}
+		]
+
+		expect(getAvailableBookmarkSubtags(libraryBookmarks, "library", null)).toEqual([
+			"Ahmet Kaya",
+			"Mehmet Akif",
+			"Ziya Gökalp"
+		])
+		expect(Object.fromEntries(getBookmarkSubtagCounts(libraryBookmarks, "library", null))).toEqual({
+			"Ahmet Kaya": 2,
+			"Mehmet Akif": 1,
+			"Ziya Gökalp": 1
+		})
+		expect(getAvailableBookmarkSubtags(libraryBookmarks, "library", "Osmanlı")).toEqual([
+			"Ahmet Kaya",
+			"Mehmet Akif",
+			"Ziya Gökalp"
+		])
+		expect(
+			applyBookmarkFilters(libraryBookmarks, {
+				categoryId: "library",
+				tag: null,
+				subtag: "Ahmet Kaya"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Ayasofya", "İkinci Kitap"])
+	})
+
+	it("groups youtube bookmarks into shared subtags", () => {
+		const mediaBookmarks: Bookmark[] = [
+			{
+				id: "media-youtube-ijbde6pkw2o",
+				title: "Liverpool - Milan",
+				url: "https://example.com/liverpool",
+				categoryId: "media",
+				tags: ["Youtube"]
+			},
+			{
+				id: "media-youtube-lmwpop3pulg",
+				title: "Barcelona - Real Madrid",
+				url: "https://example.com/elclasico",
+				categoryId: "media",
+				tags: ["Youtube"]
+			},
+			{
+				id: "media-youtube-g-swvee9him",
+				title: "Eternal Fire - Spirit",
+				url: "https://example.com/cs",
+				categoryId: "media",
+				tags: ["Youtube"]
+			},
+			{
+				id: "media-youtube-fexzy4evllo",
+				title: "Kobe Bryant: 81 Sayı",
+				url: "https://example.com/kobe",
+				categoryId: "media",
+				tags: ["Youtube"]
+			},
+			{
+				id: "media-youtube-5x2yp2wm16i",
+				title: "Mehmed: Fetihler Sultanı 59. Bölüm",
+				url: "https://example.com/mehmed",
+				categoryId: "media",
+				tags: ["Youtube"]
+			},
+			{
+				id: "media-youtube-4rpm6g6odvg",
+				title: "Hedef Kızılelma Belgeseli",
+				url: "https://example.com/kizilelma",
+				categoryId: "media",
+				tags: ["Youtube"]
+			},
+			{
+				id: "media-film",
+				title: "The Dark Knight",
+				url: "https://example.com/film",
+				categoryId: "media",
+				tags: ["Film"]
+			}
+		]
+
+		expect(getAvailableBookmarkSubtags(mediaBookmarks, "media", null)).toEqual([])
+		expect(getAvailableBookmarkSubtags(mediaBookmarks, "media", "Youtube")).toEqual([
+			"Futbol",
+			"Oyun",
+			"Spor",
+			"Dizi ve Belgesel"
+		])
+		expect(
+			Object.fromEntries(getBookmarkSubtagCounts(mediaBookmarks, "media", "Youtube"))
+		).toEqual({
+			Futbol: 2,
+			Oyun: 1,
+			Spor: 1,
+			"Dizi ve Belgesel": 2
+		})
+		expect(
+			applyBookmarkFilters(mediaBookmarks, {
+				categoryId: "media",
+				tag: "Youtube",
+				subtag: "Futbol"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Barcelona - Real Madrid", "Liverpool - Milan"])
+		expect(
+			applyBookmarkFilters(mediaBookmarks, {
+				categoryId: "media",
+				tag: "Youtube",
+				subtag: "Spor"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Kobe Bryant: 81 Sayı"])
+		expect(
+			applyBookmarkFilters(mediaBookmarks, {
+				categoryId: "media",
+				tag: "Youtube",
+				subtag: "Dizi ve Belgesel"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Hedef Kızılelma Belgeseli", "Mehmed: Fetihler Sultanı 59. Bölüm"])
 	})
 })

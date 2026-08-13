@@ -4,13 +4,18 @@ import {
 	Building2,
 	Castle,
 	Clapperboard,
+	CircleDot,
 	Crown,
 	Earth,
+	Gamepad2,
 	Globe,
 	Moon,
 	Newspaper,
 	Popcorn,
-	User
+	Swords,
+	Trophy,
+	User,
+	Video
 } from "lucide-react"
 
 import { Npm } from "@/components/ui/svgs/npm"
@@ -73,6 +78,26 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 	Kurum: {
 		icon: Building2,
 		iconClassName: "text-zinc-600 dark:text-zinc-400"
+	},
+	Futbol: {
+		icon: Trophy,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	Oyun: {
+		icon: Gamepad2,
+		iconClassName: "text-violet-600 dark:text-violet-400"
+	},
+	Spor: {
+		icon: CircleDot,
+		iconClassName: "text-lime-600 dark:text-lime-400"
+	},
+	Dövüş: {
+		icon: Swords,
+		iconClassName: "text-orange-600 dark:text-orange-400"
+	},
+	"Dizi ve Belgesel": {
+		icon: Video,
+		iconClassName: "text-sky-600 dark:text-sky-400"
 	}
 }
 

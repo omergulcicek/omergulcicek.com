@@ -12,10 +12,12 @@ import {
 } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
 	blogFilterTagsCollapsedClass,
+	blogFilterTagsCollapsedWithSubtagsClass,
 	blogFilterTagsContainerClass,
 	blogFilterTagsExpandedClass,
 	listFilterPanelClass
 } from "@/features/blog/constants/blog-filter-chip.styles"
+import { getBookmarkSubtagAriaLabel } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type {
 	BookmarkCategoryId,
 	BookmarkSort
@@ -25,10 +27,15 @@ import { cn } from "@/lib/utils"
 type BookmarksListFiltersProps = {
 	categoryId: BookmarkCategoryId
 	tags: readonly string[]
+	tagCounts: ReadonlyMap<string, number>
 	selectedTag: string | null
+	subtags: readonly string[]
+	subtagCounts: ReadonlyMap<string, number>
+	selectedSubtag: string | null
 	sort: BookmarkSort | null
 	onCategoryChange: (categoryId: BookmarkCategoryId) => void
 	onTagSelect: (tag: string | null) => void
+	onSubtagSelect: (subtag: string | null) => void
 	onSortChange: (sort: BookmarkSort) => void
 	className?: string
 }
@@ -36,10 +43,15 @@ type BookmarksListFiltersProps = {
 export function BookmarksListFilters({
 	categoryId,
 	tags,
+	tagCounts,
 	selectedTag,
+	subtags,
+	subtagCounts,
+	selectedSubtag,
 	sort,
 	onCategoryChange,
 	onTagSelect,
+	onSubtagSelect,
 	onSortChange,
 	className
 }: BookmarksListFiltersProps) {
@@ -47,18 +59,23 @@ export function BookmarksListFilters({
 	const [collapsedHasOverflow, setCollapsedHasOverflow] = useState(false)
 	const tagsContainerRef = useRef<HTMLDivElement>(null)
 	const hasTags = tags.length > 0
+	const hasSubtags = subtags.length > 0
+	const hasFilterChips = hasTags || hasSubtags
 	const showTagsToggle = collapsedHasOverflow
 	const sortOptions = getBookmarkSortOptions(categoryId, selectedTag)
 	const showSort = sortOptions.length > 0 && sort !== null
+	const collapsedTagsClass = hasSubtags
+		? blogFilterTagsCollapsedWithSubtagsClass
+		: blogFilterTagsCollapsedClass
 
 	useEffect(() => {
 		setTagsExpanded(false)
-	}, [categoryId, tags])
+	}, [categoryId, tags, subtags])
 
 	useEffect(() => {
 		const container = tagsContainerRef.current
 
-		if (!container || !hasTags) {
+		if (!container || !hasFilterChips) {
 			setCollapsedHasOverflow(false)
 			return
 		}
@@ -79,14 +96,14 @@ export function BookmarksListFilters({
 		return () => {
 			resizeObserver.disconnect()
 		}
-	}, [hasTags, tags, tagsExpanded])
+	}, [hasFilterChips, tags, subtags, tagsExpanded])
 
 	return (
 		<section
 			className={cn(
 				surfacePanelClass,
 				listFilterPanelClass,
-				hasTags ? "gap-2 md:gap-3" : "gap-0",
+				hasFilterChips ? "gap-2 md:gap-3" : "gap-0",
 				className
 			)}
 			aria-label={BOOKMARK_UI.filtersAriaLabel}
@@ -112,21 +129,35 @@ export function BookmarksListFilters({
 					</>
 				) : null}
 			</div>
-			{hasTags ? (
+			{hasFilterChips ? (
 				<div className="flex flex-col gap-2">
 					<div
 						ref={tagsContainerRef}
 						className={cn(
 							blogFilterTagsContainerClass,
-							tagsExpanded ? blogFilterTagsExpandedClass : blogFilterTagsCollapsedClass
+							tagsExpanded ? blogFilterTagsExpandedClass : collapsedTagsClass
 						)}
 					>
-						<BookmarkTagChips
-							categoryId={categoryId}
-							tags={tags}
-							selectedTag={selectedTag}
-							onSelect={onTagSelect}
-						/>
+						<div className="flex flex-col gap-2">
+							{hasTags ? (
+								<BookmarkTagChips
+									tags={tags}
+									counts={tagCounts}
+									selectedTag={selectedTag}
+									ariaLabel={BOOKMARK_UI.tagAriaLabel}
+									onSelect={onTagSelect}
+								/>
+							) : null}
+							{hasSubtags ? (
+								<BookmarkTagChips
+									tags={subtags}
+									counts={subtagCounts}
+									selectedTag={selectedSubtag}
+									ariaLabel={getBookmarkSubtagAriaLabel(categoryId, selectedTag)}
+									onSelect={onSubtagSelect}
+								/>
+							) : null}
+						</div>
 					</div>
 					{showTagsToggle ? (
 						<button

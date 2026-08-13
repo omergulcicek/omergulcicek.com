@@ -38,6 +38,7 @@ const bookmarkSortReset = { history: "replace" as const }
 export const bookmarksSearchParamsParsers = {
 	category: bookmarkCategoryParser,
 	tag: bookmarkTagParser,
+	subtag: bookmarkTagParser,
 	sort: bookmarkSortParser
 } as const
 
@@ -45,6 +46,7 @@ export function useBookmarksSearchParams() {
 	const [params, setParams] = useQueryStates(bookmarksSearchParamsParsers)
 	const category = params.category as BookmarkCategoryId
 	const tag = params.tag ?? null
+	const subtag = params.subtag ?? null
 	const rawSort = params.sort && isBookmarkSort(params.sort) ? params.sort : null
 	const resolvedSort = resolveBookmarkSort(rawSort, category, tag)
 
@@ -86,6 +88,7 @@ export function useBookmarksSearchParams() {
 				{
 					category: nextCategory,
 					tag: nextTag,
+					subtag: null,
 					sort: nextSort
 				},
 				bookmarkFilterHistory
@@ -105,7 +108,7 @@ export function useBookmarksSearchParams() {
 					? resolveBookmarkSort(null, category, null)
 					: null
 
-				setParams({ tag: null, sort: nextSort }, bookmarkFilterHistory)
+				setParams({ tag: null, subtag: null, sort: nextSort }, bookmarkFilterHistory)
 				return
 			}
 
@@ -117,9 +120,29 @@ export function useBookmarksSearchParams() {
 				? resolveBookmarkSort(null, category, nextTag)
 				: null
 
-			setParams({ tag: nextTag, sort: nextSort }, bookmarkFilterHistory)
+			setParams({ tag: nextTag, subtag: null, sort: nextSort }, bookmarkFilterHistory)
 		},
 		[category, setParams, tag]
+	)
+
+	const setSubtag = useCallback(
+		(nextSubtag: string | null) => {
+			if (nextSubtag === null) {
+				if (subtag === null) {
+					return
+				}
+
+				setParams({ subtag: null }, bookmarkFilterHistory)
+				return
+			}
+
+			if (areBookmarkTagsEqual(nextSubtag, subtag)) {
+				return
+			}
+
+			setParams({ subtag: nextSubtag }, bookmarkFilterHistory)
+		},
+		[setParams, subtag]
 	)
 
 	const setSort = useCallback(
@@ -156,13 +179,35 @@ export function useBookmarksSearchParams() {
 		[setParams, tag]
 	)
 
+	const ensureSubtag = useCallback(
+		(nextSubtag: string | null) => {
+			if (nextSubtag === null) {
+				if (subtag !== null) {
+					setParams({ subtag: null }, bookmarkTagReset)
+				}
+
+				return
+			}
+
+			if (areBookmarkTagsEqual(nextSubtag, subtag)) {
+				return
+			}
+
+			setParams({ subtag: nextSubtag }, bookmarkTagReset)
+		},
+		[setParams, subtag]
+	)
+
 	return {
 		category,
 		tag,
+		subtag,
 		sort: resolvedSort,
 		setFilters,
 		setTag,
+		setSubtag,
 		setSort,
-		ensureTag
+		ensureTag,
+		ensureSubtag
 	}
 }
