@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react"
 import { ChevronDown } from "lucide-react"
 
 import { Separator } from "@/components/ui/separator"
@@ -10,9 +10,9 @@ import {
 	BOOKMARK_UI,
 	getBookmarkSortOptions
 } from "@/features/bookmarks/constants/bookmarks.constants"
+import { getLibraryCategoryChipClassName } from "@/features/bookmarks/constants/library-bookmarks.constants"
 import {
 	blogFilterTagsCollapsedClass,
-	blogFilterTagsCollapsedWithSubtagsClass,
 	blogFilterTagsContainerClass,
 	blogFilterTagsExpandedClass,
 	listFilterPanelClass
@@ -29,15 +29,47 @@ type BookmarksListFiltersProps = {
 	tags: readonly string[]
 	tagCounts: ReadonlyMap<string, number>
 	selectedTag: string | null
+	genres: readonly string[]
+	genreCounts: ReadonlyMap<string, number>
+	selectedGenre: string | null
 	subtags: readonly string[]
 	subtagCounts: ReadonlyMap<string, number>
 	selectedSubtag: string | null
 	sort: BookmarkSort | null
 	onCategoryChange: (categoryId: BookmarkCategoryId) => void
 	onTagSelect: (tag: string | null) => void
+	onGenreSelect: (genre: string | null) => void
 	onSubtagSelect: (subtag: string | null) => void
 	onSortChange: (sort: BookmarkSort) => void
 	className?: string
+}
+
+type FilterChipRowProps = {
+	expanded: boolean
+	rowRef: RefObject<HTMLDivElement | null>
+	children: ReactNode
+}
+
+function FilterChipRow({ expanded, rowRef, children }: FilterChipRowProps) {
+	return (
+		<div
+			ref={rowRef}
+			className={cn(
+				blogFilterTagsContainerClass,
+				expanded ? blogFilterTagsExpandedClass : blogFilterTagsCollapsedClass
+			)}
+		>
+			{children}
+		</div>
+	)
+}
+
+function rowHasOverflow(row: HTMLDivElement | null) {
+	if (!row) {
+		return false
+	}
+
+	return row.scrollHeight > row.clientHeight + 1
 }
 
 export function BookmarksListFilters({
@@ -45,37 +77,46 @@ export function BookmarksListFilters({
 	tags,
 	tagCounts,
 	selectedTag,
+	genres,
+	genreCounts,
+	selectedGenre,
 	subtags,
 	subtagCounts,
 	selectedSubtag,
 	sort,
 	onCategoryChange,
 	onTagSelect,
+	onGenreSelect,
 	onSubtagSelect,
 	onSortChange,
 	className
 }: BookmarksListFiltersProps) {
 	const [tagsExpanded, setTagsExpanded] = useState(false)
 	const [collapsedHasOverflow, setCollapsedHasOverflow] = useState(false)
-	const tagsContainerRef = useRef<HTMLDivElement>(null)
+	const tagsRowRef = useRef<HTMLDivElement>(null)
+	const genresRowRef = useRef<HTMLDivElement>(null)
+	const subtagsRowRef = useRef<HTMLDivElement>(null)
 	const hasTags = tags.length > 0
+	const hasGenres = genres.length > 0
 	const hasSubtags = subtags.length > 0
-	const hasFilterChips = hasTags || hasSubtags
+	const hasFilterChips = hasTags || hasGenres || hasSubtags
 	const showTagsToggle = collapsedHasOverflow
 	const sortOptions = getBookmarkSortOptions(categoryId, selectedTag)
 	const showSort = sortOptions.length > 0 && sort !== null
-	const collapsedTagsClass = hasSubtags
-		? blogFilterTagsCollapsedWithSubtagsClass
-		: blogFilterTagsCollapsedClass
+	const isLibrary = categoryId === "library"
+	const tagAllLabel = isLibrary
+		? BOOKMARK_UI.allCategoriesLabel
+		: BOOKMARK_UI.allFilterLabel
+	const subtagAllLabel = isLibrary
+		? BOOKMARK_UI.allAuthorsLabel
+		: BOOKMARK_UI.allFilterLabel
 
 	useEffect(() => {
 		setTagsExpanded(false)
-	}, [categoryId, tags, subtags])
+	}, [categoryId, tags, genres, subtags])
 
 	useEffect(() => {
-		const container = tagsContainerRef.current
-
-		if (!container || !hasFilterChips) {
+		if (!hasFilterChips) {
 			setCollapsedHasOverflow(false)
 			return
 		}
@@ -85,18 +126,28 @@ export function BookmarksListFilters({
 				return
 			}
 
-			setCollapsedHasOverflow(container.scrollHeight > container.clientHeight + 1)
+			setCollapsedHasOverflow(
+				[tagsRowRef.current, genresRowRef.current, subtagsRowRef.current].some(
+					rowHasOverflow
+				)
+			)
 		}
 
 		updateOverflow()
 
 		const resizeObserver = new ResizeObserver(updateOverflow)
-		resizeObserver.observe(container)
+		const rows = [tagsRowRef.current, genresRowRef.current, subtagsRowRef.current]
+
+		for (const row of rows) {
+			if (row) {
+				resizeObserver.observe(row)
+			}
+		}
 
 		return () => {
 			resizeObserver.disconnect()
 		}
-	}, [hasFilterChips, tags, subtags, tagsExpanded])
+	}, [genres, hasFilterChips, subtags, tags, tagsExpanded])
 
 	return (
 		<section
@@ -131,34 +182,51 @@ export function BookmarksListFilters({
 			</div>
 			{hasFilterChips ? (
 				<div className="flex flex-col gap-2">
-					<div
-						ref={tagsContainerRef}
-						className={cn(
-							blogFilterTagsContainerClass,
-							tagsExpanded ? blogFilterTagsExpandedClass : collapsedTagsClass
-						)}
-					>
-						<div className="flex flex-col gap-2">
-							{hasTags ? (
+					{hasTags ? (
+						<FilterChipRow expanded={tagsExpanded} rowRef={tagsRowRef}>
+							<BookmarkTagChips
+								tags={tags}
+								counts={tagCounts}
+								selectedTag={selectedTag}
+								ariaLabel={BOOKMARK_UI.tagAriaLabel}
+								allLabel={tagAllLabel}
+								getChipClassName={
+									isLibrary ? getLibraryCategoryChipClassName : undefined
+								}
+								onSelect={onTagSelect}
+							/>
+						</FilterChipRow>
+					) : null}
+					{hasGenres ? (
+						<>
+							<Separator />
+							<FilterChipRow expanded={tagsExpanded} rowRef={genresRowRef}>
 								<BookmarkTagChips
-									tags={tags}
-									counts={tagCounts}
-									selectedTag={selectedTag}
-									ariaLabel={BOOKMARK_UI.tagAriaLabel}
-									onSelect={onTagSelect}
+									tags={genres}
+									counts={genreCounts}
+									selectedTag={selectedGenre}
+									ariaLabel={BOOKMARK_UI.genreAriaLabel}
+									allLabel={BOOKMARK_UI.allGenresLabel}
+									onSelect={onGenreSelect}
 								/>
-							) : null}
-							{hasSubtags ? (
+							</FilterChipRow>
+						</>
+					) : null}
+					{hasSubtags ? (
+						<>
+							{hasTags || hasGenres ? <Separator /> : null}
+							<FilterChipRow expanded={tagsExpanded} rowRef={subtagsRowRef}>
 								<BookmarkTagChips
 									tags={subtags}
 									counts={subtagCounts}
 									selectedTag={selectedSubtag}
 									ariaLabel={getBookmarkSubtagAriaLabel(categoryId, selectedTag)}
+									allLabel={subtagAllLabel}
 									onSelect={onSubtagSelect}
 								/>
-							) : null}
-						</div>
-					</div>
+							</FilterChipRow>
+						</>
+					) : null}
 					{showTagsToggle ? (
 						<button
 							type="button"

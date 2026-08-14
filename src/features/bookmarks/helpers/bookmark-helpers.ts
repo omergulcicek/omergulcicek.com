@@ -7,6 +7,12 @@ import {
 	YOUTUBE_BOOKMARK_TAG,
 	getBookmarkSortOptions
 } from "@/features/bookmarks/constants/bookmarks.constants"
+import {
+	LIBRARY_BOOKMARK_TAG_ORDER,
+	getLibrarySubcategoryLabelsForCategory,
+	getLibraryBookCategoryIdByLabel,
+	libraryCategoryHasVisibleGenres
+} from "@/features/bookmarks/constants/library-bookmarks.constants"
 import type {
 	Bookmark,
 	BookmarkCategoryId,
@@ -16,6 +22,8 @@ import {
 	BOOKMARK_CATEGORY_IDS,
 	BOOKMARK_SORTS
 } from "@/features/bookmarks/types/bookmarks.types"
+
+const BOOKMARK_TAG_LOCALE = "tr"
 
 export function isBookmarkCategoryId(value: string): value is BookmarkCategoryId {
 	return (BOOKMARK_CATEGORY_IDS as readonly string[]).includes(value)
@@ -67,14 +75,19 @@ export function getBookmarkTagCounts(
 function getScopedBookmarksForSubtags(
 	bookmarks: readonly Bookmark[],
 	categoryId: BookmarkCategoryId,
-	tag: string | null
+	tag: string | null,
+	genre: string | null = null
 ) {
 	return getBookmarksForCategory(bookmarks, categoryId).filter((bookmark) => {
-		if (!tag) {
-			return true
+		if (tag && !bookmark.tags.includes(tag)) {
+			return false
 		}
 
-		return bookmark.tags.includes(tag)
+		if (genre && bookmark.genre !== genre) {
+			return false
+		}
+
+		return true
 	})
 }
 
@@ -82,25 +95,123 @@ export function getYoutubeBookmarkSubtag(bookmark: Bookmark) {
 	return YOUTUBE_BOOKMARK_SUBTAG_BY_ID[bookmark.id] ?? null
 }
 
-function getBookmarkSubtagValue(
+const BOOKMARK_AUTHOR_SEPARATOR = /\s*[·,;/]\s*|\s+ve\s+/
+
+function splitBookmarkAuthorValue(author: string): string[] {
+	return author
+		.split(BOOKMARK_AUTHOR_SEPARATOR)
+		.map((item) => item.trim())
+		.filter(Boolean)
+}
+
+export function getBookmarkAuthors(bookmark: Bookmark): string[] {
+	const author = bookmark.author
+
+	if (!author) {
+		return []
+	}
+
+	if (typeof author === "string") {
+		return splitBookmarkAuthorValue(author)
+	}
+
+	return author.flatMap((name) => splitBookmarkAuthorValue(name))
+}
+
+export function formatBookmarkAuthors(bookmark: Bookmark): string | null {
+	const authors = getBookmarkAuthors(bookmark)
+
+	if (authors.length === 0) {
+		return null
+	}
+
+	return authors.join(" · ")
+}
+
+function getBookmarkSubtagValues(
 	bookmark: Bookmark,
 	categoryId: BookmarkCategoryId
-) {
+): string[] {
 	if (categoryId === "library") {
-		return bookmark.author ?? null
+		return getBookmarkAuthors(bookmark)
 	}
 
 	if (categoryId === "media") {
-		return getYoutubeBookmarkSubtag(bookmark)
+		const subtag = getYoutubeBookmarkSubtag(bookmark)
+
+		return subtag ? [subtag] : []
 	}
 
-	return null
+	return []
+}
+
+export function getBookmarkGenreCounts(
+	bookmarks: readonly Bookmark[],
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+): ReadonlyMap<string, number> {
+	if (categoryId !== "library" || !tag || !libraryCategoryHasVisibleGenres(tag)) {
+		return new Map()
+	}
+
+	const counts = new Map<string, number>()
+
+	for (const bookmark of getScopedBookmarksForSubtags(bookmarks, categoryId, tag)) {
+		if (!bookmark.genre) {
+			continue
+		}
+
+		counts.set(bookmark.genre, (counts.get(bookmark.genre) ?? 0) + 1)
+	}
+
+	return counts
+}
+
+function sortLibraryGenres(genres: readonly string[], tag: string) {
+	const categoryId = getLibraryBookCategoryIdByLabel(tag)
+	const order = new Map<string, number>(
+		(categoryId ? getLibrarySubcategoryLabelsForCategory(categoryId) : []).map(
+			(genre, index) => [genre, index]
+		)
+	)
+
+	return [...genres].sort((left, right) => {
+		const leftIndex = order.get(left)
+		const rightIndex = order.get(right)
+
+		if (leftIndex !== undefined && rightIndex !== undefined) {
+			return leftIndex - rightIndex
+		}
+
+		if (leftIndex !== undefined) {
+			return -1
+		}
+
+		if (rightIndex !== undefined) {
+			return 1
+		}
+
+		return left.localeCompare(right, BOOKMARK_TAG_LOCALE)
+	})
+}
+
+export function getAvailableBookmarkGenres(
+	bookmarks: readonly Bookmark[],
+	categoryId: BookmarkCategoryId,
+	tag: string | null
+) {
+	if (!tag) {
+		return []
+	}
+
+	return sortLibraryGenres([...getBookmarkGenreCounts(bookmarks, categoryId, tag).keys()], tag)
 }
 
 export function getBookmarkSubtagCounts(
 	bookmarks: readonly Bookmark[],
 	categoryId: BookmarkCategoryId,
-	tag: string | null
+	tag: string | null,
+	genre: string | null = null
 ): ReadonlyMap<string, number> {
 	if (categoryId !== "library" && !(categoryId === "media" && tag === YOUTUBE_BOOKMARK_TAG)) {
 		return new Map()
@@ -108,14 +219,10 @@ export function getBookmarkSubtagCounts(
 
 	const counts = new Map<string, number>()
 
-	for (const bookmark of getScopedBookmarksForSubtags(bookmarks, categoryId, tag)) {
-		const subtag = getBookmarkSubtagValue(bookmark, categoryId)
-
-		if (!subtag) {
-			continue
+	for (const bookmark of getScopedBookmarksForSubtags(bookmarks, categoryId, tag, genre)) {
+		for (const subtag of getBookmarkSubtagValues(bookmark, categoryId)) {
+			counts.set(subtag, (counts.get(subtag) ?? 0) + 1)
 		}
-
-		counts.set(subtag, (counts.get(subtag) ?? 0) + 1)
 	}
 
 	return counts
@@ -163,10 +270,11 @@ function sortBookmarkSubtags(
 export function getAvailableBookmarkSubtags(
 	bookmarks: readonly Bookmark[],
 	categoryId: BookmarkCategoryId,
-	tag: string | null
+	tag: string | null,
+	genre: string | null = null
 ) {
 	return sortBookmarkSubtags(
-		[...getBookmarkSubtagCounts(bookmarks, categoryId, tag).keys()],
+		[...getBookmarkSubtagCounts(bookmarks, categoryId, tag, genre).keys()],
 		categoryId,
 		tag
 	)
@@ -186,14 +294,6 @@ export function getBookmarkSubtagAriaLabel(
 
 	return BOOKMARK_UI.tagAriaLabel
 }
-
-const LIBRARY_BOOKMARK_TAG_ORDER = [
-	"Dünya Tarihi",
-	"İslam",
-	"Osmanlı",
-	"Cumhuriyet",
-	"Edebiyat"
-] as const
 
 const BLOG_BOOKMARK_TAG_ORDER = ["Kişi", "Yayın", "Kurum"] as const
 
@@ -253,8 +353,6 @@ function sortBookmarkTags(tags: readonly string[], categoryId: BookmarkCategoryI
 	)
 }
 
-const BOOKMARK_TAG_LOCALE = "tr"
-
 function normalizeBookmarkTagValue(value: string) {
 	return value
 		.normalize("NFC")
@@ -304,8 +402,8 @@ function compareBookmarksByTitle(left: Bookmark, right: Bookmark) {
 }
 
 function compareBookmarksByAuthor(left: Bookmark, right: Bookmark) {
-	const leftAuthor = left.author ?? ""
-	const rightAuthor = right.author ?? ""
+	const leftAuthor = formatBookmarkAuthors(left) ?? ""
+	const rightAuthor = formatBookmarkAuthors(right) ?? ""
 	const authorCompare = leftAuthor.localeCompare(rightAuthor, BOOKMARK_TAG_LOCALE, {
 		sensitivity: "base"
 	})
@@ -410,11 +508,13 @@ export function applyBookmarkFilters(
 	{
 		categoryId,
 		tag,
+		genre,
 		subtag,
 		sort
 	}: {
 		categoryId: BookmarkCategoryId
 		tag: string | null
+		genre?: string | null
 		subtag?: string | null
 		sort?: BookmarkSort | null
 	}
@@ -424,11 +524,17 @@ export function applyBookmarkFilters(
 			return false
 		}
 
+		if (genre && bookmark.genre !== genre) {
+			return false
+		}
+
 		if (!subtag) {
 			return true
 		}
 
-		return getBookmarkSubtagValue(bookmark, categoryId) === subtag
+		return getBookmarkSubtagValues(bookmark, categoryId).some(
+			(bookmarkSubtag) => bookmarkSubtag === subtag
+		)
 	})
 
 	const resolvedSort = resolveBookmarkSort(sort, categoryId, tag)
@@ -461,14 +567,75 @@ export function getBookmarkDisplayTitle(bookmark: Bookmark) {
 	return bookmark.title
 }
 
+const BOOKMARK_TITLE_INITIAL_SKIP_WORDS = new Set([
+	"a",
+	"an",
+	"and",
+	"da",
+	"de",
+	"ile",
+	"of",
+	"the",
+	"ve",
+	"veya",
+	"ya"
+])
+
+const BOOKMARK_TITLE_INITIALS_MAX_LENGTH = 3
+
+export function getBookmarkTitleInitials(title: string) {
+	const words = title
+		.split(/\s+/)
+		.map((word) => word.replace(/[^\p{L}\p{N}]+/gu, ""))
+		.filter((word) => {
+			if (!word) {
+				return false
+			}
+
+			const normalized = word.toLocaleLowerCase(BOOKMARK_TAG_LOCALE)
+
+			if (BOOKMARK_TITLE_INITIAL_SKIP_WORDS.has(normalized)) {
+				return false
+			}
+
+			return !/^[ivxlcdm]+$/i.test(word)
+		})
+
+	if (words.length === 0) {
+		return title.slice(0, 1).toLocaleUpperCase(BOOKMARK_TAG_LOCALE)
+	}
+
+	return words
+		.map((word) => word.slice(0, 1).toLocaleUpperCase(BOOKMARK_TAG_LOCALE))
+		.join("")
+		.slice(0, BOOKMARK_TITLE_INITIALS_MAX_LENGTH)
+}
+
 export function getBookmarkAuthorCredit(bookmark: Bookmark) {
-	if (bookmark.author) {
+	const authors = formatBookmarkAuthors(bookmark)
+
+	if (authors) {
 		if (bookmark.translator) {
-			return `${bookmark.author} (Çevirmen: ${bookmark.translator})`
+			return `${authors} (Çevirmen: ${bookmark.translator})`
 		}
 
-		return bookmark.author
+		return authors
 	}
 
 	return bookmark.description ?? null
+}
+
+export function getLibraryBookmarkTaxonomyLabel(bookmark: Bookmark) {
+	if (bookmark.categoryId !== "library") {
+		return null
+	}
+
+	const category = bookmark.tags[0] ?? null
+	const genre = bookmark.genre ?? null
+
+	if (category && genre && !areBookmarkTagsEqual(category, genre)) {
+		return `${category} · ${genre}`
+	}
+
+	return category ?? genre
 }

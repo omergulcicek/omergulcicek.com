@@ -38,6 +38,7 @@ const bookmarkSortReset = { history: "replace" as const }
 export const bookmarksSearchParamsParsers = {
 	category: bookmarkCategoryParser,
 	tag: bookmarkTagParser,
+	genre: bookmarkTagParser,
 	subtag: bookmarkTagParser,
 	sort: bookmarkSortParser
 } as const
@@ -46,6 +47,7 @@ export function useBookmarksSearchParams() {
 	const [params, setParams] = useQueryStates(bookmarksSearchParamsParsers)
 	const category = params.category as BookmarkCategoryId
 	const tag = params.tag ?? null
+	const genre = params.genre ?? null
 	const subtag = params.subtag ?? null
 	const rawSort = params.sort && isBookmarkSort(params.sort) ? params.sort : null
 	const resolvedSort = resolveBookmarkSort(rawSort, category, tag)
@@ -88,6 +90,7 @@ export function useBookmarksSearchParams() {
 				{
 					category: nextCategory,
 					tag: nextTag,
+					genre: null,
 					subtag: null,
 					sort: nextSort
 				},
@@ -108,7 +111,7 @@ export function useBookmarksSearchParams() {
 					? resolveBookmarkSort(null, category, null)
 					: null
 
-				setParams({ tag: null, subtag: null, sort: nextSort }, bookmarkFilterHistory)
+				setParams({ tag: null, genre: null, subtag: null, sort: nextSort }, bookmarkFilterHistory)
 				return
 			}
 
@@ -120,9 +123,29 @@ export function useBookmarksSearchParams() {
 				? resolveBookmarkSort(null, category, nextTag)
 				: null
 
-			setParams({ tag: nextTag, subtag: null, sort: nextSort }, bookmarkFilterHistory)
+			setParams({ tag: nextTag, genre: null, subtag: null, sort: nextSort }, bookmarkFilterHistory)
 		},
 		[category, setParams, tag]
+	)
+
+	const setGenre = useCallback(
+		(nextGenre: string | null) => {
+			if (nextGenre === null) {
+				if (genre === null) {
+					return
+				}
+
+				setParams({ genre: null, subtag: null }, bookmarkFilterHistory)
+				return
+			}
+
+			if (areBookmarkTagsEqual(nextGenre, genre)) {
+				return
+			}
+
+			setParams({ genre: nextGenre, subtag: null }, bookmarkFilterHistory)
+		},
+		[genre, setParams]
 	)
 
 	const setSubtag = useCallback(
@@ -179,6 +202,25 @@ export function useBookmarksSearchParams() {
 		[setParams, tag]
 	)
 
+	const ensureGenre = useCallback(
+		(nextGenre: string | null) => {
+			if (nextGenre === null) {
+				if (genre !== null) {
+					setParams({ genre: null }, bookmarkTagReset)
+				}
+
+				return
+			}
+
+			if (areBookmarkTagsEqual(nextGenre, genre)) {
+				return
+			}
+
+			setParams({ genre: nextGenre }, bookmarkTagReset)
+		},
+		[genre, setParams]
+	)
+
 	const ensureSubtag = useCallback(
 		(nextSubtag: string | null) => {
 			if (nextSubtag === null) {
@@ -201,13 +243,16 @@ export function useBookmarksSearchParams() {
 	return {
 		category,
 		tag,
+		genre,
 		subtag,
 		sort: resolvedSort,
 		setFilters,
 		setTag,
+		setGenre,
 		setSubtag,
 		setSort,
 		ensureTag,
+		ensureGenre,
 		ensureSubtag
 	}
 }

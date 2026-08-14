@@ -2,7 +2,7 @@ export const BOOKMARK_CATEGORY_IDS = ["blog", "frontend", "library", "media"] as
 
 export type BookmarkCategoryId = (typeof BOOKMARK_CATEGORY_IDS)[number]
 
-export const LIBRARY_BOOKMARK_SORTS = ["title", "author"] as const
+export const LIBRARY_BOOKMARK_SORTS = ["author", "title"] as const
 
 export const MEDIA_RATING_BOOKMARK_SORTS = ["rating-desc", "rating-asc"] as const
 
@@ -21,12 +21,13 @@ export type Bookmark = {
 	id: string
 	title: string
 	subtitle?: string
-	url: string
+	url?: string
 	description?: string
-	author?: string
+	author?: string | readonly string[]
 	translator?: string
 	imageUrl?: string
 	imdbRating?: string
 	categoryId: BookmarkCategoryId
 	tags: readonly string[]
+	genre?: string
 }

@@ -13,6 +13,8 @@ type BookmarkTagChipsProps = {
 	onSelect: (tag: string | null) => void
 	counts: ReadonlyMap<string, number>
 	ariaLabel: string
+	allLabel?: string
+	getChipClassName?: (tag: string, isActive: boolean) => string | undefined
 	className?: string
 }
 
@@ -22,13 +24,15 @@ export function BookmarkTagChips({
 	onSelect,
 	counts,
 	ariaLabel,
+	allLabel,
+	getChipClassName,
 	className
 }: BookmarkTagChipsProps) {
 	if (tags.length === 0) {
 		return null
 	}
 
-	const allTagLabel = getBookmarkAllTagLabel()
+	const resolvedAllLabel = allLabel ?? getBookmarkAllTagLabel()
 
 	return (
 		<div className={cn("flex flex-wrap gap-2", className)} role="group" aria-label={ariaLabel}>
@@ -40,22 +44,27 @@ export function BookmarkTagChips({
 				className={blogFilterChipDesktopClass}
 				onClick={() => onSelect(null)}
 			>
-				{allTagLabel}
+				{resolvedAllLabel}
 			</Button>
 			{tags.map((tag) => {
 				const isActive = selectedTag === tag
 				const count = counts.get(tag) ?? 0
 				const label = getBookmarkTagLabel(tag)
+				const chipToneClassName = getChipClassName?.(tag, isActive)
 
 				return (
 					<Button
 						key={tag}
 						type="button"
 						size="xs"
-						variant={isActive ? "secondary" : "outline"}
+						variant={chipToneClassName ? "outline" : isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
 						aria-label={`${label} ${count}`}
-						className={blogFilterChipWithIconDesktopClass}
+						className={cn(
+							blogFilterChipWithIconDesktopClass,
+							chipToneClassName && "shadow-none",
+							chipToneClassName
+						)}
 						onClick={() => onSelect(tag)}
 					>
 						<BookmarkTagIcon tag={tag} className="size-3 shrink-0" />

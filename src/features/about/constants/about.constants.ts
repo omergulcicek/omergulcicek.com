@@ -37,6 +37,6 @@ export const HOBBIES: Hobby[] = [
 		id: "book",
 		title: "Kitap",
 		text: "Osmanlı tarihi okumaları.",
-		href: "/bookmarks?category=library&sort=title"
+		href: "/bookmarks?category=library"
 	}
 ]

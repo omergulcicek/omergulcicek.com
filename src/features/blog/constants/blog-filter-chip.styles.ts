@@ -9,8 +9,6 @@ export const blogFilterTagsContainerClass =
 
 export const blogFilterTagsCollapsedClass = "max-h-8 md:max-h-14"
 
-export const blogFilterTagsCollapsedWithSubtagsClass = "max-h-16 md:max-h-24"
-
 export const blogFilterTagsExpandedClass = "max-h-[2000px]"
 
 export const listFilterPanelClass =

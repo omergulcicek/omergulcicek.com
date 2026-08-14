@@ -4,11 +4,14 @@ import { bleedSectionClass, pageStackGapClass } from "@/components/shared/prose.
 import { Container } from "@/components/shared/Container"
 import { BookmarksListGrid } from "@/features/bookmarks/components/bookmarks-list-grid"
 import { BookmarksListFilters } from "@/features/bookmarks/components/bookmarks-list-filters"
+import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
 	applyBookmarkFilters,
 	areBookmarkTagsEqual,
+	getAvailableBookmarkGenres,
 	getAvailableBookmarkSubtags,
 	getAvailableBookmarkTags,
+	getBookmarkGenreCounts,
 	getBookmarkSubtagCounts,
 	getBookmarkTagCounts,
 	resolveBookmarkTag
@@ -29,18 +32,28 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 	const {
 		category,
 		tag,
+		genre,
 		subtag,
 		sort,
 		setFilters,
 		setTag,
+		setGenre,
 		setSubtag,
 		setSort,
 		ensureTag,
+		ensureGenre,
 		ensureSubtag
 	} = useBookmarksSearchParams()
 	const availableTags = getAvailableBookmarkTags(bookmarks, category)
 	const selectedTag = resolveBookmarkTag(availableTags, tag)
-	const availableSubtags = getAvailableBookmarkSubtags(bookmarks, category, selectedTag)
+	const availableGenres = getAvailableBookmarkGenres(bookmarks, category, selectedTag)
+	const selectedGenre = resolveBookmarkTag(availableGenres, genre)
+	const availableSubtags = getAvailableBookmarkSubtags(
+		bookmarks,
+		category,
+		selectedTag,
+		selectedGenre
+	)
 	const selectedSubtag = resolveBookmarkTag(availableSubtags, subtag)
 
 	useEffect(() => {
@@ -56,6 +69,20 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 			ensureTag(selectedTag)
 		}
 	}, [ensureTag, selectedTag, tag])
+
+	useEffect(() => {
+		if (selectedGenre === null) {
+			if (genre !== null) {
+				ensureGenre(null)
+			}
+
+			return
+		}
+
+		if (!genre || !areBookmarkTagsEqual(genre, selectedGenre)) {
+			ensureGenre(selectedGenre)
+		}
+	}, [ensureGenre, genre, selectedGenre])
 
 	useEffect(() => {
 		if (selectedSubtag === null) {
@@ -81,34 +108,54 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 	const filteredBookmarks = applyBookmarkFilters(bookmarks, {
 		categoryId: category,
 		tag: selectedTag,
+		genre: selectedGenre,
 		subtag: selectedSubtag,
 		sort
 	})
 
 	return (
 		<div className={cn("flex flex-col", pageStackGapClass, className)}>
-			<Container>
+			<Container
+				className={cn(
+					"transition-[max-width] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
+					category === "library" ? "max-w-5xl" : "max-w-2xl"
+				)}
+			>
 				<BookmarksListFilters
 					categoryId={category}
 					tags={availableTags}
 					tagCounts={getBookmarkTagCounts(bookmarks, category)}
 					selectedTag={selectedTag}
+					genres={availableGenres}
+					genreCounts={getBookmarkGenreCounts(bookmarks, category, selectedTag)}
+					selectedGenre={selectedGenre}
 					subtags={availableSubtags}
-					subtagCounts={getBookmarkSubtagCounts(bookmarks, category, selectedTag)}
+					subtagCounts={getBookmarkSubtagCounts(
+						bookmarks,
+						category,
+						selectedTag,
+						selectedGenre
+					)}
 					selectedSubtag={selectedSubtag}
 					sort={sort}
 					onCategoryChange={handleCategoryChange}
 					onTagSelect={setTag}
+					onGenreSelect={setGenre}
 					onSubtagSelect={setSubtag}
 					onSortChange={setSort}
 				/>
 			</Container>
 
-			<div className={bleedSectionClass}>
+			<div className={cn(bleedSectionClass, "flex flex-col gap-6")}>
 				<BookmarksListGrid
 					bookmarks={filteredBookmarks}
-					filterKey={`${category}-${selectedTag ?? "all"}-${selectedSubtag ?? "all"}-${sort ?? "default"}`}
+					filterKey={`${category}-${selectedTag ?? "all"}-${selectedGenre ?? "all"}-${selectedSubtag ?? "all"}-${sort ?? "default"}`}
 				/>
+				{category === "library" && filteredBookmarks.length > 0 ? (
+					<p className="text-muted-foreground text-center text-xs italic">
+						{BOOKMARK_UI.libraryCoverAttribution}
+					</p>
+				) : null}
 			</div>
 		</div>
 	)

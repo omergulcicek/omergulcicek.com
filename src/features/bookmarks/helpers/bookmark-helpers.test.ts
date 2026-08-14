@@ -4,13 +4,17 @@ import {
 	applyBookmarkFilters,
 	areBookmarkTagsEqual,
 	getBookmarkAllTagLabel,
+	getAvailableBookmarkGenres,
 	getAvailableBookmarkSubtags,
 	getAvailableBookmarkTags,
+	getBookmarkGenreCounts,
 	getBookmarkSubtagCounts,
 	getBookmarkTagCounts,
 	getBookmarkTagLabel,
 	getBookmarkAuthorCredit,
 	getBookmarkDisplayTitle,
+	getBookmarkTitleInitials,
+	getLibraryBookmarkTaxonomyLabel,
 	isBookmarkSortVisible,
 	normalizeBookmarkTagUrlValue,
 	resolveBookmarkCategoryId,
@@ -74,7 +78,7 @@ describe("bookmark helpers", () => {
 				title: "Book 1",
 				url: "https://example.com/1",
 				categoryId: "library",
-				tags: ["Edebiyat"]
+				tags: ["Kişisel Gelişim"]
 			},
 			{
 				id: "library-2",
@@ -88,30 +92,30 @@ describe("bookmark helpers", () => {
 				title: "Book 3",
 				url: "https://example.com/3",
 				categoryId: "library",
-				tags: ["Osmanlı"]
+				tags: ["Türk Edebiyatı"]
 			},
 			{
 				id: "library-4",
 				title: "Book 4",
 				url: "https://example.com/4",
 				categoryId: "library",
-				tags: ["Cumhuriyet"]
+				tags: ["Tarih ve Kültür"]
 			},
 			{
 				id: "library-5",
 				title: "Book 5",
 				url: "https://example.com/5",
 				categoryId: "library",
-				tags: ["Dünya Tarihi"]
+				tags: ["Dünya Edebiyatı"]
 			}
 		]
 
 		expect(getAvailableBookmarkTags(libraryBookmarks, "library")).toEqual([
-			"Dünya Tarihi",
+			"Türk Edebiyatı",
+			"Dünya Edebiyatı",
 			"İslam",
-			"Osmanlı",
-			"Cumhuriyet",
-			"Edebiyat"
+			"Tarih ve Kültür",
+			"Kişisel Gelişim"
 		])
 	})
 
@@ -223,7 +227,8 @@ describe("bookmark helpers", () => {
 		expect(
 			applyBookmarkFilters(libraryBookmarks, {
 				categoryId: "library",
-				tag: "Osmanlı"
+				tag: "Osmanlı",
+				sort: "title"
 			}).map((bookmark) => bookmark.title)
 		).toEqual([
 			"Ayasofya'nın Gizli Tarihi",
@@ -232,7 +237,7 @@ describe("bookmark helpers", () => {
 		])
 	})
 
-	it("sorts library bookmarks by author", () => {
+	it("sorts library bookmarks by author by default", () => {
 		const libraryBookmarks: Bookmark[] = [
 			{
 				id: "library-z",
@@ -263,8 +268,7 @@ describe("bookmark helpers", () => {
 		expect(
 			applyBookmarkFilters(libraryBookmarks, {
 				categoryId: "library",
-				tag: "Osmanlı",
-				sort: "author"
+				tag: "Osmanlı"
 			}).map((bookmark) => bookmark.author)
 		).toEqual(["Ahmet Kaya", "Mehmet Akif", "Ziya Gökalp"])
 	})
@@ -326,9 +330,9 @@ describe("bookmark helpers", () => {
 	})
 
 	it("resolves bookmark sort for the active filter context", () => {
-		expect(resolveBookmarkSort(null, "library", null)).toBe("title")
-		expect(resolveBookmarkSort("author", "library", null)).toBe("author")
-		expect(resolveBookmarkSort("rating-desc", "library", null)).toBe("title")
+		expect(resolveBookmarkSort(null, "library", null)).toBe("author")
+		expect(resolveBookmarkSort("title", "library", null)).toBe("title")
+		expect(resolveBookmarkSort("rating-desc", "library", null)).toBe("author")
 		expect(resolveBookmarkSort(null, "media", "Film")).toBe("rating-desc")
 		expect(resolveBookmarkSort("rating-asc", "media", "Dizi")).toBe("rating-asc")
 		expect(resolveBookmarkSort("title", "media", "Youtube")).toBeNull()
@@ -391,6 +395,46 @@ describe("bookmark helpers", () => {
 				tags: ["Dünya Tarihi"]
 			})
 		).toBe("Mary Beard (Çevirmen: İrem Sağlamer)")
+	})
+
+	it("formats library category and genre labels", () => {
+		expect(
+			getLibraryBookmarkTaxonomyLabel({
+				id: "library-huzur",
+				title: "Huzur",
+				categoryId: "library",
+				tags: ["Türk Edebiyatı"],
+				genre: "Roman"
+			})
+		).toBe("Türk Edebiyatı · Roman")
+
+		expect(
+			getLibraryBookmarkTaxonomyLabel({
+				id: "library-bilim",
+				title: "Einstein Bulmacası",
+				categoryId: "library",
+				tags: ["Bilim"],
+				genre: "Bilim"
+			})
+		).toBe("Bilim")
+
+		expect(
+			getLibraryBookmarkTaxonomyLabel({
+				id: "frontend-1",
+				title: "CSS-Tricks",
+				categoryId: "frontend",
+				tags: ["Siteler"]
+			})
+		).toBeNull()
+	})
+
+	it("builds title initials for cover placeholders", () => {
+		expect(getBookmarkTitleInitials("Huzur")).toBe("H")
+		expect(getBookmarkTitleInitials("Suç ve Ceza")).toBe("SC")
+		expect(getBookmarkTitleInitials("İslâmın Vâdettikleri")).toBe("İV")
+		expect(getBookmarkTitleInitials("Ket Vurma Belirti ve Korku")).toBe("KVB")
+		expect(getBookmarkTitleInitials("Türkiye Tarihi ve Uygarlıkları I")).toBe("TTU")
+		expect(getBookmarkTitleInitials("Türkiye Tarihi ve Uygarlıkları Seti")).toBe("TTU")
 	})
 
 	it("counts bookmarks per tag in the selected category", () => {
@@ -458,6 +502,132 @@ describe("bookmark helpers", () => {
 				subtag: "Ahmet Kaya"
 			}).map((bookmark) => bookmark.title)
 		).toEqual(["Ayasofya", "İkinci Kitap"])
+	})
+
+	it("splits co-authors so each name can filter the same book", () => {
+		const libraryBookmarks: Bookmark[] = [
+			{
+				id: "library-set",
+				title: "Türkiye Tarihi ve Uygarlıkları Seti",
+				author: ["Mehmet Ali Kaya", "M. Ali Erdoğru", "Sabri Sürgevil"],
+				categoryId: "library",
+				tags: ["Tarih ve Kültür"],
+				genre: "Tarih"
+			},
+			{
+				id: "library-ayasofya",
+				title: "Ayasofya'nın Gizli Tarihi",
+				author: "Pelin Çift · Erhan Altunay",
+				categoryId: "library",
+				tags: ["Tarih ve Kültür"],
+				genre: "Tarih"
+			}
+		]
+
+		expect(getAvailableBookmarkSubtags(libraryBookmarks, "library", null)).toEqual([
+			"Erhan Altunay",
+			"M. Ali Erdoğru",
+			"Mehmet Ali Kaya",
+			"Pelin Çift",
+			"Sabri Sürgevil"
+		])
+		expect(Object.fromEntries(getBookmarkSubtagCounts(libraryBookmarks, "library", null))).toEqual({
+			"Erhan Altunay": 1,
+			"M. Ali Erdoğru": 1,
+			"Mehmet Ali Kaya": 1,
+			"Pelin Çift": 1,
+			"Sabri Sürgevil": 1
+		})
+		expect(
+			applyBookmarkFilters(libraryBookmarks, {
+				categoryId: "library",
+				tag: null,
+				subtag: "Sabri Sürgevil"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Türkiye Tarihi ve Uygarlıkları Seti"])
+		expect(
+			applyBookmarkFilters(libraryBookmarks, {
+				categoryId: "library",
+				tag: null,
+				subtag: "Pelin Çift"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Ayasofya'nın Gizli Tarihi"])
+		expect(
+			applyBookmarkFilters(libraryBookmarks, {
+				categoryId: "library",
+				tag: null,
+				subtag: "Erhan Altunay"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Ayasofya'nın Gizli Tarihi"])
+		expect(getBookmarkAuthorCredit(libraryBookmarks[0] as Bookmark)).toBe(
+			"Mehmet Ali Kaya · M. Ali Erdoğru · Sabri Sürgevil"
+		)
+	})
+
+	it("lists library genres after a category is selected", () => {
+		const libraryBookmarks: Bookmark[] = [
+			{
+				id: "library-roman",
+				title: "Huzur",
+				url: "https://example.com/huzur",
+				author: "Ahmet Hamdi Tanpınar",
+				categoryId: "library",
+				tags: ["Türk Edebiyatı"],
+				genre: "Roman"
+			},
+			{
+				id: "library-oyku",
+				title: "Sır",
+				url: "https://example.com/sir",
+				author: "Mustafa Kutlu",
+				categoryId: "library",
+				tags: ["Türk Edebiyatı"],
+				genre: "Öykü"
+			},
+			{
+				id: "library-siir",
+				title: "Safahat",
+				url: "https://example.com/safahat",
+				author: "Mehmet Âkif Ersoy",
+				categoryId: "library",
+				tags: ["Türk Edebiyatı"],
+				genre: "Şiir"
+			},
+			{
+				id: "library-bilim",
+				title: "Einstein Bulmacası",
+				url: "https://example.com/einstein",
+				author: "Jeremy Stangroom",
+				categoryId: "library",
+				tags: ["Bilim"],
+				genre: "Bilim"
+			}
+		]
+
+		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", null)).toEqual([])
+		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", "Bilim")).toEqual([])
+		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", "Türk Edebiyatı")).toEqual([
+			"Roman",
+			"Öykü",
+			"Şiir"
+		])
+		expect(
+			Object.fromEntries(getBookmarkGenreCounts(libraryBookmarks, "library", "Türk Edebiyatı"))
+		).toEqual({
+			Roman: 1,
+			Öykü: 1,
+			Şiir: 1
+		})
+		expect(
+			applyBookmarkFilters(libraryBookmarks, {
+				categoryId: "library",
+				tag: "Türk Edebiyatı",
+				genre: "Roman"
+			}).map((bookmark) => bookmark.title)
+		).toEqual(["Huzur"])
+		expect(
+			getAvailableBookmarkSubtags(libraryBookmarks, "library", "Türk Edebiyatı", "Öykü")
+		).toEqual(["Mustafa Kutlu"])
 	})
 
 	it("groups youtube bookmarks into shared subtags", () => {

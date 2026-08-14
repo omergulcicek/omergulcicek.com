@@ -37,7 +37,10 @@ function formatBookmarkEntry(book) {
 }
 
 function formatImageEntry(book) {
-	const imageUrl = book.imageUrl.replace(/\/miw:\d+\/mih:\d+/, "/miw:200/mih:200")
+	const fileId = book.imageUrl.match(/fn:(\d+)/)?.[1]
+	const imageUrl = fileId
+		? `https://img.kitapyurdu.com/v1/getImage/fn:${fileId}`
+		: book.imageUrl.replace(/\/miw:\d+\/mih:\d+/, "").replace(/\/wi:\d+/, "")
 	return `\t{\n\t\tid: "${escapeString(book.id)}",\n\t\turl: "${escapeString(imageUrl)}"\n\t}`
 }
 

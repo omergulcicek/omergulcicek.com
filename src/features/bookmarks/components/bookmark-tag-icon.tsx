@@ -1,17 +1,23 @@
 import type { ComponentType, SVGProps } from "react"
 import {
 	BookOpen,
+	Brain,
 	Building2,
-	Castle,
 	Clapperboard,
 	CircleDot,
-	Crown,
 	Earth,
+	Feather,
+	FlaskConical,
 	Gamepad2,
 	Globe,
+	Landmark,
+	Languages,
+	Lightbulb,
 	Moon,
 	Newspaper,
 	Popcorn,
+	ScrollText,
+	Sprout,
 	Swords,
 	Trophy,
 	User,
@@ -51,20 +57,52 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 		icon: Earth,
 		iconClassName: "text-sky-600 dark:text-sky-400"
 	},
+	"Türk Edebiyatı": {
+		icon: BookOpen,
+		iconClassName: "text-orange-600 dark:text-orange-400"
+	},
+	"Dünya Edebiyatı": {
+		icon: Earth,
+		iconClassName: "text-sky-600 dark:text-sky-400"
+	},
+	"Dil ve Edebiyat": {
+		icon: Languages,
+		iconClassName: "text-teal-600 dark:text-teal-400"
+	},
+	"Felsefe ve Düşünce": {
+		icon: Lightbulb,
+		iconClassName: "text-indigo-600 dark:text-indigo-400"
+	},
 	İslam: {
 		icon: Moon,
 		iconClassName: "text-emerald-600 dark:text-emerald-400"
 	},
-	Osmanlı: {
-		icon: Castle,
+	"Tarih ve Kültür": {
+		icon: Landmark,
 		iconClassName: "text-amber-700 dark:text-amber-400"
 	},
+	Psikoloji: {
+		icon: Brain,
+		iconClassName: "text-violet-600 dark:text-violet-400"
+	},
+	Bilim: {
+		icon: FlaskConical,
+		iconClassName: "text-fuchsia-600 dark:text-fuchsia-400"
+	},
+	"Anı ve Biyografi": {
+		icon: ScrollText,
+		iconClassName: "text-zinc-600 dark:text-zinc-400"
+	},
+	"Kişisel Gelişim": {
+		icon: Sprout,
+		iconClassName: "text-lime-600 dark:text-lime-400"
+	},
 	Cumhuriyet: {
-		icon: Crown,
+		icon: Landmark,
 		iconClassName: "text-red-600 dark:text-red-400"
 	},
 	Edebiyat: {
-		icon: BookOpen,
+		icon: Feather,
 		iconClassName: "text-orange-600 dark:text-orange-400"
 	},
 	Kişi: {

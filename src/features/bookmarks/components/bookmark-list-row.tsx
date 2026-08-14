@@ -5,9 +5,13 @@ import {
 	interactiveCardChevronClass,
 	interactiveListRowClass
 } from "@/components/shared/interactive-card.styles"
+import { getLibraryCategoryPlaceholderClassName } from "@/features/bookmarks/constants/library-bookmarks.constants"
 import {
+	formatBookmarkAuthors,
 	getBookmarkAuthorCredit,
-	getBookmarkDisplayTitle
+	getBookmarkDisplayTitle,
+	getBookmarkTitleInitials,
+	getLibraryBookmarkTaxonomyLabel
 } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
 import { withOutboundUtm } from "@/lib/outbound-url"
@@ -20,8 +24,11 @@ type BookmarkListRowProps = {
 
 export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 	const displayTitle = getBookmarkDisplayTitle(bookmark)
-	const descriptionCredit = bookmark.author ? null : getBookmarkAuthorCredit(bookmark)
+	const authorCredit = formatBookmarkAuthors(bookmark)
+	const descriptionCredit = authorCredit ? null : getBookmarkAuthorCredit(bookmark)
+	const taxonomyLabel = getLibraryBookmarkTaxonomyLabel(bookmark)
 	const creditClassName = "text-muted-foreground text-pretty text-xs leading-relaxed"
+	const categoryTag = bookmark.tags[0] ?? ""
 
 	return (
 		<article
@@ -31,21 +38,23 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 				className
 			)}
 		>
-			<a
-				href={withOutboundUtm(bookmark.url)}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="absolute inset-0 z-0 rounded-xl"
-				aria-label={displayTitle}
-			/>
+			{bookmark.url ? (
+				<a
+					href={withOutboundUtm(bookmark.url)}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="absolute inset-0 z-0 rounded-xl"
+					aria-label={displayTitle}
+				/>
+			) : null}
 			{bookmark.imageUrl ? (
 				<div className="pointer-events-none relative z-10 aspect-square w-full">
 					<OptimizedImage
 						src={bookmark.imageUrl}
 						alt=""
-						width={120}
-						height={120}
-						sizes="(max-width: 768px) 50vw, 20vw"
+						width={bookmark.categoryId === "library" ? 512 : 120}
+						height={bookmark.categoryId === "library" ? 512 : 120}
+						sizes="(max-width: 768px) 50vw, 184px"
 						className="image-outline size-full rounded-sm object-contain"
 					/>
 					{bookmark.imdbRating ? (
@@ -61,16 +70,30 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 						</span>
 					) : null}
 				</div>
+			) : bookmark.categoryId === "library" ? (
+				<div
+					className={cn(
+						"image-outline pointer-events-none relative z-10 flex aspect-square w-full items-center justify-center rounded-sm",
+						getLibraryCategoryPlaceholderClassName(categoryTag)
+					)}
+					aria-hidden
+				>
+					<span className="select-none text-3xl font-medium tracking-widest">
+						{getBookmarkTitleInitials(bookmark.title)}
+					</span>
+				</div>
 			) : null}
 			<div className="pointer-events-none relative z-10 flex min-w-0 flex-col">
 				<div className="flex items-start justify-between gap-2">
 					<h2 className="min-w-0 flex-1 text-sm leading-6 font-normal text-pretty">
 						{bookmark.title}
 					</h2>
-					<ChevronRight
-						className={cn(interactiveCardChevronClass, "mt-1 shrink-0")}
-						aria-hidden
-					/>
+					{bookmark.url ? (
+						<ChevronRight
+							className={cn(interactiveCardChevronClass, "mt-1 shrink-0")}
+							aria-hidden
+						/>
+					) : null}
 				</div>
 				{bookmark.subtitle ? (
 					<p
@@ -82,14 +105,17 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 						{bookmark.subtitle}
 					</p>
 				) : null}
-				{bookmark.author ? (
-					<p className={creditClassName}>{bookmark.author}</p>
+				{authorCredit ? (
+					<p className={creditClassName}>{authorCredit}</p>
 				) : null}
 				{bookmark.translator ? (
 					<p className={creditClassName}>Çevirmen: {bookmark.translator}</p>
 				) : null}
 				{descriptionCredit ? (
 					<p className={creditClassName}>{descriptionCredit}</p>
+				) : null}
+				{taxonomyLabel ? (
+					<p className={creditClassName}>{taxonomyLabel}</p>
 				) : null}
 			</div>
 		</article>
