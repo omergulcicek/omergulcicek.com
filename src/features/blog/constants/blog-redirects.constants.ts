@@ -16,7 +16,10 @@ export const BLOG_SLUG_REDIRECTS = {
 	"/sitemin-yeni-arayuzuna-hosgeldiniz":
 		"/nextjs-15-ile-tasarim-ve-mimari-yenilemesi",
 	"/kisisel-sitemin-tanstack-start-versiyonu":
-		"/nextjsten-tanstack-ve-supabasee-gecis"
+		"/nextjsten-tanstack-ve-supabasee-gecis",
+	"/turkiye-israil-savasi": "/turkiye-israil-savasi-buyuk-hesaplasma",
+	"/turkiye-israil-jeopolitik-denklemi":
+		"/turkiye-israil-savasi-buyuk-hesaplasma"
 } as const
 
 export type BlogSlugRedirect = keyof typeof BLOG_SLUG_REDIRECTS
