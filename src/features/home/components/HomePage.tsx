@@ -5,7 +5,6 @@ import { pageShellClass, pageStackGapClass } from "@/components/shared/prose.sty
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { ExperienceSummary } from "@/features/home/components/ExperienceSummary"
 import { FeaturedBlog } from "@/features/home/components/FeaturedBlog"
-import { FeaturedProjects } from "@/features/home/components/FeaturedProjects"
 import { Hero } from "@/features/home/components/Hero"
 import { VirastackCaseStudyCard } from "@/features/home/components/virastack-case-study-card"
 import { cn } from "@/lib/utils"
@@ -33,7 +32,6 @@ export function HomePage({ featuredPosts }: HomePageProps) {
 				<StackStrip />
 			</Suspense>
 			<Container className={cn("flex flex-col", pageStackGapClass)}>
-				<FeaturedProjects />
 				<VirastackCaseStudyCard />
 				<FeaturedBlog posts={featuredPosts} />
 				<ExperienceSummary />

@@ -2,17 +2,6 @@ import type { Project } from "@/features/projects/types/project.types"
 
 export const PROJECTS: Project[] = [
 	{
-		id: "footy",
-		title: "Footy",
-		description:
-			"Futbol bilgini sına: Bil Bakalım, Skor Avcısı, Kupon Ustası ve Kadro Bulmacası.",
-		group: "personal",
-		status: "live",
-		href: "https://footy.omergulcicek.com/",
-		sortOrder: 1,
-		featured: true
-	},
-	{
 		id: "takvim",
 		title: "Takvim",
 		description:
@@ -20,8 +9,35 @@ export const PROJECTS: Project[] = [
 		group: "personal",
 		status: "live",
 		href: "https://takvim.omergulcicek.com/",
-		sortOrder: 2,
-		featured: true
+		sortOrder: 1
+	},
+	{
+		id: "footy",
+		title: "Footy",
+		description:
+			"Futbol bilgini sına: Bil Bakalım, Skor Avcısı, Kupon Ustası ve Kadro Bulmacası.",
+		group: "personal",
+		status: "archived",
+		href: "https://footy.omergulcicek.com/",
+		sortOrder: 2
+	},
+	{
+		id: "turkuaz",
+		title: "Turkuaz",
+		description: "Modern ve hızlı web tasarımı",
+		group: "personal",
+		status: "archived",
+		href: "https://github.com/omergulcicek/turkuaz",
+		sortOrder: 3
+	},
+	{
+		id: "turkcedokuman",
+		title: "Türkçe Doküman",
+		description: "Yazılım geliştirme için Türkçe kaynaklar",
+		group: "personal",
+		status: "archived",
+		href: "https://github.com/omergulcicek/turkcedokuman.com",
+		sortOrder: 4
 	},
 	{
 		id: "start",
@@ -31,7 +47,7 @@ export const PROJECTS: Project[] = [
 		group: "virastack",
 		status: "package",
 		href: "https://virastack.com/start",
-		sortOrder: 3
+		sortOrder: 5
 	},
 	{
 		id: "ai",
@@ -40,7 +56,7 @@ export const PROJECTS: Project[] = [
 		group: "virastack",
 		status: "package",
 		href: "https://virastack.com/ai",
-		sortOrder: 4
+		sortOrder: 6
 	},
 	{
 		id: "mask",
@@ -49,7 +65,7 @@ export const PROJECTS: Project[] = [
 		group: "virastack",
 		status: "package",
 		href: "https://virastack.com/mask",
-		sortOrder: 5
+		sortOrder: 7
 	},
 	{
 		id: "password",
@@ -58,7 +74,7 @@ export const PROJECTS: Project[] = [
 		group: "virastack",
 		status: "package",
 		href: "https://virastack.com/password",
-		sortOrder: 6
+		sortOrder: 8
 	},
 	{
 		id: "guide",
@@ -68,31 +84,9 @@ export const PROJECTS: Project[] = [
 		group: "virastack",
 		status: "package",
 		href: "https://virastack.com/guide",
-		sortOrder: 7
-	},
-	{
-		id: "turkuaz",
-		title: "Turkuaz",
-		description: "Hızlı ve sade web sayfaları için CSS odaklı framework (2017).",
-		group: "archive",
-		status: "archived",
-		href: "https://github.com/omergulcicek/turkuaz",
-		sortOrder: 8
-	},
-	{
-		id: "turkcedokuman",
-		title: "Türkçe Doküman",
-		description: "Yazılım geliştirme konularında Türkçe kaynak projesi.",
-		group: "archive",
-		status: "archived",
-		href: "https://github.com/omergulcicek/turkcedokuman.com",
 		sortOrder: 9
 	}
 ]
-
-export function getFeaturedProjects() {
-	return PROJECTS.filter((project) => project.featured).slice(0, 2)
-}
 
 export function getProjectsByGroup(group: Project["group"]) {
 	return PROJECTS.filter((project) => project.group === group).sort(

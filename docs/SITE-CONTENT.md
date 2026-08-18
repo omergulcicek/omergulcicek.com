@@ -96,7 +96,7 @@ Sayfa gövde metinleri → ilgili `docs/*.md` dosyaları.
 | Hero — paragraflar | 16px | 400 (normal) | `text-base` |
 | Bölüm başlıkları (ana sayfa, projeler vb.) | 16px | 500 | `text-base font-medium` |
 
-Bölüm başlıkları: örn. öne çıkan projeler, son blog yazıları, Uygulamalar, ViraStack, Arşiv.
+Bölüm başlıkları: örn. son blog yazıları, Kişisel Projeler, ViraStack.
 
 ### Vurgu stilleri
 
@@ -253,8 +253,8 @@ Bağlantılar: [virastack.com](https://virastack.com) · [GitHub](https://github
 
 | Anahtar | Metin |
 | --- | --- |
-| `projectsSectionApps` | Uygulamalar |
+| `projectsSectionApps` | Kişisel Projeler |
 | `projectsSectionVirastack` | ViraStack |
-| `projectsSectionArchive` | Arşiv |
 | `projectsBadgeComingSoon` | Yakında |
+| `projectsBadgeArchive` | Arşiv |
 | `projectsPreview` | Önizle |

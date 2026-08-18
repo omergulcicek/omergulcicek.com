@@ -8,8 +8,10 @@ export {
 	interactiveCardBaseClass,
 	interactiveCardChevronClass,
 	interactiveCardLiveClass,
-	interactiveCardMutedClass
+	interactiveCardMutedClass,
+	interactiveRowCardVisualClass
 } from "./interactive-card.styles"
+export { InteractiveRowCard } from "./interactive-row-card"
 export { getNotFoundHead } from "./not-found-page.constants"
 export { NotFoundPage } from "./not-found-page"
 export { RouteErrorPage } from "./route-error-page"

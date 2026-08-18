@@ -1,4 +1,4 @@
-export type ProjectGroup = "personal" | "virastack" | "archive"
+export type ProjectGroup = "personal" | "virastack"
 
 export type ProjectStatus = "live" | "package" | "coming_soon" | "archived"
 
@@ -10,5 +10,4 @@ export type Project = {
 	status: ProjectStatus
 	href: string
 	sortOrder: number
-	featured?: boolean
 }

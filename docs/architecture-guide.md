@@ -102,7 +102,7 @@ Prose links and interactive project cards have a single implementation — do no
 | Project card surface | `getInteractiveCardClassName` → `src/components/shared/interactive-card.styles.ts` | `docs/UI-PATTERNS.md` |
 | Project card component | `FeaturedProjectCard` → `src/features/projects/components/featured-project-card.tsx` | `docs/PROJECTS.md` |
 
-Home (`FeaturedProjects`) and `/projects` share `FeaturedProjectCard` — no forked card markup.
+`/projects` uses `FeaturedProjectCard`. The ViraStack home card uses `InteractiveRowCard`.
 
 ## Canonical Rules (MDC Refs)
 

@@ -13,20 +13,6 @@ export const VIRASTACK_LOGO = {
 	height: 56
 } as const
 
-function buildProjectCover(name: string) {
-	return {
-		src: `/project/${name}-112.webp`,
-		srcSet: `/project/${name}-112.webp 1x, /project/${name}-224.webp 2x`,
-		width: 112,
-		height: 112
-	} as const
-}
-
-export const PROJECT_COVERS = {
-	footy: buildProjectCover("footy"),
-	takvim: buildProjectCover("takvim")
-} as const
-
 export function buildAvatarThumbSources(name: string) {
 	const path = buildAvatarThumbPath(name)
 	return {

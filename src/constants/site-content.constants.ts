@@ -6,11 +6,9 @@ export const SITE_CONTENT = {
 	heroParagraph2:
 		"Bana @omergulcicek ve e-posta yoluyla ulaşabilir ya da GitHub'daki kodlarıma göz atabilirsiniz.",
 	homeSections: {
-		projects: "Projeler",
 		blog: "Blog",
 		experiences: "Deneyimler"
 	},
-	homeProjectsCta: "Tüm projeleri göster",
 	homeBlogCta: "Tüm yazıları göster",
 	homeExperiencesCta: "Tüm deneyimleri göster",
 	resumeButton: "Özgeçmişi İncele",
@@ -31,10 +29,10 @@ export const SITE_CONTENT = {
 	siteDockScrollProgress: "Sayfa kaydırma durumu",
 	projectsPageIntro:
 		"Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar.",
-	projectsSectionApps: "Uygulamalar",
+	projectsSectionApps: "Kişisel Projeler",
 	projectsSectionVirastack: "ViraStack",
-	projectsSectionArchive: "Arşiv",
 	projectsBadgeComingSoon: "Yakında",
+	projectsBadgeArchive: "Arşiv",
 	virastackSectionIntro:
 		"ViraStack, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.",
 	bookmarksIntro:

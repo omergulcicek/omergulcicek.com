@@ -34,6 +34,9 @@ export const interactiveCardChevronClass =
 export const surfaceCardIconFrameClass =
 	"mt-0.5 shrink-0 rounded-md border border-border/60 bg-muted/40 p-1.5"
 
+export const interactiveRowCardVisualClass =
+	"inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-muted"
+
 export function getInteractiveCardClassName(isMuted = false) {
 	return cn(
 		interactiveCardBaseClass,

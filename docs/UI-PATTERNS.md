@@ -61,7 +61,7 @@ import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 ```tsx
 import { SectionHeading } from "@/components/shared/SectionHeading"
 
-<SectionHeading>Uygulamalar</SectionHeading>
+<SectionHeading>Kişisel Projeler</SectionHeading>
 ```
 
 ### Named entities vs links
@@ -147,9 +147,10 @@ Archive links, bookmark preview rows — de-emphasized; not for hero/body prose.
 ## Interactive cards (project cards)
 
 **Styles:** `src/components/shared/interactive-card.styles.ts`  
-**Component:** `FeaturedProjectCard` — `src/features/projects/components/featured-project-card.tsx`
+**Component:** `FeaturedProjectCard` — `src/features/projects/components/featured-project-card.tsx`  
+**Wide row layout:** `InteractiveRowCard` — `src/components/shared/interactive-row-card.tsx`
 
-Shared by home (`FeaturedProjects`) and `/projects` — single component, no duplication.
+`/projects` uses `FeaturedProjectCard` (stacked grid). The ViraStack home card uses `InteractiveRowCard`.
 
 ### Live card
 
@@ -175,6 +176,10 @@ getInteractiveCardClassName(true)
 - Title: `text-muted-foreground`
 - Badge: amber pill + pulse dot (`ComingSoonBadge` in `featured-project-card.tsx`)
 - Chevron replaced by badge
+
+### Archived card (`status: archived`)
+
+Live card surface with **dashed** border. Title row is `justify-between`: title left, **Arşiv** badge right (`ArchiveBadge`). Chevron replaced by badge.
 
 ### Usage
 

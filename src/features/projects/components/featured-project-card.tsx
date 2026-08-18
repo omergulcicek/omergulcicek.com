@@ -1,30 +1,33 @@
+import { soccerPitch } from "@lucide/lab"
 import {
 	BookOpen,
+	BookType,
+	CalendarDays,
 	ChevronRight,
 	Form,
+	Icon,
 	Rocket,
 	Sparkles,
 	SquareAsterisk,
 	type LucideIcon
 } from "lucide-react"
+import type { ComponentType, SVGProps } from "react"
 
-import { OptimizedImage } from "@/components/shared/optimized-image"
 import { cardTitleClass } from "@/components/shared/prose.styles"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import {
 	getInteractiveCardClassName,
 	interactiveCardChevronClass
 } from "@/components/shared/interactive-card.styles"
-import { PROJECT_COVERS } from "@/lib/media/build-static-thumb-image"
 import { cn } from "@/lib/utils"
 import { withOutboundUtm } from "@/lib/outbound-url"
 
+import { TurkuazLogo } from "@/features/projects/components/turkuaz-logo"
 import { VirastackProductName } from "@/features/projects/components/virastack-product-name"
 import type { Project } from "@/features/projects/types/project.types"
 
 const projectIconClass = "size-8 md:size-10"
 const projectIconStroke = 1.75
-const projectCoverClass = "image-outline size-16 rounded-lg object-contain md:size-24"
 
 type ProjectVisualConfig =
 	| {
@@ -33,18 +36,26 @@ type ProjectVisualConfig =
 			className: string
 	  }
 	| {
-			kind: "image"
-			cover: (typeof PROJECT_COVERS)[keyof typeof PROJECT_COVERS]
+			kind: "lab"
+			iconNode: typeof soccerPitch
+			className: string
+	  }
+	| {
+			kind: "svg"
+			Icon: ComponentType<SVGProps<SVGSVGElement>>
+			className: string
 	  }
 
 const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 	footy: {
-		kind: "image",
-		cover: PROJECT_COVERS.footy
+		kind: "lab",
+		iconNode: soccerPitch,
+		className: "text-green-600"
 	},
 	takvim: {
-		kind: "image",
-		cover: PROJECT_COVERS.takvim
+		kind: "lucide",
+		Icon: CalendarDays,
+		className: "text-blue-600"
 	},
 	start: {
 		kind: "lucide",
@@ -70,6 +81,16 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		kind: "lucide",
 		Icon: BookOpen,
 		className: "text-amber-500"
+	},
+	turkuaz: {
+		kind: "svg",
+		Icon: TurkuazLogo,
+		className: "size-8 text-[#03968a]"
+	},
+	turkcedokuman: {
+		kind: "lucide",
+		Icon: BookType,
+		className: "text-sky-600"
 	}
 }
 
@@ -105,6 +126,26 @@ function ComingSoonBadge() {
 	)
 }
 
+function ArchiveBadge() {
+	return (
+		<span className="inline-flex shrink-0 items-center rounded-full border border-border/60 bg-muted/40 px-1.5 py-0.5 text-xs font-medium text-muted-foreground md:px-2">
+			{SITE_CONTENT.projectsBadgeArchive}
+		</span>
+	)
+}
+
+function ProjectStatusBadge({ status }: { status: Project["status"] }) {
+	if (status === "coming_soon") {
+		return <ComingSoonBadge />
+	}
+
+	if (status === "archived") {
+		return <ArchiveBadge />
+	}
+
+	return null
+}
+
 function FeaturedProjectVisual({
 	project,
 	isComingSoon
@@ -129,22 +170,21 @@ function FeaturedProjectVisual({
 		)
 	}
 
-	if (visual.kind === "image") {
+	if (visual.kind === "lab") {
 		return (
-			<OptimizedImage
-				src={visual.cover.src}
-				alt=""
-				width={visual.cover.width}
-				height={visual.cover.height}
-				sources={[
-					{
-						type: "image/webp",
-						srcSet: visual.cover.srcSet
-					}
-				]}
-				className={cn(projectCoverClass, mutedClass)}
+			<Icon
+				iconNode={visual.iconNode}
+				className={cn(projectIconClass, visual.className, mutedClass)}
+				strokeWidth={projectIconStroke}
+				aria-hidden
 			/>
 		)
+	}
+
+	if (visual.kind === "svg") {
+		const ProjectSvg = visual.Icon
+
+		return <ProjectSvg className={cn(visual.className, mutedClass)} />
 	}
 
 	const LucideProjectIcon = visual.Icon
@@ -164,13 +204,21 @@ type FeaturedProjectCardProps = {
 
 export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 	const isComingSoon = project.status === "coming_soon"
+	const isArchived = project.status === "archived"
+	const statusBadge =
+		isComingSoon || isArchived ? (
+			<ProjectStatusBadge status={project.status} />
+		) : null
 
 	return (
 		<a
 			href={withOutboundUtm(project.href)}
 			target="_blank"
 			rel="noopener noreferrer"
-			className={getInteractiveCardClassName(isComingSoon)}
+			className={cn(
+				getInteractiveCardClassName(isComingSoon),
+				isArchived && "border-dashed"
+			)}
 		>
 			<div className="flex h-20 items-center justify-center md:h-28">
 				<FeaturedProjectVisual project={project} isComingSoon={isComingSoon} />
@@ -185,9 +233,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 							isComingSoon && "text-muted-foreground"
 						)}
 					/>
-					{isComingSoon ? (
-						<ComingSoonBadge />
-					) : (
+					{statusBadge ?? (
 						<ChevronRight
 							className={interactiveCardChevronClass}
 							aria-hidden
@@ -204,6 +250,11 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 
 export function FeaturedProjectListItem({ project }: FeaturedProjectCardProps) {
 	const isComingSoon = project.status === "coming_soon"
+	const isArchived = project.status === "archived"
+	const statusBadge =
+		isComingSoon || isArchived ? (
+			<ProjectStatusBadge status={project.status} />
+		) : null
 
 	return (
 		<a
@@ -222,13 +273,13 @@ export function FeaturedProjectListItem({ project }: FeaturedProjectCardProps) {
 						"truncate md:text-sm"
 					)}
 				/>
-				{isComingSoon && <ComingSoonBadge />}
+				{statusBadge}
 			</div>
 			<div className="flex items-center gap-3 min-w-0 flex-1 justify-between md:justify-start">
 				<p className="text-muted-foreground truncate text-left text-xs md:text-sm">
 					{project.description}
 				</p>
-				{!isComingSoon && (
+				{!statusBadge && (
 					<ChevronRight
 						className={cn(interactiveCardChevronClass, "hidden md:block ml-auto")}
 						aria-hidden

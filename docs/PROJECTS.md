@@ -1,6 +1,6 @@
 # omergulcicek.com — Projeler
 
-> **Agent onboarding:** Proje listesi, gruplama, showcase ve ana sayfa öne çıkanları için tek kaynak (SSOT) bu dosyadır. `docs/PROJECT-BRIEF.md` → Projeler bölümü ile birlikte okunur.
+> **Agent onboarding:** Proje listesi, gruplama ve `/projects` yerleşimi için tek kaynak (SSOT) bu dosyadır. `docs/PROJECT-BRIEF.md` → Projeler bölümü ile birlikte okunur.
 
 ---
 
@@ -24,16 +24,10 @@ Veri build zamanında sabittir; SSR'da doğrudan import edilir. Client-only fetc
 | `id` | string | Benzersiz anahtar (`footy`, `ai`) |
 | `title` | string | Proje adı |
 | `description` | string | 1 cümle; kart ve liste önizlemesi |
-| `group` | enum | `personal` \| `virastack` \| `archive` |
+| `group` | enum | `personal` \| `virastack` |
 | `status` | enum | `live` \| `package` \| `coming_soon` \| `archived` |
 | `href` | string | Birincil dış bağlantı (canlı site veya GitHub) |
 | `sortOrder` | number | Grup içi sıra (küçük önce) |
-
-### Opsiyonel alanlar
-
-| Alan | Tip | Açıklama |
-| --- | --- | --- |
-| `featured` | boolean | Ana sayfa havuzu (en fazla 2) |
 
 Legacy `tags`, `color`, `image`, `showcase` alanları **kullanılmaz**. Kart görselleri Lucide / Lucide Labs ikonlarıyla `FeaturedProjectCard` içinde tanımlıdır.
 
@@ -44,7 +38,7 @@ Legacy `tags`, `color`, `image`, `showcase` alanları **kullanılmaz**. Kart gö
 | `live` | Canlı ürün / site | `FeaturedProjectCard` — live yüzey |
 | `package` | Yayınlanmış npm/GitHub paketi | `FeaturedProjectCard` — live yüzey |
 | `coming_soon` | Aktif geliştirme | `FeaturedProjectCard` — muted yüzey + **Yakında** badge |
-| `archived` | Eski / bakım dışı | Arşiv listesi; `ProseLink variant="muted"` |
+| `archived` | Bakım dışı kişisel proje | `FeaturedProjectCard` — dashed border + **Arşiv** badge |
 
 Legacy `isCompleted: false` → `status: coming_soon`.
 
@@ -68,10 +62,12 @@ Sıra implementasyonda `sortOrder` ile korunur.
 
 ### Kişisel — `group: personal`
 
-| `id` | `title` | `description` | `status` | `href` | `featured` | `showcase` |
-| --- | --- | --- | --- | --- | --- | --- |
-| `footy` | Footy | Futbol bilgini sına — Bil Bakalım, Skor Avcısı, Kupon Ustası, Kadro Bulmacası. | `live` | `https://footy.omergulcicek.com/` | ✓ | `inline` → `footy-prediction` |
-| `takvim` | Takvim | Takvim abonelikleri için ücretsiz, açık kaynak arayüzler ve içerik. | `live` | `https://takvim.omergulcicek.com/` | ✓ | `inline` → `calendar-mini` |
+| `id` | `title` | `description` | `status` | `href` |
+| --- | --- | --- | --- | --- |
+| `takvim` | Takvim | Takvim abonelikleri için ücretsiz, açık kaynak arayüzler ve içerik. | `live` | `https://takvim.omergulcicek.com/` |
+| `footy` | Footy | Futbol bilgini sına: Bil Bakalım, Skor Avcısı, Kupon Ustası ve Kadro Bulmacası. | `archived` | `https://footy.omergulcicek.com/` |
+| `turkuaz` | Turkuaz | Modern ve hızlı web tasarımı | `archived` | `https://github.com/omergulcicek/turkuaz` |
+| `turkcedokuman` | Türkçe Doküman | Yazılım geliştirme için Türkçe kaynaklar | `archived` | `https://github.com/omergulcicek/turkcedokuman.com` |
 
 ### ViraStack — `group: virastack`
 
@@ -84,13 +80,6 @@ Sıra implementasyonda `sortOrder` ile korunur.
 | `mask` | ViraStack Mask | Formlar için erişilebilir input maskeleri. | `package` | `https://virastack.com/mask` | `none` |
 | `password` | ViraStack Password | Erişilebilir parola görünürlük toggle'ı. | `package` | `https://virastack.com/password` | `none` |
 | `guide` | ViraStack Guide | Modern web standartlarını adım adım gösteren interaktif rehber. | `package` | `https://virastack.com/guide` | `none` |
-
-### Arşiv — `group: archive`
-
-| `id` | `title` | `description` | `status` | `href` |
-| --- | --- | --- | --- | --- |
-| `turkuaz` | Turkuaz | Hızlı ve sade web sayfaları için CSS odaklı framework (2017). | `archived` | `https://github.com/omergulcicek/turkuaz` |
-| `turkcedokuman` | Türkçe Doküman | Yazılım geliştirme konularında Türkçe kaynak projesi. | `archived` | `https://github.com/omergulcicek/turkcedokuman.com` |
 
 ---
 
@@ -119,9 +108,8 @@ UI string'leri `docs/SITE-CONTENT.md` → Projeler ile senkron tutulur.
 **Sayfada olanlar:**
 
 - Kısa giriş metni + [ViraStack](https://virastack.com) / [GitHub org](https://github.com/virastack) bağlantısı
-- Kişisel ürünler (Footy, Takvim) — öne çıkan kartlar
-- ViraStack bloğu — compact liste
-- Arşiv — muted link listesi
+- Kişisel ürünler (Takvim, Footy, Turkuaz, Türkçe Doküman) — `FeaturedProjectCard` grid
+- ViraStack bloğu — aynı kart grid
 
 **Sayfada olmayanlar:** tag chip, filtre, arama, thumbnail grid (blog gibi düz metin listesi değil).
 
@@ -135,9 +123,11 @@ Dar container (`max-w-2xl`) içinde **grid kart** layout. Stil SSOT: `docs/UI-PA
 
 `projectsPageIntro` — tek cümle, `h1` altında. ViraStack bağlantısı `ProseLink`. Bkz. [Onaylı Metinler](#onaylı-metinler-ssot).
 
-### Bölüm 1 — Uygulamalar
+### Bölüm 1 — Kişisel Projeler
 
-Footy ve Takvim — `FeaturedProjectCard` grid (`sm:grid-cols-2`). Lucide ikonları; live kart yüzeyi.
+Alt başlık: **Kişisel Projeler** (`projectsSectionApps`)
+
+Takvim, Footy, Turkuaz, Türkçe Doküman — `FeaturedProjectCard` grid (`grid-cols-2`).
 
 ### Bölüm 2 — ViraStack
 
@@ -145,13 +135,6 @@ Alt başlık: **ViraStack** (`projectsSectionVirastack`)
 
 - `virastackSectionIntro` — ekosistem tanımı + `ProseLink` (virastack.com · GitHub)
 - Aynı `FeaturedProjectCard` grid
-
-### Bölüm 3 — Arşiv
-
-Alt başlık: **Arşiv**
-
-- `ArchiveProjectList` — başlık + dış link; `ProseLink variant="muted"`
-- Görsel ve kart yok; sayfanın en altında
 
 ### Wireframe
 
@@ -161,11 +144,15 @@ Projeler
 Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum
 ViraStack ekosistemindeki araçlar.
 
-── Uygulamalar ──────────────────────────────
+── Kişisel Projeler ─────────────────────────
 
 ┌──────────────────┐  ┌──────────────────┐
-│  [icon] Footy    │  │  [icon] Takvim   │
+│  [icon] Takvim   │  │  [icon] Footy    │
 │  …description    │  │  …description    │
+└──────────────────┘  └──────────────────┘
+┌──────────────────┐  ┌──────────────────┐
+│  [logo] Turkuaz  │  │  [icon] Türkçe   │
+│  …description    │  │  Doküman         │
 └──────────────────┘  └──────────────────┘
 
 ── ViraStack ────────────────────────────────
@@ -178,29 +165,19 @@ ViraStack ekosistemindeki araçlar.
 ┌──────────────────┐  ┌──────────────────┐
 │  [icon] Mask     │  │  [icon] Guide    │
 └──────────────────┘  └──────────────────┘
-
-── Arşiv ────────────────────────────────────
-
-  Turkuaz ↗
-  Türkçe Doküman ↗
 ```
 
 ---
 
 ## Ana Sayfa (`/`)
 
-`docs/PROJECT-BRIEF.md` ile uyumlu:
-
-- **En fazla 2** öne çıkan proje: Footy + Takvim (`featured: true`)
-- `FeaturedProjectCard` — `/projects` ile **aynı bileşen** (`featured-project-card.tsx`)
-- Tam liste CTA: `ArrowLink` → `/projects`
-- ViraStack hero metninde `ProseLink`; ayrı ViraStack kartı ana sayfada **zorunlu değil**
+ViraStack kartı (`VirastackCaseStudyCard`) ana sayfada kalır. Kişisel projeler yalnızca `/projects` üzerindedir.
 
 ---
 
 ## İkonlar
 
-Kart ikonları `FeaturedProjectCard` içindeki `PROJECT_VISUALS` haritasında (Lucide + Lucide Labs). `public/projects/` asset'leri kartlarda **kullanılmaz**.
+Kart ikonları `FeaturedProjectCard` içindeki `PROJECT_VISUALS` haritasında (Lucide, Lucide Lab `SoccerPitch`, Turkuaz SVG).
 
 ---
 
@@ -209,7 +186,6 @@ Kart ikonları `FeaturedProjectCard` içindeki `PROJECT_VISUALS` haritasında (L
 - Sabit veri: `features/projects/constants/projects.constants.ts`
 - Kart bileşeni: `features/projects/components/featured-project-card.tsx`
 - Sayfa: `features/projects/components/projects-page.tsx`
-- Ana sayfa bölümü: `features/home/components/FeaturedProjects.tsx`
 - UI stilleri: `docs/UI-PATTERNS.md`
 
 ---

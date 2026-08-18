@@ -12,10 +12,6 @@ import {
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
-import {
-	ArchiveProjectList,
-	ProjectsSectionHeading
-} from "@/features/projects/components/project-cards"
 import { ProjectSection } from "@/features/projects/components/project-section"
 import { GitHubContributionCalendar } from "@/features/projects/components/github-contribution-calendar"
 import { getProjectsByGroup } from "@/features/projects/constants/projects.constants"
@@ -23,7 +19,6 @@ import { getProjectsByGroup } from "@/features/projects/constants/projects.const
 export function ProjectsPage() {
 	const personalProjects = getProjectsByGroup("personal")
 	const virastackProjects = getProjectsByGroup("virastack")
-	const archiveProjects = getProjectsByGroup("archive")
 
 	return (
 		<main>
@@ -40,7 +35,10 @@ export function ProjectsPage() {
 				</StaggerItem>
 
 				<StaggerItem>
-					<ProjectSection title={SITE_CONTENT.projectsSectionApps} projects={personalProjects} />
+					<ProjectSection
+						title={SITE_CONTENT.projectsSectionApps}
+						projects={personalProjects}
+					/>
 				</StaggerItem>
 
 				<StaggerItem id="virastack">
@@ -49,7 +47,6 @@ export function ProjectsPage() {
 							<p className={proseParagraphClass}>
 								{SITE_CONTENT.virastackSectionIntro}
 							</p>
-							{/* <VirastackDither /> */}
 							<p className={proseParagraphClass}>
 								Ekosistemi{" "}
 								<VirastackLink>ViraStack</VirastackLink>{" "}
@@ -66,13 +63,6 @@ export function ProjectsPage() {
 							</p>
 						</div>
 					</ProjectSection>
-				</StaggerItem>
-
-				<StaggerItem className={pageSectionClass}>
-					<ProjectsSectionHeading>
-						{SITE_CONTENT.projectsSectionArchive}
-					</ProjectsSectionHeading>
-					<ArchiveProjectList projects={archiveProjects} />
 				</StaggerItem>
 
 				<StaggerItem className={pageSectionClass}>
