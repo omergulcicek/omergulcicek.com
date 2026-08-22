@@ -1510,7 +1510,9 @@ export const BOOKMARK_UI = {
 	showTags: "Tümünü göster",
 	hideTags: "Daha az göster",
 	tagsToggleAriaLabel: "Tümünü göster veya gizle",
-	libraryCoverAttribution: "Kitap görselleri Kitapyurdu'ndan alınmıştır."
+	libraryCoverAttribution: "Kitap görselleri Kitapyurdu'ndan alınmıştır.",
+	libraryAICategorizationAttribution:
+		"Kategorileştirme yapay zekâ tarafından yapılmıştır."
 } as const
 
 export function getBookmarkSortOptions(

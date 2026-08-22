@@ -207,6 +207,7 @@ export function BookmarksListFilters({
 									selectedTag={selectedGenre}
 									ariaLabel={BOOKMARK_UI.genreAriaLabel}
 									allLabel={BOOKMARK_UI.allGenresLabel}
+									showIcon={false}
 									onSelect={onGenreSelect}
 								/>
 							</FilterChipRow>

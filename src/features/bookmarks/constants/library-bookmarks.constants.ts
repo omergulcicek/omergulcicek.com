@@ -1,11 +1,8 @@
 export const LIBRARY_BOOK_CATEGORY_IDS = [
-	"turk-edebiyati",
-	"dunya-edebiyati",
-	"dil-ve-edebiyat",
+	"edebiyat",
 	"felsefe-ve-dusunce",
 	"islam",
 	"tarih-ve-kultur",
-	"psikoloji",
 	"bilim",
 	"ani-ve-biyografi",
 	"kisisel-gelisim"
@@ -14,26 +11,20 @@ export const LIBRARY_BOOK_CATEGORY_IDS = [
 export type LibraryBookCategoryId = (typeof LIBRARY_BOOK_CATEGORY_IDS)[number]
 
 export const LIBRARY_BOOK_CATEGORY_TREE = {
-	"turk-edebiyati": ["roman", "oyku", "siir", "klasik", "deneme", "tiyatro"],
-	"dunya-edebiyati": ["roman-ve-oyku", "klasik"],
-	"dil-ve-edebiyat": ["dil", "arastirma"],
+	edebiyat: ["roman", "oyku", "siir", "deneme", "roman-ve-oyku"],
 	"felsefe-ve-dusunce": ["felsefe", "siyaset-ve-toplum"],
 	islam: ["dusunce", "tasavvuf", "siyer", "ilmihal-ve-dua"],
-	"tarih-ve-kultur": ["tarih", "osmanli", "roma", "kultur"],
-	psikoloji: ["kuram", "guncel"],
-	bilim: ["bilim"],
+	"tarih-ve-kultur": ["tarih", "osmanli", "cumhuriyet", "roma", "kultur"],
+	bilim: ["bilim-felsefesi", "bulmaca"],
 	"ani-ve-biyografi": ["ani", "biyografi"],
 	"kisisel-gelisim": ["kisisel-gelisim"]
 } as const satisfies Record<LibraryBookCategoryId, readonly string[]>
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryBookCategoryId, string> = {
-	"turk-edebiyati": "Türk Edebiyatı",
-	"dunya-edebiyati": "Dünya Edebiyatı",
-	"dil-ve-edebiyat": "Dil ve Edebiyat",
+	edebiyat: "Edebiyat",
 	"felsefe-ve-dusunce": "Felsefe ve Düşünce",
 	islam: "İslam",
 	"tarih-ve-kultur": "Tarih ve Kültür",
-	psikoloji: "Psikoloji",
 	bilim: "Bilim",
 	"ani-ve-biyografi": "Anı ve Biyografi",
 	"kisisel-gelisim": "Kişisel Gelişim"
@@ -43,28 +34,24 @@ export const LIBRARY_SUBCATEGORY_LABELS: Record<string, string> = {
 	roman: "Roman",
 	oyku: "Öykü",
 	siir: "Şiir",
-	klasik: "Klasik",
 	deneme: "Deneme",
-	tiyatro: "Tiyatro",
-	"roman-ve-oyku": "Roman ve öykü",
-	dil: "Dil",
-	arastirma: "Araştırma",
+	"roman-ve-oyku": "Dünya Edebiyatı",
 	felsefe: "Felsefe",
-	"siyaset-ve-toplum": "Siyaset ve toplum",
+	"siyaset-ve-toplum": "Siyaset ve Toplum",
 	dusunce: "Düşünce",
 	tasavvuf: "Tasavvuf",
 	siyer: "Siyer",
-	"ilmihal-ve-dua": "Kur'an, İlmihal ve Dua",
+	"ilmihal-ve-dua": "İlmihal ve Dua",
 	tarih: "Tarih",
 	osmanli: "Osmanlı",
+	cumhuriyet: "Cumhuriyet",
 	roma: "Roma",
 	kultur: "Kültür",
-	kuram: "Kuram",
-	guncel: "Güncel",
+	"bilim-felsefesi": "Bilim Felsefesi",
+	bulmaca: "Bulmaca",
 	ani: "Anı",
 	biyografi: "Biyografi",
-	bilim: "Bilim",
-	"kisisel-gelisim": "Kişisel gelişim"
+	"kisisel-gelisim": "Kişisel Gelişim"
 }
 
 export const LIBRARY_BOOKMARK_TAG_ORDER = LIBRARY_BOOK_CATEGORY_IDS.map(
@@ -114,17 +101,9 @@ type LibraryCategoryChipTone = {
 }
 
 export const LIBRARY_CATEGORY_CHIP_TONES = {
-	"turk-edebiyati": {
+	edebiyat: {
 		idle: "border-orange-100 bg-orange-50 text-orange-800 hover:border-orange-200 hover:bg-orange-100 dark:border-orange-900 dark:bg-orange-950/40 dark:text-orange-200 dark:hover:border-orange-800 dark:hover:bg-orange-900/50",
 		active: "border-orange-200 bg-orange-100 text-orange-900 hover:border-orange-200 hover:bg-orange-100 dark:border-orange-800 dark:bg-orange-900/60 dark:text-orange-100 dark:hover:bg-orange-900/60"
-	},
-	"dunya-edebiyati": {
-		idle: "border-sky-100 bg-sky-50 text-sky-800 hover:border-sky-200 hover:bg-sky-100 dark:border-sky-900 dark:bg-sky-950/40 dark:text-sky-200 dark:hover:border-sky-800 dark:hover:bg-sky-900/50",
-		active: "border-sky-200 bg-sky-100 text-sky-900 hover:border-sky-200 hover:bg-sky-100 dark:border-sky-800 dark:bg-sky-900/60 dark:text-sky-100 dark:hover:bg-sky-900/60"
-	},
-	"dil-ve-edebiyat": {
-		idle: "border-teal-100 bg-teal-50 text-teal-800 hover:border-teal-200 hover:bg-teal-100 dark:border-teal-900 dark:bg-teal-950/40 dark:text-teal-200 dark:hover:border-teal-800 dark:hover:bg-teal-900/50",
-		active: "border-teal-200 bg-teal-100 text-teal-900 hover:border-teal-200 hover:bg-teal-100 dark:border-teal-800 dark:bg-teal-900/60 dark:text-teal-100 dark:hover:bg-teal-900/60"
 	},
 	"felsefe-ve-dusunce": {
 		idle: "border-indigo-100 bg-indigo-50 text-indigo-800 hover:border-indigo-200 hover:bg-indigo-100 dark:border-indigo-900 dark:bg-indigo-950/40 dark:text-indigo-200 dark:hover:border-indigo-800 dark:hover:bg-indigo-900/50",
@@ -137,10 +116,6 @@ export const LIBRARY_CATEGORY_CHIP_TONES = {
 	"tarih-ve-kultur": {
 		idle: "border-amber-100 bg-amber-50 text-amber-800 hover:border-amber-200 hover:bg-amber-100 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200 dark:hover:border-amber-800 dark:hover:bg-amber-900/50",
 		active: "border-amber-200 bg-amber-100 text-amber-900 hover:border-amber-200 hover:bg-amber-100 dark:border-amber-800 dark:bg-amber-900/60 dark:text-amber-100 dark:hover:bg-amber-900/60"
-	},
-	psikoloji: {
-		idle: "border-violet-100 bg-violet-50 text-violet-800 hover:border-violet-200 hover:bg-violet-100 dark:border-violet-900 dark:bg-violet-950/40 dark:text-violet-200 dark:hover:border-violet-800 dark:hover:bg-violet-900/50",
-		active: "border-violet-200 bg-violet-100 text-violet-900 hover:border-violet-200 hover:bg-violet-100 dark:border-violet-800 dark:bg-violet-900/60 dark:text-violet-100 dark:hover:bg-violet-900/60"
 	},
 	bilim: {
 		idle: "border-fuchsia-100 bg-fuchsia-50 text-fuchsia-800 hover:border-fuchsia-200 hover:bg-fuchsia-100 dark:border-fuchsia-900 dark:bg-fuchsia-950/40 dark:text-fuchsia-200 dark:hover:border-fuchsia-800 dark:hover:bg-fuchsia-900/50",
@@ -172,17 +147,13 @@ export function getLibraryCategoryChipClassName(
 }
 
 export const LIBRARY_CATEGORY_PLACEHOLDER_CLASS_NAMES = {
-	"turk-edebiyati":
+	edebiyat:
 		"bg-orange-50 text-orange-800/60 dark:bg-orange-950/40 dark:text-orange-200/60",
-	"dunya-edebiyati": "bg-sky-50 text-sky-800/60 dark:bg-sky-950/40 dark:text-sky-200/60",
-	"dil-ve-edebiyat":
-		"bg-teal-50 text-teal-800/60 dark:bg-teal-950/40 dark:text-teal-200/60",
 	"felsefe-ve-dusunce":
 		"bg-indigo-50 text-indigo-800/60 dark:bg-indigo-950/40 dark:text-indigo-200/60",
 	islam: "bg-emerald-50 text-emerald-800/60 dark:bg-emerald-950/40 dark:text-emerald-200/60",
 	"tarih-ve-kultur":
 		"bg-amber-50 text-amber-800/60 dark:bg-amber-950/40 dark:text-amber-200/60",
-	psikoloji: "bg-violet-50 text-violet-800/60 dark:bg-violet-950/40 dark:text-violet-200/60",
 	bilim: "bg-fuchsia-50 text-fuchsia-800/60 dark:bg-fuchsia-950/40 dark:text-fuchsia-200/60",
 	"ani-ve-biyografi": "bg-zinc-50 text-zinc-800/60 dark:bg-zinc-900/40 dark:text-zinc-200/60",
 	"kisisel-gelisim": "bg-lime-50 text-lime-800/60 dark:bg-lime-950/40 dark:text-lime-200/60"

@@ -15,6 +15,7 @@ type BookmarkTagChipsProps = {
 	ariaLabel: string
 	allLabel?: string
 	getChipClassName?: (tag: string, isActive: boolean) => string | undefined
+	showIcon?: boolean
 	className?: string
 }
 
@@ -26,6 +27,7 @@ export function BookmarkTagChips({
 	ariaLabel,
 	allLabel,
 	getChipClassName,
+	showIcon = true,
 	className
 }: BookmarkTagChipsProps) {
 	if (tags.length === 0) {
@@ -61,13 +63,13 @@ export function BookmarkTagChips({
 						aria-pressed={isActive}
 						aria-label={`${label} ${count}`}
 						className={cn(
-							blogFilterChipWithIconDesktopClass,
+							showIcon ? blogFilterChipWithIconDesktopClass : blogFilterChipDesktopClass,
 							chipToneClassName && "shadow-none",
 							chipToneClassName
 						)}
 						onClick={() => onSelect(tag)}
 					>
-						<BookmarkTagIcon tag={tag} className="size-3 shrink-0" />
+						{showIcon ? <BookmarkTagIcon tag={tag} className="size-3 shrink-0" /> : null}
 						{label} <span className="tabular-nums">{count}</span>
 					</Button>
 				)

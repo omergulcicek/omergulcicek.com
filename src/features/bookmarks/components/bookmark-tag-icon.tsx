@@ -1,7 +1,5 @@
 import type { ComponentType, SVGProps } from "react"
 import {
-	BookOpen,
-	Brain,
 	Building2,
 	Clapperboard,
 	CircleDot,
@@ -11,11 +9,11 @@ import {
 	Gamepad2,
 	Globe,
 	Landmark,
-	Languages,
 	Lightbulb,
 	Moon,
 	Newspaper,
 	Popcorn,
+	Puzzle,
 	ScrollText,
 	Sprout,
 	Swords,
@@ -57,18 +55,6 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 		icon: Earth,
 		iconClassName: "text-sky-600 dark:text-sky-400"
 	},
-	"Türk Edebiyatı": {
-		icon: BookOpen,
-		iconClassName: "text-orange-600 dark:text-orange-400"
-	},
-	"Dünya Edebiyatı": {
-		icon: Earth,
-		iconClassName: "text-sky-600 dark:text-sky-400"
-	},
-	"Dil ve Edebiyat": {
-		icon: Languages,
-		iconClassName: "text-teal-600 dark:text-teal-400"
-	},
 	"Felsefe ve Düşünce": {
 		icon: Lightbulb,
 		iconClassName: "text-indigo-600 dark:text-indigo-400"
@@ -80,10 +66,6 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 	"Tarih ve Kültür": {
 		icon: Landmark,
 		iconClassName: "text-amber-700 dark:text-amber-400"
-	},
-	Psikoloji: {
-		icon: Brain,
-		iconClassName: "text-violet-600 dark:text-violet-400"
 	},
 	Bilim: {
 		icon: FlaskConical,
@@ -104,6 +86,26 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 	Edebiyat: {
 		icon: Feather,
 		iconClassName: "text-orange-600 dark:text-orange-400"
+	},
+	"Dünya Edebiyatı": {
+		icon: Earth,
+		iconClassName: "text-sky-600 dark:text-sky-400"
+	},
+	"Bilim Felsefesi": {
+		icon: FlaskConical,
+		iconClassName: "text-fuchsia-600 dark:text-fuchsia-400"
+	},
+	Bulmaca: {
+		icon: Puzzle,
+		iconClassName: "text-amber-600 dark:text-amber-400"
+	},
+	"Siyaset ve Toplum": {
+		icon: Landmark,
+		iconClassName: "text-indigo-600 dark:text-indigo-400"
+	},
+	"İlmihal ve Dua": {
+		icon: Moon,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
 	},
 	Kişi: {
 		icon: User,

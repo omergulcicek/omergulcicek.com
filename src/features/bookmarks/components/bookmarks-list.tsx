@@ -45,9 +45,9 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 		ensureSubtag
 	} = useBookmarksSearchParams()
 	const availableTags = getAvailableBookmarkTags(bookmarks, category)
-	const selectedTag = resolveBookmarkTag(availableTags, tag)
+	const selectedTag = resolveBookmarkTag(availableTags, tag, "category")
 	const availableGenres = getAvailableBookmarkGenres(bookmarks, category, selectedTag)
-	const selectedGenre = resolveBookmarkTag(availableGenres, genre)
+	const selectedGenre = resolveBookmarkTag(availableGenres, genre, "genre")
 	const availableSubtags = getAvailableBookmarkSubtags(
 		bookmarks,
 		category,
@@ -152,9 +152,10 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 					filterKey={`${category}-${selectedTag ?? "all"}-${selectedGenre ?? "all"}-${selectedSubtag ?? "all"}-${sort ?? "default"}`}
 				/>
 				{category === "library" && filteredBookmarks.length > 0 ? (
-					<p className="text-muted-foreground text-center text-xs italic">
-						{BOOKMARK_UI.libraryCoverAttribution}
-					</p>
+					<div className="text-muted-foreground flex flex-col gap-1 text-center text-xs italic">
+						<p>{BOOKMARK_UI.libraryCoverAttribution}</p>
+						<p>{BOOKMARK_UI.libraryAICategorizationAttribution}</p>
+					</div>
 				) : null}
 			</div>
 		</div>

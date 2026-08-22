@@ -14,13 +14,10 @@ const outputPath = path.join(
 )
 
 const CATEGORY_LABELS = {
-	"turk-edebiyati": "Türk Edebiyatı",
-	"dunya-edebiyati": "Dünya Edebiyatı",
-	"dil-ve-edebiyat": "Dil ve Edebiyat",
+	edebiyat: "Edebiyat",
 	"felsefe-ve-dusunce": "Felsefe ve Düşünce",
 	islam: "İslam",
 	"tarih-ve-kultur": "Tarih ve Kültür",
-	psikoloji: "Psikoloji",
 	bilim: "Bilim",
 	"ani-ve-biyografi": "Anı ve Biyografi",
 	"kisisel-gelisim": "Kişisel Gelişim"
@@ -30,28 +27,24 @@ const SUBCATEGORY_LABELS = {
 	roman: "Roman",
 	oyku: "Öykü",
 	siir: "Şiir",
-	klasik: "Klasik",
 	deneme: "Deneme",
-	tiyatro: "Tiyatro",
-	"roman-ve-oyku": "Roman ve öykü",
-	dil: "Dil",
-	arastirma: "Araştırma",
+	"roman-ve-oyku": "Dünya Edebiyatı",
 	felsefe: "Felsefe",
-	"siyaset-ve-toplum": "Siyaset ve toplum",
+	"siyaset-ve-toplum": "Siyaset ve Toplum",
 	dusunce: "Düşünce",
 	tasavvuf: "Tasavvuf",
 	siyer: "Siyer",
-	"ilmihal-ve-dua": "Kur'an, İlmihal ve Dua",
+	"ilmihal-ve-dua": "İlmihal ve Dua",
 	tarih: "Tarih",
 	osmanli: "Osmanlı",
+	cumhuriyet: "Cumhuriyet",
 	roma: "Roma",
 	kultur: "Kültür",
-	kuram: "Kuram",
-	guncel: "Güncel",
+	"bilim-felsefesi": "Bilim Felsefesi",
+	bulmaca: "Bulmaca",
 	ani: "Anı",
 	biyografi: "Biyografi",
-	bilim: "Bilim",
-	"kisisel-gelisim": "Kişisel gelişim"
+	"kisisel-gelisim": "Kişisel Gelişim"
 }
 
 function normalizeText(value) {
@@ -188,7 +181,7 @@ const BOOK_OVERRIDES = {
 		genre: "Bilim"
 	},
 	"virginia-woolf-kendine-ait-bir-oda": {
-		tags: ["Dünya Edebiyatı"],
+		tags: ["Edebiyat"],
 		genre: "Klasik"
 	},
 	"rasim-ozdenoren-muslumanca-dusunme-uzerine-denemeler": {

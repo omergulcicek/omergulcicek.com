@@ -9,6 +9,8 @@ import {
 } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
 	LIBRARY_BOOKMARK_TAG_ORDER,
+	LIBRARY_CATEGORY_LABELS,
+	LIBRARY_SUBCATEGORY_LABELS,
 	getLibrarySubcategoryLabelsForCategory,
 	getLibraryBookCategoryIdByLabel,
 	libraryCategoryHasVisibleGenres
@@ -54,7 +56,9 @@ export function getAvailableBookmarkTags(
 	bookmarks: readonly Bookmark[],
 	categoryId: BookmarkCategoryId
 ) {
-	return sortBookmarkTags([...getBookmarkTagCounts(bookmarks, categoryId).keys()], categoryId)
+	const counts = getBookmarkTagCounts(bookmarks, categoryId)
+
+	return sortBookmarkTags([...counts.keys()], categoryId, counts)
 }
 
 export function getBookmarkTagCounts(
@@ -297,13 +301,23 @@ export function getBookmarkSubtagAriaLabel(
 
 const BLOG_BOOKMARK_TAG_ORDER = ["Kişi", "Yayın", "Kurum"] as const
 
-function sortBookmarkTags(tags: readonly string[], categoryId: BookmarkCategoryId) {
-	if (categoryId === "library") {
+function sortBookmarkTags(
+	tags: readonly string[],
+	categoryId: BookmarkCategoryId,
+	counts?: ReadonlyMap<string, number>
+) {
+	if (categoryId === "library" && counts) {
 		const order = new Map<string, number>(
 			LIBRARY_BOOKMARK_TAG_ORDER.map((tag, index) => [tag, index] as const)
 		)
 
 		return [...tags].sort((left, right) => {
+			const countCompare = (counts.get(right) ?? 0) - (counts.get(left) ?? 0)
+
+			if (countCompare !== 0) {
+				return countCompare
+			}
+
 			const leftIndex = order.get(left)
 			const rightIndex = order.get(right)
 
@@ -360,9 +374,46 @@ function normalizeBookmarkTagValue(value: string) {
 		.toLocaleLowerCase(BOOKMARK_TAG_LOCALE)
 }
 
+const LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES = new Map<string, string>([
+	[normalizeBookmarkTagValue("Türk Edebiyatı"), "Edebiyat"],
+	[normalizeBookmarkTagValue("Dünya Edebiyatı"), "Edebiyat"],
+	[normalizeBookmarkTagValue("Siyaset ve toplum"), "Siyaset ve Toplum"],
+	[normalizeBookmarkTagValue("Kişisel gelişim"), "Kişisel Gelişim"],
+	[normalizeBookmarkTagValue("Kur'an, İlmihal ve Dua"), "İlmihal ve Dua"]
+])
+
+const LIBRARY_CATEGORY_SLUG_ALIASES = new Map<string, string>(
+	Object.entries(LIBRARY_CATEGORY_LABELS).map(([slug, label]) => [
+		normalizeBookmarkTagValue(slug),
+		label
+	])
+)
+
+const LIBRARY_GENRE_SLUG_ALIASES = new Map<string, string>(
+	Object.entries(LIBRARY_SUBCATEGORY_LABELS).map(([slug, label]) => [
+		normalizeBookmarkTagValue(slug),
+		label
+	])
+)
+
+function resolveLegacyBookmarkCategoryTag(tag: string) {
+	return LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? tag
+}
+
+function resolveLibraryCategorySlug(tag: string) {
+	return LIBRARY_CATEGORY_SLUG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? null
+}
+
+function resolveLibraryGenreSlug(tag: string) {
+	return LIBRARY_GENRE_SLUG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? null
+}
+
+export type ResolveBookmarkTagScope = "category" | "genre" | "default"
+
 export function resolveBookmarkTag(
 	availableTags: readonly string[],
-	tag: string | null | undefined
+	tag: string | null | undefined,
+	scope: ResolveBookmarkTagScope = "default"
 ) {
 	if (availableTags.length === 0) {
 		return null
@@ -372,7 +423,16 @@ export function resolveBookmarkTag(
 		return null
 	}
 
-	const normalizedTag = normalizeBookmarkTagValue(tag)
+	let resolvedTag = tag
+
+	if (scope === "category") {
+		resolvedTag = resolveLegacyBookmarkCategoryTag(resolvedTag)
+		resolvedTag = resolveLibraryCategorySlug(resolvedTag) ?? resolvedTag
+	} else if (scope === "genre") {
+		resolvedTag = resolveLibraryGenreSlug(resolvedTag) ?? resolvedTag
+	}
+
+	const normalizedTag = normalizeBookmarkTagValue(resolvedTag)
 	const matchedTag = availableTags.find(
 		(availableTag) => normalizeBookmarkTagValue(availableTag) === normalizedTag
 	)

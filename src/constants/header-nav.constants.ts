@@ -7,6 +7,7 @@ export const HEADER_NAV = [
 	{ label: "Ana Sayfa", href: "/", exact: true },
 	{ label: "Blog", href: "/blog" },
 	{ label: "Projeler", href: "/projects" },
+	{ label: "Yer İmleri", href: "/bookmarks" },
 	{ label: "Hakkımda", href: "/about" }
 ] as const
 
