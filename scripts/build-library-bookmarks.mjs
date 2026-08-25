@@ -17,11 +17,19 @@ const CATEGORY_LABELS = {
 	edebiyat: "Edebiyat",
 	"felsefe-ve-dusunce": "Felsefe ve Düşünce",
 	islam: "İslam",
-	"tarih-ve-kultur": "Tarih ve Kültür",
+	"tarih-ve-kultur": "Tarih",
 	bilim: "Bilim",
 	"ani-ve-biyografi": "Anı ve Biyografi",
 	"kisisel-gelisim": "Kişisel Gelişim"
 }
+
+const DIGERLERI_CATEGORY_IDS = new Set([
+	"edebiyat",
+	"felsefe-ve-dusunce",
+	"bilim",
+	"ani-ve-biyografi",
+	"kisisel-gelisim"
+])
 
 const SUBCATEGORY_LABELS = {
 	roman: "Roman",
@@ -35,16 +43,65 @@ const SUBCATEGORY_LABELS = {
 	tasavvuf: "Tasavvuf",
 	siyer: "Siyer",
 	"ilmihal-ve-dua": "İlmihal ve Dua",
-	tarih: "Tarih",
-	osmanli: "Osmanlı",
-	cumhuriyet: "Cumhuriyet",
+	"genel-turk-tarihi": "Genel Türk Tarihi",
+	"osmanli-tarihi": "Osmanlı Tarihi",
+	"hatirat-ve-ani": "Hatırat ve Anı",
 	roma: "Roma",
-	kultur: "Kültür",
+	cumhuriyet: "Cumhuriyet",
+	"sehir-tarihi": "Şehir Tarihi",
+	"kultur-mitoloji-ve-dunya-medeniyetleri":
+		"Kültür, Mitoloji ve Dünya Medeniyetleri",
+	tarih: "Genel Türk Tarihi",
+	osmanli: "Osmanlı Tarihi",
+	"cumhuriyet-ve-yakin-tarih": "Cumhuriyet",
+	"roma-ve-bizans": "Roma",
+	kultur: "Kültür, Mitoloji ve Dünya Medeniyetleri",
 	"bilim-felsefesi": "Bilim Felsefesi",
 	bulmaca: "Bulmaca",
 	ani: "Anı",
 	biyografi: "Biyografi",
 	"kisisel-gelisim": "Kişisel Gelişim"
+}
+
+function resolveLibraryTaxonomy(categoryId, subcategoryId) {
+	if (DIGERLERI_CATEGORY_IDS.has(categoryId)) {
+		return {
+			tags: ["Diğerleri"],
+			genre: CATEGORY_LABELS[categoryId]
+		}
+	}
+
+	if (categoryId === "islam") {
+		const islamGenre =
+			{
+				"kuran-i-kerim-ve-meal": "Kur'an-ı Kerim ve Meal",
+				"kuran-i-kerim": "Kur'an-ı Kerim ve Meal",
+				meal: "Kur'an-ı Kerim ve Meal",
+				tefsir: "Tefsir",
+				"akaid-ve-ilmihal": "Akaid ve İlmihal",
+				akaid: "Akaid ve İlmihal",
+				ilmihal: "Akaid ve İlmihal",
+				"hadis-ve-sunnet": "Hadis ve Sünnet",
+				"hadis-edep-ahlak": "Hadis ve Sünnet",
+				siyer: "Siyer",
+				"ahlak-tasavvuf": "Tasavvuf",
+				"islam-dusuncesi": "İslam Düşüncesi",
+				"islam-dusuncesi-fikriyat": "İslam Düşüncesi",
+				dusunce: "İslam Düşüncesi",
+				tasavvuf: "Tasavvuf",
+				"ilmihal-ve-dua": "Akaid ve İlmihal"
+			}[subcategoryId] ?? "İslam Düşüncesi"
+
+		return {
+			tags: ["İslam"],
+			genre: islamGenre
+		}
+	}
+
+	return {
+		tags: [CATEGORY_LABELS[categoryId]],
+		genre: SUBCATEGORY_LABELS[subcategoryId]
+	}
 }
 
 function normalizeText(value) {
@@ -158,39 +215,35 @@ const BOOK_OVERRIDES = {
 	},
 	"m-yusuf-kadioglu-musluman-muhendisin-yol-haritasi": {
 		tags: ["İslam"],
-		genre: "Düşünce"
-	},
-	"hayati-inanc-bekir-develi-fabrika-ayari": {
-		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	"ismail-hakki-aydin-homo-deyyus": {
-		tags: ["Bilim"],
+		tags: ["Diğerleri"],
 		genre: "Bilim"
 	},
 	"ismail-hakki-aydin-vecizelerim": {
-		tags: ["İslam"],
-		genre: "Düşünce"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	"ismail-hakki-aydin-yasam-5-0-kuantik-dusunce-sarmali": {
-		tags: ["Bilim"],
+		tags: ["Diğerleri"],
 		genre: "Bilim"
 	},
 	"ismail-hakki-aydin-insan-endiseli-bir-damla-hem-parcacik-hem-dalga": {
-		tags: ["Bilim"],
+		tags: ["Diğerleri"],
 		genre: "Bilim"
 	},
 	"virginia-woolf-kendine-ait-bir-oda": {
-		tags: ["Edebiyat"],
-		genre: "Klasik"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	"rasim-ozdenoren-muslumanca-dusunme-uzerine-denemeler": {
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	"ali-hammuda-40-pratik-sunnet": {
 		tags: ["İslam"],
-		genre: "Kur'an, İlmihal ve Dua"
+		genre: "Hadis ve Sünnet"
 	},
 	"mehmet-ali-kaya-turkiye-tarihi-ve-uygarliklari-1": {
 		id: "library-turkiye-tarihi-ve-uygarliklari-seti",
@@ -199,12 +252,7 @@ const BOOK_OVERRIDES = {
 	}
 }
 
-const AUTHOR_CATEGORY_OVERRIDES = {
-	"sinan yagmur": {
-		tags: ["İslam"],
-		genre: "Tasavvuf"
-	}
-}
+const AUTHOR_CATEGORY_OVERRIDES = {}
 
 function extractObjectArray(source, marker) {
 	const start = source.indexOf(marker)
@@ -366,6 +414,8 @@ async function main() {
 			.map((name) => AUTHOR_CATEGORY_OVERRIDES[normalizeText(name)])
 			.find(Boolean)
 
+		const taxonomy = resolveLibraryTaxonomy(book.categoryId, book.subcategoryId)
+
 		return {
 			id: bookOverride?.id ?? match?.id ?? `library-${book.id}`,
 			title: bookOverride?.title ?? book.title,
@@ -374,8 +424,8 @@ async function main() {
 			author,
 			translator: book.translator ?? match?.translator,
 			imageUrl: match?.imageUrl,
-			tags: bookOverride?.tags ?? categoryOverride?.tags ?? [CATEGORY_LABELS[book.categoryId]],
-			genre: bookOverride?.genre ?? categoryOverride?.genre ?? SUBCATEGORY_LABELS[book.subcategoryId]
+			tags: bookOverride?.tags ?? categoryOverride?.tags ?? taxonomy.tags,
+			genre: bookOverride?.genre ?? categoryOverride?.genre ?? taxonomy.genre
 		}
 	})
 

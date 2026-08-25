@@ -12,8 +12,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Sir Arthur Conan Doyle",
 		imageUrl: bookmarkImage("library-sir-arthur-conan-doyle-suphe-asla-uyumaz"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Dünya Edebiyatı"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-sir-arthur-conan-doyle-suc-detayda-saklidir",
@@ -24,8 +24,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-sir-arthur-conan-doyle-suc-detayda-saklidir"
 		),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Dünya Edebiyatı"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-sir-arthur-conan-doyle-gercekler-kanit-ister",
@@ -36,8 +36,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-sir-arthur-conan-doyle-gercekler-kanit-ister"
 		),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Dünya Edebiyatı"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-sir-arthur-conan-doyle-aklin-suphesi-sucun-gercegidir",
@@ -48,8 +48,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-sir-arthur-conan-doyle-aklin-suphesi-sucun-gercegidir"
 		),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Dünya Edebiyatı"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-sir-arthur-conan-doyle-akil-oyunlarinin-golgesinde",
@@ -60,8 +60,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-sir-arthur-conan-doyle-akil-oyunlarinin-golgesinde"
 		),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Dünya Edebiyatı"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-piyon-321683",
@@ -70,8 +70,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Michael Sikkofield",
 		imageUrl: bookmarkImage("library-piyon-321683"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Roman"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-ismail-hakki-aydin-vecizelerim",
@@ -80,8 +80,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "İsmail Hakkı Aydın",
 		imageUrl: bookmarkImage("library-ismail-hakki-aydin-vecizelerim"),
 		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-ismail-hakki-aydin-yasam-5-0-kuantik-dusunce-sarmali",
@@ -92,8 +92,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ismail-hakki-aydin-yasam-5-0-kuantik-dusunce-sarmali"
 		),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bilim Felsefesi"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-ismail-hakki-aydin-homo-deyyus",
@@ -102,8 +102,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "İsmail Hakkı Aydın",
 		imageUrl: bookmarkImage("library-ismail-hakki-aydin-homo-deyyus"),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bilim Felsefesi"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-ismail-hakki-aydin-ve-tanri-beyni-yaratti",
@@ -114,8 +114,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ismail-hakki-aydin-ve-tanri-beyni-yaratti"
 		),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bilim Felsefesi"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-ismail-hakki-aydin-frekansa-burundum-beyin-diye-gorundum",
@@ -126,8 +126,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ismail-hakki-aydin-frekansa-burundum-beyin-diye-gorundum"
 		),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bilim Felsefesi"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-ismail-hakki-aydin-frekanslar-aleminde-kainat-beyne-kucuk-noron-kainata-buyuk",
@@ -138,8 +138,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ismail-hakki-aydin-frekanslar-aleminde-kainat-beyne-kucuk-noron-kainata-buyuk"
 		),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bilim Felsefesi"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-ismail-hakki-aydin-felsefe-karada-yuzme-denizde-yurume-sanatidir",
@@ -150,8 +150,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ismail-hakki-aydin-felsefe-karada-yuzme-denizde-yurume-sanatidir"
 		),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Felsefe"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-ismail-hakki-aydin-insan-endiseli-bir-damla-hem-parcacik-hem-dalga",
@@ -162,8 +162,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ismail-hakki-aydin-insan-endiseli-bir-damla-hem-parcacik-hem-dalga"
 		),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bilim Felsefesi"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-pinar-ulgen-orta-cag-avrupasinda-ask-tutku-entrika-ve-romantizm",
@@ -174,8 +174,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-pinar-ulgen-orta-cag-avrupasinda-ask-tutku-entrika-ve-romantizm"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-onur-inal-peradan-beyogluna",
@@ -184,8 +184,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Onur İnal",
 		imageUrl: bookmarkImage("library-onur-inal-peradan-beyogluna"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Şehir Tarihi"
 	},
 	{
 		id: "library-ramazan-sesen-ibn-fadlan-seyahatnamesi",
@@ -194,8 +194,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Ramazan Şeşen",
 		imageUrl: bookmarkImage("library-ramazan-sesen-ibn-fadlan-seyahatnamesi"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-ahmet-faik-ozbilge-fener-balat-ayvansaray",
@@ -206,8 +206,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ahmet-faik-ozbilge-fener-balat-ayvansaray"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Şehir Tarihi"
 	},
 	{
 		id: "library-59-yuz-portreler-457862",
@@ -216,8 +216,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Necmettin Asma",
 		imageUrl: bookmarkImage("library-59-yuz-portreler-457862"),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Biyografi"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-kolektif-ahmet-emre-bilgili-sehir-ve-kultur-istanbul",
@@ -228,8 +228,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-kolektif-ahmet-emre-bilgili-sehir-ve-kultur-istanbul"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Şehir Tarihi"
 	},
 	{
 		id: "library-mircea-eliade-mitlerin-ozellikleri",
@@ -238,8 +238,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mircea Eliade",
 		imageUrl: bookmarkImage("library-mircea-eliade-mitlerin-ozellikleri"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-alev-alatli-hafazanallah",
@@ -248,8 +248,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Alev Alatlı",
 		imageUrl: bookmarkImage("library-alev-alatli-hafazanallah"),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Siyaset ve Toplum"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-ali-fuad-basgil-genclerle-basbasa",
@@ -258,7 +258,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Ali Fuad Başgil",
 		imageUrl: bookmarkImage("library-ali-fuad-basgil-genclerle-basbasa"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -268,7 +268,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Erdal Demirkıran",
 		imageUrl: bookmarkImage("library-sadece-aptallar-8-saat-uyur-81650"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -278,18 +278,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Faruk Öndağ",
 		imageUrl: bookmarkImage("library-faruk-ondag-bi-musaade-sinavim-var"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
-	},
-	{
-		id: "library-fabrika-ayari-528784",
-		title: "Fabrika Ayarı",
-		url: "https://www.kitapyurdu.com/kitap/fabrika-ayari/528784.html",
-		author: ["Hayati İnanç", "Bekir Develi"],
-		imageUrl: bookmarkImage("library-fabrika-ayari-528784"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
 	},
 	{
 		id: "library-ilber-ortayli-bir-omur-nasil-yasanir",
@@ -298,7 +288,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "İlber Ortaylı",
 		imageUrl: bookmarkImage("library-ilber-ortayli-bir-omur-nasil-yasanir"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -310,7 +300,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ilber-ortayli-insan-gelecegini-nasil-kurar"
 		),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -321,8 +311,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		translator: "Sevinç Seyla Tezcan",
 		imageUrl: bookmarkImage("library-japonizm-ciltli-499470"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-japon-savas-sanati-busido-396401",
@@ -332,8 +322,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		translator: "Doruk Akyüz",
 		imageUrl: bookmarkImage("library-japon-savas-sanati-busido-396401"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-e-a-wallis-budge-antik-misir-edebiyati",
@@ -342,8 +332,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "E. A. Wallis Budge",
 		imageUrl: bookmarkImage("library-e-a-wallis-budge-antik-misir-edebiyati"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-donald-a-mackenzie-babil-ve-asur-mitleri",
@@ -352,8 +342,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Donald A. Mackenzie",
 		imageUrl: bookmarkImage("library-donald-a-mackenzie-babil-ve-asur-mitleri"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-serdar-tuncer-sermayem-yok-derdimden-baska",
@@ -364,8 +354,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-serdar-tuncer-sermayem-yok-derdimden-baska"
 		),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Deneme"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-serdar-tuncer-hicbir-zaman-hicbir-sey",
@@ -374,8 +364,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Serdar Tuncer",
 		imageUrl: bookmarkImage("library-serdar-tuncer-hicbir-zaman-hicbir-sey"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Deneme"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-ahmed-yuksel-ozemre-uskudarda-bir-attar-dukkani",
@@ -386,8 +376,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ahmed-yuksel-ozemre-uskudarda-bir-attar-dukkani"
 		),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Anı"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-medeniyet-tasavvuru-futuhati-medeniyyeye-giris-607691",
@@ -398,8 +388,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-medeniyet-tasavvuru-futuhati-medeniyyeye-giris-607691"
 		),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Siyaset ve Toplum"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-okumak-nedir-663010",
@@ -408,8 +398,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Yusuf Kaplan",
 		imageUrl: bookmarkImage("library-okumak-nedir-663010"),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Felsefe"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-turkiyenin-maarif-davasi-4879",
@@ -418,8 +408,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Nurettin Topçu",
 		imageUrl: bookmarkImage("library-turkiyenin-maarif-davasi-4879"),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Siyaset ve Toplum"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-kesintisiz-ogrenme-42711",
@@ -428,7 +418,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mümin Sekman",
 		imageUrl: bookmarkImage("library-kesintisiz-ogrenme-42711"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -438,8 +428,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Jeremy Stangroom",
 		imageUrl: bookmarkImage("library-jeremy-stangroom-einstein-bulmacasi-2"),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bulmaca"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-jeremy-stangroom-einstein-bulmacasi",
@@ -448,8 +438,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Jeremy Stangroom",
 		imageUrl: bookmarkImage("library-jeremy-stangroom-einstein-bulmacasi"),
 		categoryId: "library",
-		tags: ["Bilim"],
-		genre: "Bulmaca"
+		tags: ["Diğerleri"],
+		genre: "Bilim"
 	},
 	{
 		id: "library-ruh-adam-588450",
@@ -458,8 +448,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-ruh-adam-588450"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Roman"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-bozkurtlar-243385",
@@ -468,8 +458,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-bozkurtlar-243385"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Roman"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-turk-ulkusu-251501",
@@ -478,8 +468,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-turk-ulkusu-251501"),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Siyaset ve Toplum"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-turancilik-milli-degerler-ve-genclik-251503",
@@ -490,8 +480,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-turancilik-milli-degerler-ve-genclik-251503"
 		),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Siyaset ve Toplum"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-turk-tarihinde-meseleler-246740",
@@ -500,8 +490,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-turk-tarihinde-meseleler-246740"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-deli-kurt-243383",
@@ -510,8 +500,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-deli-kurt-243383"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Roman"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-yollarin-sonu-595418",
@@ -520,8 +510,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-yollarin-sonu-595418"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Şiir"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-atsiz-hikayeler-452636",
@@ -530,8 +520,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Nihal Atsız",
 		imageUrl: bookmarkImage("library-atsiz-hikayeler-452636"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Öykü"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-james-clear-atomik-aliskanliklar",
@@ -540,7 +530,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "James Clear",
 		imageUrl: bookmarkImage("library-james-clear-atomik-aliskanliklar"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -553,8 +543,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-gelecegi-kesfedenler-dijital-cagin-biyografisi-416958"
 		),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Biyografi"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-suat-taser-konusma-egitimi",
@@ -563,7 +553,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Suat Taşer",
 		imageUrl: bookmarkImage("library-suat-taser-konusma-egitimi"),
 		categoryId: "library",
-		tags: ["Kişisel Gelişim"],
+		tags: ["Diğerleri"],
 		genre: "Kişisel Gelişim"
 	},
 	{
@@ -573,8 +563,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mustafa Kutlu",
 		imageUrl: bookmarkImage("library-yoksulluk-icimizde-4775"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Öykü"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-ya-tahammul-ya-sefer-4801",
@@ -583,8 +573,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mustafa Kutlu",
 		imageUrl: bookmarkImage("library-ya-tahammul-ya-sefer-4801"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Öykü"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-uzun-hikaye-19088",
@@ -593,8 +583,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mustafa Kutlu",
 		imageUrl: bookmarkImage("library-uzun-hikaye-19088"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Öykü"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-sir-4798",
@@ -603,8 +593,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mustafa Kutlu",
 		imageUrl: bookmarkImage("library-sir-4798"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Öykü"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-bu-boyledir-4776",
@@ -613,8 +603,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mustafa Kutlu",
 		imageUrl: bookmarkImage("library-bu-boyledir-4776"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Öykü"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-bu-ulke-18263",
@@ -623,8 +613,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Cemil Meriç",
 		imageUrl: bookmarkImage("library-bu-ulke-18263"),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Siyaset ve Toplum"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-yitik-cennet-6384",
@@ -634,7 +624,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-yitik-cennet-6384"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-insanligin-dirilisi-6385",
@@ -644,7 +634,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-insanligin-dirilisi-6385"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-dirilis-neslinin-amentusu-6522",
@@ -654,7 +644,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-dirilis-neslinin-amentusu-6522"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-islamin-dirilisi-6514",
@@ -664,7 +654,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-islamin-dirilisi-6514"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-sezai-karakoc-islamin-vadettikleri",
@@ -674,7 +664,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-sezai-karakoc-islamin-vadettikleri"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-islam-dusuncesi-551964",
@@ -684,7 +674,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-islam-dusuncesi-551964"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-muslumanca-dusunme-uzerine-denemeler-727",
@@ -694,7 +684,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-muslumanca-dusunme-uzerine-denemeler-727"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-gul-yetistiren-adam-488",
@@ -703,8 +693,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Rasim Özdenören",
 		imageUrl: bookmarkImage("library-gul-yetistiren-adam-488"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Roman"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-m-yusuf-kadioglu-musluman-muhendisin-yol-haritasi",
@@ -716,7 +706,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-insanligin-medeniyet-destani-461827",
@@ -726,37 +716,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		translator: "Cemal Aydın",
 		imageUrl: bookmarkImage("library-insanligin-medeniyet-destani-461827"),
 		categoryId: "library",
-		tags: ["Felsefe ve Düşünce"],
-		genre: "Felsefe"
-	},
-	{
-		id: "library-allah-de-otesini-birak-311263",
-		title: "Allah De Ötesini Bırak",
-		url: "https://www.kitapyurdu.com/kitap/allah-de-otesini-birak/311263.html",
-		author: "Uğur Koşar",
-		imageUrl: bookmarkImage("library-allah-de-otesini-birak-311263"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Tasavvuf"
-	},
-	{
-		id: "library-nihat-hatipoglu-buyuklerin-dualari",
-		title: "Büyüklerin Duaları",
-		url: "https://www.kitapyurdu.com/kitap/buyuklerin-dualari/136926.html",
-		author: "Nihat Hatipoğlu",
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "İlmihal ve Dua"
-	},
-	{
-		id: "library-nihat-hatipoglu-gunluk-dualar",
-		title: "Günlük Dualar",
-		url: "https://www.kitapyurdu.com/kitap/gunluk-dualar-kitabi/744782.html",
-		author: "Nihat Hatipoğlu",
-		imageUrl: bookmarkImage("library-nihat-hatipoglu-gunluk-dualar"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "İlmihal ve Dua"
+		tags: ["Diğerleri"],
+		genre: "Felsefe ve Düşünce"
 	},
 	{
 		id: "library-hemdem-kalpten-kalbe-bir-yol-vardir-677801",
@@ -767,52 +728,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-hemdem-kalpten-kalbe-bir-yol-vardir-677801"
 		),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Deneme"
-	},
-	{
-		id: "library-askin-gozyaslari-1-sems-tebrizi-408363",
-		title: "Aşkın Gözyaşları 1: Tebrizli Şems",
-		url: "https://www.kitapyurdu.com/kitap/askin-gozyaslari-1-sems-tebrizi/408363.html",
-		author: "Sinan Yağmur",
-		imageUrl: bookmarkImage("library-askin-gozyaslari-1-sems-tebrizi-408363"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Tasavvuf"
-	},
-	{
-		id: "library-askin-gozyaslari-2-hz-mevlana-408175",
-		title: "Aşkın Gözyaşları 2: Hz. Mevlana",
-		url: "https://www.kitapyurdu.com/kitap/askin-gozyaslari-2-hz-mevlana/408175.html",
-		author: "Sinan Yağmur",
-		imageUrl: bookmarkImage("library-askin-gozyaslari-2-hz-mevlana-408175"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Tasavvuf"
-	},
-	{
-		id: "library-askin-gozyaslari-4-hamus-olumu-open-dervis-305588",
-		title: "Aşkın Gözyaşları 4: Hamuş",
-		url: "https://www.kitapyurdu.com/kitap/askin-gozyaslari-4-hamus-olumu-open-dervis/305588.html",
-		author: "Sinan Yağmur",
-		imageUrl: bookmarkImage(
-			"library-askin-gozyaslari-4-hamus-olumu-open-dervis-305588"
-		),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Tasavvuf"
-	},
-	{
-		id: "library-tennure-ve-ates-hz-mevlana-karton-kapak-240852",
-		title: "Tennure ve Ateş: Hz. Mevlana",
-		url: "https://www.kitapyurdu.com/kitap/tennure-ve-ates-hz-mevlana-karton-kapak/240852.html",
-		author: "Sinan Yağmur",
-		imageUrl: bookmarkImage(
-			"library-tennure-ve-ates-hz-mevlana-karton-kapak-240852"
-		),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Tasavvuf"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-besir-ayvazoglu-kugunun-son-sarkisi",
@@ -821,40 +738,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Beşir Ayvazoğlu",
 		imageUrl: bookmarkImage("library-besir-ayvazoglu-kugunun-son-sarkisi"),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Biyografi"
-	},
-	{
-		id: "library-zakir-naik-kuran-ve-modern-bilim",
-		title: "Kur'an ve Modern Bilim",
-		url: "https://www.kitapyurdu.com/kitap/kuran-ve-modern-bilim-uyumlu-mu-uyumsuz-mu/588262.html",
-		author: "Zâkir Naik",
-		imageUrl: bookmarkImage("library-zakir-naik-kuran-ve-modern-bilim"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
-	},
-	{
-		id: "library-zakir-naik-islami-bakisla-terorizm-ve-cihat",
-		title: "İslami Bakışla Terörizm ve Cihat",
-		url: "https://www.kitapyurdu.com/kitap/islami-bakisla-terorizm-ve-cihat/588263.html",
-		author: "Zâkir Naik",
-		imageUrl: bookmarkImage(
-			"library-zakir-naik-islami-bakisla-terorizm-ve-cihat"
-		),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
-	},
-	{
-		id: "library-zakir-naik-genclerin-inanc-sorulari",
-		title: "Gençlerin İnanç Soruları",
-		url: "https://www.kitapyurdu.com/kitap/genclerin-inanc-sorulari/509834.html",
-		author: "Zâkir Naik",
-		imageUrl: bookmarkImage("library-zakir-naik-genclerin-inanc-sorulari"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-mel-thompson-budizmin-bilgeligi",
@@ -863,8 +748,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mel Thompson",
 		imageUrl: bookmarkImage("library-mel-thompson-budizmin-bilgeligi"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-antik-misirin-peygamberleri-hz-idris-hz-yusuf-hz-musa-701428",
@@ -875,8 +760,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-antik-misirin-peygamberleri-hz-idris-hz-yusuf-hz-musa-701428"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-bektasilik-710982",
@@ -885,8 +770,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Ahmet Yaşar Ocak",
 		imageUrl: bookmarkImage("library-bektasilik-710982"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-dogu-bati-arasinda-islam-495562",
@@ -897,7 +782,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-dogu-bati-arasinda-islam-495562"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-uyur-idik-uyardilar-turk-sufizminin-izleri-uzerine-anadolu-halk-islami-arastirmalari-620987",
@@ -909,8 +794,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-uyur-idik-uyardilar-turk-sufizminin-izleri-uzerine-anadolu-halk-islami-arastirmalari-620987"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Kültür"
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	},
 	{
 		id: "library-suleyman-uludag-islam-dusuncesinin-yapisi",
@@ -922,7 +807,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-azizuddin-nesefi-tasavvufta-insan-meselesi",
@@ -964,7 +849,6 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		title: "Fütûhül-Gayb",
 		url: "https://www.kitapyurdu.com/kitap/futuhul-gayb-alemlerin-kesfi/487377.html",
 		author: "Abdülkadir Geylânî",
-		translator: "Mehmet Bilal Yamak",
 		imageUrl: bookmarkImage("library-futuhul-gayb-alemlerin-kesfi-487377"),
 		categoryId: "library",
 		tags: ["İslam"],
@@ -981,26 +865,6 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		genre: "Tasavvuf"
 	},
 	{
-		id: "library-gazali-hikmetler-kitabi",
-		title: "Hikmetler Kitabı",
-		url: "https://www.kitapyurdu.com/kitap/hikmetler-kitabi/91441.html",
-		author: "Gazâlî",
-		imageUrl: bookmarkImage("library-gazali-hikmetler-kitabi"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
-	},
-	{
-		id: "library-gazali-ahlak-kitabi",
-		title: "Ahlâk Kitabı",
-		url: "https://www.kitapyurdu.com/kitap/ahlak-kitabi/104640.html",
-		author: "Gazâlî",
-		imageUrl: bookmarkImage("library-gazali-ahlak-kitabi"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Düşünce"
-	},
-	{
 		id: "library-ideolocya-orgusu-kod36-1099",
 		title: "İdeolocya Örgüsü",
 		url: "https://www.kitapyurdu.com/kitap/ideolocya-orgusu-kod36/1099.html",
@@ -1008,7 +872,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-ideolocya-orgusu-kod36-1099"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "Düşünce"
+		genre: "İslam Düşüncesi"
 	},
 	{
 		id: "library-cole-inen-nur-kod39-1102",
@@ -1016,14 +880,6 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		url: "https://www.kitapyurdu.com/kitap/cole-inen-nur-kod39/1102.html",
 		author: "Necip Fazıl Kısakürek",
 		imageUrl: bookmarkImage("library-cole-inen-nur-kod39-1102"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Siyer"
-	},
-	{
-		id: "library-seyda-muhammed-konyevi-saadet-rehberimiz-hz-muhammed",
-		title: "Saadet Rehberimiz Hz. Muhammed",
-		author: "Seydâ Muhammed Konyevî",
 		categoryId: "library",
 		tags: ["İslam"],
 		genre: "Siyer"
@@ -1037,17 +893,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-40-pratik-sunnet-599358"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "İlmihal ve Dua"
-	},
-	{
-		id: "library-komisyon-sevgi-peygamberi-hz-muhammed",
-		title: "Sevgi Peygamberi Hz. Muhammed",
-		url: "https://www.kitapyurdu.com/kitap/sevgi-peygamberi-hz-muhammed/81476.html",
-		author: "Komisyon",
-		imageUrl: bookmarkImage("library-komisyon-sevgi-peygamberi-hz-muhammed"),
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "Siyer"
+		genre: "Hadis ve Sünnet"
 	},
 	{
 		id: "library-osman-keskioglu-siyer-i-nebi",
@@ -1069,8 +915,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-halil-inalcik-osmanli-tarihinde-efsaneler-ve-gercekler"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-osmanlilar-kulturel-tarih-460636",
@@ -1080,8 +926,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		translator: "Çağdaş Sümer",
 		imageUrl: bookmarkImage("library-osmanlilar-kulturel-tarih-460636"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-cemal-kafadar-kendine-ait-bir-roma",
@@ -1090,8 +936,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Cemal Kafadar",
 		imageUrl: bookmarkImage("library-cemal-kafadar-kendine-ait-bir-roma"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-cemal-kafadar-kim-var-imis-biz-burada-yog-iken",
@@ -1102,8 +948,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-cemal-kafadar-kim-var-imis-biz-burada-yog-iken"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-ilber-ortayli-osmanliyi-yeniden-kesfetmek",
@@ -1114,8 +960,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-ilber-ortayli-osmanliyi-yeniden-kesfetmek"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-cansu-canan-ozgen-turklerin-seruveni",
@@ -1124,8 +970,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Cansu Canan Özgen",
 		imageUrl: bookmarkImage("library-cansu-canan-ozgen-turklerin-seruveni"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-resad-ekrem-kocu-osmanli-tarihinin-panoramasi",
@@ -1136,8 +982,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-resad-ekrem-kocu-osmanli-tarihinin-panoramasi"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-resad-ekrem-kocu-topkapi-sarayi",
@@ -1146,8 +992,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Reşad Ekrem Koçu",
 		imageUrl: bookmarkImage("library-resad-ekrem-kocu-topkapi-sarayi"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-resad-ekrem-kocu-yeniceriler",
@@ -1156,8 +1002,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Reşad Ekrem Koçu",
 		imageUrl: bookmarkImage("library-resad-ekrem-kocu-yeniceriler"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-ayasofyanin-gizli-tarihi-386572",
@@ -1166,18 +1012,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: ["Pelin Çift", "Erhan Altunay"],
 		imageUrl: bookmarkImage("library-ayasofyanin-gizli-tarihi-386572"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
-	},
-	{
-		id: "library-nazim-tektas-hurrem-sultan",
-		title: "Hürrem Sultan",
-		url: "https://www.kitapyurdu.com/kitap/hurrem-sultan/276069.html",
-		author: "Nazım Tektaş",
-		imageUrl: bookmarkImage("library-nazim-tektas-hurrem-sultan"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Şehir Tarihi"
 	},
 	{
 		id: "library-dersaadette-bayram-sabahlari-509826",
@@ -1186,8 +1022,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Dursun Gürlek",
 		imageUrl: bookmarkImage("library-dersaadette-bayram-sabahlari-509826"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-itikadin-muhafizlari-osmanlilar-689752",
@@ -1196,38 +1032,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Osman Doğan",
 		imageUrl: bookmarkImage("library-itikadin-muhafizlari-osmanlilar-689752"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-sarikamisbeyaz-huzun-75913",
-		title: "Sarıkamış",
-		url: "https://www.kitapyurdu.com/kitap/sarikamisbeyaz-huzun/75913.html",
-		author: "İsmail Bilgin",
-		imageUrl: bookmarkImage("library-sarikamisbeyaz-huzun-75913"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-ismail-bilgin-57-alay-filistin",
-		title: "57. Alay Filistin",
-		url: "https://www.kitapyurdu.com/kitap/57-alay-filistin/250461.html",
-		author: "İsmail Bilgin",
-		imageUrl: bookmarkImage("library-ismail-bilgin-57-alay-filistin"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-ismail-bilgin-kutul-amare",
-		title: "Kut'ül Amare",
-		url: "https://www.kitapyurdu.com/kitap/kutul-amare-osmanlinin-son-tokadi/436691.html",
-		author: "İsmail Bilgin",
-		imageUrl: bookmarkImage("library-ismail-bilgin-kutul-amare"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-kutulamare-kahramani-halil-kut-pasanin-hatiralari-374330",
@@ -1238,8 +1044,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-kutulamare-kahramani-halil-kut-pasanin-hatiralari-374330"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
 	},
 	{
 		id: "library-mehmet-yasar-ertac-kutul-amare-1916",
@@ -1248,20 +1054,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mehmet Yaşar Ertaç",
 		imageUrl: bookmarkImage("library-mehmet-yasar-ertac-kutul-amare-1916"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-medine-mudafaasi-col-kaplani-fahrettin-pasa-88173",
-		title: "Medine Müdafaası",
-		url: "https://www.kitapyurdu.com/kitap/medine-mudafaasi-col-kaplani-fahrettin-pasa/88173.html",
-		author: "İsmail Bilgin",
-		imageUrl: bookmarkImage(
-			"library-medine-mudafaasi-col-kaplani-fahrettin-pasa-88173"
-		),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-george-stitt-son-mekke-emiri-serif-ali-haydar-pasa-anlatiyor",
@@ -1272,8 +1066,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-george-stitt-son-mekke-emiri-serif-ali-haydar-pasa-anlatiyor"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
 	},
 	{
 		id: "library-ismail-kose-serif-huseyin",
@@ -1282,8 +1076,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "İsmail Köse",
 		imageUrl: bookmarkImage("library-ismail-kose-serif-huseyin"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-biz-osmanliya-neden-isyan-ettik-arap-gozuyle-osmanli-80245",
@@ -1295,8 +1089,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-biz-osmanliya-neden-isyan-ettik-arap-gozuyle-osmanli-80245"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
 	},
 	{
 		id: "library-huseyin-cahit-yalcin-talat-pasa",
@@ -1305,18 +1099,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Hüseyin Cahit Yalçın",
 		imageUrl: bookmarkImage("library-huseyin-cahit-yalcin-talat-pasa"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-bir-darbenin-anatomisi-13641",
-		title: "Bir Darbenin Anatomisi",
-		url: "https://www.kitapyurdu.com/kitap/bir-darbenin-anatomisi/13641.html",
-		author: "Yılmaz Öztuna",
-		imageUrl: bookmarkImage("library-bir-darbenin-anatomisi-13641"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-son-osmanli-sarayinda-gorduklerim-sultan-mehmed-resad-han-donemi-721477",
@@ -1327,30 +1111,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-son-osmanli-sarayinda-gorduklerim-sultan-mehmed-resad-han-donemi-721477"
 		),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Anı"
-	},
-	{
-		id: "library-yilmaz-oztuna-avrupa-turkiyesini-kaybimiz",
-		title: "Avrupa Türkiye'sini Kaybımız",
-		url: "https://www.kitapyurdu.com/kitap/93-ve-balkan-savaslari-avrupa-turkiyesini-kaybimiz-rumelinin-elden-cikisi/303957.html",
-		author: "Yılmaz Öztuna",
-		imageUrl: bookmarkImage(
-			"library-yilmaz-oztuna-avrupa-turkiyesini-kaybimiz"
-		),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-ismail-bilgin-elveda-balkanlar",
-		title: "Elveda Balkanlar",
-		url: "https://www.kitapyurdu.com/kitap/elveda-balkanlar-unutulan-vatan/101796.html",
-		author: "İsmail Bilgin",
-		imageUrl: bookmarkImage("library-ismail-bilgin-elveda-balkanlar"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-turgut-ozakman-dirilis-canakkale-1915",
@@ -1359,7 +1121,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Turgut Özakman",
 		imageUrl: bookmarkImage("library-turgut-ozakman-dirilis-canakkale-1915"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Cumhuriyet"
 	},
 	{
@@ -1369,8 +1131,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Falih Rıfkı Atay",
 		imageUrl: bookmarkImage("library-zeytindagi-gunumuz-turkcesiyle-668164"),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Anı"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-ataturkun-hatiralari-524510",
@@ -1379,8 +1141,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Falih Rıfkı Atay",
 		imageUrl: bookmarkImage("library-ataturkun-hatiralari-524510"),
 		categoryId: "library",
-		tags: ["Anı ve Biyografi"],
-		genre: "Anı"
+		tags: ["Diğerleri"],
+		genre: "Anı ve Biyografi"
 	},
 	{
 		id: "library-ilber-ortayli-yakin-tarihin-gercekleri",
@@ -1389,8 +1151,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "İlber Ortaylı",
 		imageUrl: bookmarkImage("library-ilber-ortayli-yakin-tarihin-gercekleri"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Cumhuriyet"
 	},
 	{
 		id: "library-turgut-ozakman-cumhuriyet-1922-1938",
@@ -1399,7 +1161,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Turgut Özakman",
 		imageUrl: bookmarkImage("library-turgut-ozakman-cumhuriyet-1922-1938"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Cumhuriyet"
 	},
 	{
@@ -1409,8 +1171,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Mustafa Naima",
 		imageUrl: bookmarkImage("library-mustafa-naima-naima-tarihi"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-imparatorun-imgesi-fatih-sultan-mehmedin-kamusal-imaji-ve-imparatorluk-siyaseti-582119",
@@ -1421,8 +1183,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-imparatorun-imgesi-fatih-sultan-mehmedin-kamusal-imaji-ve-imparatorluk-siyaseti-582119"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-sair-fatih-avni-150920",
@@ -1431,8 +1193,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Prof. Dr. İskender Pala",
 		imageUrl: bookmarkImage("library-sair-fatih-avni-150920"),
 		categoryId: "library",
-		tags: ["Edebiyat"],
-		genre: "Şiir"
+		tags: ["Diğerleri"],
+		genre: "Edebiyat"
 	},
 	{
 		id: "library-erhan-afyoncu-truvanin-intikami",
@@ -1441,18 +1203,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Erhan Afyoncu",
 		imageUrl: bookmarkImage("library-erhan-afyoncu-truvanin-intikami"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-kusatma-1453-130135",
-		title: "Kuşatma 1453",
-		url: "https://www.kitapyurdu.com/kitap/kusatma-1453/130135.html",
-		author: "Okay Tiryakioğlu",
-		imageUrl: bookmarkImage("library-kusatma-1453-130135"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-evraki-perisan-selahaddin-eyyubi-fatih-sultan-mehmed-yavuz-sultan-selim-715169",
@@ -1463,8 +1215,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-evraki-perisan-selahaddin-eyyubi-fatih-sultan-mehmed-yavuz-sultan-selim-715169"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-resad-ekrem-kocu-fatih-sultan-mehmed",
@@ -1473,8 +1225,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Reşad Ekrem Koçu",
 		imageUrl: bookmarkImage("library-resad-ekrem-kocu-fatih-sultan-mehmed"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-fatih-sultan-mehmed-717193",
@@ -1483,8 +1235,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "İlber Ortaylı",
 		imageUrl: bookmarkImage("library-fatih-sultan-mehmed-717193"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-bir-cihan-hukumdari-fatih-sultan-mehmed-455566",
@@ -1495,8 +1247,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-bir-cihan-hukumdari-fatih-sultan-mehmed-455566"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-fetih-ve-kiyamet-1453-595100",
@@ -1505,8 +1257,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Feridun M. Emecen",
 		imageUrl: bookmarkImage("library-fetih-ve-kiyamet-1453-595100"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-ahmed-ates-istanbulun-fethine-dair",
@@ -1515,8 +1267,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Ahmed Ateş",
 		imageUrl: bookmarkImage("library-ahmed-ates-istanbulun-fethine-dair"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-abdulkadir-ozcan-atam-dedem-kanunu",
@@ -1525,8 +1277,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Abdülkadir Özcan",
 		imageUrl: bookmarkImage("library-abdulkadir-ozcan-atam-dedem-kanunu"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-avrupanin-fethi-osmanli-cihana-nasil-hukmetti-701864",
@@ -1538,8 +1290,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-avrupanin-fethi-osmanli-cihana-nasil-hukmetti-701864"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-timur-yildizlarin-bahtina-hukmeden-son-cihangir-459664",
@@ -1550,8 +1302,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-timur-yildizlarin-bahtina-hukmeden-son-cihangir-459664"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-sultanlar-ve-imparatorlar-bir-bizanslinin-gozunden-osmanlilar-691634",
@@ -1562,70 +1314,18 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-sultanlar-ve-imparatorlar-bir-bizanslinin-gozunden-osmanlilar-691634"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-necmettin-alkan-sultan-ii-abdulhamid",
-		title: "Sultan II. Abdülhamid",
-		url: "https://www.kitapyurdu.com/kitap/sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi/735994.html",
+		title: "Sultan II. Abdülhamid - Arafta Bir Hünkâr",
+		url: "https://www.kitapyurdu.com/kitap/sultan-ii-abdulhamid-arafta-bir-hunkar/645795.html",
 		author: "Necmettin Alkan",
 		imageUrl: bookmarkImage("library-necmettin-alkan-sultan-ii-abdulhamid"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-mustafa-armagan-abdulhamidin-kurtlarla-dansi",
-		title: "Abdülhamid'in Kurtlarla Dansı",
-		url: "https://www.kitapyurdu.com/kitap/abdulhamidin-kurtlarla-dansi-3/654421.html",
-		author: "Mustafa Armağan",
-		imageUrl: bookmarkImage(
-			"library-mustafa-armagan-abdulhamidin-kurtlarla-dansi"
-		),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-yavuz-bahadiroglu-sultan-abdulhamid-han",
-		title: "Sultan Abdülhamid Han",
-		url: "https://www.kitapyurdu.com/kitap/kudretli-sultan-ii-abdulhamid-han/422656.html",
-		author: "Yavuz Bahadıroğlu",
-		imageUrl: bookmarkImage("library-yavuz-bahadiroglu-sultan-abdulhamid-han"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-ii-abdulhamid-zamani-ve-sahsiyeti-311444",
-		title: "II. Abdülhamid Zamanı ve Şahsiyeti",
-		url: "https://www.kitapyurdu.com/kitap/ii-abdulhamid-zamani-ve-sahsiyeti/311444.html",
-		author: "Yılmaz Öztuna",
-		imageUrl: bookmarkImage("library-ii-abdulhamid-zamani-ve-sahsiyeti-311444"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-sultan-ii-mahmud-342725",
-		title: "Sultan II. Mahmud",
-		url: "https://www.kitapyurdu.com/kitap/sultan-ii-mahmud/342725.html",
-		author: "Yılmaz Öztuna",
-		imageUrl: bookmarkImage("library-sultan-ii-mahmud-342725"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-okay-tiryakioglu-kanuni",
-		title: "Kanuni",
-		url: "https://www.kitapyurdu.com/kitap/kanuni-kilicin-yapamadigini-adalet-yapar/145953.html",
-		author: "Okay Tiryakioğlu",
-		imageUrl: bookmarkImage("library-okay-tiryakioglu-kanuni"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-ozlem-kumrular-muhtesem-suleyman",
@@ -1634,28 +1334,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Özlem Kumrular",
 		imageUrl: bookmarkImage("library-ozlem-kumrular-muhtesem-suleyman"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-kanuni-sultan-suleyman-335517",
-		title: "Kanuni Sultan Süleyman",
-		url: "https://www.kitapyurdu.com/kitap/kanuni-sultan-suleyman/335517.html",
-		author: "Yılmaz Öztuna",
-		imageUrl: bookmarkImage("library-kanuni-sultan-suleyman-335517"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
-	},
-	{
-		id: "library-okay-tiryakioglu-yavuz",
-		title: "Yavuz",
-		url: "https://www.kitapyurdu.com/kitap/yavuz/139914.html",
-		author: "Okay Tiryakioğlu",
-		imageUrl: bookmarkImage("library-okay-tiryakioglu-yavuz"),
-		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-yavuz-sultan-selim-324084",
@@ -1664,8 +1344,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Namık Kemal",
 		imageUrl: bookmarkImage("library-yavuz-sultan-selim-324084"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-yavuz-sultan-selim-401713",
@@ -1674,8 +1354,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Feridun M. Emecen",
 		imageUrl: bookmarkImage("library-yavuz-sultan-selim-401713"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-tufan-gunduz-kuran-ve-kilic",
@@ -1684,8 +1364,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Tufan Gündüz",
 		imageUrl: bookmarkImage("library-tufan-gunduz-kuran-ve-kilic"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-tufan-gunduz-kizilelma",
@@ -1694,8 +1374,8 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Tufan Gündüz",
 		imageUrl: bookmarkImage("library-tufan-gunduz-kizilelma"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-erhan-afyoncu-askeri-isyanlar-ve-darbeler",
@@ -1706,16 +1386,16 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-erhan-afyoncu-askeri-isyanlar-ve-darbeler"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Osmanlı"
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	},
 	{
 		id: "library-turkiye-tarihi-ve-uygarliklari-seti",
 		title: "Türkiye Tarihi ve Uygarlıkları Seti",
 		author: ["Mehmet Ali Kaya", "M. Ali Erdoğru", "Sabri Sürgevil"],
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
-		genre: "Tarih"
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
 	},
 	{
 		id: "library-iskendersezar-paralel-hayatlar-karton-kapak-371513",
@@ -1727,7 +1407,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-iskendersezar-paralel-hayatlar-karton-kapak-371513"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Roma"
 	},
 	{
@@ -1738,7 +1418,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		translator: "İrem Sağlamer",
 		imageUrl: bookmarkImage("library-spqr-antik-roma-tarihi-449296"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Roma"
 	},
 	{
@@ -1751,7 +1431,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-yeni-roma-dogudaki-roma-imparatorlugu-395700-642279"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Roma"
 	},
 	{
@@ -1764,7 +1444,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 			"library-buyuk-konstantin-yenilmez-imparator-705347"
 		),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Roma"
 	},
 	{
@@ -1774,7 +1454,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		author: "Semavi Eyice",
 		imageUrl: bookmarkImage("library-semavi-eyice-bizans-istanbulu"),
 		categoryId: "library",
-		tags: ["Tarih ve Kültür"],
+		tags: ["Tarih"],
 		genre: "Roma"
 	},
 	{
@@ -1788,14 +1468,6 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		genre: "Tasavvuf"
 	},
 	{
-		id: "library-huseyin-hilmi-isik-tam-ilmihal-saadet-i-ebediyye",
-		title: "Tam İlmihâl: Saâdet-i Ebediyye",
-		author: "Hüseyin Hilmi Işık",
-		categoryId: "library",
-		tags: ["İslam"],
-		genre: "İlmihal ve Dua"
-	},
-	{
 		id: "library-anonim-mizrakli-ilmihal-tercumesi",
 		title: "Mızraklı İlmihal",
 		url: "https://www.ahiskayayinevi.com/mizrakli-ilmihal-tercumesi-fikih-kurulu",
@@ -1803,7 +1475,7 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-anonim-mizrakli-ilmihal-tercumesi"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "İlmihal ve Dua"
+		genre: "Akaid ve İlmihal"
 	},
 	{
 		id: "library-hamid-aytac-kuran-i-kerim",
@@ -1813,6 +1485,740 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		imageUrl: bookmarkImage("library-hamid-aytac-kuran-i-kerim"),
 		categoryId: "library",
 		tags: ["İslam"],
-		genre: "İlmihal ve Dua"
+		genre: "Kur'an-ı Kerim ve Meal"
+	},
+	{
+		id: "library-kurani-kerimin-turkce-meali-alisi-718811",
+		title: "Kur'an-ı Kerîm'in Meal-i Âlisi",
+		url: "https://www.kitapyurdu.com/kitap/kurani-kerimin-turkce-meali-alisi/718811.html",
+		author: "Ömer Nasuhi Bilmen",
+		imageUrl: bookmarkImage("library-kurani-kerimin-turkce-meali-alisi-718811"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Kur'an-ı Kerim ve Meal"
+	},
+	{
+		id: "library-kuran-meali-711584",
+		title: "Kur'an Meali",
+		url: "https://www.kitapyurdu.com/kitap/kuran-meali/711584.html",
+		author: "Elmalılı Hamdi Yazır",
+		imageUrl: bookmarkImage("library-kuran-meali-711584"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Kur'an-ı Kerim ve Meal"
+	},
+	{
+		id: "library-fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747010",
+		title: "Fatiha Tefsiri",
+		url: "https://www.kitapyurdu.com/kitap/fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli/747010.html",
+		author: "Elmalılı Hamdi Yazır",
+		imageUrl: bookmarkImage(
+			"library-fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747010"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-kuranin-ozu-cevahirulkuran-687779",
+		title: "Kur'an'ın Özü",
+		url: "https://www.kitapyurdu.com/kitap/kuranin-ozu-cevahirulkuran/687779.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage("library-kuranin-ozu-cevahirulkuran-687779"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri-694355",
+		title: "Yedi Ayet Yedi Şahsiyet Fatiha Suresi Tefsiri",
+		url: "https://www.kitapyurdu.com/kitap/yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri/694355.html",
+		author: "Yasin Pişgin",
+		imageUrl: bookmarkImage(
+			"library-yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri-694355"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-kuranin-kalbine-yolculuk-yasin-suresi-tefsiri-540910",
+		title: "Kur'an'ın Kalbine Yolculuk Yasin Suresi Tefsiri",
+		url: "https://www.kitapyurdu.com/kitap/kuranin-kalbine-yolculuk-yasin-suresi-tefsiri/540910.html",
+		author: "Yasin Pişgin",
+		imageUrl: bookmarkImage(
+			"library-kuranin-kalbine-yolculuk-yasin-suresi-tefsiri-540910"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler-738420",
+		title: "Keşke Dememek İçin Kur'an'da Keşkeler ve Keşke Diyenler",
+		url: "https://www.kitapyurdu.com/kitap/keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler/738420.html",
+		author: "Yasin Pişgin",
+		imageUrl: bookmarkImage(
+			"library-keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler-738420"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-ehli-sunnet-akaidi-nesefi-akidesi-serhi-504474",
+		title: "Ehl-i Sünnet Akaidi",
+		url: "https://www.kitapyurdu.com/kitap/ehli-sunnet-akaidi-nesefi-akidesi-serhi/504474.html",
+		author: "Ömer Nesefi",
+		imageUrl: bookmarkImage("library-ehli-sunnet-akaidi-nesefi-akidesi-serhi-504474"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Akaid ve İlmihal"
+	},
+	{
+		id: "library-buyuk-islam-ilmihali-ciltli-606944",
+		title: "Büyük İslam İlmihali",
+		url: "https://www.kitapyurdu.com/kitap/buyuk-islam-ilmihali-ciltli/606944.html",
+		author: "Ömer Nasuhi Bilmen",
+		imageUrl: bookmarkImage("library-buyuk-islam-ilmihali-ciltli-606944"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Akaid ve İlmihal"
+	},
+	{
+		id: "library-riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak-328771",
+		title: "Riyazü's Salihin",
+		url: "https://www.kitapyurdu.com/kitap/riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak/328771.html",
+		author: "İmam Nevevi",
+		imageUrl: bookmarkImage(
+			"library-riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak-328771"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Hadis ve Sünnet"
+	},
+	{
+		id: "library-kainatin-efendisi-peygamberimizin-hayati-tek-cilt-252777",
+		title: "Kainatın Efendisi Peygamberimizin Hayatı",
+		url: "https://www.kitapyurdu.com/kitap/kainatin-efendisi-peygamberimizin-hayati-tek-cilt/252777.html",
+		author: "Salih Suruç",
+		imageUrl: bookmarkImage(
+			"library-kainatin-efendisi-peygamberimizin-hayati-tek-cilt-252777"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Siyer"
+	},
+	{
+		id: "library-kendini-aldatan-insan-630916",
+		title: "Kendini Aldatan İnsan",
+		url: "https://www.kitapyurdu.com/kitap/kendini-aldatan-insan/630916.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage("library-kendini-aldatan-insan-630916"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-dusunmenin-dogru-olcusu-elkistasulmustakim-660918",
+		title: "Düşünmenin Doğru Ölçüsü",
+		url: "https://www.kitapyurdu.com/kitap/dusunmenin-dogru-olcusu-elkistasulmustakim/660918.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage(
+			"library-dusunmenin-dogru-olcusu-elkistasulmustakim-660918"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-hakikat-arayisi-elmunkiz-mineddalal-565614",
+		title: "Hakikat Arayışı",
+		url: "https://www.kitapyurdu.com/kitap/hakikat-arayisi-elmunkiz-mineddalal/565614.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage("library-hakikat-arayisi-elmunkiz-mineddalal-565614"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-dil-belasi-dilin-afetleri-kitabu-afatillisan-747009",
+		title: "Dil Belası",
+		url: "https://www.kitapyurdu.com/kitap/dil-belasi-dilin-afetleri-kitabu-afatillisan/747009.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage(
+			"library-dil-belasi-dilin-afetleri-kitabu-afatillisan-747009"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-insan-nasil-insan-oldu-elfusul-filesile-velecvibe-637295",
+		title: "İnsan Nasıl İnsan Oldu?",
+		url: "https://www.kitapyurdu.com/kitap/insan-nasil-insan-oldu-elfusul-filesile-velecvibe/637295.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage(
+			"library-insan-nasil-insan-oldu-elfusul-filesile-velecvibe-637295"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi-537248",
+		title: "Hakikat Çağrısı",
+		url: "https://www.kitapyurdu.com/kitap/hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi/537248.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage(
+			"library-hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi-537248"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna-625053",
+		title: "En Güzel İsimler",
+		url: "https://www.kitapyurdu.com/kitap/en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna/625053.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage(
+			"library-en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna-625053"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-gokyuzune-bakmanin-faydalari-321327",
+		title: "Gökyüzüne Bakmanın Faydaları",
+		url: "https://www.kitapyurdu.com/kitap/gokyuzune-bakmanin-faydalari/321327.html",
+		author: "İmam Gazali",
+		imageUrl: bookmarkImage("library-gokyuzune-bakmanin-faydalari-321327"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-kirk-hadis-398941",
+		title: "Kırk Hadis",
+		url: "https://www.kitapyurdu.com/kitap/kirk-hadis/398941.html",
+		author: "İmam Nevevi",
+		imageUrl: bookmarkImage("library-kirk-hadis-398941"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Hadis ve Sünnet"
+	},
+	{
+		id: "library-ibn-sina-hayy-bin-yakzan-kesifler-329562",
+		title: "Hayy bin Yakzân",
+		url: "https://www.kitapyurdu.com/kitap/ibn-sina-hayy-bin-yakzan-kesifler/329562.html",
+		author: "İbn Sînâ",
+		imageUrl: bookmarkImage("library-ibn-sina-hayy-bin-yakzan-kesifler-329562"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "İslam Düşüncesi"
+	},
+	{
+		id: "library-imami-azamin-bes-eseri-50132",
+		title: "İmam-ı A'zamın Beş Eseri",
+		url: "https://www.kitapyurdu.com/kitap/imami-azamin-bes-eseri/50132.html",
+		author: "İmam-ı Azam Ebu Hanife",
+		imageUrl: bookmarkImage("library-imami-azamin-bes-eseri-50132"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Akaid ve İlmihal"
+	},
+	{
+		id: "library-cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak-735273",
+		title: "Cambridge Türkiye Tarihi",
+		url: "https://www.kitapyurdu.com/kitap/cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak/735273.html",
+		author: "Kate Fleet",
+		imageUrl: bookmarkImage("library-cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak-735273"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i-131082",
+		title: "Devlet-i Aliyye: Osmanlı İmparatorluğu Üzerine Araştırmalar I",
+		url: "https://www.kitapyurdu.com/kitap/devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i/131082.html",
+		author: "Halil İnalcık",
+		imageUrl: bookmarkImage("library-devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i-131082"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-savasirken-655804",
+		title: "Osmanlı Savaşırken",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-savasirken/655804.html",
+		author: "Rhoads Murphey",
+		imageUrl: bookmarkImage("library-osmanli-savasirken-655804"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-imparatorlugu-13001650-632294",
+		title: "Osmanlı İmparatorluğu 1300-1650",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugu-13001650/632294.html",
+		author: "Colin Imber",
+		imageUrl: bookmarkImage("library-osmanli-imparatorlugu-13001650-632294"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi-640230",
+		title: "Barut, Top ve Tüfek: Osmanlı İmparatorluğu'nda Askeri Güç ve Silah Sanayisi",
+		url: "https://www.kitapyurdu.com/kitap/barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi/640230.html",
+		author: "Gábor Ágoston",
+		imageUrl: bookmarkImage("library-barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi-640230"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanliturkiye-iktisadi-tarihi-15001914-73654",
+		title: "Osmanlı-Türkiye İktisadi Tarihi 1500-1914",
+		url: "https://www.kitapyurdu.com/kitap/osmanliturkiye-iktisadi-tarihi-15001914/73654.html",
+		author: "Şevket Pamuk",
+		imageUrl: bookmarkImage("library-osmanliturkiye-iktisadi-tarihi-15001914-73654"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-imparatorlugunda-paranin-tarihi-424445",
+		title: "Osmanlı İmparatorluğu'nda Paranın Tarihi",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugunda-paranin-tarihi/424445.html",
+		author: "Şevket Pamuk",
+		imageUrl: bookmarkImage("library-osmanli-imparatorlugunda-paranin-tarihi-424445"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi-758420",
+		title: "Bir Felsefe Risalesi: Sultan Abdülaziz Han'ın Hikmet ve Mantık Bahislerine Dair Bir Şerhi",
+		url: "https://www.kitapyurdu.com/kitap/bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi/758420.html",
+		author: "Sultan Abdülaziz",
+		imageUrl: bookmarkImage("library-bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi-758420"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-sultan-abdulhamid-279760",
+		title: "Sultan Abdülhamid",
+		url: "https://www.kitapyurdu.com/kitap/sultan-abdulhamid/279760.html",
+		author: "François Georgeon",
+		imageUrl: bookmarkImage("library-sultan-abdulhamid-279760"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638-673565",
+		title: "Hacılar ve Sultanlar: Osmanlı Döneminde Hac 1517-1638",
+		url: "https://www.kitapyurdu.com/kitap/hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638/673565.html",
+		author: "Suraiya Faroqhi",
+		imageUrl: bookmarkImage("library-hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638-673565"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-toplumunda-aile-451519",
+		title: "Osmanlı Toplumunda Aile",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-toplumunda-aile/451519.html",
+		author: "İlber Ortaylı",
+		imageUrl: bookmarkImage("library-osmanli-toplumunda-aile-451519"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli-582037",
+		title: "Fatih Devri Üzerinde Tetkikler ve Vesikalar I",
+		url: "https://www.kitapyurdu.com/kitap/fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli/582037.html",
+		author: "Halil İnalcık",
+		imageUrl: bookmarkImage("library-fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli-582037"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-candarli-vezir-ailesi-22b7-606633",
+		title: "Candarlı Vezir Ailesi",
+		url: "https://www.kitapyurdu.com/kitap/candarli-vezir-ailesi-22b7/606633.html",
+		author: "İsmail Hakkı Uzunçarşılı",
+		imageUrl: bookmarkImage("library-candarli-vezir-ailesi-22b7-606633"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanlida-strateji-ve-askeri-guc-267989",
+		title: "Osmanlı'da Strateji ve Askeri Güç",
+		url: "https://www.kitapyurdu.com/kitap/osmanlida-strateji-ve-askeri-guc/267989.html",
+		author: "Gábor Ágoston",
+		imageUrl: bookmarkImage("library-osmanlida-strateji-ve-askeri-guc-267989"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600-380476",
+		title: "Osmanlı İmparatorluğu'nun Kuruluş ve Yükseliş Tarihi 1300-1600",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600/380476.html",
+		author: "Feridun M. Emecen",
+		imageUrl: bookmarkImage("library-osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600-380476"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-imparatorlugu-klasik-cag-13001600-501208",
+		title: "Osmanlı İmparatorluğu Klasik Çağ 1300-1600",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugu-klasik-cag-13001600/501208.html",
+		author: "Halil İnalcık",
+		imageUrl: bookmarkImage("library-osmanli-imparatorlugu-klasik-cag-13001600-501208"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv-708391",
+		title: "Osmanlı Devleti Tarihi: Netayicü'l-Vukuat Cilt I-IV",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv/708391.html",
+		author: "Mustafa Nuri Paşa",
+		imageUrl: bookmarkImage("library-osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv-708391"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-fatihin-tarihi-tarihi-ebulfeth-343183",
+		title: "Fatih'in Tarihi: Tarih-i Ebu'l-Feth",
+		url: "https://www.kitapyurdu.com/kitap/fatihin-tarihi-tarihi-ebulfeth/343183.html",
+		author: "Tursun Bey",
+		imageUrl: bookmarkImage("library-fatihin-tarihi-tarihi-ebulfeth-343183"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-kadin-hareketi-5871",
+		title: "Osmanlı Kadın Hareketi",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-kadin-hareketi/5871.html",
+		author: "Serpil Çakır",
+		imageUrl: bookmarkImage("library-osmanli-kadin-hareketi-5871"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-seriat-ile-kanun-arasinda-ebussuud-efendi-607812",
+		title: "Şeriat ile Kanun Arasında Ebussuud Efendi",
+		url: "https://www.kitapyurdu.com/kitap/seriat-ile-kanun-arasinda-ebussuud-efendi/607812.html",
+		author: "Colin Imber",
+		imageUrl: bookmarkImage("library-seriat-ile-kanun-arasinda-ebussuud-efendi-607812"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-iki-cihan-aresinde-502785",
+		title: "İki Cihan Arasında",
+		url: "https://www.kitapyurdu.com/kitap/iki-cihan-aresinde/502785.html",
+		author: "Cemal Kafadar",
+		imageUrl: bookmarkImage("library-iki-cihan-aresinde-502785"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanli-ilmiyesi-ciltli-569791",
+		title: "Osmanlı İlmiyesi",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-ilmiyesi-ciltli/569791.html",
+		author: "Mehmet İpşirli",
+		imageUrl: bookmarkImage("library-osmanli-ilmiyesi-ciltli-569791"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler-634474",
+		title: "Osmanlılar: Fütuhat, İmparatorluk, Avrupa ile İlişkiler",
+		url: "https://www.kitapyurdu.com/kitap/osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler/634474.html",
+		author: "Halil İnalcık",
+		imageUrl: bookmarkImage("library-osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler-634474"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-asik-pasazade-osmanogullarinin-tarihi-ciltli-742950",
+		title: "Aşıkpaşazade: Osmanoğulları'nın Tarihi",
+		url: "https://www.kitapyurdu.com/kitap/asik-pasazade-osmanogullarinin-tarihi-ciltli/742950.html",
+		author: "Aşıkpaşazade",
+		imageUrl: bookmarkImage("library-asik-pasazade-osmanogullarinin-tarihi-ciltli-742950"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-babam-sultan-abdulhamid-315783",
+		title: "Babam Sultan Abdülhamid",
+		url: "https://www.kitapyurdu.com/kitap/babam-sultan-abdulhamid/315783.html",
+		author: "Ayşe Osmanoğlu",
+		imageUrl: bookmarkImage("library-babam-sultan-abdulhamid-315783"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
+	},
+	{
+		id: "library-turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden-604831",
+		title: "Sultan Fatih'in Sarayında Bir Esir: Giovanni Maria Angiolello Gözünden",
+		url: "https://www.kitapyurdu.com/kitap/turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden/604831.html",
+		author: "Giovanni Maria Angiolello",
+		imageUrl: bookmarkImage("library-turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden-604831"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
+	},
+	{
+		id: "library-bir-yenicerinin-hatiralari-307682",
+		title: "Bir Yeniçerinin Hatıraları",
+		url: "https://www.kitapyurdu.com/kitap/bir-yenicerinin-hatiralari/307682.html",
+		author: "Konstantin Mihailoviç",
+		imageUrl: bookmarkImage("library-bir-yenicerinin-hatiralari-307682"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
+	},
+	{
+		id: "library-bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis-365372",
+		title: "Bir Osmanlı Askerinin Hatıratı 1688-1700: Esaretten Kaçış",
+		url: "https://www.kitapyurdu.com/kitap/bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis/365372.html",
+		author: "Temeşvarlı Osman Ağa",
+		imageUrl: bookmarkImage("library-bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis-365372"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
+	},
+	{
+		id: "library-roma-savas-sanati-510766",
+		title: "Roma Savaş Sanatı",
+		url: "https://www.kitapyurdu.com/kitap/roma-savas-sanati/510766.html",
+		author: "Flavius Vegetius Renatus",
+		imageUrl: bookmarkImage("library-roma-savas-sanati-510766"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Roma"
+	},
+	{
+		id: "library-justinyen-imparator-asker-aziz-719872",
+		title: "Jüstinyen İmparator, Asker, Aziz",
+		url: "https://www.kitapyurdu.com/kitap/justinyen-imparator-asker-aziz/719872.html",
+		author: "Peter Sarris",
+		imageUrl: bookmarkImage("library-justinyen-imparator-asker-aziz-719872"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Roma"
+	},
+	{
+		id: "library-bizansli-gozuyle-turkler-136818",
+		title: "Bizanslı Gözüyle Türkler",
+		url: "https://www.kitapyurdu.com/kitap/bizansli-gozuyle-turkler/136818.html",
+		author: "Georges Pachymeres",
+		imageUrl: bookmarkImage("library-bizansli-gozuyle-turkler-136818"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Roma"
+	},
+	{
+		id: "library-bir-sehir-kurmak-turgut-canseverle-konusmalar-381773",
+		title: "Bir Şehir Kurmak: Turgut Cansever'le Konuşmalar",
+		url: "https://www.kitapyurdu.com/kitap/bir-sehir-kurmak-turgut-canseverle-konusmalar/381773.html",
+		author: "Aynur Can",
+		imageUrl: bookmarkImage("library-bir-sehir-kurmak-turgut-canseverle-konusmalar-381773"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Şehir Tarihi"
+	},
+	{
+		id: "library-tanzimat-degisim-surecinde-osmanli-imparatorlugu-257767",
+		title: "Tanzimat Değişim Sürecinde Osmanlı İmparatorluğu",
+		url: "https://www.kitapyurdu.com/kitap/tanzimat-degisim-surecinde-osmanli-imparatorlugu/257767.html",
+		author: "Halil İnalcık",
+		imageUrl: bookmarkImage(
+			"library-tanzimat-degisim-surecinde-osmanli-imparatorlugu-257767"
+		),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri-722342",
+		title: "Davetsiz Misafirler Osmanlı Çökerken Amerikan Misyonerleri",
+		url: "https://www.kitapyurdu.com/kitap/davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri/722342.html",
+		author: "İsmail Köse",
+		imageUrl: bookmarkImage("library-davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri-722342"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi-735994",
+		title: "Sultan II. Abdülhamid ve Jön Türkler",
+		url: "https://www.kitapyurdu.com/kitap/sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi/735994.html",
+		author: "Necmettin Alkan",
+		imageUrl: bookmarkImage("library-sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi-735994"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik-563570",
+		title: "İmparatorluğun Son Savaşı",
+		url: "https://www.kitapyurdu.com/kitap/imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik/563570.html",
+		author: "Necmettin Alkan",
+		imageUrl: bookmarkImage("library-imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik-563570"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-turkiye-selcuklularinda-hukumet-vezir-ve-divan-538574",
+		title: "Türkiye Selçuklularında Hükümet",
+		url: "https://www.kitapyurdu.com/kitap/turkiye-selcuklularinda-hukumet-vezir-ve-divan/538574.html",
+		author: "Refik Turan",
+		imageUrl: bookmarkImage("library-turkiye-selcuklularinda-hukumet-vezir-ve-divan-538574"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-turkistan-halklarinin-tarihi-482177",
+		title: "Türkistan Halklarının Tarihi",
+		url: "https://www.kitapyurdu.com/kitap/turkistan-halklarinin-tarihi/482177.html",
+		author: "Wilhelm Barthold",
+		imageUrl: bookmarkImage("library-turkistan-halklarinin-tarihi-482177"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-turk-mitolojisi-iiicilt-takim-556120",
+		title: "Türk Mitolojisi",
+		url: "https://www.kitapyurdu.com/kitap/turk-mitolojisi-iiicilt-takim/556120.html",
+		author: "Bahaeddin Ögel",
+		imageUrl: bookmarkImage("library-turk-mitolojisi-iiicilt-takim-556120"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-son-kizilbas-sah-ismail-244032",
+		title: "Son Kızılbaş Şah İsmail",
+		url: "https://www.kitapyurdu.com/kitap/son-kizilbas-sah-ismail/244032.html",
+		author: "Tufan Gündüz",
+		imageUrl: bookmarkImage("library-son-kizilbas-sah-ismail-244032"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-selcuklular-zamaninda-turkiye-62913",
+		title: "Selçuklular Zamanında Türkiye",
+		url: "https://www.kitapyurdu.com/kitap/selcuklular-zamaninda-turkiye/62913.html",
+		author: "Osman Turan",
+		imageUrl: bookmarkImage("library-selcuklular-zamaninda-turkiye-62913"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-fetih-suresi-tefsiri-151319",
+		title: "Fetih Suresi Tefsiri",
+		url: "https://www.kitapyurdu.com/kitap/fetih-suresi-tefsiri/151319.html",
+		author: "Ömer Nasuhi Bilmen",
+		imageUrl: bookmarkImage("library-fetih-suresi-tefsiri-151319"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-elmalili-hamdi-yazir-ihlas-suresi-tefsiri-387631",
+		title: "İhlas Suresi Tefsiri",
+		url: "https://www.kitapyurdu.com/kitap/elmalili-hamdi-yazir-ihlas-suresi-tefsiri/387631.html",
+		author: "Elmalılı Hamdi Yazır",
+		imageUrl: bookmarkImage("library-elmalili-hamdi-yazir-ihlas-suresi-tefsiri-387631"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-hizbulbahr-serhi-748863",
+		title: "Hizbü'l-Bahr Şerhi",
+		url: "https://www.kitapyurdu.com/kitap/hizbulbahr-serhi/748863.html",
+		author: "Şeyh Ahmed Zerruk",
+		imageUrl: bookmarkImage("library-hizbulbahr-serhi-748863"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-aciklamali-delailulhayrat-salavati-serifler-70598",
+		title: "Delailü'l-Hayrat Salavat-ı Şerifler",
+		url: "https://www.kitapyurdu.com/kitap/aciklamali-delailulhayrat-salavati-serifler/70598.html",
+		author: "Muhammed b. Süleyman el Cezuli",
+		imageUrl: bookmarkImage("library-aciklamali-delailulhayrat-salavati-serifler-70598"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tasavvuf"
+	},
+	{
+		id: "library-osmanli-tarihinde-islamiyet-ve-devlet-396753",
+		title: "Osmanlı Tarihinde İslamiyet ve Devlet",
+		url: "https://www.kitapyurdu.com/kitap/osmanli-tarihinde-islamiyet-ve-devlet/396753.html",
+		author: "Halil İnalcık",
+		imageUrl: bookmarkImage("library-osmanli-tarihinde-islamiyet-ve-devlet-396753"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri-257775",
+		title: "Türk Mektupları Kanuni Döneminde Avrupalı Bir Elçinin Gözlemleri",
+		url: "https://www.kitapyurdu.com/kitap/turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri/257775.html",
+		author: "Ogiler Ghislain De Busbecq",
+		imageUrl: bookmarkImage("library-turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri-257775"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Hatırat ve Anı"
+	},
+	{
+		id: "library-ayasofya-fleksi-kapak-624945",
+		title: "Ayasofya",
+		url: "https://www.kitapyurdu.com/kitap/ayasofya-fleksi-kapak/624945.html",
+		author: "Sedat Bornovalı",
+		imageUrl: bookmarkImage("library-ayasofya-fleksi-kapak-624945"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Şehir Tarihi"
+	},
+	{
+		id: "library-iste-onderimiz-hz-muhammed-18361",
+		title: "İşte Önderimiz Hz. Muhammed",
+		url: "https://www.kitapyurdu.com/kitap/iste-onderimiz-hz-muhammed/18361.html",
+		author: "İhsan Süreyya Sırma",
+		imageUrl: bookmarkImage("library-iste-onderimiz-hz-muhammed-18361"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Siyer"
 	}
 ]

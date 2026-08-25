@@ -58,7 +58,7 @@ export function getAvailableBookmarkTags(
 ) {
 	const counts = getBookmarkTagCounts(bookmarks, categoryId)
 
-	return sortBookmarkTags([...counts.keys()], categoryId, counts)
+	return sortBookmarkTags([...counts.keys()], categoryId)
 }
 
 export function getBookmarkTagCounts(
@@ -301,23 +301,13 @@ export function getBookmarkSubtagAriaLabel(
 
 const BLOG_BOOKMARK_TAG_ORDER = ["Kişi", "Yayın", "Kurum"] as const
 
-function sortBookmarkTags(
-	tags: readonly string[],
-	categoryId: BookmarkCategoryId,
-	counts?: ReadonlyMap<string, number>
-) {
-	if (categoryId === "library" && counts) {
+function sortBookmarkTags(tags: readonly string[], categoryId: BookmarkCategoryId) {
+	if (categoryId === "library") {
 		const order = new Map<string, number>(
 			LIBRARY_BOOKMARK_TAG_ORDER.map((tag, index) => [tag, index] as const)
 		)
 
 		return [...tags].sort((left, right) => {
-			const countCompare = (counts.get(right) ?? 0) - (counts.get(left) ?? 0)
-
-			if (countCompare !== 0) {
-				return countCompare
-			}
-
 			const leftIndex = order.get(left)
 			const rightIndex = order.get(right)
 
@@ -375,11 +365,16 @@ function normalizeBookmarkTagValue(value: string) {
 }
 
 const LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES = new Map<string, string>([
-	[normalizeBookmarkTagValue("Türk Edebiyatı"), "Edebiyat"],
-	[normalizeBookmarkTagValue("Dünya Edebiyatı"), "Edebiyat"],
-	[normalizeBookmarkTagValue("Siyaset ve toplum"), "Siyaset ve Toplum"],
-	[normalizeBookmarkTagValue("Kişisel gelişim"), "Kişisel Gelişim"],
-	[normalizeBookmarkTagValue("Kur'an, İlmihal ve Dua"), "İlmihal ve Dua"]
+	[normalizeBookmarkTagValue("Tarih ve Kültür"), "Tarih"],
+	[normalizeBookmarkTagValue("Türk Edebiyatı"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Dünya Edebiyatı"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Edebiyat"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Felsefe ve Düşünce"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Bilim"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Anı ve Biyografi"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Kişisel Gelişim"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Kişisel gelişim"), "Diğerleri"],
+	[normalizeBookmarkTagValue("Siyaset ve toplum"), "Siyaset ve Toplum"]
 ])
 
 const LIBRARY_CATEGORY_SLUG_ALIASES = new Map<string, string>(
@@ -389,12 +384,48 @@ const LIBRARY_CATEGORY_SLUG_ALIASES = new Map<string, string>(
 	])
 )
 
-const LIBRARY_GENRE_SLUG_ALIASES = new Map<string, string>(
-	Object.entries(LIBRARY_SUBCATEGORY_LABELS).map(([slug, label]) => [
-		normalizeBookmarkTagValue(slug),
-		label
-	])
-)
+const LIBRARY_GENRE_SLUG_ALIASES = new Map<string, string>([
+	...Object.entries(LIBRARY_SUBCATEGORY_LABELS).map(
+		([slug, label]) => [normalizeBookmarkTagValue(slug), label] as const
+	),
+	[normalizeBookmarkTagValue("dusunce"), "İslam Düşüncesi"],
+	[normalizeBookmarkTagValue("Düşünce"), "İslam Düşüncesi"],
+	[normalizeBookmarkTagValue("tasavvuf"), "Tasavvuf"],
+	[normalizeBookmarkTagValue("Tasavvuf"), "Tasavvuf"],
+	[normalizeBookmarkTagValue("Ahlak / Tasavvuf"), "Tasavvuf"],
+	[normalizeBookmarkTagValue("ahlak-tasavvuf"), "Tasavvuf"],
+	[normalizeBookmarkTagValue("siyer"), "Siyer"],
+	[normalizeBookmarkTagValue("Siyer"), "Siyer"],
+	[normalizeBookmarkTagValue("ilmihal-ve-dua"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("İlmihal ve Dua"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("Kur'an, İlmihal ve Dua"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("Kur'an-ı Kerim"), "Kur'an-ı Kerim ve Meal"],
+	[normalizeBookmarkTagValue("Meal"), "Kur'an-ı Kerim ve Meal"],
+	[normalizeBookmarkTagValue("Akaid"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("İlmihal"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("İslam Düşüncesi / Fikriyat"), "İslam Düşüncesi"],
+	[normalizeBookmarkTagValue("Hadis / Edep-Ahlak"), "Hadis ve Sünnet"],
+	[normalizeBookmarkTagValue("kuran-i-kerim"), "Kur'an-ı Kerim ve Meal"],
+	[normalizeBookmarkTagValue("meal"), "Kur'an-ı Kerim ve Meal"],
+	[normalizeBookmarkTagValue("akaid"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("ilmihal"), "Akaid ve İlmihal"],
+	[normalizeBookmarkTagValue("hadis-edep-ahlak"), "Hadis ve Sünnet"],
+	[normalizeBookmarkTagValue("islam-dusuncesi-fikriyat"), "İslam Düşüncesi"],
+	[normalizeBookmarkTagValue("tarih"), "Genel Türk Tarihi"],
+	[normalizeBookmarkTagValue("Tarih"), "Genel Türk Tarihi"],
+	[normalizeBookmarkTagValue("osmanli"), "Osmanlı Tarihi"],
+	[normalizeBookmarkTagValue("Osmanlı"), "Osmanlı Tarihi"],
+	[normalizeBookmarkTagValue("cumhuriyet"), "Cumhuriyet"],
+	[normalizeBookmarkTagValue("Cumhuriyet"), "Cumhuriyet"],
+	[normalizeBookmarkTagValue("cumhuriyet-ve-yakin-tarih"), "Cumhuriyet"],
+	[normalizeBookmarkTagValue("Cumhuriyet ve Yakın Tarih"), "Cumhuriyet"],
+	[normalizeBookmarkTagValue("roma"), "Roma"],
+	[normalizeBookmarkTagValue("Roma"), "Roma"],
+	[normalizeBookmarkTagValue("roma-ve-bizans"), "Roma"],
+	[normalizeBookmarkTagValue("Roma ve Bizans"), "Roma"],
+	[normalizeBookmarkTagValue("kultur"), "Kültür, Mitoloji ve Dünya Medeniyetleri"],
+	[normalizeBookmarkTagValue("Kültür"), "Kültür, Mitoloji ve Dünya Medeniyetleri"]
+])
 
 function resolveLegacyBookmarkCategoryTag(tag: string) {
 	return LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? tag

@@ -9,6 +9,7 @@ import {
 	Gamepad2,
 	Globe,
 	Landmark,
+	Layers,
 	Lightbulb,
 	Moon,
 	Newspaper,
@@ -63,9 +64,69 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 		icon: Moon,
 		iconClassName: "text-emerald-600 dark:text-emerald-400"
 	},
-	"Tarih ve Kültür": {
+	"Kur'an-ı Kerim ve Meal": {
+		icon: Moon,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	Tefsir: {
+		icon: ScrollText,
+		iconClassName: "text-emerald-700 dark:text-emerald-300"
+	},
+	"Akaid ve İlmihal": {
+		icon: Landmark,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	"Hadis ve Sünnet": {
+		icon: Feather,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	Siyer: {
+		icon: ScrollText,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	"Tasavvuf": {
+		icon: Lightbulb,
+		iconClassName: "text-emerald-600 dark:text-emerald-400"
+	},
+	"İslam Düşüncesi": {
+		icon: Lightbulb,
+		iconClassName: "text-teal-700 dark:text-teal-300"
+	},
+	"Tarih": {
 		icon: Landmark,
 		iconClassName: "text-amber-700 dark:text-amber-400"
+	},
+	"Genel Türk Tarihi": {
+		icon: Landmark,
+		iconClassName: "text-amber-700 dark:text-amber-400"
+	},
+	"Osmanlı Tarihi": {
+		icon: Landmark,
+		iconClassName: "text-amber-800 dark:text-amber-300"
+	},
+	"Hatırat ve Anı": {
+		icon: ScrollText,
+		iconClassName: "text-amber-700 dark:text-amber-400"
+	},
+	Roma: {
+		icon: Landmark,
+		iconClassName: "text-stone-600 dark:text-stone-300"
+	},
+	Cumhuriyet: {
+		icon: Landmark,
+		iconClassName: "text-red-600 dark:text-red-400"
+	},
+	"Şehir Tarihi": {
+		icon: Building2,
+		iconClassName: "text-amber-700 dark:text-amber-400"
+	},
+	"Kültür, Mitoloji ve Dünya Medeniyetleri": {
+		icon: Earth,
+		iconClassName: "text-amber-700 dark:text-amber-400"
+	},
+	Diğerleri: {
+		icon: Layers,
+		iconClassName: "text-zinc-600 dark:text-zinc-400"
 	},
 	Bilim: {
 		icon: FlaskConical,
@@ -78,10 +139,6 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 	"Kişisel Gelişim": {
 		icon: Sprout,
 		iconClassName: "text-lime-600 dark:text-lime-400"
-	},
-	Cumhuriyet: {
-		icon: Landmark,
-		iconClassName: "text-red-600 dark:text-red-400"
 	},
 	Edebiyat: {
 		icon: Feather,

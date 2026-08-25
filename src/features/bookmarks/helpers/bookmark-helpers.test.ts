@@ -71,14 +71,15 @@ describe("bookmark helpers", () => {
 		])
 	})
 
-	it("returns library tags sorted by book count", () => {
+	it("returns library tags in the configured order", () => {
 		const libraryBookmarks: Bookmark[] = [
 			{
 				id: "library-1",
 				title: "Book 1",
 				url: "https://example.com/1",
 				categoryId: "library",
-				tags: ["Kişisel Gelişim"]
+				tags: ["Diğerleri"],
+				genre: "Kişisel Gelişim"
 			},
 			{
 				id: "library-2",
@@ -92,43 +93,44 @@ describe("bookmark helpers", () => {
 				title: "Book 3",
 				url: "https://example.com/3",
 				categoryId: "library",
-				tags: ["Edebiyat"]
+				tags: ["Diğerleri"],
+				genre: "Edebiyat"
 			},
 			{
 				id: "library-4",
 				title: "Book 4",
 				url: "https://example.com/4",
 				categoryId: "library",
-				tags: ["Tarih ve Kültür"]
+				tags: ["Tarih"]
 			},
 			{
 				id: "library-5",
 				title: "Book 5",
 				url: "https://example.com/5",
 				categoryId: "library",
-				tags: ["Edebiyat"]
+				tags: ["Diğerleri"],
+				genre: "Edebiyat"
 			},
 			{
 				id: "library-6",
 				title: "Book 6",
 				url: "https://example.com/6",
 				categoryId: "library",
-				tags: ["Tarih ve Kültür"]
+				tags: ["Tarih"]
 			},
 			{
 				id: "library-7",
 				title: "Book 7",
 				url: "https://example.com/7",
 				categoryId: "library",
-				tags: ["Tarih ve Kültür"]
+				tags: ["Tarih"]
 			}
 		]
 
 		expect(getAvailableBookmarkTags(libraryBookmarks, "library")).toEqual([
-			"Tarih ve Kültür",
-			"Edebiyat",
+			"Tarih",
 			"İslam",
-			"Kişisel Gelişim"
+			"Diğerleri"
 		])
 	})
 
@@ -187,23 +189,29 @@ describe("bookmark helpers", () => {
 		)
 		expect(areBookmarkTagsEqual("islam", "İslam")).toBe(true)
 		expect(areBookmarkTagsEqual("İslam".toLowerCase(), "İslam")).toBe(true)
-		expect(resolveBookmarkTag(["Edebiyat", "İslam"], "türk edebiyatı", "category")).toBe(
-			"Edebiyat"
+		expect(resolveBookmarkTag(["Diğerleri", "İslam"], "türk edebiyatı", "category")).toBe(
+			"Diğerleri"
 		)
-		expect(resolveBookmarkTag(["Edebiyat", "İslam"], "dünya edebiyatı", "category")).toBe(
-			"Edebiyat"
+		expect(resolveBookmarkTag(["Diğerleri", "İslam"], "dünya edebiyatı", "category")).toBe(
+			"Diğerleri"
 		)
-		expect(resolveBookmarkTag(["Edebiyat", "İslam"], "edebiyat", "category")).toBe("Edebiyat")
-		expect(resolveBookmarkTag(["Edebiyat", "İslam"], "tarih-ve-kultur", "category")).toBeNull()
+		expect(resolveBookmarkTag(["Diğerleri", "İslam"], "edebiyat", "category")).toBe("Diğerleri")
+		expect(resolveBookmarkTag(["Diğerleri", "İslam"], "tarih-ve-kultur", "category")).toBeNull()
 	})
 
 	it("resolves library genres without collapsing them into category tags", () => {
-		const genres = ["Roman", "Öykü", "Şiir", "Deneme", "Dünya Edebiyatı"] as const
+		const genres = [
+			"Edebiyat",
+			"Felsefe ve Düşünce",
+			"Bilim",
+			"Anı ve Biyografi",
+			"Kişisel Gelişim"
+		] as const
 
-		expect(resolveBookmarkTag(genres, "dünya edebiyatı", "genre")).toBe("Dünya Edebiyatı")
-		expect(resolveBookmarkTag(genres, "roman-ve-oyku", "genre")).toBe("Dünya Edebiyatı")
-		expect(resolveBookmarkTag(genres, "roman", "genre")).toBe("Roman")
-		expect(resolveBookmarkTag(genres, "dünya edebiyatı", "category")).toBeNull()
+		expect(resolveBookmarkTag(genres, "edebiyat", "genre")).toBe("Edebiyat")
+		expect(resolveBookmarkTag(genres, "felsefe-ve-dusunce", "genre")).toBe("Felsefe ve Düşünce")
+		expect(resolveBookmarkTag(genres, "bilim", "genre")).toBe("Bilim")
+		expect(resolveBookmarkTag(genres, "edebiyat", "category")).toBeNull()
 	})
 
 	it("filters bookmarks by category and tag", () => {
@@ -433,20 +441,20 @@ describe("bookmark helpers", () => {
 				id: "library-huzur",
 				title: "Huzur",
 				categoryId: "library",
-				tags: ["Edebiyat"],
-				genre: "Roman"
+				tags: ["Diğerleri"],
+				genre: "Edebiyat"
 			})
-		).toBe("Edebiyat · Roman")
+		).toBe("Diğerleri · Edebiyat")
 
 		expect(
 			getLibraryBookmarkTaxonomyLabel({
 				id: "library-bilim",
 				title: "Einstein Bulmacası",
 				categoryId: "library",
-				tags: ["Bilim"],
-				genre: "Bulmaca"
+				tags: ["Diğerleri"],
+				genre: "Bilim"
 			})
-		).toBe("Bilim · Bulmaca")
+		).toBe("Diğerleri · Bilim")
 
 		expect(
 			getLibraryBookmarkTaxonomyLabel({
@@ -498,7 +506,8 @@ describe("bookmark helpers", () => {
 				url: "https://example.com/a2",
 				author: "Ahmet Kaya",
 				categoryId: "library",
-				tags: ["Edebiyat"]
+				tags: ["Diğerleri"],
+				genre: "Edebiyat"
 			},
 			{
 				id: "library-i",
@@ -541,7 +550,7 @@ describe("bookmark helpers", () => {
 				title: "Türkiye Tarihi ve Uygarlıkları Seti",
 				author: ["Mehmet Ali Kaya", "M. Ali Erdoğru", "Sabri Sürgevil"],
 				categoryId: "library",
-				tags: ["Tarih ve Kültür"],
+				tags: ["Tarih"],
 				genre: "Tarih"
 			},
 			{
@@ -549,7 +558,7 @@ describe("bookmark helpers", () => {
 				title: "Ayasofya'nın Gizli Tarihi",
 				author: "Pelin Çift · Erhan Altunay",
 				categoryId: "library",
-				tags: ["Tarih ve Kültür"],
+				tags: ["Tarih"],
 				genre: "Tarih"
 			}
 		]
@@ -602,8 +611,8 @@ describe("bookmark helpers", () => {
 				url: "https://example.com/huzur",
 				author: "Ahmet Hamdi Tanpınar",
 				categoryId: "library",
-				tags: ["Edebiyat"],
-				genre: "Roman"
+				tags: ["Diğerleri"],
+				genre: "Edebiyat"
 			},
 			{
 				id: "library-oyku",
@@ -611,17 +620,17 @@ describe("bookmark helpers", () => {
 				url: "https://example.com/sir",
 				author: "Mustafa Kutlu",
 				categoryId: "library",
-				tags: ["Edebiyat"],
-				genre: "Öykü"
+				tags: ["Diğerleri"],
+				genre: "Edebiyat"
 			},
 			{
-				id: "library-siir",
-				title: "Safahat",
-				url: "https://example.com/safahat",
-				author: "Mehmet Âkif Ersoy",
+				id: "library-felsefe",
+				title: "Devlet",
+				url: "https://example.com/devlet",
+				author: "Platon",
 				categoryId: "library",
-				tags: ["Edebiyat"],
-				genre: "Şiir"
+				tags: ["Diğerleri"],
+				genre: "Felsefe ve Düşünce"
 			},
 			{
 				id: "library-bilim",
@@ -629,37 +638,34 @@ describe("bookmark helpers", () => {
 				url: "https://example.com/einstein",
 				author: "Jeremy Stangroom",
 				categoryId: "library",
-				tags: ["Bilim"],
-				genre: "Bilim Felsefesi"
+				tags: ["Diğerleri"],
+				genre: "Bilim"
 			}
 		]
 
 		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", null)).toEqual([])
-		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", "Bilim")).toEqual([
-			"Bilim Felsefesi"
-		])
-		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", "Edebiyat")).toEqual([
-			"Roman",
-			"Öykü",
-			"Şiir"
+		expect(getAvailableBookmarkGenres(libraryBookmarks, "library", "Diğerleri")).toEqual([
+			"Edebiyat",
+			"Felsefe ve Düşünce",
+			"Bilim"
 		])
 		expect(
-			Object.fromEntries(getBookmarkGenreCounts(libraryBookmarks, "library", "Edebiyat"))
+			Object.fromEntries(getBookmarkGenreCounts(libraryBookmarks, "library", "Diğerleri"))
 		).toEqual({
-			Roman: 1,
-			Öykü: 1,
-			Şiir: 1
+			Edebiyat: 2,
+			"Felsefe ve Düşünce": 1,
+			Bilim: 1
 		})
 		expect(
 			applyBookmarkFilters(libraryBookmarks, {
 				categoryId: "library",
-				tag: "Edebiyat",
-				genre: "Roman"
+				tag: "Diğerleri",
+				genre: "Edebiyat"
 			}).map((bookmark) => bookmark.title)
-		).toEqual(["Huzur"])
+		).toEqual(["Huzur", "Sır"])
 		expect(
-			getAvailableBookmarkSubtags(libraryBookmarks, "library", "Edebiyat", "Öykü")
-		).toEqual(["Mustafa Kutlu"])
+			getAvailableBookmarkSubtags(libraryBookmarks, "library", "Diğerleri", "Edebiyat")
+		).toEqual(["Ahmet Hamdi Tanpınar", "Mustafa Kutlu"])
 	})
 
 	it("groups youtube bookmarks into shared subtags", () => {

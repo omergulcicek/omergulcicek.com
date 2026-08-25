@@ -445,26 +445,6 @@
     "tag": "Dünya Tarihi"
   },
   {
-    "id": "library-medine-mudafaasi-col-kaplani-fahrettin-pasa-88173",
-    "title": "Medine Müdafaası / Çöl Kaplanı Fahrettin Paşa",
-    "url": "https://www.kitapyurdu.com/kitap/medine-mudafaasi-col-kaplani-fahrettin-pasa/88173.html",
-    "author": "İsmail Bilgin",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:11361645/wh:2e0006e60/miw:200/mih:200",
-    "imageId": "library-medine-mudafaasi-col-kaplani-fahrettin-pasa-88173",
-    "categoryId": "library",
-    "tag": "Edebiyat"
-  },
-  {
-    "id": "library-sarikamisbeyaz-huzun-75913",
-    "title": "Sarıkamış/Beyaz Hüzün",
-    "url": "https://www.kitapyurdu.com/kitap/sarikamisbeyaz-huzun/75913.html",
-    "author": "İsmail Bilgin",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:11974062/wh:98e0180ca/miw:200/mih:200",
-    "imageId": "library-sarikamisbeyaz-huzun-75913",
-    "categoryId": "library",
-    "tag": "Edebiyat"
-  },
-  {
     "id": "library-yasamak-618603",
     "title": "Yaşamak",
     "url": "https://www.kitapyurdu.com/kitap/yasamak/618603.html",
@@ -726,16 +706,6 @@
     "tag": "İslam"
   },
   {
-    "id": "library-kusatma-1453-130135",
-    "title": "Kuşatma 1453",
-    "url": "https://www.kitapyurdu.com/kitap/kusatma-1453/130135.html",
-    "author": "Okay Tiryakioğlu",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:1126360/wh:9a5f42cc7/miw:200/mih:200",
-    "imageId": "library-kusatma-1453-130135",
-    "categoryId": "library",
-    "tag": "Edebiyat"
-  },
-  {
     "id": "library-sadece-aptallar-8-saat-uyur-81650",
     "title": "Sadece Aptallar 8 Saat Uyur",
     "url": "https://www.kitapyurdu.com/kitap/sadece-aptallar-8-saat-uyur/81650.html",
@@ -816,56 +786,6 @@
     "imageId": "library-insanligin-dirilisi-6385",
     "categoryId": "library",
     "tag": "İslam"
-  },
-  {
-    "id": "library-kanuni-sultan-suleyman-335517",
-    "title": "Kanuni Sultan Süleyman",
-    "url": "https://www.kitapyurdu.com/kitap/kanuni-sultan-suleyman/335517.html",
-    "author": "Yılmaz Öztuna",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:11638981/wh:afe3ff5bb/miw:200/mih:200",
-    "imageId": "library-kanuni-sultan-suleyman-335517",
-    "categoryId": "library",
-    "tag": "Osmanlı"
-  },
-  {
-    "id": "library-yavuz-sultan-selim-430261",
-    "title": "Yavuz Sultan Selim",
-    "url": "https://www.kitapyurdu.com/kitap/yavuz-sultan-selim/430261.html",
-    "author": "Yılmaz Öztuna",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:12218970/wh:1b563423c/miw:200/mih:200",
-    "imageId": "library-yavuz-sultan-selim-430261",
-    "categoryId": "library",
-    "tag": "Osmanlı"
-  },
-  {
-    "id": "library-ii-abdulhamid-zamani-ve-sahsiyeti-311444",
-    "title": "II. Abdülhamid Zamanı ve Şahsiyeti",
-    "url": "https://www.kitapyurdu.com/kitap/ii-abdulhamid-zamani-ve-sahsiyeti/311444.html",
-    "author": "Yılmaz Öztuna",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:11631173/wh:8f0cfd3f9/miw:200/mih:200",
-    "imageId": "library-ii-abdulhamid-zamani-ve-sahsiyeti-311444",
-    "categoryId": "library",
-    "tag": "Osmanlı"
-  },
-  {
-    "id": "library-sultan-ii-mahmud-342725",
-    "title": "Sultan II. Mahmud",
-    "url": "https://www.kitapyurdu.com/kitap/sultan-ii-mahmud/342725.html",
-    "author": "Yılmaz Öztuna",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:264011/wh:62e4fc0e9/miw:200/mih:200",
-    "imageId": "library-sultan-ii-mahmud-342725",
-    "categoryId": "library",
-    "tag": "Osmanlı"
-  },
-  {
-    "id": "library-bir-darbenin-anatomisi-13641",
-    "title": "Bir Darbenin Anatomisi",
-    "url": "https://www.kitapyurdu.com/kitap/bir-darbenin-anatomisi/13641.html",
-    "author": "Yılmaz Öztuna",
-    "imageUrl": "https://img.kitapyurdu.com/v1/getImage/fn:11535716/wh:f8eb431ef/miw:200/mih:200",
-    "imageId": "library-bir-darbenin-anatomisi-13641",
-    "categoryId": "library",
-    "tag": "Cumhuriyet"
   },
   {
     "id": "library-bozkurtlar-243385",

@@ -696,14 +696,6 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12143309"
 	},
 	{
-		id: "library-medine-mudafaasi-col-kaplani-fahrettin-pasa-88173",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11361645"
-	},
-	{
-		id: "library-sarikamisbeyaz-huzun-75913",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11974062"
-	},
-	{
 		id: "library-yasamak-618603",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11967882"
 	},
@@ -776,22 +768,6 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11849114"
 	},
 	{
-		id: "library-askin-gozyaslari-4-hamus-olumu-open-dervis-305588",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:49534"
-	},
-	{
-		id: "library-askin-gozyaslari-2-hz-mevlana-408175",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:12131044"
-	},
-	{
-		id: "library-askin-gozyaslari-1-sems-tebrizi-408363",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:12164186"
-	},
-	{
-		id: "library-tennure-ve-ates-hz-mevlana-karton-kapak-240852",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:192507"
-	},
-	{
 		id: "library-kesintisiz-ogrenme-42711",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11914721"
 	},
@@ -802,14 +778,6 @@ const bookmarkImages = [
 	{
 		id: "library-od-261783",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12244434"
-	},
-	{
-		id: "library-allah-de-otesini-birak-311263",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11364712"
-	},
-	{
-		id: "library-kusatma-1453-130135",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:1126360"
 	},
 	{
 		id: "library-sadece-aptallar-8-saat-uyur-81650",
@@ -828,10 +796,6 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:5764123"
 	},
 	{
-		id: "library-fabrika-ayari-528784",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11948965"
-	},
-	{
 		id: "library-japonizm-ciltli-499470",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:8538776"
 	},
@@ -844,24 +808,8 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12191487"
 	},
 	{
-		id: "library-kanuni-sultan-suleyman-335517",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11638981"
-	},
-	{
 		id: "library-yavuz-sultan-selim-430261",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12218970"
-	},
-	{
-		id: "library-ii-abdulhamid-zamani-ve-sahsiyeti-311444",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11631173"
-	},
-	{
-		id: "library-sultan-ii-mahmud-342725",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:264011"
-	},
-	{
-		id: "library-bir-darbenin-anatomisi-13641",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11535716"
 	},
 	{
 		id: "library-bozkurtlar-243385",
@@ -1800,24 +1748,8 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11404881"
 	},
 	{
-		id: "library-nihat-hatipoglu-gunluk-dualar",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:12172168"
-	},
-	{
 		id: "library-besir-ayvazoglu-kugunun-son-sarkisi",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11618413"
-	},
-	{
-		id: "library-zakir-naik-kuran-ve-modern-bilim",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11437955"
-	},
-	{
-		id: "library-zakir-naik-islami-bakisla-terorizm-ve-cihat",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11437956"
-	},
-	{
-		id: "library-zakir-naik-genclerin-inanc-sorulari",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11089352"
 	},
 	{
 		id: "library-mel-thompson-budizmin-bilgeligi",
@@ -1834,10 +1766,6 @@ const bookmarkImages = [
 	{
 		id: "library-ibn-haldun-tasavvufun-mahiyeti",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:2776675"
-	},
-	{
-		id: "library-gazali-hikmetler-kitabi",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:117836"
 	},
 	{
 		id: "library-osman-keskioglu-siyer-i-nebi",
@@ -1880,18 +1808,6 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:1185531"
 	},
 	{
-		id: "library-nazim-tektas-hurrem-sultan",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:23251"
-	},
-	{
-		id: "library-ismail-bilgin-57-alay-filistin",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11805812"
-	},
-	{
-		id: "library-ismail-bilgin-kutul-amare",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11467780"
-	},
-	{
 		id: "library-mehmet-yasar-ertac-kutul-amare-1916",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11253494"
 	},
@@ -1906,14 +1822,6 @@ const bookmarkImages = [
 	{
 		id: "library-huseyin-cahit-yalcin-talat-pasa",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:7888435"
-	},
-	{
-		id: "library-yilmaz-oztuna-avrupa-turkiyesini-kaybimiz",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11438214"
-	},
-	{
-		id: "library-ismail-bilgin-elveda-balkanlar",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11715305"
 	},
 	{
 		id: "library-turgut-ozakman-dirilis-canakkale-1915",
@@ -1941,23 +1849,11 @@ const bookmarkImages = [
 	},
 	{
 		id: "library-necmettin-alkan-sultan-ii-abdulhamid",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:12130854"
-	},
-	{
-		id: "library-mustafa-armagan-abdulhamidin-kurtlarla-dansi",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11741998"
-	},
-	{
-		id: "library-yavuz-bahadiroglu-sultan-abdulhamid-han",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:12087283"
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11697790"
 	},
 	{
 		id: "library-ozlem-kumrular-muhtesem-suleyman",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:3047663"
-	},
-	{
-		id: "library-okay-tiryakioglu-yavuz",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:12049073"
 	},
 	{
 		id: "library-tufan-gunduz-kuran-ve-kilic",
@@ -2148,10 +2044,6 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:3973859"
 	},
 	{
-		id: "library-okay-tiryakioglu-kanuni",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:11364660"
-	},
-	{
 		id: "library-friedrich-nietzsche-deccal-hristiyan-karsiti",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:4391415"
 	},
@@ -2192,20 +2084,12 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11904749"
 	},
 	{
-		id: "library-gazali-ahlak-kitabi",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:71088"
-	},
-	{
 		id: "library-gustave-le-bon-devrim-psikolojisi",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11342433"
 	},
 	{
 		id: "library-ismail-hakki-aydin-vecizelerim",
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12271506"
-	},
-	{
-		id: "library-komisyon-sevgi-peygamberi-hz-muhammed",
-		url: "https://img.kitapyurdu.com/v1/getImage/fn:103545"
 	},
 	{
 		id: "library-neval-el-seddavi-sifir-noktasindaki-kadin",
@@ -2250,6 +2134,290 @@ const bookmarkImages = [
 	{
 		id: "library-hamid-aytac-kuran-i-kerim",
 		url: "https://cdn.myikas.com/images/248e4ee3-629b-46fe-abbc-8a0f7d8fe1f0/f84c9112-4c40-4981-b7d1-25cf9e43b88e/1080/1262y-1.webp"
+	},
+	{
+		id: "library-kurani-kerimin-turkce-meali-alisi-718811",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12059988"
+	},
+	{
+		id: "library-kuran-meali-711584",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12178553"
+	},
+	{
+		id: "library-fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747010",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12181585"
+	},
+	{
+		id: "library-kuranin-ozu-cevahirulkuran-687779",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11984127"
+	},
+	{
+		id: "library-yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri-694355",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11945807"
+	},
+	{
+		id: "library-kuranin-kalbine-yolculuk-yasin-suresi-tefsiri-540910",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11918262"
+	},
+	{
+		id: "library-keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler-738420",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12139944"
+	},
+	{
+		id: "library-ehli-sunnet-akaidi-nesefi-akidesi-serhi-504474",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:8827653"
+	},
+	{
+		id: "library-buyuk-islam-ilmihali-ciltli-606944",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12052067"
+	},
+	{
+		id: "library-riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak-328771",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11783906"
+	},
+	{
+		id: "library-kainatin-efendisi-peygamberimizin-hayati-tek-cilt-252777",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11588056"
+	},
+	{
+		id: "library-kendini-aldatan-insan-630916",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12260328"
+	},
+	{
+		id: "library-dusunmenin-dogru-olcusu-elkistasulmustakim-660918",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12269465"
+	},
+	{
+		id: "library-hakikat-arayisi-elmunkiz-mineddalal-565614",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12035788"
+	},
+	{
+		id: "library-dil-belasi-dilin-afetleri-kitabu-afatillisan-747009",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12262166"
+	},
+	{
+		id: "library-insan-nasil-insan-oldu-elfusul-filesile-velecvibe-637295",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12175851"
+	},
+	{
+		id: "library-hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi-537248",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11543556"
+	},
+	{
+		id: "library-en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna-625053",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12231067"
+	},
+	{
+		id: "library-gokyuzune-bakmanin-faydalari-321327",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11656891"
+	},
+	{
+		id: "library-kirk-hadis-398941",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:1205978"
+	},
+	{
+		id: "library-ibn-sina-hayy-bin-yakzan-kesifler-329562",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11305260"
+	},
+	{
+		id: "library-imami-azamin-bes-eseri-50132",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11886976"
+	},
+	{
+		id: "library-cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak-735273",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12208897"
+	},
+	{
+		id: "library-devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i-131082",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:7053526"
+	},
+	{
+		id: "library-osmanli-savasirken-655804",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11752802"
+	},
+	{
+		id: "library-osmanli-imparatorlugu-13001650-632294",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11632586"
+	},
+	{
+		id: "library-barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi-640230",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11668944"
+	},
+	{
+		id: "library-osmanliturkiye-iktisadi-tarihi-15001914-73654",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11343655"
+	},
+	{
+		id: "library-osmanli-imparatorlugunda-paranin-tarihi-424445",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:3683985"
+	},
+	{
+		id: "library-bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi-758420",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12248150"
+	},
+	{
+		id: "library-sultan-abdulhamid-279760",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:72132"
+	},
+	{
+		id: "library-hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638-673565",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11843422"
+	},
+	{
+		id: "library-osmanli-toplumunda-aile-451519",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11320636"
+	},
+	{
+		id: "library-fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli-582037",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11416924"
+	},
+	{
+		id: "library-candarli-vezir-ailesi-22b7-606633",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11513361"
+	},
+	{
+		id: "library-osmanlida-strateji-ve-askeri-guc-267989",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12100231"
+	},
+	{
+		id: "library-osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600-380476",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:1124375"
+	},
+	{
+		id: "library-osmanli-imparatorlugu-klasik-cag-13001600-501208",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:8634554"
+	},
+	{
+		id: "library-osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv-708391",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12011503"
+	},
+	{
+		id: "library-fatihin-tarihi-tarihi-ebulfeth-343183",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11922271"
+	},
+	{
+		id: "library-osmanli-kadin-hareketi-5871",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11960837"
+	},
+	{
+		id: "library-seriat-ile-kanun-arasinda-ebussuud-efendi-607812",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11518899"
+	},
+	{
+		id: "library-iki-cihan-aresinde-502785",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11424991"
+	},
+	{
+		id: "library-osmanli-ilmiyesi-ciltli-569791",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11818525"
+	},
+	{
+		id: "library-osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler-634474",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11641207"
+	},
+	{
+		id: "library-asik-pasazade-osmanogullarinin-tarihi-ciltli-742950",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12162380"
+	},
+	{
+		id: "library-babam-sultan-abdulhamid-315783",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:1138493"
+	},
+	{
+		id: "library-turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden-604831",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11504538"
+	},
+	{
+		id: "library-bir-yenicerinin-hatiralari-307682",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11862596"
+	},
+	{
+		id: "library-bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis-365372",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12228008"
+	},
+	{
+		id: "library-roma-savas-sanati-510766",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11818521"
+	},
+	{
+		id: "library-justinyen-imparator-asker-aziz-719872",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12064230"
+	},
+	{
+		id: "library-bizansli-gozuyle-turkler-136818",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11922270"
+	},
+	{
+		id: "library-bir-sehir-kurmak-turgut-canseverle-konusmalar-381773",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:4576017"
+	},
+	{
+		id: "library-tanzimat-degisim-surecinde-osmanli-imparatorlugu-257767",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:14431"
+	},
+	{
+		id: "library-davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri-722342",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12073950"
+	},
+	{
+		id: "library-sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi-735994",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12130854"
+	},
+	{
+		id: "library-imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik-563570",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11316226"
+	},
+	{
+		id: "library-turkiye-selcuklularinda-hukumet-vezir-ve-divan-538574",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11198699"
+	},
+	{
+		id: "library-turkistan-halklarinin-tarihi-482177",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:7394092"
+	},
+	{
+		id: "library-turk-mitolojisi-iiicilt-takim-556120",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11279331"
+	},
+	{
+		id: "library-son-kizilbas-sah-ismail-244032",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12184460"
+	},
+	{
+		id: "library-selcuklular-zamaninda-turkiye-62913",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11463371"
+	},
+	{
+		id: "library-fetih-suresi-tefsiri-151319",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:57980"
+	},
+	{
+		id: "library-elmalili-hamdi-yazir-ihlas-suresi-tefsiri-387631",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:1142643"
+	},
+	{
+		id: "library-hizbulbahr-serhi-748863",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12194390"
+	},
+	{
+		id: "library-aciklamali-delailulhayrat-salavati-serifler-70598",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:135354"
+	},
+	{
+		id: "library-osmanli-tarihinde-islamiyet-ve-devlet-396753",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:7053613"
+	},
+	{
+		id: "library-turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri-257775",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:16466"
+	},
+	{
+		id: "library-ayasofya-fleksi-kapak-624945",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11596787"
+	},
+	{
+		id: "library-iste-onderimiz-hz-muhammed-18361",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11397676"
 	},
 	{
 			id: "media-youtube-cdf6d19etmc",
@@ -2330,10 +2498,8 @@ const bookmarkImages = [
 	{
 			id: "media-youtube-fexzy4evllo",
 			url: "https://img.youtube.com/vi/FeXZY4eVLlo/hqdefault.jpg"
-		}
-]
-
-function getFitMode(id) {
+		},
+	{
 	if (
 		id.startsWith("library-") ||
 		id.startsWith("personal-imdb-com-title-") ||
@@ -2343,13 +2509,11 @@ function getFitMode(id) {
 	}
 
 	return "cover"
-}
-
-function getImageSize(id) {
+},
+	{
 	return id.startsWith("library-") ? librarySize : defaultSize
-}
-
-async function downloadImage(url) {
+},
+	{
 	const response = await fetch(url, {
 		headers: {
 			"User-Agent": "omergulcicek.com bookmark image sync"
@@ -2362,9 +2526,9 @@ async function downloadImage(url) {
 	}
 
 	return Buffer.from(await response.arrayBuffer())
-}
-
-async function writeBookmarkImage({ id, url }) {
+},
+	{ id, url },
+	{
 	const fit = getFitMode(id)
 	const size = getImageSize(id)
 	const outputPath = path.join(outputDir, `${id}.webp`)
@@ -2382,9 +2546,8 @@ async function writeBookmarkImage({ id, url }) {
 	}))
 
 	console.log(`${id}.webp (${bytes} bytes, ${size}px, ${fit})`)
-}
-
-async function clearBookmarkImages() {
+},
+	{
 	const entries = await readdir(outputDir, { withFileTypes: true })
 
 	await Promise.all(
@@ -2393,18 +2556,7 @@ async function clearBookmarkImages() {
 			.map((entry) => unlink(path.join(outputDir, entry.name)))
 	)
 }
-
-async function main() {
-	await mkdir(outputDir, { recursive: true })
-
-	if (!libraryOnly) {
-		await clearBookmarkImages()
-	}
-
-	const images = libraryOnly
-		? bookmarkImages.filter((bookmarkImage) => bookmarkImage.id.startsWith("library-"))
-		: bookmarkImages
-	const failures = []
+]
 
 	for (const bookmarkImage of images) {
 		try {
