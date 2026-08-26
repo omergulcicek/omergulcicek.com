@@ -2456,6 +2456,10 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12132765"
 	},
 	{
+		id: "library-balkanlarda-osmanli-mirasi-ve-milliyetcilik-267986",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12072750"
+	},
+	{
 			id: "media-youtube-cdf6d19etmc",
 			url: "https://img.youtube.com/vi/Cdf6D19Etmc/hqdefault.jpg"
 		},

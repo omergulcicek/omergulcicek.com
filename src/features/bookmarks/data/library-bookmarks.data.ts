@@ -2312,5 +2312,15 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		categoryId: "library",
 		tags: ["Tarih"],
 		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
+	},
+	{
+		id: "library-balkanlarda-osmanli-mirasi-ve-milliyetcilik-267986",
+		title: "Balkanlar'da Osmanlı Mirası ve Milliyetçilik",
+		url: "https://www.kitapyurdu.com/kitap/balkanlarda-osmanli-mirasi-ve-milliyetcilik/267986.html",
+		author: "Kemal H. Karpat",
+		imageUrl: bookmarkImage("library-balkanlarda-osmanli-mirasi-ve-milliyetcilik-267986"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	}
 ]
