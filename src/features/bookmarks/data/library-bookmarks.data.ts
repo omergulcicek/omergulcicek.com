@@ -2220,5 +2220,57 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		categoryId: "library",
 		tags: ["İslam"],
 		genre: "Siyer"
+	},
+	{
+		id: "library-bir-darbenin-anatomisi-13641",
+		title: "Bir Darbenin Anatomisi",
+		url: "https://www.kitapyurdu.com/kitap/bir-darbenin-anatomisi/13641.html",
+		author: "Yılmaz Öztuna",
+		imageUrl: bookmarkImage("library-bir-darbenin-anatomisi-13641"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-yilmaz-oztuna-avrupa-turkiyesini-kaybimiz",
+		title: "Avrupa Türkiye'sini Kaybımız",
+		url: "https://www.kitapyurdu.com/kitap/93-ve-balkan-savaslari-avrupa-turkiyesini-kaybimiz-rumelinin-elden-cikisi/303957.html",
+		author: "Yılmaz Öztuna",
+		imageUrl: bookmarkImage(
+			"library-yilmaz-oztuna-avrupa-turkiyesini-kaybimiz"
+		),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-ii-abdulhamid-zamani-ve-sahsiyeti-311444",
+		title: "II. Abdülhamid Zamanı ve Şahsiyeti",
+		url: "https://www.kitapyurdu.com/kitap/ii-abdulhamid-zamani-ve-sahsiyeti/311444.html",
+		author: "Yılmaz Öztuna",
+		imageUrl: bookmarkImage("library-ii-abdulhamid-zamani-ve-sahsiyeti-311444"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-sultan-ii-mahmud-342725",
+		title: "Sultan II. Mahmud",
+		url: "https://www.kitapyurdu.com/kitap/sultan-ii-mahmud/342725.html",
+		author: "Yılmaz Öztuna",
+		imageUrl: bookmarkImage("library-sultan-ii-mahmud-342725"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-kanuni-sultan-suleyman-335517",
+		title: "Kanuni Sultan Süleyman",
+		url: "https://www.kitapyurdu.com/kitap/kanuni-sultan-suleyman/335517.html",
+		author: "Yılmaz Öztuna",
+		imageUrl: bookmarkImage("library-kanuni-sultan-suleyman-335517"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
 	}
 ]

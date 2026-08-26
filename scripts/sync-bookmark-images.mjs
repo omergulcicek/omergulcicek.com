@@ -2420,6 +2420,26 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11397676"
 	},
 	{
+		id: "library-bir-darbenin-anatomisi-13641",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11535716"
+	},
+	{
+		id: "library-yilmaz-oztuna-avrupa-turkiyesini-kaybimiz",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11438214"
+	},
+	{
+		id: "library-ii-abdulhamid-zamani-ve-sahsiyeti-311444",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11631173"
+	},
+	{
+		id: "library-sultan-ii-mahmud-342725",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:264011"
+	},
+	{
+		id: "library-kanuni-sultan-suleyman-335517",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11638981"
+	},
+	{
 			id: "media-youtube-cdf6d19etmc",
 			url: "https://img.youtube.com/vi/Cdf6D19Etmc/hqdefault.jpg"
 		},
