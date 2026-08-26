@@ -64,12 +64,76 @@ function FilterChipRow({ expanded, rowRef, children }: FilterChipRowProps) {
 	)
 }
 
+function FilterExpandToggle({
+	expanded,
+	onToggle
+}: {
+	expanded: boolean
+	onToggle: () => void
+}) {
+	return (
+		<button
+			type="button"
+			aria-expanded={expanded}
+			aria-label={BOOKMARK_UI.tagsToggleAriaLabel}
+			className="focus-link text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
+			onClick={onToggle}
+		>
+			<ChevronDown
+				className={cn(
+					"size-3 shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
+					expanded ? "rotate-180" : undefined
+				)}
+				aria-hidden
+			/>
+			{expanded ? BOOKMARK_UI.hideTags : BOOKMARK_UI.showTags}
+		</button>
+	)
+}
+
 function rowHasOverflow(row: HTMLDivElement | null) {
 	if (!row) {
 		return false
 	}
 
 	return row.scrollHeight > row.clientHeight + 1
+}
+
+function useCollapsedRowOverflow(
+	rowRef: RefObject<HTMLDivElement | null>,
+	expanded: boolean,
+	items: readonly string[]
+) {
+	const [hasOverflow, setHasOverflow] = useState(false)
+	const itemsKey = items.join("\u0000")
+
+	useEffect(() => {
+		const row = rowRef.current
+
+		if (!row) {
+			setHasOverflow(false)
+			return
+		}
+
+		const updateOverflow = () => {
+			if (expanded) {
+				return
+			}
+
+			setHasOverflow(rowHasOverflow(row))
+		}
+
+		updateOverflow()
+
+		const resizeObserver = new ResizeObserver(updateOverflow)
+		resizeObserver.observe(row)
+
+		return () => {
+			resizeObserver.disconnect()
+		}
+	}, [expanded, itemsKey, rowRef])
+
+	return hasOverflow
 }
 
 export function BookmarksListFilters({
@@ -92,7 +156,8 @@ export function BookmarksListFilters({
 	className
 }: BookmarksListFiltersProps) {
 	const [tagsExpanded, setTagsExpanded] = useState(false)
-	const [collapsedHasOverflow, setCollapsedHasOverflow] = useState(false)
+	const [genresExpanded, setGenresExpanded] = useState(false)
+	const [subtagsExpanded, setSubtagsExpanded] = useState(false)
 	const tagsRowRef = useRef<HTMLDivElement>(null)
 	const genresRowRef = useRef<HTMLDivElement>(null)
 	const subtagsRowRef = useRef<HTMLDivElement>(null)
@@ -100,7 +165,13 @@ export function BookmarksListFilters({
 	const hasGenres = genres.length > 0
 	const hasSubtags = subtags.length > 0
 	const hasFilterChips = hasTags || hasGenres || hasSubtags
-	const showTagsToggle = collapsedHasOverflow
+	const tagsHaveOverflow = useCollapsedRowOverflow(tagsRowRef, tagsExpanded, tags)
+	const genresHaveOverflow = useCollapsedRowOverflow(genresRowRef, genresExpanded, genres)
+	const subtagsHaveOverflow = useCollapsedRowOverflow(
+		subtagsRowRef,
+		subtagsExpanded,
+		subtags
+	)
 	const sortOptions = getBookmarkSortOptions(categoryId, selectedTag)
 	const showSort = sortOptions.length > 0 && sort !== null
 	const isLibrary = categoryId === "library"
@@ -113,41 +184,9 @@ export function BookmarksListFilters({
 
 	useEffect(() => {
 		setTagsExpanded(false)
+		setGenresExpanded(false)
+		setSubtagsExpanded(false)
 	}, [categoryId, tags, genres, subtags])
-
-	useEffect(() => {
-		if (!hasFilterChips) {
-			setCollapsedHasOverflow(false)
-			return
-		}
-
-		const updateOverflow = () => {
-			if (tagsExpanded) {
-				return
-			}
-
-			setCollapsedHasOverflow(
-				[tagsRowRef.current, genresRowRef.current, subtagsRowRef.current].some(
-					rowHasOverflow
-				)
-			)
-		}
-
-		updateOverflow()
-
-		const resizeObserver = new ResizeObserver(updateOverflow)
-		const rows = [tagsRowRef.current, genresRowRef.current, subtagsRowRef.current]
-
-		for (const row of rows) {
-			if (row) {
-				resizeObserver.observe(row)
-			}
-		}
-
-		return () => {
-			resizeObserver.disconnect()
-		}
-	}, [genres, hasFilterChips, subtags, tags, tagsExpanded])
 
 	return (
 		<section
@@ -183,68 +222,74 @@ export function BookmarksListFilters({
 			{hasFilterChips ? (
 				<div className="flex flex-col gap-2">
 					{hasTags ? (
-						<FilterChipRow expanded={tagsExpanded} rowRef={tagsRowRef}>
-							<BookmarkTagChips
-								tags={tags}
-								counts={tagCounts}
-								selectedTag={selectedTag}
-								ariaLabel={BOOKMARK_UI.tagAriaLabel}
-								allLabel={tagAllLabel}
-								getChipClassName={
-									isLibrary ? getLibraryCategoryChipClassName : undefined
-								}
-								onSelect={onTagSelect}
-							/>
-						</FilterChipRow>
+						<div className="flex flex-col gap-2">
+							<FilterChipRow expanded={tagsExpanded} rowRef={tagsRowRef}>
+								<BookmarkTagChips
+									tags={tags}
+									counts={tagCounts}
+									selectedTag={selectedTag}
+									ariaLabel={BOOKMARK_UI.tagAriaLabel}
+									allLabel={tagAllLabel}
+									getChipClassName={
+										isLibrary ? getLibraryCategoryChipClassName : undefined
+									}
+									onSelect={onTagSelect}
+								/>
+							</FilterChipRow>
+							{tagsHaveOverflow ? (
+								<FilterExpandToggle
+									expanded={tagsExpanded}
+									onToggle={() => setTagsExpanded((expanded) => !expanded)}
+								/>
+							) : null}
+						</div>
 					) : null}
 					{hasGenres ? (
 						<>
 							<Separator />
-							<FilterChipRow expanded={tagsExpanded} rowRef={genresRowRef}>
-								<BookmarkTagChips
-									tags={genres}
-									counts={genreCounts}
-									selectedTag={selectedGenre}
-									ariaLabel={BOOKMARK_UI.genreAriaLabel}
-									allLabel={BOOKMARK_UI.allGenresLabel}
-									showIcon={false}
-									onSelect={onGenreSelect}
-								/>
-							</FilterChipRow>
+							<div className="flex flex-col gap-2">
+								<FilterChipRow expanded={genresExpanded} rowRef={genresRowRef}>
+									<BookmarkTagChips
+										tags={genres}
+										counts={genreCounts}
+										selectedTag={selectedGenre}
+										ariaLabel={BOOKMARK_UI.genreAriaLabel}
+										allLabel={BOOKMARK_UI.allGenresLabel}
+										showIcon={false}
+										onSelect={onGenreSelect}
+									/>
+								</FilterChipRow>
+								{genresHaveOverflow ? (
+									<FilterExpandToggle
+										expanded={genresExpanded}
+										onToggle={() => setGenresExpanded((expanded) => !expanded)}
+									/>
+								) : null}
+							</div>
 						</>
 					) : null}
 					{hasSubtags ? (
 						<>
 							{hasTags || hasGenres ? <Separator /> : null}
-							<FilterChipRow expanded={tagsExpanded} rowRef={subtagsRowRef}>
-								<BookmarkTagChips
-									tags={subtags}
-									counts={subtagCounts}
-									selectedTag={selectedSubtag}
-									ariaLabel={getBookmarkSubtagAriaLabel(categoryId, selectedTag)}
-									allLabel={subtagAllLabel}
-									onSelect={onSubtagSelect}
-								/>
-							</FilterChipRow>
+							<div className="flex flex-col gap-2">
+								<FilterChipRow expanded={subtagsExpanded} rowRef={subtagsRowRef}>
+									<BookmarkTagChips
+										tags={subtags}
+										counts={subtagCounts}
+										selectedTag={selectedSubtag}
+										ariaLabel={getBookmarkSubtagAriaLabel(categoryId, selectedTag)}
+										allLabel={subtagAllLabel}
+										onSelect={onSubtagSelect}
+									/>
+								</FilterChipRow>
+								{subtagsHaveOverflow ? (
+									<FilterExpandToggle
+										expanded={subtagsExpanded}
+										onToggle={() => setSubtagsExpanded((expanded) => !expanded)}
+									/>
+								) : null}
+							</div>
 						</>
-					) : null}
-					{showTagsToggle ? (
-						<button
-							type="button"
-							aria-expanded={tagsExpanded}
-							aria-label={BOOKMARK_UI.tagsToggleAriaLabel}
-							className="focus-link text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
-							onClick={() => setTagsExpanded((expanded) => !expanded)}
-						>
-							<ChevronDown
-								className={cn(
-									"size-3 shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
-									tagsExpanded ? "rotate-180" : undefined
-								)}
-								aria-hidden
-							/>
-							{tagsExpanded ? BOOKMARK_UI.hideTags : BOOKMARK_UI.showTags}
-						</button>
 					) : null}
 				</div>
 			) : null}
