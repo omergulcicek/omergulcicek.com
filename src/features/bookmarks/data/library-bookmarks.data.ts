@@ -2272,5 +2272,45 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		categoryId: "library",
 		tags: ["Tarih"],
 		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747016",
+		title: "Yasîn, Mülk ve Nebe' Tefsiri",
+		url: "https://www.kitapyurdu.com/kitap/yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli/747016.html",
+		author: "Elmalılı Hamdi Yazır",
+		imageUrl: bookmarkImage("library-yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747016"),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "Tefsir"
+	},
+	{
+		id: "library-fatihin-enderun-mektebi-758156",
+		title: "Fatih'in Enderun Mektebi",
+		url: "https://www.kitapyurdu.com/kitap/fatihin-enderun-mektebi/758156.html",
+		author: "Barnette Miller",
+		imageUrl: bookmarkImage("library-fatihin-enderun-mektebi-758156"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi-731499",
+		title: "Kayıp Coğrafyanın İzinde: Doğu Türkistan Seyahatnamesi",
+		url: "https://www.kitapyurdu.com/kitap/kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi/731499.html",
+		author: "Taha Kılınç",
+		imageUrl: bookmarkImage("library-kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi-731499"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu-736481",
+		title: "İslam Bilim Geleneği Avrupa'yı Nasıl Aydınlattı? Ortaçağ'da Bilimsel Düşüncenin Yükselişi ve Düşüşü",
+		url: "https://www.kitapyurdu.com/kitap/islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu/736481.html",
+		author: "George Saliba",
+		imageUrl: bookmarkImage("library-islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu-736481"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Kültür, Mitoloji ve Dünya Medeniyetleri"
 	}
 ]

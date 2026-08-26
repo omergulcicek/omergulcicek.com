@@ -2440,6 +2440,22 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:11638981"
 	},
 	{
+		id: "library-yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747016",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12181592"
+	},
+	{
+		id: "library-fatihin-enderun-mektebi-758156",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12246498"
+	},
+	{
+		id: "library-kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi-731499",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12258157"
+	},
+	{
+		id: "library-islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu-736481",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12132765"
+	},
+	{
 			id: "media-youtube-cdf6d19etmc",
 			url: "https://img.youtube.com/vi/Cdf6D19Etmc/hqdefault.jpg"
 		},
