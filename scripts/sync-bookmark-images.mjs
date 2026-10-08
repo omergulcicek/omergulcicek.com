@@ -2460,6 +2460,18 @@ const bookmarkImages = [
 		url: "https://img.kitapyurdu.com/v1/getImage/fn:12072750"
 	},
 	{
+		id: "library-malazgirt-1071-kiyametin-ilk-gunu-413227",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:2869703"
+	},
+	{
+		id: "library-osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni-670508",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:11828641"
+	},
+	{
+		id: "library-medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri-717725",
+		url: "https://img.kitapyurdu.com/v1/getImage/fn:12055718"
+	},
+	{
 			id: "media-youtube-cdf6d19etmc",
 			url: "https://img.youtube.com/vi/Cdf6D19Etmc/hqdefault.jpg"
 		},

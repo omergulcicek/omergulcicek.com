@@ -2322,5 +2322,39 @@ export const LIBRARY_BOOKMARKS: Bookmark[] = [
 		categoryId: "library",
 		tags: ["Tarih"],
 		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-malazgirt-1071-kiyametin-ilk-gunu-413227",
+		title: "Malazgirt 1071",
+		url: "https://www.kitapyurdu.com/kitap/malazgirt-1071-kiyametin-ilk-gunu/413227.html",
+		author: "Mustafa Alican",
+		imageUrl: bookmarkImage("library-malazgirt-1071-kiyametin-ilk-gunu-413227"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Genel Türk Tarihi"
+	},
+	{
+		id: "library-osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni-670508",
+		title: "Osmanoğlu'na Övgü",
+		url: "https://www.kitapyurdu.com/kitap/osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni/670508.html",
+		author: "Carullah Bin Fehd",
+		imageUrl: bookmarkImage("library-osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni-670508"),
+		categoryId: "library",
+		tags: ["Tarih"],
+		genre: "Osmanlı Tarihi"
+	},
+	{
+		id: "library-medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri-717725",
+		title: "Medreseden Kaçış",
+		subtitle: "İmam Gazzalî'nin Hayatı, Fikirleri ve Eserleri",
+		url: "https://www.kitapyurdu.com/kitap/medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri/717725.html",
+		author: "Abdülhüseyin Zerrinkub",
+		translator: "Hikmet Gök",
+		imageUrl: bookmarkImage(
+			"library-medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri-717725"
+		),
+		categoryId: "library",
+		tags: ["İslam"],
+		genre: "İslam Düşüncesi"
 	}
 ]
