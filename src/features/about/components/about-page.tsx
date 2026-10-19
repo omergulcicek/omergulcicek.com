@@ -39,8 +39,7 @@ export function AboutPage() {
 							</p>
 							<p className={proseParagraphClass}>
 								Yazılım mühendisliği altyapımla frontend geliştirmeye{" "}
-								<em>bütüncül bir disiplinle</em> yaklaşıyorum. Bir ürünü önce
-								kullanıcının, ardından kodun gözüyle değerlendiririm. Kişisel
+								<em>bütüncül bir disiplinle</em> yaklaşıyorum. Kişisel
 								projelerimin yanı sıra kurucusu olduğum{" "}
 								<VirastackLink>ViraStack</VirastackLink> ile ekosisteme
 								odaklanıyorum.
