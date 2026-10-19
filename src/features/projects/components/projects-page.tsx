@@ -27,18 +27,11 @@ export function ProjectsPage() {
 				<StaggerItem>
 					<PageHeader title="Projeler">
 						<p className={proseParagraphClass}>
-							Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum{" "}
+							Frontend geliştiriciler için kurduğum{" "}
 							<VirastackLink>ViraStack</VirastackLink>{" "}
-							ekosistemindeki araçlar.
+							ekosistemindeki araçlar ve kişisel uygulamalarım.
 						</p>
 					</PageHeader>
-				</StaggerItem>
-
-				<StaggerItem>
-					<ProjectSection
-						title={SITE_CONTENT.projectsSectionApps}
-						projects={personalProjects}
-					/>
 				</StaggerItem>
 
 				<StaggerItem id="virastack">
@@ -63,6 +56,13 @@ export function ProjectsPage() {
 							</p>
 						</div>
 					</ProjectSection>
+				</StaggerItem>
+
+				<StaggerItem>
+					<ProjectSection
+						title={SITE_CONTENT.projectsSectionApps}
+						projects={personalProjects}
+					/>
 				</StaggerItem>
 
 				<StaggerItem className={pageSectionClass}>

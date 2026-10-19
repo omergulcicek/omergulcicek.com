@@ -89,7 +89,7 @@ UI string'leri `docs/SITE-CONTENT.md` → Projeler ile senkron tutulur.
 
 ### Sayfa girişi — `projectsPageIntro` (1 cümle)
 
-> Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum [ViraStack](https://virastack.com) ekosistemindeki araçlar.
+> Frontend geliştiriciler için kurduğum [ViraStack](https://virastack.com) ekosistemindeki araçlar ve kişisel uygulamalarım.
 
 ### ViraStack bölümü — `virastackSectionIntro` (1 paragraf, 2 cümle + linkler)
 
@@ -141,19 +141,8 @@ Alt başlık: **ViraStack** (`projectsSectionVirastack`)
 ```text
 Projeler
 
-Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum
-ViraStack ekosistemindeki araçlar.
-
-── Kişisel Projeler ─────────────────────────
-
-┌──────────────────┐  ┌──────────────────┐
-│  [icon] Takvim   │  │  [icon] Footy    │
-│  …description    │  │  …description    │
-└──────────────────┘  └──────────────────┘
-┌──────────────────┐  ┌──────────────────┐
-│  [logo] Turkuaz  │  │  [icon] Türkçe   │
-│  …description    │  │  Doküman         │
-└──────────────────┘  └──────────────────┘
+Frontend geliştiriciler için kurduğum
+ViraStack ekosistemindeki araçlar ve kişisel uygulamalarım.
 
 ── ViraStack ────────────────────────────────
 
@@ -164,6 +153,17 @@ ViraStack ekosistemindeki araçlar.
 └──────────────────┘  └──────────────────┘
 ┌──────────────────┐  ┌──────────────────┐
 │  [icon] Mask     │  │  [icon] Guide    │
+└──────────────────┘  └──────────────────┘
+
+── Kişisel Projeler ─────────────────────────
+
+┌──────────────────┐  ┌──────────────────┐
+│  [icon] Takvim   │  │  [icon] Footy    │
+│  …description    │  │  …description    │
+└──────────────────┘  └──────────────────┘
+┌──────────────────┐  ┌──────────────────┐
+│  [logo] Turkuaz  │  │  [icon] Türkçe   │
+│  …description    │  │  Doküman         │
 └──────────────────┘  └──────────────────┘
 ```
 

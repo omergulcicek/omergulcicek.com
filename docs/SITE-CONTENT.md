@@ -243,7 +243,7 @@ Tam proje kataloğu, showcase kuralları ve UI yerleşimi → `docs/PROJECTS.md`
 
 ### `/projects` — sayfa girişi (`projectsPageIntro`)
 
-Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum [ViraStack](https://virastack.com) ekosistemindeki araçlar.
+Frontend geliştiriciler için kurduğum [ViraStack](https://virastack.com) ekosistemindeki araçlar ve kişisel uygulamalarım.
 
 ### ViraStack bölümü (`virastackSectionIntro`)
 
