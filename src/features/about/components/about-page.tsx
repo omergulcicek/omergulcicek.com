@@ -34,22 +34,26 @@ export function AboutPage() {
 					<PageHeader title={ABOUT_CONTENT.title} className="vt-about-block">
 						<div className={proseFlowClass}>
 							<p className={proseParagraphClass}>
-								Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
+								Merhaba, ben Ömer. Sakarya&apos;da yaşayan Trabzonlu bir yazılım
 								mühendisiyim.
 							</p>
 							<p className={proseParagraphClass}>
-								Yazılım mühendisliği mezunuyum, frontend mühendisi olarak
-								çalışıyorum. Kendi projelerimin yanında{" "}
-								<VirastackLink>ViraStack</VirastackLink>
-								&apos;i geliştiriyorum.
+								Yazılım mühendisliği altyapımla frontend geliştirmeye{" "}
+								<em>bütüncül bir disiplinle</em> yaklaşıyorum. Bir ürünü önce
+								kullanıcının, ardından kodun gözüyle değerlendiririm. Kişisel
+								projelerimin yanı sıra kurucusu olduğum{" "}
+								<VirastackLink>ViraStack</VirastackLink> ile ekosisteme
+								odaklanıyorum.
 							</p>
 							<p className={proseParagraphClass}>
-								Yıllardır farklı ölçeklerde frontend projelerinde çalışıyorum;{" "}
+								Farklı ölçeklerdeki frontend projelerinde;{" "}
 								<ProseEmphasis>
-									mimari, performans ve geliştirici deneyimine
+									mimari sağlamlık, yüksek performans ve geliştirici deneyimine
+									(DX)
 								</ProseEmphasis>{" "}
-								önem veriyorum. Yapay zekâyı da bu disiplinin içinde,{" "}
-								<em>bilinçli ve kontrollü</em> şekilde kullanıyorum.
+								önem veriyorum. Ekibin daha güvenle ilerlemesini sağlamayı;
+								yapay zekâyı da bu süreçte <em>bilinçli ve kontrollü</em> bir
+								kaldıraç olarak kullanmayı benimsiyorum.
 							</p>
 						</div>
 					</PageHeader>
