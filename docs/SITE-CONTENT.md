@@ -134,11 +134,11 @@ Sosyal ikonlar marka renkleriyle: GitHub `#181717` / dark `#f0f6fc`, LinkedIn `#
 
 ### Paragraf 1 (`heroParagraph1`)
 
-Detaylara ve kaliteye *büyük bir tutku* duyuyorum. [ViraStack](https://virastack.com) ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.
+Detaylara ve kaliteye *tutkuyla* odaklanan bir geliştiriciyim.
 
 ### Paragraf 2 (`heroParagraph2`)
 
-Yapay zekâyı *geliştirme sürecimin merkezine* alıyorum; ajan uyumlu kurallar ve net bir mimariyle daha hızlı, daha tutarlı ilerliyorum.
+[ViraStack](https://virastack.com) ile frontend geliştiricileri için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum. Yapay zekâ ajanlarını *net mimari standartlarıyla* sürecime entegre ederek daha hızlı, tutarlı ve ölçeklenebilir çözümler üretiyorum.
 
 ### Paragraf 3 (`heroParagraph3`)
 

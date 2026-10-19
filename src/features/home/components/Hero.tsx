@@ -30,15 +30,14 @@ function HeroBody() {
 	return (
 		<div className={cn("text-base", proseFlowClass)}>
 			<p className={proseParagraphClass}>
-				Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum.{" "}
-				<VirastackLink>ViraStack</VirastackLink> ile frontend geliştiriciler
-				için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa
-				ediyorum.
+				Detaylara ve kaliteye <em>tutkuyla</em> odaklanan bir geliştiriciyim.
 			</p>
 			<p className={proseParagraphClass}>
-				Yapay zekâyı <em>geliştirme sürecimin merkezine</em> alıyorum; ajan
-				uyumlu kurallar ve net bir mimariyle daha hızlı, daha tutarlı
-				ilerliyorum.
+				<VirastackLink>ViraStack</VirastackLink> ile frontend geliştiricileri
+				için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa
+				ediyorum. Yapay zekâ ajanlarını <em>net mimari standartlarıyla</em>{" "}
+				sürecime entegre ederek daha hızlı, tutarlı ve ölçeklenebilir çözümler
+				üretiyorum.
 			</p>
 			<p className={proseParagraphClass}>
 				Bana <ProseLink href={EXTERNAL_LINKS.x}>@omergulcicek</ProseLink> ve{" "}
