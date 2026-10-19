@@ -6,7 +6,8 @@ import {
 	Clapperboard,
 	Milestone,
 	Rocket,
-	Sparkles
+	Sparkles,
+	Wrench
 } from "lucide-react"
 
 import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
@@ -91,6 +92,11 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 		kind: "icon",
 		icon: Rocket,
 		iconClassName: "text-fuchsia-500 dark:text-fuchsia-400"
+	},
+	Araç: {
+		kind: "icon",
+		icon: Wrench,
+		iconClassName: "text-amber-600 dark:text-amber-400"
 	}
 }
 

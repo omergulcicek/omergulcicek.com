@@ -34,7 +34,8 @@ export const BLOG_TAG_POOL = [
 	"Film ve Dizi",
 	"Deneyim",
 	"Düşünce",
-	"Proje"
+	"Proje",
+	"Araç"
 ] as const
 
 export const BLOG_UI = {
