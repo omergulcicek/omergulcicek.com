@@ -29,7 +29,7 @@ export function ServicesPage() {
 						openToWorkPlacement="inline"
 					>
 						<p className={proseParagraphClass}>
-							Geliştirme, Danışmanlık ve frontend eğitimi sunuyorum.
+							Geliştirme, danışmanlık ve frontend eğitimi sunuyorum.
 						</p>
 					</PageHeader>
 				</StaggerItem>
@@ -74,7 +74,7 @@ export function ServicesPage() {
 
 				<StaggerItem>
 					<p className={proseParagraphClass}>
-						Geliştirme, Danışmanlık veya eğitim için projenizi{" "}
+						Geliştirme, danışmanlık veya eğitim için projenizi{" "}
 						<ProseIconLink
 							href={EXTERNAL_LINKS.email}
 							icon={<Mail className="size-3.5 shrink-0" strokeWidth={2} />}
