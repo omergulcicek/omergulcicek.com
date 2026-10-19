@@ -34,7 +34,7 @@ export const SITE_CONTENT = {
 	siteDockScrollToTop: "Yukarı çık",
 	siteDockScrollProgress: "Sayfa kaydırma durumu",
 	projectsPageIntro:
-		"Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar.",
+		"Frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar ve kişisel uygulamalarım.",
 	projectsSectionApps: "Kişisel Projeler",
 	projectsSectionVirastack: "ViraStack",
 	projectsBadgeComingSoon: "Yakında",
