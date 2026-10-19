@@ -925,15 +925,6 @@ export const BOOKMARKS: Bookmark[] = [
 			tags: ["npm"]
 		},
 	{
-			id: "frontend-animateicons-vercel-app",
-			title: "AnimateIcons",
-			url: "https://animateicons.vercel.app/",
-			imageUrl: bookmarkImage("frontend-animateicons-vercel-app"),
-			description: "Animasyonlu React ikonları",
-			categoryId: "frontend",
-			tags: ["Animasyon"]
-		},
-	{
 			id: "frontend-21st-dev-home",
 			title: "21st.dev",
 			url: "https://21st.dev/home",
