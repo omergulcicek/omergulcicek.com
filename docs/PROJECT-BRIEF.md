@@ -4,7 +4,7 @@
 
 ## Proje Nedir?
 
-**Ömer Gülçiçek**'in kişisel sitesi ve blogu — Frontend Engineer. Eski Next.js sitesi referans ve içerik taşıması için `_legacy/` altında korunuyor.
+**Ömer Gülçiçek**'in kişisel sitesi ve blogu — Frontend Mühendisi. Eski Next.js sitesi referans ve içerik taşıması için `_legacy/` altında korunuyor.
 
 ## Dokümantasyon Öncelikli İş Akışı
 
@@ -356,7 +356,7 @@ Geliştirme ve kurulum komutları → `**docs/TECH-STACK.md**`
 
 | Konu                | Karar                                                                     |
 | ------------------- | ------------------------------------------------------------------------- |
-| Unvan               | **Frontend Engineer** (kesin) — Staff kullanılmaz                        |
+| Unvan               | **Frontend Mühendisi** (kesin) — Staff kullanılmaz                        |
 | Hero fotoğrafı      | Evet — `public/omergulcicek.JPG` (legacy ile aynı)                        |
 | Header marka        | `@lucide/lab` rose ikonu yalnızca — "Ömer" metni yok                      |
 | Header GitHub       | Evet — tema + ⌘K yanında; hero'da da `SocialLinks`                        |

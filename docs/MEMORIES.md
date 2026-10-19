@@ -5,7 +5,7 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 ## Context
 
 - **Proje:** omergulcicek.com — kişisel site ve blog (Ömer Gülçiçek)
-- **Unvan:** Frontend Engineer (kesin)
+- **Unvan:** Frontend Mühendisi (kesin)
 - **Rewrite:** TanStack Start + Supabase (sıfırdan yeni Supabase projesi)
 - **Legacy:** `_legacy/` — referans; kod kopyalanmaz
 

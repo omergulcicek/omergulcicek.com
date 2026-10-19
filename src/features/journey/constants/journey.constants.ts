@@ -7,16 +7,21 @@ export const JOURNEY_CONTENT = {
 
 export const JOURNEY_TIMELINE: JourneyYearGroup[] = [
 	{
-		year: 2025,
+		year: 2026,
 		entries: [
 			{
-				id: "2025-virastack",
+				id: "2026-virastack",
 				title: "ViraStack'i kurdum",
 				description:
 					"Açık kaynak frontend işlerimi tek çatı altında topladım; şablonlardan paketlere uzanan bir yol haritası çıkardım.",
-				imageSrc: "/img/journey/2025-virastack.png",
+				imageSrc: "/img/journey/2026-virastack.png",
 				imageAlt: "ViraStack logosu"
-			},
+			}
+		]
+	},
+	{
+		year: 2025,
+		entries: [
 			{
 				id: "2025-renault-clio",
 				title: "Renault Clio araba aldım",

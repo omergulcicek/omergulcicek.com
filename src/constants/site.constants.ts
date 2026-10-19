@@ -3,10 +3,10 @@ import { env } from "@/env"
 export const SITE = {
 	name: "Ömer Gülçiçek",
 	title: "Ömer Gülçiçek",
-	jobTitle: "Frontend Engineer",
-	defaultTitle: "Ömer Gülçiçek — Frontend Engineer",
+	jobTitle: "Frontend Mühendisi",
+	defaultTitle: "Ömer Gülçiçek — Frontend Mühendisi",
 	description:
-		"Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack).",
+		"Frontend Mühendisi ve ViraStack kurucusu. React, Next.js ve TanStack ile performanslı arayüzler; blog, projeler ve açık kaynak.",
 	url: "https://omergulcicek.com",
 	repository: "https://github.com/omergulcicek/omergulcicek.com",
 	locale: "tr_TR",

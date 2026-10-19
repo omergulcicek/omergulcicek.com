@@ -78,7 +78,7 @@ Bu adımlar tamamlanmadan Faz 1'e geçilmez.
 
 ### Ana Sayfa (`/`)
 
-- [x] **Hero** — portre (`public/omergulcicek-672.webp`), isim, unvan (Frontend Engineer), sosyal linkler, 2 paragraf
+- [x] **Hero** — portre (`public/omergulcicek-672.webp`), isim, unvan (Frontend Mühendisi), sosyal linkler, 2 paragraf
 - [x] `hero-doodle.constants.ts` — boolean toggle'lar, varsayılan `false` (render Faz 5'te)
 - [x] **Öne çıkan projeler (2)** — Footy + Takvim; showcase **kapalı** (yalnızca kart)
 - [x] **Mini stack strip** — ~8–10 logo; Magic UI Marquee (`@magicui/marquee`); SVGL ikonları

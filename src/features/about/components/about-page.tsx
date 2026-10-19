@@ -1,7 +1,12 @@
+import { Mail } from "lucide-react"
+
+import { GitHubIcon } from "@/components/icons"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
 import {
+	ProseIconLink,
+	ProseLink,
 	ProseRouterLink
 } from "@/components/shared/prose-link"
 import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
@@ -15,6 +20,8 @@ import {
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+import { CV_FILES } from "@/features/experiences/constants/experiences.constants"
 import { ABOUT_CONTENT } from "@/features/about/constants/about.constants"
 import { BentoInterests } from "@/features/about/components/bento-interests"
 import { cn } from "@/lib/utils"
@@ -31,11 +38,12 @@ export function AboutPage() {
 								mühendisiyim.
 							</p>
 							<p className={proseParagraphClass}>
-								Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; işimle
-								insanlara faydalı olmayı ve deneyimlerine değer katmayı seviyorum.
-								Şu aralar kişisel projelerimin yanı sıra{" "}
-								<VirastackLink>ViraStack</VirastackLink>{" "}
-								ekosistemine odaklanıyorum.
+								Yazılım mühendisliği eğitimi aldım; frontend işine{" "}
+								<em>mühendislik temelleriyle</em> yaklaşıyorum. Bir ürünü önce
+								kullanıcının, sonra kodun gözüyle okurum. Kişisel
+								projelerimin yanı sıra{" "}
+								<VirastackLink>ViraStack</VirastackLink>
+								&apos;in kurucusuyum ve ekosisteme odaklanıyorum.
 							</p>
 							<p className={proseParagraphClass}>
 								Yıllardır farklı ölçeklerde frontend projelerinde çalışıyorum;{" "}
@@ -78,6 +86,27 @@ export function AboutPage() {
 							geliştirme, danışmanlık ve frontend eğitimi
 						</li>
 					</ul>
+					<p className={proseParagraphClass}>
+						Benimle{" "}
+						<ProseIconLink
+							href={EXTERNAL_LINKS.email}
+							icon={<Mail className="size-3.5 shrink-0" strokeWidth={2} />}
+						>
+							e-posta
+						</ProseIconLink>{" "}
+						yoluyla iletişime geçebilir,{" "}
+						<ProseLink href={CV_FILES.tr.href}>özgeçmişimi</ProseLink>{" "}
+						indirebilir ya da{" "}
+						<ProseIconLink
+							href={EXTERNAL_LINKS.github}
+							icon={
+								<GitHubIcon className="size-3.5 shrink-0 text-[#181717] dark:text-[#f0f6fc]" />
+							}
+						>
+							GitHub
+						</ProseIconLink>
+						&apos;daki projelerime göz atabilirsiniz.
+					</p>
 				</Container>
 			</StaggerItem>
 		</StaggerContainer>

@@ -1,5 +1,5 @@
 export const SITE_CONTENT = {
-	jobTitle: "Frontend Engineer",
+	jobTitle: "Frontend Mühendisi",
 	displayName: "Ömer Gülçiçek",
 	heroParagraph1:
 		"Detaylara ve kaliteye büyük bir tutku duyuyorum. ViraStack ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.",
@@ -13,6 +13,10 @@ export const SITE_CONTENT = {
 	},
 	homeBlogCta: "Tüm yazıları göster",
 	homeExperiencesCta: "Tüm deneyimleri göster",
+	homeContactTitle: "Birlikte çalışalım",
+	homeContactText:
+		"Geliştirme, danışmanlık veya eğitim için projenizi anlatın.",
+	homeContactCta: "Hizmetleri incele",
 	resumeButton: "Özgeçmişi İncele",
 	commandPalettePlaceholder: "Sayfa, yazı veya proje ara...",
 	commandPaletteEmpty: "Sonuç bulunamadı.",
@@ -71,10 +75,12 @@ export const SITE_CONTENT = {
 
 export const EXTERNAL_LINKS = {
 	virastack: "https://virastack.com",
+	virastackAcademy: "https://virastack.com/academy",
 	github: "https://github.com/omergulcicek",
 	githubRepo: "https://github.com/omergulcicek/omergulcicek.com",
 	x: "https://x.com/omergulcicek",
 	email: "mailto:iletisim@omergulcicek.com",
+	emailServices: "mailto:iletisim@omergulcicek.com?subject=Hizmet%20talebi",
 	kodluyoruz: "https://kodluyoruz.org",
 	tanstackStart: "https://tanstack.com/start",
 	tailwind: "https://tailwindcss.com",
