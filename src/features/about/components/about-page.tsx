@@ -75,7 +75,7 @@ export function AboutPage() {
 						</li>
 						<li className={proseParagraphClass}>
 							<ProseRouterLink to="/services">Hizmetler</ProseRouterLink> —
-							geliştirme, Danışmanlık ve frontend eğitimi
+							geliştirme, danışmanlık ve frontend eğitimi
 						</li>
 					</ul>
 				</Container>
