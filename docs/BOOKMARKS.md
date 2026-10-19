@@ -12,7 +12,7 @@
 
 Ana kaynak [raindrop.io/omergulcicek](https://raindrop.io/omergulcicek). Sayfa, legacy'deki önemli üst başlıklara yönlendirir; her kategoride 2–4 önizleme linki ile somutlaştırır.
 
-Raindrop'taki derin alt ağaç (Frontend → npm/Siteler, Kişisel → Edebiyat/Film vb.) sitede **kopyalanmaz** — tam liste Raindrop'ta kalır.
+Raindrop'taki derin alt ağaç (Frontend → npm, shadcn, UI Kütüphaneleri, Animasyon, Tasarım Araçları, Araçlar ve Rehberler, Kişisel → Edebiyat/Film vb.) sitede **kopyalanmaz** — tam liste Raindrop'ta kalır.
 
 **Sitede gösterilmeyen Raindrop koleksiyonları:** Donanım (kişisel alışveriş), İçerik Arşivi (Makale ile örtüşür).
 

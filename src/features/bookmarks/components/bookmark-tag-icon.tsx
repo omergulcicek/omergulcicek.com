@@ -1,26 +1,30 @@
 import type { ComponentType, SVGProps } from "react"
 import {
+	Blocks,
 	Building2,
 	Clapperboard,
 	CircleDot,
+	Component,
 	Earth,
 	Feather,
 	FlaskConical,
 	Gamepad2,
-	Globe,
 	Landmark,
 	Layers,
 	Lightbulb,
 	Moon,
 	Newspaper,
+	Palette,
 	Popcorn,
 	Puzzle,
 	ScrollText,
+	Sparkles,
 	Sprout,
 	Swords,
 	Trophy,
 	User,
-	Video
+	Video,
+	Wrench
 } from "lucide-react"
 
 import { Npm } from "@/components/ui/svgs/npm"
@@ -38,12 +42,28 @@ type BookmarkTagIconEntry = {
 }
 
 const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
-	Siteler: {
-		icon: Globe,
+	shadcn: {
+		icon: Blocks,
+		iconClassName: "text-zinc-700 dark:text-zinc-300"
+	},
+	"UI Kütüphaneleri": {
+		icon: Component,
 		iconClassName: "text-cyan-600 dark:text-cyan-400"
 	},
+	Animasyon: {
+		icon: Sparkles,
+		iconClassName: "text-fuchsia-600 dark:text-fuchsia-400"
+	},
+	"Tasarım Araçları": {
+		icon: Palette,
+		iconClassName: "text-rose-500 dark:text-rose-400"
+	},
+	"Araçlar ve Rehberler": {
+		icon: Wrench,
+		iconClassName: "text-amber-600 dark:text-amber-400"
+	},
 	npm: { icon: Npm },
-	Youtube: { icon: Youtube },
+	YouTube: { icon: Youtube },
 	Dizi: {
 		icon: Clapperboard,
 		iconClassName: "text-rose-500 dark:text-rose-400"

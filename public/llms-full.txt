@@ -32,7 +32,7 @@
 - Command palette search (⌘K / Ctrl+K): pages, projects, bookmarks, blog posts, quick actions
 - Dark/light theme with localStorage persistence
 - Open to Work badge and bilingual CV modal (TR/EN) on experiences page
-- Blog filters via URL state (category, tag, sort, search); the 16-tag pool is React, Next.js, TanStack, ViraStack, TypeScript, Yapay Zekâ, CSS, JavaScript, HTML, Supabase, Yıl Değerlendirmesi, Kitap, Film ve Dizi, Deneyim, Düşünce, Proje
+- Blog filters via URL state (category, tag, sort, search); the 17-tag pool is React, Next.js, TanStack, ViraStack, TypeScript, Yapay Zekâ, CSS, JavaScript, HTML, Supabase, Yıl Değerlendirmesi, Kitap, Film ve Dizi, Deneyim, Düşünce, Proje, Araç
 - TR/EN article pairs link to each other (notice at the top of the article, hreflang in the head and sitemap)
 
 ## Content topics (blog)

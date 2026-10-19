@@ -265,7 +265,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-ui-bklit-com"),
 			description: "shadcn tabanlı grafik bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-transitions-dev",
@@ -274,7 +274,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-transitions-dev"),
 			description: "Kopyala-yapıştır web geçiş animasyonları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Animasyon"]
 		},
 	{
 			id: "frontend-emailmd-dev",
@@ -283,7 +283,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-emailmd-dev"),
 			description: "Markdown'dan e-posta HTML'i",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-printer-animation-vercel-app",
@@ -292,7 +292,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-printer-animation-vercel-app"),
 			description: "Yazıcı animasyon demosu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Animasyon"]
 		},
 	{
 			id: "frontend-3dsvg-design",
@@ -301,7 +301,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-3dsvg-design"),
 			description: "SVG'den 3D nesne oluşturma",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-data-table-openstatus-dev",
@@ -310,7 +310,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-data-table-openstatus-dev"),
 			description: "Filtrelenebilir React data table",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-thesvg-org",
@@ -319,7 +319,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-thesvg-org"),
 			description: "Marka SVG ikon kütüphanesi",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-iocombats-com",
@@ -328,7 +328,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-iocombats-com"),
 			description: "Frontend pratik ve mülakat platformu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-spell-sh",
@@ -337,7 +337,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-spell-sh"),
 			description: "React + Tailwind UI bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-favicon-io",
@@ -346,7 +346,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-favicon-io"),
 			description: "Ücretsiz favicon oluşturucu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-blobmaker-app",
@@ -355,7 +355,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-blobmaker-app"),
 			description: "Organik SVG blob üretici",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-repostars-dev",
@@ -364,7 +364,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-repostars-dev"),
 			description: "GitHub yıldız geçmişi grafikleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-npmjs-com-package-react-use-wizard",
@@ -391,7 +391,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-markdown-new"),
 			description: "URL'den AI dostu Markdown",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-sileo-aaryan-design",
@@ -409,7 +409,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-gitingest-com"),
 			description: "GitHub repo'sunu metne çevirme",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-squoosh-app",
@@ -418,7 +418,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-squoosh-app"),
 			description: "Tarayıcıda görsel sıkıştırma",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-creative-tim-com-ui",
@@ -427,7 +427,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-creative-tim-com-ui"),
 			description: "shadcn/ui blok ve şablonları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-animateicons-in",
@@ -436,7 +436,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-animateicons-in"),
 			description: "Animasyonlu React ikonları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Animasyon"]
 		},
 	{
 			id: "frontend-moondream-ai",
@@ -445,7 +445,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-moondream-ai"),
 			description: "Hızlı görsel AI modeli",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-squircle-art",
@@ -454,7 +454,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-squircle-art"),
 			description: "CSS köşe şekli oluşturucu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-mapcn-dev",
@@ -490,7 +490,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-squircle-style"),
 			description: "Squircle köşe önizleme aracı",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-revola-sameerjs-com",
@@ -499,7 +499,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-revola-sameerjs-com"),
 			description: "Mobilde drawer, masaüstünde modal",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-buouui-com-docs-animations-event-calendar",
@@ -508,7 +508,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-buouui-com-docs-animations-event-calendar"),
 			description: "Tailwind UI bileşen kütüphanesi",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-better-upload-com",
@@ -517,7 +517,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-better-upload-com"),
 			description: "React dosya yükleme (S3 uyumlu)",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-square-lndev-me",
@@ -526,7 +526,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-square-lndev-me"),
 			description: "shadcn/ui layout koleksiyonu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-npmjs-com-package-tonl",
@@ -544,7 +544,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-logo-dev"),
 			description: "Şirket logoları API'si",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-bansal-io-pattern-css",
@@ -553,7 +553,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-bansal-io-pattern-css"),
 			description: "CSS arka plan desenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-shadcn-image-cropper-vercel-app",
@@ -562,7 +562,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-shadcn-image-cropper-vercel-app"),
 			description: "shadcn görsel kırpma aracı",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-wigggle-ui-vercel-app",
@@ -571,7 +571,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-wigggle-ui-vercel-app"),
 			description: "Kopyala-yapıştır widget koleksiyonu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-big-calendar-vercel-app-month-view",
@@ -580,7 +580,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-big-calendar-vercel-app-month-view"),
 			description: "Next.js takvim uygulaması",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-design-dev",
@@ -589,7 +589,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-design-dev"),
 			description: "Web geliştirme kaynak ve araçları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-ui-x-junwen-k-dev",
@@ -598,7 +598,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-ui-x-junwen-k-dev"),
 			description: "Kopyala-yapıştır UI bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-ui-spectrumhq-in",
@@ -607,7 +607,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-ui-spectrumhq-in"),
 			description: "Tailwind React bileşen kütüphanesi",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-shadcn-builder-com",
@@ -616,7 +616,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-shadcn-builder-com"),
 			description: "shadcn form oluşturucu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-base-ui-com-react-overview-quick-start",
@@ -625,7 +625,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-base-ui-com-react-overview-quick-start"),
 			description: "Headless React bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-reactflow-dev",
@@ -634,7 +634,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-reactflow-dev"),
 			description: "Node tabanlı akış diyagramları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-tweakcn-com",
@@ -643,7 +643,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-tweakcn-com"),
 			description: "shadcn/ui tema editörü",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-codediagram-io",
@@ -652,7 +652,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-codediagram-io"),
 			description: "VS Code içi diyagram aracı",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-forgeui-in",
@@ -661,7 +661,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-forgeui-in"),
 			description: "Erişilebilir açık kaynak UI",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-npmjs-com-package-react-just-parallax",
@@ -931,7 +931,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-animateicons-vercel-app"),
 			description: "Animasyonlu React ikonları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Animasyon"]
 		},
 	{
 			id: "frontend-21st-dev-home",
@@ -940,7 +940,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-21st-dev-home"),
 			description: "Topluluk React bileşen kaydı",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-launchmvpfast-com",
@@ -949,7 +949,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-launchmvpfast-com"),
 			description: "MVP geliştirme hizmeti",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-formcn-dev",
@@ -958,7 +958,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-formcn-dev"),
 			description: "shadcn form builder",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-docusaurus-io",
@@ -967,7 +967,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-docusaurus-io"),
 			description: "Dokümantasyon sitesi oluşturucu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-shadcn-svelte-extras-com",
@@ -976,7 +976,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-shadcn-svelte-extras-com"),
 			description: "Svelte shadcn ek bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-cult-ui-com",
@@ -985,7 +985,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-cult-ui-com"),
 			description: "shadcn blok ve şablonları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-andreasbm-github-io-web-skills",
@@ -994,7 +994,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-andreasbm-github-io-web-skills"),
 			description: "Web geliştirici beceri haritası",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-fancycomponents-dev-components",
@@ -1003,7 +1003,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-fancycomponents-dev-components"),
 			description: "Etkileşimli React bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-skiper-ui-com",
@@ -1012,7 +1012,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-skiper-ui-com"),
 			description: "shadcn için ek bileşenler",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-github-com-birobirobiro-awesome-shadcn-ui",
@@ -1021,7 +1021,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-github-com-birobirobiro-awesome-shadcn-ui"),
 			description: "shadcn/ui kaynak listesi",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-frontendchecklist-io",
@@ -1030,7 +1030,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-frontendchecklist-io"),
 			description: "Frontend kalite kuralları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-conventionalcommits-org-en-v1-0-0",
@@ -1039,7 +1039,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-conventionalcommits-org-en-v1-0-0"),
 			description: "Commit mesajı standardı",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-component-party-dev",
@@ -1048,7 +1048,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-component-party-dev"),
 			description: "Framework bileşen karşılaştırması",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Araçlar ve Rehberler"]
 		},
 	{
 			id: "frontend-tailwind-colors-meidev-co",
@@ -1057,7 +1057,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-tailwind-colors-meidev-co"),
 			description: "Tailwind renk paleti aracı",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-tailwindgen-com",
@@ -1066,7 +1066,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-tailwindgen-com"),
 			description: "Tailwind grid oluşturucu",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["Tasarım Araçları"]
 		},
 	{
 			id: "frontend-shadcn-form-build-vercel-app",
@@ -1075,7 +1075,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-shadcn-form-build-vercel-app"),
 			description: "Görsel shadcn form builder",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-originui-com",
@@ -1084,7 +1084,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-originui-com"),
 			description: "Modern UI bileşen kütüphanesi",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["shadcn"]
 		},
 	{
 			id: "frontend-magicui-design",
@@ -1093,7 +1093,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-magicui-design"),
 			description: "Landing page bileşen ve şablonları",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "frontend-ui-aceternity-com",
@@ -1102,7 +1102,7 @@ export const BOOKMARKS: Bookmark[] = [
 			imageUrl: bookmarkImage("frontend-ui-aceternity-com"),
 			description: "Animasyonlu UI bileşenleri",
 			categoryId: "frontend",
-			tags: ["Siteler"]
+			tags: ["UI Kütüphaneleri"]
 		},
 	{
 			id: "personal-imdb-com-title-tt4154796",
@@ -1241,7 +1241,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "TheUnComfortZONE",
 			imageUrl: bookmarkImage("media-youtube-cdf6d19etmc"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube--gc2twgghfa",
@@ -1250,7 +1250,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "This Is Football",
 			imageUrl: bookmarkImage("media-youtube--gc2twgghfa"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-rs8xja8ctoq",
@@ -1259,7 +1259,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "GLOBAL BUZZ",
 			imageUrl: bookmarkImage("media-youtube-rs8xja8ctoq"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-6ey6xucwf0y",
@@ -1268,7 +1268,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "rootthegamer",
 			imageUrl: bookmarkImage("media-youtube-6ey6xucwf0y"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-5x2yp2wm16i",
@@ -1277,7 +1277,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Mehmed: Fetihler Sultanı",
 			imageUrl: bookmarkImage("media-youtube-5x2yp2wm16i"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-hvmbmwuheaw",
@@ -1286,7 +1286,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Sky Sports Premier League",
 			imageUrl: bookmarkImage("media-youtube-hvmbmwuheaw"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-m22nwszycce",
@@ -1295,7 +1295,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "ElTerribleProduction",
 			imageUrl: bookmarkImage("media-youtube-m22nwszycce"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-lmwpop3pulg",
@@ -1304,7 +1304,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "LALIGA EA SPORTS",
 			imageUrl: bookmarkImage("media-youtube-lmwpop3pulg"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-4rpm6g6odvg",
@@ -1313,7 +1313,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Baykar Technologies",
 			imageUrl: bookmarkImage("media-youtube-4rpm6g6odvg"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-ueec_ebjgfu",
@@ -1322,7 +1322,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Baykar Technologies",
 			imageUrl: bookmarkImage("media-youtube-ueec_ebjgfu"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-x7158uqk1yi",
@@ -1331,7 +1331,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "FIFA",
 			imageUrl: bookmarkImage("media-youtube-x7158uqk1yi"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-u1oivnfpfii",
@@ -1340,7 +1340,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Raz Ols",
 			imageUrl: bookmarkImage("media-youtube-u1oivnfpfii"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-81txboyjrjw",
@@ -1349,7 +1349,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "UFC Eurasia",
 			imageUrl: bookmarkImage("media-youtube-81txboyjrjw"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-mhsg2m25pzy",
@@ -1358,7 +1358,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Wimbledon",
 			imageUrl: bookmarkImage("media-youtube-mhsg2m25pzy"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-g-swvee9him",
@@ -1367,7 +1367,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "BLAST Premier",
 			imageUrl: bookmarkImage("media-youtube-g-swvee9him"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-uo1chltdryq",
@@ -1376,7 +1376,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Robert Brown",
 			imageUrl: bookmarkImage("media-youtube-uo1chltdryq"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-jqvx5i4cso8",
@@ -1385,7 +1385,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "ESL Counter-Strike",
 			imageUrl: bookmarkImage("media-youtube-jqvx5i4cso8"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-pxygbwx4dks",
@@ -1394,7 +1394,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Virre CS2",
 			imageUrl: bookmarkImage("media-youtube-pxygbwx4dks"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-ijbde6pkw2o",
@@ -1403,7 +1403,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "GoalGlory Classics",
 			imageUrl: bookmarkImage("media-youtube-ijbde6pkw2o"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-fexzy4evllo",
@@ -1412,7 +1412,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "NBA",
 			imageUrl: bookmarkImage("media-youtube-fexzy4evllo"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	...LIBRARY_BOOKMARKS
 ]
@@ -1424,7 +1424,7 @@ export const BOOKMARK_GRID_COLUMN_COUNT = {
 
 export const BOOKMARK_MEDIA_RATING_TAGS = ["Film", "Dizi"] as const
 
-export const YOUTUBE_BOOKMARK_TAG = "Youtube"
+export const YOUTUBE_BOOKMARK_TAG = "YouTube"
 
 export const YOUTUBE_BOOKMARK_SUBTAGS = [
 	"Futbol",
