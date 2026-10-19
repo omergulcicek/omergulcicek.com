@@ -23,7 +23,7 @@
 
 Header'da ayrıca: tema düğmesi + ⌘K arama + **GitHub ikonu** (`IconLinkButton` → `EXTERNAL_LINKS.github`, `aria-label`: GitHub profilini ziyaret et). Hero'da da sosyal linkler (`SocialLinks`) bulunur.
 
-**Unvan (kesin):** `Frontend Engineer` — hero, SEO, metadata; `Staff Frontend Engineer` kullanılmaz.
+**Unvan (kesin):** `Frontend Mühendisi` — hero, SEO, metadata; `Staff Frontend Engineer` kullanılmaz. Çoklu dil eklenince İngilizce sitede `Frontend Engineer` gösterilecek. Yazılım mühendisliği eğitimi bilinçli vurgulanır (Hakkımda).
 
 Implementasyon: `src/constants/header-nav.constants.ts`.
 
@@ -92,7 +92,7 @@ Sayfa gövde metinleri → ilgili `docs/*.md` dosyaları.
 | Öğe | Boyut | Ağırlık | Tailwind |
 | --- | --- | --- | --- |
 | Hero — isim | 16px | 600 | `text-base font-semibold text-foreground` |
-| Hero — unvan (Frontend Engineer) | 16px | 400 | `text-base font-normal text-muted-foreground` |
+| Hero — unvan (Frontend Mühendisi) | 16px | 400 | `text-base font-normal text-muted-foreground` |
 | Hero — paragraflar | 16px | 400 (normal) | `text-base` |
 | Bölüm başlıkları (ana sayfa, projeler vb.) | 16px | 500 | `text-base font-medium` |
 
@@ -120,7 +120,7 @@ Legacy ile aynı portre görseli: `public/omergulcicek.JPG` (`_legacy` → `USER
 ### Layout (dikey editorial — v1 animasyonsuz)
 
 1. Portre fotoğraf (tam container genişliği)
-2. **Ömer Gülçiçek** · Frontend Engineer
+2. **Ömer Gülçiçek** · Frontend Mühendisi
 3. Sosyal ikonlar (GitHub, LinkedIn, X — `src/constants/social.constants.ts`)
 4. Paragraf 1
 5. Paragraf 2
@@ -128,7 +128,7 @@ Legacy ile aynı portre görseli: `public/omergulcicek.JPG` (`_legacy` → `USER
 ### Başlık
 
 **Ömer Gülçiçek** — `text-base font-semibold text-foreground` (16px, ağırlık 600)  
-Frontend Engineer — `text-base font-normal text-muted-foreground` (16px, ağırlık 400)
+Frontend Mühendisi — `text-base font-normal text-muted-foreground` (16px, ağırlık 400)
 
 Sosyal ikonlar marka renkleriyle: GitHub `#181717` / dark `#f0f6fc`, LinkedIn `#0A66C2`, X `foreground`.
 
@@ -173,10 +173,10 @@ Implementasyon: `src/constants/site.constants.ts`. Tam teknik metadata (OG, site
 | --- | --- |
 | `siteName` | Ömer Gülçiçek |
 | `siteUrl` | `https://omergulcicek.com` |
-| `jobTitle` | Frontend Engineer |
+| `jobTitle` | Frontend Mühendisi |
 | `titleTemplate` | `%s · Ömer Gülçiçek` |
-| `defaultTitle` | Ömer Gülçiçek — Frontend Engineer |
-| `defaultDescription` | Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack). |
+| `defaultTitle` | Ömer Gülçiçek — Frontend Mühendisi |
+| `defaultDescription` | Frontend Mühendisi ve ViraStack kurucusu. React, Next.js ve TanStack ile performanslı arayüzler; blog, projeler ve açık kaynak. |
 | `defaultOgImage` | `/omergulcicek.JPG` (dinamik OG şablonu Faz 4) |
 | `repository` | `https://github.com/omergulcicek/omergulcicek.com` |
 | `locale` | `tr_TR` |
@@ -187,7 +187,7 @@ Implementasyon: `src/constants/site.constants.ts`. Tam teknik metadata (OG, site
 
 | Rota | `title` | `description` |
 | --- | --- | --- |
-| `/` | Ömer Gülçiçek — Frontend Engineer | Detaylara önem veren bir frontend mühendisi; blog, projeler ve ViraStack ekosistemi. |
+| `/` | Ömer Gülçiçek — Frontend Mühendisi | React, Next.js ve TanStack ile arayüzler geliştiren frontend mühendisi; ViraStack açık kaynak ekosisteminin kurucusu. |
 | `/blog` | Blog | Teknik ve kişisel yazılar — React, Next.js, CSS, frontend mimarisi ve daha fazlası. |
 | `/blog/[slug]` | `{post.title}` | `{post.description}` (Supabase) |
 | `/projects` | Projeler | Kişisel uygulamalar ve ViraStack açık kaynak araçları. |

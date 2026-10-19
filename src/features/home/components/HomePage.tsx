@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react"
 import { Container } from "@/components/shared/Container"
 import { pageShellClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import type { BlogPost } from "@/features/blog/types/blog.types"
+import { ContactCta } from "@/features/home/components/ContactCta"
 import { ExperienceSummary } from "@/features/home/components/ExperienceSummary"
 import { FeaturedBlog } from "@/features/home/components/FeaturedBlog"
 import { Hero } from "@/features/home/components/Hero"
@@ -35,6 +36,7 @@ export function HomePage({ featuredPosts }: HomePageProps) {
 				<VirastackCaseStudyCard />
 				<FeaturedBlog posts={featuredPosts} />
 				<ExperienceSummary />
+				<ContactCta />
 			</Container>
 		</div>
 	)

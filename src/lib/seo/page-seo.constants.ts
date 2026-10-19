@@ -9,9 +9,9 @@ export type PageSeoEntry = {
 export const STATIC_PAGE_SEO = {
 	home: {
 		path: "/",
-		title: "Ömer Gülçiçek — Frontend Engineer",
+		title: "Ömer Gülçiçek — Frontend Mühendisi",
 		description:
-			"Detaylara önem veren bir frontend mühendisi; blog, projeler ve ViraStack ekosistemi.",
+			"React, Next.js ve TanStack ile arayüzler geliştiren frontend mühendisi; ViraStack açık kaynak ekosisteminin kurucusu.",
 		changeFrequency: "daily",
 		priority: 1
 	},
@@ -56,7 +56,7 @@ export const STATIC_PAGE_SEO = {
 	services: {
 		path: "/services",
 		title: "Hizmetler",
-		description: "Freelance geliştirme ve frontend eğitimi.",
+		description: "Frontend geliştirme, danışmanlık ve eğitim.",
 		changeFrequency: "monthly",
 		priority: 0.6
 	},

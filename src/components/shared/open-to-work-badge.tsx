@@ -3,9 +3,13 @@ import { cn } from "@/lib/utils"
 
 type OpenToWorkBadgeProps = {
 	className?: string
+	label?: string
 }
 
-export function OpenToWorkBadge({ className }: OpenToWorkBadgeProps) {
+export function OpenToWorkBadge({
+	className,
+	label = "Yeni fırsatlara açık"
+}: OpenToWorkBadgeProps) {
 	if (!SITE_FLAGS.isOpenToWork) {
 		return null
 	}
@@ -21,7 +25,7 @@ export function OpenToWorkBadge({ className }: OpenToWorkBadgeProps) {
 				<span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
 				<span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
 			</span>
-			Yeni fırsatlara açık
+			{label}
 		</span>
 	)
 }

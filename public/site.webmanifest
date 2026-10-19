@@ -1,7 +1,7 @@
 {
 	"name": "Ömer Gülçiçek",
 	"short_name": "Ömer",
-	"description": "Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack).",
+	"description": "Frontend Mühendisi ve ViraStack kurucusu. React, Next.js ve TanStack ile performanslı arayüzler; blog, projeler ve açık kaynak.",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
