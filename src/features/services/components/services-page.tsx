@@ -17,7 +17,6 @@ import {
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
-import { cn } from "@/lib/utils"
 import { SERVICES_CONTENT } from "@/features/services/constants/services.constants"
 
 export function ServicesPage() {
@@ -42,54 +41,24 @@ export function ServicesPage() {
 					<div className={proseFlowClass}>
 						<p className={proseParagraphClass}>
 							Sıfırdan kurulum, mevcut ürünü güncelleme ve proje bazlı iyileştirme
-							konularında destek veriyorum. Somut olarak:
+							konularında destek veriyorum. Next.js veya TanStack Start ile{" "}
+							<ProseEmphasis>proje mimarisi</ProseEmphasis> kurar, Lighthouse
+							odaklı <ProseEmphasis>performans ve SEO</ProseEmphasis>{" "}
+							iyileştirmesi yapar, kod standartları ve code review ile ekibin
+							kalitesini yükseltirim. Tasarım sistemine uygun, dokümantasyonlu bir
+							ortak UI kit de kurabilirim.
 						</p>
-						<ul className={cn("flex flex-col", proseFlowClass)}>
-							<li className={proseParagraphClass}>
-								<ProseEmphasis>Mimari:</ProseEmphasis> Next.js veya TanStack Start
-								ile proje yapısı, state ve veri katmanı kurulumu.
-							</li>
-							<li className={proseParagraphClass}>
-								<ProseEmphasis>Performans ve kalite:</ProseEmphasis> Lighthouse
-								odaklı hız ve SEO iyileştirmesi, kod standartları ve code review.
-							</li>
-							<li className={proseParagraphClass}>
-								<ProseEmphasis>Bileşen kütüphanesi:</ProseEmphasis> Tasarım
-								sistemine uygun, dokümantasyonlu ortak UI kit.
-							</li>
-						</ul>
-					</div>
-				</StaggerItem>
-
-				<StaggerItem className={pageSectionClass}>
-					<SectionHeading>{SERVICES_CONTENT.processSectionTitle}</SectionHeading>
-					<ul className={cn("flex flex-col", proseFlowClass)}>
-						<li className={proseParagraphClass}>
-							<ProseEmphasis>1. Tanışma:</ProseEmphasis> İhtiyacı birlikte
-							netleştiririz. Görüşme <em>ücretsiz</em>.
-						</li>
-						<li className={proseParagraphClass}>
-							<ProseEmphasis>2. Kapsam ve teklif:</ProseEmphasis> Yapılacak işi,
-							süreyi ve bütçeyi yazılı olarak paylaşırım.
-						</li>
-						<li className={proseParagraphClass}>
-							<ProseEmphasis>3. Teslim:</ProseEmphasis> Kodu ve dokümanı
-							teslim ederim, ekibinizin devralması için gerekli desteği veririm.
-						</li>
-					</ul>
-				</StaggerItem>
-
-				<StaggerItem className={pageSectionClass}>
-					<SectionHeading>{SERVICES_CONTENT.referencesSectionTitle}</SectionHeading>
-					<div className={proseFlowClass}>
+						<p className={proseParagraphClass}>
+							Önce ihtiyacı birlikte netleştiririz; görüşme <em>ücretsiz</em>.
+							Ardından kapsamı, süreyi ve bütçeyi yazılı paylaşırım. İş bitince
+							kodu ve dokümanı teslim eder, ekibinizin devralması için destek
+							veririm.
+						</p>
 						<p className={proseParagraphClass}>
 							Machinarium&apos;da 10 kişilik frontend ekibine teknik liderlik
-							ettim; ortak bileşen kütüphanesiyle teknik borcu azalttım.
-							Alışgidiş&apos;te frontend mimarisini sıfırdan kurdum ve
-							Lighthouse ile hız ve SEO performansını artırdım.
-						</p>
-						<p className={proseParagraphClass}>
-							Ayrıntılar için{" "}
+							ettim ve ortak bileşen kütüphanesiyle teknik borcu azalttım.
+							Alışgidiş&apos;te frontend mimarisini sıfırdan kurup Lighthouse ile
+							hız ve SEO performansını artırdım. Ayrıntılar için{" "}
 							<ProseRouterLink to="/experiences">Deneyimlerim</ProseRouterLink>{" "}
 							sayfasına bakabilirsiniz.
 						</p>
