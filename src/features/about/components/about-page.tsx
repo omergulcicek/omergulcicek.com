@@ -38,20 +38,17 @@ export function AboutPage() {
 								mühendisiyim.
 							</p>
 							<p className={proseParagraphClass}>
-								Yazılım mühendisliği eğitimi aldım; frontend işine{" "}
-								<em>mühendislik temelleriyle</em> yaklaşıyorum. Bir ürünü önce
-								kullanıcının, sonra kodun gözüyle okurum. Kişisel
-								projelerimin yanı sıra{" "}
+								Yazılım mühendisliği mezunuyum, frontend mühendisi olarak
+								çalışıyorum. Kendi projelerimin yanında{" "}
 								<VirastackLink>ViraStack</VirastackLink>
-								&apos;in kurucusuyum ve ekosisteme odaklanıyorum.
+								&apos;i geliştiriyorum.
 							</p>
 							<p className={proseParagraphClass}>
 								Yıllardır farklı ölçeklerde frontend projelerinde çalışıyorum;{" "}
 								<ProseEmphasis>
 									mimari, performans ve geliştirici deneyimine
 								</ProseEmphasis>{" "}
-								önem veriyorum. Ekibin daha güvenle ilerlemesini sağlamayı da
-								önemsiyorum. Yapay zekâyı da bu disiplinin içinde,{" "}
+								önem veriyorum. Yapay zekâyı da bu disiplinin içinde,{" "}
 								<em>bilinçli ve kontrollü</em> şekilde kullanıyorum.
 							</p>
 						</div>
