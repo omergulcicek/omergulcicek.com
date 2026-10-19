@@ -12,6 +12,7 @@ import {
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import { VirastackSectionIntro } from "@/features/projects/components/virastack-section-intro"
 import { ProjectSection } from "@/features/projects/components/project-section"
 import { GitHubContributionCalendar } from "@/features/projects/components/github-contribution-calendar"
 import { getProjectsByGroup } from "@/features/projects/constants/projects.constants"
@@ -37,9 +38,7 @@ export function ProjectsPage() {
 				<StaggerItem id="virastack">
 					<ProjectSection title={SITE_CONTENT.projectsSectionVirastack} projects={virastackProjects}>
 						<div className="flex flex-col gap-4">
-							<p className={proseParagraphClass}>
-								{SITE_CONTENT.virastackSectionIntro}
-							</p>
+							<VirastackSectionIntro />
 							<p className={proseParagraphClass}>
 								Ekosistemi{" "}
 								<VirastackLink>ViraStack</VirastackLink>{" "}
