@@ -133,7 +133,7 @@ Takvim, Footy, Turkuaz, Türkçe Doküman — `FeaturedProjectCard` grid (`grid-
 
 Alt başlık: **ViraStack** (`projectsSectionVirastack`)
 
-- `virastackSectionIntro` — ekosistem tanımı + `ProseLink` (virastack.com · GitHub)
+- `virastackSectionIntro` — ekosistem tanımı + `ProseLink` (virastack.com · GitHub). Zengin metin sürümü `VirastackSectionIntro` bileşeninde (Next.js, TanStack, React ikonlu linkler; ViraStack AI ve Academy kalın)
 - Aynı `FeaturedProjectCard` grid
 
 ### Wireframe
