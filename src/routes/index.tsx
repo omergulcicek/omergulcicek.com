@@ -35,7 +35,9 @@ export const Route = createFileRoute("/")({
 
 function HomeIndexPage() {
 	const { data: posts } = useGetBlogPosts()
-	const featuredPosts = posts.slice(0, HOME_FEATURED_BLOG_COUNT)
+	const featuredPosts = posts
+		.filter((post) => post.category === "technical")
+		.slice(0, HOME_FEATURED_BLOG_COUNT)
 
 	return (
 		<>

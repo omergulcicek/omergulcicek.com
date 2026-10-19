@@ -7,16 +7,19 @@ Primary sections: Home (/), Blog (/blog), Projects (/projects), About (/about), 
 ## Main pages
 
 - [About](https://omergulcicek.com/about): Bio, tech stack, GitHub activity, and contact links
-- [Experiences](https://omergulcicek.com/experiences): Career timeline and downloadable CV
-- [Projects](https://omergulcicek.com/projects): Personal apps and ViraStack open-source tools
+- [Experiences](https://omergulcicek.com/experiences): Career timeline (ViraStack founder, Machinarium, Alışgidiş and earlier) and downloadable CV
+- [Projects](https://omergulcicek.com/projects): Personal apps and the ViraStack ecosystem (Academy, Start, AI, Mask, Password, Guide)
 - [Services](https://omergulcicek.com/services): Freelance development and frontend training
 - [Bookmarks](https://omergulcicek.com/bookmarks): Curated frontend resources on Raindrop
 
 ## Blog
 
 - [Blog index](https://omergulcicek.com/blog): Full list of published articles
+- [Technical articles](https://omergulcicek.com/blog?category=technical): Technical posts only (React, Next.js, TanStack, CSS, AI-assisted development)
+- Some articles exist in both Turkish and English and link to each other with hreflang alternates
 
 ## Optional
 
 - [ViraStack](https://virastack.com): Open-source frontend ecosystem by Ömer Gülçiçek
+- [ViraStack Academy](https://virastack.com/academy): Free Turkish frontend learning roadmap (React, TypeScript, Next.js, TanStack Query, testing, architecture, AI)
 - [Source code](https://github.com/omergulcicek/omergulcicek.com): Repository for this site

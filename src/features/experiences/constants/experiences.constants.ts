@@ -9,6 +9,21 @@ export type Experience = {
 
 export const EXPERIENCES: Experience[] = [
 	{
+		company: "ViraStack",
+		icon: "virastack",
+		role: "Kurucu",
+		period: "2025 – Günümüz",
+		summary:
+			"Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum.",
+		technologies: [
+			"React",
+			"Next.js",
+			"TypeScript",
+			"TanStack Query",
+			"Tailwind CSS"
+		]
+	},
+	{
 		company: "Machinarium",
 		icon: "machinarium",
 		role: "Frontend Team Lead",

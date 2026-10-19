@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
 		group: "virastack",
 		status: "package",
 		href: "https://virastack.com/academy",
-		sortOrder: 10
+		sortOrder: 0
 	}
 ]
 
