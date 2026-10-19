@@ -30,12 +30,15 @@ function HeroBody() {
 	return (
 		<div className={cn("text-base", proseFlowClass)}>
 			<p className={proseParagraphClass}>
-				Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; projelerim
-				aracılığıyla insanlara faydalı olup onların deneyimlerine değer
-				katmayı seviyorum.{" "}
-				<VirastackLink>ViraStack</VirastackLink> ile frontend
-				geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir
-				ekosistem inşa ediyorum.
+				Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum.{" "}
+				<VirastackLink>ViraStack</VirastackLink> ile frontend geliştiriciler
+				için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa
+				ediyorum.
+			</p>
+			<p className={proseParagraphClass}>
+				Yapay zekâyı <em>geliştirme sürecimin merkezine</em> alıyorum; ajan
+				uyumlu kurallar ve net bir mimariyle daha hızlı, daha tutarlı
+				ilerliyorum.
 			</p>
 			<p className={proseParagraphClass}>
 				Bana <ProseLink href={EXTERNAL_LINKS.x}>@omergulcicek</ProseLink> ve{" "}
@@ -45,7 +48,7 @@ function HeroBody() {
 				>
 					e-posta
 				</ProseIconLink>{" "}
-				yoluyla ulaşabilir ya da{" "}
+				ile ulaşabilir ya da{" "}
 				<ProseIconLink
 					href={EXTERNAL_LINKS.github}
 					icon={

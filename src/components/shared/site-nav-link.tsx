@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react"
 import type { ComponentPropsWithoutRef, ReactNode } from "react"
 
 import { withOutboundUtm } from "@/lib/outbound-url"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
+import { getNavLinkSearch } from "@/lib/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
 const siteNavLinkBaseClass =
@@ -55,7 +55,7 @@ export function SiteNavLink({
 	return (
 		<Link
 			to={href}
-			search={clearedRouteSearch}
+			search={getNavLinkSearch(href)}
 			className={cn(siteNavLinkBaseClass, className)}
 			activeOptions={exact ? { exact: true } : undefined}
 			inactiveProps={{

@@ -15,7 +15,7 @@
 
 ## Giriş (`experiencesIntro`)
 
-10 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
+Yaklaşık 10 yıldır React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
 
 ---
 

@@ -16,7 +16,7 @@ import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
 import { mapPostsToSearchItems } from "@/features/blog/helpers/map-posts-to-search-items"
 import { useCommandPalette } from "@/features/search/components/command-palette-provider"
 import { withOutboundUtm } from "@/lib/outbound-url"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
+import { getNavLinkSearch } from "@/lib/router/cleared-route-search"
 import {
 	SEARCH_ACTIONS,
 	SEARCH_BOOKMARK_CATEGORIES,
@@ -114,7 +114,7 @@ export function CommandPaletteDialog() {
 
 									void navigate({
 										to: page.href,
-										search: clearedRouteSearch,
+										search: getNavLinkSearch(page.href),
 										viewTransition: false
 									})
 								})

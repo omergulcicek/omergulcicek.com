@@ -2,9 +2,11 @@ export const SITE_CONTENT = {
 	jobTitle: "Frontend Engineer",
 	displayName: "Ömer Gülçiçek",
 	heroParagraph1:
-		"Detaylara ve kaliteye büyük bir tutku duyuyorum; projelerim aracılığıyla insanlara faydalı olup onların deneyimlerine değer katmayı seviyorum. ViraStack ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.",
+		"Detaylara ve kaliteye büyük bir tutku duyuyorum. ViraStack ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.",
 	heroParagraph2:
-		"Bana @omergulcicek ve e-posta yoluyla ulaşabilir ya da GitHub'daki kodlarıma göz atabilirsiniz.",
+		"Yapay zekâyı geliştirme sürecimin merkezine alıyorum; ajan uyumlu kurallar ve net bir mimariyle daha hızlı, daha tutarlı ilerliyorum.",
+	heroParagraph3:
+		"Bana @omergulcicek ve e-posta ile ulaşabilir ya da GitHub'daki kodlarıma göz atabilirsiniz.",
 	homeSections: {
 		blog: "Blog",
 		experiences: "Deneyimler"
@@ -34,13 +36,13 @@ export const SITE_CONTENT = {
 	projectsBadgeComingSoon: "Yakında",
 	projectsBadgeArchive: "Arşiv",
 	virastackSectionIntro:
-		"ViraStack, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.",
+		"ViraStack, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri. Academy ise bu araçları kullanırken ihtiyaç duyacağın temelleri öğreten ücretsiz rehberlerdir.",
 	bookmarksIntro:
 		"Yer imlerimi raindrop.io/omergulcicek'te saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı, okuduğum makaleleri, günlük takip ettiğim blogları, teknik içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.",
 	bookmarksRaindropCta: "Tümünü göster",
 	bookmarksRaindropUrl: "https://raindrop.io/omergulcicek",
 	experiencesIntro:
-		"10 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
+		"Yaklaşık 10 yıldır React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
 	resumeModalTitle: "Özgeçmiş Önizleme",
 	resumeModalDescription:
 		"Özgeçmişimi buradan inceleyebilir veya indirebilirsiniz.",
