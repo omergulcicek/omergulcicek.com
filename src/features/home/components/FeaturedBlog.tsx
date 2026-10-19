@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router"
 
+import { blogNavSearch } from "@/lib/router/cleared-route-search"
 import { ArrowLink } from "@/components/shared/ArrowLink"
 import { pageSectionClass } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
@@ -24,7 +25,11 @@ export function FeaturedBlog({ posts }: FeaturedBlogProps) {
 				))}
 			</nav>
 			<div className="flex justify-center">
-				<Link to="/blog" className="group text-muted-foreground">
+				<Link
+					to="/blog"
+					search={blogNavSearch}
+					className="group text-muted-foreground"
+				>
 					<ArrowLink>{SITE_CONTENT.homeBlogCta}</ArrowLink>
 				</Link>
 			</div>

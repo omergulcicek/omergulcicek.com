@@ -4,33 +4,23 @@ import {
 	Bot,
 	Brain,
 	Clapperboard,
-	CodeXml,
-	Globe,
 	Milestone,
-	Popcorn,
 	Rocket,
-	Sparkles,
-	TentTree
+	Sparkles
 } from "lucide-react"
 
 import { ThemeAwareDualIcon } from "@/components/shared/theme-aware-dual-icon"
 import { StackLogo } from "@/features/stack/components/stack-logo"
 import { CssOld } from "@/components/ui/svgs/cssOld"
-import { Github } from "@/components/ui/svgs/github"
 import { Html5 } from "@/components/ui/svgs/html5"
 import { Javascript } from "@/components/ui/svgs/javascript"
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
-import { Npm } from "@/components/ui/svgs/npm"
 import { ReactDark } from "@/components/ui/svgs/reactDark"
 import { ReactLight } from "@/components/ui/svgs/reactLight"
-import { ShadcnUi } from "@/components/ui/svgs/shadcnUi"
-import { ShadcnUiDark } from "@/components/ui/svgs/shadcnUiDark"
 import { Supabase } from "@/components/ui/svgs/supabase"
 import { Tanstack } from "@/components/ui/svgs/tanstack"
-import { Tailwindcss } from "@/components/ui/svgs/tailwindcss"
 import { Typescript } from "@/components/ui/svgs/typescript"
 import { Virastack } from "@/components/ui/svgs/virastack"
-import { Vite } from "@/components/ui/svgs/vite"
 import { cn } from "@/lib/utils"
 
 type BlogTagIconProps = {
@@ -68,50 +58,24 @@ const BLOG_TAG_ICON_MAP: Record<string, BlogTagIconEntry> = {
 		icon: Bot,
 		iconClassName: "text-violet-500 dark:text-violet-400"
 	},
-	Frontend: {
-		kind: "icon",
-		icon: CodeXml,
-		iconClassName: "text-sky-500 dark:text-sky-400"
-	},
 	CSS: { kind: "icon", icon: CssOld },
 	HTML: { kind: "icon", icon: Html5 },
 	JavaScript: { kind: "icon", icon: Javascript },
-	"Tailwind CSS": { kind: "icon", icon: Tailwindcss },
-	"shadcn/ui": { kind: "theme", light: ShadcnUi, dark: ShadcnUiDark },
 	Supabase: { kind: "icon", icon: Supabase },
-	Zustand: { kind: "stack", stackId: "zustand" },
-	Vite: { kind: "icon", icon: Vite },
-	GitHub: { kind: "icon", icon: Github },
-	npm: { kind: "icon", icon: Npm },
 	"Yıl Değerlendirmesi": {
 		kind: "icon",
 		icon: Milestone,
 		iconClassName: "text-amber-500 dark:text-amber-400"
 	},
-	Kitap: {
-		kind: "icon",
-		icon: BookMarked,
-		iconClassName: "text-orange-600 dark:text-orange-400"
-	},
-	Dizi: {
+	"Film ve Dizi": {
 		kind: "icon",
 		icon: Clapperboard,
 		iconClassName: "text-rose-500 dark:text-rose-400"
 	},
-	Film: {
+	Kitap: {
 		kind: "icon",
-		icon: Popcorn,
-		iconClassName: "text-rose-500 dark:text-rose-400"
-	},
-	Seyahat: {
-		kind: "icon",
-		icon: TentTree,
-		iconClassName: "text-emerald-500 dark:text-emerald-400"
-	},
-	"Site Yenileme": {
-		kind: "icon",
-		icon: Globe,
-		iconClassName: "text-cyan-600 dark:text-cyan-400"
+		icon: BookMarked,
+		iconClassName: "text-orange-600 dark:text-orange-400"
 	},
 	Deneyim: {
 		kind: "icon",

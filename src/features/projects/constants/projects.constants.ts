@@ -85,6 +85,16 @@ export const PROJECTS: Project[] = [
 		status: "package",
 		href: "https://virastack.com/guide",
 		sortOrder: 9
+	},
+	{
+		id: "academy",
+		title: "ViraStack Academy",
+		description:
+			"React ile frontend geliştirici olmak için güncel yol haritası ve ücretsiz rehberler.",
+		group: "virastack",
+		status: "package",
+		href: "https://virastack.com/academy",
+		sortOrder: 10
 	}
 ]
 

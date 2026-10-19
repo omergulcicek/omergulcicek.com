@@ -5,6 +5,7 @@ import {
 	CalendarDays,
 	ChevronRight,
 	Form,
+	GraduationCap,
 	Icon,
 	Rocket,
 	Sparkles,
@@ -81,6 +82,11 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 		kind: "lucide",
 		Icon: BookOpen,
 		className: "text-amber-500"
+	},
+	academy: {
+		kind: "lucide",
+		Icon: GraduationCap,
+		className: "text-sky-500"
 	},
 	turkuaz: {
 		kind: "svg",

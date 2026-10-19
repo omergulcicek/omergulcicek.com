@@ -134,11 +134,15 @@ Sosyal ikonlar marka renkleriyle: GitHub `#181717` / dark `#f0f6fc`, LinkedIn `#
 
 ### Paragraf 1 (`heroParagraph1`)
 
-Detaylara ve kaliteye *büyük bir tutku* duyuyorum; projelerim aracılığıyla insanlara faydalı olup onların deneyimlerine değer katmayı seviyorum. [ViraStack](https://virastack.com) ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.
+Detaylara ve kaliteye *büyük bir tutku* duyuyorum. [ViraStack](https://virastack.com) ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.
 
 ### Paragraf 2 (`heroParagraph2`)
 
-Bana [@omergulcicek](https://x.com/omergulcicek) ve [e-posta](mailto:iletisim@omergulcicek.com) yoluyla ulaşabilir ya da [GitHub](https://github.com/omergulcicek)'daki kodlarıma göz atabilirsiniz.
+Yapay zekâyı *geliştirme sürecimin merkezine* alıyorum; ajan uyumlu kurallar ve net bir mimariyle daha hızlı, daha tutarlı ilerliyorum.
+
+### Paragraf 3 (`heroParagraph3`)
+
+Bana [@omergulcicek](https://x.com/omergulcicek) ve [e-posta](mailto:iletisim@omergulcicek.com) ile ulaşabilir ya da [GitHub](https://github.com/omergulcicek)'daki kodlarıma göz atabilirsiniz.
 
 GitHub ve e-posta linklerinin önünde küçük ikon; yalnızca metin altı çizili, ikon tıklanabilir. `@omergulcicek` X profiline gider — düz metin linki, ikon yok.
 

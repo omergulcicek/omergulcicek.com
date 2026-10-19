@@ -21,7 +21,7 @@ export function ExperiencesPage() {
 						openToWorkPlacement="inline"
 					>
 						<p className={proseParagraphClass}>
-							<em>10 yılı aşkın</em> tecrübemle,{" "}
+							<em>Yaklaşık 10 yıldır</em>{" "}
 							<ProseEmphasis>React</ProseEmphasis> ekosisteminde{" "}
 							<em>AI destekli</em> ve{" "}
 							<ProseEmphasis>yüksek performanslı mimariler</ProseEmphasis>{" "}
