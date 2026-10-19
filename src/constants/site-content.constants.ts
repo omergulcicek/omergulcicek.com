@@ -2,9 +2,9 @@ export const SITE_CONTENT = {
 	jobTitle: "Frontend Mühendisi",
 	displayName: "Ömer Gülçiçek",
 	heroParagraph1:
-		"Detaylara ve kaliteye büyük bir tutku duyuyorum. ViraStack ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.",
+		"Detaylara ve kaliteye tutkuyla odaklanan bir geliştiriciyim.",
 	heroParagraph2:
-		"Yapay zekâyı geliştirme sürecimin merkezine alıyorum; ajan uyumlu kurallar ve net bir mimariyle daha hızlı, daha tutarlı ilerliyorum.",
+		"ViraStack ile frontend geliştiricileri için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum. Yapay zekâ ajanlarını net mimari standartlarıyla sürecime entegre ederek daha hızlı, tutarlı ve ölçeklenebilir çözümler üretiyorum.",
 	heroParagraph3:
 		"Bana @omergulcicek ve e-posta ile ulaşabilir ya da GitHub'daki kodlarıma göz atabilirsiniz.",
 	homeSections: {
