@@ -73,6 +73,9 @@ export function Footer() {
 										<VirastackProductName
 											projectId={project.id}
 											title={project.title}
+											accentClassName={
+												project.id === "academy" ? "text-green-500" : undefined
+											}
 										/>
 									</SiteNavLink>
 								))}
