@@ -1,4 +1,6 @@
 import { SITE } from "@/constants/site.constants"
+import { getBlogTranslationAlternates } from "@/features/blog/constants/blog-translations.constants"
+import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import {
 	STATIC_PAGE_SEO,
 	type StaticPageSeoKey
@@ -74,6 +76,20 @@ function toArticleIsoDate(value: string): string {
 	return new Date(`${value}T12:00:00.000Z`).toISOString()
 }
 
+function buildBlogAlternateLinks(slug: string) {
+	const alternates = getBlogTranslationAlternates(slug)
+
+	if (!alternates) {
+		return []
+	}
+
+	return alternates.map(({ hreflang, slug: alternateSlug }) => ({
+		rel: "alternate" as const,
+		hreflang,
+		href: resolveAbsoluteUrl(`/blog/${slugToRouteParam(alternateSlug)}`)
+	}))
+}
+
 export function buildBlogPostHead({
 	title,
 	description,
@@ -82,8 +98,10 @@ export function buildBlogPostHead({
 	ogImage,
 	robots,
 	publishedAt,
-	author = SITE.name
+	author = SITE.name,
+	slug
 }: {
+	slug?: string
 	title: string
 	description: string
 	path: string
@@ -104,14 +122,20 @@ export function buildBlogPostHead({
 		useTitleTemplate: true
 	})
 
+	const alternateLinks = slug ? buildBlogAlternateLinks(slug) : []
+	const headWithAlternates = {
+		...pageHead,
+		links: [...pageHead.links, ...alternateLinks]
+	}
+
 	if (!publishedAt) {
-		return pageHead
+		return headWithAlternates
 	}
 
 	const publishedTime = toArticleIsoDate(publishedAt)
 
 	return {
-		...pageHead,
+		...headWithAlternates,
 		meta: [
 			...pageHead.meta,
 			{ property: "article:published_time", content: publishedTime },

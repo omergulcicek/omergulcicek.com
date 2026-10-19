@@ -1,4 +1,5 @@
 import { SITE } from "@/constants/site.constants"
+import { getBlogTranslationAlternates } from "@/features/blog/constants/blog-translations.constants"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { STATIC_SITEMAP_PAGES } from "@/lib/seo/page-seo.constants"
@@ -16,14 +17,22 @@ function buildUrlEntry(
 	loc: string,
 	changeFrequency: string,
 	priority: number,
-	lastModified?: string
+	lastModified?: string,
+	alternates: { hreflang: string; href: string }[] = []
 ) {
 	const lastModTag = lastModified
 		? `\n\t\t<lastmod>${escapeXml(lastModified)}</lastmod>`
 		: ""
 
+	const alternateTags = alternates
+		.map(
+			({ hreflang, href }) =>
+				`\n\t\t<xhtml:link rel="alternate" hreflang="${hreflang}" href="${escapeXml(href)}" />`
+		)
+		.join("")
+
 	return `\t<url>
-\t\t<loc>${escapeXml(loc)}</loc>${lastModTag}
+\t\t<loc>${escapeXml(loc)}</loc>${lastModTag}${alternateTags}
 \t\t<changefreq>${changeFrequency}</changefreq>
 \t\t<priority>${priority.toFixed(1)}</priority>
 \t</url>`
@@ -45,12 +54,18 @@ export function buildSitemapXml(posts: BlogPost[]): string {
 				`${SITE.url}/blog/${slugToRouteParam(post.slug)}`,
 				"monthly",
 				0.6,
-				post.publishedAt
+				post.publishedAt,
+				(getBlogTranslationAlternates(post.slug) ?? []).map(
+					({ hreflang, slug }) => ({
+						hreflang,
+						href: `${SITE.url}/blog/${slugToRouteParam(slug)}`
+					})
+				)
 			)
 		)
 
 	return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${[...staticEntries, ...blogEntries].join("\n")}
 </urlset>
 `

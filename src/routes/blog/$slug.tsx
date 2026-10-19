@@ -78,6 +78,7 @@ export const Route = createFileRoute("/blog/$slug")({
 			title: seo.title,
 			description: seo.description,
 			path: `/blog/${slugToRouteParam(seo.slug)}`,
+			slug: seo.slug,
 			canonicalUrl: seo.canonicalUrl,
 			ogImage: seo.coverImage,
 			publishedAt: seo.publishedAt,

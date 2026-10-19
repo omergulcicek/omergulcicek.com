@@ -18,7 +18,7 @@ export function FeaturedBlog({ posts }: FeaturedBlogProps) {
 			<SectionHeading>{SITE_CONTENT.homeSections.blog}</SectionHeading>
 			<nav
 				className="flex flex-col gap-2 md:gap-3"
-				aria-label="Son blog yazıları"
+				aria-label="Son teknik yazılar"
 			>
 				{posts.map((post) => (
 					<BlogListPostRow key={post.slug} post={post} />
