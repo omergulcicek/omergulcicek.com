@@ -18,25 +18,25 @@ export const HOBBIES: Hobby[] = [
 	{
 		id: "photography",
 		title: "Fotoğraf",
-		text: "Gezdiğim yerleri paylaşıyorum.",
+		text: "Gezdiğim yerlerin kadrajları",
 		href: "https://instagram.com/omerilekesfet"
 	},
 	{
 		id: "chess",
 		title: "Satranç",
-		text: "5+0 blitz oynuyorum.",
+		text: "5+0 blitz maçları",
 		href: "https://chess.com/member/omergulcicek"
 	},
 	{
 		id: "walk",
 		title: "Yürüyüş",
-		text: "Şehirleri yürüyerek gezerim.",
+		text: "Adım adım şehir keşifleri",
 		href: "/blog/google-maps-kisisel-listelerim"
 	},
 	{
 		id: "book",
 		title: "Kitap",
-		text: "Osmanlı tarihi okumaları.",
+		text: "Osmanlı tarihi okumaları",
 		href: "/bookmarks?category=library"
 	}
 ]

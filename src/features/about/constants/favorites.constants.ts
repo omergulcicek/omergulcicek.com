@@ -9,35 +9,35 @@ export type FavoriteItem = {
 export const FAVORITES_ITEMS: FavoriteItem[] = [
 	{
 		id: "team",
-		label: "En sevdiğim futbol kulübü.",
+		label: "En sevdiğim futbol kulübü",
 		value: "Barcelona",
 		order: 1,
 		href: "https://x.com/FCBarcelona"
 	},
 	{
 		id: "game",
-		label: "Her sezon yeni kariyer.",
+		label: "Her sezon yeni kariyer",
 		value: "Football Manager",
 		order: 2,
 		href: "https://store.steampowered.com/app/3551340/Football_Manager_26/"
 	},
 	{
 		id: "musician",
-		label: "En çok dinlediğim şarkıcı.",
+		label: "En çok dinlediğim sanatçı",
 		value: "Sagopa Kajmer",
 		order: 3,
 		href: "https://open.spotify.com/intl-tr/artist/1KXTegXtnCPKXjRaX1llcD"
 	},
 	{
 		id: "movie",
-		label: "Favori filmim.",
+		label: "En sevdiğim film",
 		value: "Yüzüklerin Efendisi",
 		order: 4,
 		href: "https://www.imdb.com/title/tt0167260/"
 	},
 	{
 		id: "color",
-		label: "En sevdiğim renk.",
+		label: "En sevdiğim renk",
 		value: "Turkuaz",
 		order: 5,
 		href: "https://github.com/omergulcicek/turkuaz"
