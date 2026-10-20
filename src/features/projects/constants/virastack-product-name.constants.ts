@@ -4,5 +4,5 @@ export const VIRASTACK_PRODUCT_ACCENT_CLASS: Record<string, string> = {
 	mask: "text-indigo-500",
 	password: "text-rose-500",
 	guide: "text-amber-500",
-	academy: "text-sky-500"
+	academy: "text-green-500"
 }

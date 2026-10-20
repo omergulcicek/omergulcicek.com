@@ -86,7 +86,7 @@ const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
 	academy: {
 		kind: "lucide",
 		Icon: GraduationCap,
-		className: "text-sky-500"
+		className: "text-green-500"
 	},
 	turkuaz: {
 		kind: "svg",

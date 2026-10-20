@@ -40,7 +40,7 @@ export function VirastackCaseStudyCard() {
 					visual={
 						<span className={interactiveRowCardVisualClass}>
 							<GraduationCap
-								className="size-7 text-sky-500"
+								className="size-7 text-green-500"
 								strokeWidth={1.75}
 								aria-hidden
 							/>
