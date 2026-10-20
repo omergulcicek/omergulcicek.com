@@ -35,7 +35,7 @@ Görseller: `public/company/` — legacy asset'ler taşınır.
 
 | Şirket | Rol | Dönem | Özet (1 cümle) |
 | --- | --- | --- | --- |
-| ViraStack | Kurucu | 2025 – Günümüz | Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum. |
+| ViraStack | Kurucu | Ara 25 – Günümüz | Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum. |
 | Machinarium | Frontend Team Lead | Ağu 25 – Kas 25 | 10 kişilik frontend ekibiyle 2 e-ticaret sitesi ve PIM, CMS, OMS panelleri dahil 5+ projeye liderlik ettim; ortak bileşen mimarisi ve AI destekli kod standartlarıyla teknik borcu eritip geliştirme hızını 2-3 kat artırdım. |
 | Alışgidiş | Frontend Team Lead | Mar 24 – Haz 25 | Fibabanka'nın e-ticaret girişimi alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum; 5 kişilik ekibi yönetip UI kütüphanesi ve Lighthouse 90+ ile hız ve SEO performansını artırdım. |
 | Gordion | Senior Frontend Engineer | Oca 22 – Şub 24 | Otel, uçak bileti ve kültür turu rezervasyon sayfalarını geliştirdim; merkezi UI Kit ve GraphQL entegrasyonuyla teknik borcu azaltıp ekipler arası tutarlılığı sağladım. |

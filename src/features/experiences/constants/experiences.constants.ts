@@ -12,7 +12,7 @@ export const EXPERIENCES: Experience[] = [
 		company: "ViraStack",
 		icon: "virastack",
 		role: "Kurucu",
-		period: "2025 – Günümüz",
+		period: "Ara 25 – Günümüz",
 		summary:
 			"Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum.",
 		technologies: [
