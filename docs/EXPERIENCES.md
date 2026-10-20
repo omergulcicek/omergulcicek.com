@@ -15,7 +15,7 @@
 
 ## Giriş (`experiencesIntro`)
 
-Yaklaşık 10 yıldır React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
+2017'den bu yana React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.
 
 ---
 
@@ -35,13 +35,13 @@ Görseller: `public/company/` — legacy asset'ler taşınır.
 
 | Şirket | Rol | Dönem | Özet (1 cümle) |
 | --- | --- | --- | --- |
-| ViraStack | Kurucu | Oca 26 – Günümüz | Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum. |
-| Machinarium | Frontend Team Lead | Ağu 25 – Kas 25 | 10 kişilik frontend ekibine teknik liderlik ettim; AI destekli kod standartları ve ortak bileşen kütüphanesiyle PIM, CMS ve OMS panellerindeki teknik borcu ve kod tutarsızlığını giderdim. |
-| Alışgidiş | Senior Frontend Engineer | Mar 24 – Haz 25 | alisgidis.com FE mimarisini sıfırdan kurdum; takım lideri olarak tasarım-backend koordinasyonunu yönetip UI kütüphanesi ve Lighthouse ile hız ve SEO performansını artırdım. |
+| ViraStack | Kurucu | 2025 – Günümüz | Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum. |
+| Machinarium | Frontend Team Lead | Ağu 25 – Kas 25 | 10 kişilik frontend ekibiyle 2 e-ticaret sitesi ve PIM, CMS, OMS panelleri dahil 5+ projeye liderlik ettim; ortak bileşen mimarisi ve AI destekli kod standartlarıyla teknik borcu eritip geliştirme hızını 2-3 kat artırdım. |
+| Alışgidiş | Frontend Team Lead | Mar 24 – Haz 25 | Fibabanka'nın e-ticaret girişimi alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum; 5 kişilik ekibi yönetip UI kütüphanesi ve Lighthouse 90+ ile hız ve SEO performansını artırdım. |
 | Gordion | Senior Frontend Engineer | Oca 22 – Şub 24 | Otel, uçak bileti ve kültür turu rezervasyon sayfalarını geliştirdim; merkezi UI Kit ve GraphQL entegrasyonuyla teknik borcu azaltıp ekipler arası tutarlılığı sağladım. |
 | HangiKredi | Frontend Developer | Eyl 20 – Oca 22 | hangikredi.com geliştirmesinde Figma tasarımlarını koda döktüm; performans iyileştirmeleri ve yeniden kullanılabilir JS kütüphaneleriyle kod tekrarını azalttım. |
 | Kodluyoruz | Frontend Eğitmeni | Ara 20 – Şub 21 | 30 öğrenciye Frontend 101 eğitimi verdim; HTML, CSS, JavaScript, Git ve React konularında uygulamalı dersler yürüttüm, sektörel tecrübe aktarımı ve sorulara yanıt verdim. |
-| Akinon | Frontend Developer | Haz 19 – Kas 19 | Vakko, A101 ve birçok e-ticaret sitesi için Zeplin tasarımlarını modüler bileşenlerle koda döktüm; component dokümantasyonuyla süreci sürdürülebilir kıldım. |
+| Akinon | Frontend Developer | Haz 19 – Kas 19 | Vakko, A101, Kemal Tanca ve Faraway gibi e-ticaret siteleri için Zeplin tasarımlarını modüler bileşenlerle koda döktüm; component dokümantasyonuyla süreci sürdürülebilir kıldım. |
 | Turkcell | Frontend Developer | Tem 18 – Kas 18 | Canlı sistemdeki kritik arayüz hatalarına anında müdahale ederek ekibin geliştirmeye kesintisiz devam etmesini sağladım. |
 | Ziraat Teknoloji | Frontend Developer | Tem 17 – Haz 18 | Kendo UI tabanlı kurumsal admin panelini uçtan uca geliştirdim; arayüzü tam responsive hale getirerek kullanılabilirliği artırdım. |
 

@@ -12,7 +12,7 @@ export const EXPERIENCES: Experience[] = [
 		company: "ViraStack",
 		icon: "virastack",
 		role: "Kurucu",
-		period: "Oca 26 – Günümüz",
+		period: "2025 – Günümüz",
 		summary:
 			"Frontend geliştiriciler için açık kaynak ViraStack ekosistemini kurdum; Next.js ve TanStack şablonlarını, ajan uyumlu AI kitini, form paketlerini ve ücretsiz Academy'yi geliştiriyorum.",
 		technologies: [
@@ -29,7 +29,7 @@ export const EXPERIENCES: Experience[] = [
 		role: "Frontend Team Lead",
 		period: "Ağu 25 – Kas 25",
 		summary:
-			"10 kişilik frontend ekibine teknik liderlik ettim; AI destekli kod standartları ve ortak bileşen kütüphanesiyle PIM, CMS ve OMS panellerindeki teknik borcu ve kod tutarsızlığını giderdim.",
+			"10 kişilik frontend ekibiyle 2 e-ticaret sitesi ve PIM, CMS, OMS panelleri dahil 5+ projeye liderlik ettim; ortak bileşen mimarisi ve AI destekli kod standartlarıyla teknik borcu eritip geliştirme hızını 2-3 kat artırdım.",
 		technologies: [
 			"React",
 			"Next.js",
@@ -41,10 +41,10 @@ export const EXPERIENCES: Experience[] = [
 	{
 		company: "Alışgidiş",
 		icon: "alisgidis",
-		role: "Senior Frontend Engineer",
+		role: "Frontend Team Lead",
 		period: "Mar 24 – Haz 25",
 		summary:
-			"alisgidis.com FE mimarisini sıfırdan kurdum; takım lideri olarak tasarım-backend koordinasyonunu yönetip UI kütüphanesi ve Lighthouse ile hız ve SEO performansını artırdım.",
+			"Fibabanka'nın e-ticaret girişimi alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum; 5 kişilik ekibi yönetip UI kütüphanesi ve Lighthouse 90+ ile hız ve SEO performansını artırdım.",
 		technologies: [
 			"React",
 			"Next.js",
@@ -92,7 +92,7 @@ export const EXPERIENCES: Experience[] = [
 		role: "Frontend Developer",
 		period: "Haz 19 – Kas 19",
 		summary:
-			"Vakko, A101 ve birçok e-ticaret sitesi için Zeplin tasarımlarını modüler bileşenlerle koda döktüm; component dokümantasyonuyla süreci sürdürülebilir kıldım.",
+			"Vakko, A101, Kemal Tanca ve Faraway gibi e-ticaret siteleri için Zeplin tasarımlarını modüler bileşenlerle koda döktüm; component dokümantasyonuyla süreci sürdürülebilir kıldım.",
 		technologies: [
 			"HTML",
 			"CSS",

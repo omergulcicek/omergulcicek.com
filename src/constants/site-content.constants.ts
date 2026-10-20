@@ -46,7 +46,7 @@ export const SITE_CONTENT = {
 	bookmarksRaindropCta: "Tümünü göster",
 	bookmarksRaindropUrl: "https://raindrop.io/omergulcicek",
 	experiencesIntro:
-		"Yaklaşık 10 yıldır React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
+		"2017'den bu yana React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
 	resumeModalTitle: "Özgeçmiş Önizleme",
 	resumeModalDescription:
 		"Özgeçmişimi buradan inceleyebilir veya indirebilirsiniz.",
