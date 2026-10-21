@@ -48,10 +48,6 @@ const bookmarkImages = [
 			url: "https://rdl.ink/render/https%3A%2F%2Ffatihhayrioglu.com%2F"
 		},
 	{
-			id: "blog-raindrop-io-ahmetsehacar",
-			url: "https://rdl.ink/render/https%3A%2F%2Fraindrop.io%2Fahmetsehacar"
-		},
-	{
 			id: "blog-jakub-kr",
 			url: "https://rdl.ink/render/https%3A%2F%2Fjakub.kr%2F"
 		},

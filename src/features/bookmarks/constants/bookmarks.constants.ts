@@ -142,15 +142,6 @@ export const BOOKMARKS: Bookmark[] = [
 			tags: ["Kişi"]
 		},
 	{
-			id: "blog-raindrop-io-ahmetsehacar",
-			title: "Ahmet Seha Acar",
-			url: "https://raindrop.io/ahmetsehacar",
-			imageUrl: bookmarkImage("blog-raindrop-io-ahmetsehacar"),
-			description: "Raindrop arşivi; yazılım ve teknoloji odaklı paylaşılan link koleksiyonu.",
-			categoryId: "blog",
-			tags: ["Kişi"]
-		},
-	{
 			id: "blog-jakub-kr",
 			title: "Jakub Krehel",
 			url: "https://jakub.kr/",
