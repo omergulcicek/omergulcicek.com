@@ -1410,6 +1410,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "PSG - Bayern Münih: Şampiyonlar Ligi Yarı Final",
 			url: "https://www.youtube.com/watch?v=x4I7ilgMrog",
 			author: "TRT SPOR",
+			imageUrl: bookmarkImage("media-youtube-x4i7ilgmrog"),
 			categoryId: "media",
 			tags: ["YouTube"]
 		},
