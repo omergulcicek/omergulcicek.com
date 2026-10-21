@@ -42,9 +42,9 @@ export const SITE_CONTENT = {
 	virastackSectionIntro:
 		"ViraStack, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri. Academy ise bu araçları kullanırken ihtiyaç duyacağın temelleri öğreten ücretsiz rehberlerdir.",
 	bookmarksIntro:
-		"Yer imlerimi raindrop.io/omergulcicek'te saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı, okuduğum makaleleri, günlük takip ettiğim blogları, teknik içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.",
+		"Yer imlerimi omergulcicek.raindrop.page'te saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı, okuduğum makaleleri, günlük takip ettiğim blogları, teknik içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.",
 	bookmarksRaindropCta: "Tümünü göster",
-	bookmarksRaindropUrl: "https://raindrop.io/omergulcicek",
+	bookmarksRaindropUrl: "https://omergulcicek.raindrop.page/",
 	experiencesIntro:
 		"2017'den bu yana React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
 	resumeModalTitle: "Özgeçmiş Önizleme",

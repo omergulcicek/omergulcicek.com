@@ -10,7 +10,7 @@
 **Başlık:** Yer İmleri  
 **Footer:** ikincil nav (header'da yok)
 
-Ana kaynak [raindrop.io/omergulcicek](https://raindrop.io/omergulcicek). Sayfa, legacy'deki önemli üst başlıklara yönlendirir; her kategoride 2–4 önizleme linki ile somutlaştırır.
+Ana kaynak [omergulcicek.raindrop.page](https://omergulcicek.raindrop.page/). Sayfa, legacy'deki önemli üst başlıklara yönlendirir; her kategoride 2–4 önizleme linki ile somutlaştırır.
 
 Raindrop'taki derin alt ağaç (Frontend → npm, shadcn, UI Kütüphaneleri, Animasyon, Tasarım Araçları, Araçlar ve Rehberler, Kişisel → Edebiyat/Film vb.) sitede **kopyalanmaz** — tam liste Raindrop'ta kalır.
 
@@ -20,7 +20,7 @@ Raindrop'taki derin alt ağaç (Frontend → npm, shadcn, UI Kütüphaneleri, An
 
 ## Giriş (`bookmarksIntro`)
 
-Yer imlerimi [raindrop.io/omergulcicek](https://raindrop.io/omergulcicek)'da saklıyorum; özellikle **frontend kaynaklarımı**, **kitaplığımı**, okuduğum **makaleleri**, günlük takip ettiğim **blogları**, **teknik içerikleri** ve kullandığım **uygulama-eklentileri** burada tutuyorum.
+Yer imlerimi [omergulcicek.raindrop.page](https://omergulcicek.raindrop.page/)'da saklıyorum; özellikle **frontend kaynaklarımı**, **kitaplığımı**, okuduğum **makaleleri**, günlük takip ettiğim **blogları**, **teknik içerikleri** ve kullandığım **uygulama-eklentileri** burada tutuyorum.
 
 ---
 

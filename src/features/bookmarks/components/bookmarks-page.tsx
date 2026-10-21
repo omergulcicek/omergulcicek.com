@@ -20,7 +20,7 @@ export function BookmarksPage() {
 								href={SITE_CONTENT.bookmarksRaindropUrl}
 								icon={<RaindropIcon className="size-3.5 shrink-0" />}
 							>
-								raindrop.io/omergulcicek
+								omergulcicek.raindrop.page
 							</ProseIconLink>
 							&apos;da.
 						</p>
