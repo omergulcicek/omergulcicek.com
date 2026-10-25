@@ -144,7 +144,7 @@ export const BOOKMARKS: Bookmark[] = [
 	{
 			id: "blog-raindrop-io-ahmetsehacar",
 			title: "Ahmet Seha Acar",
-			url: "https://raindrop.io/ahmetsehacar",
+			url: "https://ahmetsehacar.raindrop.page/",
 			imageUrl: bookmarkImage("blog-raindrop-io-ahmetsehacar"),
 			description: "Raindrop arşivi; yazılım ve teknoloji odaklı paylaşılan link koleksiyonu.",
 			categoryId: "blog",
@@ -1414,6 +1414,15 @@ export const BOOKMARKS: Bookmark[] = [
 			categoryId: "media",
 			tags: ["Youtube"]
 		},
+	{
+			id: "media-youtube-x4i7ilgmrog",
+			title: "PSG - Bayern Münih: Şampiyonlar Ligi Yarı Final",
+			url: "https://www.youtube.com/watch?v=x4I7ilgMrog",
+			author: "TRT SPOR",
+			imageUrl: bookmarkImage("media-youtube-x4i7ilgmrog"),
+			categoryId: "media",
+			tags: ["Youtube"]
+		},
 	...LIBRARY_BOOKMARKS
 ]
 
@@ -1444,6 +1453,7 @@ export const YOUTUBE_BOOKMARK_SUBTAG_BY_ID: Record<string, YoutubeBookmarkSubtag
 	"media-youtube-lmwpop3pulg": "Futbol",
 	"media-youtube-x7158uqk1yi": "Futbol",
 	"media-youtube-ijbde6pkw2o": "Futbol",
+	"media-youtube-x4i7ilgmrog": "Futbol",
 	"media-youtube-6ey6xucwf0y": "Oyun",
 	"media-youtube-g-swvee9him": "Oyun",
 	"media-youtube-uo1chltdryq": "Oyun",
