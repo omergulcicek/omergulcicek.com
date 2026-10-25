@@ -17,28 +17,7 @@ export default defineConfig(async ({ mode }) => {
 		port: 3000
 	},
 	build: {
-		sourcemap: false,
-		rollupOptions: {
-			output: {
-				manualChunks(id: string) {
-					if (id.includes("recharts")) {
-						return "recharts"
-					}
-
-					if (id.includes("embla-carousel")) {
-						return "embla-carousel"
-					}
-
-					if (id.includes("medium-zoom")) {
-						return "medium-zoom"
-					}
-
-					if (id.includes("cmdk") || id.includes("@radix-ui/react-dialog")) {
-						return "command-palette"
-					}
-				}
-			}
-		}
+		sourcemap: false
 	},
 	plugins: [
 		tsconfigPaths(),
