@@ -29,6 +29,9 @@ export const BLOG_TECHNICAL_TAG_POOL = [
 	"Proje"
 ] as const
 
+/** Number of latest technical posts shown on the home page. */
+export const LATEST_TECHNICAL_POSTS_COUNT = 3
+
 export const BLOG_PERSONAL_TAG_POOL = [
 	"Yıl Değerlendirmesi",
 	"Deneyim",
@@ -94,10 +97,11 @@ export const BLOG_UI = {
 	tagAriaLabel: "Etiket filtresi",
 	sortAriaLabel: "Sıralama",
 	sortToggleLabel: {
-		newest: "En yeni önce — en eskiye çevir",
-		oldest: "En eski önce — en yeniye çevir"
+		newest: "En eski yazıları önce göster",
+		oldest: "En yeni yazıları önce göster"
 	},
 	yearNavAriaLabel: "Yıla git",
+	sectionAnchorLabel: (section: string) => `${section} bölümüne git`,
 	featuredLabel: "Öne çıkan",
 	rssLabel: "RSS",
 	draftsHeading: "Taslaklar",
@@ -115,13 +119,17 @@ export const BLOG_UI = {
 	closeImageZoom: "Görseli kapat",
 	shareLabel: "Paylaş",
 	copyLink: "Bağlantıyı kopyala",
+	copyCode: "Kodu kopyala",
+	codeCopied: "Kopyalandı",
 	linkCopied: "Bağlantı kopyalandı",
 	shareOnX: "X'te paylaş",
 	shareOnLinkedIn: "LinkedIn'de paylaş",
 	errorTitle: "Bir şeyler ters gitti",
 	errorDescription:
 		"Blog içeriği yüklenirken bir sorun oluştu. Kısa süre sonra tekrar deneyebilirsin.",
-	errorRetry: "Tekrar dene"
+	errorRetry: "Tekrar dene",
+	postsLoadError: "Yazılar şu an yüklenemedi.",
+	postLoadError: "Yazı şu an yüklenemedi."
 } as const
 
 export const BLOG_TOC_MIN_HEADINGS = 3

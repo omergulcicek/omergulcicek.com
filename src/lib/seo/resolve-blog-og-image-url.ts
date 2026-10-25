@@ -1,5 +1,5 @@
 import { SITE } from "@/constants/site.constants"
-import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import { slugToRouteParam } from "@/features/blog"
 import { resolveAbsoluteMediaUrl } from "@/lib/media/resolve-blog-media-url"
 
 type ResolveBlogOgImageUrlOptions = {

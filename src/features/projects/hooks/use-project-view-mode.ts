@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
 
 export type ProjectViewMode = "grid" | "list"
+
+export function isProjectViewMode(value: string): value is ProjectViewMode {
+	return value === "grid" || value === "list"
+}
 const VIEW_MODE_STORAGE_KEY = "project-view-mode"
 
 type ViewModeListener = () => void

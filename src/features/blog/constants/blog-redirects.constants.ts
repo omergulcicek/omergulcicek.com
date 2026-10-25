@@ -21,10 +21,14 @@ export const BLOG_SLUG_REDIRECTS = {
 
 export type BlogSlugRedirect = keyof typeof BLOG_SLUG_REDIRECTS
 
+function isBlogSlugRedirect(slug: string): slug is BlogSlugRedirect {
+	return Object.hasOwn(BLOG_SLUG_REDIRECTS, slug)
+}
+
 export function resolveBlogSlugRedirect(slug: string) {
 	const normalizedSlug = slug.startsWith("/") ? slug : `/${slug}`
 
-	return (
-		BLOG_SLUG_REDIRECTS[normalizedSlug as BlogSlugRedirect] ?? normalizedSlug
-	)
+	return isBlogSlugRedirect(normalizedSlug)
+		? BLOG_SLUG_REDIRECTS[normalizedSlug]
+		: normalizedSlug
 }

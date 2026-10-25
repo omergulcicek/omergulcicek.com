@@ -1,1 +1,1 @@
-export { AboutPage } from "@/features/about/components/about-page"
+export { AboutPage } from "@/features/about/components/AboutPage"

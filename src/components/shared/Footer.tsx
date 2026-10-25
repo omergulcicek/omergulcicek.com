@@ -1,19 +1,19 @@
-import { BrandMark } from "@/components/shared/brand-mark"
-import { SiteNavLink } from "@/components/shared/site-nav-link"
+import { BrandMark } from "@/components/shared/BrandMark"
+import { SiteNavLink } from "@/components/shared/SiteNavLink"
 import { interactiveSurfaceBgClass } from "@/components/shared/interactive-card.styles"
-import { ProseLink } from "@/components/shared/prose-link"
+import { ProseLink } from "@/components/shared/ProseLink"
 import {
 	bleedSectionClass,
 	sectionHeadingClass
 } from "@/components/shared/prose.styles"
 import {
 	FOOTER_NAV,
-	FOOTER_SOURCE_CODE,
 	getFooterCopyright
 } from "@/constants/footer-nav.constants"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
-import { getPublishedVirastackProjects } from "@/features/projects/constants/projects.constants"
-import { VirastackProductName } from "@/features/projects/components/virastack-product-name"
+import { SITE_COPY } from "@/constants/site-copy.constants"
+import { SITE } from "@/constants/site.constants"
+import { getPublishedVirastackProjects, VirastackProductName } from "@/features/projects"
 import { cn } from "@/lib/utils"
 
 const footerNavClass =
@@ -21,6 +21,7 @@ const footerNavClass =
 
 export function Footer() {
 	const virastackProjects = getPublishedVirastackProjects()
+	const { builtWith, sourceCode } = SITE_COPY.footer
 
 	return (
 		<footer
@@ -90,23 +91,21 @@ export function Footer() {
 						)}
 					>
 						<p>
-							<ProseLink href={EXTERNAL_LINKS.virastack}>ViraStack</ProseLink>
+							<ProseLink href={EXTERNAL_LINKS.virastack}>{builtWith.virastack}</ProseLink>
 							,{" "}
 							<ProseLink href={EXTERNAL_LINKS.tanstackStart}>
-								TanStack Start
+								{builtWith.tanstackStart}
 							</ProseLink>
 							,{" "}
-							<ProseLink href={EXTERNAL_LINKS.tailwind}>
-								Tailwind CSS
-							</ProseLink>{" "}
-							ve{" "}
-							<ProseLink href={EXTERNAL_LINKS.shadcn}>shadcn/ui</ProseLink>{" "}
-							ile geliştirildi.
+							<ProseLink href={EXTERNAL_LINKS.tailwind}>{builtWith.tailwind}</ProseLink>
+							{builtWith.and}
+							<ProseLink href={EXTERNAL_LINKS.shadcn}>{builtWith.shadcn}</ProseLink>
+							{builtWith.after}
 						</p>
 						<p>
-							Kaynak kod{" "}
-							<ProseLink href={FOOTER_SOURCE_CODE.href}>GitHub</ProseLink>
-							&apos;da.
+							{sourceCode.before}
+							<ProseLink href={SITE.repository}>{sourceCode.link}</ProseLink>
+							{sourceCode.after}
 						</p>
 						<p>{getFooterCopyright()}</p>
 					</div>

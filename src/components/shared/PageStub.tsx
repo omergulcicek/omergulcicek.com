@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"
 
 import { Container } from "@/components/shared/Container"
-import { PageHeader } from "@/components/shared/page-header"
+import { PageHeader } from "@/components/shared/PageHeader"
 import { pageShellClass, proseParagraphClass } from "@/components/shared/prose.styles"
 
 type PageStubProps = {

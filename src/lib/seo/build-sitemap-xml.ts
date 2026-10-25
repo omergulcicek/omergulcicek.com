@@ -1,6 +1,6 @@
 import { SITE } from "@/constants/site.constants"
-import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
-import type { BlogPost } from "@/features/blog/types/blog.types"
+import { getBlogPostPath } from "@/features/blog"
+import type { BlogPost } from "@/features/blog"
 import { STATIC_SITEMAP_PAGES } from "@/lib/seo/page-seo.constants"
 
 function escapeXml(value: string): string {

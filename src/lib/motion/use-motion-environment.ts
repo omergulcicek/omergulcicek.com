@@ -1,5 +1,5 @@
 import { useReducedMotion } from "motion/react"
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 
 export function useMotionEnvironment() {
 	const prefersReducedMotion = useReducedMotion() === true
@@ -11,13 +11,8 @@ export function useMotionEnvironment() {
 		)
 	}, [])
 
-	const shouldUseSoftMotion = useMemo(
-		() => prefersReducedMotion,
-		[prefersReducedMotion]
-	)
-
 	return {
-		shouldUseSoftMotion,
+		shouldUseSoftMotion: prefersReducedMotion,
 		supportsViewTransitions
 	}
 }

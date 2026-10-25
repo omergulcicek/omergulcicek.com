@@ -9,7 +9,7 @@ export type NavItem = {
 }
 
 export const HEADER_NAV: readonly NavItem[] = [
-	{ label: "Ana Sayfa", href: "/", exact: true },
+	{ label: "Ana sayfa", href: "/", exact: true },
 	{ label: "Blog", href: "/blog" },
 	{ label: "Projeler", href: "/projects" },
 	{ label: "Hakkımda", href: "/about" }
@@ -22,7 +22,7 @@ export const EXPLORE_NAV: readonly NavItem[] = [
 	{ label: "Deneyimler", href: "/experiences" },
 	{ label: "Kurulum", href: "/setup" },
 	{ label: "Notlar", href: "/notlar" },
-	{ label: "Yer İmleri", href: "/bookmarks" },
+	{ label: "Yer imleri", href: "/bookmarks" },
 	{ label: "Yolculuk", href: "/journey" }
 ].sort((left, right) => left.label.localeCompare(right.label, "tr"))
 

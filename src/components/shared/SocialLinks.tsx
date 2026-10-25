@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
-import { GitHubIcon, LinkedInIcon, NpmIcon, XIcon } from "@/components/icons"
+import { GitHubIcon, LinkedInIcon, NpmIcon, XIcon } from "@/components/shared/icons"
 import { SOCIAL_LINKS } from "@/constants/social.constants"
 import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
+import { SITE_CONTENT } from "@/constants/site-content.constants"
 
 const SOCIAL_ICONS = {
 	GitHub: GitHubIcon,
@@ -12,7 +13,7 @@ const SOCIAL_ICONS = {
 } as const
 
 const SOCIAL_ICON_COLORS = {
-	GitHub: "text-[#181717] dark:text-[#f0f6fc]",
+	GitHub: "text-brand-github",
 	npm: "",
 	LinkedIn: "",
 	X: "text-foreground"
@@ -24,7 +25,7 @@ type SocialLinksProps = {
 
 export function SocialLinks({ className }: SocialLinksProps) {
 	return (
-		<nav className={cn("flex items-center", className)} aria-label="Sosyal linkler">
+		<nav className={cn("flex items-center", className)} aria-label={SITE_CONTENT.socialLinksAria}>
 			{SOCIAL_LINKS.map((social) => {
 				const Icon = SOCIAL_ICONS[social.label as keyof typeof SOCIAL_ICONS]
 				const iconColor =

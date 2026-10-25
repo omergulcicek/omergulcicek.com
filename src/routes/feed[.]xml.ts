@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { getBlogRepository } from "@/features/blog/repositories"
-import { BLOG_SECTIONS } from "@/features/blog/constants/blog.constants"
+import { BLOG_SECTIONS, getBlogRepository } from "@/features/blog"
 import { buildRssFeedXml } from "@/lib/seo/build-rss-feed-xml"
 
 export const Route = createFileRoute("/feed.xml")({

@@ -34,7 +34,7 @@ export function useBlogSearchParams() {
 	return {
 		tag: params.tag ?? null,
 		featured: params.featured,
-		sort: params.sort as BlogSort,
+		sort: params.sort,
 		query: params.q ?? null,
 		setSort: (nextSort: BlogSort) =>
 			setParams({ sort: nextSort }, blogFilterHistory),

@@ -5,7 +5,7 @@ import {
 	HEADER_NAV,
 	MOBILE_DRAWER_NAV
 } from "@/constants/header-nav.constants"
-import { SEARCH_PAGES } from "@/features/search/constants/search.constants"
+import { SEARCH_PAGES } from "@/components/shared/command-palette/command-palette.constants"
 
 describe("navigation", () => {
 	it("groups secondary pages under Keşfet in order", () => {
@@ -19,7 +19,7 @@ describe("navigation", () => {
 			"Deneyimler",
 			"Kurulum",
 			"Notlar",
-			"Yer İmleri",
+			"Yer imleri",
 			"Yolculuk"
 		])
 	})

@@ -153,7 +153,10 @@ export function getSortedYearEntries(
 			: Number(right) - Number(left)
 	)
 
-	return years.map((year) => [year, groups[year]])
+	return years.flatMap((year): [string, BlogPost[]][] => {
+		const yearPosts = groups[year]
+		return yearPosts ? [[year, yearPosts]] : []
+	})
 }
 
 function getTagUsageCounts(posts: BlogPost[]) {
@@ -253,6 +256,10 @@ export function applyBlogFilters(
 
 export type BlogNeighbour = Pick<BlogPost, "slug" | "title">
 
+function toBlogNeighbour(post: BlogPost | undefined): BlogNeighbour | null {
+	return post ? { slug: post.slug, title: post.title } : null
+}
+
 export function findBlogNeighbours(posts: BlogPost[], slug: string) {
 	const normalizedSlug = normalizeBlogSlug(slug)
 	const index = posts.findIndex((post) => post.slug === normalizedSlug)
@@ -263,19 +270,9 @@ export function findBlogNeighbours(posts: BlogPost[], slug: string) {
 
 	return {
 		previous:
-			index > 0
-				? ({
-						slug: posts[index - 1].slug,
-						title: posts[index - 1].title
-					} satisfies BlogNeighbour)
-				: null,
+			toBlogNeighbour(posts[index - 1]),
 		next:
-			index < posts.length - 1
-				? ({
-						slug: posts[index + 1].slug,
-						title: posts[index + 1].title
-					} satisfies BlogNeighbour)
-				: null
+			toBlogNeighbour(posts[index + 1])
 	}
 }
 
@@ -312,19 +309,9 @@ export function findSeriesContext(
 	return {
 		label: seriesLabels[post.series] ?? post.series,
 		previous:
-			index > 0
-				? ({
-						slug: seriesPosts[index - 1].slug,
-						title: seriesPosts[index - 1].title
-					} satisfies BlogNeighbour)
-				: null,
+			toBlogNeighbour(seriesPosts[index - 1]),
 		next:
-			index < seriesPosts.length - 1
-				? ({
-						slug: seriesPosts[index + 1].slug,
-						title: seriesPosts[index + 1].title
-					} satisfies BlogNeighbour)
-				: null,
+			toBlogNeighbour(seriesPosts[index + 1]),
 		index: index + 1,
 		total: seriesPosts.length
 	}

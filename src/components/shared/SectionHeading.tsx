@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-import { AnchoredHeading } from "@/components/shared/anchored-heading"
+import { AnchoredHeading } from "@/components/shared/AnchoredHeading"
 import {
 	sectionHeadingClass,
 	sectionHeadingSpacingClass

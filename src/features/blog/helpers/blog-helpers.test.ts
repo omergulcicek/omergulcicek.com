@@ -86,7 +86,8 @@ describe("blog helpers", () => {
 	})
 
 	it("builds series navigation context", () => {
-		const post = samplePosts[0]
+		const [post] = samplePosts
+		if (!post) throw new Error("Missing sample post")
 		const context = findSeriesContext(samplePosts, post, {
 			"site-yenileme": "Site Yenileme"
 		})
@@ -121,10 +122,12 @@ describe("getBlogPostPath", () => {
 
 describe("getFeaturedPosts", () => {
 	it("keeps the configured order and skips unknown or draft slugs", () => {
+		const [base] = samplePosts
+		if (!base) throw new Error("Missing sample post")
 		const posts = [
-			{ ...samplePosts[0], slug: "/a", published: true },
-			{ ...samplePosts[0], slug: "/b", published: true },
-			{ ...samplePosts[0], slug: "/draft", published: false }
+			{ ...base, slug: "/a", published: true },
+			{ ...base, slug: "/b", published: true },
+			{ ...base, slug: "/draft", published: false }
 		]
 
 		expect(

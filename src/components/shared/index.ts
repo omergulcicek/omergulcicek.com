@@ -1,5 +1,5 @@
 export { ArrowLink } from "./ArrowLink"
-export { BrandMark } from "./brand-mark"
+export { BrandMark } from "./BrandMark"
 export { Container } from "./Container"
 export { Footer } from "./Footer"
 export { Header } from "./Header"
@@ -11,14 +11,14 @@ export {
 	interactiveCardMutedClass,
 	interactiveRowCardVisualClass
 } from "./interactive-card.styles"
-export { InteractiveRowCard } from "./interactive-row-card"
+export { InteractiveRowCard } from "./InteractiveRowCard"
 export { getNotFoundHead } from "./not-found-page.constants"
-export { NotFoundPage } from "./not-found-page"
-export { RouteErrorPage } from "./route-error-page"
-export { OptimizedImage } from "./optimized-image"
-export { PageHeader } from "./page-header"
+export { NotFoundPage } from "./NotFoundPage"
+export { RouteErrorPage } from "./RouteErrorPage"
+export { OptimizedImage } from "./OptimizedImage"
+export { PageHeader } from "./PageHeader"
 export { PageStub } from "./PageStub"
-export { ProseEmphasis } from "./prose-emphasis"
+export { ProseEmphasis } from "./ProseEmphasis"
 export {
 	cardTitleClass,
 	heroSubtitleClass,
@@ -34,16 +34,13 @@ export {
 	proseParagraphClass,
 	sectionHeadingClass
 } from "./prose.styles"
-export {
-	ProseIconLink,
-	ProseLink,
-	ProseRouterLink,
-	proseLinkBaseClass,
-	proseLinkMutedClass
-} from "./prose-link"
+export { ProseIconLink } from "./ProseIconLink"
+export { ProseLink } from "./ProseLink"
+export { ProseRouterLink } from "./ProseRouterLink"
+export { proseLinkBaseClass, proseLinkMutedClass } from "./prose-link.styles"
 export { SectionHeading } from "./SectionHeading"
-export { ScrollToTopIndicator } from "./scroll-to-top-indicator"
+export { ScrollToTopIndicator } from "./ScrollToTopIndicator"
 export { SiteLayout } from "./SiteLayout"
-export { SiteNavLink } from "./site-nav-link"
+export { SiteNavLink } from "./SiteNavLink"
 export { SocialLinks } from "./SocialLinks"
 export { ThemeToggle } from "./ThemeToggle"

@@ -50,11 +50,6 @@ export const meJourneyYearSchema = z.object({
 	entries: z.array(meJourneyEntrySchema).min(1)
 })
 
-export const mePrincipleSchema = z.object({
-	title: z.string(),
-	text: z.string()
-})
-
 export const meStackCategorySchema = z.object({
 	id: z.string(),
 	label: z.string(),
@@ -91,7 +86,6 @@ export const meSchema = z
 		hobbies: z.array(meHobbySchema),
 		favorites: z.array(meFavoriteSchema),
 		journey: z.array(meJourneyYearSchema),
-		principles: z.array(mePrincipleSchema),
 		stack: z.object({
 			categories: z.array(meStackCategorySchema),
 			home: z.array(z.string()).min(1)

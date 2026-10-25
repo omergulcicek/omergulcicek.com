@@ -171,7 +171,7 @@ function ensureAnchorNoopenerRel(attributes: string) {
 		return `${attributes} rel="noopener noreferrer"`
 	}
 
-	const relValue = relMatch[2]
+	const relValue = relMatch[2] ?? ""
 	const tokens = relValue.split(/\s+/).filter(Boolean)
 	const normalizedTokens = new Set(tokens.map((token) => token.toLowerCase()))
 

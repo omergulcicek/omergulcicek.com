@@ -11,10 +11,6 @@ export const ME: Me = meSchema.parse(meJson)
 
 export const ME_EMAIL_HREF = `mailto:${ME.contact.email}`
 
-export function getSitePrinciples(count = 3): Me["principles"] {
-	return ME.principles.slice(0, count)
-}
-
 export function getMeProject(id: string): MeProject {
 	const project = ME.projects.find((item) => item.id === id)
 

@@ -25,14 +25,14 @@ export const sectionHeadingSpacingClass = "mt-8 md:mt-12"
 
 export const pageStackGapClass = "gap-12 md:gap-16"
 
-export const pageShellClass = `flex flex-col py-8 md:py-16 ${pageStackGapClass}`
+export const pageShellClass = cn("flex flex-col py-8 md:py-16", pageStackGapClass)
 
 export const pageSectionClass = "flex flex-col gap-4 md:gap-6"
 
 /** Gap between cards in a grid: 12px mobile, 20px desktop. */
 export const cardGridGapClass = "gap-3 md:gap-5"
 
-export const cardGridClass = `grid grid-cols-2 ${cardGridGapClass}`
+export const cardGridClass = cn("grid grid-cols-2", cardGridGapClass)
 
 /** Padding inside cards and panels: 12px mobile, 16px desktop. */
 export const cardPaddingClass = "p-3 md:p-4"

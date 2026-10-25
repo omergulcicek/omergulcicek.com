@@ -8,7 +8,7 @@ export function floydSteinbergDither(
 	const errors = new Float32Array(width * height)
 
 	for (let i = 0; i < grayscale.length; i++) {
-		errors[i] = grayscale[i]
+		errors[i] = grayscale[i] ?? 0
 	}
 
 	const positions: number[] = []
@@ -24,11 +24,11 @@ export function floydSteinbergDither(
 		for (let x = startX; x !== endX; x += step) {
 			const idx = y * width + x
 
-			if (hasAlpha && alpha![idx]! < 128) {
+			if (hasAlpha && (alpha?.[idx] ?? 255) < 128) {
 				continue
 			}
 
-			const oldVal = errors[idx]!
+			const oldVal = errors[idx] ?? 0
 			const newVal = oldVal > opts.threshold ? 255 : 0
 			const err = (oldVal - newVal) * strength
 
@@ -43,11 +43,11 @@ export function floydSteinbergDither(
 
 				const ni = ny * width + nx
 
-				if (hasAlpha && alpha![ni]! < 128) {
+				if (hasAlpha && (alpha?.[ni] ?? 255) < 128) {
 					return
 				}
 
-				errors[ni]! += err * weight
+				errors[ni] = (errors[ni] ?? 0) + err * weight
 			}
 
 			diffuse(x + step, y, 7 / 16)
@@ -101,7 +101,7 @@ export function invertDitherWithMask(
 
 	for (let i = 0; i < positions.length; i += 2) {
 		logoSet.add(
-			Math.round(positions[i + 1]!) * gridW + Math.round(positions[i]!)
+			Math.round(positions[i + 1] ?? 0) * gridW + Math.round(positions[i] ?? 0)
 		)
 	}
 
@@ -112,7 +112,7 @@ export function invertDitherWithMask(
 			continue
 		}
 
-		if (alpha && alpha[idx]! < 128) {
+		if (alpha && (alpha[idx] ?? 255) < 128) {
 			continue
 		}
 

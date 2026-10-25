@@ -1,1 +1,1 @@
-export { JourneyPage } from "@/features/journey/components/journey-page"
+export { JourneyPage } from "@/features/journey/components/JourneyPage"

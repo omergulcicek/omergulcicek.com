@@ -67,25 +67,26 @@ export const LIBRARY_BOOKMARK_TAG_ORDER = LIBRARY_BOOK_CATEGORY_IDS.map(
 	(categoryId) => LIBRARY_CATEGORY_LABELS[categoryId]
 )
 
-const LIBRARY_CATEGORY_ID_BY_LABEL = Object.fromEntries(
+const LIBRARY_CATEGORY_ID_BY_LABEL = new Map<string, LibraryBookCategoryId>(
 	LIBRARY_BOOK_CATEGORY_IDS.map((categoryId) => [
 		LIBRARY_CATEGORY_LABELS[categoryId],
 		categoryId
 	])
-) as Record<string, LibraryBookCategoryId>
+)
 
 export function getLibraryBookCategoryIdByLabel(
 	label: string
 ): LibraryBookCategoryId | null {
-	return LIBRARY_CATEGORY_ID_BY_LABEL[label] ?? null
+	return LIBRARY_CATEGORY_ID_BY_LABEL.get(label) ?? null
 }
 
 export function getLibrarySubcategoryLabelsForCategory(
 	categoryId: LibraryBookCategoryId
 ): readonly string[] {
-	return LIBRARY_BOOK_CATEGORY_TREE[categoryId].map(
-		(subcategoryId) => LIBRARY_SUBCATEGORY_LABELS[subcategoryId]
-	)
+	return LIBRARY_BOOK_CATEGORY_TREE[categoryId].flatMap((subcategoryId) => {
+		const label = LIBRARY_SUBCATEGORY_LABELS[subcategoryId]
+		return label ? [label] : []
+	})
 }
 
 export function libraryCategoryHasVisibleGenres(tag: string): boolean {

@@ -2,10 +2,12 @@ import { createFileRoute, notFound } from "@tanstack/react-router"
 
 import { Container } from "@/components/shared/Container"
 import { pageShellClass } from "@/components/shared/prose.styles"
-import { BlogProse } from "@/features/blog/components/blog-prose"
-import { blogMdxComponentNames } from "@/features/blog/constants/blog-mdx-component-names.constants"
-import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
-import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
+import {
+	blogMdxComponentNames,
+	BlogProse,
+	compileMdxToHtml,
+	enrichBlogContentHtml
+} from "@/features/blog"
 import { buildPageHead } from "@/lib/seo/build-page-head"
 
 const MDX_SANDBOX_FIXTURES = {

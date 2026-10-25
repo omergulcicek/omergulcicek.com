@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
+import { enrichBlogContentHtml } from "@/features/blog"
 import {
 	buildBlogCarouselResponsiveImage,
 	buildBlogProseResponsiveImage

@@ -2,7 +2,7 @@ import { cardPaddingClass } from "@/components/shared/prose.styles"
 import { cn } from "@/lib/utils"
 
 export const surfaceDoubleFrameClass =
-	"rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-[#fcfcfc] dark:ring-offset-[#0f0f0f]"
+	"rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-background"
 
 export const interactiveCardBaseClass = cn(
 	"group flex flex-col gap-2 transition-[border-color,box-shadow] duration-150 ease-out md:gap-3",
@@ -10,7 +10,7 @@ export const interactiveCardBaseClass = cn(
 	surfaceDoubleFrameClass
 )
 
-export const interactiveSurfaceBgClass = "bg-white dark:bg-[#0b0b0b]"
+export const interactiveSurfaceBgClass = "bg-surface"
 
 export const surfacePanelClass = cn(
 	surfaceDoubleFrameClass,
@@ -18,7 +18,7 @@ export const surfacePanelClass = cn(
 )
 
 export const interactiveSurfaceHoverBgClass =
-	"hover:bg-white dark:hover:bg-[#0b0b0b]"
+	"hover:bg-surface"
 
 export const interactiveSurfaceHoverBorderClass = "hover:border-foreground/10"
 
@@ -47,7 +47,7 @@ export function getInteractiveCardClassName(isMuted = false) {
 }
 
 export const interactiveListRowClass = cn(
-	"group relative rounded-xl border border-transparent ring-1 ring-transparent ring-offset-4 ring-offset-[#fcfcfc] transition-[border-color,background-color] duration-150 ease-out hover:z-10 dark:ring-offset-[#0f0f0f]",
+	"group relative rounded-xl border border-transparent ring-1 ring-transparent ring-offset-4 ring-offset-background transition-[border-color,background-color] duration-150 ease-out hover:z-10",
 	interactiveSurfaceHoverBorderClass,
 	interactiveSurfaceHoverBgClass,
 	"hover:ring-foreground/8"

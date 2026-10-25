@@ -1,4 +1,4 @@
-import type { TOCItemType } from "@/components/toc-minimap"
+import type { TOCItemType } from "@/components/shared/TOCMinimap"
 import { BLOG_TOC_MIN_HEADINGS } from "@/features/blog/constants/blog.constants"
 import type { BlogHeading } from "@/features/blog/types/blog-heading.types"
 

@@ -1,21 +1,8 @@
-const MONTH_LABELS = [
-	"Oca",
-	"Şub",
-	"Mar",
-	"Nis",
-	"May",
-	"Haz",
-	"Tem",
-	"Ağu",
-	"Eyl",
-	"Eki",
-	"Kas",
-	"Ara"
-] as const
+import { TURKISH_SHORT_MONTHS } from "@/constants/date.constants"
 
 function formatYearMonth(value: string): string {
-	const [year, month] = value.split("-")
-	const label = MONTH_LABELS[Number(month) - 1] ?? ""
+	const [year = "", month = ""] = value.split("-")
+	const label = TURKISH_SHORT_MONTHS[Number(month) - 1] ?? ""
 
 	return `${label} ${year.slice(2)}`
 }

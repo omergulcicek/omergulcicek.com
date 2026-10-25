@@ -1,8 +1,8 @@
-import { evaluate } from "@mdx-js/mdx"
-import type { EvaluateOptions } from "@mdx-js/mdx"
-import * as runtime from "react/jsx-runtime"
 import { createElement } from "react"
 import { renderToStaticMarkup } from "react-dom/server"
+import * as runtime from "react/jsx-runtime"
+import { evaluate } from "@mdx-js/mdx"
+import type { EvaluateOptions } from "@mdx-js/mdx"
 import rehypePrettyCode from "rehype-pretty-code"
 import remarkGfm from "remark-gfm"
 

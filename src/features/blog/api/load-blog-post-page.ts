@@ -12,6 +12,7 @@ import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
 import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
 import type { BlogCategory } from "@/features/blog/types/blog.types"
 import { buildBlogPostHead } from "@/lib/seo/build-page-head"
+import { unwrapServerResult } from "@/lib/server-result"
 import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
 type LoadBlogPostPageOptions = {
@@ -60,7 +61,7 @@ export async function loadBlogPostPage({
 
 	const [post, neighbours] = await Promise.all([
 		queryClient.ensureQueryData(blogPostDetailQueryOptions(slug)),
-		getBlogPostNeighboursFn({ data: { slug } })
+		getBlogPostNeighboursFn({ data: { slug } }).then(unwrapServerResult)
 	])
 
 	if (!post) {

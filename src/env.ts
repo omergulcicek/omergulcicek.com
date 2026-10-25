@@ -14,7 +14,7 @@ const gaIdSchema = z
 const clientEnvSchema = z
 	.object({
 		VITE_MEDIA_PROVIDER: mediaProviderSchema.default("local"),
-		VITE_SUPABASE_URL: z.string().url().optional(),
+		VITE_SUPABASE_URL: z.url().optional(),
 		VITE_SUPABASE_ANON_KEY: z.string().min(1).optional(),
 		VITE_GA_ID: gaIdSchema
 	})

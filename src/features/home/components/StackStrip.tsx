@@ -1,8 +1,9 @@
 import { Marquee } from "@/components/ui/marquee"
+import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { bleedSectionClass } from "@/components/shared/prose.styles"
-import { StackLogo } from "@/features/stack/components/stack-logo"
-import type { StackItem } from "@/features/stack/constants/stack.constants"
-import { HOME_STACK_ITEMS } from "@/features/stack/constants/stack.constants"
+import { StackLogo } from "@/components/shared/StackLogo"
+import type { StackItem } from "@/constants/stack.constants"
+import { HOME_STACK_ITEMS } from "@/constants/stack.constants"
 import { cn } from "@/lib/utils"
 
 type StackStripProps = {
@@ -13,7 +14,7 @@ type StackStripProps = {
 export function StackStrip({ items = HOME_STACK_ITEMS, className }: StackStripProps) {
 	return (
 		<section
-			aria-label="Teknoloji yığını"
+			aria-label={SITE_CONTENT.stackStripAria}
 			className={cn(bleedSectionClass, className)}
 		>
 			<div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

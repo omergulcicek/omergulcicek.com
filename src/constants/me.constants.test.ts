@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest"
 
-import { ME, getMeProject, getSitePrinciples } from "@/constants/me.constants"
+import { ME, getMeProject } from "@/constants/me.constants"
 import meJson from "@/constants/me.json"
-import { STACK_ITEMS } from "@/features/stack/constants/stack.constants"
+import { STACK_ITEMS } from "@/constants/stack.constants"
 import { meSchema } from "@/schemas/me.schema"
 
 describe("ME", () => {
@@ -27,14 +27,6 @@ describe("ME", () => {
 
 		expect(entryIds).not.toContain("2020-polo")
 		expect(entryIds).not.toContain("2022-ilk-ev")
-	})
-
-	it("returns the first three principles", () => {
-		expect(getSitePrinciples().map((principle) => principle.title)).toEqual([
-			"Desen bir araçtır",
-			"Kural otomatik denetlenir",
-			"Her bilgi tek yerde durur"
-		])
 	})
 
 	it("lists ViraStack Academy first among ViraStack projects", () => {

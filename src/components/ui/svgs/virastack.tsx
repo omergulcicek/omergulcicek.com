@@ -1,6 +1,6 @@
 import type { SVGProps } from "react"
 
-import { VirastackLogo } from "@/components/shared/virastack-logo"
+import { VirastackLogo } from "@/components/shared/VirastackLogo"
 import { cn } from "@/lib/utils"
 
 type VirastackProps = SVGProps<SVGSVGElement>

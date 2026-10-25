@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 
-import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
 import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
+import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
 
 describe("compileMdxToHtml", () => {
 	it("compiles markdown and custom notice components", async () => {

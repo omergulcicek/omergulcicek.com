@@ -1,14 +1,14 @@
-import { GitHubIcon } from "@/components/icons"
-import { BrandMark } from "@/components/shared/brand-mark"
+import { GitHubIcon } from "@/components/shared/icons"
+import { BrandMark } from "@/components/shared/BrandMark"
 import { Container } from "@/components/shared/Container"
-import { ExploreNavMenu } from "@/components/shared/explore-nav-menu"
-import { HeaderNavDrawer } from "@/components/shared/header-nav-drawer"
-import { IconLinkButton } from "@/components/shared/icon-link-button"
-import { SiteNavLink } from "@/components/shared/site-nav-link"
+import { ExploreNavMenu } from "@/components/shared/ExploreNavMenu"
+import { HeaderNavDrawer } from "@/components/shared/HeaderNavDrawer"
+import { IconLinkButton } from "@/components/shared/IconLinkButton"
+import { SiteNavLink } from "@/components/shared/SiteNavLink"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
-import { CommandPaletteTrigger } from "@/features/search/components/CommandPalette"
+import { CommandPaletteTrigger } from "@/components/shared/command-palette/CommandPaletteTrigger"
 
 export function Header() {
 	return (
@@ -29,7 +29,7 @@ export function Header() {
 							<BrandMark className="hidden md:flex" />
 							<nav
 								className="hidden items-center gap-4 md:flex"
-								aria-label="Ana menü"
+								aria-label={SITE_CONTENT.mainNavAria}
 							>
 								{HEADER_NAV.map((item) => (
 									<SiteNavLink
@@ -47,10 +47,10 @@ export function Header() {
 							<ThemeToggle />
 							<IconLinkButton
 								href={EXTERNAL_LINKS.github}
-								ariaLabel="GitHub profilini ziyaret et"
+								ariaLabel={SITE_CONTENT.githubProfileAria}
 								tooltipSide="bottom"
 							>
-								<GitHubIcon className="size-4 text-[#181717] dark:text-[#f0f6fc]" />
+								<GitHubIcon className="size-4 text-brand-github" />
 							</IconLinkButton>
 						</div>
 					</div>

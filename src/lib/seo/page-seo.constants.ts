@@ -61,7 +61,7 @@ export const STATIC_PAGE_SEO = {
 	},
 	bookmarks: {
 		path: "/bookmarks",
-		title: "Yer İmleri",
+		title: "Yer imleri",
 		description: SITE_COPY.meta.bookmarks,
 		changeFrequency: "weekly",
 		priority: 0.6

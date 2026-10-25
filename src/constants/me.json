@@ -322,7 +322,7 @@
 				{
 					"id": "2025-virastack",
 					"title": "ViraStack'i kurdum",
-					"description": "Aralık 2025.",
+					"description": "Frontend geliştiriciler için açık kaynak şablonlar, paketler ve rehberler.",
 					"imageSrc": "/img/journey/2025-virastack.png",
 					"imageAlt": "ViraStack logosu"
 				},
@@ -362,7 +362,7 @@
 			"entries": [
 				{
 					"id": "2021-macbook",
-					"title": "İlk MacBook'um (M1)",
+					"title": "İlk MacBook Pro'm (M1)",
 					"description": "Hâlâ kullanıyorum."
 				}
 			]
@@ -435,29 +435,11 @@
 			]
 		}
 	],
-	"principles": [
-		{
-			"title": "Desen bir araçtır",
-			"text": "Mimari yavaşlatmaya başlayınca değiştiririm. Önce klasör ve import düzeni."
-		},
-		{
-			"title": "Kural otomatik denetlenir",
-			"text": "Yazılı kural unutulur, lint ve typecheck unutmaz. AI de aynı kurallarla çalışır."
-		},
-		{
-			"title": "Her bilgi tek yerde durur",
-			"text": "Sabit tek dosyada, sunucu verisi Query'de, filtre URL'de."
-		},
-		{
-			"title": "Sade çözüm önce gelir",
-			"text": "Gereksiz state ve Effect yok, soyutlama tekrar gerçekten görülünce gelir."
-		}
-	],
 	"stack": {
 		"categories": [
 			{
 				"id": "languages",
-				"label": "Languages",
+				"label": "Diller",
 				"itemIds": [
 					"typescript",
 					"javascript",
@@ -503,14 +485,14 @@
 			},
 			{
 				"id": "design",
-				"label": "Design",
+				"label": "Tasarım",
 				"itemIds": [
 					"figma"
 				]
 			},
 			{
 				"id": "ai",
-				"label": "AI",
+				"label": "Yapay zekâ",
 				"itemIds": [
 					"claude",
 					"virastack"

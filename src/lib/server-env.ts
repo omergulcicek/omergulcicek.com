@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 const serverEnvSchema = z.object({
-	SUPABASE_URL: z.string().url().optional(),
+	SUPABASE_URL: z.url().optional(),
 	SUPABASE_ANON_KEY: z.string().min(1).optional(),
 	SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional()
 })

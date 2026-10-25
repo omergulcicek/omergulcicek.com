@@ -3,10 +3,10 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import {
 	BLOG_OG_IMAGE_SIZE,
-	createBlogOgImageElement
-} from "@/features/blog/og/blog-og-image"
-import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
-import { getBlogRepository } from "@/features/blog/repositories"
+	createBlogOgImageElement,
+	getBlogRepository,
+	routeParamToBlogSlug
+} from "@/features/blog"
 
 export const Route = createFileRoute("/og/blog/$slug")({
 	server: {

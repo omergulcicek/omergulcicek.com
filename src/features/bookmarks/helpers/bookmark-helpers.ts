@@ -550,11 +550,7 @@ export function getDefaultBookmarkSort(
 ): BookmarkSort {
 	const options = getBookmarkSortOptions(categoryId, tag)
 
-	if (options.length === 0) {
-		return "title"
-	}
-
-	return options[0]
+	return options[0] ?? "title"
 }
 
 export function resolveBookmarkSort(

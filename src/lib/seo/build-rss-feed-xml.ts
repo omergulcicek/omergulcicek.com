@@ -1,8 +1,7 @@
 import { SITE } from "@/constants/site.constants"
 import { ME } from "@/constants/me.constants"
-import type { BlogSection } from "@/features/blog/constants/blog.constants"
-import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
-import type { BlogPost } from "@/features/blog/types/blog.types"
+import type { BlogPost, BlogSection } from "@/features/blog"
+import { getBlogPostPath } from "@/features/blog"
 import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
 function escapeXml(value: string): string {

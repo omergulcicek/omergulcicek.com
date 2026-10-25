@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest"
 
 import { buildRssFeedXml } from "@/lib/seo/build-rss-feed-xml"
 import { buildSitemapXml } from "@/lib/seo/build-sitemap-xml"
-import { BLOG_SECTIONS } from "@/features/blog/constants/blog.constants"
-import type { BlogPost } from "@/features/blog/types/blog.types"
+import { BLOG_SECTIONS } from "@/features/blog"
+import type { BlogPost } from "@/features/blog"
 
 const samplePost: BlogPost = {
 	slug: "/sample-post",

@@ -18,4 +18,5 @@ function toFavoriteItem(favorite: MeFavorite): FavoriteItem {
 	}
 }
 
-export const FAVORITES_ITEMS_SORTED: FavoriteItem[] = ME.favorites.map(toFavoriteItem)
+export const FAVORITES_ITEMS_SORTED: FavoriteItem[] =
+	ME.favorites.map(toFavoriteItem)

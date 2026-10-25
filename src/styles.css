@@ -15,6 +15,8 @@
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
 	--color-background: var(--background);
+	--color-surface: var(--surface);
+	--color-brand-github: var(--brand-github);
 	--color-foreground: var(--foreground);
 	--color-card: var(--card);
 	--color-card-foreground: var(--card-foreground);
@@ -68,6 +70,8 @@
 		0px 2px 4px 0px rgba(0, 0, 0, 0.06);
 	--radius: 0.625rem;
 	--background: #fcfcfc;
+	--surface: #ffffff;
+	--brand-github: #181717;
 	--foreground: oklch(0.145 0 0);
 	--card: oklch(1 0 0);
 	--card-foreground: oklch(0.145 0 0);
@@ -101,6 +105,8 @@
 	--shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.08);
 	--shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.13);
 	--background: #0f0f0f;
+	--surface: #0b0b0b;
+	--brand-github: #f0f6fc;
 	--foreground: oklch(0.985 0 0);
 	--card: oklch(0.145 0 0);
 	--card-foreground: oklch(0.985 0 0);

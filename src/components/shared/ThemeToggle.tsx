@@ -1,6 +1,7 @@
 import { Moon, Sun } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { useTheme } from "@/hooks/use-theme"
 import { cn } from "@/lib/utils"
 
@@ -21,7 +22,7 @@ export function ThemeToggle({
 			<Button
 				variant="ghost"
 				size={size}
-				aria-label="Tema yükleniyor"
+				aria-label={SITE_CONTENT.themeLoading}
 				disabled
 				className={className}
 			>
@@ -40,7 +41,7 @@ export function ThemeToggle({
 			variant="ghost"
 			size={size}
 			onClick={toggleTheme}
-			aria-label={isDark ? "Aydınlık temaya geç" : "Karanlık temaya geç"}
+			aria-label={isDark ? SITE_CONTENT.themeToLight : SITE_CONTENT.themeToDark}
 			className={className}
 		>
 			<span className={cn("relative", iconClassName)} aria-hidden="true">

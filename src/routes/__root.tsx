@@ -8,13 +8,11 @@ import {
 } from "@tanstack/react-router"
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router"
 
-import {
-	GoogleAnalytics,
-	GoogleAnalyticsPageTracker
-} from "@/components/shared/google-analytics"
-import { NotFoundPage } from "@/components/shared/not-found-page"
+import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics"
+import { GoogleAnalyticsPageTracker } from "@/components/shared/GoogleAnalyticsPageTracker"
+import { NotFoundPage } from "@/components/shared/NotFoundPage"
 import { SiteLayout } from "@/components/shared/SiteLayout"
-import { WebVitalsReporter } from "@/components/shared/web-vitals-reporter"
+import { WebVitalsReporter } from "@/components/shared/WebVitalsReporter"
 import { SITE } from "@/constants/site.constants"
 import type { RouterContext } from "@/router"
 import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"

@@ -11,7 +11,7 @@ export const SITE_COPY = {
 				after:
 					"'in kurucusuyum: frontend geliştiriciler için açık kaynak şablonlar, paketler ve ücretsiz rehberler."
 			},
-			ai: "Yapay zekâyı net kurallarla çalıştırıyorum. Hızlı ilerliyorum, düzenden ödün vermiyorum.",
+			ai: "Kod kurallarımı ViraStack AI'da topladım. Yapay zekâyla da aynı kurallarla çalışıyorum.",
 			contact: {
 				before: "Bana ",
 				email: "e-posta",
@@ -34,15 +34,15 @@ export const SITE_COPY = {
 		title: "Hakkımda",
 		intro: [
 			"Merhaba, ben Ömer. Sakarya'da yaşıyorum, Trabzonluyum.",
-			"Yazılım mühendisliği okudum. 2017'den beri frontend yazıyorum."
+			"2017'den beri web için arayüz geliştiriyorum. Ziraat Teknoloji'de başladım; Akinon, HangiKredi, Gordion, Alışgidiş ve Machinarium'da çalıştım.",
+			"İki ekipte frontend mimarisini sıfırdan kurdum ve takımı yönettim."
 		],
 		focus: {
-			before:
-				"İki ekipte frontend mimarisini sıfırdan kurdum ve takımı yönettim. Şimdi ",
+			before: "Şimdi ",
 			link: "ViraStack",
-			after: "'e odaklanıyorum."
+			after:
+				"'e odaklanıyorum: frontend geliştiriciler için açık kaynak şablonlar, paketler ve ücretsiz rehberler."
 		},
-		principlesTitle: "Nasıl çalışırım",
 		workTogether: {
 			id: "birlikte-calisalim",
 			title: "Birlikte çalışmak",
@@ -50,7 +50,7 @@ export const SITE_COPY = {
 			link: "yazabilirsin",
 			after: ". İlk görüşme ücretsiz."
 		},
-		interestsTitle: "İlgi Alanları",
+		interestsTitle: "İlgi alanları",
 		links: {
 			ariaLabel: "İletişim bağlantıları",
 			email: "E-posta",
@@ -70,7 +70,23 @@ export const SITE_COPY = {
 			after: " ekosistemi ve kişisel uygulamalarım."
 		},
 		virastackIntro:
-			"Bir frontend projesine başlarken gereken parçalar tek yerde: şablonlar, AI kuralları, erişilebilir form paketleri ve ücretsiz rehberler."
+			"Bir frontend projesine başlarken gereken parçalar tek yerde: şablonlar, AI kuralları, erişilebilir form paketleri ve ücretsiz rehberler.",
+		virastackLinks: {
+			before: "Tüm araçlar ",
+			site: "ViraStack",
+			middle: " sitesinde, kaynak kodları ",
+			github: "GitHub",
+			after: "'da."
+		},
+		openSource: {
+			title: "Açık kaynak",
+			intro: "Projelerimi açık kaynakta, deneyimlerimi blogda paylaşıyorum.",
+			calendar: {
+				before: "Son bir yılda ",
+				link: "GitHub",
+				after: "'a yaptığım katkılar:"
+			}
+		}
 	},
 	blog: {
 		title: "Blog",
@@ -82,7 +98,7 @@ export const SITE_COPY = {
 	},
 	journey: {
 		title: "Yolculuk",
-		intro: "Yıllara göre iş, proje ve hayat."
+		intro: "Yıllara göre işimde ve hayatımda öne çıkanlar."
 	},
 	setup: {
 		title: "Kurulum",
@@ -112,16 +128,33 @@ export const SITE_COPY = {
 		blogCta: "Blog"
 	},
 	meta: {
-		home: "React ve TanStack ile arayüz mimarisi kuran frontend mühendisi. ViraStack kurucusu.",
+		home: "React ve TanStack ile arayüz mimarisi kuran Ömer Gülçiçek'in blogu, projeleri ve ViraStack çalışmaları.",
 		about:
-			"Sakarya'da yaşayan frontend mühendisi. Nasıl çalıştığım ve ilgi alanlarım.",
-		experiences: "2017'den bugüne frontend deneyimim ve özgeçmişim.",
-		projects: "ViraStack araçları ve kişisel uygulamalarım.",
-		journey: "Yıllara göre iş, proje ve hayat.",
-		setup: "Kod yazarken kullandığım araçlar ve teknolojiler.",
-		blog: "React, Next.js, TanStack ve frontend mimarisi üzerine yazılar.",
-		notes: "Deneyimler, yıl değerlendirmeleri, kitaplar ve kişisel düşünceler.",
+			"Sakarya'da yaşayan frontend mühendisi Ömer Gülçiçek'i, işlerini ve ilgi alanlarını tanı.",
+		experiences:
+			"2017'den beri çalıştığım şirketleri, rollerimi ve özgeçmişimi burada bulabilirsin.",
+		projects: "ViraStack araçlarını ve kişisel uygulamalarımı burada topladım.",
+		journey: "Yıllara göre işimde ve hayatımda neler değiştiğini burada tutuyorum.",
+		setup: "Kod yazarken kullandığım araçları ve teknolojileri burada listeliyorum.",
+		blog: "React, Next.js, TanStack ve frontend mimarisi üzerine yazdığım teknik yazılar.",
+		notes:
+			"Yıl değerlendirmelerimi, deneyimlerimi, okuduğum kitapları ve düşüncelerimi burada paylaşıyorum.",
 		bookmarks:
-			"Takip ettiğim frontend kaynakları, bloglar ve okuma listesi."
+			"Takip ettiğim frontend kaynaklarını, blogları ve okuma listemi burada topluyorum."
+	},
+	footer: {
+		builtWith: {
+			virastack: "ViraStack",
+			tanstackStart: "TanStack Start",
+			tailwind: "Tailwind CSS",
+			and: " ve ",
+			shadcn: "shadcn/ui",
+			after: " ile geliştirildi."
+		},
+		sourceCode: {
+			before: "Kaynak kod ",
+			link: "GitHub",
+			after: "'da."
+		}
 	}
 } as const

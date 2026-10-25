@@ -1,17 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { NotFoundPage } from "@/components/shared/not-found-page"
-import {
-	buildBlogPostPageHead,
-	loadBlogPostPage
-} from "@/features/blog/api/load-blog-post-page"
-import { BlogPostDetailPage } from "@/features/blog/components/blog-post-detail-page"
-import { BlogRouteError } from "@/features/blog/components/blog-route-error"
+import { NotFoundPage } from "@/components/shared/NotFoundPage"
 import {
 	BLOG_PAGE_CACHE_CONTROL,
-	BLOG_PAGE_DEV_CACHE_CONTROL
-} from "@/features/blog/constants/blog-cache.constants"
-import { useGetBlogPostDetail } from "@/features/blog/hooks/use-get-blog-post-detail"
+	BLOG_PAGE_DEV_CACHE_CONTROL,
+	BlogPostDetailPage,
+	BlogRouteError,
+	buildBlogPostPageHead,
+	loadBlogPostPage,
+	useGetBlogPostDetail
+} from "@/features/blog"
 
 export const Route = createFileRoute("/notlar/$slug")({
 	loader: ({ context, params }) =>

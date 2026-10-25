@@ -1501,9 +1501,9 @@ export const MEDIA_RATING_BOOKMARK_SORT_LABELS: Record<
 }
 
 export const BOOKMARK_UI = {
-	pageTitle: "Yer İmleri",
+	pageTitle: "Yer imleri",
 	pageDescription:
-		"Takip ettiğim kaynaklar, eklentiler ve okuma listem. Kategori ve etiketlerle süzülmüş favori bağlantılar.",
+		"Takip ettiğim kaynaklar, eklentiler ve okuma listem.",
 	filtersAriaLabel: "Yer imi filtreleri",
 	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",

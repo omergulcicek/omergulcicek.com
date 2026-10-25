@@ -2,11 +2,11 @@ import type { ReactNode } from "react"
 
 import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
-import { ScrollToTopIndicator } from "@/components/shared/scroll-to-top-indicator"
+import { ScrollToTopIndicator } from "@/components/shared/ScrollToTopIndicator"
 import { MotionEnvironmentBoot } from "@/lib/motion/motion-environment-boot"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { CommandPaletteProvider } from "@/features/search/components/command-palette-provider"
-import { CommandPaletteDialog } from "@/features/search/components/CommandPalette"
+import { CommandPaletteProvider } from "@/components/shared/command-palette/CommandPaletteProvider"
+import { CommandPaletteDialog } from "@/components/shared/command-palette/CommandPaletteDialog"
 
 type SiteLayoutProps = {
 	children: ReactNode
