@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { BookmarkChipLabelText } from "@/features/bookmarks/components/BookmarkChipLabelText"
-import { blogFilterChipDesktopClass } from "@/components/shared/filter-chip.styles"
 import {
 	BOOKMARK_CATEGORY_CHIP_LABELS,
 	BOOKMARK_UI,
@@ -15,6 +14,7 @@ type BookmarkCategoryChipsProps = {
 	className?: string
 }
 
+/** Segmented control, so the top-level category reads apart from the tag chips below it. */
 export function BookmarkCategoryChips({
 	value,
 	onChange,
@@ -22,7 +22,7 @@ export function BookmarkCategoryChips({
 }: BookmarkCategoryChipsProps) {
 	return (
 		<div
-			className={cn("flex flex-wrap gap-2", className)}
+			className={cn("bg-muted inline-flex gap-0.5 rounded-lg p-0.5", className)}
 			role="group"
 			aria-label={BOOKMARK_UI.categoryAriaLabel}
 		>
@@ -35,10 +35,13 @@ export function BookmarkCategoryChips({
 						key={category.id}
 						type="button"
 						size="xs"
-						variant={isActive ? "secondary" : "outline"}
+						variant="ghost"
 						aria-pressed={isActive}
 						aria-label={label.desktop}
-						className={blogFilterChipDesktopClass}
+						className={cn(
+							"text-muted-foreground h-7 rounded-md px-2.5 hover:bg-transparent dark:hover:bg-transparent",
+							"aria-pressed:bg-background aria-pressed:text-foreground aria-pressed:shadow-xs dark:aria-pressed:bg-background"
+						)}
 						onClick={() => onChange(category.id)}
 					>
 						<BookmarkChipLabelText label={label} />

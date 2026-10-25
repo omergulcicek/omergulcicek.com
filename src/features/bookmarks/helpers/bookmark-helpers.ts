@@ -516,6 +516,7 @@ function parseBookmarkImdbRating(bookmark: Bookmark) {
 	return Number.isFinite(rating) ? rating : Number.NEGATIVE_INFINITY
 }
 
+/** Unrated bookmarks (YouTube) always sort after rated ones, whatever the direction. */
 function compareBookmarksByImdbRating(
 	left: Bookmark,
 	right: Bookmark,
@@ -523,6 +524,17 @@ function compareBookmarksByImdbRating(
 ) {
 	const leftRating = parseBookmarkImdbRating(left)
 	const rightRating = parseBookmarkImdbRating(right)
+	const leftRated = Number.isFinite(leftRating)
+	const rightRated = Number.isFinite(rightRating)
+
+	if (leftRated !== rightRated) {
+		return leftRated ? -1 : 1
+	}
+
+	if (!leftRated) {
+		return compareBookmarksByTitle(left, right)
+	}
+
 	const ratingCompare =
 		direction === "desc" ? rightRating - leftRating : leftRating - rightRating
 
@@ -725,4 +737,15 @@ export function getLibraryBookmarkTaxonomyLabel(bookmark: Bookmark) {
 	}
 
 	return category ?? genre
+}
+
+export type BookmarkImageShape = "poster" | "video" | "square"
+
+/** Media covers keep their source ratio: 2:3 posters, 16:9 YouTube thumbnails. */
+export function getBookmarkImageShape(bookmark: Bookmark): BookmarkImageShape {
+	if (bookmark.categoryId !== "media") {
+		return "square"
+	}
+
+	return bookmark.tags.includes(YOUTUBE_BOOKMARK_TAG) ? "video" : "poster"
 }

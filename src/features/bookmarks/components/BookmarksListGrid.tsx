@@ -41,8 +41,9 @@ export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridPro
 					<BookmarksEmptyState />
 				</motion.div>
 			) : (
-				<motion.div
+				<motion.ul
 					key={filterKey}
+					role="list"
 					aria-label={BOOKMARK_UI.listAriaLabel}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: enterTransition }}
@@ -53,11 +54,11 @@ export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridPro
 					className="grid grid-cols-2 gap-x-4 gap-y-6 overflow-visible md:grid-cols-5 md:gap-x-4 md:gap-y-5"
 				>
 					{bookmarks.map((bookmark) => (
-						<div key={bookmark.id}>
+						<li key={bookmark.id}>
 							<BookmarkListRow bookmark={bookmark} />
-						</div>
+						</li>
 					))}
-				</motion.div>
+				</motion.ul>
 			)}
 		</AnimatePresence>
 	)

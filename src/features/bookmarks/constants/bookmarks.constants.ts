@@ -65,7 +65,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "AddyOsmani.com",
 			url: "https://addyosmani.com/blog/",
 			imageUrl: bookmarkImage("blog-addy-osmani-com-blog"),
-			description: "Google'da Chrome mühendisi; performans, JavaScript ve web mühendisliği yazıları.",
+			description: "Addy Osmani'nin web performansı ve JavaScript yazıları.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -74,7 +74,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Ahmad Shadeed",
 			url: "https://ishadeed.com/articles/",
 			imageUrl: bookmarkImage("blog-ishadeed-com-articles"),
-			description: "CSS uzmanı; modern CSS, layout ve görsel açıklamalı derinlemesine makaleler.",
+			description: "Modern CSS ve layout'u etkileşimli örneklerle anlatıyor.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -83,7 +83,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Anthropic Research",
 			url: "https://www.anthropic.com/research",
 			imageUrl: bookmarkImage("blog-anthropic-com-research"),
-			description: "Anthropic'in araştırma sayfası; AI modelleri, güvenlik ve teknik duyurular.",
+			description: "Claude'u geliştiren ekibin araştırma ve güvenlik yayınları.",
 			categoryId: "blog",
 			tags: ["Kurum"]
 		},
@@ -92,7 +92,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Builder.io",
 			url: "https://www.builder.io/blog",
 			imageUrl: bookmarkImage("blog-builder-io-blog"),
-			description: "Builder.io resmi blogu; görsel geliştirme, headless CMS ve frontend mimarisi.",
+			description: "Builder.io ekibinin frontend ve yapay zekâ araçları yazıları.",
 			categoryId: "blog",
 			tags: ["Kurum"]
 		},
@@ -101,7 +101,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "CSS { In Real Life }",
 			url: "https://css-irl.info/",
 			imageUrl: bookmarkImage("blog-css-irl-info"),
-			description: "Michelle Barker'ın blogu; pratik CSS, layout ve erişilebilirlik yazıları.",
+			description: "Michelle Barker'ın pratik CSS ve erişilebilirlik yazıları.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -110,7 +110,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "CSS-Tricks",
 			url: "https://css-tricks.com/",
 			imageUrl: bookmarkImage("blog-css-tricks-com"),
-			description: "Frontend ve CSS odaklı rehberler, ipuçları ve teknik makaleler.",
+			description: "Yıllardır biriken CSS ve frontend rehberleri.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -119,7 +119,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Daktilo1984",
 			url: "https://daktilo1984.com/",
 			imageUrl: bookmarkImage("blog-daktilo1984-com"),
-			description: "Politika, ekonomi ve kültür odaklı bağımsız düşünce yayını; yazı, video ve podcast.",
+			description: "Politika, ekonomi ve kültür üzerine yazı, video ve podcast.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -128,7 +128,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Daron Blog",
 			url: "https://daron.blog/",
 			imageUrl: bookmarkImage("blog-daron-blog"),
-			description: "AWS Serverless Hero Daron Yöndem; bulut, serverless ve .NET yazıları.",
+			description: "Daron Yöndem'in bulut, serverless ve .NET yazıları.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -137,7 +137,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Fatih Hayrioğlu",
 			url: "https://fatihhayrioglu.com/",
 			imageUrl: bookmarkImage("blog-fatihhayrioglu-com"),
-			description: "Frontend geliştirici; Türkçe JavaScript, CSS ve web teknolojileri yazıları.",
+			description: "Fatih Hayrioğlu'nun Türkçe JavaScript ve CSS yazıları.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -146,7 +146,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Ahmet Seha Acar",
 			url: "https://ahmetsehacar.raindrop.page/",
 			imageUrl: bookmarkImage("blog-raindrop-io-ahmetsehacar"),
-			description: "Raindrop arşivi; yazılım ve teknoloji odaklı paylaşılan link koleksiyonu.",
+			description: "Yazılım ve teknoloji bağlantılarını topladığı Raindrop arşivi.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -155,7 +155,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Jakub Krehel",
 			url: "https://jakub.kr/",
 			imageUrl: bookmarkImage("blog-jakub-kr"),
-			description: "Design engineer; arayüz detayları, animasyon ve etkileşim tasarımı.",
+			description: "Arayüz detayları ve animasyon üzerine kısa yazılar.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -164,7 +164,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Kodcular",
 			url: "https://medium.com/kodcular",
 			imageUrl: bookmarkImage("blog-medium-com-kodcular"),
-			description: "Medium yayını; Türkçe yazılım geliştirme ve teknoloji makaleleri.",
+			description: "Türkçe yazılım makalelerinin toplandığı Medium yayını.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -173,7 +173,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "NextRadar",
 			url: "https://nextradar.dev/content/nextjs",
 			imageUrl: bookmarkImage("blog-nextradar-dev-content-nextjs"),
-			description: "Next.js ekosisteminden haberler, kaynaklar ve içerik derlemesi.",
+			description: "Next.js dünyasından haber ve kaynak derlemesi.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -182,7 +182,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Smashing Magazine",
 			url: "https://www.smashingmagazine.com/articles/",
 			imageUrl: bookmarkImage("blog-smashingmagazine-com-articles"),
-			description: "Web tasarım ve frontend için derinlemesine makaleler ve rehberler.",
+			description: "Web tasarımı ve frontend üzerine uzun makaleler.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -191,7 +191,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Tania Rascia",
 			url: "https://www.taniarascia.com/blog/",
 			imageUrl: bookmarkImage("blog-taniarascia-com-blog"),
-			description: "Yazılım geliştirici; JavaScript, React ve web temelleri öğreticileri.",
+			description: "JavaScript ve React temellerini sade örneklerle anlatıyor.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -200,7 +200,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Tide Wave",
 			url: "https://tidewave.net/categories/nextjs",
 			imageUrl: bookmarkImage("blog-tidewave-net-categories-nextjs"),
-			description: "Next.js odaklı newsletter; framework haberleri, rehberler ve kaynaklar.",
+			description: "Next.js haberlerini ve rehberlerini derleyen bülten.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -209,7 +209,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "TkDodo",
 			url: "https://tkdodo.eu/blog/all",
 			imageUrl: bookmarkImage("blog-tkdodo-eu-blog-all"),
-			description: "TanStack Query maintainer'ı; React Query ve modern frontend yazıları.",
+			description: "TanStack Query maintainer'ı Dominik'in React Query yazıları.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -218,7 +218,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Türkçe Yayın",
 			url: "https://medium.com/t%C3%BCrkiye",
 			imageUrl: bookmarkImage("blog-medium-com-turkiye"),
-			description: "Medium Türkiye; Türkçe teknoloji, kültür ve güncel konu yazıları.",
+			description: "Medium'daki Türkçe teknoloji ve kültür yazıları.",
 			categoryId: "blog",
 			tags: ["Yayın"]
 		},
@@ -227,7 +227,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Una Kravets",
 			url: "https://una.im/",
 			imageUrl: bookmarkImage("blog-una-im"),
-			description: "UI/CSS uzmanı; design systems, animasyon ve modern CSS deneyleri.",
+			description: "Chrome ekibinden Una Kravets'in modern CSS deneyleri.",
 			categoryId: "blog",
 			tags: ["Kişi"]
 		},
@@ -236,7 +236,7 @@ export const BOOKMARKS: Bookmark[] = [
 			title: "Upstash Blog",
 			url: "https://upstash.com/blog",
 			imageUrl: bookmarkImage("blog-upstash-com-blog"),
-			description: "Upstash resmi blogu; serverless Redis, Kafka ve edge backend rehberleri.",
+			description: "Upstash ekibinin serverless Redis ve edge rehberleri.",
 			categoryId: "blog",
 			tags: ["Kurum"]
 		},
@@ -1245,7 +1245,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube--gc2twgghfa",
-			title: "Brezilya - Portekiz: Euro 2004",
+			title: "Nike Olé Reklamı: Brezilya - Portekiz, Euro 2004",
 			url: "https://www.youtube.com/watch?v=-Gc2twGGHFA",
 			author: "This Is Football",
 			imageUrl: bookmarkImage("media-youtube--gc2twgghfa"),
@@ -1299,7 +1299,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-lmwpop3pulg",
-			title: "Barcelona - Real Madrid: 2010/2011",
+			title: "Barcelona 5–0 Real Madrid: 2010/2011",
 			url: "https://www.youtube.com/watch?v=LmwPop3Pulg",
 			author: "LALIGA EA SPORTS",
 			imageUrl: bookmarkImage("media-youtube-lmwpop3pulg"),
@@ -1326,7 +1326,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-x7158uqk1yi",
-			title: "Brezilya - Fransa: 2006 Dünya Kupası",
+			title: "Brezilya 0–1 Fransa: 2006 Dünya Kupası Çeyrek Finali",
 			url: "https://www.youtube.com/watch?v=X7158uQk1yI",
 			author: "FIFA",
 			imageUrl: bookmarkImage("media-youtube-x7158uqk1yi"),
@@ -1353,7 +1353,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-mhsg2m25pzy",
-			title: "Roger Federer - Rafael Nadal: Wimbledon 2008 Final",
+			title: "Roger Federer - Rafael Nadal: Wimbledon 2008 Finali",
 			url: "https://www.youtube.com/watch?v=mHsg2M25PzY",
 			author: "Wimbledon",
 			imageUrl: bookmarkImage("media-youtube-mhsg2m25pzy"),
@@ -1362,7 +1362,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-g-swvee9him",
-			title: "Eternal Fire - Spirit: BLAST Premier Bounty Final",
+			title: "Eternal Fire - Spirit: BLAST Premier Bounty Finali",
 			url: "https://www.youtube.com/watch?v=g-swVEE9hiM",
 			author: "BLAST Premier",
 			imageUrl: bookmarkImage("media-youtube-g-swvee9him"),
@@ -1371,7 +1371,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-uo1chltdryq",
-			title: "Türkiye - Arjantin: CS:GO Major Final",
+			title: "Türkiye - Arjantin: CS:GO Major Finali",
 			url: "https://www.youtube.com/watch?v=uo1chlTDrYQ",
 			author: "Robert Brown",
 			imageUrl: bookmarkImage("media-youtube-uo1chltdryq"),
@@ -1398,7 +1398,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-ijbde6pkw2o",
-			title: "Liverpool - Milan: 2005 Şampiyonlar Ligi Finali",
+			title: "Liverpool 3–3 Milan (pen. 3–2): 2005 Şampiyonlar Ligi Finali",
 			url: "https://www.youtube.com/watch?v=iJbDE6PKW2o",
 			author: "GoalGlory Classics",
 			imageUrl: bookmarkImage("media-youtube-ijbde6pkw2o"),
@@ -1416,7 +1416,7 @@ export const BOOKMARKS: Bookmark[] = [
 		},
 	{
 			id: "media-youtube-x4i7ilgmrog",
-			title: "PSG - Bayern Münih: Şampiyonlar Ligi Yarı Final",
+			title: "PSG 5–4 Bayern Münih: 2026 Şampiyonlar Ligi Yarı Finali",
 			url: "https://www.youtube.com/watch?v=x4I7ilgMrog",
 			author: "TRT SPOR",
 			imageUrl: bookmarkImage("media-youtube-x4i7ilgmrog"),
@@ -1517,6 +1517,9 @@ export const BOOKMARK_UI = {
 	sortAriaLabel: "Sıralama",
 	listAriaLabel: "Yer imleri listesi",
 	emptyState: "Seçili etikete uygun yer imi bulunamadı.",
+	imdbLabel: "IMDb",
+	imdbRatingAriaLabel: "IMDb puanı",
+	translatorLabel: "Çevirmen",
 	showTags: "Tümünü göster",
 	hideTags: "Daha az göster",
 	libraryCoverAttribution: "Kitap görselleri Kitapyurdu'ndan alınmıştır.",
@@ -1534,8 +1537,8 @@ export function getBookmarkSortOptions(
 
 	if (
 		categoryId === "media" &&
-		tag !== null &&
-		(BOOKMARK_MEDIA_RATING_TAGS as readonly string[]).includes(tag)
+		(tag === null ||
+			(BOOKMARK_MEDIA_RATING_TAGS as readonly string[]).includes(tag))
 	) {
 		return MEDIA_RATING_BOOKMARK_SORTS
 	}

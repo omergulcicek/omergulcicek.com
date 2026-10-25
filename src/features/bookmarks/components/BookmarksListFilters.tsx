@@ -86,7 +86,6 @@ export function BookmarksListFilters({
 		>
 			<div className="flex min-h-8 flex-nowrap items-center justify-between md:min-h-0 md:gap-2">
 				<BookmarkCategoryChips
-					className="gap-1.5 md:gap-2"
 					value={categoryId}
 					onChange={onCategoryChange}
 				/>

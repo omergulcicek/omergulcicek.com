@@ -1,22 +1,34 @@
-import { ChevronRight, Star } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 import { OptimizedImage } from "@/components/shared/OptimizedImage"
 import {
 	interactiveCardChevronClass,
 	interactiveListRowClass
 } from "@/components/shared/interactive-card.styles"
+import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 import { getLibraryCategoryPlaceholderClassName } from "@/features/bookmarks/constants/library-bookmarks.constants"
 import {
 	formatBookmarkAuthors,
 	getBookmarkAuthorCredit,
 	getBookmarkDisplayTitle,
+	getBookmarkImageShape,
 	getBookmarkTitleInitials,
 	getLibraryBookmarkTaxonomyLabel
 } from "@/features/bookmarks/helpers/bookmark-helpers"
+import type { BookmarkImageShape } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
 import { withOutboundUtm } from "@/lib/outbound-url"
 import { cardPaddingClass } from "@/components/shared/prose.styles"
 import { cn } from "@/lib/utils"
+
+const IMAGE_SHAPES: Record<
+	BookmarkImageShape,
+	{ aspectClass: string; fitClass: string; width: number; height: number }
+> = {
+	poster: { aspectClass: "aspect-2/3", fitClass: "object-cover", width: 368, height: 552 },
+	video: { aspectClass: "aspect-video", fitClass: "object-cover", width: 368, height: 207 },
+	square: { aspectClass: "aspect-square", fitClass: "object-contain", width: 120, height: 120 }
+}
 
 type BookmarkListRowProps = {
 	bookmark: Bookmark
@@ -30,6 +42,8 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 	const taxonomyLabel = getLibraryBookmarkTaxonomyLabel(bookmark)
 	const creditClassName = "text-muted-foreground text-pretty text-xs leading-relaxed"
 	const categoryTag = bookmark.tags[0] ?? ""
+	const imageShape = IMAGE_SHAPES[getBookmarkImageShape(bookmark)]
+	const isLibrary = bookmark.categoryId === "library"
 
 	return (
 		<article
@@ -50,29 +64,33 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 				/>
 			) : null}
 			{bookmark.imageUrl ? (
-				<div className="pointer-events-none relative z-10 aspect-square w-full">
+				<div
+					className={cn(
+						"pointer-events-none relative z-10 w-full",
+						imageShape.aspectClass
+					)}
+				>
 					<OptimizedImage
 						src={bookmark.imageUrl}
 						alt=""
-						width={bookmark.categoryId === "library" ? 512 : 120}
-						height={bookmark.categoryId === "library" ? 512 : 120}
+						width={isLibrary ? 512 : imageShape.width}
+						height={isLibrary ? 512 : imageShape.height}
 						sizes="(max-width: 768px) 50vw, 184px"
-						className="image-outline size-full rounded-sm object-contain"
+						className={cn("image-outline size-full rounded-sm", imageShape.fitClass)}
 					/>
 					{bookmark.imdbRating ? (
 						<span
-							className="absolute right-1 bottom-px inline-flex items-center gap-0.5 rounded-sm bg-background/85 px-1 py-0.5 text-xs font-medium tabular-nums backdrop-blur-sm"
-							aria-label={`IMDB puanı: ${bookmark.imdbRating}`}
+							className="absolute right-1.5 bottom-1.5 inline-flex items-baseline gap-1 rounded-sm bg-background/90 px-1.5 py-0.5 text-xs font-medium tabular-nums backdrop-blur-sm"
+							aria-label={`${BOOKMARK_UI.imdbRatingAriaLabel}: ${bookmark.imdbRating}`}
 						>
-							<Star
-								className="size-3 fill-amber-500 text-amber-500"
-								aria-hidden
-							/>
-							{bookmark.imdbRating}
+							<span className="text-muted-foreground text-[10px] font-semibold" aria-hidden>
+								{BOOKMARK_UI.imdbLabel}
+							</span>
+							<span aria-hidden>{bookmark.imdbRating}</span>
 						</span>
 					) : null}
 				</div>
-			) : bookmark.categoryId === "library" ? (
+			) : isLibrary ? (
 				<div
 					className={cn(
 						"image-outline pointer-events-none relative z-10 flex aspect-square w-full items-center justify-center rounded-sm",
@@ -87,9 +105,9 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 			) : null}
 			<div className="pointer-events-none relative z-10 flex min-w-0 flex-col">
 				<div className="flex items-start justify-between gap-2">
-					<h2 className="min-w-0 flex-1 text-sm leading-6 font-normal text-pretty">
+					<p className="min-w-0 flex-1 text-sm leading-6 font-normal text-pretty">
 						{bookmark.title}
-					</h2>
+					</p>
 					{bookmark.url ? (
 						<ChevronRight
 							className={cn(interactiveCardChevronClass, "mt-1 shrink-0")}
@@ -101,7 +119,7 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 					<p
 						className={cn(
 							"text-muted-foreground text-pretty text-xs leading-relaxed",
-							bookmark.categoryId === "library" && "font-normal italic"
+							isLibrary && "font-normal italic"
 						)}
 					>
 						{bookmark.subtitle}
@@ -111,7 +129,9 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 					<p className={creditClassName}>{authorCredit}</p>
 				) : null}
 				{bookmark.translator ? (
-					<p className={creditClassName}>Çevirmen: {bookmark.translator}</p>
+					<p className={creditClassName}>
+						{BOOKMARK_UI.translatorLabel}: {bookmark.translator}
+					</p>
 				) : null}
 				{descriptionCredit ? (
 					<p className={creditClassName}>{descriptionCredit}</p>

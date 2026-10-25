@@ -356,12 +356,27 @@ describe("bookmark helpers", () => {
 		).toEqual(["Low Rated", "Mid Rated", "High Rated"])
 	})
 
+	it("keeps unrated media after rated media in both directions", () => {
+		const mediaBookmarks: Bookmark[] = [
+			{ id: "video", title: "A Video", categoryId: "media", tags: ["YouTube"] },
+			{ id: "film", title: "Film", imdbRating: "8.0", categoryId: "media", tags: ["Film"] },
+			{ id: "series", title: "Series", imdbRating: "9.0", categoryId: "media", tags: ["Dizi"] }
+		]
+		const titlesFor = (sort: "rating-desc" | "rating-asc") =>
+			applyBookmarkFilters(mediaBookmarks, { categoryId: "media", tag: null, sort }).map(
+				(bookmark) => bookmark.title
+			)
+
+		expect(titlesFor("rating-desc")).toEqual(["Series", "Film", "A Video"])
+		expect(titlesFor("rating-asc")).toEqual(["Film", "Series", "A Video"])
+	})
+
 	it("controls bookmark sort visibility by category and tag", () => {
 		expect(isBookmarkSortVisible("frontend", null)).toBe(false)
 		expect(isBookmarkSortVisible("frontend", "npm")).toBe(false)
 		expect(isBookmarkSortVisible("library", null)).toBe(true)
 		expect(isBookmarkSortVisible("library", "Osmanlı")).toBe(true)
-		expect(isBookmarkSortVisible("media", null)).toBe(false)
+		expect(isBookmarkSortVisible("media", null)).toBe(true)
 		expect(isBookmarkSortVisible("media", "YouTube")).toBe(false)
 		expect(isBookmarkSortVisible("media", "Film")).toBe(true)
 		expect(isBookmarkSortVisible("media", "Dizi")).toBe(true)
@@ -371,6 +386,7 @@ describe("bookmark helpers", () => {
 		expect(resolveBookmarkSort(null, "library", null)).toBe("author")
 		expect(resolveBookmarkSort("title", "library", null)).toBe("title")
 		expect(resolveBookmarkSort("rating-desc", "library", null)).toBe("author")
+		expect(resolveBookmarkSort(null, "media", null)).toBe("rating-desc")
 		expect(resolveBookmarkSort(null, "media", "Film")).toBe("rating-desc")
 		expect(resolveBookmarkSort("rating-asc", "media", "Dizi")).toBe("rating-asc")
 		expect(resolveBookmarkSort("title", "media", "YouTube")).toBeNull()
