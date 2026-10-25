@@ -10,6 +10,7 @@ export const SITE = {
 	description: SITE_COPY.meta.home,
 	url: ME.site.url,
 	repository: ME.site.repository,
+	feedPath: "/feed.xml",
 	locale: "tr_TR",
 	twitterHandle: ME.contact.xHandle,
 	defaultOgImage: "/omergulcicek-672.jpg",

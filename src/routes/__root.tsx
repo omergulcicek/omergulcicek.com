@@ -46,7 +46,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 				rel: "alternate",
 				type: "application/rss+xml",
 				title: `${SITE.name} Blog RSS`,
-				href: "/feed.xml"
+				href: SITE.feedPath
 			}
 		]
 	}),

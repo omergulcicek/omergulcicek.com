@@ -1,9 +1,18 @@
-import { Button } from "@/components/ui/button"
-import { GitHubIcon, LinkedInIcon, NpmIcon, XIcon } from "@/components/shared/icons"
+import type { ReactNode } from "react"
+
+import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { SOCIAL_LINKS } from "@/constants/social.constants"
+
 import { withOutboundUtm } from "@/lib/outbound-url"
 import { cn } from "@/lib/utils"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
+
+import {
+	GitHubIcon,
+	LinkedInIcon,
+	NpmIcon,
+	XIcon
+} from "@/components/shared/icons"
+import { Button } from "@/components/ui/button"
 
 const SOCIAL_ICONS = {
 	GitHub: GitHubIcon,
@@ -21,11 +30,16 @@ const SOCIAL_ICON_COLORS = {
 
 type SocialLinksProps = {
 	className?: string
+	/** Extra icon links appended inside the same nav (the footer adds e-mail and RSS). */
+	children?: ReactNode
 }
 
-export function SocialLinks({ className }: SocialLinksProps) {
+export function SocialLinks({ className, children }: SocialLinksProps) {
 	return (
-		<nav className={cn("flex items-center", className)} aria-label={SITE_CONTENT.socialLinksAria}>
+		<nav
+			className={cn("flex items-center", className)}
+			aria-label={SITE_CONTENT.socialLinksAria}
+		>
 			{SOCIAL_LINKS.map((social) => {
 				const Icon = SOCIAL_ICONS[social.label as keyof typeof SOCIAL_ICONS]
 				const iconColor =
@@ -44,6 +58,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
 					</Button>
 				)
 			})}
+			{children}
 		</nav>
 	)
 }

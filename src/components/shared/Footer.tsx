@@ -1,20 +1,27 @@
-import { BrandMark } from "@/components/shared/BrandMark"
-import { SiteNavLink } from "@/components/shared/SiteNavLink"
-import { interactiveSurfaceBgClass } from "@/components/shared/interactive-card.styles"
-import { ProseLink } from "@/components/shared/ProseLink"
-import {
-	bleedSectionClass,
-	sectionHeadingClass
-} from "@/components/shared/prose.styles"
+import { Mail, Rss } from "lucide-react"
+
 import {
 	FOOTER_NAV,
 	getFooterCopyright
 } from "@/constants/footer-nav.constants"
-import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import {
+	EXTERNAL_LINKS,
+	SITE_CONTENT
+} from "@/constants/site-content.constants"
 import { SITE_COPY } from "@/constants/site-copy.constants"
 import { SITE } from "@/constants/site.constants"
-import { getPublishedVirastackProjects, VirastackProductName } from "@/features/projects"
+
 import { cn } from "@/lib/utils"
+
+import { BrandMark } from "@/components/shared/BrandMark"
+import { Container } from "@/components/shared/Container"
+import { interactiveSurfaceBgClass } from "@/components/shared/interactive-card.styles"
+import { sectionHeadingClass } from "@/components/shared/prose.styles"
+import { ProseLink } from "@/components/shared/ProseLink"
+import { SiteNavLink } from "@/components/shared/SiteNavLink"
+import { SocialLinks } from "@/components/shared/SocialLinks"
+import { Button } from "@/components/ui/button"
+import { getPublishedVirastackProjects } from "@/features/projects"
 
 const footerNavClass =
 	"text-muted-foreground flex flex-col gap-2 text-xs md:text-sm"
@@ -30,11 +37,29 @@ export function Footer() {
 				interactiveSurfaceBgClass
 			)}
 		>
-			<div className={cn(bleedSectionClass, "py-8 md:py-12")}>
+			<Container className="max-w-3xl py-8 md:py-12">
 				<div className="flex flex-col gap-8 md:gap-10">
 					<div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-x-8 md:gap-x-12">
 						<div className="flex min-w-0 flex-col gap-3">
 							<BrandMark variant="profile" />
+							<SocialLinks className="-ml-2">
+								<Button variant="ghost" size="icon-sm" asChild>
+									<a
+										href={EXTERNAL_LINKS.email}
+										aria-label={SITE_CONTENT.footerEmailAria}
+									>
+										<Mail className="size-4" aria-hidden />
+									</a>
+								</Button>
+								<Button variant="ghost" size="icon-sm" asChild>
+									<a
+										href={SITE.feedPath}
+										aria-label={SITE_CONTENT.footerRssAria}
+									>
+										<Rss className="size-4" aria-hidden />
+									</a>
+								</Button>
+							</SocialLinks>
 						</div>
 
 						<div className="flex min-w-0 flex-col gap-3">
@@ -70,16 +95,11 @@ export function Footer() {
 										label={project.title}
 										external
 									>
-										<VirastackProductName
-											projectId={project.id}
-											title={project.title}
-										/>
+										<span className={cn("italic", project.color)}>
+											{project.title.replace(/^ViraStack /, "")}
+										</span>
 									</SiteNavLink>
 								))}
-								<SiteNavLink
-									href="/projects#virastack"
-									label={SITE_CONTENT.footerVirastackAllProjects}
-								/>
 							</nav>
 						</div>
 					</div>
@@ -87,30 +107,37 @@ export function Footer() {
 					<div
 						className={cn(
 							footerNavClass,
-							"border-border gap-2 border-t pt-6 md:pt-8"
+							"border-border flex-col-reverse gap-2 border-t pt-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 md:pt-8"
 						)}
 					>
-						<p>
-							<ProseLink href={EXTERNAL_LINKS.virastack}>{builtWith.virastack}</ProseLink>
+						<p className="shrink-0">{getFooterCopyright()}</p>
+						<p className="sm:text-right">
+							<ProseLink href={EXTERNAL_LINKS.virastack}>
+								{builtWith.virastack}
+							</ProseLink>
 							,{" "}
 							<ProseLink href={EXTERNAL_LINKS.tanstackStart}>
 								{builtWith.tanstackStart}
 							</ProseLink>
 							,{" "}
-							<ProseLink href={EXTERNAL_LINKS.tailwind}>{builtWith.tailwind}</ProseLink>
+							<ProseLink href={EXTERNAL_LINKS.tailwind}>
+								{builtWith.tailwind}
+							</ProseLink>
 							{builtWith.and}
-							<ProseLink href={EXTERNAL_LINKS.shadcn}>{builtWith.shadcn}</ProseLink>
+							<ProseLink href={EXTERNAL_LINKS.shadcn}>
+								{builtWith.shadcn}
+							</ProseLink>
 							{builtWith.after}
+							{/* Own line, so the sentence never breaks mid-phrase next to the copyright. */}
+							<span className="block">
+								{sourceCode.before}
+								<ProseLink href={SITE.repository}>{sourceCode.link}</ProseLink>
+								{sourceCode.after}
+							</span>
 						</p>
-						<p>
-							{sourceCode.before}
-							<ProseLink href={SITE.repository}>{sourceCode.link}</ProseLink>
-							{sourceCode.after}
-						</p>
-						<p>{getFooterCopyright()}</p>
 					</div>
 				</div>
-			</div>
+			</Container>
 		</footer>
 	)
 }

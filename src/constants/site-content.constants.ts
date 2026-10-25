@@ -53,7 +53,8 @@ export const SITE_CONTENT = {
 	resumeLanguageEnShort: "EN",
 	footerNavTitle: "Keşfet",
 	footerVirastackTitle: "ViraStack",
-	footerVirastackAllProjects: "Tüm projeler",
+	footerEmailAria: "E-posta gönder",
+	footerRssAria: "Blog RSS akışı",
 	routeErrorCodeLabel: "Hata",
 	routeErrorRetry: "Tekrar dene"
 } as const
