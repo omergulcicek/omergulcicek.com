@@ -34,6 +34,8 @@ export const SITE_CONTENT = {
 	helperLinksAria: "Yardımcı bağlantılar",
 	headingAnchorAria: "Bu bölüme link",
 	homeBlogAria: "Son blog yazıları",
+	homeProjectsTitle: "Projeler",
+	homeVirastackProductsAria: "ViraStack ürünleri",
 	stackStripAria: "Teknoloji şeridi",
 	projectsSectionApps: "Kişisel projeler",
 	projectsSectionVirastack: "ViraStack",
