@@ -18,7 +18,7 @@ import { ProseRouterLink } from "@/components/shared/ProseRouterLink"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { StaggerContainer } from "@/components/shared/StaggerContainer"
 import { StaggerItem } from "@/components/shared/StaggerItem"
-import { VirastackLink } from "@/components/shared/VirastackLink"
+import { AboutParagraph } from "@/features/about/components/AboutParagraph"
 import { BentoInterests } from "@/features/about/components/BentoInterests"
 import { LinkSeparator } from "@/features/about/components/LinkSeparator"
 
@@ -31,16 +31,16 @@ export function AboutPage() {
 				<Container className={cn("flex flex-col", pageStackGapClass)}>
 					<PageHeader title={about.title} className="vt-about-block">
 						<div className={proseFlowClass}>
-							{about.intro.map((paragraph) => (
-								<p key={paragraph} className={proseParagraphClass}>
-									{paragraph}
-								</p>
+							{about.paragraphs.map((segments) => (
+								<AboutParagraph
+									key={segments
+										.map((segment) =>
+											typeof segment === "string" ? segment : segment.text
+										)
+										.join("")}
+									segments={segments}
+								/>
 							))}
-							<p className={proseParagraphClass}>
-								{about.focus.before}
-								<VirastackLink>{about.focus.link}</VirastackLink>
-								{about.focus.after}
-							</p>
 						</div>
 					</PageHeader>
 				</Container>

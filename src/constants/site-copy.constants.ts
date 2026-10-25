@@ -32,22 +32,33 @@ export const SITE_COPY = {
 	},
 	about: {
 		title: "Hakkımda",
-		intro: [
-			"Merhaba, ben Ömer. Sakarya'da yaşıyorum, Trabzonluyum.",
-			"2017'den beri web için arayüz geliştiriyorum. Ziraat Teknoloji'de başladım; Akinon, HangiKredi, Gordion, Alışgidiş ve Machinarium'da çalıştım.",
-			"İki ekipte frontend mimarisini sıfırdan kurdum ve takımı yönettim."
+		paragraphs: [
+			["Merhaba, ben Ömer. Trabzonluyum, Sakarya'da yaşıyorum."],
+			[
+				"2017'den beri frontend geliştiriyorum. Kariyerime Ziraat Teknoloji'de başladım. Ardından Turkcell ve Fibabanka dahil ",
+				{ link: "experiences", text: "farklı şirketlerde" },
+				" çalıştım. İki şirkette frontend projelerini sıfırdan başlattım ve mimari kararları aldım. Bu şirketlerde takımlara da liderlik ettim. Kodluyoruz'da eğitmenlik yaptım."
+			],
+			[
+				"Aralık 2025'ten bu yana ",
+				{ link: "virastack", text: "ViraStack" },
+				" üzerinde çalışıyorum. Frontend projeleri için şablonlar, AI kuralları ve ücretsiz eğitim rehberleri hazırlıyorum. Öğrendiklerimi ",
+				{ link: "blog", text: "blogda" },
+				" paylaşıyorum. Kullandığım teknolojileri, donanımımı ve AI çalışma akışımı da ",
+				{ link: "setup", text: "tek sayfada" },
+				" topladım."
+			],
+			[
+				"İş dışında okumayı seviyorum. Evdeki ",
+				{ link: "library", text: "kitaplığımın listesini" },
+				" de burada tutuyorum."
+			]
 		],
-		focus: {
-			before: "Şimdi ",
-			link: "ViraStack",
-			after:
-				"'e odaklanıyorum: frontend geliştiriciler için açık kaynak şablonlar, paketler ve ücretsiz rehberler."
-		},
 		workTogether: {
 			id: "birlikte-calisalim",
-			title: "Birlikte çalışmak",
-			before: "Geliştirme, danışmanlık ya da frontend eğitimi için bana ",
-			link: "yazabilirsin",
+			title: "Birlikte çalışalım",
+			before: "Geliştirme, danışmanlık ya da frontend eğitimi için ",
+			link: "bana yazabilirsin",
 			after: ". İlk görüşme ücretsiz."
 		},
 		interestsTitle: "İlgi alanları",
