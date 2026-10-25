@@ -9,6 +9,7 @@ import {
 import { StaggerContainer } from "@/components/shared/StaggerContainer"
 import { StaggerItem } from "@/components/shared/StaggerItem"
 import { BlogPostDetailHeader } from "@/features/blog/components/BlogPostDetailHeader"
+import { BlogPostEnd } from "@/features/blog/components/BlogPostEnd"
 import { BlogPostMeta } from "@/features/blog/components/BlogPostMeta"
 import { BlogPostToc } from "@/features/blog/components/BlogPostToc"
 import { BlogProse } from "@/features/blog/components/BlogProse"
@@ -40,11 +41,7 @@ export function BlogPostDetailPage({
 				<Container>
 					<StaggerContainer className={cn("flex flex-col", pageStackGapClass)}>
 						<StaggerItem>
-							<BlogPostDetailHeader
-								category={post.category}
-								previous={previous}
-								next={next}
-							/>
+							<BlogPostDetailHeader category={post.category} />
 						</StaggerItem>
 						<StaggerItem data-blog-article className="flex flex-col gap-4">
 							<header className="flex flex-col gap-4">
@@ -66,6 +63,15 @@ export function BlogPostDetailPage({
 							</header>
 							<BlogPostToc headings={post.headings} />
 							<BlogProse key={post.slug} html={post.contentHtml} />
+						</StaggerItem>
+						<StaggerItem>
+							<BlogPostEnd
+								category={post.category}
+								sharePath={sharePath}
+								title={post.title}
+								previous={previous}
+								next={next}
+							/>
 						</StaggerItem>
 					</StaggerContainer>
 				</Container>

@@ -113,6 +113,7 @@ export const BLOG_UI = {
 	listAriaLabel: "Blog yazıları",
 	previousPost: "Önceki yazı",
 	nextPost: "Sonraki yazı",
+	postNavigationAriaLabel: "Yazılar arası gezinme",
 	tocLabel: "İçindekiler",
 	tocAriaLabel: "Yazı içindekileri",
 	tocMinimapAriaLabel: "Yazı bölümleri minimap",
