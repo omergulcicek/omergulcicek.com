@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 import { useResettableState } from "@/hooks/use-resettable-state"
 
@@ -52,17 +52,6 @@ export function useBlogListView(section: BlogSection, posts: BlogPost[]) {
 		BLOG_UI.initialVisiblePosts,
 		[tag, featured, query, sort].join("|")
 	)
-	const [pendingYear, setPendingYear] = useState<string | null>(null)
-
-	useEffect(() => {
-		if (!pendingYear) {
-			return
-		}
-
-		document.getElementById(pendingYear)?.scrollIntoView({ block: "start" })
-		setPendingYear(null)
-	}, [pendingYear, visiblePostCount])
-
 	const visibleSlugs = new Set(
 		flatPublished.slice(0, visiblePostCount).map((post) => post.slug)
 	)
@@ -73,17 +62,6 @@ export function useBlogListView(section: BlogSection, posts: BlogPost[]) {
 		}))
 		.filter((entry) => entry.posts.length > 0)
 
-	const jumpToYear = (year: string) => {
-		const lastIndexOfYear = flatPublished.reduce(
-			(lastIndex, post, index) =>
-				post.publishedAt.startsWith(year) ? index : lastIndex,
-			-1
-		)
-
-		setVisiblePostCount((count) => Math.max(count, lastIndexOfYear + 1))
-		setPendingYear(year)
-	}
-
 	return {
 		...searchParams,
 		availableTags,
@@ -91,12 +69,10 @@ export function useBlogListView(section: BlogSection, posts: BlogPost[]) {
 		featuredSlugs,
 		hasPosts: filteredPosts.length > 0,
 		drafts,
-		years: yearEntries.map(([year]) => year),
 		visibleYearEntries,
 		hasMorePosts: flatPublished.length > visiblePostCount,
 		showMorePosts: () =>
 			setVisiblePostCount((count) => count + BLOG_UI.loadMorePosts),
-		jumpToYear,
 		showClearFilters:
 			featured || canClearBlogFilters({ category: null, tag, query, sort })
 	}

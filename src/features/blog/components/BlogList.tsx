@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { BlogEmptyState } from "@/features/blog/components/BlogEmptyState"
 import { BlogListFilters } from "@/features/blog/components/BlogListFilters"
 import { BlogPostGroup } from "@/features/blog/components/BlogPostGroup"
-import { BlogYearNav } from "@/features/blog/components/BlogYearNav"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import type { BlogSection } from "@/features/blog/constants/blog.constants"
 import { useBlogListView } from "@/features/blog/hooks/use-blog-list-view"
@@ -43,10 +42,6 @@ export function BlogList({
 				onSortChange={view.setSort}
 				onClearFilters={view.clearFilters}
 			/>
-
-			{view.years.length > 1 ? (
-				<BlogYearNav years={view.years} onSelect={view.jumpToYear} />
-			) : null}
 
 			{view.hasPosts ? (
 				<div

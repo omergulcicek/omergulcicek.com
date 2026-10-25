@@ -100,7 +100,6 @@ export const BLOG_UI = {
 		newest: "En eski yazıları önce göster",
 		oldest: "En yeni yazıları önce göster"
 	},
-	yearNavAriaLabel: "Yıla git",
 	carouselPrevious: "Önceki görsel",
 	carouselNext: "Sonraki görsel",
 	sectionAnchorLabel: (section: string) => `${section} bölümüne git`,
