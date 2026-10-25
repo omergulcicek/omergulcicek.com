@@ -35,14 +35,39 @@ export const SITE_COPY = {
 		paragraphs: [
 			["Merhaba, ben Ömer. Trabzonluyum, Sakarya'da yaşıyorum."],
 			[
-				"2017'den beri frontend geliştiriyorum. Kariyerime Ziraat Teknoloji'de başladım. Ardından Turkcell ve Fibabanka dahil ",
+				{ emphasis: "2017" },
+				"'den beri frontend geliştiriyorum. Kariyerime ",
+				{
+					link: "company",
+					text: "Ziraat Teknoloji",
+					logo: "ziraat-icon",
+					experienceId: "ziraat"
+				},
+				"'de başladım. Ardından ",
+				{
+					link: "company",
+					text: "Turkcell",
+					logo: "turkcell",
+					experienceId: "turkcell"
+				},
+				" ve ",
+				{
+					link: "company",
+					text: "Fibabanka",
+					logo: "fibabanka",
+					experienceId: "alisgidis"
+				},
+				" dahil ",
 				{ link: "experiences", text: "farklı şirketlerde" },
-				" çalıştım. İki şirkette frontend projelerini sıfırdan başlattım ve mimari kararları aldım. Bu şirketlerde takımlara da liderlik ettim. Kodluyoruz'da eğitmenlik yaptım."
+				" çalıştım."
 			],
 			[
-				"Aralık 2025'ten bu yana ",
+				"İki şirkette frontend projelerini sıfırdan başlattım ve mimari kararları aldım. Bu şirketlerde takımlara da liderlik ettim. Kodluyoruz'da eğitmenlik yaptım."
+			],
+			[
+				"Son zamanlarda frontend projelerini hızlandıran şablonlar, AI kuralları ve ücretsiz eğitim rehberleri sunduğum ",
 				{ link: "virastack", text: "ViraStack" },
-				" üzerinde çalışıyorum. Frontend projeleri için şablonlar, AI kuralları ve ücretsiz eğitim rehberleri hazırlıyorum. Öğrendiklerimi ",
+				" üzerinde çalışıyorum. Öğrendiklerimi ",
 				{ link: "blog", text: "blogda" },
 				" paylaşıyorum. Kullandığım teknolojileri, donanımımı ve AI çalışma akışımı da ",
 				{ link: "setup", text: "tek sayfada" },

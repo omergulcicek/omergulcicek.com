@@ -21,6 +21,7 @@ import { StaggerItem } from "@/components/shared/StaggerItem"
 import { AboutParagraph } from "@/features/about/components/AboutParagraph"
 import { BentoInterests } from "@/features/about/components/BentoInterests"
 import { LinkSeparator } from "@/features/about/components/LinkSeparator"
+import { getAboutParagraphKey } from "@/features/about/helpers/about-paragraph.helpers"
 
 export function AboutPage() {
 	const { about } = SITE_COPY
@@ -33,11 +34,7 @@ export function AboutPage() {
 						<div className={proseFlowClass}>
 							{about.paragraphs.map((segments) => (
 								<AboutParagraph
-									key={segments
-										.map((segment) =>
-											typeof segment === "string" ? segment : segment.text
-										)
-										.join("")}
+									key={getAboutParagraphKey(segments)}
 									segments={segments}
 								/>
 							))}

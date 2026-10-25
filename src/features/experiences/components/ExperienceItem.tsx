@@ -1,13 +1,14 @@
+import { buildCompanyLogoThumbPath } from "@/lib/media/build-static-thumb-image"
+import { cn } from "@/lib/utils"
+
 import {
 	interactiveListRowBleedClass,
 	interactiveListRowClass,
 	surfaceCardIconFrameClass
 } from "@/components/shared/interactive-card.styles"
 import { OptimizedImage } from "@/components/shared/OptimizedImage"
-import { buildCompanyLogoThumbPath } from "@/lib/media/build-static-thumb-image"
 import { TechnologyBadges } from "@/features/experiences/components/TechnologyBadges"
 import type { Experience } from "@/features/experiences/constants/experiences.constants"
-import { cn } from "@/lib/utils"
 
 type ExperienceItemProps = {
 	experience: Experience
@@ -20,9 +21,10 @@ export function ExperienceItem({
 }: ExperienceItemProps) {
 	return (
 		<article
+			id={experience.id}
 			className={cn(
 				interactiveListRowClass,
-				"relative flex cursor-default items-start gap-2.5 md:gap-4",
+				"relative flex scroll-mt-24 cursor-default items-start gap-2.5 md:gap-4",
 				interactiveListRowBleedClass
 			)}
 		>
@@ -51,10 +53,7 @@ export function ExperienceItem({
 					{experience.summary}
 				</p>
 				{showTechnologies ? (
-					<TechnologyBadges
-						tags={experience.technologies}
-						className="mt-2"
-					/>
+					<TechnologyBadges tags={experience.technologies} className="mt-2" />
 				) : null}
 			</div>
 		</article>

@@ -18,7 +18,7 @@ export function ExperienceList({
 		<div className={cn("flex flex-col gap-4 md:gap-6", className)}>
 			{experiences.map((experience) => (
 				<ExperienceItem
-					key={experience.company}
+					key={experience.id}
 					experience={experience}
 					showTechnologies={showTechnologies}
 				/>

@@ -2,6 +2,7 @@ import { ME } from "@/constants/me.constants"
 import { formatExperiencePeriod } from "@/features/experiences/helpers/format-experience-period"
 
 export type Experience = {
+	id: string
 	company: string
 	icon: string
 	role: string
@@ -11,6 +12,7 @@ export type Experience = {
 }
 
 export const EXPERIENCES: Experience[] = ME.experiences.map((experience) => ({
+	id: experience.id,
 	company: experience.company,
 	icon: experience.id,
 	role: experience.role,
