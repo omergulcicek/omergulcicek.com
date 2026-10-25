@@ -27,7 +27,10 @@ export function StaggerItem({ children, ...props }: StaggerItemProps) {
 		opacity: 1,
 		y: 0,
 		filter: shouldUseSoftMotion ? "none" : "blur(0px)",
-		transition: shouldUseSoftMotion ? MOTION_SOFT_FADE : MOTION_SPRING_SNAP
+		transition: shouldUseSoftMotion ? MOTION_SOFT_FADE : MOTION_SPRING_SNAP,
+		// Any filter but none makes this a containing block, which pins
+		// position: fixed children (the blog TOC minimap) to the item.
+		transitionEnd: { filter: "none" }
 	}
 
 	return (
