@@ -15,12 +15,12 @@ describe("navigation", () => {
 			"/projects",
 			"/about"
 		])
-		expect(EXPLORE_NAV.map((item) => item.href)).toEqual([
-			"/experiences",
-			"/journey",
-			"/notlar",
-			"/bookmarks",
-			"/setup"
+		expect(EXPLORE_NAV.map((item) => item.label)).toEqual([
+			"Deneyimler",
+			"Kurulum",
+			"Notlar",
+			"Yer İmleri",
+			"Yolculuk"
 		])
 	})
 

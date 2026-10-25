@@ -17,13 +17,14 @@ export const HEADER_NAV: readonly NavItem[] = [
 
 export const EXPLORE_NAV_LABEL = "Keşfet"
 
+/** Secondary pages under Keşfet, always sorted alphabetically by their Turkish label. */
 export const EXPLORE_NAV: readonly NavItem[] = [
 	{ label: "Deneyimler", href: "/experiences" },
-	{ label: "Yolculuk", href: "/journey" },
+	{ label: "Kurulum", href: "/setup" },
 	{ label: "Notlar", href: "/notlar" },
 	{ label: "Yer İmleri", href: "/bookmarks" },
-	{ label: "Kurulum", href: "/setup" }
-]
+	{ label: "Yolculuk", href: "/journey" }
+].sort((left, right) => left.label.localeCompare(right.label, "tr"))
 
 export type MobileDrawerNavItem = NavItem & {
 	icon: LucideIcon
