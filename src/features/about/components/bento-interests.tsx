@@ -20,6 +20,10 @@ import {
 	surfaceDoubleFrameClass
 } from "@/components/shared/interactive-card.styles"
 import { withOutboundUtm } from "@/lib/outbound-url"
+import {
+	cardGridGapClass,
+	cardPaddingClass
+} from "@/components/shared/prose.styles"
 import { cn } from "@/lib/utils"
 
 const HOBBY_COLORS: Record<string, string> = {
@@ -88,7 +92,8 @@ const FAVORITE_ICONS: Record<
 function getInterestCardClassName(colorClass: string, isLink: boolean) {
 	return cn(
 		surfaceDoubleFrameClass,
-		"flex flex-col gap-3 rounded-2xl p-4 md:p-5",
+		"flex flex-col gap-3 rounded-2xl",
+		cardPaddingClass,
 		colorClass || "bg-card/50",
 		isLink &&
 			"group transition-[border-color,box-shadow] hover:border-foreground/10 hover:ring-foreground/8"
@@ -126,7 +131,7 @@ function InterestCard({
 
 export function BentoInterests() {
 	return (
-		<div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+		<div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3", cardGridGapClass)}>
 			{HOBBIES.map((hobby) => {
 				const isLink = Boolean(hobby.href)
 				const visual = HOBBY_ICONS[hobby.id]

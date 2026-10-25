@@ -1,10 +1,12 @@
+import { cardPaddingClass } from "@/components/shared/prose.styles"
 import { cn } from "@/lib/utils"
 
 export const surfaceDoubleFrameClass =
 	"rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-[#fcfcfc] dark:ring-offset-[#0f0f0f]"
 
 export const interactiveCardBaseClass = cn(
-	"group flex flex-col gap-2 p-3 transition-[border-color,box-shadow] duration-150 ease-out md:gap-3 md:p-4",
+	"group flex flex-col gap-2 transition-[border-color,box-shadow] duration-150 ease-out md:gap-3",
+	cardPaddingClass,
 	surfaceDoubleFrameClass
 )
 

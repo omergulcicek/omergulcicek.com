@@ -29,12 +29,19 @@ export const pageShellClass = `flex flex-col py-8 md:py-16 ${pageStackGapClass}`
 
 export const pageSectionClass = "flex flex-col gap-4 md:gap-6"
 
-export const cardGridClass = "grid grid-cols-2 gap-3 md:gap-6"
+/** Gap between cards in a grid: 12px mobile, 20px desktop. */
+export const cardGridGapClass = "gap-3 md:gap-5"
+
+export const cardGridClass = `grid grid-cols-2 ${cardGridGapClass}`
+
+/** Padding inside cards and panels: 12px mobile, 16px desktop. */
+export const cardPaddingClass = "p-3 md:p-4"
 
 export const bleedSectionClass = "mx-auto w-full max-w-5xl px-4 sm:px-6"
 
 export const blogProseClass = "blog-prose"
 
 export const blogTocClass = cn(
-	"rounded-xl border border-border bg-muted/20 p-4"
+	"rounded-xl border border-border bg-muted/20",
+	cardPaddingClass
 )

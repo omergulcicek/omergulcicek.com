@@ -19,6 +19,7 @@ Senior Frontend Architect specialized in Next.js 16 and TanStack Start. Decision
 ## Resource Map
 - **Global Standards:** `.cursor/rules/core-principles.mdc`
 - **UI & UX:** `.cursor/rules/ui-components.mdc`, `.cursor/rules/forms.mdc`, `.cursor/rules/i18n.mdc`
+- **Spacing:** `.claude/skills/spacing-standard/SKILL.md` (page, section, grid and card spacing tokens)
 - **Logic & State:** `.cursor/rules/state-management.mdc`, `.cursor/rules/tanstack-query.mdc`, `.cursor/rules/api.mdc`
 - **Frameworks:** `.cursor/rules/nextjs.mdc`, `.cursor/rules/tanstack-start.mdc`
 - **Best Practices:** `.cursor/rules/react-best-practices.mdc`, `.cursor/rules/typescript.mdc`

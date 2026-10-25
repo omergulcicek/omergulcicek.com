@@ -15,6 +15,7 @@ import {
 } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
 import { withOutboundUtm } from "@/lib/outbound-url"
+import { cardPaddingClass } from "@/components/shared/prose.styles"
 import { cn } from "@/lib/utils"
 
 type BookmarkListRowProps = {
@@ -34,7 +35,8 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 		<article
 			className={cn(
 				interactiveListRowClass,
-				"group relative flex flex-col gap-2 p-2 md:p-3",
+				"group relative flex flex-col gap-2",
+				cardPaddingClass,
 				className
 			)}
 		>

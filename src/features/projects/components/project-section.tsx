@@ -2,7 +2,12 @@
 
 import { LayoutGrid, List } from "lucide-react"
 
-import { cardGridClass } from "@/components/shared/prose.styles"
+import { cn } from "@/lib/utils"
+import {
+	cardGridClass,
+	pageSectionClass,
+	sectionHeadingSpacingClass
+} from "@/components/shared/prose.styles"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { FeaturedProjectCard, FeaturedProjectListItem } from "@/features/projects/components/featured-project-card"
 import { ProjectsSectionHeading } from "@/features/projects/components/project-cards"
@@ -22,9 +27,9 @@ export function ProjectSection({ title, projects, children }: ProjectSectionProp
 		<Tabs 
 			value={viewMode} 
 			onValueChange={(v) => setViewMode(v as ProjectViewMode)}
-			className="w-full flex flex-col gap-4 md:gap-6"
+			className={cn("w-full", pageSectionClass)}
 		>
-			<div className="flex items-center justify-between mt-8 md:mt-12">
+			<div className={cn("flex items-center justify-between", sectionHeadingSpacingClass)}>
 				<ProjectsSectionHeading className="mt-0 md:mt-0">
 					{title}
 				</ProjectsSectionHeading>

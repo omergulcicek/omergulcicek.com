@@ -1,6 +1,10 @@
 import { useCallback, useEffect } from "react"
 
-import { bleedSectionClass, pageStackGapClass } from "@/components/shared/prose.styles"
+import {
+	bleedSectionClass,
+	pageSectionClass,
+	pageStackGapClass
+} from "@/components/shared/prose.styles"
 import { Container } from "@/components/shared/Container"
 import { BookmarksListGrid } from "@/features/bookmarks/components/bookmarks-list-grid"
 import { BookmarksListFilters } from "@/features/bookmarks/components/bookmarks-list-filters"
@@ -146,7 +150,7 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 				/>
 			</Container>
 
-			<div className={cn(bleedSectionClass, "flex flex-col gap-6")}>
+			<div className={cn(bleedSectionClass, pageSectionClass)}>
 				<BookmarksListGrid
 					bookmarks={filteredBookmarks}
 					filterKey={`${category}-${selectedTag ?? "all"}-${selectedGenre ?? "all"}-${selectedSubtag ?? "all"}-${sort ?? "default"}`}
