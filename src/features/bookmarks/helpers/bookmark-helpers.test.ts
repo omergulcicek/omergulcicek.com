@@ -362,7 +362,7 @@ describe("bookmark helpers", () => {
 		expect(isBookmarkSortVisible("library", null)).toBe(true)
 		expect(isBookmarkSortVisible("library", "Osmanlı")).toBe(true)
 		expect(isBookmarkSortVisible("media", null)).toBe(false)
-		expect(isBookmarkSortVisible("media", "Youtube")).toBe(false)
+		expect(isBookmarkSortVisible("media", "YouTube")).toBe(false)
 		expect(isBookmarkSortVisible("media", "Film")).toBe(true)
 		expect(isBookmarkSortVisible("media", "Dizi")).toBe(true)
 	})
@@ -373,7 +373,7 @@ describe("bookmark helpers", () => {
 		expect(resolveBookmarkSort("rating-desc", "library", null)).toBe("author")
 		expect(resolveBookmarkSort(null, "media", "Film")).toBe("rating-desc")
 		expect(resolveBookmarkSort("rating-asc", "media", "Dizi")).toBe("rating-asc")
-		expect(resolveBookmarkSort("title", "media", "Youtube")).toBeNull()
+		expect(resolveBookmarkSort("title", "media", "YouTube")).toBeNull()
 		expect(resolveBookmarkSort("title", "frontend", null)).toBeNull()
 	})
 
@@ -675,42 +675,42 @@ describe("bookmark helpers", () => {
 				title: "Liverpool - Milan",
 				url: "https://example.com/liverpool",
 				categoryId: "media",
-				tags: ["Youtube"]
+				tags: ["YouTube"]
 			},
 			{
 				id: "media-youtube-lmwpop3pulg",
 				title: "Barcelona - Real Madrid",
 				url: "https://example.com/elclasico",
 				categoryId: "media",
-				tags: ["Youtube"]
+				tags: ["YouTube"]
 			},
 			{
 				id: "media-youtube-g-swvee9him",
 				title: "Eternal Fire - Spirit",
 				url: "https://example.com/cs",
 				categoryId: "media",
-				tags: ["Youtube"]
+				tags: ["YouTube"]
 			},
 			{
 				id: "media-youtube-fexzy4evllo",
 				title: "Kobe Bryant: 81 Sayı",
 				url: "https://example.com/kobe",
 				categoryId: "media",
-				tags: ["Youtube"]
+				tags: ["YouTube"]
 			},
 			{
 				id: "media-youtube-5x2yp2wm16i",
 				title: "Mehmed: Fetihler Sultanı 59. Bölüm",
 				url: "https://example.com/mehmed",
 				categoryId: "media",
-				tags: ["Youtube"]
+				tags: ["YouTube"]
 			},
 			{
 				id: "media-youtube-4rpm6g6odvg",
 				title: "Hedef Kızılelma Belgeseli",
 				url: "https://example.com/kizilelma",
 				categoryId: "media",
-				tags: ["Youtube"]
+				tags: ["YouTube"]
 			},
 			{
 				id: "media-film",
@@ -722,14 +722,14 @@ describe("bookmark helpers", () => {
 		]
 
 		expect(getAvailableBookmarkSubtags(mediaBookmarks, "media", null)).toEqual([])
-		expect(getAvailableBookmarkSubtags(mediaBookmarks, "media", "Youtube")).toEqual([
+		expect(getAvailableBookmarkSubtags(mediaBookmarks, "media", "YouTube")).toEqual([
 			"Futbol",
 			"Oyun",
 			"Spor",
 			"Dizi ve Belgesel"
 		])
 		expect(
-			Object.fromEntries(getBookmarkSubtagCounts(mediaBookmarks, "media", "Youtube"))
+			Object.fromEntries(getBookmarkSubtagCounts(mediaBookmarks, "media", "YouTube"))
 		).toEqual({
 			Futbol: 2,
 			Oyun: 1,
@@ -739,21 +739,21 @@ describe("bookmark helpers", () => {
 		expect(
 			applyBookmarkFilters(mediaBookmarks, {
 				categoryId: "media",
-				tag: "Youtube",
+				tag: "YouTube",
 				subtag: "Futbol"
 			}).map((bookmark) => bookmark.title)
 		).toEqual(["Barcelona - Real Madrid", "Liverpool - Milan"])
 		expect(
 			applyBookmarkFilters(mediaBookmarks, {
 				categoryId: "media",
-				tag: "Youtube",
+				tag: "YouTube",
 				subtag: "Spor"
 			}).map((bookmark) => bookmark.title)
 		).toEqual(["Kobe Bryant: 81 Sayı"])
 		expect(
 			applyBookmarkFilters(mediaBookmarks, {
 				categoryId: "media",
-				tag: "Youtube",
+				tag: "YouTube",
 				subtag: "Dizi ve Belgesel"
 			}).map((bookmark) => bookmark.title)
 		).toEqual(["Hedef Kızılelma Belgeseli", "Mehmed: Fetihler Sultanı 59. Bölüm"])

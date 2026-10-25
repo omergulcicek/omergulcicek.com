@@ -43,7 +43,7 @@ const BOOKMARK_TAG_ICON_MAP: Record<string, BookmarkTagIconEntry> = {
 		iconClassName: "text-cyan-600 dark:text-cyan-400"
 	},
 	npm: { icon: Npm },
-	Youtube: { icon: Youtube },
+	YouTube: { icon: Youtube },
 	Dizi: {
 		icon: Clapperboard,
 		iconClassName: "text-rose-500 dark:text-rose-400"

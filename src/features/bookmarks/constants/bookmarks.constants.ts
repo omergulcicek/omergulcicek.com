@@ -1241,7 +1241,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "TheUnComfortZONE",
 			imageUrl: bookmarkImage("media-youtube-cdf6d19etmc"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube--gc2twgghfa",
@@ -1250,7 +1250,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "This Is Football",
 			imageUrl: bookmarkImage("media-youtube--gc2twgghfa"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-rs8xja8ctoq",
@@ -1259,7 +1259,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "GLOBAL BUZZ",
 			imageUrl: bookmarkImage("media-youtube-rs8xja8ctoq"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-6ey6xucwf0y",
@@ -1268,7 +1268,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "rootthegamer",
 			imageUrl: bookmarkImage("media-youtube-6ey6xucwf0y"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-5x2yp2wm16i",
@@ -1277,7 +1277,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Mehmed: Fetihler Sultanı",
 			imageUrl: bookmarkImage("media-youtube-5x2yp2wm16i"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-hvmbmwuheaw",
@@ -1286,7 +1286,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Sky Sports Premier League",
 			imageUrl: bookmarkImage("media-youtube-hvmbmwuheaw"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-m22nwszycce",
@@ -1295,7 +1295,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "ElTerribleProduction",
 			imageUrl: bookmarkImage("media-youtube-m22nwszycce"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-lmwpop3pulg",
@@ -1304,7 +1304,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "LALIGA EA SPORTS",
 			imageUrl: bookmarkImage("media-youtube-lmwpop3pulg"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-4rpm6g6odvg",
@@ -1313,7 +1313,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Baykar Technologies",
 			imageUrl: bookmarkImage("media-youtube-4rpm6g6odvg"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-ueec_ebjgfu",
@@ -1322,7 +1322,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Baykar Technologies",
 			imageUrl: bookmarkImage("media-youtube-ueec_ebjgfu"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-x7158uqk1yi",
@@ -1331,7 +1331,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "FIFA",
 			imageUrl: bookmarkImage("media-youtube-x7158uqk1yi"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-u1oivnfpfii",
@@ -1340,7 +1340,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Raz Ols",
 			imageUrl: bookmarkImage("media-youtube-u1oivnfpfii"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-81txboyjrjw",
@@ -1349,7 +1349,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "UFC Eurasia",
 			imageUrl: bookmarkImage("media-youtube-81txboyjrjw"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-mhsg2m25pzy",
@@ -1358,7 +1358,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Wimbledon",
 			imageUrl: bookmarkImage("media-youtube-mhsg2m25pzy"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-g-swvee9him",
@@ -1367,7 +1367,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "BLAST Premier",
 			imageUrl: bookmarkImage("media-youtube-g-swvee9him"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-uo1chltdryq",
@@ -1376,7 +1376,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Robert Brown",
 			imageUrl: bookmarkImage("media-youtube-uo1chltdryq"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-jqvx5i4cso8",
@@ -1385,7 +1385,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "ESL Counter-Strike",
 			imageUrl: bookmarkImage("media-youtube-jqvx5i4cso8"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-pxygbwx4dks",
@@ -1394,7 +1394,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "Virre CS2",
 			imageUrl: bookmarkImage("media-youtube-pxygbwx4dks"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-ijbde6pkw2o",
@@ -1403,7 +1403,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "GoalGlory Classics",
 			imageUrl: bookmarkImage("media-youtube-ijbde6pkw2o"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-fexzy4evllo",
@@ -1412,7 +1412,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "NBA",
 			imageUrl: bookmarkImage("media-youtube-fexzy4evllo"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	{
 			id: "media-youtube-x4i7ilgmrog",
@@ -1421,7 +1421,7 @@ export const BOOKMARKS: Bookmark[] = [
 			author: "TRT SPOR",
 			imageUrl: bookmarkImage("media-youtube-x4i7ilgmrog"),
 			categoryId: "media",
-			tags: ["Youtube"]
+			tags: ["YouTube"]
 		},
 	...LIBRARY_BOOKMARKS
 ]
@@ -1433,7 +1433,7 @@ export const BOOKMARK_GRID_COLUMN_COUNT = {
 
 export const BOOKMARK_MEDIA_RATING_TAGS = ["Film", "Dizi"] as const
 
-export const YOUTUBE_BOOKMARK_TAG = "Youtube"
+export const YOUTUBE_BOOKMARK_TAG = "YouTube"
 
 export const YOUTUBE_BOOKMARK_SUBTAGS = [
 	"Futbol",
