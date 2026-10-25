@@ -12,8 +12,9 @@ export const interactiveCardBaseClass = cn(
 
 export const interactiveSurfaceBgClass = "bg-surface"
 
+/** Static panels (filters) take a single border; the double frame stays on cards. */
 export const surfacePanelClass = cn(
-	surfaceDoubleFrameClass,
+	"rounded-xl border border-border",
 	interactiveSurfaceBgClass
 )
 
