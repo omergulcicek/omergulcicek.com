@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/features/blog/types/blog.types"
+import type { BlogCategory, BlogPost } from "@/features/blog/types/blog.types"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 
 export type BlogSearchItem = {
@@ -8,9 +8,12 @@ export type BlogSearchItem = {
 	tags: string[]
 }
 
-export function mapPostsToSearchItems(posts: BlogPost[]): BlogSearchItem[] {
+export function mapPostsToSearchItems(
+	posts: BlogPost[],
+	category: BlogCategory
+): BlogSearchItem[] {
 	return posts
-		.filter((post) => post.published)
+		.filter((post) => post.published && post.category === category)
 		.map((post) => ({
 			slug: slugToRouteParam(post.slug),
 			title: post.title,

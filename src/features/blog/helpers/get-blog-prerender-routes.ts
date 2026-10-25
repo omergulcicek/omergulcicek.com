@@ -20,7 +20,7 @@ function canQuerySupabase() {
 }
 
 export async function getBlogPrerenderRoutes(): Promise<string[]> {
-	const routes = ["/blog/"]
+	const routes = ["/blog/", "/notlar/"]
 
 	if (!canQuerySupabase()) {
 		return routes
@@ -42,7 +42,7 @@ export async function getBlogPrerenderRoutes(): Promise<string[]> {
 
 		const { data, error } = await supabase
 			.from("blog_posts")
-			.select("slug")
+			.select("slug, category")
 			.eq("published", true)
 
 		if (error || !data) {
@@ -54,7 +54,8 @@ export async function getBlogPrerenderRoutes(): Promise<string[]> {
 				continue
 			}
 
-			routes.push(`/blog/${slugToRouteParam(row.slug)}`)
+			const section = row.category === "personal" ? "/notlar" : "/blog"
+			routes.push(`${section}/${slugToRouteParam(row.slug)}`)
 		}
 	} catch {
 		return routes

@@ -1,10 +1,15 @@
 import type {
+	BlogCategory,
 	BlogCategoryFilter,
 	BlogPost,
 	BlogSort
 } from "@/features/blog/types/blog.types"
 import { normalizeBlogSlug } from "@/features/blog/helpers/blog-slug"
-import { BLOG_CATEGORY_LABELS } from "@/features/blog/constants/blog.constants"
+import {
+	BLOG_CATEGORY_LABELS,
+	BLOG_SECTIONS
+} from "@/features/blog/constants/blog.constants"
+import type { BlogSection } from "@/features/blog/constants/blog.constants"
 
 export function formatBlogDate(
 	value: string,
@@ -21,6 +26,15 @@ export function formatBlogDate(
 
 export function slugToRouteParam(slug: string) {
 	return slug.replace(/^\//, "")
+}
+
+export function getBlogSection(category: BlogCategory): BlogSection {
+	return BLOG_SECTIONS[category]
+}
+
+/** Technical posts resolve to /blog/{slug}, personal posts to /notlar/{slug}. */
+export function getBlogPostPath(slug: string, category: BlogCategory): string {
+	return `${BLOG_SECTIONS[category].path}/${slugToRouteParam(slug)}`
 }
 
 export function getVisiblePosts(posts: BlogPost[], isDev: boolean) {
@@ -150,6 +164,37 @@ function getTagUsageCounts(posts: BlogPost[]) {
 
 		return counts
 	}, new Map())
+}
+
+/** Returns published posts matching `slugs`, in the order the slugs are listed; unknown slugs are skipped. */
+export function getFeaturedPosts(
+	posts: BlogPost[],
+	slugs: readonly string[]
+): BlogPost[] {
+	const postBySlug = new Map(
+		posts.filter((post) => post.published).map((post) => [post.slug, post])
+	)
+
+	return slugs.flatMap((slug) => {
+		const post = postBySlug.get(slug)
+		return post ? [post] : []
+	})
+}
+
+/** Tag usage counts within the current category and search query. */
+export function getTagCounts(
+	posts: BlogPost[],
+	{
+		category,
+		query
+	}: {
+		category: BlogCategoryFilter
+		query: string | null
+	}
+): Map<string, number> {
+	return getTagUsageCounts(
+		filterPostsByQuery(filterPostsByCategory(posts, category), query)
+	)
 }
 
 export function getAvailableTags(

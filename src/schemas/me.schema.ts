@@ -86,6 +86,8 @@ export const meSchema = z
 		}),
 		experiences: z.array(meExperienceSchema),
 		projects: z.array(meProjectSchema),
+		/** Post slugs shown as featured at the top of /blog, in display order. */
+		featuredPosts: z.array(z.string().startsWith("/")).max(6),
 		hobbies: z.array(meHobbySchema),
 		favorites: z.array(meFavoriteSchema),
 		journey: z.array(meJourneyYearSchema),

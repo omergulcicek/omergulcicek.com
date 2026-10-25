@@ -1,28 +1,28 @@
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
-import { Separator } from "@/components/ui/separator"
 import { surfacePanelClass } from "@/components/shared/interactive-card.styles"
-import { BlogCategoryPills } from "@/features/blog/components/blog-category-pills"
 import { BlogSortControl } from "@/features/blog/components/blog-sort-control"
 import { BlogTagChips } from "@/features/blog/components/blog-tag-chips"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import {
-	blogFilterTagsCollapsedClass,
+	blogFilterPanelClass,
 	blogFilterTagsContainerClass,
-	blogFilterTagsExpandedClass,
-	listFilterPanelClass
+	blogTagsCollapsedClass,
+	blogTagsExpandedClass
 } from "@/features/blog/constants/blog-filter-chip.styles"
-import type { BlogCategory, BlogSort } from "@/features/blog/types/blog.types"
+import type { BlogSort } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
 type BlogListFiltersProps = {
-	category: BlogCategory | null
 	tags: readonly string[]
+	tagCounts: ReadonlyMap<string, number>
+	featuredCount: number
+	isFeaturedActive: boolean
+	onFeaturedToggle: () => void
 	selectedTag: string | null
 	sort: BlogSort
 	showClearFilters: boolean
-	onCategoryChange: (category: BlogCategory | null) => void
 	onTagSelect: (tag: string) => void
 	onSortChange: (sort: BlogSort) => void
 	onClearFilters: () => void
@@ -30,12 +30,14 @@ type BlogListFiltersProps = {
 }
 
 export function BlogListFilters({
-	category,
 	tags,
+	tagCounts,
+	featuredCount,
+	isFeaturedActive,
+	onFeaturedToggle,
 	selectedTag,
 	sort,
 	showClearFilters,
-	onCategoryChange,
 	onTagSelect,
 	onSortChange,
 	onClearFilters,
@@ -49,7 +51,7 @@ export function BlogListFilters({
 
 	useEffect(() => {
 		setTagsExpanded(false)
-	}, [category, tags])
+	}, [tags])
 
 	useEffect(() => {
 		const container = tagsContainerRef.current
@@ -79,56 +81,36 @@ export function BlogListFilters({
 
 	return (
 		<section
-			className={cn(
-				surfacePanelClass,
-				listFilterPanelClass,
-				hasTags ? "gap-2 md:gap-3" : "gap-0",
-				className
-			)}
+			className={cn(surfacePanelClass, blogFilterPanelClass, "gap-2", className)}
 			aria-label={BLOG_UI.filtersAriaLabel}
 		>
-			<div className="flex min-h-8 flex-nowrap items-center justify-between md:min-h-0 md:gap-2">
-				<div className="flex flex-wrap items-center gap-1.5 md:gap-2">
-					<BlogCategoryPills
-						className="gap-1.5 md:gap-2"
-						value={category}
-						onChange={onCategoryChange}
+			<div className="flex items-start gap-2">
+				<div
+					ref={tagsContainerRef}
+					className={cn(
+						"min-w-0 flex-1",
+						blogFilterTagsContainerClass,
+						tagsExpanded ? blogTagsExpandedClass : blogTagsCollapsedClass
+					)}
+				>
+					<BlogTagChips
+						tags={tags}
+						tagCounts={tagCounts}
+						featuredCount={featuredCount}
+						isFeaturedActive={isFeaturedActive}
+						onFeaturedToggle={onFeaturedToggle}
+						selectedTag={selectedTag}
+						onSelect={onTagSelect}
 					/>
-					{showClearFilters ? (
-						<button
-							type="button"
-							className="focus-link text-muted-foreground hover:text-foreground text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
-							onClick={onClearFilters}
-						>
-							{BLOG_UI.clearFilters}
-						</button>
-					) : null}
 				</div>
-				<Separator
-					orientation="vertical"
-					className="mx-0.5 h-5 shrink-0 self-center md:hidden data-[orientation=vertical]:h-5"
-				/>
 				<BlogSortControl
-					className="gap-1.5 md:gap-2"
+					className="-my-1"
 					value={sort}
 					onChange={onSortChange}
 				/>
 			</div>
-			{hasTags ? (
-				<div className="flex flex-col gap-2">
-					<div
-						ref={tagsContainerRef}
-						className={cn(
-							blogFilterTagsContainerClass,
-							tagsExpanded ? blogFilterTagsExpandedClass : blogFilterTagsCollapsedClass
-						)}
-					>
-						<BlogTagChips
-							tags={tags}
-							selectedTag={selectedTag}
-							onSelect={onTagSelect}
-						/>
-					</div>
+			{showTagsToggle || showClearFilters ? (
+				<div className="flex items-center gap-4">
 					{showTagsToggle ? (
 						<button
 							type="button"
@@ -145,6 +127,15 @@ export function BlogListFilters({
 								aria-hidden
 							/>
 							{tagsExpanded ? BLOG_UI.hideTags : BLOG_UI.showTags}
+						</button>
+					) : null}
+					{showClearFilters ? (
+						<button
+							type="button"
+							className="focus-link text-muted-foreground hover:text-foreground text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
+							onClick={onClearFilters}
+						>
+							{BLOG_UI.clearFilters}
 						</button>
 					) : null}
 				</div>

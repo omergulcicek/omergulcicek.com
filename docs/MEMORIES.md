@@ -21,7 +21,7 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 - **Slug:** Başında `/` — örn. `/react-ai-stack-2026`.
 - **Yayın:** `published` boolean manuel; cron ve `published_at <= now()` yok.
 - **Taslaklar:** `published = false` — development'ta listede; production'da gizli (eski futurePosts).
-- **Blog filtre:** Kategori pill + tag chip (kesin). Sıralama: `newest` / `oldest` only.
+- **Blog / Notlar:** Teknik yazılar `/blog`, kişisel yazılar `/notlar` (`BLOG_SECTIONS`). Kategori pill yok; tag chip + sayı, sıralama tek ok düğmesi (`newest` / `oldest`). Öne çıkan yazılar `me.json` → `featuredPosts`.
 - **Blog TOC:** chanhdai minimap (kesin).
 - **Blog görselleri:** Aşamalı — `local` (`public/blog/`) → `supabase` → `supabase-transform`; `getMediaUrl` + `VITE_MEDIA_PROVIDER`.
 - **MDX tam set:** Faz 4; Faz 3 yalnızca temel render.
@@ -37,5 +37,6 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 - 2026-06 — Blog görselleri aşamalı medya sağlayıcı: `src/lib/media/`, varsayılan `local`.
 - 2026-06-29 — `SITE-CONTENT.md` tamamlandı (footer, SEO, hata sayfaları). `BOOKMARKS.md` 7 kategori SSOT. Faz haritası güncellendi (MDX/SEO Faz 4, cila Faz 5).
 - 2026-07-04 — **Faz 6** eklendi: SEO ve Lighthouse performans iyileştirmeleri (CI eşikleri, görsel/bundle optimizasyonu, kullanıcı incelemesi).
+- 2026-10-25 — Blog ikiye bölündü: `/blog` (teknik) ve `/notlar` (kişisel), 301 yönlendirmeler, ayrı RSS (`/feed.xml`, `/notlar/feed.xml`). Arama ve tema header'a taşındı; ilk yüklemede giriş animasyonu kapalı (`useSkipInitialMotion`).
 - 2026-10-25 — Redesign Faz 1–2: metin SSOT `src/constants/me.json` (kişi, iletişim, site/repo, deneyimler + özetler, projeler, hobiler, favoriler, Yolculuk, ilkeler, kullanılan teknolojiler; `me.constants.ts` içinde `src/schemas/me.schema.ts` ile doğrulanır) + `src/constants/site-copy.constants.ts` (sayfa metinleri). Hizmetler kaldırıldı (`/services` → 301 `/about`); header'a Keşfet menüsü eklendi. Akademi ViraStack'e taşındı (`/academy/*` → 301 virastack.com/academy). Ana sayfa blogu yalnızca teknik yazılar.
 - 2026-06-29 — Header rose ikonu (metin yok); footer iki sütun; hero + bölüm başlıkları 16px tipografi kararları.

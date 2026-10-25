@@ -8,6 +8,7 @@ const NEIGHBOUR_COLUMNS = "slug, title"
 type BlogPostOrderAnchor = {
 	slug: string
 	published_at: string | null
+	category: string
 }
 
 type FetchBlogPostNeighboursOptions = {
@@ -16,8 +17,16 @@ type FetchBlogPostNeighboursOptions = {
 	isDev: boolean
 }
 
-function createNeighbourQuery(supabase: SupabaseClient, isDev: boolean) {
-	let query = supabase.from("blog_posts").select(NEIGHBOUR_COLUMNS)
+/** Neighbours stay within the anchor's category so /blog and /notlar never link across. */
+function createNeighbourQuery(
+	supabase: SupabaseClient,
+	isDev: boolean,
+	category: string
+) {
+	let query = supabase
+		.from("blog_posts")
+		.select(NEIGHBOUR_COLUMNS)
+		.eq("category", category)
 
 	if (!isDev) {
 		query = query.eq("published", true)
@@ -33,7 +42,7 @@ async function fetchAnchor({
 }: FetchBlogPostNeighboursOptions): Promise<BlogPostOrderAnchor | null> {
 	let query = supabase
 		.from("blog_posts")
-		.select("slug, published_at")
+		.select("slug, published_at, category")
 		.eq("slug", slug)
 
 	if (!isDev) {
@@ -55,7 +64,7 @@ async function fetchPreviousNeighbour(
 	isDev: boolean
 ) {
 	if (anchor.published_at) {
-		const newerByDate = await createNeighbourQuery(supabase, isDev)
+		const newerByDate = await createNeighbourQuery(supabase, isDev, anchor.category)
 			.gt("published_at", anchor.published_at)
 			.order("published_at", { ascending: true, nullsFirst: false })
 			.order("slug", { ascending: true })
@@ -72,7 +81,7 @@ async function fetchPreviousNeighbour(
 			return newerByDate.data
 		}
 
-		const newerBySlug = await createNeighbourQuery(supabase, isDev)
+		const newerBySlug = await createNeighbourQuery(supabase, isDev, anchor.category)
 			.eq("published_at", anchor.published_at)
 			.gt("slug", anchor.slug)
 			.order("slug", { ascending: true })
@@ -88,7 +97,7 @@ async function fetchPreviousNeighbour(
 		return newerBySlug.data
 	}
 
-	const newerAmongNullDates = await createNeighbourQuery(supabase, isDev)
+	const newerAmongNullDates = await createNeighbourQuery(supabase, isDev, anchor.category)
 		.is("published_at", null)
 		.gt("slug", anchor.slug)
 		.order("slug", { ascending: true })
@@ -110,7 +119,7 @@ async function fetchNextNeighbour(
 	isDev: boolean
 ) {
 	if (anchor.published_at) {
-		const olderByDate = await createNeighbourQuery(supabase, isDev)
+		const olderByDate = await createNeighbourQuery(supabase, isDev, anchor.category)
 			.lt("published_at", anchor.published_at)
 			.order("published_at", { ascending: false, nullsFirst: false })
 			.order("slug", { ascending: false })
@@ -127,7 +136,7 @@ async function fetchNextNeighbour(
 			return olderByDate.data
 		}
 
-		const olderBySlug = await createNeighbourQuery(supabase, isDev)
+		const olderBySlug = await createNeighbourQuery(supabase, isDev, anchor.category)
 			.eq("published_at", anchor.published_at)
 			.lt("slug", anchor.slug)
 			.order("slug", { ascending: false })
@@ -143,7 +152,7 @@ async function fetchNextNeighbour(
 		return olderBySlug.data
 	}
 
-	const olderAmongNullDates = await createNeighbourQuery(supabase, isDev)
+	const olderAmongNullDates = await createNeighbourQuery(supabase, isDev, anchor.category)
 		.is("published_at", null)
 		.lt("slug", anchor.slug)
 		.order("slug", { ascending: false })

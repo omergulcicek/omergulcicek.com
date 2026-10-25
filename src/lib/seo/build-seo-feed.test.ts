@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 
 import { buildRssFeedXml } from "@/lib/seo/build-rss-feed-xml"
 import { buildSitemapXml } from "@/lib/seo/build-sitemap-xml"
+import { BLOG_SECTIONS } from "@/features/blog/constants/blog.constants"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 
 const samplePost: BlogPost = {
@@ -43,15 +44,44 @@ describe("buildSitemapXml", () => {
 
 describe("buildRssFeedXml", () => {
 	it("includes published posts only", () => {
-		const xml = buildRssFeedXml([
-			samplePost,
-			{ ...samplePost, published: false, slug: "/draft", title: "Draft" }
-		])
+		const xml = buildRssFeedXml(
+			[
+				samplePost,
+				{ ...samplePost, published: false, slug: "/draft", title: "Draft" }
+			],
+			BLOG_SECTIONS.technical
+		)
 
 		expect(xml).toContain("<title>Sample Post</title>")
 		expect(xml).not.toContain("<title>Draft</title>")
 		expect(xml).toContain('rel="self"')
 		expect(xml).toContain("<enclosure")
 		expect(xml).toContain("https://omergulcicek.com/og/blog/sample-post")
+	})
+
+	it("keeps personal posts in the Notlar feed", () => {
+		const posts = [
+			samplePost,
+			{ ...samplePost, category: "personal" as const, slug: "/note", title: "Note" }
+		]
+		const blogXml = buildRssFeedXml(posts, BLOG_SECTIONS.technical)
+		const notesXml = buildRssFeedXml(posts, BLOG_SECTIONS.personal)
+
+		expect(blogXml).not.toContain("<title>Note</title>")
+		expect(notesXml).toContain("<link>https://omergulcicek.com/notlar/note</link>")
+		expect(notesXml).not.toContain("<title>Sample Post</title>")
+		expect(notesXml).toContain("https://omergulcicek.com/notlar/feed.xml")
+	})
+})
+
+describe("buildSitemapXml sections", () => {
+	it("lists personal posts under /notlar", () => {
+		const xml = buildSitemapXml([
+			{ ...samplePost, category: "personal", slug: "/note" }
+		])
+
+		expect(xml).toContain("https://omergulcicek.com/notlar/note</loc>")
+		expect(xml).toContain("https://omergulcicek.com/notlar</loc>")
+		expect(xml).not.toContain("https://omergulcicek.com/blog/note</loc>")
 	})
 })

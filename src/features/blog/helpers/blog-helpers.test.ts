@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest"
 
 import {
+	getBlogPostPath,
+	getFeaturedPosts,
 	applyBlogFilters,
 	filterPostsByCategory,
 	findBlogNeighbours,
@@ -107,5 +109,26 @@ describe("blog helpers", () => {
 
 		expect(filtered).toHaveLength(1)
 		expect(filtered[0]?.slug).toBe("/post-a")
+	})
+})
+
+describe("getBlogPostPath", () => {
+	it("routes technical posts to /blog and personal posts to /notlar", () => {
+		expect(getBlogPostPath("/react-state", "technical")).toBe("/blog/react-state")
+		expect(getBlogPostPath("/satranc", "personal")).toBe("/notlar/satranc")
+	})
+})
+
+describe("getFeaturedPosts", () => {
+	it("keeps the configured order and skips unknown or draft slugs", () => {
+		const posts = [
+			{ ...samplePosts[0], slug: "/a", published: true },
+			{ ...samplePosts[0], slug: "/b", published: true },
+			{ ...samplePosts[0], slug: "/draft", published: false }
+		]
+
+		expect(
+			getFeaturedPosts(posts, ["/b", "/missing", "/draft", "/a"]).map((post) => post.slug)
+		).toEqual(["/b", "/a"])
 	})
 })

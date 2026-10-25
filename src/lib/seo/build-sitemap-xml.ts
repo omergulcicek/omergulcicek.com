@@ -1,5 +1,5 @@
 import { SITE } from "@/constants/site.constants"
-import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { STATIC_SITEMAP_PAGES } from "@/lib/seo/page-seo.constants"
 
@@ -42,7 +42,7 @@ export function buildSitemapXml(posts: BlogPost[]): string {
 		.filter((post) => post.published)
 		.map((post) =>
 			buildUrlEntry(
-				`${SITE.url}/blog/${slugToRouteParam(post.slug)}`,
+				`${SITE.url}${getBlogPostPath(post.slug, post.category)}`,
 				"monthly",
 				0.6,
 				post.publishedAt

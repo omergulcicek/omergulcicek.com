@@ -1,6 +1,6 @@
 # omergulcicek.com — Site İçerikleri
 
-> **2026-10-25'ten itibaren metin SSOT koddadır:** olgular, projeler, deneyimler, Yolculuk, hobiler, favoriler ve teknoloji seçimleri `src/constants/me.json` (`me.constants.ts` içinde `src/schemas/me.schema.ts` ile doğrulanır), sayfa metinleri `src/constants/site-copy.constants.ts`, UI kalıpları `src/constants/site-content.constants.ts`. Bu dosya kararları özetler; metin değişikliği önce koda girer. Hizmetler sayfası kaldırıldı (`/services` → 301 `/about#birlikte-calisalim`). Akademi ViraStack'e taşındı (`/academy/*` → 301 `https://virastack.com/academy`). Diğer SSOT'lar: Yer İmleri → `docs/BOOKMARKS.md` · Arama → `docs/SEARCH.md`.
+> **2026-10-25'ten itibaren metin SSOT koddadır:** olgular, projeler, deneyimler, Yolculuk, hobiler, favoriler ve teknoloji seçimleri `src/constants/me.json` (`me.constants.ts` içinde `src/schemas/me.schema.ts` ile doğrulanır), sayfa metinleri `src/constants/site-copy.constants.ts`, UI kalıpları `src/constants/site-content.constants.ts`. Bu dosya kararları özetler; metin değişikliği önce koda girer. Hizmetler sayfası kaldırıldı (`/services` → 301 `/about#birlikte-calisalim`). Akademi ViraStack'e taşındı (`/academy/*` → 301 `https://virastack.com/academy`). Kişisel yazılar `/notlar` altında; `/blog/<kişisel>` → 301 `/notlar/<slug>`. Diğer SSOT'lar: Yer İmleri → `docs/BOOKMARKS.md` · Arama → `docs/SEARCH.md`.
 
 ---
 
@@ -19,12 +19,12 @@
 | Ana Sayfa | `/`         |
 | Blog      | `/blog`     |
 | Projeler  | `/projects` |
-| Yer İmleri | `/bookmarks` |
-| Keşfet ▾  | Hakkımda `/about` · Deneyimler `/experiences` · Yolculuk `/journey` · Kurulum `/setup` |
+| Hakkımda  | `/about`    |
+| Keşfet ▾  | Deneyimler `/experiences` · Yolculuk `/journey` · Notlar `/notlar` · Yer İmleri `/bookmarks` · Kurulum `/setup` |
 
-Keşfet bir açılır menüdür (`src/components/shared/explore-nav-menu.tsx`, `EXPLORE_NAV`). Mobil menü ve ⌘K arama `HEADER_NAV` + `EXPLORE_NAV` listesini düz kullanır.
+Keşfet bir açılır menüdür (`src/components/shared/explore-nav-menu.tsx`, `EXPLORE_NAV`); header'daki diğer linkler gibi ikonsuzdur. Mobil menü ve ⌘K arama `HEADER_NAV` + `EXPLORE_NAV` listesini düz kullanır.
 
-Header'da ayrıca: tema düğmesi + ⌘K arama + **GitHub ikonu** (`IconLinkButton` → `EXTERNAL_LINKS.github`, `aria-label`: GitHub profilini ziyaret et). Hero'da da sosyal linkler (`SocialLinks`) bulunur.
+Header'da ayrıca (sağda): **Ara ⌘K** düğmesi, tema düğmesi ve **GitHub ikonu**; alttaki bar kaldırıldı, sağ altta kaydırma göstergesi var (`IconLinkButton` → `EXTERNAL_LINKS.github`, `aria-label`: GitHub profilini ziyaret et). Hero'da da sosyal linkler (`SocialLinks`) bulunur.
 
 **Unvan (kesin):** `Frontend Mühendisi` (`ME.personal.title`) — hero, SEO, metadata. Frontend Architect hedef; unvan olarak yazılmaz.
 

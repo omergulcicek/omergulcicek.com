@@ -2,6 +2,11 @@ import { useQuery } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 import { Bookmark, ExternalLink, FolderOpen, Quote, Search } from "lucide-react"
 
+import { SITE_CONTENT } from "@/constants/site-content.constants"
+
+import { withOutboundUtm } from "@/lib/outbound-url"
+import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
+
 import { Button } from "@/components/ui/button"
 import {
 	CommandDialog,
@@ -11,12 +16,11 @@ import {
 	CommandItem,
 	CommandList
 } from "@/components/ui/command"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
+import { BLOG_SECTION_LIST } from "@/features/blog/constants/blog.constants"
 import { mapPostsToSearchItems } from "@/features/blog/helpers/map-posts-to-search-items"
+import type { BlogCategory } from "@/features/blog/types/blog.types"
 import { useCommandPalette } from "@/features/search/components/command-palette-provider"
-import { withOutboundUtm } from "@/lib/outbound-url"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
 import {
 	SEARCH_ACTIONS,
 	SEARCH_BOOKMARK_CATEGORIES,
@@ -24,36 +28,9 @@ import {
 	SEARCH_PROJECTS
 } from "@/features/search/constants/search.constants"
 
-type CommandPaletteTriggerProps = {
-	variant?: "default" | "dock"
-}
-
-export function CommandPaletteTrigger({
-	variant = "default"
-}: CommandPaletteTriggerProps) {
+/** Header search button: icon on mobile, label and ⌘K hint from `sm` up. */
+export function CommandPaletteTrigger() {
 	const { setOpen } = useCommandPalette()
-
-	if (variant === "dock") {
-		return (
-			<Button
-				type="button"
-				variant="ghost"
-				size="sm"
-				onClick={() => setOpen(true)}
-				aria-label={SITE_CONTENT.siteDockSearchAria}
-				className="h-7 min-w-7 gap-1.5 rounded-full bg-muted px-2.5 text-xs font-medium text-muted-foreground hover:bg-muted/80 hover:text-foreground dark:hover:bg-muted/80"
-			>
-				<Search className="size-3.5 shrink-0" />
-				<span className="hidden max-w-36 truncate sm:inline">
-					{SITE_CONTENT.siteDockSearchLabel}
-				</span>
-				<kbd className="bg-muted/80 text-muted-foreground pointer-events-none inline-flex h-4 items-center gap-0.5 rounded border px-1 font-mono text-xs font-medium leading-none">
-					<span>⌘</span>
-					<span>K</span>
-				</kbd>
-			</Button>
-		)
-	}
 
 	return (
 		<Button
@@ -61,10 +38,12 @@ export function CommandPaletteTrigger({
 			variant="outline"
 			size="sm"
 			onClick={() => setOpen(true)}
-			className="mr-2 h-8 gap-2 rounded-full pr-2 pl-2.5 font-medium shadow-sm"
+			aria-label={SITE_CONTENT.searchTriggerAria}
+			className="text-muted-foreground hover:text-foreground h-8 gap-1.5 rounded-lg border-border/70 px-2.5 text-sm font-normal shadow-none"
 		>
-			<Search className="size-4 text-muted-foreground" />
-			<kbd className="bg-background text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-0.5 rounded border px-1.5 font-mono text-xs font-medium">
+			<Search className="size-4 shrink-0" aria-hidden />
+			<span className="hidden sm:inline">{SITE_CONTENT.searchTriggerLabel}</span>
+			<kbd className="bg-muted text-muted-foreground pointer-events-none hidden h-5 items-center gap-0.5 rounded border px-1 font-mono text-[11px] font-medium leading-none sm:inline-flex">
 				<span>⌘</span>
 				<span>K</span>
 			</kbd>
@@ -79,7 +58,26 @@ export function CommandPaletteDialog() {
 		...blogPostsQueryOptions(),
 		enabled: open
 	})
-	const searchBlogPosts = mapPostsToSearchItems(blogPosts)
+	const searchSections = BLOG_SECTION_LIST.map((section) => ({
+		section,
+		posts: mapPostsToSearchItems(blogPosts, section.category)
+	}))
+	const openPost = (category: BlogCategory, slug: string) => {
+		if (category === "personal") {
+			void navigate({
+				to: "/notlar/$slug",
+				params: { slug },
+				viewTransition: false
+			})
+			return
+		}
+
+		void navigate({
+			to: "/blog/$slug",
+			params: { slug },
+			viewTransition: false
+		})
+	}
 
 	const runCommand = (command: () => void) => {
 		setOpen(false)
@@ -128,31 +126,27 @@ export function CommandPaletteDialog() {
 						</CommandItem>
 					))}
 				</CommandGroup>
-				<CommandGroup heading={SITE_CONTENT.commandGroups.blog}>
-					{searchBlogPosts.map((post) => (
-						<CommandItem
-							key={post.slug}
-							value={`${post.title} ${post.description} ${post.tags.join(" ")}`}
-							onSelect={() =>
-								runCommand(() => {
-									void navigate({
-										to: "/blog/$slug",
-										params: { slug: post.slug },
-										viewTransition: false
-									})
-								})
-							}
-						>
-							<Quote className="size-3.5 text-muted-foreground" />
-							<div className="flex min-w-0 flex-1 flex-col">
-								<span>{post.title}</span>
-								<span className="truncate text-[11px] text-muted-foreground">
-									{post.description}
-								</span>
-							</div>
-						</CommandItem>
-					))}
-				</CommandGroup>
+				{searchSections.map(({ section, posts }) => (
+					<CommandGroup key={section.category} heading={section.title}>
+						{posts.map((post) => (
+							<CommandItem
+								key={post.slug}
+								value={`${post.title} ${post.description} ${post.tags.join(" ")}`}
+								onSelect={() =>
+									runCommand(() => openPost(section.category, post.slug))
+								}
+							>
+								<Quote className="size-3.5 text-muted-foreground" />
+								<div className="flex min-w-0 flex-1 flex-col">
+									<span>{post.title}</span>
+									<span className="truncate text-[11px] text-muted-foreground">
+										{post.description}
+									</span>
+								</div>
+							</CommandItem>
+						))}
+					</CommandGroup>
+				))}
 				<CommandGroup heading={SITE_CONTENT.commandGroups.projects}>
 					{SEARCH_PROJECTS.map((project) => (
 						<CommandItem

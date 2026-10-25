@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 import { getBlogRepository } from "@/features/blog/repositories"
+import { BLOG_SECTIONS } from "@/features/blog/constants/blog.constants"
 import { buildRssFeedXml } from "@/lib/seo/build-rss-feed-xml"
 
 export const Route = createFileRoute("/feed.xml")({
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/feed.xml")({
 		handlers: {
 			GET: async () => {
 				const posts = await getBlogRepository(false).getAllPosts()
-				const xml = buildRssFeedXml(posts)
+				const xml = buildRssFeedXml(posts, BLOG_SECTIONS.technical)
 
 				return new Response(xml, {
 					headers: {

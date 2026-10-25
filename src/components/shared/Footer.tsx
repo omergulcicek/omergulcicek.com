@@ -25,7 +25,7 @@ export function Footer() {
 	return (
 		<footer
 			className={cn(
-				"mt-12 border-t pb-[calc(2.75rem+max(0.75rem,env(safe-area-inset-bottom)))] md:mt-20",
+				"mt-12 border-t pb-[max(1rem,env(safe-area-inset-bottom))] md:mt-20",
 				interactiveSurfaceBgClass
 			)}
 		>

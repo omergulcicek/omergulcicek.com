@@ -1,4 +1,5 @@
 import { SITE } from "@/constants/site.constants"
+import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
 import { computeReadingTimeMinutes } from "@/features/blog/helpers/compute-reading-time"
 import type {
 	BlogPostListRow,
@@ -36,7 +37,7 @@ export function mapBlogPostListRow(row: BlogPostListRow): BlogPost {
 		publishedAt: formatPublishedAt(row.published_at),
 		interactive: row.interactive,
 		mediumUrl: row.medium_url ?? undefined,
-		canonicalUrl: `${SITE.url}/blog${slug}`
+		canonicalUrl: `${SITE.url}${getBlogPostPath(slug, row.category)}`
 	}
 }
 

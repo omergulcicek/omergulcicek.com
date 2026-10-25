@@ -2,7 +2,7 @@ import type { ReactNode } from "react"
 
 import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
-import { SiteDock } from "@/components/shared/site-dock"
+import { ScrollToTopIndicator } from "@/components/shared/scroll-to-top-indicator"
 import { MotionEnvironmentBoot } from "@/lib/motion/motion-environment-boot"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { CommandPaletteProvider } from "@/features/search/components/command-palette-provider"
@@ -25,7 +25,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 						{children}
 					</main>
 					<Footer />
-					<SiteDock />
+					<ScrollToTopIndicator />
 					<CommandPaletteDialog />
 				</div>
 				<MotionEnvironmentBoot />

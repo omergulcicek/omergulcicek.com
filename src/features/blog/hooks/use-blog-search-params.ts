@@ -1,105 +1,57 @@
-import { useEffect, useRef } from "react"
 import {
+	parseAsBoolean,
 	parseAsString,
 	parseAsStringLiteral,
-	useQueryState,
 	useQueryStates
 } from "nuqs"
 
-import type { BlogCategory, BlogSort } from "@/features/blog/types/blog.types"
-
-const blogCategoryParser = parseAsStringLiteral(["technical", "personal"])
+import type { BlogSort } from "@/features/blog/types/blog.types"
 
 const blogSortParser = parseAsStringLiteral(["newest", "oldest"]).withDefault(
 	"newest"
 )
 
-const blogTagParser = parseAsString
-
-const blogQueryParser = parseAsString
-
 const blogFilterHistory = { history: "push" as const }
-
-export const blogSearchParamsParsers = {
-	category: blogCategoryParser,
-	tag: blogTagParser,
-	sort: blogSortParser,
-	q: blogQueryParser
-}
-
-export function useBlogCategoryParam() {
-	return useQueryState("category", blogCategoryParser)
-}
-
-export function useBlogTagParam() {
-	return useQueryState("tag", blogTagParser)
-}
-
-export function useBlogSortParam() {
-	return useQueryState("sort", blogSortParser)
-}
 
 const blogSubFilterReset = { history: "replace" as const }
 
+export const blogSearchParamsParsers = {
+	tag: parseAsString,
+	featured: parseAsBoolean.withDefault(false),
+	sort: blogSortParser,
+	q: parseAsString
+}
+
+/** Legacy `?category=` links on /blog are redirected to the matching section. */
+export const blogIndexSearchParamsParsers = {
+	...blogSearchParamsParsers,
+	category: parseAsStringLiteral(["technical", "personal"])
+}
+
 export function useBlogSearchParams() {
 	const [params, setParams] = useQueryStates(blogSearchParamsParsers)
-	const prevCategoryRef = useRef<BlogCategory | null | undefined>(undefined)
-	const tag = params.tag ?? null
-	const query = params.q ?? null
-	const category = (params.category ?? null) as BlogCategory | null
-
-	const clearSubFilters = () =>
-		setParams({ tag: null, sort: null }, blogSubFilterReset)
-
-	useEffect(() => {
-		if (prevCategoryRef.current === undefined) {
-			prevCategoryRef.current = category
-			return
-		}
-
-		if (prevCategoryRef.current === category) {
-			return
-		}
-
-		prevCategoryRef.current = category
-
-		if (tag === null && params.sort === "newest") {
-			return
-		}
-
-		void setParams({ tag: null, sort: null }, blogSubFilterReset)
-	}, [category, params.sort, setParams, tag])
 
 	return {
-		category,
-		tag,
+		tag: params.tag ?? null,
+		featured: params.featured,
 		sort: params.sort as BlogSort,
-		query,
-		setCategory: (nextCategory: BlogCategory | null) => {
-			if (nextCategory === category) {
-				return
-			}
-
+		query: params.q ?? null,
+		setSort: (nextSort: BlogSort) =>
+			setParams({ sort: nextSort }, blogFilterHistory),
+		selectTag: (nextTag: string) => {
 			setParams(
-				{ category: nextCategory, tag: null, sort: null },
+				{ tag: params.tag === nextTag ? null : nextTag, featured: null },
 				blogFilterHistory
 			)
 		},
-		setTag: (nextTag: string | null) =>
-			setParams({ tag: nextTag }, blogFilterHistory),
-		setSort: (nextSort: BlogSort) =>
-			setParams({ sort: nextSort }, blogFilterHistory),
-		setQuery: (q: string | null) => setParams({ q }),
-		selectTag: (nextTag: string) => {
-			setParams({ tag: tag === nextTag ? null : nextTag }, blogFilterHistory)
+		toggleFeatured: () => {
+			setParams(
+				{ featured: params.featured ? null : true, tag: null },
+				blogFilterHistory
+			)
 		},
-		clearSubFilters,
+		clearTag: () => setParams({ tag: null }, blogSubFilterReset),
 		clearFilters: () =>
-			setParams({
-				category: null,
-				tag: null,
-				q: null,
-				sort: null
-			})
+			setParams({ tag: null, featured: null, q: null, sort: null })
 	}
 }

@@ -1,10 +1,7 @@
+import { ArrowDownWideNarrow, ArrowUpNarrowWide } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
-import {
-	BLOG_SORT_LABELS,
-	BLOG_SORT_OPTIONS,
-	BLOG_UI
-} from "@/features/blog/constants/blog.constants"
-import { blogFilterChipDesktopClass } from "@/features/blog/constants/blog-filter-chip.styles"
+import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import type { BlogSort } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
@@ -19,29 +16,23 @@ export function BlogSortControl({
 	onChange,
 	className
 }: BlogSortControlProps) {
-	return (
-		<div
-			className={cn("flex flex-wrap gap-2", className)}
-			role="group"
-			aria-label={BLOG_UI.sortAriaLabel}
-		>
-			{BLOG_SORT_OPTIONS.map((option) => {
-				const isActive = value === option
+	const Icon = value === "newest" ? ArrowDownWideNarrow : ArrowUpNarrowWide
+	const label = BLOG_UI.sortToggleLabel[value]
 
-				return (
-					<Button
-						key={option}
-						type="button"
-						size="xs"
-						variant={isActive ? "secondary" : "outline"}
-						aria-pressed={isActive}
-						className={blogFilterChipDesktopClass}
-						onClick={() => onChange(option)}
-					>
-						{BLOG_SORT_LABELS[option]}
-					</Button>
-				)
-			})}
-		</div>
+	return (
+		<Button
+			type="button"
+			size="icon-sm"
+			variant="ghost"
+			aria-label={label}
+			title={label}
+			className={cn(
+				"text-muted-foreground hover:text-foreground shrink-0 transition-transform duration-150 ease-out active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100",
+				className
+			)}
+			onClick={() => onChange(value === "newest" ? "oldest" : "newest")}
+		>
+			<Icon aria-hidden />
+		</Button>
 	)
 }

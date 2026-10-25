@@ -3,12 +3,15 @@ import { Button } from "@/components/ui/button"
 import { BlogEmptyState } from "@/features/blog/components/blog-empty-state"
 import { BlogListFilters } from "@/features/blog/components/blog-list-filters"
 import { BlogListPostRow } from "@/features/blog/components/blog-list-post-row"
-import { BLOG_TAG_POOL, BLOG_UI } from "@/features/blog/constants/blog.constants"
+import { BLOG_UI } from "@/features/blog/constants/blog.constants"
+import type { BlogSection } from "@/features/blog/constants/blog.constants"
 import {
 	applyBlogFilters,
 	canClearBlogFilters,
 	getAvailableTags,
+	getFeaturedPosts,
 	getSortedYearEntries,
+	getTagCounts,
 	partitionDraftPosts
 } from "@/features/blog/helpers/blog-helpers"
 import { useBlogSearchParams } from "@/features/blog/hooks/use-blog-search-params"
@@ -19,41 +22,56 @@ import { slugifyHeading } from "@/lib/slugify-heading"
 import { cn } from "@/lib/utils"
 
 type BlogListProps = {
+	section: BlogSection
 	posts: BlogPost[]
 	isDev?: boolean
 	className?: string
 }
 
-export function BlogList({ posts, isDev = false, className }: BlogListProps) {
+export function BlogList({
+	section,
+	posts,
+	isDev = false,
+	className
+}: BlogListProps) {
 	const {
-		category,
 		tag,
+		featured,
 		sort,
 		query,
-		setCategory,
 		setSort,
 		selectTag,
+		toggleFeatured,
 		clearFilters,
-		clearSubFilters
+		clearTag
 	} = useBlogSearchParams()
+	const { category } = section
 
-	const availableTags = getAvailableTags(posts, BLOG_TAG_POOL, {
+	const availableTags = getAvailableTags(posts, section.tagPool, {
 		category,
 		query
 	})
+	const tagCounts = getTagCounts(posts, { category, query })
+	const featuredSlugs = new Set(
+		getFeaturedPosts(posts, section.featuredSlugs).map((post) => post.slug)
+	)
 
 	useEffect(() => {
 		if (tag && !availableTags.includes(tag)) {
-			void clearSubFilters()
+			void clearTag()
 		}
-	}, [availableTags, clearSubFilters, tag])
-	const filteredPosts = applyBlogFilters(posts, {
+	}, [availableTags, clearTag, tag])
+	const sectionFilteredPosts = applyBlogFilters(posts, {
 		category,
 		tag,
 		query,
 		sort
 	})
-	const showClearFilters = canClearBlogFilters({ category, tag, query, sort })
+	const filteredPosts = featured
+		? sectionFilteredPosts.filter((post) => featuredSlugs.has(post.slug))
+		: sectionFilteredPosts
+	const showClearFilters =
+		featured || canClearBlogFilters({ category: null, tag, query, sort })
 	const { drafts, published } = partitionDraftPosts(filteredPosts)
 	const yearEntries = getSortedYearEntries(published, sort)
 	const flatPublished = useMemo(
@@ -63,32 +81,72 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 	const [visiblePostCount, setVisiblePostCount] = useState<number>(
 		BLOG_UI.initialVisiblePosts
 	)
+	const [pendingYear, setPendingYear] = useState<string | null>(null)
 
 	useEffect(() => {
 		setVisiblePostCount(BLOG_UI.initialVisiblePosts)
-	}, [category, tag, query, sort])
+	}, [tag, featured, query, sort])
 
 	const visiblePublishedSlugs = useMemo(
 		() => new Set(flatPublished.slice(0, visiblePostCount).map((post) => post.slug)),
 		[flatPublished, visiblePostCount]
 	)
 	const hasMorePosts = flatPublished.length > visiblePostCount
+
+	const jumpToYear = (year: string) => {
+		const lastIndexOfYear = flatPublished.reduce(
+			(lastIndex, post, index) =>
+				post.publishedAt.startsWith(year) ? index : lastIndex,
+			-1
+		)
+
+		setVisiblePostCount((count) => Math.max(count, lastIndexOfYear + 1))
+		setPendingYear(year)
+	}
+
+	useEffect(() => {
+		if (!pendingYear) {
+			return
+		}
+
+		document.getElementById(pendingYear)?.scrollIntoView({ block: "start" })
+		setPendingYear(null)
+	}, [pendingYear, visiblePostCount])
 	const showDrafts = isDev && drafts.length > 0
-	const hasLeadSection = showDrafts
 
 	return (
 		<div className={cn("flex flex-col", pageStackGapClass, className)}>
 			<BlogListFilters
-				category={category}
 				tags={availableTags}
+				tagCounts={tagCounts}
+				featuredCount={featuredSlugs.size}
+				isFeaturedActive={featured}
+				onFeaturedToggle={toggleFeatured}
 				selectedTag={tag}
 				sort={sort}
 				showClearFilters={showClearFilters}
-				onCategoryChange={setCategory}
 				onTagSelect={selectTag}
 				onSortChange={setSort}
 				onClearFilters={clearFilters}
 			/>
+
+			{yearEntries.length > 1 ? (
+				<nav
+					aria-label={BLOG_UI.yearNavAriaLabel}
+					className="text-muted-foreground -mt-4 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs tabular-nums md:-mt-6"
+				>
+					{yearEntries.map(([year]) => (
+						<button
+							key={year}
+							type="button"
+							className="focus-link hover:text-foreground underline-offset-4 transition-colors hover:underline"
+							onClick={() => jumpToYear(year)}
+						>
+							{year}
+						</button>
+					))}
+				</nav>
+			) : null}
 
 			{filteredPosts.length === 0 ? (
 				<BlogEmptyState onClearFilters={clearFilters} />
@@ -119,7 +177,7 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 						</section>
 					) : null}
 
-					{yearEntries.map(([year, yearPosts], index) => {
+					{yearEntries.map(([year, yearPosts]) => {
 						const visibleYearPosts = yearPosts.filter((post) =>
 							visiblePublishedSlugs.has(post.slug)
 						)
@@ -129,26 +187,22 @@ export function BlogList({ posts, isDev = false, className }: BlogListProps) {
 						}
 
 						return (
-						<section
-							key={year}
-							className={cn(
-								pageSectionClass,
-								hasLeadSection || index > 0
-									? "border-t border-border/60 pt-10"
-									: undefined
-							)}
-						>
+						<section key={year} className={pageSectionClass}>
 							<AnchoredHeading
 								as="h2"
 								id={year}
 								anchorLabel={`${year} bölümüne git`}
-								className="text-muted-foreground font-mono text-sm font-medium tabular-nums"
+								className="text-muted-foreground scroll-mt-24 font-mono text-sm font-medium tabular-nums md:scroll-mt-52"
 							>
 								{year}
 							</AnchoredHeading>
 							<div className="flex flex-col gap-3 overflow-visible">
 								{visibleYearPosts.map((post) => (
-									<BlogListPostRow key={post.slug} post={post} />
+									<BlogListPostRow
+										key={post.slug}
+										post={post}
+										isFeatured={featuredSlugs.has(post.slug)}
+									/>
 								))}
 							</div>
 						</section>

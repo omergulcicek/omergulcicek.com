@@ -24,6 +24,13 @@ export const STATIC_PAGE_SEO = {
 		changeFrequency: "weekly",
 		priority: 0.9
 	},
+	notes: {
+		path: "/notlar",
+		title: SITE_COPY.notes.title,
+		description: SITE_COPY.meta.notes,
+		changeFrequency: "weekly",
+		priority: 0.6
+	},
 	projects: {
 		path: "/projects",
 		title: "Projeler",

@@ -250,6 +250,13 @@
 			"color": "text-sky-600"
 		}
 	],
+	"featuredPosts": [
+		"/react-state-yonetim-mimarisi",
+		"/feature-driven-proje-yapisi",
+		"/tanstack-router-ve-query-birlikte-kullanmak",
+		"/tanstack-start-vs-nextjs",
+		"/2026-icin-react-ve-yapay-zeka-stacki"
+	],
 	"hobbies": [
 		{
 			"id": "photography",

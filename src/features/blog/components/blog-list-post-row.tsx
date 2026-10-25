@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router"
-import { ChevronRight, Languages } from "lucide-react"
+import { ChevronRight, Languages, Star } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Medium } from "@/components/ui/svgs/medium"
@@ -10,10 +9,8 @@ import {
 } from "@/components/shared/interactive-card.styles"
 import { BlogTagBadge } from "@/features/blog/components/blog-tag-badge"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
-import {
-	formatBlogDate,
-	slugToRouteParam
-} from "@/features/blog/helpers/blog-helpers"
+import { BlogPostLink } from "@/features/blog/components/blog-section-links"
+import { formatBlogDate } from "@/features/blog/helpers/blog-helpers"
 import { listTitleClass } from "@/components/shared/prose.styles"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { withOutboundUtm } from "@/lib/outbound-url"
@@ -22,12 +19,14 @@ import { cn } from "@/lib/utils"
 type BlogListPostRowProps = {
 	post: BlogPost
 	showDraftBadge?: boolean
+	isFeatured?: boolean
 	className?: string
 }
 
 export function BlogListPostRow({
 	post,
 	showDraftBadge = false,
+	isFeatured = false,
 	className
 }: BlogListPostRowProps) {
 	const visibleTags = post.tags.slice(0, BLOG_UI.maxVisibleTags)
@@ -43,9 +42,9 @@ export function BlogListPostRow({
 				className
 			)}
 		>
-			<Link
-				to="/blog/$slug"
-				params={{ slug: slugToRouteParam(post.slug) }}
+			<BlogPostLink
+				category={post.category}
+				slug={post.slug}
 				className="absolute inset-0 z-0 rounded-xl"
 				aria-label={post.title}
 			/>
@@ -56,6 +55,12 @@ export function BlogListPostRow({
 				>
 					{formatBlogDate(post.publishedAt)}
 				</time>
+				{isFeatured ? (
+					<span className="flex items-center gap-1 text-xs text-amber-700 dark:text-amber-400">
+						<Star className="size-3 shrink-0 fill-amber-400 text-amber-500" aria-hidden />
+						{BLOG_UI.featuredLabel}
+					</span>
+				) : null}
 				{post.locale === "en" ? (
 					<span
 						className="text-muted-foreground flex items-center gap-1 text-xs"
@@ -112,11 +117,11 @@ export function BlogListPostRow({
 								href={withOutboundUtm(post.mediumUrl)}
 								target="_blank"
 								rel="noopener noreferrer"
-							className="hit-area focus-link text-foreground hover:text-foreground/80 pointer-events-auto inline-flex size-9 items-center justify-center transition-colors"
-							aria-label={BLOG_UI.mediumLinkLabel}
+							className="hit-area focus-link text-muted-foreground hover:text-foreground pointer-events-auto inline-flex items-center gap-1 text-xs transition-colors"
 							title={BLOG_UI.mediumLinkLabel}
 						>
-							<Medium className="size-4 shrink-0" aria-hidden />
+							<Medium className="size-3.5 shrink-0" aria-hidden />
+							{BLOG_UI.mediumLinkShortLabel}
 							</a>
 						) : null}
 					</div>

@@ -72,6 +72,14 @@ export const SITE_COPY = {
 		virastackIntro:
 			"Bir frontend projesine başlarken gereken parçalar tek yerde: şablonlar, AI kuralları, erişilebilir form paketleri ve ücretsiz rehberler."
 	},
+	blog: {
+		title: "Blog",
+		intro: "React, Next.js, TanStack ve frontend mimarisi üzerine teknik yazılar."
+	},
+	notes: {
+		title: "Notlar",
+		intro: "Deneyimler, yıl değerlendirmeleri, kitaplar ve düşünceler."
+	},
 	journey: {
 		title: "Yolculuk",
 		intro: "Yıllara göre iş, proje ve hayat."
@@ -112,6 +120,7 @@ export const SITE_COPY = {
 		journey: "Yıllara göre iş, proje ve hayat.",
 		setup: "Kod yazarken kullandığım araçlar ve teknolojiler.",
 		blog: "React, Next.js, TanStack ve frontend mimarisi üzerine yazılar.",
+		notes: "Deneyimler, yıl değerlendirmeleri, kitaplar ve kişisel düşünceler.",
 		bookmarks:
 			"Takip ettiğim frontend kaynakları, bloglar ve okuma listesi."
 	}

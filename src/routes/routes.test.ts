@@ -16,6 +16,8 @@ import { Route as StackRoute } from "@/routes/stack"
 import { Route as WorkspaceRoute } from "@/routes/workspace"
 import { Route as BlogIndexRoute } from "@/routes/blog/index"
 import { Route as BlogSlugRoute } from "@/routes/blog/$slug"
+import { Route as NotesIndexRoute } from "@/routes/notlar/index"
+import { Route as NotesSlugRoute } from "@/routes/notlar/$slug"
 import { Route as MdxSandboxRoute } from "@/routes/dev/mdx-sandbox"
 
 const ROUTES = [
@@ -34,6 +36,8 @@ const ROUTES = [
 	WorkspaceRoute,
 	BlogIndexRoute,
 	BlogSlugRoute,
+	NotesIndexRoute,
+	NotesSlugRoute,
 	MdxSandboxRoute
 ] as const
 
@@ -78,5 +82,21 @@ describe("legacy routes", () => {
 		expect(thrown).toMatchObject({
 			options: { href: "https://virastack.com/academy", statusCode: 301 }
 		})
+	})
+
+	it.each([
+		["personal", "/notlar"],
+		["technical", "/blog"]
+	] as const)("redirects /blog?category=%s to %s", (category, to) => {
+		let thrown: unknown
+
+		try {
+			BlogIndexRoute.options.beforeLoad?.({ search: { category } } as never)
+		} catch (error) {
+			thrown = error
+		}
+
+		expect(isRedirect(thrown)).toBe(true)
+		expect(thrown).toMatchObject({ options: { to, statusCode: 301 } })
 	})
 })

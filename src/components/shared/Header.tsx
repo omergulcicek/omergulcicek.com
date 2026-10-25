@@ -5,8 +5,10 @@ import { ExploreNavMenu } from "@/components/shared/explore-nav-menu"
 import { HeaderNavDrawer } from "@/components/shared/header-nav-drawer"
 import { IconLinkButton } from "@/components/shared/icon-link-button"
 import { SiteNavLink } from "@/components/shared/site-nav-link"
+import { ThemeToggle } from "@/components/shared/ThemeToggle"
 import { HEADER_NAV } from "@/constants/header-nav.constants"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import { CommandPaletteTrigger } from "@/features/search/components/CommandPalette"
 
 export function Header() {
 	return (
@@ -40,13 +42,17 @@ export function Header() {
 								<ExploreNavMenu />
 							</nav>
 						</div>
-						<IconLinkButton
-							href={EXTERNAL_LINKS.github}
-							ariaLabel="GitHub profilini ziyaret et"
-							tooltipSide="bottom"
-						>
-							<GitHubIcon className="size-4 text-[#181717] dark:text-[#f0f6fc]" />
-						</IconLinkButton>
+						<div className="flex items-center gap-1">
+							<CommandPaletteTrigger />
+							<ThemeToggle />
+							<IconLinkButton
+								href={EXTERNAL_LINKS.github}
+								ariaLabel="GitHub profilini ziyaret et"
+								tooltipSide="bottom"
+							>
+								<GitHubIcon className="size-4 text-[#181717] dark:text-[#f0f6fc]" />
+							</IconLinkButton>
+						</div>
 					</div>
 				</Container>
 			</header>

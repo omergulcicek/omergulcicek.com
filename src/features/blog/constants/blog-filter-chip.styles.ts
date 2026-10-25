@@ -13,3 +13,12 @@ export const blogFilterTagsExpandedClass = "max-h-[2000px]"
 
 export const listFilterPanelClass =
 	"sticky top-[calc(3.5rem+8px)] z-20 -mx-1 flex flex-col p-3 md:p-4"
+
+/** Blog panel is sticky on desktop only; on mobile it scrolls away so it never covers the list. */
+export const blogFilterPanelClass =
+	"z-20 -mx-1 flex flex-col p-3 md:sticky md:top-[calc(3.5rem+8px)] md:p-4"
+
+/** Blog tags scroll horizontally on mobile and collapse to two rows on desktop. */
+export const blogTagsCollapsedClass = "md:max-h-14"
+
+export const blogTagsExpandedClass = "md:max-h-[2000px]"

@@ -1,24 +1,13 @@
-import type { BlogCategory, BlogSort } from "@/features/blog/types/blog.types"
+import { ME } from "@/constants/me.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
+import type { BlogCategory } from "@/features/blog/types/blog.types"
 
 export const BLOG_CATEGORY_LABELS: Record<BlogCategory, string> = {
 	technical: "Teknik",
 	personal: "Kişisel"
 }
 
-export const BLOG_CATEGORY_OPTIONS = [
-	{ value: null, label: "Tümü" },
-	{ value: "technical" as const, label: BLOG_CATEGORY_LABELS.technical },
-	{ value: "personal" as const, label: BLOG_CATEGORY_LABELS.personal }
-]
-
-export const BLOG_SORT_LABELS: Record<BlogSort, string> = {
-	newest: "En yeni",
-	oldest: "En eski"
-}
-
-export const BLOG_SORT_OPTIONS: BlogSort[] = ["newest", "oldest"]
-
-export const BLOG_TAG_POOL = [
+export const BLOG_TECHNICAL_TAG_POOL = [
 	"React",
 	"Zustand",
 	"Next.js",
@@ -37,20 +26,60 @@ export const BLOG_TAG_POOL = [
 	"npm",
 	"GitHub",
 	"Site Yenileme",
+	"Proje"
+] as const
+
+export const BLOG_PERSONAL_TAG_POOL = [
 	"Yıl Değerlendirmesi",
+	"Deneyim",
+	"Düşünce",
 	"Kitap",
 	"Dizi",
 	"Film",
 	"Seyahat",
-	"Deneyim",
-	"Düşünce",
 	"Proje"
 ] as const
 
+export type BlogSectionPath = "/blog" | "/notlar"
+
+export type BlogSection = {
+	category: BlogCategory
+	path: BlogSectionPath
+	title: string
+	description: string
+	feedPath: string
+	tagPool: readonly string[]
+	featuredSlugs: readonly string[]
+}
+
+/** Technical posts live under /blog, personal posts under /notlar; both share the blog feature. */
+export const BLOG_SECTIONS = {
+	technical: {
+		category: "technical",
+		path: "/blog",
+		title: SITE_COPY.blog.title,
+		description: SITE_COPY.blog.intro,
+		feedPath: "/feed.xml",
+		tagPool: BLOG_TECHNICAL_TAG_POOL,
+		featuredSlugs: ME.featuredPosts
+	},
+	personal: {
+		category: "personal",
+		path: "/notlar",
+		title: SITE_COPY.notes.title,
+		description: SITE_COPY.notes.intro,
+		feedPath: "/notlar/feed.xml",
+		tagPool: BLOG_PERSONAL_TAG_POOL,
+		featuredSlugs: []
+	}
+} as const satisfies Record<BlogCategory, BlogSection>
+
+export const BLOG_SECTION_LIST: BlogSection[] = [
+	BLOG_SECTIONS.technical,
+	BLOG_SECTIONS.personal
+]
+
 export const BLOG_UI = {
-	pageTitle: "Blog",
-	pageDescription:
-		"Teknik ve kişisel yazılar — React, Next.js, CSS, frontend mimarisi ve daha fazlası.",
 	draftBadge: "Taslak",
 	englishLabel: "English",
 	englishTooltip: "Read in English",
@@ -62,9 +91,15 @@ export const BLOG_UI = {
 	loadMorePosts: 12,
 	loadMorePostsLabel: "Daha fazla yazı göster",
 	filtersAriaLabel: "Blog filtreleri",
-	categoryAriaLabel: "Kategori filtresi",
 	tagAriaLabel: "Etiket filtresi",
 	sortAriaLabel: "Sıralama",
+	sortToggleLabel: {
+		newest: "En yeni önce — en eskiye çevir",
+		oldest: "En eski önce — en yeniye çevir"
+	},
+	yearNavAriaLabel: "Yıla git",
+	featuredLabel: "Öne çıkan",
+	rssLabel: "RSS",
 	draftsHeading: "Taslaklar",
 	clearFilters: "Filtreleri temizle",
 	showTags: "Tüm etiketleri göster",

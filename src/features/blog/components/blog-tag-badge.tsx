@@ -1,21 +1,23 @@
 import type { ComponentProps } from "react"
-import { Link } from "@tanstack/react-router"
 
 import { Badge } from "@/components/ui/badge"
+import { BlogSectionLink } from "@/features/blog/components/blog-section-links"
 import { BlogTagIcon } from "@/features/blog/components/blog-tag-icon"
+import type { BlogCategory } from "@/features/blog/types/blog.types"
 import { cn } from "@/lib/utils"
 
 type BlogTagBadgeProps = {
 	tag: string
 	className?: string
-	linkable?: boolean
+	/** When set, the badge links to that section's list filtered by the tag. */
+	linkCategory?: BlogCategory
 } & Pick<ComponentProps<typeof Badge>, "variant">
 
 export function BlogTagBadge({
 	tag,
 	className,
 	variant = "outline",
-	linkable = false
+	linkCategory
 }: BlogTagBadgeProps) {
 	const content = (
 		<>
@@ -24,12 +26,12 @@ export function BlogTagBadge({
 		</>
 	)
 
-	if (linkable) {
+	if (linkCategory) {
 		return (
 			<Badge variant={variant} className={cn(className)} asChild>
-				<Link to="/blog" search={{ tag }} className="focus-link">
+				<BlogSectionLink category={linkCategory} tag={tag} className="focus-link">
 					{content}
-				</Link>
+				</BlogSectionLink>
 			</Badge>
 		)
 	}

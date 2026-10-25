@@ -6,6 +6,7 @@ import {
 	LayoutGrid,
 	Monitor,
 	Newspaper,
+	NotebookPen,
 	Package,
 	UserRound
 } from "lucide-react"
@@ -21,6 +22,7 @@ export const NAV_PAGE_ICONS: Record<string, LucideIcon> = {
 	"/about": UserRound,
 	"/experiences": Briefcase,
 	"/journey": Footprints,
+	"/notlar": NotebookPen,
 	"/setup": Monitor,
 	"/bookmarks": Bookmark,
 	[EXTERNAL_LINKS.virastack]: Package

@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { ProseRouterLink } from "@/components/shared/prose-link"
@@ -8,21 +7,29 @@ import {
 	TooltipContent,
 	TooltipTrigger
 } from "@/components/ui/tooltip"
+import { BlogPostLink } from "@/features/blog/components/blog-section-links"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
-import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import { getBlogSection } from "@/features/blog/helpers/blog-helpers"
+import type { BlogCategory } from "@/features/blog/types/blog.types"
 
 type BlogPostDetailHeaderProps = {
+	category: BlogCategory
 	previous: BlogNeighbour | null
 	next: BlogNeighbour | null
 }
 
 type BlogNeighbourButtonProps = {
+	category: BlogCategory
 	neighbour: BlogNeighbour
 	direction: "previous" | "next"
 }
 
-function BlogNeighbourButton({ neighbour, direction }: BlogNeighbourButtonProps) {
+function BlogNeighbourButton({
+	category,
+	neighbour,
+	direction
+}: BlogNeighbourButtonProps) {
 	const Icon = direction === "previous" ? ChevronLeft : ChevronRight
 	const navLabel =
 		direction === "previous" ? BLOG_UI.previousPost : BLOG_UI.nextPost
@@ -31,13 +38,13 @@ function BlogNeighbourButton({ neighbour, direction }: BlogNeighbourButtonProps)
 		<Tooltip>
 			<TooltipTrigger asChild>
 				<Button variant="secondary" size="icon-sm" asChild>
-					<Link
-						to="/blog/$slug"
-						params={{ slug: slugToRouteParam(neighbour.slug) }}
+					<BlogPostLink
+						category={category}
+						slug={neighbour.slug}
 						aria-label={`${navLabel}: ${neighbour.title}`}
 					>
 						<Icon aria-hidden />
-					</Link>
+					</BlogPostLink>
 				</Button>
 			</TooltipTrigger>
 			<TooltipContent side="top">{neighbour.title}</TooltipContent>
@@ -46,27 +53,38 @@ function BlogNeighbourButton({ neighbour, direction }: BlogNeighbourButtonProps)
 }
 
 export function BlogPostDetailHeader({
+	category,
 	previous,
 	next
 }: BlogPostDetailHeaderProps) {
+	const section = getBlogSection(category)
+
 	return (
 		<div className="flex items-center justify-between gap-4">
 			<ProseRouterLink
-				to="/blog"
+				to={section.path}
 				variant="muted"
 				className="inline-flex items-center gap-1"
 			>
 				<ChevronLeft className="size-4 shrink-0" aria-hidden />
-				{BLOG_UI.pageTitle}
+				{section.title}
 			</ProseRouterLink>
 
 			{previous || next ? (
 				<div className="flex items-center gap-2">
 					{previous ? (
-						<BlogNeighbourButton neighbour={previous} direction="previous" />
+						<BlogNeighbourButton
+							category={category}
+							neighbour={previous}
+							direction="previous"
+						/>
 					) : null}
 					{next ? (
-						<BlogNeighbourButton neighbour={next} direction="next" />
+						<BlogNeighbourButton
+							category={category}
+							neighbour={next}
+							direction="next"
+						/>
 					) : null}
 				</div>
 			) : null}

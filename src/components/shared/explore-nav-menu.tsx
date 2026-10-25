@@ -13,7 +13,6 @@ import {
 	DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { EXPLORE_NAV, EXPLORE_NAV_LABEL } from "@/constants/header-nav.constants"
-import { getNavPageIcon } from "@/constants/nav-icons.constants"
 import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
@@ -40,9 +39,8 @@ export function ExploreNavMenu() {
 					aria-hidden
 				/>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent align="start" sideOffset={8} className="min-w-44">
+			<DropdownMenuContent align="start" sideOffset={8} className="min-w-40">
 				{EXPLORE_NAV.map((item) => {
-					const Icon = getNavPageIcon(item.href)
 					const isItemActive = isExplorePath(pathname, item.href)
 
 					return (
@@ -59,7 +57,6 @@ export function ExploreNavMenu() {
 								search={clearedRouteSearch}
 								aria-current={isItemActive ? "page" : undefined}
 							>
-								<Icon aria-hidden />
 								{item.label}
 							</Link>
 						</DropdownMenuItem>

@@ -9,10 +9,17 @@ import { SEARCH_PAGES } from "@/features/search/constants/search.constants"
 
 describe("navigation", () => {
 	it("groups secondary pages under Keşfet in order", () => {
+		expect(HEADER_NAV.map((item) => item.href)).toEqual([
+			"/",
+			"/blog",
+			"/projects",
+			"/about"
+		])
 		expect(EXPLORE_NAV.map((item) => item.href)).toEqual([
-			"/about",
 			"/experiences",
 			"/journey",
+			"/notlar",
+			"/bookmarks",
 			"/setup"
 		])
 	})

@@ -97,7 +97,7 @@ export function BlogPostMeta({
 					{visibleTags.length > 0 ? (
 						<div className="flex min-w-0 flex-wrap items-center gap-2">
 							{visibleTags.map((tag) => (
-								<BlogTagBadge key={tag} tag={tag} linkable />
+								<BlogTagBadge key={tag} tag={tag} linkCategory={post.category} />
 							))}
 							{hiddenTagCount > 0 ? (
 								<Badge

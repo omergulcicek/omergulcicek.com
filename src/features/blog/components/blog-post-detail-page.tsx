@@ -1,7 +1,11 @@
 import { cn } from "@/lib/utils"
 
 import { Container } from "@/components/shared/Container"
-import { pageTitleClass } from "@/components/shared/prose.styles"
+import {
+	pageShellClass,
+	pageStackGapClass,
+	pageTitleClass
+} from "@/components/shared/prose.styles"
 import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { BlogPostDetailHeader } from "@/features/blog/components/blog-post-detail-header"
 import { BlogPostMeta } from "@/features/blog/components/blog-post-meta"
@@ -10,7 +14,7 @@ import { BlogProse } from "@/features/blog/components/blog-prose"
 import { BlogShareActionsBar } from "@/features/blog/components/blog-share-actions"
 import { BlogStructuredData } from "@/features/blog/components/blog-structured-data"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
-import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPostDetail } from "@/features/blog/repositories/blog-repository.types"
 
 type BlogPostDetailPageProps = {
@@ -26,16 +30,20 @@ export function BlogPostDetailPage({
 	previous,
 	next
 }: BlogPostDetailPageProps) {
-	const sharePath = `/blog/${slugToRouteParam(post.slug)}`
+	const sharePath = getBlogPostPath(post.slug, post.category)
 
 	return (
 		<>
 			<BlogStructuredData post={post} />
-			<div className="flex flex-col gap-12 py-8 md:py-16">
+			<div className={pageShellClass}>
 				<Container>
-					<StaggerContainer className="flex flex-col gap-12">
+					<StaggerContainer className={cn("flex flex-col", pageStackGapClass)}>
 						<StaggerItem>
-							<BlogPostDetailHeader previous={previous} next={next} />
+							<BlogPostDetailHeader
+								category={post.category}
+								previous={previous}
+								next={next}
+							/>
 						</StaggerItem>
 						<StaggerItem data-blog-article className="flex flex-col gap-4">
 							<header className="flex flex-col gap-4">

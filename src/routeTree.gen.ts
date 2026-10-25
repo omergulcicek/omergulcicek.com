@@ -27,6 +27,9 @@ import { Route as AcademySplatRouteImport } from './routes/academy/$'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as DevMdxSandboxRouteImport } from './routes/dev/mdx-sandbox'
+import { Route as NotlarIndexRouteImport } from './routes/notlar/index'
+import { Route as NotlarSlugRouteImport } from './routes/notlar/$slug'
+import { Route as NotlarFeedDotxmlRouteImport } from './routes/notlar/feed[.]xml'
 import { Route as OgBlogSlugRouteImport } from './routes/og/blog/$slug'
 import { Route as OgPagePageKeyRouteImport } from './routes/og/page/$pageKey'
 
@@ -120,6 +123,21 @@ const DevMdxSandboxRoute = DevMdxSandboxRouteImport.update({
   path: '/dev/mdx-sandbox',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotlarIndexRoute = NotlarIndexRouteImport.update({
+  id: '/notlar/',
+  path: '/notlar/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotlarSlugRoute = NotlarSlugRouteImport.update({
+  id: '/notlar/$slug',
+  path: '/notlar/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotlarFeedDotxmlRoute = NotlarFeedDotxmlRouteImport.update({
+  id: '/notlar/feed.xml',
+  path: '/notlar/feed.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OgBlogSlugRoute = OgBlogSlugRouteImport.update({
   id: '/og/blog/$slug',
   path: '/og/blog/$slug',
@@ -148,8 +166,11 @@ export interface FileRoutesByFullPath {
   '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
+  '/notlar/$slug': typeof NotlarSlugRoute
+  '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
   '/academy/': typeof AcademyIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/notlar/': typeof NotlarIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
   '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
@@ -170,8 +191,11 @@ export interface FileRoutesByTo {
   '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
+  '/notlar/$slug': typeof NotlarSlugRoute
+  '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
   '/academy': typeof AcademyIndexRoute
   '/blog': typeof BlogIndexRoute
+  '/notlar': typeof NotlarIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
   '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
@@ -193,8 +217,11 @@ export interface FileRoutesById {
   '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
+  '/notlar/$slug': typeof NotlarSlugRoute
+  '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
   '/academy/': typeof AcademyIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/notlar/': typeof NotlarIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
   '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
@@ -217,8 +244,11 @@ export interface FileRouteTypes {
     | '/academy/$'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
+    | '/notlar/$slug'
+    | '/notlar/feed.xml'
     | '/academy/'
     | '/blog/'
+    | '/notlar/'
     | '/og/blog/$slug'
     | '/og/page/$pageKey'
   fileRoutesByTo: FileRoutesByTo
@@ -239,8 +269,11 @@ export interface FileRouteTypes {
     | '/academy/$'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
+    | '/notlar/$slug'
+    | '/notlar/feed.xml'
     | '/academy'
     | '/blog'
+    | '/notlar'
     | '/og/blog/$slug'
     | '/og/page/$pageKey'
   id:
@@ -261,8 +294,11 @@ export interface FileRouteTypes {
     | '/academy/$'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
+    | '/notlar/$slug'
+    | '/notlar/feed.xml'
     | '/academy/'
     | '/blog/'
+    | '/notlar/'
     | '/og/blog/$slug'
     | '/og/page/$pageKey'
   fileRoutesById: FileRoutesById
@@ -284,8 +320,11 @@ export interface RootRouteChildren {
   AcademySplatRoute: typeof AcademySplatRoute
   BlogSlugRoute: typeof BlogSlugRoute
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
+  NotlarSlugRoute: typeof NotlarSlugRoute
+  NotlarFeedDotxmlRoute: typeof NotlarFeedDotxmlRoute
   AcademyIndexRoute: typeof AcademyIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  NotlarIndexRoute: typeof NotlarIndexRoute
   OgBlogSlugRoute: typeof OgBlogSlugRoute
   OgPagePageKeyRoute: typeof OgPagePageKeyRoute
 }
@@ -418,6 +457,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DevMdxSandboxRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notlar/': {
+      id: '/notlar/'
+      path: '/notlar'
+      fullPath: '/notlar/'
+      preLoaderRoute: typeof NotlarIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notlar/$slug': {
+      id: '/notlar/$slug'
+      path: '/notlar/$slug'
+      fullPath: '/notlar/$slug'
+      preLoaderRoute: typeof NotlarSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notlar/feed.xml': {
+      id: '/notlar/feed.xml'
+      path: '/notlar/feed.xml'
+      fullPath: '/notlar/feed.xml'
+      preLoaderRoute: typeof NotlarFeedDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/og/blog/$slug': {
       id: '/og/blog/$slug'
       path: '/og/blog/$slug'
@@ -452,8 +512,11 @@ const rootRouteChildren: RootRouteChildren = {
   AcademySplatRoute: AcademySplatRoute,
   BlogSlugRoute: BlogSlugRoute,
   DevMdxSandboxRoute: DevMdxSandboxRoute,
+  NotlarSlugRoute: NotlarSlugRoute,
+  NotlarFeedDotxmlRoute: NotlarFeedDotxmlRoute,
   AcademyIndexRoute: AcademyIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
+  NotlarIndexRoute: NotlarIndexRoute,
   OgBlogSlugRoute: OgBlogSlugRoute,
   OgPagePageKeyRoute: OgPagePageKeyRoute,
 }

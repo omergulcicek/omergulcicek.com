@@ -12,15 +12,16 @@ export const HEADER_NAV: readonly NavItem[] = [
 	{ label: "Ana Sayfa", href: "/", exact: true },
 	{ label: "Blog", href: "/blog" },
 	{ label: "Projeler", href: "/projects" },
-	{ label: "Yer İmleri", href: "/bookmarks" }
+	{ label: "Hakkımda", href: "/about" }
 ]
 
 export const EXPLORE_NAV_LABEL = "Keşfet"
 
 export const EXPLORE_NAV: readonly NavItem[] = [
-	{ label: "Hakkımda", href: "/about" },
 	{ label: "Deneyimler", href: "/experiences" },
 	{ label: "Yolculuk", href: "/journey" },
+	{ label: "Notlar", href: "/notlar" },
+	{ label: "Yer İmleri", href: "/bookmarks" },
 	{ label: "Kurulum", href: "/setup" }
 ]
 

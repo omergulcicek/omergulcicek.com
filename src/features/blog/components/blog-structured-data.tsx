@@ -1,7 +1,10 @@
 import { SITE } from "@/constants/site.constants"
 import { ME } from "@/constants/me.constants"
 import type { BlogPost } from "@/features/blog/types/blog.types"
-import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
+import {
+	getBlogPostPath,
+	getBlogSection
+} from "@/features/blog/helpers/blog-helpers"
 import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
 type BlogStructuredDataProps = {
@@ -9,7 +12,7 @@ type BlogStructuredDataProps = {
 }
 
 export function BlogStructuredData({ post }: BlogStructuredDataProps) {
-	const articleUrl = `${SITE.url}/blog/${slugToRouteParam(post.slug)}`
+	const articleUrl = `${SITE.url}${getBlogPostPath(post.slug, post.category)}`
 	const imageUrl = resolveBlogOgImageUrl({
 		slug: post.slug,
 		coverImage: post.coverImage
@@ -54,8 +57,8 @@ export function BlogStructuredData({ post }: BlogStructuredDataProps) {
 			{
 				"@type": "ListItem",
 				position: 2,
-				name: "Blog",
-				item: `${SITE.url}/blog`
+				name: getBlogSection(post.category).title,
+				item: `${SITE.url}${getBlogSection(post.category).path}`
 			},
 			{
 				"@type": "ListItem",
