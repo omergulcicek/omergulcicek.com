@@ -87,13 +87,7 @@ export const SITE_COPY = {
 			link: "bana yazabilirsin",
 			after: ". İlk görüşme ücretsiz."
 		},
-		interestsTitle: "İlgi alanları",
-		links: {
-			ariaLabel: "İletişim bağlantıları",
-			email: "E-posta",
-			resume: "Özgeçmiş",
-			github: "GitHub"
-		}
+		interestsTitle: "İlgi alanları"
 	},
 	experiences: {
 		title: "Deneyimler",

@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/PageHeader"
 import {
-	bleedSectionClass,
 	pageSectionClass,
 	pageShellClass,
 	pageStackGapClass,
@@ -14,13 +13,11 @@ import {
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
 import { ProseLink } from "@/components/shared/ProseLink"
-import { ProseRouterLink } from "@/components/shared/ProseRouterLink"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { StaggerContainer } from "@/components/shared/StaggerContainer"
 import { StaggerItem } from "@/components/shared/StaggerItem"
 import { AboutParagraph } from "@/features/about/components/AboutParagraph"
 import { BentoInterests } from "@/features/about/components/BentoInterests"
-import { LinkSeparator } from "@/features/about/components/LinkSeparator"
 import { getAboutParagraphKey } from "@/features/about/helpers/about-paragraph.helpers"
 
 export function AboutPage() {
@@ -62,33 +59,11 @@ export function AboutPage() {
 			</StaggerItem>
 
 			<StaggerItem>
-				<section className={pageSectionClass}>
-					<Container>
-						<SectionHeading>{about.interestsTitle}</SectionHeading>
-					</Container>
-					<div className={bleedSectionClass}>
-						<BentoInterests />
-					</div>
-				</section>
-			</StaggerItem>
-
-			<StaggerItem>
 				<Container>
-					<nav aria-label={about.links.ariaLabel}>
-						<p className={proseParagraphClass}>
-							<ProseLink href={EXTERNAL_LINKS.email}>
-								{about.links.email}
-							</ProseLink>
-							<LinkSeparator />
-							<ProseRouterLink to="/experiences">
-								{about.links.resume}
-							</ProseRouterLink>
-							<LinkSeparator />
-							<ProseLink href={EXTERNAL_LINKS.github}>
-								{about.links.github}
-							</ProseLink>
-						</p>
-					</nav>
+					<section className={pageSectionClass}>
+						<SectionHeading>{about.interestsTitle}</SectionHeading>
+						<BentoInterests />
+					</section>
 				</Container>
 			</StaggerItem>
 		</StaggerContainer>

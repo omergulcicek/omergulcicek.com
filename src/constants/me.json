@@ -265,53 +265,59 @@
 			"url": "https://instagram.com/omerilekesfet"
 		},
 		{
-			"id": "chess",
-			"name": "Satranç",
-			"description": "5+0 blitz",
-			"url": "https://chess.com/member/omergulcicek"
-		},
-		{
 			"id": "walk",
 			"name": "Yürüyüş",
-			"description": "Şehirleri adım adım keşfediyorum",
+			"description": "Adım adım şehir keşfi",
 			"url": "/blog/google-maps-kisisel-listelerim"
 		},
 		{
 			"id": "book",
 			"name": "Kitap",
-			"description": "Osmanlı tarihi",
+			"description": "200'den fazla kitap",
 			"url": "/bookmarks?category=library"
+		},
+		{
+			"id": "chess",
+			"name": "Satranç",
+			"description": "5+0 blitz",
+			"url": "https://chess.com/member/omergulcicek"
 		}
 	],
 	"favorites": [
 		{
 			"id": "team",
 			"value": "Barcelona",
-			"description": "En sevdiğim futbol kulübü.",
+			"description": "En sevdiğim futbol kulübü",
 			"url": "https://x.com/FCBarcelona"
 		},
 		{
 			"id": "game",
 			"value": "Football Manager",
-			"description": "Her sezon yeni kariyer.",
+			"description": "Her sezon yeni kariyer",
 			"url": "https://store.steampowered.com/app/3551340/Football_Manager_26/"
-		},
-		{
-			"id": "musician",
-			"value": "Sagopa Kajmer",
-			"description": "En çok dinlediğim şarkıcı.",
-			"url": "https://open.spotify.com/intl-tr/artist/1KXTegXtnCPKXjRaX1llcD"
 		},
 		{
 			"id": "movie",
 			"value": "Yüzüklerin Efendisi",
-			"description": "Favori filmim.",
+			"description": "Favori film serim",
 			"url": "https://www.imdb.com/title/tt0167260/"
+		},
+		{
+			"id": "series",
+			"value": "Leyla ile Mecnun",
+			"description": "En sevdiğim dizi",
+			"url": "https://www.imdb.com/title/tt1831164/"
+		},
+		{
+			"id": "musician",
+			"value": "Sagopa Kajmer",
+			"description": "En çok dinlediğim sanatçı",
+			"url": "https://open.spotify.com/intl-tr/artist/1KXTegXtnCPKXjRaX1llcD"
 		},
 		{
 			"id": "color",
 			"value": "Turkuaz",
-			"description": "En sevdiğim renk.",
+			"description": "En sevdiğim renk",
 			"url": "https://github.com/omergulcicek/turkuaz"
 		}
 	],

@@ -8,6 +8,7 @@ import {
 	MicVocal,
 	Palette,
 	Shirt,
+	Tv,
 	type LucideIcon
 } from "lucide-react"
 
@@ -45,6 +46,7 @@ export const FAVORITE_COLORS: Record<string, string> = {
 	game: "bg-violet-50 dark:bg-violet-500/10",
 	musician: "bg-stone-50 dark:bg-stone-500/10",
 	movie: "bg-amber-50 dark:bg-amber-500/10",
+	series: "bg-rose-50 dark:bg-rose-500/10",
 	color: "bg-cyan-50 dark:bg-cyan-500/10"
 }
 
@@ -67,6 +69,10 @@ export const FAVORITE_ICONS: Record<
 	movie: {
 		Icon: Clapperboard,
 		className: "text-amber-600 dark:text-amber-400"
+	},
+	series: {
+		Icon: Tv,
+		className: "text-rose-600 dark:text-rose-400"
 	},
 	color: {
 		Icon: Palette,
