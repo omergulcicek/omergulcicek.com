@@ -2552,6 +2552,14 @@ const bookmarkImages = [
 			url: "https://img.youtube.com/vi/FeXZY4eVLlo/hqdefault.jpg"
 		},
 	{
+			id: "media-youtube-x4i7ilgmrog",
+			url: "https://img.youtube.com/vi/x4I7ilgMrog/hqdefault.jpg"
+		},
+	{
+			id: "media-youtube-fkwwbuwwd7s",
+			url: "https://img.youtube.com/vi/fkWwbuWWD7s/hqdefault.jpg"
+		},
+	{
 	if (
 		id.startsWith("library-") ||
 		id.startsWith("personal-imdb-com-title-") ||

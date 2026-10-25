@@ -1423,6 +1423,15 @@ export const BOOKMARKS: Bookmark[] = [
 			categoryId: "media",
 			tags: ["YouTube"]
 		},
+	{
+			id: "media-youtube-fkwwbuwwd7s",
+			title: "Barcelona 6–1 PSG: 2017 Şampiyonlar Ligi Son 16 Turu",
+			url: "https://www.youtube.com/watch?v=fkWwbuWWD7s",
+			author: "TRT SPOR Arşiv",
+			imageUrl: bookmarkImage("media-youtube-fkwwbuwwd7s"),
+			categoryId: "media",
+			tags: ["YouTube"]
+		},
 	...LIBRARY_BOOKMARKS
 ]
 
@@ -1454,6 +1463,7 @@ export const YOUTUBE_BOOKMARK_SUBTAG_BY_ID: Record<string, YoutubeBookmarkSubtag
 	"media-youtube-x7158uqk1yi": "Futbol",
 	"media-youtube-ijbde6pkw2o": "Futbol",
 	"media-youtube-x4i7ilgmrog": "Futbol",
+	"media-youtube-fkwwbuwwd7s": "Futbol",
 	"media-youtube-6ey6xucwf0y": "Oyun",
 	"media-youtube-g-swvee9him": "Oyun",
 	"media-youtube-uo1chltdryq": "Oyun",
