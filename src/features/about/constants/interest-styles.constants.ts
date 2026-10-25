@@ -16,7 +16,7 @@ export const HOBBY_COLORS: Record<string, string> = {
 	photography: "bg-sky-50 dark:bg-sky-500/10",
 	chess: "bg-zinc-50 dark:bg-zinc-500/10",
 	walk: "bg-orange-50 dark:bg-orange-500/10",
-	book: "bg-teal-50 dark:bg-teal-500/10"
+	book: "bg-emerald-50 dark:bg-emerald-500/10"
 }
 
 export const HOBBY_ICONS: Record<
@@ -37,16 +37,16 @@ export const HOBBY_ICONS: Record<
 	},
 	book: {
 		Icon: BookOpen,
-		className: "text-teal-600 dark:text-teal-400"
+		className: "text-emerald-600 dark:text-emerald-400"
 	}
 }
 
 export const FAVORITE_COLORS: Record<string, string> = {
-	team: "bg-emerald-50 dark:bg-emerald-500/10",
+	team: "bg-red-50 dark:bg-red-500/10",
 	game: "bg-violet-50 dark:bg-violet-500/10",
 	musician: "bg-stone-50 dark:bg-stone-500/10",
 	movie: "bg-amber-50 dark:bg-amber-500/10",
-	series: "bg-rose-50 dark:bg-rose-500/10",
+	series: "bg-lime-50 dark:bg-lime-500/10",
 	color: "bg-cyan-50 dark:bg-cyan-500/10"
 }
 
@@ -56,7 +56,7 @@ export const FAVORITE_ICONS: Record<
 > = {
 	team: {
 		Icon: Shirt,
-		className: "text-emerald-600 dark:text-emerald-400"
+		className: "text-red-700 dark:text-red-400"
 	},
 	game: {
 		Icon: Gamepad2,
@@ -72,7 +72,7 @@ export const FAVORITE_ICONS: Record<
 	},
 	series: {
 		Icon: Tv,
-		className: "text-rose-600 dark:text-rose-400"
+		className: "text-lime-700 dark:text-lime-400"
 	},
 	color: {
 		Icon: Palette,
