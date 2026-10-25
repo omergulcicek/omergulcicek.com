@@ -44,7 +44,7 @@ export const SITE_CONTENT = {
 	projectsBadgePaused: "Ara verildi",
 	resumeModalTitle: "Özgeçmiş",
 	resumeModalDescription:
-		"Özgeçmişimi buradan inceleyebilir ya da indirebilirsin.",
+		"Türkçe ve İngilizce sürümünü PDF olarak indirebilirsin.",
 	resumeDownload: "İndir",
 	resumeLanguageGroup: "Özgeçmiş dili",
 	resumeLanguageTr: "Türkçe CV",

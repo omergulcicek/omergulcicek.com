@@ -57,7 +57,8 @@ export function ResumeModal() {
 					{SITE_CONTENT.resumeButton}
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="flex h-[90vh] w-[calc(100%-2rem)] max-w-4xl flex-col gap-3 overflow-hidden p-4 md:h-[65vh] md:gap-3 md:p-6">
+			{/* dvh follows mobile browser chrome; sm:max-w-4xl overrides the dialog's default sm:max-w-lg. */}
+			<DialogContent className="flex h-[80dvh] max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl flex-col gap-3 overflow-hidden p-4 sm:max-w-4xl md:gap-3 md:p-6">
 				<DialogHeader className="shrink-0 gap-3">
 					<div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:pr-8">
 						<div className="flex min-w-0 flex-col gap-1.5 md:gap-2">
