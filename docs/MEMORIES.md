@@ -1,42 +1,28 @@
-# Project Memories & Context
+# Project Memories
 
-Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
+Kalıcı kararlar ve kodda açık olmayan bağlam. Metin ve içerik kodda yaşar (`src/constants/me.json`, `src/constants/site-copy.constants.ts`); burada yalnızca kararlar tutulur.
 
-## Context
+## Bağlam
 
-- **Proje:** omergulcicek.com — kişisel site ve blog (Ömer Gülçiçek)
-- **Unvan:** Frontend Mühendisi (kesin). Frontend Architect hedef, unvan olarak yazılmaz.
-- **Rewrite:** TanStack Start + Supabase (sıfırdan yeni Supabase projesi)
-- **Legacy:** `_legacy/` — referans; kod kopyalanmaz
+- **Proje:** omergulcicek.com, Ömer Gülçiçek'in kişisel sitesi ve blogu. Yalnızca Türkçe; i18n paketi yok.
+- **Stack:** TanStack Start + Supabase (`blog_posts`) + Tailwind CSS 4 + shadcn/ui. Deploy: Vercel.
+- **Unvan:** "Frontend Mühendisi". Frontend Architect hedef, unvan olarak yazılmaz.
 
-## Key Decisions (2026-06)
+## Kararlar
 
-- **Layout:** Sayfa `max-w-2xl`; en fazla iki genişlik katmanı (prose + bleed). Blog görselleri ve stack slider bleed'de; viewport full değil.
-- **About:** Yeni versiyon kalıcı; legacy Vizyon/İletişim/uzun teknik metin bilinçli kaldırıldı. Hobiler statik liste.
-- **Header:** Marka yalnızca `@lucide/lab` rose ikonu — "Ömer" metni yok. Header'da GitHub ikonu (tema + ⌘K yanında); hero'da `SocialLinks`.
-- **Footer:** Üst — `BrandMark`; orta — Keşfet (6 ikincil sayfa) + ViraStack (yayın paketler + Tüm projeler); alt — build credit + kaynak kod + telif. LinkPreview yok.
-- **Tipografi:** Hero isim/unvan/metin 16px; isim + unvan font-weight 500. Bölüm başlıkları 16px.
-- **Bookmarks:** 7 legacy başlık (Blog, Eklenti, Frontend, Kitaplık, Kişisel, Makale, Teknik); Raindrop slug'ları legacy'den; Donanım/İçerik Arşivi sitede yok.
-- **DB:** Tablo/sütun/enum İngilizce; UI Türkçe. Kategori: `technical` | `personal`.
-- **Slug:** Başında `/` — örn. `/react-ai-stack-2026`.
-- **Yayın:** `published` boolean manuel; cron ve `published_at <= now()` yok.
-- **Taslaklar:** `published = false` — development'ta listede; production'da gizli (eski futurePosts).
-- **Blog / Notlar:** Teknik yazılar `/blog`, kişisel yazılar `/notlar` (`BLOG_SECTIONS`). Kategori pill yok; tag chip + sayı, sıralama tek ok düğmesi (`newest` / `oldest`). Öne çıkan yazılar `me.json` → `featuredPosts`.
-- **Blog TOC:** chanhdai minimap (kesin).
-- **Blog görselleri:** Aşamalı — `local` (`public/blog/`) → `supabase` → `supabase-transform`; `getMediaUrl` + `VITE_MEDIA_PROVIDER`.
-- **MDX tam set:** Faz 4; Faz 3 yalnızca temel render.
-- **SEO (RSS, OG, llms, sitemap, GA):** Faz 4 altyapı; derin denetim + Lighthouse CWV hedefleri **Faz 6**.
-- **Hero doodle / ayet:** Faz 5; constants Faz 1'de kapalı.
-- **Engagement:** view/like/comment site lansmanından sonra; yorum şimdilik geç.
-- **v1 motion:** Framer Motion yok; CSS hover/focus serbest.
-- **İçerik:** Agent + prompt; admin paneli yok.
+- **Tek kaynak:** Kişisel olgular, projeler, deneyimler, Yolculuk, hobiler, favoriler ve teknoloji seçimleri `me.json`'da; `me.schema.ts` ile doğrulanır. Sayfa metinleri `site-copy.constants.ts`'te.
+- **Layout:** Sayfa `max-w-2xl`; en fazla iki genişlik katmanı (prose + bleed). Boşluklar `spacing-standard` skill'indeki token'larla.
+- **Navigasyon:** Header: Ana Sayfa, Blog, Projeler, Hakkımda, Keşfet. Keşfet ve footer aynı liste (`EXPLORE_NAV`), Türkçe alfabetik. Arama (⌘K) ve tema header'da; sağ altta kaydırma göstergesi.
+- **Blog / Notlar:** Teknik yazılar `/blog`, kişisel yazılar `/notlar` (`BLOG_SECTIONS`). Kategoriler arası 301 yönlendirme; ayrı RSS (`/feed.xml`, `/notlar/feed.xml`). Öne çıkan yazılar `me.json` → `featuredPosts`.
+- **Yayın:** `published` boolean manuel; cron veya `published_at <= now()` yok. Taslaklar (`published = false`) yalnızca development'ta listelenir.
+- **Slug:** Başında `/`. Görseller `public/blog/YYYY/MM-DD/` altında, tarih yazının `published_at` günü (ay önce).
+- **Medya sağlayıcı:** `getMediaUrl` + `VITE_MEDIA_PROVIDER` (`local` varsayılan → `supabase` → `supabase-transform`). DB mantıksal yolu tutar; sağlayıcı değişince içerik güncellenmez.
+- **Supabase yazma:** Her yazma işleminden önce SQL önizlemesi ve açık onay.
+- **Kaldırılanlar:** Hizmetler (`/services` → 301 `/about#birlikte-calisalim`), Akademi (`/academy/*` → 301 virastack.com/academy).
+- **Motion:** İlk yüklemede giriş animasyonu yok (`useSkipInitialMotion`); animasyon yalnızca site içi gezinmede.
 
-## Evolution
+## Ajan kuralları
 
-- 2026-06 — Dokümantasyon SSOT tamamlandı; `docs/supabase-migration.md` eklendi.
-- 2026-06 — Blog görselleri aşamalı medya sağlayıcı: `src/lib/media/`, varsayılan `local`.
-- 2026-06-29 — `SITE-CONTENT.md` tamamlandı (footer, SEO, hata sayfaları). `BOOKMARKS.md` 7 kategori SSOT. Faz haritası güncellendi (MDX/SEO Faz 4, cila Faz 5).
-- 2026-07-04 — **Faz 6** eklendi: SEO ve Lighthouse performans iyileştirmeleri (CI eşikleri, görsel/bundle optimizasyonu, kullanıcı incelemesi).
-- 2026-10-25 — Blog ikiye bölündü: `/blog` (teknik) ve `/notlar` (kişisel), 301 yönlendirmeler, ayrı RSS (`/feed.xml`, `/notlar/feed.xml`). Arama ve tema header'a taşındı; ilk yüklemede giriş animasyonu kapalı (`useSkipInitialMotion`).
-- 2026-10-25 — Redesign Faz 1–2: metin SSOT `src/constants/me.json` (kişi, iletişim, site/repo, deneyimler + özetler, projeler, hobiler, favoriler, Yolculuk, ilkeler, kullanılan teknolojiler; `me.constants.ts` içinde `src/schemas/me.schema.ts` ile doğrulanır) + `src/constants/site-copy.constants.ts` (sayfa metinleri). Hizmetler kaldırıldı (`/services` → 301 `/about`); header'a Keşfet menüsü eklendi. Akademi ViraStack'e taşındı (`/academy/*` → 301 virastack.com/academy). Ana sayfa blogu yalnızca teknik yazılar.
-- 2026-06-29 — Header rose ikonu (metin yok); footer iki sütun; hero + bölüm başlıkları 16px tipografi kararları.
+- Kod kuralları: ViraStack AI (`.claude/rules/virastack/`, `.cursor/rules/virastack/`).
+- Proje skill'leri: `writing-voice`, `blog-post`, `spacing-standard` (`.claude/skills/`).
+- UI skill'leri: `better-ui`, `better-accessibility`, `emil-design-eng` (`.agents/skills/`, `skills-lock.json`).

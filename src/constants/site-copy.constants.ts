@@ -1,5 +1,5 @@
 /**
- * Page copy for the Turkish-only site. Approved source: `docs/redesign/copy.md`.
+ * Page copy for the Turkish-only site. Follow the writing-voice skill when editing.
  * Sentences that contain inline links are split into pieces so components only compose them.
  */
 export const SITE_COPY = {
