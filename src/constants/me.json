@@ -327,6 +327,13 @@
 					"imageAlt": "ViraStack logosu"
 				},
 				{
+					"id": "2025-renault-clio",
+					"title": "Renault Clio aldım",
+					"imageSrc": "/img/journey/2025-renault-clio.jpg",
+					"imageAlt": "Renault Clio ile birlikte",
+					"imageObjectPosition": "center calc(100% + 100px)"
+				},
+				{
 					"id": "2025-evlilik",
 					"title": "Evlendim",
 					"description": "Eşimle hayatı birlikte kurmaya karar verdik.",
@@ -337,14 +344,6 @@
 					"id": "2025-sakarya",
 					"title": "Sakarya'ya taşındım",
 					"description": "İstanbul'dan sessiz bir yaşama geçtim."
-				},
-				{
-					"id": "2025-renault-clio",
-					"title": "Renault Clio aldım",
-					"description": "Aktif kullandığım ilk araç.",
-					"imageSrc": "/img/journey/2025-renault-clio.jpg",
-					"imageAlt": "Renault Clio ile birlikte",
-					"imageObjectPosition": "center calc(100% + 100px)"
 				}
 			]
 		},
