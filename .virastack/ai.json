@@ -1,0 +1,37 @@
+{
+  "$schema": "https://unpkg.com/@virastack/ai@2/schema.json",
+  "version": 1,
+  "cliVersion": "2.0.0",
+  "framework": "tanstack",
+  "agents": [
+    "claude",
+    "cursor"
+  ],
+  "claudeImport": "created",
+  "files": {
+    ".claude/rules/virastack/api.md": "2cf8b9caabe2e04ff85e5aa3cbe11b6588b8b16c77e15359acf1c9fc7bceecee",
+    ".claude/rules/virastack/architecture.md": "2cea0cf7d2b6cac2223d2c863862417277b704a641be497d348fe6f6d9655f29",
+    ".claude/rules/virastack/client-state.md": "4774d67f6bcaf4b4320748e19fca6617836443b49b51419f5ed89d44f79be40c",
+    ".claude/rules/virastack/core.md": "213abd75defaf7abb9dd19471ff7fcd1994cbd198f35b97841b514d5df8ddff8",
+    ".claude/rules/virastack/forms.md": "39a4f8b7ca9a246236ebd20a754418c61fccad5d3ca2153e703f7604231223b9",
+    ".claude/rules/virastack/performance.md": "a27372ba7226e36ac2536dee22e44197aa74e3d9c2377d84ca73ee9978ba9ece",
+    ".claude/rules/virastack/react.md": "7f5add6718f13bed5e37ebcc11e41fde0caddc9923914daca10550c2e0ce6ac7",
+    ".claude/rules/virastack/server-state.md": "0086ef011bb347f700e54ebc1f1f2c0646f2d874c333970bc30846b547435954",
+    ".claude/rules/virastack/tanstack-start.md": "9d06382b69e555d2934eb964a3aedd06f5c2d95f1369417c16514de8e87fc0e3",
+    ".claude/rules/virastack/testing.md": "c09fb7d8d21df532ed93df8c1c14b691ec5dd9898dd0093f8c9ba28602c6c0a7",
+    ".claude/rules/virastack/typescript.md": "eea11c8bf696ccb9f4accce85eb742644f12bd017fdef5423c6dfd7b6589eafb",
+    ".claude/rules/virastack/ui.md": "8d9f122b4c86e54e0302ef4217adaf947ad59a19260c7cd786b1a44b9157339f",
+    ".cursor/rules/virastack/api.mdc": "2b7b3856e5e3577946c959fb1e089ddf049d4e06fb38f464c9f3a73bea2a0e73",
+    ".cursor/rules/virastack/architecture.mdc": "f92309e135e02529bb2f3bfca19b854032875af065805cc381375b0f8717083e",
+    ".cursor/rules/virastack/client-state.mdc": "68d65246c972e9fa70a881ec1c2d4a3e783c63e0caf0ed68cbae46b45869e458",
+    ".cursor/rules/virastack/core.mdc": "1690d0aa01865de8261e1f9eb02147e9e2961165b46dabc0f46d6cc9fa2af4d3",
+    ".cursor/rules/virastack/forms.mdc": "e1ed8122037740c5e040b36cbecea7066ee46645a4f303d59ab512110dbc7fb4",
+    ".cursor/rules/virastack/performance.mdc": "bde6e02aa83a56cc0eb4b20a5959c1c8f948dbea8fa77129fca18bd1783d6026",
+    ".cursor/rules/virastack/react.mdc": "a77b4ab247eb274246b5ca78ffc06741ae53b0ba05ad6fc77bbfb62cd2ab017a",
+    ".cursor/rules/virastack/server-state.mdc": "e8595528aa47bdeecf99801d51264c9a52a0ce5c11d32a18030046cd41d8c826",
+    ".cursor/rules/virastack/tanstack-start.mdc": "f506e47a709ab3a9ecc6cf64a1dcf478c1be25477e8ee5be4a9a5cae4e9dc9c7",
+    ".cursor/rules/virastack/testing.mdc": "890366e4f25b56b5637b723068680f9d74558b34c5188d85e41507cf56573503",
+    ".cursor/rules/virastack/typescript.mdc": "e29bfa3feee1d08c4abcdfa62061944358abdc86be1d5888d68e98bac4488e94",
+    ".cursor/rules/virastack/ui.mdc": "5de91b5356620ae00cf9d340ecf1fee38e2a2604e6f6316c6186230a2a9cfd0c"
+  }
+}

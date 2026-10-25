@@ -11,6 +11,7 @@
 		"lighthouse:ci": "pnpm build && lhci autorun",
 		"lint": "eslint .",
 		"check-types": "tsc --noEmit",
+		"typecheck": "tsc --noEmit",
 		"generate-routes": "tsr generate",
 		"test": "vitest",
 		"test:run": "vitest run",

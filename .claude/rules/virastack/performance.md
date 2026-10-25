@@ -1,0 +1,50 @@
+---
+paths:
+  - "src/app/**/*.tsx"
+  - "src/routes/**/*.tsx"
+  - "src/components/**/*.tsx"
+  - "src/features/**/components/**/*.tsx"
+---
+<!-- Managed by @virastack/ai -->
+
+# Performance
+
+USE WHEN: Improving Core Web Vitals (LCP, INP, CLS): images, fonts, scripts, bundle size.
+
+Budgets at the 75th percentile on mobile: **LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1**.
+
+## Rules
+
+- Measure first (Lighthouse, DevTools, React Profiler). Keep a change only if it measurably helps.
+- No `useMemo` or `useCallback` for speed without a profile.
+- LCP: load the hero image eagerly with high fetch priority. Never lazy-load it.
+- CLS: images and embeds have dimensions or an aspect ratio, skeletons match the final size, fonts use `font-display: swap`.
+- INP: keep handlers short; move heavy work into `startTransition` or a web worker.
+- Lazy-load heavy components below the fold and defer third-party scripts.
+- Import single icons and functions, not whole libraries.
+- No request waterfalls: run independent requests together, prefetch route data.
+
+## Bans
+
+- Render-blocking third-party scripts.
+- Long lists without pagination or virtualization.
+
+<example>
+```tsx
+import { lazy, Suspense } from "react";
+
+import { Skeleton } from "@/components/ui";
+
+const RevenueChart = lazy(() =>
+  import("@/features/reports/components/RevenueChart").then((mod) => ({ default: mod.RevenueChart })),
+);
+
+export function ReportsPanel() {
+  return (
+    <Suspense fallback={<Skeleton className="h-80 w-full" />}>
+      <RevenueChart />
+    </Suspense>
+  );
+}
+```
+</example>
