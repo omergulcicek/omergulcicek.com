@@ -1,4 +1,5 @@
 import { TURKISH_SHORT_MONTHS } from "@/constants/date.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 
 function formatYearMonth(value: string): string {
 	const [year = "", month = ""] = value.split("-")
@@ -7,12 +8,14 @@ function formatYearMonth(value: string): string {
 	return `${label} ${year.slice(2)}`
 }
 
-/** Formats `YYYY-MM` ranges as `Ağu 25 – Kas 25`; an open range ends with a trailing dash. */
+/** Formats `YYYY-MM` ranges as `Ağu 25 – Kas 25`; an open range ends with `Günümüz`. */
 export function formatExperiencePeriod(
 	startDate: string,
 	endDate: string | null
 ): string {
 	const start = formatYearMonth(startDate)
 
-	return endDate ? `${start} – ${formatYearMonth(endDate)}` : `${start} –`
+	const end = endDate ? formatYearMonth(endDate) : SITE_COPY.experiences.ongoing
+
+	return `${start} – ${end}`
 }

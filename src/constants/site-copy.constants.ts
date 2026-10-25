@@ -91,6 +91,7 @@ export const SITE_COPY = {
 	},
 	experiences: {
 		title: "Deneyimler",
+		ongoing: "Günümüz",
 		intro:
 			"2017'den beri React ekosisteminde ürün geliştiriyorum. Son yıllarda ekip yönettim, mimari kurdum."
 	},

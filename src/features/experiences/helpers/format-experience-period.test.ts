@@ -8,6 +8,6 @@ describe("formatExperiencePeriod", () => {
 	})
 
 	it("formats an open range", () => {
-		expect(formatExperiencePeriod("2025-12", null)).toBe("Ara 25 –")
+		expect(formatExperiencePeriod("2025-12", null)).toBe("Ara 25 – Günümüz")
 	})
 })
