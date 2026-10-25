@@ -89,7 +89,7 @@ export const STACK_ITEMS: StackItem[] = [
 	{
 		id: "base-ui",
 		label: "Base UI",
-		description: "Stilsiz, erişilebilir bileşenler",
+		description: "Erişilebilir bileşenler",
 		order: 205,
 		href: "https://base-ui.com/"
 	},
