@@ -14,7 +14,12 @@ export function HeroBody() {
 	return (
 		<div className={cn("text-base", proseFlowClass)}>
 			<p className={proseParagraphClass}>
-				{hero.architecture} <VirastackLink>{hero.virastack.link}</VirastackLink>
+				{hero.architecture}{" "}
+				{/* Only "ViraStack'in" stays together; the inline-flex link would otherwise wrap away from its suffix. */}
+				<span className="whitespace-nowrap">
+					<VirastackLink>{hero.virastack.link}</VirastackLink>
+					{hero.virastack.suffix}
+				</span>
 				{hero.virastack.after}
 			</p>
 			<p className={proseParagraphClass}>{hero.ai}</p>

@@ -8,8 +8,9 @@ export const SITE_COPY = {
 			architecture: "React ve TanStack ile arayüz mimarisi kuruyorum.",
 			virastack: {
 				link: "ViraStack",
+				suffix: "'in",
 				after:
-					"'in kurucusuyum: frontend geliştiriciler için açık kaynak şablonlar, paketler ve ücretsiz rehberler."
+					" kurucusuyum. Burada frontend geliştiriciler için açık kaynak şablonlar, paketler ve ücretsiz rehberler hazırlıyorum."
 			},
 			ai: "Kod kurallarımı ViraStack AI'da topladım. Yapay zekâyla da aynı kurallarla çalışıyorum.",
 			contact: {
