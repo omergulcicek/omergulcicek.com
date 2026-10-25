@@ -18,9 +18,9 @@ export const CARD_PADDING = 32
 export const CONTRIBUTION_LEVELS = [0, 1, 2, 3, 4] as const
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const
-export const ACTIVITY_SPRING = { type: "spring", bounce: 0.15, duration: 0.5 } as const
-export const HEADER_SPRING = { ...ACTIVITY_SPRING, bounce: 0.2 } as const
-export const ROW_SPRING = { ...ACTIVITY_SPRING, bounce: 0.18, delay: 0.08 } as const
+export const ACTIVITY_SPRING = { type: "spring", bounce: 0, duration: 0.5 } as const
+export const HEADER_SPRING = ACTIVITY_SPRING
+export const ROW_SPRING = { ...ACTIVITY_SPRING, delay: 0.08 } as const
 export const CELL_FADE = { duration: 0.2, ease: EASE_OUT } as const
 export const TOOLTIP_FADE = { duration: 0.14, ease: EASE_OUT } as const
 export const LABEL_REVEAL = { duration: 0.45, ease: EASE_OUT } as const

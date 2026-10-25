@@ -10,6 +10,7 @@ import {
 	CarouselNext,
 	CarouselPrevious
 } from "@/components/ui/carousel"
+import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import { resolveCarouselImages } from "@/features/blog/helpers/resolve-carousel-images"
 import {
 	openBlogProseImageZoom,
@@ -87,8 +88,8 @@ export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {
 				</CarouselContent>
 				{resolvedImages.length > 1 ? (
 					<>
-						<CarouselPrevious />
-						<CarouselNext />
+						<CarouselPrevious aria-label={BLOG_UI.carouselPrevious} />
+						<CarouselNext aria-label={BLOG_UI.carouselNext} />
 					</>
 				) : null}
 			</Carousel>

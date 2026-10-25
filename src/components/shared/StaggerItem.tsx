@@ -4,6 +4,7 @@ import type { ComponentProps } from "react"
 import { motion, type HTMLMotionProps } from "motion/react"
 
 import {
+	MOTION_ENTER_BLUR,
 	MOTION_ENTER_OFFSET_Y,
 	MOTION_SOFT_FADE,
 	MOTION_SPRING_SNAP
@@ -18,12 +19,14 @@ export function StaggerItem({ children, ...props }: StaggerItemProps) {
 
 	const itemHidden = {
 		opacity: 0,
-		y: shouldUseSoftMotion ? 0 : MOTION_ENTER_OFFSET_Y
+		y: shouldUseSoftMotion ? 0 : MOTION_ENTER_OFFSET_Y,
+		filter: shouldUseSoftMotion ? "none" : MOTION_ENTER_BLUR
 	}
 
 	const itemVisible = {
 		opacity: 1,
 		y: 0,
+		filter: shouldUseSoftMotion ? "none" : "blur(0px)",
 		transition: shouldUseSoftMotion ? MOTION_SOFT_FADE : MOTION_SPRING_SNAP
 	}
 

@@ -20,7 +20,6 @@ export const SITE_CONTENT = {
 	},
 	skipToContent: "Ana içeriğe geç",
 	searchTriggerLabel: "Ara",
-	searchTriggerAria: "Arama paletini aç",
 	scrollToTop: "Yukarı çık",
 	scrollProgress: "Sayfa kaydırma durumu",
 	mainNavAria: "Ana menü",

@@ -162,13 +162,15 @@
 		transition: text-decoration-color 150ms ease;
 	}
 
-	.underline:hover {
-		text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
-	}
+	@media (hover: hover) {
+		.underline:hover {
+			text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+		}
 
-	:is(a, button, [role="link"]).hover\:underline:hover {
-		text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
-		text-underline-offset: 3px;
+		:is(a, button, [role="link"]).hover\:underline:hover {
+			text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+			text-underline-offset: 3px;
+		}
 	}
 
 	.group:hover .group-hover\:underline {
@@ -192,8 +194,10 @@
 		transition-timing-function: ease-out;
 	}
 
-	.surface-card-interactive:hover {
-		box-shadow: var(--shadow-border-hover);
+	@media (hover: hover) {
+		.surface-card-interactive:hover {
+			box-shadow: var(--shadow-border-hover);
+		}
 	}
 
 	.focus-link {

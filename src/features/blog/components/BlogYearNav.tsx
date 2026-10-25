@@ -1,3 +1,6 @@
+import { cn } from "@/lib/utils"
+
+import { filterTextButtonClass } from "@/components/shared/filter-chip.styles"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 
 type BlogYearNavProps = {
@@ -9,13 +12,13 @@ export function BlogYearNav({ years, onSelect }: BlogYearNavProps) {
 	return (
 		<nav
 			aria-label={BLOG_UI.yearNavAriaLabel}
-			className="text-muted-foreground -mt-4 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs tabular-nums md:-mt-6"
+			className="text-muted-foreground -mt-4 flex flex-wrap gap-x-3 font-mono text-xs tabular-nums md:-mt-6"
 		>
 			{years.map((year) => (
 				<button
 					key={year}
 					type="button"
-					className="focus-link hover:text-foreground underline-offset-4 transition-colors hover:underline"
+					className={cn(filterTextButtonClass, "font-mono")}
 					onClick={() => onSelect(year)}
 				>
 					{year}

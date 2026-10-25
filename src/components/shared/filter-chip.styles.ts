@@ -22,3 +22,7 @@ export const blogFilterPanelClass =
 export const blogTagsCollapsedClass = "md:max-h-14"
 
 export const blogTagsExpandedClass = "md:max-h-[2000px]"
+
+/** Small text actions beside filters; `min-h-6` keeps the target at the 24px WCAG 2.5.8 minimum. */
+export const filterTextButtonClass =
+	"focus-link text-muted-foreground hover:text-foreground inline-flex min-h-6 w-fit items-center gap-1 text-xs underline-offset-4 transition-[color,scale] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"

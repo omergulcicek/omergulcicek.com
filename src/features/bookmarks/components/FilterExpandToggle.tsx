@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+import { filterTextButtonClass } from "@/components/shared/filter-chip.styles"
 import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 
 export function FilterExpandToggle({
@@ -15,8 +16,7 @@ export function FilterExpandToggle({
 		<button
 			type="button"
 			aria-expanded={expanded}
-			aria-label={BOOKMARK_UI.tagsToggleAriaLabel}
-			className="focus-link text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
+			className={filterTextButtonClass}
 			onClick={onToggle}
 		>
 			<ChevronDown

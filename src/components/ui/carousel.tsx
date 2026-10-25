@@ -169,7 +169,7 @@ const CarouselItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 CarouselItem.displayName = "CarouselItem"
 
 const carouselButtonClass =
-	"inline-flex size-8 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-sm transition-[box-shadow,transform,background-color,color] duration-150 ease-out hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.96]"
+	"inline-flex size-8 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-sm transition-[box-shadow,scale,background-color,color] duration-150 ease-out hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 enabled:active:scale-[0.96]"
 
 const CarouselPrevious = forwardRef<HTMLButtonElement, ComponentProps<"button">>(
 	({ className, ...props }, ref) => {

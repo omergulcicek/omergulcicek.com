@@ -18,8 +18,10 @@
 	transition: text-decoration-color 150ms ease;
 }
 
-.blog-prose :where(a:hover) {
-	text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+@media (hover: hover) {
+	.blog-prose :where(a:hover) {
+		text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+	}
 }
 
 .blog-prose :where(a:focus-visible) {
@@ -38,16 +40,24 @@
 	@apply inline-flex shrink-0 text-muted-foreground/70 opacity-0 transition-opacity duration-150 rounded-sm;
 }
 
-.blog-prose :where(.heading-anchor:hover) {
-	@apply text-foreground;
+@media (hover: hover) {
+	.blog-prose :where(.heading-anchor:hover) {
+		@apply text-foreground;
+	}
 }
 
 .blog-prose :where(.heading-anchor:focus-visible) {
 	@apply opacity-100 ring-[3px] ring-ring/50 outline-none;
 }
 
-.blog-prose :where(h2[id]:hover .heading-anchor, h3[id]:hover .heading-anchor, h2[id]:focus-within .heading-anchor, h3[id]:focus-within .heading-anchor) {
+.blog-prose :where(h2[id]:focus-within .heading-anchor, h3[id]:focus-within .heading-anchor) {
 	opacity: 1;
+}
+
+@media (hover: hover) {
+	.blog-prose :where(h2[id]:hover .heading-anchor, h3[id]:hover .heading-anchor) {
+		opacity: 1;
+	}
 }
 
 .blog-prose :where(h2) {
@@ -263,8 +273,10 @@
 	text-decoration-color: color-mix(in oklch, currentColor 40%, transparent);
 }
 
-.blog-prose :where(.blog-book-info__title:is(a:hover), .blog-media-info__title:is(a:hover)) {
-	text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+@media (hover: hover) {
+	.blog-prose :where(.blog-book-info__title:is(a:hover), .blog-media-info__title:is(a:hover)) {
+		text-decoration-color: color-mix(in oklch, currentColor 80%, transparent);
+	}
 }
 
 .blog-prose :where(.blog-book-info__details, .blog-media-info__details) {
@@ -332,7 +344,7 @@
 }
 
 .blog-prose :where(.blog-links-review__summary) {
-	@apply flex w-full cursor-pointer list-none items-center justify-between gap-4 border-0 bg-transparent py-3 text-left text-sm font-medium text-foreground transition-[color,transform] duration-150 ease-out active:scale-[0.96] motion-reduce:active:scale-100;
+	@apply flex w-full cursor-pointer list-none items-center justify-between gap-4 border-0 bg-transparent py-3 text-left text-sm font-medium text-foreground transition-[color,scale] duration-150 ease-out active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100;
 }
 
 .blog-prose :where(.blog-links-review__summary::-webkit-details-marker) {

@@ -8,7 +8,8 @@ import {
 	blogFilterPanelClass,
 	blogFilterTagsContainerClass,
 	blogTagsCollapsedClass,
-	blogTagsExpandedClass
+	blogTagsExpandedClass,
+	filterTextButtonClass
 } from "@/components/shared/filter-chip.styles"
 import { surfacePanelClass } from "@/components/shared/interactive-card.styles"
 import { BlogSortControl } from "@/features/blog/components/BlogSortControl"
@@ -123,8 +124,7 @@ export function BlogListFilters({
 						<button
 							type="button"
 							aria-expanded={tagsExpanded}
-							aria-label={BLOG_UI.tagsToggleAriaLabel}
-							className="focus-link text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-xs underline-offset-4 transition-colors hover:underline"
+							className={filterTextButtonClass}
 							onClick={() => setTagsExpanded((expanded) => !expanded)}
 						>
 							<ChevronDown
@@ -140,7 +140,7 @@ export function BlogListFilters({
 					{showClearFilters ? (
 						<button
 							type="button"
-							className="focus-link text-muted-foreground hover:text-foreground text-xs underline-offset-4 transition-[color,transform] duration-150 ease-out hover:underline active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
+							className={filterTextButtonClass}
 							onClick={onClearFilters}
 						>
 							{BLOG_UI.clearFilters}

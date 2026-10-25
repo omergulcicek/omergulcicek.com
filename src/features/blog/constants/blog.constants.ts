@@ -101,6 +101,8 @@ export const BLOG_UI = {
 		oldest: "En yeni yazıları önce göster"
 	},
 	yearNavAriaLabel: "Yıla git",
+	carouselPrevious: "Önceki görsel",
+	carouselNext: "Sonraki görsel",
 	sectionAnchorLabel: (section: string) => `${section} bölümüne git`,
 	featuredLabel: "Öne çıkan",
 	rssLabel: "RSS",
@@ -108,7 +110,6 @@ export const BLOG_UI = {
 	clearFilters: "Filtreleri temizle",
 	showTags: "Tüm etiketleri göster",
 	hideTags: "Daha az göster",
-	tagsToggleAriaLabel: "Etiket filtrelerini göster veya gizle",
 	emptyState: "Seçili filtrelere uygun yazı bulunamadı.",
 	listAriaLabel: "Blog yazıları",
 	previousPost: "Önceki yazı",

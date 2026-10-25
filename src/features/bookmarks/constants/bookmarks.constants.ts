@@ -1519,7 +1519,6 @@ export const BOOKMARK_UI = {
 	emptyState: "Seçili etikete uygun yer imi bulunamadı.",
 	showTags: "Tümünü göster",
 	hideTags: "Daha az göster",
-	tagsToggleAriaLabel: "Tümünü göster veya gizle",
 	libraryCoverAttribution: "Kitap görselleri Kitapyurdu'ndan alınmıştır.",
 	libraryAICategorizationAttribution:
 		"Kategorileştirme yapay zekâ tarafından yapılmıştır."

@@ -11,9 +11,11 @@ export const MOTION_SOFT_FADE = {
 	ease: MOTION_EASE_OUT
 }
 
-export const MOTION_STAGGER_DELAY = 0.07
+export const MOTION_STAGGER_DELAY = 0.1
 
-export const MOTION_ENTER_OFFSET_Y = 8
+export const MOTION_ENTER_OFFSET_Y = 12
+
+export const MOTION_ENTER_BLUR = "blur(4px)"
 
 export const MOTION_FILTER_ENTER = {
 	duration: 0.18,
