@@ -1,5 +1,6 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/PageHeader"
+import { ProseEmphasis } from "@/components/shared/ProseEmphasis"
 import { ProseLink } from "@/components/shared/ProseLink"
 import { StaggerContainer } from "@/components/shared/StaggerContainer"
 import { StaggerItem } from "@/components/shared/StaggerItem"
@@ -36,6 +37,10 @@ export function SetupPage() {
 							<ProseLink href={SETUP_LINKS.claudeCode}>
 								{setup.assistant.link}
 							</ProseLink>
+							{setup.assistant.afterLink}
+							<ProseEmphasis>{setup.assistant.opus}</ProseEmphasis>
+							{setup.assistant.afterOpus}
+							<ProseEmphasis>{setup.assistant.sonnet}</ProseEmphasis>
 							{setup.assistant.after}
 						</p>
 						<p className={proseParagraphClass}>

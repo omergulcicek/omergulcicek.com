@@ -43,6 +43,8 @@ export type StackLogoEntry =
 			srcSet?: string
 			width: number
 			height: number
+			/** Person avatars render as circles; product logos keep their shape. */
+			round?: boolean
 	  }
 
 /** Logo for each stack item id in `STACK_ITEMS`; unknown ids fall back to initials. */
@@ -90,5 +92,28 @@ export const STACK_LOGOS: Record<string, StackLogoEntry> = {
 		srcSet: VIRASTACK_LOGO.srcSet,
 		width: VIRASTACK_LOGO.width,
 		height: VIRASTACK_LOGO.height
+	},
+	"virastack-ai": {
+		kind: "image",
+		src: VIRASTACK_LOGO.src,
+		srcSet: VIRASTACK_LOGO.srcSet,
+		width: VIRASTACK_LOGO.width,
+		height: VIRASTACK_LOGO.height
+	},
+	"emil-skills": {
+		kind: "image",
+		src: "/logos/emil-skills-56.webp",
+		srcSet: "/logos/emil-skills-56.webp 1x, /logos/emil-skills-112.webp 2x",
+		width: 56,
+		height: 56,
+		round: true
+	},
+	"jakub-skills": {
+		kind: "image",
+		src: "/logos/jakub-skills-56.webp",
+		srcSet: "/logos/jakub-skills-56.webp 1x, /logos/jakub-skills-112.webp 2x",
+		width: 56,
+		height: 56,
+		round: true
 	}
 }

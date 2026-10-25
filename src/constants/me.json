@@ -494,7 +494,9 @@
 				"label": "Yapay zekâ",
 				"itemIds": [
 					"claude",
-					"virastack"
+					"virastack-ai",
+					"emil-skills",
+					"jakub-skills"
 				]
 			}
 		],

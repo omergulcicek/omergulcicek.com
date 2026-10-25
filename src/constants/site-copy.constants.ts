@@ -138,24 +138,31 @@ export const SITE_COPY = {
 	},
 	setup: {
 		title: "Kurulum",
-		intro: "Kod yazarken kullandıklarım.",
+		intro: "Kod yazarken kullandığım araçlar ve teknolojiler.",
 		toolsTitle: "Araçlar",
 		stackTitle: "Teknolojiler",
 		assistant: {
-			before: "Günlük aracım ",
+			before: "Yapay zekâyla kod yazarken ",
 			link: "Claude Code",
-			after: ". Opus ile mimari kararlar, Sonnet ile hızlı işler."
+			afterLink:
+				" kullanıyorum. Mimari kararlar gibi dikkat isteyen karmaşık işlerde ",
+			opus: "Opus",
+			afterOpus:
+				"'u seçiyorum. İyi tanımlanmış günlük görevlerde ve hata düzeltmede daha hızlı ve ucuz olan ",
+			sonnet: "Sonnet",
+			after: "'le ilerliyorum."
 		},
 		agent: {
-			before: "Ajanı ",
+			before: "Ajanın uyduğu kod kurallarını ",
 			virastackAi: "ViraStack AI",
-			afterVirastackAi: " kurallarıyla mimari için, ",
+			afterVirastackAi:
+				"'da topladım. Arayüz tarafında iki skill paketi daha kullanıyorum: animasyon ve etkileşim için ",
 			emilSkills: "emilkowalski/skills",
-			afterEmilSkills: " ile animasyon için, ",
+			afterEmilSkills: ", yüzey ve erişilebilirlik detayları için ",
 			jakubSkills: "jakubkrehel/skills",
-			after: " ile arayüz cilası için yönlendiriyorum."
+			after: "."
 		},
-		computer: "Bilgisayarım M1 MacBook Pro."
+		computer: "2021'den beri aynı M1 MacBook Pro'yu kullanıyorum."
 	},
 	notFound: {
 		title: "Sayfa bulunamadı",

@@ -204,6 +204,27 @@ export const STACK_ITEMS: StackItem[] = [
 		description: "Frontend ekosistemi",
 		order: 503,
 		href: EXTERNAL_LINKS.virastack
+	},
+	{
+		id: "virastack-ai",
+		label: "ViraStack AI",
+		description: "AI kod kuralları",
+		order: 503,
+		href: `${EXTERNAL_LINKS.virastack}/ai`
+	},
+	{
+		id: "emil-skills",
+		label: "emilkowalski/skills",
+		description: "Animasyon ve etkileşim skill'leri",
+		order: 504,
+		href: "https://github.com/emilkowalski/skills"
+	},
+	{
+		id: "jakub-skills",
+		label: "jakubkrehel/skills",
+		description: "Arayüz ve erişilebilirlik skill'leri",
+		order: 505,
+		href: "https://github.com/jakubkrehel/skills"
 	}
 ]
 

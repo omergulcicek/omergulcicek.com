@@ -58,7 +58,7 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 						? [{ type: "image/webp", srcSet: logo.srcSet }]
 						: undefined
 				}
-				className={iconClassName}
+				className={cn(iconClassName, logo.round && "rounded-full object-cover")}
 			/>
 		)
 	}
