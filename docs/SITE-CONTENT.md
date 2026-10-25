@@ -1,6 +1,6 @@
 # omergulcicek.com — Site İçerikleri
 
-> Onaylı UI metinleri bu dosyada. Sayfa içerik SSOT: Hakkımda → `docs/ABOUT.md` · Deneyimler → `docs/EXPERIENCES.md` · Hizmetler → `docs/SERVICES.md` · Yer İmleri → `docs/BOOKMARKS.md` · Arama → `docs/SEARCH.md`.
+> **2026-10-25'ten itibaren metin SSOT koddadır:** olgular, projeler, deneyimler, Yolculuk, hobiler, favoriler ve teknoloji seçimleri `src/constants/me.json` (`me.constants.ts` içinde `src/schemas/me.schema.ts` ile doğrulanır), sayfa metinleri `src/constants/site-copy.constants.ts`, UI kalıpları `src/constants/site-content.constants.ts`. Bu dosya kararları özetler; metin değişikliği önce koda girer. Hizmetler sayfası kaldırıldı (`/services` → 301 `/about#birlikte-calisalim`). Akademi ViraStack'e taşındı (`/academy/*` → 301 `https://virastack.com/academy`). Diğer SSOT'lar: Yer İmleri → `docs/BOOKMARKS.md` · Arama → `docs/SEARCH.md`.
 
 ---
 
@@ -19,11 +19,14 @@
 | Ana Sayfa | `/`         |
 | Blog      | `/blog`     |
 | Projeler  | `/projects` |
-| Hakkımda  | `/about`    |
+| Yer İmleri | `/bookmarks` |
+| Keşfet ▾  | Hakkımda `/about` · Deneyimler `/experiences` · Yolculuk `/journey` · Kurulum `/setup` |
+
+Keşfet bir açılır menüdür (`src/components/shared/explore-nav-menu.tsx`, `EXPLORE_NAV`). Mobil menü ve ⌘K arama `HEADER_NAV` + `EXPLORE_NAV` listesini düz kullanır.
 
 Header'da ayrıca: tema düğmesi + ⌘K arama + **GitHub ikonu** (`IconLinkButton` → `EXTERNAL_LINKS.github`, `aria-label`: GitHub profilini ziyaret et). Hero'da da sosyal linkler (`SocialLinks`) bulunur.
 
-**Unvan (kesin):** `Frontend Engineer` — hero, SEO, metadata; `Staff Frontend Engineer` kullanılmaz.
+**Unvan (kesin):** `Frontend Mühendisi` (`ME.personal.title`) — hero, SEO, metadata. Frontend Architect hedef; unvan olarak yazılmaz.
 
 Implementasyon: `src/constants/header-nav.constants.ts`.
 
@@ -45,16 +48,7 @@ Implementasyon: `src/constants/header-nav.constants.ts`.
 
 Header'da yok. Sıra implementasyonda korunur (`src/constants/footer-nav.constants.ts`, ViraStack listesi `getPublishedVirastackProjects()`).
 
-**Keşfet (`footerNavTitle`):**
-
-| Sıra | Etiket         | Rota           |
-| ---- | -------------- | -------------- |
-| 1    | Deneyimler     | `/experiences` |
-| 2    | Yolculuk       | `/journey`     |
-| 3    | Araçlar        | `/stack`       |
-| 4    | Çalışma Alanı  | `/workspace`   |
-| 5    | Hizmetler      | `/services`    |
-| 6    | Yer İmleri     | `/bookmarks`   |
+**Keşfet (`footerNavTitle`):** header'daki Keşfet menüsüyle aynı liste (`FOOTER_NAV = EXPLORE_NAV`): Hakkımda, Deneyimler, Yolculuk, Kurulum.
 
 **ViraStack (`footerVirastackTitle`):** Başlık [virastack.com](https://virastack.com)'a link. Altında yalnızca `status: package` projeler (`docs/PROJECTS.md`); sıra `sortOrder`. Son satır: **Tüm projeler** → `/projects` (`footerVirastackAllProjects`).
 
@@ -92,7 +86,7 @@ Sayfa gövde metinleri → ilgili `docs/*.md` dosyaları.
 | Öğe | Boyut | Ağırlık | Tailwind |
 | --- | --- | --- | --- |
 | Hero — isim | 16px | 600 | `text-base font-semibold text-foreground` |
-| Hero — unvan (Frontend Engineer) | 16px | 400 | `text-base font-normal text-muted-foreground` |
+| Hero — unvan (Frontend Mühendisi) | 16px | 400 | `text-base font-normal text-muted-foreground` |
 | Hero — paragraflar | 16px | 400 (normal) | `text-base` |
 | Bölüm başlıkları (ana sayfa, projeler vb.) | 16px | 500 | `text-base font-medium` |
 
@@ -120,7 +114,7 @@ Legacy ile aynı portre görseli: `public/omergulcicek.JPG` (`_legacy` → `USER
 ### Layout (dikey editorial — v1 animasyonsuz)
 
 1. Portre fotoğraf (tam container genişliği)
-2. **Ömer Gülçiçek** · Frontend Engineer
+2. **Ömer Gülçiçek** · Frontend Mühendisi
 3. Sosyal ikonlar (GitHub, LinkedIn, X — `src/constants/social.constants.ts`)
 4. Paragraf 1
 5. Paragraf 2
@@ -128,19 +122,15 @@ Legacy ile aynı portre görseli: `public/omergulcicek.JPG` (`_legacy` → `USER
 ### Başlık
 
 **Ömer Gülçiçek** — `text-base font-semibold text-foreground` (16px, ağırlık 600)  
-Frontend Engineer — `text-base font-normal text-muted-foreground` (16px, ağırlık 400)
+Frontend Mühendisi — `text-base font-normal text-muted-foreground` (16px, ağırlık 400)
 
 Sosyal ikonlar marka renkleriyle: GitHub `#181717` / dark `#f0f6fc`, LinkedIn `#0A66C2`, X `foreground`.
 
-### Paragraf 1 (`heroParagraph1`)
+### Metin
 
-Detaylara ve kaliteye *büyük bir tutku* duyuyorum; projelerim aracılığıyla insanlara faydalı olup onların deneyimlerine değer katmayı seviyorum. [ViraStack](https://virastack.com) ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.
+`SITE_COPY.home.hero` — copy.md'deki dört cümle: mimari, ViraStack kuruculuğu, AI çalışma biçimi, iletişim (e-posta, LinkedIn, X, GitHub).
 
-### Paragraf 2 (`heroParagraph2`)
-
-Bana [@omergulcicek](https://x.com/omergulcicek) ve [e-posta](mailto:iletisim@omergulcicek.com) yoluyla ulaşabilir ya da [GitHub](https://github.com/omergulcicek)'daki kodlarıma göz atabilirsiniz.
-
-GitHub ve e-posta linklerinin önünde küçük ikon; yalnızca metin altı çizili, ikon tıklanabilir. `@omergulcicek` X profiline gider — düz metin linki, ikon yok.
+E-posta ve GitHub linklerinin önünde küçük ikon; LinkedIn ve X düz metin linki.
 
 Paragraflar: `text-base` (16px), normal ağırlık. Ardışık paragraflar arası: `proseFlowClass` (`gap-4`, 16px) — `docs/UI-PATTERNS.md`.
 
@@ -157,7 +147,8 @@ Tam plan → `docs/PROJECT-BRIEF.md` → Ana Sayfa Planı.
 | 3 | Mini stack strip | ~8–10 logo; **bleed** genişlik; Magic UI Marquee (CSS scroll); SVGL ikonları |
 | 4 | Son 3 blog | Metin listesi |
 | 5 | Son 3 deneyim | Şirket logosu + 1 satır; CV düğmesi yalnızca `/experiences` |
-| 6 | Ayet/alıntı | **Faz 5** — ilk build'de yok |
+| 6 | Birlikte çalışalım | `ContactCta` — e-posta kartı (`SITE_COPY.contactCta`) |
+| 7 | Ayet/alıntı | **Faz 5** — ilk build'de yok |
 
 ---
 
@@ -169,10 +160,10 @@ Implementasyon: `src/constants/site.constants.ts`. Tam teknik metadata (OG, site
 | --- | --- |
 | `siteName` | Ömer Gülçiçek |
 | `siteUrl` | `https://omergulcicek.com` |
-| `jobTitle` | Frontend Engineer |
+| `jobTitle` | Frontend Mühendisi |
 | `titleTemplate` | `%s · Ömer Gülçiçek` |
-| `defaultTitle` | Ömer Gülçiçek — Frontend Engineer |
-| `defaultDescription` | Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack). |
+| `defaultTitle` | Ömer Gülçiçek — Frontend Mühendisi |
+| `defaultDescription` | `SITE_COPY.meta.home` |
 | `defaultOgImage` | `/omergulcicek.JPG` (dinamik OG şablonu Faz 4) |
 | `repository` | `https://github.com/omergulcicek/omergulcicek.com` |
 | `locale` | `tr_TR` |
@@ -181,16 +172,19 @@ Implementasyon: `src/constants/site.constants.ts`. Tam teknik metadata (OG, site
 
 ### Sayfa `title` ve `description`
 
+Implementasyon: `src/lib/seo/page-seo.constants.ts`; açıklamalar `SITE_COPY.meta.*`.
+
 | Rota | `title` | `description` |
 | --- | --- | --- |
-| `/` | Ömer Gülçiçek — Frontend Engineer | Detaylara önem veren bir frontend mühendisi; blog, projeler ve ViraStack ekosistemi. |
-| `/blog` | Blog | Teknik ve kişisel yazılar — React, Next.js, CSS, frontend mimarisi ve daha fazlası. |
+| `/` | Ömer Gülçiçek — Frontend Mühendisi | React ve TanStack ile arayüz mimarisi kuran frontend mühendisi. ViraStack kurucusu. |
+| `/blog` | Blog | React, Next.js, TanStack ve frontend mimarisi üzerine yazılar. |
 | `/blog/[slug]` | `{post.title}` | `{post.description}` (Supabase) |
-| `/projects` | Projeler | Kişisel uygulamalar ve ViraStack açık kaynak araçları. |
-| `/about` | Hakkımda | Frontend mühendisliği, ViraStack ve üretim kültürü hakkında kısa bir tanışma. |
-| `/experiences` | Deneyimler | Kariyer geçmişi, teknoloji etiketleri ve CV. |
-| `/services` | Hizmetler | Freelance geliştirme ve frontend eğitimi. |
-| `/bookmarks` | Yer İmleri | Raindrop'ta topladığım frontend kaynakları, bloglar ve okuma listesi. |
+| `/projects` | Projeler | ViraStack araçları ve kişisel uygulamalarım. |
+| `/about` | Hakkımda | Sakarya'da yaşayan frontend mühendisi. Nasıl çalıştığım ve ilgi alanlarım. |
+| `/experiences` | Deneyimler | 2017'den bugüne frontend deneyimim ve özgeçmişim. |
+| `/journey` | Yolculuk | Yıllara göre iş, proje ve hayat. |
+| `/setup` | Kurulum | Kod yazarken kullandığım araçlar ve teknolojiler. |
+| `/bookmarks` | Yer İmleri | Takip ettiğim frontend kaynakları, bloglar ve okuma listesi. |
 
 Blog yazısı: `titleTemplate` → `React AI Stack 2026 · Ömer Gülçiçek`.
 
@@ -198,14 +192,14 @@ Blog yazısı: `titleTemplate` → `React AI Stack 2026 · Ömer Gülçiçek`.
 
 ## Hata sayfaları
 
-### 404 (`notFound`)
+### 404 (`SITE_COPY.notFound`)
 
 | Anahtar | Metin |
 | --- | --- |
-| `notFoundTitle` | Sayfa bulunamadı |
-| `notFoundDescription` | Aradığın sayfa taşınmış, silinmiş veya hiç var olmamış olabilir. |
-| `notFoundHomeCta` | Ana sayfaya dön → `/` |
-| `notFoundBlogCta` | Blog'a git → `/blog` |
+| `title` | Sayfa bulunamadı |
+| `description` | Aradığın sayfa taşınmış ya da hiç olmamış olabilir. |
+| `homeCta` | Ana sayfa → `/` |
+| `blogCta` | Blog → `/blog` |
 
 ### Runtime error (`error.tsx`)
 
@@ -237,13 +231,13 @@ Legacy referans: `_legacy/src/features/home/constants/doodle.constants.ts`.
 
 Tam proje kataloğu, showcase kuralları ve UI yerleşimi → `docs/PROJECTS.md`.
 
-### `/projects` — sayfa girişi (`projectsPageIntro`)
+### `/projects` — sayfa girişi (`SITE_COPY.projects.intro`)
 
-Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum [ViraStack](https://virastack.com) ekosistemindeki araçlar.
+[ViraStack](https://virastack.com) ekosistemi ve kişisel uygulamalarım.
 
-### ViraStack bölümü (`virastackSectionIntro`)
+### ViraStack bölümü (`SITE_COPY.projects.virastackIntro`)
 
-**ViraStack**, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.
+Bir frontend projesine başlarken gereken parçalar tek yerde: şablonlar, AI kuralları, erişilebilir form paketleri ve ücretsiz rehberler. Rakam (indirme, yıldız) gösterilmez.
 
 Bağlantılar: [virastack.com](https://virastack.com) · [GitHub](https://github.com/virastack)
 
@@ -257,4 +251,5 @@ Bağlantılar: [virastack.com](https://virastack.com) · [GitHub](https://github
 | `projectsSectionVirastack` | ViraStack |
 | `projectsBadgeComingSoon` | Yakında |
 | `projectsBadgeArchive` | Arşiv |
+| `projectsBadgePaused` | Ara verildi (Footy) |
 | `projectsPreview` | Önizle |

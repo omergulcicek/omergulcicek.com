@@ -15,7 +15,8 @@ import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
 import { ReactDark } from "@/components/ui/svgs/reactDark"
 import { ReactLight } from "@/components/ui/svgs/reactLight"
 import { Styledcomponents } from "@/components/ui/svgs/styledcomponents"
-import { Tanstack } from "@/components/ui/svgs/tanstack"
+import { TanstackDark } from "@/components/ui/svgs/tanstackDark"
+import { TanstackLight } from "@/components/ui/svgs/tanstackLight"
 import { Tailwindcss } from "@/components/ui/svgs/tailwindcss"
 import { Typescript } from "@/components/ui/svgs/typescript"
 import { cn } from "@/lib/utils"
@@ -41,7 +42,7 @@ const TECHNOLOGY_ICON_MAP: Record<string, TechnologyIconEntry> = {
 	React: { kind: "theme", light: ReactLight, dark: ReactDark },
 	"Next.js": { kind: "icon", icon: NextjsIconDark, invertOnDark: true },
 	TypeScript: { kind: "icon", icon: Typescript },
-	"TanStack Query": { kind: "icon", icon: Tanstack },
+	"TanStack Query": { kind: "theme", light: TanstackLight, dark: TanstackDark },
 	"Tailwind CSS": { kind: "icon", icon: Tailwindcss },
 	GraphQL: { kind: "icon", icon: Graphql },
 	"Styled Components": { kind: "icon", icon: Styledcomponents },

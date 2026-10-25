@@ -1,13 +1,5 @@
-export type JourneyEntry = {
-	id: string
-	title: string
-	description: string
-	imageSrc?: string
-	imageAlt?: string
-	imageObjectPosition?: string
-}
+import type { MeJourneyEntry, MeJourneyYear } from "@/schemas/me.schema"
 
-export type JourneyYearGroup = {
-	year: number
-	entries: JourneyEntry[]
-}
+export type JourneyEntry = MeJourneyEntry
+
+export type JourneyYearGroup = MeJourneyYear

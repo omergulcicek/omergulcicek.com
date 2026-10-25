@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/shared/page-header"
 import { ProseIconLink } from "@/components/shared/prose-link"
 import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { proseParagraphClass } from "@/components/shared/prose.styles"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 import { BookmarksList } from "@/features/bookmarks/components/bookmarks-list"
 import { BOOKMARKS, BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 
@@ -17,10 +17,10 @@ export function BookmarksPage() {
 						<p className={proseParagraphClass}>
 							{BOOKMARK_UI.pageDescription} Tam arşiv{" "}
 							<ProseIconLink
-								href={SITE_CONTENT.bookmarksRaindropUrl}
+								href={EXTERNAL_LINKS.raindrop}
 								icon={<RaindropIcon className="size-3.5 shrink-0" />}
 							>
-								raindrop.io/omergulcicek
+								{new URL(EXTERNAL_LINKS.raindrop).host}
 							</ProseIconLink>
 							&apos;da.
 						</p>

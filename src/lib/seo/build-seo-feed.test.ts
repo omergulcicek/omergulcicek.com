@@ -25,6 +25,13 @@ describe("buildSitemapXml", () => {
 		expect(xml).toContain("<lastmod>2026-01-15</lastmod>")
 	})
 
+	it("does not list the removed services page", () => {
+		const xml = buildSitemapXml([])
+
+		expect(xml).not.toContain("/services")
+		expect(xml).toContain("https://omergulcicek.com/journey</loc>")
+	})
+
 	it("excludes unpublished posts", () => {
 		const xml = buildSitemapXml([
 			{ ...samplePost, published: false, slug: "/draft-post" }

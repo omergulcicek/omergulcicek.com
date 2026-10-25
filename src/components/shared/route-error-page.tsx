@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/shared/page-header"
 import { pageShellClass, proseParagraphClass } from "@/components/shared/prose.styles"
 import { Button } from "@/components/ui/button"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 import { cn } from "@/lib/utils"
 
 const routeErrorLinkClass =
@@ -61,14 +62,14 @@ export function RouteErrorPage({
 					aria-label="Yardımcı bağlantılar"
 				>
 					<Link to="/" className={routeErrorLinkClass}>
-						{SITE_CONTENT.notFoundHomeCta}
+						{SITE_COPY.notFound.homeCta}
 						<ChevronRight
 							className="size-4 transition-transform fine-hover:group-hover:translate-x-0.5"
 							aria-hidden
 						/>
 					</Link>
 					<Link to="/blog" className={routeErrorLinkClass}>
-						{SITE_CONTENT.notFoundBlogCta}
+						{SITE_COPY.notFound.blogCta}
 						<ChevronRight
 							className="size-4 transition-transform fine-hover:group-hover:translate-x-0.5"
 							aria-hidden

@@ -21,16 +21,17 @@
 | /blog | Blog | Filterable list of technical and personal articles |
 | /blog/{slug} | Article | Individual MDX blog post with tags, series, and prose styling |
 | /projects | Projects | Personal apps (Footy, Takvim) and ViraStack packages |
-| /about | About | Bio, open-to-work badge, stack grid, GitHub calendar, hobbies |
+| /about | About | Bio, working principles, work-together section, hobbies |
 | /experiences | Experiences | Work history timeline, technology tags, CV download |
-| /services | Services | Freelance development and frontend training offerings |
+| /journey | Journey | Career and life milestones by year |
+| /setup | Setup | Tools (Claude Code) and technology stack |
 | /bookmarks | Bookmarks | Seven Raindrop categories of curated frontend resources |
 
 ## Features
 
 - Command palette search (⌘K / Ctrl+K): pages, projects, bookmarks, blog posts, quick actions
 - Dark/light theme with localStorage persistence
-- Open to Work badge and bilingual CV modal (TR/EN) on experiences page
+- Bilingual CV modal (TR/EN) on experiences page
 - Blog filters via URL state (tags, series, search)
 
 ## Content topics (blog)

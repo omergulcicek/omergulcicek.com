@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { SiteStructuredData } from "@/components/shared/site-structured-data"
 import { blogPostsQueryOptions } from "@/features/blog/api/get-blog-posts.api"
 import { HomePage } from "@/features/home"
-import { HOME_FEATURED_BLOG_COUNT } from "@/features/home/constants/home-blog.constants"
+import { getHomeFeaturedPosts } from "@/features/home/helpers/get-home-featured-posts"
 import { HERO_IMAGE } from "@/features/home/constants/hero-image.constants"
 import { useGetBlogPosts } from "@/features/blog/hooks/use-get-blog-posts"
 import { buildStaticPageHead } from "@/lib/seo/build-page-head"
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
 
 function HomeIndexPage() {
 	const { data: posts } = useGetBlogPosts()
-	const featuredPosts = posts.slice(0, HOME_FEATURED_BLOG_COUNT)
+	const featuredPosts = getHomeFeaturedPosts(posts)
 
 	return (
 		<>

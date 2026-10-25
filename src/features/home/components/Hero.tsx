@@ -12,7 +12,9 @@ import {
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
 import { SocialLinks } from "@/components/shared/SocialLinks"
-import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import { ME } from "@/constants/me.constants"
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 import { HeroContentMotion } from "@/features/home/components/hero-content-motion"
 import { HERO_IMAGE } from "@/features/home/constants/hero-image.constants"
 import { cn } from "@/lib/utils"
@@ -20,41 +22,44 @@ import { cn } from "@/lib/utils"
 function HeroTitleRow() {
 	return (
 		<div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-			<h1 className={pageTitleClass}>{SITE_CONTENT.displayName}</h1>
-			<p className={heroSubtitleClass}>{SITE_CONTENT.jobTitle}</p>
+			<h1 className={pageTitleClass}>{ME.personal.fullName}</h1>
+			<p className={heroSubtitleClass}>{ME.personal.title}</p>
 		</div>
 	)
 }
 
 function HeroBody() {
+	const { hero } = SITE_COPY.home
+
 	return (
 		<div className={cn("text-base", proseFlowClass)}>
 			<p className={proseParagraphClass}>
-				Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; projelerim
-				aracılığıyla insanlara faydalı olup onların deneyimlerine değer
-				katmayı seviyorum.{" "}
-				<VirastackLink>ViraStack</VirastackLink> ile frontend
-				geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir
-				ekosistem inşa ediyorum.
+				{hero.architecture} <VirastackLink>{hero.virastack.link}</VirastackLink>
+				{hero.virastack.after}
 			</p>
+			<p className={proseParagraphClass}>{hero.ai}</p>
 			<p className={proseParagraphClass}>
-				Bana <ProseLink href={EXTERNAL_LINKS.x}>@omergulcicek</ProseLink> ve{" "}
+				{hero.contact.before}
 				<ProseIconLink
 					href={EXTERNAL_LINKS.email}
 					icon={<Mail className="size-3.5 shrink-0" strokeWidth={2} />}
 				>
-					e-posta
-				</ProseIconLink>{" "}
-				yoluyla ulaşabilir ya da{" "}
+					{hero.contact.email}
+				</ProseIconLink>
+				{hero.contact.separator}
+				<ProseLink href={EXTERNAL_LINKS.linkedin}>{hero.contact.linkedin}</ProseLink>
+				{hero.contact.or}
+				<ProseLink href={EXTERNAL_LINKS.x}>{hero.contact.x}</ProseLink>
+				{hero.contact.after}
 				<ProseIconLink
 					href={EXTERNAL_LINKS.github}
 					icon={
 						<GitHubIcon className="size-3.5 shrink-0 text-[#181717] dark:text-[#f0f6fc]" />
 					}
 				>
-					GitHub
+					{hero.contact.github}
 				</ProseIconLink>
-				&apos;daki kodlarıma göz atabilirsiniz.
+				{hero.contact.end}
 			</p>
 		</div>
 	)

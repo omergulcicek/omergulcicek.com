@@ -8,6 +8,7 @@ import { InteractiveRowCard } from "@/components/shared/interactive-row-card"
 import { cardTitleClass, pageSectionClass } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { VirastackLogo } from "@/components/shared/virastack-logo"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 
 export function VirastackCaseStudyCard() {
 	return (
@@ -25,7 +26,7 @@ export function VirastackCaseStudyCard() {
 						</span>
 					}
 					title={<h3 className={cardTitleClass}>ViraStack</h3>}
-					description="Frontend geliştiriciler için şablonlardan npm paketlerine uzanan açık kaynak ekosistem: ViraStack Start, ViraStack AI ve React paketleri."
+					description={SITE_COPY.projects.virastackIntro}
 				/>
 			</Link>
 		</section>

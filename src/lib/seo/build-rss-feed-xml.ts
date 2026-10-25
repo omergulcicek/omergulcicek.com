@@ -1,5 +1,5 @@
 import { SITE } from "@/constants/site.constants"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { ME } from "@/constants/me.constants"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
@@ -50,7 +50,7 @@ export function buildRssFeedXml(posts: BlogPost[]): string {
 \t\t<link>${escapeXml(`${SITE.url}/blog`)}</link>
 \t\t<description>${escapeXml(STATIC_PAGE_SEO.blog.description)}</description>
 \t\t<language>tr</language>
-\t\t<managingEditor>${escapeXml(SITE_CONTENT.displayName)} (${escapeXml(SITE.url)})</managingEditor>
+\t\t<managingEditor>${escapeXml(ME.personal.fullName)} (${escapeXml(SITE.url)})</managingEditor>
 \t\t<lastBuildDate>${escapeXml(new Date().toUTCString())}</lastBuildDate>
 \t\t<atom:link href="${escapeXml(`${SITE.url}/feed.xml`)}" rel="self" type="application/rss+xml" />
 ${items}

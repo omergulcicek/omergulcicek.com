@@ -1,13 +1,7 @@
-export type ProjectGroup = "personal" | "virastack"
+import type { MeProject } from "@/schemas/me.schema"
 
-export type ProjectStatus = "live" | "package" | "coming_soon" | "archived"
+export type Project = MeProject
 
-export type Project = {
-	id: string
-	title: string
-	description: string
-	group: ProjectGroup
-	status: ProjectStatus
-	href: string
-	sortOrder: number
-}
+export type ProjectGroup = Project["group"]
+
+export type ProjectStatus = Project["status"]

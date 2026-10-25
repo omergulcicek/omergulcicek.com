@@ -1,6 +1,6 @@
 import { SITE } from "@/constants/site.constants"
 
-const OUTBOUND_UTM_SOURCE = "omergulcicek.com"
+const OUTBOUND_UTM_SOURCE = new URL(SITE.url).hostname
 const OUTBOUND_UTM_MEDIUM = "referral"
 
 function isOwnHostname(hostname: string) {

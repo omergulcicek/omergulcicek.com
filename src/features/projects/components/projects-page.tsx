@@ -12,6 +12,7 @@ import {
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 import { ProjectSection } from "@/features/projects/components/project-section"
 import { GitHubContributionCalendar } from "@/features/projects/components/github-contribution-calendar"
 import { getProjectsByGroup } from "@/features/projects/constants/projects.constants"
@@ -25,27 +26,19 @@ export function ProjectsPage() {
 			<Container>
 				<StaggerContainer className={pageShellClass}>
 				<StaggerItem>
-					<PageHeader title="Projeler">
+					<PageHeader title={SITE_COPY.projects.title}>
 						<p className={proseParagraphClass}>
-							Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum{" "}
-							<VirastackLink>ViraStack</VirastackLink>{" "}
-							ekosistemindeki araçlar.
+							<VirastackLink>{SITE_COPY.projects.intro.link}</VirastackLink>
+							{SITE_COPY.projects.intro.after}
 						</p>
 					</PageHeader>
-				</StaggerItem>
-
-				<StaggerItem>
-					<ProjectSection
-						title={SITE_CONTENT.projectsSectionApps}
-						projects={personalProjects}
-					/>
 				</StaggerItem>
 
 				<StaggerItem id="virastack">
 					<ProjectSection title={SITE_CONTENT.projectsSectionVirastack} projects={virastackProjects}>
 						<div className="flex flex-col gap-4">
 							<p className={proseParagraphClass}>
-								{SITE_CONTENT.virastackSectionIntro}
+								{SITE_COPY.projects.virastackIntro}
 							</p>
 							<p className={proseParagraphClass}>
 								Ekosistemi{" "}
@@ -63,6 +56,13 @@ export function ProjectsPage() {
 							</p>
 						</div>
 					</ProjectSection>
+				</StaggerItem>
+
+				<StaggerItem>
+					<ProjectSection
+						title={SITE_CONTENT.projectsSectionApps}
+						projects={personalProjects}
+					/>
 				</StaggerItem>
 
 				<StaggerItem className={pageSectionClass}>

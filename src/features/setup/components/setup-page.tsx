@@ -9,62 +9,55 @@ import {
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 import { StackCategoryList } from "@/features/stack/components/stack-category-list"
-import {
-	SETUP_CONTENT,
-	SETUP_EDITOR_LINKS
-} from "@/features/setup/constants/setup.constants"
+import { SETUP_LINKS } from "@/features/setup/constants/setup.constants"
 
 export function SetupPage() {
+	const { setup } = SITE_COPY
+
 	return (
 		<Container>
 			<StaggerContainer className={pageShellClass}>
 				<StaggerItem>
-					<PageHeader title={SETUP_CONTENT.pageTitle}>
-						<p className={proseParagraphClass}>{SETUP_CONTENT.pageDescription}</p>
+					<PageHeader title={setup.title}>
+						<p className={proseParagraphClass}>{setup.intro}</p>
 					</PageHeader>
 				</StaggerItem>
 
 				<StaggerItem className={pageSectionClass}>
 					<SectionHeading className="mt-0 md:mt-0">
-						{SETUP_CONTENT.editorSectionTitle}
+						{setup.toolsTitle}
 					</SectionHeading>
 					<div className={proseFlowClass}>
 						<p className={proseParagraphClass}>
-							Ana editörüm{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.cursor}>Cursor</ProseLink>.
-							Tema olarak{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.beardedTheme}>
-								Bearded Theme
+							{setup.assistant.before}
+							<ProseLink href={SETUP_LINKS.claudeCode}>
+								{setup.assistant.link}
 							</ProseLink>
-							&apos;in Black &amp; Gold varyantını, font olarak{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.firaCode}>Fira Code</ProseLink>{" "}
-							kullanıyorum. Tam{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.settings}>
-								settings.json
-							</ProseLink>{" "}
-							ayarlarım notes reposunda.
+							{setup.assistant.after}
 						</p>
 						<p className={proseParagraphClass}>
-							AI model tercihim Gemini. Agent&apos;ı{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.virastackAiRules}>
-								ViraStack AI
-							</ProseLink>{" "}
-							ile mimari temel,{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.emilSkills}>
-								emilkowalski/skills
-							</ProseLink>{" "}
-							ile animasyonlar,{" "}
-							<ProseLink href={SETUP_EDITOR_LINKS.makeInterfacesFeelBetter}>
-								make-interfaces-feel-better
-							</ProseLink>{" "}
-							ile UI cilası için yönlendiriyorum.
+							{setup.agent.before}
+							<ProseLink href={SETUP_LINKS.virastackAiRules}>
+								{setup.agent.virastackAi}
+							</ProseLink>
+							{setup.agent.afterVirastackAi}
+							<ProseLink href={SETUP_LINKS.emilSkills}>
+								{setup.agent.emilSkills}
+							</ProseLink>
+							{setup.agent.afterEmilSkills}
+							<ProseLink href={SETUP_LINKS.jakubSkills}>
+								{setup.agent.jakubSkills}
+							</ProseLink>
+							{setup.agent.after}
 						</p>
+						<p className={proseParagraphClass}>{setup.computer}</p>
 					</div>
 				</StaggerItem>
 
 				<StaggerItem className={pageSectionClass}>
-					<SectionHeading>{SETUP_CONTENT.stackSectionTitle}</SectionHeading>
+					<SectionHeading>{setup.stackTitle}</SectionHeading>
 					<StackCategoryList />
 				</StaggerItem>
 			</StaggerContainer>

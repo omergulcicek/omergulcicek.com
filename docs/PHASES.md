@@ -14,7 +14,7 @@
 
 Build oturumunda sırayla oku:
 
-`PROJECT-BRIEF.md` → `TECH-STACK.md` → `SITE-CONTENT.md` → `PROJECTS.md` → `BLOG.md` → `supabase-migration.md` → `ABOUT.md` → `EXPERIENCES.md` → `SERVICES.md` → `BOOKMARKS.md` → `SEARCH.md` → `architecture-guide.md`
+`PROJECT-BRIEF.md` → `TECH-STACK.md` → `SITE-CONTENT.md` → `PROJECTS.md` → `BLOG.md` → `supabase-migration.md` → `ABOUT.md` → `EXPERIENCES.md` → `BOOKMARKS.md` → `SEARCH.md` → `architecture-guide.md`
 
 ---
 

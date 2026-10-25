@@ -5,6 +5,7 @@ import {
 	CalendarDays,
 	ChevronRight,
 	Form,
+	GraduationCap,
 	Icon,
 	Rocket,
 	Sparkles,
@@ -33,65 +34,30 @@ type ProjectVisualConfig =
 	| {
 			kind: "lucide"
 			Icon: LucideIcon
-			className: string
+			className?: string
 	  }
 	| {
 			kind: "lab"
 			iconNode: typeof soccerPitch
-			className: string
+			className?: string
 	  }
 	| {
 			kind: "svg"
 			Icon: ComponentType<SVGProps<SVGSVGElement>>
-			className: string
+			className?: string
 	  }
 
 const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
-	footy: {
-		kind: "lab",
-		iconNode: soccerPitch,
-		className: "text-green-600"
-	},
-	takvim: {
-		kind: "lucide",
-		Icon: CalendarDays,
-		className: "text-blue-600"
-	},
-	start: {
-		kind: "lucide",
-		Icon: Rocket,
-		className: "text-teal-500"
-	},
-	ai: {
-		kind: "lucide",
-		Icon: Sparkles,
-		className: "text-fuchsia-500"
-	},
-	mask: {
-		kind: "lucide",
-		Icon: Form,
-		className: "text-indigo-500"
-	},
-	password: {
-		kind: "lucide",
-		Icon: SquareAsterisk,
-		className: "text-rose-500"
-	},
-	guide: {
-		kind: "lucide",
-		Icon: BookOpen,
-		className: "text-amber-500"
-	},
-	turkuaz: {
-		kind: "svg",
-		Icon: TurkuazLogo,
-		className: "size-8 text-[#03968a]"
-	},
-	turkcedokuman: {
-		kind: "lucide",
-		Icon: BookType,
-		className: "text-sky-600"
-	}
+	academy: { kind: "lucide", Icon: GraduationCap },
+	footy: { kind: "lab", iconNode: soccerPitch },
+	takvim: { kind: "lucide", Icon: CalendarDays },
+	start: { kind: "lucide", Icon: Rocket },
+	ai: { kind: "lucide", Icon: Sparkles },
+	mask: { kind: "lucide", Icon: Form },
+	password: { kind: "lucide", Icon: SquareAsterisk },
+	guide: { kind: "lucide", Icon: BookOpen },
+	turkuaz: { kind: "svg", Icon: TurkuazLogo, className: "size-8" },
+	turkcedokuman: { kind: "lucide", Icon: BookType }
 }
 
 function ProjectTitle({
@@ -126,10 +92,10 @@ function ComingSoonBadge() {
 	)
 }
 
-function ArchiveBadge() {
+function MutedStatusBadge({ label }: { label: string }) {
 	return (
 		<span className="inline-flex shrink-0 items-center rounded-full border border-border/60 bg-muted/40 px-1.5 py-0.5 text-xs font-medium text-muted-foreground md:px-2">
-			{SITE_CONTENT.projectsBadgeArchive}
+			{label}
 		</span>
 	)
 }
@@ -139,8 +105,12 @@ function ProjectStatusBadge({ status }: { status: Project["status"] }) {
 		return <ComingSoonBadge />
 	}
 
+	if (status === "paused") {
+		return <MutedStatusBadge label={SITE_CONTENT.projectsBadgePaused} />
+	}
+
 	if (status === "archived") {
-		return <ArchiveBadge />
+		return <MutedStatusBadge label={SITE_CONTENT.projectsBadgeArchive} />
 	}
 
 	return null
@@ -174,7 +144,7 @@ function FeaturedProjectVisual({
 		return (
 			<Icon
 				iconNode={visual.iconNode}
-				className={cn(projectIconClass, visual.className, mutedClass)}
+				className={cn(projectIconClass, project.color, visual.className, mutedClass)}
 				strokeWidth={projectIconStroke}
 				aria-hidden
 			/>
@@ -184,14 +154,14 @@ function FeaturedProjectVisual({
 	if (visual.kind === "svg") {
 		const ProjectSvg = visual.Icon
 
-		return <ProjectSvg className={cn(visual.className, mutedClass)} />
+		return <ProjectSvg className={cn(project.color, visual.className, mutedClass)} />
 	}
 
 	const LucideProjectIcon = visual.Icon
 
 	return (
 		<LucideProjectIcon
-			className={cn(projectIconClass, visual.className, mutedClass)}
+			className={cn(projectIconClass, project.color, visual.className, mutedClass)}
 			strokeWidth={projectIconStroke}
 			aria-hidden
 		/>
@@ -204,7 +174,8 @@ type FeaturedProjectCardProps = {
 
 export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 	const isComingSoon = project.status === "coming_soon"
-	const isArchived = project.status === "archived"
+	const isArchived =
+		project.status === "archived" || project.status === "paused"
 	const statusBadge =
 		isComingSoon || isArchived ? (
 			<ProjectStatusBadge status={project.status} />
@@ -250,7 +221,8 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 
 export function FeaturedProjectListItem({ project }: FeaturedProjectCardProps) {
 	const isComingSoon = project.status === "coming_soon"
-	const isArchived = project.status === "archived"
+	const isArchived =
+		project.status === "archived" || project.status === "paused"
 	const statusBadge =
 		isComingSoon || isArchived ? (
 			<ProjectStatusBadge status={project.status} />

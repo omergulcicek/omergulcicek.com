@@ -22,6 +22,8 @@ import { Route as SetupRouteImport } from './routes/setup'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StackRouteImport } from './routes/stack'
 import { Route as WorkspaceRouteImport } from './routes/workspace'
+import { Route as AcademyIndexRouteImport } from './routes/academy/index'
+import { Route as AcademySplatRouteImport } from './routes/academy/$'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as DevMdxSandboxRouteImport } from './routes/dev/mdx-sandbox'
@@ -93,6 +95,16 @@ const WorkspaceRoute = WorkspaceRouteImport.update({
   path: '/workspace',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademyIndexRoute = AcademyIndexRouteImport.update({
+  id: '/academy/',
+  path: '/academy/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademySplatRoute = AcademySplatRouteImport.update({
+  id: '/academy/$',
+  path: '/academy/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -133,8 +145,10 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
+  '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
+  '/academy/': typeof AcademyIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
   '/og/page/$pageKey': typeof OgPagePageKeyRoute
@@ -153,8 +167,10 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
+  '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
+  '/academy': typeof AcademyIndexRoute
   '/blog': typeof BlogIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
   '/og/page/$pageKey': typeof OgPagePageKeyRoute
@@ -174,8 +190,10 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/workspace': typeof WorkspaceRoute
+  '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
+  '/academy/': typeof AcademyIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/og/blog/$slug': typeof OgBlogSlugRoute
   '/og/page/$pageKey': typeof OgPagePageKeyRoute
@@ -196,8 +214,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/stack'
     | '/workspace'
+    | '/academy/$'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
+    | '/academy/'
     | '/blog/'
     | '/og/blog/$slug'
     | '/og/page/$pageKey'
@@ -216,8 +236,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/stack'
     | '/workspace'
+    | '/academy/$'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
+    | '/academy'
     | '/blog'
     | '/og/blog/$slug'
     | '/og/page/$pageKey'
@@ -236,8 +258,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/stack'
     | '/workspace'
+    | '/academy/$'
     | '/blog/$slug'
     | '/dev/mdx-sandbox'
+    | '/academy/'
     | '/blog/'
     | '/og/blog/$slug'
     | '/og/page/$pageKey'
@@ -257,8 +281,10 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StackRoute: typeof StackRoute
   WorkspaceRoute: typeof WorkspaceRoute
+  AcademySplatRoute: typeof AcademySplatRoute
   BlogSlugRoute: typeof BlogSlugRoute
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
+  AcademyIndexRoute: typeof AcademyIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   OgBlogSlugRoute: typeof OgBlogSlugRoute
   OgPagePageKeyRoute: typeof OgPagePageKeyRoute
@@ -357,6 +383,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkspaceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academy/': {
+      id: '/academy/'
+      path: '/academy'
+      fullPath: '/academy/'
+      preLoaderRoute: typeof AcademyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academy/$': {
+      id: '/academy/$'
+      path: '/academy/$'
+      fullPath: '/academy/$'
+      preLoaderRoute: typeof AcademySplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -409,8 +449,10 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StackRoute: StackRoute,
   WorkspaceRoute: WorkspaceRoute,
+  AcademySplatRoute: AcademySplatRoute,
   BlogSlugRoute: BlogSlugRoute,
   DevMdxSandboxRoute: DevMdxSandboxRoute,
+  AcademyIndexRoute: AcademyIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   OgBlogSlugRoute: OgBlogSlugRoute,
   OgPagePageKeyRoute: OgPagePageKeyRoute,

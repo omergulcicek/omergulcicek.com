@@ -1,6 +1,7 @@
 import { GitHubIcon } from "@/components/icons"
 import { BrandMark } from "@/components/shared/brand-mark"
 import { Container } from "@/components/shared/Container"
+import { ExploreNavMenu } from "@/components/shared/explore-nav-menu"
 import { HeaderNavDrawer } from "@/components/shared/header-nav-drawer"
 import { IconLinkButton } from "@/components/shared/icon-link-button"
 import { SiteNavLink } from "@/components/shared/site-nav-link"
@@ -17,7 +18,7 @@ export function Header() {
 				{SITE_CONTENT.skipToContent}
 			</a>
 			<header className="motion-enter vt-header-shell bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 backdrop-blur">
-				<Container className="py-3 md:py-4">
+				<Container className="max-w-3xl py-3 md:py-4">
 					<div className="flex items-center justify-between gap-3 md:gap-4">
 						<div className="flex items-center gap-3 md:gap-6">
 							<div className="md:hidden">
@@ -33,9 +34,10 @@ export function Header() {
 										key={item.href}
 										href={item.href}
 										label={item.label}
-										exact={"exact" in item ? item.exact : undefined}
+										exact={item.exact}
 									/>
 								))}
+								<ExploreNavMenu />
 							</nav>
 						</div>
 						<IconLinkButton

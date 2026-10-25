@@ -19,19 +19,29 @@ export function StackStrip({ items = HOME_STACK_ITEMS, className }: StackStripPr
 			<div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
 				<Marquee
 					repeat={2}
-					className="py-4 [--duration:60s] [--gap:3.5rem]"
+					className="py-4 [--duration:60s] [--gap:1.5rem]"
 				>
 					{items.map((item) => (
-						<div
+						<figure
 							key={item.id}
-							className="flex size-16 shrink-0 items-center justify-center"
+							className="flex w-28 shrink-0 flex-col items-center gap-2 text-center"
 						>
-							<StackLogo
-								stackId={item.id}
-								label={item.label}
-								className="size-14"
-							/>
-						</div>
+							<span className="flex size-14 items-center justify-center">
+								<StackLogo
+									stackId={item.id}
+									label={item.label}
+									className="size-12"
+								/>
+							</span>
+							<figcaption className="flex flex-col gap-0.5">
+								<span className="text-foreground text-xs font-medium">
+									{item.label}
+								</span>
+								<span className="text-muted-foreground text-[11px] leading-tight">
+									{item.description}
+								</span>
+							</figcaption>
+						</figure>
 					))}
 				</Marquee>
 			</div>

@@ -1,5 +1,5 @@
 import { SITE } from "@/constants/site.constants"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { ME } from "@/constants/me.constants"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 import { slugToRouteParam } from "@/features/blog/helpers/blog-helpers"
 import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
@@ -26,12 +26,12 @@ export function BlogStructuredData({ post }: BlogStructuredDataProps) {
 		inLanguage: post.locale === "en" ? "en" : "tr",
 		author: {
 			"@type": "Person",
-			name: SITE_CONTENT.displayName,
+			name: ME.personal.fullName,
 			url: SITE.url
 		},
 		publisher: {
 			"@type": "Person",
-			name: SITE_CONTENT.displayName,
+			name: ME.personal.fullName,
 			url: SITE.url
 		},
 		mainEntityOfPage: {

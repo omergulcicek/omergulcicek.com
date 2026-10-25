@@ -1,0 +1,541 @@
+{
+	"personal": {
+		"fullName": "Ömer Gülçiçek",
+		"title": "Frontend Mühendisi"
+	},
+	"contact": {
+		"email": "iletisim@omergulcicek.com",
+		"github": "https://github.com/omergulcicek",
+		"linkedin": "https://linkedin.com/in/omergulcicek",
+		"x": "https://x.com/omergulcicek",
+		"xHandle": "@omergulcicek",
+		"npm": "https://www.npmjs.com/~omergulcicek",
+		"raindrop": "https://omergulcicek.raindrop.page/",
+		"resume": {
+			"tr": "/omergulcicek_cv.pdf",
+			"en": "/omergulcicek_eng_cv.pdf"
+		}
+	},
+	"site": {
+		"url": "https://omergulcicek.com",
+		"repository": "https://github.com/omergulcicek/omergulcicek.com"
+	},
+	"experiences": [
+		{
+			"id": "virastack",
+			"company": "ViraStack",
+			"role": "Kurucu",
+			"startDate": "2025-12",
+			"endDate": null,
+			"summary": "Frontend geliştiriciler için açık kaynak ekosistem kuruyorum: şablonlar, AI kuralları, form paketleri, Academy.",
+			"technologies": [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"TanStack Query",
+				"Tailwind CSS"
+			]
+		},
+		{
+			"id": "machinarium",
+			"company": "Machinarium",
+			"role": "Frontend Team Lead",
+			"startDate": "2025-08",
+			"endDate": "2025-11",
+			"summary": "10 kişilik ekibe liderlik ettim. Ortak bileşen mimarisi ve AI destekli kod standartlarıyla teknik borcu azalttım.",
+			"technologies": [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"TanStack Query",
+				"Tailwind CSS"
+			]
+		},
+		{
+			"id": "alisgidis",
+			"company": "Alışgidiş",
+			"role": "Frontend Team Lead",
+			"startDate": "2024-03",
+			"endDate": "2025-06",
+			"summary": "alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum. Lighthouse 90+.",
+			"technologies": [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"TanStack Query",
+				"Tailwind CSS"
+			]
+		},
+		{
+			"id": "gordion",
+			"company": "Gordion",
+			"role": "Senior Frontend Engineer",
+			"startDate": "2022-01",
+			"endDate": "2024-02",
+			"summary": "Rezervasyon sayfaları, merkezi UI Kit ve GraphQL entegrasyonu.",
+			"technologies": [
+				"React",
+				"Next.js",
+				"GraphQL",
+				"Styled Components",
+				"Tailwind CSS"
+			]
+		},
+		{
+			"id": "hangikredi",
+			"company": "HangiKredi",
+			"role": "Frontend Developer",
+			"startDate": "2020-09",
+			"endDate": "2022-01",
+			"summary": "hangikredi.com arayüzleri, performans iyileştirmeleri.",
+			"technologies": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"jQuery",
+				"Bootstrap"
+			]
+		},
+		{
+			"id": "kodluyoruz",
+			"company": "Kodluyoruz",
+			"role": "Eğitmen",
+			"startDate": "2020-12",
+			"endDate": "2021-02",
+			"summary": "30 öğrenciye Frontend 101 verdim.",
+			"technologies": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"Git",
+				"React"
+			]
+		},
+		{
+			"id": "akinon",
+			"company": "Akinon",
+			"role": "Frontend Developer",
+			"startDate": "2019-06",
+			"endDate": "2019-11",
+			"summary": "Vakko, A101 gibi e-ticaret siteleri için modüler bileşenler.",
+			"technologies": [
+				"HTML",
+				"CSS",
+				"LESS",
+				"JavaScript",
+				"jQuery",
+				"ES6",
+				"Jinja"
+			]
+		},
+		{
+			"id": "turkcell",
+			"company": "Turkcell",
+			"role": "Frontend Developer",
+			"startDate": "2018-07",
+			"endDate": "2018-11",
+			"summary": "Canlı sistemdeki kritik arayüz hatalarına müdahale.",
+			"technologies": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"jQuery"
+			]
+		},
+		{
+			"id": "ziraat",
+			"company": "Ziraat Teknoloji",
+			"role": "Frontend Developer",
+			"startDate": "2017-07",
+			"endDate": "2018-06",
+			"summary": "Kurumsal admin paneli. İlk işim.",
+			"technologies": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"jQuery",
+				"Kendo UI"
+			]
+		}
+	],
+	"projects": [
+		{
+			"id": "academy",
+			"title": "ViraStack Academy",
+			"description": "Frontend geliştiriciler için ücretsiz yol haritası ve rehberler.",
+			"href": "https://virastack.com/academy",
+			"group": "virastack",
+			"status": "package",
+			"color": "text-green-500"
+		},
+		{
+			"id": "start",
+			"title": "ViraStack Start",
+			"description": "Üretime hazır Next.js ve TanStack başlangıç şablonları.",
+			"href": "https://virastack.com/start",
+			"group": "virastack",
+			"status": "package",
+			"color": "text-teal-500"
+		},
+		{
+			"id": "ai",
+			"title": "ViraStack AI",
+			"description": "Ajan uyumlu kurallar ve mimari kit.",
+			"href": "https://virastack.com/ai",
+			"group": "virastack",
+			"status": "package",
+			"color": "text-fuchsia-500"
+		},
+		{
+			"id": "mask",
+			"title": "ViraStack Mask",
+			"description": "Formlar için erişilebilir input maskeleri.",
+			"href": "https://virastack.com/mask",
+			"group": "virastack",
+			"status": "package",
+			"color": "text-indigo-500"
+		},
+		{
+			"id": "password",
+			"title": "ViraStack Password",
+			"description": "Erişilebilir parola görünürlük toggle'ı.",
+			"href": "https://virastack.com/password",
+			"group": "virastack",
+			"status": "package",
+			"color": "text-rose-500"
+		},
+		{
+			"id": "guide",
+			"title": "ViraStack Guide",
+			"description": "Modern web standartlarını adım adım gösteren interaktif rehber.",
+			"href": "https://virastack.com/guide",
+			"group": "virastack",
+			"status": "package",
+			"color": "text-amber-500"
+		},
+		{
+			"id": "takvim",
+			"title": "Takvim",
+			"description": "Takvim abonelikleri için ücretsiz, açık kaynak arayüz.",
+			"href": "https://takvim.omergulcicek.com/",
+			"group": "personal",
+			"status": "live",
+			"color": "text-blue-600"
+		},
+		{
+			"id": "footy",
+			"title": "Footy",
+			"description": "Futbol bilgi oyunları.",
+			"href": "https://footy.omergulcicek.com/",
+			"group": "personal",
+			"status": "paused",
+			"color": "text-green-600"
+		},
+		{
+			"id": "turkuaz",
+			"title": "Turkuaz",
+			"description": "İlk açık kaynak projem, bir CSS kütüphanesi.",
+			"href": "https://github.com/omergulcicek/turkuaz",
+			"group": "personal",
+			"status": "archived",
+			"color": "text-[#03968a]"
+		},
+		{
+			"id": "turkcedokuman",
+			"title": "Türkçe Doküman",
+			"description": "Yazılım için Türkçe kaynaklar.",
+			"href": "https://github.com/omergulcicek/turkcedokuman.com",
+			"group": "personal",
+			"status": "archived",
+			"color": "text-sky-600"
+		}
+	],
+	"hobbies": [
+		{
+			"id": "photography",
+			"name": "Fotoğraf",
+			"description": "Gezdiğim yerlerin kadrajları",
+			"url": "https://instagram.com/omerilekesfet"
+		},
+		{
+			"id": "chess",
+			"name": "Satranç",
+			"description": "5+0 blitz",
+			"url": "https://chess.com/member/omergulcicek"
+		},
+		{
+			"id": "walk",
+			"name": "Yürüyüş",
+			"description": "Şehirleri adım adım keşfediyorum",
+			"url": "/blog/google-maps-kisisel-listelerim"
+		},
+		{
+			"id": "book",
+			"name": "Kitap",
+			"description": "Osmanlı tarihi",
+			"url": "/bookmarks?category=library"
+		}
+	],
+	"favorites": [
+		{
+			"id": "team",
+			"value": "Barcelona",
+			"description": "En sevdiğim futbol kulübü.",
+			"url": "https://x.com/FCBarcelona"
+		},
+		{
+			"id": "game",
+			"value": "Football Manager",
+			"description": "Her sezon yeni kariyer.",
+			"url": "https://store.steampowered.com/app/3551340/Football_Manager_26/"
+		},
+		{
+			"id": "musician",
+			"value": "Sagopa Kajmer",
+			"description": "En çok dinlediğim şarkıcı.",
+			"url": "https://open.spotify.com/intl-tr/artist/1KXTegXtnCPKXjRaX1llcD"
+		},
+		{
+			"id": "movie",
+			"value": "Yüzüklerin Efendisi",
+			"description": "Favori filmim.",
+			"url": "https://www.imdb.com/title/tt0167260/"
+		},
+		{
+			"id": "color",
+			"value": "Turkuaz",
+			"description": "En sevdiğim renk.",
+			"url": "https://github.com/omergulcicek/turkuaz"
+		}
+	],
+	"journey": [
+		{
+			"year": 2025,
+			"entries": [
+				{
+					"id": "2025-virastack",
+					"title": "ViraStack'i kurdum",
+					"description": "Aralık 2025.",
+					"imageSrc": "/img/journey/2025-virastack.png",
+					"imageAlt": "ViraStack logosu"
+				},
+				{
+					"id": "2025-evlilik",
+					"title": "Evlendim",
+					"description": "Eşimle hayatı birlikte kurmaya karar verdik.",
+					"imageSrc": "/img/journey/2025-evlilik.png",
+					"imageAlt": "Nişan"
+				},
+				{
+					"id": "2025-sakarya",
+					"title": "Sakarya'ya taşındım",
+					"description": "İstanbul'dan sessiz bir yaşama geçtim."
+				},
+				{
+					"id": "2025-renault-clio",
+					"title": "Renault Clio aldım",
+					"description": "Aktif kullandığım ilk araç.",
+					"imageSrc": "/img/journey/2025-renault-clio.jpg",
+					"imageAlt": "Renault Clio ile birlikte",
+					"imageObjectPosition": "center calc(100% + 100px)"
+				}
+			]
+		},
+		{
+			"year": 2024,
+			"entries": [
+				{
+					"id": "2024-alisgidis",
+					"title": "Alışgidiş'te frontend ekibini kurdum"
+				}
+			]
+		},
+		{
+			"year": 2021,
+			"entries": [
+				{
+					"id": "2021-macbook",
+					"title": "İlk MacBook'um (M1)",
+					"description": "Hâlâ kullanıyorum."
+				}
+			]
+		},
+		{
+			"year": 2020,
+			"entries": [
+				{
+					"id": "2020-kodluyoruz",
+					"title": "Kodluyoruz'da eğitmen oldum"
+				}
+			]
+		},
+		{
+			"year": 2019,
+			"entries": [
+				{
+					"id": "2019-askerlik",
+					"title": "Bedelli askerlik",
+					"description": "Ankara Mamak.",
+					"imageSrc": "/img/journey/2019-askerlik.webp",
+					"imageAlt": "Kamuflaj üniformalı askerlik fotoğrafı",
+					"imageObjectPosition": "center 25%"
+				}
+			]
+		},
+		{
+			"year": 2017,
+			"entries": [
+				{
+					"id": "2017-ziraat",
+					"title": "Ziraat Teknoloji'de ilk yazılım işim",
+					"imageSrc": "/img/journey/2017-ziraat.png",
+					"imageAlt": "Ziraat Teknoloji binası önünde selfie",
+					"imageObjectPosition": "center 40%"
+				}
+			]
+		},
+		{
+			"year": 2016,
+			"entries": [
+				{
+					"id": "2016-turkuaz",
+					"title": "İlk açık kaynak projem: Turkuaz"
+				}
+			]
+		},
+		{
+			"year": 2012,
+			"entries": [
+				{
+					"id": "2012-universite",
+					"title": "Yazılım mühendisliğine başladım",
+					"imageSrc": "/img/journey/2012-universite.png",
+					"imageAlt": "Üniversite mezuniyet töreninde selfie",
+					"imageObjectPosition": "center 20%"
+				}
+			]
+		},
+		{
+			"year": 1993,
+			"entries": [
+				{
+					"id": "1993-dogum",
+					"title": "7 Şubat'ta İstanbul'da doğdum",
+					"imageSrc": "/img/journey/1993-dogum.webp",
+					"imageAlt": "Annemle bebek fotoğrafım",
+					"imageObjectPosition": "top"
+				}
+			]
+		}
+	],
+	"principles": [
+		{
+			"title": "Desen bir araçtır",
+			"text": "Mimari yavaşlatmaya başlayınca değiştiririm. Önce klasör ve import düzeni."
+		},
+		{
+			"title": "Kural otomatik denetlenir",
+			"text": "Yazılı kural unutulur, lint ve typecheck unutmaz. AI de aynı kurallarla çalışır."
+		},
+		{
+			"title": "Her bilgi tek yerde durur",
+			"text": "Sabit tek dosyada, sunucu verisi Query'de, filtre URL'de."
+		},
+		{
+			"title": "Sade çözüm önce gelir",
+			"text": "Gereksiz state ve Effect yok, soyutlama tekrar gerçekten görülünce gelir."
+		}
+	],
+	"stack": {
+		"categories": [
+			{
+				"id": "languages",
+				"label": "Languages",
+				"itemIds": [
+					"typescript",
+					"javascript",
+					"git"
+				]
+			},
+			{
+				"id": "frontend",
+				"label": "Frontend",
+				"itemIds": [
+					"react",
+					"nextjs",
+					"vite",
+					"tanstack",
+					"tailwind",
+					"base-ui",
+					"shadcn",
+					"motion",
+					"react-hook-form",
+					"zustand",
+					"redux",
+					"zod",
+					"storybook"
+				]
+			},
+			{
+				"id": "backend",
+				"label": "Backend",
+				"itemIds": [
+					"nodejs",
+					"postgresql",
+					"supabase",
+					"graphql"
+				]
+			},
+			{
+				"id": "testing",
+				"label": "Test",
+				"itemIds": [
+					"vitest",
+					"playwright"
+				]
+			},
+			{
+				"id": "design",
+				"label": "Design",
+				"itemIds": [
+					"figma"
+				]
+			},
+			{
+				"id": "ai",
+				"label": "AI",
+				"itemIds": [
+					"claude",
+					"virastack"
+				]
+			}
+		],
+		"home": [
+			"typescript",
+			"javascript",
+			"react",
+			"nextjs",
+			"tanstack",
+			"vite",
+			"tailwind",
+			"shadcn",
+			"base-ui",
+			"motion",
+			"react-hook-form",
+			"zod",
+			"zustand",
+			"redux",
+			"nodejs",
+			"graphql",
+			"supabase",
+			"postgresql",
+			"storybook",
+			"vitest",
+			"playwright",
+			"git",
+			"figma",
+			"claude",
+			"virastack"
+		]
+	}
+}

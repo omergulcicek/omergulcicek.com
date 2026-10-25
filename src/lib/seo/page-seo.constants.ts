@@ -1,3 +1,6 @@
+import { SITE } from "@/constants/site.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
+
 export type PageSeoEntry = {
 	path: string
 	title: string
@@ -9,70 +12,57 @@ export type PageSeoEntry = {
 export const STATIC_PAGE_SEO = {
 	home: {
 		path: "/",
-		title: "Ömer Gülçiçek — Frontend Engineer",
-		description:
-			"Detaylara önem veren bir frontend mühendisi; blog, projeler ve ViraStack ekosistemi.",
+		title: SITE.defaultTitle,
+		description: SITE_COPY.meta.home,
 		changeFrequency: "daily",
 		priority: 1
 	},
 	blog: {
 		path: "/blog",
 		title: "Blog",
-		description:
-			"Teknik ve kişisel yazılar — React, Next.js, CSS, frontend mimarisi ve daha fazlası.",
+		description: SITE_COPY.meta.blog,
 		changeFrequency: "weekly",
 		priority: 0.9
 	},
 	projects: {
 		path: "/projects",
 		title: "Projeler",
-		description: "Kişisel uygulamalar ve ViraStack açık kaynak araçları.",
+		description: SITE_COPY.meta.projects,
 		changeFrequency: "weekly",
 		priority: 0.8
 	},
 	about: {
 		path: "/about",
 		title: "Hakkımda",
-		description:
-			"Frontend mühendisliği, ViraStack ve üretim kültürü hakkında kısa bir tanışma.",
+		description: SITE_COPY.meta.about,
 		changeFrequency: "monthly",
 		priority: 0.7
 	},
 	experiences: {
 		path: "/experiences",
 		title: "Deneyimler",
-		description: "Kariyer geçmişi, teknoloji etiketleri ve CV.",
+		description: SITE_COPY.meta.experiences,
 		changeFrequency: "monthly",
 		priority: 0.7
 	},
 	journey: {
 		path: "/journey",
 		title: "Yolculuk",
-		description:
-			"Kariyer ve kişisel dönüm noktalarım; yıllara göre kısa anılar ve önemli anlar.",
-		changeFrequency: "monthly",
-		priority: 0.6
-	},
-	services: {
-		path: "/services",
-		title: "Hizmetler",
-		description: "Freelance geliştirme ve frontend eğitimi.",
+		description: SITE_COPY.meta.journey,
 		changeFrequency: "monthly",
 		priority: 0.6
 	},
 	bookmarks: {
 		path: "/bookmarks",
 		title: "Yer İmleri",
-		description:
-			"Raindrop'ta topladığım frontend kaynakları, bloglar ve okuma listesi.",
+		description: SITE_COPY.meta.bookmarks,
 		changeFrequency: "weekly",
 		priority: 0.6
 	},
 	setup: {
 		path: "/setup",
 		title: "Kurulum",
-		description:
-			"Kod yazarken kullandığım editör kurulumu ve ürün geliştirirken tercih ettiğim teknolojiler.",
+		description: SITE_COPY.meta.setup,
 		changeFrequency: "monthly",
 		priority: 0.6
 	}

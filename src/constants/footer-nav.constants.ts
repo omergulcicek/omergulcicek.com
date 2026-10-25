@@ -1,25 +1,16 @@
-export type FooterNavItem = {
-	label: string
-	href: string
-	external?: boolean
-}
+import { EXPLORE_NAV } from "@/constants/header-nav.constants"
+import { ME } from "@/constants/me.constants"
 
-export const FOOTER_NAV: readonly FooterNavItem[] = [
-	{ label: "Deneyimler", href: "/experiences" },
-	{ label: "Yolculuk", href: "/journey" },
-	{ label: "Hizmetler", href: "/services" },
-	{ label: "Yer İmleri", href: "/bookmarks" },
-	{ label: "Kurulum", href: "/setup" }
-]
+export const FOOTER_NAV = EXPLORE_NAV
 
 export const FOOTER_BUILD_CREDIT =
 	"ViraStack, TanStack Start, Tailwind CSS ve shadcn/ui ile geliştirildi."
 
 export const FOOTER_SOURCE_CODE = {
 	label: "Kaynak kod GitHub'da.",
-	href: "https://github.com/omergulcicek/omergulcicek.com"
+	href: ME.site.repository
 } as const
 
 export function getFooterCopyright(year = new Date().getFullYear()) {
-	return `© ${year} Ömer Gülçiçek`
+	return `© ${year} ${ME.personal.fullName}`
 }

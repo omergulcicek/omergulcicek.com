@@ -3,8 +3,7 @@ import type { ComponentType } from "react"
 
 import { GitHubIcon } from "@/components/icons"
 import { Virastack } from "@/components/ui/svgs/virastack"
-import { FOOTER_NAV } from "@/constants/footer-nav.constants"
-import { HEADER_NAV } from "@/constants/header-nav.constants"
+import { EXPLORE_NAV, HEADER_NAV } from "@/constants/header-nav.constants"
 import { getNavPageIcon } from "@/constants/nav-icons.constants"
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 import { BOOKMARK_CATEGORIES } from "@/features/bookmarks/constants/bookmarks.constants"
@@ -27,23 +26,15 @@ export type SearchActionItem = {
 	external?: boolean
 }
 
-const HEADER_HREFS = new Set<string>(HEADER_NAV.map((item) => item.href))
-
 const SEARCH_ACTION_ICON_CLASS = "size-3.5 shrink-0"
 
-export const SEARCH_PAGES: SearchPageItem[] = [
-	...HEADER_NAV.map((item) => ({
+export const SEARCH_PAGES: SearchPageItem[] = [...HEADER_NAV, ...EXPLORE_NAV].map(
+	(item) => ({
 		label: item.label,
 		href: item.href,
 		icon: getNavPageIcon(item.href)
-	})),
-	...FOOTER_NAV.filter((item) => !HEADER_HREFS.has(item.href)).map((item) => ({
-		label: item.label,
-		href: item.href,
-		icon: getNavPageIcon(item.href),
-		external: item.external
-	}))
-]
+	})
+)
 
 export const SEARCH_ACTIONS: SearchActionItem[] = [
 	{

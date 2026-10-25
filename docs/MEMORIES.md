@@ -5,7 +5,7 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 ## Context
 
 - **Proje:** omergulcicek.com — kişisel site ve blog (Ömer Gülçiçek)
-- **Unvan:** Frontend Engineer (kesin)
+- **Unvan:** Frontend Mühendisi (kesin). Frontend Architect hedef, unvan olarak yazılmaz.
 - **Rewrite:** TanStack Start + Supabase (sıfırdan yeni Supabase projesi)
 - **Legacy:** `_legacy/` — referans; kod kopyalanmaz
 
@@ -37,4 +37,5 @@ Kalıcı kararlar ve bağlam. Kodda açık olmayan tercihler burada.
 - 2026-06 — Blog görselleri aşamalı medya sağlayıcı: `src/lib/media/`, varsayılan `local`.
 - 2026-06-29 — `SITE-CONTENT.md` tamamlandı (footer, SEO, hata sayfaları). `BOOKMARKS.md` 7 kategori SSOT. Faz haritası güncellendi (MDX/SEO Faz 4, cila Faz 5).
 - 2026-07-04 — **Faz 6** eklendi: SEO ve Lighthouse performans iyileştirmeleri (CI eşikleri, görsel/bundle optimizasyonu, kullanıcı incelemesi).
+- 2026-10-25 — Redesign Faz 1–2: metin SSOT `src/constants/me.json` (kişi, iletişim, site/repo, deneyimler + özetler, projeler, hobiler, favoriler, Yolculuk, ilkeler, kullanılan teknolojiler; `me.constants.ts` içinde `src/schemas/me.schema.ts` ile doğrulanır) + `src/constants/site-copy.constants.ts` (sayfa metinleri). Hizmetler kaldırıldı (`/services` → 301 `/about`); header'a Keşfet menüsü eklendi. Akademi ViraStack'e taşındı (`/academy/*` → 301 virastack.com/academy). Ana sayfa blogu yalnızca teknik yazılar.
 - 2026-06-29 — Header rose ikonu (metin yok); footer iki sütun; hero + bölüm başlıkları 16px tipografi kararları.

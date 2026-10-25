@@ -1,10 +1,6 @@
+import { ME, ME_EMAIL_HREF } from "@/constants/me.constants"
+
 export const SITE_CONTENT = {
-	jobTitle: "Frontend Engineer",
-	displayName: "Ömer Gülçiçek",
-	heroParagraph1:
-		"Detaylara ve kaliteye büyük bir tutku duyuyorum; projelerim aracılığıyla insanlara faydalı olup onların deneyimlerine değer katmayı seviyorum. ViraStack ile frontend geliştiriciler için şablonlardan paketlere uzanan açık kaynak bir ekosistem inşa ediyorum.",
-	heroParagraph2:
-		"Bana @omergulcicek ve e-posta yoluyla ulaşabilir ya da GitHub'daki kodlarıma göz atabilirsiniz.",
 	homeSections: {
 		blog: "Blog",
 		experiences: "Deneyimler"
@@ -27,53 +23,34 @@ export const SITE_CONTENT = {
 	siteDockSearchAria: "Arama paletini aç",
 	siteDockScrollToTop: "Yukarı çık",
 	siteDockScrollProgress: "Sayfa kaydırma durumu",
-	projectsPageIntro:
-		"Kişisel uygulamalarım ve frontend geliştiriciler için kurduğum ViraStack ekosistemindeki araçlar.",
 	projectsSectionApps: "Kişisel Projeler",
 	projectsSectionVirastack: "ViraStack",
 	projectsBadgeComingSoon: "Yakında",
 	projectsBadgeArchive: "Arşiv",
-	virastackSectionIntro:
-		"ViraStack, bir frontend projesine başlarken ihtiyaç duyduğun parçaları bir araya getiren açık kaynak bir ekosistemdir: Next.js ve TanStack başlangıç şablonları, yapay zekâyı mimarine göre yönlendiren ViraStack AI ve formlar ile erişilebilirlik gibi alanlarda kullanılan React paketleri.",
-	bookmarksIntro:
-		"Yer imlerimi raindrop.io/omergulcicek'da saklıyorum; özellikle frontend kaynaklarımı, kitaplığımı, okuduğum makaleleri, günlük takip ettiğim blogları, teknik içerikleri ve kullandığım uygulama-eklentileri burada tutuyorum.",
-	bookmarksRaindropCta: "Tümünü göster",
-	bookmarksRaindropUrl: "https://raindrop.io/omergulcicek",
-	experiencesIntro:
-		"10 yılı aşkın tecrübemle, React ekosisteminde AI destekli ve yüksek performanslı mimariler kurgulayarak sürdürülebilir kullanıcı deneyimleri inşa ediyorum.",
+	projectsBadgePaused: "Ara verildi",
 	resumeModalTitle: "Özgeçmiş Önizleme",
 	resumeModalDescription:
 		"Özgeçmişimi buradan inceleyebilir veya indirebilirsiniz.",
 	resumeDownload: "İndir",
-	resumeClose: "Kapat",
 	resumeLanguageGroup: "Özgeçmiş dili",
 	resumeLanguageTr: "Türkçe CV",
 	resumeLanguageEn: "English CV",
 	resumeLanguageTrShort: "TR",
 	resumeLanguageEnShort: "EN",
-	aboutLinks: {
-		experiences: "Deneyimlerim — kariyer geçmişi ve CV",
-		services: "Hizmetler — geliştirme, Danışmanlık ve frontend eğitimi"
-	},
 	footerNavTitle: "Keşfet",
 	footerVirastackTitle: "ViraStack",
 	footerVirastackAllProjects: "Tüm projeler",
-	notFoundTitle: "Sayfa bulunamadı",
-	notFoundDescription:
-		"Aradığın sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.",
-	notFoundHomeCta: "Ana sayfaya dön",
-	notFoundBlogCta: "Blog'a git",
 	routeErrorCodeLabel: "Hata",
 	routeErrorRetry: "Tekrar dene"
 } as const
 
 export const EXTERNAL_LINKS = {
 	virastack: "https://virastack.com",
-	github: "https://github.com/omergulcicek",
-	githubRepo: "https://github.com/omergulcicek/omergulcicek.com",
-	x: "https://x.com/omergulcicek",
-	email: "mailto:iletisim@omergulcicek.com",
-	kodluyoruz: "https://kodluyoruz.org",
+	github: ME.contact.github,
+	x: ME.contact.x,
+	linkedin: ME.contact.linkedin,
+	email: ME_EMAIL_HREF,
+	raindrop: ME.contact.raindrop,
 	tanstackStart: "https://tanstack.com/start",
 	tailwind: "https://tailwindcss.com",
 	shadcn: "https://ui.shadcn.com"

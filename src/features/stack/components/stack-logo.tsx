@@ -1,7 +1,6 @@
+import { ClaudeAiIcon } from "@/components/ui/svgs/claudeAiIcon"
 import { CssOld } from "@/components/ui/svgs/cssOld"
-import { CursorLight } from "@/components/ui/svgs/cursorLight"
 import { Figma } from "@/components/ui/svgs/figma"
-import { Gemini } from "@/components/ui/svgs/gemini"
 import { Git } from "@/components/ui/svgs/git"
 import { Graphql } from "@/components/ui/svgs/graphql"
 import { Html5 } from "@/components/ui/svgs/html5"
@@ -18,11 +17,14 @@ import { ReactLight } from "@/components/ui/svgs/reactLight"
 import { Redux } from "@/components/ui/svgs/redux"
 import { ShadcnUi } from "@/components/ui/svgs/shadcnUi"
 import { ShadcnUiDark } from "@/components/ui/svgs/shadcnUiDark"
+import { Playwright } from "@/components/ui/svgs/playwright"
 import { Storybook } from "@/components/ui/svgs/storybook"
 import { Supabase } from "@/components/ui/svgs/supabase"
-import { Tanstack } from "@/components/ui/svgs/tanstack"
+import { TanstackDark } from "@/components/ui/svgs/tanstackDark"
+import { TanstackLight } from "@/components/ui/svgs/tanstackLight"
 import { Tailwindcss } from "@/components/ui/svgs/tailwindcss"
 import { Typescript } from "@/components/ui/svgs/typescript"
+import { Vitest } from "@/components/ui/svgs/vitest"
 import { Vite } from "@/components/ui/svgs/vite"
 import { Zod } from "@/components/ui/svgs/zod"
 import { OptimizedImage } from "@/components/shared/optimized-image"
@@ -83,7 +85,12 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "tanstack":
 			return (
-				<Tanstack className={iconClassName} role="img" aria-label={label} />
+				<ThemeAwareDualIcon
+					light={TanstackLight}
+					dark={TanstackDark}
+					className={iconClassName}
+					label={label}
+				/>
 			)
 		case "vite":
 			return <Vite className={iconClassName} role="img" aria-label={label} />
@@ -143,17 +150,13 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 			)
 		case "redux":
 			return <Redux className={iconClassName} role="img" aria-label={label} />
-		case "cursor":
+		case "claude":
 			return (
-				<CursorLight
-					className={cn(iconClassName, "text-[#181717] dark:text-white")}
+				<ClaudeAiIcon
+					className={iconClassName}
 					role="img"
 					aria-label={label}
 				/>
-			)
-		case "gemini":
-			return (
-				<Gemini className={iconClassName} role="img" aria-label={label} />
 			)
 		case "motion":
 			return (
@@ -178,6 +181,12 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 		case "storybook":
 			return (
 				<Storybook className={iconClassName} role="img" aria-label={label} />
+			)
+		case "vitest":
+			return <Vitest className={iconClassName} role="img" aria-label={label} />
+		case "playwright":
+			return (
+				<Playwright className={iconClassName} role="img" aria-label={label} />
 			)
 		case "virastack":
 			return (

@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react"
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { pageShellClass, proseParagraphClass } from "@/components/shared/prose.styles"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 
 const notFoundLinkClass =
 	"group text-muted-foreground inline-flex items-center gap-1 text-sm transition-colors hover:text-foreground"
@@ -16,9 +16,9 @@ export function NotFoundPage() {
 				<p className="text-muted-foreground font-mono text-sm tabular-nums">
 					404
 				</p>
-				<PageHeader title={SITE_CONTENT.notFoundTitle}>
+				<PageHeader title={SITE_COPY.notFound.title}>
 					<p className={proseParagraphClass}>
-						{SITE_CONTENT.notFoundDescription}
+						{SITE_COPY.notFound.description}
 					</p>
 				</PageHeader>
 			</div>
@@ -27,14 +27,14 @@ export function NotFoundPage() {
 				aria-label="Yardımcı bağlantılar"
 			>
 				<Link to="/" className={notFoundLinkClass}>
-					{SITE_CONTENT.notFoundHomeCta}
+					{SITE_COPY.notFound.homeCta}
 					<ChevronRight
 						className="size-4 transition-transform fine-hover:group-hover:translate-x-0.5"
 						aria-hidden
 					/>
 				</Link>
 				<Link to="/blog" className={notFoundLinkClass}>
-					{SITE_CONTENT.notFoundBlogCta}
+					{SITE_COPY.notFound.blogCta}
 					<ChevronRight
 						className="size-4 transition-transform fine-hover:group-hover:translate-x-0.5"
 						aria-hidden

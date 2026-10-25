@@ -1,7 +1,10 @@
+import { ME } from "@/constants/me.constants"
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+
 export type StackItem = {
 	id: string
 	label: string
-	svglSlug: string
+	description: string
 	order: number
 	href: string
 }
@@ -16,228 +19,195 @@ export const STACK_ITEMS: StackItem[] = [
 	{
 		id: "typescript",
 		label: "TypeScript",
-		svglSlug: "typescript",
+		description: "Tip güvenliği",
 		order: 100,
 		href: "https://www.typescriptlang.org/"
 	},
 	{
 		id: "javascript",
 		label: "JavaScript",
-		svglSlug: "javascript",
+		description: "Web'in dili",
 		order: 101,
 		href: "https://developer.mozilla.org/docs/Web/JavaScript"
 	},
 	{
 		id: "html",
 		label: "HTML",
-		svglSlug: "html5",
+		description: "Sayfa yapısı",
 		order: 102,
 		href: "https://developer.mozilla.org/docs/Web/HTML"
 	},
 	{
 		id: "css",
 		label: "CSS",
-		svglSlug: "css",
+		description: "Stil",
 		order: 103,
 		href: "https://developer.mozilla.org/docs/Web/CSS"
 	},
 	{
 		id: "git",
 		label: "Git",
-		svglSlug: "git",
+		description: "Sürüm kontrolü",
 		order: 104,
 		href: "https://git-scm.com/"
 	},
 	{
 		id: "react",
 		label: "React",
-		svglSlug: "react",
+		description: "Arayüz kütüphanesi",
 		order: 200,
 		href: "https://react.dev/"
 	},
 	{
 		id: "nextjs",
 		label: "Next.js",
-		svglSlug: "nextjs",
+		description: "React framework'ü",
 		order: 201,
 		href: "https://nextjs.org/"
 	},
 	{
 		id: "vite",
 		label: "Vite",
-		svglSlug: "vite",
+		description: "Derleme aracı",
 		order: 202,
 		href: "https://vite.dev/"
 	},
 	{
 		id: "tanstack",
 		label: "TanStack",
-		svglSlug: "tanstack",
+		description: "Router, Query, Start",
 		order: 203,
 		href: "https://tanstack.com/"
 	},
 	{
 		id: "tailwind",
 		label: "Tailwind CSS",
-		svglSlug: "tailwind-css",
+		description: "Utility-first CSS",
 		order: 204,
 		href: "https://tailwindcss.com/"
 	},
 	{
 		id: "base-ui",
 		label: "Base UI",
-		svglSlug: "base-ui",
+		description: "Stilsiz, erişilebilir bileşenler",
 		order: 205,
 		href: "https://base-ui.com/"
 	},
 	{
 		id: "shadcn",
 		label: "shadcn/ui",
-		svglSlug: "shadcnui",
+		description: "Bileşen seti",
 		order: 206,
 		href: "https://ui.shadcn.com/"
 	},
 	{
 		id: "motion",
 		label: "Motion",
-		svglSlug: "motion",
+		description: "Animasyon",
 		order: 207,
 		href: "https://motion.dev/"
 	},
 	{
 		id: "react-hook-form",
 		label: "React Hook Form",
-		svglSlug: "react-hook-form",
+		description: "Form yönetimi",
 		order: 208,
 		href: "https://react-hook-form.com/"
 	},
 	{
 		id: "zustand",
 		label: "Zustand",
-		svglSlug: "zustand",
+		description: "Client state",
 		order: 209,
 		href: "https://zustand.docs.pmnd.rs/"
 	},
 	{
 		id: "redux",
 		label: "Redux",
-		svglSlug: "redux",
+		description: "Global state",
 		order: 210,
 		href: "https://redux.js.org/"
 	},
 	{
 		id: "zod",
 		label: "Zod",
-		svglSlug: "zod",
+		description: "Şema doğrulama",
 		order: 211,
 		href: "https://zod.dev/"
 	},
 	{
 		id: "storybook",
 		label: "Storybook",
-		svglSlug: "storybook",
+		description: "Bileşen kataloğu",
 		order: 212,
 		href: "https://storybook.js.org/"
 	},
 	{
 		id: "nodejs",
 		label: "Node.js",
-		svglSlug: "nodejs",
+		description: "Sunucu ortamı",
 		order: 300,
 		href: "https://nodejs.org/"
 	},
 	{
 		id: "postgresql",
 		label: "PostgreSQL",
-		svglSlug: "postgresql",
+		description: "Veritabanı",
 		order: 301,
 		href: "https://www.postgresql.org/"
 	},
 	{
 		id: "supabase",
 		label: "Supabase",
-		svglSlug: "supabase",
+		description: "Backend servisi",
 		order: 302,
 		href: "https://supabase.com/"
 	},
 	{
 		id: "graphql",
 		label: "GraphQL",
-		svglSlug: "graphql",
+		description: "API sorgu dili",
 		order: 303,
 		href: "https://graphql.org/"
 	},
 	{
+		id: "vitest",
+		label: "Vitest",
+		description: "Unit ve bileşen testi",
+		order: 350,
+		href: "https://vitest.dev/"
+	},
+	{
+		id: "playwright",
+		label: "Playwright",
+		description: "Uçtan uca test",
+		order: 351,
+		href: "https://playwright.dev/"
+	},
+	{
 		id: "figma",
 		label: "Figma",
-		svglSlug: "figma",
+		description: "Tasarım",
 		order: 400,
 		href: "https://www.figma.com/"
 	},
 	{
-		id: "cursor",
-		label: "Cursor",
-		svglSlug: "cursor",
-		order: 500,
-		href: "https://cursor.com/"
-	},
-	{
-		id: "gemini",
-		label: "Gemini",
-		svglSlug: "gemini",
+		id: "claude",
+		label: "Claude Code",
+		description: "AI kod asistanı",
 		order: 501,
-		href: "https://gemini.google.com/"
+		href: "https://claude.com/claude-code"
 	},
 	{
 		id: "virastack",
 		label: "ViraStack",
-		svglSlug: "virastack",
-		order: 502,
-		href: "https://virastack.com/"
+		description: "Frontend ekosistemi",
+		order: 503,
+		href: EXTERNAL_LINKS.virastack
 	}
 ]
 
-export const STACK_CATEGORIES: StackCategory[] = [
-	{
-		id: "languages",
-		label: "Languages",
-		itemIds: ["typescript", "javascript", "git"]
-	},
-	{
-		id: "frontend",
-		label: "Frontend",
-		itemIds: [
-			"react",
-			"nextjs",
-			"vite",
-			"tanstack",
-			"tailwind",
-			"base-ui",
-			"shadcn",
-			"motion",
-			"react-hook-form",
-			"zustand",
-			"redux",
-			"zod",
-			"storybook"
-		]
-	},
-	{
-		id: "backend",
-		label: "Backend",
-		itemIds: ["nodejs", "postgresql", "supabase", "graphql"]
-	},
-	{
-		id: "design",
-		label: "Design",
-		itemIds: ["figma"]
-	},
-	{
-		id: "ai",
-		label: "AI",
-		itemIds: ["cursor", "gemini", "virastack"]
-	}
-]
+export const STACK_CATEGORIES: StackCategory[] = ME.stack.categories
 
 const STACK_ITEM_BY_ID = new Map(
 	STACK_ITEMS.map((item) => [item.id, item] as const)
@@ -275,31 +245,4 @@ export const STACK_CATEGORY_SECTIONS = [...STACK_CATEGORIES]
 	})
 	.sort((a, b) => a.order - b.order)
 
-const HOME_STACK_IDS = [
-	"javascript",
-	"typescript",
-	"git",
-	"figma",
-	"react",
-	"nextjs",
-	"tailwind",
-	"tanstack",
-	"vite",
-	"base-ui",
-	"shadcn",
-	"zod",
-	"zustand",
-	"redux",
-	"nodejs",
-	"postgresql",
-	"supabase",
-	"graphql",
-	"motion",
-	"react-hook-form",
-	"storybook",
-	"cursor",
-	"gemini",
-	"virastack"
-] as const
-
-export const HOME_STACK_ITEMS = getStackItemsByIds(HOME_STACK_IDS)
+export const HOME_STACK_ITEMS = getStackItemsByIds(ME.stack.home)

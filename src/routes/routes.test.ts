@@ -1,6 +1,9 @@
+import { isRedirect } from "@tanstack/react-router"
 import { describe, expect, it } from "vitest"
 
 import { Route as AboutRoute } from "@/routes/about"
+import { Route as AcademyIndexRoute } from "@/routes/academy/index"
+import { Route as AcademySplatRoute } from "@/routes/academy/$"
 import { Route as BookmarksRoute } from "@/routes/bookmarks"
 import { Route as ExperiencesRoute } from "@/routes/experiences"
 import { Route as IndexRoute } from "@/routes/index"
@@ -17,6 +20,8 @@ import { Route as MdxSandboxRoute } from "@/routes/dev/mdx-sandbox"
 
 const ROUTES = [
 	AboutRoute,
+	AcademyIndexRoute,
+	AcademySplatRoute,
 	BookmarksRoute,
 	ExperiencesRoute,
 	IndexRoute,
@@ -38,5 +43,40 @@ describe("route modules", () => {
 			expect(route).toBeDefined()
 			expect(route.options).toBeDefined()
 		}
+	})
+})
+
+describe("legacy routes", () => {
+	it("redirects /services to the work-together section on /about", () => {
+		let thrown: unknown
+
+		try {
+			ServicesRoute.options.beforeLoad?.({} as never)
+		} catch (error) {
+			thrown = error
+		}
+
+		expect(isRedirect(thrown)).toBe(true)
+		expect(thrown).toMatchObject({
+			options: { to: "/about", hash: "birlikte-calisalim", statusCode: 301 }
+		})
+	})
+
+	it.each([
+		["/academy", AcademyIndexRoute],
+		["/academy/*", AcademySplatRoute]
+	])("redirects %s to ViraStack Academy", (_path, route) => {
+		let thrown: unknown
+
+		try {
+			route.options.beforeLoad?.({} as never)
+		} catch (error) {
+			thrown = error
+		}
+
+		expect(isRedirect(thrown)).toBe(true)
+		expect(thrown).toMatchObject({
+			options: { href: "https://virastack.com/academy", statusCode: 301 }
+		})
 	})
 })

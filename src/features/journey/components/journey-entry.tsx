@@ -23,7 +23,9 @@ export function JourneyEntryItem({ entry, isLast }: JourneyEntryProps) {
 
 			<div className={cn("min-w-0 flex-1", !isLast && "pb-8 md:pb-10")}>
 				<h3 className={cn(cardTitleClass, "text-foreground")}>{entry.title}</h3>
-				<p className={cn(proseParagraphClass, "mt-1")}>{entry.description}</p>
+				{entry.description ? (
+					<p className={cn(proseParagraphClass, "mt-1")}>{entry.description}</p>
+				) : null}
 				<JourneyEntryImage entry={entry} />
 			</div>
 		</li>

@@ -1,9 +1,7 @@
 import { Container } from "@/components/shared/Container"
 import { PageHeader } from "@/components/shared/page-header"
 import { ProseEmphasis } from "@/components/shared/prose-emphasis"
-import {
-	ProseRouterLink
-} from "@/components/shared/prose-link"
+import { ProseLink, ProseRouterLink } from "@/components/shared/prose-link"
 import { StaggerContainer, StaggerItem } from "@/components/shared/stagger-motion"
 import { VirastackLink } from "@/components/shared/virastack-link"
 import {
@@ -15,36 +13,39 @@ import {
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
 import { SectionHeading } from "@/components/shared/SectionHeading"
-import { ABOUT_CONTENT } from "@/features/about/constants/about.constants"
+import { getSitePrinciples } from "@/constants/me.constants"
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 import { BentoInterests } from "@/features/about/components/bento-interests"
 import { cn } from "@/lib/utils"
 
+function LinkSeparator() {
+	return (
+		<span className="text-muted-foreground" aria-hidden>
+			{" · "}
+		</span>
+	)
+}
+
 export function AboutPage() {
+	const { about } = SITE_COPY
+	const principles = getSitePrinciples()
+
 	return (
 		<StaggerContainer className={pageShellClass}>
 			<StaggerItem>
 				<Container className={cn("flex flex-col", pageStackGapClass)}>
-					<PageHeader title={ABOUT_CONTENT.title} className="vt-about-block">
+					<PageHeader title={about.title} className="vt-about-block">
 						<div className={proseFlowClass}>
+							{about.intro.map((paragraph) => (
+								<p key={paragraph} className={proseParagraphClass}>
+									{paragraph}
+								</p>
+							))}
 							<p className={proseParagraphClass}>
-								Merhaba, ben Ömer. Sakarya&apos;da yaşayan, Trabzonlu bir yazılım
-								mühendisiyim.
-							</p>
-							<p className={proseParagraphClass}>
-								Detaylara ve kaliteye <em>büyük bir tutku</em> duyuyorum; işimle
-								insanlara faydalı olmayı ve deneyimlerine değer katmayı seviyorum.
-								Şu aralar kişisel projelerimin yanı sıra{" "}
-								<VirastackLink>ViraStack</VirastackLink>{" "}
-								ekosistemine odaklanıyorum.
-							</p>
-							<p className={proseParagraphClass}>
-								Yıllardır farklı ölçeklerde frontend projelerinde çalışıyorum;{" "}
-								<ProseEmphasis>
-									mimari, performans ve geliştirici deneyimine
-								</ProseEmphasis>{" "}
-								önem veriyorum. Ekibin daha güvenle ilerlemesini sağlamayı da
-								önemsiyorum. Yapay zekâyı da bu disiplinin içinde,{" "}
-								<em>bilinçli ve kontrollü</em> şekilde kullanıyorum.
+								{about.focus.before}
+								<VirastackLink>{about.focus.link}</VirastackLink>
+								{about.focus.after}
 							</p>
 						</div>
 					</PageHeader>
@@ -52,9 +53,43 @@ export function AboutPage() {
 			</StaggerItem>
 
 			<StaggerItem>
+				<Container>
+					<section className={pageSectionClass}>
+						<SectionHeading>{about.principlesTitle}</SectionHeading>
+						<ul className={cn("flex flex-col", proseFlowClass)}>
+							{principles.map((principle) => (
+								<li key={principle.title} className={proseParagraphClass}>
+									<ProseEmphasis>{principle.title}.</ProseEmphasis>{" "}
+									{principle.text}
+								</li>
+							))}
+						</ul>
+					</section>
+				</Container>
+			</StaggerItem>
+
+			<StaggerItem>
+				<Container>
+					<section
+						id={about.workTogether.id}
+						className={cn(pageSectionClass, "scroll-mt-24")}
+					>
+						<SectionHeading>{about.workTogether.title}</SectionHeading>
+						<p className={proseParagraphClass}>
+							{about.workTogether.before}
+							<ProseLink href={EXTERNAL_LINKS.email}>
+								{about.workTogether.link}
+							</ProseLink>
+							{about.workTogether.after}
+						</p>
+					</section>
+				</Container>
+			</StaggerItem>
+
+			<StaggerItem>
 				<section className={pageSectionClass}>
 					<Container>
-						<SectionHeading>İlgi Alanları</SectionHeading>
+						<SectionHeading>{about.interestsTitle}</SectionHeading>
 					</Container>
 					<div className={bleedSectionClass}>
 						<BentoInterests />
@@ -63,21 +98,16 @@ export function AboutPage() {
 			</StaggerItem>
 
 			<StaggerItem>
-				<Container className={cn("flex flex-col", pageStackGapClass)}>
-					<ul className={cn("flex flex-col", proseFlowClass)}>
-						<li className={proseParagraphClass}>
-							<ProseRouterLink to="/experiences">Deneyimlerim</ProseRouterLink> —
-							kariyer geçmişi ve CV
-						</li>
-						<li className={proseParagraphClass}>
-							<ProseRouterLink to="/journey">Yolculuk</ProseRouterLink> —
-							iş, proje ve hayat anıları
-						</li>
-						<li className={proseParagraphClass}>
-							<ProseRouterLink to="/services">Hizmetler</ProseRouterLink> —
-							geliştirme, Danışmanlık ve frontend eğitimi
-						</li>
-					</ul>
+				<Container>
+					<nav aria-label={about.links.ariaLabel}>
+						<p className={proseParagraphClass}>
+							<ProseLink href={EXTERNAL_LINKS.email}>{about.links.email}</ProseLink>
+							<LinkSeparator />
+							<ProseRouterLink to="/experiences">{about.links.resume}</ProseRouterLink>
+							<LinkSeparator />
+							<ProseLink href={EXTERNAL_LINKS.github}>{about.links.github}</ProseLink>
+						</p>
+					</nav>
 				</Container>
 			</StaggerItem>
 		</StaggerContainer>

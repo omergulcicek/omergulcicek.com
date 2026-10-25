@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react"
 import { Container } from "@/components/shared/Container"
 import { pageShellClass, pageStackGapClass } from "@/components/shared/prose.styles"
 import type { BlogPost } from "@/features/blog/types/blog.types"
+import { ContactCta } from "@/features/home/components/contact-cta"
 import { ExperienceSummary } from "@/features/home/components/ExperienceSummary"
 import { FeaturedBlog } from "@/features/home/components/FeaturedBlog"
 import { Hero } from "@/features/home/components/Hero"
@@ -15,7 +16,7 @@ const StackStrip = lazy(async () => {
 })
 
 function StackStripFallback() {
-	return <div className="h-24" aria-hidden />
+	return <div className="h-36" aria-hidden />
 }
 
 type HomePageProps = {
@@ -35,6 +36,7 @@ export function HomePage({ featuredPosts }: HomePageProps) {
 				<VirastackCaseStudyCard />
 				<FeaturedBlog posts={featuredPosts} />
 				<ExperienceSummary />
+				<ContactCta />
 			</Container>
 		</div>
 	)

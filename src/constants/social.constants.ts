@@ -1,18 +1,20 @@
+import { ME } from "@/constants/me.constants"
+
 export const SOCIAL_LINKS = [
 	{
 		label: "GitHub",
-		href: "https://github.com/omergulcicek"
+		href: ME.contact.github
 	},
 	{
 		label: "npm",
-		href: "https://www.npmjs.com/~omergulcicek"
+		href: ME.contact.npm
 	},
 	{
 		label: "LinkedIn",
-		href: "https://linkedin.com/in/omergulcicek"
+		href: ME.contact.linkedin
 	},
 	{
 		label: "X",
-		href: "https://x.com/omergulcicek"
+		href: ME.contact.x
 	}
 ] as const

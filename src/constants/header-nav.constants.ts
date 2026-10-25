@@ -1,42 +1,37 @@
-import { FOOTER_NAV } from "@/constants/footer-nav.constants"
 import { getNavPageIcon } from "@/constants/nav-icons.constants"
 
 import type { LucideIcon } from "lucide-react"
 
-export const HEADER_NAV = [
+export type NavItem = {
+	label: string
+	href: string
+	exact?: boolean
+}
+
+export const HEADER_NAV: readonly NavItem[] = [
 	{ label: "Ana Sayfa", href: "/", exact: true },
 	{ label: "Blog", href: "/blog" },
 	{ label: "Projeler", href: "/projects" },
-	{ label: "Yer İmleri", href: "/bookmarks" },
-	{ label: "Hakkımda", href: "/about" }
-] as const
+	{ label: "Yer İmleri", href: "/bookmarks" }
+]
 
-export type MobileDrawerNavItem = {
-	label: string
-	href: string
+export const EXPLORE_NAV_LABEL = "Keşfet"
+
+export const EXPLORE_NAV: readonly NavItem[] = [
+	{ label: "Hakkımda", href: "/about" },
+	{ label: "Deneyimler", href: "/experiences" },
+	{ label: "Yolculuk", href: "/journey" },
+	{ label: "Kurulum", href: "/setup" }
+]
+
+export type MobileDrawerNavItem = NavItem & {
 	icon: LucideIcon
-	exact?: boolean
-	external?: boolean
 }
 
-const HEADER_HREFS = new Set<string>(HEADER_NAV.map((item) => item.href))
-
 export const MOBILE_DRAWER_NAV: MobileDrawerNavItem[] = [
-	...HEADER_NAV.map((item) => ({
-		label: item.label,
-		href: item.href,
-		icon: getNavPageIcon(item.href),
-		...("exact" in item ? { exact: item.exact } : {})
-	})),
-	...FOOTER_NAV.filter(
-		(item) => !HEADER_HREFS.has(item.href) && !item.external
-	).map((item) => ({
-		label: item.label,
-		href: item.href,
-		icon: getNavPageIcon(item.href),
-		external: item.external
-	}))
-]
+	...HEADER_NAV,
+	...EXPLORE_NAV
+].map((item) => ({ ...item, icon: getNavPageIcon(item.href) }))
 
 export const HEADER_BRAND = {
 	href: "/",

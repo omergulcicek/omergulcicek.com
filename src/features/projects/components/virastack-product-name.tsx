@@ -1,4 +1,4 @@
-import { VIRASTACK_PRODUCT_ACCENT_CLASS } from "@/features/projects/constants/virastack-product-name.constants"
+import { getProjectColorClass } from "@/features/projects/constants/projects.constants"
 import { cn } from "@/lib/utils"
 
 type VirastackProductNameProps = {
@@ -12,7 +12,7 @@ export function VirastackProductName({
 	title,
 	accentClassName
 }: VirastackProductNameProps) {
-	const accentClass = VIRASTACK_PRODUCT_ACCENT_CLASS[projectId]
+	const accentClass = getProjectColorClass(projectId)
 	const productName = /^ViraStack (.+)$/.exec(title)?.[1]
 
 	if (!productName || !accentClass) {

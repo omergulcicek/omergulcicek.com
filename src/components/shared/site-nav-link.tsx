@@ -6,13 +6,13 @@ import { withOutboundUtm } from "@/lib/outbound-url"
 import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
-const siteNavLinkBaseClass =
+export const siteNavLinkBaseClass =
 	"focus-link inline-flex min-h-6 items-center py-1 text-sm transition-colors underline-offset-4"
 
-const siteNavLinkActiveClass =
+export const siteNavLinkActiveClass =
 	"text-foreground font-medium underline decoration-foreground/50"
 
-const siteNavLinkInactiveClass = "text-muted-foreground hover:text-foreground"
+export const siteNavLinkInactiveClass = "text-muted-foreground hover:text-foreground"
 
 type SiteNavLinkProps = {
 	href: string

@@ -2,7 +2,6 @@ import {
 	Bookmark,
 	Briefcase,
 	Footprints,
-	Handshake,
 	Home,
 	LayoutGrid,
 	Monitor,
@@ -23,7 +22,6 @@ export const NAV_PAGE_ICONS: Record<string, LucideIcon> = {
 	"/experiences": Briefcase,
 	"/journey": Footprints,
 	"/setup": Monitor,
-	"/services": Handshake,
 	"/bookmarks": Bookmark,
 	[EXTERNAL_LINKS.virastack]: Package
 }

@@ -1,5 +1,7 @@
+import { ME } from "@/constants/me.constants"
+
 export const HERO_IMAGE = {
-	alt: "Ömer Gülçiçek",
+	alt: ME.personal.fullName,
 	width: 216,
 	height: 216,
 	sources: {

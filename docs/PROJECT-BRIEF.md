@@ -1,6 +1,6 @@
 # omergulcicek.com — Proje Özeti
 
-> **Agent onboarding:** Sırayla oku: `docs/PROJECT-BRIEF.md` → `docs/TECH-STACK.md` → `docs/SITE-CONTENT.md` → `docs/PROJECTS.md` → `docs/BLOG.md` → `docs/supabase-migration.md` → `docs/ABOUT.md` → `docs/EXPERIENCES.md` → `docs/SERVICES.md` → `docs/BOOKMARKS.md` → `docs/SEARCH.md` → `docs/architecture-guide.md`. Burada kayıtlı kararları kullanıcı açıkça değiştirmek istemedikçe yeniden sorma.
+> **Agent onboarding:** Sırayla oku: `docs/PROJECT-BRIEF.md` → `docs/TECH-STACK.md` → `docs/SITE-CONTENT.md` → `docs/PROJECTS.md` → `docs/BLOG.md` → `docs/supabase-migration.md` → `docs/ABOUT.md` → `docs/EXPERIENCES.md` → `docs/BOOKMARKS.md` → `docs/SEARCH.md` → `docs/architecture-guide.md`. Burada kayıtlı kararları kullanıcı açıkça değiştirmek istemedikçe yeniden sorma.
 
 ## Proje Nedir?
 
@@ -20,7 +20,6 @@ Dokümantasyon tamamlanana kadar geliştirme **duraklatıldı**. Hedef: doküman
 | `docs/BLOG.md`               | **Blog SSOT** — frontmatter, liste UI, filtreler, nuqs URL sözleşmesi   |
 | `docs/ABOUT.md`              | **Hakkımda SSOT** — bölümler, metinler, stack carousel, site bayrakları |
 | `docs/EXPERIENCES.md`        | **Deneyimler SSOT** — zaman çizelgesi, CV                               |
-| `docs/SERVICES.md`           | **Hizmetler SSOT** — freelance ve eğitim                                |
 | `docs/BOOKMARKS.md`          | **Yer imleri SSOT** — Raindrop koleksiyonları, önizleme linkleri        |
 | `docs/SEARCH.md`             | **⌘K Command Palette SSOT** — MVP zorunlu                               |
 | `docs/supabase-migration.md` | **Supabase SSOT** — şema, Storage, taşıma, yayın mantığı                |
@@ -323,7 +322,6 @@ docs/
 ├── BLOG.md              # Blog frontmatter, filtre UI, nuqs
 ├── ABOUT.md             # Hakkımda bölümleri ve metinler
 ├── EXPERIENCES.md       # Deneyim zaman çizelgesi
-├── SERVICES.md          # Hizmetler
 ├── BOOKMARKS.md         # Yer imleri
 ├── SEARCH.md            # ⌘K Command Palette
 ├── supabase-migration.md # DB, Storage, taşıma
@@ -385,7 +383,7 @@ Geliştirme ve kurulum komutları → `**docs/TECH-STACK.md**`
 | DB isimlendirme     | Tablo/sütun/enum İngilizce                                                |
 | About               | Yeni versiyon kalıcı; legacy bölümlere dönüş yok — `docs/ABOUT.md`        |
 | Deneyimler          | Ayrı `/experiences` — `docs/EXPERIENCES.md`                               |
-| Hizmetler           | Ayrı `/services` — `docs/SERVICES.md`                                     |
+| Hizmetler           | Kaldırıldı (2026-10) — `/services` → 301 `/about#birlikte-calisalim` |
 | Open to work badge  | `SITE_FLAGS.isOpenToWork` — `docs/ABOUT.md`                               |
 | Container           | Prose `max-w-2xl` + bleed katmanı (max 2 genişlik) — `docs/BLOG.md`       |
 | Engagement          | View/like/comment site lansmanından sonra                                 |
@@ -399,7 +397,7 @@ Geliştirme ve kurulum komutları → `**docs/TECH-STACK.md**`
 **Tam build oturumunu** başlatmak için kopyala-yapıştır:
 
 ```
-docs/PROJECT-BRIEF.md, docs/TECH-STACK.md, docs/SITE-CONTENT.md, docs/PROJECTS.md, docs/BLOG.md, docs/supabase-migration.md, docs/ABOUT.md, docs/EXPERIENCES.md, docs/SERVICES.md, docs/BOOKMARKS.md, docs/SEARCH.md ve docs/architecture-guide.md dosyalarını baştan sona oku.
+docs/PROJECT-BRIEF.md, docs/TECH-STACK.md, docs/SITE-CONTENT.md, docs/PROJECTS.md, docs/BLOG.md, docs/supabase-migration.md, docs/ABOUT.md, docs/EXPERIENCES.md, docs/BOOKMARKS.md, docs/SEARCH.md ve docs/architecture-guide.md dosyalarını baştan sona oku.
 Faz 0: npx @virastack/ai-rules init && npx skills add jakubkrehel/make-interfaces-feel-better && npx skills add emilkowalski/skill (henüz yoksa).
 .cursor/rules/ altındaki ViraStack kurallarına uy. v1'de Framer Motion yok; CSS hover/focus serbest; make-interfaces-feel-better öncelikli.
 Production öncesi RSS, OG, llms, GA, WebVitals zorunlu. DB isimleri İngilizce. Taslaklar dev'de görünür, production'da gizli.

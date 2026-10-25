@@ -1,16 +1,17 @@
+import { ME } from "@/constants/me.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
 import { env } from "@/env"
 
 export const SITE = {
-	name: "Ömer Gülçiçek",
-	title: "Ömer Gülçiçek",
-	jobTitle: "Frontend Engineer",
-	defaultTitle: "Ömer Gülçiçek — Frontend Engineer",
-	description:
-		"Frontend Engineer. React, Next.js ve TypeScript ile performanslı arayüzler; blog, projeler ve açık kaynak (ViraStack).",
-	url: "https://omergulcicek.com",
-	repository: "https://github.com/omergulcicek/omergulcicek.com",
+	name: ME.personal.fullName,
+	title: ME.personal.fullName,
+	jobTitle: ME.personal.title,
+	defaultTitle: `${ME.personal.fullName} — ${ME.personal.title}`,
+	description: SITE_COPY.meta.home,
+	url: ME.site.url,
+	repository: ME.site.repository,
 	locale: "tr_TR",
-	twitterHandle: "@omergulcicek",
+	twitterHandle: ME.contact.xHandle,
 	defaultOgImage: "/omergulcicek-672.jpg",
 	analyticsId: env.VITE_GA_ID
 } as const

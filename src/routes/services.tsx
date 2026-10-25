@@ -1,9 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router"
-
-import { ServicesPage } from "@/features/services"
-import { buildStaticPageHead } from "@/lib/seo/build-page-head"
+import { createFileRoute, redirect } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/services")({
-	head: () => buildStaticPageHead("services"),
-	component: ServicesPage
+	beforeLoad: () => {
+		throw redirect({
+			to: "/about",
+			hash: "birlikte-calisalim",
+			replace: true,
+			statusCode: 301
+		})
+	}
 })
