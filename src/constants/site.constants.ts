@@ -14,5 +14,6 @@ export const SITE = {
 	locale: "tr_TR",
 	twitterHandle: ME.contact.xHandle,
 	defaultOgImage: "/omergulcicek-672.jpg",
+	googleSiteVerification: "zmwXV_nPeKUGEdvaM6Ue26BgLZLUTuzjVVUHI6c8OO8",
 	analyticsId: env.VITE_GA_ID
 } as const

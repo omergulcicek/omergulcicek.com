@@ -26,7 +26,11 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 			{ charSet: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
 			{ name: "theme-color", content: "#3b82f6" },
-			{ name: "author", content: SITE.name }
+			{ name: "author", content: SITE.name },
+			{
+				name: "google-site-verification",
+				content: SITE.googleSiteVerification
+			}
 		],
 		links: [
 			{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
