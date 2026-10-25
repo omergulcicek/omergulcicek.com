@@ -10,3 +10,4 @@ export {
 } from "@/lib/motion/motion.constants"
 export { MotionEnvironmentBoot } from "@/lib/motion/motion-environment-boot"
 export { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
+export { useSkipInitialMotion } from "@/lib/motion/use-skip-initial-motion"

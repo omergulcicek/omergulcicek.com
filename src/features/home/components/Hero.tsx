@@ -1,4 +1,3 @@
-import { ClientOnly } from "@tanstack/react-router"
 import { Mail } from "lucide-react"
 
 import { GitHubIcon } from "@/components/icons"
@@ -65,18 +64,6 @@ function HeroBody() {
 	)
 }
 
-function HeroContentStatic() {
-	return (
-		<div className="flex flex-col gap-4">
-			<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-				<HeroTitleRow />
-				<SocialLinks className="sm:shrink-0" />
-			</div>
-			<HeroBody />
-		</div>
-	)
-}
-
 export function Hero() {
 	return (
 		<section className={pageSectionClass}>
@@ -99,13 +86,11 @@ export function Hero() {
 					/>
 				</picture>
 			</figure>
-			<ClientOnly fallback={<HeroContentStatic />}>
-				<HeroContentMotion
-					titleRow={<HeroTitleRow />}
-					socialLinks={<SocialLinks />}
-					body={<HeroBody />}
-				/>
-			</ClientOnly>
+			<HeroContentMotion
+				titleRow={<HeroTitleRow />}
+				socialLinks={<SocialLinks />}
+				body={<HeroBody />}
+			/>
 		</section>
 	)
 }

@@ -10,6 +10,7 @@ import {
 	MOTION_STAGGER_DELAY
 } from "@/lib/motion/motion.constants"
 import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
+import { useSkipInitialMotion } from "@/lib/motion/use-skip-initial-motion"
 
 type HeroContentMotionProps = {
 	titleRow: ReactNode
@@ -24,6 +25,7 @@ export function HeroContentMotion({
 }: HeroContentMotionProps) {
 	const { shouldUseSoftMotion, supportsViewTransitions } =
 		useMotionEnvironment()
+	const skipInitialMotion = useSkipInitialMotion()
 
 	const containerTransition = shouldUseSoftMotion
 		? { ...MOTION_SOFT_FADE }
@@ -43,7 +45,7 @@ export function HeroContentMotion({
 	return (
 		<motion.div
 			data-vt-enabled={supportsViewTransitions}
-			initial="hidden"
+			initial={skipInitialMotion ? false : "hidden"}
 			animate="visible"
 			variants={{
 				hidden: shouldUseSoftMotion ? { opacity: 0 } : {},
