@@ -20,7 +20,7 @@ export type BookmarkCategory = {
 	accent: string
 }
 
-export const DEFAULT_BOOKMARK_CATEGORY_ID = "blog" satisfies BookmarkCategoryId
+export { DEFAULT_BOOKMARK_CATEGORY_ID } from "@/features/bookmarks/constants/bookmarks-search-params.constants"
 
 export { BOOKMARK_CATEGORY_IDS }
 

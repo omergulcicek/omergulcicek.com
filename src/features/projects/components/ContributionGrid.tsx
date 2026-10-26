@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence, m } from "motion/react"
 import { useState, type PointerEvent } from "react"
 
 import { ContributionTooltip } from "@/features/projects/components/ContributionTooltip"
@@ -63,7 +63,7 @@ export function ContributionGrid({
 			className="relative"
 		>
 			{showMonths ? (
-				<motion.div
+				<m.div
 					className="flex justify-center"
 					style={{ gap, marginBottom: gap }}
 					initial={
@@ -85,7 +85,7 @@ export function ContributionGrid({
 							) : null}
 						</div>
 					))}
-				</motion.div>
+				</m.div>
 			) : null}
 
 			<div
@@ -100,7 +100,7 @@ export function ContributionGrid({
 						style={{ gap }}
 					>
 						{week.map((day) => (
-							<motion.div
+							<m.div
 								key={day.date}
 								onPointerEnter={hover(day)}
 								className="bg-foreground/[0.08] shrink-0 rounded-[3px]"
@@ -116,7 +116,7 @@ export function ContributionGrid({
 									className="size-full rounded-[3px]"
 									style={scale[day.level] ?? scale[0]}
 								/>
-							</motion.div>
+							</m.div>
 						))}
 					</div>
 				))}

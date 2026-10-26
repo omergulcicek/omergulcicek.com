@@ -16,9 +16,6 @@ import {
 	teardownBlogProseImageZoom
 } from "@/features/blog/lib/blog-prose-image-zoom"
 
-import "@/styles/blog-prose.css"
-import "medium-zoom/dist/style.css"
-
 type BlogProseProps = {
 	html: string
 	className?: string

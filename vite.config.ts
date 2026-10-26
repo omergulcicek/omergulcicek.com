@@ -17,7 +17,18 @@ export default defineConfig(async ({ mode }) => {
 		port: 3000
 	},
 	build: {
-		sourcemap: false
+		sourcemap: false,
+		rollupOptions: {
+			treeshake: {
+				// Our own modules have no import-time side effects besides CSS, so feature
+				// barrels can drop unused exports (e.g. bookmark data behind validateSearch).
+				moduleSideEffects: (id: string, external: boolean) =>
+					external ||
+					id.includes("/node_modules/") ||
+					!id.includes("/src/") ||
+					/\.css($|\?)/.test(id)
+			}
+		}
 	},
 	plugins: [
 		tsconfigPaths(),

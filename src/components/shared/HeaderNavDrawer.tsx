@@ -1,81 +1,44 @@
-import { Link, useRouterState } from "@tanstack/react-router"
-import { Menu } from "lucide-react"
+import { lazy, Suspense, useState } from "react"
 
-import { Button } from "@/components/ui/button"
-import {
-	Drawer,
-	DrawerClose,
-	DrawerContent,
-	DrawerTitle,
-	DrawerTrigger
-} from "@/components/ui/drawer"
-import { MOBILE_DRAWER_NAV } from "@/constants/header-nav.constants"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
-import { cn } from "@/lib/utils"
+import { HeaderNavDrawerTriggerButton } from "@/components/shared/HeaderNavDrawerTriggerButton"
 
-function isNavItemActive(
-	pathname: string,
-	href: string,
-	exact?: boolean
-) {
-	if (exact) {
-		return pathname === href
-	}
-
-	return pathname === href || (href !== "/" && pathname.startsWith(href))
+function preloadHeaderNavDrawerPanel() {
+	return import("@/components/shared/HeaderNavDrawerPanel")
 }
 
+const HeaderNavDrawerPanel = lazy(async () => {
+	const module = await preloadHeaderNavDrawerPanel()
+	return { default: module.HeaderNavDrawerPanel }
+})
+
+/**
+ * Renders a plain menu button until the first tap, then swaps in the vaul drawer,
+ * so the drawer library stays out of the entry bundle.
+ */
 export function HeaderNavDrawer() {
-	const pathname = useRouterState({ select: (state) => state.location.pathname })
+	const [isLoaded, setIsLoaded] = useState(false)
+	const [open, setOpen] = useState(false)
+
+	const trigger = (
+		<HeaderNavDrawerTriggerButton
+			type="button"
+			aria-expanded={false}
+			onPointerEnter={preloadHeaderNavDrawerPanel}
+			onFocus={preloadHeaderNavDrawerPanel}
+			onClick={() => {
+				setIsLoaded(true)
+				setOpen(true)
+			}}
+		/>
+	)
+
+	if (!isLoaded) {
+		return trigger
+	}
 
 	return (
-		<Drawer shouldScaleBackground setBackgroundColorOnScale>
-			<DrawerTrigger asChild>
-				<Button
-					variant="ghost"
-					size="sm"
-					className="size-8 p-0"
-					aria-label={SITE_CONTENT.mobileNavOpen}
-				>
-					<Menu className="size-4" aria-hidden />
-				</Button>
-			</DrawerTrigger>
-			<DrawerContent>
-				<DrawerTitle className="sr-only">{SITE_CONTENT.mobileNavTitle}</DrawerTitle>
-				<nav
-					aria-label={SITE_CONTENT.mobileNavAria}
-					className="flex flex-col gap-1 px-4 pb-6"
-				>
-					{MOBILE_DRAWER_NAV.map((item) => {
-						const isActive = isNavItemActive(
-							pathname,
-							item.href,
-							item.exact
-						)
-						const Icon = item.icon
-
-						return (
-							<DrawerClose asChild key={item.href}>
-								<Link
-									to={item.href}
-									search={clearedRouteSearch}
-									className={cn(
-										"focus-link flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-										isActive
-											? "bg-accent text-accent-foreground"
-											: "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-									)}
-									aria-current={isActive ? "page" : undefined}
-								>
-									<Icon className="size-4 shrink-0" aria-hidden />
-									{item.label}
-								</Link>
-							</DrawerClose>
-						)
-					})}
-				</nav>
-			</DrawerContent>
-		</Drawer>
+		<Suspense fallback={trigger}>
+			<HeaderNavDrawerPanel open={open} onOpenChange={setOpen} />
+		</Suspense>
 	)
 }

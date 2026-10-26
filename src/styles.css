@@ -3,6 +3,8 @@
 @import "./styles/inter-font.css";
 @import "./styles/ibm-plex-mono-font.css";
 @import "./styles/motion.css";
+@import "./styles/blog-prose.css";
+@import "medium-zoom/dist/style.css";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant fine-hover (@media (hover: hover) and (pointer: fine));

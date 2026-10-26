@@ -1,5 +1,3 @@
-@reference "../styles.css";
-
 .blog-prose {
 	@apply text-base leading-relaxed text-pretty text-muted-foreground;
 }

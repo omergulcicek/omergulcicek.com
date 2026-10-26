@@ -1,4 +1,4 @@
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import { useLayoutEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 
@@ -35,7 +35,7 @@ export function ContributionTooltip({
 				transform: "translate(-50%, calc(-100% - 8px))"
 			}}
 		>
-			<motion.div
+			<m.div
 				ref={ref}
 				className="bg-foreground text-background rounded-lg px-2 py-1 text-[11px] font-medium whitespace-nowrap shadow-md"
 				initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
@@ -44,7 +44,7 @@ export function ContributionTooltip({
 				transition={reduceMotion ? { duration: 0 } : TOOLTIP_FADE}
 			>
 				{describeDay(hovered.day)}
-			</motion.div>
+			</m.div>
 		</div>,
 		document.body
 	)

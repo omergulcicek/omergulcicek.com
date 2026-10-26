@@ -1,47 +1,23 @@
 import { useCallback, useEffect } from "react"
-import { createParser, parseAsStringLiteral, useQueryStates } from "nuqs"
+import { useQueryStates } from "nuqs"
 
-import { DEFAULT_BOOKMARK_CATEGORY_ID } from "@/features/bookmarks/constants/bookmarks.constants"
+import { bookmarksSearchParamsParsers } from "@/features/bookmarks/constants/bookmarks-search-params.constants"
 import {
 	areBookmarkTagsEqual,
 	isBookmarkSort,
 	isBookmarkSortVisible,
-	normalizeBookmarkTagUrlValue,
 	resolveBookmarkSort
 } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type {
 	BookmarkCategoryId,
 	BookmarkSort
 } from "@/features/bookmarks/types/bookmarks.types"
-import {
-	BOOKMARK_CATEGORY_IDS,
-	BOOKMARK_SORTS
-} from "@/features/bookmarks/types/bookmarks.types"
-
-const bookmarkCategoryParser = parseAsStringLiteral(BOOKMARK_CATEGORY_IDS).withDefault(
-	DEFAULT_BOOKMARK_CATEGORY_ID
-)
-
-const bookmarkTagParser = createParser({
-	parse: (value) => normalizeBookmarkTagUrlValue(value),
-	serialize: (value) => normalizeBookmarkTagUrlValue(value)
-})
-
-const bookmarkSortParser = parseAsStringLiteral(BOOKMARK_SORTS)
 
 const bookmarkFilterHistory = { history: "push" as const }
 
 const bookmarkTagReset = { history: "replace" as const }
 
 const bookmarkSortReset = { history: "replace" as const }
-
-export const bookmarksSearchParamsParsers = {
-	category: bookmarkCategoryParser,
-	tag: bookmarkTagParser,
-	genre: bookmarkTagParser,
-	subtag: bookmarkTagParser,
-	sort: bookmarkSortParser
-} as const
 
 export function useBookmarksSearchParams() {
 	const [params, setParams] = useQueryStates(bookmarksSearchParamsParsers)

@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react"
-import { AnimatePresence, motion, type Transition } from "motion/react"
+import { AnimatePresence, m, type Transition } from "motion/react"
 import { useId, useState } from "react"
 
 import { RepoAvatar } from "@/features/projects/components/RepoAvatar"
@@ -31,7 +31,7 @@ export function TopReposPanel({ repos, reduceMotion }: TopReposPanelProps) {
 	const kick = reduceMotion ? {} : { x: ROW_OFFSET, y: ROW_OFFSET }
 
 	return (
-		<motion.div
+		<m.div
 			layout
 			id={`${uid}-panel`}
 			data-slot="github-activity-panel"
@@ -45,7 +45,7 @@ export function TopReposPanel({ repos, reduceMotion }: TopReposPanelProps) {
 			}}
 			transition={transition}
 		>
-			<motion.div
+			<m.div
 				layout="position"
 				transition={reduceMotion ? NO_MOTION : HEADER_SPRING}
 				className="flex items-center justify-between gap-3 px-4 py-3"
@@ -81,21 +81,21 @@ export function TopReposPanel({ repos, reduceMotion }: TopReposPanelProps) {
 						aria-label={open ? PROJECTS_UI.hideTopRepos : PROJECTS_UI.showTopRepos}
 						className="hit-area bg-card grid size-9 shrink-0 place-items-center rounded-full transition-transform duration-150 ease-out active:scale-96"
 					>
-						<motion.span
+						<m.span
 							className="text-muted-foreground grid size-4 place-items-center"
 							initial={false}
 							animate={{ rotate: open ? 180 : 0 }}
 							transition={transition}
 						>
 							<ChevronDown className="size-4" aria-hidden />
-						</motion.span>
+						</m.span>
 					</button>
 				</div>
-			</motion.div>
+			</m.div>
 
 			<AnimatePresence initial={false} mode="popLayout">
 				{open ? (
-					<motion.ul
+					<m.ul
 						key="list"
 						layout="position"
 						initial={{ opacity: 0, ...kick }}
@@ -113,9 +113,9 @@ export function TopReposPanel({ repos, reduceMotion }: TopReposPanelProps) {
 								/>
 							</li>
 						))}
-					</motion.ul>
+					</m.ul>
 				) : null}
 			</AnimatePresence>
-		</motion.div>
+		</m.div>
 	)
 }

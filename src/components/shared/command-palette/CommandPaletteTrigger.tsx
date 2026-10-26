@@ -2,6 +2,7 @@ import { Search } from "lucide-react"
 
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 
+import { preloadCommandPaletteDialog } from "@/components/shared/command-palette/preload-command-palette-dialog"
 import { useCommandPalette } from "@/components/shared/command-palette/use-command-palette"
 import { Button } from "@/components/ui/button"
 
@@ -15,6 +16,8 @@ export function CommandPaletteTrigger() {
 			variant="outline"
 			size="sm"
 			onClick={() => setOpen(true)}
+			onPointerEnter={preloadCommandPaletteDialog}
+			onFocus={preloadCommandPaletteDialog}
 			aria-label={SITE_CONTENT.searchTriggerLabel}
 			aria-keyshortcuts="Meta+K"
 			className="text-muted-foreground hover:text-foreground h-8 gap-1.5 rounded-lg border-border/70 px-2.5 text-sm font-normal shadow-none"

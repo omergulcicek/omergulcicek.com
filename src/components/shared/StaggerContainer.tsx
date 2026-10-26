@@ -1,7 +1,7 @@
 "use client"
 
 import type { ComponentProps } from "react"
-import { motion, type HTMLMotionProps } from "motion/react"
+import { m, type HTMLMotionProps } from "motion/react"
 
 import {
 	MOTION_SOFT_FADE,
@@ -25,7 +25,7 @@ export function StaggerContainer({ children, ...props }: StaggerProps) {
 			}
 
 	return (
-		<motion.div
+		<m.div
 			data-vt-enabled={supportsViewTransitions}
 			initial={skipInitialMotion ? false : "hidden"}
 			animate="visible"
@@ -39,6 +39,6 @@ export function StaggerContainer({ children, ...props }: StaggerProps) {
 			{...props}
 		>
 			{children}
-		</motion.div>
+		</m.div>
 	)
 }

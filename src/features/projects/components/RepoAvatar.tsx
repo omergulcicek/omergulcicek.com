@@ -1,4 +1,4 @@
-import { motion, type Transition } from "motion/react"
+import { m, type Transition } from "motion/react"
 
 import type { RepoContribution } from "@/features/projects/types/github-activity.types"
 import { cn } from "@/lib/utils"
@@ -17,7 +17,7 @@ export function RepoAvatar({
 	className
 }: RepoAvatarProps) {
 	return (
-		<motion.span
+		<m.span
 			layoutId={layoutId}
 			transition={transition}
 			className={cn(
@@ -30,6 +30,6 @@ export function RepoAvatar({
 			) : (
 				repo.name.charAt(0)
 			)}
-		</motion.span>
+		</m.span>
 	)
 }

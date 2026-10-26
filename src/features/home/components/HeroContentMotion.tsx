@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import type { ReactNode } from "react"
 
 import {
@@ -43,7 +43,7 @@ export function HeroContentMotion({
 	}
 
 	return (
-		<motion.div
+		<m.div
 			data-vt-enabled={supportsViewTransitions}
 			initial={skipInitialMotion ? false : "hidden"}
 			animate="visible"
@@ -57,7 +57,7 @@ export function HeroContentMotion({
 			className="flex flex-col gap-4"
 		>
 			<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-				<motion.div
+				<m.div
 					variants={{
 						hidden: itemHidden,
 						visible: itemVisible
@@ -65,8 +65,8 @@ export function HeroContentMotion({
 					className="vt-hero-content-title"
 				>
 					{titleRow}
-				</motion.div>
-				<motion.div
+				</m.div>
+				<m.div
 					variants={{
 						hidden: itemHidden,
 						visible: itemVisible
@@ -74,16 +74,16 @@ export function HeroContentMotion({
 					className="vt-hero-content-social sm:shrink-0"
 				>
 					{socialLinks}
-				</motion.div>
+				</m.div>
 			</div>
-			<motion.div
+			<m.div
 				variants={{
 					hidden: itemHidden,
 					visible: itemVisible
 				}}
 			>
 				{body}
-			</motion.div>
-		</motion.div>
+			</m.div>
+		</m.div>
 	)
 }

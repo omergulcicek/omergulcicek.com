@@ -15,6 +15,10 @@ import {
 	getLibraryBookCategoryIdByLabel,
 	libraryCategoryHasVisibleGenres
 } from "@/features/bookmarks/constants/library-bookmarks.constants"
+import {
+	BOOKMARK_TAG_LOCALE,
+	normalizeBookmarkTagValue
+} from "@/features/bookmarks/helpers/normalize-bookmark-tag"
 import type {
 	Bookmark,
 	BookmarkCategoryId,
@@ -25,7 +29,6 @@ import {
 	BOOKMARK_SORTS
 } from "@/features/bookmarks/types/bookmarks.types"
 
-const BOOKMARK_TAG_LOCALE = "tr"
 
 export function isBookmarkCategoryId(value: string): value is BookmarkCategoryId {
 	return (BOOKMARK_CATEGORY_IDS as readonly string[]).includes(value)
@@ -355,13 +358,6 @@ function sortBookmarkTags(tags: readonly string[], categoryId: BookmarkCategoryI
 	return [...tags].sort((left, right) =>
 		left.localeCompare(right, BOOKMARK_TAG_LOCALE)
 	)
-}
-
-function normalizeBookmarkTagValue(value: string) {
-	return value
-		.normalize("NFC")
-		.replace(/\u0307/g, "")
-		.toLocaleLowerCase(BOOKMARK_TAG_LOCALE)
 }
 
 const LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES = new Map<string, string>([

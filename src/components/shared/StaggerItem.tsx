@@ -1,7 +1,7 @@
 "use client"
 
 import type { ComponentProps } from "react"
-import { motion, type HTMLMotionProps } from "motion/react"
+import { m, type HTMLMotionProps } from "motion/react"
 
 import {
 	MOTION_ENTER_BLUR,
@@ -34,7 +34,7 @@ export function StaggerItem({ children, ...props }: StaggerItemProps) {
 	}
 
 	return (
-		<motion.div
+		<m.div
 			variants={{
 				hidden: itemHidden,
 				visible: itemVisible
@@ -42,6 +42,6 @@ export function StaggerItem({ children, ...props }: StaggerItemProps) {
 			{...props}
 		>
 			{children}
-		</motion.div>
+		</m.div>
 	)
 }

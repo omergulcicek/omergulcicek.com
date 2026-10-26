@@ -3,13 +3,14 @@ import { STACK_LOGOS } from "@/constants/stack-logos.constants"
 import { cn } from "@/lib/utils"
 
 import { OptimizedImage } from "@/components/shared/OptimizedImage"
-import { ThemeAwareDualIcon } from "@/components/shared/ThemeAwareDualIcon"
 
 type StackLogoProps = {
 	stackId: string
 	label: string
 	className?: string
 }
+
+const LOGO_SIZE = 56
 
 export function StackLogo({ stackId, label, className }: StackLogoProps) {
 	const logo = STACK_LOGOS[stackId]
@@ -34,42 +35,47 @@ export function StackLogo({ stackId, label, className }: StackLogoProps) {
 	}
 
 	if (logo.kind === "theme") {
+		// Both variants are in the HTML and CSS picks one, so the right logo shows before hydration.
 		return (
-			<ThemeAwareDualIcon
-				light={logo.light}
-				dark={logo.dark}
-				className={iconClassName}
-				label={label}
-			/>
+			<>
+				<OptimizedImage
+					src={logo.light}
+					alt={label}
+					width={LOGO_SIZE}
+					height={LOGO_SIZE}
+					loading="eager"
+					className={cn(iconClassName, "dark:hidden")}
+				/>
+				<OptimizedImage
+					src={logo.dark}
+					alt={label}
+					width={LOGO_SIZE}
+					height={LOGO_SIZE}
+					loading="eager"
+					className={cn(iconClassName, "hidden dark:block")}
+				/>
+			</>
 		)
 	}
-
-	if (logo.kind === "image") {
-		return (
-			<OptimizedImage
-				src={logo.src}
-				alt={label}
-				width={logo.width}
-				height={logo.height}
-				loading="eager"
-				decoding="async"
-				sources={
-					logo.srcSet
-						? [{ type: "image/webp", srcSet: logo.srcSet }]
-						: undefined
-				}
-				className={cn(iconClassName, logo.round && "rounded-full object-cover")}
-			/>
-		)
-	}
-
-	const Icon = logo.icon
 
 	return (
-		<Icon
-			className={cn(iconClassName, logo.invertOnDark && "dark:invert")}
-			role="img"
-			aria-label={label}
+		<OptimizedImage
+			src={logo.src}
+			alt={label}
+			width={logo.width}
+			height={logo.height}
+			loading="eager"
+			decoding="async"
+			sources={
+				logo.srcSet
+					? [{ type: "image/webp", srcSet: logo.srcSet }]
+					: undefined
+			}
+			className={cn(
+				iconClassName,
+				logo.round && "rounded-full object-cover",
+				logo.invertOnDark && "dark:invert"
+			)}
 		/>
 	)
 }

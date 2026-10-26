@@ -1,6 +1,6 @@
 "use client"
 
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence, m } from "motion/react"
 
 import { BookmarkListRow } from "@/features/bookmarks/components/BookmarkListRow"
 import { BookmarksEmptyState } from "@/features/bookmarks/components/BookmarksEmptyState"
@@ -28,7 +28,7 @@ export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridPro
 	return (
 		<AnimatePresence mode="wait" initial={false}>
 			{bookmarks.length === 0 ? (
-				<motion.div
+				<m.div
 					key={`empty-${filterKey}`}
 					initial={{ opacity: 0, y: motionOffsetY }}
 					animate={{ opacity: 1, y: 0, transition: enterTransition }}
@@ -39,9 +39,9 @@ export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridPro
 					}}
 				>
 					<BookmarksEmptyState />
-				</motion.div>
+				</m.div>
 			) : (
-				<motion.ul
+				<m.ul
 					key={filterKey}
 					role="list"
 					aria-label={BOOKMARK_UI.listAriaLabel}
@@ -58,7 +58,7 @@ export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridPro
 							<BookmarkListRow bookmark={bookmark} />
 						</li>
 					))}
-				</motion.ul>
+				</m.ul>
 			)}
 		</AnimatePresence>
 	)
