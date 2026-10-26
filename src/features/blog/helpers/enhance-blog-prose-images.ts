@@ -25,6 +25,11 @@ export function enhanceBlogProseImages(container: HTMLElement) {
 	for (const image of images) {
 		image.dataset.zoomable = ""
 
+		// Authors opt out with data-bleed="none" (e.g. UI screenshots that should stay at prose width).
+		if (image.dataset.bleed === "none") {
+			continue
+		}
+
 		const applyBleed = () => {
 			const { naturalWidth, naturalHeight } = image
 
