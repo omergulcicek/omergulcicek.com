@@ -16,6 +16,7 @@ import { WebVitalsReporter } from "@/components/shared/WebVitalsReporter"
 import { SITE } from "@/constants/site.constants"
 import type { RouterContext } from "@/router"
 import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
+import interLatinFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
 
 import "@/styles.css"
 
@@ -33,6 +34,14 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 			}
 		],
 		links: [
+			// Body text font: start it with the HTML instead of waiting for the stylesheet.
+			{
+				rel: "preload",
+				href: interLatinFontUrl,
+				as: "font",
+				type: "font/woff2",
+				crossOrigin: "anonymous"
+			},
 			{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
 			{
 				rel: "apple-touch-icon",

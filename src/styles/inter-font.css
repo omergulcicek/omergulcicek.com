@@ -1,14 +1,13 @@
+/* Latin-ext faces are subset to Turkish letters and ₺ (≈3 KB instead of ≈85 KB); see src/assets/fonts. */
+
 @font-face {
 	font-family: "Inter Variable";
 	font-style: normal;
 	font-display: swap;
 	font-weight: 100 900;
-	src: url("@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2")
+	src: url("../assets/fonts/inter-turkish-wght-normal.woff2?no-inline")
 		format("woff2-variations");
-	unicode-range:
-		U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
-		U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
-		U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+011E-011F, U+0130, U+015E-015F, U+20BA;
 }
 
 @font-face {
@@ -29,12 +28,9 @@
 	font-style: italic;
 	font-display: swap;
 	font-weight: 100 900;
-	src: url("@fontsource-variable/inter/files/inter-latin-ext-wght-italic.woff2")
+	src: url("../assets/fonts/inter-turkish-wght-italic.woff2?no-inline")
 		format("woff2-variations");
-	unicode-range:
-		U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
-		U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
-		U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+011E-011F, U+0130, U+015E-015F, U+20BA;
 }
 
 @font-face {
