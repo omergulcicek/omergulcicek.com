@@ -5,7 +5,7 @@
 export const SITE_COPY = {
 	home: {
 		hero: {
-			architecture: "React ve TanStack ile arayüz mimarisi kuruyorum.",
+			architecture: "React ve Next.js ile arayüz mimarisi kuruyorum.",
 			virastack: {
 				link: "ViraStack",
 				suffix: "'in",
@@ -167,7 +167,7 @@ export const SITE_COPY = {
 		blogCta: "Blog"
 	},
 	meta: {
-		home: "React ve TanStack ile arayüz mimarisi kuran Ömer Gülçiçek'in blogu, projeleri ve ViraStack çalışmaları.",
+		home: "React ve Next.js ile arayüz mimarisi kuran Ömer Gülçiçek'in blogu, projeleri ve ViraStack çalışmaları.",
 		about:
 			"Sakarya'da yaşayan frontend mühendisi Ömer Gülçiçek'i, işlerini ve ilgi alanlarını tanı.",
 		experiences:
