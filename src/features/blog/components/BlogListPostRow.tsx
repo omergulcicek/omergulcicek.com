@@ -88,7 +88,7 @@ export function BlogListPostRow({
 					href={withOutboundUtm(post.mediumUrl ?? "")}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="hit-area focus-link text-muted-foreground hover:text-foreground pointer-events-auto inline-flex items-center gap-1 text-xs transition-colors"
+					className="hit-area focus-link text-muted-foreground hover:text-foreground pointer-events-auto -my-1 inline-flex items-center gap-1 py-1 text-xs transition-colors"
 					title={BLOG_UI.mediumLinkLabel}
 				>
 					<Medium className="size-3.5 shrink-0" aria-hidden />

@@ -166,7 +166,7 @@
 			"href": "https://virastack.com/academy",
 			"group": "virastack",
 			"status": "package",
-			"color": "text-green-500"
+			"color": "text-green-700 dark:text-green-500"
 		},
 		{
 			"id": "start",
@@ -175,7 +175,7 @@
 			"href": "https://virastack.com/start",
 			"group": "virastack",
 			"status": "package",
-			"color": "text-teal-500"
+			"color": "text-teal-700 dark:text-teal-500"
 		},
 		{
 			"id": "ai",
@@ -184,7 +184,7 @@
 			"href": "https://virastack.com/ai",
 			"group": "virastack",
 			"status": "package",
-			"color": "text-fuchsia-500"
+			"color": "text-fuchsia-700 dark:text-fuchsia-400"
 		},
 		{
 			"id": "mask",
@@ -193,7 +193,7 @@
 			"href": "https://virastack.com/mask",
 			"group": "virastack",
 			"status": "package",
-			"color": "text-indigo-500"
+			"color": "text-indigo-600 dark:text-indigo-400"
 		},
 		{
 			"id": "password",
@@ -202,7 +202,7 @@
 			"href": "https://virastack.com/password",
 			"group": "virastack",
 			"status": "package",
-			"color": "text-rose-500"
+			"color": "text-rose-700 dark:text-rose-400"
 		},
 		{
 			"id": "guide",
@@ -211,7 +211,7 @@
 			"href": "https://virastack.com/guide",
 			"group": "virastack",
 			"status": "package",
-			"color": "text-amber-500"
+			"color": "text-amber-700 dark:text-amber-500"
 		},
 		{
 			"id": "takvim",
