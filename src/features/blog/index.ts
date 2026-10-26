@@ -37,7 +37,7 @@ export {
 export { mapPostsToSearchItems } from "@/features/blog/helpers/map-posts-to-search-items"
 export { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
 export { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
-export { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
+export { compileMdxSandboxFn } from "@/features/blog/api/mdx-sandbox.api"
 export {
 	blogIndexSearchParamsParsers,
 	blogSearchParamsParsers

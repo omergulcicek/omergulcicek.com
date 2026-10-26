@@ -5,10 +5,10 @@ import { pageShellClass } from "@/components/shared/prose.styles"
 import {
 	blogMdxComponentNames,
 	BlogProse,
-	compileMdxToHtml,
-	enrichBlogContentHtml
+	compileMdxSandboxFn
 } from "@/features/blog"
 import { buildPageHead } from "@/lib/seo/build-page-head"
+import { unwrapServerResult } from "@/lib/server-result"
 
 const MDX_SANDBOX_FIXTURES = {
 	notice: `<BlogNotice title="Sandbox" variant="info">
@@ -39,10 +39,11 @@ export const Route = createFileRoute("/dev/mdx-sandbox")({
 	loader: async () => {
 		const compiled = await Promise.all(
 			Object.entries(MDX_SANDBOX_FIXTURES).map(async ([key, content]) => {
-				const html = await compileMdxToHtml(content)
-				const enriched = enrichBlogContentHtml(html)
+				const html = await compileMdxSandboxFn({ data: { content } }).then(
+					unwrapServerResult
+				)
 
-				return [key, enriched.contentHtml] as const
+				return [key, html] as const
 			})
 		)
 
