@@ -15,7 +15,12 @@ const MDX_SANDBOX_FIXTURES = {
 Bu sayfa yalnızca geliştirme ortamında MDX bileşenlerini test etmek içindir.
 </BlogNotice>`,
 	table: `<MdxTable headers={["Özellik", "Durum"]} rows={[["Chart", "Hazır"], ["Carousel", "Hazır"]]} />`,
-	chart: `<ChartAreaLinear />`
+	chart: `<ChartAreaLinear
+	title="Sandbox"
+	description="Örnek veri"
+	data={[{ year: "2024", count: 12 }, { year: "2025", count: 18 }, { year: "2026", count: 9 }]}
+	config={{ count: { label: "Adet", color: "var(--chart-1)" } }}
+/>`
 } as const
 
 export const Route = createFileRoute("/dev/mdx-sandbox")({
