@@ -28,7 +28,7 @@ export function VirastackCaseStudyCard() {
 				<InteractiveRowCard
 					visual={
 						<span className={interactiveRowCardVisualClass}>
-							<VirastackLogo className="size-7" />
+							<VirastackLogo className="size-7" label="" />
 						</span>
 					}
 					title={

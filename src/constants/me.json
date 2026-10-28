@@ -53,7 +53,7 @@
 		},
 		{
 			"id": "alisgidis",
-			"company": "Alışgidiş",
+			"company": "Alışgidiş (Fibabanka)",
 			"role": "Frontend Team Lead",
 			"startDate": "2024-03",
 			"endDate": "2025-06",
@@ -447,8 +447,7 @@
 				"label": "Diller",
 				"itemIds": [
 					"typescript",
-					"javascript",
-					"git"
+					"javascript"
 				]
 			},
 			{
@@ -486,6 +485,13 @@
 				"itemIds": [
 					"vitest",
 					"playwright"
+				]
+			},
+			{
+				"id": "version-control",
+				"label": "Sürüm kontrolü",
+				"itemIds": [
+					"git"
 				]
 			},
 			{

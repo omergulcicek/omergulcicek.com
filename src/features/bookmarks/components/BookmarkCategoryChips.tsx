@@ -39,7 +39,7 @@ export function BookmarkCategoryChips({
 						aria-pressed={isActive}
 						aria-label={label.desktop}
 						className={cn(
-							"text-muted-foreground h-7 rounded-md px-2.5 hover:bg-transparent dark:hover:bg-transparent",
+							"text-foreground/70 h-7 rounded-md px-2.5 hover:bg-transparent dark:hover:bg-transparent",
 							"aria-pressed:bg-background aria-pressed:text-foreground aria-pressed:shadow-xs dark:aria-pressed:bg-background"
 						)}
 						onClick={() => onChange(category.id)}

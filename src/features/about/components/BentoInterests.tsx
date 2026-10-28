@@ -57,7 +57,7 @@ export function BentoInterests() {
 										/>
 									)}
 								</div>
-								<p className="text-muted-foreground text-sm">{hobby.text}</p>
+								<p className="text-foreground/70 text-sm">{hobby.text}</p>
 							</div>
 						</div>
 					</InterestCard>
@@ -100,7 +100,7 @@ export function BentoInterests() {
 										/>
 									)}
 								</div>
-								<p className="text-muted-foreground text-sm">
+								<p className="text-foreground/70 text-sm">
 									{favorite.label}
 								</p>
 							</div>

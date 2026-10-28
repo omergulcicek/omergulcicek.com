@@ -1,7 +1,6 @@
 import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 import { SITE } from "@/constants/site.constants"
 import { SOCIAL_LINKS } from "@/constants/social.constants"
-import { resolvePageOgImageUrl } from "@/lib/seo/resolve-page-og-image-url"
 
 export function SiteStructuredData() {
 	const personSchema = {
@@ -11,7 +10,7 @@ export function SiteStructuredData() {
 		jobTitle: SITE.jobTitle,
 		url: SITE.url,
 		email: EXTERNAL_LINKS.email.replace("mailto:", ""),
-		image: resolvePageOgImageUrl({ pageKey: "home" }),
+		image: `${SITE.url}${SITE.defaultOgImage}`,
 		sameAs: SOCIAL_LINKS.map((link) => link.href)
 	}
 

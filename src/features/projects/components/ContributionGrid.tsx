@@ -86,7 +86,7 @@ export function ContributionGrid({
 							style={{ width: cellSize }}
 						>
 							{month.label && !isPlaceholder ? (
-								<span className="text-foreground/40 absolute top-0 left-0 text-[10px] leading-none">
+								<span className="text-foreground/70 absolute top-0 left-0 text-[10px] leading-none">
 									{month.label}
 								</span>
 							) : null}

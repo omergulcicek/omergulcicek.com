@@ -91,7 +91,23 @@ export default defineConfig(async ({ mode }) => {
 				prerender: { enabled: true }
 			}))
 		}),
-		nitro({ preset: "vercel" }),
+		nitro({
+			preset: "vercel",
+			// Baseline security headers for every response, static or server-rendered.
+			// A full script CSP is left out: inline boot and hydration scripts need nonces.
+			routeRules: {
+				"/**": {
+					headers: {
+						"X-Content-Type-Options": "nosniff",
+						"Referrer-Policy": "strict-origin-when-cross-origin",
+						"Permissions-Policy":
+							"camera=(), microphone=(), geolocation=(), browsing-topics=()",
+						"Content-Security-Policy": "frame-ancestors 'none'",
+						"X-Frame-Options": "DENY"
+					}
+				}
+			}
+		}),
 		viteReact(),
 		tailwindcss(),
 		mode === "analyze" &&
