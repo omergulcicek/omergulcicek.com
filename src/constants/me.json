@@ -328,7 +328,9 @@
 				{
 					"id": "2026-virastack-academy",
 					"title": "ViraStack Academy'yi açtım",
-					"description": "Start, AI, Mask, Password ve Guide'ı kararlı hale getirdim. Şimdi öğrendiklerimi ders olarak paylaşıyorum."
+					"description": "Start, AI, Mask, Password ve Guide'ı kararlı hale getirdim. Şimdi öğrendiklerimi ders olarak paylaşıyorum.",
+					"imageSrc": "/img/journey/2026-virastack.gif",
+					"imageAlt": "ViraStack ürünlerini sırayla vurgulayan renkli noktalar"
 				}
 			]
 		},
