@@ -8,7 +8,7 @@
 		"dev": "vite dev",
 		"build": "pnpm optimize:images && vite build",
 		"preview": "vite preview",
-		"preview:ci": "npx srvx --dir .vercel/output/functions/__server.func --entry index.mjs --static ../../static --port 4173 --host 127.0.0.1",
+		"preview:ci": "pnpm dlx srvx@0.11.22 --dir .vercel/output/functions/__server.func --entry index.mjs --static ../../static --port 4173 --host 127.0.0.1",
 		"lighthouse:ci": "pnpm build && lhci autorun",
 		"lint": "eslint .",
 		"check-types": "tsc --noEmit",
