@@ -323,6 +323,16 @@
 	],
 	"journey": [
 		{
+			"year": 2026,
+			"entries": [
+				{
+					"id": "2026-virastack-academy",
+					"title": "ViraStack Academy'yi açtım",
+					"description": "Start, AI, Mask, Password ve Guide'ı kararlı hale getirdim. Şimdi öğrendiklerimi ders olarak paylaşıyorum."
+				}
+			]
+		},
+		{
 			"year": 2025,
 			"entries": [
 				{
