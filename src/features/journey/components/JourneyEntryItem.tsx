@@ -1,4 +1,6 @@
-import { ProseLink } from "@/components/shared/ProseLink"
+import { ExternalLink } from "lucide-react"
+
+import { ProseIconLink } from "@/components/shared/ProseIconLink"
 import { cardTitleClass, proseParagraphClass } from "@/components/shared/prose.styles"
 import type { JourneyEntry } from "@/features/journey/types/journey.types"
 import { cn } from "@/lib/utils"
@@ -33,12 +35,13 @@ export function JourneyEntryItem({ entry, isLast }: JourneyEntryProps) {
 				) : null}
 				{entry.href ? (
 					<p className="mt-1 text-sm">
-						<ProseLink
+						<ProseIconLink
 							href={entry.href}
+							icon={<ExternalLink className="size-3.5 shrink-0" aria-hidden />}
 							className="text-sky-600 dark:text-sky-400"
 						>
 							{formatLinkLabel(entry.href)}
-						</ProseLink>
+						</ProseIconLink>
 					</p>
 				) : null}
 				<JourneyEntryImage entry={entry} />
