@@ -45,7 +45,7 @@ export function ViraStackProductsVisual() {
 			ref={ref}
 			role="img"
 			aria-label={VIRASTACK_PRODUCT_DOTS_LABEL}
-			className="bg-card/50 flex aspect-video flex-col items-center justify-center gap-3"
+			className="bg-card/50 flex aspect-video flex-col items-center justify-center gap-1"
 		>
 			<div
 				aria-hidden
@@ -73,7 +73,7 @@ export function ViraStackProductsVisual() {
 					</span>
 				))}
 			</div>
-			<div aria-hidden className="h-6 text-sm md:text-base">
+			<div aria-hidden className="h-5 text-sm">
 				<AnimatePresence mode="wait" initial={false}>
 					{active ? (
 						<m.span
