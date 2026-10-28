@@ -20,6 +20,7 @@ import { sectionHeadingClass } from "@/components/shared/prose.styles"
 import { ProseLink } from "@/components/shared/ProseLink"
 import { SiteNavLink } from "@/components/shared/SiteNavLink"
 import { SocialLinks } from "@/components/shared/SocialLinks"
+import { VirastackShortName } from "@/components/shared/VirastackShortName"
 import { Button } from "@/components/ui/button"
 import { getPublishedVirastackProjects } from "@/features/projects"
 
@@ -96,7 +97,7 @@ export function Footer() {
 										external
 									>
 										<span className={cn("italic", project.color)}>
-											{project.title.replace(/^ViraStack /, "")}
+											<VirastackShortName title={project.title} />
 										</span>
 									</SiteNavLink>
 								))}

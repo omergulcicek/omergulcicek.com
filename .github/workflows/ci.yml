@@ -8,12 +8,18 @@ on:
 jobs:
   quality:
     runs-on: ubuntu-latest
+    # The build prerenders pages that load posts from Supabase, so CI needs the same
+    # read-only credentials as Vercel (repository secrets; the anon key, not service role).
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
     steps:
       - uses: actions/checkout@v4
 
+      # Version comes from "packageManager" in package.json.
       - uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
       - uses: actions/setup-node@v4
         with:
@@ -30,4 +36,5 @@ jobs:
 
       - run: pnpm build
 
-      - run: pnpm lighthouse:ci
+      # The build above is reused; `pnpm lighthouse:ci` would build a second time.
+      - run: pnpm exec lhci autorun

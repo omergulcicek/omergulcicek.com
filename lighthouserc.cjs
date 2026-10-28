@@ -12,7 +12,6 @@ module.exports = {
 				"http://127.0.0.1:4173/about",
 				"http://127.0.0.1:4173/projects",
 				"http://127.0.0.1:4173/experiences",
-				"http://127.0.0.1:4173/services",
 				"http://127.0.0.1:4173/bookmarks"
 			]
 		},

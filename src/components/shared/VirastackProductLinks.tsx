@@ -3,6 +3,7 @@ import { Fragment } from "react"
 import { cn } from "@/lib/utils"
 
 import { ProseLink } from "@/components/shared/ProseLink"
+import { VirastackShortName } from "@/components/shared/VirastackShortName"
 import { getPublishedVirastackProjects } from "@/features/projects"
 
 type VirastackProductLinksProps = {
@@ -10,7 +11,10 @@ type VirastackProductLinksProps = {
 	className?: string
 }
 
-/** Product names only ("Academy · Start · …") in each product's footer accent color. */
+/**
+ * Product names only ("Academy · Start · …") in each product's footer accent color;
+ * the "ViraStack" prefix stays in the link text for screen readers.
+ */
 export function VirastackProductLinks({
 	ariaLabel,
 	className
@@ -18,7 +22,7 @@ export function VirastackProductLinks({
 	const products = getPublishedVirastackProjects().map((project) => ({
 		id: project.id,
 		href: project.href,
-		name: project.title.replace(/^ViraStack /, ""),
+		title: project.title,
 		colorClass: project.color
 	}))
 
@@ -41,7 +45,7 @@ export function VirastackProductLinks({
 						href={product.href}
 						className={cn("italic", product.colorClass)}
 					>
-						{product.name}
+						<VirastackShortName title={product.title} />
 					</ProseLink>
 				</Fragment>
 			))}
