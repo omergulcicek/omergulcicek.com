@@ -14,7 +14,9 @@ export function ViraStackProductsVisual() {
 	const ref = useRef<HTMLDivElement>(null)
 	const inView = useInView(ref, { margin: "-80px" })
 	const reduceMotion = useReducedMotion() === true
-	const [activeIndex, setActiveIndex] = useState<number | null>(null)
+	const [autoIndex, setAutoIndex] = useState<number | null>(null)
+	const [hoverIndex, setHoverIndex] = useState<number | null>(null)
+	const activeIndex = hoverIndex ?? autoIndex
 
 	useEffect(() => {
 		if (!inView || reduceMotion) {
@@ -24,14 +26,14 @@ export function ViraStackProductsVisual() {
 		let step = 0
 		const timer = window.setInterval(() => {
 			step = (step + 1) % (VIRASTACK_PRODUCT_DOTS.length + 2)
-			setActiveIndex(step < VIRASTACK_PRODUCT_DOTS.length ? step : null)
+			setAutoIndex(step < VIRASTACK_PRODUCT_DOTS.length ? step : null)
 		}, VIRASTACK_PRODUCT_DOTS_STEP_MS)
 
-		setActiveIndex(0)
+		setAutoIndex(0)
 
 		return () => {
 			window.clearInterval(timer)
-			setActiveIndex(null)
+			setAutoIndex(null)
 		}
 	}, [inView, reduceMotion])
 
@@ -45,21 +47,30 @@ export function ViraStackProductsVisual() {
 			aria-label={VIRASTACK_PRODUCT_DOTS_LABEL}
 			className="bg-card/50 flex aspect-video flex-col items-center justify-center gap-3"
 		>
-			<div aria-hidden className="flex items-center gap-2 md:gap-2.5">
+			<div
+				aria-hidden
+				className="flex items-center"
+				onMouseLeave={() => setHoverIndex(null)}
+			>
 				{VIRASTACK_PRODUCT_DOTS.map((product, index) => (
-					<m.span
+					<span
 						key={product.id}
-						className={cn("block size-2.5 rounded-full md:size-3", product.dotClass)}
-						animate={{
-							scale: activeIndex === index ? 1.5 : 1,
-							opacity: activeIndex !== null && activeIndex !== index ? 0.35 : 1
-						}}
-						transition={
-							reduceMotion
-								? { duration: 0 }
-								: { type: "spring", stiffness: 420, damping: 24 }
-						}
-					/>
+						className="flex size-6 items-center justify-center"
+						onMouseEnter={() => setHoverIndex(index)}
+					>
+						<m.span
+							className={cn("block size-2.5 rounded-full", product.dotClass)}
+							animate={{
+								scale: activeIndex === index ? 1.5 : 1,
+								opacity: activeIndex !== null && activeIndex !== index ? 0.35 : 1
+							}}
+							transition={
+								reduceMotion
+									? { duration: 0 }
+									: { type: "spring", stiffness: 420, damping: 24 }
+							}
+						/>
+					</span>
 				))}
 			</div>
 			<div aria-hidden className="h-6 text-sm md:text-base">
