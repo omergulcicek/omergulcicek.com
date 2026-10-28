@@ -9,6 +9,10 @@ type JourneyEntryProps = {
 	isLast: boolean
 }
 
+function formatLinkLabel(href: string) {
+	return href.replace(/^https?:\/\//, "").replace(/\/$/, "")
+}
+
 export function JourneyEntryItem({ entry, isLast }: JourneyEntryProps) {
 	return (
 		<li className="relative flex gap-4 md:gap-6">
@@ -23,15 +27,19 @@ export function JourneyEntryItem({ entry, isLast }: JourneyEntryProps) {
 			</div>
 
 			<div className={cn("min-w-0 flex-1", !isLast && "pb-8 md:pb-10")}>
-				<h3 className={cn(cardTitleClass, "text-foreground")}>
-					{entry.href ? (
-						<ProseLink href={entry.href}>{entry.title}</ProseLink>
-					) : (
-						entry.title
-					)}
-				</h3>
+				<h3 className={cn(cardTitleClass, "text-foreground")}>{entry.title}</h3>
 				{entry.description ? (
 					<p className={cn(proseParagraphClass, "mt-1")}>{entry.description}</p>
+				) : null}
+				{entry.href ? (
+					<p className="mt-1 text-sm">
+						<ProseLink
+							href={entry.href}
+							className="text-sky-600 dark:text-sky-400"
+						>
+							{formatLinkLabel(entry.href)}
+						</ProseLink>
+					</p>
 				) : null}
 				<JourneyEntryImage entry={entry} />
 			</div>
