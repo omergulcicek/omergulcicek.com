@@ -11,6 +11,7 @@ Kalıcı kararlar ve kodda açık olmayan bağlam. Metin ve içerik kodda yaşar
 ## Kararlar
 
 - **Tek kaynak:** Kişisel olgular, projeler, deneyimler, Yolculuk, hobiler, favoriler ve teknoloji seçimleri `me.json`'da; `me.schema.ts` ile doğrulanır. Sayfa metinleri `site-copy.constants.ts`'te.
+- **Zod istemcide yok:** `me.json` ve `VITE_*` env, dev sunucusu ve build başlarken `vite.config.ts`'teki `validateContentPlugin` ile doğrulanır; tarayıcı düz veri okur. Server function girdi şemaları `*.api.ts`'te değil `schemas/` altında durur; istemci build'i `.validator()`'ı sildiğinden Zod tree-shake olur. Zod istemcide yalnızca dış API yanıtı doğrulayan /projects paketinde kalır.
 - **Layout:** Sayfa `max-w-2xl`; en fazla iki genişlik katmanı (prose + bleed). Boşluklar `spacing-standard` skill'indeki token'larla.
 - **Navigasyon:** Header: Ana Sayfa, Blog, Projeler, Hakkımda, Keşfet. Keşfet ve footer aynı liste (`EXPLORE_NAV`), Türkçe alfabetik. Arama (⌘K) ve tema header'da; sağ altta kaydırma göstergesi.
 - **Blog / Notlar:** Teknik yazılar `/blog`, kişisel yazılar `/notlar` (`BLOG_SECTIONS`). Kategoriler arası 301 yönlendirme; ayrı RSS (`/feed.xml`, `/notlar/feed.xml`). Öne çıkan yazılar `me.json` → `featuredPosts`.

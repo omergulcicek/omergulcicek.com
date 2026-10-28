@@ -1,17 +1,13 @@
 import { createServerFn } from "@tanstack/react-start"
-import { z } from "zod"
 
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import type { BlogPostNeighbours } from "@/features/blog/helpers/resolve-blog-neighbours"
 import { getBlogRepository } from "@/features/blog/repositories"
 import type { BlogPostDetail } from "@/features/blog/repositories/blog-repository.types"
 import type { BlogPost } from "@/features/blog/types/blog.types"
+import { blogSlugInputSchema } from "@/features/blog/schemas/blog-server-fn.schema"
 import { getRuntimeIsDev } from "@/lib/runtime/is-dev-runtime"
 import { toServerResult, type ServerResult } from "@/lib/server-result"
-
-const blogSlugInputSchema = z.object({
-	slug: z.string().min(1)
-})
 
 export const getBlogPostsFn = createServerFn({ method: "GET" }).handler(
 	async (): Promise<ServerResult<BlogPost[]>> =>

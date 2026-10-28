@@ -2,11 +2,44 @@ import tailwindcss from "@tailwindcss/vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import viteReact from "@vitejs/plugin-react"
 import { nitro } from "nitro/vite"
+import { readFile } from "node:fs/promises"
+
 import { visualizer } from "rollup-plugin-visualizer"
-import { defineConfig } from "vite"
+import { defineConfig, type Plugin } from "vite"
 import tsconfigPaths from "vite-tsconfig-paths"
 
 import { getBlogPrerenderRoutes } from "./src/features/blog/helpers/get-blog-prerender-routes"
+import { clientEnvSchema } from "./src/schemas/client-env.schema"
+import { meSchema } from "./src/schemas/me.schema"
+
+/**
+ * Validates site content and public env once, when the dev server or build starts.
+ * The browser reads both as plain data, so Zod stays out of the client bundle while a
+ * broken `me.json` or env value still fails the build instead of a visitor's page.
+ */
+function validateContentPlugin(): Plugin {
+	return {
+		name: "validate-content",
+		configResolved(config) {
+			// `.env` lines like `VITE_SUPABASE_URL=` mean "unset", as in src/env.ts.
+			const publicEnv = Object.fromEntries(
+				Object.entries(config.env).map(([key, value]) => [
+					key,
+					value === "" ? undefined : value
+				])
+			)
+
+			clientEnvSchema.parse(publicEnv)
+		},
+		async buildStart() {
+			const meJson: unknown = JSON.parse(
+				await readFile(new URL("./src/constants/me.json", import.meta.url), "utf8")
+			)
+
+			meSchema.parse(meJson)
+		}
+	}
+}
 
 export default defineConfig(async ({ mode }) => {
 	const blogPrerenderRoutes = await getBlogPrerenderRoutes()
@@ -31,6 +64,7 @@ export default defineConfig(async ({ mode }) => {
 		}
 	},
 	plugins: [
+		validateContentPlugin(),
 		tsconfigPaths(),
 		tanstackStart({
 			prerender: {

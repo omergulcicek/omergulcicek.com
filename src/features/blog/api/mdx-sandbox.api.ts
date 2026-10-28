@@ -1,14 +1,10 @@
 import { createServerFn } from "@tanstack/react-start"
-import { z } from "zod"
 
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
 import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
+import { mdxSandboxInputSchema } from "@/features/blog/schemas/blog-server-fn.schema"
 import { getRuntimeIsDev } from "@/lib/runtime/is-dev-runtime"
 import { toServerResult, type ServerResult } from "@/lib/server-result"
-
-const mdxSandboxInputSchema = z.object({
-	content: z.string().min(1)
-})
 
 /**
  * Compiles MDX for the dev sandbox on the server, so the MDX compiler and its

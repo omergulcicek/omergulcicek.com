@@ -1,13 +1,12 @@
-import meJson from "@/constants/me.json"
-import { meSchema } from "@/schemas/me.schema"
+import { meContent } from "@/lib/content/me-content"
 
 import type { Me, MeProject } from "@/schemas/me.schema"
 
 /**
- * Facts about Ömer used across the site, validated from `me.json` at module load.
+ * Facts about Ömer used across the site, from `me.json` (validated at build time).
  * Private fields (leave reasons, education years, unverified results) are intentionally omitted from the JSON.
  */
-export const ME: Me = meSchema.parse(meJson)
+export const ME: Me = meContent
 
 export const ME_EMAIL_HREF = `mailto:${ME.contact.email}`
 
