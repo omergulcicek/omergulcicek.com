@@ -328,9 +328,9 @@
 				{
 					"id": "2026-virastack-academy",
 					"title": "ViraStack Academy'yi açtım",
+					"href": "https://virastack.com/tr/academy",
 					"description": "Start, AI, Mask, Password ve Guide'ı kararlı hale getirdim. Şimdi öğrendiklerimi ders olarak paylaşıyorum.",
-					"imageSrc": "/img/journey/2026-virastack.gif",
-					"imageAlt": "ViraStack ürünlerini sırayla vurgulayan renkli noktalar"
+					"visual": "virastack-products"
 				}
 			]
 		},
@@ -423,7 +423,8 @@
 			"entries": [
 				{
 					"id": "2016-turkuaz",
-					"title": "İlk açık kaynak projem: Turkuaz"
+					"title": "İlk açık kaynak projem: Turkuaz",
+					"href": "https://turkuazcss.com/"
 				}
 			]
 		},

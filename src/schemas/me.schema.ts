@@ -42,7 +42,9 @@ export const meJourneyEntrySchema = z.object({
 	description: z.string().optional(),
 	imageSrc: z.string().startsWith("/").optional(),
 	imageAlt: z.string().optional(),
-	imageObjectPosition: z.string().optional()
+	imageObjectPosition: z.string().optional(),
+	visual: z.enum(["virastack-products"]).optional(),
+	href: z.url().optional()
 })
 
 export const meJourneyYearSchema = z.object({

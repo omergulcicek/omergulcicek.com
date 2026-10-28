@@ -1,3 +1,4 @@
+import { ProseLink } from "@/components/shared/ProseLink"
 import { cardTitleClass, proseParagraphClass } from "@/components/shared/prose.styles"
 import type { JourneyEntry } from "@/features/journey/types/journey.types"
 import { cn } from "@/lib/utils"
@@ -22,7 +23,13 @@ export function JourneyEntryItem({ entry, isLast }: JourneyEntryProps) {
 			</div>
 
 			<div className={cn("min-w-0 flex-1", !isLast && "pb-8 md:pb-10")}>
-				<h3 className={cn(cardTitleClass, "text-foreground")}>{entry.title}</h3>
+				<h3 className={cn(cardTitleClass, "text-foreground")}>
+					{entry.href ? (
+						<ProseLink href={entry.href}>{entry.title}</ProseLink>
+					) : (
+						entry.title
+					)}
+				</h3>
 				{entry.description ? (
 					<p className={cn(proseParagraphClass, "mt-1")}>{entry.description}</p>
 				) : null}
