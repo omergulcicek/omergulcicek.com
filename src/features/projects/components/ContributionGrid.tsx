@@ -27,6 +27,12 @@ type ContributionGridProps = {
 	cellSize: number
 	months: number
 	showMonths: boolean
+	/**
+	 * Placeholder grid while data loads: keeps the month row's height but leaves it blank.
+	 * Placeholder dates come from the current day, which differs between the prerender and
+	 * the visitor's browser, so printing them would break hydration.
+	 */
+	isPlaceholder?: boolean
 	label: string
 	reduceMotion: boolean | null
 }
@@ -37,6 +43,7 @@ export function ContributionGrid({
 	cellSize,
 	months,
 	showMonths,
+	isPlaceholder = false,
 	label,
 	reduceMotion
 }: ContributionGridProps) {
@@ -78,7 +85,7 @@ export function ContributionGrid({
 							className="relative h-3 shrink-0"
 							style={{ width: cellSize }}
 						>
-							{month.label ? (
+							{month.label && !isPlaceholder ? (
 								<span className="text-foreground/40 absolute top-0 left-0 text-[10px] leading-none">
 									{month.label}
 								</span>

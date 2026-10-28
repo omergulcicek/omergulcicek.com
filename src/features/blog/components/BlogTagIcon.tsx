@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils"
 
 import { StackLogo } from "@/components/shared/StackLogo"
-import { ThemeAwareDualIcon } from "@/components/shared/ThemeAwareDualIcon"
 import { BLOG_TAG_ICON_MAP } from "@/features/blog/constants/blog-tag-icons.constants"
 
 type BlogTagIconProps = {
@@ -9,6 +8,7 @@ type BlogTagIconProps = {
 	className?: string
 }
 
+/** Decorative: every tag icon sits next to the tag's visible name. */
 export function BlogTagIcon({ tag, className }: BlogTagIconProps) {
 	const entry = BLOG_TAG_ICON_MAP[tag]
 
@@ -16,33 +16,18 @@ export function BlogTagIcon({ tag, className }: BlogTagIconProps) {
 		return null
 	}
 
-	if (entry.kind === "theme") {
-		return (
-			<ThemeAwareDualIcon
-				light={entry.light}
-				dark={entry.dark}
-				className={className}
-				label={tag}
-			/>
-		)
-	}
-
 	if (entry.kind === "stack") {
 		return (
-			<StackLogo stackId={entry.stackId} label={tag} className={className} />
+			<StackLogo
+				stackId={entry.stackId}
+				label={tag}
+				className={cn(className, entry.iconClassName)}
+				decorative
+			/>
 		)
 	}
 
 	const Icon = entry.icon
 
-	return (
-		<Icon
-			className={cn(
-				className,
-				entry.iconClassName,
-				entry.invertOnDark && "dark:invert"
-			)}
-			aria-hidden
-		/>
-	)
+	return <Icon className={cn(className, entry.iconClassName)} aria-hidden />
 }

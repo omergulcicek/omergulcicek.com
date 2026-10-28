@@ -1,6 +1,7 @@
 import type {
 	BlogCategory,
 	BlogCategoryFilter,
+	BlogLocale,
 	BlogPost,
 	BlogSort
 } from "@/features/blog/types/blog.types"
@@ -35,6 +36,19 @@ export function getBlogSection(category: BlogCategory): BlogSection {
 /** Technical posts resolve to /blog/{slug}, personal posts to /notlar/{slug}. */
 export function getBlogPostPath(slug: string, category: BlogCategory): string {
 	return `${BLOG_SECTIONS[category].path}/${slugToRouteParam(slug)}`
+}
+
+/** Markdown copy of a post for AI agents and readers (`/blog/<slug>.md`). */
+export function getBlogPostMarkdownPath(slug: string, category: BlogCategory): string {
+	return `${getBlogPostPath(slug, category)}.md`
+}
+
+/**
+ * `lang` for post text that is not in the site's language (Turkish), so screen readers
+ * switch pronunciation (WCAG 3.1.2). Turkish posts inherit `<html lang="tr">`.
+ */
+export function getBlogContentLang(locale: BlogLocale): BlogLocale | undefined {
+	return locale === "tr" ? undefined : locale
 }
 
 export function getVisiblePosts(posts: BlogPost[], isDev: boolean) {

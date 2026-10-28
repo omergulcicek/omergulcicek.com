@@ -5,12 +5,23 @@ import {
 } from "@/lib/seo/page-seo.constants"
 import { resolvePageOgImageUrl } from "@/lib/seo/resolve-page-og-image-url"
 
+export type PageAlternateLink = {
+	href: string
+	/** Language alternate (`hreflang`), e.g. the Turkish and English versions of a post. */
+	hrefLang?: string
+	/** Format alternate, e.g. `text/markdown` for the Markdown copy of a post. */
+	type?: string
+}
+
 type BuildPageHeadOptions = {
 	title: string
 	description: string
 	path: string
 	ogType?: "website" | "article"
 	ogImage?: string
+	ogLocale?: string
+	ogLocaleAlternates?: readonly string[]
+	alternateLinks?: readonly PageAlternateLink[]
 	canonicalUrl?: string
 	robots?: string
 	useTitleTemplate?: boolean
@@ -39,6 +50,9 @@ export function buildPageHead({
 	path,
 	ogType = "website",
 	ogImage,
+	ogLocale = SITE.locale,
+	ogLocaleAlternates = [],
+	alternateLinks = [],
 	canonicalUrl,
 	robots,
 	useTitleTemplate = true
@@ -57,7 +71,11 @@ export function buildPageHead({
 			{ property: "og:description", content: description },
 			{ property: "og:type", content: ogType },
 			{ property: "og:url", content: canonical },
-			{ property: "og:locale", content: SITE.locale },
+			{ property: "og:locale", content: ogLocale },
+			...ogLocaleAlternates.map((locale) => ({
+				property: "og:locale:alternate",
+				content: locale
+			})),
 			{ property: "og:image", content: image },
 			{ property: "og:image:alt", content: `${SITE.name} — ${SITE.jobTitle}` },
 			{ name: "twitter:card", content: "summary_large_image" },
@@ -66,7 +84,14 @@ export function buildPageHead({
 			{ name: "twitter:description", content: description },
 			{ name: "twitter:image", content: image }
 		],
-		links: [{ rel: "canonical", href: canonical }]
+		links: [
+			{ rel: "canonical", href: canonical },
+			...alternateLinks.map((link) => ({
+				rel: "alternate",
+				...link,
+				href: resolveAbsoluteUrl(link.href)
+			}))
+		]
 	}
 }
 
@@ -80,6 +105,9 @@ export function buildBlogPostHead({
 	path,
 	canonicalUrl,
 	ogImage,
+	ogLocale,
+	ogLocaleAlternates,
+	alternateLinks,
 	robots,
 	publishedAt,
 	author = SITE.name
@@ -89,6 +117,9 @@ export function buildBlogPostHead({
 	path: string
 	canonicalUrl?: string
 	ogImage?: string
+	ogLocale?: string
+	ogLocaleAlternates?: readonly string[]
+	alternateLinks?: readonly PageAlternateLink[]
 	robots?: string
 	publishedAt?: string
 	author?: string
@@ -100,6 +131,9 @@ export function buildBlogPostHead({
 		ogType: "article",
 		canonicalUrl,
 		ogImage,
+		ogLocale,
+		ogLocaleAlternates,
+		alternateLinks,
 		robots,
 		useTitleTemplate: true
 	})

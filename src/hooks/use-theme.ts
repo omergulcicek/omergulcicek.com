@@ -2,7 +2,12 @@ import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
 
 import { persistThemePreference } from "@/lib/theme/persist-theme-preference"
 import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
-import { THEME_STORAGE_KEY, type Theme } from "@/lib/theme/theme.types"
+import {
+	THEME_DARK_CLASS,
+	THEME_STORAGE_KEY,
+	THEME_SYSTEM_DARK_QUERY,
+	type Theme
+} from "@/lib/theme/theme.types"
 
 type ThemeListener = () => void
 
@@ -10,22 +15,25 @@ let currentTheme: Theme = "light"
 let isThemeInitialized = false
 const listeners = new Set<ThemeListener>()
 
-function getPreferredTheme(): Theme {
-	if (typeof window === "undefined") {
-		return "light"
+/** The inline boot script already applied the saved or OS theme before the first paint. */
+function readDocumentTheme(): Theme {
+	return document.documentElement.classList.contains(THEME_DARK_CLASS)
+		? "dark"
+		: "light"
+}
+
+function hasSavedThemePreference(): boolean {
+	try {
+		const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
+		return stored === "dark" || stored === "light"
+	} catch {
+		// Storage is blocked (privacy mode): no saved choice, so the OS theme applies.
+		return false
 	}
-
-	const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
-
-	if (stored === "dark" || stored === "light") {
-		return stored
-	}
-
-	return "light"
 }
 
 function applyTheme(theme: Theme) {
-	document.documentElement.classList.toggle("dark", theme === "dark")
+	document.documentElement.classList.toggle(THEME_DARK_CLASS, theme === "dark")
 }
 
 function emitThemeChange() {
@@ -62,10 +70,19 @@ function initializeTheme() {
 	}
 
 	isThemeInitialized = true
-	currentTheme = getPreferredTheme()
-	persistThemePreference(currentTheme)
-	applyTheme(currentTheme)
+	currentTheme = readDocumentTheme()
 	emitThemeChange()
+
+	// Until the visitor picks a theme, follow OS changes (e.g. automatic dark mode at night).
+	window.matchMedia(THEME_SYSTEM_DARK_QUERY).addEventListener("change", (event) => {
+		if (hasSavedThemePreference()) {
+			return
+		}
+
+		currentTheme = event.matches ? "dark" : "light"
+		applyTheme(currentTheme)
+		emitThemeChange()
+	})
 }
 
 export function useTheme() {

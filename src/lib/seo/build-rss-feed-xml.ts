@@ -17,8 +17,21 @@ function toRfc822Date(value: string): string {
 	return new Date(`${value}T12:00:00.000Z`).toUTCString()
 }
 
-/** Builds the RSS feed of one section: /feed.xml (technical) or /notlar/feed.xml (personal). */
-export function buildRssFeedXml(posts: BlogPost[], section: BlogSection): string {
+/** `]]>` would end the CDATA section early, so it is split across two sections. */
+function toCdata(value: string): string {
+	return `<![CDATA[${value.replaceAll("]]>", "]]]]><![CDATA[>")}]]>`
+}
+
+/**
+ * Builds the RSS feed of one section: /feed.xml (technical) or /notlar/feed.xml (personal).
+ * With `contentHtmlBySlug`, each item carries the full post as `content:encoded`, so feed
+ * readers and agents get the text without opening the page.
+ */
+export function buildRssFeedXml(
+	posts: BlogPost[],
+	section: BlogSection,
+	contentHtmlBySlug?: ReadonlyMap<string, string>
+): string {
 	const publishedPosts = posts
 		.filter((post) => post.published && post.category === section.category)
 		.sort((left, right) => right.publishedAt.localeCompare(left.publishedAt))
@@ -31,12 +44,16 @@ export function buildRssFeedXml(posts: BlogPost[], section: BlogSection): string
 				coverImage: post.coverImage
 			})
 			const enclosure = `<enclosure url="${escapeXml(coverUrl)}" type="image/jpeg" />`
+			const contentHtml = contentHtmlBySlug?.get(post.slug)
+			const content = contentHtml
+				? `\n\t\t<content:encoded>${toCdata(contentHtml)}</content:encoded>`
+				: ""
 
 			return `\t<item>
 \t\t<title>${escapeXml(post.title)}</title>
 \t\t<link>${escapeXml(url)}</link>
 \t\t<guid isPermaLink="true">${escapeXml(url)}</guid>
-\t\t<description>${escapeXml(post.description)}</description>
+\t\t<description>${escapeXml(post.description)}</description>${content}
 \t\t<pubDate>${escapeXml(toRfc822Date(post.publishedAt))}</pubDate>
 \t\t${enclosure}
 \t</item>`
@@ -44,7 +61,7 @@ export function buildRssFeedXml(posts: BlogPost[], section: BlogSection): string
 		.join("\n")
 
 	return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 \t<channel>
 \t\t<title>${escapeXml(SITE.name)} — ${escapeXml(section.title)}</title>
 \t\t<link>${escapeXml(`${SITE.url}${section.path}`)}</link>

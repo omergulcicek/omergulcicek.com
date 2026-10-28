@@ -16,7 +16,12 @@ export function StackPill({ item }: StackPillProps) {
 					rel="noopener noreferrer"
 					className="focus-link"
 				>
-					<StackLogo stackId={item.id} label={item.label} className="size-3" />
+					<StackLogo
+						stackId={item.id}
+						label={item.label}
+						className="size-3"
+						decorative
+					/>
 					{item.label}
 				</a>
 			</Badge>

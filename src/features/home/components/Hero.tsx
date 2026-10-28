@@ -4,11 +4,22 @@ import { HeroContentMotion } from "@/features/home/components/HeroContentMotion"
 import { HERO_IMAGE } from "@/constants/hero-image.constants"
 import { HeroTitleRow } from "@/features/home/components/HeroTitleRow"
 import { HeroBody } from "@/features/home/components/HeroBody"
+import { useSkipInitialMotion } from "@/lib/motion/use-skip-initial-motion"
+import { cn } from "@/lib/utils"
 
 export function Hero() {
+	// The photo is the LCP element: it paints at once on a full load and only animates
+	// in when the home page is opened from another page of the site.
+	const skipInitialMotion = useSkipInitialMotion()
+
 	return (
 		<section className={pageSectionClass}>
-			<figure className="motion-enter-hero-image vt-hero-image relative size-54 shrink-0 overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background">
+			<figure
+				className={cn(
+					!skipInitialMotion && "motion-enter-hero-image",
+					"vt-hero-image relative size-54 shrink-0 overflow-hidden rounded-xl ring-1 ring-border ring-offset-3 ring-offset-background"
+				)}
+			>
 				<picture>
 					<source
 						type="image/webp"

@@ -255,3 +255,34 @@ export function enrichBlogContentHtml(html: string) {
 		headings
 	}
 }
+
+/**
+ * An image placed before the first section heading is the post's cover and usually the
+ * LCP element on mobile, so it loads eagerly with high priority instead of lazily.
+ * Runs on every post, because stored `content_html` already marks all images lazy.
+ */
+export function prioritizeBlogLeadImage(html: string) {
+	const imageIndex = html.search(/<img\b/i)
+
+	if (imageIndex === -1) {
+		return html
+	}
+
+	const headingIndex = html.search(/<h2\b/i)
+
+	if (headingIndex !== -1 && headingIndex < imageIndex) {
+		return html
+	}
+
+	const leadImage = html
+		.slice(imageIndex)
+		.replace(/^<img([^>]*?)\s*\/?>/i, (_match, attributes: string) => {
+			const nextAttributes = attributes
+				.replace(/\s*\bloading=(["'])[^"']*\1/i, "")
+				.replace(/\s*\bfetchpriority=(["'])[^"']*\1/i, "")
+
+			return `<img${nextAttributes} loading="eager" fetchpriority="high">`
+		})
+
+	return `${html.slice(0, imageIndex)}${leadImage}`
+}

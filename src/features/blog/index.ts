@@ -31,6 +31,7 @@ export {
 export { blogMdxComponentNames } from "@/features/blog/constants/blog-mdx-component-names.constants"
 export { getLatestTechnicalPosts } from "@/features/blog/helpers/get-latest-technical-posts"
 export {
+	getBlogPostMarkdownPath,
 	getBlogPostPath,
 	slugToRouteParam
 } from "@/features/blog/helpers/blog-helpers"
@@ -48,4 +49,9 @@ export {
 	createBlogOgImageElement
 } from "@/features/blog/og/blog-og-image"
 export { getBlogRepository } from "@/features/blog/repositories"
+export {
+	getBlogFeedContentHtml,
+	getBlogPostBodies,
+	getBlogPostMarkdownResponse
+} from "@/features/blog/api/blog-text-exports.api"
 export type { BlogCategory, BlogPost } from "@/features/blog/types/blog.types"

@@ -32,6 +32,7 @@ export function StackStrip({ items = HOME_STACK_ITEMS, className }: StackStripPr
 									stackId={item.id}
 									label={item.label}
 									className="size-12"
+									decorative
 								/>
 							</span>
 							<figcaption className="flex flex-col gap-0.5">

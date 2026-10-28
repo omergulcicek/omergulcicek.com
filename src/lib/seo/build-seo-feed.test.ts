@@ -72,6 +72,25 @@ describe("buildRssFeedXml", () => {
 		expect(notesXml).not.toContain("<title>Sample Post</title>")
 		expect(notesXml).toContain("https://omergulcicek.com/notlar/feed.xml")
 	})
+
+	it("adds the full post as content:encoded when the HTML is given", () => {
+		const xml = buildRssFeedXml(
+			[samplePost],
+			BLOG_SECTIONS.technical,
+			new Map([["/sample-post", "<p>Tam metin ]]> burada</p>"]])
+		)
+
+		expect(xml).toContain('xmlns:content="http://purl.org/rss/1.0/modules/content/"')
+		expect(xml).toContain(
+			"<content:encoded><![CDATA[<p>Tam metin ]]]]><![CDATA[> burada</p>]]></content:encoded>"
+		)
+	})
+
+	it("leaves content:encoded out for posts without HTML", () => {
+		const xml = buildRssFeedXml([samplePost], BLOG_SECTIONS.technical, new Map())
+
+		expect(xml).not.toContain("<content:encoded>")
+	})
 })
 
 describe("buildSitemapXml sections", () => {

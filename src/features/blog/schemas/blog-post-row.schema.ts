@@ -25,7 +25,14 @@ export const blogPostDetailRowSchema = blogPostListRowSchema.extend({
 	og_image_path: z.string().nullable()
 })
 
+/** Raw MDX source for the Markdown copies, llms-full.txt and the RSS full text. */
+export const blogPostSourceRowSchema = blogPostListRowSchema.extend({
+	content: z.string().min(1)
+})
+
 export type BlogPostListRow = z.infer<typeof blogPostListRowSchema>
 export type BlogPostDetailRow = z.infer<typeof blogPostDetailRowSchema>
+export type BlogPostSourceRow = z.infer<typeof blogPostSourceRowSchema>
 
 export const blogPostListRowsSchema = z.array(blogPostListRowSchema)
+export const blogPostSourceRowsSchema = z.array(blogPostSourceRowSchema)

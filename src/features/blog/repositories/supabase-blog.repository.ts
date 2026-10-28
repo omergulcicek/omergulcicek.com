@@ -2,16 +2,21 @@ import {
 	mapBlogPostDetailRow,
 	mapBlogPostListRow
 } from "@/features/blog/helpers/map-blog-post-row"
+import { prioritizeBlogLeadImage } from "@/features/blog/helpers/blog-content-html"
 import { normalizeBlogSlug } from "@/features/blog/helpers/blog-slug"
 import { sortBlogPosts } from "@/features/blog/helpers/blog-helpers"
 import type {
 	BlogPostDetail,
+	BlogPostSource,
 	BlogRepository
 } from "@/features/blog/repositories/blog-repository.types"
 import { fetchBlogPostNeighbours } from "@/features/blog/repositories/fetch-blog-post-neighbours"
 import {
 	blogPostDetailRowSchema,
-	blogPostListRowsSchema
+	blogPostListRowsSchema,
+	blogPostSourceRowSchema,
+	blogPostSourceRowsSchema,
+	type BlogPostSourceRow
 } from "@/features/blog/schemas/blog-post-row.schema"
 import { getRuntimeIsDev } from "@/lib/runtime/is-dev-runtime"
 import { createSupabaseServerClient } from "@/lib/supabase/create-supabase-server-client"
@@ -20,6 +25,12 @@ const LIST_COLUMNS =
 	"slug, title, description, category, tags, locale, medium_url, interactive, published, published_at"
 
 const DETAIL_COLUMNS = `${LIST_COLUMNS}, content, content_html, headings, og_image_path`
+
+const SOURCE_COLUMNS = `${LIST_COLUMNS}, content`
+
+function mapBlogPostSourceRow(row: BlogPostSourceRow): BlogPostSource {
+	return { post: mapBlogPostListRow(row), content: row.content }
+}
 
 type SupabaseBlogRepositoryOptions = {
 	isDev: boolean
@@ -99,9 +110,50 @@ export function createSupabaseBlogRepository({
 
 			return {
 				...blogPost,
-				contentHtml: contentHtml,
+				contentHtml: prioritizeBlogLeadImage(contentHtml),
 				headings: headings
 			} satisfies BlogPostDetail
+		},
+
+		async getPostSource(slug) {
+			const supabase = createSupabaseServerClient()
+			let query = supabase
+				.from("blog_posts")
+				.select(SOURCE_COLUMNS)
+				.eq("slug", normalizeBlogSlug(slug))
+
+			if (!isDev) {
+				query = query.eq("published", true)
+			}
+
+			const { data, error } = await query.maybeSingle()
+
+			if (error) {
+				throw new Error(`Failed to fetch blog post source: ${error.message}`)
+			}
+
+			return data ? mapBlogPostSourceRow(blogPostSourceRowSchema.parse(data)) : null
+		},
+
+		async getAllPostSources(category) {
+			const supabase = createSupabaseServerClient()
+			let query = supabase
+				.from("blog_posts")
+				.select(SOURCE_COLUMNS)
+				.eq("category", category)
+				.order("published_at", { ascending: false, nullsFirst: false })
+
+			if (!isDev) {
+				query = query.eq("published", true)
+			}
+
+			const { data, error } = await query
+
+			if (error) {
+				throw new Error(`Failed to fetch blog post sources: ${error.message}`)
+			}
+
+			return blogPostSourceRowsSchema.parse(data ?? []).map(mapBlogPostSourceRow)
 		},
 
 		async getPostNeighbours(slug) {

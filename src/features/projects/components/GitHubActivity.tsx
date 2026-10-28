@@ -88,6 +88,7 @@ export function GitHubActivity({
 						cellSize={ACTIVITY_CELL_SIZE}
 						months={ACTIVITY_MONTHS}
 						showMonths={showMonths}
+						isPlaceholder={!data}
 						label={heading}
 						reduceMotion={reduceMotion}
 					/>

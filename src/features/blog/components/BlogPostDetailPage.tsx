@@ -16,7 +16,10 @@ import { BlogProse } from "@/features/blog/components/BlogProse"
 import { BlogShareActions } from "@/features/blog/components/BlogShareActions"
 import { BlogStructuredData } from "@/features/blog/components/BlogStructuredData"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
-import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
+import {
+	getBlogContentLang,
+	getBlogPostPath
+} from "@/features/blog/helpers/blog-helpers"
 import type { BlogPostDetail } from "@/features/blog/repositories/blog-repository.types"
 
 type BlogPostDetailPageProps = {
@@ -43,7 +46,11 @@ export function BlogPostDetailPage({
 						<StaggerItem>
 							<BlogPostDetailHeader category={post.category} />
 						</StaggerItem>
-						<StaggerItem data-blog-article className="flex flex-col gap-4">
+						<StaggerItem
+							data-blog-article
+							lang={getBlogContentLang(post.locale)}
+							className="flex flex-col gap-4"
+						>
 							<header className="flex flex-col gap-4">
 								<h1
 									className={cn(

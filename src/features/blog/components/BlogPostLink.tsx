@@ -9,6 +9,7 @@ type BlogPostLinkProps = {
 	slug: string
 	className?: string
 	"aria-label"?: string
+	lang?: string
 	children?: ReactNode
 }
 

@@ -5,13 +5,25 @@ import { getBlogPostNeighboursFn } from "@/features/blog/api/blog-post.api"
 import { blogPostDetailQueryOptions } from "@/features/blog/api/get-blog-post-detail.api"
 import { resolveBlogSlugRedirect } from "@/features/blog/constants/blog-redirects.constants"
 import {
+	BLOG_OG_LOCALES,
+	findBlogTranslationPair
+} from "@/features/blog/constants/blog-translations.constants"
+import {
+	getBlogPostMarkdownPath,
 	getBlogPostPath,
 	slugToRouteParam
 } from "@/features/blog/helpers/blog-helpers"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
 import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
-import type { BlogCategory } from "@/features/blog/types/blog.types"
-import { buildBlogPostHead } from "@/lib/seo/build-page-head"
+import type {
+	BlogCategory,
+	BlogLocale,
+	BlogPost
+} from "@/features/blog/types/blog.types"
+import {
+	buildBlogPostHead,
+	type PageAlternateLink
+} from "@/lib/seo/build-page-head"
 import { unwrapServerResult } from "@/lib/server-result"
 import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
@@ -34,7 +46,35 @@ export type BlogPostPageLoaderData = {
 		canonicalUrl?: string
 		coverImage: string
 		path: string
+		locale: BlogLocale
+		translatedLocales: BlogLocale[]
+		alternateLinks: PageAlternateLink[]
 	}
+}
+
+/** The Markdown copy, plus hreflang links when the post exists in both languages. */
+function buildBlogPostAlternates(post: BlogPost) {
+	const alternateLinks: PageAlternateLink[] = [
+		{
+			type: "text/markdown",
+			href: getBlogPostMarkdownPath(post.slug, post.category)
+		}
+	]
+	const pair = findBlogTranslationPair(post.slug)
+
+	if (!pair) {
+		return { alternateLinks, translatedLocales: [] }
+	}
+
+	alternateLinks.push(
+		{ hrefLang: "tr", href: getBlogPostPath(pair.tr, post.category) },
+		{ hrefLang: "en", href: getBlogPostPath(pair.en, post.category) },
+		{ hrefLang: "x-default", href: getBlogPostPath(pair.tr, post.category) }
+	)
+
+	const translatedLocales: BlogLocale[] = post.locale === "tr" ? ["en"] : ["tr"]
+
+	return { alternateLinks, translatedLocales }
 }
 
 function redirectToPost(slug: string, category: BlogCategory): never {
@@ -87,7 +127,9 @@ export async function loadBlogPostPage({
 				slug: post.slug,
 				coverImage: post.coverImage
 			}),
-			path: getBlogPostPath(post.slug, post.category)
+			path: getBlogPostPath(post.slug, post.category),
+			locale: post.locale,
+			...buildBlogPostAlternates(post)
 		}
 	}
 }
@@ -105,6 +147,11 @@ export function buildBlogPostPageHead(loaderData: BlogPostPageLoaderData | undef
 		path: seo.path,
 		canonicalUrl: seo.canonicalUrl,
 		ogImage: seo.coverImage,
+		ogLocale: BLOG_OG_LOCALES[seo.locale],
+		ogLocaleAlternates: seo.translatedLocales.map(
+			(locale) => BLOG_OG_LOCALES[locale]
+		),
+		alternateLinks: seo.alternateLinks,
 		publishedAt: seo.publishedAt,
 		robots: seo.published ? undefined : "noindex, nofollow"
 	})

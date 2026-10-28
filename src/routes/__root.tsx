@@ -3,6 +3,7 @@ import type { ReactNode } from "react"
 import {
 	HeadContent,
 	Outlet,
+	ScriptOnce,
 	Scripts,
 	createRootRouteWithContext
 } from "@tanstack/react-router"
@@ -15,7 +16,7 @@ import { SiteLayout } from "@/components/shared/SiteLayout"
 import { WebVitalsReporter } from "@/components/shared/WebVitalsReporter"
 import { SITE } from "@/constants/site.constants"
 import type { RouterContext } from "@/router"
-import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
+import { THEME_BOOT_SCRIPT } from "@/lib/theme/theme-boot-script"
 import interLatinFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
 
 import "@/styles.css"
@@ -79,15 +80,12 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
-	const theme = resolveDocumentTheme()
-
+	// The `dark` class is owned by THEME_BOOT_SCRIPT and useTheme, not React: prerendered
+	// HTML cannot know the visitor's theme, so the script sets it before the first paint.
 	return (
-		<html
-			lang="tr"
-			className={theme === "dark" ? "dark" : undefined}
-			suppressHydrationWarning
-		>
+		<html lang="tr" suppressHydrationWarning>
 			<head>
+				<ScriptOnce>{THEME_BOOT_SCRIPT}</ScriptOnce>
 				<HeadContent />
 			</head>
 			<body>

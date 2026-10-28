@@ -20,6 +20,10 @@ Kalıcı kararlar ve kodda açık olmayan bağlam. Metin ve içerik kodda yaşar
 - **Supabase yazma:** Her yazma işleminden önce SQL önizlemesi ve açık onay.
 - **Kaldırılanlar:** Hizmetler (`/services` → 301 `/about#birlikte-calisalim`), Akademi (`/academy/*` → 301 virastack.com/academy).
 - **Motion:** İlk yüklemede giriş animasyonu yok (`useSkipInitialMotion`); animasyon yalnızca site içi gezinmede.
+- **Tema:** Kayıtlı seçim yoksa işletim sistemi teması geçerli. `dark` sınıfını React değil, `<head>`'deki `THEME_BOOT_SCRIPT` ilk boyamadan önce koyar; prerender edilen HTML ziyaretçinin temasını bilemez.
+- **Logolar:** Marka logoları `public/logos/stack/` altında statik SVG; inline SVG bileşeni ve eager logo yok (eager `<img>` React'ın preload üretmesine yol açar).
+- **Makine okunur çıktılar:** `/llms.txt`, `/llms-full.txt` (yalnızca teknik yazılar), `/blog/<slug>.md`, `/notlar/<slug>.md` ve RSS'teki `content:encoded` sunucuda Supabase'den üretilir; `public/`'te statik kopya yok.
+- **Çeviri çiftleri:** TR/EN yazılar `blog-translations.constants.ts`'te eşlenir; hreflang ve `og:locale` buradan gelir. İngilizce metin `lang="en"` taşır.
 
 ## Ajan kuralları
 

@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest"
 
-import { enrichBlogContentHtml } from "@/features/blog/helpers/blog-content-html"
+import {
+	enrichBlogContentHtml,
+	prioritizeBlogLeadImage
+} from "@/features/blog/helpers/blog-content-html"
 import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
 
 describe("enrichBlogContentHtml external links", () => {
@@ -48,5 +51,30 @@ describe("enrichBlogContentHtml external links", () => {
 		expect(contentHtml).toContain('href="https://tkdodo.eu/blog/tan-stack-router-and-query"')
 		expect(contentHtml).toContain('target="_blank"')
 		expect(contentHtml).toContain('rel="noopener noreferrer"')
+	})
+})
+
+describe("prioritizeBlogLeadImage", () => {
+	it("loads a cover image before the first heading eagerly", () => {
+		const html = prioritizeBlogLeadImage(
+			'<p>Giriş</p><figure><img src="/a.webp" alt="A" loading="lazy" decoding="async"></figure><h2>Başlık</h2><img src="/b.webp" loading="lazy">'
+		)
+
+		expect(html).toContain(
+			'<img src="/a.webp" alt="A" decoding="async" loading="eager" fetchpriority="high">'
+		)
+		expect(html).toContain('<img src="/b.webp" loading="lazy">')
+	})
+
+	it("keeps images after the first heading lazy", () => {
+		const html = '<p>Giriş</p><h2>Başlık</h2><img src="/a.webp" loading="lazy">'
+
+		expect(prioritizeBlogLeadImage(html)).toBe(html)
+	})
+
+	it("handles self-closing image tags", () => {
+		expect(prioritizeBlogLeadImage('<img src="/a.webp" loading="lazy" />')).toBe(
+			'<img src="/a.webp" loading="eager" fetchpriority="high">'
+		)
 	})
 })

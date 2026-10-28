@@ -16,6 +16,8 @@ import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SetupRouteImport } from './routes/setup'
@@ -26,10 +28,12 @@ import { Route as AcademyIndexRouteImport } from './routes/academy/index'
 import { Route as AcademySplatRouteImport } from './routes/academy/$'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as BlogChar123slugChar125DotmdRouteImport } from './routes/blog/{$slug}[.]md'
 import { Route as DevMdxSandboxRouteImport } from './routes/dev/mdx-sandbox'
 import { Route as NotlarIndexRouteImport } from './routes/notlar/index'
 import { Route as NotlarSlugRouteImport } from './routes/notlar/$slug'
 import { Route as NotlarFeedDotxmlRouteImport } from './routes/notlar/feed[.]xml'
+import { Route as NotlarChar123slugChar125DotmdRouteImport } from './routes/notlar/{$slug}[.]md'
 import { Route as OgBlogSlugRouteImport } from './routes/og/blog/$slug'
 import { Route as OgPagePageKeyRouteImport } from './routes/og/page/$pageKey'
 
@@ -66,6 +70,16 @@ const FeedDotxmlRoute = FeedDotxmlRouteImport.update({
 const JourneyRoute = JourneyRouteImport.update({
   id: '/journey',
   path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
+  id: '/llms-full.txt',
+  path: '/llms-full.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -118,6 +132,12 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogChar123slugChar125DotmdRoute =
+  BlogChar123slugChar125DotmdRouteImport.update({
+    id: '/blog/{$slug}.md',
+    path: '/blog/{$slug}.md',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DevMdxSandboxRoute = DevMdxSandboxRouteImport.update({
   id: '/dev/mdx-sandbox',
   path: '/dev/mdx-sandbox',
@@ -138,6 +158,12 @@ const NotlarFeedDotxmlRoute = NotlarFeedDotxmlRouteImport.update({
   path: '/notlar/feed.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotlarChar123slugChar125DotmdRoute =
+  NotlarChar123slugChar125DotmdRouteImport.update({
+    id: '/notlar/{$slug}.md',
+    path: '/notlar/{$slug}.md',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const OgBlogSlugRoute = OgBlogSlugRouteImport.update({
   id: '/og/blog/$slug',
   path: '/og/blog/$slug',
@@ -157,6 +183,8 @@ export interface FileRoutesByFullPath {
   '/experiences': typeof ExperiencesRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/journey': typeof JourneyRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/setup': typeof SetupRoute
@@ -165,9 +193,11 @@ export interface FileRoutesByFullPath {
   '/workspace': typeof WorkspaceRoute
   '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/{$slug}.md': typeof BlogChar123slugChar125DotmdRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/notlar/$slug': typeof NotlarSlugRoute
   '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
+  '/notlar/{$slug}.md': typeof NotlarChar123slugChar125DotmdRoute
   '/academy/': typeof AcademyIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/notlar/': typeof NotlarIndexRoute
@@ -182,6 +212,8 @@ export interface FileRoutesByTo {
   '/experiences': typeof ExperiencesRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/journey': typeof JourneyRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/setup': typeof SetupRoute
@@ -190,9 +222,11 @@ export interface FileRoutesByTo {
   '/workspace': typeof WorkspaceRoute
   '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/{$slug}.md': typeof BlogChar123slugChar125DotmdRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/notlar/$slug': typeof NotlarSlugRoute
   '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
+  '/notlar/{$slug}.md': typeof NotlarChar123slugChar125DotmdRoute
   '/academy': typeof AcademyIndexRoute
   '/blog': typeof BlogIndexRoute
   '/notlar': typeof NotlarIndexRoute
@@ -208,6 +242,8 @@ export interface FileRoutesById {
   '/experiences': typeof ExperiencesRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/journey': typeof JourneyRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/setup': typeof SetupRoute
@@ -216,9 +252,11 @@ export interface FileRoutesById {
   '/workspace': typeof WorkspaceRoute
   '/academy/$': typeof AcademySplatRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/{$slug}.md': typeof BlogChar123slugChar125DotmdRoute
   '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
   '/notlar/$slug': typeof NotlarSlugRoute
   '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
+  '/notlar/{$slug}.md': typeof NotlarChar123slugChar125DotmdRoute
   '/academy/': typeof AcademyIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/notlar/': typeof NotlarIndexRoute
@@ -235,6 +273,8 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/feed.xml'
     | '/journey'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/projects'
     | '/services'
     | '/setup'
@@ -243,9 +283,11 @@ export interface FileRouteTypes {
     | '/workspace'
     | '/academy/$'
     | '/blog/$slug'
+    | '/blog/{$slug}.md'
     | '/dev/mdx-sandbox'
     | '/notlar/$slug'
     | '/notlar/feed.xml'
+    | '/notlar/{$slug}.md'
     | '/academy/'
     | '/blog/'
     | '/notlar/'
@@ -260,6 +302,8 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/feed.xml'
     | '/journey'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/projects'
     | '/services'
     | '/setup'
@@ -268,9 +312,11 @@ export interface FileRouteTypes {
     | '/workspace'
     | '/academy/$'
     | '/blog/$slug'
+    | '/blog/{$slug}.md'
     | '/dev/mdx-sandbox'
     | '/notlar/$slug'
     | '/notlar/feed.xml'
+    | '/notlar/{$slug}.md'
     | '/academy'
     | '/blog'
     | '/notlar'
@@ -285,6 +331,8 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/feed.xml'
     | '/journey'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/projects'
     | '/services'
     | '/setup'
@@ -293,9 +341,11 @@ export interface FileRouteTypes {
     | '/workspace'
     | '/academy/$'
     | '/blog/$slug'
+    | '/blog/{$slug}.md'
     | '/dev/mdx-sandbox'
     | '/notlar/$slug'
     | '/notlar/feed.xml'
+    | '/notlar/{$slug}.md'
     | '/academy/'
     | '/blog/'
     | '/notlar/'
@@ -311,6 +361,8 @@ export interface RootRouteChildren {
   ExperiencesRoute: typeof ExperiencesRoute
   FeedDotxmlRoute: typeof FeedDotxmlRoute
   JourneyRoute: typeof JourneyRoute
+  LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   SetupRoute: typeof SetupRoute
@@ -319,9 +371,11 @@ export interface RootRouteChildren {
   WorkspaceRoute: typeof WorkspaceRoute
   AcademySplatRoute: typeof AcademySplatRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogChar123slugChar125DotmdRoute: typeof BlogChar123slugChar125DotmdRoute
   DevMdxSandboxRoute: typeof DevMdxSandboxRoute
   NotlarSlugRoute: typeof NotlarSlugRoute
   NotlarFeedDotxmlRoute: typeof NotlarFeedDotxmlRoute
+  NotlarChar123slugChar125DotmdRoute: typeof NotlarChar123slugChar125DotmdRoute
   AcademyIndexRoute: typeof AcademyIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   NotlarIndexRoute: typeof NotlarIndexRoute
@@ -378,6 +432,20 @@ declare module '@tanstack/react-router' {
       path: '/journey'
       fullPath: '/journey'
       preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms-full.txt': {
+      id: '/llms-full.txt'
+      path: '/llms-full.txt'
+      fullPath: '/llms-full.txt'
+      preLoaderRoute: typeof LlmsFullDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -450,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/{$slug}.md': {
+      id: '/blog/{$slug}.md'
+      path: '/blog/{$slug}.md'
+      fullPath: '/blog/{$slug}.md'
+      preLoaderRoute: typeof BlogChar123slugChar125DotmdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dev/mdx-sandbox': {
       id: '/dev/mdx-sandbox'
       path: '/dev/mdx-sandbox'
@@ -478,6 +553,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotlarFeedDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notlar/{$slug}.md': {
+      id: '/notlar/{$slug}.md'
+      path: '/notlar/{$slug}.md'
+      fullPath: '/notlar/{$slug}.md'
+      preLoaderRoute: typeof NotlarChar123slugChar125DotmdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/og/blog/$slug': {
       id: '/og/blog/$slug'
       path: '/og/blog/$slug'
@@ -503,6 +585,8 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesRoute: ExperiencesRoute,
   FeedDotxmlRoute: FeedDotxmlRoute,
   JourneyRoute: JourneyRoute,
+  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   SetupRoute: SetupRoute,
@@ -511,9 +595,11 @@ const rootRouteChildren: RootRouteChildren = {
   WorkspaceRoute: WorkspaceRoute,
   AcademySplatRoute: AcademySplatRoute,
   BlogSlugRoute: BlogSlugRoute,
+  BlogChar123slugChar125DotmdRoute: BlogChar123slugChar125DotmdRoute,
   DevMdxSandboxRoute: DevMdxSandboxRoute,
   NotlarSlugRoute: NotlarSlugRoute,
   NotlarFeedDotxmlRoute: NotlarFeedDotxmlRoute,
+  NotlarChar123slugChar125DotmdRoute: NotlarChar123slugChar125DotmdRoute,
   AcademyIndexRoute: AcademyIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   NotlarIndexRoute: NotlarIndexRoute,

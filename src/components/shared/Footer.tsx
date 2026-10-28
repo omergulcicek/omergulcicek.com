@@ -110,7 +110,11 @@ export function Footer() {
 							"border-border flex-col-reverse gap-2 border-t pt-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 md:pt-8"
 						)}
 					>
-						<p className="shrink-0">{getFooterCopyright()}</p>
+						{/* Prerendered pages keep the build year; on New Year's Day the browser's year
+						    differs until the next deploy, which must not fail hydration. */}
+						<p className="shrink-0" suppressHydrationWarning>
+							{getFooterCopyright()}
+						</p>
 						<p className="sm:text-right">
 							<ProseLink href={EXTERNAL_LINKS.virastack}>
 								{builtWith.virastack}

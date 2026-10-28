@@ -15,7 +15,10 @@ import { Medium } from "@/components/ui/svgs/medium"
 import { BlogPostLink } from "@/features/blog/components/BlogPostLink"
 import { BlogTagBadge } from "@/features/blog/components/BlogTagBadge"
 import { BLOG_UI } from "@/features/blog/constants/blog.constants"
-import { formatBlogDate } from "@/features/blog/helpers/blog-helpers"
+import {
+	formatBlogDate,
+	getBlogContentLang
+} from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 
 type MetaLabel = { key: string; node: ReactNode }
@@ -100,6 +103,7 @@ export function BlogListPostRow({
 	const metaLabels = metaLabelCandidates.filter((label): label is MetaLabel =>
 		Boolean(label)
 	)
+	const contentLang = getBlogContentLang(post.locale)
 
 	return (
 		<article
@@ -115,6 +119,7 @@ export function BlogListPostRow({
 				slug={post.slug}
 				className="absolute inset-0 z-0 rounded-xl"
 				aria-label={post.title}
+				lang={contentLang}
 			/>
 			<div className="pointer-events-none relative z-10 flex w-full flex-wrap items-center gap-x-2 gap-y-1">
 				<time
@@ -134,13 +139,18 @@ export function BlogListPostRow({
 			</div>
 			<div className="pointer-events-none relative z-10 min-w-0 w-full">
 				<div className="flex items-start gap-2">
-					<h2 className={listTitleClass}>{post.title}</h2>
+					<h2 className={listTitleClass} lang={contentLang}>
+						{post.title}
+					</h2>
 					<ChevronRight
 						className={cn(interactiveCardChevronClass, "mt-1.5")}
 						aria-hidden
 					/>
 				</div>
-				<p className="text-muted-foreground mt-1 text-pretty text-xs leading-5 md:text-sm md:leading-6">
+				<p
+					className="text-muted-foreground mt-1 text-pretty text-xs leading-5 md:text-sm md:leading-6"
+					lang={contentLang}
+				>
 					{post.description}
 				</p>
 				{visibleTags.length > 0 ? (
