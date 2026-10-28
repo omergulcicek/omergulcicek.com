@@ -84,19 +84,15 @@ export function BookmarksListFilters({
 			)}
 			aria-label={BOOKMARK_UI.filtersAriaLabel}
 		>
-			<div className="flex min-h-8 flex-nowrap items-center justify-between md:min-h-0 md:gap-2">
+			<div className="flex min-h-8 flex-wrap items-center justify-between gap-2 md:min-h-0 md:flex-nowrap">
 				<BookmarkCategoryChips
 					value={categoryId}
 					onChange={onCategoryChange}
 				/>
 				{showSort ? (
 					<>
-						<Separator
-							orientation="vertical"
-							className="mx-0.5 h-5 shrink-0 self-center md:hidden data-[orientation=vertical]:h-5"
-						/>
 						<BookmarkSortControl
-							className="gap-1.5 md:gap-2"
+							className="flex-nowrap gap-1.5 md:gap-2"
 							options={sortOptions}
 							value={sort}
 							onChange={onSortChange}

@@ -7,7 +7,8 @@ export const blogFilterChipWithIconDesktopClass =
 export const blogFilterTagsContainerClass =
 	"overflow-hidden transition-[max-height] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
 
-export const blogFilterTagsCollapsedClass = "max-h-8 md:max-h-14"
+/** Two chip rows: 2 x 32px + 8px gap on mobile, 2 x 24px + 8px gap on desktop. */
+export const blogFilterTagsCollapsedClass = "max-h-[4.5rem] md:max-h-14"
 
 export const blogFilterTagsExpandedClass = "max-h-[2000px]"
 
@@ -18,10 +19,10 @@ export const listFilterPanelClass =
 export const blogFilterPanelClass =
 	"z-20 -mx-1 flex flex-col p-3 md:sticky md:top-[calc(3.5rem+8px)] md:p-4"
 
-/** Blog tags scroll horizontally on mobile and collapse to two rows on desktop. */
-export const blogTagsCollapsedClass = "md:max-h-14"
+/** Blog tags wrap and collapse to two rows; a toggle reveals the rest. */
+export const blogTagsCollapsedClass = "max-h-[4.5rem] md:max-h-14"
 
-export const blogTagsExpandedClass = "md:max-h-[2000px]"
+export const blogTagsExpandedClass = "max-h-[2000px]"
 
 /** Small text actions beside filters; `min-h-6` keeps the target at the 24px WCAG 2.5.8 minimum. */
 export const filterTextButtonClass =

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Download, Eye } from "lucide-react"
+import { Download, ExternalLink, Eye } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -100,12 +100,24 @@ export function ResumeModal() {
 					</div>
 				</DialogHeader>
 				<div className="bg-muted min-h-0 flex-1 overflow-hidden rounded-md border">
+					{/* Mobile browsers do not render PDFs inside iframes, so phones get an open link instead. */}
 					<iframe
 						key={locale}
 						src={getCvPreviewUrl(activeCv.href)}
-						className="size-full border-0"
+						className="hidden size-full border-0 md:block"
 						title={SITE_CONTENT.resumeModalTitle}
 					/>
+					<div className="flex size-full flex-col items-center justify-center gap-3 p-4 text-center md:hidden">
+						<p className="text-muted-foreground text-xs text-pretty">
+							{SITE_CONTENT.resumeMobilePreviewNote}
+						</p>
+						<Button asChild variant="outline" size="sm" className="gap-2">
+							<a href={activeCv.href} target="_blank" rel="noopener noreferrer">
+								<ExternalLink className="size-4" aria-hidden />
+								{SITE_CONTENT.resumeOpenInNewTab}
+							</a>
+						</Button>
+					</div>
 				</div>
 				<DialogFooter className="shrink-0">
 					<Button asChild className="gap-2">

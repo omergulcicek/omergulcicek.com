@@ -21,7 +21,7 @@ export function ExperiencesPage() {
 					</PageHeader>
 				</StaggerItem>
 
-				<StaggerItem>
+				<StaggerItem className="-my-4 md:my-0">
 					<ResumeModal />
 				</StaggerItem>
 

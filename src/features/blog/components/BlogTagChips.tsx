@@ -35,7 +35,7 @@ export function BlogTagChips({
 	return (
 		<div
 			className={cn(
-				"flex gap-2 overflow-x-auto [scrollbar-width:none] md:flex-wrap md:overflow-visible [&::-webkit-scrollbar]:hidden",
+				"flex flex-wrap gap-2",
 				className
 			)}
 			role="group"
@@ -47,7 +47,7 @@ export function BlogTagChips({
 					size="xs"
 					variant={isFeaturedActive ? "secondary" : "outline"}
 					aria-pressed={isFeaturedActive}
-					className={cn("shrink-0", blogFilterChipWithIconDesktopClass)}
+					className={blogFilterChipWithIconDesktopClass}
 					onClick={onFeaturedToggle}
 				>
 					<Star
@@ -70,7 +70,7 @@ export function BlogTagChips({
 						size="xs"
 						variant={isActive ? "secondary" : "outline"}
 						aria-pressed={isActive}
-						className={cn("shrink-0", blogFilterChipWithIconDesktopClass)}
+						className={blogFilterChipWithIconDesktopClass}
 						onClick={() => onSelect(tag)}
 					>
 						<BlogTagIcon tag={tag} className="size-3 shrink-0" />

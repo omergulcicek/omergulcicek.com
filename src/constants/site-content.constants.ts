@@ -46,6 +46,9 @@ export const SITE_CONTENT = {
 	resumeModalDescription:
 		"Türkçe ve İngilizce sürümünü PDF olarak indirebilirsin.",
 	resumeDownload: "İndir",
+	resumeMobilePreviewNote:
+		"Telefon tarayıcıları PDF'i burada gösteremiyor. Yeni sekmede açabilir ya da indirebilirsin.",
+	resumeOpenInNewTab: "Yeni sekmede aç",
 	resumeLanguageGroup: "Özgeçmiş dili",
 	resumeLanguageTr: "Türkçe CV",
 	resumeLanguageEn: "English CV",

@@ -49,7 +49,9 @@ export function BentoInterests() {
 							</div>
 							<div className="flex min-w-0 flex-1 flex-col gap-1.5">
 								<div className="flex items-start justify-between gap-2">
-									<h3 className="text-foreground font-medium">{hobby.title}</h3>
+									<h3 className="text-foreground text-sm font-medium md:text-base">
+										{hobby.title}
+									</h3>
 									{isLink && (
 										<ChevronRight
 											className={interactiveCardChevronClass}
@@ -57,7 +59,7 @@ export function BentoInterests() {
 										/>
 									)}
 								</div>
-								<p className="text-foreground/70 text-sm">{hobby.text}</p>
+								<p className="text-foreground/70 text-xs md:text-sm">{hobby.text}</p>
 							</div>
 						</div>
 					</InterestCard>
@@ -90,7 +92,7 @@ export function BentoInterests() {
 							</div>
 							<div className="flex min-w-0 flex-1 flex-col gap-1.5">
 								<div className="flex items-start justify-between gap-2">
-									<h3 className="text-foreground font-medium">
+									<h3 className="text-foreground text-sm font-medium md:text-base">
 										{favorite.value}
 									</h3>
 									{isLink && (
@@ -100,7 +102,7 @@ export function BentoInterests() {
 										/>
 									)}
 								</div>
-								<p className="text-foreground/70 text-sm">
+								<p className="text-foreground/70 text-xs md:text-sm">
 									{favorite.label}
 								</p>
 							</div>
