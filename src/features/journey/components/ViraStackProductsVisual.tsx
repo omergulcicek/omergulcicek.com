@@ -45,11 +45,11 @@ export function ViraStackProductsVisual() {
 			aria-label={VIRASTACK_PRODUCT_DOTS_LABEL}
 			className="bg-card/50 flex aspect-video flex-col items-center justify-center gap-3"
 		>
-			<div aria-hidden className="flex items-center gap-3 md:gap-4">
+			<div aria-hidden className="flex items-center gap-2 md:gap-2.5">
 				{VIRASTACK_PRODUCT_DOTS.map((product, index) => (
 					<m.span
 						key={product.id}
-						className={cn("block size-4 rounded-full md:size-5", product.dotClass)}
+						className={cn("block size-2.5 rounded-full md:size-3", product.dotClass)}
 						animate={{
 							scale: activeIndex === index ? 1.5 : 1,
 							opacity: activeIndex !== null && activeIndex !== index ? 0.35 : 1
