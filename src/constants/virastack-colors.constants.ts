@@ -41,9 +41,9 @@ export const VIRASTACK_PRODUCTS = {
 	},
 	password: {
 		Icon: SquareAsterisk,
-		textClass: "text-teal-600 dark:text-teal-500",
-		dotClass: "bg-teal-500",
-		hex: "#00baa6"
+		textClass: "text-pink-600 dark:text-pink-500",
+		dotClass: "bg-pink-500",
+		hex: "#f6339a"
 	},
 	address: {
 		Icon: MapPin,
@@ -61,6 +61,14 @@ export const VIRASTACK_PRODUCTS = {
 	string,
 	{ Icon: LucideIcon; textClass: string; dotClass: string; hex: string }
 >
+
+/** The ViraStack brand itself (logo mark), not a product. */
+export const VIRASTACK_BRAND = {
+	textClass: "text-teal-600 dark:text-teal-500",
+	dotClass: "bg-teal-500",
+	hexLight: "#009689",
+	hexDark: "#00baa6"
+} as const
 
 export type VirastackProductId = keyof typeof VIRASTACK_PRODUCTS
 

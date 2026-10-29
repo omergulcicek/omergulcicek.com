@@ -46,7 +46,7 @@ export function useVirastackDither() {
 	const interactionEnabledRef = useRef(true)
 	const { theme } = useTheme()
 	const isDark = theme === "dark"
-	const dotColor = isDark ? "#f5f5f5" : "#000000"
+	const dotColor = isDark ? VIRASTACK_BRAND.hexDark : VIRASTACK_BRAND.hexLight
 
 	useEffect(() => {
 		const canvas = canvasRef.current
