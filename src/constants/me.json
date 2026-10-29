@@ -162,7 +162,7 @@
 		{
 			"id": "academy",
 			"title": "ViraStack Academy",
-			"description": "Frontend geliştiriciler için ücretsiz yol haritası ve rehberler.",
+			"description": "React ile frontend geliştirici olmak için güncel yol haritası. Temellerden yapay zekâ, mimari ve test gibi ileri konulara ücretsiz rehberler.",
 			"href": "https://virastack.com/academy",
 			"group": "virastack",
 			"status": "package"
@@ -170,7 +170,7 @@
 		{
 			"id": "start",
 			"title": "ViraStack Start",
-			"description": "Üretime hazır Next.js ve TanStack başlangıç şablonları.",
+			"description": "npx virastack ile üretime hazır Next.js ve TanStack Start projeleri. Feature tabanlı mimari, strict TypeScript ve AI kuralları dahil gelir.",
 			"href": "https://virastack.com/start",
 			"group": "virastack",
 			"status": "package"
@@ -178,7 +178,7 @@
 		{
 			"id": "ai",
 			"title": "ViraStack AI",
-			"description": "Ajan uyumlu kurallar ve mimari kit.",
+			"description": "Claude Code, Cursor ve AGENTS.md okuyan tüm agent'lar için tek bir mimari kural seti. Agent'lar projenin geri kalanına uyan kod yazar.",
 			"href": "https://virastack.com/ai",
 			"group": "virastack",
 			"status": "package"
@@ -186,7 +186,7 @@
 		{
 			"id": "mask",
 			"title": "ViraStack Mask",
-			"description": "Formlar için erişilebilir input maskeleri.",
+			"description": "React Hook Form için sıfır bağımlılıklı input maskeleri. Telefon, kart, IBAN, TCKN ve TRY hazır gelir; aynı şema sunucuda da doğrular.",
 			"href": "https://virastack.com/mask",
 			"group": "virastack",
 			"status": "package"
@@ -194,15 +194,23 @@
 		{
 			"id": "password",
 			"title": "ViraStack Password",
-			"description": "Erişilebilir parola görünürlük toggle'ı.",
+			"description": "React için erişilebilir parola hook'u: göster/gizle, NIST tarzı güç, parola tekrarı ve sunucuda aynı kurallar.",
 			"href": "https://virastack.com/password",
+			"group": "virastack",
+			"status": "package"
+		},
+		{
+			"id": "address",
+			"title": "ViraStack Address",
+			"description": "Türkiye adresleri için headless React hook'u. İl, ilçe ve mahalle zincirleme seçilir; posta kodu mahalleden gelir ve adres sunucuda doğrulanır.",
+			"href": "https://virastack.com/address",
 			"group": "virastack",
 			"status": "package"
 		},
 		{
 			"id": "guide",
 			"title": "ViraStack Guide",
-			"description": "Modern web standartlarını adım adım gösteren interaktif rehber.",
+			"description": "Modern bir web uygulamasının nasıl kurulduğunu, ham HTML'den AI-native arayüze 3 dakikada adım adım gösteren interaktif rehber.",
 			"href": "https://virastack.com/guide",
 			"group": "virastack",
 			"status": "package"
