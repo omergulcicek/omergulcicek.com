@@ -1,4 +1,4 @@
-import { isVirastackProductId, VIRASTACK_PRODUCT_COLORS } from "@/constants/virastack-colors.constants"
+import { isVirastackProductId, VIRASTACK_PRODUCTS } from "@/constants/virastack-colors.constants"
 import { meContent } from "@/lib/content/me-content"
 
 import type { Me, MeProject } from "@/schemas/me.schema"
@@ -11,7 +11,7 @@ export const ME: Me = {
 	...meContent,
 	projects: meContent.projects.map((project) =>
 		isVirastackProductId(project.id)
-			? { ...project, color: VIRASTACK_PRODUCT_COLORS[project.id].textClass }
+			? { ...project, color: VIRASTACK_PRODUCTS[project.id].textClass }
 			: project
 	)
 }

@@ -1,16 +1,11 @@
 import { soccerPitch } from "@lucide/lab"
 import {
-	BookOpen,
 	BookType,
 	CalendarDays,
-	Form,
-	GraduationCap,
-	Rocket,
-	Sparkles,
-	SquareAsterisk,
 	type LucideIcon
 } from "lucide-react"
 import type { ComponentType, SVGProps } from "react"
+import { VIRASTACK_PRODUCTS } from "@/constants/virastack-colors.constants"
 import { TurkuazLogo } from "@/features/projects/components/TurkuazLogo"
 
 export const projectIconClass = "size-8 md:size-10"
@@ -35,14 +30,14 @@ export type ProjectVisualConfig =
 	  }
 
 export const PROJECT_VISUALS: Record<string, ProjectVisualConfig> = {
-	academy: { kind: "lucide", Icon: GraduationCap },
+	academy: { kind: "lucide", Icon: VIRASTACK_PRODUCTS.academy.Icon },
 	footy: { kind: "lab", iconNode: soccerPitch },
 	takvim: { kind: "lucide", Icon: CalendarDays },
-	start: { kind: "lucide", Icon: Rocket },
-	ai: { kind: "lucide", Icon: Sparkles },
-	mask: { kind: "lucide", Icon: Form },
-	password: { kind: "lucide", Icon: SquareAsterisk },
-	guide: { kind: "lucide", Icon: BookOpen },
+	start: { kind: "lucide", Icon: VIRASTACK_PRODUCTS.start.Icon },
+	ai: { kind: "lucide", Icon: VIRASTACK_PRODUCTS.ai.Icon },
+	mask: { kind: "lucide", Icon: VIRASTACK_PRODUCTS.mask.Icon },
+	password: { kind: "lucide", Icon: VIRASTACK_PRODUCTS.password.Icon },
+	guide: { kind: "lucide", Icon: VIRASTACK_PRODUCTS.guide.Icon },
 	turkuaz: { kind: "svg", Icon: TurkuazLogo, className: "size-8" },
 	turkcedokuman: { kind: "lucide", Icon: BookType }
 }
