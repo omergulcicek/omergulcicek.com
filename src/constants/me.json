@@ -165,8 +165,7 @@
 			"description": "Frontend geliştiriciler için ücretsiz yol haritası ve rehberler.",
 			"href": "https://virastack.com/academy",
 			"group": "virastack",
-			"status": "package",
-			"color": "text-green-700 dark:text-green-500"
+			"status": "package"
 		},
 		{
 			"id": "start",
@@ -174,8 +173,7 @@
 			"description": "Üretime hazır Next.js ve TanStack başlangıç şablonları.",
 			"href": "https://virastack.com/start",
 			"group": "virastack",
-			"status": "package",
-			"color": "text-teal-700 dark:text-teal-500"
+			"status": "package"
 		},
 		{
 			"id": "ai",
@@ -183,8 +181,7 @@
 			"description": "Ajan uyumlu kurallar ve mimari kit.",
 			"href": "https://virastack.com/ai",
 			"group": "virastack",
-			"status": "package",
-			"color": "text-fuchsia-700 dark:text-fuchsia-400"
+			"status": "package"
 		},
 		{
 			"id": "mask",
@@ -192,8 +189,7 @@
 			"description": "Formlar için erişilebilir input maskeleri.",
 			"href": "https://virastack.com/mask",
 			"group": "virastack",
-			"status": "package",
-			"color": "text-indigo-600 dark:text-indigo-400"
+			"status": "package"
 		},
 		{
 			"id": "password",
@@ -201,8 +197,7 @@
 			"description": "Erişilebilir parola görünürlük toggle'ı.",
 			"href": "https://virastack.com/password",
 			"group": "virastack",
-			"status": "package",
-			"color": "text-rose-700 dark:text-rose-400"
+			"status": "package"
 		},
 		{
 			"id": "guide",
@@ -210,8 +205,7 @@
 			"description": "Modern web standartlarını adım adım gösteren interaktif rehber.",
 			"href": "https://virastack.com/guide",
 			"group": "virastack",
-			"status": "package",
-			"color": "text-amber-700 dark:text-amber-500"
+			"status": "package"
 		},
 		{
 			"id": "takvim",

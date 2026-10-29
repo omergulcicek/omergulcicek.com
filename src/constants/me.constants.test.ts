@@ -37,7 +37,7 @@ describe("ME", () => {
 		expect(virastackProjects[0]).toMatchObject({
 			id: "academy",
 			href: "https://virastack.com/academy",
-			color: "text-green-700 dark:text-green-500"
+			color: "text-sky-600 dark:text-sky-500"
 		})
 	})
 

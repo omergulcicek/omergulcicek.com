@@ -1,11 +1,13 @@
-/** Brand order and colors follow virastack.com; full class names keep Tailwind's scanner happy. */
+import { VIRASTACK_PRODUCT_COLORS } from "@/constants/virastack-colors.constants"
+
+/** Brand order follows virastack.com; colors come from `virastack-colors.constants.ts`. */
 export const VIRASTACK_PRODUCT_DOTS = [
-	{ id: "academy", name: "Academy", dotClass: "bg-green-500", textClass: "text-green-600 dark:text-green-500" },
-	{ id: "start", name: "Start", dotClass: "bg-teal-500", textClass: "text-teal-600 dark:text-teal-500" },
-	{ id: "ai", name: "AI", dotClass: "bg-fuchsia-500", textClass: "text-fuchsia-600 dark:text-fuchsia-500" },
-	{ id: "mask", name: "Mask", dotClass: "bg-indigo-500", textClass: "text-indigo-600 dark:text-indigo-400" },
-	{ id: "password", name: "Password", dotClass: "bg-rose-500", textClass: "text-rose-600 dark:text-rose-500" },
-	{ id: "guide", name: "Guide", dotClass: "bg-amber-400", textClass: "text-amber-600 dark:text-amber-400" }
+	{ id: "academy", name: "Academy", ...VIRASTACK_PRODUCT_COLORS.academy },
+	{ id: "start", name: "Start", ...VIRASTACK_PRODUCT_COLORS.start },
+	{ id: "ai", name: "AI", ...VIRASTACK_PRODUCT_COLORS.ai },
+	{ id: "mask", name: "Mask", ...VIRASTACK_PRODUCT_COLORS.mask },
+	{ id: "password", name: "Password", ...VIRASTACK_PRODUCT_COLORS.password },
+	{ id: "guide", name: "Guide", ...VIRASTACK_PRODUCT_COLORS.guide }
 ] as const
 
 export const VIRASTACK_PRODUCT_DOTS_STEP_MS = 650

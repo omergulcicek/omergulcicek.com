@@ -19,7 +19,8 @@ export const meProjectSchema = z.object({
 	href: z.url(),
 	group: z.enum(["personal", "virastack"]),
 	status: z.enum(["live", "package", "coming_soon", "paused", "archived"]),
-	color: z.string().startsWith("text-")
+	/** Omitted for ViraStack products: their colors live in `virastack-colors.constants.ts`. */
+	color: z.string().startsWith("text-").optional()
 })
 
 export const meHobbySchema = z.object({
