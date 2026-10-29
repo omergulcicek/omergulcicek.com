@@ -26,8 +26,7 @@ const IMAGE_SHAPES: Record<
 	{ aspectClass: string; fitClass: string; width: number; height: number }
 > = {
 	poster: { aspectClass: "aspect-2/3", fitClass: "object-cover", width: 368, height: 552 },
-	video: { aspectClass: "aspect-video", fitClass: "object-cover", width: 368, height: 207 },
-	square: { aspectClass: "aspect-square", fitClass: "object-contain", width: 120, height: 120 }
+	video: { aspectClass: "aspect-video", fitClass: "object-cover", width: 368, height: 207 }
 }
 
 type BookmarkListRowProps = {
@@ -73,8 +72,8 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 					<OptimizedImage
 						src={bookmark.imageUrl}
 						alt=""
-						width={isLibrary ? 512 : imageShape.width}
-						height={isLibrary ? 512 : imageShape.height}
+						width={imageShape.width}
+						height={imageShape.height}
 						sizes="(max-width: 768px) 50vw, 184px"
 						className={cn("image-outline size-full rounded-sm", imageShape.fitClass)}
 					/>
@@ -93,7 +92,7 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 			) : isLibrary ? (
 				<div
 					className={cn(
-						"image-outline pointer-events-none relative z-10 flex aspect-square w-full items-center justify-center rounded-sm",
+						"image-outline pointer-events-none relative z-10 flex aspect-2/3 w-full items-center justify-center rounded-sm",
 						getLibraryCategoryPlaceholderClassName(categoryTag)
 					)}
 					aria-hidden

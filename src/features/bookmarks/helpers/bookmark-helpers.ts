@@ -735,13 +735,17 @@ export function getLibraryBookmarkTaxonomyLabel(bookmark: Bookmark) {
 	return category ?? genre
 }
 
-export type BookmarkImageShape = "poster" | "video" | "square"
+export type BookmarkImageShape = "poster" | "video"
 
-/** Media covers keep their source ratio: 2:3 posters, 16:9 YouTube thumbnails. */
+/** Covers keep their source ratio: 2:3 book covers and film posters, 16:9 site previews and YouTube thumbnails. */
 export function getBookmarkImageShape(bookmark: Bookmark): BookmarkImageShape {
-	if (bookmark.categoryId !== "media") {
-		return "square"
+	switch (bookmark.categoryId) {
+		case "library":
+			return "poster"
+		case "blog":
+		case "frontend":
+			return "video"
+		case "media":
+			return bookmark.tags.includes(YOUTUBE_BOOKMARK_TAG) ? "video" : "poster"
 	}
-
-	return bookmark.tags.includes(YOUTUBE_BOOKMARK_TAG) ? "video" : "poster"
 }

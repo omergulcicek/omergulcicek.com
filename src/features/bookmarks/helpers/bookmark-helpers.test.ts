@@ -13,6 +13,7 @@ import {
 	getBookmarkTagLabel,
 	getBookmarkAuthorCredit,
 	getBookmarkDisplayTitle,
+	getBookmarkImageShape,
 	getBookmarkTitleInitials,
 	getLibraryBookmarkTaxonomyLabel,
 	isBookmarkSortVisible,
@@ -773,5 +774,16 @@ describe("bookmark helpers", () => {
 				subtag: "Dizi ve Belgesel"
 			}).map((bookmark) => bookmark.title)
 		).toEqual(["Hedef Kızılelma Belgeseli", "Mehmed: Fetihler Sultanı 59. Bölüm"])
+	})
+
+	it("picks the cover shape per category", () => {
+		const shapeOf = (categoryId: Bookmark["categoryId"], tags: string[]) =>
+			getBookmarkImageShape({ id: "x", title: "x", categoryId, tags })
+
+		expect(shapeOf("library", ["Osmanlı"])).toBe("poster")
+		expect(shapeOf("frontend", ["npm"])).toBe("video")
+		expect(shapeOf("media", ["Film"])).toBe("poster")
+		expect(shapeOf("media", ["YouTube"])).toBe("video")
+		expect(shapeOf("blog", ["Kurum"])).toBe("video")
 	})
 })

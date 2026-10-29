@@ -51,7 +51,7 @@ export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridPro
 						opacity: 0,
 						transition: exitTransition
 					}}
-					className="grid grid-cols-2 gap-x-4 gap-y-6 overflow-visible md:grid-cols-5 md:gap-x-4 md:gap-y-5"
+					className="grid grid-cols-2 gap-x-3 gap-y-4 overflow-visible md:grid-cols-5"
 				>
 					{bookmarks.map((bookmark) => (
 						<li key={bookmark.id}>
