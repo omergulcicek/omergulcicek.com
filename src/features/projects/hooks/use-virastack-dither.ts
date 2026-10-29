@@ -10,7 +10,7 @@ import {
 	type Shockwave
 } from "@its-thepoe/dither-react"
 
-import { VIRASTACK_BRAND } from "@/constants/virastack-colors.constants"
+import { VIRASTACK_PRODUCTS } from "@/constants/virastack-colors.constants"
 import { useTheme } from "@/hooks/use-theme"
 
 import {
@@ -47,7 +47,7 @@ export function useVirastackDither() {
 	const interactionEnabledRef = useRef(true)
 	const { theme } = useTheme()
 	const isDark = theme === "dark"
-	const dotColor = isDark ? VIRASTACK_BRAND.hexDark : VIRASTACK_BRAND.hexLight
+	const dotColor = isDark ? VIRASTACK_PRODUCTS.virastack.hexDark : VIRASTACK_PRODUCTS.virastack.hexLight
 
 	useEffect(() => {
 		const canvas = canvasRef.current
