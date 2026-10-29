@@ -10,6 +10,7 @@ import {
 	type Shockwave
 } from "@its-thepoe/dither-react"
 
+import { VIRASTACK_BRAND } from "@/constants/virastack-colors.constants"
 import { useTheme } from "@/hooks/use-theme"
 
 import {
