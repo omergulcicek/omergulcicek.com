@@ -1,3 +1,4 @@
+import { getProjectDescriptionText } from "@/features/projects/helpers/project-description.helpers"
 import type { ComponentType } from "react"
 import { Mail } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
@@ -75,6 +76,6 @@ export const SEARCH_BOOKMARK_CATEGORIES = BOOKMARK_CATEGORIES.map(
 export const SEARCH_PROJECTS = PROJECTS.map((project) => ({
 	id: project.id,
 	title: project.title,
-	description: project.description,
+	description: getProjectDescriptionText(project.description),
 	href: project.href
 }))

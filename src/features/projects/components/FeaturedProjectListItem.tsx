@@ -1,3 +1,4 @@
+import { ProjectDescription } from "@/features/projects/components/ProjectDescription"
 import { ChevronRight } from "lucide-react"
 
 import { withOutboundUtm } from "@/lib/outbound-url"
@@ -43,7 +44,7 @@ export function FeaturedProjectListItem({
 			</div>
 			<div className="flex items-center gap-3 min-w-0 flex-1 justify-between md:justify-start">
 				<p className="text-muted-foreground truncate text-left text-xs md:text-sm">
-					{project.description}
+					<ProjectDescription description={project.description} />
 				</p>
 				{!statusBadge && (
 					<ChevronRight

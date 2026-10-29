@@ -1,3 +1,4 @@
+import { ProjectDescription } from "@/features/projects/components/ProjectDescription"
 import { getProjectStatusFlags } from "@/features/projects/helpers/project-status.helpers"
 import { ChevronRight } from "lucide-react"
 import { cardTitleClass } from "@/components/shared/prose.styles"
@@ -52,7 +53,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 					)}
 				</div>
 				<p className="text-muted-foreground text-pretty text-xs leading-relaxed md:text-sm">
-					{project.description}
+					<ProjectDescription description={project.description} />
 				</p>
 			</div>
 		</a>
