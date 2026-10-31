@@ -214,6 +214,24 @@ export function getTagCounts(
 	)
 }
 
+/**
+ * Orders a post's tags by their position in the category's tag pool, so the first tag a
+ * reader sees does not depend on the order stored in the database. Tags outside the pool
+ * keep their stored order after the pooled ones.
+ */
+export function sortTagsByPool(
+	tags: readonly string[],
+	tagPool: readonly string[]
+) {
+	const rank = (tag: string) => {
+		const index = tagPool.indexOf(tag)
+
+		return index === -1 ? tagPool.length : index
+	}
+
+	return [...tags].sort((left, right) => rank(left) - rank(right))
+}
+
 export function getAvailableTags(
 	posts: BlogPost[],
 	tagPool: readonly string[],

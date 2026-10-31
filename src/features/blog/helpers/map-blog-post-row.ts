@@ -1,5 +1,9 @@
 import { SITE } from "@/constants/site.constants"
-import { getBlogPostPath } from "@/features/blog/helpers/blog-helpers"
+import { BLOG_SECTIONS } from "@/features/blog/constants/blog.constants"
+import {
+	getBlogPostPath,
+	sortTagsByPool
+} from "@/features/blog/helpers/blog-helpers"
 import { computeReadingTimeMinutes } from "@/features/blog/helpers/compute-reading-time"
 import type {
 	BlogPostListRow,
@@ -31,7 +35,7 @@ export function mapBlogPostListRow(row: BlogPostListRow): BlogPost {
 		title: row.title,
 		description: row.description,
 		category: row.category,
-		tags: row.tags,
+		tags: sortTagsByPool(row.tags, BLOG_SECTIONS[row.category].tagPool),
 		locale: row.locale,
 		published: row.published,
 		publishedAt: formatPublishedAt(row.published_at),

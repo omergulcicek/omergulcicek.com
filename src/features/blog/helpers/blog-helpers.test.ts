@@ -8,7 +8,8 @@ import {
 	findBlogNeighbours,
 	findSeriesContext,
 	getSeriesPosts,
-	sortBlogPosts
+	sortBlogPosts,
+	sortTagsByPool
 } from "@/features/blog/helpers/blog-helpers"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 
@@ -133,5 +134,37 @@ describe("getFeaturedPosts", () => {
 		expect(
 			getFeaturedPosts(posts, ["/b", "/missing", "/draft", "/a"]).map((post) => post.slug)
 		).toEqual(["/b", "/a"])
+	})
+})
+
+describe("sortTagsByPool", () => {
+	const pool = ["ViraStack", "TanStack", "React", "Frontend", "Proje"]
+
+	it("orders tags by pool position, specific first and general last", () => {
+		expect(sortTagsByPool(["Frontend", "TanStack", "Proje"], pool)).toEqual([
+			"TanStack",
+			"Frontend",
+			"Proje"
+		])
+		expect(sortTagsByPool(["React", "ViraStack"], pool)).toEqual([
+			"ViraStack",
+			"React"
+		])
+	})
+
+	it("keeps tags outside the pool last, in their stored order", () => {
+		expect(sortTagsByPool(["Film ve Dizi", "Araç", "React"], pool)).toEqual([
+			"React",
+			"Film ve Dizi",
+			"Araç"
+		])
+	})
+
+	it("does not mutate the stored tags", () => {
+		const tags = ["Frontend", "React"]
+
+		sortTagsByPool(tags, pool)
+
+		expect(tags).toEqual(["Frontend", "React"])
 	})
 })

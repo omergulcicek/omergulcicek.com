@@ -7,24 +7,25 @@ export const BLOG_CATEGORY_LABELS: Record<BlogCategory, string> = {
 	personal: "Kişisel"
 }
 
+/** Order matters: a post's tags are shown in this order, specific first and general last. */
 export const BLOG_TECHNICAL_TAG_POOL = [
-	"React",
-	"Zustand",
+	"ViraStack",
 	"Next.js",
 	"TanStack",
-	"ViraStack",
-	"TypeScript",
-	"Yapay Zekâ",
-	"Frontend",
-	"CSS",
-	"JavaScript",
-	"HTML",
-	"Tailwind CSS",
+	"React",
+	"Zustand",
 	"shadcn/ui",
 	"Supabase",
 	"Vite",
+	"TypeScript",
+	"JavaScript",
+	"Tailwind CSS",
+	"CSS",
+	"HTML",
 	"npm",
 	"GitHub",
+	"Yapay Zekâ",
+	"Frontend",
 	"Site Yenileme",
 	"Proje"
 ] as const
