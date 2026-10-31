@@ -1,0 +1,7 @@
+{
+ "path": "/projects",
+ "shiftedDays": 40,
+ "errors": [
+  "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+ ]
+}
