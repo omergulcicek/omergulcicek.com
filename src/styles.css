@@ -141,7 +141,13 @@
 }
 
 @layer base {
-	* {
+	/*
+	 * `:root *` instead of `*`: in dev, TanStack Start's SSR styles also compile the
+	 * `@import`ed tailwindcss/index.css, which repeats the preflight (`border: 0 solid`)
+	 * after this rule. At equal specificity that reset wins and borders paint
+	 * currentColor (black) until Vite's styles arrive and transition to the theme color.
+	 */
+	:root * {
 		@apply border-border outline-ring/50;
 	}
 
