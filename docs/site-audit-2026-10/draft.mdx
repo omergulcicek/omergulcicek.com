@@ -4,15 +4,17 @@ Sitemde gözden kaçan hatalar vardı ve Lighthouse puanları bunların çoğunu
 
 Canlı sitede tek bir Lighthouse ölçümü çok oynak. Aynı sayfa bir seferinde 2,9 sn, bir sonrakinde 4,5 sn LCP verebiliyor. Bu yüzden sitenin eski ve yeni halini aynı makinede yan yana çalıştırıp karşılaştırdım.
 
-Lighthouse'u mobil profilde, her sayfa için dönüşümlü 3 kez çalıştırdım: önce, sonra, önce, sonra. Tablolardaki değerler medyan. Tema ve hydration gibi Lighthouse'un görmediği sorunlar için Puppeteer ile küçük scriptler yazdım.
+Lighthouse'u mobil profilde, her sayfa için dönüşümlü 3 kez çalıştırdım: önce, sonra, önce, sonra. Tablolardaki değerler medyan. Tema gibi Lighthouse'un görmediği sorunlar için Puppeteer ile küçük scriptler yazdım.
 
-## Kullanıcının Gördüğü İki Hata
+## Kullanıcının Gördüğü Hata
 
-İlki koyu temadaydı. Sayfalar build sırasında prerender ediliyor ve HTML ziyaretçinin temasını bilemiyor. Tema, React hydrate olduktan sonra uygulanıyordu. Yavaş bir bağlantıda bu, koyu tema seçen birinin her sayfa açılışında yaklaşık 1,7 saniye beyaz ekran görmesi demekti. Kayıtlı tercih yoksa işletim sisteminin teması da hiç okunmuyordu.
+Hata koyu temadaydı. Sayfalar build sırasında prerender ediliyor ve HTML ziyaretçinin temasını bilemiyor. Tema, React hydrate olduktan sonra uygulanıyordu. Yavaş bir bağlantıda bu, koyu tema seçen birinin her sayfa açılışında yaklaşık 1,7 saniye beyaz ekran görmesi demekti. Kayıtlı tercih yoksa işletim sisteminin teması da hiç okunmuyordu.
 
-![Koyu tema: önce 938 ms'de beyaz, 2.671 ms'de koyu; sonra ilk karede koyu](/blog/2026/10-28/tema-once-sonra.webp)
+![Koyu tema: eski sürümde 938 ms'de beyaz, 2.671 ms'de koyu; yeni sürümde 876 ms'de koyu](/blog/2026/10-28/tema-once-sonra.webp)
 
-Çözüm, `<head>`'in en başında ilk boyamadan önce çalışan küçük bir script oldu:
+İlk iki kare eski sürüm: sayfa 938 ms'de beyaz açılıyor, koyu tema ancak 2.671 ms'de geliyor. Üçüncü kare yeni sürüm: ilk içerik 876 ms'de zaten koyu. Logoların bazı karelerde boş görünmesi temayla ilgili değil, logolar ağdan geç geliyor.
+
+Çözüm, `<head>`'in en başında ilk boyamadan önce çalışan küçük bir script oldu. [shadcn/ui'ın TanStack Start rehberi](https://ui.shadcn.com/docs/dark-mode/tanstack-start) de aynı yöntemi kullanıyor:
 
 ```js
 var t = localStorage.getItem("theme")
@@ -21,8 +23,6 @@ document.documentElement.classList.toggle("dark", dark)
 ```
 
 Artık `dark` sınıfını React değil bu script koyuyor. Kullanıcı seçim yapana kadar işletim sistemindeki tema değişikliği de canlı takip ediliyor.
-
-İkinci hata daha sinsiydi. Projeler sayfasındaki GitHub katkı takvimi, veri gelene kadar bugünün tarihinden boş bir ızgara çiziyordu. Build günü sunucunun ve tarayıcının tarihi aynı olduğu için hata görünmüyordu. Günler geçtikçe ay etiketleri değişiyor, sunucu HTML'i ile tarayıcının render'ı uyuşmuyor ve React #418 hatası veriyordu. Hatayı tarayıcı saatini 40 gün ileri alarak yeniden ürettim. Yer tutucu ızgara artık tarih yazmıyor. Footer'daki `© 2026` de aynı türden bir hataydı ve yılbaşında her sayfada ortaya çıkacaktı.
 
 ## Gereksiz Byte'lar
 
