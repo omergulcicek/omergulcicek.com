@@ -28,6 +28,8 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 			{ charSet: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
 			{ name: "theme-color", content: "#3b82f6" },
+			// Until the stylesheet loads, the browser paints the canvas in the OS theme.
+			{ name: "color-scheme", content: "light dark" },
 			{ name: "author", content: SITE.name },
 			{
 				name: "google-site-verification",
