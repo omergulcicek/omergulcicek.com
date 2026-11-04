@@ -6,17 +6,15 @@ Tarih: 2026-11-04. Kapsam: `src/` (460 dosya), `.claude/rules/virastack/` altın
 
 **Taban durum:** lint 0 hata / 6 uyarı, typecheck temiz, 117 test geçiyor.
 
-## Durum (2026-11-04, düzeltmeler uygulandı)
+## Durum (2026-11-04, düzeltmeler uygulandı ve doğrulandı)
 
-P1, P2 ve P3 maddeleri uygulandı; lint 0 hata, typecheck temiz, 140 test geçiyor, `pnpm build` geçiyor. Bilerek yapılmayanlar:
+P1, P2 ve P3 maddeleri ile ikinci tur (test kapsamı, `pendingComponent`, carousel, `queryClient.query`) uygulandı. lint 0 hata, typecheck temiz, 154 test geçiyor, `pnpm build` 119 sayfa prerender ediyor. React Compiler 295/295 bileşeni derledi. Kalanlar:
 
-- **`components/ui/carousel.tsx` `forwardRef`:** shadcn çıktısı; `pnpm dlx shadcn@latest add carousel --overwrite` onayı gerekir.
-- **`queryClient.query({ staleTime: "static" })`:** kurulu `@tanstack/query-core` 5.104.1'de yok; `ensureQueryData` kaldı.
-- **`pendingComponent`:** boyutlu bir iskelet tasarımı gerektirir; blog verisi SSR ile geliyor ve 1 saat cache'li, eklenmedi.
 - **Effect bağımlılığı olan `useCallback`/`useMemo`** (`use-bookmarks-search-params`, `TOCMinimap`) kuralın "precise control" istisnası olarak kaldı.
 - **Ham renk sınıfları** sabit marka/etiket haritalarında kaldı (`AGENTS.md`'de adıyla muaf).
 - **Karar bekleyen tablo:** nuqs, istemcide Zod ve marka renkleri `AGENTS.md`'de adıyla geçersiz kılındı.
-- **`BlogRating`/`SiblingIndex` indeks key'leri** sabit dekoratif listeler; olduğu gibi bırakıldı. Carousel `img` boyutları veride yok.
+- **`BlogRating`/`SiblingIndex` indeks key'leri** sabit dekoratif listeler; olduğu gibi bırakıldı.
+- **Lighthouse:** yerel ölçüm gürültülü; kalıcı bir düşüş için Vercel deploy sonrası PageSpeed ile bakılmalı.
 
 ## Özet
 
