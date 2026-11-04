@@ -28,9 +28,9 @@ export function FeaturedProjectListItem({
 			href={withOutboundUtm(project.href)}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="group flex flex-col md:flex-row md:items-center gap-1 md:gap-4 py-2"
+			className="group flex flex-col gap-1 py-2"
 		>
-			<div className="flex items-center gap-2 md:gap-3 shrink-0 md:w-[240px]">
+			<div className="flex items-center gap-2 md:gap-3">
 				<ProjectTitle
 					project={project}
 					id={`${project.id}-list`}
@@ -41,11 +41,6 @@ export function FeaturedProjectListItem({
 					)}
 				/>
 				{statusBadge}
-			</div>
-			<div className="flex items-center gap-3 min-w-0 flex-1 justify-between md:justify-start">
-				<p className="text-muted-foreground text-left text-xs text-pretty md:text-sm">
-					<ProjectDescription description={project.description} />
-				</p>
 				{!statusBadge && (
 					<ChevronRight
 						className={cn(
@@ -56,6 +51,9 @@ export function FeaturedProjectListItem({
 					/>
 				)}
 			</div>
+			<p className="text-muted-foreground text-left text-xs text-pretty md:text-sm">
+				<ProjectDescription description={project.description} />
+			</p>
 		</a>
 	)
 }
