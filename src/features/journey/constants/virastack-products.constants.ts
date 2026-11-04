@@ -7,10 +7,11 @@ export const VIRASTACK_PRODUCT_DOTS = [
 	{ id: "ai", name: "AI", ...VIRASTACK_PRODUCTS.ai },
 	{ id: "mask", name: "Mask", ...VIRASTACK_PRODUCTS.mask },
 	{ id: "password", name: "Password", ...VIRASTACK_PRODUCTS.password },
+	{ id: "address", name: "Address", ...VIRASTACK_PRODUCTS.address },
 	{ id: "guide", name: "Guide", ...VIRASTACK_PRODUCTS.guide }
 ] as const
 
 export const VIRASTACK_PRODUCT_DOTS_STEP_MS = 650
 
 export const VIRASTACK_PRODUCT_DOTS_LABEL =
-	"ViraStack ürünleri sırayla vurgulanıyor: Academy, Start, AI, Mask, Password, Guide"
+	"ViraStack ürünleri sırayla vurgulanıyor: Academy, Start, AI, Mask, Password, Address, Guide"
