@@ -437,8 +437,9 @@
 	@apply grid gap-3 sm:grid-cols-2 lg:grid-cols-3;
 }
 
+/* Image sizes are not in the post data, so reserve a fixed box until each image loads. */
 .blog-prose :where(.blog-images-carousel__fallback-image) {
-	@apply my-0 h-auto max-h-80 w-full cursor-zoom-in rounded-xl object-contain border-0 ring-0;
+	@apply my-0 aspect-4/3 h-auto max-h-80 w-full cursor-zoom-in rounded-xl object-contain border-0 ring-0;
 }
 
 .blog-prose :where(.blog-images-carousel) {
@@ -450,7 +451,7 @@
 }
 
 .blog-prose :where(.blog-images-carousel__slide) {
-	@apply flex items-center justify-center;
+	@apply flex h-96 items-center justify-center;
 }
 
 .blog-prose :where(.blog-images-carousel__image) {

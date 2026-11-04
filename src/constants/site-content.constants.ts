@@ -58,6 +58,7 @@ export const SITE_CONTENT = {
 	footerVirastackTitle: "ViraStack",
 	footerEmailAria: "E-posta gönder",
 	footerRssAria: "Blog RSS akışı",
+	routePendingLabel: "Sayfa yükleniyor…",
 	routeErrorCodeLabel: "Hata",
 	routeErrorTitle: "Bir şeyler ters gitti",
 	routeErrorDescription:

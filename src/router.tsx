@@ -2,6 +2,7 @@ import { QueryClient } from "@tanstack/react-query"
 import { createRouter } from "@tanstack/react-router"
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query"
 
+import { RoutePending } from "@/components/shared/RoutePending"
 import { SiteRouteError } from "@/components/shared/SiteRouteError"
 import { createQueryClient } from "@/lib/query/create-query-client"
 import { routeTree } from "./routeTree.gen"
@@ -20,6 +21,7 @@ export function getRouter() {
 		},
 		// Each route match gets its own boundary, so a failing page keeps the site layout.
 		defaultErrorComponent: SiteRouteError,
+		defaultPendingComponent: RoutePending,
 		defaultPreloadStaleTime: 0,
 		defaultViewTransition: false,
 		scrollRestoration: true
