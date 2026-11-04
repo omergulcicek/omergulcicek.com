@@ -3,7 +3,7 @@ import type { ReactElement, ReactNode } from "react"
 import {
 	formatLinkTooltip,
 	shouldShowLinkTooltip
-} from "@/lib/format-link-tooltip"
+} from "@/helpers/format-link-tooltip"
 
 import {
 	Tooltip,

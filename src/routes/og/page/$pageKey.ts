@@ -1,13 +1,12 @@
-import { ImageResponse } from "@vercel/og"
 import { createFileRoute } from "@tanstack/react-router"
+import { ImageResponse } from "@vercel/og"
 
-import {
-	createOgImageElement,
-	OG_IMAGE_SIZE
-} from "@/lib/og/create-og-image-element"
-import { resolveOgImageSitePath } from "@/lib/og/resolve-og-image-site-path"
-import { isStaticPageSeoKey } from "@/lib/seo/is-static-page-seo-key"
-import { STATIC_PAGE_SEO } from "@/lib/seo/page-seo.constants"
+import { OG_IMAGE_SIZE } from "@/constants/og-image.constants"
+
+import { createOgImageElement } from "@/helpers/og/create-og-image-element"
+import { resolveOgImageSitePath } from "@/helpers/og/resolve-og-image-site-path"
+import { isStaticPageSeoKey } from "@/helpers/seo/is-static-page-seo-key"
+import { STATIC_PAGE_SEO } from "@/helpers/seo/page-seo.constants"
 
 export const Route = createFileRoute("/og/page/$pageKey")({
 	server: {

@@ -1,6 +1,6 @@
 import { Clapperboard, Heart, Tv } from "lucide-react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
 import { BlogInfoRow } from "@/features/blog/components/BlogInfoRow"
@@ -9,14 +9,11 @@ import {
 	BLOG_MEDIA_INFO_LABELS,
 	getBlogMediaInfoKicker
 } from "@/features/blog/constants/blog-media-info.constants"
+import { hasDisplayValue } from "@/features/blog/helpers/has-display-value"
 import type {
 	BlogMediaInfoProps,
 	BlogMediaType
 } from "@/features/blog/types/media-info.types"
-
-function hasDisplayValue(value: string | number | undefined) {
-	return value !== undefined && value !== ""
-}
 
 function getMediaInfoIcon(type: BlogMediaType | undefined) {
 	if (type === "Dizi") {
@@ -65,23 +62,17 @@ export function BlogMediaInfo({
 
 			<dl className="blog-media-info__details">
 				{hasDisplayValue(year) ? (
-					<BlogInfoRow
-						label={BLOG_MEDIA_INFO_LABELS.year}
-						value={year as number}
-					/>
+					<BlogInfoRow label={BLOG_MEDIA_INFO_LABELS.year} value={year} />
 				) : null}
 				{hasDisplayValue(director) ? (
 					<BlogInfoRow
 						label={BLOG_MEDIA_INFO_LABELS.director}
-						value={director as string}
+						value={director}
 						href={directorLink}
 					/>
 				) : null}
 				{hasDisplayValue(imdbRating) ? (
-					<BlogInfoRow
-						label={BLOG_MEDIA_INFO_LABELS.imdb}
-						value={imdbRating as string}
-					/>
+					<BlogInfoRow label={BLOG_MEDIA_INFO_LABELS.imdb} value={imdbRating} />
 				) : null}
 				{typeof rating === "number" ? (
 					<div className="blog-info-row">
@@ -98,7 +89,7 @@ export function BlogMediaInfo({
 			{isFavorite ? (
 				<div className="blog-media-info__favorite">
 					<Heart
-						className={cn("size-3.5 fill-rose-500 text-rose-500")}
+						className={cn("size-3.5 fill-favorite text-favorite")}
 						aria-hidden="true"
 					/>
 					<span>{BLOG_MEDIA_INFO_LABELS.favorite}</span>

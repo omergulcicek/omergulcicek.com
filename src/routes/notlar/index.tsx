@@ -1,17 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { createStandardSchemaV1 } from "nuqs"
 
+import { buildStaticPageHead } from "@/helpers/seo/build-page-head"
+
+import { blogPostsQueryOptions } from "@/features/blog/api/blog.queries"
+import { BlogPage } from "@/features/blog/components/BlogPage"
+import { BlogRouteError } from "@/features/blog/components/BlogRouteError"
 import {
 	BLOG_PAGE_CACHE_CONTROL,
-	BLOG_PAGE_DEV_CACHE_CONTROL,
-	BLOG_SECTIONS,
-	BlogPage,
-	blogPostsQueryOptions,
-	BlogRouteError,
-	blogSearchParamsParsers,
-	useGetBlogPosts
-} from "@/features/blog"
-import { buildStaticPageHead } from "@/lib/seo/build-page-head"
+	BLOG_PAGE_DEV_CACHE_CONTROL
+} from "@/features/blog/constants/blog-cache.constants"
+import { BLOG_SECTIONS } from "@/features/blog/constants/blog.constants"
+import { blogSearchParamsParsers } from "@/features/blog/hooks/use-blog-search-params"
+import { useGetBlogPosts } from "@/features/blog/hooks/use-get-blog-posts"
 
 export const Route = createFileRoute("/notlar/")({
 	validateSearch: createStandardSchemaV1(blogSearchParamsParsers, {

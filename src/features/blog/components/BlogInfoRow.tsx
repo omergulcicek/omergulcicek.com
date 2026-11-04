@@ -1,4 +1,4 @@
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
 type BlogInfoRowProps = {

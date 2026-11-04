@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 
-import { persistThemePreference } from "@/lib/theme/persist-theme-preference"
-import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
+import { persistThemePreference } from "@/helpers/theme/persist-theme-preference"
 import {
 	THEME_DARK_CLASS,
 	THEME_STORAGE_KEY,
 	THEME_SYSTEM_DARK_QUERY,
 	type Theme
-} from "@/lib/theme/theme.types"
+} from "@/helpers/theme/theme.types"
+import { resolveDocumentTheme } from "@/lib/theme/resolve-document-theme"
 
 type ThemeListener = () => void
 
@@ -74,15 +74,17 @@ function initializeTheme() {
 	emitThemeChange()
 
 	// Until the visitor picks a theme, follow OS changes (e.g. automatic dark mode at night).
-	window.matchMedia(THEME_SYSTEM_DARK_QUERY).addEventListener("change", (event) => {
-		if (hasSavedThemePreference()) {
-			return
-		}
+	window
+		.matchMedia(THEME_SYSTEM_DARK_QUERY)
+		.addEventListener("change", (event) => {
+			if (hasSavedThemePreference()) {
+				return
+			}
 
-		currentTheme = event.matches ? "dark" : "light"
-		applyTheme(currentTheme)
-		emitThemeChange()
-	})
+			currentTheme = event.matches ? "dark" : "light"
+			applyTheme(currentTheme)
+			emitThemeChange()
+		})
 }
 
 export function useTheme() {
@@ -99,18 +101,14 @@ export function useTheme() {
 		getServerThemeSnapshot
 	)
 
-	const setTheme = useCallback((nextTheme: Theme) => {
-		setSharedTheme(nextTheme)
-	}, [])
-
-	const toggleTheme = useCallback(() => {
+	const toggleTheme = () => {
 		setSharedTheme(theme === "dark" ? "light" : "dark")
-	}, [theme])
+	}
 
 	return {
 		theme,
 		isMounted,
-		setTheme,
+		setTheme: setSharedTheme,
 		toggleTheme
 	}
 }

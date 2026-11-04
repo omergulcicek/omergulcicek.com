@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { SiteStructuredData } from "@/components/shared/SiteStructuredData"
-import {
-	blogPostsQueryOptions,
-	getLatestTechnicalPosts,
-	LatestPostsSection,
-	useGetBlogPosts
-} from "@/features/blog"
-import { HomePage } from "@/features/home"
-import { ExperienceSummary } from "@/features/experiences"
 import { HERO_IMAGE } from "@/constants/hero-image.constants"
-import { buildStaticPageHead } from "@/lib/seo/build-page-head"
+
+import { buildStaticPageHead } from "@/helpers/seo/build-page-head"
+
+import { SiteStructuredData } from "@/components/shared/SiteStructuredData"
+import { blogPostsQueryOptions } from "@/features/blog/api/blog.queries"
+import { LatestPostsSection } from "@/features/blog/components/LatestPostsSection"
+import { getLatestTechnicalPosts } from "@/features/blog/helpers/get-latest-technical-posts"
+import { useGetBlogPosts } from "@/features/blog/hooks/use-get-blog-posts"
+import { ExperienceSummary } from "@/features/experiences/components/ExperienceSummary"
+import { HomePage } from "@/features/home/components/HomePage"
 
 export const Route = createFileRoute("/")({
 	loader: async ({ context }) => {
@@ -42,7 +42,9 @@ function HomeIndexPage() {
 		<>
 			<SiteStructuredData />
 			<HomePage
-				blogSection={<LatestPostsSection posts={getLatestTechnicalPosts(posts)} />}
+				blogSection={
+					<LatestPostsSection posts={getLatestTechnicalPosts(posts)} />
+				}
 				experiencesSection={<ExperienceSummary />}
 			/>
 		</>

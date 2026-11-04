@@ -2,6 +2,14 @@ import { Link, useRouterState } from "@tanstack/react-router"
 import { ChevronDown } from "lucide-react"
 
 import {
+	EXPLORE_NAV,
+	EXPLORE_NAV_LABEL
+} from "@/constants/header-nav.constants"
+
+import { clearedRouteSearch } from "@/helpers/router/cleared-route-search"
+import { cn } from "@/lib/utils"
+
+import {
 	siteNavLinkActiveClass,
 	siteNavLinkBaseClass,
 	siteNavLinkInactiveClass
@@ -12,17 +20,18 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { EXPLORE_NAV, EXPLORE_NAV_LABEL } from "@/constants/header-nav.constants"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
-import { cn } from "@/lib/utils"
 
 function isExplorePath(pathname: string, href: string) {
 	return pathname === href || pathname.startsWith(`${href}/`)
 }
 
 export function ExploreNavMenu() {
-	const pathname = useRouterState({ select: (state) => state.location.pathname })
-	const isActive = EXPLORE_NAV.some((item) => isExplorePath(pathname, item.href))
+	const pathname = useRouterState({
+		select: (state) => state.location.pathname
+	})
+	const isActive = EXPLORE_NAV.some((item) =>
+		isExplorePath(pathname, item.href)
+	)
 
 	return (
 		<DropdownMenu modal={false}>

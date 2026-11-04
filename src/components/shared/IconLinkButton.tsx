@@ -1,14 +1,15 @@
 import type { ReactNode } from "react"
 
+import { formatLinkTooltip } from "@/helpers/format-link-tooltip"
+import { withOutboundUtm } from "@/helpers/outbound-url"
+import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger
 } from "@/components/ui/tooltip"
-import { formatLinkTooltip } from "@/lib/format-link-tooltip"
-import { withOutboundUtm } from "@/lib/outbound-url"
-import { cn } from "@/lib/utils"
 
 type IconLinkButtonProps = {
 	href: string
@@ -28,7 +29,12 @@ export function IconLinkButton({
 	return (
 		<Tooltip>
 			<TooltipTrigger asChild>
-				<Button variant="ghost" size="icon-sm" asChild className={cn("shrink-0", className)}>
+				<Button
+					variant="ghost"
+					size="icon-sm"
+					asChild
+					className={cn("shrink-0", className)}
+				>
 					<a
 						href={withOutboundUtm(href)}
 						target="_blank"

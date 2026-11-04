@@ -1,4 +1,5 @@
 import { TURKISH_SHORT_MONTHS } from "@/constants/date.constants"
+
 import {
 	CONTRIBUTION_LEVELS,
 	MIN_LABEL_WEEKS,
@@ -46,10 +47,12 @@ export function toMonthLabels(
 	weeks: Contribution[][]
 ): { key: string; label: string | null }[] {
 	const monthAt = (index: number) => weeks[index]?.[0]?.date.slice(5, 7)
-	const labels = weeks.map((week, index) => ({
-		key: week[0]?.date ?? String(index),
-		label: null as string | null
-	}))
+	const labels: { key: string; label: string | null }[] = weeks.map(
+		(week, index) => ({
+			key: week[0]?.date ?? String(index),
+			label: null
+		})
+	)
 
 	let start = 0
 	for (let index = 1; index <= weeks.length; index++) {
@@ -57,7 +60,8 @@ export function toMonthLabels(
 
 		const startLabel = labels[start]
 		if (index - start >= MIN_LABEL_WEEKS && startLabel) {
-			startLabel.label = TURKISH_SHORT_MONTHS[Number(monthAt(start)) - 1] ?? null
+			startLabel.label =
+				TURKISH_SHORT_MONTHS[Number(monthAt(start)) - 1] ?? null
 		}
 		start = index
 	}

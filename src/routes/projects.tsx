@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { ProjectsPage } from "@/features/projects"
-import { buildStaticPageHead } from "@/lib/seo/build-page-head"
+import { buildStaticPageHead } from "@/helpers/seo/build-page-head"
+
+import { ProjectsPage } from "@/features/projects/components/ProjectsPage"
 
 export const Route = createFileRoute("/projects")({
 	head: () => buildStaticPageHead("projects"),

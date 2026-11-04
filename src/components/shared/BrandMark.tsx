@@ -3,9 +3,10 @@ import { flowerRose } from "@lucide/lab"
 import { Icon } from "lucide-react"
 
 import { HEADER_BRAND } from "@/constants/header-nav.constants"
-import { ME } from "@/constants/me.constants"
 import { HERO_IMAGE } from "@/constants/hero-image.constants"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
+import { ME } from "@/constants/me.constants"
+
+import { clearedRouteSearch } from "@/helpers/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
 type BrandMarkProps = {

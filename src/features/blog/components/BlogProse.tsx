@@ -1,20 +1,20 @@
-import { memo, useLayoutEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import { createRoot, type Root } from "react-dom/client"
 import type { Zoom } from "medium-zoom"
 
 import { cn } from "@/lib/utils"
 
 import { blogProseClass } from "@/components/shared/prose.styles"
+import {
+	ensureBlogProseImageZoom,
+	scheduleBlogProseImageZoomSync,
+	teardownBlogProseImageZoom
+} from "@/features/blog/components/blog-prose-image-zoom"
 import { BlogCodeCopyButton } from "@/features/blog/components/BlogCodeCopyButton"
 import { enhanceBlogProseCodeBlocks } from "@/features/blog/helpers/enhance-blog-prose-code-blocks"
 import { enhanceBlogProseHeadings } from "@/features/blog/helpers/enhance-blog-prose-headings"
 import { enhanceBlogProseImages } from "@/features/blog/helpers/enhance-blog-prose-images"
 import { getBlogCodeBlockText } from "@/features/blog/helpers/get-blog-code-block-text"
-import {
-	ensureBlogProseImageZoom,
-	scheduleBlogProseImageZoomSync,
-	teardownBlogProseImageZoom
-} from "@/features/blog/lib/blog-prose-image-zoom"
 
 type BlogProseProps = {
 	html: string
@@ -26,10 +26,7 @@ type BlogProseWidgetRoot = {
 	mount: HTMLElement
 }
 
-export const BlogProse = memo(function BlogProse({
-	html,
-	className
-}: BlogProseProps) {
+export function BlogProse({ html, className }: BlogProseProps) {
 	const containerRef = useRef<HTMLDivElement>(null)
 
 	useLayoutEffect(() => {
@@ -67,7 +64,7 @@ export const BlogProse = memo(function BlogProse({
 		let unmountWidgets: ((roots: BlogProseWidgetRoot[]) => void) | null = null
 		const zoomRef: { current: Zoom | null } = { current: null }
 
-		void import("@/features/blog/lib/hydrate-blog-prose-widgets.client").then(
+		void import("@/features/blog/components/hydrate-blog-prose-widgets.client").then(
 			({ hydrateBlogProseWidgets, unmountBlogProseWidgets }) => {
 				unmountWidgets = unmountBlogProseWidgets
 
@@ -115,4 +112,4 @@ export const BlogProse = memo(function BlogProse({
 			dangerouslySetInnerHTML={{ __html: html }}
 		/>
 	)
-})
+}

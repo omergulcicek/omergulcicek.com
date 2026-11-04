@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import { Calendar, Clock, Languages } from "lucide-react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
 import { Badge } from "@/components/ui/badge"
@@ -60,7 +60,7 @@ export function BlogPostMeta({
 							title={BLOG_UI.englishTooltip}
 						>
 							<Languages
-								className="size-4 shrink-0 text-blue-600 dark:text-blue-400"
+								className="size-4 shrink-0 text-info"
 								aria-hidden
 							/>
 							<span>{BLOG_UI.englishLabel}</span>

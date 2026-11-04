@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode } from "react"
 import { ChevronRight, Languages, Star } from "lucide-react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
 import {
@@ -44,9 +44,9 @@ export function BlogListPostRow({
 		isFeatured && {
 			key: "featured",
 			node: (
-				<span className="flex items-center gap-1 text-xs text-amber-700 dark:text-amber-400">
+				<span className="flex items-center gap-1 text-xs text-rating-foreground">
 					<Star
-						className="size-3 shrink-0 fill-amber-400 text-amber-500"
+						className="size-3 shrink-0 fill-rating text-rating"
 						aria-hidden
 					/>
 					{BLOG_UI.featuredLabel}
@@ -61,7 +61,7 @@ export function BlogListPostRow({
 					title={BLOG_UI.englishTooltip}
 				>
 					<Languages
-						className="size-3.5 shrink-0 text-blue-600 dark:text-blue-400"
+						className="size-3.5 shrink-0 text-info"
 						aria-hidden
 					/>
 					{BLOG_UI.englishLabel}

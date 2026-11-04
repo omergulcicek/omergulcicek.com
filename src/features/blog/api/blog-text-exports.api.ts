@@ -1,3 +1,10 @@
+import { getBlogRepository } from "@/features/blog/api/get-blog-repository"
+import {
+	getBlogPostUrl,
+	renderBlogPostBody,
+	renderBlogPostMarkdown,
+	renderMarkdownToHtml
+} from "@/features/blog/api/render-blog-markdown"
 import {
 	BLOG_PAGE_CACHE_CONTROL,
 	BLOG_PAGE_DEV_CACHE_CONTROL
@@ -5,14 +12,7 @@ import {
 import { resolveBlogSlugRedirect } from "@/features/blog/constants/blog-redirects.constants"
 import { getBlogPostMarkdownPath } from "@/features/blog/helpers/blog-helpers"
 import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
-import {
-	getBlogPostUrl,
-	renderBlogPostBody,
-	renderBlogPostMarkdown,
-	renderMarkdownToHtml
-} from "@/features/blog/lib/render-blog-markdown"
-import { getBlogRepository } from "@/features/blog/repositories"
-import type { BlogPostSource } from "@/features/blog/repositories/blog-repository.types"
+import type { BlogPostSource } from "@/features/blog/types/blog-repository.types"
 import type { BlogCategory, BlogPost } from "@/features/blog/types/blog.types"
 
 /** Text outputs of the blog for agents and feed readers: Markdown copies and full text. */

@@ -1,4 +1,4 @@
-import { buildCompanyLogoThumbPath } from "@/lib/media/build-static-thumb-image"
+import { buildCompanyLogoThumbPath } from "@/helpers/media/build-static-thumb-image"
 import { cn } from "@/lib/utils"
 
 import {

@@ -1,4 +1,3 @@
-import { getProjectDescriptionText } from "@/features/projects/helpers/project-description.helpers"
 import type { ComponentType } from "react"
 import { Mail } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
@@ -9,10 +8,8 @@ import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
 
 import { cn } from "@/lib/utils"
 
-import { GitHubIcon } from "@/components/shared/icons"
+import { GitHubIcon } from "@/components/shared/icons/GitHubIcon"
 import { Virastack } from "@/components/ui/svgs/virastack"
-import { BOOKMARK_CATEGORIES } from "@/features/bookmarks"
-import { PROJECTS } from "@/features/projects"
 
 export type SearchPageItem = {
 	label: string
@@ -63,19 +60,3 @@ export const SEARCH_ACTIONS: SearchActionItem[] = [
 		external: true
 	}
 ]
-
-export const SEARCH_BOOKMARK_CATEGORIES = BOOKMARK_CATEGORIES.map(
-	(category) => ({
-		id: category.id,
-		title: category.title,
-		description: category.description,
-		categoryId: category.id
-	})
-)
-
-export const SEARCH_PROJECTS = PROJECTS.map((project) => ({
-	id: project.id,
-	title: project.title,
-	description: getProjectDescriptionText(project.description),
-	href: project.href
-}))

@@ -1,13 +1,15 @@
-import { useCallback, useEffect } from "react"
+import { useEffect } from "react"
 
+import { cn } from "@/lib/utils"
+
+import { Container } from "@/components/shared/Container"
 import {
 	bleedSectionClass,
 	pageSectionClass,
 	pageStackGapClass
 } from "@/components/shared/prose.styles"
-import { Container } from "@/components/shared/Container"
-import { BookmarksListGrid } from "@/features/bookmarks/components/BookmarksListGrid"
 import { BookmarksListFilters } from "@/features/bookmarks/components/BookmarksListFilters"
+import { BookmarksListGrid } from "@/features/bookmarks/components/BookmarksListGrid"
 import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
 	applyBookmarkFilters,
@@ -21,11 +23,7 @@ import {
 	resolveBookmarkTag
 } from "@/features/bookmarks/helpers/bookmark-helpers"
 import { useBookmarksSearchParams } from "@/features/bookmarks/hooks/use-bookmarks-search-params"
-import type {
-	Bookmark,
-	BookmarkCategoryId
-} from "@/features/bookmarks/types/bookmarks.types"
-import { cn } from "@/lib/utils"
+import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
 
 type BookmarksListProps = {
 	bookmarks: readonly Bookmark[]
@@ -50,7 +48,11 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 	} = useBookmarksSearchParams()
 	const availableTags = getAvailableBookmarkTags(bookmarks, category)
 	const selectedTag = resolveBookmarkTag(availableTags, tag, "category")
-	const availableGenres = getAvailableBookmarkGenres(bookmarks, category, selectedTag)
+	const availableGenres = getAvailableBookmarkGenres(
+		bookmarks,
+		category,
+		selectedTag
+	)
 	const selectedGenre = resolveBookmarkTag(availableGenres, genre, "genre")
 	const availableSubtags = getAvailableBookmarkSubtags(
 		bookmarks,
@@ -102,13 +104,6 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 		}
 	}, [ensureSubtag, selectedSubtag, subtag])
 
-	const handleCategoryChange = useCallback(
-		(nextCategory: BookmarkCategoryId) => {
-			setFilters(nextCategory, null)
-		},
-		[setFilters]
-	)
-
 	const filteredBookmarks = applyBookmarkFilters(bookmarks, {
 		categoryId: category,
 		tag: selectedTag,
@@ -142,7 +137,7 @@ export function BookmarksList({ bookmarks, className }: BookmarksListProps) {
 					)}
 					selectedSubtag={selectedSubtag}
 					sort={sort}
-					onCategoryChange={handleCategoryChange}
+					onCategoryChange={(nextCategory) => setFilters(nextCategory, null)}
 					onTagSelect={setTag}
 					onGenreSelect={setGenre}
 					onSubtagSelect={setSubtag}

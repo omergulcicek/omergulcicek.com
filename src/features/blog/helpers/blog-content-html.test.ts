@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest"
 
+import { compileMdxToHtml } from "@/features/blog/api/compile-mdx-content"
 import {
 	enrichBlogContentHtml,
 	prioritizeBlogLeadImage
 } from "@/features/blog/helpers/blog-content-html"
-import { compileMdxToHtml } from "@/features/blog/lib/compile-mdx-content"
 
 describe("enrichBlogContentHtml external links", () => {
 	it("adds target and rel to external http(s) links", () => {
@@ -48,7 +48,9 @@ describe("enrichBlogContentHtml external links", () => {
 		)
 		const { contentHtml } = enrichBlogContentHtml(html)
 
-		expect(contentHtml).toContain('href="https://tkdodo.eu/blog/tan-stack-router-and-query"')
+		expect(contentHtml).toContain(
+			'href="https://tkdodo.eu/blog/tan-stack-router-and-query"'
+		)
 		expect(contentHtml).toContain('target="_blank"')
 		expect(contentHtml).toContain('rel="noopener noreferrer"')
 	})
@@ -73,8 +75,8 @@ describe("prioritizeBlogLeadImage", () => {
 	})
 
 	it("handles self-closing image tags", () => {
-		expect(prioritizeBlogLeadImage('<img src="/a.webp" loading="lazy" />')).toBe(
-			'<img src="/a.webp" loading="eager" fetchpriority="high">'
-		)
+		expect(
+			prioritizeBlogLeadImage('<img src="/a.webp" loading="lazy" />')
+		).toBe('<img src="/a.webp" loading="eager" fetchpriority="high">')
 	})
 })

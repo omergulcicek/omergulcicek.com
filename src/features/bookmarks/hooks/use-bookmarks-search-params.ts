@@ -21,11 +21,12 @@ const bookmarkSortReset = { history: "replace" as const }
 
 export function useBookmarksSearchParams() {
 	const [params, setParams] = useQueryStates(bookmarksSearchParamsParsers)
-	const category = params.category as BookmarkCategoryId
+	const category = params.category
 	const tag = params.tag ?? null
 	const genre = params.genre ?? null
 	const subtag = params.subtag ?? null
-	const rawSort = params.sort && isBookmarkSort(params.sort) ? params.sort : null
+	const rawSort =
+		params.sort && isBookmarkSort(params.sort) ? params.sort : null
 	const resolvedSort = resolveBookmarkSort(rawSort, category, tag)
 
 	const clearInvalidSort = useCallback(() => {
@@ -87,7 +88,10 @@ export function useBookmarksSearchParams() {
 					? resolveBookmarkSort(null, category, null)
 					: null
 
-				setParams({ tag: null, genre: null, subtag: null, sort: nextSort }, bookmarkFilterHistory)
+				setParams(
+					{ tag: null, genre: null, subtag: null, sort: nextSort },
+					bookmarkFilterHistory
+				)
 				return
 			}
 
@@ -99,7 +103,10 @@ export function useBookmarksSearchParams() {
 				? resolveBookmarkSort(null, category, nextTag)
 				: null
 
-			setParams({ tag: nextTag, genre: null, subtag: null, sort: nextSort }, bookmarkFilterHistory)
+			setParams(
+				{ tag: nextTag, genre: null, subtag: null, sort: nextSort },
+				bookmarkFilterHistory
+			)
 		},
 		[category, setParams, tag]
 	)

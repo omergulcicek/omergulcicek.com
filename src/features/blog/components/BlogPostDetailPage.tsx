@@ -20,7 +20,7 @@ import {
 	getBlogContentLang,
 	getBlogPostPath
 } from "@/features/blog/helpers/blog-helpers"
-import type { BlogPostDetail } from "@/features/blog/repositories/blog-repository.types"
+import type { BlogPostDetail } from "@/features/blog/types/blog-repository.types"
 
 type BlogPostDetailPageProps = {
 	post: BlogPostDetail

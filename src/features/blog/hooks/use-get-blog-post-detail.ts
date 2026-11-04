@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 
-import { blogPostDetailQueryOptions } from "@/features/blog/api/get-blog-post-detail.api"
+import { blogPostDetailQueryOptions } from "@/features/blog/api/blog.queries"
 import { normalizeBlogSlug } from "@/features/blog/helpers/blog-slug"
 
 export function useGetBlogPostDetail(slug: string) {

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 
-import { githubActivityQueryOptions } from "@/features/projects/api/github-activity.api"
+import { githubActivityQueryOptions } from "@/features/projects/api/github-activity.queries"
 
 /**
  * Client-only on purpose: fetching GitHub on every SSR request would hit its rate limit,

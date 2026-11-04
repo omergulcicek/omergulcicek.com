@@ -38,7 +38,7 @@ export function JourneyEntryItem({ entry, isLast }: JourneyEntryProps) {
 						<ProseIconLink
 							href={entry.href}
 							icon={<ExternalLink className="size-3.5 shrink-0" aria-hidden />}
-							className="text-sky-600 dark:text-sky-400"
+							className="text-info"
 						>
 							{formatLinkLabel(entry.href)}
 						</ProseIconLink>

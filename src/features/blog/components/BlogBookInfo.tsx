@@ -1,16 +1,13 @@
 import { BookOpen, Heart } from "lucide-react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
 import { BlogInfoRow } from "@/features/blog/components/BlogInfoRow"
 import { BlogRating } from "@/features/blog/components/BlogRating"
 import { BLOG_BOOK_INFO_LABELS } from "@/features/blog/constants/blog-book-info.constants"
+import { hasDisplayValue } from "@/features/blog/helpers/has-display-value"
 import type { BlogBookInfoProps } from "@/features/blog/types/book-info.types"
-
-function hasDisplayValue(value: string | number | undefined) {
-	return value !== undefined && value !== ""
-}
 
 export function BlogBookInfo({
 	title,
@@ -66,28 +63,22 @@ export function BlogBookInfo({
 				{hasDisplayValue(translator) ? (
 					<BlogInfoRow
 						label={BLOG_BOOK_INFO_LABELS.translator}
-						value={translator as string}
+						value={translator}
 						href={translatorLink}
 					/>
 				) : null}
 				{hasDisplayValue(publisher) ? (
 					<BlogInfoRow
 						label={BLOG_BOOK_INFO_LABELS.publisher}
-						value={publisher as string}
+						value={publisher}
 						href={publisherLink}
 					/>
 				) : null}
 				{hasDisplayValue(pages) ? (
-					<BlogInfoRow
-						label={BLOG_BOOK_INFO_LABELS.pages}
-						value={pages as number}
-					/>
+					<BlogInfoRow label={BLOG_BOOK_INFO_LABELS.pages} value={pages} />
 				) : null}
 				{hasDisplayValue(year) ? (
-					<BlogInfoRow
-						label={BLOG_BOOK_INFO_LABELS.year}
-						value={year as number}
-					/>
+					<BlogInfoRow label={BLOG_BOOK_INFO_LABELS.year} value={year} />
 				) : null}
 				{typeof rating === "number" ? (
 					<div className="blog-info-row">
@@ -104,7 +95,7 @@ export function BlogBookInfo({
 			{isFavorite ? (
 				<div className="blog-book-info__favorite">
 					<Heart
-						className={cn("size-3.5 fill-rose-500 text-rose-500")}
+						className={cn("size-3.5 fill-favorite text-favorite")}
 						aria-hidden="true"
 					/>
 					<span>{BLOG_BOOK_INFO_LABELS.favorite}</span>

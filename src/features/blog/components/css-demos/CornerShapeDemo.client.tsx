@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { BlogCssInteractiveDemo } from "@/features/blog/components/BlogCssInteractiveDemo"
 import { BLOG_CSS_INTERACTIVE_CANIUSE } from "@/features/blog/constants/blog-css-interactive.constants"
-import type { BlogCssCustomProperties } from "@/features/blog/types/blog-css-interactive.types"
+import { blogStyle } from "@/features/blog/helpers/blog-style"
 
 type CornerShapeType = "round" | "scoop" | "bevel" | "notch" | "squircle"
 
@@ -41,7 +41,7 @@ export function CornerShapeDemo() {
 			}
 			preview={
 				<div
-					style={{ cornerShape: selectedShape } as BlogCssCustomProperties}
+					style={blogStyle({ cornerShape: selectedShape })}
 					className="blog-css-interactive-demo__corner-shape-preview"
 				>
 					Preview: {selectedShape}

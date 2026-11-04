@@ -1,11 +1,11 @@
-import { ProjectDescription } from "@/features/projects/components/ProjectDescription"
 import { ChevronRight } from "lucide-react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
 import { interactiveCardChevronClass } from "@/components/shared/interactive-card.styles"
 import { cardTitleClass } from "@/components/shared/prose.styles"
+import { ProjectDescription } from "@/features/projects/components/ProjectDescription"
 import { ProjectStatusBadge } from "@/features/projects/components/ProjectStatusBadge"
 import { ProjectTitle } from "@/features/projects/components/ProjectTitle"
 import { getProjectStatusFlags } from "@/features/projects/helpers/project-status.helpers"

@@ -1,23 +1,24 @@
-import type { ReactNode } from "react"
-
+import { lazy, type ReactNode } from "react"
 import {
+	createRootRouteWithContext,
 	HeadContent,
 	Outlet,
 	ScriptOnce,
-	Scripts,
-	createRootRouteWithContext
+	Scripts
 } from "@tanstack/react-router"
+import type { RouterContext } from "@/router"
+import interLatinFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router"
+
+import { SITE } from "@/constants/site.constants"
+
+import { THEME_BOOT_SCRIPT } from "@/helpers/theme/theme-boot-script"
 
 import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics"
 import { GoogleAnalyticsPageTracker } from "@/components/shared/GoogleAnalyticsPageTracker"
 import { NotFoundPage } from "@/components/shared/NotFoundPage"
 import { SiteLayout } from "@/components/shared/SiteLayout"
 import { WebVitalsReporter } from "@/components/shared/WebVitalsReporter"
-import { SITE } from "@/constants/site.constants"
-import type { RouterContext } from "@/router"
-import { THEME_BOOT_SCRIPT } from "@/lib/theme/theme-boot-script"
-import interLatinFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
 
 import "@/styles.css"
 
@@ -69,11 +70,16 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 	component: RootComponent
 })
 
+const CommandPaletteGroups = lazy(async () => {
+	const module = await import("@/routes/-command-palette-groups")
+	return { default: module.CommandPaletteGroups }
+})
+
 function RootComponent() {
 	return (
 		<RootDocument>
 			<NuqsAdapter>
-				<SiteLayout>
+				<SiteLayout searchGroups={<CommandPaletteGroups />}>
 					<Outlet />
 				</SiteLayout>
 			</NuqsAdapter>

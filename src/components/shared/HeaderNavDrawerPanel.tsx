@@ -1,5 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router"
 
+import { MOBILE_DRAWER_NAV } from "@/constants/header-nav.constants"
+import { SITE_CONTENT } from "@/constants/site-content.constants"
+
+import { clearedRouteSearch } from "@/helpers/router/cleared-route-search"
+import { cn } from "@/lib/utils"
+
 import { HeaderNavDrawerTriggerButton } from "@/components/shared/HeaderNavDrawerTriggerButton"
 import {
 	Drawer,
@@ -8,16 +14,8 @@ import {
 	DrawerTitle,
 	DrawerTrigger
 } from "@/components/ui/drawer"
-import { MOBILE_DRAWER_NAV } from "@/constants/header-nav.constants"
-import { SITE_CONTENT } from "@/constants/site-content.constants"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
-import { cn } from "@/lib/utils"
 
-function isNavItemActive(
-	pathname: string,
-	href: string,
-	exact?: boolean
-) {
+function isNavItemActive(pathname: string, href: string, exact?: boolean) {
 	if (exact) {
 		return pathname === href
 	}
@@ -34,7 +32,9 @@ export function HeaderNavDrawerPanel({
 	open,
 	onOpenChange
 }: HeaderNavDrawerPanelProps) {
-	const pathname = useRouterState({ select: (state) => state.location.pathname })
+	const pathname = useRouterState({
+		select: (state) => state.location.pathname
+	})
 
 	return (
 		<Drawer
@@ -47,17 +47,15 @@ export function HeaderNavDrawerPanel({
 				<HeaderNavDrawerTriggerButton />
 			</DrawerTrigger>
 			<DrawerContent>
-				<DrawerTitle className="sr-only">{SITE_CONTENT.mobileNavTitle}</DrawerTitle>
+				<DrawerTitle className="sr-only">
+					{SITE_CONTENT.mobileNavTitle}
+				</DrawerTitle>
 				<nav
 					aria-label={SITE_CONTENT.mobileNavAria}
 					className="flex flex-col gap-1 px-4 pb-6"
 				>
 					{MOBILE_DRAWER_NAV.map((item) => {
-						const isActive = isNavItemActive(
-							pathname,
-							item.href,
-							item.exact
-						)
+						const isActive = isNavItemActive(pathname, item.href, item.exact)
 						const Icon = item.icon
 
 						return (

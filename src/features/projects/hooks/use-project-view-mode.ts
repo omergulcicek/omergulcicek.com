@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 
 export type ProjectViewMode = "grid" | "list"
 
@@ -78,12 +78,8 @@ export function useProjectViewMode() {
 		getServerViewModeSnapshot
 	)
 
-	const setViewMode = useCallback((nextMode: ProjectViewMode) => {
-		setSharedViewMode(nextMode)
-	}, [])
-
 	return {
 		viewMode: isMounted ? viewMode : "grid",
-		setViewMode
+		setViewMode: setSharedViewMode
 	}
 }

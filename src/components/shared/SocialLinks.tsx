@@ -3,15 +3,13 @@ import type { ReactNode } from "react"
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 import { SOCIAL_LINKS } from "@/constants/social.constants"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
 
-import {
-	GitHubIcon,
-	LinkedInIcon,
-	NpmIcon,
-	XIcon
-} from "@/components/shared/icons"
+import { GitHubIcon } from "@/components/shared/icons/GitHubIcon"
+import { LinkedInIcon } from "@/components/shared/icons/LinkedInIcon"
+import { NpmIcon } from "@/components/shared/icons/NpmIcon"
+import { XIcon } from "@/components/shared/icons/XIcon"
 import { Button } from "@/components/ui/button"
 
 const SOCIAL_ICONS = {
@@ -41,9 +39,8 @@ export function SocialLinks({ className, children }: SocialLinksProps) {
 			aria-label={SITE_CONTENT.socialLinksAria}
 		>
 			{SOCIAL_LINKS.map((social) => {
-				const Icon = SOCIAL_ICONS[social.label as keyof typeof SOCIAL_ICONS]
-				const iconColor =
-					SOCIAL_ICON_COLORS[social.label as keyof typeof SOCIAL_ICON_COLORS]
+				const Icon = SOCIAL_ICONS[social.label]
+				const iconColor = SOCIAL_ICON_COLORS[social.label]
 
 				return (
 					<Button key={social.href} variant="ghost" size="icon-sm" asChild>

@@ -1,10 +1,14 @@
 import { ChevronRight } from "lucide-react"
 
-import { OptimizedImage } from "@/components/shared/OptimizedImage"
+import { withOutboundUtm } from "@/helpers/outbound-url"
+import { cn } from "@/lib/utils"
+
 import {
 	interactiveCardChevronClass,
 	interactiveListRowClass
 } from "@/components/shared/interactive-card.styles"
+import { OptimizedImage } from "@/components/shared/OptimizedImage"
+import { cardPaddingClass } from "@/components/shared/prose.styles"
 import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
 import { getLibraryCategoryPlaceholderClassName } from "@/features/bookmarks/constants/library-bookmarks.constants"
 import {
@@ -17,16 +21,23 @@ import {
 } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type { BookmarkImageShape } from "@/features/bookmarks/helpers/bookmark-helpers"
 import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
-import { withOutboundUtm } from "@/lib/outbound-url"
-import { cardPaddingClass } from "@/components/shared/prose.styles"
-import { cn } from "@/lib/utils"
 
 const IMAGE_SHAPES: Record<
 	BookmarkImageShape,
 	{ aspectClass: string; fitClass: string; width: number; height: number }
 > = {
-	poster: { aspectClass: "aspect-2/3", fitClass: "object-cover", width: 368, height: 552 },
-	video: { aspectClass: "aspect-video", fitClass: "object-cover", width: 368, height: 207 }
+	poster: {
+		aspectClass: "aspect-2/3",
+		fitClass: "object-cover",
+		width: 368,
+		height: 552
+	},
+	video: {
+		aspectClass: "aspect-video",
+		fitClass: "object-cover",
+		width: 368,
+		height: 207
+	}
 }
 
 type BookmarkListRowProps = {
@@ -37,9 +48,12 @@ type BookmarkListRowProps = {
 export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 	const displayTitle = getBookmarkDisplayTitle(bookmark)
 	const authorCredit = formatBookmarkAuthors(bookmark)
-	const descriptionCredit = authorCredit ? null : getBookmarkAuthorCredit(bookmark)
+	const descriptionCredit = authorCredit
+		? null
+		: getBookmarkAuthorCredit(bookmark)
 	const taxonomyLabel = getLibraryBookmarkTaxonomyLabel(bookmark)
-	const creditClassName = "text-muted-foreground text-pretty text-xs leading-relaxed"
+	const creditClassName =
+		"text-muted-foreground text-pretty text-xs leading-relaxed"
 	const categoryTag = bookmark.tags[0] ?? ""
 	const imageShape = IMAGE_SHAPES[getBookmarkImageShape(bookmark)]
 	const isLibrary = bookmark.categoryId === "library"
@@ -75,14 +89,20 @@ export function BookmarkListRow({ bookmark, className }: BookmarkListRowProps) {
 						width={imageShape.width}
 						height={imageShape.height}
 						sizes="(max-width: 768px) 50vw, 184px"
-						className={cn("image-outline size-full rounded-sm", imageShape.fitClass)}
+						className={cn(
+							"image-outline size-full rounded-sm",
+							imageShape.fitClass
+						)}
 					/>
 					{bookmark.imdbRating ? (
 						<span
 							className="absolute right-1.5 bottom-1.5 inline-flex items-baseline gap-1 rounded-sm bg-background/90 px-1.5 py-0.5 text-xs font-medium tabular-nums backdrop-blur-sm"
 							aria-label={`${BOOKMARK_UI.imdbRatingAriaLabel}: ${bookmark.imdbRating}`}
 						>
-							<span className="text-muted-foreground text-[10px] font-semibold" aria-hidden>
+							<span
+								className="text-muted-foreground text-[10px] font-semibold"
+								aria-hidden
+							>
 								{BOOKMARK_UI.imdbLabel}
 							</span>
 							<span aria-hidden>{bookmark.imdbRating}</span>

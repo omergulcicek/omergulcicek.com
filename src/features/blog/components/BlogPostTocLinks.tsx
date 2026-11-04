@@ -1,6 +1,6 @@
 "use client"
 
-import { navigateToHeading } from "@/lib/navigate-to-heading"
+import { navigateToHeading } from "@/helpers/navigate-to-heading"
 import { cn } from "@/lib/utils"
 
 import type { TOCItemType } from "@/components/shared/TOCMinimap"

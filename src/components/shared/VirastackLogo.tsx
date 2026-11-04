@@ -1,6 +1,7 @@
-import { OptimizedImage } from "@/components/shared/OptimizedImage"
-import { VIRASTACK_LOGO } from "@/lib/media/build-static-thumb-image"
+import { VIRASTACK_LOGO } from "@/helpers/media/build-static-thumb-image"
 import { cn } from "@/lib/utils"
+
+import { OptimizedImage } from "@/components/shared/OptimizedImage"
 
 type VirastackLogoProps = {
 	className?: string

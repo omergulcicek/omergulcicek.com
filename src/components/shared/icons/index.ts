@@ -1,5 +1,0 @@
-export { GitHubIcon } from "./GitHubIcon"
-export { LinkedInIcon } from "./LinkedInIcon"
-export { NpmIcon } from "./NpmIcon"
-export { RaindropIcon } from "./RaindropIcon"
-export { XIcon } from "./XIcon"

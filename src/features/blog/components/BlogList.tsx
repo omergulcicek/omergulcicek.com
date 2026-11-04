@@ -1,4 +1,4 @@
-import { slugifyHeading } from "@/lib/slugify-heading"
+import { slugifyHeading } from "@/helpers/slugify-heading"
 import { cn } from "@/lib/utils"
 
 import { pageStackGapClass } from "@/components/shared/prose.styles"

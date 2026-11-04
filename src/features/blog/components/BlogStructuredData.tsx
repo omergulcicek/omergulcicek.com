@@ -2,12 +2,11 @@ import { HEADER_BRAND } from "@/constants/header-nav.constants"
 import { ME } from "@/constants/me.constants"
 import { SITE } from "@/constants/site.constants"
 
-import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
-
 import {
 	getBlogPostPath,
 	getBlogSection
 } from "@/features/blog/helpers/blog-helpers"
+import { resolveBlogOgImageUrl } from "@/features/blog/helpers/resolve-blog-og-image-url"
 import type { BlogPost } from "@/features/blog/types/blog.types"
 
 type BlogStructuredDataProps = {

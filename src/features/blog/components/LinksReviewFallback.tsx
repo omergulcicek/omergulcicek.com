@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react"
 
-import { isExternalHref } from "@/lib/is-external-href"
+import { isExternalHref } from "@/helpers/is-external-href"
 import { cn } from "@/lib/utils"
 
 import { surfaceDoubleFrameClass } from "@/components/shared/interactive-card.styles"

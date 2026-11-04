@@ -1,8 +1,12 @@
-import type { BlogHeading, BlogHeadingLevel } from "@/features/blog/types/blog-heading.types"
-import { decodeHtmlEntities } from "@/lib/decode-html-entities"
-import { isExternalHref } from "@/lib/is-external-href"
-import { buildBlogProseResponsiveImage } from "@/lib/media/build-blog-responsive-image"
-import { slugifyHeading } from "@/lib/slugify-heading"
+import { decodeHtmlEntities } from "@/helpers/decode-html-entities"
+import { isExternalHref } from "@/helpers/is-external-href"
+import { slugifyHeading } from "@/helpers/slugify-heading"
+
+import { buildBlogProseResponsiveImage } from "@/features/blog/helpers/build-blog-responsive-image"
+import type {
+	BlogHeading,
+	BlogHeadingLevel
+} from "@/features/blog/types/blog-heading.types"
 
 function stripHtmlTags(value: string) {
 	return value.replace(/<[^>]+>/g, "").trim()
@@ -34,8 +38,7 @@ function buildBlogImageFigure(attributes: string) {
 const blogParagraphImagePattern =
 	/<p>((?:(?!<\/p>)[\s\S])*?)<img([^>]*?)\/?>((?:(?!<\/p>)[\s\S])*?)<\/p>/i
 
-const reactPreloadLinkPattern =
-	/<link\b[^>]*\brel=["']preload["'][^>]*\/?>/gi
+const reactPreloadLinkPattern = /<link\b[^>]*\brel=["']preload["'][^>]*\/?>/gi
 
 function stripReactPreloadLinks(html: string) {
 	return html.replace(reactPreloadLinkPattern, "")
@@ -221,7 +224,7 @@ export function enrichBlogContentHtml(html: string) {
 				return match
 			}
 
-			const level = Number(levelValue) as BlogHeadingLevel
+			const level = levelValue === "2" ? 2 : 3
 			const text = extractHeadingText(innerHtml)
 
 			if (!text) {

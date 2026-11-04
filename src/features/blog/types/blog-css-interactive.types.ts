@@ -15,4 +15,5 @@ export type BlogCssInteractiveDemoProps = {
 export type BlogCssCustomProperties = CSSProperties & {
 	cornerShape?: string
 	textBox?: string
+	[customProperty: `--${string}`]: string | number | undefined
 }

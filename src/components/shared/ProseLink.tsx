@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
+import { withOutboundUtm } from "@/helpers/outbound-url"
 
 import {
 	getExternalLinkAttrs,

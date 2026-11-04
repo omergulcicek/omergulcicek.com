@@ -10,12 +10,12 @@ import {
 	CarouselNext,
 	CarouselPrevious
 } from "@/components/ui/carousel"
-import { BLOG_UI } from "@/features/blog/constants/blog.constants"
-import { resolveCarouselImages } from "@/features/blog/helpers/resolve-carousel-images"
 import {
 	openBlogProseImageZoom,
 	registerBlogProseZoomableRoot
-} from "@/features/blog/lib/blog-prose-image-zoom"
+} from "@/features/blog/components/blog-prose-image-zoom"
+import { BLOG_UI } from "@/features/blog/constants/blog.constants"
+import { resolveCarouselImages } from "@/features/blog/helpers/resolve-carousel-images"
 import type { BlogImagesCarouselProps } from "@/features/blog/types/images-carousel.types"
 
 export function BlogImagesCarouselClient({ images }: BlogImagesCarouselProps) {

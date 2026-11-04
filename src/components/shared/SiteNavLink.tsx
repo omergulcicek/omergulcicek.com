@@ -1,9 +1,9 @@
+import type { ComponentPropsWithoutRef, ReactNode } from "react"
 import { Link } from "@tanstack/react-router"
 import { ExternalLink } from "lucide-react"
-import type { ComponentPropsWithoutRef, ReactNode } from "react"
 
-import { withOutboundUtm } from "@/lib/outbound-url"
-import { clearedRouteSearch } from "@/lib/router/cleared-route-search"
+import { withOutboundUtm } from "@/helpers/outbound-url"
+import { clearedRouteSearch } from "@/helpers/router/cleared-route-search"
 import { cn } from "@/lib/utils"
 
 export const siteNavLinkBaseClass =
@@ -12,7 +12,8 @@ export const siteNavLinkBaseClass =
 export const siteNavLinkActiveClass =
 	"text-foreground font-medium underline decoration-foreground/50"
 
-export const siteNavLinkInactiveClass = "text-muted-foreground hover:text-foreground"
+export const siteNavLinkInactiveClass =
+	"text-muted-foreground hover:text-foreground"
 
 type SiteNavLinkProps = {
 	href: string

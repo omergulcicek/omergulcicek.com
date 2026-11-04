@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { BlogCssInteractiveDemo } from "@/features/blog/components/BlogCssInteractiveDemo"
 import { BLOG_CSS_INTERACTIVE_CANIUSE } from "@/features/blog/constants/blog-css-interactive.constants"
-import type { BlogCssCustomProperties } from "@/features/blog/types/blog-css-interactive.types"
+import { blogStyle } from "@/features/blog/helpers/blog-style"
 
 type TextBoxMode = "normal" | "trim-start"
 
@@ -40,12 +40,9 @@ export function TextBoxDemo() {
 					<div className="blog-css-interactive-demo__text-box-image" />
 					<h3
 						className="blog-css-interactive-demo__text-box-heading"
-						style={
-							{
-								textBox:
-									mode === "trim-start" ? "trim-start cap text" : "normal"
-							} as BlogCssCustomProperties
-						}
+						style={blogStyle({
+							textBox: mode === "trim-start" ? "trim-start cap text" : "normal"
+						})}
 					>
 						Başlık Metni
 					</h3>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 
-import { writeToClipboard } from "@/lib/write-to-clipboard"
+import { writeToClipboard } from "@/helpers/write-to-clipboard"
 
 const COPY_FEEDBACK_MS = 2000
 

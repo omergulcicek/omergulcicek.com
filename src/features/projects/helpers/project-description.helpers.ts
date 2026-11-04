@@ -1,4 +1,6 @@
 export type ProjectDescriptionSegment = {
+	/** Offset of the segment in the source text: unique and stable, so usable as a list key. */
+	key: number
 	text: string
 	style: "plain" | "bold" | "italic" | "code"
 }
@@ -9,24 +11,29 @@ const MARKUP_PATTERN = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/
 export function parseProjectDescription(
 	description: string
 ): ProjectDescriptionSegment[] {
-	return description
-		.split(MARKUP_PATTERN)
-		.filter(Boolean)
-		.map((part): ProjectDescriptionSegment => {
-			if (part.startsWith("**")) {
-				return { text: part.slice(2, -2), style: "bold" }
-			}
+	const segments: ProjectDescriptionSegment[] = []
+	let offset = 0
 
-			if (part.startsWith("*")) {
-				return { text: part.slice(1, -1), style: "italic" }
-			}
+	for (const part of description.split(MARKUP_PATTERN)) {
+		const key = offset
+		offset += part.length
 
-			if (part.startsWith("`")) {
-				return { text: part.slice(1, -1), style: "code" }
-			}
+		if (!part) {
+			continue
+		}
 
-			return { text: part, style: "plain" }
-		})
+		if (part.startsWith("**")) {
+			segments.push({ key, text: part.slice(2, -2), style: "bold" })
+		} else if (part.startsWith("*")) {
+			segments.push({ key, text: part.slice(1, -1), style: "italic" })
+		} else if (part.startsWith("`")) {
+			segments.push({ key, text: part.slice(1, -1), style: "code" })
+		} else {
+			segments.push({ key, text: part, style: "plain" })
+		}
+	}
+
+	return segments
 }
 
 /** The description without markers, for search values and other plain-text spots. */

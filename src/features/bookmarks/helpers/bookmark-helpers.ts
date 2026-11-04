@@ -2,17 +2,17 @@ import {
 	BOOKMARK_CATEGORIES,
 	BOOKMARK_UI,
 	DEFAULT_BOOKMARK_CATEGORY_ID,
+	getBookmarkSortOptions,
 	YOUTUBE_BOOKMARK_SUBTAG_BY_ID,
 	YOUTUBE_BOOKMARK_SUBTAGS,
-	YOUTUBE_BOOKMARK_TAG,
-	getBookmarkSortOptions
+	YOUTUBE_BOOKMARK_TAG
 } from "@/features/bookmarks/constants/bookmarks.constants"
 import {
+	getLibraryBookCategoryIdByLabel,
+	getLibrarySubcategoryLabelsForCategory,
 	LIBRARY_BOOKMARK_TAG_ORDER,
 	LIBRARY_CATEGORY_LABELS,
 	LIBRARY_SUBCATEGORY_LABELS,
-	getLibrarySubcategoryLabelsForCategory,
-	getLibraryBookCategoryIdByLabel,
 	libraryCategoryHasVisibleGenres
 } from "@/features/bookmarks/constants/library-bookmarks.constants"
 import {
@@ -29,9 +29,10 @@ import {
 	BOOKMARK_SORTS
 } from "@/features/bookmarks/types/bookmarks.types"
 
-
-export function isBookmarkCategoryId(value: string): value is BookmarkCategoryId {
-	return (BOOKMARK_CATEGORY_IDS as readonly string[]).includes(value)
+export function isBookmarkCategoryId(
+	value: string
+): value is BookmarkCategoryId {
+	return BOOKMARK_CATEGORY_IDS.some((id) => id === value)
 }
 
 export function resolveBookmarkCategoryId(
@@ -157,13 +158,21 @@ export function getBookmarkGenreCounts(
 	categoryId: BookmarkCategoryId,
 	tag: string | null
 ): ReadonlyMap<string, number> {
-	if (categoryId !== "library" || !tag || !libraryCategoryHasVisibleGenres(tag)) {
+	if (
+		categoryId !== "library" ||
+		!tag ||
+		!libraryCategoryHasVisibleGenres(tag)
+	) {
 		return new Map()
 	}
 
 	const counts = new Map<string, number>()
 
-	for (const bookmark of getScopedBookmarksForSubtags(bookmarks, categoryId, tag)) {
+	for (const bookmark of getScopedBookmarksForSubtags(
+		bookmarks,
+		categoryId,
+		tag
+	)) {
 		if (!bookmark.genre) {
 			continue
 		}
@@ -211,7 +220,10 @@ export function getAvailableBookmarkGenres(
 		return []
 	}
 
-	return sortLibraryGenres([...getBookmarkGenreCounts(bookmarks, categoryId, tag).keys()], tag)
+	return sortLibraryGenres(
+		[...getBookmarkGenreCounts(bookmarks, categoryId, tag).keys()],
+		tag
+	)
 }
 
 export function getBookmarkSubtagCounts(
@@ -220,13 +232,21 @@ export function getBookmarkSubtagCounts(
 	tag: string | null,
 	genre: string | null = null
 ): ReadonlyMap<string, number> {
-	if (categoryId !== "library" && !(categoryId === "media" && tag === YOUTUBE_BOOKMARK_TAG)) {
+	if (
+		categoryId !== "library" &&
+		!(categoryId === "media" && tag === YOUTUBE_BOOKMARK_TAG)
+	) {
 		return new Map()
 	}
 
 	const counts = new Map<string, number>()
 
-	for (const bookmark of getScopedBookmarksForSubtags(bookmarks, categoryId, tag, genre)) {
+	for (const bookmark of getScopedBookmarksForSubtags(
+		bookmarks,
+		categoryId,
+		tag,
+		genre
+	)) {
 		for (const subtag of getBookmarkSubtagValues(bookmark, categoryId)) {
 			counts.set(subtag, (counts.get(subtag) ?? 0) + 1)
 		}
@@ -304,7 +324,10 @@ export function getBookmarkSubtagAriaLabel(
 
 const BLOG_BOOKMARK_TAG_ORDER = ["Kişi", "Yayın", "Kurum"] as const
 
-function sortBookmarkTags(tags: readonly string[], categoryId: BookmarkCategoryId) {
+function sortBookmarkTags(
+	tags: readonly string[],
+	categoryId: BookmarkCategoryId
+) {
 	if (categoryId === "library") {
 		const order = new Map<string, number>(
 			LIBRARY_BOOKMARK_TAG_ORDER.map((tag, index) => [tag, index] as const)
@@ -419,16 +442,27 @@ const LIBRARY_GENRE_SLUG_ALIASES = new Map<string, string>([
 	[normalizeBookmarkTagValue("Roma"), "Roma"],
 	[normalizeBookmarkTagValue("roma-ve-bizans"), "Roma"],
 	[normalizeBookmarkTagValue("Roma ve Bizans"), "Roma"],
-	[normalizeBookmarkTagValue("kultur"), "Kültür, Mitoloji ve Dünya Medeniyetleri"],
-	[normalizeBookmarkTagValue("Kültür"), "Kültür, Mitoloji ve Dünya Medeniyetleri"]
+	[
+		normalizeBookmarkTagValue("kultur"),
+		"Kültür, Mitoloji ve Dünya Medeniyetleri"
+	],
+	[
+		normalizeBookmarkTagValue("Kültür"),
+		"Kültür, Mitoloji ve Dünya Medeniyetleri"
+	]
 ])
 
 function resolveLegacyBookmarkCategoryTag(tag: string) {
-	return LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? tag
+	return (
+		LEGACY_BOOKMARK_CATEGORY_TAG_ALIASES.get(normalizeBookmarkTagValue(tag)) ??
+		tag
+	)
 }
 
 function resolveLibraryCategorySlug(tag: string) {
-	return LIBRARY_CATEGORY_SLUG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? null
+	return (
+		LIBRARY_CATEGORY_SLUG_ALIASES.get(normalizeBookmarkTagValue(tag)) ?? null
+	)
 }
 
 function resolveLibraryGenreSlug(tag: string) {
@@ -491,9 +525,13 @@ function compareBookmarksByTitle(left: Bookmark, right: Bookmark) {
 function compareBookmarksByAuthor(left: Bookmark, right: Bookmark) {
 	const leftAuthor = formatBookmarkAuthors(left) ?? ""
 	const rightAuthor = formatBookmarkAuthors(right) ?? ""
-	const authorCompare = leftAuthor.localeCompare(rightAuthor, BOOKMARK_TAG_LOCALE, {
-		sensitivity: "base"
-	})
+	const authorCompare = leftAuthor.localeCompare(
+		rightAuthor,
+		BOOKMARK_TAG_LOCALE,
+		{
+			sensitivity: "base"
+		}
+	)
 
 	if (authorCompare !== 0) {
 		return authorCompare
@@ -542,7 +580,7 @@ function compareBookmarksByImdbRating(
 }
 
 export function isBookmarkSort(value: string): value is BookmarkSort {
-	return (BOOKMARK_SORTS as readonly string[]).includes(value)
+	return BOOKMARK_SORTS.some((sort) => sort === value)
 }
 
 export function isBookmarkSortVisible(
@@ -579,7 +617,10 @@ export function resolveBookmarkSort(
 	return getDefaultBookmarkSort(categoryId, tag)
 }
 
-function sortBookmarks(bookmarks: readonly Bookmark[], sort: BookmarkSort | null) {
+function sortBookmarks(
+	bookmarks: readonly Bookmark[],
+	sort: BookmarkSort | null
+) {
 	if (!sort) {
 		return [...bookmarks].sort(compareBookmarksByTitle)
 	}
@@ -614,23 +655,25 @@ export function applyBookmarkFilters(
 		sort?: BookmarkSort | null
 	}
 ) {
-	const filtered = getBookmarksForCategory(bookmarks, categoryId).filter((bookmark) => {
-		if (tag && !bookmark.tags.includes(tag)) {
-			return false
-		}
+	const filtered = getBookmarksForCategory(bookmarks, categoryId).filter(
+		(bookmark) => {
+			if (tag && !bookmark.tags.includes(tag)) {
+				return false
+			}
 
-		if (genre && bookmark.genre !== genre) {
-			return false
-		}
+			if (genre && bookmark.genre !== genre) {
+				return false
+			}
 
-		if (!subtag) {
-			return true
-		}
+			if (!subtag) {
+				return true
+			}
 
-		return getBookmarkSubtagValues(bookmark, categoryId).some(
-			(bookmarkSubtag) => bookmarkSubtag === subtag
-		)
-	})
+			return getBookmarkSubtagValues(bookmark, categoryId).some(
+				(bookmarkSubtag) => bookmarkSubtag === subtag
+			)
+		}
+	)
 
 	const resolvedSort = resolveBookmarkSort(sort, categoryId, tag)
 

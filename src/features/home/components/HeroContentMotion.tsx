@@ -1,16 +1,16 @@
 "use client"
 
-import { m } from "motion/react"
 import type { ReactNode } from "react"
+import { m } from "motion/react"
 
+import { useMotionEnvironment } from "@/hooks/use-motion-environment"
+import { useSkipInitialMotion } from "@/hooks/use-skip-initial-motion"
 import {
 	MOTION_ENTER_OFFSET_Y,
 	MOTION_SOFT_FADE,
 	MOTION_SPRING_SNAP,
 	MOTION_STAGGER_DELAY
 } from "@/lib/motion/motion.constants"
-import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
-import { useSkipInitialMotion } from "@/lib/motion/use-skip-initial-motion"
 
 type HeroContentMotionProps = {
 	titleRow: ReactNode
@@ -29,7 +29,10 @@ export function HeroContentMotion({
 
 	const containerTransition = shouldUseSoftMotion
 		? { ...MOTION_SOFT_FADE }
-		: { staggerChildren: MOTION_STAGGER_DELAY, delayChildren: MOTION_STAGGER_DELAY }
+		: {
+				staggerChildren: MOTION_STAGGER_DELAY,
+				delayChildren: MOTION_STAGGER_DELAY
+			}
 
 	const itemHidden = {
 		opacity: 0,

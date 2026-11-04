@@ -1,7 +1,8 @@
 import { m, type Transition } from "motion/react"
 
-import type { RepoContribution } from "@/features/projects/types/github-activity.types"
 import { cn } from "@/lib/utils"
+
+import type { RepoContribution } from "@/features/projects/types/github-activity.types"
 
 type RepoAvatarProps = {
 	repo: RepoContribution
@@ -21,12 +22,18 @@ export function RepoAvatar({
 			layoutId={layoutId}
 			transition={transition}
 			className={cn(
-				"text-foreground/70 ring-background grid size-7 shrink-0 place-items-center overflow-hidden rounded-full bg-neutral-200 text-[11px] font-medium uppercase ring-2 dark:bg-neutral-800",
+				"text-foreground/70 ring-background grid size-7 shrink-0 place-items-center overflow-hidden rounded-full bg-muted text-[11px] font-medium uppercase ring-2",
 				className
 			)}
 		>
 			{repo.avatarUrl ? (
-				<img src={repo.avatarUrl} alt="" className="size-full object-cover" />
+				<img
+					src={repo.avatarUrl}
+					alt=""
+					width={28}
+					height={28}
+					className="size-full object-cover"
+				/>
 			) : (
 				repo.name.charAt(0)
 			)}

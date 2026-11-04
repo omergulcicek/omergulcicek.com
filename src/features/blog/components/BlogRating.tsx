@@ -37,7 +37,7 @@ export function BlogRating({
 				{Array.from({ length: filledCount }).map((_, index) => (
 					<Star
 						key={`filled-${index}`}
-						className="size-3.5 fill-amber-500 text-amber-500"
+						className="size-3.5 fill-rating text-rating"
 					/>
 				))}
 				{hasHalf ? (
@@ -47,7 +47,7 @@ export function BlogRating({
 							aria-hidden="true"
 						/>
 						<StarHalf
-							className="relative size-3.5 fill-amber-500 text-amber-500"
+							className="relative size-3.5 fill-rating text-rating"
 							aria-hidden="true"
 						/>
 					</span>

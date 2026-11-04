@@ -3,7 +3,7 @@ import { Link2 } from "lucide-react"
 
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 
-import { navigateToHeading } from "@/lib/navigate-to-heading"
+import { navigateToHeading } from "@/helpers/navigate-to-heading"
 
 import { headingAnchorLinkClass } from "@/components/shared/heading-anchor.styles"
 

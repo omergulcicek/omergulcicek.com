@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { buildLlmsFullTxt } from "@/lib/seo/build-llms-txt"
-
-import { BLOG_PAGE_CACHE_CONTROL, getBlogPostBodies } from "@/features/blog"
+import { getBlogPostBodies } from "@/features/blog/api/blog-text-exports.api"
+import { BLOG_PAGE_CACHE_CONTROL } from "@/features/blog/constants/blog-cache.constants"
+import { buildLlmsFullTxt } from "@/features/blog/helpers/build-llms-txt"
 
 export const Route = createFileRoute("/llms-full.txt")({
 	server: {

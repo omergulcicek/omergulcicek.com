@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import { Link } from "@tanstack/react-router"
 
-import { buildCompanyLogoThumbPath } from "@/lib/media/build-static-thumb-image"
+import { buildCompanyLogoThumbPath } from "@/helpers/media/build-static-thumb-image"
 
 import { OptimizedImage } from "@/components/shared/OptimizedImage"
 import { getProseLinkClassName } from "@/components/shared/prose-link.styles"

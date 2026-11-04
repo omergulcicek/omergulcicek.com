@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react"
 
-import { CommandPaletteContext } from "@/components/shared/command-palette/use-command-palette"
+import { CommandPaletteContext } from "@/hooks/use-command-palette"
 
 /** Remembers what had focus before the palette opened; the dialog has no Radix Trigger to return focus to. */
 function captureReturnFocus(): HTMLElement | null {
@@ -27,6 +27,11 @@ export function CommandPaletteProvider({
 		setOpenState(nextOpen)
 	}
 
+	const runCommand = (command: () => void) => {
+		setOpen(false)
+		command()
+	}
+
 	useEffect(() => {
 		const onKeyDown = (event: KeyboardEvent) => {
 			if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
@@ -50,7 +55,7 @@ export function CommandPaletteProvider({
 	}, [open])
 
 	return (
-		<CommandPaletteContext.Provider value={{ open, setOpen }}>
+		<CommandPaletteContext.Provider value={{ open, setOpen, runCommand }}>
 			{children}
 		</CommandPaletteContext.Provider>
 	)

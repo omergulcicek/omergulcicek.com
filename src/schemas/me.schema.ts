@@ -59,42 +59,40 @@ export const meStackCategorySchema = z.object({
 	itemIds: z.array(z.string()).min(1)
 })
 
-export const meSchema = z
-	.object({
-		personal: z.object({
-			fullName: z.string(),
-			title: z.string()
-		}),
-		contact: z.object({
-			email: z.email(),
-			github: z.url(),
-			linkedin: z.url(),
-			x: z.url(),
-			xHandle: z.string().startsWith("@"),
-			npm: z.url(),
-			raindrop: z.url(),
-			resume: z.object({
-				tr: z.string().startsWith("/"),
-				en: z.string().startsWith("/")
-			})
-		}),
-		site: z.object({
-			url: z.url(),
-			repository: z.url()
-		}),
-		experiences: z.array(meExperienceSchema),
-		projects: z.array(meProjectSchema),
-		/** Post slugs shown as featured at the top of /blog, in display order. */
-		featuredPosts: z.array(z.string().startsWith("/")).max(6),
-		hobbies: z.array(meHobbySchema),
-		favorites: z.array(meFavoriteSchema),
-		journey: z.array(meJourneyYearSchema),
-		stack: z.object({
-			categories: z.array(meStackCategorySchema),
-			home: z.array(z.string()).min(1)
+export const meSchema = z.strictObject({
+	personal: z.object({
+		fullName: z.string(),
+		title: z.string()
+	}),
+	contact: z.object({
+		email: z.email(),
+		github: z.url(),
+		linkedin: z.url(),
+		x: z.url(),
+		xHandle: z.string().startsWith("@"),
+		npm: z.url(),
+		raindrop: z.url(),
+		resume: z.object({
+			tr: z.string().startsWith("/"),
+			en: z.string().startsWith("/")
 		})
+	}),
+	site: z.object({
+		url: z.url(),
+		repository: z.url()
+	}),
+	experiences: z.array(meExperienceSchema),
+	projects: z.array(meProjectSchema),
+	/** Post slugs shown as featured at the top of /blog, in display order. */
+	featuredPosts: z.array(z.string().startsWith("/")).max(6),
+	hobbies: z.array(meHobbySchema),
+	favorites: z.array(meFavoriteSchema),
+	journey: z.array(meJourneyYearSchema),
+	stack: z.object({
+		categories: z.array(meStackCategorySchema),
+		home: z.array(z.string()).min(1)
 	})
-	.strict()
+})
 
 export type Me = z.infer<typeof meSchema>
 export type MeExperience = z.infer<typeof meExperienceSchema>

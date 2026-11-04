@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { SetupPage } from "@/features/setup"
-import { buildStaticPageHead } from "@/lib/seo/build-page-head"
+import { buildStaticPageHead } from "@/helpers/seo/build-page-head"
+
+import { SetupPage } from "@/features/setup/components/SetupPage"
 
 export const Route = createFileRoute("/setup")({
 	head: () => buildStaticPageHead("setup"),

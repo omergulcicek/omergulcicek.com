@@ -1,10 +1,11 @@
 import { Fragment } from "react"
 
+import { getPublishedVirastackProjects } from "@/constants/virastack-products.constants"
+
 import { cn } from "@/lib/utils"
 
 import { ProseLink } from "@/components/shared/ProseLink"
 import { VirastackShortName } from "@/components/shared/VirastackShortName"
-import { getPublishedVirastackProjects } from "@/features/projects"
 
 type VirastackProductLinksProps = {
 	ariaLabel: string

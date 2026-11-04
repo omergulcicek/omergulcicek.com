@@ -1,6 +1,7 @@
-import { SITE } from "@/constants/site.constants"
 import { SITE_COPY } from "@/constants/site-copy.constants"
-import { buildPageHead } from "@/lib/seo/build-page-head"
+import { SITE } from "@/constants/site.constants"
+
+import { buildPageHead } from "@/helpers/seo/build-page-head"
 
 export function getNotFoundHead() {
 	return buildPageHead({

@@ -19,6 +19,12 @@
 	--color-background: var(--background);
 	--color-surface: var(--surface);
 	--color-brand-github: var(--brand-github);
+	--color-rating: var(--rating);
+	--color-rating-foreground: var(--rating-foreground);
+	--color-favorite: var(--favorite);
+	--color-info: var(--info);
+	--color-warning: var(--warning);
+	--color-warning-foreground: var(--warning-foreground);
 	--color-foreground: var(--foreground);
 	--color-card: var(--card);
 	--color-card-foreground: var(--card-foreground);
@@ -75,6 +81,12 @@
 	--background: #fcfcfc;
 	--surface: #ffffff;
 	--brand-github: #181717;
+	--rating: #f59e0b;
+	--rating-foreground: #b45309;
+	--favorite: #f43f5e;
+	--info: #2563eb;
+	--warning: #f59e0b;
+	--warning-foreground: #451a03;
 	--foreground: oklch(0.145 0 0);
 	--card: oklch(1 0 0);
 	--card-foreground: oklch(0.145 0 0);
@@ -111,6 +123,12 @@
 	--background: #0f0f0f;
 	--surface: #0b0b0b;
 	--brand-github: #f0f6fc;
+	--rating: #f59e0b;
+	--rating-foreground: #fbbf24;
+	--favorite: #f43f5e;
+	--info: #60a5fa;
+	--warning: #fbbf24;
+	--warning-foreground: #fef3c7;
 	--foreground: oklch(0.985 0 0);
 	--card: oklch(0.145 0 0);
 	--card-foreground: oklch(0.985 0 0);

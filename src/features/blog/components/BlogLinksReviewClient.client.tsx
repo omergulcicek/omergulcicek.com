@@ -1,10 +1,11 @@
-import { useId, useState, type CSSProperties } from "react"
+import { useId, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
-import { isExternalHref } from "@/lib/is-external-href"
+import { isExternalHref } from "@/helpers/is-external-href"
 import { cn } from "@/lib/utils"
 
 import { surfaceDoubleFrameClass } from "@/components/shared/interactive-card.styles"
+import { blogStyle } from "@/features/blog/helpers/blog-style"
 import type { BlogLinksReviewProps } from "@/features/blog/types/links-review.types"
 
 export function BlogLinksReviewClient({ title, links }: BlogLinksReviewProps) {
@@ -40,11 +41,7 @@ export function BlogLinksReviewClient({ title, links }: BlogLinksReviewProps) {
 							<li
 								key={`${link.href}-${link.label}`}
 								className="blog-links-review__item"
-								style={
-									{
-										"--stagger-delay": `${index * 100}ms`
-									} as CSSProperties
-								}
+								style={blogStyle({ "--stagger-delay": `${index * 100}ms` })}
 							>
 								<a
 									href={link.href}

@@ -1,14 +1,12 @@
 import { createFileRoute, notFound } from "@tanstack/react-router"
 
+import { buildPageHead } from "@/helpers/seo/build-page-head"
+
 import { Container } from "@/components/shared/Container"
 import { pageShellClass } from "@/components/shared/prose.styles"
-import {
-	blogMdxComponentNames,
-	BlogProse,
-	compileMdxSandboxFn
-} from "@/features/blog"
-import { buildPageHead } from "@/lib/seo/build-page-head"
-import { unwrapServerResult } from "@/lib/server-result"
+import { compileMdxSandboxFn } from "@/features/blog/api/mdx-sandbox.api"
+import { BlogProse } from "@/features/blog/components/BlogProse"
+import { blogMdxComponentNames } from "@/features/blog/constants/blog-mdx-component-names.constants"
 
 const MDX_SANDBOX_FIXTURES = {
 	notice: `<BlogNotice title="Sandbox" variant="info">
@@ -39,9 +37,7 @@ export const Route = createFileRoute("/dev/mdx-sandbox")({
 	loader: async () => {
 		const compiled = await Promise.all(
 			Object.entries(MDX_SANDBOX_FIXTURES).map(async ([key, content]) => {
-				const html = await compileMdxSandboxFn({ data: { content } }).then(
-					unwrapServerResult
-				)
+				const html = await compileMdxSandboxFn({ data: { content } })
 
 				return [key, html] as const
 			})
@@ -62,9 +58,7 @@ function MdxSandboxPage() {
 		<Container className={pageShellClass}>
 			<div className="flex flex-col gap-10 py-10">
 				<header className="flex flex-col gap-2">
-					<h1 className="text-xl font-semibold text-foreground">
-						MDX Sandbox
-					</h1>
+					<h1 className="text-xl font-semibold text-foreground">MDX Sandbox</h1>
 					<p className="text-muted-foreground text-sm">
 						Kayıtlı bileşenler: {componentNames.join(", ")}
 					</p>

@@ -1,14 +1,19 @@
-import { ProjectDescription } from "@/features/projects/components/ProjectDescription"
-import { getProjectStatusFlags } from "@/features/projects/helpers/project-status.helpers"
 import { ChevronRight } from "lucide-react"
-import { cardTitleClass } from "@/components/shared/prose.styles"
-import { getInteractiveCardClassName, interactiveCardChevronClass } from "@/components/shared/interactive-card.styles"
+
+import { withOutboundUtm } from "@/helpers/outbound-url"
 import { cn } from "@/lib/utils"
-import { withOutboundUtm } from "@/lib/outbound-url"
-import type { Project } from "@/features/projects/types/project.types"
-import { ProjectTitle } from "@/features/projects/components/ProjectTitle"
-import { ProjectStatusBadge } from "@/features/projects/components/ProjectStatusBadge"
+
+import {
+	getInteractiveCardClassName,
+	interactiveCardChevronClass
+} from "@/components/shared/interactive-card.styles"
+import { cardTitleClass } from "@/components/shared/prose.styles"
 import { FeaturedProjectVisual } from "@/features/projects/components/FeaturedProjectVisual"
+import { ProjectDescription } from "@/features/projects/components/ProjectDescription"
+import { ProjectStatusBadge } from "@/features/projects/components/ProjectStatusBadge"
+import { ProjectTitle } from "@/features/projects/components/ProjectTitle"
+import { getProjectStatusFlags } from "@/features/projects/helpers/project-status.helpers"
+import type { Project } from "@/features/projects/types/project.types"
 
 type FeaturedProjectCardProps = {
 	project: Project
@@ -46,10 +51,7 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
 						)}
 					/>
 					{statusBadge ?? (
-						<ChevronRight
-							className={interactiveCardChevronClass}
-							aria-hidden
-						/>
+						<ChevronRight className={interactiveCardChevronClass} aria-hidden />
 					)}
 				</div>
 				<p className="text-muted-foreground text-pretty text-xs leading-relaxed md:text-sm">

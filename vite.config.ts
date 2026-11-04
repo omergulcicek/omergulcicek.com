@@ -8,7 +8,7 @@ import { visualizer } from "rollup-plugin-visualizer"
 import { defineConfig, type Plugin } from "vite"
 import tsconfigPaths from "vite-tsconfig-paths"
 
-import { getBlogPrerenderRoutes } from "./src/features/blog/helpers/get-blog-prerender-routes"
+import { getBlogPrerenderRoutes } from "./src/features/blog/api/get-blog-prerender-routes"
 import { clientEnvSchema } from "./src/schemas/client-env.schema"
 import { meSchema } from "./src/schemas/me.schema"
 
@@ -41,8 +41,10 @@ function validateContentPlugin(): Plugin {
 	}
 }
 
-export default defineConfig(async ({ mode }) => {
-	const blogPrerenderRoutes = await getBlogPrerenderRoutes()
+export default defineConfig(async ({ command, mode }) => {
+	const blogPrerenderRoutes = await getBlogPrerenderRoutes({
+		strict: command === "build"
+	})
 	const blogPrerenderPathSet = new Set(blogPrerenderRoutes)
 
 	return {
@@ -53,8 +55,8 @@ export default defineConfig(async ({ mode }) => {
 		sourcemap: false,
 		rollupOptions: {
 			treeshake: {
-				// Our own modules have no import-time side effects besides CSS, so feature
-				// barrels can drop unused exports (e.g. bookmark data behind validateSearch).
+				// Our own modules have no import-time side effects besides CSS, so unused
+				// exports can be dropped (e.g. bookmark data behind validateSearch).
 				moduleSideEffects: (id: string, external: boolean) =>
 					external ||
 					id.includes("/node_modules/") ||
@@ -108,7 +110,9 @@ export default defineConfig(async ({ mode }) => {
 				}
 			}
 		}),
-		viteReact(),
+		viteReact({
+			babel: { plugins: [["babel-plugin-react-compiler"]] }
+		}),
 		tailwindcss(),
 		mode === "analyze" &&
 			visualizer({

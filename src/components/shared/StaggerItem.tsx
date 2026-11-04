@@ -3,13 +3,13 @@
 import type { ComponentProps } from "react"
 import { m, type HTMLMotionProps } from "motion/react"
 
+import { useMotionEnvironment } from "@/hooks/use-motion-environment"
 import {
 	MOTION_ENTER_BLUR,
 	MOTION_ENTER_OFFSET_Y,
 	MOTION_SOFT_FADE,
 	MOTION_SPRING_SNAP
 } from "@/lib/motion/motion.constants"
-import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
 
 type StaggerItemProps = HTMLMotionProps<"div"> &
 	Pick<ComponentProps<"div">, "ref">

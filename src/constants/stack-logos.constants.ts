@@ -1,4 +1,4 @@
-import { VIRASTACK_LOGO } from "@/lib/media/build-static-thumb-image"
+import { VIRASTACK_LOGO } from "@/helpers/media/build-static-thumb-image"
 
 export type StackLogoEntry =
 	| {
@@ -20,7 +20,10 @@ export type StackLogoEntry =
  */
 const STACK_LOGO_DIR = "/logos/stack"
 
-function svgLogo(id: string, options?: { invertOnDark?: boolean }): StackLogoEntry {
+function svgLogo(
+	id: string,
+	options?: { invertOnDark?: boolean }
+): StackLogoEntry {
 	return {
 		kind: "image",
 		src: `${STACK_LOGO_DIR}/${id}.svg`,

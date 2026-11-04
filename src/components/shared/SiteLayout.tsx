@@ -12,9 +12,11 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 
 type SiteLayoutProps = {
 	children: ReactNode
+	/** Result groups for the command palette, supplied by the route so shared code imports no feature. */
+	searchGroups?: ReactNode
 }
 
-export function SiteLayout({ children }: SiteLayoutProps) {
+export function SiteLayout({ children, searchGroups }: SiteLayoutProps) {
 	return (
 		<MotionProvider>
 			<CommandPaletteProvider>
@@ -29,7 +31,9 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 						</main>
 						<Footer />
 						<ScrollToTopIndicator />
-						<CommandPaletteDialogLoader />
+						<CommandPaletteDialogLoader>
+							{searchGroups}
+						</CommandPaletteDialogLoader>
 					</div>
 					<MotionEnvironmentBoot />
 				</TooltipProvider>

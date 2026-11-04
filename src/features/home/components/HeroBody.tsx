@@ -1,12 +1,18 @@
 import { Mail } from "lucide-react"
-import { GitHubIcon } from "@/components/shared/icons"
+
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+import { SITE_COPY } from "@/constants/site-copy.constants"
+
+import { cn } from "@/lib/utils"
+
+import { GitHubIcon } from "@/components/shared/icons/GitHubIcon"
+import {
+	proseFlowClass,
+	proseParagraphClass
+} from "@/components/shared/prose.styles"
 import { ProseIconLink } from "@/components/shared/ProseIconLink"
 import { ProseLink } from "@/components/shared/ProseLink"
 import { VirastackLink } from "@/components/shared/VirastackLink"
-import { proseFlowClass, proseParagraphClass } from "@/components/shared/prose.styles"
-import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
-import { SITE_COPY } from "@/constants/site-copy.constants"
-import { cn } from "@/lib/utils"
 
 export function HeroBody() {
 	const { hero } = SITE_COPY.home
@@ -32,15 +38,15 @@ export function HeroBody() {
 					{hero.contact.email}
 				</ProseIconLink>
 				{hero.contact.separator}
-				<ProseLink href={EXTERNAL_LINKS.linkedin}>{hero.contact.linkedin}</ProseLink>
+				<ProseLink href={EXTERNAL_LINKS.linkedin}>
+					{hero.contact.linkedin}
+				</ProseLink>
 				{hero.contact.or}
 				<ProseLink href={EXTERNAL_LINKS.x}>{hero.contact.x}</ProseLink>
 				{hero.contact.after}
 				<ProseIconLink
 					href={EXTERNAL_LINKS.github}
-					icon={
-						<GitHubIcon className="size-3.5 shrink-0 text-brand-github" />
-					}
+					icon={<GitHubIcon className="size-3.5 shrink-0 text-brand-github" />}
 				>
 					{hero.contact.github}
 				</ProseIconLink>

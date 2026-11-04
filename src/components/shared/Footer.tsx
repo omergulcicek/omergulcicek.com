@@ -10,6 +10,7 @@ import {
 } from "@/constants/site-content.constants"
 import { SITE_COPY } from "@/constants/site-copy.constants"
 import { SITE } from "@/constants/site.constants"
+import { getPublishedVirastackProjects } from "@/constants/virastack-products.constants"
 
 import { cn } from "@/lib/utils"
 
@@ -22,7 +23,6 @@ import { SiteNavLink } from "@/components/shared/SiteNavLink"
 import { SocialLinks } from "@/components/shared/SocialLinks"
 import { VirastackShortName } from "@/components/shared/VirastackShortName"
 import { Button } from "@/components/ui/button"
-import { getPublishedVirastackProjects } from "@/features/projects"
 
 const footerNavClass =
 	"text-muted-foreground flex flex-col gap-2 text-xs md:text-sm"

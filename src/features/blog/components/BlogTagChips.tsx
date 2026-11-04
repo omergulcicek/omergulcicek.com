@@ -51,7 +51,7 @@ export function BlogTagChips({
 					onClick={onFeaturedToggle}
 				>
 					<Star
-						className="size-3 shrink-0 fill-amber-400 text-amber-500"
+						className="size-3 shrink-0 fill-rating text-rating"
 						aria-hidden
 					/>
 					{BLOG_UI.featuredLabel}

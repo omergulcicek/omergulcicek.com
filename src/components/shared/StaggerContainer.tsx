@@ -3,12 +3,12 @@
 import type { ComponentProps } from "react"
 import { m, type HTMLMotionProps } from "motion/react"
 
+import { useMotionEnvironment } from "@/hooks/use-motion-environment"
+import { useSkipInitialMotion } from "@/hooks/use-skip-initial-motion"
 import {
 	MOTION_SOFT_FADE,
 	MOTION_STAGGER_DELAY
 } from "@/lib/motion/motion.constants"
-import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
-import { useSkipInitialMotion } from "@/lib/motion/use-skip-initial-motion"
 
 type StaggerProps = HTMLMotionProps<"div"> & Pick<ComponentProps<"div">, "ref">
 

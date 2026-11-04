@@ -1,8 +1,13 @@
-import { notFound, redirect } from "@tanstack/react-router"
 import type { QueryClient } from "@tanstack/react-query"
+import { notFound, redirect } from "@tanstack/react-router"
+
+import {
+	buildBlogPostHead,
+	type PageAlternateLink
+} from "@/helpers/seo/build-page-head"
 
 import { getBlogPostNeighboursFn } from "@/features/blog/api/blog-post.api"
-import { blogPostDetailQueryOptions } from "@/features/blog/api/get-blog-post-detail.api"
+import { blogPostDetailQueryOptions } from "@/features/blog/api/blog.queries"
 import { resolveBlogSlugRedirect } from "@/features/blog/constants/blog-redirects.constants"
 import {
 	BLOG_OG_LOCALES,
@@ -15,17 +20,12 @@ import {
 } from "@/features/blog/helpers/blog-helpers"
 import type { BlogNeighbour } from "@/features/blog/helpers/blog-helpers"
 import { routeParamToBlogSlug } from "@/features/blog/helpers/blog-slug"
+import { resolveBlogOgImageUrl } from "@/features/blog/helpers/resolve-blog-og-image-url"
 import type {
 	BlogCategory,
 	BlogLocale,
 	BlogPost
 } from "@/features/blog/types/blog.types"
-import {
-	buildBlogPostHead,
-	type PageAlternateLink
-} from "@/lib/seo/build-page-head"
-import { unwrapServerResult } from "@/lib/server-result"
-import { resolveBlogOgImageUrl } from "@/lib/seo/resolve-blog-og-image-url"
 
 type LoadBlogPostPageOptions = {
 	queryClient: QueryClient
@@ -101,7 +101,7 @@ export async function loadBlogPostPage({
 
 	const [post, neighbours] = await Promise.all([
 		queryClient.ensureQueryData(blogPostDetailQueryOptions(slug)),
-		getBlogPostNeighboursFn({ data: { slug } }).then(unwrapServerResult)
+		getBlogPostNeighboursFn({ data: { slug } })
 	])
 
 	if (!post) {
@@ -134,7 +134,9 @@ export async function loadBlogPostPage({
 	}
 }
 
-export function buildBlogPostPageHead(loaderData: BlogPostPageLoaderData | undefined) {
+export function buildBlogPostPageHead(
+	loaderData: BlogPostPageLoaderData | undefined
+) {
 	if (!loaderData) {
 		return {}
 	}

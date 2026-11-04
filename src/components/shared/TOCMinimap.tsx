@@ -2,13 +2,14 @@
 
 import { useMemo } from "react"
 
+import { useVisibleHeadings } from "@/hooks/use-visible-headings"
+import { cn } from "@/lib/utils"
+
 import {
 	HoverCard,
 	HoverCardContent,
 	HoverCardTrigger
 } from "@/components/ui/hover-card"
-import { useVisibleHeadings } from "@/lib/use-visible-headings"
-import { cn } from "@/lib/utils"
 
 export type TOCItemType = {
 	title: React.ReactNode
@@ -48,9 +49,7 @@ export function TOCMinimap({ items, className }: TOCMinimapProps) {
 									data-depth={item.depth}
 									className={cn(
 										"h-0.5 w-6 shrink-0 rounded-xs transition-[background-color] duration-200",
-										isVisible ?
-											"bg-foreground"
-										:	"bg-muted-foreground/30",
+										isVisible ? "bg-foreground" : "bg-muted-foreground/30",
 										"data-[depth=3]:ml-2 data-[depth=3]:w-4",
 										"data-[depth=4]:ml-4 data-[depth=4]:w-2"
 									)}
@@ -80,9 +79,9 @@ export function TOCMinimap({ items, className }: TOCMinimapProps) {
 											data-depth={item.depth}
 											className={cn(
 												"line-clamp-2 w-full transition-[color] duration-200",
-												isVisible ?
-													"text-foreground"
-												:	"text-muted-foreground hover:text-foreground",
+												isVisible
+													? "text-foreground"
+													: "text-muted-foreground hover:text-foreground",
 												"data-[depth=3]:pl-4 data-[depth=4]:pl-8"
 											)}
 											onClick={handleItemClick}

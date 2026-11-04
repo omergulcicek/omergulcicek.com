@@ -2,27 +2,35 @@
 
 import { AnimatePresence, m } from "motion/react"
 
-import { BookmarkListRow } from "@/features/bookmarks/components/BookmarkListRow"
-import { BookmarksEmptyState } from "@/features/bookmarks/components/BookmarksEmptyState"
-import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
-import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
+import { useMotionEnvironment } from "@/hooks/use-motion-environment"
 import {
 	MOTION_ENTER_OFFSET_Y,
 	MOTION_FILTER_ENTER,
 	MOTION_FILTER_EXIT,
 	MOTION_SOFT_FADE
 } from "@/lib/motion/motion.constants"
-import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
+
+import { BookmarkListRow } from "@/features/bookmarks/components/BookmarkListRow"
+import { BookmarksEmptyState } from "@/features/bookmarks/components/BookmarksEmptyState"
+import { BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
+import type { Bookmark } from "@/features/bookmarks/types/bookmarks.types"
 
 type BookmarksListGridProps = {
 	bookmarks: readonly Bookmark[]
 	filterKey: string
 }
 
-export function BookmarksListGrid({ bookmarks, filterKey }: BookmarksListGridProps) {
+export function BookmarksListGrid({
+	bookmarks,
+	filterKey
+}: BookmarksListGridProps) {
 	const { shouldUseSoftMotion } = useMotionEnvironment()
-	const enterTransition = shouldUseSoftMotion ? MOTION_SOFT_FADE : MOTION_FILTER_ENTER
-	const exitTransition = shouldUseSoftMotion ? MOTION_SOFT_FADE : MOTION_FILTER_EXIT
+	const enterTransition = shouldUseSoftMotion
+		? MOTION_SOFT_FADE
+		: MOTION_FILTER_ENTER
+	const exitTransition = shouldUseSoftMotion
+		? MOTION_SOFT_FADE
+		: MOTION_FILTER_EXIT
 	const motionOffsetY = shouldUseSoftMotion ? 0 : MOTION_ENTER_OFFSET_Y
 
 	return (

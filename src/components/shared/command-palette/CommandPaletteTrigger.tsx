@@ -2,8 +2,9 @@ import { Search } from "lucide-react"
 
 import { SITE_CONTENT } from "@/constants/site-content.constants"
 
+import { useCommandPalette } from "@/hooks/use-command-palette"
+
 import { preloadCommandPaletteDialog } from "@/components/shared/command-palette/preload-command-palette-dialog"
-import { useCommandPalette } from "@/components/shared/command-palette/use-command-palette"
 import { Button } from "@/components/ui/button"
 
 /** Header search button: icon on mobile, label and ⌘K hint from `sm` up. */
@@ -28,7 +29,8 @@ export function CommandPaletteTrigger() {
 			</span>
 			<kbd
 				aria-hidden
-				className="bg-muted text-muted-foreground pointer-events-none hidden h-5 items-center gap-0.5 rounded border px-1 font-mono text-[11px] font-medium leading-none sm:inline-flex">
+				className="bg-muted text-muted-foreground pointer-events-none hidden h-5 items-center gap-0.5 rounded border px-1 font-mono text-[11px] font-medium leading-none sm:inline-flex"
+			>
 				<span>⌘</span>
 				<span>K</span>
 			</kbd>

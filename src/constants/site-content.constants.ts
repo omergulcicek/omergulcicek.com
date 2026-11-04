@@ -59,6 +59,9 @@ export const SITE_CONTENT = {
 	footerEmailAria: "E-posta gönder",
 	footerRssAria: "Blog RSS akışı",
 	routeErrorCodeLabel: "Hata",
+	routeErrorTitle: "Bir şeyler ters gitti",
+	routeErrorDescription:
+		"Sayfa yüklenirken bir sorun oluştu. Kısa süre sonra tekrar deneyebilirsin.",
 	routeErrorRetry: "Tekrar dene"
 } as const
 

@@ -1,7 +1,7 @@
 import { createIsomorphicFn } from "@tanstack/react-start"
 import { getCookie } from "@tanstack/react-start/server"
 
-import { THEME_COOKIE_KEY, type Theme } from "@/lib/theme/theme.types"
+import { THEME_COOKIE_KEY, type Theme } from "@/helpers/theme/theme.types"
 
 function parseTheme(value: string | undefined | null): Theme {
 	return value === "dark" ? "dark" : "light"

@@ -1,11 +1,13 @@
+import { HERO_IMAGE } from "@/constants/hero-image.constants"
+
+import { useSkipInitialMotion } from "@/hooks/use-skip-initial-motion"
+import { cn } from "@/lib/utils"
+
 import { pageSectionClass } from "@/components/shared/prose.styles"
 import { SocialLinks } from "@/components/shared/SocialLinks"
-import { HeroContentMotion } from "@/features/home/components/HeroContentMotion"
-import { HERO_IMAGE } from "@/constants/hero-image.constants"
-import { HeroTitleRow } from "@/features/home/components/HeroTitleRow"
 import { HeroBody } from "@/features/home/components/HeroBody"
-import { useSkipInitialMotion } from "@/lib/motion/use-skip-initial-motion"
-import { cn } from "@/lib/utils"
+import { HeroContentMotion } from "@/features/home/components/HeroContentMotion"
+import { HeroTitleRow } from "@/features/home/components/HeroTitleRow"
 
 export function Hero() {
 	// The photo is the LCP element: it paints at once on a full load and only animates

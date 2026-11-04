@@ -1,9 +1,9 @@
 "use client"
 
-import { ClientOnly } from "@tanstack/react-router"
 import { useEffect } from "react"
+import { ClientOnly } from "@tanstack/react-router"
 
-import { useMotionEnvironment } from "@/lib/motion/use-motion-environment"
+import { useMotionEnvironment } from "@/hooks/use-motion-environment"
 
 function MotionEnvironmentBootInner() {
 	const { shouldUseSoftMotion, supportsViewTransitions } =

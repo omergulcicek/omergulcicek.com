@@ -1,14 +1,18 @@
-import { GitHubIcon } from "@/components/shared/icons"
+import { HEADER_NAV } from "@/constants/header-nav.constants"
+import {
+	EXTERNAL_LINKS,
+	SITE_CONTENT
+} from "@/constants/site-content.constants"
+
 import { BrandMark } from "@/components/shared/BrandMark"
+import { CommandPaletteTrigger } from "@/components/shared/command-palette/CommandPaletteTrigger"
 import { Container } from "@/components/shared/Container"
 import { ExploreNavMenu } from "@/components/shared/ExploreNavMenu"
 import { HeaderNavDrawer } from "@/components/shared/HeaderNavDrawer"
 import { IconLinkButton } from "@/components/shared/IconLinkButton"
+import { GitHubIcon } from "@/components/shared/icons/GitHubIcon"
 import { SiteNavLink } from "@/components/shared/SiteNavLink"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
-import { HEADER_NAV } from "@/constants/header-nav.constants"
-import { EXTERNAL_LINKS, SITE_CONTENT } from "@/constants/site-content.constants"
-import { CommandPaletteTrigger } from "@/components/shared/command-palette/CommandPaletteTrigger"
 
 export function Header() {
 	return (

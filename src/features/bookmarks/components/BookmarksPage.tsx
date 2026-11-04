@@ -1,16 +1,20 @@
-import { RaindropIcon } from "@/components/shared/icons"
+import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+
 import { Container } from "@/components/shared/Container"
+import { RaindropIcon } from "@/components/shared/icons/RaindropIcon"
 import { PageHeader } from "@/components/shared/PageHeader"
-import { ProseIconLink } from "@/components/shared/ProseIconLink"
-import { StaggerContainer } from "@/components/shared/StaggerContainer"
-import { StaggerItem } from "@/components/shared/StaggerItem"
 import {
 	pageShellClass,
 	proseParagraphClass
 } from "@/components/shared/prose.styles"
-import { EXTERNAL_LINKS } from "@/constants/site-content.constants"
+import { ProseIconLink } from "@/components/shared/ProseIconLink"
+import { StaggerContainer } from "@/components/shared/StaggerContainer"
+import { StaggerItem } from "@/components/shared/StaggerItem"
 import { BookmarksList } from "@/features/bookmarks/components/BookmarksList"
-import { BOOKMARKS, BOOKMARK_UI } from "@/features/bookmarks/constants/bookmarks.constants"
+import {
+	BOOKMARK_UI,
+	BOOKMARKS
+} from "@/features/bookmarks/constants/bookmarks.constants"
 
 export function BookmarksPage() {
 	return (
