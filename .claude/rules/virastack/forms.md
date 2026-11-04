@@ -1,6 +1,6 @@
 ---
 paths:
-  - "src/features/**/components/*Form*.tsx"
+  - "src/**/components/**/*Form*.tsx"
   - "src/features/**/schemas/**/*.ts"
   - "src/schemas/**/*.ts"
 ---
@@ -15,8 +15,9 @@ USE WHEN: Building forms with React Hook Form and Zod: schemas, defaults, submis
 - React Hook Form with `zodResolver` from `@hookform/resolvers/zod`.
 - Schemas live in `schemas/` (`*.schema.ts`), never in the component file.
 - Every field has a value in `defaultValues`, typed from the schema.
+- Render fields with `Controller` and shadcn `Field`: `data-invalid` on `Field`, `aria-invalid` on the control.
 - Read live values with `useWatch` or `Controller`, not root `watch()`. Disable submit while `isSubmitting`.
-- Map server errors to fields or to `root` with `setError`.
+- Map server errors to fields or to `root.server` with `setError`, and render them.
 - The server validates the same schema again before it acts.
 - Small forms without client validation may use an Action with `useActionState`.
 
@@ -29,31 +30,55 @@ USE WHEN: Building forms with React Hook Form and Zod: schemas, defaults, submis
 <example>
 ```tsx
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
-import { createProject } from "@/features/projects/api";
-import { projectSchema } from "@/features/projects/schemas";
-import type { ProjectInput } from "@/features/projects/schemas";
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+
+import { createProject } from "@/features/projects/api/create-project.api";
+import { projectSchema } from "@/features/projects/schemas/project.schema";
 
 export function ProjectForm() {
-  const form = useForm<ProjectInput>({
+  const form = useForm({
     resolver: zodResolver(projectSchema),
     defaultValues: { name: "" },
   });
 
   const onSubmit = form.handleSubmit(async (values) => {
-    const result = await createProject(values);
-    if (result.error) form.setError("root", { message: result.error });
+    try {
+      await createProject(values);
+    } catch (error) {
+      form.setError("root.server", {
+        message: error instanceof Error ? error.message : "Could not create the project",
+      });
+    }
   });
 
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="project-name">Name</label>
-      <input id="project-name" {...form.register("name")} />
-      <p role="alert">{form.formState.errors.name?.message}</p>
-      <button type="submit" disabled={form.formState.isSubmitting}>
+    <form onSubmit={onSubmit} noValidate>
+      <Controller
+        name="name"
+        control={form.control}
+        render={({ field, fieldState }) => (
+          <Field data-invalid={fieldState.invalid}>
+            <FieldLabel htmlFor={field.name}>Name</FieldLabel>
+            <Input
+              {...field}
+              id={field.name}
+              aria-invalid={fieldState.invalid}
+              aria-describedby={fieldState.invalid ? `${field.name}-error` : undefined}
+            />
+            {fieldState.invalid && (
+              <FieldError id={`${field.name}-error`} errors={[fieldState.error]} />
+            )}
+          </Field>
+        )}
+      />
+      <p role="alert">{form.formState.errors.root?.server?.message}</p>
+      <Button type="submit" disabled={form.formState.isSubmitting}>
         Create
-      </button>
+      </Button>
     </form>
   );
 }

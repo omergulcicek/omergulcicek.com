@@ -1,7 +1,9 @@
 ---
 paths:
-  - "src/**/*.test.{ts,tsx}"
-  - "src/test/**/*.{ts,tsx}"
+  - "src/**/*.test.ts"
+  - "src/**/*.test.tsx"
+  - "src/test/**/*.ts"
+  - "src/test/**/*.tsx"
   - "vitest.config.ts"
 ---
 <!-- Managed by @virastack/ai -->
@@ -13,7 +15,8 @@ USE WHEN: Writing tests with Vitest, Testing Library and MSW.
 ## Setup
 
 - Vitest + jsdom (`vitest.config.ts`, `src/test/setup.ts`). Run `pnpm test`.
-- `renderWithProviders` (`@/test/render`) adds the app providers. MSW server: `@/test/server`; unhandled requests fail.
+- `renderWithProviders` (`@/test/render`) adds `QueryClientProvider`.
+- MSW server: `@/test/server`. Unhandled requests reject, but a test still passes if the app catches the error: add a handler for every request and assert the resulting UI. Never lower this setting.
 
 ## Rules
 
@@ -21,6 +24,7 @@ USE WHEN: Writing tests with Vitest, Testing Library and MSW.
 - Prioritize feature logic (helpers, api, hooks, stores) and critical flows. Skip trivial markup.
 - Query by role and label (`getByRole`, `findByRole`, `getByLabelText`). Use `getByTestId` only as a last resort.
 - Interact through `userEvent.setup()` and wait for async UI with `findBy*`.
+- A component using router hooks renders inside a real router with `createMemoryHistory`.
 - Mock HTTP with MSW handlers (`server.use(...)`) per test. Do not mock `fetch` or the api module.
 - Cover loading, empty, error and success for critical data flows.
 - Tests sit next to their code (`get-users.api.test.ts`). Snapshots only for small, stable data.
@@ -33,7 +37,7 @@ import userEvent from "@testing-library/user-event";
 import { http, HttpResponse } from "msw";
 import { expect, it } from "vitest";
 
-import { LoginForm } from "@/features/auth";
+import { LoginForm } from "@/features/auth/components/LoginForm";
 import { renderWithProviders } from "@/test/render";
 import { server } from "@/test/server";
 

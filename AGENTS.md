@@ -15,47 +15,46 @@ Personal site and blog of Ömer Gülçiçek. Turkish-only site; code, types and 
   - `better-ui`, `better-accessibility`, `emil-design-eng` — UI polish, accessibility and design review.
 - **Supabase:** never write without showing the SQL first and getting explicit approval.
 - **Decisions:** `docs/MEMORIES.md`.
+- **ViraStack overrides (named, per the Precedence section):**
+  - Ignore the ViraStack `react` rule on URL state: blog and bookmarks filters stay on `nuqs` (`createStandardSchemaV1` in `validateSearch`).
+  - Ignore the ViraStack `ui` rule on semantic colors for brand and tag color maps in `*.constants.ts` (`bookmark-tag-icons`, `blog-tag-icons`, `interest-styles`, `virastack-colors`); components use tokens.
+  - Ignore the ViraStack `api` rule on parsing every response with Zod where it would ship Zod to the client: only the GitHub responses in `features/projects` are parsed in the browser (`docs/MEMORIES.md`).
+  - `src/components/ui` is shadcn output: never edited by hand, and exempt from the `react` and `ui` rules.
 
 <!-- BEGIN:virastack-ai -->
 # ViraStack AI
 
-## Persona
-
-Senior Frontend Architect specialized in TanStack Start. Decisions: SOLID, SRP, end-to-end type-safety. Approach: Plan-first.
-
 ## Commands
 
-- **Dev:** `pnpm install && pnpm dev`
-- **Validation:** `pnpm lint && pnpm typecheck`
+- **Install:** `pnpm install`
+- **Dev:** `pnpm dev`
+- **Validate:** `pnpm lint && pnpm typecheck`
 - **Test:** `pnpm test`
+- **Test one file:** `pnpm vitest run <path>`
 - **Build:** `pnpm build`
 
-## Operational Guardrails
+## Precedence
 
-- **Planning Protocol:** Approval required for: Boundaries, Routing/Rendering, State, Schemas, New Dependencies, Infrastructure.
-- **Context Integrity:** No hallucinations for unknown paths; ask or state UNKNOWN.
-- **Naming:** Code, types and identifiers in English.
-- **Self-Documentation:** JSDoc for complex logic.
-- **Deviation:** Follow every ViraStack rule. A project instruction may override a rule only by naming it (e.g. "ignore the ViraStack `testing` rule").
+- Your project's own instructions override ViraStack rules; mention any conflict.
+- Framework docs decide API facts.
 
 ## Rules
 
 - **Claude Code:** `.claude/rules/virastack/` (loaded automatically)
-- **Cursor:** `.cursor/rules/virastack/` (loaded automatically)
 - **Other agents:** read the "Always" rules at the start of every task and the matching rule before editing, from `.claude/rules/virastack/`.
 
 | Rule | Use when |
 | :--- | :------- |
 | `core` | Always. Working agreement, naming, exports and error handling for every task. |
 | `architecture` | Always. Where code lives in src/, feature boundaries and import rules. |
-| `react` | Writing React 19 components and hooks: state, effects, composition, React Compiler. |
 | `typescript` | Writing TypeScript types and Zod 4 schemas: strict mode, unions, inference. |
-| `ui` | Building UI with shadcn/ui (Base UI or Radix) and Tailwind CSS 4: components, styling, states, accessibility. |
+| `react` | Writing React 19 components and hooks: state, effects, composition, React Compiler. |
+| `tanstack-start` | Working on TanStack Start routes, loaders, server functions, middleware and head/SEO. |
+| `ui` | Building UI with shadcn/ui and Tailwind CSS 4: components, styling, states, accessibility. |
 | `forms` | Building forms with React Hook Form and Zod: schemas, defaults, submission, server errors. |
 | `api` | Writing HTTP calls with the native fetch wrapper in src/lib/api.ts: endpoints, Zod parsing, ApiError. |
 | `server-state` | Fetching and caching server data with TanStack Query 5: queryOptions, hooks, mutations, invalidation. |
-| `client-state` | Managing client state with Zustand 5 stores and URL state with nuqs. |
-| `performance` | Improving Core Web Vitals (LCP, INP, CLS): images, fonts, scripts, bundle size. |
+| `client-state` | Writing Zustand 5 stores: placement, actions, server rendering and persist. |
 | `testing` | Writing tests with Vitest, Testing Library and MSW. |
-| `tanstack-start` | Working on TanStack Start routes, loaders, server functions, middleware and head/SEO. |
+| `performance` | Improving Core Web Vitals (LCP, INP, CLS): images, fonts, scripts, bundle size. |
 <!-- END:virastack-ai -->

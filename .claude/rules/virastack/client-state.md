@@ -5,36 +5,27 @@ paths:
 ---
 <!-- Managed by @virastack/ai -->
 
-# Zustand and URL state
+# Zustand
 
-USE WHEN: Managing client state with Zustand 5 stores and URL state with nuqs.
-
-## Where state lives
-
-- Server data: TanStack Query (`server-state`). Form input: React Hook Form (`forms`).
-- Filters, page, sort and tabs: URL search params with `nuqs` when installed, else the router's.
-- One component's UI state: `useState`. Client state shared across the app: Zustand.
+USE WHEN: Writing Zustand 5 stores: placement, actions, server rendering and persist.
 
 ## Rules
 
 - Stores live in `src/stores/` or `features/<feature>/stores/` (`cart.store.ts` exports `useCartStore`).
-- Read through selectors (`useCartStore((state) => state.items)`); wrap object or array selectors in `useShallow`.
 - Actions live in the store and only update state. Side effects such as API calls live in hooks.
-- Never read `window` or `localStorage` while creating a store.
-- Pages render on the server: request or user data needs a per-request store (`createStore` in a context provider). Module-level `create()` is for client-only UI state.
+- Never read `window` or `localStorage` while creating a store, except through `persist`'s `createJSONStorage(() => localStorage)`.
+- Data the server renders or that belongs to one request: `createStore` in `useState` inside a context provider. Module-level `create()` only for state that stays in the browser, such as UI state or persisted preferences (project decision). Server Components never read or write a store.
 - `persist`: show persisted values only on the client, gated with `useIsClient()` (`usehooks-ts`) or `skipHydration: true` plus `persist.rehydrate()`.
 
 ## Bans
 
-- Calling a store hook without a selector.
 - Keystroke-frequency values in a store.
-- Copies of server data in a store.
 
 <example>
 ```ts
 import { create } from "zustand";
 
-import type { CartItem } from "@/features/cart/types";
+import type { CartItem } from "@/features/cart/types/cart.types";
 
 type CartState = {
   items: CartItem[];
@@ -42,6 +33,7 @@ type CartState = {
   clear: () => void;
 };
 
+// Client-only UI state, so a module-level store is fine.
 export const useCartStore = create<CartState>()((set) => ({
   items: [],
   add: (item) => set((state) => ({ items: [...state.items, item] })),

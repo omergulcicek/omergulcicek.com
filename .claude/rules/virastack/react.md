@@ -12,14 +12,21 @@ USE WHEN: Writing React 19 components and hooks: state, effects, composition, Re
 
 ## Rules
 
-- One component per file, under about 200 lines.
+- One exported component per file; private helpers may stay beside it. `components/ui` is exempt.
 - Compose with `children` and slots instead of drilling props past two levels.
 - Derive values during render. Never mirror props or other state into state.
 - Business logic goes into hooks; components render.
 - List keys are stable ids, never the index.
 - `useEffect` only syncs with external systems (subscriptions, DOM APIs). Handle user actions in event handlers.
-- Use updater functions when the next state depends on the previous one.
-- `useMemo`, `useCallback` and `memo` only for a measured problem or a required stable reference.
+- Reset state with `key`, not an Effect. For Effect-only events use `useEffectEvent`, never to skip dependencies.
+- When React Compiler is enabled: do not add `useMemo`, `useCallback` or `memo` for speed; use them only for precise control, such as a stable Effect dependency. Without it: only for a measured problem. Do not remove existing memoization in passing.
+
+## State
+
+- Server data: TanStack Query (`server-state`). Form input: React Hook Form (`forms`).
+- Filters, page, sort and tabs: URL search params with `validateSearch`, `getRouteApi("/path").useSearch()` (features cannot import routes) and `navigate({ search })`.
+- One component's UI state: `useState`. Client state shared across the app: Zustand (`client-state`).
+- Zustand: read one value per selector, never call a store hook without one. A selector that builds a new object or array needs `useShallow` from `zustand/react/shallow`; without it React throws.
 
 ## React 19 APIs
 
@@ -29,13 +36,12 @@ USE WHEN: Writing React 19 components and hooks: state, effects, composition, Re
 
 ## Bans
 
-- Class components.
 - Fetching data with `useEffect` in a Client Component. Use query hooks or server loading (async Server Components may `await`).
-- Silencing `react-hooks/exhaustive-deps`.
+- Silencing `react-hooks/*` rules.
 
 <example>
 ```tsx
-import type { Task } from "@/features/tasks/types";
+import type { Task } from "@/features/tasks/types/task.types";
 
 type TaskListProps = { tasks: Task[]; showDone: boolean };
 
@@ -52,3 +58,13 @@ export function TaskList({ tasks, showDone }: TaskListProps) {
 }
 ```
 </example>
+
+<incorrect-example>
+```tsx
+const [visible, setVisible] = useState(tasks);
+
+useEffect(() => {
+  setVisible(showDone ? tasks : tasks.filter((task) => !task.done));
+}, [tasks, showDone]);
+```
+</incorrect-example>
