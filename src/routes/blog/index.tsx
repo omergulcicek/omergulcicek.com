@@ -28,7 +28,10 @@ export const Route = createFileRoute("/blog/")({
 		}
 	},
 	loader: async ({ context }) => {
-		await context.queryClient.ensureQueryData(blogPostsQueryOptions())
+		await context.queryClient.query({
+			...blogPostsQueryOptions(),
+			staleTime: "static"
+		})
 
 		return {
 			isDev: import.meta.env.DEV

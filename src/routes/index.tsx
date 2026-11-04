@@ -14,7 +14,10 @@ import { HomePage } from "@/features/home/components/HomePage"
 
 export const Route = createFileRoute("/")({
 	loader: async ({ context }) => {
-		await context.queryClient.ensureQueryData(blogPostsQueryOptions())
+		await context.queryClient.query({
+			...blogPostsQueryOptions(),
+			staleTime: "static"
+		})
 	},
 	head: () => {
 		const pageHead = buildStaticPageHead("home")

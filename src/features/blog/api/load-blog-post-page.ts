@@ -100,7 +100,10 @@ export async function loadBlogPostPage({
 	const slug = resolveBlogSlugRedirect(requestedSlug)
 
 	const [post, neighbours] = await Promise.all([
-		queryClient.ensureQueryData(blogPostDetailQueryOptions(slug)),
+		queryClient.query({
+			...blogPostDetailQueryOptions(slug),
+			staleTime: "static"
+		}),
 		getBlogPostNeighboursFn({ data: { slug } })
 	])
 
