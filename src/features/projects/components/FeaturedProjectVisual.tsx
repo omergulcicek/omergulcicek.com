@@ -5,10 +5,13 @@ import { projectIconClass, projectIconStroke, PROJECT_VISUALS } from "@/features
 
 export function FeaturedProjectVisual({
 	project,
-	isComingSoon
+	isComingSoon,
+	className
 }: {
 	project: Project
 	isComingSoon: boolean
+	/** Applied last, so a caller can resize the icon. */
+	className?: string
 }) {
 	const visual = PROJECT_VISUALS[project.id]
 	const mutedClass = isComingSoon ? "opacity-45 saturate-50" : undefined
@@ -19,7 +22,8 @@ export function FeaturedProjectVisual({
 				className={cn(
 					projectIconClass,
 					"text-muted-foreground",
-					mutedClass
+					mutedClass,
+					className
 				)}
 				strokeWidth={projectIconStroke}
 				aria-hidden
@@ -31,7 +35,13 @@ export function FeaturedProjectVisual({
 		return (
 			<Icon
 				iconNode={visual.iconNode}
-				className={cn(projectIconClass, project.color, visual.className, mutedClass)}
+				className={cn(
+					projectIconClass,
+					project.color,
+					visual.className,
+					mutedClass,
+					className
+				)}
 				strokeWidth={projectIconStroke}
 				aria-hidden
 			/>
@@ -41,14 +51,24 @@ export function FeaturedProjectVisual({
 	if (visual.kind === "svg") {
 		const ProjectSvg = visual.Icon
 
-		return <ProjectSvg className={cn(project.color, visual.className, mutedClass)} />
+		return (
+			<ProjectSvg
+				className={cn(project.color, visual.className, mutedClass, className)}
+			/>
+		)
 	}
 
 	const LucideProjectIcon = visual.Icon
 
 	return (
 		<LucideProjectIcon
-			className={cn(projectIconClass, project.color, visual.className, mutedClass)}
+			className={cn(
+					projectIconClass,
+					project.color,
+					visual.className,
+					mutedClass,
+					className
+				)}
 			strokeWidth={projectIconStroke}
 			aria-hidden
 		/>
