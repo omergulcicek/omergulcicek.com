@@ -9,7 +9,7 @@ Personal site and blog of Ömer Gülçiçek. Turkish-only site; code, types and 
 - **Content SSOT:** facts in `src/constants/me.json` (validated by `src/schemas/me.schema.ts`), page copy in `src/constants/site-copy.constants.ts`. Components never hard-code user-facing text.
 - **UI SSOT:** prose links → `ProseLink` / `ProseIconLink` / `ProseRouterLink` (`src/components/shared/prose-link.tsx`); typography and spacing tokens → `src/components/shared/prose.styles.ts`; card surfaces → `getInteractiveCardClassName` (`src/components/shared/interactive-card.styles.ts`).
 - **Skills (always use when relevant):**
-  - `writing-voice` — any Turkish text a reader sees.
+  - `ghostwriter` — any Turkish text a reader sees.
   - `blog-post` — new posts and notes, Supabase rows, post images.
   - `spacing-standard` — padding, margin and gap in `src/`.
   - `better-ui`, `better-accessibility`, `emil-design-eng` — UI polish, accessibility and design review.

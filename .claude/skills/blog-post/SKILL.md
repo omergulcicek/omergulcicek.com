@@ -1,13 +1,13 @@
 ---
 name: blog-post
-description: Workflow for writing, editing and publishing a new post on omergulcicek.com — technical posts under /blog and personal notes under /notlar. Use when the user asks to draft, outline, edit, title, tag or publish a post or note, or to prepare its Supabase row or images. Always use together with the writing-voice skill.
+description: Workflow for writing, editing and publishing a new post on omergulcicek.com — technical posts under /blog and personal notes under /notlar. Use when the user asks to draft, outline, edit, title, tag or publish a post or note, or to prepare its Supabase row or images. Always use together with the ghostwriter skill.
 ---
 
 # Blog post
 
 Posts live in Supabase (`blog_posts`) and render through the blog feature. This skill covers new posts only: never rewrite, retitle or retag existing posts unless the user names them.
 
-Read and follow the `writing-voice` skill first. Everything here adds to it.
+Read and follow the `ghostwriter` skill first. Everything here adds to it.
 
 ## 1. Pick the section
 
@@ -93,6 +93,6 @@ Table `blog_posts` columns: `slug` (unique, leading `/`), `title`, `description`
 1. Category, route and tags match the section's pool.
 2. Title, slug and description follow section 2.
 3. Intro is 1–2 sentences, 2–4 sections, closing has no template phrase.
-4. `writing-voice` checklist passes.
+4. `ghostwriter` checklist passes.
 5. Images exist under the correct `YYYY/MM-DD` folder and have alt text.
 6. SQL was previewed and approved before any write; the row is inserted with `published = false`.

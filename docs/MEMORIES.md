@@ -39,5 +39,5 @@ Kalıcı kararlar ve kodda açık olmayan bağlam. Metin ve içerik kodda yaşar
 ## Ajan kuralları
 
 - Kod kuralları: ViraStack AI 2.1 (`.claude/rules/virastack/`); yalnızca Claude, Cursor kuralları yok. Rule ile çakışan proje kararları `AGENTS.md`'de adıyla geçersiz kılınır.
-- Proje skill'leri: `writing-voice`, `blog-post`, `spacing-standard` (`.claude/skills/`).
+- Proje skill'leri: `ghostwriter`, `blog-post`, `spacing-standard` (`.claude/skills/`).
 - UI skill'leri: `better-ui`, `better-accessibility`, `emil-design-eng` (`.agents/skills/`, `skills-lock.json`).

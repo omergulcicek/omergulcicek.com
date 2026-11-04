@@ -1,5 +1,5 @@
 ---
-name: writing-voice
+name: ghostwriter
 description: Ömer Gülçiçek's Turkish writing voice for omergulcicek.com. Use whenever you write or edit any Turkish text a reader will see — page copy (src/constants/site-copy.constants.ts), facts and descriptions in src/constants/me.json, SEO meta descriptions, project/experience summaries, blog posts, notes, social bios. Not for code, comments or commit messages.
 ---
 
