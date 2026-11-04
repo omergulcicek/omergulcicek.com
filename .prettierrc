@@ -24,6 +24,7 @@
 		"^@/stores",
 		"^@/schemas",
 		"^@/hooks",
+		"^@/helpers",
 		"^@/lib",
 		"",
 		"^@/components",
