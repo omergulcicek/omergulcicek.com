@@ -22,3 +22,10 @@ if (typeof document !== "undefined" && !globalThis.ResizeObserver) {
 		disconnect() {}
 	}
 }
+
+// cmdk scrolls the active item into view, which jsdom does not implement.
+if (typeof document !== "undefined") {
+	Element.prototype.scrollIntoView ??= () => {}
+	// The router restores scroll on navigation; jsdom only logs "not implemented".
+	window.scrollTo = () => {}
+}
