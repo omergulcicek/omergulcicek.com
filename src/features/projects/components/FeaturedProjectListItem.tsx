@@ -43,7 +43,7 @@ export function FeaturedProjectListItem({
 				{statusBadge}
 			</div>
 			<div className="flex items-center gap-3 min-w-0 flex-1 justify-between md:justify-start">
-				<p className="text-muted-foreground truncate text-left text-xs md:text-sm">
+				<p className="text-muted-foreground text-left text-xs text-pretty md:text-sm">
 					<ProjectDescription description={project.description} />
 				</p>
 				{!statusBadge && (
