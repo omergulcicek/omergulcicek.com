@@ -26,8 +26,18 @@ Kalıcı kararlar ve kodda açık olmayan bağlam. Metin ve içerik kodda yaşar
 - **Makine okunur çıktılar:** `/llms.txt`, `/llms-full.txt` (yalnızca teknik yazılar), `/blog/<slug>.md`, `/notlar/<slug>.md` ve RSS'teki `content:encoded` sunucuda Supabase'den üretilir; `public/`'te statik kopya yok.
 - **Çeviri çiftleri:** TR/EN yazılar `blog-translations.constants.ts`'te eşlenir; hreflang ve `og:locale` buradan gelir. İngilizce metin `lang="en"` taşır.
 
+## Mimari kararlar (ViraStack 2.1 denetimi)
+
+- **Barrel yok:** `index.ts` dosyaları kaldırıldı; import tanımlayan dosyadan yapılır.
+- **Tek yönlü akış:** `components/shared`, `lib`, `helpers` feature import etmez. Command palette grupları (`BlogSearchGroups`, `ProjectsSearchGroup`, `BookmarksSearchGroup`) `src/routes/-command-palette-groups.tsx` içinde birleşir ve `__root.tsx` onu lazy yükler; Footer ve ana sayfa ürün listesini `src/constants/virastack-products.constants.ts`'ten alır.
+- **Klasörler:** paket import eden saf olmayan kod `lib/`'de, saf fonksiyonlar `helpers/`'ta (`helpers/seo`, `helpers/media`, `helpers/og`, `helpers/theme`), hook'lar `hooks/`'ta. Blog'un MDX derleme hattı ve repository'leri `features/blog/api/` altında.
+- **Hata:** sunucu fonksiyonları `runServerWork` ile güvenli mesajla fırlatır (`ServerResult` kalktı). HTTP çağrıları `src/lib/api.ts` (`ApiError`: http, network, timeout, schema) üzerinden. Production build'de Supabase yazı listesi alınamazsa build düşer.
+- **Test:** `.test.ts` Node'da, `.test.tsx` jsdom'da çalışır; MSW handler'sız istek testi düşürür (`src/test/`).
+- **React Compiler** açık (`vite.config.ts`); `useCallback`/`useMemo` yalnızca effect bağımlılığı gibi kesin kontrol gereken yerde kalır.
+- **Semantik token'lar:** `rating`, `favorite`, `info`, `warning` (`src/styles.css`).
+
 ## Ajan kuralları
 
-- Kod kuralları: ViraStack AI (`.claude/rules/virastack/`, `.cursor/rules/virastack/`).
+- Kod kuralları: ViraStack AI 2.1 (`.claude/rules/virastack/`); yalnızca Claude, Cursor kuralları yok. Rule ile çakışan proje kararları `AGENTS.md`'de adıyla geçersiz kılınır.
 - Proje skill'leri: `writing-voice`, `blog-post`, `spacing-standard` (`.claude/skills/`).
 - UI skill'leri: `better-ui`, `better-accessibility`, `emil-design-eng` (`.agents/skills/`, `skills-lock.json`).
