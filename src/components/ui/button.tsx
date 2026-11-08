@@ -1,75 +1,46 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
-import { Slot } from "radix-ui"
+import type { ComponentProps } from "react"
 
-import { cn } from "@/lib/utils"
-import {
-	interactiveSurfaceBgClass,
-	interactiveSurfaceHoverBgClass,
-	interactiveSurfaceHoverBorderClass
-} from "@/components/shared/interactive-card.styles"
+import { Button as BaseButton } from "@base-ui/react/button"
+import { cva } from "class-variance-authority"
+import type { VariantProps } from "class-variance-authority"
+import { cn } from "cn"
 
-const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-[color,background-color,box-shadow,border-color,opacity,scale] duration-150 ease-out active:scale-[0.96] outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 disabled:active:scale-100 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+export const buttonVariants = cva(
+  "inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-[color,background-color,border-color,box-shadow,scale] duration-150 ease-out outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 active:scale-[0.96] disabled:pointer-events-none disabled:opacity-50 motion-reduce:active:scale-100 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
         destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",
-        outline: cn(
-          "border shadow-xs dark:border-input",
-          interactiveSurfaceBgClass,
-          interactiveSurfaceHoverBorderClass,
-          interactiveSurfaceHoverBgClass
-        ),
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary hover:underline",
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20",
+        outline:
+          "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline"
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        xs: "h-8 gap-1 rounded-md px-2.5 text-xs has-[>svg]:px-2 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "hit-area size-9",
-        "icon-xs": "hit-area size-9 rounded-md [&_svg:not([class*='size-'])]:size-3.5",
-        "icon-sm": "hit-area size-8",
-        "icon-lg": "size-10",
-      },
+        icon: "size-9"
+      }
     },
     defaultVariants: {
       variant: "default",
-      size: "default",
-    },
+      size: "default"
+    }
   }
 )
 
-function Button({
-  className,
-  variant = "default",
-  size = "default",
-  asChild = false,
-  static: isStatic = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-    static?: boolean
-  }) {
-  const Comp = asChild ? Slot.Root : "button"
+export type ButtonProps = ComponentProps<typeof BaseButton> & VariantProps<typeof buttonVariants>
 
+export function Button({ className, variant, size, ...props }: ButtonProps) {
   return (
-    <Comp
+    <BaseButton
       data-slot="button"
-      data-variant={variant}
-      data-size={size}
-      className={cn(buttonVariants({ variant, size }), isStatic && "active:scale-100", className)}
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
   )
 }
-
-export { Button, buttonVariants }

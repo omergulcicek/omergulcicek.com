@@ -10,91 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SplatRouteImport } from './routes/$'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as BookmarksRouteImport } from './routes/bookmarks'
-import { Route as ExperiencesRouteImport } from './routes/experiences'
-import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
-import { Route as JourneyRouteImport } from './routes/journey'
-import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
-import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as SetupRouteImport } from './routes/setup'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as StackRouteImport } from './routes/stack'
-import { Route as WorkspaceRouteImport } from './routes/workspace'
-import { Route as AcademyIndexRouteImport } from './routes/academy/index'
-import { Route as AcademySplatRouteImport } from './routes/academy/$'
-import { Route as BlogIndexRouteImport } from './routes/blog/index'
-import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
-import { Route as BlogChar123slugChar125DotmdRouteImport } from './routes/blog/{$slug}[.]md'
-import { Route as DevMdxSandboxRouteImport } from './routes/dev/mdx-sandbox'
-import { Route as NotlarIndexRouteImport } from './routes/notlar/index'
-import { Route as NotlarSlugRouteImport } from './routes/notlar/$slug'
-import { Route as NotlarFeedDotxmlRouteImport } from './routes/notlar/feed[.]xml'
-import { Route as NotlarChar123slugChar125DotmdRouteImport } from './routes/notlar/{$slug}[.]md'
-import { Route as OgBlogSlugRouteImport } from './routes/og/blog/$slug'
-import { Route as OgPagePageKeyRouteImport } from './routes/og/page/$pageKey'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SplatRoute = SplatRouteImport.update({
-  id: '/$',
-  path: '/$',
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookmarksRoute = BookmarksRouteImport.update({
-  id: '/bookmarks',
-  path: '/bookmarks',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExperiencesRoute = ExperiencesRouteImport.update({
-  id: '/experiences',
-  path: '/experiences',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FeedDotxmlRoute = FeedDotxmlRouteImport.update({
-  id: '/feed.xml',
-  path: '/feed.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JourneyRoute = JourneyRouteImport.update({
-  id: '/journey',
-  path: '/journey',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
-  id: '/llms-full.txt',
-  path: '/llms-full.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
-  id: '/llms.txt',
-  path: '/llms.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SetupRoute = SetupRouteImport.update({
-  id: '/setup',
-  path: '/setup',
+const SiteDotwebmanifestRoute = SiteDotwebmanifestRouteImport.update({
+  id: '/site.webmanifest',
+  path: '/site.webmanifest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -102,285 +34,39 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StackRoute = StackRouteImport.update({
-  id: '/stack',
-  path: '/stack',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WorkspaceRoute = WorkspaceRouteImport.update({
-  id: '/workspace',
-  path: '/workspace',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AcademyIndexRoute = AcademyIndexRouteImport.update({
-  id: '/academy/',
-  path: '/academy/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AcademySplatRoute = AcademySplatRouteImport.update({
-  id: '/academy/$',
-  path: '/academy/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogChar123slugChar125DotmdRoute =
-  BlogChar123slugChar125DotmdRouteImport.update({
-    id: '/blog/{$slug}.md',
-    path: '/blog/{$slug}.md',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DevMdxSandboxRoute = DevMdxSandboxRouteImport.update({
-  id: '/dev/mdx-sandbox',
-  path: '/dev/mdx-sandbox',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NotlarIndexRoute = NotlarIndexRouteImport.update({
-  id: '/notlar/',
-  path: '/notlar/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NotlarSlugRoute = NotlarSlugRouteImport.update({
-  id: '/notlar/$slug',
-  path: '/notlar/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NotlarFeedDotxmlRoute = NotlarFeedDotxmlRouteImport.update({
-  id: '/notlar/feed.xml',
-  path: '/notlar/feed.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NotlarChar123slugChar125DotmdRoute =
-  NotlarChar123slugChar125DotmdRouteImport.update({
-    id: '/notlar/{$slug}.md',
-    path: '/notlar/{$slug}.md',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const OgBlogSlugRoute = OgBlogSlugRouteImport.update({
-  id: '/og/blog/$slug',
-  path: '/og/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OgPagePageKeyRoute = OgPagePageKeyRouteImport.update({
-  id: '/og/page/$pageKey',
-  path: '/og/page/$pageKey',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$': typeof SplatRoute
-  '/about': typeof AboutRoute
-  '/bookmarks': typeof BookmarksRoute
-  '/experiences': typeof ExperiencesRoute
-  '/feed.xml': typeof FeedDotxmlRoute
-  '/journey': typeof JourneyRoute
-  '/llms-full.txt': typeof LlmsFullDottxtRoute
-  '/llms.txt': typeof LlmsDottxtRoute
-  '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
-  '/setup': typeof SetupRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/stack': typeof StackRoute
-  '/workspace': typeof WorkspaceRoute
-  '/academy/$': typeof AcademySplatRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/{$slug}.md': typeof BlogChar123slugChar125DotmdRoute
-  '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
-  '/notlar/$slug': typeof NotlarSlugRoute
-  '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
-  '/notlar/{$slug}.md': typeof NotlarChar123slugChar125DotmdRoute
-  '/academy/': typeof AcademyIndexRoute
-  '/blog/': typeof BlogIndexRoute
-  '/notlar/': typeof NotlarIndexRoute
-  '/og/blog/$slug': typeof OgBlogSlugRoute
-  '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$': typeof SplatRoute
-  '/about': typeof AboutRoute
-  '/bookmarks': typeof BookmarksRoute
-  '/experiences': typeof ExperiencesRoute
-  '/feed.xml': typeof FeedDotxmlRoute
-  '/journey': typeof JourneyRoute
-  '/llms-full.txt': typeof LlmsFullDottxtRoute
-  '/llms.txt': typeof LlmsDottxtRoute
-  '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
-  '/setup': typeof SetupRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/stack': typeof StackRoute
-  '/workspace': typeof WorkspaceRoute
-  '/academy/$': typeof AcademySplatRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/{$slug}.md': typeof BlogChar123slugChar125DotmdRoute
-  '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
-  '/notlar/$slug': typeof NotlarSlugRoute
-  '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
-  '/notlar/{$slug}.md': typeof NotlarChar123slugChar125DotmdRoute
-  '/academy': typeof AcademyIndexRoute
-  '/blog': typeof BlogIndexRoute
-  '/notlar': typeof NotlarIndexRoute
-  '/og/blog/$slug': typeof OgBlogSlugRoute
-  '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$': typeof SplatRoute
-  '/about': typeof AboutRoute
-  '/bookmarks': typeof BookmarksRoute
-  '/experiences': typeof ExperiencesRoute
-  '/feed.xml': typeof FeedDotxmlRoute
-  '/journey': typeof JourneyRoute
-  '/llms-full.txt': typeof LlmsFullDottxtRoute
-  '/llms.txt': typeof LlmsDottxtRoute
-  '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
-  '/setup': typeof SetupRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/stack': typeof StackRoute
-  '/workspace': typeof WorkspaceRoute
-  '/academy/$': typeof AcademySplatRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/{$slug}.md': typeof BlogChar123slugChar125DotmdRoute
-  '/dev/mdx-sandbox': typeof DevMdxSandboxRoute
-  '/notlar/$slug': typeof NotlarSlugRoute
-  '/notlar/feed.xml': typeof NotlarFeedDotxmlRoute
-  '/notlar/{$slug}.md': typeof NotlarChar123slugChar125DotmdRoute
-  '/academy/': typeof AcademyIndexRoute
-  '/blog/': typeof BlogIndexRoute
-  '/notlar/': typeof NotlarIndexRoute
-  '/og/blog/$slug': typeof OgBlogSlugRoute
-  '/og/page/$pageKey': typeof OgPagePageKeyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/$'
-    | '/about'
-    | '/bookmarks'
-    | '/experiences'
-    | '/feed.xml'
-    | '/journey'
-    | '/llms-full.txt'
-    | '/llms.txt'
-    | '/projects'
-    | '/services'
-    | '/setup'
-    | '/sitemap.xml'
-    | '/stack'
-    | '/workspace'
-    | '/academy/$'
-    | '/blog/$slug'
-    | '/blog/{$slug}.md'
-    | '/dev/mdx-sandbox'
-    | '/notlar/$slug'
-    | '/notlar/feed.xml'
-    | '/notlar/{$slug}.md'
-    | '/academy/'
-    | '/blog/'
-    | '/notlar/'
-    | '/og/blog/$slug'
-    | '/og/page/$pageKey'
+  fullPaths: '/' | '/robots.txt' | '/site.webmanifest' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/$'
-    | '/about'
-    | '/bookmarks'
-    | '/experiences'
-    | '/feed.xml'
-    | '/journey'
-    | '/llms-full.txt'
-    | '/llms.txt'
-    | '/projects'
-    | '/services'
-    | '/setup'
-    | '/sitemap.xml'
-    | '/stack'
-    | '/workspace'
-    | '/academy/$'
-    | '/blog/$slug'
-    | '/blog/{$slug}.md'
-    | '/dev/mdx-sandbox'
-    | '/notlar/$slug'
-    | '/notlar/feed.xml'
-    | '/notlar/{$slug}.md'
-    | '/academy'
-    | '/blog'
-    | '/notlar'
-    | '/og/blog/$slug'
-    | '/og/page/$pageKey'
-  id:
-    | '__root__'
-    | '/'
-    | '/$'
-    | '/about'
-    | '/bookmarks'
-    | '/experiences'
-    | '/feed.xml'
-    | '/journey'
-    | '/llms-full.txt'
-    | '/llms.txt'
-    | '/projects'
-    | '/services'
-    | '/setup'
-    | '/sitemap.xml'
-    | '/stack'
-    | '/workspace'
-    | '/academy/$'
-    | '/blog/$slug'
-    | '/blog/{$slug}.md'
-    | '/dev/mdx-sandbox'
-    | '/notlar/$slug'
-    | '/notlar/feed.xml'
-    | '/notlar/{$slug}.md'
-    | '/academy/'
-    | '/blog/'
-    | '/notlar/'
-    | '/og/blog/$slug'
-    | '/og/page/$pageKey'
+  to: '/' | '/robots.txt' | '/site.webmanifest' | '/sitemap.xml'
+  id: '__root__' | '/' | '/robots.txt' | '/site.webmanifest' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  SplatRoute: typeof SplatRoute
-  AboutRoute: typeof AboutRoute
-  BookmarksRoute: typeof BookmarksRoute
-  ExperiencesRoute: typeof ExperiencesRoute
-  FeedDotxmlRoute: typeof FeedDotxmlRoute
-  JourneyRoute: typeof JourneyRoute
-  LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
-  LlmsDottxtRoute: typeof LlmsDottxtRoute
-  ProjectsRoute: typeof ProjectsRoute
-  ServicesRoute: typeof ServicesRoute
-  SetupRoute: typeof SetupRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SiteDotwebmanifestRoute: typeof SiteDotwebmanifestRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  StackRoute: typeof StackRoute
-  WorkspaceRoute: typeof WorkspaceRoute
-  AcademySplatRoute: typeof AcademySplatRoute
-  BlogSlugRoute: typeof BlogSlugRoute
-  BlogChar123slugChar125DotmdRoute: typeof BlogChar123slugChar125DotmdRoute
-  DevMdxSandboxRoute: typeof DevMdxSandboxRoute
-  NotlarSlugRoute: typeof NotlarSlugRoute
-  NotlarFeedDotxmlRoute: typeof NotlarFeedDotxmlRoute
-  NotlarChar123slugChar125DotmdRoute: typeof NotlarChar123slugChar125DotmdRoute
-  AcademyIndexRoute: typeof AcademyIndexRoute
-  BlogIndexRoute: typeof BlogIndexRoute
-  NotlarIndexRoute: typeof NotlarIndexRoute
-  OgBlogSlugRoute: typeof OgBlogSlugRoute
-  OgPagePageKeyRoute: typeof OgPagePageKeyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -392,81 +78,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$': {
-      id: '/$'
-      path: '/$'
-      fullPath: '/$'
-      preLoaderRoute: typeof SplatRouteImport
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bookmarks': {
-      id: '/bookmarks'
-      path: '/bookmarks'
-      fullPath: '/bookmarks'
-      preLoaderRoute: typeof BookmarksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/experiences': {
-      id: '/experiences'
-      path: '/experiences'
-      fullPath: '/experiences'
-      preLoaderRoute: typeof ExperiencesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/feed.xml': {
-      id: '/feed.xml'
-      path: '/feed.xml'
-      fullPath: '/feed.xml'
-      preLoaderRoute: typeof FeedDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/journey': {
-      id: '/journey'
-      path: '/journey'
-      fullPath: '/journey'
-      preLoaderRoute: typeof JourneyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/llms-full.txt': {
-      id: '/llms-full.txt'
-      path: '/llms-full.txt'
-      fullPath: '/llms-full.txt'
-      preLoaderRoute: typeof LlmsFullDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/llms.txt': {
-      id: '/llms.txt'
-      path: '/llms.txt'
-      fullPath: '/llms.txt'
-      preLoaderRoute: typeof LlmsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/setup': {
-      id: '/setup'
-      path: '/setup'
-      fullPath: '/setup'
-      preLoaderRoute: typeof SetupRouteImport
+    '/site.webmanifest': {
+      id: '/site.webmanifest'
+      path: '/site.webmanifest'
+      fullPath: '/site.webmanifest'
+      preLoaderRoute: typeof SiteDotwebmanifestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -476,145 +99,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/stack': {
-      id: '/stack'
-      path: '/stack'
-      fullPath: '/stack'
-      preLoaderRoute: typeof StackRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/workspace': {
-      id: '/workspace'
-      path: '/workspace'
-      fullPath: '/workspace'
-      preLoaderRoute: typeof WorkspaceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/academy/': {
-      id: '/academy/'
-      path: '/academy'
-      fullPath: '/academy/'
-      preLoaderRoute: typeof AcademyIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/academy/$': {
-      id: '/academy/$'
-      path: '/academy/$'
-      fullPath: '/academy/$'
-      preLoaderRoute: typeof AcademySplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/{$slug}.md': {
-      id: '/blog/{$slug}.md'
-      path: '/blog/{$slug}.md'
-      fullPath: '/blog/{$slug}.md'
-      preLoaderRoute: typeof BlogChar123slugChar125DotmdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dev/mdx-sandbox': {
-      id: '/dev/mdx-sandbox'
-      path: '/dev/mdx-sandbox'
-      fullPath: '/dev/mdx-sandbox'
-      preLoaderRoute: typeof DevMdxSandboxRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/notlar/': {
-      id: '/notlar/'
-      path: '/notlar'
-      fullPath: '/notlar/'
-      preLoaderRoute: typeof NotlarIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/notlar/$slug': {
-      id: '/notlar/$slug'
-      path: '/notlar/$slug'
-      fullPath: '/notlar/$slug'
-      preLoaderRoute: typeof NotlarSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/notlar/feed.xml': {
-      id: '/notlar/feed.xml'
-      path: '/notlar/feed.xml'
-      fullPath: '/notlar/feed.xml'
-      preLoaderRoute: typeof NotlarFeedDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/notlar/{$slug}.md': {
-      id: '/notlar/{$slug}.md'
-      path: '/notlar/{$slug}.md'
-      fullPath: '/notlar/{$slug}.md'
-      preLoaderRoute: typeof NotlarChar123slugChar125DotmdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/og/blog/$slug': {
-      id: '/og/blog/$slug'
-      path: '/og/blog/$slug'
-      fullPath: '/og/blog/$slug'
-      preLoaderRoute: typeof OgBlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/og/page/$pageKey': {
-      id: '/og/page/$pageKey'
-      path: '/og/page/$pageKey'
-      fullPath: '/og/page/$pageKey'
-      preLoaderRoute: typeof OgPagePageKeyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  SplatRoute: SplatRoute,
-  AboutRoute: AboutRoute,
-  BookmarksRoute: BookmarksRoute,
-  ExperiencesRoute: ExperiencesRoute,
-  FeedDotxmlRoute: FeedDotxmlRoute,
-  JourneyRoute: JourneyRoute,
-  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
-  LlmsDottxtRoute: LlmsDottxtRoute,
-  ProjectsRoute: ProjectsRoute,
-  ServicesRoute: ServicesRoute,
-  SetupRoute: SetupRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SiteDotwebmanifestRoute: SiteDotwebmanifestRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  StackRoute: StackRoute,
-  WorkspaceRoute: WorkspaceRoute,
-  AcademySplatRoute: AcademySplatRoute,
-  BlogSlugRoute: BlogSlugRoute,
-  BlogChar123slugChar125DotmdRoute: BlogChar123slugChar125DotmdRoute,
-  DevMdxSandboxRoute: DevMdxSandboxRoute,
-  NotlarSlugRoute: NotlarSlugRoute,
-  NotlarFeedDotxmlRoute: NotlarFeedDotxmlRoute,
-  NotlarChar123slugChar125DotmdRoute: NotlarChar123slugChar125DotmdRoute,
-  AcademyIndexRoute: AcademyIndexRoute,
-  BlogIndexRoute: BlogIndexRoute,
-  NotlarIndexRoute: NotlarIndexRoute,
-  OgBlogSlugRoute: OgBlogSlugRoute,
-  OgPagePageKeyRoute: OgPagePageKeyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
+import type { startInstance } from './start.ts'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
   }
 }

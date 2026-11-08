@@ -2,40 +2,43 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   pull_request:
+    branches: [main, master]
 
 jobs:
-  quality:
-    # Pinned so the runner's OS upgrade happens when we choose, not mid-week.
-    runs-on: ubuntu-24.04
-    # The build prerenders pages that load posts from Supabase, so CI needs the same
-    # read-only credentials as Vercel (repository secrets; the anon key, not service role).
-    env:
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-      VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      # Version comes from "packageManager" in package.json.
-      - uses: pnpm/action-setup@v6
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 12
 
-      - uses: actions/setup-node@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: "pnpm"
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - run: pnpm lint
+      - name: Typecheck
+        run: pnpm run typecheck
 
-      - run: pnpm check-types
+      - name: Lint
+        run: pnpm run lint:ci
 
-      - run: pnpm test
+      - name: Knip
+        run: pnpm run knip
 
-      - run: pnpm build
+      - name: Test
+        run: pnpm run test
 
-      # The build above is reused; `pnpm lighthouse:ci` would build a second time.
-      - run: pnpm exec lhci autorun
+      - name: Build
+        run: pnpm run build

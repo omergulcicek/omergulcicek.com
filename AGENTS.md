@@ -1,26 +1,3 @@
-# AGENTS.md
-
-## Project: omergulcicek.com
-
-Personal site and blog of Ömer Gülçiçek. Turkish-only site; code, types and naming in English.
-
-- **Commands:** `pnpm lint && pnpm typecheck && pnpm test:run` after every change (`typecheck` = `check-types`).
-- **Chat:** Reply to the user in Turkish.
-- **Content SSOT:** facts in `src/constants/me.json` (validated by `src/schemas/me.schema.ts`), page copy in `src/constants/site-copy.constants.ts`. Components never hard-code user-facing text.
-- **UI SSOT:** prose links → `ProseLink` / `ProseIconLink` / `ProseRouterLink` (`src/components/shared/prose-link.tsx`); typography and spacing tokens → `src/components/shared/prose.styles.ts`; card surfaces → `getInteractiveCardClassName` (`src/components/shared/interactive-card.styles.ts`).
-- **Skills (always use when relevant):**
-  - `ghostwriter` — any Turkish text a reader sees.
-  - `blog-post` — new posts and notes, Supabase rows, post images.
-  - `spacing-standard` — padding, margin and gap in `src/`.
-  - `better-ui`, `better-accessibility`, `emil-design-eng` — UI polish, accessibility and design review.
-- **Supabase:** never write without showing the SQL first and getting explicit approval.
-- **Decisions:** `docs/MEMORIES.md`.
-- **ViraStack overrides (named, per the Precedence section):**
-  - Ignore the ViraStack `react` rule on URL state: blog and bookmarks filters stay on `nuqs` (`createStandardSchemaV1` in `validateSearch`).
-  - Ignore the ViraStack `ui` rule on semantic colors for brand and tag color maps in `*.constants.ts` (`bookmark-tag-icons`, `blog-tag-icons`, `interest-styles`, `virastack-colors`); components use tokens.
-  - Ignore the ViraStack `api` rule on parsing every response with Zod where it would ship Zod to the client: only the GitHub responses in `features/projects` are parsed in the browser (`docs/MEMORIES.md`).
-  - `src/components/ui` is shadcn output: never edited by hand, and exempt from the `react` and `ui` rules.
-
 <!-- BEGIN:virastack-ai -->
 # ViraStack AI
 

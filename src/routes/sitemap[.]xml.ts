@@ -1,22 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { getBlogRepository } from "@/features/blog/api/get-blog-repository"
-import { buildSitemapXml } from "@/features/blog/helpers/build-sitemap-xml"
+import { siteConfig } from "@/config/site.config"
 
 export const Route = createFileRoute("/sitemap.xml")({
-	server: {
-		handlers: {
-			GET: async () => {
-				const posts = await getBlogRepository(false).getAllPosts()
-				const xml = buildSitemapXml(posts)
+  server: {
+    handlers: {
+      GET: async () => {
+        const lastmod = new Date().toISOString()
+        const body = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${siteConfig.url}/</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+`
 
-				return new Response(xml, {
-					headers: {
-						"Content-Type": "application/xml; charset=utf-8",
-						"Cache-Control": "public, max-age=3600, s-maxage=3600"
-					}
-				})
-			}
-		}
-	}
+        return new Response(body, {
+          headers: { "Content-Type": "application/xml; charset=utf-8" }
+        })
+      }
+    }
+  }
 })

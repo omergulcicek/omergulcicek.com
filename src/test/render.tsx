@@ -1,63 +1,56 @@
-import type { ReactElement } from "react"
+import type { ReactElement, ReactNode } from "react"
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import {
-	createMemoryHistory,
-	createRootRoute,
-	createRoute,
-	createRouter,
-	Outlet,
-	RouterProvider
+  createMemoryHistory,
+  createRootRoute,
+  createRoute,
+  createRouter,
+  RouterProvider
 } from "@tanstack/react-router"
+import type { AnyRoute, RouterHistory } from "@tanstack/react-router"
 import { render } from "@testing-library/react"
+import type { RenderOptions } from "@testing-library/react"
 
-/** A `QueryClient` that never retries, so failures show up at once. */
-export function createTestQueryClient() {
-	return new QueryClient({
-		defaultOptions: { queries: { retry: false, gcTime: Infinity } }
-	})
+export type UrlUpdateEvent = { queryString: string }
+
+type TestRoute = { path: string } & Pick<AnyRoute["options"], "validateSearch" | "search">
+
+type ProvidersOptions = Omit<RenderOptions, "wrapper"> & {
+  /** Renders the component in this route, for components that read it. Content appears async. */
+  route?: TestRoute
+  /** The URL the component starts on, such as `"?page=2"`. */
+  searchParams?: string
+  onUrlUpdate?: (event: UrlUpdateEvent) => void
 }
 
-/** Renders with a fresh `QueryClient`; pass one to seed the cache. */
-export function renderWithProviders(
-	ui: ReactElement,
-	queryClient = createTestQueryClient()
-) {
-	return render(
-		<QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>
-	)
+function makeRouter(ui: ReactElement, route: TestRoute, history: RouterHistory) {
+  // The router scrolls after each navigation and jsdom does not implement that.
+  window.scrollTo = () => {}
+
+  const rootRoute = createRootRoute()
+  const testRoute = createRoute({ getParentRoute: () => rootRoute, ...route, component: () => ui })
+
+  return createRouter({ routeTree: rootRoute.addChildren([testRoute]), history })
 }
 
 /**
- * Renders `ui` inside a real memory router so router hooks work. Every path resolves
- * (a splat route catches the rest), and `router.state.location` shows where it ended up.
+ * Renders a component with the app providers it expects.
+ * Each call gets a fresh QueryClient without retries and its own URL state, so tests stay isolated.
  */
-export async function renderWithRouter(
-	ui: ReactElement,
-	{ path = "/", queryClient = createTestQueryClient() } = {}
+export function renderWithProviders(
+  ui: ReactElement,
+  { route, searchParams = "", onUrlUpdate, ...options }: ProvidersOptions = {}
 ) {
-	const rootRoute = createRootRoute({
-		component: () => (
-			<>
-				{ui}
-				<Outlet />
-			</>
-		)
-	})
-	const routeTree = rootRoute.addChildren([
-		createRoute({ getParentRoute: () => rootRoute, path: "/" }),
-		createRoute({ getParentRoute: () => rootRoute, path: "$" })
-	])
-	const router = createRouter({
-		routeTree,
-		history: createMemoryHistory({ initialEntries: [path] })
-	})
+  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } })
+  const history = createMemoryHistory({ initialEntries: [`${route?.path ?? "/"}${searchParams}`] })
+  history.subscribe(({ location }) => onUrlUpdate?.({ queryString: location.search }))
 
-	await router.load()
-	render(
-		<QueryClientProvider client={queryClient}>
-			<RouterProvider router={router} />
-		</QueryClientProvider>
-	)
+  function Wrapper({ children }: { children: ReactNode }) {
+    return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  }
 
-	return { router, queryClient }
+  const content = route ? <RouterProvider router={makeRouter(ui, route, history)} /> : ui
+
+  return { ...render(content, { wrapper: Wrapper, ...options }), history }
 }

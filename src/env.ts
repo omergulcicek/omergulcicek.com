@@ -1,16 +1,57 @@
-import type { MediaProvider } from "@/schemas/client-env.schema"
-
-export type { MediaProvider }
+import { z } from "zod"
 
 /**
- * Public env values, inlined by Vite at build time. They are validated against
- * `clientEnvSchema` once, when the dev server or build starts (vite.config.ts), instead
- * of in every visitor's browser, which kept Zod in the entry bundle.
- * Empty strings from `.env` count as unset.
+ * Type-safe environment variable schema.
+ *
+ * Client-exposed variables MUST be prefixed with `VITE_` (Vite inlines these
+ * at build time). Server-only variables have no prefix and must never be
+ * read via `import.meta.env` on the client.
  */
+const serverSchema = z.object({
+  NODE_ENV: z.enum(["development", "production", "test"]).default("development")
+})
+
+const clientSchema = z.object({
+  VITE_APP_URL: z.url().default("http://localhost:3000"),
+  VITE_API_URL: z.url().default("https://dummyjson.com"),
+  VITE_APP_NAME: z.string().min(1).default("ViraStack Start - TanStack Edition")
+})
+
+function readEnv(key: string): string | undefined {
+  if (typeof process !== "undefined" && process.env[key] != null) {
+    return process.env[key]
+  }
+  return (import.meta.env as Record<string, string | undefined>)[key]
+}
+
+const serverParsed = serverSchema.safeParse({
+  NODE_ENV: readEnv("NODE_ENV")
+})
+
+const clientParsed = clientSchema.safeParse({
+  VITE_APP_URL: readEnv("VITE_APP_URL"),
+  VITE_API_URL: readEnv("VITE_API_URL"),
+  VITE_APP_NAME: readEnv("VITE_APP_NAME")
+})
+
+if (!serverParsed.success || !clientParsed.success) {
+  console.error(
+    "❌ Invalid environment variables:",
+    serverParsed.error && z.flattenError(serverParsed.error).fieldErrors,
+    clientParsed.error && z.flattenError(clientParsed.error).fieldErrors
+  )
+  throw new Error("Invalid environment variables. Check src/env.ts")
+}
+
+if (
+  serverParsed.data.NODE_ENV === "production" &&
+  typeof window === "undefined" &&
+  !readEnv("VITE_APP_URL")
+) {
+  console.warn("⚠️ VITE_APP_URL is not set, so the sitemap and social links point to localhost.")
+}
+
 export const env = {
-	VITE_MEDIA_PROVIDER: import.meta.env.VITE_MEDIA_PROVIDER || "local",
-	VITE_SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL || undefined,
-	VITE_SUPABASE_ANON_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY || undefined,
-	VITE_GA_ID: import.meta.env.VITE_GA_ID || undefined
-} as const
+  ...serverParsed.data,
+  ...clientParsed.data
+}

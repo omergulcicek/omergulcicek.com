@@ -1,11 +1,11 @@
 {
   "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
+  "style": "base-vega",
   "rsc": false,
   "tsx": true,
   "tailwind": {
     "config": "",
-    "css": "src/styles.css",
+    "css": "src/styles/tailwind.css",
     "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
@@ -17,10 +17,5 @@
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
-  },
-	"registries": {
-		"@magicui": "https://magicui.design/r/{name}",
-		"@ncdai": "https://chanhdai.com/r/{name}.json",
-		"@svgl": "https://svgl.app/r/{name}.json"
-	}
+  }
 }
