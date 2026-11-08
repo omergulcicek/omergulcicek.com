@@ -18,19 +18,19 @@ const config = defineConfig({
       // The URL alone decides the language: no redirect ever comes from a cookie or a header.
       strategy: ["url", "baseLocale"],
       urlPatterns: [
-        // Without this entry, the Turkish home page comes out as `/tr/`, which the router redirects.
+        // Without this entry, the English home page comes out as `/en/`, which the router redirects.
         {
           pattern: "/",
           localized: [
-            ["tr", "/tr"],
-            ["en", "/"]
+            ["en", "/en"],
+            ["tr", "/"]
           ]
         },
         {
           pattern: "/:path(.*)?",
           localized: [
-            ["tr", "/tr/:path(.*)?"],
-            ["en", "/:path(.*)?"]
+            ["en", "/en/:path(.*)?"],
+            ["tr", "/:path(.*)?"]
           ]
         }
       ]

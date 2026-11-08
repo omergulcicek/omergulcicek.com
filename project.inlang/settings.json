@@ -1,7 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/project-settings",
-  "baseLocale": "en",
-  "locales": ["en", "tr"],
+  "baseLocale": "tr",
+  "locales": ["tr", "en"],
   "modules": ["https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@3/dist/index.js"],
   "plugin.inlang.messageFormat": {
     "pathPattern": "./src/messages/{locale}.json"
