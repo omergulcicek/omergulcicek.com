@@ -1,7 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "site_description": "TanStack Start boilerplate built for scalable UI/UX, clean architecture, and agent-ready developer experience.",
-  "language": "Language",
+  "language_switch": "Switch to Turkish",
   "theme_to_light": "Switch to light theme",
   "theme_to_dark": "Switch to dark theme",
   "go_home": "Go home",

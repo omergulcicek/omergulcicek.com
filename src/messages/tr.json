@@ -1,7 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "site_description": "Ölçeklenebilir UI/UX, temiz mimari ve agent-ready geliştirici deneyimi için hazırlanmış TanStack Start boilerplate'i.",
-  "language": "Dil",
+  "language_switch": "İngilizceye geç",
   "theme_to_light": "Açık temaya geç",
   "theme_to_dark": "Koyu temaya geç",
   "go_home": "Ana sayfaya dön",
