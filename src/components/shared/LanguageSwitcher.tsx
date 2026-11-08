@@ -9,8 +9,8 @@ export function LanguageSwitcher() {
   return (
     <Button
       variant="ghost"
-      size="sm"
-      className="font-mono text-xs"
+      size="icon"
+      className="size-8 font-mono text-xs"
       aria-label={m.language_switch()}
       // setLocale loads the localized URL as a new document, so the server HTML and the URL agree.
       onClick={() => void setLocale(nextLang)}
