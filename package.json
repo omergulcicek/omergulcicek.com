@@ -8,6 +8,7 @@
   "virastack": {
     "template": "tanstack",
     "version": "2.1.0",
+    "i18n": true,
     "url": "https://virastack.com"
   },
   "engines": {
@@ -29,7 +30,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -68,6 +70,7 @@
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "@inlang/paraglide-js": "^2.29.3",
     "@rolldown/plugin-babel": "^0.2.4",
     "@tanstack/eslint-config": "^0.4.0",
     "@tanstack/router-cli": "^1.167.46",

@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-imports -- package.json sits outside src, beyond the @/* alias */
 import { STACK } from "@/features/home/constants/home.constants"
 import { parseVersion } from "@/features/home/helpers/parse-version"
+import * as m from "@/paraglide/messages.js"
 
 import { dependencies, devDependencies } from "../../../../package.json"
 
@@ -8,7 +9,7 @@ const versions: Record<string, string> = { ...devDependencies, ...dependencies }
 
 export function StackList() {
   return (
-    <ul aria-label="Tech stack" className="flex flex-wrap justify-center gap-2 lg:-mx-28">
+    <ul aria-label={m.home_stack_label()} className="flex flex-wrap justify-center gap-2 lg:-mx-28">
       {STACK.map(({ name, packageName, icon: Icon }) => {
         const range = packageName ? versions[packageName] : undefined
 

@@ -1,6 +1,6 @@
 /** @type {import('knip').KnipConfig} */
 const config = {
-  entry: ["src/router.tsx", "src/start.ts", "src/routes/**/*.{ts,tsx}"],
+  entry: ["src/router.tsx", "src/start.ts", "src/server.ts", "src/routes/**/*.{ts,tsx}"],
   project: ["src/**/*.{ts,tsx,js,jsx}"],
   ignore: [
     "src/components/ui/**",

@@ -15,6 +15,7 @@ import { Providers } from "@/providers/Providers"
 import { DefaultCatchBoundary } from "@/components/shared/DefaultCatchBoundary"
 import { NotFound } from "@/components/shared/NotFound"
 import { SiteHeader } from "@/components/shared/SiteHeader"
+import { getLocale } from "@/paraglide/runtime.js"
 
 interface RouterContext {
   queryClient: QueryClient
@@ -59,8 +60,9 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const lang = getLocale()
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang={lang} className="h-full" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

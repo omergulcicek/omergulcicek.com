@@ -5,6 +5,9 @@ node_modules
 pnpm-lock.yaml
 public
 src/routeTree.gen.ts
+src/paraglide
+project.inlang/*
+!project.inlang/settings.json
 
 # Managed by ViraStack AI and the skills CLI
 AGENTS.md

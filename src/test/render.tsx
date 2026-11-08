@@ -19,6 +19,8 @@ type TestRoute = { path: string } & Pick<AnyRoute["options"], "validateSearch" |
 type ProvidersOptions = Omit<RenderOptions, "wrapper"> & {
   /** Renders the component in this route, for components that read it. Content appears async. */
   route?: TestRoute
+  /** The path the component starts on. Needed when `route.path` has a param, such as `{-$lang}`. */
+  initialPath?: string
   /** The URL the component starts on, such as `"?page=2"`. */
   searchParams?: string
   onUrlUpdate?: (event: UrlUpdateEvent) => void
@@ -40,10 +42,12 @@ function makeRouter(ui: ReactElement, route: TestRoute, history: RouterHistory) 
  */
 export function renderWithProviders(
   ui: ReactElement,
-  { route, searchParams = "", onUrlUpdate, ...options }: ProvidersOptions = {}
+  { route, initialPath, searchParams = "", onUrlUpdate, ...options }: ProvidersOptions = {}
 ) {
   const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } })
-  const history = createMemoryHistory({ initialEntries: [`${route?.path ?? "/"}${searchParams}`] })
+  const history = createMemoryHistory({
+    initialEntries: [`${initialPath ?? route?.path ?? "/"}${searchParams}`]
+  })
   history.subscribe(({ location }) => onUrlUpdate?.({ queryString: location.search }))
 
   function Wrapper({ children }: { children: ReactNode }) {

@@ -36,6 +36,10 @@ USE WHEN: Working on TanStack Start routes, loaders, server functions, middlewar
 - Secrets stay in server code; `VITE_` env vars are public.
 - `src/start.ts` must keep `createCsrfMiddleware`: defining this file turns off the automatic one. Non-GET server routes need their own same-origin check.
 
+## i18n
+
+- Paraglide JS (`@inlang/paraglide-js`): locale routes under the optional param `src/routes/{-$lang}`, so the default locale has no prefix; `/en` answers with a 301 to `/`. See the `i18n` rule.
+
 ## Bans
 
 - Route data fetched in a component (`useEffect`, or `useQuery` without a loader prefetch).

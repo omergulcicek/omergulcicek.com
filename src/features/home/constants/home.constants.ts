@@ -8,6 +8,7 @@ import { TanstackIcon } from "@/features/home/icons/tanstack"
 import { TypescriptIcon } from "@/features/home/icons/typescript"
 import { ZodIcon } from "@/features/home/icons/zod"
 import { ZustandIcon } from "@/features/home/icons/zustand"
+import * as m from "@/paraglide/messages.js"
 
 type StackItem = {
   name: string
@@ -18,10 +19,11 @@ type StackItem = {
 
 export const FEATURES_URL = "https://virastack.com/start/features"
 
-export const NEXT_STEPS = [
-  { title: "Replace this page", path: "src/routes/index.tsx" },
-  { title: "Add your first feature", path: "src/features/<name>" },
-  { title: "Add a ready-to-run module", path: "npx virastack add users" }
+// These two are functions so the text is read per request, in the locale of that request.
+export const getNextSteps = () => [
+  { title: m.home_next_replace(), path: "src/routes/{-$lang}/index.tsx" },
+  { title: m.home_next_feature(), path: "src/features/<name>" },
+  { title: m.home_next_module(), path: "npx virastack add users" }
 ]
 
 export const STACK: readonly StackItem[] = [
@@ -36,9 +38,10 @@ export const STACK: readonly StackItem[] = [
   { name: "Zod", packageName: "zod", icon: ZodIcon }
 ]
 
-export const RESOURCE_LINKS = [
-  { label: "Docs", href: "https://virastack.com/start/docs" },
-  { label: "ViraStack AI", href: "https://virastack.com/ai" },
-  { label: "Academy", href: "https://virastack.com/academy" },
-  { label: "GitHub", href: "https://github.com/virastack/start" }
-] as const
+export const getResourceLinks = () =>
+  [
+    { label: m.home_link_docs(), href: "https://virastack.com/start/docs" },
+    { label: "ViraStack AI", href: "https://virastack.com/ai" },
+    { label: "Academy", href: "https://virastack.com/academy" },
+    { label: "GitHub", href: "https://github.com/virastack/start" }
+  ] as const

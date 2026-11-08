@@ -32,6 +32,7 @@
 | `api` | Writing HTTP calls with the native fetch wrapper in src/lib/api.ts: endpoints, Zod parsing, ApiError. |
 | `server-state` | Fetching and caching server data with TanStack Query 5: queryOptions, hooks, mutations, invalidation. |
 | `client-state` | Writing Zustand 5 stores: placement, actions, server rendering and persist. |
+| `i18n` | Working with translations (next-intl or Paraglide JS): message files, keys, locales. |
 | `testing` | Writing tests with Vitest, Testing Library and MSW. |
 | `performance` | Improving Core Web Vitals (LCP, INP, CLS): images, fonts, scripts, bundle size. |
 <!-- END:virastack-ai -->

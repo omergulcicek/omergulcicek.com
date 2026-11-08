@@ -14,6 +14,7 @@ src/
 ├── features/<feature>/  # api, components, constants, helpers, hooks, icons,
 │                        # schemas, stores, types
 ├── components/          # layout, shared, ui
+├── messages/            # one JSON file per locale
 ├── assets/  config/  constants/  helpers/  hooks/  lib/
 ├── providers/  schemas/  stores/  styles/  test/  types/
 └── env.ts
