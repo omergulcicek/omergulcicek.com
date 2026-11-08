@@ -70,7 +70,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         {children}
         {import.meta.env.DEV ? (
           <TanStackDevtools
-            config={{ position: "bottom-right" }}
+            config={{ position: "bottom-right", triggerHidden: true }}
             plugins={[
               {
                 name: "TanStack Router",
