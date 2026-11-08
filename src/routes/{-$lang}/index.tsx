@@ -3,7 +3,6 @@ import { createFileRoute } from "@tanstack/react-router"
 import { hreflangLinks } from "@/helpers/localized-url"
 
 import { Pending } from "@/components/shared/Pending"
-import { HomePage } from "@/features/home/components/HomePage"
 
 export const Route = createFileRoute("/{-$lang}/")({
   head: () => ({ links: hreflangLinks("/") }),
@@ -12,5 +11,5 @@ export const Route = createFileRoute("/{-$lang}/")({
 })
 
 function Home() {
-  return <HomePage />
+  return <main className="flex-1" />
 }
