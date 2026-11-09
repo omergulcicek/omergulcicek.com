@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import { TanStackDevtools } from "@tanstack/react-devtools"
 import type { QueryClient } from "@tanstack/react-query"
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router"
@@ -84,6 +86,15 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 })
 
 function RootComponent() {
+  // The page entrance (see tailwind.css) plays on the first load only; after that, pages that
+  // open through client-side navigation appear at once.
+  useEffect(() => {
+    const timer = globalThis.setTimeout(() => {
+      document.documentElement.dataset.entered = ""
+    }, 800)
+    return () => globalThis.clearTimeout(timer)
+  }, [])
+
   return (
     <Providers>
       <GoogleAnalytics />
@@ -92,7 +103,10 @@ function RootComponent() {
         <SiteSidebar />
         {/* The sidebar stays at the left edge; content centers in the space beside it. */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-5 py-10 md:px-10 md:py-12">
+          <main
+            data-enter=""
+            className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-5 py-10 md:px-10 md:py-12"
+          >
             <Outlet />
           </main>
           <SiteFooter />

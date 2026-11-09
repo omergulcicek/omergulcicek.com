@@ -200,3 +200,108 @@
     transform: translateY(0.5rem) scale(0.9);
   }
 }
+
+/*
+ * Motion. Values follow the better-ui and Emil Kowalski rules: entrances 300ms ease-out with a
+ * 12px rise and 4px blur, 100ms apart; reduced motion keeps only the opacity.
+ */
+
+/* Page entrance, on the first load only: the root marks <html data-entered> once it has played,
+   so client-side navigation (frequent) shows pages at once. Header, then the next block, then
+   the rest of the page. */
+@keyframes enter {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+    filter: blur(4px);
+  }
+}
+
+@keyframes enter-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+html:not([data-entered]) main[data-enter] > :first-child > * {
+  animation: enter 300ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+html:not([data-entered]) main[data-enter] > :first-child > :nth-child(2) {
+  animation-delay: 100ms;
+}
+
+html:not([data-entered]) main[data-enter] > :first-child > :nth-child(n + 3) {
+  animation-delay: 200ms;
+}
+
+/* A translate or filter on an ancestor turns it into the containing block of a fixed element,
+   so the right rail would ride along in the middle of the page until the animation ended. Blocks
+   that hold it only fade. */
+html:not([data-entered]) main[data-enter] > :first-child > :has([data-page-rail]) {
+  animation-name: enter-fade;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-entered]) main[data-enter] > :first-child > * {
+    animation-name: enter-fade;
+  }
+}
+
+/* Photos open from the bottom as they scroll into view, once (see useRevealOnScroll). The
+   inset reaches past the edges so the double frame's ring is never cut. */
+[data-reveal] {
+  clip-path: inset(-12px);
+  transition:
+    clip-path 600ms cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 300ms ease-out;
+}
+
+[data-reveal="hidden"] {
+  clip-path: inset(-12px -12px 100% -12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    clip-path: none;
+  }
+
+  [data-reveal="hidden"] {
+    opacity: 0;
+  }
+}
+
+/* Two icons in one spot, cross-faded on a state change: copy to copied, moon to sun. The first
+   child shows by default; [data-copied] on the button or the dark theme shows the second. */
+.icon-swap {
+  display: grid;
+}
+
+.icon-swap > * {
+  grid-area: 1 / 1;
+  transition-property: opacity, scale, filter;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.icon-swap > :last-child,
+[data-copied] .icon-swap > :first-child,
+.dark [data-theme-swap] .icon-swap > :first-child {
+  opacity: 0;
+  scale: 0.25;
+  filter: blur(4px);
+}
+
+[data-copied] .icon-swap > :last-child,
+.dark [data-theme-swap] .icon-swap > :last-child {
+  opacity: 1;
+  scale: 1;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-swap > * {
+    scale: 1 !important;
+    filter: none !important;
+  }
+}

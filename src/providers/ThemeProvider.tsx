@@ -73,9 +73,10 @@ export function ThemeProvider({
     const current = resolve(readTheme(storageKey, defaultTheme), prefersDark())
     const root = document.documentElement
     // Every hover and link color transitions in 150ms; without this they would all fade at
-    // once and smear the switch. Off for the swap, a forced style flush, then back on.
+    // once and smear the switch. Off for the swap, a forced style flush, then back on. The
+    // theme button's own icon (.icon-swap) is left out, so it still cross-fades.
     const pause = document.createElement("style")
-    pause.textContent = "*,*::before,*::after{transition:none!important}"
+    pause.textContent = ":not(.icon-swap > *),::before,::after{transition:none!important}"
     document.head.appendChild(pause)
     root.classList.remove("light", "dark")
     root.classList.add(current)

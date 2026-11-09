@@ -14,6 +14,8 @@ export function PageRail({ title, children }: PageRailProps) {
   return (
     <nav
       aria-labelledby={titleId}
+      // The page entrance only fades blocks that hold the rail (see tailwind.css).
+      data-page-rail=""
       // Long lists (19 book genres) scroll inside the rail instead of running off the window.
       className="fixed top-28 right-10 hidden max-h-[calc(100dvh-9rem)] w-56 flex-col gap-3 overflow-y-auto text-sm xl:flex"
     >

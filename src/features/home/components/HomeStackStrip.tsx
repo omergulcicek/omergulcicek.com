@@ -6,6 +6,13 @@ import { localize } from "@/helpers/localize"
 import { Marquee } from "@/components/ui/marquee"
 import * as m from "@/paraglide/messages.js"
 
+/** Changes the speed of every CSS animation inside, keeping its position: no jump, no restart. */
+function setPlaybackRate(element: HTMLElement, rate: number) {
+  for (const animation of element.getAnimations({ subtree: true })) {
+    animation.updatePlaybackRate(rate)
+  }
+}
+
 export function HomeStackStrip() {
   const items = me.stack.map((item) => ({
     ...item,
@@ -32,8 +39,14 @@ export function HomeStackStrip() {
         ))}
       </ul>
       {/* The moving copy repeats the list for the loop, so it stays hidden from assistive tech. */}
-      <div aria-hidden className="mask-x-from-90% mask-x-to-100% motion-reduce:hidden">
-        <Marquee pauseOnHover repeat={2} className="py-2 [--duration:60s] [--gap:1.5rem]">
+      {/* Hover slows the strip to a quarter speed instead of stopping it dead. */}
+      <div
+        aria-hidden
+        className="mask-x-from-90% mask-x-to-100% motion-reduce:hidden"
+        onPointerEnter={(event) => setPlaybackRate(event.currentTarget, 0.25)}
+        onPointerLeave={(event) => setPlaybackRate(event.currentTarget, 1)}
+      >
+        <Marquee repeat={2} className="py-2 [--duration:60s] [--gap:1.5rem]">
           {items.map(renderItem)}
         </Marquee>
       </div>

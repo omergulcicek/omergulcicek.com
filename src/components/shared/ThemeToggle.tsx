@@ -25,8 +25,13 @@ export function ThemeToggle() {
       className="size-8"
       aria-label={isDark ? m.theme_to_light() : m.theme_to_dark()}
       onClick={() => setTheme(isDark ? "light" : "dark")}
+      // Both icons stay mounted; the theme class on <html> cross-fades them (see .icon-swap).
+      data-theme-swap=""
     >
-      {isDark ? <SunIcon className="size-3.5" /> : <MoonIcon className="size-3.5" />}
+      <span className="icon-swap">
+        <MoonIcon aria-hidden className="size-3.5" />
+        <SunIcon aria-hidden className="size-3.5" />
+      </span>
     </Button>
   )
 }

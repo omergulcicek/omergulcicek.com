@@ -60,8 +60,10 @@ export function BlogCodeBlock({
             "group size-8 text-muted-foreground"
           )}
         >
-          <CopyIcon aria-hidden="true" className="group-data-copied:hidden" />
-          <CheckIcon aria-hidden="true" className="hidden group-data-copied:block" />
+          <span className="icon-swap">
+            <CopyIcon aria-hidden="true" />
+            <CheckIcon aria-hidden="true" />
+          </span>
         </button>
       </figcaption>
       <pre
