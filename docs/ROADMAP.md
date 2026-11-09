@@ -38,8 +38,9 @@
 - [x] Ana sayfa meta description (`site_description`)
 - [x] Alt sayfa başlık şablonu: "Blog · Ömer Gülçiçek" (`pageHead()` in `config/seo.config.ts`)
 - [x] Her sayfaya kendi OG ve Twitter etiketleri
-- [x] Yazı sayfalarına özel paylaşım görseli (`og_image_path`; 113 yazının 74'ünde var, diğerleri site kartını kullanır)
-- [ ] OG görseli ve favicon (şu an ViraStack Start'ın `og.png`, `favicon.ico` ve `logo.webp` dosyaları; manifest için 192 ve 512 px ikon)
+- [x] Yazı sayfalarında paylaşım kartı (Supabase'deki `og_image_path` artık kullanılmıyor)
+- [x] Paylaşım kartları dinamik: `/og/<dil>/<yol>`, tüm sayfalar ve yazılar aynı şablonla (`features/og-image`)
+- [ ] Favicon ve manifest ikonları (şu an ViraStack Start'ın `favicon.ico` ve `logo.webp` dosyaları; 192 ve 512 px ikon)
 - [x] Sitemap: sayfalar iki dilde (hreflang ile), yazılar yalnızca kendi dillerinde
 - [x] JSON-LD: ana sayfada `WebSite` ve `Person`, yazılarda `BlogPosting`
 - [x] Canonical: tüm sayfalar; yazılar kendi dillerindeki adresi gösterir
