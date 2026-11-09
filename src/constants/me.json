@@ -18,6 +18,7 @@
     "npm": "https://www.npmjs.com/~omergulcicek",
     "linkedin": "https://linkedin.com/in/omergulcicek",
     "x": "https://x.com/omergulcicek",
+    "instagram": "https://instagram.com/omerilekesfet",
     "virastack": "https://virastack.com"
   },
   "experiences": [
@@ -660,8 +661,8 @@
   ],
   "hero": {
     "intro": {
-      "tr": "Sakarya'da yaşayan kıdemli bir frontend mühendisiyim. 10 yılı aşkın süredir React ile arayüz geliştiriyorum. Next.js ve TanStack ile sunucuda render edilen uygulamalar, tasarım sistemleri, erişilebilir form bileşenleri ve tip güvenli API katmanları kuruyorum. Ekiplere liderlik edip ortak kod standartlarını belirliyorum. Bugün bunların hepsini frontend geliştiriciler için açık kaynak şablonlara, paketlere ve ücretsiz rehberlere dönüştürüyorum: <virastack>ViraStack</virastack>.",
-      "en": "I'm a senior frontend engineer based in Sakarya, Turkey. I've been building interfaces with React for over 10 years. I build server-rendered apps with Next.js and TanStack, design systems, accessible form components and type-safe API layers. I lead teams and set shared code standards. Today I turn all of it into open-source templates, packages and free guides for frontend developers: <virastack>ViraStack</virastack>."
+      "tr": "Sakarya'da yaşayan <b>kıdemli bir frontend mühendisiyim</b>. 10 yılı aşkın süredir React ile arayüz geliştiriyorum. Next.js ve TanStack ile sunucuda render edilen uygulamalar, <b>tasarım sistemleri</b>, erişilebilir form bileşenleri ve tip güvenli API katmanları kuruyorum. <b>Ekiplere liderlik edip</b> ortak kod standartlarını belirliyorum. Bugün bunların hepsini frontend geliştiriciler için açık kaynak şablonlara, paketlere ve ücretsiz rehberlere dönüştürüyorum: <virastack>ViraStack</virastack>.",
+      "en": "I'm a <b>senior frontend engineer</b> based in Sakarya, Turkey. I've been building interfaces with React for over 10 years. I build server-rendered apps with Next.js and TanStack, <b>design systems</b>, accessible form components and type-safe API layers. <b>I lead teams</b> and set shared code standards. Today I turn all of it into open-source templates, packages and free guides for frontend developers: <virastack>ViraStack</virastack>."
     }
   }
 }

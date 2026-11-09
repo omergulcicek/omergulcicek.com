@@ -36,10 +36,10 @@ function FavoriteValue({ favorite }: { favorite: Favorite }) {
 export function AboutFavorites() {
   return (
     <section aria-labelledby="about-favorites" className="flex flex-col gap-4">
-      <h2 id="about-favorites" className="text-sm font-medium text-muted-foreground">
+      <h2 id="about-favorites" className="text-xl font-semibold tracking-tight">
         {m.about_favorites_title()}
       </h2>
-      <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-8 gap-y-3 text-sm">
+      <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-8 gap-y-3 text-base">
         {FAVORITES.map((favorite) => (
           <div key={favorite.id} className="contents">
             <dt className="text-muted-foreground">{getLabel(favorite.id)}</dt>

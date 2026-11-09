@@ -4,6 +4,7 @@ import { me } from "@/constants/me.constants"
 
 import { localize } from "@/helpers/localize"
 
+import { emphasisTags } from "@/components/shared/emphasis-tags"
 import { ProseLink } from "@/components/shared/ProseLink"
 import { RichMessage } from "@/components/shared/RichMessage"
 import { surfaceDoubleFrameClass } from "@/components/shared/surface.styles"
@@ -24,11 +25,15 @@ export function HomeHero() {
           <p>
             <RichMessage
               message={localize(hero.intro)}
-              tags={{ virastack: (chunk) => <ProseLink href={links.virastack}>{chunk}</ProseLink> }}
+              tags={{
+                ...emphasisTags,
+                virastack: (chunk) => <ProseLink href={links.virastack}>{chunk}</ProseLink>
+              }}
             />
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        {/* Below md the two labeled buttons share a row and the profile icons center under them. */}
+        <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:items-center">
           <HomeCtaButton />
           <HomeSocialLinks />
         </div>
@@ -43,7 +48,7 @@ export function HomeHero() {
         fetchPriority="high"
         decoding="async"
         className={cn(
-          "aspect-square w-full max-w-80 shrink-0 object-cover",
+          "aspect-square w-full shrink-0 object-cover md:max-w-80",
           surfaceDoubleFrameClass
         )}
       />
