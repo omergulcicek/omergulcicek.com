@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start"
 
 import { getSupabaseApi } from "@/lib/supabase-api"
 
+import { RETIRED_POSTS_FILTER } from "@/features/blog/constants/retired-posts.constants"
 import {
   blogPostListSchema,
   getBlogPostsInputSchema
@@ -18,6 +19,7 @@ export const getBlogPosts = createServerFn({ method: "GET" })
         select: "slug,title,tags,locale,published_at",
         category: `eq.${data.category}`,
         published: "eq.true",
+        slug: RETIRED_POSTS_FILTER,
         order: "published_at.desc.nullslast",
         limit: 500
       },
