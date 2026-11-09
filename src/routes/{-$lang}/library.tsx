@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { canonicalLink, hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
@@ -10,10 +10,8 @@ import { librarySearchSchema } from "@/features/library/schemas/book.schema"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/library")({
-  head: () => ({
-    meta: [{ title: m.library_title() }, { name: "description", content: m.library_description() }],
-    links: [canonicalLink("/library"), ...hreflangLinks("/library")]
-  }),
+  head: () =>
+    pageHead({ path: "/library", title: m.library_title(), description: m.library_description() }),
   validateSearch: librarySearchSchema,
   component: LibraryPage
 })

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { canonicalLink, hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
@@ -12,10 +12,8 @@ import { blogListSearchSchema } from "@/features/blog/schemas/blog-post.schema"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/notes/")({
-  head: () => ({
-    meta: [{ title: m.notes_title() }, { name: "description", content: m.notes_description() }],
-    links: [canonicalLink("/notes"), ...hreflangLinks("/notes")]
-  }),
+  head: () =>
+    pageHead({ path: "/notes", title: m.notes_title(), description: m.notes_description() }),
   validateSearch: blogListSearchSchema,
   loader: ({ context }) =>
     context.queryClient.query({ ...blogPostsQueryOptions("personal"), staleTime: "static" }),

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { hreflangLinks } from "@/helpers/localized-url"
+import { homeHead } from "@/config/seo.config"
 
 import { Pending } from "@/components/shared/Pending"
 import { Separator } from "@/components/ui/separator"
@@ -11,7 +11,7 @@ import { HomeHero } from "@/features/home/components/HomeHero"
 import { HomeStackStrip } from "@/features/home/components/HomeStackStrip"
 
 export const Route = createFileRoute("/{-$lang}/")({
-  head: () => ({ links: hreflangLinks("/") }),
+  head: homeHead,
   loader: ({ context }) =>
     context.queryClient.query({ ...blogPostsQueryOptions("technical"), staleTime: "static" }),
   pendingComponent: Pending,

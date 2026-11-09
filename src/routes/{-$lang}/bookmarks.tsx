@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { canonicalLink, hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
@@ -10,13 +10,12 @@ import { bookmarksSearchSchema } from "@/features/bookmarks/schemas/bookmark.sch
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/bookmarks")({
-  head: () => ({
-    meta: [
-      { title: m.bookmarks_title() },
-      { name: "description", content: m.bookmarks_description() }
-    ],
-    links: [canonicalLink("/bookmarks"), ...hreflangLinks("/bookmarks")]
-  }),
+  head: () =>
+    pageHead({
+      path: "/bookmarks",
+      title: m.bookmarks_title(),
+      description: m.bookmarks_description()
+    }),
   validateSearch: bookmarksSearchSchema,
   component: BookmarksPage
 })

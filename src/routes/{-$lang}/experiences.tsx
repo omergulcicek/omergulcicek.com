@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
@@ -10,13 +10,12 @@ import { ExperienceList } from "@/features/experiences/components/ExperienceList
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/experiences")({
-  head: () => ({
-    meta: [
-      { title: m.experiences_title() },
-      { name: "description", content: m.experiences_description() }
-    ],
-    links: hreflangLinks("/experiences")
-  }),
+  head: () =>
+    pageHead({
+      path: "/experiences",
+      title: m.experiences_title(),
+      description: m.experiences_description()
+    }),
   component: ExperiencesPage
 })
 

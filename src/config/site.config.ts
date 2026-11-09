@@ -1,13 +1,14 @@
 import type { SiteConfig } from "@/types/site-config.types"
+import { me } from "@/constants/me.constants"
 import { env } from "@/env"
 
-// FIXME: replace with your own site metadata, and public/og.png and public/logo.* with your images.
 export const siteConfig: SiteConfig = {
-  name: env.VITE_APP_NAME,
-  description:
-    "TanStack Start boilerplate built for scalable UI/UX, clean architecture, and agent-ready developer experience.",
-  shortName: "ViraStack Start",
+  name: me.name,
+  // The web manifest has one description for every locale; pages localize theirs in head().
+  description: `${me.name}, ${me.title.en}`,
+  shortName: me.handle,
   url: env.VITE_APP_URL,
   apiUrl: env.VITE_API_URL,
+  // FIXME: public/og.png is still the ViraStack Start card; replace it with a 1200×630 card of your own.
   ogImage: `${env.VITE_APP_URL}/og.png`
 }

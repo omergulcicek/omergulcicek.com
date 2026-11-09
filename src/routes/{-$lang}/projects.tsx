@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
@@ -11,13 +11,12 @@ import { ProjectsToc } from "@/features/projects/components/ProjectsToc"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/projects")({
-  head: () => ({
-    meta: [
-      { title: m.projects_title() },
-      { name: "description", content: m.projects_description() }
-    ],
-    links: hreflangLinks("/projects")
-  }),
+  head: () =>
+    pageHead({
+      path: "/projects",
+      title: m.projects_title(),
+      description: m.projects_description()
+    }),
   loader: ({ context }) => context.queryClient.query(projectStatsQueryOptions()),
   component: ProjectsPage
 })

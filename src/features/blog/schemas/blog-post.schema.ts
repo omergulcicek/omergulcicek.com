@@ -21,6 +21,14 @@ export const blogPostListItemSchema = z.object({
 
 export const blogPostListSchema = z.array(blogPostListItemSchema)
 
+/** One row for the sitemap: where the post lives and when it last changed. */
+export const sitemapPostListSchema = z.array(
+  blogPostListItemSchema.pick({ slug: true, locale: true, published_at: true }).extend({
+    category: blogCategorySchema,
+    updated_at: z.string().nullable()
+  })
+)
+
 /** The route param is the slug without its leading slash; slugs are lowercase words and dashes. */
 export const getBlogPostInputSchema = z.strictObject({
   category: blogCategorySchema,
@@ -31,7 +39,10 @@ export const getBlogPostInputSchema = z.strictObject({
 export const blogPostDetailRowsSchema = z.array(
   blogPostListItemSchema.extend({
     description: z.string(),
-    content: z.string().min(1)
+    content: z.string().min(1),
+    /** A public path such as `blog/2026/07-28/cover.jpg`, with or without the leading slash. */
+    og_image_path: z.string().min(1).nullable(),
+    updated_at: z.string().nullable()
   })
 )
 
@@ -41,6 +52,8 @@ export type BlogPostListItem = z.infer<typeof blogPostListItemSchema>
 /** A post ready to show: its MDX is already rendered to HTML on the server. */
 export type BlogPostDetail = BlogPostListItem & {
   description: string
+  og_image_path: string | null
+  updated_at: string | null
   html: string
   /** The h2/h3 outline, for the table of contents. */
   headings: PostHeading[]

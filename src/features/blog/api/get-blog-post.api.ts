@@ -29,7 +29,7 @@ export const getBlogPost = createServerFn({ method: "GET" })
 
     const rows = await getSupabaseApi().get("/blog_posts", {
       params: {
-        select: "slug,title,description,tags,locale,published_at,content",
+        select: "slug,title,description,tags,locale,published_at,content,og_image_path,updated_at",
         slug: `eq./${data.slug}`,
         category: `eq.${data.category}`,
         published: "eq.true",

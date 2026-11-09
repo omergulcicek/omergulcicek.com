@@ -1,6 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "site_description": "TanStack Start boilerplate built for scalable UI/UX, clean architecture, and agent-ready developer experience.",
+  "site_description": "The site of Ömer Gülçiçek, a frontend engineer in Sakarya, Turkey: posts on React, Next.js and TanStack, open-source projects and ViraStack.",
   "language_switch": "Switch to Turkish",
   "theme_to_light": "Switch to light theme",
   "theme_to_dark": "Switch to dark theme",

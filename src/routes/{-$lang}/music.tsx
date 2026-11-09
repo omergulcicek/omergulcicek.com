@@ -1,16 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { canonicalLink, hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { MusicGroups } from "@/features/music/components/MusicGroups"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/music")({
-  head: () => ({
-    meta: [{ title: m.music_title() }, { name: "description", content: m.music_description() }],
-    links: [canonicalLink("/music"), ...hreflangLinks("/music")]
-  }),
+  // Draft track lists: out of search results until the page is final.
+  head: () =>
+    pageHead({
+      path: "/music",
+      title: m.music_title(),
+      description: m.music_description(),
+      noindex: true
+    }),
   component: MusicPage
 })
 

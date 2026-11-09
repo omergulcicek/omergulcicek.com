@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { hreflangLinks } from "@/helpers/localized-url"
-
 import { NotFound } from "@/components/shared/NotFound"
 import { readingWidthClass } from "@/components/shared/surface.styles"
 import { blogPostQueryOptions, blogPostsQueryOptions } from "@/features/blog/api/blog.queries"
 import { BlogPostArticle } from "@/features/blog/components/BlogPostArticle"
+import { postHead } from "@/features/blog/helpers/post-head"
 
 export const Route = createFileRoute("/{-$lang}/notes/$slug")({
   // The list comes along for the previous and next links; it is cached for the list page too.
@@ -20,12 +19,8 @@ export const Route = createFileRoute("/{-$lang}/notes/$slug")({
     ])
     return post
   },
-  head: ({ loaderData, params }) => ({
-    meta: loaderData
-      ? [{ title: loaderData.title }, { name: "description", content: loaderData.description }]
-      : [],
-    links: hreflangLinks(`/notes/${params.slug}`)
-  }),
+  head: ({ loaderData, params }) =>
+    loaderData ? postHead(`/notes/${params.slug}`, loaderData) : {},
   notFoundComponent: () => <NotFound />,
   component: NotePage
 })

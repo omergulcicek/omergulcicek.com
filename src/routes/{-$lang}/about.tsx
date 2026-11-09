@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { canonicalLink, hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
@@ -11,10 +11,8 @@ import { AboutIntro } from "@/features/about/components/AboutIntro"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/about")({
-  head: () => ({
-    meta: [{ title: m.about_title() }, { name: "description", content: m.about_description() }],
-    links: [canonicalLink("/about"), ...hreflangLinks("/about")]
-  }),
+  head: () =>
+    pageHead({ path: "/about", title: m.about_title(), description: m.about_description() }),
   component: AboutPage
 })
 

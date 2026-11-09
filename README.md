@@ -67,10 +67,9 @@ Open [http://localhost:3000](http://localhost:3000). `/` (`/tr` in Turkish) is a
 
 Validated in `src/env.ts`. Scaffolded projects already have `.env.local`.
 
-| Variable        | Scope  | Description                                                   |
-| :-------------- | :----- | :------------------------------------------------------------ |
-| `VITE_APP_URL`  | Public | Canonical app URL (default `http://localhost:3000`)           |
-| `VITE_APP_NAME` | Public | Product name shown in UI/metadata (default `ViraStack Start`) |
+| Variable       | Scope  | Description                                         |
+| :------------- | :----- | :-------------------------------------------------- |
+| `VITE_APP_URL` | Public | Canonical app URL (default `http://localhost:3000`) |
 
 `NODE_ENV` is set by Vite — do not define it manually. Add new vars in both `.env.example` and `src/env.ts`.
 
@@ -197,7 +196,7 @@ Install or refresh rules: `npx @virastack/ai init` (pick tools with `--agent cla
 Works with [Netlify](https://www.netlify.com/), [Cloudflare](https://developers.cloudflare.com/), Nitro, Railway, or any Node host:
 
 1. Push the repo and import the project
-2. Set `VITE_APP_URL` and `VITE_APP_NAME` from `.env.example`
+2. Set `VITE_APP_URL` from `.env.example`
 3. Deploy — `pnpm build` / `pnpm start` work on any Node host that can serve the Vite output
 
 ## Philosophy

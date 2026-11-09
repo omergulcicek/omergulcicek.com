@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { cn } from "cn"
 
-import { canonicalLink, hreflangLinks } from "@/helpers/localized-url"
+import { pageHead } from "@/config/seo.config"
 
 import { PageHeader } from "@/components/shared/PageHeader"
 import { Pending } from "@/components/shared/Pending"
@@ -23,13 +23,12 @@ import { getViraStackSectionTitle } from "@/features/virastack/helpers/get-viras
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/virastack")({
-  head: () => ({
-    meta: [
-      { title: m.virastack_title() },
-      { name: "description", content: m.virastack_description() }
-    ],
-    links: [canonicalLink("/virastack"), ...hreflangLinks("/virastack")]
-  }),
+  head: () =>
+    pageHead({
+      path: "/virastack",
+      title: m.virastack_title(),
+      description: m.virastack_description()
+    }),
   loader: ({ context }) =>
     Promise.all([
       context.queryClient.query(projectStatsQueryOptions()),
