@@ -1,0 +1,101 @@
+Yeni bir React projesine başlarken ilk günü hep aynı işlere harcarsın: klasör yapısını kurmak, TanStack Query ve Zustand'ı bağlamak, form için React Hook Form ile Zod'u ayarlamak, test ortamını hazırlamak. Bir de yapay zekâ asistanına projenin nasıl yazılacağını anlatman gerekir. Her yeni projede bunları baştan yapmak hem vakit alır hem de projeden projeye küçük farklar biriktirir.
+
+**ViraStack Start** (`virastack`) bu ilk günü tek komuta indiren bir CLI. Next.js veya TanStack Start projesini, feature tabanlı bir mimariyle, kurulu paketlerle ve agent kurallarıyla birlikte oluşturuyor.
+
+<video src="/blog/2026/07-28/virastack-start-intro.mp4" poster="/blog/2026/07-28/virastack-start-intro-poster.webp" width="1920" height="1080" autoPlay muted loop playsInline controls />
+
+## Kurulum
+
+```bash
+pnpm dlx virastack
+```
+
+npm, yarn ya da bun kullanıyorsan `npx virastack`, `yarn dlx virastack` veya `bunx virastack` da çalışıyor; paketler hangi yöneticiyle başlattıysan onunla kuruluyor. Komut sana birkaç soru soruyor:
+
+```text
+What is your project named?
+  virastack-app
+
+Which template would you like to use?
+  › Next.js App Router
+    TanStack Start
+
+Which AI coding tools do you use?
+  [x] Claude Code
+  [x] Cursor
+
+Would you like multi-language (i18n) support?
+  › Yes
+    No
+
+Which ViraStack tools would you like to include?
+  [ ] @virastack/mask
+  [ ] @virastack/password
+  [ ] @virastack/address
+```
+
+Soruları Türkçe görmek istersen `--tr` ekle. Hiç soru sorulmasın istersen hepsini bayrakla ver:
+
+```bash
+pnpm dlx virastack my-app --template tanstack --agent claude --i18n --tools mask,password --yes
+```
+
+## Ne kuruluyor?
+
+Komut sırasıyla şunları yapıyor:
+
+1. Şablonu kopyalayıp proje adını yazıyor.
+2. Bağımlılıkları kuruyor.
+3. Next.js şablonunda `AGENTS.md`'ye bir blok ekleyip agent'ları `node_modules/next/dist/docs/` içindeki güncel Next.js dokümanlarına yönlendiriyor.
+4. Seçtiğin araçlar için [ViraStack AI](/blog/virastack-ai) kurallarını kuruyor.
+5. Tasarım skill'lerini ekliyor: [Emil Kowalski](https://github.com/emilkowalski/skills)'nin `emil-design-eng`'i, [Jakub Krehel](https://github.com/jakubkrehel/skills)'in `better-ui` ve `better-accessibility`'si.
+6. İlk commit'i atıyor; `git status` temiz başlıyor.
+
+Her iki şablonda da şu paketler kurulu geliyor:
+
+| Alan | Paketler |
+| :--- | :--- |
+| State | TanStack Query, Zustand, nuqs (Next.js; TanStack Start'ta `validateSearch`) |
+| Form | React Hook Form, Zod |
+| UI | Base UI, Lucide React, Tailwind CSS 4 |
+| Test | Vitest, Testing Library, MSW |
+
+## Klasör yapısı
+
+Kod `src/` altında feature'lara göre ayrılıyor. Bir özellik kendi `features/<özellik>/` klasöründe başlıyor; ikinci bir feature aynı koda ihtiyaç duyunca ortak klasörlere taşınıyor:
+
+```text
+src/
+├── features/<feature>/   # api, components, hooks, schemas, stores, types
+├── components/           # layout, shared, ui
+├── lib/                  # api.ts, query-client.ts
+├── schemas/  stores/  hooks/  helpers/  constants/
+└── env.ts
+```
+
+Next.js şablonunda sayfalar `app/`, TanStack Start şablonunda `routes/` altında duruyor. Kural basit: feature'lar birbirini import etmiyor; birleştirme route seviyesinde yapılıyor. Bu kuralları agent'lar da biliyor, çünkü aynı yapı ViraStack AI kurallarında yazılı.
+
+## Yapay zekâya hazır
+
+Kurulum sorusunda Claude Code'u seçersen kurallar `.claude/rules/virastack/` altına, Cursor'u seçersen `.cursor/rules/virastack/` altına yazılıyor. Hiçbirini seçmezsen düz Markdown kurallar `.agents/rules/` altına geliyor ve `AGENTS.md` okuyan her agent bunları buluyor. Yani projeyi açtığın ilk dakikada asistan, dosyanın nereye konacağını, verinin nasıl çekileceğini ve formun nasıl yazılacağını biliyor.
+
+## Sonradan eklemek: araçlar ve modüller
+
+`add` komutu var olan bir projeye ViraStack araçlarını ya da hazır modülleri ekliyor:
+
+```bash
+pnpm dlx virastack add address
+pnpm dlx virastack add ai --agent cursor
+pnpm dlx virastack add users
+pnpm dlx virastack remove users
+```
+
+Üç modül var:
+
+- **`users`:** Arama, URL'de tutulan sayfalama, ortak bir ekleme ve düzenleme formu ve satır aksiyonlarıyla bir kullanıcı listesi.
+- **`checkout-address`:** Teslimat ve fatura adresi seçme, ekleme ve düzenleme; Türkiye adres verisiyle ([ViraStack Address](/blog/virastack-address)).
+- **`checkout-card`:** Kayıtlı bir kartı seçme ya da yeni kart ekleme; kart numarası ve CVV ağa gönderilmiyor ([ViraStack Mask](/blog/virastack-mask)).
+
+`add` modülün feature klasörünü kuruyor ama sayfa oluşturmuyor. Import satırını ve kendi framework'ün için adımların linkini yazdırıyor; sayfayı nereye koyacağına sen karar veriyorsun. `remove` modülü siliyor, kurduğu paketleri bırakıyor.
+
+Belgeler [virastack.com/start](https://virastack.com/start) adresinde, kaynak kod [github.com/virastack/start](https://github.com/virastack/start) deposunda. ViraStack'in diğer parçaları [Frontend Ekosistemi](/blog/frontend-ekosistemi-insa-etmek) yazısında.

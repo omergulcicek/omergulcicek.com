@@ -1,0 +1,101 @@
+The first day of a new React project usually goes to the same chores: setting up the folder structure, wiring TanStack Query and Zustand, pairing React Hook Form with Zod, preparing the test setup. Then you explain to your AI assistant how the project should be written. Doing it all again for every project takes time, and small differences pile up from one project to the next.
+
+**ViraStack Start** (`virastack`) is a CLI that turns that first day into one command. It creates a Next.js or TanStack Start project with a feature-based architecture, the core packages installed and agent rules in place.
+
+<video src="/blog/2026/07-28/virastack-start-intro.mp4" poster="/blog/2026/07-28/virastack-start-intro-poster.webp" width="1920" height="1080" autoPlay muted loop playsInline controls />
+
+## Install
+
+```bash
+pnpm dlx virastack
+```
+
+`npx virastack`, `yarn dlx virastack` and `bunx virastack` work too; dependencies are installed with the package manager you started it with. It asks a few questions:
+
+```text
+What is your project named?
+  virastack-app
+
+Which template would you like to use?
+  › Next.js App Router
+    TanStack Start
+
+Which AI coding tools do you use?
+  [x] Claude Code
+  [x] Cursor
+
+Would you like multi-language (i18n) support?
+  › Yes
+    No
+
+Which ViraStack tools would you like to include?
+  [ ] @virastack/mask
+  [ ] @virastack/password
+  [ ] @virastack/address
+```
+
+To skip the questions, pass everything as flags:
+
+```bash
+pnpm dlx virastack my-app --template tanstack --agent claude --i18n --tools mask,password --yes
+```
+
+## What it sets up
+
+In order, the command:
+
+1. Copies the template and sets the project name.
+2. Installs dependencies.
+3. In the Next.js template, adds a block to `AGENTS.md` that points agents at the current Next.js docs bundled in `node_modules/next/dist/docs/`.
+4. Installs [ViraStack AI](/blog/virastack-ai-architecture-rules-for-agents) rules for the tools you picked.
+5. Adds design skills: [Emil Kowalski](https://github.com/emilkowalski/skills)'s `emil-design-eng`, and [Jakub Krehel](https://github.com/jakubkrehel/skills)'s `better-ui` and `better-accessibility`.
+6. Makes the first commit, so `git status` starts clean.
+
+Both templates ship with this stack:
+
+| Area | Packages |
+| :--- | :--- |
+| State | TanStack Query, Zustand, nuqs (Next.js; TanStack Start uses `validateSearch`) |
+| Forms | React Hook Form, Zod |
+| UI | Base UI, Lucide React, Tailwind CSS 4 |
+| Testing | Vitest, Testing Library, MSW |
+
+## Folder structure
+
+Code under `src/` is split by feature. A feature starts in its own `features/<feature>/` folder and moves to the shared folders once a second feature needs it:
+
+```text
+src/
+├── features/<feature>/   # api, components, hooks, schemas, stores, types
+├── components/           # layout, shared, ui
+├── lib/                  # api.ts, query-client.ts
+├── schemas/  stores/  hooks/  helpers/  constants/
+└── env.ts
+```
+
+Pages live in `app/` in the Next.js template and in `routes/` in the TanStack Start one. The rule is simple: features never import each other, and they're composed at the route level. Your agents know this too, because the same structure is written into the ViraStack AI rules.
+
+## Ready for AI
+
+Pick Claude Code and the rules go to `.claude/rules/virastack/`; pick Cursor and they go to `.cursor/rules/virastack/`. Pick neither and plain Markdown rules land in `.agents/rules/`, where any agent that reads `AGENTS.md` finds them. From the first minute, your assistant knows where files go, how data is fetched and how forms are written.
+
+## Adding things later: tools and modules
+
+`add` brings ViraStack tools or ready-made modules into an existing project:
+
+```bash
+pnpm dlx virastack add mask
+pnpm dlx virastack add ai --agent cursor
+pnpm dlx virastack add users
+pnpm dlx virastack remove users
+```
+
+There are three modules:
+
+- **`users`:** A searchable user list with pagination in the URL, a shared add and edit form, and row actions.
+- **`checkout-card`:** Pick a saved card or add a new one, with the card number and CVV kept off the network ([ViraStack Mask](/blog/virastack-mask-react-hook-form-input-masks)).
+- **`checkout-address`:** Pick, add and edit shipping and billing addresses with Turkish address data ([ViraStack Address](https://virastack.com/address)).
+
+`add` installs the module's feature folder but creates no page. It prints the import line and a link to the steps for your framework, so where the page goes is up to you. `remove` deletes the module and leaves its packages installed.
+
+The docs are at [virastack.com/start](https://virastack.com/start), and the source is in [github.com/virastack/start](https://github.com/virastack/start). The rest of ViraStack is in [Building a Frontend Ecosystem](/blog/building-a-frontend-ecosystem).

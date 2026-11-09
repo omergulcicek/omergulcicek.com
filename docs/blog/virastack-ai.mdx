@@ -1,0 +1,117 @@
+Bir kod asistanına "kullanıcı listesini göster" dediğinde çalışan bir bileşen alırsın. Ama dosyanın nereye konacağına, verinin nasıl çekileceğine, formun hangi kütüphaneyle yazılacağına asistan o an kendisi karar verir. Bir sonraki istekte başka bir karar verir. Birkaç hafta sonra projede aynı işi üç farklı şekilde yapan kod olur. Sorun modelin yeteneği değil; projenin kurallarını ona her seferinde baştan anlatmak zorunda olman.
+
+**ViraStack AI** (`@virastack/ai`) bu kuralları bir kez yazıp kalıcı hale getiriyor. Tek komutla modern React projeleri için mimari kuralları kuruyor ve bunları her aracın kendi formatında yazıyor: Claude Code `.claude/rules`'u, Cursor `.cursor/rules`'u, diğer agent'lar `AGENTS.md`'yi okuyor.
+
+## Ne Yapıyor?
+
+- **Tek komut, birden fazla araç:** Aynı kurallar Claude Code ve Cursor için kendi formatlarında yazılıyor. `AGENTS.md` okuyan Codex, GitHub Copilot, Gemini CLI, Aider, Windsurf ve Zed de aynı kurallara ulaşıyor.
+- **Framework'e göre kural:** `package.json`'a bakıp projenin Next.js mi TanStack Start mı olduğunu anlıyor ve yalnızca o framework'ün kurallarını kuruyor. `i18n` kuralı da sadece `next-intl` ya da Paraglide varsa geliyor.
+- **Güncel stack:** Kurallar Next.js 16, React 19, TanStack Start, TanStack Query 5, Zustand 5, Zod 4 ve Tailwind CSS 4 için yazılmış.
+- **Dosyalarını ezmiyor:** Kurallar kendi `virastack/` klasörlerinde duruyor. `AGENTS.md`'ye yönetilen bir blok, `CLAUDE.md`'ye tek bir import satırı ekleniyor; geri kalan her şey olduğu gibi kalıyor.
+- **Güvenli güncelleme:** `.virastack/ai.json` neyin kurulduğunu tutuyor. `init`'i tekrar çalıştırınca dokunmadığın kuralları güncelliyor, değiştirdiklerin için sana soruyor.
+
+## Kurulum
+
+```bash
+npx @virastack/ai init
+```
+
+`next-intl` kullanan bir Next.js projesinde `--dry-run` ile ne yazılacağına bakınca çıktı şöyle (kısaltılmış):
+
+```text
+ViraStack AI v2.2.0
+Framework: nextjs · Araçlar: claude, cursor · i18n: var · Paket yöneticisi: pnpm
+
+  + .claude/rules/virastack/core.md · oluşturuldu
+  + .claude/rules/virastack/architecture.md · oluşturuldu
+  + .claude/rules/virastack/nextjs.md · oluşturuldu
+  + .claude/rules/virastack/forms.md · oluşturuldu
+  …
+  + .cursor/rules/virastack/core.mdc · oluşturuldu
+  …
+  + AGENTS.md · oluşturuldu
+  + CLAUDE.md · oluşturuldu
+  + .virastack/ai.json · oluşturuldu
+
+29 oluşturuldu · 0 güncellendi · 0 silindi · 0 atlandı
+Deneme çalıştırması: hiçbir şey yazılmadı.
+```
+
+Next.js projesi olduğu için `tanstack-start` kuralı kurulmadı; `next-intl` olduğu için `i18n` kuruldu. Komutlar da lockfile'dan okunan paket yöneticisiyle yazılıyor (burada `pnpm`).
+
+## Bir kural neye benziyor?
+
+Kurallar kısa ve doğrudan. Her birinin başında hangi dosyalarda devreye gireceği yazıyor; Claude Code form kuralını yalnızca bir form ya da şema dosyasında çalışırken okuyor. `forms.md`'nin başı:
+
+```md title=".claude/rules/virastack/forms.md"
+---
+paths:
+  - "src/**/components/**/*Form*.tsx"
+  - "src/features/**/schemas/**/*.ts"
+  - "src/schemas/**/*.ts"
+---
+
+# Forms
+
+## Rules
+
+- React Hook Form with `zodResolver` from `@hookform/resolvers/zod`.
+- Schemas live in `schemas/` (`*.schema.ts`), never in the component file.
+- Every field has a value in `defaultValues`, typed from the schema.
+- The server validates the same schema again before it acts.
+
+## Bans
+
+- Inputs managed with `useState`.
+- Syncing form state with `useEffect`.
+```
+
+Kurallar İngilizce yazılı. Bu kural kuruluyken "bir kayıt formu ekle" dediğinde asistan şemayı `schemas/` altına koyuyor, formu React Hook Form ve Zod ile yazıyor, aynı şemayı sunucuda tekrar doğruluyor. Bunları sen söylemiyorsun; kural söylüyor.
+
+## Hangi kurallar var?
+
+İki kural her zaman yükleniyor, diğerleri ilgili dosyada çalışırken:
+
+| Kural | Ne zaman |
+| :--- | :--- |
+| `core` | Her zaman: çalışma şekli, isimlendirme, export'lar, hatalar |
+| `architecture` | Her zaman: klasör yapısı, feature sınırları, import'lar |
+| `typescript`, `react` | TypeScript ve React dosyaları |
+| `nextjs` veya `tanstack-start` | Framework'ün route ve yapılandırma dosyaları |
+| `ui` | Bileşenler ve stiller |
+| `forms` | Form bileşenleri ve şemalar |
+| `api`, `server-state` | Feature'ların `api/` ve `hooks/` klasörleri |
+| `client-state` | Zustand store'ları |
+| `i18n` | Mesaj dosyaları ve route'lar (`next-intl` veya Paraglide varsa) |
+| `testing` | Test dosyaları |
+| `performance` | Route'lar ve bileşenler |
+
+## Hangi araçlar destekleniyor?
+
+| Araç | Kendi formatında | `AGENTS.md` üzerinden |
+| :--- | :---: | :---: |
+| Claude Code | ✅ `.claude/rules/virastack/` | ✅ |
+| Cursor | ✅ `.cursor/rules/virastack/` | ✅ |
+| Codex, GitHub Copilot | | ✅ |
+| Gemini CLI, Aider | | ✅ (bir ayarla) |
+| Windsurf, Zed ve `AGENTS.md` okuyan diğerleri | | ✅ |
+
+Gemini CLI için `.gemini/settings.json`'a `{ "context": { "fileName": ["AGENTS.md", "GEMINI.md"] } }`, Aider için `.aider.conf.yml`'a `read: AGENTS.md` eklemen yeterli. Hiçbir araç kullanmıyorsan `--agent none` kuralları düz Markdown olarak `.agents/rules/` altına yazıyor.
+
+## Güncelleme ve kaldırma
+
+Yeni bir sürüm çıktığında aynı komutu tekrar çalıştır:
+
+```bash
+npx @virastack/ai init
+```
+
+Dokunmadığın kurallar güncelleniyor, değiştirdiğin bir kural için sana soruluyor, yeni sürümde olmayan kurallar siliniyor. CI'da soru sorulamadığı için değiştirdiğin dosyalar bir uyarıyla atlanıyor. Kaldırmak istersen `npx @virastack/ai remove` her şeyi geri alıyor; değiştirdiğin dosyalar onay vermeden silinmiyor.
+
+Bir not: Prettier kuralları biçimlendirirse ViraStack AI onları "değiştirilmiş" sayar ve güncellemeyi bırakır. `.virastack/`, `.claude/rules/virastack/`, `.cursor/rules/virastack/`, `AGENTS.md` ve `CLAUDE.md`'yi `.prettierignore`'a ekle.
+
+## Yeni proje mi açıyorsun?
+
+[ViraStack Start](/blog/virastack-start) Next.js ya da TanStack Start projesini bu kurallar kurulmuş halde oluşturuyor; ayrıca `init` çalıştırmana gerek kalmıyor.
+
+Tüm kurallar ve seçenekler [virastack.com/ai](https://virastack.com/ai) adresinde, kaynak kod [github.com/virastack/ai](https://github.com/virastack/ai) deposunda. ViraStack'in diğer parçaları [Frontend Ekosistemi](/blog/frontend-ekosistemi-insa-etmek) yazısında.

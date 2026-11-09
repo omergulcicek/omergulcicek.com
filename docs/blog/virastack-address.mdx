@@ -1,0 +1,174 @@
+Türkiye'de bir adres formu yazdıysan bilirsin: il seçilince ilçeler, ilçe seçilince mahalleler gelmeli. İl değişince altındaki seçimler temizlenmeli, yoksa formda Sakarya'nın altında Kadıköy kalıyor. Posta kodunu kullanıcıya yazdırırsan yanlış girilir; mahalleden türetmen gerekir. Verisi de ayrı bir dert: 81 il, 973 ilçe ve 72 binden fazla mahalle. Bunları tek bir JSON olarak sayfaya gömersen her ziyaretçi megabaytlarca veri indiriyor.
+
+**ViraStack Address** (`@virastack/address`) bunları tek bir React hook'unda çözüyor. İl, ilçe ve mahalle zincirleme seçiliyor, posta kodu mahalleden geliyor, istersen tam tersi de çalışıyor: posta kodunu yazınca seçimler doluyor. PTT'den derlenen veri paketin içinde ve yalnızca gerektiği kadarı indiriliyor.
+
+## Ne Yapıyor?
+
+- **Zincirleme seçim:** İl seçilince ilçeler, ilçe seçilince mahalleler geliyor. Üst seviye değişince alttakiler temizleniyor.
+- **Posta kodu türetiliyor:** Mahalle seçilince posta kodu kendiliğinden doluyor. Birden fazla posta kodu olan birkaç yüz mahallenin hepsi de tutuluyor.
+- **Posta kodundan adrese:** Posta kodunu yazınca il ve ilçe doluyor; kod tek bir mahalleye aitse mahalle de seçiliyor.
+- **Headless:** Bileşen ya da stil yok. Düz `<select>`, shadcn/ui, Ant Design ya da kendi bileşeninle çalışıyor.
+- **React Hook Form desteği:** `form` verince her seçim forma yazılıyor; React Hook Form'u import etmiyor, zorunlu da değil.
+- **Türkçeye uygun:** Sıralama, büyük-küçük harf ve başlık biçimi `İ` ile `ı`'yı doğru işliyor.
+- **Sunucuda doğrulama:** Gönderilen adresi sunucuda tekrar kontrol edip posta kodunu orada türetiyor.
+
+## Kurulum
+
+```bash
+pnpm add @virastack/address
+```
+
+## En basit hali
+
+Hook seçimler için prop'ları veriyor; `value` formun ihtiyaç duyduğu her şeyi tutuyor:
+
+```tsx title="address-fields.tsx"
+import { useViraAddress } from "@virastack/address"
+
+export function AddressFields() {
+  const { getProvinceProps, getDistrictProps, getNeighbourhoodProps, value } = useViraAddress()
+
+  return (
+    <>
+      <select {...getProvinceProps()} />
+      <select {...getDistrictProps()} />
+      <select {...getNeighbourhoodProps()} />
+      <p>Posta kodu: {value.postalCode ?? "—"}</p>
+    </>
+  )
+}
+```
+
+Sakarya, Adapazarı ve Alandüzü Mahallesi seçilince `value` şu oluyor:
+
+```ts
+{
+  provinceCode: "54",
+  province: "SAKARYA",
+  district: "ADAPAZARI",
+  neighbourhood: "ALANDÜZÜ MAH.",
+  postalCode: "54100",
+  postalCodes: ["54100"]
+}
+```
+
+`value` içindeki adlar veri setinin yazdığı gibi büyük harfle duruyor. Seçeneklerde ise kullanıcı "Adapazarı" görüyor; her liste `{ value, label }` biçiminde ve `label` Türkçe başlık biçimiyle yazılıyor.
+
+Her prop getter düz bir `<select>`'i dolduruyor: seçenekleri, boş bir ilk seçeneği, `value`, `onChange`, `disabled` ve `aria-busy`'yi veriyor. İlçe bir il seçilene kadar, mahalle de bir ilçe seçilene ve verisi gelene kadar kapalı kalıyor. Bunların hepsini ezebilirsin:
+
+```tsx
+<select {...getDistrictProps({ placeholder: "İlçe seçin" })} />
+```
+
+## React Hook Form ile
+
+Formu verdiğinde alanlar kendiliğinden doluyor:
+
+```tsx title="address-form.tsx"
+import { useForm } from "react-hook-form"
+import { useViraAddress } from "@virastack/address"
+
+type Address = { province: string; district: string; neighbourhood: string; postalCode: string }
+
+export function AddressForm() {
+  const form = useForm<Address>()
+  const { getProvinceProps, getDistrictProps, getNeighbourhoodProps } = useViraAddress({ form })
+
+  return (
+    <form onSubmit={form.handleSubmit(console.log)}>
+      <select {...getProvinceProps()} />
+      <select {...getDistrictProps()} />
+      <select {...getNeighbourhoodProps()} />
+    </form>
+  )
+}
+```
+
+Alan adları varsayılan olarak `province`, `district`, `neighbourhood` ve `postalCode`. Formun başka bir şekildeyse `names` ile ver; TypeScript her adı formun tipine göre denetliyor:
+
+```tsx
+useViraAddress({
+  form,
+  names: {
+    province: "address.il",
+    district: "address.ilce",
+    neighbourhood: "address.mahalle",
+    postalCode: "address.postaKodu"
+  }
+})
+```
+
+Bir seviye temizlendiğinde formda da temizleniyor ve yeniden doğrulanıyor; il değişince zorunlu bir ilçe alanı geçerli kalamıyor. Düzenleme formu da olduğu gibi çalışıyor: hook formdaki mevcut adresten başlıyor, `form.reset(data)` gelince seçimler de onu izliyor.
+
+## Posta kodundan adrese
+
+Seçimlerin yanına bir posta kodu input'u ekleyince adres posta kodundan da doldurulabiliyor:
+
+```tsx
+const { getPostalCodeInputProps, postalCodeStatus } = useViraAddress({ form })
+
+<input {...getPostalCodeInputProps()} />
+{postalCodeStatus === "unknown" && <p>Bu posta kodu bulunamadı.</p>}
+```
+
+Bir posta kodu her zaman tek bir ilçeye ait ama çoğu zaman birden fazla mahalleyi kapsıyor. 2.777 posta kodunun yalnızca 205'i tek bir mahalleye ait. Bu yüzden hook kodun kesin söyleyebildiği kadarını dolduruyor:
+
+| `postalCodeStatus` | Ne oldu |
+| :--- | :--- |
+| `"exact"` | Kod tek bir mahalleye ait: il, ilçe ve mahalle doldu. |
+| `"partial"` | İl ve ilçe doldu; mahalle listesi bu koda göre daraltıldı, kullanıcı seçiyor. |
+| `"unknown"` | Veri setinde böyle bir kod yok; hiçbir şey değişmiyor, input `aria-invalid` alıyor. |
+| `"loading"` | Kodun ili yükleniyor; yalnızca o il okunuyor. |
+
+Örneğin `54100` yazınca il Sakarya, ilçe Adapazarı oluyor ve mahalle listesi bu koda ait 81 mahalleye daralıyor.
+
+## Tek satırlık adres
+
+Sipariş özetinde, faturada ya da kargo etiketinde adresi tek satırda göstermek için `formatAddress` var:
+
+```ts
+import { formatAddress } from "@virastack/address"
+
+formatAddress(value)                       // "Alandüzü Mah. Adapazarı/Sakarya"
+formatAddress(value, { postalCode: true }) // "Alandüzü Mah. 54100 Adapazarı/Sakarya"
+```
+
+Henüz seçilmemiş bir seviye atlanıyor; yarım doldurulmuş bir form da düzgün okunuyor.
+
+## Sunucuda doğrulama
+
+İstemci istediği posta kodunu gönderebilir. Bu yüzden adresi sunucuda tekrar çöz ve posta kodunu orada türet:
+
+```ts title="app/checkout/actions.ts"
+"use server"
+
+import { resolveAddress } from "@virastack/address/server"
+
+const result = await resolveAddress({
+  province: "sakarya", // herhangi bir yazımla ya da plaka koduyla: 54, "54"
+  district: "adapazarı",
+  neighbourhood: "alandüzü mah."
+})
+// { ok: true, value: { province: "SAKARYA", district: "ADAPAZARI", postalCode: "54100", … }, issues: [] }
+```
+
+Sakarya'nın altında olmayan bir ilçe gönderilirse:
+
+```ts
+await resolveAddress({ province: 54, district: "kadıköy", neighbourhood: "caferağa mah." })
+// { ok: false, issues: [{ level: "district", reason: "unknown" }], … }
+```
+
+Formun gönderdiği posta kodunu da verirsen o da kontrol ediliyor; mahalleye ait olmayan bir kod `{ level: "postalCode", reason: "mismatch" }` dönüyor. Bu girişte React ve `"use client"` yok; Server Component ve Server Action içinden çağırabilirsin.
+
+## Ne kadar veri indiriliyor?
+
+İl ve ilçe adları pakete dahil, gzip ile 5,3 kB. Her ilin mahalleleri ayrı bir modül ve o il ilk seçildiğinde indiriliyor. Ortanca bir il 4,6 kB; 81 ilin 75'i 10 kB'ın altında. Yani tipik bir ziyaretçi yaklaşık **10 kB** indiriyor: adlar ve seçtiği il. En büyük il Kastamonu, 4.318 yerleşimle 28,5 kB.
+
+Veri [PTT](https://www.ptt.gov.tr/posta-kodu)'den derlendi; `@virastack/address/data` girişinden React olmadan da okunabiliyor. Teslimatın kritik olduğu yerlerde PTT ile karşılaştırmanı öneririm.
+
+## Mask ve Password ile birlikte
+
+ViraStack'in üç form paketi de aynı React Hook Form'da çalışıyor. Bir ödeme formunda TCKN ve telefonu [ViraStack Mask](/blog/virastack-mask), parolayı [ViraStack Password](/blog/virastack-password), adresi ViraStack Address yönetiyor; hepsinin değeri tek bir `useForm`'da toplanıyor. Hazır bir örnek istersen [ViraStack Start](/blog/virastack-start)'ın `checkout-address` modülü, teslimat ve fatura adresi seçimini bu paketle kuruyor.
+
+Tüm seçenekler ve UI kütüphanesi örnekleri [virastack.com/address](https://virastack.com/address) adresinde, kaynak kod [github.com/virastack/form](https://github.com/virastack/form/tree/main/packages/address) deposunda.

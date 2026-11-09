@@ -1,0 +1,53 @@
+Thousands of packages ship to npm every day. For me, the appeal was never "grab what's ready and move on". It was wanting to understand what each line does and to set my own standards. This is the story of how a handful of side projects grew into an open-source frontend ecosystem: [**ViraStack**](https://virastack.com).
+
+## The first one: Turkuaz CSS
+
+It started when I was lost in the source code of libraries like [Bootstrap](https://getbootstrap.com/) and [Materialize](https://materializecss.com/). I didn't want to compete with them; I wanted to understand how a UI library works underneath. The first thing that came out of that curiosity was [Turkuaz](https://github.com/omergulcicek/turkuaz), a CSS framework. It taught me the depths of CSS and its hard parts first-hand. Now that [Tailwind CSS](https://tailwindcss.com/) and [shadcn/ui](https://ui.shadcn.com/) have become the standard, Turkuaz is retired, but it's the project that shaped how I work today.
+
+![The ViraStack logo](/blog/2026/04-05/virastack-logo.webp)
+
+## Turkish names and their limits
+
+After Turkuaz, I gave every project a Turkish name that fit its character. **Nizam** ("order") brought discipline to Next.js projects and is now [ViraStack Start](/blog/virastack-start-nextjs-tanstack-start-cli). **Kaide** ("rule") taught AI assistants a project's conventions and is now [ViraStack AI](/blog/virastack-ai-architecture-rules-for-agents). **Beti**, an input-masking package for React Hook Form, is now [ViraStack Mask](/blog/virastack-mask-react-hook-form-input-masks). The names were short and memorable, but nobody could tell what a project did without opening its docs.
+
+Packages under my own name, like `@omergulcicek/beti`, also read as "someone's experiment" and made people hesitate to depend on them. Outside Türkiye the names were hard to pronounce, they were nearly invisible in search, and the domains were usually taken. I needed to move from personal repos to an organization that was open to the community and could grow.
+
+## ViraStack
+
+I wanted a name with Turkish roots that was strong and easy to say in any language, and I settled on **Vira**. In Turkish it's what sailors call when they weigh anchor; Black Sea fishermen head out with "Vira Bismillah". It's short and sounds at home next to names like **Vite** and **Vue**. **Vira** on its own was taken, so I paired it with "stack" and founded the [**ViraStack**](https://github.com/virastack) organization. Every old package now lives there under its new name.
+
+## ViraStack today
+
+ViraStack has seven products. All are open source, MIT licensed and free. Think of them in three layers:
+
+**Learn**
+
+- [**Academy**](https://virastack.com/academy): A free roadmap for learning frontend with React, from the fundamentals to AI, built on official docs and trusted authors. Lessons are in Turkish and English.
+- [**Guide**](https://virastack.com/guide): An interactive guide that shows, step by step in three minutes, how a modern web app is built, from plain HTML to an AI-native UI.
+
+**Start**
+
+- [**Start**](/blog/virastack-start-nextjs-tanstack-start-cli): A Next.js or TanStack Start project in one command, with a feature-based architecture, the core packages and agent rules included.
+- [**AI**](/blog/virastack-ai-architecture-rules-for-agents): Architecture rules for Claude Code, Cursor and any agent that reads `AGENTS.md`, so agents write code that fits your project.
+
+**Build**
+
+- [**Mask**](/blog/virastack-mask-react-hook-form-input-masks): Input masks for React Hook Form. Cards, phone numbers, IBANs and currencies come ready, and the form keeps the raw value.
+- [**Password**](/blog/virastack-password-accessible-password-hook): An accessible password hook. Show / hide, NIST-style strength, confirmation and the same rules on the server.
+- [**Address**](https://virastack.com/address): A hook for Turkish addresses. Province, district and neighbourhood are picked in a chain, and the postal code comes from the neighbourhood.
+
+Mask, Password and Address are headless: they render nothing, so the inputs and styles stay yours. All three work together in the same React Hook Form.
+
+## Why I do this
+
+ViraStack is less a rename than a change in how I work. It's how I learn: I like to get into the kitchen of a craft and own its quality end to end. Naming a project and taking ownership of it turns writing code into setting a standard. Back then I explored CSS with Turkuaz; today, under ViraStack, I follow the current thinking on React architecture, form experience and agent rules, and I make sure the packages work well together.
+
+## Here's to the next one
+
+Building a frontend ecosystem isn't just writing code for me; it's putting together something where every part is considered and consistent. ViraStack keeps growing with feedback from the community. Reporting a bug, suggesting an idea or leaving a star on GitHub helps the most:
+
+- **GitHub:** [github.com/virastack](https://github.com/virastack)
+- **X:** [x.com/virastack](https://x.com/virastack)
+- **LinkedIn:** [linkedin.com/company/virastack](https://linkedin.com/company/virastack)
+
+If you have an idea or a technical question, reach out on any of these. Vira!

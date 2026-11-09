@@ -1,0 +1,117 @@
+Ask a coding agent to "show a list of users" and you'll get a working component. But where the file goes, how the data is fetched and which library handles the form are decisions the agent makes on the spot. On the next request it makes different ones. A few weeks later the project does the same thing three different ways. The problem isn't the model; it's that you have to explain your project's rules from scratch every time.
+
+**ViraStack AI** (`@virastack/ai`) writes those rules down once and keeps them there. One command installs architecture rules for modern React projects, in each tool's own format: Claude Code reads `.claude/rules`, Cursor reads `.cursor/rules`, and every other agent reads `AGENTS.md`.
+
+## What it does
+
+- **One command, many tools:** The same rules are written for Claude Code and Cursor in their native formats. Codex, GitHub Copilot, Gemini CLI, Aider, Windsurf and Zed reach them through `AGENTS.md`.
+- **Rules for your framework:** It reads `package.json`, tells Next.js from TanStack Start and installs only that framework's rules. The `i18n` rule is added only when `next-intl` or Paraglide is there.
+- **Written for today's stack:** Next.js 16, React 19, TanStack Start, TanStack Query 5, Zustand 5, Zod 4 and Tailwind CSS 4.
+- **Never overwrites your files:** Rules live in their own `virastack/` folders. `AGENTS.md` gets a managed block and `CLAUDE.md` a single import line; everything else stays as it was.
+- **Safe updates:** `.virastack/ai.json` records what was installed. Running `init` again updates the rules you haven't touched and asks about the ones you changed.
+
+## Install
+
+```bash
+npx @virastack/ai init
+```
+
+Here's a `--dry-run` in a Next.js project that uses `next-intl` (trimmed):
+
+```text
+ViraStack AI v2.2.0
+Framework: nextjs · Agents: claude, cursor · i18n: yes · Package manager: pnpm
+
+  + .claude/rules/virastack/core.md · created
+  + .claude/rules/virastack/architecture.md · created
+  + .claude/rules/virastack/nextjs.md · created
+  + .claude/rules/virastack/forms.md · created
+  …
+  + .cursor/rules/virastack/core.mdc · created
+  …
+  + AGENTS.md · created
+  + CLAUDE.md · created
+  + .virastack/ai.json · created
+
+29 created · 0 updated · 0 removed · 0 skipped
+Dry run: nothing was written.
+```
+
+It's a Next.js project, so the `tanstack-start` rule was left out; `next-intl` is installed, so `i18n` came in. Commands inside the rules use the package manager read from the lockfile, here `pnpm`.
+
+## What a rule looks like
+
+Rules are short and direct. Each one says which files it applies to, so Claude Code only reads the forms rule while working on a form or a schema. The top of `forms.md`:
+
+```md title=".claude/rules/virastack/forms.md"
+---
+paths:
+  - "src/**/components/**/*Form*.tsx"
+  - "src/features/**/schemas/**/*.ts"
+  - "src/schemas/**/*.ts"
+---
+
+# Forms
+
+## Rules
+
+- React Hook Form with `zodResolver` from `@hookform/resolvers/zod`.
+- Schemas live in `schemas/` (`*.schema.ts`), never in the component file.
+- Every field has a value in `defaultValues`, typed from the schema.
+- The server validates the same schema again before it acts.
+
+## Bans
+
+- Inputs managed with `useState`.
+- Syncing form state with `useEffect`.
+```
+
+With this rule in place, "add a sign-up form" gets you a schema under `schemas/`, a form built with React Hook Form and Zod, and the same schema checked again on the server. You don't say any of that; the rule does.
+
+## Which rules are there?
+
+Two rules always load; the others load when the agent works on matching files:
+
+| Rule | When |
+| :--- | :--- |
+| `core` | Always: workflow, naming, exports, errors |
+| `architecture` | Always: folder tree, feature boundaries, imports |
+| `typescript`, `react` | TypeScript and React files |
+| `nextjs` or `tanstack-start` | The framework's route and config files |
+| `ui` | Components and styles |
+| `forms` | Form components and schemas |
+| `api`, `server-state` | Feature `api/` and `hooks/` folders |
+| `client-state` | Zustand stores |
+| `i18n` | Message files and routes (with `next-intl` or Paraglide) |
+| `testing` | Test files |
+| `performance` | Routes and components |
+
+## Supported tools
+
+| Tool | Native rules | Through `AGENTS.md` |
+| :--- | :---: | :---: |
+| Claude Code | ✅ `.claude/rules/virastack/` | ✅ |
+| Cursor | ✅ `.cursor/rules/virastack/` | ✅ |
+| Codex, GitHub Copilot | | ✅ |
+| Gemini CLI, Aider | | ✅ (one setting) |
+| Windsurf, Zed and others that read `AGENTS.md` | | ✅ |
+
+For Gemini CLI, add `{ "context": { "fileName": ["AGENTS.md", "GEMINI.md"] } }` to `.gemini/settings.json`; for Aider, `read: AGENTS.md` to `.aider.conf.yml`. If you use none of these tools, `--agent none` writes plain Markdown rules to `.agents/rules/`.
+
+## Updating and removing
+
+When a new version is out, run the same command:
+
+```bash
+npx @virastack/ai init
+```
+
+Rules you haven't touched are updated, you're asked about rules you changed, and rules the new version no longer ships are removed. In CI, where nobody can answer, changed files are skipped with a warning. To remove everything, `npx @virastack/ai remove` undoes the install; files you changed aren't deleted without your confirmation.
+
+One note: if Prettier formats the rules, ViraStack AI sees them as edited and stops updating them. Add `.virastack/`, `.claude/rules/virastack/`, `.cursor/rules/virastack/`, `AGENTS.md` and `CLAUDE.md` to `.prettierignore`.
+
+## Starting a new project?
+
+[ViraStack Start](/blog/virastack-start-nextjs-tanstack-start-cli) creates a Next.js or TanStack Start project with these rules already in place, so there's no separate `init` to run.
+
+Every rule and option is at [virastack.com/ai](https://virastack.com/ai), and the source is in [github.com/virastack/ai](https://github.com/virastack/ai). The rest of ViraStack is in [Building a Frontend Ecosystem](/blog/building-a-frontend-ecosystem).
