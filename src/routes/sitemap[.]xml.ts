@@ -5,7 +5,7 @@ import { localizedUrl } from "@/helpers/localized-url"
 import { getSitemapPosts } from "@/features/blog/api/get-sitemap-posts.api"
 import { baseLocale, locales } from "@/paraglide/runtime.js"
 
-/** Pages listed in both languages. Music is left out while it is a draft (noindex). */
+/** Pages listed in both languages. */
 const PAGES = [
   "/",
   "/blog",
@@ -16,6 +16,7 @@ const PAGES = [
   "/bookmarks",
   "/library",
   "/films",
+  "/music",
   "/about",
   "/journey",
   "/uses"

@@ -7,13 +7,11 @@ import { MusicGroups } from "@/features/music/components/MusicGroups"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/music")({
-  // Draft track lists: out of search results until the page is final.
   head: () =>
     pageHead({
       path: "/music",
       title: m.music_title(),
-      description: m.music_description(),
-      noindex: true
+      description: m.music_description()
     }),
   component: MusicPage
 })
