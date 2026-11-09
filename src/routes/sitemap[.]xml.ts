@@ -1,26 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router"
 
+import { getSitePages } from "@/constants/site-nav.constants"
+
 import { localizedUrl } from "@/helpers/localized-url"
 
 import { getSitemapPosts } from "@/features/blog/api/get-sitemap-posts.api"
 import { baseLocale, locales } from "@/paraglide/runtime.js"
-
-/** Pages listed in both languages. */
-const PAGES = [
-  "/",
-  "/blog",
-  "/notes",
-  "/virastack",
-  "/projects",
-  "/experiences",
-  "/bookmarks",
-  "/library",
-  "/films",
-  "/music",
-  "/about",
-  "/journey",
-  "/uses"
-]
 
 const POST_FOLDERS = { technical: "/blog", personal: "/notes" } as const
 
@@ -76,9 +61,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           )
         })
 
+        // Every menu page, in both languages.
+        const pagePaths = getSitePages().map(({ path }) => path)
+
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${[...PAGES.flatMap(pageEntries), ...postEntries].join("\n")}
+${[...pagePaths.flatMap(pageEntries), ...postEntries].join("\n")}
 </urlset>
 `
 

@@ -1,4 +1,5 @@
 import { me } from "@/constants/me.constants"
+import { getSitePages } from "@/constants/site-nav.constants"
 import { siteConfig } from "@/config/site.config"
 
 import { buildLlmsFullTxt, buildLlmsTxt } from "@/helpers/build-llms-txt"
@@ -19,6 +20,8 @@ const TEXT_HEADERS = {
 
 const REPOSITORY_URL = "https://github.com/omergulcicek/omergulcicek.com"
 
+const LISTED_ELSEWHERE = new Set(["/", "/blog", "/notes"])
+
 const postUrl = (list: string, post: Pick<FeedPost, "slug" | "locale">) =>
   localizedUrl(`${list}${post.slug}`, post.locale)
 
@@ -36,12 +39,6 @@ function toLlmsPost(list: string) {
 /** /llms.txt. Server only: it reads Supabase. */
 export async function llmsTxtResponse() {
   const [posts, notes] = await Promise.all([getFeedPosts("technical"), getFeedPosts("personal")])
-  const page = (path: string, title: string, description: string) => ({
-    title,
-    url: localizedUrl(path, "tr"),
-    description
-  })
-
   const text = buildLlmsTxt({
     name: me.name,
     role: me.title.tr,
@@ -50,15 +47,14 @@ export async function llmsTxtResponse() {
       `Full text of every technical post: ${siteConfig.url}/llms-full.txt`,
       `Contact: ${me.links.email} · [GitHub](${me.links.github}) · [LinkedIn](${me.links.linkedin}) · [X](${me.links.x})`
     ],
-    pages: [
-      page("/about", m.about_title({}, tr), m.about_description({}, tr)),
-      page("/virastack", m.virastack_title({}, tr), m.virastack_description({}, tr)),
-      page("/projects", m.projects_title({}, tr), m.projects_description({}, tr)),
-      page("/experiences", m.experiences_title({}, tr), m.experiences_description({}, tr)),
-      page("/journey", m.journey_title({}, tr), m.journey_description({}, tr)),
-      page("/uses", m.uses_title({}, tr), m.uses_description({}, tr)),
-      page("/bookmarks", m.bookmarks_title({}, tr), m.bookmarks_description({}, tr))
-    ],
+    // The menu's pages; home, blog and notes are left out, their content has sections below.
+    pages: getSitePages("tr")
+      .filter(({ path }) => !LISTED_ELSEWHERE.has(path))
+      .map(({ path, title, description }) => ({
+        title,
+        url: localizedUrl(path, "tr"),
+        description
+      })),
     posts: posts.filter((post) => post.locale === "tr").map(toLlmsPost(FEED_PATHS.technical.list)),
     englishPosts: posts
       .filter((post) => post.locale === "en")
