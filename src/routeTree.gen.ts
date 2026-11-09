@@ -13,6 +13,7 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Char123LangChar125RouteImport } from './routes/{-$lang}'
+import { Route as OgSplatRouteImport } from './routes/og/$'
 import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
 import { Route as Char123LangChar125AboutRouteImport } from './routes/{-$lang}/about'
 import { Route as Char123LangChar125BookmarksRouteImport } from './routes/{-$lang}/bookmarks'
@@ -49,6 +50,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const Char123LangChar125Route = Char123LangChar125RouteImport.update({
   id: '/{-$lang}',
   path: '/{-$lang}',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OgSplatRoute = OgSplatRouteImport.update({
+  id: '/og/$',
+  path: '/og/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char123LangChar125IndexRoute = Char123LangChar125IndexRouteImport.update({
@@ -153,6 +159,7 @@ export interface FileRoutesByFullPath {
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
   '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
@@ -175,6 +182,7 @@ export interface FileRoutesByTo {
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
   '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
@@ -199,6 +207,7 @@ export interface FileRoutesById {
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
   '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
@@ -224,6 +233,7 @@ export interface FileRouteTypes {
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
     | '/{-$lang}/experiences'
@@ -246,6 +256,7 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/site.webmanifest'
     | '/sitemap.xml'
+    | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
     | '/{-$lang}/experiences'
@@ -269,6 +280,7 @@ export interface FileRouteTypes {
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
     | '/{-$lang}/experiences'
@@ -293,6 +305,7 @@ export interface RootRouteChildren {
   SiteDotwebmanifestRoute: typeof SiteDotwebmanifestRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Char123LangChar125Route: typeof Char123LangChar125RouteWithChildren
+  OgSplatRoute: typeof OgSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -323,6 +336,13 @@ declare module '@tanstack/react-router' {
       path: '/{-$lang}'
       fullPath: '/{-$lang}'
       preLoaderRoute: typeof Char123LangChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/og/$': {
+      id: '/og/$'
+      path: '/og/$'
+      fullPath: '/og/$'
+      preLoaderRoute: typeof OgSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$lang}/': {
@@ -495,6 +515,7 @@ const rootRouteChildren: RootRouteChildren = {
   SiteDotwebmanifestRoute: SiteDotwebmanifestRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Char123LangChar125Route: Char123LangChar125RouteWithChildren,
+  OgSplatRoute: OgSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
