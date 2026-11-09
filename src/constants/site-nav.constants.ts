@@ -5,6 +5,7 @@ import {
   FolderGit2Icon,
   HouseIcon,
   LaptopIcon,
+  LayersIcon,
   LibraryBigIcon,
   MusicIcon,
   NewspaperIcon,
@@ -148,7 +149,7 @@ export function getSiteNav(locale?: Locale): SiteNavGroup[] {
   ]
 }
 
-type SitePage = { path: string; title: string; description: string }
+type SitePage = { path: string; title: string; description: string; icon: LucideIcon }
 
 /**
  * Pages that are not in the menu but still belong in the sitemap and llms.txt. ViraStack is
@@ -159,7 +160,8 @@ function getUnlistedPages(o: { locale: Locale } | undefined): SitePage[] {
     {
       path: "/virastack",
       title: m.nav_virastack({}, o),
-      description: m.virastack_description({}, o)
+      description: m.virastack_description({}, o),
+      icon: LayersIcon
     }
   ]
 }
@@ -167,10 +169,11 @@ function getUnlistedPages(o: { locale: Locale } | undefined): SitePage[] {
 /** Every page as a locale-free path ("/", "/blog"): the menu's, in order, then the unlisted ones. */
 export function getSitePages(locale?: Locale): SitePage[] {
   const menuPages = getSiteNav(locale).flatMap((group) =>
-    group.links.map(({ to, label, description }) => ({
+    group.links.map(({ to, label, description, icon }) => ({
       path: to.replace("/{-$lang}", "") || "/",
       title: label,
-      description
+      description,
+      icon
     }))
   )
 

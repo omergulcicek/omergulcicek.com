@@ -1,7 +1,8 @@
+import type { ComponentType, SVGProps } from "react"
+
 import { useNavigate } from "@tanstack/react-router"
 
 import {
-  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -17,6 +18,8 @@ export type CommandPaletteItem = {
   label: string
   /** A localized URL path, such as `/blog/barrel-file` or `/en/about`. */
   href: string
+  /** Shown before the label: the page's menu icon, or one for its kind of post. */
+  icon: ComponentType<SVGProps<SVGSVGElement>>
   keywords?: string[]
 }
 
@@ -52,29 +55,27 @@ export function CommandPaletteDialog({
       // Opened from the keyboard many times a day: it appears at once, with no zoom or fade.
       className="transition-none"
     >
-      {/* shadcn's CommandDialog leaves the cmdk root to the caller. */}
-      <Command>
-        <CommandInput placeholder={m.search_placeholder()} />
-        <CommandList>
-          <CommandEmpty>{loading ? m.search_loading() : m.search_empty()}</CommandEmpty>
-          {groups.map((group) =>
-            group.items.length > 0 ? (
-              <CommandGroup key={group.heading} heading={group.heading}>
-                {group.items.map((item) => (
-                  <CommandItem
-                    key={item.id}
-                    value={item.id}
-                    keywords={[item.label, ...(item.keywords ?? [])]}
-                    onSelect={() => select(item.href)}
-                  >
-                    <span className="truncate">{item.label}</span>
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            ) : null
-          )}
-        </CommandList>
-      </Command>
+      <CommandInput placeholder={m.search_placeholder()} />
+      <CommandList>
+        <CommandEmpty>{loading ? m.search_loading() : m.search_empty()}</CommandEmpty>
+        {groups.map((group) =>
+          group.items.length > 0 ? (
+            <CommandGroup key={group.heading} heading={group.heading}>
+              {group.items.map(({ id, label, href, icon: Icon, keywords }) => (
+                <CommandItem
+                  key={id}
+                  value={id}
+                  keywords={[label, ...(keywords ?? [])]}
+                  onSelect={() => select(href)}
+                >
+                  <Icon aria-hidden />
+                  <span className="truncate">{label}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          ) : null
+        )}
+      </CommandList>
     </CommandDialog>
   )
 }

@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 import { useQuery } from "@tanstack/react-query"
+import { NewspaperIcon, NotebookPenIcon } from "lucide-react"
 
 import { getSitePages } from "@/constants/site-nav.constants"
 
@@ -13,6 +14,8 @@ import * as m from "@/paraglide/messages.js"
 import { getLocale, localizeHref } from "@/paraglide/runtime.js"
 
 const FOLDERS: Record<BlogCategory, string> = { technical: "/blog", personal: "/notes" }
+// The same icons the menu uses for Blog and Notes.
+const POST_ICONS = { technical: NewspaperIcon, personal: NotebookPenIcon } as const
 
 /**
  * The header's search, composed here because it joins the site's pages with the blog feature's
@@ -36,6 +39,7 @@ export function SiteSearch() {
       id: `${category}:${post.slug}`,
       label: post.title,
       href: localizeHref(`${FOLDERS[category]}${post.slug}`),
+      icon: POST_ICONS[category],
       keywords: post.tags
     }))
 
@@ -45,7 +49,8 @@ export function SiteSearch() {
       items: getSitePages().map((page) => ({
         id: `page:${page.path}`,
         label: page.title,
-        href: localizeHref(page.path)
+        href: localizeHref(page.path),
+        icon: page.icon
       }))
     },
     { heading: m.nav_blog(), items: postItems("technical", technical.data) },
