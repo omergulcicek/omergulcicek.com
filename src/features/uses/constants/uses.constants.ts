@@ -10,8 +10,8 @@ export type UsesItem = {
   href?: string
   /** A page on this site, such as the library. */
   to?: FileRouteTypes["to"]
-  /** Shown before the name; one logo per row. */
-  logos: readonly UsesLogo[]
+  /** Shown before the name; one logo per row. The hardware rows have none. */
+  logos?: readonly UsesLogo[]
   /** One line on what it is for, or why. */
   note: Localized
 }
@@ -32,7 +32,6 @@ export const USES_SECTIONS: readonly UsesSection[] = [
     items: [
       {
         name: 'MacBook Pro 13" (M1, 2020)',
-        logos: ["apple"],
         note: {
           tr: "16 GB RAM. 2021'den beri aynı makine; hâlâ her işe yetiyor.",
           en: "16 GB of RAM. The same machine since 2021; still enough for everything."
@@ -40,7 +39,6 @@ export const USES_SECTIONS: readonly UsesSection[] = [
       },
       {
         name: "ASUS ROG Swift OLED PG27UCDM",
-        logos: ["asus"],
         href: "https://rog.asus.com/tr/monitors/27-to-31-5-inches/rog-swift-oled-pg27ucdm/",
         note: {
           tr: "4K OLED monitör; kod ve tasarım için keskin yazı ve doğru renkler.",
@@ -49,19 +47,16 @@ export const USES_SECTIONS: readonly UsesSection[] = [
       },
       {
         name: "Logitech G513",
-        logos: ["logitech"],
         href: "https://www.logitechg.com/tr-tr/shop/p/g513-backlit-mechanical-gaming-keyboard.920-009322",
         note: { tr: "Mekanik, arka aydınlatmalı klavye.", en: "A backlit mechanical keyboard." }
       },
       {
         name: "Logitech G703 HERO",
-        logos: ["logitech"],
         href: "https://www.logitechg.com/tr-tr/shop/p/g703-hero-wireless-gaming-mouse.910-005640",
         note: { tr: "Kablosuz fare.", en: "A wireless mouse." }
       },
       {
         name: "Logitech G733",
-        logos: ["logitech"],
         href: "https://www.logitechg.com/tr-tr/shop/p/g733-rgb-wireless-headset.981-000864",
         note: { tr: "Kablosuz kulaklık.", en: "A wireless headset." }
       }

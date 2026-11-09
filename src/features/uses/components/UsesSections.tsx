@@ -60,11 +60,13 @@ export function UsesSections() {
                 >
                   {/* One logo per row, in a fixed column so the names line up; centered on the title and
                       its note together, which reads as aligned better than the title line. */}
-                  <span className="flex w-5 shrink-0 items-center">
-                    {item.logos.map((logo) => (
-                      <Fragment key={logo}>{USES_LOGOS[logo]}</Fragment>
-                    ))}
-                  </span>
+                  {item.logos?.length ? (
+                    <span className="flex w-5 shrink-0 items-center">
+                      {item.logos.map((logo) => (
+                        <Fragment key={logo}>{USES_LOGOS[logo]}</Fragment>
+                      ))}
+                    </span>
+                  ) : null}
                   <span className="flex min-w-0 flex-col gap-0.5">
                     <span className="text-base font-medium">
                       <ItemName item={item} />

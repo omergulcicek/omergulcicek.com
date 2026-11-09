@@ -13,9 +13,6 @@ import { cn } from "cn"
 
 import { VIRASTACK_PRODUCTS } from "@/constants/virastack-products.constants"
 
-import { Apple } from "@/components/ui/svgs/apple"
-import { AppleDark } from "@/components/ui/svgs/appleDark"
-import { AsusRog } from "@/components/ui/svgs/asusRog"
 import { Chrome } from "@/components/ui/svgs/chrome"
 import { ClaudeAiIcon } from "@/components/ui/svgs/claudeAiIcon"
 import { CursorDark } from "@/components/ui/svgs/cursorDark"
@@ -23,7 +20,6 @@ import { CursorLight } from "@/components/ui/svgs/cursorLight"
 import { Figma } from "@/components/ui/svgs/figma"
 import { Git } from "@/components/ui/svgs/git"
 import { GithubLight } from "@/components/ui/svgs/githubLight"
-import { LogitechG } from "@/components/ui/svgs/logitechG"
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark"
 import { Pnpm } from "@/components/ui/svgs/pnpm"
 import { PnpmDark } from "@/components/ui/svgs/pnpmDark"
@@ -68,23 +64,16 @@ function avatar(name: string) {
   )
 }
 
-/** For tools without a logo in svgl (hardware, the terminal) and for this site's own pages. */
+/** For tools without a logo in svgl (the terminal) and for this site's own pages. */
 const glyph = (Icon: LucideIcon) => (
   <Icon aria-hidden strokeWidth={1.75} className={cn(logoClass, "text-muted-foreground")} />
 )
 
 /**
  * Logos for the uses page, keyed by name. Brand logos come from svgl (src/components/ui/svgs);
- * ASUS ROG and Logitech G are hand-added marks; the macOS Terminal has none, so those get a plain glyph.
+ * the macOS Terminal has none, so it gets a plain glyph. The hardware rows go without a logo.
  */
 export const USES_LOGOS = {
-  apple: themed(
-    "apple",
-    <Apple aria-hidden className={logoClass} />,
-    <AppleDark aria-hidden className={logoClass} />
-  ),
-  asus: <AsusRog aria-hidden className={logoClass} />,
-  logitech: <LogitechG aria-hidden className={logoClass} />,
   cursor: themed(
     "cursor",
     <CursorLight aria-hidden className={logoClass} />,
