@@ -1,0 +1,230 @@
+[
+  {
+    "id": "2026-virastack-academy",
+    "year": 2026,
+    "title": {
+      "tr": "ViraStack Academy'yi açtım",
+      "en": "I opened ViraStack Academy"
+    },
+    "description": {
+      "tr": "Start, AI, Mask, Password, Address ve Guide'ı kararlı hale getirdim. Şimdi öğrendiklerimi ders olarak paylaşıyorum.",
+      "en": "Start, AI, Mask, Password, Address and Guide are stable now. These days I share what I learned as lessons."
+    },
+    "href": "https://virastack.com/tr/academy",
+    "image": null,
+    "visual": null
+  },
+  {
+    "id": "2025-virastack",
+    "year": 2025,
+    "title": {
+      "tr": "ViraStack'i kurdum",
+      "en": "I founded ViraStack"
+    },
+    "description": {
+      "tr": "Frontend geliştiriciler için açık kaynak şablonlar, paketler ve rehberler.",
+      "en": "Open-source templates, packages and guides for frontend developers."
+    },
+    "href": null,
+    "image": null,
+    "visual": "virastack-products"
+  },
+  {
+    "id": "2025-renault-clio",
+    "year": 2025,
+    "title": {
+      "tr": "Renault Clio aldım",
+      "en": "I bought a Renault Clio"
+    },
+    "description": null,
+    "href": null,
+    "image": {
+      "src": "/media/journey/2025-renault-clio.webp",
+      "width": 675,
+      "height": 1200,
+      "alt": {
+        "tr": "Renault Clio ile birlikte",
+        "en": "With the Renault Clio"
+      },
+      "position": "center calc(100% + 100px)"
+    },
+    "visual": null
+  },
+  {
+    "id": "2025-evlilik",
+    "year": 2025,
+    "title": {
+      "tr": "Evlendim",
+      "en": "I got married"
+    },
+    "description": {
+      "tr": "Eşimle hayatı birlikte kurmaya karar verdik.",
+      "en": "My wife and I decided to build a life together."
+    },
+    "href": null,
+    "image": {
+      "src": "/media/journey/2025-evlilik.webp",
+      "width": 700,
+      "height": 341,
+      "alt": {
+        "tr": "Nişan",
+        "en": "Engagement"
+      },
+      "position": null
+    },
+    "visual": null
+  },
+  {
+    "id": "2025-sakarya",
+    "year": 2025,
+    "title": {
+      "tr": "Sakarya'ya taşındım",
+      "en": "I moved to Sakarya"
+    },
+    "description": {
+      "tr": "İstanbul'dan sessiz bir yaşama geçtim.",
+      "en": "From Istanbul to a quieter life."
+    },
+    "href": null,
+    "image": null,
+    "visual": null
+  },
+  {
+    "id": "2024-alisgidis",
+    "year": 2024,
+    "title": {
+      "tr": "Alışgidiş'te frontend ekibini kurdum",
+      "en": "I built the frontend team at Alışgidiş"
+    },
+    "description": null,
+    "href": null,
+    "image": null,
+    "visual": null
+  },
+  {
+    "id": "2021-macbook",
+    "year": 2021,
+    "title": {
+      "tr": "İlk MacBook Pro'm (M1)",
+      "en": "My first MacBook Pro (M1)"
+    },
+    "description": {
+      "tr": "Hâlâ kullanıyorum.",
+      "en": "Still using it."
+    },
+    "href": null,
+    "image": null,
+    "visual": null
+  },
+  {
+    "id": "2020-kodluyoruz",
+    "year": 2020,
+    "title": {
+      "tr": "Kodluyoruz'da eğitmen oldum",
+      "en": "I became an instructor at Kodluyoruz"
+    },
+    "description": null,
+    "href": null,
+    "image": null,
+    "visual": null
+  },
+  {
+    "id": "2019-askerlik",
+    "year": 2019,
+    "title": {
+      "tr": "Bedelli askerlik",
+      "en": "Paid military service"
+    },
+    "description": {
+      "tr": "Ankara Mamak.",
+      "en": "Mamak, Ankara."
+    },
+    "href": null,
+    "image": {
+      "src": "/media/journey/2019-askerlik.webp",
+      "width": 576,
+      "height": 1024,
+      "alt": {
+        "tr": "Kamuflaj üniformalı askerlik fotoğrafı",
+        "en": "Military service photo in camouflage uniform"
+      },
+      "position": "center 25%"
+    },
+    "visual": null
+  },
+  {
+    "id": "2017-ziraat",
+    "year": 2017,
+    "title": {
+      "tr": "Ziraat Teknoloji'de ilk yazılım işim",
+      "en": "My first software job, at Ziraat Teknoloji"
+    },
+    "description": null,
+    "href": null,
+    "image": {
+      "src": "/media/journey/2017-ziraat.webp",
+      "width": 769,
+      "height": 1024,
+      "alt": {
+        "tr": "Ziraat Teknoloji binası önünde selfie",
+        "en": "Selfie in front of the Ziraat Teknoloji building"
+      },
+      "position": "center 40%"
+    },
+    "visual": null
+  },
+  {
+    "id": "2016-turkuaz",
+    "year": 2016,
+    "title": {
+      "tr": "İlk açık kaynak projem: Turkuaz",
+      "en": "My first open-source project: Turkuaz"
+    },
+    "description": null,
+    "href": "https://turkuazcss.com/",
+    "image": null,
+    "visual": null
+  },
+  {
+    "id": "2012-universite",
+    "year": 2012,
+    "title": {
+      "tr": "Yazılım mühendisliğine başladım",
+      "en": "I started software engineering"
+    },
+    "description": null,
+    "href": null,
+    "image": {
+      "src": "/media/journey/2012-universite.webp",
+      "width": 1024,
+      "height": 769,
+      "alt": {
+        "tr": "Üniversite mezuniyet töreninde selfie",
+        "en": "Selfie at the graduation ceremony"
+      },
+      "position": "center 20%"
+    },
+    "visual": null
+  },
+  {
+    "id": "1993-dogum",
+    "year": 1993,
+    "title": {
+      "tr": "7 Şubat'ta İstanbul'da doğdum",
+      "en": "Born in Istanbul on 7 February"
+    },
+    "description": null,
+    "href": null,
+    "image": {
+      "src": "/media/journey/1993-dogum.webp",
+      "width": 1024,
+      "height": 767,
+      "alt": {
+        "tr": "Annemle bebek fotoğrafım",
+        "en": "A baby photo with my mother"
+      },
+      "position": "top"
+    },
+    "visual": null
+  }
+]
