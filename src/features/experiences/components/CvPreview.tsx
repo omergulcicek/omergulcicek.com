@@ -6,11 +6,7 @@ import { cn } from "cn"
 
 import { formatYearMonth } from "@/helpers/format-year-month"
 
-import {
-  linkedCardClass,
-  surfaceDoubleFrameClass,
-  textLinkClass
-} from "@/components/shared/surface.styles"
+import { cardFrameClass, linkedCardClass, textLinkClass } from "@/components/shared/surface.styles"
 import { buttonVariants } from "@/components/ui/button"
 import { Dialog, DialogClose, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import * as m from "@/paraglide/messages.js"
@@ -61,8 +57,8 @@ export function CvPreview() {
        */}
       <div
         className={cn(
-          "relative flex items-center gap-4 bg-background p-3 sm:max-w-sm",
-          surfaceDoubleFrameClass,
+          "relative flex items-center gap-4 p-3 sm:max-w-sm",
+          cardFrameClass,
           linkedCardClass
         )}
       >

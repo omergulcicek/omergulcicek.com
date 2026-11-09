@@ -1,13 +1,19 @@
-/** Double frame for cards and images: a border, a gap in the page color, then a ring. Carried over from v10. */
+/**
+ * Double frame for images only (photos, logos): a border, a gap in the page color, then a ring.
+ * Carried over from v10. Cards use the single cardFrameClass.
+ */
 export const surfaceDoubleFrameClass =
   "rounded-xl border border-border ring-1 ring-border ring-offset-4 ring-offset-background"
 
+/** The frame for cards: one border. Project cards, the CV card, previous/next posts, fact sheets. */
+export const cardFrameClass = "rounded-xl border border-border bg-background"
+
 /**
- * Hover and focus for a card that is a link, on top of surfaceDoubleFrameClass: both rings
- * and the fill strengthen. Shared by project cards, the CV card and previous/next posts.
+ * Hover and focus for a card that is a link, on top of cardFrameClass: the border and the fill
+ * strengthen on hover, and a focus ring shows for the keyboard.
  */
 export const linkedCardClass =
-  "group outline-none transition-[background-color,border-color,box-shadow] duration-150 ease-out hover:border-foreground/20 hover:bg-accent/40 hover:ring-foreground/20 focus-visible:border-foreground/30 focus-visible:ring-foreground/40"
+  "group outline-none transition-[background-color,border-color] duration-150 ease-out hover:border-foreground/20 hover:bg-accent/40 focus-visible:ring-[3px] focus-visible:ring-ring/50"
 
 /** The same frame for small images such as 32-40px logos, with a tighter gap. */
 export const surfaceDoubleFrameSmClass =

@@ -13,7 +13,7 @@ export function ProjectGroups() {
           <h2 id={id} className="scroll-mt-24 text-sm font-medium text-muted-foreground">
             {title}
           </h2>
-          {/* p-1 keeps the outer ring of each card inside the grid. */}
+          {/* p-1 keeps each card's focus ring inside the grid. */}
           <ul className="grid gap-5 sm:grid-cols-2">
             {projects.map((project) => (
               <li key={project.id} className="p-1">

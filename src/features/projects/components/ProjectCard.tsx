@@ -6,7 +6,7 @@ import type { Me } from "@/schemas/me.schema"
 import { localize } from "@/helpers/localize"
 
 import { RichMessage } from "@/components/shared/RichMessage"
-import { linkedCardClass, surfaceDoubleFrameClass } from "@/components/shared/surface.styles"
+import { cardFrameClass, linkedCardClass } from "@/components/shared/surface.styles"
 import { PROJECT_ICONS } from "@/features/projects/constants/project-icons.constants"
 import * as m from "@/paraglide/messages.js"
 import { getLocale } from "@/paraglide/runtime.js"
@@ -104,7 +104,7 @@ export function ProjectCard({ project, stats }: ProjectCardProps) {
     </>
   )
 
-  const base = cn("flex h-full flex-col gap-2 bg-background p-4", surfaceDoubleFrameClass)
+  const base = cn("flex h-full flex-col gap-2 p-4", cardFrameClass)
 
   if (!project.href) return <div className={base}>{content}</div>
 

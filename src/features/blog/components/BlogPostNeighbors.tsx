@@ -4,7 +4,7 @@ import { cn } from "cn"
 
 import { getLangParam } from "@/helpers/localized-url"
 
-import { linkedCardClass, surfaceDoubleFrameClass } from "@/components/shared/surface.styles"
+import { cardFrameClass, linkedCardClass } from "@/components/shared/surface.styles"
 import { getAdjacentPosts } from "@/features/blog/helpers/get-adjacent-posts"
 import { useBlogPosts } from "@/features/blog/hooks/use-blog-posts"
 import type { BlogCategory, BlogPostListItem } from "@/features/blog/schemas/blog-post.schema"
@@ -12,12 +12,8 @@ import * as m from "@/paraglide/messages.js"
 
 type BlogPostNeighborsProps = { category: BlogCategory; slug: string }
 
-// The same linked card as projects and the CV: double frame, both rings strengthen on hover.
-const cardClass = cn(
-  "flex flex-col gap-1.5 bg-background p-4",
-  surfaceDoubleFrameClass,
-  linkedCardClass
-)
+// The same linked card as projects and the CV.
+const cardClass = cn("flex flex-col gap-1.5 p-4", cardFrameClass, linkedCardClass)
 
 /** Links to the older and newer post of the same list, at the end of a post. */
 export function BlogPostNeighbors({ category, slug }: BlogPostNeighborsProps) {
