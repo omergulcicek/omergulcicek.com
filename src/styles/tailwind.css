@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* Font faces in this file, not in their own stylesheets: one render-blocking request instead of three. */
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 

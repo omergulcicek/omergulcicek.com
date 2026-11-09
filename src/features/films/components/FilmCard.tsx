@@ -8,10 +8,14 @@ import type { Film } from "@/features/films/schemas/film.schema"
 import * as m from "@/paraglide/messages.js"
 import { getLocale } from "@/paraglide/runtime.js"
 
-type FilmCardProps = { film: Film }
+type FilmCardProps = {
+  film: Film
+  /** The first row of the page, loaded eagerly so the LCP poster is not late. */
+  priority?: boolean
+}
 
 /** A poster (or a video thumbnail) with the title, then the rating or channel and a line on it. */
-export function FilmCard({ film }: FilmCardProps) {
+export function FilmCard({ film, priority = false }: FilmCardProps) {
   const video = film.kind === "video"
   const rating = film.rating?.toLocaleString(getLocale(), { minimumFractionDigits: 1 })
 
@@ -28,7 +32,8 @@ export function FilmCard({ film }: FilmCardProps) {
           alt=""
           width={368}
           height={video ? 207 : 552}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : undefined}
           decoding="async"
           className={cn(
             "w-full bg-muted object-cover transition-[border-color] duration-150 ease-out group-hover:border-foreground/30",

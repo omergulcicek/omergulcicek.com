@@ -17,7 +17,14 @@ import * as m from "@/paraglide/messages.js"
  * click and started right away. The player only loads then, so the page stays light, and it
  * comes from youtube-nocookie.com, which sets no cookies until the video plays.
  */
-function FeaturedVideo({ featured }: { featured: NonNullable<MusicGroup["featured"]> }) {
+function FeaturedVideo({
+  featured,
+  priority
+}: {
+  featured: NonNullable<MusicGroup["featured"]>
+  /** The first group's still is the LCP, so it loads eagerly. */
+  priority: boolean
+}) {
   const [playing, setPlaying] = useState(false)
   const label = `${featured.artist}, ${featured.title}`
 
@@ -44,7 +51,8 @@ function FeaturedVideo({ featured }: { featured: NonNullable<MusicGroup["feature
               alt=""
               width={960}
               height={540}
-              loading="lazy"
+              loading={priority ? "eager" : "lazy"}
+              fetchPriority={priority ? "high" : undefined}
               decoding="async"
               className="size-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
             />
@@ -125,7 +133,7 @@ export function MusicGroups() {
   return (
     <>
       <div className="flex flex-col gap-12">
-        {groups.map((group) => (
+        {groups.map((group, groupIndex) => (
           <section
             key={group.id}
             aria-labelledby={group.anchor}
@@ -133,7 +141,7 @@ export function MusicGroups() {
           >
             <div className="sm:sticky sm:top-24 sm:self-start">
               {group.featured ? (
-                <FeaturedVideo featured={group.featured} />
+                <FeaturedVideo featured={group.featured} priority={groupIndex === 0} />
               ) : (
                 <FeaturedPlaceholder />
               )}

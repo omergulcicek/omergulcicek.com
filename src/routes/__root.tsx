@@ -2,10 +2,8 @@ import { TanStackDevtools } from "@tanstack/react-devtools"
 import type { QueryClient } from "@tanstack/react-query"
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
-import geistMonoCss from "@fontsource-variable/geist-mono/index.css?url"
 import geistLatinExt from "@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2?url"
 import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url"
-import geistCss from "@fontsource-variable/geist/index.css?url"
 
 import { seoHeadMeta } from "@/config/seo.config"
 
@@ -42,9 +40,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         type: "font/woff2",
         crossOrigin: "anonymous" as const
       })),
-      { rel: "stylesheet", href: geistCss },
-      // Mono only sets small dates and years, so it loads without a preload and never blocks the first paint.
-      { rel: "stylesheet", href: geistMonoCss },
       { rel: "icon", href: "/logo.webp" },
       { rel: "apple-touch-icon", href: "/logo.webp" },
       { rel: "manifest", href: "/site.webmanifest" },

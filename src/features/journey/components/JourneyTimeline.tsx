@@ -20,6 +20,8 @@ function groupByYear(entries: readonly JourneyEntry[]) {
  */
 export function JourneyTimeline() {
   const years = groupByYear(journey)
+  // The first photo is usually the LCP, so it alone loads eagerly.
+  const firstImageId = journey.find((entry) => entry.image)?.id
 
   return (
     <ol className="flex flex-col">
@@ -39,7 +41,7 @@ export function JourneyTimeline() {
           </h2>
           <ul className="flex flex-col gap-8 pt-0.5">
             {entries.map((entry) => (
-              <JourneyItem key={entry.id} entry={entry} />
+              <JourneyItem key={entry.id} entry={entry} priority={entry.id === firstImageId} />
             ))}
           </ul>
         </li>
@@ -48,7 +50,7 @@ export function JourneyTimeline() {
   )
 }
 
-function JourneyItem({ entry }: { entry: JourneyEntry }) {
+function JourneyItem({ entry, priority }: { entry: JourneyEntry; priority: boolean }) {
   const title = localize(entry.title)
 
   return (
@@ -80,7 +82,8 @@ function JourneyItem({ entry }: { entry: JourneyEntry }) {
           alt={localize(entry.image.alt)}
           width={entry.image.width}
           height={entry.image.height}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : undefined}
           decoding="async"
           // Off-center subjects keep their framing in the fixed-ratio crop.
           style={entry.image.position ? { objectPosition: entry.image.position } : undefined}

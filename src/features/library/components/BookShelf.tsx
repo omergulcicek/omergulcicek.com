@@ -9,6 +9,9 @@ import { sortBooks } from "@/features/library/helpers/sort-books"
 import * as m from "@/paraglide/messages.js"
 import { getLocale } from "@/paraglide/runtime.js"
 
+// Covers on screen at load: two rows on phones, one row of four from md up.
+const ABOVE_THE_FOLD = 4
+
 const route = getRouteApi("/{-$lang}/library")
 
 export function BookShelf() {
@@ -36,8 +39,8 @@ export function BookShelf() {
         current={genre}
       />
       <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
-        {visible.map((book) => (
-          <BookCard key={book.id} book={book} />
+        {visible.map((book, index) => (
+          <BookCard key={book.id} book={book} priority={index < ABOVE_THE_FOLD} />
         ))}
       </ul>
     </>

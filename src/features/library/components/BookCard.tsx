@@ -5,7 +5,11 @@ import { mediaFrameClass } from "@/components/shared/surface.styles"
 import type { Book } from "@/features/library/schemas/book.schema"
 import * as m from "@/paraglide/messages.js"
 
-type BookCardProps = { book: Book }
+type BookCardProps = {
+  book: Book
+  /** The first row, which is on screen at load: loaded eagerly so the LCP cover is not late. */
+  priority?: boolean
+}
 
 const coverClass = cn(
   "aspect-[2/3] w-full bg-muted object-cover transition-[border-color] duration-150 ease-out",
@@ -13,14 +17,15 @@ const coverClass = cn(
 )
 
 /** A cover with its title and author. Linked books open their store page. */
-export function BookCard({ book }: BookCardProps) {
+export function BookCard({ book, priority = false }: BookCardProps) {
   const cover = book.image ? (
     <img
       src={book.image}
       alt=""
       width={360}
       height={540}
-      loading="lazy"
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
       decoding="async"
       className={cn(coverClass, book.url && "group-hover:border-foreground/30")}
     />
