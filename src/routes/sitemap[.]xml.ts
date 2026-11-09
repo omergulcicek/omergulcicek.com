@@ -48,17 +48,31 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        // Posts are written in one language, so each is listed once, at that language's URL.
+        // Each post is listed once, at its own language's URL.
         const posts = await getSitemapPosts().catch((error: unknown) => {
           console.warn("Sitemap posts could not be loaded:", error)
           return []
         })
+        const postPath = (category: keyof typeof POST_FOLDERS, slug: string) =>
+          `${POST_FOLDERS[category]}${slug.startsWith("/") ? slug : `/${slug}`}`
         const postEntries = posts.map((post) => {
-          const path = `${POST_FOLDERS[post.category]}${post.slug.startsWith("/") ? post.slug : `/${post.slug}`}`
+          const path = postPath(post.category, post.slug)
           const lastmod = post.updated_at ?? post.published_at
+          // A translated post lists both versions, like the pages do.
+          const translation = post.translation_slug
+            ? posts.find((other) => other.slug === post.translation_slug)
+            : undefined
+          const alternates = translation
+            ? [post, translation]
+                .map(
+                  (version) =>
+                    `    <xhtml:link rel="alternate" hreflang="${version.locale}" href="${escapeXml(localizedUrl(postPath(version.category, version.slug), version.locale))}"/>\n`
+                )
+                .join("")
+            : ""
           return urlEntry(
             localizedUrl(path, post.locale),
-            lastmod ? `    <lastmod>${new Date(lastmod).toISOString()}</lastmod>\n` : ""
+            `${lastmod ? `    <lastmod>${new Date(lastmod).toISOString()}</lastmod>\n` : ""}${alternates}`
           )
         })
 

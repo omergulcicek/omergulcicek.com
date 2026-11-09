@@ -7,7 +7,7 @@ import { sitemapPostListSchema } from "@/features/blog/schemas/blog-post.schema"
 export function getSitemapPosts(signal?: AbortSignal) {
   return getSupabaseApi().get("/blog_posts", {
     params: {
-      select: "slug,category,locale,published_at,updated_at",
+      select: "slug,category,locale,published_at,updated_at,translation_slug",
       published: "eq.true",
       slug: RETIRED_POSTS_FILTER,
       order: "published_at.desc.nullslast",

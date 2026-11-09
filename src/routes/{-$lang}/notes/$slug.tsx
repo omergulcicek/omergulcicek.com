@@ -7,6 +7,7 @@ import { blogPostQueryOptions, blogPostsQueryOptions } from "@/features/blog/api
 import { BlogPostArticle } from "@/features/blog/components/BlogPostArticle"
 import { postHead } from "@/features/blog/helpers/post-head"
 import { resolvePostRedirect } from "@/features/blog/helpers/resolve-post-redirect"
+import { baseLocale } from "@/paraglide/runtime.js"
 
 export const Route = createFileRoute("/{-$lang}/notes/$slug")({
   // Retired posts and v10's `.md` addresses move with a 301; impossible slugs are a 404, not a 500.
@@ -30,6 +31,16 @@ export const Route = createFileRoute("/{-$lang}/notes/$slug")({
       }),
       context.queryClient.query({ ...blogPostsQueryOptions("personal"), staleTime: "static" })
     ])
+    // A post read under the other language's prefix moves to its translation when it has one,
+    // so the language switch lands on the same post in the other language.
+    const locale = params.lang ?? baseLocale
+    if (post.locale !== locale && post.translation_slug) {
+      throw redirect({
+        to: "/{-$lang}/notes/$slug",
+        params: { ...params, slug: post.translation_slug.replace(/^\//, "") },
+        statusCode: 301
+      })
+    }
     return post
   },
   head: ({ loaderData, params }) =>

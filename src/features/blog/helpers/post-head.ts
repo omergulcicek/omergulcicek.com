@@ -3,6 +3,13 @@ import { jsonLd, ogCardUrl, pageHead, personJsonLd } from "@/config/seo.config"
 import { localizedUrl } from "@/helpers/localized-url"
 
 import type { BlogPostDetail } from "@/features/blog/schemas/blog-post.schema"
+import { locales } from "@/paraglide/runtime.js"
+import type { Locale } from "@/paraglide/runtime.js"
+
+/** The site has two locales, so a translation is always in the other one. */
+function otherLocale(locale: Locale): Locale {
+  return locales.find((item) => item !== locale) ?? locale
+}
 
 /**
  * A post's head: its generated share card, article dates and a BlogPosting block. Posts are written
@@ -14,6 +21,13 @@ export function postHead(path: string, post: BlogPostDetail) {
     title: post.title,
     description: post.description,
     contentLocale: post.locale,
+    // The translation lives in the same folder (`/blog`, `/notes`) under the other language.
+    translation: post.translation_slug
+      ? {
+          path: `${path.slice(0, path.lastIndexOf("/"))}${post.translation_slug}`,
+          locale: otherLocale(post.locale)
+        }
+      : undefined,
     article: { publishedTime: post.published_at, modifiedTime: post.updated_at }
   })
 

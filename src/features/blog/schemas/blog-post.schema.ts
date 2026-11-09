@@ -45,7 +45,9 @@ export type FullTextPost = z.infer<typeof fullTextPostListSchema>[number]
 export const sitemapPostListSchema = z.array(
   blogPostListItemSchema.pick({ slug: true, locale: true, published_at: true }).extend({
     category: blogCategorySchema,
-    updated_at: z.string().nullable()
+    updated_at: z.string().nullable(),
+    /** The same post in the other language, with a leading slash; null when there is none. */
+    translation_slug: z.string().min(1).nullable()
   })
 )
 
@@ -60,7 +62,9 @@ export const blogPostDetailRowsSchema = z.array(
   blogPostListItemSchema.extend({
     description: z.string(),
     content: z.string().min(1),
-    updated_at: z.string().nullable()
+    updated_at: z.string().nullable(),
+    /** The same post in the other language, with a leading slash; null when there is none. */
+    translation_slug: z.string().min(1).nullable()
   })
 )
 
@@ -71,6 +75,7 @@ export type BlogPostListItem = z.infer<typeof blogPostListItemSchema>
 export type BlogPostDetail = BlogPostListItem & {
   description: string
   updated_at: string | null
+  translation_slug: string | null
   html: string
   /** The h2/h3 outline, for the table of contents. */
   headings: PostHeading[]

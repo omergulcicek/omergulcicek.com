@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site.config"
 import { canonicalLink, hreflangLinks, localizedUrl } from "@/helpers/localized-url"
 
 import * as m from "@/paraglide/messages.js"
-import { getLocale } from "@/paraglide/runtime.js"
+import { baseLocale, getLocale } from "@/paraglide/runtime.js"
 import type { Locale } from "@/paraglide/runtime.js"
 
 const OG_LOCALES: Record<Locale, string> = { en: "en_US", tr: "tr_TR" }
@@ -46,6 +46,8 @@ type PageSeo = {
   image?: string | null
   /** Posts exist in one language: canonical points there and no alternates are declared. */
   contentLocale?: Locale
+  /** The same post in the other language; with it, both versions are declared as alternates. */
+  translation?: { path: string; locale: Locale }
   /** Pages still in draft stay out of search results. */
   noindex?: boolean
   article?: { publishedTime: string | null; modifiedTime: string | null }
@@ -60,6 +62,29 @@ export function ogCardUrl(path: string, locale: Locale) {
 export function absoluteUrl(pathOrUrl: string) {
   if (/^https?:\/\//.test(pathOrUrl)) return pathOrUrl
   return `${siteConfig.url}/${pathOrUrl.replace(/^\//, "")}`
+}
+
+/**
+ * hreflang links between a post and its translation. x-default goes to the base locale's
+ * version, as for every other page.
+ */
+function translationLinks(path: string, locale: Locale, translation: PageSeo["translation"]) {
+  if (!translation) return []
+
+  const versions = [
+    { locale, href: localizedUrl(path, locale) },
+    { locale: translation.locale, href: localizedUrl(translation.path, translation.locale) }
+  ]
+  const fallback = versions.find((version) => version.locale === baseLocale) ?? versions[0]
+
+  return [
+    ...versions.map((version) => ({
+      rel: "alternate",
+      hrefLang: version.locale,
+      href: version.href
+    })),
+    ...(fallback ? [{ rel: "alternate", hrefLang: "x-default", href: fallback.href }] : [])
+  ]
 }
 
 /** Title, description, share tags, canonical and hreflang of one page, for its route's head(). */
@@ -103,7 +128,7 @@ export function pageHead(seo: PageSeo) {
   ]
 
   const links = seo.contentLocale
-    ? [{ rel: "canonical", href: url }]
+    ? [{ rel: "canonical", href: url }, ...translationLinks(seo.path, locale, seo.translation)]
     : [canonicalLink(seo.path), ...hreflangLinks(seo.path)]
 
   return { meta, links }

@@ -6,6 +6,7 @@ import { pageHead } from "@/config/seo.config"
 import { PageHeader } from "@/components/shared/PageHeader"
 import { readingWidthClass } from "@/components/shared/surface.styles"
 import { blogPostsQueryOptions } from "@/features/blog/api/blog.queries"
+import { BlogLocaleNotice } from "@/features/blog/components/BlogLocaleNotice"
 import { BlogPostList } from "@/features/blog/components/BlogPostList"
 import { BlogTagFilter } from "@/features/blog/components/BlogTagFilter"
 import { blogListSearchSchema } from "@/features/blog/schemas/blog-post.schema"
@@ -23,6 +24,7 @@ function BlogPage() {
   return (
     <div className={cn("flex flex-col gap-8", readingWidthClass)}>
       <PageHeader title={m.blog_title()} description={m.blog_description()} />
+      <BlogLocaleNotice category="technical" />
       <BlogTagFilter category="technical" />
       <BlogPostList category="technical" />
     </div>
