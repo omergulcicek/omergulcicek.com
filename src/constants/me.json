@@ -1,0 +1,667 @@
+{
+  "name": "Ömer Gülçiçek",
+  "handle": "omergulcicek",
+  "title": {
+    "tr": "Frontend Mühendisi",
+    "en": "Frontend Engineer"
+  },
+  "photo": {
+    "src": "/img/omer-gulcicek.webp",
+    "alt": {
+      "tr": "Ömer Gülçiçek, şapkası ve lacivert ceketiyle deniz kenarındaki bir terasta",
+      "en": "Ömer Gülçiçek in a cap and navy jacket on a seaside terrace"
+    }
+  },
+  "links": {
+    "email": "iletisim@omergulcicek.com",
+    "github": "https://github.com/omergulcicek",
+    "npm": "https://www.npmjs.com/~omergulcicek",
+    "linkedin": "https://linkedin.com/in/omergulcicek",
+    "x": "https://x.com/omergulcicek",
+    "virastack": "https://virastack.com"
+  },
+  "experiences": [
+    {
+      "id": "virastack",
+      "company": "ViraStack",
+      "parent": null,
+      "logo": "/media/company/virastack-112.webp",
+      "role": {
+        "tr": "Kurucu",
+        "en": "Founder"
+      },
+      "location": {
+        "city": null,
+        "workMode": "remote"
+      },
+      "startDate": "2025-12",
+      "endDate": null,
+      "summary": {
+        "tr": "Frontend geliştiriciler için açık kaynak ekosistem kuruyorum: şablonlar, AI kuralları, form paketleri, Academy.",
+        "en": "Building an open-source ecosystem for frontend developers: templates, AI rules, form packages and Academy."
+      },
+      "technologies": ["React", "Next.js", "TypeScript", "TanStack Query", "Tailwind CSS"],
+      "highlights": [
+        {
+          "tr": "Frontend projelerinde uzun vadeli kalite ve mimari düzen sağlayan açık kaynak ViraStack ekosistemini kurdum.",
+          "en": "Founded ViraStack, an open-source ecosystem that brings long-term quality and architectural order to frontend projects."
+        },
+        {
+          "tr": "Ekosistemde ücretsiz bir eğitim platformu, tek komutla üretime hazır proje kuran bir başlatıcı, AI ajanları için mimari kit ve erişilebilir React form paketleri yer alıyor.",
+          "en": "The ecosystem includes a free learning platform, a one-command starter for production-ready projects, an architecture kit for AI agents and accessible React form packages."
+        },
+        {
+          "tr": "Ürün kararlarını, geliştirmeyi, dokümantasyonu ve npm yayın sürecini uçtan uca yönetiyorum.",
+          "en": "I own the full lifecycle end to end: product decisions, development, documentation and npm releases."
+        }
+      ]
+    },
+    {
+      "id": "machinarium",
+      "company": "Machinarium",
+      "parent": null,
+      "logo": "/media/company/machinarium-112.webp",
+      "role": {
+        "tr": "Frontend Team Lead",
+        "en": "Frontend Team Lead"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "remote"
+      },
+      "startDate": "2025-08",
+      "endDate": "2025-11",
+      "summary": {
+        "tr": "10 kişilik ekibe liderlik ettim. Ortak bileşen mimarisi ve AI destekli kod standartlarıyla teknik borcu azalttım.",
+        "en": "Led a team of 10. Cut technical debt with a shared component architecture and AI-assisted code standards."
+      },
+      "technologies": ["React", "Next.js", "TypeScript", "TanStack Query", "Tailwind CSS"],
+      "highlights": [
+        {
+          "tr": "10 kişilik frontend ekibinden sorumlu olarak 2 e-ticaret sitesi ile PIM, CMS ve OMS panelleri dahil 5+ projenin teknik liderliğini yürüttüm.",
+          "en": "Led a 10-person frontend team, owning the technical direction of 5+ projects, including 2 e-commerce sites and PIM, CMS and OMS panels."
+        },
+        {
+          "tr": "Projelerde ayrı ayrı yazılan ortak yapıları ortak bileşen ve modül mimarisinde topladım; yeni geliştirme ve hata çözüm sürelerini 2-3 kat kısalttım.",
+          "en": "Brought structures rebuilt separately across projects into a shared component and module architecture, cutting feature and bug-fix turnaround by 2–3x."
+        },
+        {
+          "tr": "Yapay zekâ kuralları ve kod yazım standartları oluşturarak ekip genelinde kod tutarlılığını sağladım.",
+          "en": "Established AI rules and coding standards, bringing code consistency across the team."
+        },
+        {
+          "tr": "Yapay zekâ destekli Figma to Code akışı kurarak tasarımların koda dönüşümünü hızlandırdım.",
+          "en": "Set up an AI-assisted Figma-to-code workflow that sped up turning designs into code."
+        }
+      ]
+    },
+    {
+      "id": "alisgidis",
+      "company": "Alışgidiş",
+      "parent": "Fibabanka",
+      "logo": "/media/company/alisgidis-112.webp",
+      "role": {
+        "tr": "Frontend Team Lead",
+        "en": "Frontend Team Lead"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "remote"
+      },
+      "startDate": "2024-03",
+      "endDate": "2025-06",
+      "summary": {
+        "tr": "alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum. Lighthouse 90+.",
+        "en": "Built the frontend team and architecture of alisgidis.com from scratch. Lighthouse 90+."
+      },
+      "technologies": ["React", "Next.js", "TypeScript", "TanStack Query", "Tailwind CSS"],
+      "highlights": [
+        {
+          "tr": "Fibabanka'nın e-ticaret girişimi alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum; 5 kişilik frontend ekibini yönettim.",
+          "en": "Built the frontend team and architecture of alisgidis.com, Fibabanka's e-commerce venture, from scratch, and led its 5-person frontend team."
+        },
+        {
+          "tr": "Core Web Vitals iyileştirmeleriyle Lighthouse skorlarını 90+ seviyesine taşıyarak site hızını ve SEO performansını artırdım.",
+          "en": "Raised Lighthouse scores to 90+ through Core Web Vitals improvements, improving site speed and SEO."
+        },
+        {
+          "tr": "Atomic Design ile modüler, dark/light tema destekli bir UI kütüphanesi kurarak frontend geliştirme hızını %25 artırdım.",
+          "en": "Built a modular UI library with dark and light themes using Atomic Design, increasing frontend development speed by 25%."
+        },
+        {
+          "tr": "Vitest ile birim, Playwright ile uçtan uca testleri geliştirme sürecine dahil ettim.",
+          "en": "Introduced unit testing with Vitest and end-to-end testing with Playwright into the development process."
+        }
+      ]
+    },
+    {
+      "id": "gordion",
+      "company": "Gordion",
+      "parent": null,
+      "logo": "/media/company/gordion-112.webp",
+      "role": {
+        "tr": "Senior Frontend Engineer",
+        "en": "Senior Frontend Engineer"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "remote"
+      },
+      "startDate": "2022-01",
+      "endDate": "2024-02",
+      "summary": {
+        "tr": "Rezervasyon sayfalarını geliştirdim, merkezi bir UI Kit kurdum ve GraphQL entegrasyonunu yaptım.",
+        "en": "Built the booking pages, set up a central UI kit and handled the GraphQL integration."
+      },
+      "technologies": ["React", "Next.js", "GraphQL", "Styled Components", "Tailwind CSS"],
+      "highlights": [
+        {
+          "tr": "Otel, uçak bileti ve kültür turu rezervasyon platformları için ölçeklenebilir frontend mimarileri kurdum.",
+          "en": "Built scalable frontend architectures for hotel, flight and cultural tour booking platforms."
+        },
+        {
+          "tr": "Kurumsal UI Kit ve tasarım sistemi geliştirerek ekipler arası tutarlılığı sağladım.",
+          "en": "Developed a corporate UI kit and design system, bringing consistency across teams."
+        },
+        {
+          "tr": "6 kişilik frontend ekibinde resmi unvan olmadan teknik liderlik üstlendim; birkaç geliştiriciye mentorluk yaptım.",
+          "en": "Took on technical leadership of a 6-person frontend team without a formal title and mentored several developers."
+        }
+      ]
+    },
+    {
+      "id": "hangikredi",
+      "company": "HangiKredi",
+      "parent": null,
+      "logo": "/media/company/hangikredi-112.webp",
+      "role": {
+        "tr": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "remote"
+      },
+      "startDate": "2020-09",
+      "endDate": "2022-01",
+      "summary": {
+        "tr": "hangikredi.com'un arayüzlerini geliştirdim ve sayfa performansını iyileştirdim.",
+        "en": "Built interfaces for hangikredi.com and improved page performance."
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
+      "highlights": [
+        {
+          "tr": "hangikredi.com'un tüm sayfalarını geliştirdim; performans iyileştirmeleriyle Lighthouse skorlarını üst seviyeye taşıdım.",
+          "en": "Developed every page of hangikredi.com and raised Lighthouse scores to top levels through performance work."
+        },
+        {
+          "tr": "Yeniden kullanılabilir JavaScript kütüphaneleri yazarak kod tekrarını azalttım.",
+          "en": "Wrote reusable JavaScript libraries to reduce code duplication."
+        }
+      ]
+    },
+    {
+      "id": "kodluyoruz",
+      "company": "Kodluyoruz",
+      "parent": null,
+      "logo": "/media/company/kodluyoruz-112.webp",
+      "role": {
+        "tr": "Eğitmen",
+        "en": "Instructor"
+      },
+      "location": {
+        "city": null,
+        "workMode": "remote"
+      },
+      "startDate": "2020-12",
+      "endDate": "2021-02",
+      "summary": {
+        "tr": "30 öğrenciye Frontend 101 verdim.",
+        "en": "Taught Frontend 101 to 30 students."
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "Git", "React"],
+      "highlights": []
+    },
+    {
+      "id": "akinon",
+      "company": "Akinon",
+      "parent": null,
+      "logo": "/media/company/akinon-112.webp",
+      "role": {
+        "tr": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "onsite"
+      },
+      "startDate": "2019-06",
+      "endDate": "2019-11",
+      "summary": {
+        "tr": "Vakko ve A101 gibi e-ticaret siteleri için modüler bileşenler geliştirdim.",
+        "en": "Built modular components for e-commerce sites such as Vakko and A101."
+      },
+      "technologies": ["HTML", "CSS", "LESS", "JavaScript", "jQuery", "ES6", "Jinja"],
+      "highlights": []
+    },
+    {
+      "id": "turkcell",
+      "company": "Turkcell",
+      "parent": null,
+      "logo": "/media/company/turkcell-112.webp",
+      "role": {
+        "tr": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "onsite"
+      },
+      "startDate": "2018-07",
+      "endDate": "2018-11",
+      "summary": {
+        "tr": "Canlı sistemdeki kritik arayüz hatalarını çözdüm.",
+        "en": "Fixed critical interface bugs in production."
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "jQuery"],
+      "highlights": []
+    },
+    {
+      "id": "ziraat",
+      "company": "Ziraat Teknoloji",
+      "parent": null,
+      "logo": "/media/company/ziraat-112.webp",
+      "role": {
+        "tr": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "location": {
+        "city": {
+          "tr": "İstanbul",
+          "en": "Istanbul"
+        },
+        "workMode": "onsite"
+      },
+      "startDate": "2017-07",
+      "endDate": "2018-06",
+      "summary": {
+        "tr": "Kurumsal bir admin paneli geliştirdim. İlk işimdi.",
+        "en": "Built a corporate admin panel. My first job."
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Kendo UI"],
+      "highlights": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "start",
+      "title": "ViraStack Start",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/start",
+      "repo": "virastack/start",
+      "npm": "virastack",
+      "description": {
+        "tr": "<code>npx virastack</code> ile üretime hazır Next.js ve TanStack Start projeleri. Feature tabanlı mimari, strict TypeScript ve AI kuralları dahil gelir.",
+        "en": "Production-ready Next.js and TanStack Start projects from <code>npx virastack</code>. Feature-based architecture, strict TypeScript and AI rules included."
+      }
+    },
+    {
+      "id": "ai",
+      "title": "ViraStack AI",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/ai",
+      "repo": "virastack/ai",
+      "npm": "@virastack/ai",
+      "description": {
+        "tr": "Claude Code, Cursor ve <code>AGENTS.md</code> okuyan tüm agent'lar için tek bir mimari kural seti. Agent'lar projenin geri kalanına uyan kod yazar.",
+        "en": "One set of architecture rules for Claude Code, Cursor and any agent that reads <code>AGENTS.md</code>, so agents write code that fits the rest of the project."
+      }
+    },
+    {
+      "id": "mask",
+      "title": "ViraStack Mask",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/mask",
+      "repo": null,
+      "npm": "@virastack/mask",
+      "description": {
+        "tr": "React Hook Form için sıfır bağımlılıklı input maskeleri. Telefon, kart, IBAN, TCKN ve TRY hazır gelir; aynı şema sunucuda da doğrular.",
+        "en": "Zero-dependency input masks for React Hook Form. Phone, card, IBAN, Turkish ID and TRY come ready, and the same schema validates on the server."
+      }
+    },
+    {
+      "id": "password",
+      "title": "ViraStack Password",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/password",
+      "repo": null,
+      "npm": "@virastack/password",
+      "description": {
+        "tr": "React için erişilebilir parola hook'u: göster/gizle, NIST tarzı güç, parola tekrarı ve sunucuda aynı kurallar.",
+        "en": "An accessible password hook for React: show and hide, NIST-style strength, confirmation and the same rules on the server."
+      }
+    },
+    {
+      "id": "address",
+      "title": "ViraStack Address",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/address",
+      "repo": null,
+      "npm": "@virastack/address",
+      "description": {
+        "tr": "Türkiye adresleri için headless React hook'u. İl, ilçe ve mahalle zincirleme seçilir; posta kodu mahalleden gelir ve adres sunucuda doğrulanır.",
+        "en": "A headless React hook for Turkish addresses. Province, district and neighborhood chain together, the postal code comes from the neighborhood, and the server validates the address."
+      }
+    },
+    {
+      "id": "academy",
+      "title": "ViraStack Academy",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/academy",
+      "repo": "virastack/academy",
+      "npm": null,
+      "description": {
+        "tr": "React ile frontend geliştirici olmak için güncel yol haritası. Temellerden yapay zekâ, mimari ve test gibi ileri konulara ücretsiz rehberler.",
+        "en": "An up-to-date roadmap for becoming a React frontend developer, with free guides from the basics to AI, architecture and testing."
+      }
+    },
+    {
+      "id": "guide",
+      "title": "ViraStack Guide",
+      "group": "virastack",
+      "status": "active",
+      "href": "https://virastack.com/guide",
+      "repo": null,
+      "npm": null,
+      "description": {
+        "tr": "Modern bir web uygulamasının nasıl kurulduğunu, ham HTML'den AI-native arayüze 3 dakikada adım adım gösteren interaktif rehber.",
+        "en": "An interactive guide that shows, step by step in 3 minutes, how a modern web app is built, from raw HTML to an AI-native interface."
+      }
+    },
+    {
+      "id": "takvim",
+      "title": "Takvim",
+      "group": "side",
+      "status": "active",
+      "href": "https://takvim.omergulcicek.com",
+      "repo": "omergulcicek/takvim",
+      "npm": null,
+      "description": {
+        "tr": "Takvim abonelikleri için ücretsiz, açık kaynak arayüz.",
+        "en": "A free, open-source interface for calendar subscriptions."
+      }
+    },
+    {
+      "id": "footy",
+      "title": "Footy",
+      "group": "side",
+      "status": "paused",
+      "href": "https://footy.omergulcicek.com",
+      "repo": null,
+      "npm": null,
+      "description": {
+        "tr": "Futbol bilgi oyunları.",
+        "en": "Football trivia games."
+      }
+    },
+    {
+      "id": "react-tr",
+      "title": "React",
+      "group": "translation",
+      "status": "archived",
+      "href": "https://tr.react.dev",
+      "repo": "omergulcicek/react",
+      "npm": null,
+      "description": {
+        "tr": "React dokümantasyonunun Türkçe çevirisi.",
+        "en": "The Turkish translation of the React docs."
+      }
+    },
+    {
+      "id": "react-router-tr",
+      "title": "React Router",
+      "group": "translation",
+      "status": "archived",
+      "href": "https://github.com/omergulcicek/react-router",
+      "repo": "omergulcicek/react-router",
+      "npm": null,
+      "description": {
+        "tr": "React Router dokümantasyonunun Türkçe çevirisi.",
+        "en": "The Turkish translation of the React Router docs."
+      }
+    },
+    {
+      "id": "es6-tr",
+      "title": "ECMAScript 6",
+      "group": "translation",
+      "status": "archived",
+      "href": "https://github.com/omergulcicek/es6",
+      "repo": "omergulcicek/es6",
+      "npm": null,
+      "description": {
+        "tr": "ES6 (ES2015) özelliklerinin Türkçe çevirisi.",
+        "en": "The Turkish translation of ES6 (ES2015) features."
+      }
+    },
+    {
+      "id": "airbnb-css-tr",
+      "title": "Airbnb CSS",
+      "group": "translation",
+      "status": "archived",
+      "href": "https://github.com/omergulcicek/css",
+      "repo": "omergulcicek/css",
+      "npm": null,
+      "description": {
+        "tr": "Airbnb'nin CSS ve Sass stil rehberinin Türkçe çevirisi.",
+        "en": "The Turkish translation of Airbnb's CSS and Sass style guide."
+      }
+    },
+    {
+      "id": "gulp-tr",
+      "title": "Gulp",
+      "group": "translation",
+      "status": "archived",
+      "href": "https://github.com/omergulcicek/gulp",
+      "repo": "omergulcicek/gulp",
+      "npm": null,
+      "description": {
+        "tr": "Gulp dokümantasyonunun Türkçe çevirisi.",
+        "en": "The Turkish translation of the Gulp docs."
+      }
+    },
+    {
+      "id": "turkuaz",
+      "title": "Turkuaz",
+      "group": "archive",
+      "status": "archived",
+      "href": "https://github.com/omergulcicek/turkuaz",
+      "repo": "omergulcicek/turkuaz",
+      "npm": null,
+      "description": {
+        "tr": "İlk açık kaynak projem, bir CSS kütüphanesi.",
+        "en": "My first open-source project, a CSS framework."
+      }
+    },
+    {
+      "id": "turkcedokuman",
+      "title": "Türkçe Doküman",
+      "group": "archive",
+      "status": "archived",
+      "href": "https://github.com/omergulcicek/turkcedokuman.com",
+      "repo": "omergulcicek/turkcedokuman.com",
+      "npm": null,
+      "description": {
+        "tr": "Yazılım için Türkçe kaynaklar.",
+        "en": "Turkish resources for software development."
+      }
+    }
+  ],
+  "stack": [
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "description": {
+        "tr": "Tip güvenliği",
+        "en": "Type safety"
+      }
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "description": {
+        "tr": "Arayüz kütüphanesi",
+        "en": "UI library"
+      }
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "description": {
+        "tr": "React framework'ü",
+        "en": "React framework"
+      }
+    },
+    {
+      "id": "tanstack",
+      "label": "TanStack",
+      "description": {
+        "tr": "Router, Query, Start",
+        "en": "Router, Query, Start"
+      }
+    },
+    {
+      "id": "tailwindcss",
+      "label": "Tailwind CSS",
+      "description": {
+        "tr": "CSS framework'ü",
+        "en": "CSS framework"
+      }
+    },
+    {
+      "id": "shadcn",
+      "label": "shadcn/ui",
+      "description": {
+        "tr": "Bileşen seti",
+        "en": "Component kit"
+      }
+    },
+    {
+      "id": "motion",
+      "label": "Motion",
+      "description": {
+        "tr": "Animasyon",
+        "en": "Animation"
+      }
+    },
+    {
+      "id": "storybook",
+      "label": "Storybook",
+      "description": {
+        "tr": "Bileşen kataloğu",
+        "en": "Component catalog"
+      }
+    },
+    {
+      "id": "react-hook-form",
+      "label": "React Hook Form",
+      "description": {
+        "tr": "Form yönetimi",
+        "en": "Form handling"
+      }
+    },
+    {
+      "id": "zod",
+      "label": "Zod",
+      "description": {
+        "tr": "Şema doğrulama",
+        "en": "Schema validation"
+      }
+    },
+    {
+      "id": "zustand",
+      "label": "Zustand",
+      "description": {
+        "tr": "State yönetimi",
+        "en": "State management"
+      }
+    },
+    {
+      "id": "supabase",
+      "label": "Supabase",
+      "description": {
+        "tr": "Backend servisi",
+        "en": "Backend service"
+      }
+    },
+    {
+      "id": "vite",
+      "label": "Vite",
+      "description": {
+        "tr": "Derleme aracı",
+        "en": "Build tool"
+      }
+    },
+    {
+      "id": "vitest",
+      "label": "Vitest",
+      "description": {
+        "tr": "Unit ve bileşen testi",
+        "en": "Unit tests"
+      }
+    },
+    {
+      "id": "playwright",
+      "label": "Playwright",
+      "description": {
+        "tr": "Uçtan uca test",
+        "en": "End-to-end tests"
+      }
+    },
+    {
+      "id": "figma",
+      "label": "Figma",
+      "description": {
+        "tr": "Arayüz tasarımı",
+        "en": "Interface design"
+      }
+    },
+    {
+      "id": "claude",
+      "label": "Claude Code",
+      "description": {
+        "tr": "AI kod asistanı",
+        "en": "AI coding assistant"
+      }
+    }
+  ],
+  "hero": {
+    "intro": {
+      "tr": "Sakarya'da yaşayan kıdemli bir frontend mühendisiyim. 10 yılı aşkın süredir React ile arayüz geliştiriyorum. Next.js ve TanStack ile sunucuda render edilen uygulamalar, tasarım sistemleri, erişilebilir form bileşenleri ve tip güvenli API katmanları kuruyorum. Ekiplere liderlik edip ortak kod standartlarını belirliyorum. Bugün bunların hepsini frontend geliştiriciler için açık kaynak şablonlara, paketlere ve ücretsiz rehberlere dönüştürüyorum: <virastack>ViraStack</virastack>.",
+      "en": "I'm a senior frontend engineer based in Sakarya, Turkey. I've been building interfaces with React for over 10 years. I build server-rendered apps with Next.js and TanStack, design systems, accessible form components and type-safe API layers. I lead teams and set shared code standards. Today I turn all of it into open-source templates, packages and free guides for frontend developers: <virastack>ViraStack</virastack>."
+    }
+  }
+}

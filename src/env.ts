@@ -8,7 +8,12 @@ import { z } from "zod"
  * read via `import.meta.env` on the client.
  */
 const serverSchema = z.object({
-  NODE_ENV: z.enum(["development", "production", "test"]).default("development")
+  NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
+  // Optional so tests and the client bundle load without them; the blog server function checks them.
+  SUPABASE_URL: z.url().optional(),
+  SUPABASE_ANON_KEY: z.string().min(1).optional(),
+  // Optional: raises GitHub's limit from 60 to 5,000 requests an hour; stars load without it too.
+  GITHUB_TOKEN: z.string().min(1).optional()
 })
 
 const clientSchema = z.object({
@@ -25,7 +30,10 @@ function readEnv(key: string): string | undefined {
 }
 
 const serverParsed = serverSchema.safeParse({
-  NODE_ENV: readEnv("NODE_ENV")
+  NODE_ENV: readEnv("NODE_ENV"),
+  SUPABASE_URL: readEnv("SUPABASE_URL"),
+  SUPABASE_ANON_KEY: readEnv("SUPABASE_ANON_KEY"),
+  GITHUB_TOKEN: readEnv("GITHUB_TOKEN")
 })
 
 const clientParsed = clientSchema.safeParse({

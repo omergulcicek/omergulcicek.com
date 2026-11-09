@@ -1,3 +1,10 @@
+# omergulcicek.com
+
+## Project overrides (named, per the Precedence section)
+
+- Ignore the ViraStack `ui` rule on semantic colors for brand color maps in `*.constants.tsx` (`constants/virastack-products.constants.tsx`, `features/projects/constants/project-icons.constants.tsx`): each ViraStack product keeps its virastack.com color. Only icons are colored; text uses tokens.
+- `src/components/ui/svgs/*` are svgl icons added with shadcn; their fills and ids may be edited by hand (`currentColor`, `useId`).
+
 <!-- BEGIN:virastack-ai -->
 # ViraStack AI
 

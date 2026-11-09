@@ -17,5 +17,9 @@
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
+  },
+  "registries": {
+    "@svgl": "https://svgl.app/r/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}"
   }
 }

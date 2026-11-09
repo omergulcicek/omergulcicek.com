@@ -14,6 +14,22 @@ import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanif
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Char123LangChar125RouteImport } from './routes/{-$lang}'
 import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
+import { Route as Char123LangChar125AboutRouteImport } from './routes/{-$lang}/about'
+import { Route as Char123LangChar125BookmarksRouteImport } from './routes/{-$lang}/bookmarks'
+import { Route as Char123LangChar125ExperiencesRouteImport } from './routes/{-$lang}/experiences'
+import { Route as Char123LangChar125FilmsRouteImport } from './routes/{-$lang}/films'
+import { Route as Char123LangChar125JourneyRouteImport } from './routes/{-$lang}/journey'
+import { Route as Char123LangChar125LibraryRouteImport } from './routes/{-$lang}/library'
+import { Route as Char123LangChar125MusicRouteImport } from './routes/{-$lang}/music'
+import { Route as Char123LangChar125ProjectsRouteImport } from './routes/{-$lang}/projects'
+import { Route as Char123LangChar125SetupRouteImport } from './routes/{-$lang}/setup'
+import { Route as Char123LangChar125UsesRouteImport } from './routes/{-$lang}/uses'
+import { Route as Char123LangChar125VirastackRouteImport } from './routes/{-$lang}/virastack'
+import { Route as Char123LangChar125WorkspaceRouteImport } from './routes/{-$lang}/workspace'
+import { Route as Char123LangChar125BlogIndexRouteImport } from './routes/{-$lang}/blog/index'
+import { Route as Char123LangChar125BlogSlugRouteImport } from './routes/{-$lang}/blog/$slug'
+import { Route as Char123LangChar125NotesIndexRouteImport } from './routes/{-$lang}/notes/index'
+import { Route as Char123LangChar125NotesSlugRouteImport } from './routes/{-$lang}/notes/$slug'
 
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   id: '/robots.txt',
@@ -40,19 +56,142 @@ const Char123LangChar125IndexRoute = Char123LangChar125IndexRouteImport.update({
   path: '/',
   getParentRoute: () => Char123LangChar125Route,
 } as any)
+const Char123LangChar125AboutRoute = Char123LangChar125AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
+const Char123LangChar125BookmarksRoute =
+  Char123LangChar125BookmarksRouteImport.update({
+    id: '/bookmarks',
+    path: '/bookmarks',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125ExperiencesRoute =
+  Char123LangChar125ExperiencesRouteImport.update({
+    id: '/experiences',
+    path: '/experiences',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125FilmsRoute = Char123LangChar125FilmsRouteImport.update({
+  id: '/films',
+  path: '/films',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
+const Char123LangChar125JourneyRoute =
+  Char123LangChar125JourneyRouteImport.update({
+    id: '/journey',
+    path: '/journey',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125LibraryRoute =
+  Char123LangChar125LibraryRouteImport.update({
+    id: '/library',
+    path: '/library',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125MusicRoute = Char123LangChar125MusicRouteImport.update({
+  id: '/music',
+  path: '/music',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
+const Char123LangChar125ProjectsRoute =
+  Char123LangChar125ProjectsRouteImport.update({
+    id: '/projects',
+    path: '/projects',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125SetupRoute = Char123LangChar125SetupRouteImport.update({
+  id: '/setup',
+  path: '/setup',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
+const Char123LangChar125UsesRoute = Char123LangChar125UsesRouteImport.update({
+  id: '/uses',
+  path: '/uses',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
+const Char123LangChar125VirastackRoute =
+  Char123LangChar125VirastackRouteImport.update({
+    id: '/virastack',
+    path: '/virastack',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125WorkspaceRoute =
+  Char123LangChar125WorkspaceRouteImport.update({
+    id: '/workspace',
+    path: '/workspace',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125BlogIndexRoute =
+  Char123LangChar125BlogIndexRouteImport.update({
+    id: '/blog/',
+    path: '/blog/',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125BlogSlugRoute =
+  Char123LangChar125BlogSlugRouteImport.update({
+    id: '/blog/$slug',
+    path: '/blog/$slug',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125NotesIndexRoute =
+  Char123LangChar125NotesIndexRouteImport.update({
+    id: '/notes/',
+    path: '/notes/',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125NotesSlugRoute =
+  Char123LangChar125NotesSlugRouteImport.update({
+    id: '/notes/$slug',
+    path: '/notes/$slug',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/{-$lang}/about': typeof Char123LangChar125AboutRoute
+  '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
+  '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
+  '/{-$lang}/films': typeof Char123LangChar125FilmsRoute
+  '/{-$lang}/journey': typeof Char123LangChar125JourneyRoute
+  '/{-$lang}/library': typeof Char123LangChar125LibraryRoute
+  '/{-$lang}/music': typeof Char123LangChar125MusicRoute
+  '/{-$lang}/projects': typeof Char123LangChar125ProjectsRoute
+  '/{-$lang}/setup': typeof Char123LangChar125SetupRoute
+  '/{-$lang}/uses': typeof Char123LangChar125UsesRoute
+  '/{-$lang}/virastack': typeof Char123LangChar125VirastackRoute
+  '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
+  '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
+  '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/blog/': typeof Char123LangChar125BlogIndexRoute
+  '/{-$lang}/notes/': typeof Char123LangChar125NotesIndexRoute
 }
 export interface FileRoutesByTo {
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/{-$lang}/about': typeof Char123LangChar125AboutRoute
+  '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
+  '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
+  '/{-$lang}/films': typeof Char123LangChar125FilmsRoute
+  '/{-$lang}/journey': typeof Char123LangChar125JourneyRoute
+  '/{-$lang}/library': typeof Char123LangChar125LibraryRoute
+  '/{-$lang}/music': typeof Char123LangChar125MusicRoute
+  '/{-$lang}/projects': typeof Char123LangChar125ProjectsRoute
+  '/{-$lang}/setup': typeof Char123LangChar125SetupRoute
+  '/{-$lang}/uses': typeof Char123LangChar125UsesRoute
+  '/{-$lang}/virastack': typeof Char123LangChar125VirastackRoute
+  '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}': typeof Char123LangChar125IndexRoute
+  '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
+  '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/blog': typeof Char123LangChar125BlogIndexRoute
+  '/{-$lang}/notes': typeof Char123LangChar125NotesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -60,7 +199,23 @@ export interface FileRoutesById {
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/{-$lang}/about': typeof Char123LangChar125AboutRoute
+  '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
+  '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
+  '/{-$lang}/films': typeof Char123LangChar125FilmsRoute
+  '/{-$lang}/journey': typeof Char123LangChar125JourneyRoute
+  '/{-$lang}/library': typeof Char123LangChar125LibraryRoute
+  '/{-$lang}/music': typeof Char123LangChar125MusicRoute
+  '/{-$lang}/projects': typeof Char123LangChar125ProjectsRoute
+  '/{-$lang}/setup': typeof Char123LangChar125SetupRoute
+  '/{-$lang}/uses': typeof Char123LangChar125UsesRoute
+  '/{-$lang}/virastack': typeof Char123LangChar125VirastackRoute
+  '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
+  '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
+  '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/blog/': typeof Char123LangChar125BlogIndexRoute
+  '/{-$lang}/notes/': typeof Char123LangChar125NotesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -69,16 +224,68 @@ export interface FileRouteTypes {
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/{-$lang}/about'
+    | '/{-$lang}/bookmarks'
+    | '/{-$lang}/experiences'
+    | '/{-$lang}/films'
+    | '/{-$lang}/journey'
+    | '/{-$lang}/library'
+    | '/{-$lang}/music'
+    | '/{-$lang}/projects'
+    | '/{-$lang}/setup'
+    | '/{-$lang}/uses'
+    | '/{-$lang}/virastack'
+    | '/{-$lang}/workspace'
     | '/{-$lang}/'
+    | '/{-$lang}/blog/$slug'
+    | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/blog/'
+    | '/{-$lang}/notes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/robots.txt' | '/site.webmanifest' | '/sitemap.xml' | '/{-$lang}'
+  to:
+    | '/robots.txt'
+    | '/site.webmanifest'
+    | '/sitemap.xml'
+    | '/{-$lang}/about'
+    | '/{-$lang}/bookmarks'
+    | '/{-$lang}/experiences'
+    | '/{-$lang}/films'
+    | '/{-$lang}/journey'
+    | '/{-$lang}/library'
+    | '/{-$lang}/music'
+    | '/{-$lang}/projects'
+    | '/{-$lang}/setup'
+    | '/{-$lang}/uses'
+    | '/{-$lang}/virastack'
+    | '/{-$lang}/workspace'
+    | '/{-$lang}'
+    | '/{-$lang}/blog/$slug'
+    | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/blog'
+    | '/{-$lang}/notes'
   id:
     | '__root__'
     | '/robots.txt'
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/{-$lang}/about'
+    | '/{-$lang}/bookmarks'
+    | '/{-$lang}/experiences'
+    | '/{-$lang}/films'
+    | '/{-$lang}/journey'
+    | '/{-$lang}/library'
+    | '/{-$lang}/music'
+    | '/{-$lang}/projects'
+    | '/{-$lang}/setup'
+    | '/{-$lang}/uses'
+    | '/{-$lang}/virastack'
+    | '/{-$lang}/workspace'
     | '/{-$lang}/'
+    | '/{-$lang}/blog/$slug'
+    | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/blog/'
+    | '/{-$lang}/notes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -125,15 +332,159 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LangChar125IndexRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
+    '/{-$lang}/about': {
+      id: '/{-$lang}/about'
+      path: '/about'
+      fullPath: '/{-$lang}/about'
+      preLoaderRoute: typeof Char123LangChar125AboutRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/bookmarks': {
+      id: '/{-$lang}/bookmarks'
+      path: '/bookmarks'
+      fullPath: '/{-$lang}/bookmarks'
+      preLoaderRoute: typeof Char123LangChar125BookmarksRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/experiences': {
+      id: '/{-$lang}/experiences'
+      path: '/experiences'
+      fullPath: '/{-$lang}/experiences'
+      preLoaderRoute: typeof Char123LangChar125ExperiencesRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/films': {
+      id: '/{-$lang}/films'
+      path: '/films'
+      fullPath: '/{-$lang}/films'
+      preLoaderRoute: typeof Char123LangChar125FilmsRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/journey': {
+      id: '/{-$lang}/journey'
+      path: '/journey'
+      fullPath: '/{-$lang}/journey'
+      preLoaderRoute: typeof Char123LangChar125JourneyRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/library': {
+      id: '/{-$lang}/library'
+      path: '/library'
+      fullPath: '/{-$lang}/library'
+      preLoaderRoute: typeof Char123LangChar125LibraryRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/music': {
+      id: '/{-$lang}/music'
+      path: '/music'
+      fullPath: '/{-$lang}/music'
+      preLoaderRoute: typeof Char123LangChar125MusicRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/projects': {
+      id: '/{-$lang}/projects'
+      path: '/projects'
+      fullPath: '/{-$lang}/projects'
+      preLoaderRoute: typeof Char123LangChar125ProjectsRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/setup': {
+      id: '/{-$lang}/setup'
+      path: '/setup'
+      fullPath: '/{-$lang}/setup'
+      preLoaderRoute: typeof Char123LangChar125SetupRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/uses': {
+      id: '/{-$lang}/uses'
+      path: '/uses'
+      fullPath: '/{-$lang}/uses'
+      preLoaderRoute: typeof Char123LangChar125UsesRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/virastack': {
+      id: '/{-$lang}/virastack'
+      path: '/virastack'
+      fullPath: '/{-$lang}/virastack'
+      preLoaderRoute: typeof Char123LangChar125VirastackRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/workspace': {
+      id: '/{-$lang}/workspace'
+      path: '/workspace'
+      fullPath: '/{-$lang}/workspace'
+      preLoaderRoute: typeof Char123LangChar125WorkspaceRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/blog/': {
+      id: '/{-$lang}/blog/'
+      path: '/blog'
+      fullPath: '/{-$lang}/blog/'
+      preLoaderRoute: typeof Char123LangChar125BlogIndexRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/blog/$slug': {
+      id: '/{-$lang}/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/{-$lang}/blog/$slug'
+      preLoaderRoute: typeof Char123LangChar125BlogSlugRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/notes/': {
+      id: '/{-$lang}/notes/'
+      path: '/notes'
+      fullPath: '/{-$lang}/notes/'
+      preLoaderRoute: typeof Char123LangChar125NotesIndexRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/notes/$slug': {
+      id: '/{-$lang}/notes/$slug'
+      path: '/notes/$slug'
+      fullPath: '/{-$lang}/notes/$slug'
+      preLoaderRoute: typeof Char123LangChar125NotesSlugRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
   }
 }
 
 interface Char123LangChar125RouteChildren {
+  Char123LangChar125AboutRoute: typeof Char123LangChar125AboutRoute
+  Char123LangChar125BookmarksRoute: typeof Char123LangChar125BookmarksRoute
+  Char123LangChar125ExperiencesRoute: typeof Char123LangChar125ExperiencesRoute
+  Char123LangChar125FilmsRoute: typeof Char123LangChar125FilmsRoute
+  Char123LangChar125JourneyRoute: typeof Char123LangChar125JourneyRoute
+  Char123LangChar125LibraryRoute: typeof Char123LangChar125LibraryRoute
+  Char123LangChar125MusicRoute: typeof Char123LangChar125MusicRoute
+  Char123LangChar125ProjectsRoute: typeof Char123LangChar125ProjectsRoute
+  Char123LangChar125SetupRoute: typeof Char123LangChar125SetupRoute
+  Char123LangChar125UsesRoute: typeof Char123LangChar125UsesRoute
+  Char123LangChar125VirastackRoute: typeof Char123LangChar125VirastackRoute
+  Char123LangChar125WorkspaceRoute: typeof Char123LangChar125WorkspaceRoute
   Char123LangChar125IndexRoute: typeof Char123LangChar125IndexRoute
+  Char123LangChar125BlogSlugRoute: typeof Char123LangChar125BlogSlugRoute
+  Char123LangChar125NotesSlugRoute: typeof Char123LangChar125NotesSlugRoute
+  Char123LangChar125BlogIndexRoute: typeof Char123LangChar125BlogIndexRoute
+  Char123LangChar125NotesIndexRoute: typeof Char123LangChar125NotesIndexRoute
 }
 
 const Char123LangChar125RouteChildren: Char123LangChar125RouteChildren = {
+  Char123LangChar125AboutRoute: Char123LangChar125AboutRoute,
+  Char123LangChar125BookmarksRoute: Char123LangChar125BookmarksRoute,
+  Char123LangChar125ExperiencesRoute: Char123LangChar125ExperiencesRoute,
+  Char123LangChar125FilmsRoute: Char123LangChar125FilmsRoute,
+  Char123LangChar125JourneyRoute: Char123LangChar125JourneyRoute,
+  Char123LangChar125LibraryRoute: Char123LangChar125LibraryRoute,
+  Char123LangChar125MusicRoute: Char123LangChar125MusicRoute,
+  Char123LangChar125ProjectsRoute: Char123LangChar125ProjectsRoute,
+  Char123LangChar125SetupRoute: Char123LangChar125SetupRoute,
+  Char123LangChar125UsesRoute: Char123LangChar125UsesRoute,
+  Char123LangChar125VirastackRoute: Char123LangChar125VirastackRoute,
+  Char123LangChar125WorkspaceRoute: Char123LangChar125WorkspaceRoute,
   Char123LangChar125IndexRoute: Char123LangChar125IndexRoute,
+  Char123LangChar125BlogSlugRoute: Char123LangChar125BlogSlugRoute,
+  Char123LangChar125NotesSlugRoute: Char123LangChar125NotesSlugRoute,
+  Char123LangChar125BlogIndexRoute: Char123LangChar125BlogIndexRoute,
+  Char123LangChar125NotesIndexRoute: Char123LangChar125NotesIndexRoute,
 }
 
 const Char123LangChar125RouteWithChildren =

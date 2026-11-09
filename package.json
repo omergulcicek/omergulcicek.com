@@ -31,7 +31,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky",
-    "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide"
+    "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide",
+    "blog:image-sizes": "node scripts/generate-blog-image-sizes.ts"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -44,8 +45,11 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
-    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
     "@hookform/resolvers": "^6.0.2",
+    "@mdx-js/mdx": "3.1.1",
+    "@shikijs/rehype": "4.5.0",
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/react-devtools": "^0.10.9",
     "@tanstack/react-query": "^5.105.0",
@@ -54,12 +58,17 @@
     "@tanstack/react-router-devtools": "^1.167.2",
     "@tanstack/react-router-ssr-query": "^1.167.3",
     "@tanstack/react-start": "^1.169.4",
+    "@virastack/mask": "2.3.0",
+    "@virastack/password": "1.2.0",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.1",
     "lucide-react": "^1.66.0",
+    "medium-zoom": "1.1.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-hook-form": "^7.91.0",
+    "remark-gfm": "4.0.1",
+    "shiki": "4.5.0",
     "sonner": "^2.0.8",
     "tailwindcss": "^4.3.3",
     "usehooks-ts": "^3.1.1",
@@ -72,6 +81,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@inlang/paraglide-js": "^2.29.3",
     "@rolldown/plugin-babel": "^0.2.4",
+    "@tailwindcss/typography": "0.5.20",
     "@tanstack/eslint-config": "^0.4.0",
     "@tanstack/router-cli": "^1.167.46",
     "@testing-library/dom": "^10.4.2",

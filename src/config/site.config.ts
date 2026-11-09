@@ -7,12 +7,7 @@ export const siteConfig: SiteConfig = {
   description:
     "TanStack Start boilerplate built for scalable UI/UX, clean architecture, and agent-ready developer experience.",
   shortName: "ViraStack Start",
-  handle: "omergulcicek",
   url: env.VITE_APP_URL,
   apiUrl: env.VITE_API_URL,
-  ogImage: `${env.VITE_APP_URL}/og.png`,
-  links: {
-    github: "https://github.com/virastack/start",
-    twitter: "https://x.com/virastack"
-  }
+  ogImage: `${env.VITE_APP_URL}/og.png`
 }
