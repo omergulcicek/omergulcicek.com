@@ -22,6 +22,14 @@
 - [x] Hakkımda (tanışma, işin dışında, favoriler; menü grubu "Kişisel")
 - [x] Şu an sayfası kaldırıldı: içeriği Hakkımda, ViraStack ve Yolculuk sayfalarında
 - [x] Ana sayfa test ve commit
+- [x] Mobil menü alttan açılan drawer; profil ikonları menünün altında; hero ve ViraStack mobil düzeni
+- [x] Hakkımda: kişisel giriş, fotoğraflı bölümler (yürüyüş, kitap, satranç), favoriler
+- [x] Footer: RSS, llms.txt ve kaynak kod linkleri; sitemap ve llms.txt sayfa listesi menüden
+- [x] ViraStack menüden çıktı (sayfa duruyor, ana sayfadaki butondan)
+- [x] Google Analytics ve Search Console doğrulaması v10'dan taşındı
+- [x] 404 başlığı ve `noindex`; yazıların Markdown sürümü (`/blog/slug.md`)
+- [x] ⌘K komut paleti (cmdk)
+- [x] Turkuaz vurgu rengi ve animasyon cilası
 
 ## Yayından önce (zorunlu)
 
