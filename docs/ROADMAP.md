@@ -11,14 +11,13 @@
 - [x] Yazı sayfası: görsellere boyut (`pnpm blog:image-sizes`), okuma süresi, mobil içindekiler, ilgili yazılar
 - [x] Kod blokları: dil etiketi, `title="…"` ile dosya adı, kopyala butonu
 - [x] Blog ve Notlar: etiket filtresi (`?tag=css`, sağ alanda liste, mobilde çipler)
-- [ ] EN blog sayfası: şimdilik iki dil birlikte; İngilizce yazılar birikince EN'de yalnızca İngilizce yazılar
-- [ ] Etiketlerin İngilizce karşılıkları (Supabase'de etiketler Türkçe)
+- [x] Her dil kendi yazılarını listeliyor (notlar yalnızca Türkçe, iki dilde de hepsi); çevirisi olan yazılar birbirine link veriyor
+- [x] Etiketlerin İngilizce karşılıkları (`EN_TAG_LABELS`; Supabase'de etiketler Türkçe kalıyor)
 - [x] `/virastack` sayfası (9 bölüm; ürün başına 3 aylık, toplamda tüm zamanların npm indirmesi; günlük cache)
 - [x] Proje kartlarında npm indirme sayıları (son 3 ay) ve GitHub yıldızları, günlük cache ile canlı
-- [ ] Takvim ve Footy için somut metrikler (kullanıcıdan alınacak)
+- [x] Takvim ve Footy metrikleri: Takvim'de ölçülecek veri yok (abonelikler takvim uygulamasına iniyor), GitHub yıldızı yeterli; Footy durduruldu (`paused`)
 - [x] Keşfet: Yer imleri (115 link, kategori filtresi), Kitaplık (222 kitap, tür filtresi), Film ve diziler (13 favori + 22 YouTube videosu)
 - [ ] Müzik sayfası: taslak hazır (4 grup, sticky video); grup şarkı listeleri, öne çıkan videolar, Spotify linkleri kullanıcıdan
-- [ ] Film kartlarından Notlar'daki "Film ve Dizi" yazılarına link
 - [x] Yolculuk (13 kayıt, ViraStack noktaları); Kullandıklarım (/uses; /setup ve /workspace 301 ile yönleniyor)
 - [x] Hakkımda (tanışma, işin dışında, favoriler; menü grubu "Kişisel")
 - [x] Şu an sayfası kaldırıldı: içeriği Hakkımda, ViraStack ve Yolculuk sayfalarında
