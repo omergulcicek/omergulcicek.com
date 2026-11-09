@@ -9,10 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Char123LangChar125RouteImport } from './routes/{-$lang}'
+import { Route as NotesFeedDotxmlRouteImport } from './routes/notes/feed[.]xml'
 import { Route as OgSplatRouteImport } from './routes/og/$'
 import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
 import { Route as Char123LangChar125AboutRouteImport } from './routes/{-$lang}/about'
@@ -23,7 +27,9 @@ import { Route as Char123LangChar125JourneyRouteImport } from './routes/{-$lang}
 import { Route as Char123LangChar125LibraryRouteImport } from './routes/{-$lang}/library'
 import { Route as Char123LangChar125MusicRouteImport } from './routes/{-$lang}/music'
 import { Route as Char123LangChar125ProjectsRouteImport } from './routes/{-$lang}/projects'
+import { Route as Char123LangChar125ServicesRouteImport } from './routes/{-$lang}/services'
 import { Route as Char123LangChar125SetupRouteImport } from './routes/{-$lang}/setup'
+import { Route as Char123LangChar125StackRouteImport } from './routes/{-$lang}/stack'
 import { Route as Char123LangChar125UsesRouteImport } from './routes/{-$lang}/uses'
 import { Route as Char123LangChar125VirastackRouteImport } from './routes/{-$lang}/virastack'
 import { Route as Char123LangChar125WorkspaceRouteImport } from './routes/{-$lang}/workspace'
@@ -31,7 +37,24 @@ import { Route as Char123LangChar125BlogIndexRouteImport } from './routes/{-$lan
 import { Route as Char123LangChar125BlogSlugRouteImport } from './routes/{-$lang}/blog/$slug'
 import { Route as Char123LangChar125NotesIndexRouteImport } from './routes/{-$lang}/notes/index'
 import { Route as Char123LangChar125NotesSlugRouteImport } from './routes/{-$lang}/notes/$slug'
+import { Route as Char123LangChar125NotlarIndexRouteImport } from './routes/{-$lang}/notlar/index'
+import { Route as Char123LangChar125NotlarSlugRouteImport } from './routes/{-$lang}/notlar/$slug'
 
+const FeedDotxmlRoute = FeedDotxmlRouteImport.update({
+  id: '/feed.xml',
+  path: '/feed.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
+  id: '/llms-full.txt',
+  path: '/llms-full.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   id: '/robots.txt',
   path: '/robots.txt',
@@ -50,6 +73,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const Char123LangChar125Route = Char123LangChar125RouteImport.update({
   id: '/{-$lang}',
   path: '/{-$lang}',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesFeedDotxmlRoute = NotesFeedDotxmlRouteImport.update({
+  id: '/notes/feed.xml',
+  path: '/notes/feed.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OgSplatRoute = OgSplatRouteImport.update({
@@ -107,9 +135,20 @@ const Char123LangChar125ProjectsRoute =
     path: '/projects',
     getParentRoute: () => Char123LangChar125Route,
   } as any)
+const Char123LangChar125ServicesRoute =
+  Char123LangChar125ServicesRouteImport.update({
+    id: '/services',
+    path: '/services',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
 const Char123LangChar125SetupRoute = Char123LangChar125SetupRouteImport.update({
   id: '/setup',
   path: '/setup',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
+const Char123LangChar125StackRoute = Char123LangChar125StackRouteImport.update({
+  id: '/stack',
+  path: '/stack',
   getParentRoute: () => Char123LangChar125Route,
 } as any)
 const Char123LangChar125UsesRoute = Char123LangChar125UsesRouteImport.update({
@@ -153,12 +192,28 @@ const Char123LangChar125NotesSlugRoute =
     path: '/notes/$slug',
     getParentRoute: () => Char123LangChar125Route,
   } as any)
+const Char123LangChar125NotlarIndexRoute =
+  Char123LangChar125NotlarIndexRouteImport.update({
+    id: '/notlar/',
+    path: '/notlar/',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125NotlarSlugRoute =
+  Char123LangChar125NotlarSlugRouteImport.update({
+    id: '/notlar/$slug',
+    path: '/notlar/$slug',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
 
 export interface FileRoutesByFullPath {
+  '/feed.xml': typeof FeedDotxmlRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/notes/feed.xml': typeof NotesFeedDotxmlRoute
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
@@ -168,20 +223,28 @@ export interface FileRoutesByFullPath {
   '/{-$lang}/library': typeof Char123LangChar125LibraryRoute
   '/{-$lang}/music': typeof Char123LangChar125MusicRoute
   '/{-$lang}/projects': typeof Char123LangChar125ProjectsRoute
+  '/{-$lang}/services': typeof Char123LangChar125ServicesRoute
   '/{-$lang}/setup': typeof Char123LangChar125SetupRoute
+  '/{-$lang}/stack': typeof Char123LangChar125StackRoute
   '/{-$lang}/uses': typeof Char123LangChar125UsesRoute
   '/{-$lang}/virastack': typeof Char123LangChar125VirastackRoute
   '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
   '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
   '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/notlar/$slug': typeof Char123LangChar125NotlarSlugRoute
   '/{-$lang}/blog/': typeof Char123LangChar125BlogIndexRoute
   '/{-$lang}/notes/': typeof Char123LangChar125NotesIndexRoute
+  '/{-$lang}/notlar/': typeof Char123LangChar125NotlarIndexRoute
 }
 export interface FileRoutesByTo {
+  '/feed.xml': typeof FeedDotxmlRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/notes/feed.xml': typeof NotesFeedDotxmlRoute
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
@@ -191,22 +254,30 @@ export interface FileRoutesByTo {
   '/{-$lang}/library': typeof Char123LangChar125LibraryRoute
   '/{-$lang}/music': typeof Char123LangChar125MusicRoute
   '/{-$lang}/projects': typeof Char123LangChar125ProjectsRoute
+  '/{-$lang}/services': typeof Char123LangChar125ServicesRoute
   '/{-$lang}/setup': typeof Char123LangChar125SetupRoute
+  '/{-$lang}/stack': typeof Char123LangChar125StackRoute
   '/{-$lang}/uses': typeof Char123LangChar125UsesRoute
   '/{-$lang}/virastack': typeof Char123LangChar125VirastackRoute
   '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}': typeof Char123LangChar125IndexRoute
   '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
   '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/notlar/$slug': typeof Char123LangChar125NotlarSlugRoute
   '/{-$lang}/blog': typeof Char123LangChar125BlogIndexRoute
   '/{-$lang}/notes': typeof Char123LangChar125NotesIndexRoute
+  '/{-$lang}/notlar': typeof Char123LangChar125NotlarIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/feed.xml': typeof FeedDotxmlRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/notes/feed.xml': typeof NotesFeedDotxmlRoute
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
@@ -216,23 +287,31 @@ export interface FileRoutesById {
   '/{-$lang}/library': typeof Char123LangChar125LibraryRoute
   '/{-$lang}/music': typeof Char123LangChar125MusicRoute
   '/{-$lang}/projects': typeof Char123LangChar125ProjectsRoute
+  '/{-$lang}/services': typeof Char123LangChar125ServicesRoute
   '/{-$lang}/setup': typeof Char123LangChar125SetupRoute
+  '/{-$lang}/stack': typeof Char123LangChar125StackRoute
   '/{-$lang}/uses': typeof Char123LangChar125UsesRoute
   '/{-$lang}/virastack': typeof Char123LangChar125VirastackRoute
   '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
   '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
   '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/notlar/$slug': typeof Char123LangChar125NotlarSlugRoute
   '/{-$lang}/blog/': typeof Char123LangChar125BlogIndexRoute
   '/{-$lang}/notes/': typeof Char123LangChar125NotesIndexRoute
+  '/{-$lang}/notlar/': typeof Char123LangChar125NotlarIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/feed.xml'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/robots.txt'
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/notes/feed.xml'
     | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
@@ -242,20 +321,28 @@ export interface FileRouteTypes {
     | '/{-$lang}/library'
     | '/{-$lang}/music'
     | '/{-$lang}/projects'
+    | '/{-$lang}/services'
     | '/{-$lang}/setup'
+    | '/{-$lang}/stack'
     | '/{-$lang}/uses'
     | '/{-$lang}/virastack'
     | '/{-$lang}/workspace'
     | '/{-$lang}/'
     | '/{-$lang}/blog/$slug'
     | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/notlar/$slug'
     | '/{-$lang}/blog/'
     | '/{-$lang}/notes/'
+    | '/{-$lang}/notlar/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/feed.xml'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/robots.txt'
     | '/site.webmanifest'
     | '/sitemap.xml'
+    | '/notes/feed.xml'
     | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
@@ -265,21 +352,29 @@ export interface FileRouteTypes {
     | '/{-$lang}/library'
     | '/{-$lang}/music'
     | '/{-$lang}/projects'
+    | '/{-$lang}/services'
     | '/{-$lang}/setup'
+    | '/{-$lang}/stack'
     | '/{-$lang}/uses'
     | '/{-$lang}/virastack'
     | '/{-$lang}/workspace'
     | '/{-$lang}'
     | '/{-$lang}/blog/$slug'
     | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/notlar/$slug'
     | '/{-$lang}/blog'
     | '/{-$lang}/notes'
+    | '/{-$lang}/notlar'
   id:
     | '__root__'
+    | '/feed.xml'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/robots.txt'
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/notes/feed.xml'
     | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
@@ -289,27 +384,56 @@ export interface FileRouteTypes {
     | '/{-$lang}/library'
     | '/{-$lang}/music'
     | '/{-$lang}/projects'
+    | '/{-$lang}/services'
     | '/{-$lang}/setup'
+    | '/{-$lang}/stack'
     | '/{-$lang}/uses'
     | '/{-$lang}/virastack'
     | '/{-$lang}/workspace'
     | '/{-$lang}/'
     | '/{-$lang}/blog/$slug'
     | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/notlar/$slug'
     | '/{-$lang}/blog/'
     | '/{-$lang}/notes/'
+    | '/{-$lang}/notlar/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  FeedDotxmlRoute: typeof FeedDotxmlRoute
+  LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SiteDotwebmanifestRoute: typeof SiteDotwebmanifestRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Char123LangChar125Route: typeof Char123LangChar125RouteWithChildren
+  NotesFeedDotxmlRoute: typeof NotesFeedDotxmlRoute
   OgSplatRoute: typeof OgSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/feed.xml': {
+      id: '/feed.xml'
+      path: '/feed.xml'
+      fullPath: '/feed.xml'
+      preLoaderRoute: typeof FeedDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms-full.txt': {
+      id: '/llms-full.txt'
+      path: '/llms-full.txt'
+      fullPath: '/llms-full.txt'
+      preLoaderRoute: typeof LlmsFullDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/robots.txt': {
       id: '/robots.txt'
       path: '/robots.txt'
@@ -336,6 +460,13 @@ declare module '@tanstack/react-router' {
       path: '/{-$lang}'
       fullPath: '/{-$lang}'
       preLoaderRoute: typeof Char123LangChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes/feed.xml': {
+      id: '/notes/feed.xml'
+      path: '/notes/feed.xml'
+      fullPath: '/notes/feed.xml'
+      preLoaderRoute: typeof NotesFeedDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/og/$': {
@@ -408,11 +539,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LangChar125ProjectsRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
+    '/{-$lang}/services': {
+      id: '/{-$lang}/services'
+      path: '/services'
+      fullPath: '/{-$lang}/services'
+      preLoaderRoute: typeof Char123LangChar125ServicesRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
     '/{-$lang}/setup': {
       id: '/{-$lang}/setup'
       path: '/setup'
       fullPath: '/{-$lang}/setup'
       preLoaderRoute: typeof Char123LangChar125SetupRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/stack': {
+      id: '/{-$lang}/stack'
+      path: '/stack'
+      fullPath: '/{-$lang}/stack'
+      preLoaderRoute: typeof Char123LangChar125StackRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
     '/{-$lang}/uses': {
@@ -464,6 +609,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LangChar125NotesSlugRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
+    '/{-$lang}/notlar/': {
+      id: '/{-$lang}/notlar/'
+      path: '/notlar'
+      fullPath: '/{-$lang}/notlar/'
+      preLoaderRoute: typeof Char123LangChar125NotlarIndexRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/notlar/$slug': {
+      id: '/{-$lang}/notlar/$slug'
+      path: '/notlar/$slug'
+      fullPath: '/{-$lang}/notlar/$slug'
+      preLoaderRoute: typeof Char123LangChar125NotlarSlugRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
   }
 }
 
@@ -476,15 +635,19 @@ interface Char123LangChar125RouteChildren {
   Char123LangChar125LibraryRoute: typeof Char123LangChar125LibraryRoute
   Char123LangChar125MusicRoute: typeof Char123LangChar125MusicRoute
   Char123LangChar125ProjectsRoute: typeof Char123LangChar125ProjectsRoute
+  Char123LangChar125ServicesRoute: typeof Char123LangChar125ServicesRoute
   Char123LangChar125SetupRoute: typeof Char123LangChar125SetupRoute
+  Char123LangChar125StackRoute: typeof Char123LangChar125StackRoute
   Char123LangChar125UsesRoute: typeof Char123LangChar125UsesRoute
   Char123LangChar125VirastackRoute: typeof Char123LangChar125VirastackRoute
   Char123LangChar125WorkspaceRoute: typeof Char123LangChar125WorkspaceRoute
   Char123LangChar125IndexRoute: typeof Char123LangChar125IndexRoute
   Char123LangChar125BlogSlugRoute: typeof Char123LangChar125BlogSlugRoute
   Char123LangChar125NotesSlugRoute: typeof Char123LangChar125NotesSlugRoute
+  Char123LangChar125NotlarSlugRoute: typeof Char123LangChar125NotlarSlugRoute
   Char123LangChar125BlogIndexRoute: typeof Char123LangChar125BlogIndexRoute
   Char123LangChar125NotesIndexRoute: typeof Char123LangChar125NotesIndexRoute
+  Char123LangChar125NotlarIndexRoute: typeof Char123LangChar125NotlarIndexRoute
 }
 
 const Char123LangChar125RouteChildren: Char123LangChar125RouteChildren = {
@@ -496,25 +659,33 @@ const Char123LangChar125RouteChildren: Char123LangChar125RouteChildren = {
   Char123LangChar125LibraryRoute: Char123LangChar125LibraryRoute,
   Char123LangChar125MusicRoute: Char123LangChar125MusicRoute,
   Char123LangChar125ProjectsRoute: Char123LangChar125ProjectsRoute,
+  Char123LangChar125ServicesRoute: Char123LangChar125ServicesRoute,
   Char123LangChar125SetupRoute: Char123LangChar125SetupRoute,
+  Char123LangChar125StackRoute: Char123LangChar125StackRoute,
   Char123LangChar125UsesRoute: Char123LangChar125UsesRoute,
   Char123LangChar125VirastackRoute: Char123LangChar125VirastackRoute,
   Char123LangChar125WorkspaceRoute: Char123LangChar125WorkspaceRoute,
   Char123LangChar125IndexRoute: Char123LangChar125IndexRoute,
   Char123LangChar125BlogSlugRoute: Char123LangChar125BlogSlugRoute,
   Char123LangChar125NotesSlugRoute: Char123LangChar125NotesSlugRoute,
+  Char123LangChar125NotlarSlugRoute: Char123LangChar125NotlarSlugRoute,
   Char123LangChar125BlogIndexRoute: Char123LangChar125BlogIndexRoute,
   Char123LangChar125NotesIndexRoute: Char123LangChar125NotesIndexRoute,
+  Char123LangChar125NotlarIndexRoute: Char123LangChar125NotlarIndexRoute,
 }
 
 const Char123LangChar125RouteWithChildren =
   Char123LangChar125Route._addFileChildren(Char123LangChar125RouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
+  FeedDotxmlRoute: FeedDotxmlRoute,
+  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SiteDotwebmanifestRoute: SiteDotwebmanifestRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Char123LangChar125Route: Char123LangChar125RouteWithChildren,
+  NotesFeedDotxmlRoute: NotesFeedDotxmlRoute,
   OgSplatRoute: OgSplatRoute,
 }
 export const routeTree = rootRouteImport

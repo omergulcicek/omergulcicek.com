@@ -47,7 +47,10 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       { rel: "stylesheet", href: geistMonoCss },
       { rel: "icon", href: "/logo.webp" },
       { rel: "apple-touch-icon", href: "/logo.webp" },
-      { rel: "manifest", href: "/site.webmanifest" }
+      { rel: "manifest", href: "/site.webmanifest" },
+      // Feed readers find the RSS feeds from any page.
+      { rel: "alternate", type: "application/rss+xml", title: "Blog", href: "/feed.xml" },
+      { rel: "alternate", type: "application/rss+xml", title: "Notlar", href: "/notes/feed.xml" }
     ]
   }),
   errorComponent: DefaultCatchBoundary,

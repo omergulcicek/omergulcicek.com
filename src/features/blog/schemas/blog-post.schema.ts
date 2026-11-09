@@ -28,6 +28,19 @@ export const postCardRowsSchema = z.array(
     .extend({ description: z.string() })
 )
 
+/** A post as feeds and llms.txt list it. */
+export const feedPostListSchema = z.array(
+  blogPostListItemSchema.extend({ description: z.string() })
+)
+
+/** A post with its MDX source, for llms-full.txt. */
+export const fullTextPostListSchema = z.array(
+  blogPostListItemSchema.extend({ description: z.string(), content: z.string().min(1) })
+)
+
+export type FeedPost = z.infer<typeof feedPostListSchema>[number]
+export type FullTextPost = z.infer<typeof fullTextPostListSchema>[number]
+
 /** One row for the sitemap: where the post lives and when it last changed. */
 export const sitemapPostListSchema = z.array(
   blogPostListItemSchema.pick({ slug: true, locale: true, published_at: true }).extend({
