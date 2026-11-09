@@ -50,7 +50,8 @@ export const VIRASTACK_PRODUCTS: readonly ViraStackProduct[] = [
     id: "mask",
     name: "Mask",
     Icon: TextCursorInputIcon,
-    colorClass: "text-indigo-500",
+    // indigo-500 reads below 4.5:1 on both backgrounds, so text takes 600 / 400 (virastack.com keeps 500).
+    colorClass: "text-indigo-600 dark:text-indigo-400",
     dotClass: "bg-indigo-500"
   },
   {
