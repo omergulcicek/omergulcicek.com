@@ -1,0 +1,391 @@
+[
+  {
+    "id": "tt4154796",
+    "title": "Avengers Serisi",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt4154796/",
+    "image": "/media/films/tt4154796.webp",
+    "rating": 8.4,
+    "channel": null,
+    "description": {
+      "tr": "Süper kahramanların insanlığı korumak için verdiği epik mücadele.",
+      "en": "Superheroes in an epic fight to protect humanity."
+    }
+  },
+  {
+    "id": "tt0468569",
+    "title": "The Dark Knight",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt0468569/",
+    "image": "/media/films/tt0468569.webp",
+    "rating": 9.1,
+    "channel": null,
+    "description": {
+      "tr": "Batman'in Joker'e karşı adalet ve ahlak sorgulayan karanlık mücadelesi.",
+      "en": "Batman's dark fight against the Joker, testing justice and morality."
+    }
+  },
+  {
+    "id": "tt7286456",
+    "title": "Joker",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt7286456/",
+    "image": "/media/films/tt7286456.webp",
+    "rating": 8.3,
+    "channel": null,
+    "description": {
+      "tr": "Dışlanmış Arthur Fleck'in Joker'e dönüşümünü anlatan psikolojik dram.",
+      "en": "A psychological drama about outcast Arthur Fleck becoming the Joker."
+    }
+  },
+  {
+    "id": "tt1831164",
+    "title": "Leyla ile Mecnun",
+    "kind": "series",
+    "url": "https://www.imdb.com/title/tt1831164/",
+    "image": "/media/films/tt1831164.webp",
+    "rating": 9.0,
+    "channel": null,
+    "description": {
+      "tr": "Kireçburnu'nun absürt ve gerçeküstü maceralarını anlatan durum komedisi.",
+      "en": "A sitcom about the absurd, surreal adventures of Kireçburnu."
+    }
+  },
+  {
+    "id": "tt1475582",
+    "title": "Sherlock",
+    "kind": "series",
+    "url": "https://www.imdb.com/title/tt1475582/",
+    "image": "/media/films/tt1475582.webp",
+    "rating": 9.0,
+    "channel": null,
+    "description": {
+      "tr": "Sherlock ve Watson'ın karmaşık suçları çözdüğü polisiye.",
+      "en": "Sherlock and Watson solve tangled crimes."
+    }
+  },
+  {
+    "id": "tt0167260",
+    "title": "The Lord of the Rings Serisi",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt0167260/",
+    "image": "/media/films/tt0167260.webp",
+    "rating": 9.0,
+    "channel": null,
+    "description": {
+      "tr": "Frodo'nun Tek Yüzük'ü yok etmek için çıktığı destansı yolculuk.",
+      "en": "Frodo's epic journey to destroy the One Ring."
+    }
+  },
+  {
+    "id": "tt1795096",
+    "title": "Behzat Ç.",
+    "kind": "series",
+    "url": "https://www.imdb.com/title/tt1795096/",
+    "image": "/media/films/tt1795096.webp",
+    "rating": 8.8,
+    "channel": null,
+    "description": {
+      "tr": "Behzat Ç. ve ekibinin Ankara suç dünyasıyla tavizsiz mücadelesi.",
+      "en": "Behzat Ç. and his team take on Ankara's underworld without compromise."
+    }
+  },
+  {
+    "id": "tt7920978",
+    "title": "Şahsiyet",
+    "kind": "series",
+    "url": "https://www.imdb.com/title/tt7920978/",
+    "image": "/media/films/tt7920978.webp",
+    "rating": 9.0,
+    "channel": null,
+    "description": {
+      "tr": "Emekli memurun geçmişiyle hesaplaşırken adaleti kendi eliyle araması.",
+      "en": "A retired civil servant settles scores with his past and takes justice into his own hands."
+    }
+  },
+  {
+    "id": "tt7949218",
+    "title": "See",
+    "kind": "series",
+    "url": "https://www.imdb.com/title/tt7949218/",
+    "image": "/media/films/tt7949218.webp",
+    "rating": 7.6,
+    "channel": null,
+    "description": {
+      "tr": "Kör bir dünyada gören ikizlerin doğumuyla sarsılan kabileler arası mücadele.",
+      "en": "Tribes collide after twins who can see are born into a blind world."
+    }
+  },
+  {
+    "id": "tt31323988",
+    "title": "Mehmed: Fetihler Sultanı",
+    "kind": "series",
+    "url": "https://www.imdb.com/title/tt31323988/",
+    "image": "/media/films/tt31323988.webp",
+    "rating": 7.9,
+    "channel": null,
+    "description": {
+      "tr": "Fatih Sultan Mehmed'in İstanbul fetih hayali ve saray mücadeleleri.",
+      "en": "Sultan Mehmed II's dream of taking Istanbul, and the struggles of his court."
+    }
+  },
+  {
+    "id": "tt0252488",
+    "title": "Hababam Sınıfı Sınıfta Kaldı",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt0252488/",
+    "image": "/media/films/tt0252488.webp",
+    "rating": 8.9,
+    "channel": null,
+    "description": {
+      "tr": "Sahte diploması ortaya çıkan Hababam Sınıfı'nın yeni öğretmenlerle verdiği efsanevi mücadele.",
+      "en": "When its fake diploma is exposed, the Hababam class faces new teachers in a legendary struggle."
+    }
+  },
+  {
+    "id": "tt10431500",
+    "title": "Yedinci Koğuştaki Mucize",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt10431500/",
+    "image": "/media/films/tt10431500.webp",
+    "rating": 8.2,
+    "channel": null,
+    "description": {
+      "tr": "Haksız yere hapse giren babanın kızıyla olan bağını anlatan duygusal dram.",
+      "en": "A drama about a wrongly imprisoned father and his bond with his daughter."
+    }
+  },
+  {
+    "id": "tt6316138",
+    "title": "Ayla",
+    "kind": "film",
+    "url": "https://www.imdb.com/title/tt6316138/",
+    "image": "/media/films/tt6316138.webp",
+    "rating": 8.2,
+    "channel": null,
+    "description": {
+      "tr": "Kore Savaşı'nda küçük bir kızla kurulan bağın yıllarca süren hikayesini anlatan biyografik dram.",
+      "en": "A biographical drama about a bond with a little girl, formed in the Korean War and kept for decades."
+    }
+  },
+  {
+    "id": "yt-cdf6d19etmc",
+    "title": "Maradona Warm-Up: UEFA Cup Semi-Final 1989",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=Cdf6D19Etmc",
+    "image": "/media/films/yt-cdf6d19etmc.webp",
+    "rating": null,
+    "channel": "TheUnComfortZONE",
+    "description": null
+  },
+  {
+    "id": "yt--gc2twgghfa",
+    "title": "Nike Olé Reklamı: Brezilya - Portekiz, Euro 2004",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=-Gc2twGGHFA",
+    "image": "/media/films/yt--gc2twgghfa.webp",
+    "rating": null,
+    "channel": "This Is Football",
+    "description": null
+  },
+  {
+    "id": "yt-rs8xja8ctoq",
+    "title": "Fransa 2018 Dünya Kupası Müziği",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=rs8xJa8ctOQ",
+    "image": "/media/films/yt-rs8xja8ctoq.webp",
+    "rating": null,
+    "channel": "GLOBAL BUZZ",
+    "description": null
+  },
+  {
+    "id": "yt-6ey6xucwf0y",
+    "title": "Aurora - Vitality: IEM Krakow 2026",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=6Ey6xUCWF0Y",
+    "image": "/media/films/yt-6ey6xucwf0y.webp",
+    "rating": null,
+    "channel": "rootthegamer",
+    "description": null
+  },
+  {
+    "id": "yt-5x2yp2wm16i",
+    "title": "Mehmed: Fetihler Sultanı 59. Bölüm",
+    "kind": "video",
+    "url": "https://youtu.be/5X2yp2Wm16I?si=qwuSoZU9fb4g4BlG&t=2067",
+    "image": "/media/films/yt-5x2yp2wm16i.webp",
+    "rating": null,
+    "channel": "Mehmed: Fetihler Sultanı",
+    "description": null
+  },
+  {
+    "id": "yt-hvmbmwuheaw",
+    "title": "You'll Never Walk Alone",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=HVmbMWUhEaw",
+    "image": "/media/films/yt-hvmbmwuheaw.webp",
+    "rating": null,
+    "channel": "Sky Sports Premier League",
+    "description": null
+  },
+  {
+    "id": "yt-m22nwszycce",
+    "title": "Muhammad Ali - George Foreman: Rumble in the Jungle",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=M22nWSzyccE",
+    "image": "/media/films/yt-m22nwszycce.webp",
+    "rating": null,
+    "channel": "ElTerribleProduction",
+    "description": null
+  },
+  {
+    "id": "yt-lmwpop3pulg",
+    "title": "Barcelona 5–0 Real Madrid: 2010/2011",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=LmwPop3Pulg",
+    "image": "/media/films/yt-lmwpop3pulg.webp",
+    "rating": null,
+    "channel": "LALIGA EA SPORTS",
+    "description": null
+  },
+  {
+    "id": "yt-4rpm6g6odvg",
+    "title": "Hedef Kızılelma Belgeseli",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=4RPm6g6odVg",
+    "image": "/media/films/yt-4rpm6g6odvg.webp",
+    "rating": null,
+    "channel": "Baykar Technologies",
+    "description": null
+  },
+  {
+    "id": "yt-ueec-ebjgfu",
+    "title": "Akıncı Belgeseli",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=UEec_EbJgfU",
+    "image": "/media/films/yt-ueec-ebjgfu.webp",
+    "rating": null,
+    "channel": "Baykar Technologies",
+    "description": null
+  },
+  {
+    "id": "yt-x7158uqk1yi",
+    "title": "Brezilya 0–1 Fransa: 2006 Dünya Kupası Çeyrek Finali",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=X7158uQk1yI",
+    "image": "/media/films/yt-x7158uqk1yi.webp",
+    "rating": null,
+    "channel": "FIFA",
+    "description": null
+  },
+  {
+    "id": "yt-u1oivnfpfii",
+    "title": "Roger Federer - Rafael Nadal: Battle of Surfaces 2007",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=u1oivnfpfII",
+    "image": "/media/films/yt-u1oivnfpfii.webp",
+    "rating": null,
+    "channel": "Raz Ols",
+    "description": null
+  },
+  {
+    "id": "yt-81txboyjrjw",
+    "title": "Habib Nurmagomedov - Conor McGregor: UFC 229",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=81tXbOYJRJw",
+    "image": "/media/films/yt-81txboyjrjw.webp",
+    "rating": null,
+    "channel": "UFC Eurasia",
+    "description": null
+  },
+  {
+    "id": "yt-mhsg2m25pzy",
+    "title": "Roger Federer - Rafael Nadal: Wimbledon 2008 Finali",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=mHsg2M25PzY",
+    "image": "/media/films/yt-mhsg2m25pzy.webp",
+    "rating": null,
+    "channel": "Wimbledon",
+    "description": null
+  },
+  {
+    "id": "yt-g-swvee9him",
+    "title": "Eternal Fire - Spirit: BLAST Premier Bounty Finali",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=g-swVEE9hiM",
+    "image": "/media/films/yt-g-swvee9him.webp",
+    "rating": null,
+    "channel": "BLAST Premier",
+    "description": null
+  },
+  {
+    "id": "yt-uo1chltdryq",
+    "title": "Türkiye - Arjantin: CS:GO Major Finali",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=uo1chlTDrYQ",
+    "image": "/media/films/yt-uo1chltdryq.webp",
+    "rating": null,
+    "channel": "Robert Brown",
+    "description": null
+  },
+  {
+    "id": "yt-jqvx5i4cso8",
+    "title": "XANTARES Nerede?!",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=JqVx5I4CsO8",
+    "image": "/media/films/yt-jqvx5i4cso8.webp",
+    "rating": null,
+    "channel": "ESL Counter-Strike",
+    "description": null
+  },
+  {
+    "id": "yt-pxygbwx4dks",
+    "title": "Teşekkürler CS:GO",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=pXyGBwx4dks",
+    "image": "/media/films/yt-pxygbwx4dks.webp",
+    "rating": null,
+    "channel": "Virre CS2",
+    "description": null
+  },
+  {
+    "id": "yt-ijbde6pkw2o",
+    "title": "Liverpool 3–3 Milan (pen. 3–2): 2005 Şampiyonlar Ligi Finali",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=iJbDE6PKW2o",
+    "image": "/media/films/yt-ijbde6pkw2o.webp",
+    "rating": null,
+    "channel": "GoalGlory Classics",
+    "description": null
+  },
+  {
+    "id": "yt-fexzy4evllo",
+    "title": "Kobe Bryant: 81 Sayı vs Raptors",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=FeXZY4eVLlo",
+    "image": "/media/films/yt-fexzy4evllo.webp",
+    "rating": null,
+    "channel": "NBA",
+    "description": null
+  },
+  {
+    "id": "yt-x4i7ilgmrog",
+    "title": "PSG 5–4 Bayern Münih: 2026 Şampiyonlar Ligi Yarı Finali",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=x4I7ilgMrog",
+    "image": "/media/films/yt-x4i7ilgmrog.webp",
+    "rating": null,
+    "channel": "TRT SPOR",
+    "description": null
+  },
+  {
+    "id": "yt-fkwwbuwwd7s",
+    "title": "Barcelona 6–1 PSG: 2017 Şampiyonlar Ligi Son 16 Turu",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=fkWwbuWWD7s",
+    "image": "/media/films/yt-fkwwbuwwd7s.webp",
+    "rating": null,
+    "channel": "TRT SPOR Arşiv",
+    "description": null
+  }
+]

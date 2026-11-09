@@ -1,0 +1,135 @@
+[
+  {
+    "id": "ottoman-history",
+    "label": {
+      "tr": "Osmanlı Tarihi",
+      "en": "Ottoman history"
+    }
+  },
+  {
+    "id": "literature",
+    "label": {
+      "tr": "Edebiyat",
+      "en": "Literature"
+    }
+  },
+  {
+    "id": "sufism",
+    "label": {
+      "tr": "Tasavvuf",
+      "en": "Sufism"
+    }
+  },
+  {
+    "id": "turkish-history",
+    "label": {
+      "tr": "Genel Türk Tarihi",
+      "en": "Turkish history"
+    }
+  },
+  {
+    "id": "islamic-thought",
+    "label": {
+      "tr": "İslam Düşüncesi",
+      "en": "Islamic thought"
+    }
+  },
+  {
+    "id": "world-civilizations",
+    "label": {
+      "tr": "Kültür, Mitoloji ve Dünya Medeniyetleri",
+      "en": "Culture, mythology and world civilizations"
+    }
+  },
+  {
+    "id": "philosophy",
+    "label": {
+      "tr": "Felsefe ve Düşünce",
+      "en": "Philosophy and thought"
+    }
+  },
+  {
+    "id": "science",
+    "label": {
+      "tr": "Bilim",
+      "en": "Science"
+    }
+  },
+  {
+    "id": "self-improvement",
+    "label": {
+      "tr": "Kişisel Gelişim",
+      "en": "Self-improvement"
+    }
+  },
+  {
+    "id": "memoirs",
+    "label": {
+      "tr": "Hatırat ve Anı",
+      "en": "Memoirs"
+    }
+  },
+  {
+    "id": "rome",
+    "label": {
+      "tr": "Roma",
+      "en": "Rome"
+    }
+  },
+  {
+    "id": "biography",
+    "label": {
+      "tr": "Anı ve Biyografi",
+      "en": "Memoir and biography"
+    }
+  },
+  {
+    "id": "tafsir",
+    "label": {
+      "tr": "Tefsir",
+      "en": "Tafsir"
+    }
+  },
+  {
+    "id": "city-history",
+    "label": {
+      "tr": "Şehir Tarihi",
+      "en": "City history"
+    }
+  },
+  {
+    "id": "sira",
+    "label": {
+      "tr": "Siyer",
+      "en": "Sira"
+    }
+  },
+  {
+    "id": "creed",
+    "label": {
+      "tr": "Akaid ve İlmihal",
+      "en": "Creed and practice"
+    }
+  },
+  {
+    "id": "hadith",
+    "label": {
+      "tr": "Hadis ve Sünnet",
+      "en": "Hadith and Sunnah"
+    }
+  },
+  {
+    "id": "republic",
+    "label": {
+      "tr": "Cumhuriyet",
+      "en": "The Republic"
+    }
+  },
+  {
+    "id": "quran",
+    "label": {
+      "tr": "Kur'an-ı Kerim ve Meal",
+      "en": "The Quran and translations"
+    }
+  }
+]

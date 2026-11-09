@@ -1,0 +1,1267 @@
+[
+  {
+    "id": "addy-osmani-com-blog",
+    "title": "AddyOsmani.com",
+    "url": "https://addyosmani.com/blog/",
+    "category": "blogs",
+    "image": "/media/bookmarks/addy-osmani-com-blog.webp",
+    "description": {
+      "tr": "Addy Osmani'nin web performansı ve JavaScript yazıları.",
+      "en": "Addy Osmani on web performance and JavaScript."
+    }
+  },
+  {
+    "id": "ishadeed-com-articles",
+    "title": "Ahmad Shadeed",
+    "url": "https://ishadeed.com/articles/",
+    "category": "blogs",
+    "image": "/media/bookmarks/ishadeed-com-articles.webp",
+    "description": {
+      "tr": "Modern CSS ve layout'u etkileşimli örneklerle anlatıyor.",
+      "en": "Modern CSS and layout, explained with interactive examples."
+    }
+  },
+  {
+    "id": "anthropic-com-research",
+    "title": "Anthropic Research",
+    "url": "https://www.anthropic.com/research",
+    "category": "blogs",
+    "image": "/media/bookmarks/anthropic-com-research.webp",
+    "description": {
+      "tr": "Claude'u geliştiren ekibin araştırma ve güvenlik yayınları.",
+      "en": "Research and safety papers from the team behind Claude."
+    }
+  },
+  {
+    "id": "builder-io-blog",
+    "title": "Builder.io",
+    "url": "https://www.builder.io/blog",
+    "category": "blogs",
+    "image": "/media/bookmarks/builder-io-blog.webp",
+    "description": {
+      "tr": "Builder.io ekibinin frontend ve yapay zekâ araçları yazıları.",
+      "en": "The Builder.io team on frontend and AI tooling."
+    }
+  },
+  {
+    "id": "css-irl-info",
+    "title": "CSS { In Real Life }",
+    "url": "https://css-irl.info/",
+    "category": "blogs",
+    "image": "/media/bookmarks/css-irl-info.webp",
+    "description": {
+      "tr": "Michelle Barker'ın pratik CSS ve erişilebilirlik yazıları.",
+      "en": "Michelle Barker on practical CSS and accessibility."
+    }
+  },
+  {
+    "id": "css-tricks-com",
+    "title": "CSS-Tricks",
+    "url": "https://css-tricks.com/",
+    "category": "blogs",
+    "image": "/media/bookmarks/css-tricks-com.webp",
+    "description": {
+      "tr": "Yıllardır biriken CSS ve frontend rehberleri.",
+      "en": "Years of CSS and frontend guides."
+    }
+  },
+  {
+    "id": "daktilo1984-com",
+    "title": "Daktilo1984",
+    "url": "https://daktilo1984.com/",
+    "category": "blogs",
+    "image": "/media/bookmarks/daktilo1984-com.webp",
+    "description": {
+      "tr": "Politika, ekonomi ve kültür üzerine yazı, video ve podcast.",
+      "en": "Writing, video and podcasts on politics, economy and culture, in Turkish."
+    }
+  },
+  {
+    "id": "daron-blog",
+    "title": "Daron Blog",
+    "url": "https://daron.blog/",
+    "category": "blogs",
+    "image": "/media/bookmarks/daron-blog.webp",
+    "description": {
+      "tr": "Daron Yöndem'in bulut, serverless ve .NET yazıları.",
+      "en": "Daron Yöndem on cloud, serverless and .NET."
+    }
+  },
+  {
+    "id": "fatihhayrioglu-com",
+    "title": "Fatih Hayrioğlu",
+    "url": "https://fatihhayrioglu.com/",
+    "category": "blogs",
+    "image": "/media/bookmarks/fatihhayrioglu-com.webp",
+    "description": {
+      "tr": "Fatih Hayrioğlu'nun Türkçe JavaScript ve CSS yazıları.",
+      "en": "Fatih Hayrioğlu on JavaScript and CSS, in Turkish."
+    }
+  },
+  {
+    "id": "raindrop-io-ahmetsehacar",
+    "title": "Ahmet Seha Acar",
+    "url": "https://ahmetsehacar.raindrop.page/",
+    "category": "blogs",
+    "image": "/media/bookmarks/raindrop-io-ahmetsehacar.webp",
+    "description": {
+      "tr": "Yazılım ve teknoloji bağlantılarını topladığı Raindrop arşivi.",
+      "en": "Ahmet Seha Acar's Raindrop archive of software and tech links."
+    }
+  },
+  {
+    "id": "jakub-kr",
+    "title": "Jakub Krehel",
+    "url": "https://jakub.kr/",
+    "category": "blogs",
+    "image": "/media/bookmarks/jakub-kr.webp",
+    "description": {
+      "tr": "Arayüz detayları ve animasyon üzerine kısa yazılar.",
+      "en": "Short posts on interface details and animation."
+    }
+  },
+  {
+    "id": "medium-com-kodcular",
+    "title": "Kodcular",
+    "url": "https://medium.com/kodcular",
+    "category": "blogs",
+    "image": "/media/bookmarks/medium-com-kodcular.webp",
+    "description": {
+      "tr": "Türkçe yazılım makalelerinin toplandığı Medium yayını.",
+      "en": "A Medium publication collecting Turkish software articles."
+    }
+  },
+  {
+    "id": "nextradar-dev-content-nextjs",
+    "title": "NextRadar",
+    "url": "https://nextradar.dev/content/nextjs",
+    "category": "blogs",
+    "image": "/media/bookmarks/nextradar-dev-content-nextjs.webp",
+    "description": {
+      "tr": "Next.js dünyasından haber ve kaynak derlemesi.",
+      "en": "News and resources from the Next.js world."
+    }
+  },
+  {
+    "id": "smashingmagazine-com-articles",
+    "title": "Smashing Magazine",
+    "url": "https://www.smashingmagazine.com/articles/",
+    "category": "blogs",
+    "image": "/media/bookmarks/smashingmagazine-com-articles.webp",
+    "description": {
+      "tr": "Web tasarımı ve frontend üzerine uzun makaleler.",
+      "en": "Long-form articles on web design and frontend."
+    }
+  },
+  {
+    "id": "taniarascia-com-blog",
+    "title": "Tania Rascia",
+    "url": "https://www.taniarascia.com/blog/",
+    "category": "blogs",
+    "image": "/media/bookmarks/taniarascia-com-blog.webp",
+    "description": {
+      "tr": "JavaScript ve React temellerini sade örneklerle anlatıyor.",
+      "en": "JavaScript and React fundamentals with plain examples."
+    }
+  },
+  {
+    "id": "tidewave-net-categories-nextjs",
+    "title": "Tide Wave",
+    "url": "https://tidewave.net/categories/nextjs",
+    "category": "blogs",
+    "image": "/media/bookmarks/tidewave-net-categories-nextjs.webp",
+    "description": {
+      "tr": "Next.js haberlerini ve rehberlerini derleyen bülten.",
+      "en": "A newsletter rounding up Next.js news and guides."
+    }
+  },
+  {
+    "id": "tkdodo-eu-blog-all",
+    "title": "TkDodo",
+    "url": "https://tkdodo.eu/blog/all",
+    "category": "blogs",
+    "image": "/media/bookmarks/tkdodo-eu-blog-all.webp",
+    "description": {
+      "tr": "TanStack Query maintainer'ı Dominik'in React Query yazıları.",
+      "en": "Dominik, the TanStack Query maintainer, on React Query."
+    }
+  },
+  {
+    "id": "medium-com-turkiye",
+    "title": "Türkçe Yayın",
+    "url": "https://medium.com/t%C3%BCrkiye",
+    "category": "blogs",
+    "image": "/media/bookmarks/medium-com-turkiye.webp",
+    "description": {
+      "tr": "Medium'daki Türkçe teknoloji ve kültür yazıları.",
+      "en": "Turkish tech and culture writing on Medium."
+    }
+  },
+  {
+    "id": "una-im",
+    "title": "Una Kravets",
+    "url": "https://una.im/",
+    "category": "blogs",
+    "image": "/media/bookmarks/una-im.webp",
+    "description": {
+      "tr": "Chrome ekibinden Una Kravets'in modern CSS deneyleri.",
+      "en": "Modern CSS experiments by Una Kravets of the Chrome team."
+    }
+  },
+  {
+    "id": "upstash-com-blog",
+    "title": "Upstash Blog",
+    "url": "https://upstash.com/blog",
+    "category": "blogs",
+    "image": "/media/bookmarks/upstash-com-blog.webp",
+    "description": {
+      "tr": "Upstash ekibinin serverless Redis ve edge rehberleri.",
+      "en": "The Upstash team's guides to serverless Redis and the edge."
+    }
+  },
+  {
+    "id": "mesurer-dev",
+    "title": "Mesurer",
+    "url": "https://mesurer.dev/",
+    "category": "packages",
+    "image": "/media/bookmarks/mesurer-dev.webp",
+    "description": {
+      "tr": "Localhost'ta ölçü ve hizalama aracı",
+      "en": "Measuring and alignment tool for localhost"
+    }
+  },
+  {
+    "id": "evilcharts-com-docs",
+    "title": "Evil Charts",
+    "url": "https://evilcharts.com/docs",
+    "category": "packages",
+    "image": "/media/bookmarks/evilcharts-com-docs.webp",
+    "description": {
+      "tr": "shadcn + Recharts grafik bileşenleri",
+      "en": "Chart components built on shadcn and Recharts"
+    }
+  },
+  {
+    "id": "ui-bklit-com",
+    "title": "Bklit UI",
+    "url": "https://ui.bklit.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/ui-bklit-com.webp",
+    "description": {
+      "tr": "shadcn tabanlı grafik bileşenleri",
+      "en": "Chart components based on shadcn"
+    }
+  },
+  {
+    "id": "transitions-dev",
+    "title": "Transitions.dev",
+    "url": "https://transitions.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/transitions-dev.webp",
+    "description": {
+      "tr": "Kopyala-yapıştır web geçiş animasyonları",
+      "en": "Copy-paste web transition animations"
+    }
+  },
+  {
+    "id": "emailmd-dev",
+    "title": "Email.md",
+    "url": "https://www.emailmd.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/emailmd-dev.webp",
+    "description": {
+      "tr": "Markdown'dan e-posta HTML'i",
+      "en": "Email HTML from Markdown"
+    }
+  },
+  {
+    "id": "printer-animation-vercel-app",
+    "title": "Printer Animation",
+    "url": "https://printer-animation.vercel.app/",
+    "category": "sites",
+    "image": "/media/bookmarks/printer-animation-vercel-app.webp",
+    "description": {
+      "tr": "Yazıcı animasyon demosu",
+      "en": "Printer animation demo"
+    }
+  },
+  {
+    "id": "3dsvg-design",
+    "title": "3dsvg",
+    "url": "https://3dsvg.design/",
+    "category": "sites",
+    "image": "/media/bookmarks/3dsvg-design.webp",
+    "description": {
+      "tr": "SVG'den 3D nesne oluşturma",
+      "en": "3D objects from SVG"
+    }
+  },
+  {
+    "id": "data-table-openstatus-dev",
+    "title": "openstatus",
+    "url": "https://data-table.openstatus.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/data-table-openstatus-dev.webp",
+    "description": {
+      "tr": "Filtrelenebilir React data table",
+      "en": "Filterable React data table"
+    }
+  },
+  {
+    "id": "thesvg-org",
+    "title": "theSVG",
+    "url": "https://www.thesvg.org/",
+    "category": "sites",
+    "image": "/media/bookmarks/thesvg-org.webp",
+    "description": {
+      "tr": "Marka SVG ikon kütüphanesi",
+      "en": "Brand SVG icon library"
+    }
+  },
+  {
+    "id": "iocombats-com",
+    "title": "IO Combats",
+    "url": "https://iocombats.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/iocombats-com.webp",
+    "description": {
+      "tr": "Frontend pratik ve mülakat platformu",
+      "en": "Frontend practice and interview platform"
+    }
+  },
+  {
+    "id": "spell-sh",
+    "title": "Spell UI",
+    "url": "https://spell.sh/",
+    "category": "sites",
+    "image": "/media/bookmarks/spell-sh.webp",
+    "description": {
+      "tr": "React + Tailwind UI bileşenleri",
+      "en": "React and Tailwind UI components"
+    }
+  },
+  {
+    "id": "favicon-io",
+    "title": "Favicon.io",
+    "url": "https://favicon.io/",
+    "category": "sites",
+    "image": "/media/bookmarks/favicon-io.webp",
+    "description": {
+      "tr": "Ücretsiz favicon oluşturucu",
+      "en": "Free favicon generator"
+    }
+  },
+  {
+    "id": "blobmaker-app",
+    "title": "Blobmaker",
+    "url": "https://www.blobmaker.app/",
+    "category": "sites",
+    "image": "/media/bookmarks/blobmaker-app.webp",
+    "description": {
+      "tr": "Organik SVG blob üretici",
+      "en": "Organic SVG blob generator"
+    }
+  },
+  {
+    "id": "repostars-dev",
+    "title": "RepoStars",
+    "url": "https://www.repostars.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/repostars-dev.webp",
+    "description": {
+      "tr": "GitHub yıldız geçmişi grafikleri",
+      "en": "GitHub star history charts"
+    }
+  },
+  {
+    "id": "npmjs-com-package-react-use-wizard",
+    "title": "react-use-wizard",
+    "url": "https://www.npmjs.com/package/react-use-wizard",
+    "category": "packages",
+    "image": "/media/bookmarks/npmjs-com-package-react-use-wizard.webp",
+    "description": {
+      "tr": "Çok adımlı form yönetimi",
+      "en": "Multi-step form management"
+    }
+  },
+  {
+    "id": "npmjs-com-package-react-grab",
+    "title": "react-grab",
+    "url": "https://www.npmjs.com/package/react-grab",
+    "category": "packages",
+    "image": "/media/bookmarks/npmjs-com-package-react-grab.webp",
+    "description": {
+      "tr": "AI agent'lara bağlam seçme",
+      "en": "Pick context for AI agents"
+    }
+  },
+  {
+    "id": "markdown-new",
+    "title": "markdown.new",
+    "url": "https://markdown.new/",
+    "category": "sites",
+    "image": "/media/bookmarks/markdown-new.webp",
+    "description": {
+      "tr": "URL'den AI dostu Markdown",
+      "en": "AI-friendly Markdown from a URL"
+    }
+  },
+  {
+    "id": "sileo-aaryan-design",
+    "title": "sileo",
+    "url": "https://sileo.aaryan.design/",
+    "category": "packages",
+    "image": "/media/bookmarks/sileo-aaryan-design.webp",
+    "description": {
+      "tr": "Animasyonlu toast bildirimleri",
+      "en": "Animated toast notifications"
+    }
+  },
+  {
+    "id": "gitingest-com",
+    "title": "Gitingest",
+    "url": "https://gitingest.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/gitingest-com.webp",
+    "description": {
+      "tr": "GitHub repo'sunu metne çevirme",
+      "en": "Turns a GitHub repo into text"
+    }
+  },
+  {
+    "id": "squoosh-app",
+    "title": "Squoosh",
+    "url": "https://squoosh.app/",
+    "category": "sites",
+    "image": "/media/bookmarks/squoosh-app.webp",
+    "description": {
+      "tr": "Tarayıcıda görsel sıkıştırma",
+      "en": "Image compression in the browser"
+    }
+  },
+  {
+    "id": "creative-tim-com-ui",
+    "title": "Creative Tim UI",
+    "url": "https://www.creative-tim.com/ui",
+    "category": "sites",
+    "image": "/media/bookmarks/creative-tim-com-ui.webp",
+    "description": {
+      "tr": "shadcn/ui blok ve şablonları",
+      "en": "shadcn/ui blocks and templates"
+    }
+  },
+  {
+    "id": "animateicons-in",
+    "title": "AnimateIcons",
+    "url": "https://animateicons.in/",
+    "category": "sites",
+    "image": "/media/bookmarks/animateicons-in.webp",
+    "description": {
+      "tr": "Animasyonlu React ikonları",
+      "en": "Animated React icons"
+    }
+  },
+  {
+    "id": "moondream-ai",
+    "title": "Moondream",
+    "url": "https://moondream.ai/",
+    "category": "sites",
+    "image": "/media/bookmarks/moondream-ai.webp",
+    "description": {
+      "tr": "Hızlı görsel AI modeli",
+      "en": "Fast vision AI model"
+    }
+  },
+  {
+    "id": "squircle-art",
+    "title": "squircle.art",
+    "url": "https://www.squircle.art/",
+    "category": "sites",
+    "image": "/media/bookmarks/squircle-art.webp",
+    "description": {
+      "tr": "CSS köşe şekli oluşturucu",
+      "en": "CSS corner shape generator"
+    }
+  },
+  {
+    "id": "mapcn-dev",
+    "title": "mapcn",
+    "url": "https://www.mapcn.dev/",
+    "category": "packages",
+    "image": "/media/bookmarks/mapcn-dev.webp",
+    "description": {
+      "tr": "shadcn harita bileşenleri",
+      "en": "shadcn map components"
+    }
+  },
+  {
+    "id": "lucide-animated-com",
+    "title": "lucide-animated",
+    "url": "https://lucide-animated.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/lucide-animated-com.webp",
+    "description": {
+      "tr": "Animasyonlu Lucide ikonları",
+      "en": "Animated Lucide icons"
+    }
+  },
+  {
+    "id": "grubersjoe-github-io-react-github-calendar",
+    "title": "react-github-calendar",
+    "url": "https://grubersjoe.github.io/react-github-calendar/#/?user=omergulcicek",
+    "category": "packages",
+    "image": "/media/bookmarks/grubersjoe-github-io-react-github-calendar.webp",
+    "description": {
+      "tr": "GitHub katkı takvimi",
+      "en": "GitHub contribution calendar"
+    }
+  },
+  {
+    "id": "squircle-style",
+    "title": "squircle.style",
+    "url": "https://www.squircle.style/",
+    "category": "sites",
+    "image": "/media/bookmarks/squircle-style.webp",
+    "description": {
+      "tr": "Squircle köşe önizleme aracı",
+      "en": "Squircle corner preview tool"
+    }
+  },
+  {
+    "id": "revola-sameerjs-com",
+    "title": "Revola",
+    "url": "https://revola.sameerjs.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/revola-sameerjs-com.webp",
+    "description": {
+      "tr": "Mobilde drawer, masaüstünde modal",
+      "en": "A drawer on mobile, a modal on desktop"
+    }
+  },
+  {
+    "id": "buouui-com-docs-animations-event-calendar",
+    "title": "BuouUI",
+    "url": "https://buouui.com/docs/animations/event-calendar",
+    "category": "sites",
+    "image": "/media/bookmarks/buouui-com-docs-animations-event-calendar.webp",
+    "description": {
+      "tr": "Tailwind UI bileşen kütüphanesi",
+      "en": "Tailwind UI component library"
+    }
+  },
+  {
+    "id": "better-upload-com",
+    "title": "Better Upload",
+    "url": "https://better-upload.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/better-upload-com.webp",
+    "description": {
+      "tr": "React dosya yükleme (S3 uyumlu)",
+      "en": "React file uploads (S3 compatible)"
+    }
+  },
+  {
+    "id": "square-lndev-me",
+    "title": "Square UI",
+    "url": "https://square.lndev.me/",
+    "category": "sites",
+    "image": "/media/bookmarks/square-lndev-me.webp",
+    "description": {
+      "tr": "shadcn/ui layout koleksiyonu",
+      "en": "shadcn/ui layout collection"
+    }
+  },
+  {
+    "id": "npmjs-com-package-tonl",
+    "title": "tonl",
+    "url": "https://www.npmjs.com/package/tonl",
+    "category": "packages",
+    "image": "/media/bookmarks/npmjs-com-package-tonl.webp",
+    "description": {
+      "tr": "LLM dostu veri serileştirme",
+      "en": "LLM-friendly data serialization"
+    }
+  },
+  {
+    "id": "logo-dev",
+    "title": "Logo API",
+    "url": "https://www.logo.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/logo-dev.webp",
+    "description": {
+      "tr": "Şirket logoları API'si",
+      "en": "Company logo API"
+    }
+  },
+  {
+    "id": "bansal-io-pattern-css",
+    "title": "pattern.css",
+    "url": "https://bansal.io/pattern-css",
+    "category": "sites",
+    "image": "/media/bookmarks/bansal-io-pattern-css.webp",
+    "description": {
+      "tr": "CSS arka plan desenleri",
+      "en": "CSS background patterns"
+    }
+  },
+  {
+    "id": "shadcn-image-cropper-vercel-app",
+    "title": "Image cropper",
+    "url": "https://shadcn-image-cropper.vercel.app/",
+    "category": "sites",
+    "image": "/media/bookmarks/shadcn-image-cropper-vercel-app.webp",
+    "description": {
+      "tr": "shadcn görsel kırpma aracı",
+      "en": "shadcn image cropper"
+    }
+  },
+  {
+    "id": "wigggle-ui-vercel-app",
+    "title": "Wigggle UI",
+    "url": "https://wigggle-ui.vercel.app/",
+    "category": "sites",
+    "image": "/media/bookmarks/wigggle-ui-vercel-app.webp",
+    "description": {
+      "tr": "Kopyala-yapıştır widget koleksiyonu",
+      "en": "Copy-paste widget collection"
+    }
+  },
+  {
+    "id": "big-calendar-vercel-app-month-view",
+    "title": "Big Calendar",
+    "url": "https://big-calendar.vercel.app/month-view",
+    "category": "sites",
+    "image": "/media/bookmarks/big-calendar-vercel-app-month-view.webp",
+    "description": {
+      "tr": "Next.js takvim uygulaması",
+      "en": "Next.js calendar app"
+    }
+  },
+  {
+    "id": "design-dev",
+    "title": "Design.dev",
+    "url": "https://design.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/design-dev.webp",
+    "description": {
+      "tr": "Web geliştirme kaynak ve araçları",
+      "en": "Web development resources and tools"
+    }
+  },
+  {
+    "id": "ui-x-junwen-k-dev",
+    "title": "junwen-k/ui-x",
+    "url": "https://ui-x.junwen-k.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/ui-x-junwen-k-dev.webp",
+    "description": {
+      "tr": "Kopyala-yapıştır UI bileşenleri",
+      "en": "Copy-paste UI components"
+    }
+  },
+  {
+    "id": "ui-spectrumhq-in",
+    "title": "Spectrum UI",
+    "url": "https://ui.spectrumhq.in/",
+    "category": "sites",
+    "image": "/media/bookmarks/ui-spectrumhq-in.webp",
+    "description": {
+      "tr": "Tailwind React bileşen kütüphanesi",
+      "en": "Tailwind React component library"
+    }
+  },
+  {
+    "id": "shadcn-builder-com",
+    "title": "Shadcn Builder",
+    "url": "https://www.shadcn-builder.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/shadcn-builder-com.webp",
+    "description": {
+      "tr": "shadcn form oluşturucu",
+      "en": "shadcn form builder"
+    }
+  },
+  {
+    "id": "base-ui-com-react-overview-quick-start",
+    "title": "Base UI",
+    "url": "https://base-ui.com/react/overview/quick-start",
+    "category": "sites",
+    "image": "/media/bookmarks/base-ui-com-react-overview-quick-start.webp",
+    "description": {
+      "tr": "Headless React bileşenleri",
+      "en": "Headless React components"
+    }
+  },
+  {
+    "id": "reactflow-dev",
+    "title": "React Flow",
+    "url": "https://reactflow.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/reactflow-dev.webp",
+    "description": {
+      "tr": "Node tabanlı akış diyagramları",
+      "en": "Node-based flow diagrams"
+    }
+  },
+  {
+    "id": "tweakcn-com",
+    "title": "tweakcn",
+    "url": "https://tweakcn.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/tweakcn-com.webp",
+    "description": {
+      "tr": "shadcn/ui tema editörü",
+      "en": "shadcn/ui theme editor"
+    }
+  },
+  {
+    "id": "codediagram-io",
+    "title": "Code Diagram",
+    "url": "https://www.codediagram.io/",
+    "category": "sites",
+    "image": "/media/bookmarks/codediagram-io.webp",
+    "description": {
+      "tr": "VS Code içi diyagram aracı",
+      "en": "Diagrams inside VS Code"
+    }
+  },
+  {
+    "id": "forgeui-in",
+    "title": "ForgeUI",
+    "url": "https://forgeui.in/",
+    "category": "sites",
+    "image": "/media/bookmarks/forgeui-in.webp",
+    "description": {
+      "tr": "Erişilebilir açık kaynak UI",
+      "en": "Accessible open-source UI"
+    }
+  },
+  {
+    "id": "npmjs-com-package-react-just-parallax",
+    "title": "react-just-parallax",
+    "url": "https://www.npmjs.com/package/react-just-parallax",
+    "category": "packages",
+    "image": "/media/bookmarks/npmjs-com-package-react-just-parallax.webp",
+    "description": {
+      "tr": "Scroll/mouse parallax efekti",
+      "en": "Scroll and mouse parallax"
+    }
+  },
+  {
+    "id": "github-com-francoischalifour-medium-zoom",
+    "title": "medium-zoom",
+    "url": "https://github.com/francoischalifour/medium-zoom",
+    "category": "packages",
+    "image": "/media/bookmarks/github-com-francoischalifour-medium-zoom.webp",
+    "description": {
+      "tr": "Medium tarzı resim zoom",
+      "en": "Medium-style image zoom"
+    }
+  },
+  {
+    "id": "suchi-imharsh-in",
+    "title": "suchi",
+    "url": "https://www.suchi.imharsh.in/",
+    "category": "packages",
+    "image": "/media/bookmarks/suchi-imharsh-in.webp",
+    "description": {
+      "tr": "React index/liste bileşeni",
+      "en": "React index and list component"
+    }
+  },
+  {
+    "id": "auto-animate-formkit-com",
+    "title": "auto-animate",
+    "url": "https://auto-animate.formkit.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/auto-animate-formkit-com.webp",
+    "description": {
+      "tr": "Otomatik DOM animasyonları",
+      "en": "Automatic DOM animations"
+    }
+  },
+  {
+    "id": "zustand-demo-pmnd-rs",
+    "title": "zustand",
+    "url": "https://zustand-demo.pmnd.rs/",
+    "category": "packages",
+    "image": "/media/bookmarks/zustand-demo-pmnd-rs.webp",
+    "description": {
+      "tr": "Hafif React state yönetimi",
+      "en": "Lightweight React state management"
+    }
+  },
+  {
+    "id": "imask-js-org",
+    "title": "imask",
+    "url": "https://imask.js.org/",
+    "category": "packages",
+    "image": "/media/bookmarks/imask-js-org.webp",
+    "description": {
+      "tr": "Input mask (telefon, tarih)",
+      "en": "Input masks (phone, date)"
+    }
+  },
+  {
+    "id": "react-svgr-com",
+    "title": "svgr",
+    "url": "https://react-svgr.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/react-svgr-com.webp",
+    "description": {
+      "tr": "SVG'yi React bileşenine çevirir",
+      "en": "Turns SVG into React components"
+    }
+  },
+  {
+    "id": "npmjs-com-package-clsx",
+    "title": "clsx",
+    "url": "https://www.npmjs.com/package/clsx",
+    "category": "packages",
+    "image": "/media/bookmarks/npmjs-com-package-clsx.webp",
+    "description": {
+      "tr": "Koşullu className birleştirme",
+      "en": "Conditional className joining"
+    }
+  },
+  {
+    "id": "tailwindcss-com",
+    "title": "tailwindcss",
+    "url": "https://tailwindcss.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/tailwindcss-com.webp",
+    "description": {
+      "tr": "Sınıf tabanlı CSS framework",
+      "en": "Utility-first CSS framework"
+    }
+  },
+  {
+    "id": "skeletongenerator-com",
+    "title": "skeleton-generator",
+    "url": "https://skeletongenerator.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/skeletongenerator-com.webp",
+    "description": {
+      "tr": "Skeleton loading UI üretici",
+      "en": "Skeleton loading UI generator"
+    }
+  },
+  {
+    "id": "tanstack-com",
+    "title": "tanstack",
+    "url": "https://tanstack.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/tanstack-com.webp",
+    "description": {
+      "tr": "Headless React araçları",
+      "en": "Headless React tools"
+    }
+  },
+  {
+    "id": "storybook-js-org",
+    "title": "storybook",
+    "url": "https://storybook.js.org/",
+    "category": "packages",
+    "image": "/media/bookmarks/storybook-js-org.webp",
+    "description": {
+      "tr": "Bileşen geliştirme ortamı",
+      "en": "Component workshop"
+    }
+  },
+  {
+    "id": "ui-shadcn-com",
+    "title": "shadcn/ui",
+    "url": "https://ui.shadcn.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/ui-shadcn-com.webp",
+    "description": {
+      "tr": "Kopyala-yapıştır UI bileşenleri",
+      "en": "Copy-paste UI components"
+    }
+  },
+  {
+    "id": "react-hook-form-com",
+    "title": "react-hook-form",
+    "url": "https://www.react-hook-form.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/react-hook-form-com.webp",
+    "description": {
+      "tr": "Form validasyon hook'ları",
+      "en": "Form validation hooks"
+    }
+  },
+  {
+    "id": "platejs-org",
+    "title": "platejs",
+    "url": "https://platejs.org/",
+    "category": "packages",
+    "image": "/media/bookmarks/platejs-org.webp",
+    "description": {
+      "tr": "Zengin metin editörü",
+      "en": "Rich text editor"
+    }
+  },
+  {
+    "id": "nextjs-org",
+    "title": "next",
+    "url": "https://nextjs.org/",
+    "category": "packages",
+    "image": "/media/bookmarks/nextjs-org.webp",
+    "description": {
+      "tr": "Tam yığın React framework",
+      "en": "Full-stack React framework"
+    }
+  },
+  {
+    "id": "motion-dev",
+    "title": "motion",
+    "url": "https://motion.dev/",
+    "category": "packages",
+    "image": "/media/bookmarks/motion-dev.webp",
+    "description": {
+      "tr": "React/JS/Vue animasyonları",
+      "en": "Animations for React, JS and Vue"
+    }
+  },
+  {
+    "id": "typicode-github-io-husky",
+    "title": "husky",
+    "url": "https://typicode.github.io/husky/",
+    "category": "packages",
+    "image": "/media/bookmarks/typicode-github-io-husky.webp",
+    "description": {
+      "tr": "Git hook'larını kolay yönetme",
+      "en": "Git hooks made easy"
+    }
+  },
+  {
+    "id": "github-com-duskload-react-device-detect-tab-readme-ov-file",
+    "title": "react-device-detect",
+    "url": "https://github.com/duskload/react-device-detect?tab=readme-ov-file",
+    "category": "packages",
+    "image": "/media/bookmarks/github-com-duskload-react-device-detect-tab-readme-ov-file.webp",
+    "description": {
+      "tr": "Cihaz/tarayıcı tespiti",
+      "en": "Device and browser detection"
+    }
+  },
+  {
+    "id": "usehooks-ts-com",
+    "title": "usehooks-ts",
+    "url": "https://usehooks-ts.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/usehooks-ts-com.webp",
+    "description": {
+      "tr": "Hazır TypeScript React hook'ları",
+      "en": "Ready-made TypeScript React hooks"
+    }
+  },
+  {
+    "id": "react-querybuilder-js-org",
+    "title": "react-querybuilder",
+    "url": "https://react-querybuilder.js.org/",
+    "category": "packages",
+    "image": "/media/bookmarks/react-querybuilder-js-org.webp",
+    "description": {
+      "tr": "Filtre/sorgu oluşturucu",
+      "en": "Filter and query builder"
+    }
+  },
+  {
+    "id": "joren-co-tailwindcss-debug-screens-demo",
+    "title": "tailwindcss-debug-screens",
+    "url": "https://www.joren.co/tailwindcss-debug-screens-demo/",
+    "category": "packages",
+    "image": "/media/bookmarks/joren-co-tailwindcss-debug-screens-demo.webp",
+    "description": {
+      "tr": "Breakpoint debug eklentisi",
+      "en": "Breakpoint debugging plugin"
+    }
+  },
+  {
+    "id": "react-scan-com",
+    "title": "react-scan",
+    "url": "https://react-scan.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/react-scan-com.webp",
+    "description": {
+      "tr": "Yavaş render tespiti",
+      "en": "Finds slow renders"
+    }
+  },
+  {
+    "id": "cva-style-docs",
+    "title": "cva",
+    "url": "https://cva.style/docs",
+    "category": "packages",
+    "image": "/media/bookmarks/cva-style-docs.webp",
+    "description": {
+      "tr": "Tip güvenli CSS variant API",
+      "en": "Type-safe CSS variant API"
+    }
+  },
+  {
+    "id": "tailwind-variants-org",
+    "title": "tailwind-variants",
+    "url": "https://www.tailwind-variants.org/",
+    "category": "packages",
+    "image": "/media/bookmarks/tailwind-variants-org.webp",
+    "description": {
+      "tr": "Tailwind variant sistemi",
+      "en": "Variant system for Tailwind"
+    }
+  },
+  {
+    "id": "trpc-io",
+    "title": "trpc",
+    "url": "https://trpc.io/",
+    "category": "packages",
+    "image": "/media/bookmarks/trpc-io.webp",
+    "description": {
+      "tr": "Uçtan uca type-safe API",
+      "en": "End-to-end type-safe APIs"
+    }
+  },
+  {
+    "id": "nuqs-47ng-com",
+    "title": "nuqs",
+    "url": "https://nuqs.47ng.com/",
+    "category": "packages",
+    "image": "/media/bookmarks/nuqs-47ng-com.webp",
+    "description": {
+      "tr": "URL tabanlı React state",
+      "en": "URL-based React state"
+    }
+  },
+  {
+    "id": "cmdk-paco-me",
+    "title": "cmdk",
+    "url": "https://cmdk.paco.me/",
+    "category": "packages",
+    "image": "/media/bookmarks/cmdk-paco-me.webp",
+    "description": {
+      "tr": "Komut paleti bileşeni",
+      "en": "Command palette component"
+    }
+  },
+  {
+    "id": "frimousse-liveblocks-io-ref-dailydev",
+    "title": "frimousse",
+    "url": "https://frimousse.liveblocks.io/?ref=dailydev",
+    "category": "packages",
+    "image": "/media/bookmarks/frimousse-liveblocks-io-ref-dailydev.webp",
+    "description": {
+      "tr": "Hafif emoji seçici",
+      "en": "Lightweight emoji picker"
+    }
+  },
+  {
+    "id": "21st-dev-home",
+    "title": "21st.dev",
+    "url": "https://21st.dev/home",
+    "category": "sites",
+    "image": "/media/bookmarks/21st-dev-home.webp",
+    "description": {
+      "tr": "Topluluk React bileşen kaydı",
+      "en": "Community React component registry"
+    }
+  },
+  {
+    "id": "launchmvpfast-com",
+    "title": "Launch MVP Fast",
+    "url": "https://www.launchmvpfast.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/launchmvpfast-com.webp",
+    "description": {
+      "tr": "MVP geliştirme hizmeti",
+      "en": "MVP development service"
+    }
+  },
+  {
+    "id": "formcn-dev",
+    "title": "Formcn",
+    "url": "https://formcn.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/formcn-dev.webp",
+    "description": {
+      "tr": "shadcn form builder",
+      "en": "shadcn form builder"
+    }
+  },
+  {
+    "id": "docusaurus-io",
+    "title": "Docusaurus",
+    "url": "https://docusaurus.io/",
+    "category": "sites",
+    "image": "/media/bookmarks/docusaurus-io.webp",
+    "description": {
+      "tr": "Dokümantasyon sitesi oluşturucu",
+      "en": "Documentation site generator"
+    }
+  },
+  {
+    "id": "shadcn-svelte-extras-com",
+    "title": "shadcn-svelte-extras",
+    "url": "https://www.shadcn-svelte-extras.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/shadcn-svelte-extras-com.webp",
+    "description": {
+      "tr": "Svelte shadcn ek bileşenleri",
+      "en": "Extra shadcn components for Svelte"
+    }
+  },
+  {
+    "id": "cult-ui-com",
+    "title": "Cult UI",
+    "url": "https://www.cult-ui.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/cult-ui-com.webp",
+    "description": {
+      "tr": "shadcn blok ve şablonları",
+      "en": "shadcn blocks and templates"
+    }
+  },
+  {
+    "id": "andreasbm-github-io-web-skills",
+    "title": "Web Skills",
+    "url": "https://andreasbm.github.io/web-skills/",
+    "category": "sites",
+    "image": "/media/bookmarks/andreasbm-github-io-web-skills.webp",
+    "description": {
+      "tr": "Web geliştirici beceri haritası",
+      "en": "A skill map for web developers"
+    }
+  },
+  {
+    "id": "fancycomponents-dev-components",
+    "title": "Fancy Components",
+    "url": "https://www.fancycomponents.dev/components",
+    "category": "sites",
+    "image": "/media/bookmarks/fancycomponents-dev-components.webp",
+    "description": {
+      "tr": "Etkileşimli React bileşenleri",
+      "en": "Interactive React components"
+    }
+  },
+  {
+    "id": "skiper-ui-com",
+    "title": "Skiper UI",
+    "url": "https://skiper-ui.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/skiper-ui-com.webp",
+    "description": {
+      "tr": "shadcn için ek bileşenler",
+      "en": "Extra components for shadcn"
+    }
+  },
+  {
+    "id": "github-com-birobirobiro-awesome-shadcn-ui",
+    "title": "awesome-shadcn-ui",
+    "url": "https://github.com/birobirobiro/awesome-shadcn-ui",
+    "category": "sites",
+    "image": "/media/bookmarks/github-com-birobirobiro-awesome-shadcn-ui.webp",
+    "description": {
+      "tr": "shadcn/ui kaynak listesi",
+      "en": "A list of shadcn/ui resources"
+    }
+  },
+  {
+    "id": "frontendchecklist-io",
+    "title": "Front-End Checklist",
+    "url": "https://frontendchecklist.io/",
+    "category": "sites",
+    "image": "/media/bookmarks/frontendchecklist-io.webp",
+    "description": {
+      "tr": "Frontend kalite kuralları",
+      "en": "Frontend quality rules"
+    }
+  },
+  {
+    "id": "conventionalcommits-org-en-v1-0-0",
+    "title": "Conventional Commits",
+    "url": "https://www.conventionalcommits.org/en/v1.0.0/",
+    "category": "sites",
+    "image": "/media/bookmarks/conventionalcommits-org-en-v1-0-0.webp",
+    "description": {
+      "tr": "Commit mesajı standardı",
+      "en": "Commit message standard"
+    }
+  },
+  {
+    "id": "component-party-dev",
+    "title": "Component Party",
+    "url": "https://component-party.dev/",
+    "category": "sites",
+    "image": "/media/bookmarks/component-party-dev.webp",
+    "description": {
+      "tr": "Framework bileşen karşılaştırması",
+      "en": "Components compared across frameworks"
+    }
+  },
+  {
+    "id": "tailwind-colors-meidev-co",
+    "title": "Tailwind Colors",
+    "url": "https://tailwind-colors.meidev.co/",
+    "category": "sites",
+    "image": "/media/bookmarks/tailwind-colors-meidev-co.webp",
+    "description": {
+      "tr": "Tailwind renk paleti aracı",
+      "en": "Tailwind color palette tool"
+    }
+  },
+  {
+    "id": "tailwindgen-com",
+    "title": "Tailwind Grid Generator",
+    "url": "https://www.tailwindgen.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/tailwindgen-com.webp",
+    "description": {
+      "tr": "Tailwind grid oluşturucu",
+      "en": "Tailwind grid generator"
+    }
+  },
+  {
+    "id": "shadcn-form-build-vercel-app",
+    "title": "shadcn Form Builder",
+    "url": "https://shadcn-form-build.vercel.app/",
+    "category": "sites",
+    "image": "/media/bookmarks/shadcn-form-build-vercel-app.webp",
+    "description": {
+      "tr": "Görsel shadcn form builder",
+      "en": "Visual shadcn form builder"
+    }
+  },
+  {
+    "id": "originui-com",
+    "title": "Origin UI",
+    "url": "https://originui.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/originui-com.webp",
+    "description": {
+      "tr": "Modern UI bileşen kütüphanesi",
+      "en": "Modern UI component library"
+    }
+  },
+  {
+    "id": "magicui-design",
+    "title": "Magic UI",
+    "url": "https://magicui.design/",
+    "category": "sites",
+    "image": "/media/bookmarks/magicui-design.webp",
+    "description": {
+      "tr": "Landing page bileşen ve şablonları",
+      "en": "Landing page components and templates"
+    }
+  },
+  {
+    "id": "ui-aceternity-com",
+    "title": "Aceternity UI",
+    "url": "https://ui.aceternity.com/",
+    "category": "sites",
+    "image": "/media/bookmarks/ui-aceternity-com.webp",
+    "description": {
+      "tr": "Animasyonlu UI bileşenleri",
+      "en": "Animated UI components"
+    }
+  }
+]

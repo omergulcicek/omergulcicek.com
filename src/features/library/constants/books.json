@@ -1,0 +1,2222 @@
+[
+  {
+    "id": "sir-arthur-conan-doyle-suphe-asla-uyumaz",
+    "title": "Şüphe Asla Uyumaz",
+    "subtitle": null,
+    "authors": ["Sir Arthur Conan Doyle"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/suphe-asla-uyumaz/605893.html",
+    "image": "/media/books/sir-arthur-conan-doyle-suphe-asla-uyumaz.webp"
+  },
+  {
+    "id": "sir-arthur-conan-doyle-suc-detayda-saklidir",
+    "title": "Suç Detayda Saklıdır",
+    "subtitle": null,
+    "authors": ["Sir Arthur Conan Doyle"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/suc-detayda-saklidir/605890.html",
+    "image": "/media/books/sir-arthur-conan-doyle-suc-detayda-saklidir.webp"
+  },
+  {
+    "id": "sir-arthur-conan-doyle-gercekler-kanit-ister",
+    "title": "Gerçekler Kanıt İster",
+    "subtitle": null,
+    "authors": ["Sir Arthur Conan Doyle"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/gercekler-kanit-ister/605894.html",
+    "image": "/media/books/sir-arthur-conan-doyle-gercekler-kanit-ister.webp"
+  },
+  {
+    "id": "sir-arthur-conan-doyle-aklin-suphesi-sucun-gercegidir",
+    "title": "Aklın Şüphesi Suçun Gerçeğidir",
+    "subtitle": null,
+    "authors": ["Sir Arthur Conan Doyle"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/aklin-suphesi-sucun-gercegidir/605892.html",
+    "image": "/media/books/sir-arthur-conan-doyle-aklin-suphesi-sucun-gercegidir.webp"
+  },
+  {
+    "id": "sir-arthur-conan-doyle-akil-oyunlarinin-golgesinde",
+    "title": "Akıl Oyunlarının Gölgesinde",
+    "subtitle": null,
+    "authors": ["Sir Arthur Conan Doyle"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/akil-oyunlarinin-golgesinde/605891.html",
+    "image": "/media/books/sir-arthur-conan-doyle-akil-oyunlarinin-golgesinde.webp"
+  },
+  {
+    "id": "piyon-321683",
+    "title": "Piyon",
+    "subtitle": null,
+    "authors": ["Michael Sikkofield"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/piyon/321683.html",
+    "image": "/media/books/piyon-321683.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-vecizelerim",
+    "title": "Vecizelerim (Aforizmalar)",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/vecizelerim/640686.html",
+    "image": "/media/books/ismail-hakki-aydin-vecizelerim.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-yasam-5-0-kuantik-dusunce-sarmali",
+    "title": "Yaşam 5.0: Kuantik Düşünce Sarmalı",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/yasam-50-chatgpt-kuantik-dusunce-sarmali/655336.html",
+    "image": "/media/books/ismail-hakki-aydin-yasam-5-0-kuantik-dusunce-sarmali.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-homo-deyyus",
+    "title": "Homo Deyyus",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/homo-deyyus-kiyamet-serisi-1/709752.html",
+    "image": "/media/books/ismail-hakki-aydin-homo-deyyus.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-ve-tanri-beyni-yaratti",
+    "title": "ve Tanrı Beyni Yarattı",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/ve-tanri-beyni-yaratti-bilim-felsefesi-serisi-1/614142.html",
+    "image": "/media/books/ismail-hakki-aydin-ve-tanri-beyni-yaratti.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-frekansa-burundum-beyin-diye-gorundum",
+    "title": "Frekansa Büründüm Beyin Diye Göründüm",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/frekansa-burundum-beyin-diye-gorundum/634222.html",
+    "image": "/media/books/ismail-hakki-aydin-frekansa-burundum-beyin-diye-gorundum.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-frekanslar-aleminde-kainat-beyne-kucuk-noron-kainata-buyuk",
+    "title": "Frekanslar Âleminde Kâinat Beyne Küçük, Nöron Kâinata Büyük",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/frekanslar-aleminde-kainat-beyne-kucuk-noron-kainata-buyuk/677390.html",
+    "image": "/media/books/ismail-hakki-aydin-frekanslar-aleminde-kainat-beyne-kucuk-noron-kainata-buyuk.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-felsefe-karada-yuzme-denizde-yurume-sanatidir",
+    "title": "Felsefe Karada Yüzme Denizde Yürüme Sanatıdır",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/felsefe-karada-yuzme-denizde-yurume-sanatidir/664622.html",
+    "image": "/media/books/ismail-hakki-aydin-felsefe-karada-yuzme-denizde-yurume-sanatidir.webp"
+  },
+  {
+    "id": "ismail-hakki-aydin-insan-endiseli-bir-damla-hem-parcacik-hem-dalga",
+    "title": "İnsan Endişeli Bir Damla Hem Parçacık Hem Dalga",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Aydın"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/insan-endiseli-bir-damla-hem-parcacik-hem-dalga/645542.html",
+    "image": "/media/books/ismail-hakki-aydin-insan-endiseli-bir-damla-hem-parcacik-hem-dalga.webp"
+  },
+  {
+    "id": "pinar-ulgen-orta-cag-avrupasinda-ask-tutku-entrika-ve-romantizm",
+    "title": "Orta Çağ Avrupa'sında Aşk, Tutku, Entrika ve Romantizm",
+    "subtitle": null,
+    "authors": ["Pınar Ülgen"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/orta-cag-avrupasinda-ask-tutku-entrika-ve-romantizm/657630.html",
+    "image": "/media/books/pinar-ulgen-orta-cag-avrupasinda-ask-tutku-entrika-ve-romantizm.webp"
+  },
+  {
+    "id": "onur-inal-peradan-beyogluna",
+    "title": "Pera'dan Beyoğlu'na",
+    "subtitle": null,
+    "authors": ["Onur İnal"],
+    "translator": null,
+    "genre": "city-history",
+    "url": "https://www.kitapyurdu.com/kitap/peradan-beyogluna/84294.html",
+    "image": "/media/books/onur-inal-peradan-beyogluna.webp"
+  },
+  {
+    "id": "ramazan-sesen-ibn-fadlan-seyahatnamesi",
+    "title": "İbn Fadlan Seyahatnamesi",
+    "subtitle": null,
+    "authors": ["Ramazan Şeşen"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/ibn-fadlan-seyahatnamesi/143842.html",
+    "image": "/media/books/ramazan-sesen-ibn-fadlan-seyahatnamesi.webp"
+  },
+  {
+    "id": "ahmet-faik-ozbilge-fener-balat-ayvansaray",
+    "title": "Fener - Balat - Ayvansaray",
+    "subtitle": null,
+    "authors": ["Ahmet Faik Özbilge"],
+    "translator": null,
+    "genre": "city-history",
+    "url": "https://www.kitapyurdu.com/kitap/fener-balat-ayvansaray/125746.html",
+    "image": "/media/books/ahmet-faik-ozbilge-fener-balat-ayvansaray.webp"
+  },
+  {
+    "id": "59-yuz-portreler-457862",
+    "title": "59 Yüz / Portreler",
+    "subtitle": null,
+    "authors": ["Necmettin Asma"],
+    "translator": null,
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/59-yuz-portreler/457862.html",
+    "image": "/media/books/59-yuz-portreler-457862.webp"
+  },
+  {
+    "id": "kolektif-ahmet-emre-bilgili-sehir-ve-kultur-istanbul",
+    "title": "Şehir ve Kültür: İstanbul",
+    "subtitle": null,
+    "authors": ["Ahmet Emre Bilgili"],
+    "translator": null,
+    "genre": "city-history",
+    "url": "https://www.kitapyurdu.com/kitap/sehir-ve-kultur-istanbul/627493.html",
+    "image": "/media/books/kolektif-ahmet-emre-bilgili-sehir-ve-kultur-istanbul.webp"
+  },
+  {
+    "id": "mircea-eliade-mitlerin-ozellikleri",
+    "title": "Mitlerin Özellikleri",
+    "subtitle": null,
+    "authors": ["Mircea Eliade"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/mitlerin-ozellikleri/401752.html",
+    "image": "/media/books/mircea-eliade-mitlerin-ozellikleri.webp"
+  },
+  {
+    "id": "alev-alatli-hafazanallah",
+    "title": "Hafazanallah",
+    "subtitle": null,
+    "authors": ["Alev Alatlı"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/all-american-heman-hafazanallah-nasihatname-ii/510545.html",
+    "image": "/media/books/alev-alatli-hafazanallah.webp"
+  },
+  {
+    "id": "ali-fuad-basgil-genclerle-basbasa",
+    "title": "Gençlerle Başbaşa",
+    "subtitle": null,
+    "authors": ["Ali Fuad Başgil"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/genclerle-basbasa/148246.html",
+    "image": "/media/books/ali-fuad-basgil-genclerle-basbasa.webp"
+  },
+  {
+    "id": "sadece-aptallar-8-saat-uyur-81650",
+    "title": "Sadece Aptallar 8 Saat Uyur",
+    "subtitle": null,
+    "authors": ["Erdal Demirkıran"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/sadece-aptallar-8-saat-uyur/81650.html",
+    "image": "/media/books/sadece-aptallar-8-saat-uyur-81650.webp"
+  },
+  {
+    "id": "faruk-ondag-bi-musaade-sinavim-var",
+    "title": "Bi' Müsaade Sınavım Var",
+    "subtitle": null,
+    "authors": ["Faruk Öndağ"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/bi-musaade-sinavim-var/289860.html",
+    "image": "/media/books/faruk-ondag-bi-musaade-sinavim-var.webp"
+  },
+  {
+    "id": "ilber-ortayli-bir-omur-nasil-yasanir",
+    "title": "Bir Ömür Nasıl Yaşanır?",
+    "subtitle": null,
+    "authors": ["İlber Ortaylı"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/bir-omur-nasil-yasanir-hayatta-dogru-secimler-icin-oneriler/493305.html",
+    "image": "/media/books/ilber-ortayli-bir-omur-nasil-yasanir.webp"
+  },
+  {
+    "id": "ilber-ortayli-insan-gelecegini-nasil-kurar",
+    "title": "İnsan Geleceğini Nasıl Kurar?",
+    "subtitle": null,
+    "authors": ["İlber Ortaylı"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/insan-gelecegini-nasil-kurar-kendini-insa-etmenin-yollari/609007.html",
+    "image": "/media/books/ilber-ortayli-insan-gelecegini-nasil-kurar.webp"
+  },
+  {
+    "id": "japonizm-ciltli-499470",
+    "title": "Japonizm",
+    "subtitle": null,
+    "authors": ["Erin Niimi Longhurst"],
+    "translator": "Sevinç Seyla Tezcan",
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/japonizm-ciltli/499470.html",
+    "image": "/media/books/japonizm-ciltli-499470.webp"
+  },
+  {
+    "id": "japon-savas-sanati-busido-396401",
+    "title": "Buşido: Japon Savaşçı Yolu",
+    "subtitle": null,
+    "authors": ["Inazo Nitobe"],
+    "translator": "Doruk Akyüz",
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/japon-savas-sanati-busido/396401.html",
+    "image": "/media/books/japon-savas-sanati-busido-396401.webp"
+  },
+  {
+    "id": "e-a-wallis-budge-antik-misir-edebiyati",
+    "title": "Antik Mısır Edebiyatı",
+    "subtitle": null,
+    "authors": ["E. A. Wallis Budge"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/antik-misir-edebiyati-yazinsal-metinler/127717.html",
+    "image": "/media/books/e-a-wallis-budge-antik-misir-edebiyati.webp"
+  },
+  {
+    "id": "donald-a-mackenzie-babil-ve-asur-mitleri",
+    "title": "Babil ve Asur Mitleri",
+    "subtitle": null,
+    "authors": ["Donald A. Mackenzie"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/babil-ve-asur-efsaneleri-mitlerin-kokenine-yolculuk/685412.html",
+    "image": "/media/books/donald-a-mackenzie-babil-ve-asur-mitleri.webp"
+  },
+  {
+    "id": "serdar-tuncer-sermayem-yok-derdimden-baska",
+    "title": "Sermayem Yok Derdimden Başka",
+    "subtitle": null,
+    "authors": ["Serdar Tuncer"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/sermayem-yok-derdimden-baska/454096.html",
+    "image": "/media/books/serdar-tuncer-sermayem-yok-derdimden-baska.webp"
+  },
+  {
+    "id": "serdar-tuncer-hicbir-zaman-hicbir-sey",
+    "title": "Hiçbir Zaman Hiçbir Şey",
+    "subtitle": null,
+    "authors": ["Serdar Tuncer"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/hicbir-zaman-hicbir-sey/682179.html",
+    "image": "/media/books/serdar-tuncer-hicbir-zaman-hicbir-sey.webp"
+  },
+  {
+    "id": "ahmed-yuksel-ozemre-uskudarda-bir-attar-dukkani",
+    "title": "Üsküdar'da Bir Attar Dükkânı",
+    "subtitle": null,
+    "authors": ["Ahmed Yüksel Özemre"],
+    "translator": null,
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/uskudarda-bir-attar-dukkani/27134.html",
+    "image": "/media/books/ahmed-yuksel-ozemre-uskudarda-bir-attar-dukkani.webp"
+  },
+  {
+    "id": "medeniyet-tasavvuru-futuhati-medeniyyeye-giris-607691",
+    "title": "Medeniyet Tasavvuru",
+    "subtitle": null,
+    "authors": ["Yusuf Kaplan"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/medeniyet-tasavvuru-futuhati-medeniyyeye-giris-/607691.html",
+    "image": "/media/books/medeniyet-tasavvuru-futuhati-medeniyyeye-giris-607691.webp"
+  },
+  {
+    "id": "okumak-nedir-663010",
+    "title": "Okumak Nedir?",
+    "subtitle": null,
+    "authors": ["Yusuf Kaplan"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/okumak-nedir/663010.html",
+    "image": "/media/books/okumak-nedir-663010.webp"
+  },
+  {
+    "id": "turkiyenin-maarif-davasi-4879",
+    "title": "Türkiye'nin Maarif Dâvası",
+    "subtitle": null,
+    "authors": ["Nurettin Topçu"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/turkiyenin-maarif-davasi/4879.html",
+    "image": "/media/books/turkiyenin-maarif-davasi-4879.webp"
+  },
+  {
+    "id": "kesintisiz-ogrenme-42711",
+    "title": "Kesintisiz Öğrenme",
+    "subtitle": null,
+    "authors": ["Mümin Sekman"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/kesintisiz-ogrenme/42711.html",
+    "image": "/media/books/kesintisiz-ogrenme-42711.webp"
+  },
+  {
+    "id": "jeremy-stangroom-einstein-bulmacasi-2",
+    "title": "Einstein Bulmacası 2",
+    "subtitle": null,
+    "authors": ["Jeremy Stangroom"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/einstein-bulmacasi-2-aklinizin-sinirlarini-zorlayacak-bulmaca-ve-paradokslar/343350.html",
+    "image": "/media/books/jeremy-stangroom-einstein-bulmacasi-2.webp"
+  },
+  {
+    "id": "jeremy-stangroom-einstein-bulmacasi",
+    "title": "Einstein Bulmacası",
+    "subtitle": null,
+    "authors": ["Jeremy Stangroom"],
+    "translator": null,
+    "genre": "science",
+    "url": "https://www.kitapyurdu.com/kitap/einstein-bulmacasi-2-aklinizin-sinirlarini-zorlayacak-bulmaca-ve-paradokslar/343350.html",
+    "image": "/media/books/jeremy-stangroom-einstein-bulmacasi.webp"
+  },
+  {
+    "id": "ruh-adam-588450",
+    "title": "Ruh Adam",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/ruh-adam-/588450.html",
+    "image": "/media/books/ruh-adam-588450.webp"
+  },
+  {
+    "id": "bozkurtlar-243385",
+    "title": "Bozkurtlar",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/bozkurtlar/243385.html",
+    "image": "/media/books/bozkurtlar-243385.webp"
+  },
+  {
+    "id": "turk-ulkusu-251501",
+    "title": "Türk Ülküsü",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/turk-ulkusu/251501.html",
+    "image": "/media/books/turk-ulkusu-251501.webp"
+  },
+  {
+    "id": "turancilik-milli-degerler-ve-genclik-251503",
+    "title": "Turancılık, Millî Değerler ve Gençlik",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/turancilik-milli-degerler-ve-genclik/251503.html",
+    "image": "/media/books/turancilik-milli-degerler-ve-genclik-251503.webp"
+  },
+  {
+    "id": "turk-tarihinde-meseleler-246740",
+    "title": "Türk Tarihinde Meseleler",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/turk-tarihinde-meseleler/246740.html",
+    "image": "/media/books/turk-tarihinde-meseleler-246740.webp"
+  },
+  {
+    "id": "deli-kurt-243383",
+    "title": "Deli Kurt",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/deli-kurt/243383.html",
+    "image": "/media/books/deli-kurt-243383.webp"
+  },
+  {
+    "id": "yollarin-sonu-595418",
+    "title": "Yolların Sonu",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/yollarin-sonu/595418.html",
+    "image": "/media/books/yollarin-sonu-595418.webp"
+  },
+  {
+    "id": "atsiz-hikayeler-452636",
+    "title": "Hikâyeler",
+    "subtitle": null,
+    "authors": ["Hüseyin Nihal Atsız"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/atsiz-hikayeler/452636.html",
+    "image": "/media/books/atsiz-hikayeler-452636.webp"
+  },
+  {
+    "id": "james-clear-atomik-aliskanliklar",
+    "title": "Atomik Alışkanlıklar",
+    "subtitle": null,
+    "authors": ["James Clear"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/atomik-aliskanliklar/540793.html",
+    "image": "/media/books/james-clear-atomik-aliskanliklar.webp"
+  },
+  {
+    "id": "gelecegi-kesfedenler-dijital-cagin-biyografisi-416958",
+    "title": "Geleceği Keşfedenler",
+    "subtitle": null,
+    "authors": ["Walter Isaacson"],
+    "translator": "Duygu Dalgakıran",
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/gelecegi-kesfedenler-dijital-cagin-biyografisi/416958.html",
+    "image": "/media/books/gelecegi-kesfedenler-dijital-cagin-biyografisi-416958.webp"
+  },
+  {
+    "id": "suat-taser-konusma-egitimi",
+    "title": "Konuşma Eğitimi",
+    "subtitle": null,
+    "authors": ["Suat Taşer"],
+    "translator": null,
+    "genre": "self-improvement",
+    "url": "https://www.kitapyurdu.com/kitap/konusma-egitimi/137838.html",
+    "image": "/media/books/suat-taser-konusma-egitimi.webp"
+  },
+  {
+    "id": "yoksulluk-icimizde-4775",
+    "title": "Yoksulluk İçimizde",
+    "subtitle": null,
+    "authors": ["Mustafa Kutlu"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/yoksulluk-icimizde/4775.html",
+    "image": "/media/books/yoksulluk-icimizde-4775.webp"
+  },
+  {
+    "id": "ya-tahammul-ya-sefer-4801",
+    "title": "Ya Tahammül Ya Sefer",
+    "subtitle": null,
+    "authors": ["Mustafa Kutlu"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/ya-tahammul-ya-sefer/4801.html",
+    "image": "/media/books/ya-tahammul-ya-sefer-4801.webp"
+  },
+  {
+    "id": "uzun-hikaye-19088",
+    "title": "Uzun Hikâye",
+    "subtitle": null,
+    "authors": ["Mustafa Kutlu"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/uzun-hikaye/19088.html",
+    "image": "/media/books/uzun-hikaye-19088.webp"
+  },
+  {
+    "id": "sir-4798",
+    "title": "Sır",
+    "subtitle": null,
+    "authors": ["Mustafa Kutlu"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/sir/4798.html",
+    "image": "/media/books/sir-4798.webp"
+  },
+  {
+    "id": "bu-boyledir-4776",
+    "title": "Bu Böyledir",
+    "subtitle": null,
+    "authors": ["Mustafa Kutlu"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/bu-boyledir/4776.html",
+    "image": "/media/books/bu-boyledir-4776.webp"
+  },
+  {
+    "id": "bu-ulke-18263",
+    "title": "Bu Ülke",
+    "subtitle": null,
+    "authors": ["Cemil Meriç"],
+    "translator": null,
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/bu-ulke/18263.html",
+    "image": "/media/books/bu-ulke-18263.webp"
+  },
+  {
+    "id": "yitik-cennet-6384",
+    "title": "Yitik Cennet",
+    "subtitle": null,
+    "authors": ["Sezai Karakoç"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/yitik-cennet/6384.html",
+    "image": "/media/books/yitik-cennet-6384.webp"
+  },
+  {
+    "id": "insanligin-dirilisi-6385",
+    "title": "İnsanlığın Dirilişi",
+    "subtitle": null,
+    "authors": ["Sezai Karakoç"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/insanligin-dirilisi/6385.html",
+    "image": "/media/books/insanligin-dirilisi-6385.webp"
+  },
+  {
+    "id": "dirilis-neslinin-amentusu-6522",
+    "title": "Diriliş Neslinin Âmentüsü",
+    "subtitle": null,
+    "authors": ["Sezai Karakoç"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/dirilis-neslinin-amentusu/6522.html",
+    "image": "/media/books/dirilis-neslinin-amentusu-6522.webp"
+  },
+  {
+    "id": "islamin-dirilisi-6514",
+    "title": "İslâmın Dirilişi",
+    "subtitle": null,
+    "authors": ["Sezai Karakoç"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/islamin-dirilisi/6514.html",
+    "image": "/media/books/islamin-dirilisi-6514.webp"
+  },
+  {
+    "id": "sezai-karakoc-islamin-vadettikleri",
+    "title": "İslâmın Vâdettikleri",
+    "subtitle": null,
+    "authors": ["Roger Garaudy"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/islamin-vadettikleri/467400.html",
+    "image": "/media/books/sezai-karakoc-islamin-vadettikleri.webp"
+  },
+  {
+    "id": "islam-dusuncesi-551964",
+    "title": "İslâm Düşüncesi",
+    "subtitle": null,
+    "authors": ["Muhammed İkbal"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/islam-dusuncesi/551964.html",
+    "image": "/media/books/islam-dusuncesi-551964.webp"
+  },
+  {
+    "id": "muslumanca-dusunme-uzerine-denemeler-727",
+    "title": "Müslümanca Düşünme Üzerine Denemeler",
+    "subtitle": null,
+    "authors": ["Rasim Özdenören"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/muslumanca-dusunme-uzerine-denemeler/727.html",
+    "image": "/media/books/muslumanca-dusunme-uzerine-denemeler-727.webp"
+  },
+  {
+    "id": "gul-yetistiren-adam-488",
+    "title": "Gül Yetiştiren Adam",
+    "subtitle": null,
+    "authors": ["Rasim Özdenören"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/gul-yetistiren-adam/488.html",
+    "image": "/media/books/gul-yetistiren-adam-488.webp"
+  },
+  {
+    "id": "m-yusuf-kadioglu-musluman-muhendisin-yol-haritasi",
+    "title": "Müslüman Mühendisin Yol Haritası",
+    "subtitle": null,
+    "authors": ["M. Yusuf Kadıoğlu"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/musluman-muhendisin-yol-haritasi/654190.html",
+    "image": "/media/books/m-yusuf-kadioglu-musluman-muhendisin-yol-haritasi.webp"
+  },
+  {
+    "id": "insanligin-medeniyet-destani-461827",
+    "title": "İnsanlığın Medeniyet Destanı",
+    "subtitle": null,
+    "authors": ["Roger Garaudy"],
+    "translator": "Cemal Aydın",
+    "genre": "philosophy",
+    "url": "https://www.kitapyurdu.com/kitap/insanligin-medeniyet-destani/461827.html",
+    "image": "/media/books/insanligin-medeniyet-destani-461827.webp"
+  },
+  {
+    "id": "hemdem-kalpten-kalbe-bir-yol-vardir-677801",
+    "title": "Hemdem",
+    "subtitle": null,
+    "authors": ["Sait Köşk"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/hemdem-kalpten-kalbe-bir-yol-vardir/677801.html",
+    "image": "/media/books/hemdem-kalpten-kalbe-bir-yol-vardir-677801.webp"
+  },
+  {
+    "id": "besir-ayvazoglu-kugunun-son-sarkisi",
+    "title": "Kuğunun Son Şarkısı",
+    "subtitle": null,
+    "authors": ["Beşir Ayvazoğlu"],
+    "translator": null,
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/galib-kugunun-son-sarkisi/629295.html",
+    "image": "/media/books/besir-ayvazoglu-kugunun-son-sarkisi.webp"
+  },
+  {
+    "id": "mel-thompson-budizmin-bilgeligi",
+    "title": "Budizm'in Bilgeliği",
+    "subtitle": null,
+    "authors": ["Mel Thompson"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/budizmin-bilgeligi/62976.html",
+    "image": "/media/books/mel-thompson-budizmin-bilgeligi.webp"
+  },
+  {
+    "id": "antik-misirin-peygamberleri-hz-idris-hz-yusuf-hz-musa-701428",
+    "title": "Antik Mısır'ın Peygamberleri",
+    "subtitle": null,
+    "authors": ["Bülent Şahin Erdeğer"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/antik-misirin-peygamberleri-hz-idris-hz-yusuf-hz-musa/701428.html",
+    "image": "/media/books/antik-misirin-peygamberleri-hz-idris-hz-yusuf-hz-musa-701428.webp"
+  },
+  {
+    "id": "bektasilik-710982",
+    "title": "Bektaşilik",
+    "subtitle": null,
+    "authors": ["Ahmet Yaşar Ocak"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/bektasilik/710982.html",
+    "image": "/media/books/bektasilik-710982.webp"
+  },
+  {
+    "id": "dogu-bati-arasinda-islam-495562",
+    "title": "Doğu Batı Arasında İslam",
+    "subtitle": null,
+    "authors": ["Aliya İzzetbegoviç"],
+    "translator": "Edina Nurikiç",
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/dogu-bati-arasinda-islam/495562.html",
+    "image": "/media/books/dogu-bati-arasinda-islam-495562.webp"
+  },
+  {
+    "id": "uyur-idik-uyardilar-turk-sufizminin-izleri-uzerine-anadolu-halk-islami-arastirmalari-620987",
+    "title": "Uyur İdik Uyardılar",
+    "subtitle": null,
+    "authors": ["Irene Melikoff"],
+    "translator": "Başak Bıçak",
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/uyur-idik-uyardilar-turk-sufizminin-izleri-uzerine-anadolu-halk-islami-arastirmalari/620987.html",
+    "image": "/media/books/uyur-idik-uyardilar-turk-sufizminin-izleri-uzerine-anadolu-halk-islami-arastirmalari-620987.webp"
+  },
+  {
+    "id": "suleyman-uludag-islam-dusuncesinin-yapisi",
+    "title": "İslam Düşüncesinin Yapısı",
+    "subtitle": null,
+    "authors": ["Süleyman Uludağ"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/islam-dusuncesinin-yapisi/4821.html",
+    "image": "/media/books/suleyman-uludag-islam-dusuncesinin-yapisi.webp"
+  },
+  {
+    "id": "azizuddin-nesefi-tasavvufta-insan-meselesi",
+    "title": "Tasavvufta İnsan Meselesi",
+    "subtitle": null,
+    "authors": ["Azizüddin Nesefi"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/tasavvufta-insan-meselesi/4832.html",
+    "image": "/media/books/azizuddin-nesefi-tasavvufta-insan-meselesi.webp"
+  },
+  {
+    "id": "ibn-haldun-tasavvufun-mahiyeti",
+    "title": "Tasavvufun Mahiyeti",
+    "subtitle": null,
+    "authors": ["İbn Haldun"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/tasavvufun-mahiyeti/4782.html",
+    "image": "/media/books/ibn-haldun-tasavvufun-mahiyeti.webp"
+  },
+  {
+    "id": "fihi-ma-fih-mevlananin-konusma-ve-sohbetleri-461625",
+    "title": "Fîhi Mâ Fîh",
+    "subtitle": null,
+    "authors": ["Mevlânâ Celâleddîn-i Rûmî"],
+    "translator": "Cemal Aydın",
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/fihi-ma-fih-mevlananin-konusma-ve-sohbetleri/461625.html",
+    "image": "/media/books/fihi-ma-fih-mevlananin-konusma-ve-sohbetleri-461625.webp"
+  },
+  {
+    "id": "futuhul-gayb-alemlerin-kesfi-487377",
+    "title": "Fütûhül-Gayb",
+    "subtitle": null,
+    "authors": ["Abdülkadir Geylânî"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/futuhul-gayb-alemlerin-kesfi/487377.html",
+    "image": "/media/books/futuhul-gayb-alemlerin-kesfi-487377.webp"
+  },
+  {
+    "id": "bu-dunya-icin-yaratilmadin-641708",
+    "title": "Bu Dünya İçin Yaratılmadın",
+    "subtitle": null,
+    "authors": ["Abdülkadir Geylânî"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/bu-dunya-icin-yaratilmadin/641708.html",
+    "image": "/media/books/bu-dunya-icin-yaratilmadin-641708.webp"
+  },
+  {
+    "id": "ideolocya-orgusu-kod36-1099",
+    "title": "İdeolocya Örgüsü",
+    "subtitle": null,
+    "authors": ["Necip Fazıl Kısakürek"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/ideolocya-orgusu-kod36/1099.html",
+    "image": "/media/books/ideolocya-orgusu-kod36-1099.webp"
+  },
+  {
+    "id": "cole-inen-nur-kod39-1102",
+    "title": "Çöle İnen Nur",
+    "subtitle": null,
+    "authors": ["Necip Fazıl Kısakürek"],
+    "translator": null,
+    "genre": "sira",
+    "url": "https://www.kitapyurdu.com/kitap/cole-inen-nur-kod39/1102.html",
+    "image": "/media/books/cole-inen-nur-kod39-1102.webp"
+  },
+  {
+    "id": "40-pratik-sunnet-599358",
+    "title": "40 Pratik Sünnet",
+    "subtitle": null,
+    "authors": ["Ali Hammuda"],
+    "translator": "İbrahim Eski",
+    "genre": "hadith",
+    "url": "https://www.kitapyurdu.com/kitap/40-pratik-sunnet/599358.html",
+    "image": "/media/books/40-pratik-sunnet-599358.webp"
+  },
+  {
+    "id": "osman-keskioglu-siyer-i-nebi",
+    "title": "Siyer-i Nebî",
+    "subtitle": "Hazret-i Peygamber'in Hayatı",
+    "authors": ["Osman Keskioğlu"],
+    "translator": null,
+    "genre": "sira",
+    "url": "https://www.kitapyurdu.com/kitap/siyeri-nebi-hazreti-peygamberin-hayati/440154.html",
+    "image": "/media/books/osman-keskioglu-siyer-i-nebi.webp"
+  },
+  {
+    "id": "halil-inalcik-osmanli-tarihinde-efsaneler-ve-gercekler",
+    "title": "Osmanlı Tarihinde Efsaneler ve Gerçekler",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-tarihinde-efsaneler-ve-gercekler/432787.html",
+    "image": "/media/books/halil-inalcik-osmanli-tarihinde-efsaneler-ve-gercekler.webp"
+  },
+  {
+    "id": "osmanlilar-kulturel-tarih-460636",
+    "title": "Osmanlılar Kültürel Tarih",
+    "subtitle": null,
+    "authors": ["Suraiya Faroqhi"],
+    "translator": "Çağdaş Sümer",
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanlilar-kulturel-tarih/460636.html",
+    "image": "/media/books/osmanlilar-kulturel-tarih-460636.webp"
+  },
+  {
+    "id": "cemal-kafadar-kendine-ait-bir-roma",
+    "title": "Kendine Ait Bir Roma",
+    "subtitle": null,
+    "authors": ["Cemal Kafadar"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/kendine-ait-bir-roma-diyari-rumda-kulturel-cografya-ve-kimlik-uzerine/426356.html",
+    "image": "/media/books/cemal-kafadar-kendine-ait-bir-roma.webp"
+  },
+  {
+    "id": "cemal-kafadar-kim-var-imis-biz-burada-yog-iken",
+    "title": "Kim Var İmiş Biz Burada Yoğ İken",
+    "subtitle": null,
+    "authors": ["Cemal Kafadar"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/kim-var-imis-biz-burada-yog-iken-dort-osmanli-yeniceri-tuccar-dervis-ve-hatun/137406.html",
+    "image": "/media/books/cemal-kafadar-kim-var-imis-biz-burada-yog-iken.webp"
+  },
+  {
+    "id": "ilber-ortayli-osmanliyi-yeniden-kesfetmek",
+    "title": "Osmanlı'yı Yeniden Keşfetmek",
+    "subtitle": null,
+    "authors": ["İlber Ortaylı"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanliyi-yeniden-kesfetmek/636864.html",
+    "image": "/media/books/ilber-ortayli-osmanliyi-yeniden-kesfetmek.webp"
+  },
+  {
+    "id": "cansu-canan-ozgen-turklerin-seruveni",
+    "title": "Türklerin Serüveni",
+    "subtitle": null,
+    "authors": ["Cansu Canan Özgen"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/turklerin-seruveni-metehandan-attilaya-fatihten-ataturke/438994.html",
+    "image": "/media/books/cansu-canan-ozgen-turklerin-seruveni.webp"
+  },
+  {
+    "id": "resad-ekrem-kocu-osmanli-tarihinin-panoramasi",
+    "title": "Osmanlı Tarihinin Panoraması",
+    "subtitle": null,
+    "authors": ["Reşad Ekrem Koçu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-tarihinin-panoramasi/52659.html",
+    "image": "/media/books/resad-ekrem-kocu-osmanli-tarihinin-panoramasi.webp"
+  },
+  {
+    "id": "resad-ekrem-kocu-topkapi-sarayi",
+    "title": "Topkapı Sarayı",
+    "subtitle": null,
+    "authors": ["Reşad Ekrem Koçu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/topkapi-sarayi/63602.html",
+    "image": "/media/books/resad-ekrem-kocu-topkapi-sarayi.webp"
+  },
+  {
+    "id": "resad-ekrem-kocu-yeniceriler",
+    "title": "Yeniçeriler",
+    "subtitle": null,
+    "authors": ["Reşad Ekrem Koçu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/yeniceriler-resad-ekrem-kocu/57398.html",
+    "image": "/media/books/resad-ekrem-kocu-yeniceriler.webp"
+  },
+  {
+    "id": "ayasofyanin-gizli-tarihi-386572",
+    "title": "Ayasofya'nın Gizli Tarihi",
+    "subtitle": null,
+    "authors": ["Pelin Çift", "Erhan Altunay"],
+    "translator": null,
+    "genre": "city-history",
+    "url": "https://www.kitapyurdu.com/kitap/ayasofyanin-gizli-tarihi/386572.html",
+    "image": "/media/books/ayasofyanin-gizli-tarihi-386572.webp"
+  },
+  {
+    "id": "dersaadette-bayram-sabahlari-509826",
+    "title": "Dersââdet'te Bayram Sabahları",
+    "subtitle": null,
+    "authors": ["Dursun Gürlek"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/dersaadette-bayram-sabahlari/509826.html",
+    "image": "/media/books/dersaadette-bayram-sabahlari-509826.webp"
+  },
+  {
+    "id": "itikadin-muhafizlari-osmanlilar-689752",
+    "title": "İtikadın Muhafızları Osmanlılar",
+    "subtitle": null,
+    "authors": ["Osman Doğan"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/itikadin-muhafizlari-osmanlilar/689752.html",
+    "image": "/media/books/itikadin-muhafizlari-osmanlilar-689752.webp"
+  },
+  {
+    "id": "kutulamare-kahramani-halil-kut-pasanin-hatiralari-374330",
+    "title": "Kut'ül Amare Kahramanı Halil Kut Paşa'nın Hatıraları",
+    "subtitle": null,
+    "authors": ["Erhan Çiftçi"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/kutulamare-kahramani-halil-kut-pasanin-hatiralari/374330.html",
+    "image": "/media/books/kutulamare-kahramani-halil-kut-pasanin-hatiralari-374330.webp"
+  },
+  {
+    "id": "mehmet-yasar-ertac-kutul-amare-1916",
+    "title": "Kut'ül Amare 1916",
+    "subtitle": null,
+    "authors": ["Mehmet Yaşar Ertaç"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/kutul-amare-1916-olaylar-hatiralar-raporlar/422079.html",
+    "image": "/media/books/mehmet-yasar-ertac-kutul-amare-1916.webp"
+  },
+  {
+    "id": "george-stitt-son-mekke-emiri-serif-ali-haydar-pasa-anlatiyor",
+    "title": "Son Mekke Emiri Şerif Ali Haydar Paşa Anlatıyor",
+    "subtitle": null,
+    "authors": ["George Stitt"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/son-mekke-emiri-serif-ali-haydar-pasa-anlatiyor-osmanli-arabistani-nasil-kaybetti/464566.html",
+    "image": "/media/books/george-stitt-son-mekke-emiri-serif-ali-haydar-pasa-anlatiyor.webp"
+  },
+  {
+    "id": "ismail-kose-serif-huseyin",
+    "title": "Şerif Hüseyin",
+    "subtitle": null,
+    "authors": ["İsmail Köse"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/serif-huseyin-buyuk-oyunun-kucuk-aktoru/482531.html",
+    "image": "/media/books/ismail-kose-serif-huseyin.webp"
+  },
+  {
+    "id": "biz-osmanliya-neden-isyan-ettik-arap-gozuyle-osmanli-80245",
+    "title": "Biz Osmanlı'ya Neden İsyan Ettik?",
+    "subtitle": null,
+    "authors": ["Kral Abdullah"],
+    "translator": "Halit Özkan",
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/biz-osmanliya-neden-isyan-ettik-arap-gozuyle-osmanli/80245.html",
+    "image": "/media/books/biz-osmanliya-neden-isyan-ettik-arap-gozuyle-osmanli-80245.webp"
+  },
+  {
+    "id": "huseyin-cahit-yalcin-talat-pasa",
+    "title": "Talat Paşa",
+    "subtitle": null,
+    "authors": ["Hüseyin Cahit Yalçın"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/talat-pasa-kod-6i7/490613.html",
+    "image": "/media/books/huseyin-cahit-yalcin-talat-pasa.webp"
+  },
+  {
+    "id": "son-osmanli-sarayinda-gorduklerim-sultan-mehmed-resad-han-donemi-721477",
+    "title": "Son Osmanlı Sarayında Gördüklerim",
+    "subtitle": null,
+    "authors": ["Lütfi Simavi"],
+    "translator": null,
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/son-osmanli-sarayinda-gorduklerim-sultan-mehmed-resad-han-donemi/721477.html",
+    "image": "/media/books/son-osmanli-sarayinda-gorduklerim-sultan-mehmed-resad-han-donemi-721477.webp"
+  },
+  {
+    "id": "turgut-ozakman-dirilis-canakkale-1915",
+    "title": "Diriliş Çanakkale 1915",
+    "subtitle": null,
+    "authors": ["Turgut Özakman"],
+    "translator": null,
+    "genre": "republic",
+    "url": "https://www.kitapyurdu.com/kitap/dirilis-canakkale-1915/106263.html",
+    "image": "/media/books/turgut-ozakman-dirilis-canakkale-1915.webp"
+  },
+  {
+    "id": "zeytindagi-gunumuz-turkcesiyle-668164",
+    "title": "Zeytindağı",
+    "subtitle": null,
+    "authors": ["Falih Rıfkı Atay"],
+    "translator": null,
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/zeytindagi-gunumuz-turkcesiyle/668164.html",
+    "image": "/media/books/zeytindagi-gunumuz-turkcesiyle-668164.webp"
+  },
+  {
+    "id": "ataturkun-hatiralari-524510",
+    "title": "Atatürk'ün Hatıraları",
+    "subtitle": null,
+    "authors": ["Falih Rıfkı Atay"],
+    "translator": null,
+    "genre": "biography",
+    "url": "https://www.kitapyurdu.com/kitap/ataturkun-hatiralari-/524510.html",
+    "image": "/media/books/ataturkun-hatiralari-524510.webp"
+  },
+  {
+    "id": "ilber-ortayli-yakin-tarihin-gercekleri",
+    "title": "Yakın Tarihin Gerçekleri",
+    "subtitle": null,
+    "authors": ["İlber Ortaylı"],
+    "translator": null,
+    "genre": "republic",
+    "url": "https://www.kitapyurdu.com/kitap/yakin-tarihin-gercekleri/576542.html",
+    "image": "/media/books/ilber-ortayli-yakin-tarihin-gercekleri.webp"
+  },
+  {
+    "id": "turgut-ozakman-cumhuriyet-1922-1938",
+    "title": "Cumhuriyet 1922-1938",
+    "subtitle": null,
+    "authors": ["Turgut Özakman"],
+    "translator": null,
+    "genre": "republic",
+    "url": "https://www.kitapyurdu.com/kitap/cumhuriyet-turk-mucizesi/138622.html",
+    "image": "/media/books/turgut-ozakman-cumhuriyet-1922-1938.webp"
+  },
+  {
+    "id": "mustafa-naima-naima-tarihi",
+    "title": "Naima Tarihi",
+    "subtitle": null,
+    "authors": ["Mustafa Naima"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/gunumuz-turkcesiyle-naima-tarihi-6-kitap-takim/731472.html",
+    "image": "/media/books/mustafa-naima-naima-tarihi.webp"
+  },
+  {
+    "id": "imparatorun-imgesi-fatih-sultan-mehmedin-kamusal-imaji-ve-imparatorluk-siyaseti-582119",
+    "title": "İmparator'un İmgesi",
+    "subtitle": null,
+    "authors": ["Gizem Magemizoğlu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/imparatorun-imgesi-fatih-sultan-mehmedin-kamusal-imaji-ve-imparatorluk-siyaseti/582119.html",
+    "image": "/media/books/imparatorun-imgesi-fatih-sultan-mehmedin-kamusal-imaji-ve-imparatorluk-siyaseti-582119.webp"
+  },
+  {
+    "id": "sair-fatih-avni-150920",
+    "title": "Şair Fâtih: Avnî",
+    "subtitle": null,
+    "authors": ["Prof. Dr. İskender Pala"],
+    "translator": null,
+    "genre": "literature",
+    "url": "https://www.kitapyurdu.com/kitap/sair-fatih-avni/150920.html",
+    "image": "/media/books/sair-fatih-avni-150920.webp"
+  },
+  {
+    "id": "erhan-afyoncu-truvanin-intikami",
+    "title": "Truva'nın İntikamı",
+    "subtitle": null,
+    "authors": ["Erhan Afyoncu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/truvanin-intikami/130803.html",
+    "image": "/media/books/erhan-afyoncu-truvanin-intikami.webp"
+  },
+  {
+    "id": "evraki-perisan-selahaddin-eyyubi-fatih-sultan-mehmed-yavuz-sultan-selim-715169",
+    "title": "Evrâk-ı Perîşan",
+    "subtitle": null,
+    "authors": ["Namık Kemal"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/evraki-perisan-selahaddin-eyyubi-fatih-sultan-mehmed-yavuz-sultan-selim-/715169.html",
+    "image": "/media/books/evraki-perisan-selahaddin-eyyubi-fatih-sultan-mehmed-yavuz-sultan-selim-715169.webp"
+  },
+  {
+    "id": "resad-ekrem-kocu-fatih-sultan-mehmed",
+    "title": "Fatih Sultan Mehmed",
+    "subtitle": null,
+    "authors": ["Reşad Ekrem Koçu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/fatih-sultan-mehmed/43902.html",
+    "image": "/media/books/resad-ekrem-kocu-fatih-sultan-mehmed.webp"
+  },
+  {
+    "id": "fatih-sultan-mehmed-717193",
+    "title": "Fâtih Sultan Mehmed",
+    "subtitle": null,
+    "authors": ["İlber Ortaylı"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/fatih-sultan-mehmed-/717193.html",
+    "image": "/media/books/fatih-sultan-mehmed-717193.webp"
+  },
+  {
+    "id": "bir-cihan-hukumdari-fatih-sultan-mehmed-455566",
+    "title": "Bir Cihan Hükümdarı Fatih Sultan Mehmed",
+    "subtitle": null,
+    "authors": ["Erhan Afyoncu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/bir-cihan-hukumdari-fatih-sultan-mehmed/455566.html",
+    "image": "/media/books/bir-cihan-hukumdari-fatih-sultan-mehmed-455566.webp"
+  },
+  {
+    "id": "fetih-ve-kiyamet-1453-595100",
+    "title": "Fetih ve Kıyamet 1453",
+    "subtitle": null,
+    "authors": ["Feridun M. Emecen"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/fetih-ve-kiyamet-1453/595100.html",
+    "image": "/media/books/fetih-ve-kiyamet-1453-595100.webp"
+  },
+  {
+    "id": "ahmed-ates-istanbulun-fethine-dair",
+    "title": "İstanbul'un Fethine Dair",
+    "subtitle": null,
+    "authors": ["Ahmed Ateş"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/istanbulun-fethine-dair/618487.html",
+    "image": "/media/books/ahmed-ates-istanbulun-fethine-dair.webp"
+  },
+  {
+    "id": "abdulkadir-ozcan-atam-dedem-kanunu",
+    "title": "Atam Dedem Kanunu: Kanunname-i Âl-i Osman",
+    "subtitle": null,
+    "authors": ["Abdülkadir Özcan"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/atam-dedem-kanunu-kanunnamei-ali-osman/428718.html",
+    "image": "/media/books/abdulkadir-ozcan-atam-dedem-kanunu.webp"
+  },
+  {
+    "id": "avrupanin-fethi-osmanli-cihana-nasil-hukmetti-701864",
+    "title": "Avrupa'nın Fethi",
+    "subtitle": null,
+    "authors": ["Gábor Ágoston"],
+    "translator": "Kahraman Şakul",
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/avrupanin-fethi-osmanli-cihana-nasil-hukmetti/701864.html",
+    "image": "/media/books/avrupanin-fethi-osmanli-cihana-nasil-hukmetti-701864.webp"
+  },
+  {
+    "id": "timur-yildizlarin-bahtina-hukmeden-son-cihangir-459664",
+    "title": "Timur",
+    "subtitle": null,
+    "authors": ["Cüneyt Kanat", "Mustafa Alican"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/timur-yildizlarin-bahtina-hukmeden-son-cihangir/459664.html",
+    "image": "/media/books/timur-yildizlarin-bahtina-hukmeden-son-cihangir-459664.webp"
+  },
+  {
+    "id": "sultanlar-ve-imparatorlar-bir-bizanslinin-gozunden-osmanlilar-691634",
+    "title": "Sultanlar ve İmparatorlar: Bir Bizanslının Gözünden Osmanlılar",
+    "subtitle": null,
+    "authors": ["Hüseyin Uçar"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/sultanlar-ve-imparatorlar-bir-bizanslinin-gozunden-osmanlilar/691634.html",
+    "image": "/media/books/sultanlar-ve-imparatorlar-bir-bizanslinin-gozunden-osmanlilar-691634.webp"
+  },
+  {
+    "id": "necmettin-alkan-sultan-ii-abdulhamid",
+    "title": "Sultan II. Abdülhamid - Arafta Bir Hünkâr",
+    "subtitle": null,
+    "authors": ["Necmettin Alkan"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/sultan-ii-abdulhamid-arafta-bir-hunkar/645795.html",
+    "image": "/media/books/necmettin-alkan-sultan-ii-abdulhamid.webp"
+  },
+  {
+    "id": "ozlem-kumrular-muhtesem-suleyman",
+    "title": "Muhteşem Süleyman",
+    "subtitle": null,
+    "authors": ["Özlem Kumrular"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/muhtesem-suleyman/415302.html",
+    "image": "/media/books/ozlem-kumrular-muhtesem-suleyman.webp"
+  },
+  {
+    "id": "yavuz-sultan-selim-324084",
+    "title": "Yavuz Sultan Selim Han",
+    "subtitle": null,
+    "authors": ["Namık Kemal"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/yavuz-sultan-selim/324084.html",
+    "image": "/media/books/yavuz-sultan-selim-324084.webp"
+  },
+  {
+    "id": "yavuz-sultan-selim-401713",
+    "title": "Yavuz Sultan Selim",
+    "subtitle": null,
+    "authors": ["Feridun M. Emecen"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/yavuz-sultan-selim/401713.html",
+    "image": "/media/books/yavuz-sultan-selim-401713.webp"
+  },
+  {
+    "id": "tufan-gunduz-kuran-ve-kilic",
+    "title": "Kur'an ve Kılıç: Türkler Nasıl Müslüman Oldu?",
+    "subtitle": null,
+    "authors": ["Tufan Gündüz"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/kuran-ve-kilic-turkler-nasil-musluman-oldu/455565.html",
+    "image": "/media/books/tufan-gunduz-kuran-ve-kilic.webp"
+  },
+  {
+    "id": "tufan-gunduz-kizilelma",
+    "title": "Kızılelma: Türk Cihan Hâkimiyeti Ülküsü",
+    "subtitle": null,
+    "authors": ["Tufan Gündüz"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/kizilelma-turk-cihan-hakimiyeti-ulkusu/657930.html",
+    "image": "/media/books/tufan-gunduz-kizilelma.webp"
+  },
+  {
+    "id": "erhan-afyoncu-askeri-isyanlar-ve-darbeler",
+    "title": "Askerî İsyanlar ve Darbeler",
+    "subtitle": null,
+    "authors": ["Erhan Afyoncu"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugunda-askeri-isyanlar-ve-darbeler/142768.html",
+    "image": "/media/books/erhan-afyoncu-askeri-isyanlar-ve-darbeler.webp"
+  },
+  {
+    "id": "turkiye-tarihi-ve-uygarliklari-seti",
+    "title": "Türkiye Tarihi ve Uygarlıkları Seti",
+    "subtitle": null,
+    "authors": ["Mehmet Ali Kaya", "M. Ali Erdoğru", "Sabri Sürgevil"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": null,
+    "image": null
+  },
+  {
+    "id": "iskendersezar-paralel-hayatlar-karton-kapak-371513",
+    "title": "İskender-Sezar: Paralel Hayatlar",
+    "subtitle": null,
+    "authors": ["Plutarkhos"],
+    "translator": "İo Çokona",
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/iskendersezar-paralel-hayatlar-karton-kapak/371513.html",
+    "image": "/media/books/iskendersezar-paralel-hayatlar-karton-kapak-371513.webp"
+  },
+  {
+    "id": "spqr-antik-roma-tarihi-449296",
+    "title": "SPQR",
+    "subtitle": null,
+    "authors": ["Mary Beard"],
+    "translator": "İrem Sağlamer",
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/spqr-antik-roma-tarihi-/449296.html",
+    "image": "/media/books/spqr-antik-roma-tarihi-449296.webp"
+  },
+  {
+    "id": "yeni-roma-dogudaki-roma-imparatorlugu-395700-642279",
+    "title": "Yeni Roma",
+    "subtitle": null,
+    "authors": ["Paul Stephenson"],
+    "translator": "Bahattin Bayram",
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/yeni-roma-dogudaki-roma-imparatorlugu-395700/642279.html",
+    "image": "/media/books/yeni-roma-dogudaki-roma-imparatorlugu-395700-642279.webp"
+  },
+  {
+    "id": "buyuk-konstantin-yenilmez-imparator-705347",
+    "title": "Büyük Konstantin",
+    "subtitle": null,
+    "authors": ["Paul Stephenson"],
+    "translator": "Gürkan Ergin",
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/buyuk-konstantin-yenilmez-imparator/705347.html",
+    "image": "/media/books/buyuk-konstantin-yenilmez-imparator-705347.webp"
+  },
+  {
+    "id": "semavi-eyice-bizans-istanbulu",
+    "title": "Bizans İstanbul'u",
+    "subtitle": null,
+    "authors": ["Semavi Eyice"],
+    "translator": null,
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/yabancilarin-gozuyle-bizans-istanbulu/426682.html",
+    "image": "/media/books/semavi-eyice-bizans-istanbulu.webp"
+  },
+  {
+    "id": "mevlana-mesnevi",
+    "title": "Mesnevî",
+    "subtitle": null,
+    "authors": ["Mevlânâ Celâleddîn-i Rûmî"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/mesnevi-123-ciltli-kutulu-set/668026.html",
+    "image": "/media/books/mevlana-mesnevi.webp"
+  },
+  {
+    "id": "anonim-mizrakli-ilmihal-tercumesi",
+    "title": "Mızraklı İlmihal",
+    "subtitle": null,
+    "authors": ["İsmailağa Fıkıh Kurulu"],
+    "translator": null,
+    "genre": "creed",
+    "url": "https://www.ahiskayayinevi.com/mizrakli-ilmihal-tercumesi-fikih-kurulu",
+    "image": "/media/books/anonim-mizrakli-ilmihal-tercumesi.webp"
+  },
+  {
+    "id": "hamid-aytac-kuran-i-kerim",
+    "title": "Kur'an-ı Kerim",
+    "subtitle": null,
+    "authors": ["Allah"],
+    "translator": null,
+    "genre": "quran",
+    "url": "https://envarnesriyat.com/mushaf-rahle-boy-hamit-5-renk-klasik-kutulu-deri-yesil-1262-153-01-116",
+    "image": "/media/books/hamid-aytac-kuran-i-kerim.webp"
+  },
+  {
+    "id": "kurani-kerimin-turkce-meali-alisi-718811",
+    "title": "Kur'an-ı Kerîm'in Meal-i Âlisi",
+    "subtitle": null,
+    "authors": ["Ömer Nasuhi Bilmen"],
+    "translator": null,
+    "genre": "quran",
+    "url": "https://www.kitapyurdu.com/kitap/kurani-kerimin-turkce-meali-alisi/718811.html",
+    "image": "/media/books/kurani-kerimin-turkce-meali-alisi-718811.webp"
+  },
+  {
+    "id": "kuran-meali-711584",
+    "title": "Kur'an Meali",
+    "subtitle": null,
+    "authors": ["Elmalılı Hamdi Yazır"],
+    "translator": null,
+    "genre": "quran",
+    "url": "https://www.kitapyurdu.com/kitap/kuran-meali/711584.html",
+    "image": "/media/books/kuran-meali-711584.webp"
+  },
+  {
+    "id": "fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747010",
+    "title": "Fatiha Tefsiri",
+    "subtitle": null,
+    "authors": ["Elmalılı Hamdi Yazır"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli/747010.html",
+    "image": "/media/books/fatiha-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747010.webp"
+  },
+  {
+    "id": "kuranin-ozu-cevahirulkuran-687779",
+    "title": "Kur'an'ın Özü",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/kuranin-ozu-cevahirulkuran/687779.html",
+    "image": "/media/books/kuranin-ozu-cevahirulkuran-687779.webp"
+  },
+  {
+    "id": "yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri-694355",
+    "title": "Yedi Ayet Yedi Şahsiyet Fatiha Suresi Tefsiri",
+    "subtitle": null,
+    "authors": ["Yasin Pişgin"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri/694355.html",
+    "image": "/media/books/yedi-ayet-yedi-sahsiyet-fatiha-suresi-tefsiri-694355.webp"
+  },
+  {
+    "id": "kuranin-kalbine-yolculuk-yasin-suresi-tefsiri-540910",
+    "title": "Kur'an'ın Kalbine Yolculuk Yasin Suresi Tefsiri",
+    "subtitle": null,
+    "authors": ["Yasin Pişgin"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/kuranin-kalbine-yolculuk-yasin-suresi-tefsiri/540910.html",
+    "image": "/media/books/kuranin-kalbine-yolculuk-yasin-suresi-tefsiri-540910.webp"
+  },
+  {
+    "id": "keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler-738420",
+    "title": "Keşke Dememek İçin Kur'an'da Keşkeler ve Keşke Diyenler",
+    "subtitle": null,
+    "authors": ["Yasin Pişgin"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler/738420.html",
+    "image": "/media/books/keske-dememek-icin-kuranda-keskeler-ve-keske-diyenler-738420.webp"
+  },
+  {
+    "id": "ehli-sunnet-akaidi-nesefi-akidesi-serhi-504474",
+    "title": "Ehl-i Sünnet Akaidi",
+    "subtitle": null,
+    "authors": ["Ömer Nesefi"],
+    "translator": null,
+    "genre": "creed",
+    "url": "https://www.kitapyurdu.com/kitap/ehli-sunnet-akaidi-nesefi-akidesi-serhi/504474.html",
+    "image": "/media/books/ehli-sunnet-akaidi-nesefi-akidesi-serhi-504474.webp"
+  },
+  {
+    "id": "buyuk-islam-ilmihali-ciltli-606944",
+    "title": "Büyük İslam İlmihali",
+    "subtitle": null,
+    "authors": ["Ömer Nasuhi Bilmen"],
+    "translator": null,
+    "genre": "creed",
+    "url": "https://www.kitapyurdu.com/kitap/buyuk-islam-ilmihali-ciltli/606944.html",
+    "image": "/media/books/buyuk-islam-ilmihali-ciltli-606944.webp"
+  },
+  {
+    "id": "riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak-328771",
+    "title": "Riyazü's Salihin",
+    "subtitle": null,
+    "authors": ["İmam Nevevi"],
+    "translator": null,
+    "genre": "hadith",
+    "url": "https://www.kitapyurdu.com/kitap/riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak/328771.html",
+    "image": "/media/books/riyazus-salihin-salihler-bahcesi-ithal-kagitkarton-kapak-328771.webp"
+  },
+  {
+    "id": "kainatin-efendisi-peygamberimizin-hayati-tek-cilt-252777",
+    "title": "Kainatın Efendisi Peygamberimizin Hayatı",
+    "subtitle": null,
+    "authors": ["Salih Suruç"],
+    "translator": null,
+    "genre": "sira",
+    "url": "https://www.kitapyurdu.com/kitap/kainatin-efendisi-peygamberimizin-hayati-tek-cilt/252777.html",
+    "image": "/media/books/kainatin-efendisi-peygamberimizin-hayati-tek-cilt-252777.webp"
+  },
+  {
+    "id": "kendini-aldatan-insan-630916",
+    "title": "Kendini Aldatan İnsan",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/kendini-aldatan-insan/630916.html",
+    "image": "/media/books/kendini-aldatan-insan-630916.webp"
+  },
+  {
+    "id": "dusunmenin-dogru-olcusu-elkistasulmustakim-660918",
+    "title": "Düşünmenin Doğru Ölçüsü",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/dusunmenin-dogru-olcusu-elkistasulmustakim/660918.html",
+    "image": "/media/books/dusunmenin-dogru-olcusu-elkistasulmustakim-660918.webp"
+  },
+  {
+    "id": "hakikat-arayisi-elmunkiz-mineddalal-565614",
+    "title": "Hakikat Arayışı",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/hakikat-arayisi-elmunkiz-mineddalal/565614.html",
+    "image": "/media/books/hakikat-arayisi-elmunkiz-mineddalal-565614.webp"
+  },
+  {
+    "id": "dil-belasi-dilin-afetleri-kitabu-afatillisan-747009",
+    "title": "Dil Belası",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/dil-belasi-dilin-afetleri-kitabu-afatillisan/747009.html",
+    "image": "/media/books/dil-belasi-dilin-afetleri-kitabu-afatillisan-747009.webp"
+  },
+  {
+    "id": "insan-nasil-insan-oldu-elfusul-filesile-velecvibe-637295",
+    "title": "İnsan Nasıl İnsan Oldu?",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/insan-nasil-insan-oldu-elfusul-filesile-velecvibe/637295.html",
+    "image": "/media/books/insan-nasil-insan-oldu-elfusul-filesile-velecvibe-637295.webp"
+  },
+  {
+    "id": "hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi-537248",
+    "title": "Hakikat Çağrısı",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi/537248.html",
+    "image": "/media/books/hakikat-cagrisi-ey-ogul-eyyuhelveled-ledunni-ilim-risalesi-537248.webp"
+  },
+  {
+    "id": "en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna-625053",
+    "title": "En Güzel İsimler",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna/625053.html",
+    "image": "/media/books/en-guzel-isimler-elmaksadulesna-fi-serhi-esmaillahilhusna-625053.webp"
+  },
+  {
+    "id": "gokyuzune-bakmanin-faydalari-321327",
+    "title": "Gökyüzüne Bakmanın Faydaları",
+    "subtitle": null,
+    "authors": ["İmam Gazali"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/gokyuzune-bakmanin-faydalari/321327.html",
+    "image": "/media/books/gokyuzune-bakmanin-faydalari-321327.webp"
+  },
+  {
+    "id": "kirk-hadis-398941",
+    "title": "Kırk Hadis",
+    "subtitle": null,
+    "authors": ["İmam Nevevi"],
+    "translator": null,
+    "genre": "hadith",
+    "url": "https://www.kitapyurdu.com/kitap/kirk-hadis/398941.html",
+    "image": "/media/books/kirk-hadis-398941.webp"
+  },
+  {
+    "id": "ibn-sina-hayy-bin-yakzan-kesifler-329562",
+    "title": "Hayy bin Yakzân",
+    "subtitle": null,
+    "authors": ["İbn Sînâ"],
+    "translator": null,
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/ibn-sina-hayy-bin-yakzan-kesifler/329562.html",
+    "image": "/media/books/ibn-sina-hayy-bin-yakzan-kesifler-329562.webp"
+  },
+  {
+    "id": "imami-azamin-bes-eseri-50132",
+    "title": "İmam-ı A'zamın Beş Eseri",
+    "subtitle": null,
+    "authors": ["İmam-ı Azam Ebu Hanife"],
+    "translator": null,
+    "genre": "creed",
+    "url": "https://www.kitapyurdu.com/kitap/imami-azamin-bes-eseri/50132.html",
+    "image": "/media/books/imami-azamin-bes-eseri-50132.webp"
+  },
+  {
+    "id": "cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak-735273",
+    "title": "Cambridge Türkiye Tarihi",
+    "subtitle": null,
+    "authors": ["Kate Fleet"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak/735273.html",
+    "image": "/media/books/cambridge-turkiye-tarihi-1-bizanstan-turkiyeye-10711453-karton-kapak-735273.webp"
+  },
+  {
+    "id": "devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i-131082",
+    "title": "Devlet-i Aliyye: Osmanlı İmparatorluğu Üzerine Araştırmalar I",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i/131082.html",
+    "image": "/media/books/devleti-aliyye-osmanli-imparatorlugu-uzerine-arastirmalar-i-131082.webp"
+  },
+  {
+    "id": "osmanli-savasirken-655804",
+    "title": "Osmanlı Savaşırken",
+    "subtitle": null,
+    "authors": ["Rhoads Murphey"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-savasirken/655804.html",
+    "image": "/media/books/osmanli-savasirken-655804.webp"
+  },
+  {
+    "id": "osmanli-imparatorlugu-13001650-632294",
+    "title": "Osmanlı İmparatorluğu 1300-1650",
+    "subtitle": null,
+    "authors": ["Colin Imber"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugu-13001650/632294.html",
+    "image": "/media/books/osmanli-imparatorlugu-13001650-632294.webp"
+  },
+  {
+    "id": "barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi-640230",
+    "title": "Barut, Top ve Tüfek: Osmanlı İmparatorluğu'nda Askeri Güç ve Silah Sanayisi",
+    "subtitle": null,
+    "authors": ["Gábor Ágoston"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi/640230.html",
+    "image": "/media/books/barut-top-ve-tufek-osmanli-imparatorlugunda-askeri-guc-ve-silah-sanayisi-640230.webp"
+  },
+  {
+    "id": "osmanliturkiye-iktisadi-tarihi-15001914-73654",
+    "title": "Osmanlı-Türkiye İktisadi Tarihi 1500-1914",
+    "subtitle": null,
+    "authors": ["Şevket Pamuk"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanliturkiye-iktisadi-tarihi-15001914/73654.html",
+    "image": "/media/books/osmanliturkiye-iktisadi-tarihi-15001914-73654.webp"
+  },
+  {
+    "id": "osmanli-imparatorlugunda-paranin-tarihi-424445",
+    "title": "Osmanlı İmparatorluğu'nda Paranın Tarihi",
+    "subtitle": null,
+    "authors": ["Şevket Pamuk"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugunda-paranin-tarihi/424445.html",
+    "image": "/media/books/osmanli-imparatorlugunda-paranin-tarihi-424445.webp"
+  },
+  {
+    "id": "bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi-758420",
+    "title": "Bir Felsefe Risalesi: Sultan Abdülaziz Han'ın Hikmet ve Mantık Bahislerine Dair Bir Şerhi",
+    "subtitle": null,
+    "authors": ["Sultan Abdülaziz"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi/758420.html",
+    "image": "/media/books/bir-felsefe-risalesi-sultan-abdulaziz-hanin-hikmet-ve-mantik-bahislerine-dair-bir-serhi-758420.webp"
+  },
+  {
+    "id": "sultan-abdulhamid-279760",
+    "title": "Sultan Abdülhamid",
+    "subtitle": null,
+    "authors": ["François Georgeon"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/sultan-abdulhamid/279760.html",
+    "image": "/media/books/sultan-abdulhamid-279760.webp"
+  },
+  {
+    "id": "hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638-673565",
+    "title": "Hacılar ve Sultanlar: Osmanlı Döneminde Hac 1517-1638",
+    "subtitle": null,
+    "authors": ["Suraiya Faroqhi"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638/673565.html",
+    "image": "/media/books/hacilar-ve-sultanlar-osmanli-doneminde-hac-15171638-673565.webp"
+  },
+  {
+    "id": "osmanli-toplumunda-aile-451519",
+    "title": "Osmanlı Toplumunda Aile",
+    "subtitle": null,
+    "authors": ["İlber Ortaylı"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-toplumunda-aile/451519.html",
+    "image": "/media/books/osmanli-toplumunda-aile-451519.webp"
+  },
+  {
+    "id": "fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli-582037",
+    "title": "Fatih Devri Üzerinde Tetkikler ve Vesikalar I",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli/582037.html",
+    "image": "/media/books/fatih-devri-uzerinde-tetkikler-ve-vesikalar-1-ciltli-582037.webp"
+  },
+  {
+    "id": "candarli-vezir-ailesi-22b7-606633",
+    "title": "Candarlı Vezir Ailesi",
+    "subtitle": null,
+    "authors": ["İsmail Hakkı Uzunçarşılı"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/candarli-vezir-ailesi-22b7/606633.html",
+    "image": "/media/books/candarli-vezir-ailesi-22b7-606633.webp"
+  },
+  {
+    "id": "osmanlida-strateji-ve-askeri-guc-267989",
+    "title": "Osmanlı'da Strateji ve Askeri Güç",
+    "subtitle": null,
+    "authors": ["Gábor Ágoston"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanlida-strateji-ve-askeri-guc/267989.html",
+    "image": "/media/books/osmanlida-strateji-ve-askeri-guc-267989.webp"
+  },
+  {
+    "id": "osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600-380476",
+    "title": "Osmanlı İmparatorluğu'nun Kuruluş ve Yükseliş Tarihi 1300-1600",
+    "subtitle": null,
+    "authors": ["Feridun M. Emecen"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600/380476.html",
+    "image": "/media/books/osmanli-imparatorlugunun-kurulus-ve-yukselis-tarihi-13001600-380476.webp"
+  },
+  {
+    "id": "osmanli-imparatorlugu-klasik-cag-13001600-501208",
+    "title": "Osmanlı İmparatorluğu Klasik Çağ 1300-1600",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-imparatorlugu-klasik-cag-13001600/501208.html",
+    "image": "/media/books/osmanli-imparatorlugu-klasik-cag-13001600-501208.webp"
+  },
+  {
+    "id": "osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv-708391",
+    "title": "Osmanlı Devleti Tarihi: Netayicü'l-Vukuat Cilt I-IV",
+    "subtitle": null,
+    "authors": ["Mustafa Nuri Paşa"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv/708391.html",
+    "image": "/media/books/osmanli-devleti-tarihi-netayicul-vukuat-olaylarin-sonuclari-cilt-iiv-708391.webp"
+  },
+  {
+    "id": "fatihin-tarihi-tarihi-ebulfeth-343183",
+    "title": "Fatih'in Tarihi: Tarih-i Ebu'l-Feth",
+    "subtitle": null,
+    "authors": ["Tursun Bey"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/fatihin-tarihi-tarihi-ebulfeth/343183.html",
+    "image": "/media/books/fatihin-tarihi-tarihi-ebulfeth-343183.webp"
+  },
+  {
+    "id": "osmanli-kadin-hareketi-5871",
+    "title": "Osmanlı Kadın Hareketi",
+    "subtitle": null,
+    "authors": ["Serpil Çakır"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-kadin-hareketi/5871.html",
+    "image": "/media/books/osmanli-kadin-hareketi-5871.webp"
+  },
+  {
+    "id": "seriat-ile-kanun-arasinda-ebussuud-efendi-607812",
+    "title": "Şeriat ile Kanun Arasında Ebussuud Efendi",
+    "subtitle": null,
+    "authors": ["Colin Imber"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/seriat-ile-kanun-arasinda-ebussuud-efendi/607812.html",
+    "image": "/media/books/seriat-ile-kanun-arasinda-ebussuud-efendi-607812.webp"
+  },
+  {
+    "id": "iki-cihan-aresinde-502785",
+    "title": "İki Cihan Arasında",
+    "subtitle": null,
+    "authors": ["Cemal Kafadar"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/iki-cihan-aresinde/502785.html",
+    "image": "/media/books/iki-cihan-aresinde-502785.webp"
+  },
+  {
+    "id": "osmanli-ilmiyesi-ciltli-569791",
+    "title": "Osmanlı İlmiyesi",
+    "subtitle": null,
+    "authors": ["Mehmet İpşirli"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-ilmiyesi-ciltli/569791.html",
+    "image": "/media/books/osmanli-ilmiyesi-ciltli-569791.webp"
+  },
+  {
+    "id": "osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler-634474",
+    "title": "Osmanlılar: Fütuhat, İmparatorluk, Avrupa ile İlişkiler",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler/634474.html",
+    "image": "/media/books/osmanlilar-futuhat-imparatorluk-avrupa-ile-iliskiler-634474.webp"
+  },
+  {
+    "id": "asik-pasazade-osmanogullarinin-tarihi-ciltli-742950",
+    "title": "Aşıkpaşazade: Osmanoğulları'nın Tarihi",
+    "subtitle": null,
+    "authors": ["Aşıkpaşazade"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/asik-pasazade-osmanogullarinin-tarihi-ciltli/742950.html",
+    "image": "/media/books/asik-pasazade-osmanogullarinin-tarihi-ciltli-742950.webp"
+  },
+  {
+    "id": "babam-sultan-abdulhamid-315783",
+    "title": "Babam Sultan Abdülhamid",
+    "subtitle": null,
+    "authors": ["Ayşe Osmanoğlu"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/babam-sultan-abdulhamid/315783.html",
+    "image": "/media/books/babam-sultan-abdulhamid-315783.webp"
+  },
+  {
+    "id": "turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden-604831",
+    "title": "Sultan Fatih'in Sarayında Bir Esir: Giovanni Maria Angiolello Gözünden",
+    "subtitle": null,
+    "authors": ["Giovanni Maria Angiolello"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden/604831.html",
+    "image": "/media/books/turk-tarihi-sultan-fatihin-sarayinda-bir-esir-giovanni-maria-angiolello-gozunden-604831.webp"
+  },
+  {
+    "id": "bir-yenicerinin-hatiralari-307682",
+    "title": "Bir Yeniçerinin Hatıraları",
+    "subtitle": null,
+    "authors": ["Konstantin Mihailoviç"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/bir-yenicerinin-hatiralari/307682.html",
+    "image": "/media/books/bir-yenicerinin-hatiralari-307682.webp"
+  },
+  {
+    "id": "bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis-365372",
+    "title": "Bir Osmanlı Askerinin Hatıratı 1688-1700: Esaretten Kaçış",
+    "subtitle": null,
+    "authors": ["Temeşvarlı Osman Ağa"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis/365372.html",
+    "image": "/media/books/bir-osmanli-askerinin-hatirati-16881700-esaretten-kacis-365372.webp"
+  },
+  {
+    "id": "roma-savas-sanati-510766",
+    "title": "Roma Savaş Sanatı",
+    "subtitle": null,
+    "authors": ["Flavius Vegetius Renatus"],
+    "translator": null,
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/roma-savas-sanati/510766.html",
+    "image": "/media/books/roma-savas-sanati-510766.webp"
+  },
+  {
+    "id": "justinyen-imparator-asker-aziz-719872",
+    "title": "Jüstinyen İmparator, Asker, Aziz",
+    "subtitle": null,
+    "authors": ["Peter Sarris"],
+    "translator": null,
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/justinyen-imparator-asker-aziz/719872.html",
+    "image": "/media/books/justinyen-imparator-asker-aziz-719872.webp"
+  },
+  {
+    "id": "bizansli-gozuyle-turkler-136818",
+    "title": "Bizanslı Gözüyle Türkler",
+    "subtitle": null,
+    "authors": ["Georges Pachymeres"],
+    "translator": null,
+    "genre": "rome",
+    "url": "https://www.kitapyurdu.com/kitap/bizansli-gozuyle-turkler/136818.html",
+    "image": "/media/books/bizansli-gozuyle-turkler-136818.webp"
+  },
+  {
+    "id": "bir-sehir-kurmak-turgut-canseverle-konusmalar-381773",
+    "title": "Bir Şehir Kurmak: Turgut Cansever'le Konuşmalar",
+    "subtitle": null,
+    "authors": ["Aynur Can"],
+    "translator": null,
+    "genre": "city-history",
+    "url": "https://www.kitapyurdu.com/kitap/bir-sehir-kurmak-turgut-canseverle-konusmalar/381773.html",
+    "image": "/media/books/bir-sehir-kurmak-turgut-canseverle-konusmalar-381773.webp"
+  },
+  {
+    "id": "tanzimat-degisim-surecinde-osmanli-imparatorlugu-257767",
+    "title": "Tanzimat Değişim Sürecinde Osmanlı İmparatorluğu",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/tanzimat-degisim-surecinde-osmanli-imparatorlugu/257767.html",
+    "image": "/media/books/tanzimat-degisim-surecinde-osmanli-imparatorlugu-257767.webp"
+  },
+  {
+    "id": "davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri-722342",
+    "title": "Davetsiz Misafirler Osmanlı Çökerken Amerikan Misyonerleri",
+    "subtitle": null,
+    "authors": ["İsmail Köse"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri/722342.html",
+    "image": "/media/books/davetsiz-misafirler-osmanli-cokerken-amerikan-misyonerleri-722342.webp"
+  },
+  {
+    "id": "sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi-735994",
+    "title": "Sultan II. Abdülhamid ve Jön Türkler",
+    "subtitle": null,
+    "authors": ["Necmettin Alkan"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi/735994.html",
+    "image": "/media/books/sultan-ii-abdulhamid-ve-jon-turkler-18891908-selanikin-yukselisi-735994.webp"
+  },
+  {
+    "id": "imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik-563570",
+    "title": "İmparatorluğun Son Savaşı",
+    "subtitle": null,
+    "authors": ["Necmettin Alkan"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik/563570.html",
+    "image": "/media/books/imparatorlugun-son-savasi-birinci-dunya-savasina-neden-ve-nasil-girdik-563570.webp"
+  },
+  {
+    "id": "turkiye-selcuklularinda-hukumet-vezir-ve-divan-538574",
+    "title": "Türkiye Selçuklularında Hükümet",
+    "subtitle": null,
+    "authors": ["Refik Turan"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/turkiye-selcuklularinda-hukumet-vezir-ve-divan/538574.html",
+    "image": "/media/books/turkiye-selcuklularinda-hukumet-vezir-ve-divan-538574.webp"
+  },
+  {
+    "id": "turkistan-halklarinin-tarihi-482177",
+    "title": "Türkistan Halklarının Tarihi",
+    "subtitle": null,
+    "authors": ["Wilhelm Barthold"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/turkistan-halklarinin-tarihi/482177.html",
+    "image": "/media/books/turkistan-halklarinin-tarihi-482177.webp"
+  },
+  {
+    "id": "turk-mitolojisi-iiicilt-takim-556120",
+    "title": "Türk Mitolojisi",
+    "subtitle": null,
+    "authors": ["Bahaeddin Ögel"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/turk-mitolojisi-iiicilt-takim/556120.html",
+    "image": "/media/books/turk-mitolojisi-iiicilt-takim-556120.webp"
+  },
+  {
+    "id": "son-kizilbas-sah-ismail-244032",
+    "title": "Son Kızılbaş Şah İsmail",
+    "subtitle": null,
+    "authors": ["Tufan Gündüz"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/son-kizilbas-sah-ismail/244032.html",
+    "image": "/media/books/son-kizilbas-sah-ismail-244032.webp"
+  },
+  {
+    "id": "selcuklular-zamaninda-turkiye-62913",
+    "title": "Selçuklular Zamanında Türkiye",
+    "subtitle": null,
+    "authors": ["Osman Turan"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/selcuklular-zamaninda-turkiye/62913.html",
+    "image": "/media/books/selcuklular-zamaninda-turkiye-62913.webp"
+  },
+  {
+    "id": "fetih-suresi-tefsiri-151319",
+    "title": "Fetih Suresi Tefsiri",
+    "subtitle": null,
+    "authors": ["Ömer Nasuhi Bilmen"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/fetih-suresi-tefsiri/151319.html",
+    "image": "/media/books/fetih-suresi-tefsiri-151319.webp"
+  },
+  {
+    "id": "elmalili-hamdi-yazir-ihlas-suresi-tefsiri-387631",
+    "title": "İhlas Suresi Tefsiri",
+    "subtitle": null,
+    "authors": ["Elmalılı Hamdi Yazır"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/elmalili-hamdi-yazir-ihlas-suresi-tefsiri/387631.html",
+    "image": "/media/books/elmalili-hamdi-yazir-ihlas-suresi-tefsiri-387631.webp"
+  },
+  {
+    "id": "hizbulbahr-serhi-748863",
+    "title": "Hizbü'l-Bahr Şerhi",
+    "subtitle": null,
+    "authors": ["Şeyh Ahmed Zerruk"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/hizbulbahr-serhi/748863.html",
+    "image": "/media/books/hizbulbahr-serhi-748863.webp"
+  },
+  {
+    "id": "aciklamali-delailulhayrat-salavati-serifler-70598",
+    "title": "Delailü'l-Hayrat Salavat-ı Şerifler",
+    "subtitle": null,
+    "authors": ["Muhammed b. Süleyman el Cezuli"],
+    "translator": null,
+    "genre": "sufism",
+    "url": "https://www.kitapyurdu.com/kitap/aciklamali-delailulhayrat-salavati-serifler/70598.html",
+    "image": "/media/books/aciklamali-delailulhayrat-salavati-serifler-70598.webp"
+  },
+  {
+    "id": "osmanli-tarihinde-islamiyet-ve-devlet-396753",
+    "title": "Osmanlı Tarihinde İslamiyet ve Devlet",
+    "subtitle": null,
+    "authors": ["Halil İnalcık"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanli-tarihinde-islamiyet-ve-devlet/396753.html",
+    "image": "/media/books/osmanli-tarihinde-islamiyet-ve-devlet-396753.webp"
+  },
+  {
+    "id": "turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri-257775",
+    "title": "Türk Mektupları Kanuni Döneminde Avrupalı Bir Elçinin Gözlemleri",
+    "subtitle": null,
+    "authors": ["Ogiler Ghislain De Busbecq"],
+    "translator": null,
+    "genre": "memoirs",
+    "url": "https://www.kitapyurdu.com/kitap/turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri/257775.html",
+    "image": "/media/books/turk-mektuplari-kanuni-doneminde-avrupali-bir-elcinin-gozlemleri-257775.webp"
+  },
+  {
+    "id": "ayasofya-fleksi-kapak-624945",
+    "title": "Ayasofya",
+    "subtitle": null,
+    "authors": ["Sedat Bornovalı"],
+    "translator": null,
+    "genre": "city-history",
+    "url": "https://www.kitapyurdu.com/kitap/ayasofya-fleksi-kapak/624945.html",
+    "image": "/media/books/ayasofya-fleksi-kapak-624945.webp"
+  },
+  {
+    "id": "iste-onderimiz-hz-muhammed-18361",
+    "title": "İşte Önderimiz Hz. Muhammed",
+    "subtitle": null,
+    "authors": ["İhsan Süreyya Sırma"],
+    "translator": null,
+    "genre": "sira",
+    "url": "https://www.kitapyurdu.com/kitap/iste-onderimiz-hz-muhammed/18361.html",
+    "image": "/media/books/iste-onderimiz-hz-muhammed-18361.webp"
+  },
+  {
+    "id": "bir-darbenin-anatomisi-13641",
+    "title": "Bir Darbenin Anatomisi",
+    "subtitle": null,
+    "authors": ["Yılmaz Öztuna"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/bir-darbenin-anatomisi/13641.html",
+    "image": "/media/books/bir-darbenin-anatomisi-13641.webp"
+  },
+  {
+    "id": "yilmaz-oztuna-avrupa-turkiyesini-kaybimiz",
+    "title": "Avrupa Türkiye'sini Kaybımız",
+    "subtitle": null,
+    "authors": ["Yılmaz Öztuna"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/93-ve-balkan-savaslari-avrupa-turkiyesini-kaybimiz-rumelinin-elden-cikisi/303957.html",
+    "image": "/media/books/yilmaz-oztuna-avrupa-turkiyesini-kaybimiz.webp"
+  },
+  {
+    "id": "ii-abdulhamid-zamani-ve-sahsiyeti-311444",
+    "title": "II. Abdülhamid Zamanı ve Şahsiyeti",
+    "subtitle": null,
+    "authors": ["Yılmaz Öztuna"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/ii-abdulhamid-zamani-ve-sahsiyeti/311444.html",
+    "image": "/media/books/ii-abdulhamid-zamani-ve-sahsiyeti-311444.webp"
+  },
+  {
+    "id": "sultan-ii-mahmud-342725",
+    "title": "Sultan II. Mahmud",
+    "subtitle": null,
+    "authors": ["Yılmaz Öztuna"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/sultan-ii-mahmud/342725.html",
+    "image": "/media/books/sultan-ii-mahmud-342725.webp"
+  },
+  {
+    "id": "kanuni-sultan-suleyman-335517",
+    "title": "Kanuni Sultan Süleyman",
+    "subtitle": null,
+    "authors": ["Yılmaz Öztuna"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/kanuni-sultan-suleyman/335517.html",
+    "image": "/media/books/kanuni-sultan-suleyman-335517.webp"
+  },
+  {
+    "id": "yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747016",
+    "title": "Yasîn, Mülk ve Nebe' Tefsiri",
+    "subtitle": null,
+    "authors": ["Elmalılı Hamdi Yazır"],
+    "translator": null,
+    "genre": "tafsir",
+    "url": "https://www.kitapyurdu.com/kitap/yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli/747016.html",
+    "image": "/media/books/yasin-mulk-ve-nebe-tefsiri-aciklamali-tahsiyeli-lugatce-ilaveli-747016.webp"
+  },
+  {
+    "id": "fatihin-enderun-mektebi-758156",
+    "title": "Fatih'in Enderun Mektebi",
+    "subtitle": null,
+    "authors": ["Barnette Miller"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/fatihin-enderun-mektebi/758156.html",
+    "image": "/media/books/fatihin-enderun-mektebi-758156.webp"
+  },
+  {
+    "id": "kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi-731499",
+    "title": "Kayıp Coğrafyanın İzinde: Doğu Türkistan Seyahatnamesi",
+    "subtitle": null,
+    "authors": ["Taha Kılınç"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi/731499.html",
+    "image": "/media/books/kayip-cografyanin-izinde-dogu-turkistan-seyahatnamesi-731499.webp"
+  },
+  {
+    "id": "islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu-736481",
+    "title": "İslam Bilim Geleneği Avrupa'yı Nasıl Aydınlattı? Ortaçağ'da Bilimsel Düşüncenin Yükselişi ve Düşüşü",
+    "subtitle": null,
+    "authors": ["George Saliba"],
+    "translator": null,
+    "genre": "world-civilizations",
+    "url": "https://www.kitapyurdu.com/kitap/islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu/736481.html",
+    "image": "/media/books/islam-bilim-gelenegi-avrupayi-nasil-aydinlatti-ortacagda-bilimsel-dusuncenin-yukselisi-ve-dususu-736481.webp"
+  },
+  {
+    "id": "balkanlarda-osmanli-mirasi-ve-milliyetcilik-267986",
+    "title": "Balkanlar'da Osmanlı Mirası ve Milliyetçilik",
+    "subtitle": null,
+    "authors": ["Kemal H. Karpat"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/balkanlarda-osmanli-mirasi-ve-milliyetcilik/267986.html",
+    "image": "/media/books/balkanlarda-osmanli-mirasi-ve-milliyetcilik-267986.webp"
+  },
+  {
+    "id": "malazgirt-1071-kiyametin-ilk-gunu-413227",
+    "title": "Malazgirt 1071",
+    "subtitle": null,
+    "authors": ["Mustafa Alican"],
+    "translator": null,
+    "genre": "turkish-history",
+    "url": "https://www.kitapyurdu.com/kitap/malazgirt-1071-kiyametin-ilk-gunu/413227.html",
+    "image": "/media/books/malazgirt-1071-kiyametin-ilk-gunu-413227.webp"
+  },
+  {
+    "id": "osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni-670508",
+    "title": "Osmanoğlu'na Övgü",
+    "subtitle": null,
+    "authors": ["Carullah Bin Fehd"],
+    "translator": null,
+    "genre": "ottoman-history",
+    "url": "https://www.kitapyurdu.com/kitap/osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni/670508.html",
+    "image": "/media/books/osmanogluna-ovgu-elcevahirulhisan-fi-menakibissultan-suleyman-b-osman-elmustehir-bisuleyman-elkanuni-670508.webp"
+  },
+  {
+    "id": "medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri-717725",
+    "title": "Medreseden Kaçış",
+    "subtitle": "İmam Gazzalî'nin Hayatı, Fikirleri ve Eserleri",
+    "authors": ["Abdülhüseyin Zerrinkub"],
+    "translator": "Hikmet Gök",
+    "genre": "islamic-thought",
+    "url": "https://www.kitapyurdu.com/kitap/medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri/717725.html",
+    "image": "/media/books/medreseden-kacis-imam-gazzalinin-hayati-fikirleri-ve-eserleri-717725.webp"
+  }
+]
