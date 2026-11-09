@@ -3,7 +3,6 @@ import { Fragment, useRef } from "react"
 import { Link } from "@tanstack/react-router"
 
 import { getLangParam, localizedUrl } from "@/helpers/localized-url"
-import { toSlug } from "@/helpers/to-slug"
 
 import { PageToc } from "@/components/shared/PageToc"
 import { titleLinkClass } from "@/components/shared/surface.styles"
@@ -11,6 +10,7 @@ import { BlogMobileToc } from "@/features/blog/components/BlogMobileToc"
 import { BlogPostNeighbors } from "@/features/blog/components/BlogPostNeighbors"
 import { BlogRelatedPosts } from "@/features/blog/components/BlogRelatedPosts"
 import { BlogShareActions } from "@/features/blog/components/BlogShareActions"
+import { tagLabel, tagSlug } from "@/features/blog/helpers/blog-tags"
 import { formatPostDate } from "@/features/blog/helpers/format-post-date"
 import { useBlogPost } from "@/features/blog/hooks/use-blog-post"
 import { useCodeBlockActions } from "@/features/blog/hooks/use-code-block-actions"
@@ -67,19 +67,19 @@ export function BlogPostArticle({ category, slug }: BlogPostArticleProps) {
                   <Link
                     to="/{-$lang}/blog"
                     params={{ lang }}
-                    search={{ tag: toSlug(tag) }}
+                    search={{ tag: tagSlug(tag, locale) }}
                     className={titleLinkClass}
                   >
-                    {tag}
+                    {tagLabel(tag, locale)}
                   </Link>
                 ) : (
                   <Link
                     to="/{-$lang}/notes"
                     params={{ lang }}
-                    search={{ tag: toSlug(tag) }}
+                    search={{ tag: tagSlug(tag, locale) }}
                     className={titleLinkClass}
                   >
-                    {tag}
+                    {tagLabel(tag, locale)}
                   </Link>
                 )}
               </Fragment>

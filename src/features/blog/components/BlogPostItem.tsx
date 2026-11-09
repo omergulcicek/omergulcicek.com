@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router"
 import { getLangParam } from "@/helpers/localized-url"
 
 import { titleLinkClass } from "@/components/shared/surface.styles"
+import { tagLabel } from "@/features/blog/helpers/blog-tags"
 import { formatPostDate } from "@/features/blog/helpers/format-post-date"
 import type { BlogCategory, BlogPostListItem } from "@/features/blog/schemas/blog-post.schema"
 import { getLocale } from "@/paraglide/runtime.js"
@@ -12,7 +13,7 @@ type BlogPostItemProps = { post: BlogPostListItem; category: BlogCategory }
 export function BlogPostItem({ post, category }: BlogPostItemProps) {
   const locale = getLocale()
   const date = post.published_at ? formatPostDate(post.published_at, locale, "short") : null
-  const tags = post.tags.join(", ")
+  const tags = post.tags.map((tag) => tagLabel(tag, locale)).join(", ")
   // Slugs are stored with a leading slash; the route param is the rest.
   const params = { lang: getLangParam(), slug: post.slug.replace(/^\//, "") }
 

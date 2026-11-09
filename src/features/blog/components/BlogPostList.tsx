@@ -4,13 +4,14 @@ import { groupPostsByYear } from "@/features/blog/helpers/group-posts-by-year"
 import { useBlogPosts } from "@/features/blog/hooks/use-blog-posts"
 import { useBlogTagFilter } from "@/features/blog/hooks/use-blog-tag-filter"
 import type { BlogCategory } from "@/features/blog/schemas/blog-post.schema"
+import { getLocale } from "@/paraglide/runtime.js"
 
 type BlogPostListProps = { category: BlogCategory }
 
 export function BlogPostList({ category }: BlogPostListProps) {
   const { data: posts } = useBlogPosts(category)
   const tag = useBlogTagFilter()
-  const filtered = filterPostsByTag(posts, tag)
+  const filtered = filterPostsByTag(posts, tag, getLocale())
   // An unknown tag would empty the page; showing every post is the friendlier fallback.
   const visible = filtered.length > 0 ? filtered : posts
 
