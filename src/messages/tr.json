@@ -207,5 +207,9 @@
   "mdx_password_issue_repetitive": "tekrar eden karakterler",
   "mdx_password_issue_mismatch": "iki parola aynı değil",
   "blog_locale_notice": "Çoğunlukla Türkçe yazıyorum. Bu sayfada İngilizce yazdığım yazılar listeleniyor; hepsi <link>Türkçe blogda</link>.",
-  "notes_locale_notice": "Notlarımı Türkçe yazıyorum, bu yüzden aşağıdaki yazılar Türkçe."
+  "notes_locale_notice": "Notlarımı Türkçe yazıyorum, bu yüzden aşağıdaki yazılar Türkçe.",
+  "mdx_address_province": "İl",
+  "mdx_address_district": "İlçe",
+  "mdx_address_neighbourhood": "Mahalle",
+  "mdx_address_postal_code": "Posta kodu"
 }

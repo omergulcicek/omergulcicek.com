@@ -207,5 +207,9 @@
   "mdx_password_issue_repetitive": "repeated characters",
   "mdx_password_issue_mismatch": "the passwords differ",
   "blog_locale_notice": "I mostly write in Turkish. This page lists the posts I've also written in English; <link>the Turkish blog</link> has everything.",
-  "notes_locale_notice": "I write my notes in Turkish, so the posts below are in Turkish."
+  "notes_locale_notice": "I write my notes in Turkish, so the posts below are in Turkish.",
+  "mdx_address_province": "Province",
+  "mdx_address_district": "District",
+  "mdx_address_neighbourhood": "Neighbourhood",
+  "mdx_address_postal_code": "Postal code"
 }

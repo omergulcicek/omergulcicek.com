@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react"
 
+import { AddressDemo } from "@/features/blog/components/mdx/islands/AddressDemo"
 import { CssDemo } from "@/features/blog/components/mdx/islands/CssDemo"
 import type { CssDemoName } from "@/features/blog/components/mdx/islands/CssDemo"
 import { MaskDemo } from "@/features/blog/components/mdx/islands/MaskDemo"
@@ -63,6 +64,11 @@ export function getMdxComponents(locale: Locale, getImageSize: GetImageSize) {
     ViraMaskDemo: () => (
       <MdxIsland name="mask-demo" props={{ locale }}>
         <MaskDemo locale={locale} />
+      </MdxIsland>
+    ),
+    ViraAddressDemo: () => (
+      <MdxIsland name="address-demo" props={{ locale }}>
+        <AddressDemo locale={locale} />
       </MdxIsland>
     ),
     ViraPasswordDemo: () => (

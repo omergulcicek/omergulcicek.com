@@ -56,6 +56,9 @@ importers:
       '@vercel/og':
         specifier: 0.11.1
         version: 0.11.1
+      '@virastack/address':
+        specifier: 1.0.1
+        version: 1.0.1(react@19.3.1)
       '@virastack/mask':
         specifier: 2.3.0
         version: 2.3.0(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
@@ -2315,6 +2318,15 @@ packages:
   '@vercel/og@0.11.1':
     resolution: {integrity: sha512-02rXXRABFq1B03w3aNhcVfxkY+8Ba5QFi4ax0zS0oOiD/LL9WUd/LA7BjVPakrQmVhIBjuo2oBM5U25R9IuXMg==}
     engines: {node: '>=16'}
+
+  '@virastack/address@1.0.1':
+    resolution: {integrity: sha512-yMGZ99K81j2IJUAqKSQjr/oS3lNMxQino8wWUby1LSsf0Iem8aRSxzpL+4PNFrxuElC/uG8lRKd4aYJI0A1DOw==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      react: '>=18.2.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   '@virastack/mask@2.3.0':
     resolution: {integrity: sha512-fUZNPjlokdRFru7Q4dgAPmiHF+HIchS5oyVxUEQrekactRtrwCuDrY/SUQqkkJWckNC7Tu8J4hd3aZCm+Qt8nQ==}
@@ -6315,6 +6327,10 @@ snapshots:
       satori: 0.25.0
     optionalDependencies:
       sharp: 0.34.5
+
+  '@virastack/address@1.0.1(react@19.3.1)':
+    optionalDependencies:
+      react: 19.3.1
 
   '@virastack/mask@2.3.0(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)':
     dependencies:

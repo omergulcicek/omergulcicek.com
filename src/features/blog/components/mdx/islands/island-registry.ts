@@ -15,6 +15,14 @@ const localeSchema = z.enum(locales)
 
 export const ISLANDS = new Map<string, IslandLoader>([
   [
+    "address-demo",
+    async () => {
+      const { AddressDemo } = await import("@/features/blog/components/mdx/islands/AddressDemo")
+      const schema = z.object({ locale: localeSchema })
+      return (props) => createElement(AddressDemo, schema.parse(props))
+    }
+  ],
+  [
     "css-demo",
     async () => {
       const { CssDemo, CSS_DEMOS } = await import("@/features/blog/components/mdx/islands/CssDemo")
