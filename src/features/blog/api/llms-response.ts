@@ -59,7 +59,10 @@ export async function llmsTxtResponse() {
       page("/uses", m.uses_title({}, tr), m.uses_description({}, tr)),
       page("/bookmarks", m.bookmarks_title({}, tr), m.bookmarks_description({}, tr))
     ],
-    posts: posts.map(toLlmsPost(FEED_PATHS.technical.list)),
+    posts: posts.filter((post) => post.locale === "tr").map(toLlmsPost(FEED_PATHS.technical.list)),
+    englishPosts: posts
+      .filter((post) => post.locale === "en")
+      .map(toLlmsPost(FEED_PATHS.technical.list)),
     notes: notes.map(toLlmsPost(FEED_PATHS.personal.list)),
     projects: me.projects.flatMap((project) =>
       project.href
@@ -116,7 +119,10 @@ export async function llmsFullTxtResponse() {
 }
 
 async function buildFullText() {
-  const posts = await getFullTextPosts("technical")
+  // Turkish posts first, then the English ones; each post's header names its language.
+  const posts = [...(await getFullTextPosts("technical"))].sort(
+    (a, b) => Number(a.locale === "en") - Number(b.locale === "en")
+  )
 
   // One post that fails to convert is left out instead of taking the whole file down.
   const entries = posts.flatMap((post) => {

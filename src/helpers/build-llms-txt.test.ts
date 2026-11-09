@@ -19,13 +19,15 @@ describe("buildLlmsTxt", () => {
       summary: "Kişisel site",
       contact: ["Email: iletisim@omergulcicek.com"],
       pages: [{ title: "Blog", url: "https://omergulcicek.com/blog", description: "Yazılar" }],
-      posts: [post],
+      posts: [],
+      englishPosts: [post],
       notes: [],
       projects: [],
       links: []
     })
 
     expect(text.startsWith("# Ömer Gülçiçek · Frontend Mühendisi\n\n> Kişisel site")).toBe(true)
+    expect(text).toContain("## Blog in English (newest first)")
     expect(text).toContain(
       "- [Barrel File](https://omergulcicek.com/blog/barrel-file): Gerekli mi? (2026-10-31, en)"
     )

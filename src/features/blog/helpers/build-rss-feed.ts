@@ -10,6 +10,8 @@ type RssChannel = {
   /** A post's absolute URL; its slug has a leading slash. */
   postUrl: (post: FeedPost) => string
   author: string
+  /** The feed's language code, such as `tr`. */
+  language: string
 }
 
 const escapeXml = (value: string) =>
@@ -47,7 +49,7 @@ export function buildRssFeed(posts: FeedPost[], channel: RssChannel, now = new D
     <title>${escapeXml(channel.title)}</title>
     <link>${escapeXml(channel.link)}</link>
     <description>${escapeXml(channel.description)}</description>
-    <language>tr</language>
+    <language>${escapeXml(channel.language)}</language>
     <managingEditor>${escapeXml(channel.author)}</managingEditor>
     <lastBuildDate>${now.toUTCString()}</lastBuildDate>
     <atom:link href="${escapeXml(channel.feedUrl)}" rel="self" type="application/rss+xml"/>

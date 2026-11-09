@@ -16,6 +16,7 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Char123LangChar125RouteImport } from './routes/{-$lang}'
+import { Route as EnFeedDotxmlRouteImport } from './routes/en/feed[.]xml'
 import { Route as NotesFeedDotxmlRouteImport } from './routes/notes/feed[.]xml'
 import { Route as OgSplatRouteImport } from './routes/og/$'
 import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
@@ -73,6 +74,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const Char123LangChar125Route = Char123LangChar125RouteImport.update({
   id: '/{-$lang}',
   path: '/{-$lang}',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnFeedDotxmlRoute = EnFeedDotxmlRouteImport.update({
+  id: '/en/feed.xml',
+  path: '/en/feed.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotesFeedDotxmlRoute = NotesFeedDotxmlRouteImport.update({
@@ -213,6 +219,7 @@ export interface FileRoutesByFullPath {
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/en/feed.xml': typeof EnFeedDotxmlRoute
   '/notes/feed.xml': typeof NotesFeedDotxmlRoute
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
@@ -244,6 +251,7 @@ export interface FileRoutesByTo {
   '/robots.txt': typeof RobotsDottxtRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/en/feed.xml': typeof EnFeedDotxmlRoute
   '/notes/feed.xml': typeof NotesFeedDotxmlRoute
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
@@ -277,6 +285,7 @@ export interface FileRoutesById {
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/en/feed.xml': typeof EnFeedDotxmlRoute
   '/notes/feed.xml': typeof NotesFeedDotxmlRoute
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
@@ -311,6 +320,7 @@ export interface FileRouteTypes {
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/en/feed.xml'
     | '/notes/feed.xml'
     | '/og/$'
     | '/{-$lang}/about'
@@ -342,6 +352,7 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/site.webmanifest'
     | '/sitemap.xml'
+    | '/en/feed.xml'
     | '/notes/feed.xml'
     | '/og/$'
     | '/{-$lang}/about'
@@ -374,6 +385,7 @@ export interface FileRouteTypes {
     | '/site.webmanifest'
     | '/sitemap.xml'
     | '/{-$lang}'
+    | '/en/feed.xml'
     | '/notes/feed.xml'
     | '/og/$'
     | '/{-$lang}/about'
@@ -407,6 +419,7 @@ export interface RootRouteChildren {
   SiteDotwebmanifestRoute: typeof SiteDotwebmanifestRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Char123LangChar125Route: typeof Char123LangChar125RouteWithChildren
+  EnFeedDotxmlRoute: typeof EnFeedDotxmlRoute
   NotesFeedDotxmlRoute: typeof NotesFeedDotxmlRoute
   OgSplatRoute: typeof OgSplatRoute
 }
@@ -460,6 +473,13 @@ declare module '@tanstack/react-router' {
       path: '/{-$lang}'
       fullPath: '/{-$lang}'
       preLoaderRoute: typeof Char123LangChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/feed.xml': {
+      id: '/en/feed.xml'
+      path: '/en/feed.xml'
+      fullPath: '/en/feed.xml'
+      preLoaderRoute: typeof EnFeedDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notes/feed.xml': {
@@ -685,6 +705,7 @@ const rootRouteChildren: RootRouteChildren = {
   SiteDotwebmanifestRoute: SiteDotwebmanifestRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Char123LangChar125Route: Char123LangChar125RouteWithChildren,
+  EnFeedDotxmlRoute: EnFeedDotxmlRoute,
   NotesFeedDotxmlRoute: NotesFeedDotxmlRoute,
   OgSplatRoute: OgSplatRoute,
 }

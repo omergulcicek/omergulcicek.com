@@ -8,7 +8,8 @@ const channel = {
   link: "https://omergulcicek.com/blog",
   feedUrl: "https://omergulcicek.com/feed.xml",
   postUrl: (post: { slug: string }) => `https://omergulcicek.com/blog${post.slug}`,
-  author: "iletisim@omergulcicek.com (Ömer Gülçiçek)"
+  author: "iletisim@omergulcicek.com (Ömer Gülçiçek)",
+  language: "tr"
 }
 
 describe("buildRssFeed", () => {

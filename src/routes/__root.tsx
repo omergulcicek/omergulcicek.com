@@ -17,7 +17,8 @@ import { NotFound } from "@/components/shared/NotFound"
 import { SiteFooter } from "@/components/shared/SiteFooter"
 import { SiteHeader } from "@/components/shared/SiteHeader"
 import { SiteSidebar } from "@/components/shared/SiteSidebar"
-import { getLocale } from "@/paraglide/runtime.js"
+import * as m from "@/paraglide/messages.js"
+import { getLocale, localizeHref } from "@/paraglide/runtime.js"
 
 interface RouterContext {
   queryClient: QueryClient
@@ -44,8 +45,18 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       { rel: "apple-touch-icon", href: "/logo.webp" },
       { rel: "manifest", href: "/site.webmanifest" },
       // Feed readers find the RSS feeds from any page.
-      { rel: "alternate", type: "application/rss+xml", title: "Blog", href: "/feed.xml" },
-      { rel: "alternate", type: "application/rss+xml", title: "Notlar", href: "/notes/feed.xml" }
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: m.blog_title(),
+        href: localizeHref("/feed.xml")
+      },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: m.notes_title(),
+        href: "/notes/feed.xml"
+      }
     ]
   }),
   errorComponent: DefaultCatchBoundary,

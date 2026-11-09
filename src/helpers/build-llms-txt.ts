@@ -8,7 +8,10 @@ type LlmsTxtInput = {
   summary: string
   contact: string[]
   pages: LlmsLink[]
+  /** Posts in Turkish, the site's main language. */
   posts: LlmsPost[]
+  /** Posts written in English; their section is left out when there are none. */
+  englishPosts: LlmsPost[]
   notes: LlmsPost[]
   projects: LlmsLink[]
   links: LlmsLink[]
@@ -32,11 +35,14 @@ export function buildLlmsTxt(input: LlmsTxtInput) {
     `# ${input.name} · ${input.role}`,
     `> ${input.summary}`,
     [
-      "- Language: Turkish (tr), with some posts in English; English pages live under /en.",
+      "- Language: Turkish (tr). Posts written in English are listed in their own section; English pages live under /en.",
       ...input.contact.map((line) => `- ${line}`)
     ].join("\n"),
     ["## Pages", "", ...input.pages.map(linkLine)].join("\n"),
-    ["## Blog (newest first)", "", ...input.posts.map(postLine)].join("\n"),
+    ["## Blog (Turkish, newest first)", "", ...input.posts.map(postLine)].join("\n"),
+    ...(input.englishPosts.length > 0
+      ? [["## Blog in English (newest first)", "", ...input.englishPosts.map(postLine)].join("\n")]
+      : []),
     ["## Projects", "", ...input.projects.map(linkLine)].join("\n"),
     ["## Optional", "", ...input.notes.map(postLine), "", ...input.links.map(linkLine)].join("\n")
   ]
