@@ -11,7 +11,7 @@
 - [x] Yazı sayfası: görsellere boyut (`pnpm blog:image-sizes`), okuma süresi, mobil içindekiler, ilgili yazılar
 - [x] Kod blokları: dil etiketi, `title="…"` ile dosya adı, kopyala butonu
 - [x] Blog ve Notlar: etiket filtresi (`?tag=css`, sağ alanda liste, mobilde çipler)
-- [ ] EN blog sayfası: İngilizce yazılar üstte, "Posts in Turkish" ayrı bölümde
+- [ ] EN blog sayfası: şimdilik iki dil birlikte; İngilizce yazılar birikince EN'de yalnızca İngilizce yazılar
 - [ ] Etiketlerin İngilizce karşılıkları (Supabase'de etiketler Türkçe)
 - [x] `/virastack` sayfası (9 bölüm; ürün başına 3 aylık, toplamda tüm zamanların npm indirmesi; günlük cache)
 - [x] Proje kartlarında npm indirme sayıları (son 3 ay) ve GitHub yıldızları, günlük cache ile canlı
@@ -22,11 +22,11 @@
 - [x] Yolculuk (13 kayıt, ViraStack noktaları); Kullandıklarım (/uses; /setup ve /workspace 301 ile yönleniyor)
 - [x] Hakkımda (tanışma, işin dışında, favoriler; menü grubu "Kişisel")
 - [x] Şu an sayfası kaldırıldı: içeriği Hakkımda, ViraStack ve Yolculuk sayfalarında
-- [ ] Ana sayfa test ve commit (ana sayfa bitince toplu)
+- [x] Ana sayfa test ve commit
 
 ## ViraStack Start şablonunda düzeltilecekler
 
-- [ ] `commitlint.config.js` CommonJS yazılmış, paket `"type": "module"` olduğu için commit hook'u çöküyor
+- [x] `commitlint.config.js` ESM; commit hook'u çalışıyor
 - [ ] `components/ui/separator.tsx` yüksekliği `data-horizontal`'a bağlı, Base UI `data-orientation` koyuyor; yatay separator 0px kalıyor
 - [ ] `src/routeTree.gen.ts` içinde TanStack Start `Register` bloğu eksik geliyor
 
@@ -34,17 +34,17 @@
 
 ### SEO ve meta
 
-- [ ] Ana sayfa `<title>`: "Ömer Gülçiçek · Frontend Mühendisi" (şu an şablonun "ViraStack Start - TanStack Edition" başlığı)
-- [ ] Ana sayfa meta description: şablonun "TanStack Start boilerplate'i…" metni yerine kişisel açıklama
-- [ ] Alt sayfa başlık şablonu: "Blog · Ömer Gülçiçek" (şu an sadece "Blog")
-- [ ] Her sayfaya kendi OG ve Twitter etiketleri (şu an alt sayfalarda şablonun değerleri)
-- [ ] Yazı sayfalarına özel paylaşım görseli: Supabase'deki `og_image_path`
-- [ ] OG görseli ve favicon (şu an ViraStack Start'ın `og.png` ve `logo.webp` dosyaları)
-- [ ] Sitemap: blog, notlar ve diğer sayfalar, iki dilde (şu an sadece ana sayfa)
-- [ ] JSON-LD: `Person` ve `WebSite` (isim, unvan, sosyal linkler)
-- [ ] Canonical: `/blog` ve `/notes` tamam (filtreli URL'ler yalın adresi gösteriyor), diğer sayfalara da `canonicalLink()` eklenmeli
-- [ ] `siteConfig` içindeki şablon değerleri (`name`, `description`, `shortName`) ve `VITE_APP_NAME`
-- [ ] Boş kalan sayfalar yayına girmesin ya da `noindex` alsın
+- [x] Ana sayfa `<title>`: "Ömer Gülçiçek · Frontend Mühendisi"
+- [x] Ana sayfa meta description (`site_description`)
+- [x] Alt sayfa başlık şablonu: "Blog · Ömer Gülçiçek" (`pageHead()` in `config/seo.config.ts`)
+- [x] Her sayfaya kendi OG ve Twitter etiketleri
+- [x] Yazı sayfalarına özel paylaşım görseli (`og_image_path`; 113 yazının 74'ünde var, diğerleri site kartını kullanır)
+- [ ] OG görseli ve favicon (şu an ViraStack Start'ın `og.png`, `favicon.ico` ve `logo.webp` dosyaları; manifest için 192 ve 512 px ikon)
+- [x] Sitemap: sayfalar iki dilde (hreflang ile), yazılar yalnızca kendi dillerinde
+- [x] JSON-LD: ana sayfada `WebSite` ve `Person`, yazılarda `BlogPosting`
+- [x] Canonical: tüm sayfalar; yazılar kendi dillerindeki adresi gösterir
+- [x] `siteConfig` değerleri `me.json`'dan; `VITE_APP_NAME` kaldırıldı
+- [x] Taslak sayfalar `noindex`: Müzik (sitemap'te de yok); bitince `noindex` kaldırılıp sitemap'e eklenmeli
 
 ### Yönlendirmeler ve geçiş
 
