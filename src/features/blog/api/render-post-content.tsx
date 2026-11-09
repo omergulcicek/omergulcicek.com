@@ -11,6 +11,7 @@ import type { ShikiTransformer } from "shiki"
 import { BlogCodeBlock } from "@/features/blog/components/BlogCodeBlock"
 import { getMdxComponents } from "@/features/blog/components/mdx/mdx-components"
 import imageSizes from "@/features/blog/constants/blog-image-sizes.json"
+import { localizePostLink } from "@/features/blog/helpers/localize-post-link"
 import { rehypeFigureCaptions } from "@/features/blog/helpers/rehype-figure-captions"
 import { rehypeHeadingIds } from "@/features/blog/helpers/rehype-heading-ids"
 import type { PostHeading } from "@/features/blog/helpers/rehype-heading-ids"
@@ -74,7 +75,9 @@ export async function renderPostContent(content: string, locale: Locale) {
   }
   const components = {
     ...getMdxComponents(locale, getPublicImageSize),
-    pre: (props: ComponentProps<"pre">) => createElement(BlogCodeBlock, { ...props, labels })
+    pre: (props: ComponentProps<"pre">) => createElement(BlogCodeBlock, { ...props, labels }),
+    a: ({ href, ...props }: ComponentProps<"a">) =>
+      createElement("a", { ...props, href: localizePostLink(href, locale) })
   }
 
   // `evaluate` above ran the rehype plugins, so `headings` is already filled here.
