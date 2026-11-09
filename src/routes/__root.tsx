@@ -2,8 +2,10 @@ import { TanStackDevtools } from "@tanstack/react-devtools"
 import type { QueryClient } from "@tanstack/react-query"
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
-import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
-import interCss from "@fontsource-variable/inter/index.css?url"
+import geistMonoCss from "@fontsource-variable/geist-mono/index.css?url"
+import geistLatinExt from "@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2?url"
+import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url"
+import geistCss from "@fontsource-variable/geist/index.css?url"
 
 import { seoHeadMeta } from "@/config/seo.config"
 
@@ -14,7 +16,9 @@ import { Providers } from "@/providers/Providers"
 
 import { DefaultCatchBoundary } from "@/components/shared/DefaultCatchBoundary"
 import { NotFound } from "@/components/shared/NotFound"
+import { SiteFooter } from "@/components/shared/SiteFooter"
 import { SiteHeader } from "@/components/shared/SiteHeader"
+import { SiteSidebar } from "@/components/shared/SiteSidebar"
 import { getLocale } from "@/paraglide/runtime.js"
 
 interface RouterContext {
@@ -30,15 +34,17 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      // Preloading the Latin file keeps the swap from shifting the first paint.
-      {
+      // Turkish text needs both files (ş, ğ, ı and İ live in latin-ext); preloading them keeps the swap from shifting the first paint.
+      ...[geistLatin, geistLatinExt].map((href) => ({
         rel: "preload",
-        href: interLatin,
+        href,
         as: "font",
         type: "font/woff2",
-        crossOrigin: "anonymous"
-      },
-      { rel: "stylesheet", href: interCss },
+        crossOrigin: "anonymous" as const
+      })),
+      { rel: "stylesheet", href: geistCss },
+      // Mono only sets small dates and years, so it loads without a preload and never blocks the first paint.
+      { rel: "stylesheet", href: geistMonoCss },
       { rel: "icon", href: "/logo.webp" },
       { rel: "apple-touch-icon", href: "/logo.webp" },
       { rel: "manifest", href: "/site.webmanifest" }
@@ -54,7 +60,16 @@ function RootComponent() {
   return (
     <Providers>
       <SiteHeader />
-      <Outlet />
+      <div className="flex flex-1">
+        <SiteSidebar />
+        {/* The sidebar stays at the left edge; content centers in the space beside it. */}
+        <div className="flex min-w-0 flex-1 flex-col">
+          <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-5 py-10 md:px-10 md:py-12">
+            <Outlet />
+          </main>
+          <SiteFooter />
+        </div>
+      </div>
     </Providers>
   )
 }

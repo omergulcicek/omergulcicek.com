@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -99,8 +100,27 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --font-inter: "Inter Variable", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter);
+  --font-geist: "Geist Variable", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist);
+  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 @layer base {
@@ -122,12 +142,39 @@
   }
 }
 
-/* Arial sized to Inter's metrics (the values next/font generates), so the swap does not move text. */
+/* Arial sized to Geist's metrics (computed from Capsize data the way next/font does), so the swap does not move text. */
 @font-face {
-  font-family: "Inter Fallback";
+  font-family: "Geist Fallback";
   src: local("Arial");
-  size-adjust: 107.12%;
-  ascent-override: 90.44%;
-  descent-override: 22.52%;
+  size-adjust: 104.76%;
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
   line-gap-override: 0%;
+}
+/*
+ * Shiki writes both themes as CSS variables (defaultColor: false); this picks one per theme.
+ * github-light by default, one-dark-pro under .dark, the same pair v10 used.
+ */
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+}
+
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+
+/* medium-zoom: above the sticky header (z-40) and dialogs (z-50), so a zoomed image covers the page. */
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 60;
+}
+
+/* The sibling-index demo in the new-CSS post: each item pops in after the one before it. */
+@keyframes sibling-pop {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.9);
+  }
 }
