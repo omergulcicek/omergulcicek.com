@@ -42,13 +42,18 @@ type PageSeo = {
   description: string
   /** The home page's title stands alone; every other page gets " · Ömer Gülçiçek". */
   standaloneTitle?: boolean
-  /** A site path (`/blog/…jpg`) or absolute URL of a 1200×630 image; the site card otherwise. */
+  /** A site path or absolute URL of a 1200×630 image; the page's generated card otherwise. */
   image?: string | null
   /** Posts exist in one language: canonical points there and no alternates are declared. */
   contentLocale?: Locale
   /** Pages still in draft stay out of search results. */
   noindex?: boolean
   article?: { publishedTime: string | null; modifiedTime: string | null }
+}
+
+/** The generated 1200×630 share card of a page, served by the `/og/$` route. */
+export function ogCardUrl(path: string, locale: Locale) {
+  return `${siteConfig.url}/og/${locale}${path === "/" ? "" : path}`
 }
 
 /** Absolute URL of a site path or an already absolute URL. */
@@ -62,7 +67,7 @@ export function pageHead(seo: PageSeo) {
   const title = seo.standaloneTitle ? seo.title : `${seo.title} · ${me.name}`
   const locale = seo.contentLocale ?? getLocale()
   const url = localizedUrl(seo.path, locale)
-  const image = seo.image ? absoluteUrl(seo.image) : siteConfig.ogImage
+  const image = seo.image ? absoluteUrl(seo.image) : ogCardUrl(seo.path, locale)
 
   const meta = [
     { title },
@@ -74,7 +79,7 @@ export function pageHead(seo: PageSeo) {
     { property: "og:title", content: title },
     { property: "og:description", content: seo.description },
     { property: "og:image", content: image },
-    // Only the site card has a known size; post images come in their own.
+    // Generated cards have a known size; a custom image comes in its own.
     ...(seo.image
       ? []
       : [

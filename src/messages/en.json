@@ -202,5 +202,6 @@
   "virastack_status_body": "Each product is versioned on its own and grows with feedback from the community. Reporting a bug, suggesting an idea or leaving a star on GitHub helps the most.",
   "virastack_posts_title": "Posts",
   "footer_built_with": "Built with <virastack>ViraStack Start</virastack>, TanStack Start, Tailwind CSS and shadcn/ui.",
-  "footer_source": "Source code on <source>GitHub</source>."
+  "footer_source": "Source code on <source>GitHub</source>.",
+  "og_home_title": "I build interfaces with React, Next.js and TanStack"
 }

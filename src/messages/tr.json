@@ -202,5 +202,6 @@
   "virastack_status_body": "Her ürün ayrı sürümlenir ve topluluktan gelen geri bildirimle gelişir. Bir hata bildirmek, fikir önermek ya da GitHub'da yıldız bırakmak en büyük destek.",
   "virastack_posts_title": "Yazılar",
   "footer_built_with": "<virastack>ViraStack Start</virastack>, TanStack Start, Tailwind CSS ve shadcn/ui ile geliştirildi.",
-  "footer_source": "Kaynak kodu <source>GitHub'da</source>."
+  "footer_source": "Kaynak kodu <source>GitHub'da</source>.",
+  "og_home_title": "React, Next.js ve TanStack ile arayüz geliştiriyorum"
 }

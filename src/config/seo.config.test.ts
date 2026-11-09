@@ -12,7 +12,7 @@ describe("pageHead", () => {
 
     expect(meta[0]).toEqual({ title: "Blog · Ömer Gülçiçek" })
     expect(content(meta, "og:title")).toBe("Blog · Ömer Gülçiçek")
-    expect(content(meta, "og:image")).toBe(siteConfig.ogImage)
+    expect(content(meta, "og:image")).toBe(`${siteConfig.url}/og/tr/blog`)
     expect(links.map((link) => link.rel)).toEqual([
       "canonical",
       "alternate",

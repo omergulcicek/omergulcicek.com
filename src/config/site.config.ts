@@ -9,6 +9,6 @@ export const siteConfig: SiteConfig = {
   shortName: me.handle,
   url: env.VITE_APP_URL,
   apiUrl: env.VITE_API_URL,
-  // FIXME: public/og.png is still the ViraStack Start card; replace it with a 1200×630 card of your own.
-  ogImage: `${env.VITE_APP_URL}/og.png`
+  // The home page's generated card (see src/routes/og/$.ts), for pages that set none of their own.
+  ogImage: `${env.VITE_APP_URL}/og/tr`
 }

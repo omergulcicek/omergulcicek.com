@@ -21,6 +21,13 @@ export const blogPostListItemSchema = z.object({
 
 export const blogPostListSchema = z.array(blogPostListItemSchema)
 
+/** The fields of one post that its share card shows; PostgREST returns an array. */
+export const postCardRowsSchema = z.array(
+  blogPostListItemSchema
+    .pick({ title: true, tags: true, locale: true, published_at: true })
+    .extend({ description: z.string() })
+)
+
 /** One row for the sitemap: where the post lives and when it last changed. */
 export const sitemapPostListSchema = z.array(
   blogPostListItemSchema.pick({ slug: true, locale: true, published_at: true }).extend({
@@ -40,8 +47,6 @@ export const blogPostDetailRowsSchema = z.array(
   blogPostListItemSchema.extend({
     description: z.string(),
     content: z.string().min(1),
-    /** A public path such as `blog/2026/07-28/cover.jpg`, with or without the leading slash. */
-    og_image_path: z.string().min(1).nullable(),
     updated_at: z.string().nullable()
   })
 )
@@ -52,7 +57,6 @@ export type BlogPostListItem = z.infer<typeof blogPostListItemSchema>
 /** A post ready to show: its MDX is already rendered to HTML on the server. */
 export type BlogPostDetail = BlogPostListItem & {
   description: string
-  og_image_path: string | null
   updated_at: string | null
   html: string
   /** The h2/h3 outline, for the table of contents. */
