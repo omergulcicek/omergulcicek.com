@@ -1,18 +1,18 @@
-If you're building a checkout form, the card number field alone is enough trouble: how many digits, where the spaces go, whether the number is even valid. Validity needs the **Luhn algorithm**. Then **American Express** shows up, the mask changes and the CVV grows from three digits to four. Add phone numbers, IBANs and amounts, and every field brings its own rules. Writing them by hand in every project, or having an AI generate them and testing every case yourself, costs time and invites bugs.
+In a checkout form, the card number field alone is enough trouble: how many digits, where the spaces go, whether the number is valid. Validity needs the **Luhn algorithm**; **American Express** changes the mask and grows the CVV to four digits. Phone numbers and IBANs bring rules of their own. Rewriting all of it in every project costs time and invites bugs.
 
 **ViraStack Mask** (`@virastack/mask`) gives you ready, tested masks for these fields. It works with React Hook Form: the user sees the formatted value, the form keeps the raw one.
 
 ## What it does
 
-- **Built for React Hook Form:** The form holds `4111111111111111`, the input shows `4111 1111 1111 1111`. `register` rules, `reset`, `setValue`, `watch`, `Controller` and resolvers keep working.
-- **Type-safe:** Field names, `from` links and rules are checked against your form type. A wrong field name fails at compile time.
-- **International presets:** Phone numbers in E.164, any IBAN with its mod-97 check, cards with Luhn, currencies through `Intl`, dates. Turkish IDs, plates and lira come built in as well.
-- **Same rules on the server:** `@virastack/mask/server` parses and validates the same schema in a Server Action.
-- **Zero dependencies:** Under 10 KB for everything; presets you don't use are tree-shaken away.
+- **Built for React Hook Form:** The input shows `4111 1111 1111 1111`, the form holds `4111111111111111`. `reset`, `setValue`, `watch` and resolvers keep working.
+- **Type-safe:** Field names are checked against your form type; a wrong one fails at compile time.
+- **International presets:** E.164 phone numbers, any IBAN with mod-97, cards with Luhn, currencies through `Intl`, dates.
+- **Same rules on the server:** `@virastack/mask/server` validates the same schema in a Server Action.
+- **Zero dependencies:** Under 10 KB for everything.
 
-## Credit card example
+## Try it
 
-Below, the card number, expiry and CVV work together. Type an invalid number and an error appears. Type an Amex number starting with `34` and watch the mask and the CVV length change. Under each field you'll see the raw value the form holds next to the formatted one.
+The card number, expiry and CVV work together. Type an Amex number starting with `34` and watch the mask and the CVV length change. Under each field you'll see the raw value next to the formatted one.
 
 <ViraMaskDemo />
 
@@ -24,7 +24,7 @@ npm install @virastack/mask
 
 ## Usage
 
-Pass the form and a schema. Each key is a field name; the value is a preset or its options:
+Pass the form and a schema; each key is a field name, each value a preset:
 
 ```tsx title="credit-card-form.tsx"
 import { useForm } from "react-hook-form"
@@ -33,10 +33,7 @@ import { useViraMask } from "@virastack/mask"
 type Card = { card: string; expiry: string; cvv: string }
 
 export function CreditCardForm() {
-  const form = useForm<Card>({
-    defaultValues: { card: "", expiry: "", cvv: "" },
-    mode: "onChange"
-  })
+  const form = useForm<Card>({ defaultValues: { card: "", expiry: "", cvv: "" } })
 
   const { card, expiry, cvv } = useViraMask(form, {
     card: "card",
@@ -54,96 +51,19 @@ export function CreditCardForm() {
 }
 ```
 
-Type `4111 1111 1111 1111` and `form.watch("card")` returns `"4111111111111111"`, no spaces. `from: "card"` links the CVV to the card field, so an Amex number switches it to four digits. If your backend wants the formatted text, add `output: "masked"` to the field.
+Type `4111 1111 1111 1111` and `form.watch("card")` returns `"4111111111111111"`, no spaces. `from: "card"` links the CVV to the card, so an Amex number switches it to four digits.
 
-## Presets
-
-What a few presets show and what they store:
-
-| Preset | Shows | Form value |
-| :--- | :--- | :--- |
-| `phone` | `+14155552671`, `+4915112345678` | `+14155552671` |
-| `iban` | `GB82 WEST 1234 5698 7654 32` | `GB82WEST12345698765432` |
-| `card` | `4111 1111 1111 1111`, Amex `3782 822463 10005` | `4111111111111111` |
-| `expiry` | `12/28` (past months are invalid) | `1228` |
-| `currency` | `1,234.56`; with `currency: "USD"` `$1,234.56` | `1234.56` |
-| `date` | `01/02/2026` | `2026-02-01` |
-
-No preset for your format? Write a pattern: `9` is a digit, `a` a letter, `*` either. `{ mask: "aa-9999", transform: "uppercase" }` shows an order number as `AB-1234`.
-
-## Error messages
-
-Validation errors come back as keys, not text, so wording and translation stay yours. Real output from a few fields:
+Validation errors come back as keys, not text, so the wording stays yours:
 
 ```ts
 import { createMask } from "@virastack/mask/server"
 
 createMask("card").validate("4111")                   // "card.incomplete"
 createMask("card").validate("4111111111111112")       // "card.invalid" (Luhn)
-createMask("card").validate("4111111111111111")       // undefined, valid
 createMask("expiry").validate("0120")                 // "expiry.min", expired
 createMask("iban").validate("GB82WEST12345698765431") // "iban.invalid" (mod-97)
 ```
 
-Map them to your own copy:
+Add `"phone"`, `"iban"`, `"date"` or `{ preset: "currency", currency: "USD" }` to the same schema for the other fields.
 
-```tsx
-const messages: Record<string, string> = {
-  "card.incomplete": "The card number is incomplete",
-  "card.invalid": "This card number isn't valid",
-  "expiry.min": "This card has expired",
-  "iban.invalid": "Check the IBAN"
-}
-
-const error = form.formState.errors.card
-{error && <p>{messages[error.message ?? ""] ?? error.message}</p>}
-```
-
-## Validating on the server
-
-Client checks can be bypassed, so run the same schema on the server. In Server Components and Server Actions, import from `/server`:
-
-```ts title="app/checkout/actions.ts"
-"use server"
-
-import { parseMasked } from "@virastack/mask/server"
-
-import { masks } from "@/features/checkout/schemas/checkout-masks"
-
-export async function checkout(formData: FormData) {
-  const result = await parseMasked(masks, formData)
-  if (!result.success) return { errors: result.errors }
-  // result.data holds the raw values: { card: "4111111111111111", … }
-}
-```
-
-Pass a Zod schema as the third argument if you have one. If you use a resolver on the client, wrap it as `maskResolver(masks, zodResolver(schema))`; otherwise React Hook Form skips the mask's own errors.
-
-## Small helpers
-
-Masks work outside forms too:
-
-```ts
-import { createMask, toMinorUnits } from "@virastack/mask/server"
-
-createMask({ preset: "currency", currency: "USD" }).format("1234.56") // "$1,234.56"
-createMask({ mask: "aa-9999", transform: "uppercase" }).format("ab1234") // "AB-1234"
-toMinorUnits("1234.56", "USD") // 123456 (cents)
-```
-
-For tests, `@virastack/mask/testing` generates valid IBANs for any country (`generateIBAN("DE")`). That entry isn't part of the main or `/server` entries, so it never reaches production bundles.
-
-## With Password and Address
-
-All three ViraStack form packages keep their values in the same React Hook Form:
-
-```tsx
-const form = useForm<Checkout>()
-const { phone, card } = useViraMask(form, { phone: "phone", card: "card" })
-const password = useViraPassword({ value: form.watch("password") })
-const address = useViraAddress({ form })
-```
-
-[ViraStack Password](/blog/virastack-password-accessible-password-hook) covers the password side in detail. [ViraStack Address](https://virastack.com/address) is a hook for Turkish addresses, so it's most useful if you ship to Türkiye.
-
-Every preset, option and live example is at [virastack.com/mask](https://virastack.com/mask), the credit card example's docs are [here](https://virastack.com/mask/examples/credit-card), and the source is in [github.com/virastack/form](https://github.com/virastack/form/tree/main/packages/mask).
+Every preset, server validation, resolvers and live examples are in the [virastack.com/mask](https://virastack.com/mask) docs, and the source is in [github.com/virastack/form](https://github.com/virastack/form/tree/main/packages/mask). For a password field in the same form, see [ViraStack Password](/blog/virastack-password-accessible-password-hook).

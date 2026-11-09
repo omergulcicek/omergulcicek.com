@@ -1,18 +1,18 @@
-Bir ödeme formu yazıyorsan kart numarası alanı tek başına yeterince dert: kaç hane alınacak, boşluklar nereye gelecek, numara gerçekten geçerli mi? Geçerlilik için **Luhn algoritması** gerekiyor. İşin içine **American Express** girince maske değişiyor, CVV üç haneden dörde çıkıyor. Telefon, IBAN ve TCKN eklenince her alan kendi kurallarını getiriyor. Bunları her projede elle yazmak, yapay zekâya ürettirip her senaryoyu tek tek test etmek hem vakit alıyor hem hata riskini artırıyor.
+Bir ödeme formunda kart numarası alanı tek başına yeterince dert: kaç hane alınacak, boşluklar nereye gelecek, numara geçerli mi? Geçerlilik için **Luhn algoritması** gerekiyor; **American Express** girince maske değişiyor, CVV dört haneye çıkıyor. Telefon, IBAN ve TCKN de kendi kurallarını getiriyor. Bunları her projede baştan yazmak hem vakit alıyor hem hata riskini artırıyor.
 
 **ViraStack Mask** (`@virastack/mask`) bu alanlar için hazır ve test edilmiş maskeler sunuyor. React Hook Form ile çalışıyor: kullanıcı formatlı değeri görüyor, form ham değeri tutuyor.
 
 ## Ne Yapıyor?
 
-- **React Hook Form için:** Form `5551234567` tutuyor, input `(555) 123 45 67` gösteriyor. `register` kuralları, `reset`, `setValue`, `watch`, `Controller` ve resolver'lar çalışmaya devam ediyor.
-- **Tip güvenli:** Alan adları, `from` bağlantıları ve kurallar formunun tipine göre denetleniyor. Yanlış bir alan adı derlemede hata veriyor.
-- **Türkiye'ye hazır:** TCKN, VKN, Türkiye IBAN'ı ve telefonu, plaka, kuruşlu TL ve IBAN'dan banka bilgisi.
-- **Sunucuda aynı kurallar:** `@virastack/mask/server` aynı şemayı Server Action içinde çözüp doğruluyor.
-- **Bağımlılık yok:** Hepsi birden 10 KB'ın altında; kullanmadığın preset'ler pakete girmiyor.
+- **React Hook Form için:** Input `(555) 123 45 67` gösteriyor, form `5551234567` tutuyor. `reset`, `setValue`, `watch` ve resolver'lar çalışmaya devam ediyor.
+- **Tip güvenli:** Alan adları formunun tipine göre denetleniyor; yanlış bir ad derlemede hata veriyor.
+- **Türkiye'ye hazır:** TCKN, VKN, IBAN, telefon, plaka ve kuruşlu TL; kartta Luhn, IBAN'da mod-97 kontrolü hazır.
+- **Sunucuda aynı kurallar:** `@virastack/mask/server` aynı şemayı Server Action içinde doğruluyor.
+- **Bağımlılık yok:** Hepsi birden 10 KB'ın altında.
 
-## Kredi kartı örneği
+## Dene
 
-Aşağıda kart numarası, son kullanma tarihi ve CVV birlikte çalışıyor. Geçersiz bir numara yazınca hata görünüyor. `34` ile başlayan bir Amex numarası yaz, maskenin ve CVV hanesinin nasıl değiştiğine bak. Her alanın altında formun tuttuğu ham değer ve ekranda görünen değer yan yana duruyor.
+Kart numarası, son kullanma tarihi ve CVV birlikte çalışıyor. `34` ile başlayan bir Amex numarası yaz, maskenin ve CVV hanesinin değiştiğine bak. Her alanın altında formun tuttuğu ham değer ve ekranda görünen değer yan yana duruyor.
 
 <ViraMaskDemo />
 
@@ -22,9 +22,9 @@ Aşağıda kart numarası, son kullanma tarihi ve CVV birlikte çalışıyor. Ge
 npm install @virastack/mask
 ```
 
-## Nasıl kullanılır?
+## Kullanım
 
-Hook'a formu ve bir şema veriyorsun. Şemadaki her anahtar bir alan adı; değeri bir preset ya da ayar:
+Hook'a formu ve bir şema veriyorsun; her anahtar bir alan adı, değeri bir preset:
 
 ```tsx title="credit-card-form.tsx"
 import { useForm } from "react-hook-form"
@@ -33,10 +33,7 @@ import { useViraMask } from "@virastack/mask"
 type Card = { card: string; expiry: string; cvv: string }
 
 export function CreditCardForm() {
-  const form = useForm<Card>({
-    defaultValues: { card: "", expiry: "", cvv: "" },
-    mode: "onChange"
-  })
+  const form = useForm<Card>({ defaultValues: { card: "", expiry: "", cvv: "" } })
 
   const { card, expiry, cvv } = useViraMask(form, {
     card: "card",
@@ -54,104 +51,19 @@ export function CreditCardForm() {
 }
 ```
 
-`4111 1111 1111 1111` yazınca `form.watch("card")` boşluksuz `"4111111111111111"` döndürüyor. `from: "card"` CVV'yi kart alanına bağlıyor: Amex yazılınca CVV dört haneye çıkıyor. Backend'in formatlı metni istiyorsa alana `output: "masked"` ekle.
+`4111 1111 1111 1111` yazınca `form.watch("card")` boşluksuz `"4111111111111111"` döndürüyor. `from: "card"` CVV'yi kart alanına bağlıyor; Amex yazılınca CVV dört haneye çıkıyor.
 
-## Hazır preset'ler
-
-Birkaç preset'in ekranda gösterdiği ve forma yazdığı değer:
-
-| Preset | Ekranda | Formda |
-| :--- | :--- | :--- |
-| `phone` + `country: "TR"` | `(555) 123 45 67` | `5551234567` |
-| `iban` + `country: "TR"` | `TR33 0006 1005 1978 6457 8413 26` | `TR330006100519786457841326` |
-| `card` | `4111 1111 1111 1111`, Amex `3782 822463 10005` | `4111111111111111` |
-| `expiry` | `12/28` (geçmiş aylar geçersiz) | `1228` |
-| `tckn`, `vkn` | `10000000146` | `10000000146` |
-| `plate` | `34 ABC 123` | `34ABC123` |
-| `currency` + `country: "TR"` | `₺1.234,56` | `1234.56` |
-| `date` | `01/02/2026` | `2026-02-01` |
-
-Hazır bir preset yoksa kendi desenini yaz: `9` rakam, `a` harf, `*` ikisinden biri. Örneğin `{ mask: "aa-9999", transform: "uppercase" }` bir sipariş numarasını `AB-1234` olarak gösteriyor.
-
-## Hata mesajları
-
-Doğrulama hataları metin değil anahtar olarak dönüyor; metni ve çeviriyi sen yönetiyorsun. Birkaç alanın gerçek çıktısı:
+Doğrulama hataları metin değil anahtar olarak dönüyor; metni ve çeviriyi sen yazıyorsun:
 
 ```ts
 import { createMask } from "@virastack/mask/server"
 
 createMask("card").validate("4111")             // "card.incomplete"
 createMask("card").validate("4111111111111112") // "card.invalid" (Luhn)
-createMask("card").validate("4111111111111111") // undefined, geçerli
 createMask("expiry").validate("0120")           // "expiry.min", süresi dolmuş
 createMask("tckn").validate("12345678901")      // "tckn.invalid"
 ```
 
-Bunları kendi metinlerinle eşle:
+Telefon için `{ preset: "phone", country: "TR" }`, IBAN için `{ preset: "iban", country: "TR" }` ya da `"tckn"`, `"plate"`, `"currency"` gibi preset'leri aynı şemaya ekleyebilirsin.
 
-```tsx
-const messages: Record<string, string> = {
-  "card.incomplete": "Kart numarası eksik",
-  "card.invalid": "Geçersiz kart numarası",
-  "expiry.min": "Kartın süresi dolmuş",
-  "tckn.invalid": "Geçersiz TC kimlik numarası"
-}
-
-const error = form.formState.errors.card
-{error && <p>{messages[error.message ?? ""] ?? error.message}</p>}
-```
-
-## Sunucuda doğrulama
-
-İstemcideki kontrol atlanabilir, o yüzden aynı şemayı sunucuda da çalıştır. Server Component ve Server Action'larda `/server` girişini kullan:
-
-```ts title="app/checkout/actions.ts"
-"use server"
-
-import { parseMasked } from "@virastack/mask/server"
-
-import { masks } from "@/features/checkout/schemas/checkout-masks"
-
-export async function checkout(formData: FormData) {
-  const result = await parseMasked(masks, formData)
-  if (!result.success) return { errors: result.errors }
-  // result.data ham değerleri tutuyor: { card: "4111111111111111", … }
-}
-```
-
-Bir Zod şeman varsa üçüncü argüman olarak verebilirsin. İstemcide bir resolver kullanıyorsan `maskResolver(masks, zodResolver(schema))` ile sarmala; yoksa React Hook Form maskenin hatalarını atlıyor.
-
-## Küçük yardımcılar
-
-Maskeler formun dışında da çalışıyor:
-
-```ts
-import { createMask, toMinorUnits } from "@virastack/mask/server"
-import { getTurkishBank } from "@virastack/mask"
-
-createMask("plate").format("34abc123")                           // "34 ABC 123"
-createMask({ preset: "currency", country: "TR" }).format("1234.56") // "₺1.234,56"
-toMinorUnits("1234.56", "TRY")                                   // 123456 (kuruş)
-getTurkishBank("TR63 0006 2000 0000 0000 1234 56")
-// { code: "0062", name: "T. GARANTİ BANKASI A.Ş." }
-```
-
-`getTurkishBank` bankayı IBAN'daki banka kodundan okuyor, API çağrısı yapmıyor; banka haneleri yazılır yazılmaz çalışıyor. Testler için `@virastack/mask/testing` geçerli TCKN ve IBAN üretiyor (`generateTCKN()`, `generateIBAN("TR")`); bu giriş ana pakete ve `/server`'a dahil değil, üretim koduna girmiyor.
-
-## Password ve Address ile birlikte
-
-ViraStack'in üç form paketi de değerleri aynı React Hook Form'da tutuyor. Maskeli bir TCKN ve telefon, bir parola ve bir adres tek bir formda:
-
-```tsx
-const form = useForm<Checkout>()
-const { tckn, phone } = useViraMask(form, {
-  tckn: { preset: "tckn" },
-  phone: { preset: "phone", country: "TR" }
-})
-const password = useViraPassword({ value: form.watch("password") })
-const address = useViraAddress({ form })
-```
-
-[ViraStack Password](/blog/virastack-password) ve [ViraStack Address](/blog/virastack-address) yazılarında ikisini ayrıntılı anlattım.
-
-Tüm preset'ler, seçenekler ve canlı örnekler [virastack.com/mask](https://virastack.com/mask) adresinde, kredi kartı örneğinin dokümantasyonu [burada](https://virastack.com/tr/mask/examples/credit-card), kaynak kod [github.com/virastack/form](https://github.com/virastack/form/tree/main/packages/mask) deposunda.
+Tüm preset'ler, sunucu doğrulaması, resolver kullanımı ve canlı örnekler [virastack.com/mask](https://virastack.com/mask) dokümanında, kaynak kod [github.com/virastack/form](https://github.com/virastack/form/tree/main/packages/mask) deposunda. Aynı formda parola ve adres için [ViraStack Password](/blog/virastack-password) ve [ViraStack Address](/blog/virastack-address) yazılarına bakabilirsin.
