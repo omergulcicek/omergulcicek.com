@@ -72,9 +72,22 @@ export function ThemeProvider({
     // Read the real values: on hydration `resolvedTheme` still holds the server snapshot.
     const current = resolve(readTheme(storageKey, defaultTheme), prefersDark())
     const root = document.documentElement
+    // Every hover and link color transitions in 150ms; without this they would all fade at
+    // once and smear the switch. Off for the swap, a forced style flush, then back on.
+    const pause = document.createElement("style")
+    pause.textContent = "*,*::before,*::after{transition:none!important}"
+    document.head.appendChild(pause)
     root.classList.remove("light", "dark")
     root.classList.add(current)
     root.style.colorScheme = current
+    void window.getComputedStyle(document.body).opacity
+    // A timer, not requestAnimationFrame: rAF never fires in a background tab, which would
+    // leave every transition switched off.
+    const timer = globalThis.setTimeout(() => pause.remove(), 1)
+    return () => {
+      globalThis.clearTimeout(timer)
+      pause.remove()
+    }
   }, [resolvedTheme, storageKey, defaultTheme])
 
   const setTheme = (next: Theme) => {

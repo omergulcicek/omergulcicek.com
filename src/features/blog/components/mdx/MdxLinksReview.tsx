@@ -14,7 +14,7 @@ export function MdxLinksReview({ title, links }: MdxLinksReviewProps) {
           {links.length}
           <ChevronDownIcon
             aria-hidden
-            className="size-4 transition-transform duration-150 ease-out group-open/links:rotate-180"
+            className="size-4 transition-[rotate] duration-150 ease-out group-open/links:rotate-180 motion-reduce:transition-none"
           />
         </span>
       </summary>

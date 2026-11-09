@@ -8,7 +8,7 @@ import { VIRASTACK_GITHUB } from "@/features/virastack/constants/virastack.const
 import * as m from "@/paraglide/messages.js"
 
 const iconClass =
-  "transition-transform duration-150 ease-out motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5"
+  "transition-[translate] duration-150 ease-out motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5"
 
 /** The site and the GitHub organization, right under the page header. */
 export function ViraStackLinks() {

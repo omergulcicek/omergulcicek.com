@@ -94,7 +94,7 @@ export function BlogCodeBlock({
             <span data-expand-text="">{labels.expand(lines)}</span>
             <ChevronDownIcon
               aria-hidden="true"
-              className="transition-transform duration-150 ease-out group-aria-expanded/expand:rotate-180"
+              className="transition-[rotate] duration-150 ease-out group-aria-expanded/expand:rotate-180 motion-reduce:transition-none"
             />
           </button>
         </div>

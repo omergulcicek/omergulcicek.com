@@ -21,19 +21,19 @@ export const surfaceDoubleFrameSmClass =
 export const readingWidthClass = "w-full max-w-2xl"
 
 /**
- * The one text-link style: an underline in the text's own color at 30%, full on hover.
- * Always visible, so a link never relies on color alone. Rails and nav are navigation, not
- * text links, and use pageRailLinkClass instead.
+ * The one text-link style: a brand-colored underline at half strength, full on hover. The text
+ * keeps its own color and the underline is always there, so a link never relies on color alone.
+ * Rails and nav are navigation, not text links, and use pageRailLinkClass instead.
  */
 export const textLinkClass =
-  "rounded-sm underline decoration-current/30 underline-offset-4 transition-[text-decoration-color,color] duration-150 ease-out outline-none hover:decoration-current focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  "rounded-sm underline decoration-brand/50 underline-offset-4 transition-[text-decoration-color,color] duration-150 ease-out outline-none hover:decoration-brand focus-visible:ring-[3px] focus-visible:ring-ring/50"
 
 /**
  * The same link for titles in a list (blog, notes): the underline only appears on hover. A
  * list of titles reads as links by its layout, and 100 underlines would turn into noise.
  */
 export const titleLinkClass =
-  "rounded-sm underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-150 ease-out outline-none hover:decoration-current focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  "rounded-sm underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-150 ease-out outline-none hover:decoration-brand focus-visible:ring-[3px] focus-visible:ring-ring/50"
 
 /** A single frame for media in grids and lists, where the double frame would turn to noise. */
 export const mediaFrameClass = "rounded-lg border border-border shadow-xs"

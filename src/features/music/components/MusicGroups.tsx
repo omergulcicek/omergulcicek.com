@@ -54,14 +54,14 @@ function FeaturedVideo({
               loading={priority ? "eager" : "lazy"}
               fetchPriority={priority ? "high" : undefined}
               decoding="async"
-              className="size-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
+              className="size-full object-cover transition-[scale] duration-300 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
             />
             {/* The play mark says "this is a video" before anyone reads the caption. */}
             <span
               aria-hidden
               className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-150 group-hover:bg-black/20"
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-transform duration-150 ease-out group-hover:scale-110 motion-reduce:transition-none">
+              <span className="flex size-10 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-[scale] duration-150 ease-out group-hover:scale-110 motion-reduce:transition-none">
                 <PlayIcon className="size-4 translate-x-px fill-current" />
               </span>
             </span>

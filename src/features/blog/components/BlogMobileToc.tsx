@@ -18,7 +18,7 @@ export function BlogMobileToc({ headings, lang }: BlogMobileTocProps) {
         {m.toc_title()}
         <ChevronDownIcon
           aria-hidden
-          className="size-4 text-muted-foreground transition-transform duration-150 ease-out group-open/toc:rotate-180"
+          className="size-4 text-muted-foreground transition-[rotate] duration-150 ease-out group-open/toc:rotate-180 motion-reduce:transition-none"
         />
       </summary>
       <ul lang={lang} className="flex flex-col gap-2 border-t border-border px-4 py-3">

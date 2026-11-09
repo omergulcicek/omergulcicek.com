@@ -41,7 +41,7 @@ export function LabeledSection({ id, title, link, children }: LabeledSectionProp
             {link.label}
             <ArrowRightIcon
               aria-hidden
-              className="size-3.5 transition-transform duration-150 ease-out motion-safe:group-hover:translate-x-0.5"
+              className="size-3.5 transition-[translate] duration-150 ease-out motion-safe:group-hover:translate-x-0.5"
             />
           </Link>
         ) : null}

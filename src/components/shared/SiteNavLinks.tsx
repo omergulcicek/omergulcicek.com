@@ -38,7 +38,7 @@ export function SiteNavLinks({ onNavigate, idPrefix }: SiteNavLinksProps) {
                     params={{ lang }}
                     activeOptions={{ exact }}
                     onClick={onNavigate}
-                    className="flex h-9 items-center gap-2 rounded-md px-2 text-sm text-muted-foreground transition-colors duration-150 ease-out outline-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-[current=page]:bg-accent aria-[current=page]:font-medium aria-[current=page]:text-foreground md:h-8"
+                    className="flex h-9 items-center gap-2 rounded-md px-2 text-sm text-muted-foreground transition-colors duration-150 ease-out outline-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-[current=page]:bg-accent aria-[current=page]:font-medium aria-[current=page]:text-foreground md:h-8 aria-[current=page]:[&_svg]:text-brand"
                   >
                     <Icon aria-hidden className="size-4" />
                     {label}

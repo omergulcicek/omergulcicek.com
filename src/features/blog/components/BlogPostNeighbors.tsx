@@ -44,7 +44,7 @@ function NeighborLink({ category, post, direction }: NeighborLinkProps) {
   const params = { lang: getLangParam(), slug: post.slug.replace(/^\//, "") }
   const className = cn(cardClass, isNext && "items-end text-right sm:col-start-2")
   const arrowClass =
-    "size-3.5 transition-transform duration-150 ease-out motion-safe:group-hover:translate-x-0.5"
+    "size-3.5 transition-[translate] duration-150 ease-out motion-safe:group-hover:translate-x-0.5"
 
   const content = (
     <>
