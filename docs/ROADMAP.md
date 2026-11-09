@@ -45,17 +45,19 @@
 - [x] JSON-LD: ana sayfada `WebSite` ve `Person`, yazılarda `BlogPosting`
 - [x] Canonical: tüm sayfalar; yazılar kendi dillerindeki adresi gösterir
 - [x] `siteConfig` değerleri `me.json`'dan; `VITE_APP_NAME` kaldırıldı
-- [x] Taslak sayfalar `noindex`: Müzik (sitemap'te de yok); bitince `noindex` kaldırılıp sitemap'e eklenmeli
+- [x] Taslak sayfa için `noindex` gerekmiyor: site, bütün sayfalar tamamlanınca yayına girecek
 
 ### Yönlendirmeler ve geçiş
 
-- [ ] v10 URL'leri için 301: `/notlar/*` → `/notes/*` ve değişen diğer adresler
-- [ ] Güncelliğini yitiren yazılar (ör. `/blog/kaide-yapay-zeka-odakli-mimari-kit`): 301 ile yerini alan sayfaya; hedef sayfada eski ad ("eski adıyla Kaide") geçsin
+- [x] v10 URL'leri için 301: `/notlar/*` → `/notes/*`, `/stack` ve `/setup` → `/uses`, `/services` → `/about`, `slug.md` → yazı sayfası
+- [x] RSS: `/feed.xml` (blog) ve `/notes/feed.xml` (notlar; `/notlar/feed.xml` 301 ile buraya); `llms.txt` ve `llms-full.txt` (teknik yazılar Markdown olarak)
+- [x] Güncelliğini yitiren yazılar 301 ile yerini alan yazıya (Nizam ve Next.js 15 Boilerplate → `virastack-start`, Kaide → `virastack-ai`); listelerden ve sitemap'ten çıktılar (`RETIRED_POSTS`)
+- [ ] Hedef yazılarda eski ad geçsin ("eski adıyla Kaide"): `virastack-ai` ve `virastack-start` içeriği Supabase'de
 - [ ] Legacy reposundaki `v10/` için `noindex` + `robots.txt`, `v10.omergulcicek.com` deploy'u, README güncellemesi
 - [ ] Vercel env değişkenleri: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `VITE_APP_URL`, `GITHUB_TOKEN` (yetkisiz, sadece okuma limiti için)
 
 ### Son kontroller
 
-- [ ] `pnpm lint && pnpm typecheck && pnpm test` ve `pnpm build`
-- [ ] Lighthouse: LCP, CLS, erişilebilirlik
+- [x] `pnpm lint && pnpm typecheck && pnpm test` ve `pnpm build` (9 Kasım)
+- [x] Lighthouse (9 Kasım, mobil, gzip ile): erişilebilirlik, best practices ve SEO her sayfada 100; performans metin sayfalarında 100, görsel ağırlıklı sayfalarda 83–94 (LCP görseli)
 - [ ] TanStack Redact denemesi (ayrı branch, v10 ile karşılaştırma)
