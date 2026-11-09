@@ -28,8 +28,10 @@ export function ViraStackStatus({ stats }: ViraStackStatusProps) {
     <LabeledSection id="status" title={getViraStackSectionTitle("status")}>
       <dl className="grid grid-cols-3 gap-4">
         {figures.map(({ id, value, label }) => (
-          // The label comes first for screen readers; the number shows on top.
-          <div key={id} className="flex flex-col-reverse gap-1">
+          // The label comes first for screen readers; the number shows on top. justify-end pins
+          // the numbers to the top of the reversed column, so a label wrapping to two lines
+          // does not push its number out of line with the others.
+          <div key={id} className="flex flex-col-reverse justify-end gap-1">
             <dt className="text-xs text-muted-foreground">{label}</dt>
             <dd className="font-mono text-2xl font-semibold tracking-tight tabular-nums">
               {value.toLocaleString(locale)}

@@ -28,6 +28,7 @@ export const meSchema = z.strictObject({
     npm: z.url(),
     linkedin: z.url(),
     x: z.url(),
+    instagram: z.url(),
     virastack: z.url()
   }),
   experiences: z.array(

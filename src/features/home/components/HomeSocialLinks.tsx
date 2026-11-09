@@ -15,7 +15,7 @@ export function HomeSocialLinks() {
 
   // Mail is a labeled button of its own; the profile icons sit together as one tight group.
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="contents md:flex md:flex-wrap md:items-center md:gap-2">
       <a
         href={`mailto:${links.email}`}
         className={cn(
@@ -26,7 +26,10 @@ export function HomeSocialLinks() {
         <MailIcon aria-hidden className={iconClass} />
         {m.social_email()}
       </a>
-      <ul aria-label={m.social_label()} className="flex items-center">
+      <ul
+        aria-label={m.social_label()}
+        className="col-span-2 flex items-center justify-center md:justify-start"
+      >
         {items.map(({ href, label, Icon }) => (
           <li key={href}>
             <a
