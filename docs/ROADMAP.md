@@ -23,12 +23,6 @@
 - [x] Şu an sayfası kaldırıldı: içeriği Hakkımda, ViraStack ve Yolculuk sayfalarında
 - [x] Ana sayfa test ve commit
 
-## ViraStack Start şablonunda düzeltilecekler
-
-- [x] `commitlint.config.js` ESM; commit hook'u çalışıyor
-- [ ] `components/ui/separator.tsx` yüksekliği `data-horizontal`'a bağlı, Base UI `data-orientation` koyuyor; yatay separator 0px kalıyor
-- [ ] `src/routeTree.gen.ts` içinde TanStack Start `Register` bloğu eksik geliyor
-
 ## Yayından önce (zorunlu)
 
 ### SEO ve meta
@@ -51,7 +45,6 @@
 - [x] v10 URL'leri için 301: `/notlar/*` → `/notes/*`, `/stack` ve `/setup` → `/uses`, `/services` → `/about`, `slug.md` → yazı sayfası
 - [x] RSS: `/feed.xml` (blog) ve `/notes/feed.xml` (notlar; `/notlar/feed.xml` 301 ile buraya); `llms.txt` ve `llms-full.txt` (teknik yazılar Markdown olarak)
 - [x] Güncelliğini yitiren yazılar 301 ile yerini alan yazıya (Nizam ve Next.js 15 Boilerplate → `virastack-start`, Kaide → `virastack-ai`); listelerden ve sitemap'ten çıktılar (`RETIRED_POSTS`)
-- [ ] Hedef yazılarda eski ad geçsin ("eski adıyla Kaide"): `virastack-ai` ve `virastack-start` içeriği Supabase'de
 - [ ] Legacy reposundaki `v10/` için `noindex` + `robots.txt`, `v10.omergulcicek.com` deploy'u, README güncellemesi
 - [ ] Vercel env değişkenleri: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `VITE_APP_URL`, `GITHUB_TOKEN` (yetkisiz, sadece okuma limiti için)
 
