@@ -5,6 +5,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import geistLatinExt from "@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2?url"
 import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url"
 
+import { me } from "@/constants/me.constants"
 import { seoHeadMeta } from "@/config/seo.config"
 
 import appCss from "@/styles/tailwind.css?url"
@@ -13,23 +14,40 @@ import TanStackQueryDevtools from "@/providers/devtools"
 import { Providers } from "@/providers/Providers"
 
 import { DefaultCatchBoundary } from "@/components/shared/DefaultCatchBoundary"
+import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics"
 import { NotFound } from "@/components/shared/NotFound"
 import { SiteFooter } from "@/components/shared/SiteFooter"
 import { SiteHeader } from "@/components/shared/SiteHeader"
 import { SiteSidebar } from "@/components/shared/SiteSidebar"
 import * as m from "@/paraglide/messages.js"
 import { getLocale, localizeHref } from "@/paraglide/runtime.js"
+import { SiteSearch } from "@/routes/-site-search"
+
+/**
+ * A route that threw notFound(), or, when no route matched the URL at all, the match the router
+ * marks with `_notFound` (typed on RouteMatch, though underscored) to render the 404 in.
+ */
+function isNotFound(match: { status: string; _notFound?: boolean }) {
+  return match.status === "notFound" || match._notFound === true
+}
 
 interface RouterContext {
   queryClient: QueryClient
 }
 
 export const Route = createRootRouteWithContext<RouterContext>()({
-  head: () => ({
+  head: ({ matches }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      ...seoHeadMeta()
+      ...seoHeadMeta(),
+      // A 404 gets its own title and stays out of the index; later entries win over the ones above.
+      ...(matches.some(isNotFound)
+        ? [
+            { title: `${m.not_found_title()} · ${me.name}` },
+            { name: "robots", content: "noindex, nofollow" }
+          ]
+        : [])
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -68,7 +86,8 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 function RootComponent() {
   return (
     <Providers>
-      <SiteHeader />
+      <GoogleAnalytics />
+      <SiteHeader search={<SiteSearch />} />
       <div className="flex flex-1">
         <SiteSidebar />
         {/* The sidebar stays at the left edge; content centers in the space beside it. */}

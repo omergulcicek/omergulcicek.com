@@ -14,14 +14,6 @@ describe("resolvePostRedirect", () => {
     })
   })
 
-  it("moves v10's Markdown address to the page, retired or not", () => {
-    expect(resolvePostRedirect("barrel-file.md")).toEqual({ kind: "redirect", slug: "barrel-file" })
-    expect(resolvePostRedirect("nizam-nextjs-16-boilerplate.md")).toEqual({
-      kind: "redirect",
-      slug: "virastack-start"
-    })
-  })
-
   it("rejects slugs that cannot exist instead of erroring", () => {
     expect(resolvePostRedirect("Bad Slug")).toEqual({ kind: "not-found" })
   })

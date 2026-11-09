@@ -64,6 +64,7 @@
     "@virastack/mask": "2.3.0",
     "@virastack/password": "1.2.0",
     "class-variance-authority": "^0.7.1",
+    "cmdk": "1.1.1",
     "cn": "^0.5.1",
     "lucide-react": "^1.66.0",
     "medium-zoom": "1.1.0",

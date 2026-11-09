@@ -4,14 +4,13 @@ const SLUG_PATTERN = /^[a-z0-9-]+$/
 
 /**
  * What an incoming post slug should do: render, move to another slug (301) or not exist.
- * v10 also served every post as Markdown at `slug.md`; those move to the page itself.
+ * A post's Markdown version (`slug.md`) has its own route and never reaches this.
  */
 export function resolvePostRedirect(
   slug: string
 ): { kind: "render" } | { kind: "redirect"; slug: string } | { kind: "not-found" } {
-  const bare = slug.endsWith(".md") ? slug.slice(0, -".md".length) : slug
-  if (!SLUG_PATTERN.test(bare)) return { kind: "not-found" }
+  if (!SLUG_PATTERN.test(slug)) return { kind: "not-found" }
 
-  const target = RETIRED_POSTS[bare] ?? bare
+  const target = RETIRED_POSTS[slug] ?? slug
   return target === slug ? { kind: "render" } : { kind: "redirect", slug: target }
 }

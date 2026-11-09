@@ -1,3 +1,5 @@
+import type { ReactNode } from "react"
+
 import { Link } from "@tanstack/react-router"
 
 import { me } from "@/constants/me.constants"
@@ -8,7 +10,12 @@ import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher"
 import { SiteMobileMenu } from "@/components/shared/SiteMobileMenu"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  /** The search button, passed in by the root route since it reads the blog feature's posts. */
+  search?: ReactNode
+}
+
+export function SiteHeader({ search }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
       <div className="flex h-16 items-center justify-between gap-2 px-4 md:px-5">
@@ -23,6 +30,7 @@ export function SiteHeader() {
           </Link>
         </div>
         <div className="flex items-center gap-2">
+          {search}
           <LanguageSwitcher />
           <ThemeToggle />
         </div>

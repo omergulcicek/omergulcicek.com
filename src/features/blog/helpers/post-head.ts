@@ -33,6 +33,11 @@ export function postHead(path: string, post: BlogPostDetail) {
 
   return {
     ...head,
+    // Agents find the post's plain Markdown version from the page itself.
+    links: [
+      ...head.links,
+      { rel: "alternate", type: "text/markdown", href: `${localizedUrl(path, post.locale)}.md` }
+    ],
     scripts: [
       jsonLd({
         "@type": "BlogPosting",

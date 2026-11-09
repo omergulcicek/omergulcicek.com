@@ -36,8 +36,10 @@ import { Route as Char123LangChar125VirastackRouteImport } from './routes/{-$lan
 import { Route as Char123LangChar125WorkspaceRouteImport } from './routes/{-$lang}/workspace'
 import { Route as Char123LangChar125BlogIndexRouteImport } from './routes/{-$lang}/blog/index'
 import { Route as Char123LangChar125BlogSlugRouteImport } from './routes/{-$lang}/blog/$slug'
+import { Route as Char123LangChar125BlogChar123slugChar125DotmdRouteImport } from './routes/{-$lang}/blog/{$slug}[.]md'
 import { Route as Char123LangChar125NotesIndexRouteImport } from './routes/{-$lang}/notes/index'
 import { Route as Char123LangChar125NotesSlugRouteImport } from './routes/{-$lang}/notes/$slug'
+import { Route as Char123LangChar125NotesChar123slugChar125DotmdRouteImport } from './routes/{-$lang}/notes/{$slug}[.]md'
 import { Route as Char123LangChar125NotlarIndexRouteImport } from './routes/{-$lang}/notlar/index'
 import { Route as Char123LangChar125NotlarSlugRouteImport } from './routes/{-$lang}/notlar/$slug'
 
@@ -186,6 +188,12 @@ const Char123LangChar125BlogSlugRoute =
     path: '/blog/$slug',
     getParentRoute: () => Char123LangChar125Route,
   } as any)
+const Char123LangChar125BlogChar123slugChar125DotmdRoute =
+  Char123LangChar125BlogChar123slugChar125DotmdRouteImport.update({
+    id: '/blog/{$slug}.md',
+    path: '/blog/{$slug}.md',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
 const Char123LangChar125NotesIndexRoute =
   Char123LangChar125NotesIndexRouteImport.update({
     id: '/notes/',
@@ -196,6 +204,12 @@ const Char123LangChar125NotesSlugRoute =
   Char123LangChar125NotesSlugRouteImport.update({
     id: '/notes/$slug',
     path: '/notes/$slug',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125NotesChar123slugChar125DotmdRoute =
+  Char123LangChar125NotesChar123slugChar125DotmdRouteImport.update({
+    id: '/notes/{$slug}.md',
+    path: '/notes/{$slug}.md',
     getParentRoute: () => Char123LangChar125Route,
   } as any)
 const Char123LangChar125NotlarIndexRoute =
@@ -238,7 +252,9 @@ export interface FileRoutesByFullPath {
   '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
   '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
+  '/{-$lang}/blog/{$slug}.md': typeof Char123LangChar125BlogChar123slugChar125DotmdRoute
   '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/notes/{$slug}.md': typeof Char123LangChar125NotesChar123slugChar125DotmdRoute
   '/{-$lang}/notlar/$slug': typeof Char123LangChar125NotlarSlugRoute
   '/{-$lang}/blog/': typeof Char123LangChar125BlogIndexRoute
   '/{-$lang}/notes/': typeof Char123LangChar125NotesIndexRoute
@@ -270,7 +286,9 @@ export interface FileRoutesByTo {
   '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}': typeof Char123LangChar125IndexRoute
   '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
+  '/{-$lang}/blog/{$slug}.md': typeof Char123LangChar125BlogChar123slugChar125DotmdRoute
   '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/notes/{$slug}.md': typeof Char123LangChar125NotesChar123slugChar125DotmdRoute
   '/{-$lang}/notlar/$slug': typeof Char123LangChar125NotlarSlugRoute
   '/{-$lang}/blog': typeof Char123LangChar125BlogIndexRoute
   '/{-$lang}/notes': typeof Char123LangChar125NotesIndexRoute
@@ -304,7 +322,9 @@ export interface FileRoutesById {
   '/{-$lang}/workspace': typeof Char123LangChar125WorkspaceRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
   '/{-$lang}/blog/$slug': typeof Char123LangChar125BlogSlugRoute
+  '/{-$lang}/blog/{$slug}.md': typeof Char123LangChar125BlogChar123slugChar125DotmdRoute
   '/{-$lang}/notes/$slug': typeof Char123LangChar125NotesSlugRoute
+  '/{-$lang}/notes/{$slug}.md': typeof Char123LangChar125NotesChar123slugChar125DotmdRoute
   '/{-$lang}/notlar/$slug': typeof Char123LangChar125NotlarSlugRoute
   '/{-$lang}/blog/': typeof Char123LangChar125BlogIndexRoute
   '/{-$lang}/notes/': typeof Char123LangChar125NotesIndexRoute
@@ -339,7 +359,9 @@ export interface FileRouteTypes {
     | '/{-$lang}/workspace'
     | '/{-$lang}/'
     | '/{-$lang}/blog/$slug'
+    | '/{-$lang}/blog/{$slug}.md'
     | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/notes/{$slug}.md'
     | '/{-$lang}/notlar/$slug'
     | '/{-$lang}/blog/'
     | '/{-$lang}/notes/'
@@ -371,7 +393,9 @@ export interface FileRouteTypes {
     | '/{-$lang}/workspace'
     | '/{-$lang}'
     | '/{-$lang}/blog/$slug'
+    | '/{-$lang}/blog/{$slug}.md'
     | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/notes/{$slug}.md'
     | '/{-$lang}/notlar/$slug'
     | '/{-$lang}/blog'
     | '/{-$lang}/notes'
@@ -404,7 +428,9 @@ export interface FileRouteTypes {
     | '/{-$lang}/workspace'
     | '/{-$lang}/'
     | '/{-$lang}/blog/$slug'
+    | '/{-$lang}/blog/{$slug}.md'
     | '/{-$lang}/notes/$slug'
+    | '/{-$lang}/notes/{$slug}.md'
     | '/{-$lang}/notlar/$slug'
     | '/{-$lang}/blog/'
     | '/{-$lang}/notes/'
@@ -615,6 +641,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LangChar125BlogSlugRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
+    '/{-$lang}/blog/{$slug}.md': {
+      id: '/{-$lang}/blog/{$slug}.md'
+      path: '/blog/{$slug}.md'
+      fullPath: '/{-$lang}/blog/{$slug}.md'
+      preLoaderRoute: typeof Char123LangChar125BlogChar123slugChar125DotmdRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
     '/{-$lang}/notes/': {
       id: '/{-$lang}/notes/'
       path: '/notes'
@@ -627,6 +660,13 @@ declare module '@tanstack/react-router' {
       path: '/notes/$slug'
       fullPath: '/{-$lang}/notes/$slug'
       preLoaderRoute: typeof Char123LangChar125NotesSlugRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/notes/{$slug}.md': {
+      id: '/{-$lang}/notes/{$slug}.md'
+      path: '/notes/{$slug}.md'
+      fullPath: '/{-$lang}/notes/{$slug}.md'
+      preLoaderRoute: typeof Char123LangChar125NotesChar123slugChar125DotmdRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
     '/{-$lang}/notlar/': {
@@ -663,7 +703,9 @@ interface Char123LangChar125RouteChildren {
   Char123LangChar125WorkspaceRoute: typeof Char123LangChar125WorkspaceRoute
   Char123LangChar125IndexRoute: typeof Char123LangChar125IndexRoute
   Char123LangChar125BlogSlugRoute: typeof Char123LangChar125BlogSlugRoute
+  Char123LangChar125BlogChar123slugChar125DotmdRoute: typeof Char123LangChar125BlogChar123slugChar125DotmdRoute
   Char123LangChar125NotesSlugRoute: typeof Char123LangChar125NotesSlugRoute
+  Char123LangChar125NotesChar123slugChar125DotmdRoute: typeof Char123LangChar125NotesChar123slugChar125DotmdRoute
   Char123LangChar125NotlarSlugRoute: typeof Char123LangChar125NotlarSlugRoute
   Char123LangChar125BlogIndexRoute: typeof Char123LangChar125BlogIndexRoute
   Char123LangChar125NotesIndexRoute: typeof Char123LangChar125NotesIndexRoute
@@ -687,7 +729,11 @@ const Char123LangChar125RouteChildren: Char123LangChar125RouteChildren = {
   Char123LangChar125WorkspaceRoute: Char123LangChar125WorkspaceRoute,
   Char123LangChar125IndexRoute: Char123LangChar125IndexRoute,
   Char123LangChar125BlogSlugRoute: Char123LangChar125BlogSlugRoute,
+  Char123LangChar125BlogChar123slugChar125DotmdRoute:
+    Char123LangChar125BlogChar123slugChar125DotmdRoute,
   Char123LangChar125NotesSlugRoute: Char123LangChar125NotesSlugRoute,
+  Char123LangChar125NotesChar123slugChar125DotmdRoute:
+    Char123LangChar125NotesChar123slugChar125DotmdRoute,
   Char123LangChar125NotlarSlugRoute: Char123LangChar125NotlarSlugRoute,
   Char123LangChar125BlogIndexRoute: Char123LangChar125BlogIndexRoute,
   Char123LangChar125NotesIndexRoute: Char123LangChar125NotesIndexRoute,

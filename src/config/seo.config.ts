@@ -21,6 +21,7 @@ export function seoHeadMeta() {
     { name: "description", content: description },
     { name: "author", content: me.name },
     { name: "robots", content: "index, follow" },
+    { name: "google-site-verification", content: siteConfig.googleSiteVerification },
     { property: "og:type", content: "website" },
     { property: "og:locale", content: OG_LOCALES[getLocale()] },
     { property: "og:site_name", content: me.name },

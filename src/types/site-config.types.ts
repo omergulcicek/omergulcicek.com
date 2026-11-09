@@ -5,4 +5,5 @@ export type SiteConfig = {
   url: string
   apiUrl: string
   ogImage: string
+  googleSiteVerification: string
 }
