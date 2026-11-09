@@ -67,6 +67,7 @@
     "cn": "^0.5.1",
     "lucide-react": "^1.66.0",
     "medium-zoom": "1.1.0",
+    "nitro": "3.0.261103-rc",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-hook-form": "^7.91.0",
