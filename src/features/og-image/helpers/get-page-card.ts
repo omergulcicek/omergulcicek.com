@@ -55,6 +55,10 @@ const PAGE_CARDS: Record<string, (locale: Locale) => PageCard> = {
   "/uses": (locale) => ({
     title: m.uses_title({}, { locale }),
     description: m.uses_description({}, { locale })
+  }),
+  "/brand": (locale) => ({
+    title: m.brand_title({}, { locale }),
+    description: m.brand_description({}, { locale })
   })
 }
 

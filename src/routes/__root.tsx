@@ -61,8 +61,10 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         type: "font/woff2",
         crossOrigin: "anonymous" as const
       })),
-      { rel: "icon", href: "/logo.webp" },
-      { rel: "apple-touch-icon", href: "/logo.webp" },
+      // All drawn from the çintemani tile by `pnpm favicon`; the ICO is for browsers without SVG icons.
+      { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
       // Feed readers find the RSS feeds from any page.
       {

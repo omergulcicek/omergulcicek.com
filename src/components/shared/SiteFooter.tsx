@@ -1,6 +1,9 @@
+import { Link } from "@tanstack/react-router"
 import { cn } from "cn"
 
 import { me } from "@/constants/me.constants"
+
+import { getLangParam } from "@/helpers/localized-url"
 
 import * as m from "@/paraglide/messages.js"
 import { localizeHref } from "@/paraglide/runtime.js"
@@ -13,7 +16,8 @@ const footerLinkClass = cn(
 )
 
 /**
- * The copyright, plus the machine-readable ways in: the feed, llms.txt and the source.
+ * The copyright, the Brand page (the one page outside the sidebar menu that lives here), plus
+ * the machine-readable ways in: the feed, llms.txt and the source.
  * Navigation and the profile icons stay in the sidebar, so the footer repeats neither.
  */
 export function SiteFooter() {
@@ -32,6 +36,15 @@ export function SiteFooter() {
           © <span className="tabular-nums">{new Date().getFullYear()}</span> {me.name}
         </p>
         <ul aria-label={m.footer_links_label()} className="flex items-center gap-4">
+          <li>
+            <Link
+              to="/{-$lang}/brand"
+              params={{ lang: getLangParam() }}
+              className={footerLinkClass}
+            >
+              {m.nav_brand()}
+            </Link>
+          </li>
           {links.map(({ href, label, external }) => (
             <li key={href}>
               <a

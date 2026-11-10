@@ -22,6 +22,7 @@ import { Route as OgSplatRouteImport } from './routes/og/$'
 import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
 import { Route as Char123LangChar125AboutRouteImport } from './routes/{-$lang}/about'
 import { Route as Char123LangChar125BookmarksRouteImport } from './routes/{-$lang}/bookmarks'
+import { Route as Char123LangChar125BrandRouteImport } from './routes/{-$lang}/brand'
 import { Route as Char123LangChar125ExperiencesRouteImport } from './routes/{-$lang}/experiences'
 import { Route as Char123LangChar125FilmsRouteImport } from './routes/{-$lang}/films'
 import { Route as Char123LangChar125JourneyRouteImport } from './routes/{-$lang}/journey'
@@ -109,6 +110,11 @@ const Char123LangChar125BookmarksRoute =
     path: '/bookmarks',
     getParentRoute: () => Char123LangChar125Route,
   } as any)
+const Char123LangChar125BrandRoute = Char123LangChar125BrandRouteImport.update({
+  id: '/brand',
+  path: '/brand',
+  getParentRoute: () => Char123LangChar125Route,
+} as any)
 const Char123LangChar125ExperiencesRoute =
   Char123LangChar125ExperiencesRouteImport.update({
     id: '/experiences',
@@ -238,6 +244,7 @@ export interface FileRoutesByFullPath {
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
+  '/{-$lang}/brand': typeof Char123LangChar125BrandRoute
   '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
   '/{-$lang}/films': typeof Char123LangChar125FilmsRoute
   '/{-$lang}/journey': typeof Char123LangChar125JourneyRoute
@@ -272,6 +279,7 @@ export interface FileRoutesByTo {
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
+  '/{-$lang}/brand': typeof Char123LangChar125BrandRoute
   '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
   '/{-$lang}/films': typeof Char123LangChar125FilmsRoute
   '/{-$lang}/journey': typeof Char123LangChar125JourneyRoute
@@ -308,6 +316,7 @@ export interface FileRoutesById {
   '/og/$': typeof OgSplatRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
   '/{-$lang}/bookmarks': typeof Char123LangChar125BookmarksRoute
+  '/{-$lang}/brand': typeof Char123LangChar125BrandRoute
   '/{-$lang}/experiences': typeof Char123LangChar125ExperiencesRoute
   '/{-$lang}/films': typeof Char123LangChar125FilmsRoute
   '/{-$lang}/journey': typeof Char123LangChar125JourneyRoute
@@ -345,6 +354,7 @@ export interface FileRouteTypes {
     | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
+    | '/{-$lang}/brand'
     | '/{-$lang}/experiences'
     | '/{-$lang}/films'
     | '/{-$lang}/journey'
@@ -379,6 +389,7 @@ export interface FileRouteTypes {
     | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
+    | '/{-$lang}/brand'
     | '/{-$lang}/experiences'
     | '/{-$lang}/films'
     | '/{-$lang}/journey'
@@ -414,6 +425,7 @@ export interface FileRouteTypes {
     | '/og/$'
     | '/{-$lang}/about'
     | '/{-$lang}/bookmarks'
+    | '/{-$lang}/brand'
     | '/{-$lang}/experiences'
     | '/{-$lang}/films'
     | '/{-$lang}/journey'
@@ -541,6 +553,13 @@ declare module '@tanstack/react-router' {
       path: '/bookmarks'
       fullPath: '/{-$lang}/bookmarks'
       preLoaderRoute: typeof Char123LangChar125BookmarksRouteImport
+      parentRoute: typeof Char123LangChar125Route
+    }
+    '/{-$lang}/brand': {
+      id: '/{-$lang}/brand'
+      path: '/brand'
+      fullPath: '/{-$lang}/brand'
+      preLoaderRoute: typeof Char123LangChar125BrandRouteImport
       parentRoute: typeof Char123LangChar125Route
     }
     '/{-$lang}/experiences': {
@@ -689,6 +708,7 @@ declare module '@tanstack/react-router' {
 interface Char123LangChar125RouteChildren {
   Char123LangChar125AboutRoute: typeof Char123LangChar125AboutRoute
   Char123LangChar125BookmarksRoute: typeof Char123LangChar125BookmarksRoute
+  Char123LangChar125BrandRoute: typeof Char123LangChar125BrandRoute
   Char123LangChar125ExperiencesRoute: typeof Char123LangChar125ExperiencesRoute
   Char123LangChar125FilmsRoute: typeof Char123LangChar125FilmsRoute
   Char123LangChar125JourneyRoute: typeof Char123LangChar125JourneyRoute
@@ -715,6 +735,7 @@ interface Char123LangChar125RouteChildren {
 const Char123LangChar125RouteChildren: Char123LangChar125RouteChildren = {
   Char123LangChar125AboutRoute: Char123LangChar125AboutRoute,
   Char123LangChar125BookmarksRoute: Char123LangChar125BookmarksRoute,
+  Char123LangChar125BrandRoute: Char123LangChar125BrandRoute,
   Char123LangChar125ExperiencesRoute: Char123LangChar125ExperiencesRoute,
   Char123LangChar125FilmsRoute: Char123LangChar125FilmsRoute,
   Char123LangChar125JourneyRoute: Char123LangChar125JourneyRoute,

@@ -40,9 +40,10 @@
   /*
    * Turquoise, the site's one accent (Ömer's favorite color). Kept to a few percent of the page:
    * link underlines, the current nav item, focus rings, text selection and the main call to
-   * action. 5.3:1 against white, so white text on it passes WCAG AA.
+   * action. Tailwind teal-600, as on ViraStack; teal-700 read too dark to look turquoise. Only
+   * 3.7:1 against white, below WCAG AA for normal text on it: a deliberate trade for the hue.
    */
-  --brand: oklch(0.52 0.09 195);
+  --brand: oklch(0.6 0.118 184.704);
   --brand-foreground: oklch(0.985 0 0);
   --ring: var(--brand);
 }
@@ -75,8 +76,8 @@
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 18%);
 
-  /* Lighter in the dark theme: 11:1 against the background, and dark text on it reads at 10:1. */
-  --brand: oklch(0.8 0.11 190);
+  /* Tailwind teal-500, as on ViraStack: 8.2:1 against the background, dark text on it reads at 7.4:1. */
+  --brand: oklch(0.704 0.14 182.503);
   --brand-foreground: oklch(0.205 0 0);
   --ring: var(--brand);
 }

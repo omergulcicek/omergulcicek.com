@@ -14,14 +14,12 @@ export const Route = createFileRoute("/site.webmanifest")({
           display: "standalone",
           background_color: "#ffffff",
           theme_color: "#ffffff",
-          // FIXME: add 192x192 and 512x512 icons to make the app installable.
-          icons: [
-            {
-              src: "/logo.webp",
-              sizes: "96x96",
-              type: "image/webp"
-            }
-          ]
+          // Drawn from the çintemani tile by `pnpm favicon`.
+          icons: [192, 512].map((size) => ({
+            src: `/icon-${size}.png`,
+            sizes: `${size}x${size}`,
+            type: "image/png"
+          }))
         }
 
         return Response.json(manifest, {

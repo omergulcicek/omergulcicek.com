@@ -7,9 +7,9 @@ import {
   LaptopIcon,
   LayersIcon,
   LibraryBigIcon,
-  MusicIcon,
   NewspaperIcon,
   NotebookPenIcon,
+  PaletteIcon,
   RouteIcon,
   UserIcon
 } from "lucide-react"
@@ -113,13 +113,9 @@ export function getSiteNav(locale?: Locale): SiteNavGroup[] {
           label: m.nav_films({}, o),
           description: m.films_description({}, o),
           icon: ClapperboardIcon
-        },
-        {
-          to: "/{-$lang}/music",
-          label: m.nav_music({}, o),
-          description: m.music_description({}, o),
-          icon: MusicIcon
         }
+        // Music is hidden until its draft is done (docs/ROADMAP.md); the menu entry was:
+        // { to: "/{-$lang}/music", label: m.nav_music({}, o), description: m.music_description({}, o), icon: MusicIcon }
       ]
     },
     {
@@ -153,7 +149,7 @@ type SitePage = { path: string; title: string; description: string; icon: Lucide
 
 /**
  * Pages that are not in the menu but still belong in the sitemap and llms.txt. ViraStack is
- * reached from the home hero's button instead.
+ * reached from the home hero's button, Brand from the footer.
  */
 function getUnlistedPages(o: { locale: Locale } | undefined): SitePage[] {
   return [
@@ -162,6 +158,12 @@ function getUnlistedPages(o: { locale: Locale } | undefined): SitePage[] {
       title: m.nav_virastack({}, o),
       description: m.virastack_description({}, o),
       icon: LayersIcon
+    },
+    {
+      path: "/brand",
+      title: m.nav_brand({}, o),
+      description: m.brand_description({}, o),
+      icon: PaletteIcon
     }
   ]
 }

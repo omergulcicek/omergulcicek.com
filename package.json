@@ -32,7 +32,8 @@
     "test:watch": "vitest",
     "prepare": "husky",
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide",
-    "blog:image-sizes": "node scripts/generate-blog-image-sizes.ts"
+    "blog:image-sizes": "node scripts/generate-blog-image-sizes.ts",
+    "favicon": "node scripts/favicon/generate-favicon.ts"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -85,6 +86,7 @@
     "@commitlint/config-conventional": "^21.2.4",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@inlang/paraglide-js": "^2.29.3",
+    "@resvg/resvg-js": "^2.6.2",
     "@rolldown/plugin-babel": "^0.2.4",
     "@tailwindcss/typography": "0.5.20",
     "@tanstack/eslint-config": "^0.4.0",
