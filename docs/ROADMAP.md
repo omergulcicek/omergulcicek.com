@@ -17,7 +17,7 @@
 - [x] Proje kartlarında npm indirme sayıları (son 3 ay) ve GitHub yıldızları, günlük cache ile canlı
 - [x] Takvim ve Footy metrikleri: Takvim'de ölçülecek veri yok (abonelikler takvim uygulamasına iniyor), GitHub yıldızı yeterli; Footy durduruldu (`paused`)
 - [x] Keşfet: Yer imleri (115 link, kategori filtresi), Kitaplık (222 kitap, tür filtresi), Film ve diziler (13 favori + 22 YouTube videosu)
-- [ ] Müzik sayfası: taslak hazır (4 grup, sticky video); grup şarkı listeleri, öne çıkan videolar, Spotify linkleri kullanıcıdan
+- [ ] Müzik sayfası (gizli: `noindex`, menüden, sitemap'ten, llms.txt'ten ve Hakkımda/Kullandıklarım linklerinden çıktı; kod duruyor): taslak hazır (4 grup, sticky video); grup şarkı listeleri, öne çıkan videolar, Spotify linkleri kullanıcıdan
 - [x] Yolculuk (13 kayıt, ViraStack noktaları); Kullandıklarım (/uses; /setup ve /workspace 301 ile yönleniyor)
 - [x] Hakkımda (tanışma, işin dışında, favoriler; menü grubu "Kişisel")
 - [x] Şu an sayfası kaldırıldı: içeriği Hakkımda, ViraStack ve Yolculuk sayfalarında
@@ -41,7 +41,7 @@
 - [x] Her sayfaya kendi OG ve Twitter etiketleri
 - [x] Yazı sayfalarında paylaşım kartı (Supabase'deki `og_image_path` artık kullanılmıyor)
 - [x] Paylaşım kartları dinamik: `/og/<dil>/<yol>`, tüm sayfalar ve yazılar aynı şablonla (`features/og-image`)
-- [ ] Favicon ve manifest ikonları (şu an ViraStack Start'ın `favicon.ico` ve `logo.webp` dosyaları; 192 ve 512 px ikon)
+- [x] Favicon ve manifest ikonları: hepsi çintemani çinisinden `pnpm favicon` ile üretiliyor (SVG, ICO, 180, 192 ve 512 px PNG)
 - [x] Sitemap: sayfalar iki dilde (hreflang ile), yazılar yalnızca kendi dillerinde
 - [x] JSON-LD: ana sayfada `WebSite` ve `Person`, yazılarda `BlogPosting`
 - [x] Canonical: tüm sayfalar; yazılar kendi dillerindeki adresi gösterir
@@ -53,11 +53,11 @@
 - [x] v10 URL'leri için 301: `/notlar/*` → `/notes/*`, `/stack` ve `/setup` → `/uses`, `/services` → `/about`, `slug.md` → yazı sayfası
 - [x] RSS: `/feed.xml` (blog) ve `/notes/feed.xml` (notlar; `/notlar/feed.xml` 301 ile buraya); `llms.txt` ve `llms-full.txt` (teknik yazılar Markdown olarak)
 - [x] Güncelliğini yitiren yazılar 301 ile yerini alan yazıya (Nizam ve Next.js 15 Boilerplate → `virastack-start`, Kaide → `virastack-ai`); listelerden ve sitemap'ten çıktılar (`RETIRED_POSTS`)
-- [ ] Legacy reposundaki `v10/` için `noindex` + `robots.txt`, `v10.omergulcicek.com` deploy'u, README güncellemesi
-- [ ] Vercel env değişkenleri: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `VITE_APP_URL`, `GITHUB_TOKEN` (yetkisiz, sadece okuma limiti için)
+- [x] Legacy reposundaki `v10/` için `noindex` + `robots.txt`, `v10.omergulcicek.com` deploy'u, README güncellemesi (10 Kasım; v1–v10'daki ters `ignoreCommand` de düzeldi)
+- [x] Vercel env değişkenleri: v10 projesinde tanımlı, main'e push ile aynen geliyor (`VITE_API_URL` kaldırıldı)
 
 ### Son kontroller
 
 - [x] `pnpm lint && pnpm typecheck && pnpm test` ve `pnpm build` (9 Kasım)
 - [x] Lighthouse (9 Kasım, mobil, gzip ile): erişilebilirlik, best practices ve SEO her sayfada 100; performans metin sayfalarında 100, görsel ağırlıklı sayfalarda 83–94 (LCP görseli)
-- [ ] TanStack Redact denemesi (ayrı branch, v10 ile karşılaştırma)
+- [x] TanStack Redact denemesi (10 Kasım): JS −%8, TBT 2–4 kat arttı, mobil menü kapanmıyor; şimdilik alınmadı (`docs/redact-denemesi.md`)
