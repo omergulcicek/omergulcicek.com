@@ -1,221 +1,43 @@
 <div align="center">
 
-<a href="https://github.com/virastack/start" target="_blank" rel="noreferrer">
-  <img src="https://raw.githubusercontent.com/virastack/start/main/assets/logo.png" alt="ViraStack Start" height="120" style="max-width: 100%;" />
+<a href="https://omergulcicek.com" target="_blank" rel="noreferrer">
+  <img src="public/favicon.svg" alt="omergulcicek.com" height="96" />
 </a>
 
 # omergulcicek.com
 
-_The TanStack Start boilerplate that feels effortless._
+Personal website of Ömer Gülçiçek: blog, notes, projects, experiences and the things I use.
 
-[![ViraStack TanStack](https://img.shields.io/badge/ViraStack-TanStack-%2300c950)](https://virastack.com)
-[![npm version](https://img.shields.io/npm/v/virastack)](https://www.npmjs.com/package/virastack)
-[![npm downloads](https://img.shields.io/npm/dt/virastack)](https://www.npmjs.com/package/virastack)
-[![Node](https://img.shields.io/node/v/virastack)](package.json)
-[![License: MIT](https://img.shields.io/github/license/virastack/start)](LICENSE)
-[![CI](https://github.com/virastack/start/actions/workflows/ci.yml/badge.svg)](https://github.com/virastack/start/actions/workflows/ci.yml)
-[![@virastack](https://img.shields.io/badge/-%40virastack-555?logo=x&logoColor=white)](https://x.com/virastack)
+[omergulcicek.com](https://omergulcicek.com)
 
 </div>
 
 ---
 
-**Docs:** [See the docs](https://virastack.com/start/docs)
+## Tech stack
 
-**Contents:** [Why](#why-virastack) · [Features](#features) · [Getting started](#getting-started) · [Environment](#environment-variables) · [Scripts](#scripts) · [Project structure](#project-structure) · [Customization](#customization) · [ViraStack AI](#virastack-ai) · [Deployment](#deployment)
-
-Production-grade TanStack Start starter with feature-based architecture, strict TypeScript, and a pre-configured [**ViraStack AI**](https://github.com/virastack/ai) layer — so you and your coding agents ship consistent code from day one.
-
-## Why ViraStack
-
-- **Opinionated, not opaque** — clear folder rules and placement conventions; nothing important is hidden behind magic
-- **Agent-ready by default** — `AGENTS.md`, rules for Claude Code and Cursor, and agent skills ship with every project
-- **Own your UI** — Base UI primitives in `components/ui` (shadcn-style), fully editable
-- **State triad** — TanStack Query (server), Zustand (client), TanStack Router search params (URL) — each with a dedicated job
-- **DX that sticks** — ESLint, Prettier, Knip, Vitest, Husky, Commitlint, and GitHub Actions CI out of the box
-
-## Features
-
-**Included**
-
-- ⚡ **TanStack Start** — file-based TanStack Router, type-safe loaders, SSR
-- ⚛️ **React 19** + TypeScript strict (`noUncheckedIndexedAccess`)
-- 🎨 **Tailwind CSS 4** + Base UI primitives
-- 🔄 **TanStack Query** · **Zustand**
-- 🌍 **Paraglide JS** — English and Turkish, with typed messages
-- 📋 **React Hook Form** + **Zod** — validated forms end to end
-- 🤖 **ViraStack AI** — agent context, scoped rules, design skills
-- ✅ **Quality built in** — ESLint, Prettier, Knip, Husky, Commitlint, Vitest + Testing Library + MSW, CI (typecheck → lint → knip → test → build)
-
-**Optional / bring your own**
-
-- Auth, database, analytics, and monitoring — wire them in when you need them; the architecture is ready
+- **Framework:** [TanStack Start](https://tanstack.com/start) (SSR, file-based TanStack Router, server functions)
+- **UI:** [React 19](https://react.dev) with React Compiler, [Tailwind CSS 4](https://tailwindcss.com), [Base UI](https://base-ui.com) primitives in the shadcn/ui style, [Lucide](https://lucide.dev) icons, [Geist](https://vercel.com/font) font
+- **Language:** TypeScript (strict), [Zod 4](https://zod.dev)
+- **Data:** [TanStack Query](https://tanstack.com/query), [Zustand](https://zustand.docs.pmnd.rs), [Supabase](https://supabase.com) for blog posts
+- **Content:** [MDX](https://mdxjs.com) with [Shiki](https://shiki.style) code highlighting and GitHub Flavored Markdown
+- **i18n:** [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs), English at `/` and Turkish at `/tr`
+- **Extras:** command palette with [cmdk](https://cmdk.paco.me), Open Graph images with [@vercel/og](https://vercel.com/docs/og-image-generation), RSS feeds, sitemap and `llms.txt`
+- **Tooling:** [Vite](https://vite.dev), [Vitest](https://vitest.dev) + Testing Library + MSW, ESLint, Prettier, Knip, Husky, Commitlint
+- **Hosting:** [Vercel](https://vercel.com)
 
 ## Getting started
 
-**Quick Start & Setup:** Please follow the instructions in the main [ViraStack Start README](https://github.com/virastack/start#quick-start).
-
-Once your project is scaffolded, start the development server:
-
 ```bash
+pnpm install
+cp .env.example .env.local
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). `/` (`/tr` in Turkish) is a short start page from `src/features/home`: the first file to edit and a list of the stack. Replace it when you are ready to build. `npx virastack add users` installs a working users module for you to place on a page.
+## Built with ViraStack Start
 
-## Environment variables
+This site is bootstrapped with [**ViraStack Start**](https://github.com/virastack/start), a TanStack Start boilerplate with a feature-based architecture and the [ViraStack AI](https://github.com/virastack/ai) rules for coding agents. See [virastack.com](https://virastack.com) for more.
 
-Validated in `src/env.ts`. Scaffolded projects already have `.env.local`.
+## License
 
-| Variable       | Scope  | Description                                         |
-| :------------- | :----- | :-------------------------------------------------- |
-| `VITE_APP_URL` | Public | Canonical app URL (default `http://localhost:3000`) |
-
-`NODE_ENV` is set by Vite — do not define it manually. Add new vars in both `.env.example` and `src/env.ts`.
-
-## Scripts
-
-| Script                          | Description                                  |
-| :------------------------------ | :------------------------------------------- |
-| `dev`                           | Start the Vite + TanStack Start dev server   |
-| `build`                         | Production build                             |
-| `start` / `preview`             | Serve the production build                   |
-| `lint` / `lint:fix` / `lint:ci` | ESLint (+ format check in CI)                |
-| `format` / `format:check`       | Prettier                                     |
-| `typecheck`                     | `tsc --noEmit`                               |
-| `knip`                          | Find unused files, exports, and dependencies |
-| `test` / `test:watch`           | Vitest (single run / watch mode)             |
-
-CI runs the same gates: typecheck → lint → knip → test → build (see `.github/workflows/ci.yml`).
-
-## Project structure
-
-```
-src/
-├── routes/               # File-based routes; pages live under `{-$lang}/`
-├── features/
-│   └── home/             # Start page at `/` and `/tr` (deletable)
-│       ├── components/   # HomePage, StackList
-│       ├── constants/    # Stack list data and links
-│       ├── helpers/      # Parses versions read from package.json
-│       └── icons/        # Brand SVGs used by the stack list
-├── components/
-│   ├── ui/               # Base UI primitives (Button, Dialog, Tabs, …)
-│   └── shared/           # Cross-feature components (ThemeToggle, LanguageSwitcher, …)
-├── hooks/                # Shared hooks (promote via Rule of Three)
-├── stores/
-├── schemas/
-├── providers/
-├── lib/                  # api.ts, query-client.ts, utils
-├── config/
-├── constants/
-├── helpers/              # localized-url: lang param, hreflang links
-├── messages/             # en.json, tr.json
-├── paraglide/            # Generated by Paraglide, do not edit
-├── types/
-├── styles/
-├── test/                 # Vitest setup, MSW server, renderWithProviders
-├── router.tsx
-├── server.ts             # Runs each request inside Paraglide's middleware
-├── start.ts              # Global request middleware (security headers)
-└── env.ts
-```
-
-The start page follows the ViraStack AI feature tree and is meant to be deleted when you start building.
-
-**Modules**
-
-Run `npx virastack add <module>` to add a working feature: `users`, `checkout-address` or `checkout-card`. It installs `src/features/<module>` and the packages the module needs, creates no page, and prints the import line for your own page. See every module and the steps for your framework at [virastack.com/start/features](https://virastack.com/start/features).
-
-Run `npx virastack remove <module>` to take one out. It asks before deleting files you changed, and leaves packages in place because other code may use them.
-
-**About the users module**
-
-- A list with pagination and search in the URL, a shared add and edit form, and row actions for details, editing and deleting, backed by the [DummyJSON](https://dummyjson.com) demo API
-- Page and search stay in the URL (`?page=2&q=ann`), so a shared link opens the same view
-- DummyJSON answers `POST`, `PUT` and `DELETE` without saving: a new user never appears in the list, and edits and deletes last until the list reloads
-
-**Languages**
-
-- English lives at `/`, Turkish at `/tr`, through the optional `{-$lang}` route param
-- `/en` answers with a 301 to `/`, and an unknown language such as `/fr` is a 404
-- Only the URL decides the language: a cookie or `Accept-Language` never redirects anyone
-- The language switcher loads the other URL as a new document, so the server HTML and the URL always agree
-- Add text to every file in `src/messages`; a test fails when their keys differ. Run `pnpm install` or `pnpm build` to regenerate `src/paraglide` afterwards
-
-**Remove the start page**
-
-1. Delete `src/features/home`
-2. Replace `src/routes/{-$lang}/index.tsx` with your own route
-
-Then run `pnpm knip` and remove what it reports as unused, including the messages you no longer call in `src/messages`.
-
-**Rules of thumb**
-
-- Default scope is `features/[feature]/` — promote to global `src/` only when a second feature needs it
-- No cross-feature imports; share via `components/`, `lib/`, `hooks/`, etc.
-- Path aliases are mandatory; parent-relative imports (`../`) are forbidden
-- ESLint enforces both rules (`no-restricted-imports` in the ESLint config)
-- Tests live next to the code they cover (`*.test.ts(x)`)
-
-See the ViraStack AI `architecture` rule (`.claude/rules/virastack/` or `.cursor/rules/virastack/`) for placement rules and import conventions.
-
-## Customization
-
-Search the repo for `FIXME:` to find the first things to own:
-
-| File                          | What to change                    |
-| :---------------------------- | :-------------------------------- |
-| `src/config/site.config.ts`   | Site name, description, metadata  |
-| `vite.config.ts`              | Vite / TanStack Start options     |
-| `src/start.ts`                | Global request middleware/headers |
-| `src/lib/api.ts`              | Auth header / API client wiring   |
-| `src/env.ts` + `.env.example` | New environment variables         |
-| `public/`                     | Favicon and static assets         |
-
-You own every file — trim pages, rename features, keep only what you need.
-
-## ViraStack AI
-
-Developed with [**ViraStack AI**](https://github.com/virastack/ai) — an AI-native architecture kit that ships agent context into every project:
-
-| File                       | Purpose                                       |
-| :------------------------- | :-------------------------------------------- |
-| `CLAUDE.md`                | Claude Code entry point (imports `AGENTS.md`) |
-| `.claude/rules/virastack/` | Scoped rules for Claude Code                  |
-| `.claude/skills/`          | Skills for Claude Code                        |
-| `.cursor/rules/virastack/` | Scoped rules for Cursor                       |
-| `AGENTS.md`                | Agent operating guide (managed block + yours) |
-| `.agents/skills/`          | Skills for other agents                       |
-| `.virastack/ai.json`       | Manifest of the files ViraStack AI manages    |
-
-Install or refresh rules: `npx @virastack/ai init` (pick tools with `--agent claude,cursor`).
-
-## Deployment
-
-Works with [Netlify](https://www.netlify.com/), [Cloudflare](https://developers.cloudflare.com/), Nitro, Railway, or any Node host:
-
-1. Push the repo and import the project
-2. Set `VITE_APP_URL` from `.env.example`
-3. Deploy — `pnpm build` / `pnpm start` work on any Node host that can serve the Vite output
-
-## Philosophy
-
-- Minimal surface, strong conventions
-- Agent-first documentation lives next to the code
-- Own your UI and architecture — no locked black boxes
-- Production-ready DX without forcing auth/db opinions until you need them
-
-## Contributing
-
-Ideas and bug reports welcome — open an [issue](https://github.com/virastack/start/issues).
-
-PRs that improve DX, architecture docs, or the bundled modules are especially appreciated.
-
----
-
-<div align="center">
-
-Bootstrapped with [**ViraStack Start**](https://github.com/virastack/start) · Built by <a href="https://omergulcicek.com">Ömer Gülçiçek</a> · <a href="LICENSE">MIT Licensed</a>
-
-</div>
+[MIT](LICENSE) © Ömer Gülçiçek
