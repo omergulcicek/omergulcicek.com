@@ -4,7 +4,7 @@ import { PageRail } from "@/components/shared/PageRail"
 import { pageRailLinkClass } from "@/components/shared/surface.styles"
 import * as m from "@/paraglide/messages.js"
 
-export type PageTocItem = {
+type PageTocItem = {
   id: string
   label: string
   /** 3 for a subsection, indented under its section; sections are 2, the default. */

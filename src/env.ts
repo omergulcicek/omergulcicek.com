@@ -18,7 +18,6 @@ const serverSchema = z.object({
 
 const clientSchema = z.object({
   VITE_APP_URL: z.url().default("http://localhost:3000"),
-  VITE_API_URL: z.url().default("https://dummyjson.com"),
   // Optional: without it no analytics load, as in development and tests.
   VITE_GA_ID: z
     .string()
@@ -42,7 +41,6 @@ const serverParsed = serverSchema.safeParse({
 
 const clientParsed = clientSchema.safeParse({
   VITE_APP_URL: readEnv("VITE_APP_URL"),
-  VITE_API_URL: readEnv("VITE_API_URL"),
   VITE_GA_ID: readEnv("VITE_GA_ID")
 })
 

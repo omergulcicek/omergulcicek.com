@@ -1,6 +1,6 @@
 type Localized = { tr: string; en: string }
 
-export type MusicTrack = { title: string; artist: string }
+type MusicTrack = { title: string; artist: string }
 
 export type MusicGroup = {
   id: string

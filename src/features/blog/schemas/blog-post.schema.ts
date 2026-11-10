@@ -3,7 +3,7 @@ import { z } from "zod"
 import type { PostHeading } from "@/features/blog/helpers/rehype-heading-ids"
 
 /** `technical` posts list on /blog, `personal` ones on /notes. */
-export const blogCategorySchema = z.enum(["technical", "personal"])
+const blogCategorySchema = z.enum(["technical", "personal"])
 
 export const getBlogPostsInputSchema = z.strictObject({ category: blogCategorySchema })
 
@@ -11,7 +11,7 @@ export const getBlogPostsInputSchema = z.strictObject({ category: blogCategorySc
 export const blogListSearchSchema = z.object({ tag: z.string().optional().catch(undefined) })
 
 /** One row of the blog list, as `blog_posts` returns it. */
-export const blogPostListItemSchema = z.object({
+const blogPostListItemSchema = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
   tags: z.array(z.string()),
@@ -39,7 +39,6 @@ export const fullTextPostListSchema = z.array(
 )
 
 export type FeedPost = z.infer<typeof feedPostListSchema>[number]
-export type FullTextPost = z.infer<typeof fullTextPostListSchema>[number]
 
 /** One row for the sitemap: where the post lives and when it last changed. */
 export const sitemapPostListSchema = z.array(

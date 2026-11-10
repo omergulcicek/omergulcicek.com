@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/command"
 import * as m from "@/paraglide/messages.js"
 
-export type CommandPaletteItem = {
+type CommandPaletteItem = {
   /** Unique across all groups; also what cmdk matches the query against, with the keywords. */
   id: string
   label: string

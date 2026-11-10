@@ -8,7 +8,6 @@ export const siteConfig: SiteConfig = {
   description: `${me.name}, ${me.title.en}`,
   shortName: me.handle,
   url: env.VITE_APP_URL,
-  apiUrl: env.VITE_API_URL,
   // The home page's generated card (see src/routes/og/$.ts), for pages that set none of their own.
   ogImage: `${env.VITE_APP_URL}/og/tr`,
   // Proves ownership to Google Search Console; carried over from v10.

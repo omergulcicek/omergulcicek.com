@@ -9,7 +9,7 @@ import { CODE_LANGUAGE_LABELS } from "@/features/blog/constants/code-languages.c
 /** Blocks longer than this start collapsed to about this many lines. */
 const COLLAPSE_AFTER_LINES = 25
 
-export type CodeBlockLabels = {
+type CodeBlockLabels = {
   copy: string
   copied: string
   collapse: string

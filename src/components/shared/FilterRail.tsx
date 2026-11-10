@@ -5,7 +5,7 @@ import { PageRail } from "@/components/shared/PageRail"
 import { pageRailLinkClass } from "@/components/shared/surface.styles"
 import * as m from "@/paraglide/messages.js"
 
-export type FilterRailItem = { value: string; label: string; count: number }
+type FilterRailItem = { value: string; label: string; count: number }
 
 type FilterRailProps = {
   title: string

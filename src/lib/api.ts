@@ -193,4 +193,4 @@ export function createApi({ baseUrl, getHeaders, credentials }: ApiConfig) {
 }
 
 // Add getHeaders here. Reading cookies on the server needs its own instance in a server module.
-export const api = createApi({ baseUrl: siteConfig.apiUrl })
+export const api = createApi({ baseUrl: siteConfig.url })
