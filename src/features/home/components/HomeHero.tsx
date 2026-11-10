@@ -38,7 +38,8 @@ export function HomeHero() {
           <HomeSocialLinks />
         </div>
       </div>
-      {/* The hero photo is the LCP image: load it eagerly with high priority. */}
+      {/* The hero photo is the LCP image: load it eagerly with high priority, and no async
+          decoding, which may paint it a frame later. */}
       <img
         src={me.photo.src}
         alt={localize(me.photo.alt)}
@@ -46,7 +47,6 @@ export function HomeHero() {
         height={320}
         loading="eager"
         fetchPriority="high"
-        decoding="async"
         className={cn(
           "aspect-square w-full shrink-0 object-cover md:max-w-80",
           surfaceDoubleFrameClass
