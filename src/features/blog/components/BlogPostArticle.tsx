@@ -8,6 +8,7 @@ import { PageToc } from "@/components/shared/PageToc"
 import { titleLinkClass } from "@/components/shared/surface.styles"
 import { BlogMobileToc } from "@/features/blog/components/BlogMobileToc"
 import { BlogPostNeighbors } from "@/features/blog/components/BlogPostNeighbors"
+import { BlogPostSeries } from "@/features/blog/components/BlogPostSeries"
 import { BlogRelatedPosts } from "@/features/blog/components/BlogRelatedPosts"
 import { BlogShareActions } from "@/features/blog/components/BlogShareActions"
 import { tagLabel, tagSlug } from "@/features/blog/helpers/blog-tags"
@@ -96,6 +97,7 @@ export function BlogPostArticle({ category, slug }: BlogPostArticleProps) {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>
+      <BlogPostSeries category={category} slug={slug} />
       {/* Outside the article: these are the site's own controls, in the page's language. */}
       <footer className="flex flex-col gap-6 border-t border-border pt-6">
         <BlogShareActions title={post.title} url={url} />

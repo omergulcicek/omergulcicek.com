@@ -1,3 +1,4 @@
+import { BlogFeaturedPosts } from "@/features/blog/components/BlogFeaturedPosts"
 import { BlogPostItem } from "@/features/blog/components/BlogPostItem"
 import { filterPostsByTag } from "@/features/blog/helpers/blog-tags"
 import { groupPostsByYear } from "@/features/blog/helpers/group-posts-by-year"
@@ -17,6 +18,10 @@ export function BlogPostList({ category }: BlogPostListProps) {
 
   return (
     <div className="flex flex-col gap-12">
+      {/* A tag filter is a narrowed view, so the featured picks step aside while it is on. */}
+      {visible.length === posts.length ? (
+        <BlogFeaturedPosts posts={posts} category={category} />
+      ) : null}
       {groupPostsByYear(visible).map(({ year, posts: yearPosts }) => (
         <section key={year ?? "undated"} className="flex flex-col gap-4">
           {year ? (

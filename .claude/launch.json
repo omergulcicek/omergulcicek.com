@@ -20,6 +20,18 @@
         "4173"
       ],
       "port": 4173
+    },
+    {
+      "name": "dev-3001",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "exec",
+        "vite",
+        "dev",
+        "--port",
+        "3001"
+      ],
+      "port": 3001
     }
   ]
 }

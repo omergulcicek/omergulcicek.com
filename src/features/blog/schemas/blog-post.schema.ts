@@ -19,7 +19,18 @@ const blogPostListItemSchema = z.object({
   published_at: z.string().nullable()
 })
 
-export const blogPostListSchema = z.array(blogPostListItemSchema)
+/**
+ * A row of the blog list query: the list item plus what the featured section and the series box
+ * need. Kept apart from `blogPostListItemSchema`, which feeds, the sitemap and cards extend.
+ */
+const blogListPostSchema = blogPostListItemSchema.extend({
+  featured: z.boolean(),
+  /** Slug of the series the post belongs to, such as `virastack`; null outside a series. */
+  series: z.string().min(1).nullable(),
+  series_order: z.number().int().nullable()
+})
+
+export const blogPostListSchema = z.array(blogListPostSchema)
 
 /** The fields of one post that its share card shows; PostgREST returns an array. */
 export const postCardRowsSchema = z.array(
@@ -69,6 +80,7 @@ export const blogPostDetailRowsSchema = z.array(
 
 export type BlogCategory = z.infer<typeof blogCategorySchema>
 export type BlogPostListItem = z.infer<typeof blogPostListItemSchema>
+export type BlogListPost = z.infer<typeof blogListPostSchema>
 
 /** A post ready to show: its MDX is already rendered to HTML on the server. */
 export type BlogPostDetail = BlogPostListItem & {

@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start"
 
-import { getSupabaseApi } from "@/lib/supabase-api"
+import { canReadDrafts, getSupabaseApi } from "@/lib/supabase-api"
 
 import { RETIRED_POSTS_FILTER } from "@/features/blog/constants/retired-posts.constants"
 import {
@@ -8,21 +8,23 @@ import {
   getBlogPostsInputSchema
 } from "@/features/blog/schemas/blog-post.schema"
 
-/** Published posts of one category, newest first. */
+/** Published posts of one category, newest first; drafts too under `pnpm dev` (`canReadDrafts`). */
 // The query's signal cancels the server function request itself; the handler gets no signal of its own.
 export const getBlogPosts = createServerFn({ method: "GET" })
   .validator(getBlogPostsInputSchema)
-  .handler(({ data }) =>
+  .handler(({ data }) => {
+    const drafts = canReadDrafts()
     // ApiError messages carry only the status and kind, so they are safe to reach the client.
-    getSupabaseApi().get("/blog_posts", {
+    return getSupabaseApi().get("/blog_posts", {
       params: {
-        select: "slug,title,tags,locale,published_at",
+        select: "slug,title,tags,locale,published_at,featured,series,series_order",
         category: `eq.${data.category}`,
-        published: "eq.true",
+        ...(drafts ? {} : { published: "eq.true" }),
         slug: RETIRED_POSTS_FILTER,
-        order: "published_at.desc.nullslast",
+        // Drafts have no publish date yet; under `pnpm dev` they lead the list so they are easy to find.
+        order: drafts ? "published_at.desc.nullsfirst" : "published_at.desc.nullslast",
         limit: 500
       },
       schema: blogPostListSchema
     })
-  )
+  })

@@ -11,6 +11,14 @@ import { surfaceDoubleFrameClass } from "@/components/shared/surface.styles"
 import { HomeCtaButton } from "@/features/home/components/HomeCtaButton"
 import { HomeSocialLinks } from "@/features/home/components/HomeSocialLinks"
 
+// Made from the 1344 px original; the photo shows at 256 px below md and 320 px from md up.
+const PHOTO_WIDTHS = [320, 480, 640, 960] as const
+const PHOTO_SIZES = "(min-width: 768px) 320px, 256px"
+
+function photoSrcSet(format: "avif" | "webp") {
+  return PHOTO_WIDTHS.map((width) => `/img/omer-gulcicek-${width}.${format} ${width}w`).join(", ")
+}
+
 export function HomeHero() {
   const { links, hero } = me
 
@@ -39,19 +47,25 @@ export function HomeHero() {
         </div>
       </div>
       {/* The hero photo is the LCP image: load it eagerly with high priority, and no async
-          decoding, which may paint it a frame later. */}
-      <img
-        src={me.photo.src}
-        alt={localize(me.photo.alt)}
-        width={320}
-        height={320}
-        loading="eager"
-        fetchPriority="high"
-        className={cn(
-          "aspect-square w-full shrink-0 object-cover md:max-w-80",
-          surfaceDoubleFrameClass
-        )}
-      />
+          decoding, which may paint it a frame later. AVIF first, WebP as the fallback; the
+          sizes cover 1x to 3x screens at both widths. */}
+      <picture className="shrink-0">
+        <source type="image/avif" srcSet={photoSrcSet("avif")} sizes={PHOTO_SIZES} />
+        <img
+          src={me.photo.src}
+          srcSet={photoSrcSet("webp")}
+          sizes={PHOTO_SIZES}
+          alt={localize(me.photo.alt)}
+          width={320}
+          height={320}
+          loading="eager"
+          fetchPriority="high"
+          className={cn(
+            "aspect-square w-full max-w-64 object-cover md:max-w-80",
+            surfaceDoubleFrameClass
+          )}
+        />
+      </picture>
     </section>
   )
 }

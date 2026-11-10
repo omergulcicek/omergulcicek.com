@@ -1,7 +1,7 @@
 import { notFound } from "@tanstack/react-router"
 import { createServerFn } from "@tanstack/react-start"
 
-import { getSupabaseApi } from "@/lib/supabase-api"
+import { canReadDrafts, getSupabaseApi } from "@/lib/supabase-api"
 
 import { renderPostContent } from "@/features/blog/api/render-post-content"
 import { estimateReadingMinutes } from "@/features/blog/helpers/estimate-reading-minutes"
@@ -19,12 +19,17 @@ const HOUR_MS = 60 * 60 * 1000
  */
 const cache = new Map<string, { renderedAt: number; post: BlogPostDetail }>()
 
-/** One published post of a category, with its MDX rendered to HTML. Throws notFound otherwise. */
+/**
+ * One published post of a category, with its MDX rendered to HTML. Throws notFound otherwise.
+ * Under `pnpm dev` with drafts readable it also returns drafts and skips the cache, so an edit in
+ * Supabase shows on the next reload.
+ */
 export const getBlogPost = createServerFn({ method: "GET" })
   .validator(getBlogPostInputSchema)
   .handler(async ({ data }) => {
     const key = `${data.category}:${data.slug}`
-    const cached = cache.get(key)
+    const drafts = canReadDrafts()
+    const cached = drafts ? undefined : cache.get(key)
     if (cached && Date.now() - cached.renderedAt < HOUR_MS) return cached.post
 
     const rows = await getSupabaseApi().get("/blog_posts", {
@@ -33,7 +38,7 @@ export const getBlogPost = createServerFn({ method: "GET" })
           "slug,title,description,tags,locale,published_at,content,updated_at,translation_slug",
         slug: `eq./${data.slug}`,
         category: `eq.${data.category}`,
-        published: "eq.true",
+        ...(drafts ? {} : { published: "eq.true" }),
         limit: 1
       },
       schema: blogPostDetailRowsSchema

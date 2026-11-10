@@ -53,3 +53,6 @@ yarn-error.log*
 
 # paraglide (generated on install)
 /src/paraglide
+
+# local notes, roadmap and post drafts (posts live in Supabase)
+/docs
