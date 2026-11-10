@@ -14,6 +14,14 @@ describe("getHomePosts", () => {
     expect(latest.map((item) => item.slug)).toEqual(["/a", "/b"])
   })
 
+  it("fills the rest of the five rows with latest posts when fewer are featured", () => {
+    const posts = [post("/a"), post("/f1", true), post("/b"), post("/c"), post("/d"), post("/e")]
+    const { featured, latest } = getHomePosts(posts)
+
+    expect(featured.map((item) => item.slug)).toEqual(["/f1"])
+    expect(latest.map((item) => item.slug)).toEqual(["/a", "/b", "/c", "/d"])
+  })
+
   it("falls back to the five latest posts when none is featured", () => {
     const posts = ["/a", "/b", "/c", "/d", "/e", "/f"].map((slug) => post(slug))
     const { featured, latest } = getHomePosts(posts)
