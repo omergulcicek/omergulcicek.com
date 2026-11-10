@@ -287,7 +287,7 @@ export const USES_SECTIONS: readonly UsesSection[] = [
       {
         name: { tr: "Müzik", en: "Music" },
         logos: ["music"],
-        to: "/{-$lang}/music",
+        // No link while the music page is hidden; restore `to: "/{-$lang}/music"` when it is done.
         note: { tr: "Dinlediklerim.", en: "What I listen to." }
       },
       {

@@ -11,7 +11,9 @@ export const Route = createFileRoute("/{-$lang}/music")({
     pageHead({
       path: "/music",
       title: m.music_title(),
-      description: m.music_description()
+      description: m.music_description(),
+      // Hidden while it is a draft: out of the menu, the sitemap and llms.txt (docs/ROADMAP.md).
+      noindex: true
     }),
   component: MusicPage
 })

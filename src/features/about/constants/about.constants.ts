@@ -21,5 +21,6 @@ export const FAVORITES: readonly Favorite[] = [
   { id: "color", value: "Turkuaz", href: "https://github.com/omergulcicek/turkuaz" },
   { id: "film", value: "The Lord of the Rings", to: "/{-$lang}/films" },
   { id: "series", value: "Leyla ile Mecnun", to: "/{-$lang}/films" },
-  { id: "artist", value: "Sagopa Kajmer", to: "/{-$lang}/music" }
+  // No link while the music page is hidden; restore `to: "/{-$lang}/music"` when it is done.
+  { id: "artist", value: "Sagopa Kajmer" }
 ]

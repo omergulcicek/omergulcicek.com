@@ -25,6 +25,8 @@ function FavoriteValue({ favorite }: { favorite: Favorite }) {
     )
   }
 
+  if (!favorite.href) return favorite.value
+
   return (
     <a href={favorite.href} target="_blank" rel="noreferrer" className={titleLinkClass}>
       {favorite.value}
@@ -32,7 +34,7 @@ function FavoriteValue({ favorite }: { favorite: Favorite }) {
   )
 }
 
-/** One favorite per kind, as label and value rows; films and music link to their pages. */
+/** One favorite per kind, as label and value rows; films link to their page (music too, once it is out of draft). */
 export function AboutFavorites() {
   return (
     <section aria-labelledby="about-favorites" className="flex flex-col gap-4">
