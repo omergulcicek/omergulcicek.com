@@ -1,5 +1,5 @@
 import { FilterRail } from "@/components/shared/FilterRail"
-import { getBlogTags } from "@/features/blog/helpers/blog-tags"
+import { getBlogTags, getFilterTags } from "@/features/blog/helpers/blog-tags"
 import { useBlogPosts } from "@/features/blog/hooks/use-blog-posts"
 import { useBlogTagFilter } from "@/features/blog/hooks/use-blog-tag-filter"
 import type { BlogCategory } from "@/features/blog/schemas/blog-post.schema"
@@ -10,11 +10,14 @@ type BlogTagFilterProps = { category: BlogCategory }
 
 export function BlogTagFilter({ category }: BlogTagFilterProps) {
   const { data: posts } = useBlogPosts(category)
-  const items = getBlogTags(posts, getLocale()).map(({ tag, slug, count }) => ({
-    value: slug,
-    label: tag,
-    count
-  }))
+  const current = useBlogTagFilter()
+  const items = getFilterTags(getBlogTags(posts, getLocale()), current).map(
+    ({ tag, slug, count }) => ({
+      value: slug,
+      label: tag,
+      count
+    })
+  )
 
   return (
     <FilterRail
@@ -22,7 +25,7 @@ export function BlogTagFilter({ category }: BlogTagFilterProps) {
       param="tag"
       items={items}
       total={posts.length}
-      current={useBlogTagFilter()}
+      current={current}
     />
   )
 }

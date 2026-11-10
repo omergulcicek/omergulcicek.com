@@ -11,5 +11,8 @@ export const EN_TAG_LABELS: Readonly<Record<string, string>> = {
   "Film ve Dizi": "Film & TV",
   Kitap: "Books",
   "Site Yenileme": "Site Redesign",
-  Araç: "Tools"
+  Araç: "Tools",
+  Erişilebilirlik: "Accessibility",
+  Performans: "Performance",
+  Yerelleştirme: "Localization"
 }

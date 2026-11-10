@@ -6,9 +6,14 @@ import { titleLinkClass } from "@/components/shared/surface.styles"
 import { tagLabel } from "@/features/blog/helpers/blog-tags"
 import { formatPostDate } from "@/features/blog/helpers/format-post-date"
 import type { BlogCategory, BlogPostListItem } from "@/features/blog/schemas/blog-post.schema"
+import * as m from "@/paraglide/messages.js"
 import { getLocale } from "@/paraglide/runtime.js"
 
-type BlogPostItemProps = { post: BlogPostListItem; category: BlogCategory }
+// `series` comes with the list query only; other lists (feeds, cards) have no badge to show.
+type BlogPostItemProps = {
+  post: BlogPostListItem & { series?: string | null }
+  category: BlogCategory
+}
 
 export function BlogPostItem({ post, category }: BlogPostItemProps) {
   const locale = getLocale()
@@ -29,6 +34,11 @@ export function BlogPostItem({ post, category }: BlogPostItemProps) {
             {post.title}
           </Link>
         )}
+        {post.series ? (
+          <span className="shrink-0 rounded-sm border border-border px-1 font-mono text-xs text-muted-foreground">
+            {m.post_series_badge()}
+          </span>
+        ) : null}
         {/* Only posts in another language get a label. */}
         {post.locale !== locale ? (
           <span

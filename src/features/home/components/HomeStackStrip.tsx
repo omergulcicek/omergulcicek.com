@@ -4,6 +4,7 @@ import { STACK_ICONS } from "@/constants/stack-icons.constants"
 import { localize } from "@/helpers/localize"
 
 import { Marquee } from "@/components/ui/marquee"
+import { HOME_STACK_IDS } from "@/features/home/constants/home-stack.constants"
 import * as m from "@/paraglide/messages.js"
 
 /** Changes the speed of every CSS animation inside, keeping its position: no jump, no restart. */
@@ -14,11 +15,15 @@ function setPlaybackRate(element: HTMLElement, rate: number) {
 }
 
 export function HomeStackStrip() {
-  const items = me.stack.map((item) => ({
-    ...item,
-    icon: STACK_ICONS.get(item.id),
-    description: localize(item.description)
-  }))
+  const ids: readonly string[] = HOME_STACK_IDS
+  // Filtered from me.stack, so the strip keeps its order, labels and icons.
+  const items = me.stack
+    .filter((item) => ids.includes(item.id))
+    .map((item) => ({
+      ...item,
+      icon: STACK_ICONS.get(item.id),
+      description: localize(item.description)
+    }))
 
   const renderItem = ({ id, label, description, icon }: (typeof items)[number]) => (
     <figure key={id} className="flex w-28 shrink-0 flex-col items-center gap-2 text-center">

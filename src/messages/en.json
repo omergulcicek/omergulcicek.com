@@ -106,6 +106,12 @@
   "blog_featured": "Featured",
   "post_series_title": "The {series} series",
   "post_series_position": "Part {position} of {total}",
+  "blog_year_count": {
+    "declarations": ["input count", "local countPlural = count: plural"],
+    "selectors": ["countPlural"],
+    "match": { "countPlural=one": "{count} post", "countPlural=*": "{count} posts" }
+  },
+  "post_series_badge": "Series",
   "mdx_author": "Author",
   "mdx_translator": "Translator",
   "mdx_publisher": "Publisher",

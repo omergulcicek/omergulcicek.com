@@ -5,7 +5,7 @@ import { homeHead } from "@/config/seo.config"
 import { Pending } from "@/components/shared/Pending"
 import { Separator } from "@/components/ui/separator"
 import { blogPostsQueryOptions } from "@/features/blog/api/blog.queries"
-import { BlogLatestPosts } from "@/features/blog/components/BlogLatestPosts"
+import { BlogHomePosts } from "@/features/blog/components/BlogHomePosts"
 import { ExperienceHighlights } from "@/features/experiences/components/ExperienceHighlights"
 import { HomeHero } from "@/features/home/components/HomeHero"
 import { HomeStackStrip } from "@/features/home/components/HomeStackStrip"
@@ -27,7 +27,7 @@ function Home() {
       {/* The primitive keys its height on data-horizontal, which Base UI never sets. */}
       <Separator className="h-px" />
       {/* Same order as the sidebar: writing first, then work. */}
-      <BlogLatestPosts />
+      <BlogHomePosts />
       <Separator className="h-px" />
       <ExperienceHighlights />
     </div>

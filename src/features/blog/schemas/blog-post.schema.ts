@@ -1,5 +1,6 @@
 import { z } from "zod"
 
+import { sortTags } from "@/features/blog/helpers/blog-tags"
 import type { PostHeading } from "@/features/blog/helpers/rehype-heading-ids"
 
 /** `technical` posts list on /blog, `personal` ones on /notes. */
@@ -14,14 +15,15 @@ export const blogListSearchSchema = z.object({ tag: z.string().optional().catch(
 const blogPostListItemSchema = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
-  tags: z.array(z.string()),
+  // Sorted once here, so every list, page, feed and card shows tags in the same order.
+  tags: z.array(z.string()).transform(sortTags),
   locale: z.enum(["tr", "en"]),
   published_at: z.string().nullable()
 })
 
 /**
- * A row of the blog list query: the list item plus what the featured section and the series box
- * need. Kept apart from `blogPostListItemSchema`, which feeds, the sitemap and cards extend.
+ * A row of the blog list query: the list item plus what the home page and the series box need.
+ * Kept apart from `blogPostListItemSchema`, which feeds, the sitemap and cards extend.
  */
 const blogListPostSchema = blogPostListItemSchema.extend({
   featured: z.boolean(),

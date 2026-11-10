@@ -106,6 +106,8 @@
   "blog_featured": "Öne çıkanlar",
   "post_series_title": "{series} serisi",
   "post_series_position": "Yazı {position} / {total}",
+  "blog_year_count": "{count} yazı",
+  "post_series_badge": "Seri",
   "mdx_author": "Yazar",
   "mdx_translator": "Çevirmen",
   "mdx_publisher": "Yayınevi",
