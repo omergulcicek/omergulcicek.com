@@ -1,7 +1,7 @@
 // Draws the site's mark, an İznik çintemani tile (three blossoms with saz leaves), and writes
-// every icon from it: public/favicon.svg and favicon.ico (rounded), the manifest's 192 and 512
-// PNGs (rounded), apple-touch-icon.png (square: iOS rounds it) and a square SVG for the Brand
-// page, whose CSS frame rounds it there. Every shape is computed from the constants below, so a change here
+// every icon from it: the manifest's 192 and 512 PNGs (rounded), apple-touch-icon.png (square:
+// iOS rounds it) and a square SVG for the Brand page, whose CSS frame rounds it there. The tab
+// icons, favicon.svg and favicon.ico, use a simpler mark drawn for 16 to 32 px (see SMALL). Every shape is computed from the constants below, so a change here
 // and `pnpm favicon` is all it takes to redraw it. All sizes are in units of the 500x500 canvas.
 import { mkdirSync, writeFileSync } from "node:fs"
 import { dirname, join, relative } from "node:path"
@@ -11,7 +11,7 @@ import { Resvg } from "@resvg/resvg-js"
 // Tailwind teal-600, the brand color in the light theme. Hex, not oklch(): resvg, which draws
 // the PNGs, does not read oklch().
 const GROUND = "#009689"
-// Corner radius of the favicon only: 64 of 500 is about 4px at a 32px tab icon.
+// Corner radius of the rounded full tile, used by the manifest icons: 64 of 500 is about 25px at 192px.
 const FAVICON_RADIUS = 64
 const RED = "#c8202f"
 const BLUE = "#1f2fa3"
@@ -53,13 +53,29 @@ const STROKE = {
   leafBlack: 5.5
 }
 
+/*
+ * The small mark: at 16 to 32 px the leaves, clouds and outlines turn to noise, so it keeps
+ * the three blossoms alone, larger, with no strokes. Blue and red sit back from the center by
+ * `gap` so the three blue eyes stay apart at 16 px instead of merging into one blot.
+ */
+const SMALL = {
+  center: { x: 250, y: 282 },
+  distance: 142,
+  blossom: 104,
+  blue: 64,
+  dot: 24,
+  gap: 16,
+  // Rounder than the full tile's 64: at 16 px a smaller radius reads as a square corner.
+  radius: 96
+}
+
 const round = (value: number) => Number(value.toFixed(1))
 
-function polar(angle: number, distance: number) {
+function polar(angle: number, distance: number, center = CENTER) {
   const rad = (angle * Math.PI) / 180
   return {
-    x: round(CENTER.x + distance * Math.cos(rad)),
-    y: round(CENTER.y + distance * Math.sin(rad))
+    x: round(center.x + distance * Math.cos(rad)),
+    y: round(center.y + distance * Math.sin(rad))
   }
 }
 
@@ -141,6 +157,28 @@ function buildSvg(radius: number) {
   )
 }
 
+function buildSmallSvg() {
+  const { center, distance, blossom, blue, dot, gap, radius } = SMALL
+  const blueOffset = blossom - blue - gap
+  const dotOffset = blueOffset + blue - dot - gap / 2
+  const shapes = [270, 150, 30]
+    .map((angle) => {
+      const c = polar(angle, distance, center)
+      const b = polar(angle, distance - blueOffset, center)
+      const d = polar(angle, distance - dotOffset, center)
+      return (
+        `<circle cx="${c.x}" cy="${c.y}" r="${blossom}" fill="${WHITE}"/>` +
+        `<circle cx="${b.x}" cy="${b.y}" r="${blue}" fill="${BLUE}"/>` +
+        `<circle cx="${d.x}" cy="${d.y}" r="${dot}" fill="${RED}"/>`
+      )
+    })
+    .join("")
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">` +
+    `<rect width="500" height="500" rx="${radius}" fill="${GROUND}"/>${shapes}</svg>\n`
+  )
+}
+
 const root = join(import.meta.dirname, "..", "..")
 const publicDir = join(root, "public")
 
@@ -179,8 +217,9 @@ function toIco(pngs: { size: number; data: Uint8Array }[]) {
 
 const rounded = buildSvg(FAVICON_RADIUS)
 const square = buildSvg(0)
+const small = buildSmallSvg()
 
-write(join(publicDir, "favicon.svg"), rounded)
+write(join(publicDir, "favicon.svg"), small)
 write(join(publicDir, "img", "brand", "cintemani.svg"), square)
 write(join(publicDir, "apple-touch-icon.png"), toPng(square, 180))
 for (const size of [192, 512]) {
@@ -188,5 +227,5 @@ for (const size of [192, 512]) {
 }
 write(
   join(publicDir, "favicon.ico"),
-  toIco([16, 32, 48].map((size) => ({ size, data: toPng(rounded, size) })))
+  toIco([16, 32, 48].map((size) => ({ size, data: toPng(small, size) })))
 )
