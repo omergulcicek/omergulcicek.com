@@ -15,7 +15,8 @@ export function SiteSidebar() {
       >
         <SiteNavLinks idPrefix="sidebar-group" />
       </nav>
-      <div className="shrink-0 border-t border-border px-3 py-3">
+      {/* h-16 like the header and the footer, so at the page's end its top line meets the footer's. */}
+      <div className="flex h-16 shrink-0 items-center border-t border-border px-3">
         <SiteNavSocialLinks />
       </div>
     </div>

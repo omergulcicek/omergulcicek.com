@@ -29,8 +29,9 @@ export function SiteFooter() {
   ]
 
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-5 py-6 text-sm text-muted-foreground sm:flex-row sm:items-start sm:justify-between md:px-10">
+    // From md, h-16 (border included) like the header and the sidebar's icon row, so their top lines meet.
+    <footer className="border-t border-border md:h-16">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-5 py-6 text-sm text-muted-foreground sm:flex-row sm:items-start sm:justify-between md:h-full md:items-center md:px-10 md:py-0">
         {/* Around midnight on New Year's Eve the server's year and the browser's can differ. */}
         <p className="text-foreground" suppressHydrationWarning>
           © <span className="tabular-nums">{new Date().getFullYear()}</span> {me.name}
