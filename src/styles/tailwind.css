@@ -41,10 +41,12 @@
    * Turquoise, the site's one accent (Ömer's favorite color). Kept to a few percent of the page:
    * link underlines, the current nav item, focus rings, text selection and the main call to
    * action. Tailwind teal-600, as on ViraStack; teal-700 read too dark to look turquoise. Only
-   * 3.7:1 against white, below WCAG AA for normal text on it: a deliberate trade for the hue.
+   * 3.7:1 against white, so white text never sits on it.
    */
   --brand: oklch(0.6 0.118 184.704);
   --brand-foreground: oklch(0.985 0 0);
+  /* The one fill that carries white text, the main call to action: Tailwind teal-700, 5.5:1. */
+  --brand-strong: oklch(0.511 0.096 186.391);
   --ring: var(--brand);
 }
 
@@ -79,6 +81,8 @@
   /* Tailwind teal-500, as on ViraStack: 8.2:1 against the background, dark text on it reads at 7.4:1. */
   --brand: oklch(0.704 0.14 182.503);
   --brand-foreground: oklch(0.205 0 0);
+  /* Dark text already passes on teal-500, so the call to action keeps the brand color. */
+  --brand-strong: var(--brand);
   --ring: var(--brand);
 }
 
@@ -113,6 +117,7 @@
 
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
+  --color-brand-strong: var(--brand-strong);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

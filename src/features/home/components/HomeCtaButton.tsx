@@ -15,7 +15,7 @@ export function HomeCtaButton() {
       // The page's one filled call to action wears the brand color.
       className={cn(
         buttonVariants({ size: "sm" }),
-        "group bg-brand text-brand-foreground hover:bg-brand/90"
+        "group bg-brand-strong text-brand-foreground hover:bg-brand-strong/90"
       )}
     >
       {m.hero_cta()}
