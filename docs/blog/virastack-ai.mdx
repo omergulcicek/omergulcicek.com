@@ -72,29 +72,29 @@ Kurallar İngilizce yazılı. Bu kural kuruluyken "bir kayıt formu ekle" dediğ
 
 İki kural her zaman yükleniyor, diğerleri ilgili dosyada çalışırken:
 
-| Kural | Ne zaman |
-| :--- | :--- |
-| `core` | Her zaman: çalışma şekli, isimlendirme, export'lar, hatalar |
-| `architecture` | Her zaman: klasör yapısı, feature sınırları, import'lar |
-| `typescript`, `react` | TypeScript ve React dosyaları |
-| `nextjs` veya `tanstack-start` | Framework'ün route ve yapılandırma dosyaları |
-| `ui` | Bileşenler ve stiller |
-| `forms` | Form bileşenleri ve şemalar |
-| `api`, `server-state` | Feature'ların `api/` ve `hooks/` klasörleri |
-| `client-state` | Zustand store'ları |
-| `i18n` | Mesaj dosyaları ve route'lar (`next-intl` veya Paraglide varsa) |
-| `testing` | Test dosyaları |
-| `performance` | Route'lar ve bileşenler |
+| Kural                          | Ne zaman                                                        |
+| :----------------------------- | :-------------------------------------------------------------- |
+| `core`                         | Her zaman: çalışma şekli, isimlendirme, export'lar, hatalar     |
+| `architecture`                 | Her zaman: klasör yapısı, feature sınırları, import'lar         |
+| `typescript`, `react`          | TypeScript ve React dosyaları                                   |
+| `nextjs` veya `tanstack-start` | Framework'ün route ve yapılandırma dosyaları                    |
+| `ui`                           | Bileşenler ve stiller                                           |
+| `forms`                        | Form bileşenleri ve şemalar                                     |
+| `api`, `server-state`          | Feature'ların `api/` ve `hooks/` klasörleri                     |
+| `client-state`                 | Zustand store'ları                                              |
+| `i18n`                         | Mesaj dosyaları ve route'lar (`next-intl` veya Paraglide varsa) |
+| `testing`                      | Test dosyaları                                                  |
+| `performance`                  | Route'lar ve bileşenler                                         |
 
 ## Hangi araçlar destekleniyor?
 
-| Araç | Kendi formatında | `AGENTS.md` üzerinden |
-| :--- | :---: | :---: |
-| Claude Code | ✅ `.claude/rules/virastack/` | ✅ |
-| Cursor | ✅ `.cursor/rules/virastack/` | ✅ |
-| Codex, GitHub Copilot | | ✅ |
-| Gemini CLI, Aider | | ✅ (bir ayarla) |
-| Windsurf, Zed ve `AGENTS.md` okuyan diğerleri | | ✅ |
+| Araç                                          |       Kendi formatında        | `AGENTS.md` üzerinden |
+| :-------------------------------------------- | :---------------------------: | :-------------------: |
+| Claude Code                                   | ✅ `.claude/rules/virastack/` |          ✅           |
+| Cursor                                        | ✅ `.cursor/rules/virastack/` |          ✅           |
+| Codex, GitHub Copilot                         |                               |          ✅           |
+| Gemini CLI, Aider                             |                               |    ✅ (bir ayarla)    |
+| Windsurf, Zed ve `AGENTS.md` okuyan diğerleri |                               |          ✅           |
 
 Gemini CLI için `.gemini/settings.json`'a `{ "context": { "fileName": ["AGENTS.md", "GEMINI.md"] } }`, Aider için `.aider.conf.yml`'a `read: AGENTS.md` eklemen yeterli. Hiçbir araç kullanmıyorsan `--agent none` kuralları düz Markdown olarak `.agents/rules/` altına yazıyor.
 

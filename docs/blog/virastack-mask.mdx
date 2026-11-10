@@ -27,8 +27,8 @@ npm install @virastack/mask
 Hook'a formu ve bir şema veriyorsun; her anahtar bir alan adı, değeri bir preset:
 
 ```tsx title="credit-card-form.tsx"
-import { useForm } from "react-hook-form"
 import { useViraMask } from "@virastack/mask"
+import { useForm } from "react-hook-form"
 
 type Card = { card: string; expiry: string; cvv: string }
 
@@ -58,10 +58,10 @@ Doğrulama hataları metin değil anahtar olarak dönüyor; metni ve çeviriyi s
 ```ts
 import { createMask } from "@virastack/mask/server"
 
-createMask("card").validate("4111")             // "card.incomplete"
+createMask("card").validate("4111") // "card.incomplete"
 createMask("card").validate("4111111111111112") // "card.invalid" (Luhn)
-createMask("expiry").validate("0120")           // "expiry.min", süresi dolmuş
-createMask("tckn").validate("12345678901")      // "tckn.invalid"
+createMask("expiry").validate("0120") // "expiry.min", süresi dolmuş
+createMask("tckn").validate("12345678901") // "tckn.invalid"
 ```
 
 Telefon için `{ preset: "phone", country: "TR" }`, IBAN için `{ preset: "iban", country: "TR" }` ya da `"tckn"`, `"plate"`, `"currency"` gibi preset'leri aynı şemaya ekleyebilirsin.

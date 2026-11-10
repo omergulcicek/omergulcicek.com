@@ -72,29 +72,29 @@ With this rule in place, "add a sign-up form" gets you a schema under `schemas/`
 
 Two rules always load; the others load when the agent works on matching files:
 
-| Rule | When |
-| :--- | :--- |
-| `core` | Always: workflow, naming, exports, errors |
-| `architecture` | Always: folder tree, feature boundaries, imports |
-| `typescript`, `react` | TypeScript and React files |
-| `nextjs` or `tanstack-start` | The framework's route and config files |
-| `ui` | Components and styles |
-| `forms` | Form components and schemas |
-| `api`, `server-state` | Feature `api/` and `hooks/` folders |
-| `client-state` | Zustand stores |
-| `i18n` | Message files and routes (with `next-intl` or Paraglide) |
-| `testing` | Test files |
-| `performance` | Routes and components |
+| Rule                         | When                                                     |
+| :--------------------------- | :------------------------------------------------------- |
+| `core`                       | Always: workflow, naming, exports, errors                |
+| `architecture`               | Always: folder tree, feature boundaries, imports         |
+| `typescript`, `react`        | TypeScript and React files                               |
+| `nextjs` or `tanstack-start` | The framework's route and config files                   |
+| `ui`                         | Components and styles                                    |
+| `forms`                      | Form components and schemas                              |
+| `api`, `server-state`        | Feature `api/` and `hooks/` folders                      |
+| `client-state`               | Zustand stores                                           |
+| `i18n`                       | Message files and routes (with `next-intl` or Paraglide) |
+| `testing`                    | Test files                                               |
+| `performance`                | Routes and components                                    |
 
 ## Supported tools
 
-| Tool | Native rules | Through `AGENTS.md` |
-| :--- | :---: | :---: |
-| Claude Code | ✅ `.claude/rules/virastack/` | ✅ |
-| Cursor | ✅ `.cursor/rules/virastack/` | ✅ |
-| Codex, GitHub Copilot | | ✅ |
-| Gemini CLI, Aider | | ✅ (one setting) |
-| Windsurf, Zed and others that read `AGENTS.md` | | ✅ |
+| Tool                                           |         Native rules          | Through `AGENTS.md` |
+| :--------------------------------------------- | :---------------------------: | :-----------------: |
+| Claude Code                                    | ✅ `.claude/rules/virastack/` |         ✅          |
+| Cursor                                         | ✅ `.cursor/rules/virastack/` |         ✅          |
+| Codex, GitHub Copilot                          |                               |         ✅          |
+| Gemini CLI, Aider                              |                               |  ✅ (one setting)   |
+| Windsurf, Zed and others that read `AGENTS.md` |                               |         ✅          |
 
 For Gemini CLI, add `{ "context": { "fileName": ["AGENTS.md", "GEMINI.md"] } }` to `.gemini/settings.json`; for Aider, `read: AGENTS.md` to `.aider.conf.yml`. If you use none of these tools, `--agent none` writes plain Markdown rules to `.agents/rules/`.
 

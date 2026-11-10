@@ -27,8 +27,8 @@ npm install @virastack/mask
 Pass the form and a schema; each key is a field name, each value a preset:
 
 ```tsx title="credit-card-form.tsx"
-import { useForm } from "react-hook-form"
 import { useViraMask } from "@virastack/mask"
+import { useForm } from "react-hook-form"
 
 type Card = { card: string; expiry: string; cvv: string }
 
@@ -58,9 +58,9 @@ Validation errors come back as keys, not text, so the wording stays yours:
 ```ts
 import { createMask } from "@virastack/mask/server"
 
-createMask("card").validate("4111")                   // "card.incomplete"
-createMask("card").validate("4111111111111112")       // "card.invalid" (Luhn)
-createMask("expiry").validate("0120")                 // "expiry.min", expired
+createMask("card").validate("4111") // "card.incomplete"
+createMask("card").validate("4111111111111112") // "card.invalid" (Luhn)
+createMask("expiry").validate("0120") // "expiry.min", expired
 createMask("iban").validate("GB82WEST12345698765431") // "iban.invalid" (mod-97)
 ```
 
