@@ -5,6 +5,7 @@ import { CssDemo } from "@/features/blog/components/mdx/islands/CssDemo"
 import type { CssDemoName } from "@/features/blog/components/mdx/islands/CssDemo"
 import { MaskDemo } from "@/features/blog/components/mdx/islands/MaskDemo"
 import { PasswordDemo } from "@/features/blog/components/mdx/islands/PasswordDemo"
+import { TokenDemo } from "@/features/blog/components/mdx/islands/TokenDemo"
 import { MdxAreaChart } from "@/features/blog/components/mdx/MdxAreaChart"
 import { MdxBookInfo } from "@/features/blog/components/mdx/MdxBookInfo"
 import { MdxImageStrip } from "@/features/blog/components/mdx/MdxImageStrip"
@@ -69,6 +70,11 @@ export function getMdxComponents(locale: Locale, getImageSize: GetImageSize) {
     ViraAddressDemo: () => (
       <MdxIsland name="address-demo" props={{ locale }}>
         <AddressDemo locale={locale} />
+      </MdxIsland>
+    ),
+    TokenDemo: () => (
+      <MdxIsland name="token-demo" props={{ locale }}>
+        <TokenDemo locale={locale} />
       </MdxIsland>
     ),
     ViraPasswordDemo: () => (

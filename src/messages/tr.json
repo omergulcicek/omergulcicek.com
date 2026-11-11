@@ -249,5 +249,19 @@
   "mdx_address_province": "İl",
   "mdx_address_district": "İlçe",
   "mdx_address_neighbourhood": "Mahalle",
-  "mdx_address_postal_code": "Posta kodu"
+  "mdx_address_postal_code": "Posta kodu",
+  "mdx_token_pick": "Renk seç",
+  "mdx_token_color_teal": "Turkuaz",
+  "mdx_token_color_pink": "Pembe",
+  "mdx_token_color_violet": "Mor",
+  "mdx_token_without": "Token olmadan",
+  "mdx_token_with": "Token ile",
+  "mdx_token_save": "Kaydet",
+  "mdx_token_agree": "Onaylıyorum",
+  "mdx_token_next_file": "Sonraki dosyayı düzenle",
+  "mdx_token_files": "{count}/3 dosya",
+  "mdx_token_files_done": "3 dosya, 3 ayrı değişiklik",
+  "mdx_token_start_without": "3 dosya, 3 ayrı renk",
+  "mdx_token_start_with": "1 token, 3 bileşen",
+  "mdx_token_one_line": "1 satır değişti, 3 bileşen güncellendi"
 }

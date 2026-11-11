@@ -39,6 +39,14 @@ export const ISLANDS = new Map<string, IslandLoader>([
     }
   ],
   [
+    "token-demo",
+    async () => {
+      const { TokenDemo } = await import("@/features/blog/components/mdx/islands/TokenDemo")
+      const schema = z.object({ locale: localeSchema })
+      return (props) => createElement(TokenDemo, schema.parse(props))
+    }
+  ],
+  [
     "password-demo",
     async () => {
       const { PasswordDemo } = await import("@/features/blog/components/mdx/islands/PasswordDemo")

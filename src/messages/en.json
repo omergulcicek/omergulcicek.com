@@ -253,5 +253,19 @@
   "mdx_address_province": "Province",
   "mdx_address_district": "District",
   "mdx_address_neighbourhood": "Neighbourhood",
-  "mdx_address_postal_code": "Postal code"
+  "mdx_address_postal_code": "Postal code",
+  "mdx_token_pick": "Pick a color",
+  "mdx_token_color_teal": "Teal",
+  "mdx_token_color_pink": "Pink",
+  "mdx_token_color_violet": "Violet",
+  "mdx_token_without": "Without a token",
+  "mdx_token_with": "With a token",
+  "mdx_token_save": "Save",
+  "mdx_token_agree": "I agree",
+  "mdx_token_next_file": "Edit the next file",
+  "mdx_token_files": "{count}/3 files",
+  "mdx_token_files_done": "3 files, 3 separate edits",
+  "mdx_token_start_without": "3 files, 3 different colors",
+  "mdx_token_start_with": "1 token, 3 components",
+  "mdx_token_one_line": "1 line changed, 3 components updated"
 }
