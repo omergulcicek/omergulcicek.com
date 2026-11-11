@@ -17,7 +17,7 @@ export const getBlogPosts = createServerFn({ method: "GET" })
     // ApiError messages carry only the status and kind, so they are safe to reach the client.
     return getSupabaseApi().get("/blog_posts", {
       params: {
-        select: "slug,title,tags,locale,published_at,featured,series,series_order",
+        select: "slug,title,tags,locale,published_at,featured_rank,series,series_order",
         category: `eq.${data.category}`,
         ...(drafts ? {} : { published: "eq.true" }),
         slug: RETIRED_POSTS_FILTER,

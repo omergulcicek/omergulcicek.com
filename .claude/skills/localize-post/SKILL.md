@@ -47,7 +47,7 @@ Türkçe yazı onaylanmadan İngilizceye geçme.
 1. MDX'i `docs/blog/en/<slug>.mdx` olarak yaz (bu klasör git'te değil, yerel kopya).
 2. Supabase `blog_posts` tablosuna taslak olarak ekle:
    - `locale: "en"`, `published: false`, `published_at: null`
-   - `category`, `tags`, `featured`, `og_image_path` Türkçe yazıdakiyle aynı
+   - `category`, `tags`, `og_image_path` Türkçe yazıdakiyle aynı; `featured_rank` dil başına ayrı (1 ilk sırada, öne çıkmıyorsa `null`), İngilizce öne çıkanlardaki sırayı kullanıcıya sor
    - `translation_slug`: Türkçe yazının slug'ı
    - Taslaklar RLS'yi aştığı için service role anahtarı gerekiyor. `.env.local`'deki `SUPABASE_SERVICE_ROLE_KEY` ile REST üzerinden ekle, anahtarı asla ekrana yazdırma.
 3. Kullanıcıya localdeki adresi ver: `/en/blog/<slug>`. Taslaklar yalnızca `pnpm dev`'de görünür.

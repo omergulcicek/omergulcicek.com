@@ -26,7 +26,8 @@ const blogPostListItemSchema = z.object({
  * Kept apart from `blogPostListItemSchema`, which feeds, the sitemap and cards extend.
  */
 const blogListPostSchema = blogPostListItemSchema.extend({
-  featured: z.boolean(),
+  /** Place in the home page's featured list, 1 first; null when the post is not featured. */
+  featured_rank: z.number().int().positive().nullable(),
   /** Slug of the series the post belongs to, such as `virastack`; null outside a series. */
   series: z.string().min(1).nullable(),
   series_order: z.number().int().nullable()
