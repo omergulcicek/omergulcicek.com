@@ -51,10 +51,11 @@ Türkçe yazı onaylanmadan İngilizceye geçme.
    - `translation_slug`: Türkçe yazının slug'ı
    - Taslaklar RLS'yi aştığı için service role anahtarı gerekiyor. `.env.local`'deki `SUPABASE_SERVICE_ROLE_KEY` ile REST üzerinden ekle, anahtarı asla ekrana yazdırma.
 3. Kullanıcıya localdeki adresi ver: `/en/blog/<slug>`. Taslaklar yalnızca `pnpm dev`'de görünür.
-4. Kullanıcı onaylayınca:
+4. Yayından hemen önce öne çıkanları kontrol et: iki dildeki ilk 3'ü listele ve yazının girip girmeyeceğini, girerse sırasını öner. Ölçütler sırasıyla kalıcı öğreti, en güçlü alanın vitrini (tasarım sistemi, mimari, React) ve konu çeşitliliği; vaka çalışmaları genelde girmez. Kararı kullanıcı verir.
+5. Kullanıcı onaylayınca:
    - İngilizce yazıda `published: true` ve `published_at: now()`.
    - Türkçe yazının `translation_slug` alanına İngilizce slug'ı yaz. Bunu yayından önce yapma; Türkçe sayfa yayımlanmamış bir sayfaya link vermesin.
-5. Canlıda kontrol et: yazı 200 dönüyor, hreflang iki dili gösteriyor, `/en/blog/<türkçe-slug>` 301 ile İngilizceye yönleniyor.
+6. Canlıda kontrol et: yazı 200 dönüyor, hreflang iki dili gösteriyor, `/en/blog/<türkçe-slug>` 301 ile İngilizceye yönleniyor.
 
 ## Kontrol listesi
 

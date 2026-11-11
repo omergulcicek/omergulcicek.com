@@ -19,7 +19,6 @@ export const BLOG_TAG_ORDER = [
   "Yerelleştirme",
   "Araç",
   "Proje",
-  "Frontend",
   // Notes
   "Yıl Değerlendirmesi",
   "Deneyim",

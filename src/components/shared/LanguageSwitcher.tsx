@@ -14,7 +14,8 @@ export function LanguageSwitcher() {
       // setLocale loads the localized URL as a new document, so the server HTML and the URL agree.
       onClick={() => void setLocale(nextLang)}
     >
-      {currentLang.toLocaleUpperCase(currentLang)}
+      {/* It shows the target language, so a visitor on the wrong language finds their own. */}
+      {nextLang.toLocaleUpperCase(nextLang)}
       {/* The name starts with the visible code, so voice control users can say what they see. */}
       <span className="sr-only">: {m.language_switch()}</span>
     </Button>
