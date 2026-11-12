@@ -93,7 +93,7 @@ export function BlogPostArticle({ category, slug }: BlogPostArticleProps) {
         {/* Rendered on the server from our own MDX in Supabase; never visitor input. */}
         <div
           ref={contentRef}
-          className="prose max-w-none prose-neutral dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:font-medium prose-a:decoration-current/30 prose-a:underline-offset-4 prose-a:transition-[text-decoration-color] prose-a:duration-150 prose-a:hover:decoration-current prose-figcaption:text-center prose-code:rounded-sm prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-img:mx-auto prose-img:rounded-lg"
+          className="prose max-w-none prose-neutral dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:font-medium prose-a:decoration-current/30 prose-a:underline-offset-4 prose-a:transition-[text-decoration-color] prose-a:duration-150 prose-a:hover:decoration-current prose-figcaption:text-center prose-code:rounded-sm prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-img:mx-auto prose-img:rounded-lg [&_[data-footnote-ref]]:no-underline [&_[data-footnotes]_li]:my-1.5"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>

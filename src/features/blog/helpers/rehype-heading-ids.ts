@@ -31,10 +31,13 @@ export function rehypeHeadingIds(headings: PostHeading[]) {
       const level = node.tagName ? LEVELS[node.tagName] : undefined
       if (node.type === "element" && level) {
         const text = textOf(node).trim()
+        // A heading that already has an id keeps it: the footnotes label is the target of
+        // every footnote reference's aria-describedby.
+        const existing = node.properties?.id
         const base = toSlug(text) || "section"
         const count = (used.get(base) ?? 0) + 1
         used.set(base, count)
-        const id = count === 1 ? base : `${base}-${count}`
+        const id = typeof existing === "string" ? existing : count === 1 ? base : `${base}-${count}`
 
         node.properties = { ...node.properties, id }
         headings.push({ id, text, level })

@@ -15,6 +15,7 @@ import { localizePostLink } from "@/features/blog/helpers/localize-post-link"
 import { rehypeFigureCaptions } from "@/features/blog/helpers/rehype-figure-captions"
 import { rehypeHeadingIds } from "@/features/blog/helpers/rehype-heading-ids"
 import type { PostHeading } from "@/features/blog/helpers/rehype-heading-ids"
+import { rehypeStripFootnoteBackrefs } from "@/features/blog/helpers/rehype-strip-footnote-backrefs"
 import * as m from "@/paraglide/messages.js"
 import type { Locale } from "@/paraglide/runtime.js"
 
@@ -51,6 +52,13 @@ export async function renderPostContent(content: string, locale: Locale) {
   const { default: Content } = await evaluate(content, {
     ...runtime,
     remarkPlugins: [remarkGfm],
+    // GFM footnotes close the post as its sources list, so the label is a visible h2 in
+    // the post's language instead of the default hidden English "Footnotes".
+    remarkRehypeOptions: {
+      footnoteLabel: m.blog_footnotes_label({}, { locale }),
+      footnoteLabelTagName: "h2",
+      footnoteLabelProperties: {}
+    },
     rehypePlugins: [
       [
         rehypeShiki,
@@ -63,6 +71,7 @@ export async function renderPostContent(content: string, locale: Locale) {
         }
       ],
       rehypeHeadingIds(headings),
+      rehypeStripFootnoteBackrefs,
       rehypeFigureCaptions(getPublicImageSize)
     ]
   })
