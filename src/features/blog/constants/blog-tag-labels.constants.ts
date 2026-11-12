@@ -12,6 +12,7 @@ export const EN_TAG_LABELS: Readonly<Record<string, string>> = {
   Kitap: "Books",
   "Site Yenileme": "Site Redesign",
   Araç: "Tools",
+  Mimari: "Architecture",
   Erişilebilirlik: "Accessibility",
   Performans: "Performance",
   Yerelleştirme: "Localization"

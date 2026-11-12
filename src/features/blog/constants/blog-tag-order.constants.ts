@@ -14,6 +14,7 @@ export const BLOG_TAG_ORDER = [
   "CSS",
   "HTML",
   "Yapay Zekâ",
+  "Mimari",
   "Erişilebilirlik",
   "Performans",
   "Yerelleştirme",
