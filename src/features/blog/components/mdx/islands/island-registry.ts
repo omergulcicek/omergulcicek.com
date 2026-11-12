@@ -23,6 +23,15 @@ export const ISLANDS = new Map<string, IslandLoader>([
     }
   ],
   [
+    "button-hierarchy-demo",
+    async () => {
+      const { ButtonHierarchyDemo } =
+        await import("@/features/blog/components/mdx/islands/ButtonHierarchyDemo")
+      const schema = z.object({ locale: localeSchema })
+      return (props) => createElement(ButtonHierarchyDemo, schema.parse(props))
+    }
+  ],
+  [
     "css-demo",
     async () => {
       const { CssDemo, CSS_DEMOS } = await import("@/features/blog/components/mdx/islands/CssDemo")
