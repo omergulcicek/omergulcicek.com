@@ -269,6 +269,7 @@
   "mdx_token_start_without": "3 files, 3 different colors",
   "mdx_token_start_with": "1 token, 3 components",
   "mdx_token_one_line": "1 line changed, 3 components updated",
+  "mdx_button_variants_caption": "The button variants in shadcn/ui: the first five run from the most attention-grabbing to the least; destructive is for actions you can't undo, like deleting.",
   "mdx_buttons_pick": "Pick a design system",
   "mdx_buttons_page": "On a page",
   "mdx_buttons_dialog": "In a dialog",

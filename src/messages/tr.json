@@ -265,6 +265,7 @@
   "mdx_token_start_without": "3 dosya, 3 ayrı renk",
   "mdx_token_start_with": "1 token, 3 bileşen",
   "mdx_token_one_line": "1 satır değişti, 3 bileşen güncellendi",
+  "mdx_button_variants_caption": "shadcn/ui'daki buton varyantları: ilk beşi en çok dikkat çekenden en aza, destructive ise silme gibi geri alınamayan işlemler için.",
   "mdx_buttons_pick": "Tasarım sistemi seç",
   "mdx_buttons_page": "Sayfada",
   "mdx_buttons_dialog": "Dialog'da",

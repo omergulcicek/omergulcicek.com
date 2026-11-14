@@ -8,6 +8,7 @@ import { PasswordDemo } from "@/features/blog/components/mdx/islands/PasswordDem
 import { TokenDemo } from "@/features/blog/components/mdx/islands/TokenDemo"
 import { MdxAreaChart } from "@/features/blog/components/mdx/MdxAreaChart"
 import { MdxBookInfo } from "@/features/blog/components/mdx/MdxBookInfo"
+import { MdxButtonVariants } from "@/features/blog/components/mdx/MdxButtonVariants"
 import { MdxImageStrip } from "@/features/blog/components/mdx/MdxImageStrip"
 import { MdxIsland } from "@/features/blog/components/mdx/MdxIsland"
 import { MdxLinksReview } from "@/features/blog/components/mdx/MdxLinksReview"
@@ -73,6 +74,7 @@ export function getMdxComponents(locale: Locale, getImageSize: GetImageSize) {
         <AddressDemo locale={locale} />
       </MdxIsland>
     ),
+    ButtonVariants: () => <MdxButtonVariants locale={locale} />,
     ButtonHierarchyDemo: () => (
       <MdxIsland name="button-hierarchy-demo" props={{ locale }}>
         <ButtonHierarchyDemo locale={locale} />
