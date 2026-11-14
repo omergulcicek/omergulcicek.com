@@ -151,6 +151,11 @@
     @apply scroll-smooth;
   }
 
+  /* Anchor jumps (TOC, footnotes) land below the sticky header: 65px header + 16px gap, rounded to 80px. */
+  [id] {
+    @apply scroll-mt-20;
+  }
+
   body {
     @apply bg-background text-foreground;
   }

@@ -23,11 +23,7 @@ type LabeledSectionProps = {
 export function LabeledSection({ id, title, link, children }: LabeledSectionProps) {
   return (
     <section aria-labelledby={id} className="flex flex-col gap-4 md:flex-row md:gap-10">
-      {/* scroll-mt clears the sticky header when a page TOC jumps here. */}
-      <h2
-        id={id}
-        className="scroll-mt-24 text-sm font-medium text-muted-foreground md:w-40 md:shrink-0"
-      >
+      <h2 id={id} className="text-sm font-medium text-muted-foreground md:w-40 md:shrink-0">
         {title}
       </h2>
       <div className="flex min-w-0 flex-1 flex-col gap-6">

@@ -149,7 +149,7 @@ export function MusicGroups() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1">
                 <div className="flex items-start justify-between gap-3">
-                  <h2 id={group.anchor} className="scroll-mt-24 text-lg font-semibold text-pretty">
+                  <h2 id={group.anchor} className="text-lg font-semibold text-pretty">
                     {localize(group.title)}
                   </h2>
                   <SpotifyButton url={group.spotifyUrl} />

@@ -49,7 +49,7 @@ export function UsesSections() {
       <div className="flex flex-col gap-12">
         {sections.map(({ id, title, items }) => (
           <section key={id} aria-labelledby={id} className="flex flex-col gap-4">
-            <h2 id={id} className="scroll-mt-24 text-sm font-medium text-muted-foreground">
+            <h2 id={id} className="text-sm font-medium text-muted-foreground">
               {localize(title)}
             </h2>
             <ul className="flex flex-col gap-4">
