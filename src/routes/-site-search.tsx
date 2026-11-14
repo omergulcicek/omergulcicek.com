@@ -13,10 +13,20 @@ import { postsForLocale } from "@/features/blog/helpers/posts-for-locale"
 import type { BlogCategory } from "@/features/blog/schemas/blog-post.schema"
 import * as m from "@/paraglide/messages.js"
 import { getLocale, localizeHref } from "@/paraglide/runtime.js"
+import type { Locale } from "@/paraglide/runtime.js"
 
 const FOLDERS: Record<BlogCategory, string> = { technical: "/blog", personal: "/notes" }
 // The same icons the menu uses for Blog and Notes.
 const POST_ICONS = { technical: NewspaperIcon, personal: NotebookPenIcon } as const
+
+/** A category's posts in the current locale, fetched only once the palette has opened. */
+function usePostsWhenOpen(category: BlogCategory, open: boolean, locale: Locale) {
+  return useQuery({
+    ...searchPostsQueryOptions(category),
+    enabled: open,
+    select: (posts) => postsForLocale(posts, category, locale)
+  })
+}
 
 /**
  * The header's search, composed here because it joins the site's pages with the blog feature's
@@ -27,14 +37,8 @@ export function SiteSearch() {
   const [open, setOpen] = useState(false)
   const locale = getLocale()
 
-  const usePostsWhenOpen = (category: BlogCategory) =>
-    useQuery({
-      ...searchPostsQueryOptions(category),
-      enabled: open,
-      select: (posts) => postsForLocale(posts, category, locale)
-    })
-  const technical = usePostsWhenOpen("technical")
-  const personal = usePostsWhenOpen("personal")
+  const technical = usePostsWhenOpen("technical", open, locale)
+  const personal = usePostsWhenOpen("personal", open, locale)
 
   const postItems = (category: BlogCategory, posts: typeof technical.data) =>
     (posts ?? []).map((post) => ({

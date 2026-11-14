@@ -8,8 +8,8 @@ import * as m from "@/paraglide/messages.js"
 
 /** The libraries the templates and hooks build on; labels and icons come from `me.stack`. */
 export function ViraStackPoweredBy() {
-  const ids: readonly string[] = VIRASTACK_POWERED_BY
-  const items = me.stack.filter((item) => ids.includes(item.id))
+  const ids = new Set<string>(VIRASTACK_POWERED_BY)
+  const items = me.stack.filter((item) => ids.has(item.id))
 
   return (
     <LabeledSection id="powered-by" title={getViraStackSectionTitle("powered-by")}>

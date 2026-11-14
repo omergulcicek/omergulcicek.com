@@ -1,6 +1,9 @@
 import { useEffect } from "react"
 import type { RefObject } from "react"
 
+// Kept outside the hook: React Compiler skips any hook that calls `import()` directly.
+const loadMediumZoom = () => import("medium-zoom")
+
 /**
  * Medium-style zoom on the post's figure images. medium-zoom works on DOM nodes, which fits
  * the server-rendered post HTML; it loads on demand, so pages without images never fetch it.
@@ -14,7 +17,7 @@ export function useImageZoom(ref: RefObject<HTMLElement | null>) {
     let detach: (() => void) | undefined
     let cancelled = false
 
-    import("medium-zoom")
+    loadMediumZoom()
       .then(({ default: mediumZoom }) => {
         if (cancelled) return
         // The theme token, not a color read once: the overlay follows a theme switched later too.

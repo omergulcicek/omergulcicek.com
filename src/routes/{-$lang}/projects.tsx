@@ -11,13 +11,13 @@ import { ProjectsToc } from "@/features/projects/components/ProjectsToc"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/projects")({
+  loader: ({ context }) => context.queryClient.query(projectStatsQueryOptions()),
   head: () =>
     pageHead({
       path: "/projects",
       title: m.projects_title(),
       description: m.projects_description()
     }),
-  loader: ({ context }) => context.queryClient.query(projectStatsQueryOptions()),
   component: ProjectsPage
 })
 

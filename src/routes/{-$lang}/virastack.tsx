@@ -23,17 +23,17 @@ import { getViraStackSectionTitle } from "@/features/virastack/helpers/get-viras
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/virastack")({
+  loader: ({ context }) =>
+    Promise.all([
+      context.queryClient.query(projectStatsQueryOptions()),
+      context.queryClient.query({ ...blogPostsQueryOptions("technical"), staleTime: "static" })
+    ]),
   head: () =>
     pageHead({
       path: "/virastack",
       title: m.virastack_title(),
       description: m.virastack_description()
     }),
-  loader: ({ context }) =>
-    Promise.all([
-      context.queryClient.query(projectStatsQueryOptions()),
-      context.queryClient.query({ ...blogPostsQueryOptions("technical"), staleTime: "static" })
-    ]),
   pendingComponent: Pending,
   component: ViraStackPage
 })

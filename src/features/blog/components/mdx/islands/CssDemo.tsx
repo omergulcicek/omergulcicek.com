@@ -4,19 +4,9 @@ import { RotateCcwIcon } from "lucide-react"
 import { cn } from "cn"
 
 import { buttonVariants } from "@/components/ui/button"
+import type { CssDemoName } from "@/features/blog/constants/css-demos.constants"
 import * as m from "@/paraglide/messages.js"
 import type { Locale } from "@/paraglide/runtime.js"
-
-export const CSS_DEMOS = [
-  "corner-shape",
-  "clip-path",
-  "picker-icon",
-  "sibling-index",
-  "stretch",
-  "text-box"
-] as const
-
-export type CssDemoName = (typeof CSS_DEMOS)[number]
 
 /*
  * Each option pairs the CSS it shows with a static Tailwind class for the preview, so the

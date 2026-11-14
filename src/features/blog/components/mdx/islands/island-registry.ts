@@ -3,6 +3,7 @@ import type { ReactElement } from "react"
 
 import { z } from "zod"
 
+import { CSS_DEMOS } from "@/features/blog/constants/css-demos.constants"
 import { locales } from "@/paraglide/runtime.js"
 
 /**
@@ -34,7 +35,7 @@ export const ISLANDS = new Map<string, IslandLoader>([
   [
     "css-demo",
     async () => {
-      const { CssDemo, CSS_DEMOS } = await import("@/features/blog/components/mdx/islands/CssDemo")
+      const { CssDemo } = await import("@/features/blog/components/mdx/islands/CssDemo")
       const schema = z.object({ demo: z.enum(CSS_DEMOS), locale: localeSchema })
       return (props) => createElement(CssDemo, schema.parse(props))
     }

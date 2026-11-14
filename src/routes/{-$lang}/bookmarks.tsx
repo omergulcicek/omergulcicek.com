@@ -10,13 +10,13 @@ import { bookmarksSearchSchema } from "@/features/bookmarks/schemas/bookmark.sch
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/bookmarks")({
+  validateSearch: bookmarksSearchSchema,
   head: () =>
     pageHead({
       path: "/bookmarks",
       title: m.bookmarks_title(),
       description: m.bookmarks_description()
     }),
-  validateSearch: bookmarksSearchSchema,
   component: BookmarksPage
 })
 

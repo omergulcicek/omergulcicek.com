@@ -13,11 +13,11 @@ import { blogListSearchSchema } from "@/features/blog/schemas/blog-post.schema"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/notes/")({
-  head: () =>
-    pageHead({ path: "/notes", title: m.notes_title(), description: m.notes_description() }),
   validateSearch: blogListSearchSchema,
   loader: ({ context }) =>
     context.queryClient.query({ ...blogPostsQueryOptions("personal"), staleTime: "static" }),
+  head: () =>
+    pageHead({ path: "/notes", title: m.notes_title(), description: m.notes_description() }),
   component: NotesPage
 })
 

@@ -11,9 +11,9 @@ import { HomeHero } from "@/features/home/components/HomeHero"
 import { HomeStackStrip } from "@/features/home/components/HomeStackStrip"
 
 export const Route = createFileRoute("/{-$lang}/")({
-  head: homeHead,
   loader: ({ context }) =>
     context.queryClient.query({ ...blogPostsQueryOptions("technical"), staleTime: "static" }),
+  head: homeHead,
   pendingComponent: Pending,
   component: Home
 })

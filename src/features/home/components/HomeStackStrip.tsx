@@ -15,10 +15,10 @@ function setPlaybackRate(element: HTMLElement, rate: number) {
 }
 
 export function HomeStackStrip() {
-  const ids: readonly string[] = HOME_STACK_IDS
+  const ids = new Set<string>(HOME_STACK_IDS)
   // Filtered from me.stack, so the strip keeps its order, labels and icons.
   const items = me.stack
-    .filter((item) => ids.includes(item.id))
+    .filter((item) => ids.has(item.id))
     .map((item) => ({
       ...item,
       icon: STACK_ICONS.get(item.id),

@@ -10,9 +10,9 @@ import { librarySearchSchema } from "@/features/library/schemas/book.schema"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/library")({
+  validateSearch: librarySearchSchema,
   head: () =>
     pageHead({ path: "/library", title: m.library_title(), description: m.library_description() }),
-  validateSearch: librarySearchSchema,
   component: LibraryPage
 })
 

@@ -13,7 +13,7 @@ export function ThemeToggle() {
   const isClient = useIsClient()
 
   if (!isClient) {
-    return <Button variant="ghost" size="icon" aria-hidden className="size-8 opacity-0" />
+    return <div aria-hidden className="size-8 shrink-0" />
   }
 
   const isDark = resolvedTheme === "dark"

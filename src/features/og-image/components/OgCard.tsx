@@ -58,6 +58,7 @@ export function OgCard({ title, description, sitePath, meta, name, role, photo }
           <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
             <img
               src={photo}
+              alt=""
               width={64}
               height={64}
               style={{ borderRadius: 9999, border: `1px solid ${OG_COLORS.border}` }}
