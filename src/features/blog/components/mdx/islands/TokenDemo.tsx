@@ -52,7 +52,7 @@ function Preview({
   icon: { className?: string; style?: CSSProperties }
 }) {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-5 bg-muted/40 px-4 py-8">
+    <div className="flex flex-wrap items-center justify-center gap-4 bg-muted px-4 py-8">
       <button type="button" className={cn(buttonVariants(), button.className)} style={button.style}>
         {m.mdx_token_save({}, { locale })}
       </button>
@@ -72,7 +72,7 @@ function Preview({
 function Card({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div className="flex flex-col">
-      <p className="border-b border-border px-4 py-2.5 text-sm font-medium">{title}</p>
+      <p className="border-b border-border px-4 py-3 text-sm font-medium">{title}</p>
       {children}
     </div>
   )
@@ -112,7 +112,7 @@ export function TokenDemo({ locale }: TokenDemoProps) {
   const checkboxVar: VarStyle = { "--c": checkboxColor?.value ?? "" }
 
   return (
-    <div className="not-prose my-8 flex flex-col overflow-hidden rounded-xl border border-border">
+    <div className="not-prose my-6 flex flex-col overflow-hidden rounded-xl border border-border">
       <div
         role="group"
         aria-label={m.mdx_token_pick({}, { locale })}
@@ -153,7 +153,7 @@ export function TokenDemo({ locale }: TokenDemoProps) {
               return (
                 <li key={file} className="flex items-center justify-between gap-2">
                   <span className="text-muted-foreground">{file}</span>
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center gap-2">
                     {utility}-{color?.name}
                     <CheckIcon
                       aria-hidden
@@ -164,7 +164,7 @@ export function TokenDemo({ locale }: TokenDemoProps) {
               )
             })}
           </ul>
-          <div className="mt-auto flex min-h-14 items-center justify-between gap-2 border-t border-border px-4 py-2.5 text-xs text-muted-foreground">
+          <div className="mt-auto flex min-h-14 items-center justify-between gap-2 border-t border-border px-4 py-3 text-xs text-muted-foreground">
             <span aria-live="polite">
               {picked === null
                 ? m.mdx_token_start_without({}, { locale })
@@ -207,7 +207,7 @@ export function TokenDemo({ locale }: TokenDemoProps) {
             </div>
             <p
               aria-live="polite"
-              className="mt-auto flex min-h-14 items-center border-t border-border px-4 py-2.5 text-xs text-muted-foreground"
+              className="mt-auto flex min-h-14 items-center border-t border-border px-4 py-3 text-xs text-muted-foreground"
             >
               {picked === null
                 ? m.mdx_token_start_with({}, { locale })

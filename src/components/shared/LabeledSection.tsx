@@ -17,13 +17,13 @@ type LabeledSectionProps = {
 }
 
 /**
- * A section with its heading in a 160px column on the left and the content beside it,
- * so the heading takes no row of its own. Below md the heading sits on top.
+ * A home section: a real h2 on top and the content under it, so the heading outranks the item
+ * titles it labels.
  */
 export function LabeledSection({ id, title, link, children }: LabeledSectionProps) {
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-4 md:flex-row md:gap-10">
-      <h2 id={id} className="text-sm font-medium text-muted-foreground md:w-40 md:shrink-0">
+    <section aria-labelledby={id} className="flex flex-col gap-6">
+      <h2 id={id} className="text-xl font-semibold text-foreground">
         {title}
       </h2>
       <div className="flex min-w-0 flex-1 flex-col gap-6">
@@ -37,7 +37,7 @@ export function LabeledSection({ id, title, link, children }: LabeledSectionProp
             {link.label}
             <ArrowRightIcon
               aria-hidden
-              className="size-3.5 transition-[translate] duration-150 ease-out motion-safe:group-hover:translate-x-0.5"
+              className="size-4 transition-[translate] duration-150 ease-out motion-safe:group-hover:translate-x-1"
             />
           </Link>
         ) : null}

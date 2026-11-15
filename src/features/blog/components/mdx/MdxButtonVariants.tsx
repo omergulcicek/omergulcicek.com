@@ -21,8 +21,8 @@ const VARIANTS = [
  */
 export function MdxButtonVariants({ locale }: MdxButtonVariantsProps) {
   return (
-    <figure className="not-prose my-8 overflow-hidden rounded-xl border border-border">
-      <ul className="grid grid-cols-2 gap-x-4 gap-y-6 bg-muted/40 px-4 py-8 sm:grid-cols-3">
+    <figure className="not-prose my-6 overflow-hidden rounded-xl border border-border">
+      <ul className="grid grid-cols-2 gap-x-4 gap-y-6 bg-muted p-4 sm:grid-cols-3">
         {VARIANTS.map(({ label, variant }) => (
           <li key={variant} className="flex flex-col items-center gap-2">
             {/* Real buttons with no action, so hover, press and focus show each variant's states. */}
@@ -33,7 +33,7 @@ export function MdxButtonVariants({ locale }: MdxButtonVariantsProps) {
           </li>
         ))}
       </ul>
-      <figcaption className="border-t border-border px-4 py-2.5 text-xs text-muted-foreground">
+      <figcaption className="border-t border-border px-4 py-3 text-xs text-muted-foreground">
         {m.mdx_button_variants_caption({}, { locale })}
       </figcaption>
     </figure>

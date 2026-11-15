@@ -28,9 +28,9 @@ export function HomeStackStrip() {
   const renderItem = ({ id, label, description, icon }: (typeof items)[number]) => (
     <figure key={id} className="flex w-28 shrink-0 flex-col items-center gap-2 text-center">
       <span className="flex size-12 items-center justify-center">{icon}</span>
-      <figcaption className="flex flex-col gap-0.5">
+      <figcaption className="flex flex-col gap-1">
         <span className="text-xs font-medium text-foreground">{label}</span>
-        <span className="text-xs leading-tight text-muted-foreground">{description}</span>
+        <span className="text-xs text-muted-foreground">{description}</span>
       </figcaption>
     </figure>
   )
@@ -47,7 +47,8 @@ export function HomeStackStrip() {
       {/* Hover slows the strip to a quarter speed instead of stopping it dead. */}
       <div
         aria-hidden
-        className="mask-x-from-90% mask-x-to-100% motion-reduce:hidden"
+        // A hard edge instead of a fade: the strip simply clips at the column's sides.
+        className="overflow-hidden motion-reduce:hidden"
         onPointerEnter={(event) => setPlaybackRate(event.currentTarget, 0.25)}
         onPointerLeave={(event) => setPlaybackRate(event.currentTarget, 1)}
       >

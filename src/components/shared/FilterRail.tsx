@@ -22,7 +22,7 @@ type FilterRailProps = {
 const exactSearch = { exact: true } as const
 
 const chipClass =
-  "inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full border px-3 text-sm whitespace-nowrap transition-colors duration-150 ease-out outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  "inline-flex h-8 shrink-0 items-center gap-2 rounded-full border px-3 text-sm whitespace-nowrap transition-colors duration-150 ease-out outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
 
 /**
  * A single-choice list filter kept in the URL: a list in the right rail from xl, a row of chips
@@ -56,7 +56,10 @@ export function FilterRail({ title, param, items, total, current }: FilterRailPr
         </ul>
       </PageRail>
       {/* py/px-1 keep the focus ring inside the scrolling row. */}
-      <nav aria-label={title} className="-mx-1 overflow-x-auto px-1 py-1 xl:hidden">
+      <nav
+        aria-label={title}
+        className="-mx-1 [scrollbar-width:none] overflow-x-auto px-1 py-1 xl:hidden"
+      >
         <ul className="flex gap-2">
           {entries.map(({ value, label, count }) => {
             const selected = value === currentValue
@@ -71,14 +74,14 @@ export function FilterRail({ title, param, items, total, current }: FilterRailPr
                     chipClass,
                     selected
                       ? "border-foreground bg-foreground text-background"
-                      : "border-border text-muted-foreground hover:text-foreground"
+                      : "border-border text-muted-foreground hover:bg-muted hover:text-foreground"
                   )}
                 >
                   {label}
                   <span
                     className={cn(
                       "text-xs tabular-nums",
-                      selected ? "text-background/70" : "text-muted-foreground"
+                      selected ? "text-background" : "text-muted-foreground"
                     )}
                   >
                     {count}

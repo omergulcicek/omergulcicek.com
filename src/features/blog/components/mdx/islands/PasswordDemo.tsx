@@ -36,12 +36,12 @@ type FieldProps = {
 
 function Field({ label, field }: FieldProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-2">
       <label htmlFor={field.inputProps.id} className="text-sm">
         {label}
       </label>
       <div className="relative">
-        <input {...field.inputProps} className={cn(demoInputClass, "pr-10")} />
+        <input {...field.inputProps} className={cn(demoInputClass, "pr-12")} />
         <button
           {...field.btnProps}
           className={cn(
@@ -73,7 +73,7 @@ export function PasswordDemo({ locale }: PasswordDemoProps) {
   const issues = [...main.issues, ...confirm.issues]
 
   return (
-    <div className="not-prose my-8 flex flex-col gap-4 rounded-xl border border-border p-4">
+    <div className="not-prose my-6 flex flex-col gap-4 rounded-xl border border-border p-4">
       <p className="text-sm font-medium">{m.mdx_mask_title({}, { locale })}</p>
       <Field label={m.mdx_password_new({}, { locale })} field={main} />
       <Field label={m.mdx_password_confirm({}, { locale })} field={confirm} />

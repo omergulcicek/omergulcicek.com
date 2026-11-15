@@ -19,11 +19,11 @@ export function BlogRelatedPosts({ category, slug, tags }: BlogRelatedPostsProps
   if (related.length === 0) return null
 
   return (
-    <section aria-labelledby="related-posts" className="flex flex-col gap-4">
-      <h2 id="related-posts" className="text-sm font-medium text-muted-foreground">
+    <section aria-labelledby="related-posts" className="flex flex-col gap-6">
+      <h2 id="related-posts" className="text-xl font-semibold text-foreground">
         {m.post_related()}
       </h2>
-      <ul className="flex flex-col gap-5">
+      <ul className="flex flex-col gap-4">
         {related.map((post) => (
           <BlogPostItem key={post.slug} post={post} category={category} />
         ))}

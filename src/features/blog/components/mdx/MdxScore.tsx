@@ -15,13 +15,13 @@ export function MdxScore({ score, favorite = false, locale }: MdxScoreProps) {
 
   return (
     <span className="inline-flex items-center gap-2">
-      <span aria-hidden className="flex items-center gap-0.5">
+      <span aria-hidden className="flex items-center gap-1">
         {[1, 2, 3, 4, 5].map((star) => {
           const fill = Math.max(0, Math.min(1, score - (star - 1)))
 
           return (
             <span key={star} className="relative size-3.5">
-              <StarIcon className="absolute inset-0 size-3.5 text-muted-foreground/40" />
+              <StarIcon className="absolute inset-0 size-3.5 text-muted-foreground" />
               {/* A clipped filled star on top draws whole and half stars alike. */}
               <span
                 className="absolute inset-0 overflow-hidden"

@@ -52,7 +52,7 @@ export function BlogShareActions({ title, url }: BlogShareActionsProps) {
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm text-muted-foreground">{m.share_title()}</span>
+      <span className="text-sm font-medium text-muted-foreground">{m.share_title()}</span>
       <ul className="flex items-center gap-1">
         {links.map(({ label, href, Icon }) => (
           <li key={href}>

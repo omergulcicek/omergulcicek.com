@@ -39,8 +39,8 @@ export function ViraStackLayer({ id, stats }: ViraStackLayerProps) {
 
   return (
     <LabeledSection id={id} title={getViraStackSectionTitle(id)}>
-      <p className="text-base leading-7 text-pretty text-foreground/80">{getLayerLead(id)}</p>
-      <ul className="flex flex-col gap-5">
+      <p className="text-base text-pretty text-foreground">{getLayerLead(id)}</p>
+      <ul className="flex flex-col gap-4">
         {products.map(({ id: productId, name, Icon, colorClass }) => {
           const project = me.projects.find((item) => item.id === productId)
           if (!project) return null
@@ -84,7 +84,7 @@ export function ViraStackLayer({ id, stats }: ViraStackLayerProps) {
                     {stars ? (
                       <span title={m.project_stars()} className="inline-flex items-center gap-1">
                         <StarIcon aria-hidden className="size-3.5" />
-                        <span className="font-mono tabular-nums">{stars}</span>
+                        <span className="tabular-nums">{stars}</span>
                         <span className="sr-only">{m.project_stars()}</span>
                       </span>
                     ) : null}
@@ -94,19 +94,19 @@ export function ViraStackLayer({ id, stats }: ViraStackLayerProps) {
                         className="inline-flex items-center gap-1"
                       >
                         <DownloadIcon aria-hidden className="size-3.5" />
-                        <span className="font-mono tabular-nums">{downloads}</span>
+                        <span className="tabular-nums">{downloads}</span>
                         <span className="sr-only">{m.project_downloads_period()}</span>
                       </span>
                     ) : null}
                   </p>
                 ) : null}
               </div>
-              <p className="text-sm leading-6 text-pretty text-muted-foreground">
+              <p className="text-sm text-pretty text-muted-foreground">
                 <RichMessage
                   message={localize(project.description)}
                   tags={{
                     code: (chunk) => (
-                      <code className="rounded-sm bg-muted px-1 py-0.5 font-mono text-[0.8125rem] text-foreground">
+                      <code className="rounded-sm bg-muted px-1 font-mono text-sm text-foreground">
                         {chunk}
                       </code>
                     )

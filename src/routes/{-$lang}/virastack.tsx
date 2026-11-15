@@ -44,7 +44,7 @@ function ViraStackPage() {
 
   return (
     <div className={cn("flex flex-col gap-12", readingWidthClass)}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-6">
         <PageHeader title={m.virastack_title()} description={m.virastack_description()} />
         <ViraStackLinks />
       </div>

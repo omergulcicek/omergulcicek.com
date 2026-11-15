@@ -10,77 +10,79 @@
 :root {
   --radius: 0.625rem;
 
+  /*
+   * Color: five tokens, nothing else. Every other name below is an alias, kept so the shadcn
+   * primitives in components/ui keep working.
+   *
+   * 1. background        the page and every surface on it
+   * 2. foreground        text, icons, the solid (inverted) fill
+   * 3. muted-foreground  secondary text: descriptions, meta, inactive nav (4.7:1 on background)
+   * 4. border            hairlines; mixed half and half with the background it is the one quiet fill
+   * 5. brand             turquoise (Ömer's favorite color), a few percent of the page: link
+   *                      underlines, the current nav item, focus rings, selection, the main call
+   *                      to action. Tailwind teal-700: white text on it reads at 5.5:1 (WCAG AA).
+   */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-
-  --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-
   --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-
-  /*
-   * Turquoise, the site's one accent (Ömer's favorite color). Kept to a few percent of the page:
-   * link underlines, the current nav item, focus rings, text selection and the main call to
-   * action. Tailwind teal-700: white text on it reads at 5.5:1, so the call to action passes
-   * WCAG AA; teal-600, as on ViraStack, only reached 3.7:1.
-   */
   --brand: oklch(0.511 0.096 186.391);
-  --brand-foreground: oklch(0.985 0 0);
-  --ring: var(--brand);
 }
 
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-
-  --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 18%);
-
-  /* Tailwind teal-500, as on ViraStack: 8.2:1 against the background, dark text on it reads at 7.4:1. */
+  /* Opaque (it was white at 12%), so the fill mixed from it is the same on every surface. */
+  --border: oklch(0.275 0 0);
+  /* Tailwind teal-500, as on ViraStack: 8.2:1 against the background. */
   --brand: oklch(0.704 0.14 182.503);
-  --brand-foreground: oklch(0.205 0 0);
+}
+
+/* Aliases of the five tokens. Do not give any of these a value of its own. */
+:root,
+.dark {
+  --muted: color-mix(in oklab, var(--border) 50%, var(--background));
+
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary: var(--muted);
+  --secondary-foreground: var(--foreground);
+  --accent: var(--muted);
+  --accent-foreground: var(--foreground);
+  /* No sixth color for errors: they are told by text and an icon, in the foreground color. */
+  --destructive: var(--foreground);
+  --destructive-foreground: var(--background);
+  --input: var(--border);
+  --brand-foreground: var(--background);
   --ring: var(--brand);
 }
+
+/*
+ * Spacing: eight steps for padding, margin and gap. Nothing in between.
+ *
+ *   1  4px   a title and its meta line
+ *   2  8px   an icon and its label, inline items
+ *   3  12px  inside controls and compact rows
+ *   4  16px  between list items, card padding, the page gutter on phones
+ *   6  24px  between blocks of one section
+ *   8  32px  a page header and its content, the page gutter from md
+ *   12 48px  between sections
+ *   16 64px  between the bands of a page, page top and bottom
+ *
+ * Type: five sizes, each with its line height built in (no leading-* utilities), in three
+ * weights (400, 500, 600). Mono is for code and keys only; numbers use tabular-nums.
+ *
+ *   text-3xl  30/36  600  the page title, once per page
+ *   text-xl   20/28  600  section headings
+ *   text-base 16/28  400  reading text; 500 for item titles
+ *   text-sm   14/20  400  interface text, descriptions; 500 for labels
+ *   text-xs   12/16  400  meta: dates, counts, captions
+ */
 
 @theme inline {
   --color-background: var(--background);
@@ -122,6 +124,17 @@
   --font-geist: "Geist Variable", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist);
   --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {

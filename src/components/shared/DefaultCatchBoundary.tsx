@@ -16,8 +16,8 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
   console.error(error)
 
   return (
-    <div className="mx-auto flex flex-1 flex-col items-center justify-center gap-4 px-6 py-24 text-center">
-      <h1 className="text-2xl font-semibold tracking-tight">{m.error_title()}</h1>
+    <div className="mx-auto flex flex-1 flex-col items-center justify-center gap-4 px-4 py-16 text-center">
+      <h1 className="text-3xl font-semibold tracking-tight">{m.error_title()}</h1>
       <p className="max-w-md text-sm text-muted-foreground">{m.error_description()}</p>
       <div className="flex gap-3">
         <Button onClick={() => router.invalidate()}>{m.error_retry()}</Button>

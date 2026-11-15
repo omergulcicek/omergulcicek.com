@@ -107,7 +107,7 @@ function RootComponent() {
         <div className="flex min-w-0 flex-1 flex-col">
           <main
             data-enter=""
-            className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-5 py-10 md:px-10 md:py-12"
+            className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-8 md:px-8 md:py-12"
           >
             <Outlet />
           </main>

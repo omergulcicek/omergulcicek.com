@@ -29,8 +29,8 @@ export function ThemeToggle() {
       data-theme-swap=""
     >
       <span className="icon-swap">
-        <MoonIcon aria-hidden className="size-3.5" />
-        <SunIcon aria-hidden className="size-3.5" />
+        <MoonIcon aria-hidden className="size-4" />
+        <SunIcon aria-hidden className="size-4" />
       </span>
     </Button>
   )

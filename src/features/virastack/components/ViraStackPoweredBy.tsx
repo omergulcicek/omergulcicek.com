@@ -13,9 +13,7 @@ export function ViraStackPoweredBy() {
 
   return (
     <LabeledSection id="powered-by" title={getViraStackSectionTitle("powered-by")}>
-      <p className="text-base leading-7 text-pretty text-foreground/80">
-        {m.virastack_powered_by_lead()}
-      </p>
+      <p className="text-base text-pretty text-foreground">{m.virastack_powered_by_lead()}</p>
       <ul className="grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4">
         {items.map(({ id, label }) => (
           <li key={id} className="flex flex-col items-center gap-2 text-center">

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/{-$lang}/about")({
 function AboutPage() {
   return (
     // Reading width, like the other text pages: photos run full width, text below them.
-    <div className={cn("flex flex-col gap-16", readingWidthClass)}>
+    <div className={cn("flex flex-col gap-12", readingWidthClass)}>
       <PageHeader title={m.about_title()} description={m.about_description()} />
       <AboutIntro />
       <AboutInterests />

@@ -17,8 +17,8 @@ const tags = {
  */
 export function AboutIntro() {
   return (
-    <section className="flex flex-col gap-8">
-      <div className="flex flex-col gap-4 text-base leading-7 text-pretty text-foreground/80">
+    <section className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 text-base text-pretty text-foreground">
         <p>
           <RichMessage message={m.about_intro_place()} tags={tags} />
         </p>

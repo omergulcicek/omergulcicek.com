@@ -13,10 +13,10 @@ export function BlogHomePosts() {
   const { featured, latest } = getHomePosts(posts)
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-12">
       {featured.length > 0 ? (
         <LabeledSection id="featured-posts-heading" title={m.blog_featured()}>
-          <ul className="flex flex-col gap-5">
+          <ul className="flex flex-col gap-4">
             {featured.map((post) => (
               <BlogPostItem key={post.slug} post={post} category="technical" />
             ))}
@@ -28,7 +28,7 @@ export function BlogHomePosts() {
         title={m.latest_posts_title()}
         link={{ to: "/{-$lang}/blog", label: m.latest_posts_all() }}
       >
-        <ul className="flex flex-col gap-5">
+        <ul className="flex flex-col gap-4">
           {latest.map((post) => (
             <BlogPostItem key={post.slug} post={post} category="technical" />
           ))}

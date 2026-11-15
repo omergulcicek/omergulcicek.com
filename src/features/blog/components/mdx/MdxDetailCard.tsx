@@ -22,10 +22,10 @@ type MdxDetailCardProps = {
  */
 export function MdxDetailCard({ title, href, kicker, rows, footer }: MdxDetailCardProps) {
   return (
-    <aside className="not-prose my-8 p-1">
-      <div className={cn("flex flex-col gap-4 p-5", cardFrameClass)}>
+    <aside className="not-prose my-6">
+      <div className={cn("flex flex-col gap-4 p-4", cardFrameClass)}>
         <div className="flex flex-col gap-1">
-          <p className="text-base font-semibold text-pretty">
+          <p className="text-base font-medium text-pretty">
             {href ? (
               <a
                 href={href}

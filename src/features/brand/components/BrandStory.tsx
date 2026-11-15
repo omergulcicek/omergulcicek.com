@@ -44,7 +44,7 @@ export function BrandStory() {
   }
 
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-6">
       {/* The page's first image and its LCP: eager, with high priority. */}
       <img
         src="/img/brand/cintemani.svg"
@@ -56,7 +56,7 @@ export function BrandStory() {
         decoding="async"
         className={cn("aspect-square w-full", surfaceDoubleFrameClass)}
       />
-      <div className="flex flex-col gap-4 text-base leading-7 text-pretty text-foreground/80">
+      <div className="flex flex-col gap-4 text-base text-pretty text-foreground">
         <p>
           <RichMessage message={m.brand_body_motif()} tags={tags} />
         </p>
@@ -70,8 +70,8 @@ export function BrandStory() {
           <RichMessage message={m.brand_body_small()} tags={tags} />
         </p>
       </div>
-      <figure className="flex flex-col gap-3">
-        <div className={cn("flex items-end gap-8 p-6", cardFrameClass)}>
+      <figure className="flex flex-col gap-2">
+        <div className={cn("flex items-end gap-8 p-4", cardFrameClass)}>
           {SMALL_ICON_SIZES.map((size) => (
             <div key={size} className="flex flex-col items-center gap-2">
               {/* One image carries the description; the other two repeat it at other sizes. */}

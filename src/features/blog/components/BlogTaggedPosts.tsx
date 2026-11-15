@@ -21,7 +21,7 @@ export function BlogTaggedPosts({ id, title, tag }: BlogTaggedPostsProps) {
 
   return (
     <LabeledSection id={id} title={title}>
-      <ul className="flex flex-col gap-5">
+      <ul className="flex flex-col gap-4">
         {tagged.map((post) => (
           <BlogPostItem key={post.slug} post={post} category="technical" />
         ))}

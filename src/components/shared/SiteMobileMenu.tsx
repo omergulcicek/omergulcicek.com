@@ -29,12 +29,12 @@ export function SiteMobileMenu() {
         <DrawerTitle className="sr-only">{m.nav_menu_title()}</DrawerTitle>
         <nav
           aria-label={m.nav_label()}
-          className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 pt-2 pb-4"
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pt-2 pb-4"
         >
           <SiteNavLinks idPrefix="mobile-group" onNavigate={() => setOpen(false)} />
         </nav>
         {/* The footer stays put while the links scroll above it. */}
-        <div className="shrink-0 border-t border-border px-3 pt-3 pb-[calc(2rem+env(safe-area-inset-bottom))]">
+        <div className="shrink-0 border-t border-border px-4 pt-3 pb-[calc(2rem+env(safe-area-inset-bottom))]">
           <SiteNavSocialLinks />
         </div>
       </DrawerContent>

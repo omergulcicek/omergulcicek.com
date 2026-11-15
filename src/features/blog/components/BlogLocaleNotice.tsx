@@ -33,8 +33,8 @@ export function BlogLocaleNotice({ category }: BlogLocaleNoticeProps) {
   }
 
   return (
-    <p className="flex items-start gap-2.5 rounded-lg border border-border bg-muted/40 px-4 py-3 text-sm leading-6 text-pretty text-muted-foreground">
-      <InfoIcon aria-hidden className="mt-1 size-4 shrink-0" />
+    <p className="flex items-start gap-2 rounded-lg border border-border bg-muted px-4 py-3 text-sm text-pretty text-muted-foreground">
+      <InfoIcon aria-hidden className="size-4 shrink-0 translate-y-0.5" />
       <span>
         <RichMessage message={message} tags={tags} />
       </span>

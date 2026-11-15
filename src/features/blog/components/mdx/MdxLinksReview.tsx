@@ -18,7 +18,7 @@ export function MdxLinksReview({ title, links }: MdxLinksReviewProps) {
           />
         </span>
       </summary>
-      <ol className="flex list-decimal flex-col gap-2 border-t border-border py-3 pr-4 pl-9 marker:text-muted-foreground">
+      <ol className="flex list-decimal flex-col gap-2 border-t border-border py-3 pr-4 pl-8 marker:text-muted-foreground">
         {links.map(({ href, label }) => {
           const external = href.startsWith("http")
 

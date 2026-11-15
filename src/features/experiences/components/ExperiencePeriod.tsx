@@ -8,7 +8,7 @@ type ExperiencePeriodProps = {
 /** "Ara 2025 – Günümüz", with machine-readable dates. */
 export function ExperiencePeriod({ startDate, endDate, start, end }: ExperiencePeriodProps) {
   return (
-    <span className="font-mono">
+    <span className="tabular-nums">
       <time dateTime={startDate}>{start}</time>
       {" – "}
       {endDate ? <time dateTime={endDate}>{end}</time> : end}

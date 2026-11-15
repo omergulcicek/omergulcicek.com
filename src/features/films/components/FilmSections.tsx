@@ -13,7 +13,7 @@ export function FilmSections() {
       <div className="flex flex-col gap-12">
         {sections.map(({ id, kind, title, films }, sectionIndex) => (
           <section key={id} aria-labelledby={id} className="flex flex-col gap-4">
-            <h2 id={id} className="text-sm font-medium text-muted-foreground">
+            <h2 id={id} className="text-xl font-semibold text-foreground">
               {title}
             </h2>
             <ul

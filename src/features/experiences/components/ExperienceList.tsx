@@ -34,8 +34,8 @@ export function ExperienceList() {
         ))}
       </ol>
       {earlier.length > 0 ? (
-        <section aria-labelledby="experiences-earlier" className="flex flex-col gap-4">
-          <h2 id="experiences-earlier" className="text-sm font-medium text-muted-foreground">
+        <section aria-labelledby="experiences-earlier" className="flex flex-col gap-6">
+          <h2 id="experiences-earlier" className="text-xl font-semibold text-foreground">
             {m.experiences_earlier()}
           </h2>
           <ol className="flex flex-col">
@@ -57,7 +57,7 @@ type EntryProps = { experience: Experience; last: boolean }
 
 /**
  * The line segment from one logo to the next; the last entry of each list has none.
- * Stronger than `border`, which reads as a hairline at 12% on the dark theme.
+ * It uses the border token like every other line on the site.
  */
 function TimelineLine({ last, top }: { last: boolean; top: string }) {
   if (last) return null
@@ -65,7 +65,7 @@ function TimelineLine({ last, top }: { last: boolean; top: string }) {
   return (
     <span
       aria-hidden
-      className={cn("absolute bottom-1 left-5 w-px -translate-x-1/2 bg-foreground/20", top)}
+      className={cn("absolute bottom-1 left-5 w-px -translate-x-1/2 bg-border", top)}
     />
   )
 }
@@ -74,7 +74,7 @@ function FeaturedEntry({ experience, last }: EntryProps) {
   const text = describeExperience(experience)
 
   return (
-    <li className="relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 pb-10 last:pb-0">
+    <li className="relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 pb-8 last:pb-0">
       <TimelineLine last={last} top="top-12" />
       <img
         src={experience.logo}
@@ -87,9 +87,9 @@ function FeaturedEntry({ experience, last }: EntryProps) {
       />
       <article className="flex flex-col gap-3">
         <header className="flex flex-col gap-1">
-          <div className="flex flex-col gap-x-4 gap-y-0.5 sm:flex-row sm:items-baseline sm:justify-between">
+          <div className="flex flex-col gap-x-4 gap-y-1 sm:flex-row sm:items-baseline sm:justify-between">
             <ExperienceCompany as="h2" company={experience.company} parent={text.parent} />
-            <span className="shrink-0 text-sm text-muted-foreground">
+            <span className="shrink-0 text-xs text-muted-foreground">
               <ExperiencePeriod
                 startDate={experience.startDate}
                 endDate={experience.endDate}
@@ -106,7 +106,7 @@ function FeaturedEntry({ experience, last }: EntryProps) {
             </span>
           </p>
         </header>
-        <ul className="flex list-disc flex-col gap-1.5 pl-4 text-sm leading-6 text-pretty text-foreground/80 marker:text-muted-foreground">
+        <ul className="flex list-disc flex-col gap-2 pl-4 text-sm text-pretty text-foreground marker:text-muted-foreground">
           {experience.highlights.map((highlight) => (
             <li key={highlight.en}>{localize(highlight)}</li>
           ))}
@@ -136,10 +136,10 @@ function CompactEntry({ experience, last }: EntryProps) {
           surfaceDoubleFrameSmClass
         )}
       />
-      <article className="flex flex-col gap-0.5">
+      <article className="flex flex-col gap-1">
         <div className="flex flex-col gap-x-4 sm:flex-row sm:items-baseline sm:justify-between">
           <ExperienceCompany as="h3" company={experience.company} parent={text.parent} />
-          <span className="shrink-0 text-sm text-muted-foreground">
+          <span className="shrink-0 text-xs text-muted-foreground">
             <ExperiencePeriod
               startDate={experience.startDate}
               endDate={experience.endDate}

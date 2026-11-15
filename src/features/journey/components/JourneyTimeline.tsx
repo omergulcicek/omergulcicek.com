@@ -33,13 +33,13 @@ export function JourneyTimeline() {
           {index < years.length - 1 ? (
             <span
               aria-hidden
-              className="absolute top-8 bottom-1 left-7 w-px -translate-x-1/2 bg-foreground/20"
+              className="absolute top-8 bottom-1 left-7 w-px -translate-x-1/2 bg-border"
             />
           ) : null}
-          <h2 className="relative flex h-7 items-center justify-center rounded-full border border-border bg-background font-mono text-xs font-medium tabular-nums">
+          <h2 className="relative flex h-7 items-center justify-center rounded-full border border-border bg-background text-xs font-medium text-foreground tabular-nums">
             {year}
           </h2>
-          <ul className="flex flex-col gap-8 pt-0.5">
+          <ul className="flex flex-col gap-8">
             {entries.map((entry) => (
               <JourneyItem key={entry.id} entry={entry} priority={entry.id === firstImageId} />
             ))}
@@ -54,9 +54,9 @@ function JourneyItem({ entry, priority }: { entry: JourneyEntry; priority: boole
   const title = localize(entry.title)
 
   return (
-    <li className="flex flex-col gap-3">
+    <li className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <h3 className="text-base font-medium text-pretty">
+        <h3 className="text-base font-medium text-pretty text-foreground">
           {entry.href ? (
             <a
               href={entry.href}

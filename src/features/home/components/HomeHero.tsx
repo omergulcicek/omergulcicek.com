@@ -25,11 +25,11 @@ export function HomeHero() {
   return (
     <section className="flex flex-col-reverse gap-8 md:flex-row md:items-start md:justify-between md:gap-12">
       <div className="flex min-w-0 flex-1 flex-col gap-6">
-        <div className="flex flex-col gap-1">
-          <h1 className="text-4xl font-semibold tracking-tight text-balance">{me.name}</h1>
+        <div className="flex flex-col gap-2">
+          <h1 className="text-3xl font-semibold tracking-tight text-balance">{me.name}</h1>
           <p className="text-base text-muted-foreground">{localize(me.title)}</p>
         </div>
-        <div className="flex flex-col gap-4 text-base leading-7 text-pretty text-foreground/80">
+        <div className="flex flex-col gap-4 text-base text-pretty text-foreground">
           <p>
             <RichMessage
               message={localize(hero.intro)}

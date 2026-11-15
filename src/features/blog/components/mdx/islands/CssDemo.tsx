@@ -230,7 +230,7 @@ export function CssDemo({ demo, locale }: CssDemoProps) {
   if (!option) return null
 
   return (
-    <div className="not-prose my-8 flex flex-col overflow-hidden rounded-xl border border-border">
+    <div className="not-prose my-6 flex flex-col overflow-hidden rounded-xl border border-border">
       <div className="flex flex-wrap items-center gap-2 border-b border-border p-3">
         {config.options.map((item, index) => (
           <button
@@ -259,7 +259,7 @@ export function CssDemo({ demo, locale }: CssDemoProps) {
       <div
         aria-label={m.mdx_preview({}, { locale })}
         role="group"
-        className="flex min-h-48 items-center justify-center bg-muted/40 p-6"
+        className="flex min-h-48 items-center justify-center bg-muted p-6"
       >
         <Preview demo={demo} option={option} replay={replay} />
       </div>
@@ -271,7 +271,7 @@ export function CssDemo({ demo, locale }: CssDemoProps) {
             href={config.caniuse}
             target="_blank"
             rel="noreferrer"
-            className="rounded-sm underline decoration-current/30 underline-offset-4 hover:decoration-current"
+            className="rounded-sm underline decoration-brand/50 underline-offset-4 outline-none hover:decoration-brand focus-visible:ring-[3px] focus-visible:ring-ring/50"
           >
             {m.mdx_caniuse({}, { locale })}
           </a>

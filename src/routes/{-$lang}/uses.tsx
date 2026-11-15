@@ -17,7 +17,7 @@ export const Route = createFileRoute("/{-$lang}/uses")({
 function UsesPage() {
   return (
     <div className={cn("flex flex-col gap-8", readingWidthClass)}>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <PageHeader title={m.uses_title()} description={m.uses_description()} />
         <UsesUpdated />
       </div>

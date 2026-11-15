@@ -23,7 +23,7 @@ export function AboutFigure({ caption, className, loading = "lazy", ...props }: 
         {...props}
       />
       {caption ? (
-        <figcaption className="text-center text-sm text-pretty text-muted-foreground">
+        <figcaption className="text-center text-xs text-pretty text-muted-foreground">
           {caption}
         </figcaption>
       ) : null}

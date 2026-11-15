@@ -27,13 +27,10 @@ export function BookmarkItem({ bookmark }: BookmarkItemProps) {
           height={360}
           loading="lazy"
           decoding="async"
-          className={cn(
-            "aspect-video w-28 shrink-0 bg-muted object-cover transition-[border-color] duration-150 ease-out group-hover:border-foreground/30",
-            mediaFrameClass
-          )}
+          className={cn("aspect-video w-28 shrink-0 bg-muted object-cover", mediaFrameClass)}
         />
-        <span className="flex min-w-0 flex-col gap-0.5">
-          <span className="flex items-center gap-1.5 text-base font-medium">
+        <span className="flex min-w-0 flex-col gap-1">
+          <span className="flex items-center gap-2 text-base font-medium text-foreground">
             <span className="truncate">{bookmark.title}</span>
             <ArrowUpRightIcon
               aria-hidden

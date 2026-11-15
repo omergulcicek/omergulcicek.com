@@ -47,14 +47,14 @@ export function CommandPalette({ open, onOpenChange, groups, loading }: CommandP
         aria-keyshortcuts="Meta+K Control+K"
         className={cn(
           buttonVariants({ variant: "outline", size: "sm" }),
-          "h-8 gap-2 px-2 font-normal text-muted-foreground sm:w-48 sm:justify-start sm:px-2.5"
+          "h-8 gap-2 px-2 font-normal text-muted-foreground sm:w-48 sm:justify-start sm:px-3"
         )}
       >
         <SearchIcon aria-hidden className="size-4" />
         <span className="sr-only sm:not-sr-only">{m.search_open()}</span>
         <kbd
           aria-hidden
-          className="ml-auto hidden rounded border border-border bg-muted px-1.5 font-mono text-[11px] leading-5 sm:inline"
+          className="ml-auto hidden rounded border border-border bg-muted px-1 font-mono text-xs sm:inline"
         >
           ⌘K
         </kbd>

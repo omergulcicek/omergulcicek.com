@@ -26,16 +26,16 @@ export function BlogPostSeries({ category, slug }: BlogPostSeriesProps) {
   const lang = getLangParam()
 
   return (
-    <nav aria-labelledby="post-series" className={cn("flex flex-col gap-4 p-5", cardFrameClass)}>
+    <nav aria-labelledby="post-series" className={cn("flex flex-col gap-4 p-4", cardFrameClass)}>
       <div className="flex flex-col gap-1">
-        <h2 id="post-series" className="text-base font-medium">
+        <h2 id="post-series" className="text-xl font-semibold">
           {m.post_series_title({ series: label ? localize(label) : result.series })}
         </h2>
-        <p className="font-mono text-sm text-muted-foreground tabular-nums">
+        <p className="text-xs text-muted-foreground">
           {m.post_series_position({ position: result.position, total: result.posts.length })}
         </p>
       </div>
-      <ol className="flex list-decimal flex-col gap-2 pl-5 text-sm marker:font-mono marker:text-muted-foreground">
+      <ol className="flex list-decimal flex-col gap-2 pl-6 text-sm marker:text-muted-foreground marker:tabular-nums">
         {result.posts.map((post, index) => {
           const params = { lang, slug: post.slug.replace(/^\//, "") }
           if (index + 1 === result.position) {
@@ -46,7 +46,7 @@ export function BlogPostSeries({ category, slug }: BlogPostSeriesProps) {
             )
           }
           return (
-            <li key={post.slug} className="text-foreground/80">
+            <li key={post.slug} className="text-muted-foreground">
               {category === "technical" ? (
                 <Link to="/{-$lang}/blog/$slug" params={params} className={titleLinkClass}>
                   {post.title}

@@ -59,9 +59,9 @@ function FeaturedVideo({
             {/* The play mark says "this is a video" before anyone reads the caption. */}
             <span
               aria-hidden
-              className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-150 group-hover:bg-black/20"
+              className="absolute inset-0 flex items-center justify-center transition-colors duration-150 group-hover:bg-foreground/20"
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-[scale] duration-150 ease-out group-hover:scale-110 motion-reduce:transition-none">
+              <span className="flex size-10 items-center justify-center rounded-full bg-background text-foreground transition-[scale] duration-150 ease-out group-hover:scale-110 motion-reduce:transition-none">
                 <PlayIcon className="size-4 translate-x-px fill-current" />
               </span>
             </span>
@@ -78,7 +78,7 @@ function FeaturedVideo({
 
 const spotifyButtonClass = cn(
   buttonVariants({ variant: "outline", size: "sm" }),
-  "shrink-0 gap-1.5 font-normal"
+  "shrink-0 gap-2 font-normal"
 )
 
 /** "Listen on Spotify" by the section title; shown disabled until the playlist link is set. */
@@ -114,7 +114,7 @@ function FeaturedPlaceholder() {
     <span
       aria-hidden
       className={cn(
-        "flex aspect-video items-center justify-center bg-muted/40 text-muted-foreground",
+        "flex aspect-video items-center justify-center bg-muted text-muted-foreground",
         mediaFrameClass
       )}
     >
@@ -137,7 +137,7 @@ export function MusicGroups() {
           <section
             key={group.id}
             aria-labelledby={group.anchor}
-            className="grid gap-5 sm:grid-cols-[15rem_minmax(0,1fr)] sm:gap-6 lg:grid-cols-[25rem_minmax(0,1fr)] lg:gap-10"
+            className="grid gap-4 sm:grid-cols-[15rem_minmax(0,1fr)] sm:gap-6 lg:grid-cols-[25rem_minmax(0,1fr)] lg:gap-8"
           >
             <div className="sm:sticky sm:top-24 sm:self-start">
               {group.featured ? (
@@ -149,7 +149,10 @@ export function MusicGroups() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1">
                 <div className="flex items-start justify-between gap-3">
-                  <h2 id={group.anchor} className="text-lg font-semibold text-pretty">
+                  <h2
+                    id={group.anchor}
+                    className="text-xl font-semibold text-pretty text-foreground"
+                  >
                     {localize(group.title)}
                   </h2>
                   <SpotifyButton url={group.spotifyUrl} />
@@ -160,17 +163,17 @@ export function MusicGroups() {
               </div>
               <p className="text-sm text-pretty">{group.artists.join(", ")}</p>
               {group.tracks.length > 0 ? (
-                <ol className="flex flex-col divide-y divide-border border-y border-border">
+                <ol className="flex flex-col gap-3">
                   {group.tracks.map((track, index) => (
                     <li
                       key={`${track.artist}-${track.title}`}
-                      className="flex items-baseline gap-3 py-2.5 text-sm"
+                      className="flex items-baseline gap-3 text-sm"
                     >
-                      <span className="w-4 shrink-0 font-mono text-xs text-muted-foreground tabular-nums">
+                      <span className="w-4 shrink-0 text-xs text-muted-foreground tabular-nums">
                         {index + 1}
                       </span>
                       <span className="flex min-w-0 flex-col">
-                        <span className="font-medium">{track.title}</span>
+                        <span className="font-medium text-foreground">{track.title}</span>
                         <span className="text-xs text-muted-foreground">{track.artist}</span>
                       </span>
                     </li>

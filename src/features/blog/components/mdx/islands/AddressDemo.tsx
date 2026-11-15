@@ -50,18 +50,18 @@ export function AddressDemo({ locale }: AddressDemoProps) {
   const line = formatAddress(value, { postalCode: true })
 
   return (
-    <div className="not-prose my-8 flex flex-col gap-4 rounded-xl border border-border p-4">
+    <div className="not-prose my-6 flex flex-col gap-4 rounded-xl border border-border p-4">
       <p className="text-sm font-medium">{m.mdx_mask_title({}, { locale })}</p>
       <div className="grid gap-4 sm:grid-cols-2">
         {fields.map(({ id: fieldId, label, props }) => (
-          <div key={fieldId} className="flex flex-col gap-1.5">
+          <div key={fieldId} className="flex flex-col gap-2">
             <label htmlFor={fieldId} className="text-sm">
               {label}
             </label>
             <select {...props} className={selectClass} />
           </div>
         ))}
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           <label htmlFor={postalCodeId} className="text-sm">
             {m.mdx_address_postal_code({}, { locale })}
           </label>

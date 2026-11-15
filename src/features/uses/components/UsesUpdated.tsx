@@ -15,10 +15,7 @@ export function UsesUpdated() {
 
   return (
     <p className="text-sm text-muted-foreground">
-      {m.uses_updated()}:{" "}
-      <time dateTime={USES_UPDATED} className="font-mono">
-        {date}
-      </time>
+      {m.uses_updated()}: <time dateTime={USES_UPDATED}>{date}</time>
     </p>
   )
 }

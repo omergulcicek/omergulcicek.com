@@ -13,7 +13,7 @@ type MdxImageStripProps = {
  */
 export function MdxImageStrip({ images, label, getSize }: MdxImageStripProps) {
   return (
-    <div className="not-prose my-8">
+    <div className="not-prose my-6">
       <ul
         aria-label={label}
         // Focusable, so the arrow keys can scroll the row.
@@ -34,7 +34,7 @@ export function MdxImageStrip({ images, label, getSize }: MdxImageStripProps) {
                   height={size?.height}
                   loading="lazy"
                   decoding="async"
-                  className="h-72 w-auto rounded-lg border border-border object-cover shadow-xs"
+                  className="h-72 w-auto rounded-lg border border-border object-cover"
                 />
               </figure>
             </li>

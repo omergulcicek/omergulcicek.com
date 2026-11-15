@@ -35,7 +35,7 @@ export function BlogPostItem({ post, category }: BlogPostItemProps) {
           </Link>
         )}
         {post.series ? (
-          <span className="shrink-0 rounded-sm border border-border px-1 font-mono text-xs text-muted-foreground">
+          <span className="shrink-0 rounded-sm border border-border px-1 text-xs text-muted-foreground">
             {m.post_series_badge()}
           </span>
         ) : null}
@@ -43,16 +43,15 @@ export function BlogPostItem({ post, category }: BlogPostItemProps) {
         {post.locale !== locale ? (
           <span
             lang={post.locale}
-            className="shrink-0 rounded-sm border border-border px-1 font-mono text-xs text-muted-foreground"
+            className="shrink-0 rounded-sm border border-border px-1 text-xs text-muted-foreground"
           >
             {post.locale.toLocaleUpperCase(locale)}
           </span>
         ) : null}
       </p>
-      {/* Mono for the date only: tags are words and read better in the body font. */}
-      <p className="text-sm text-muted-foreground">
+      <p className="text-xs text-muted-foreground">
         {date && post.published_at ? (
-          <time dateTime={post.published_at} className="font-mono">
+          <time dateTime={post.published_at} className="tabular-nums">
             {date}
           </time>
         ) : null}

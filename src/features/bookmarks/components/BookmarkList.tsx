@@ -37,7 +37,7 @@ export function BookmarkList() {
         total={bookmarks.length}
         current={category}
       />
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-4">
         {visible.map((bookmark) => (
           <BookmarkItem key={bookmark.id} bookmark={bookmark} />
         ))}

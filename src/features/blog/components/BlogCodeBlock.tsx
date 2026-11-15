@@ -25,7 +25,7 @@ type BlogCodeBlockProps = ComponentProps<"pre"> & {
 
 /**
  * A Shiki `pre` with a header: the file name when the fence has `title="…"`, else the
- * language. A long block starts collapsed behind a fade, with a button to show all of it.
+ * language. A long block starts collapsed with a hard cut, above a full-width row that shows all of it.
  * Rendered to static HTML on the server, so BlogPostArticle wires both buttons.
  */
 export function BlogCodeBlock({
@@ -43,7 +43,7 @@ export function BlogCodeBlock({
   return (
     <figure
       data-collapsible={collapsible ? "" : undefined}
-      className="group/code not-prose relative my-6 overflow-hidden rounded-xl border border-border bg-muted/40"
+      className="group/code not-prose my-6 overflow-hidden rounded-xl border border-border bg-muted"
     >
       <figcaption className="flex h-10 items-center justify-between gap-2 border-b border-border pr-1 pl-4 text-xs text-muted-foreground">
         {/* A file name is code, a language label is a word. */}
@@ -73,33 +73,27 @@ export function BlogCodeBlock({
         className={cn(
           className,
           // Scrolls sideways without a visible bar (trackpad, shift + wheel, or arrow keys once focused).
-          "[scrollbar-width:none] overflow-x-auto p-4 text-sm leading-relaxed [&::-webkit-scrollbar]:hidden",
-          // About 25 lines; only the last few fade, a short hard edge like shadcn's code previews.
-          collapsible &&
-            "max-h-[36rem] overflow-y-hidden [mask-image:linear-gradient(to_bottom,black_calc(100%-6rem),transparent_calc(100%-1.5rem))] group-data-expanded/code:max-h-none group-data-expanded/code:[mask-image:none]"
+          "[scrollbar-width:none] overflow-x-auto p-4 text-sm [&::-webkit-scrollbar]:hidden",
+          // About 25 lines, cut hard; the expand row below marks the cut, so no fade is needed.
+          collapsible && "max-h-[36rem] overflow-y-hidden group-data-expanded/code:max-h-none"
         )}
       />
       {collapsible ? (
-        // Floats over the faded lines while collapsed, then settles under the code once open.
-        <div className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center group-data-expanded/code:pointer-events-auto group-data-expanded/code:static group-data-expanded/code:pb-4">
-          <button
-            type="button"
-            data-expand-code=""
-            data-expand-label={labels.expand(lines)}
-            data-collapse-label={labels.collapse}
-            aria-expanded="false"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "sm" }),
-              "group/expand pointer-events-auto rounded-lg shadow-sm"
-            )}
-          >
-            <span data-expand-text="">{labels.expand(lines)}</span>
-            <ChevronDownIcon
-              aria-hidden="true"
-              className="transition-[rotate] duration-150 ease-out group-aria-expanded/expand:rotate-180 motion-reduce:transition-none"
-            />
-          </button>
-        </div>
+        // A full-width row under the code, collapsed or open, so the cut always has an edge.
+        <button
+          type="button"
+          data-expand-code=""
+          data-expand-label={labels.expand(lines)}
+          data-collapse-label={labels.collapse}
+          aria-expanded="false"
+          className="group/expand flex h-10 w-full items-center justify-center gap-2 border-t border-border text-sm text-muted-foreground transition-colors duration-150 ease-out outline-none hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-inset"
+        >
+          <span data-expand-text="">{labels.expand(lines)}</span>
+          <ChevronDownIcon
+            aria-hidden="true"
+            className="size-4 transition-[rotate] duration-150 ease-out group-aria-expanded/expand:rotate-180 motion-reduce:transition-none"
+          />
+        </button>
       ) : null}
     </figure>
   )

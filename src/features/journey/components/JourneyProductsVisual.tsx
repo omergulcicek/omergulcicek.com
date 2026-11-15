@@ -56,7 +56,7 @@ export function JourneyProductsVisual() {
         aria-label={m.journey_products_label({
           names: VIRASTACK_PRODUCTS.map((product) => product.name).join(", ")
         })}
-        className="flex aspect-[2/1] flex-col items-center justify-center gap-1 bg-card/50"
+        className="flex aspect-[2/1] flex-col items-center justify-center gap-1 bg-background"
       >
         <div aria-hidden className="flex items-center" onMouseLeave={() => hoverTo(null)}>
           {VIRASTACK_PRODUCTS.map(({ id, dotClass }, index) => (

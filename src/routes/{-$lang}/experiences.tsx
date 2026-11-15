@@ -22,7 +22,7 @@ export const Route = createFileRoute("/{-$lang}/experiences")({
 function ExperiencesPage() {
   return (
     <div className={cn("flex flex-col gap-8", readingWidthClass)}>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-6">
         <PageHeader title={m.experiences_title()} description={m.experiences_description()} />
         <CvPreview />
       </div>

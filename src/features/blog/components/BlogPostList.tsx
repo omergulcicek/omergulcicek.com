@@ -21,7 +21,7 @@ export function BlogPostList({ category }: BlogPostListProps) {
       {groupPostsByYear(visible).map(({ year, posts: yearPosts }) => (
         <section key={year ?? "undated"} className="flex flex-col gap-4">
           {year ? (
-            <h2 className="font-mono text-sm font-medium text-muted-foreground tabular-nums">
+            <h2 className="text-sm font-medium text-muted-foreground tabular-nums">
               {year}
               {/* The dot is decoration; the count reads as words, so it needs no screen-reader copy. */}
               <span aria-hidden> · </span>
@@ -29,7 +29,7 @@ export function BlogPostList({ category }: BlogPostListProps) {
               {m.blog_year_count({ count: yearPosts.length })}
             </h2>
           ) : null}
-          <ul className="flex flex-col gap-5">
+          <ul className="flex flex-col gap-4">
             {yearPosts.map((post) => (
               <BlogPostItem key={post.slug} post={post} category={category} />
             ))}

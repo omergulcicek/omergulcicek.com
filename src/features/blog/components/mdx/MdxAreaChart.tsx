@@ -1,5 +1,3 @@
-import { useId } from "react"
-
 type Point = { year: string; count: number }
 
 type MdxAreaChartProps = {
@@ -19,7 +17,6 @@ const PAD = { top: 24, right: 16, bottom: 28, left: 16 }
  * chart says nothing to them.
  */
 export function MdxAreaChart({ title, description, data, locale }: MdxAreaChartProps) {
-  const gradientId = useId()
   const max = Math.max(1, ...data.map((point) => point.count))
   const innerWidth = WIDTH - PAD.left - PAD.right
   const innerHeight = HEIGHT - PAD.top - PAD.bottom
@@ -37,22 +34,16 @@ export function MdxAreaChart({ title, description, data, locale }: MdxAreaChartP
   const area = first && last ? `${line} L${last.x},${baseline} L${first.x},${baseline} Z` : ""
 
   return (
-    <figure className="not-prose my-8 flex flex-col gap-3 rounded-xl border border-border p-4">
-      <figcaption className="flex flex-col gap-0.5">
+    <figure className="not-prose my-6 flex flex-col gap-4 rounded-xl border border-border p-4">
+      <figcaption className="flex flex-col gap-1">
         <span className="text-sm font-medium">{title}</span>
         {description ? <span className="text-xs text-muted-foreground">{description}</span> : null}
       </figcaption>
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         aria-hidden
-        className="h-auto w-full overflow-visible text-foreground"
+        className="h-auto w-full overflow-visible"
       >
-        <defs>
-          <linearGradient id={gradientId} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="currentColor" stopOpacity="0.18" />
-            <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
-          </linearGradient>
-        </defs>
         <line
           x1={PAD.left}
           x2={WIDTH - PAD.right}
@@ -60,22 +51,29 @@ export function MdxAreaChart({ title, description, data, locale }: MdxAreaChartP
           y2={baseline}
           className="stroke-border"
         />
-        <path d={area} fill={`url(#${gradientId})`} />
-        <path d={line} fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        {/* A flat tint of the line's color instead of a fade. */}
+        <path d={area} className="fill-brand" fillOpacity={0.12} />
+        <path
+          d={line}
+          fill="none"
+          className="stroke-brand"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
         {points.map(({ x, y, year, count }) => (
           <g key={year}>
             <circle
               cx={x}
               cy={y}
               r="3"
-              className="fill-background stroke-foreground"
+              className="fill-background stroke-brand"
               strokeWidth="1.5"
             />
             <text
               x={x}
               y={y - 10}
               textAnchor="middle"
-              className="fill-foreground text-[11px] tabular-nums"
+              className="fill-foreground text-xs tabular-nums"
             >
               {count}
             </text>
@@ -83,7 +81,7 @@ export function MdxAreaChart({ title, description, data, locale }: MdxAreaChartP
               x={x}
               y={HEIGHT - 8}
               textAnchor="middle"
-              className="fill-muted-foreground font-mono text-[11px]"
+              className="fill-muted-foreground text-xs tabular-nums"
             >
               {year}
             </text>

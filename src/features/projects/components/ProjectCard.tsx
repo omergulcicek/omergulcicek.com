@@ -35,9 +35,9 @@ function getStatusLabel(status: string) {
 }
 
 /**
- * Double-frame rule: every card keeps the frame, because it is the site's signature, not a
- * link cue. A linked card adds an arrow that is always visible (touch has no hover) and
- * strengthens frame, background and arrow on hover and focus. A card without a link stays still.
+ * Every card keeps its one border, which is not a link cue. A linked card adds an arrow that
+ * is always visible (touch has no hover) and takes the quiet fill and a stronger arrow on hover
+ * and focus. A card without a link stays still.
  */
 type ProjectCardProps = {
   project: Project
@@ -59,7 +59,7 @@ export function ProjectCard({ project, stats }: ProjectCardProps) {
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           {PROJECT_ICONS.get(project.id)}
-          <h3 className="text-base font-semibold">{getCardTitle(project)}</h3>
+          <h3 className="text-base font-medium">{getCardTitle(project)}</h3>
         </div>
         {project.href ? (
           <ArrowUpRightIcon
@@ -68,13 +68,13 @@ export function ProjectCard({ project, stats }: ProjectCardProps) {
           />
         ) : null}
       </div>
-      <p className="flex-1 text-sm leading-6 text-pretty text-muted-foreground">
+      <p className="flex-1 text-sm text-pretty text-muted-foreground">
         {/* Only commands and file names are marked up: they are typed as written. */}
         <RichMessage
           message={localize(project.description)}
           tags={{
             code: (chunk) => (
-              <code className="rounded-sm bg-muted px-1 py-0.5 font-mono text-[0.8125rem] text-foreground">
+              <code className="rounded-sm bg-muted px-1 font-mono text-sm text-foreground">
                 {chunk}
               </code>
             )
@@ -86,7 +86,7 @@ export function ProjectCard({ project, stats }: ProjectCardProps) {
           {stars ? (
             <span className="inline-flex items-center gap-1">
               <StarIcon aria-hidden className="size-3.5" />
-              <span className="font-mono">{stars}</span>
+              <span className="tabular-nums">{stars}</span>
               <span className="sr-only">{m.project_stars()}</span>
             </span>
           ) : null}
@@ -95,7 +95,7 @@ export function ProjectCard({ project, stats }: ProjectCardProps) {
           {downloads ? (
             <span className="ml-auto inline-flex items-center gap-1">
               <DownloadIcon aria-hidden className="size-3.5" />
-              <span className="font-mono">{downloads}</span>
+              <span className="tabular-nums">{downloads}</span>
               <span>{m.project_downloads_period()}</span>
             </span>
           ) : null}

@@ -61,7 +61,7 @@ export function MaskDemo({ locale }: MaskDemoProps) {
     <form
       noValidate
       onSubmit={form.handleSubmit(() => undefined)}
-      className="not-prose my-8 flex flex-col gap-4 rounded-xl border border-border p-4"
+      className="not-prose my-6 flex flex-col gap-4 rounded-xl border border-border p-4"
     >
       <p className="text-sm font-medium">{m.mdx_mask_title({}, { locale })}</p>
       {rows.map(({ name, label, placeholder }) => {
@@ -70,7 +70,7 @@ export function MaskDemo({ locale }: MaskDemoProps) {
         const error = getErrorMessage(errors[name]?.message, locale)
 
         return (
-          <div key={name} className="flex flex-col gap-1.5">
+          <div key={name} className="flex flex-col gap-2">
             <label htmlFor={inputId} className="text-sm">
               {label}
             </label>
@@ -82,7 +82,7 @@ export function MaskDemo({ locale }: MaskDemoProps) {
               className={demoInputClass}
             />
             {error ? (
-              <p id={errorId} className="text-xs text-destructive">
+              <p id={errorId} className="text-xs font-medium text-foreground">
                 {error}
               </p>
             ) : null}

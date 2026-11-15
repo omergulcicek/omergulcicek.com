@@ -22,7 +22,7 @@ export function ExperienceHighlights() {
       title={m.experiences_title()}
       link={{ to: "/{-$lang}/experiences", label: m.experiences_all() }}
     >
-      <ol className="flex flex-col gap-5">
+      <ol className="flex flex-col gap-4">
         {recent.map((experience) => {
           const text = describeExperience(experience)
 
@@ -37,12 +37,12 @@ export function ExperienceHighlights() {
                 decoding="async"
                 className={cn("size-10 shrink-0 object-cover", surfaceDoubleFrameSmClass)}
               />
-              <div className="flex min-w-0 flex-1 flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-                <div className="flex min-w-0 flex-col gap-0.5">
+              <div className="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <div className="flex min-w-0 flex-col gap-1">
                   <ExperienceCompany as="h3" company={experience.company} parent={text.parent} />
                   <p className="text-sm text-muted-foreground">{text.role}</p>
                 </div>
-                <p className="shrink-0 text-sm text-muted-foreground">
+                <p className="shrink-0 text-xs text-muted-foreground">
                   <ExperiencePeriod
                     startDate={experience.startDate}
                     endDate={experience.endDate}

@@ -26,7 +26,7 @@ type SiteHeaderProps = {
 export function SiteHeader({ search }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
-      <div className="flex h-16 items-center justify-between gap-2 px-4 md:px-5">
+      <div className="flex h-16 items-center justify-between gap-2 px-4">
         <div className="flex items-center gap-2">
           <SiteMobileMenu />
           {/* Right-clicking the logo, the usual place for a site's brand assets, opens the Brand page. */}
@@ -36,7 +36,7 @@ export function SiteHeader({ search }: SiteHeaderProps) {
                 <Link
                   to="/{-$lang}"
                   params={{ lang: getLangParam() }}
-                  className="flex items-center gap-2 rounded-md text-lg font-semibold outline-none select-auto focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                  className="flex items-center gap-2 rounded-md text-base font-semibold outline-none select-auto focus-visible:ring-[3px] focus-visible:ring-ring/50"
                 />
               }
             >

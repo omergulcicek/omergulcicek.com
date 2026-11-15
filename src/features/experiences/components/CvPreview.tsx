@@ -57,7 +57,7 @@ export function CvPreview() {
        */}
       <div
         className={cn(
-          "relative flex items-center gap-4 p-3 sm:max-w-sm",
+          "relative flex items-center gap-4 p-4 sm:max-w-sm",
           cardFrameClass,
           linkedCardClass
         )}
@@ -67,9 +67,9 @@ export function CvPreview() {
           alt=""
           width={240}
           height={340}
-          className="w-14 shrink-0 rounded-sm border border-border bg-white shadow-xs"
+          className="w-14 shrink-0 rounded-sm border border-border"
         />
-        <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+        <div className="flex min-w-0 flex-1 flex-col gap-1">
           <a
             href={CV_FILES[primary]}
             target="_blank"
@@ -113,7 +113,7 @@ export function CvPreview() {
         >
           {open ? (
             <>
-              <div className="flex items-center justify-between gap-3 border-b border-border py-2 pr-2 pl-5">
+              <div className="flex items-center justify-between gap-3 border-b border-border py-2 pr-2 pl-4">
                 <DialogTitle className="text-base">{getTitle(open)}</DialogTitle>
                 <div className="flex items-center gap-1">
                   <a href={CV_FILES[open]} download className={cn(buttonVariants({ size: "sm" }))}>

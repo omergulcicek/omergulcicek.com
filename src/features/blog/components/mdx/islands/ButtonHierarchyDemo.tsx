@@ -229,8 +229,8 @@ function Preview({
 }) {
   return (
     <div className="flex flex-col">
-      <p className="border-b border-border px-4 py-2.5 text-sm font-medium">{title}</p>
-      <div className="flex flex-1 items-center justify-center bg-muted/40 px-4 py-6">
+      <p className="border-b border-border px-4 py-3 text-sm font-medium">{title}</p>
+      <div className="flex flex-1 items-center justify-center bg-muted px-4 py-6">
         {layout === null ? (
           <p className="max-w-56 text-center text-xs text-muted-foreground">
             {m.mdx_buttons_none({}, { locale })}
@@ -242,9 +242,9 @@ function Preview({
               dialog && "shadow-md"
             )}
           >
-            <div aria-hidden className="flex flex-col gap-1.5">
+            <div aria-hidden className="flex flex-col gap-2">
               <span className="h-2.5 w-2/3 rounded-full bg-muted" />
-              <span className="h-2 w-full rounded-full bg-muted/70" />
+              <span className="h-2 w-full rounded-full bg-muted" />
             </div>
             {/* Drawn, not clickable: the preview only shows order and weight. */}
             <div
@@ -288,7 +288,7 @@ export function ButtonHierarchyDemo({ locale }: ButtonHierarchyDemoProps) {
   const selected = SYSTEMS.find((system) => system.id === selectedId) ?? SYSTEMS[0]
 
   return (
-    <div className="not-prose my-8 flex flex-col overflow-hidden rounded-xl border border-border">
+    <div className="not-prose my-6 flex flex-col overflow-hidden rounded-xl border border-border">
       <div
         role="group"
         aria-label={m.mdx_buttons_pick({}, { locale })}
@@ -333,7 +333,7 @@ export function ButtonHierarchyDemo({ locale }: ButtonHierarchyDemoProps) {
           href={selected.source}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex w-fit items-center gap-1 text-xs text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          className="inline-flex w-fit items-center gap-1 rounded-sm text-xs text-muted-foreground underline decoration-brand/50 underline-offset-4 outline-none hover:text-foreground hover:decoration-brand focus-visible:ring-[3px] focus-visible:ring-ring/50"
         >
           {m.mdx_buttons_source({}, { locale })}: {selected.name}
           <ExternalLinkIcon aria-hidden className="size-3" />

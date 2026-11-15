@@ -48,8 +48,8 @@ export function UsesSections() {
       <PageToc items={sections.map(({ id, title }) => ({ id, label: localize(title) }))} />
       <div className="flex flex-col gap-12">
         {sections.map(({ id, title, items }) => (
-          <section key={id} aria-labelledby={id} className="flex flex-col gap-4">
-            <h2 id={id} className="text-sm font-medium text-muted-foreground">
+          <section key={id} aria-labelledby={id} className="flex flex-col gap-6">
+            <h2 id={id} className="text-xl font-semibold text-foreground">
               {localize(title)}
             </h2>
             <ul className="flex flex-col gap-4">
@@ -67,7 +67,7 @@ export function UsesSections() {
                       ))}
                     </span>
                   ) : null}
-                  <span className="flex min-w-0 flex-col gap-0.5">
+                  <span className="flex min-w-0 flex-col gap-1">
                     <span className="text-base font-medium">
                       <ItemName item={item} />
                     </span>

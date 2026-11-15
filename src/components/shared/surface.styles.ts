@@ -9,11 +9,11 @@ export const surfaceDoubleFrameClass =
 export const cardFrameClass = "rounded-xl border border-border bg-background"
 
 /**
- * Hover and focus for a card that is a link, on top of cardFrameClass: the border and the fill
- * strengthen on hover, and a focus ring shows for the keyboard.
+ * Hover and focus for a card that is a link, on top of cardFrameClass: the quiet fill is the
+ * hover cue (the border stays put), and a focus ring shows for the keyboard.
  */
 export const linkedCardClass =
-  "group outline-none transition-[background-color,border-color] duration-150 ease-out hover:border-foreground/20 hover:bg-accent/40 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  "group outline-none transition-[background-color] duration-150 ease-out hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/50"
 
 /** The same frame for small images such as 32-40px logos, with a tighter gap. */
 export const surfaceDoubleFrameSmClass =
@@ -42,7 +42,7 @@ export const titleLinkClass =
   "rounded-sm underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-150 ease-out outline-none hover:decoration-brand focus-visible:ring-[3px] focus-visible:ring-ring/50"
 
 /** A single frame for media in grids and lists, where the double frame would turn to noise. */
-export const mediaFrameClass = "rounded-lg border border-border shadow-xs"
+export const mediaFrameClass = "rounded-lg border border-border"
 
 /** Links in the right rail (PageRail): muted, full color on hover and when current. */
 export const pageRailLinkClass =

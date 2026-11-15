@@ -38,7 +38,7 @@ function FavoriteValue({ favorite }: { favorite: Favorite }) {
 export function AboutFavorites() {
   return (
     <section aria-labelledby="about-favorites" className="flex flex-col gap-4">
-      <h2 id="about-favorites" className="text-xl font-semibold tracking-tight">
+      <h2 id="about-favorites" className="text-xl font-semibold text-foreground">
         {m.about_favorites_title()}
       </h2>
       <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-8 gap-y-3 text-base">

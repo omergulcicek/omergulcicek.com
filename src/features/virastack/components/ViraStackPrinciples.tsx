@@ -11,9 +11,7 @@ const tags: Record<string, (chunk: string) => ReactNode> = {
   ...VIRASTACK_PRODUCT_TAGS,
   bold: (chunk) => <span className="font-medium text-foreground">{chunk}</span>,
   code: (chunk) => (
-    <code className="rounded-sm bg-muted px-1 py-0.5 font-mono text-[0.8125rem] text-foreground">
-      {chunk}
-    </code>
+    <code className="rounded-sm bg-muted px-1 font-mono text-sm text-foreground">{chunk}</code>
   )
 }
 
@@ -44,11 +42,11 @@ export function ViraStackPrinciples() {
 
   return (
     <LabeledSection id="principles" title={getViraStackSectionTitle("principles")}>
-      <dl className="flex flex-col gap-5">
+      <dl className="flex flex-col gap-4">
         {principles.map(({ id, title, body }) => (
           <div key={id} className="flex flex-col gap-1">
             <dt className="text-base font-medium">{title}</dt>
-            <dd className="text-sm leading-6 text-pretty text-muted-foreground">
+            <dd className="text-sm text-pretty text-muted-foreground">
               <RichMessage message={body} tags={tags} />
             </dd>
           </div>

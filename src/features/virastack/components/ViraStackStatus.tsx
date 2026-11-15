@@ -32,16 +32,12 @@ export function ViraStackStatus({ stats }: ViraStackStatusProps) {
           // the numbers to the top of the reversed column, so a label wrapping to two lines
           // does not push its number out of line with the others.
           <div key={id} className="flex flex-col-reverse justify-end gap-1">
-            <dt className="text-xs text-muted-foreground">{label}</dt>
-            <dd className="font-mono text-2xl font-semibold tracking-tight tabular-nums">
-              {value.toLocaleString(locale)}
-            </dd>
+            <dt className="text-sm text-muted-foreground">{label}</dt>
+            <dd className="text-xl font-semibold tabular-nums">{value.toLocaleString(locale)}</dd>
           </div>
         ))}
       </dl>
-      <p className="text-base leading-7 text-pretty text-foreground/80">
-        {m.virastack_status_body()}
-      </p>
+      <p className="text-base text-pretty text-foreground">{m.virastack_status_body()}</p>
     </LabeledSection>
   )
 }

@@ -10,7 +10,7 @@ export function LanguageSwitcher() {
     <Button
       variant="ghost"
       size="icon"
-      className="size-8 font-mono text-xs"
+      className="size-8 text-xs font-medium"
       // setLocale loads the localized URL as a new document, so the server HTML and the URL agree.
       onClick={() => void setLocale(nextLang)}
     >

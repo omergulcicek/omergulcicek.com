@@ -43,7 +43,7 @@ export function AboutWalks() {
         <RichMessage message={m.about_walks_body()} tags={tags} />
       </p>
       <div className="flex flex-col gap-2">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <AboutFigure
             src="/img/about/kuzguncuk.webp"
             alt={m.about_walks_photo_kuzguncuk()}
@@ -59,7 +59,7 @@ export function AboutWalks() {
             className="aspect-4/5"
           />
         </div>
-        <p className="text-center text-sm text-pretty text-muted-foreground">
+        <p className="text-center text-xs text-pretty text-muted-foreground">
           {m.about_walks_caption_streets()}
         </p>
       </div>
