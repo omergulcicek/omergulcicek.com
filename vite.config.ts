@@ -6,6 +6,8 @@ import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react"
 import { nitro } from "nitro/vite"
 import { defineConfig } from "vite"
 
+import { paraglideOptions } from "./paraglide.config"
+
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
@@ -15,29 +17,7 @@ const config = defineConfig({
     nitro(),
     viteReact(),
     babel({ presets: [reactCompilerPreset()] }),
-    paraglideVitePlugin({
-      project: "./project.inlang",
-      outdir: "./src/paraglide",
-      // The URL alone decides the language: no redirect ever comes from a cookie or a header.
-      strategy: ["url", "baseLocale"],
-      urlPatterns: [
-        // Without this entry, the English home page comes out as `/en/`, which the router redirects.
-        {
-          pattern: "/",
-          localized: [
-            ["en", "/en"],
-            ["tr", "/"]
-          ]
-        },
-        {
-          pattern: "/:path(.*)?",
-          localized: [
-            ["en", "/en/:path(.*)?"],
-            ["tr", "/:path(.*)?"]
-          ]
-        }
-      ]
-    })
+    paraglideVitePlugin(paraglideOptions)
   ]
 })
 

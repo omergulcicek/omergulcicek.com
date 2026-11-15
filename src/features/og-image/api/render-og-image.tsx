@@ -1,12 +1,14 @@
-import geistLatin400 from "@fontsource/geist/files/geist-latin-400-normal.woff?inline"
-import geistLatin600 from "@fontsource/geist/files/geist-latin-600-normal.woff?inline"
-import geistLatinExt400 from "@fontsource/geist/files/geist-latin-ext-400-normal.woff?inline"
-import geistLatinExt600 from "@fontsource/geist/files/geist-latin-ext-600-normal.woff?inline"
 import { ImageResponse } from "@vercel/og"
 
 import { me } from "@/constants/me.constants"
 import { siteConfig } from "@/config/site.config"
 
+// Static Geist cuts from @fontsource/geist 5.3.0 (OFL, see OFL.txt): Satori reads neither woff2
+// nor variable fonts, and the site's own package ships only those.
+import geistLatin400 from "@/assets/og/fonts/geist-latin-400-normal.woff?inline"
+import geistLatin600 from "@/assets/og/fonts/geist-latin-600-normal.woff?inline"
+import geistLatinExt400 from "@/assets/og/fonts/geist-latin-ext-400-normal.woff?inline"
+import geistLatinExt600 from "@/assets/og/fonts/geist-latin-ext-600-normal.woff?inline"
 import photo from "@/assets/og/omer-gulcicek.jpg?inline"
 
 import { OgCard } from "@/features/og-image/components/OgCard"

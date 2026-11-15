@@ -26,4 +26,11 @@ describe("groupPostsByYear", () => {
       [null, ["draft"]]
     ])
   })
+
+  // A post published on 1 January before 03:00 Istanbul shows "1 Oca", so it belongs to the new year.
+  it("puts a post under the year its date shows, in Istanbul time", () => {
+    const groups = groupPostsByYear([post("new-year", "2025-12-31T22:30:00Z")])
+
+    expect(groups[0]?.year).toBe(2026)
+  })
 })

@@ -28,8 +28,16 @@ function getLoneImage(node: HastNode) {
   return content.length === 1 && only && isElement(only, "img") ? only : null
 }
 
-/** Looks up an image's pixel size by its `src`; null when it is unknown. */
-export type GetImageSize = (src: string) => { width: number; height: number } | null
+/**
+ * Looks up an image by its `src`: its pixel size and, when a smaller copy exists, a `srcset`
+ * offering both. Null when the image is unknown.
+ */
+export type GetImageSize = (
+  src: string
+) => { width: number; height: number; srcSet?: string } | null
+
+/** Phones fill the screen minus main's padding; from md up, the 672px reading column. */
+const POST_IMAGE_SIZES = "(min-width: 768px) 672px, calc(100vw - 2rem)"
 
 function toFigure(image: HastElement, getSize?: GetImageSize): HastElement {
   const alt = typeof image.properties.alt === "string" ? image.properties.alt.trim() : ""
@@ -42,6 +50,12 @@ function toFigure(image: HastElement, getSize?: GetImageSize): HastElement {
   if (size) {
     image.properties.width = size.width
     image.properties.height = size.height
+  }
+  if (typeof src === "string" && size?.srcSet) {
+    image.properties.srcSet = size.srcSet
+    image.properties.sizes = POST_IMAGE_SIZES
+    // The zoom opens the full-size file even when the page loaded the smaller copy.
+    image.properties.dataZoomSrc = src
   }
 
   const children: HastNode[] = [image]

@@ -4,10 +4,11 @@ import { describe, expect, it } from "vitest"
 
 import { readImageSize } from "@/features/blog/helpers/read-image-size"
 
-// Real post images, one per format; sizes checked against macOS `sips`.
+// Real files of the site, one per format. Post images are WebP since `pnpm blog:images`, so
+// PNG and JPEG come from the icons and the share card photo.
 const samples = [
-  ["public/blog/2019/12-31/calendar.png", "PNG"],
-  ["public/blog/2017/07-22/sait-kosk-hemdem.jpg", "JPEG"],
+  ["public/icon-192.png", "PNG"],
+  ["src/assets/og/omer-gulcicek.jpg", "JPEG"],
   ["public/blog/2026/04-05/virastack-logo.webp", "WebP"],
   ["public/blog/2025/01-06/optimistic-ui.gif", "GIF"]
 ] as const

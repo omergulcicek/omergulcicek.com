@@ -11,6 +11,7 @@ import type { ShikiTransformer } from "shiki"
 import { BlogCodeBlock } from "@/features/blog/components/BlogCodeBlock"
 import { getMdxComponents } from "@/features/blog/components/mdx/mdx-components"
 import imageSizes from "@/features/blog/constants/blog-image-sizes.json"
+import { variantPath } from "@/features/blog/constants/blog-image-variants.constants"
 import { localizePostLink } from "@/features/blog/helpers/localize-post-link"
 import { rehypeFigureCaptions } from "@/features/blog/helpers/rehype-figure-captions"
 import { rehypeHeadingIds } from "@/features/blog/helpers/rehype-heading-ids"
@@ -22,10 +23,19 @@ import type { Locale } from "@/paraglide/runtime.js"
 // Built by `pnpm blog:image-sizes`; a Map so a src that is not a key reads as undefined.
 const imageSizeManifest = new Map(Object.entries(imageSizes))
 
-/** The size of a post image under public/blog, from the generated manifest. */
+/**
+ * A post image under public/blog, from the generated manifest: its size, and a srcset when
+ * `pnpm blog:images` wrote a smaller copy beside it.
+ */
 function getPublicImageSize(src: string) {
-  const [width, height] = imageSizeManifest.get(decodeURI(src)) ?? []
-  return width && height ? { width, height } : null
+  const path = decodeURI(src)
+  const [width, height] = imageSizeManifest.get(path) ?? []
+  if (!width || !height) return null
+
+  const variant = variantPath(path)
+  const variantWidth = variant === path ? undefined : imageSizeManifest.get(variant)?.[0]
+  const srcSet = variantWidth ? `${variant} ${variantWidth}w, ${path} ${width}w` : undefined
+  return { width, height, srcSet }
 }
 
 /** Hands the fence's language, `title="…"` and line count to BlogCodeBlock as data attributes. */
@@ -63,7 +73,8 @@ export async function renderPostContent(content: string, locale: Locale) {
       [
         rehypeShiki,
         {
-          themes: { light: "github-light", dark: "one-dark-pro" },
+          // The high-contrast light theme: github-light's orange stays under AA (4.5:1) even on white.
+          themes: { light: "github-light-high-contrast", dark: "one-dark-pro" },
           defaultColor: false,
           defaultLanguage: "text",
           fallbackLanguage: "text",

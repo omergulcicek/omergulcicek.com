@@ -19,9 +19,9 @@ Personal website of Ömer Gülçiçek: blog, notes, projects, experiences and th
 - **Framework:** [TanStack Start](https://tanstack.com/start) (SSR, file-based TanStack Router, server functions)
 - **UI:** [React 19](https://react.dev) with React Compiler, [Tailwind CSS 4](https://tailwindcss.com), [Base UI](https://base-ui.com) primitives in the shadcn/ui style, [Lucide](https://lucide.dev) icons, [Geist](https://vercel.com/font) font
 - **Language:** TypeScript (strict), [Zod 4](https://zod.dev)
-- **Data:** [TanStack Query](https://tanstack.com/query), [Zustand](https://zustand.docs.pmnd.rs), [Supabase](https://supabase.com) for blog posts
+- **Data:** [TanStack Query](https://tanstack.com/query), [Supabase](https://supabase.com) for blog posts
 - **Content:** [MDX](https://mdxjs.com) with [Shiki](https://shiki.style) code highlighting and GitHub Flavored Markdown
-- **i18n:** [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs), English at `/` and Turkish at `/tr`
+- **i18n:** [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs), Turkish at `/` and English at `/en`
 - **Extras:** command palette with [cmdk](https://cmdk.paco.me), Open Graph images with [@vercel/og](https://vercel.com/docs/og-image-generation), RSS feeds, sitemap and `llms.txt`
 - **Tooling:** [Vite](https://vite.dev), [Vitest](https://vitest.dev) + Testing Library + MSW, ESLint, Prettier, Knip, Husky, Commitlint
 - **Hosting:** [Vercel](https://vercel.com)

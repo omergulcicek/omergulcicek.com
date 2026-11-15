@@ -13,10 +13,7 @@ const config = {
     "tw-animate-css",
     // Loaded by tailwind.css (`@plugin`, `@import`), which knip does not read.
     "@tailwindcss/typography",
-    "@fontsource-variable/geist-mono",
-    "@hookform/resolvers",
-    "zustand",
-    "@testing-library/user-event"
+    "@fontsource-variable/geist-mono"
   ],
   rules: {
     dependencies: "error",

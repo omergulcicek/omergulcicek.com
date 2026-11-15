@@ -17,6 +17,16 @@ export function useImageZoom(ref: RefObject<HTMLElement | null>) {
     let detach: (() => void) | undefined
     let cancelled = false
 
+    // medium-zoom sizes the zoom from the clone's naturalWidth before the full file replaces
+    // the srcset's smaller pick, so the image opened at its inline size. Dropping srcset as the
+    // zoom opens (before medium-zoom clones it) leaves only the full-size file to measure.
+    function showFullSize(event: Event) {
+      if (!(event.currentTarget instanceof HTMLImageElement)) return
+      event.currentTarget.removeAttribute("srcset")
+      event.currentTarget.removeAttribute("sizes")
+    }
+    for (const image of images) image.addEventListener("medium-zoom:open", showFullSize)
+
     loadMediumZoom()
       .then(({ default: mediumZoom }) => {
         if (cancelled) return
@@ -31,6 +41,7 @@ export function useImageZoom(ref: RefObject<HTMLElement | null>) {
 
     return () => {
       cancelled = true
+      for (const image of images) image.removeEventListener("medium-zoom:open", showFullSize)
       detach?.()
     }
   }, [ref])

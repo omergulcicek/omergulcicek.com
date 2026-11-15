@@ -43,7 +43,8 @@ export function BlogCodeBlock({
   return (
     <figure
       data-collapsible={collapsible ? "" : undefined}
-      className="group/code not-prose my-6 overflow-hidden rounded-xl border border-border bg-muted"
+      // White in light mode: Shiki's light colors and the muted label lose AA contrast on muted.
+      className="group/code not-prose my-6 overflow-hidden rounded-xl border border-border bg-background dark:bg-muted"
     >
       <figcaption className="flex h-10 items-center justify-between gap-2 border-b border-border pr-1 pl-4 text-xs text-muted-foreground">
         {/* A file name is code, a language label is a word. */}

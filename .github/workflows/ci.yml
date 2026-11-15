@@ -37,6 +37,9 @@ jobs:
       - name: Knip
         run: pnpm run knip
 
+      - name: Image sizes
+        run: pnpm run images:check
+
       - name: Test
         run: pnpm run test
 

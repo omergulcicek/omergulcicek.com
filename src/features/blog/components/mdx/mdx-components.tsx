@@ -16,10 +16,9 @@ import { MdxMediaInfo } from "@/features/blog/components/mdx/MdxMediaInfo"
 import { MdxNotice } from "@/features/blog/components/mdx/MdxNotice"
 import { MdxTable } from "@/features/blog/components/mdx/MdxTable"
 import type { CssDemoName } from "@/features/blog/constants/css-demos.constants"
+import type { GetImageSize } from "@/features/blog/helpers/rehype-figure-captions"
 import * as m from "@/paraglide/messages.js"
 import type { Locale } from "@/paraglide/runtime.js"
-
-type GetImageSize = (src: string) => { width: number; height: number } | null
 
 type WithoutLocale<T> = Omit<T, "locale">
 

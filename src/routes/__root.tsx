@@ -21,6 +21,7 @@ import { NotFound } from "@/components/shared/NotFound"
 import { SiteFooter } from "@/components/shared/SiteFooter"
 import { SiteHeader } from "@/components/shared/SiteHeader"
 import { SiteSidebar } from "@/components/shared/SiteSidebar"
+import { SkipLink } from "@/components/shared/SkipLink"
 import * as m from "@/paraglide/messages.js"
 import { getLocale, localizeHref } from "@/paraglide/runtime.js"
 import { SiteSearch } from "@/routes/-site-search"
@@ -87,6 +88,8 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: RootComponent
 })
 
+const MAIN_ID = "main-content"
+
 function RootComponent() {
   // The page entrance (see tailwind.css) plays on the first load only; after that, pages that
   // open through client-side navigation appear at once.
@@ -100,14 +103,18 @@ function RootComponent() {
   return (
     <Providers>
       <GoogleAnalytics />
+      <SkipLink targetId={MAIN_ID} />
       <SiteHeader search={<SiteSearch />} />
       <div className="flex flex-1">
         <SiteSidebar />
         {/* The sidebar stays at the left edge; content centers in the space beside it. */}
         <div className="flex min-w-0 flex-1 flex-col">
+          {/* Focusable from the skip link only, so focus lands here and the next Tab goes on. */}
           <main
+            id={MAIN_ID}
+            tabIndex={-1}
             data-enter=""
-            className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-8 md:px-8 md:py-12"
+            className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-8 outline-none md:px-8 md:py-12"
           >
             <Outlet />
           </main>

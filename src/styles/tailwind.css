@@ -194,7 +194,7 @@
 }
 /*
  * Shiki writes both themes as CSS variables (defaultColor: false); this picks one per theme.
- * github-light by default, one-dark-pro under .dark, the same pair v10 used.
+ * github-light-high-contrast by default, one-dark-pro under .dark.
  */
 .shiki,
 .shiki span {

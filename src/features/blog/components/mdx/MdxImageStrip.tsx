@@ -1,9 +1,9 @@
-type ImageSizeLookup = (src: string) => { width: number; height: number } | null
+import type { GetImageSize } from "@/features/blog/helpers/rehype-figure-captions"
 
 type MdxImageStripProps = {
   images: readonly { src: string; alt: string }[]
   label: string
-  getSize: ImageSizeLookup
+  getSize: GetImageSize
 }
 
 /**
@@ -32,6 +32,10 @@ export function MdxImageStrip({ images, label, getSize }: MdxImageStripProps) {
                   alt={alt}
                   width={size?.width}
                   height={size?.height}
+                  srcSet={size?.srcSet}
+                  // Shown 288px tall (h-72), so the width follows the image's own ratio.
+                  sizes={size ? `${Math.round((288 * size.width) / size.height)}px` : undefined}
+                  data-zoom-src={size?.srcSet ? src : undefined}
                   loading="lazy"
                   decoding="async"
                   className="h-72 w-auto rounded-lg border border-border object-cover"

@@ -24,6 +24,8 @@ type ProvidersOptions = Omit<RenderOptions, "wrapper"> & {
   /** The URL the component starts on, such as `"?page=2"`. */
   searchParams?: string
   onUrlUpdate?: (event: UrlUpdateEvent) => void
+  /** A client with data already in its cache, for components that read suspense queries. */
+  queryClient?: QueryClient
 }
 
 function makeRouter(ui: ReactElement, route: TestRoute, history: RouterHistory) {
@@ -37,14 +39,30 @@ function makeRouter(ui: ReactElement, route: TestRoute, history: RouterHistory) 
 }
 
 /**
+ * A QueryClient without retries. Seeded data never goes stale, so a test that fills the cache
+ * with `setQueryData` makes no background request.
+ */
+export function createTestQueryClient() {
+  return new QueryClient({
+    defaultOptions: { queries: { retry: false, staleTime: Number.POSITIVE_INFINITY } }
+  })
+}
+
+/**
  * Renders a component with the app providers it expects.
  * Each call gets a fresh QueryClient without retries and its own URL state, so tests stay isolated.
  */
 export function renderWithProviders(
   ui: ReactElement,
-  { route, initialPath, searchParams = "", onUrlUpdate, ...options }: ProvidersOptions = {}
+  {
+    route,
+    initialPath,
+    searchParams = "",
+    onUrlUpdate,
+    queryClient = createTestQueryClient(),
+    ...options
+  }: ProvidersOptions = {}
 ) {
-  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } })
   const history = createMemoryHistory({
     initialEntries: [`${initialPath ?? route?.path ?? "/"}${searchParams}`]
   })
