@@ -1,4 +1,5 @@
 import { getPostCard } from "@/features/blog/api/get-post-card.api"
+import { tagLabel } from "@/features/blog/helpers/blog-tags"
 import { formatPostDate } from "@/features/blog/helpers/format-post-date"
 import type { BlogCategory } from "@/features/blog/schemas/blog-post.schema"
 
@@ -18,10 +19,12 @@ export async function getPostCardContent(path: string) {
   if (!post) return null
 
   const date = post.published_at ? formatPostDate(post.published_at, post.locale, "long") : null
+  // Tags are stored in Turkish; an English post's card shows the English label.
+  const tag = post.tags[0] ? tagLabel(post.tags[0], post.locale) : null
   return {
     locale: post.locale,
     title: post.title,
     description: post.description,
-    meta: [date, post.tags[0]].filter(Boolean).join(" · ")
+    meta: [date, tag].filter(Boolean).join(" · ")
   }
 }
