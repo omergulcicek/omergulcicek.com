@@ -44,7 +44,10 @@ Türkçe yazı onaylanmadan İngilizceye geçme.
 
 ## Yayın akışı
 
-1. MDX'i `docs/blog/en/<slug>.mdx` olarak yaz (bu klasör git'te değil, yerel kopya).
+1. MDX'i `docs/blog/en/<slug>.mdx` olarak yaz (bu klasör git'te değil, yerel kopya). Ardından kaynaklar için yalnızca fark kontrolü yap; Türkçe yazı zaten `verify-sources` ile doğrulandı, tam taramayı tekrarlama:
+   - Dipnot etiketleri ve tanımları iki dilde aynı mı, her dipnot İngilizcede de aynı iddiaya bağlı mı?
+   - Yeniden kurulan cümleler kaynağın söylediğinden daha güçlü ya da farklı bir şey söylemiyor mu?
+   - Değişen örnekler (Masterpass yerine Apple Pay gibi) ve Türkçe kaynağın yerine konan İngilizce kaynaklar yeni iddiadır; yalnızca bunları `verify-sources`'taki subagent talimatıyla doğrula.
 2. Supabase `blog_posts` tablosuna taslak olarak ekle:
    - `locale: "en"`, `published: false`, `published_at: null`
    - `category`, `tags`, `og_image_path` Türkçe yazıdakiyle aynı; `featured_rank` dil başına ayrı (1 ilk sırada, öne çıkmıyorsa `null`), İngilizce öne çıkanlardaki sırayı kullanıcıya sor
@@ -64,6 +67,7 @@ Kullanıcıya göstermeden önce:
 - [ ] Her bölüm iki dilde de aynı fikri veriyor mu? Eksik ya da fazladan eklenmiş bir fikir yok mu?
 - [ ] Uyarlanan her örnek orijinaldeki dersi hâlâ anlatıyor mu?
 - [ ] Uydurma bir bilgi eklenmedi mi? Örnek değişebilir, olgular değişmez.
+- [ ] Dipnotlar iki dilde aynı iddialara bağlı mı, yeni örnek ve kaynaklar doğrulandı mı?
 - [ ] Teknik terimler İngilizce mi, marka adları aynen mi?
 - [ ] İç linkler doğru dile gidiyor mu, "(in Turkish)" notları yerinde mi?
 - [ ] Açıklama 155 karakterin altında mı?
