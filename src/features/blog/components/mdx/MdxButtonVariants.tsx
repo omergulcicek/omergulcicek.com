@@ -22,7 +22,7 @@ const VARIANTS = [
 export function MdxButtonVariants({ locale }: MdxButtonVariantsProps) {
   return (
     <figure className="not-prose my-6 overflow-hidden rounded-xl border border-border">
-      <ul className="grid grid-cols-2 gap-x-4 gap-y-6 bg-muted p-4 sm:grid-cols-3">
+      <ul className="grid grid-cols-2 gap-x-4 gap-y-6 bg-background p-4 sm:grid-cols-3">
         {VARIANTS.map(({ label, variant }) => (
           <li key={variant} className="flex flex-col items-center gap-2">
             {/* Real buttons with no action, so hover, press and focus show each variant's states. */}

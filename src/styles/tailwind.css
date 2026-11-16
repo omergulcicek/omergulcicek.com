@@ -39,6 +39,20 @@
   --brand: oklch(0.704 0.14 182.503);
 }
 
+/*
+ * Content colors, outside the five UI tokens: they draw things a post shows, never the
+ * interface.
+ */
+:root {
+  /*
+   * destructive: the fill of a button whose action cannot be undone, like deleting. Tailwind
+   * red-600 in both themes: white text on it reads at 4.8:1 (WCAG AA). Errors in forms stay in
+   * the foreground color, told by text and an icon.
+   */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+}
+
 /* Aliases of the five tokens. Do not give any of these a value of its own. */
 :root,
 .dark {
@@ -54,9 +68,6 @@
   --secondary-foreground: var(--foreground);
   --accent: var(--muted);
   --accent-foreground: var(--foreground);
-  /* No sixth color for errors: they are told by text and an icon, in the foreground color. */
-  --destructive: var(--foreground);
-  --destructive-foreground: var(--background);
   --input: var(--border);
   --brand-foreground: var(--background);
   --ring: var(--brand);
