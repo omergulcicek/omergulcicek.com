@@ -4,6 +4,7 @@
 
 - Ignore the ViraStack `ui` rule on semantic colors for brand color maps in `*.constants.tsx` (`constants/virastack-products.constants.tsx`, `features/projects/constants/project-icons.constants.tsx`): each ViraStack product keeps its virastack.com color. Only icons are colored; text uses tokens.
 - `src/components/ui/svgs/*` are svgl icons added with shadcn; their fills and ids may be edited by hand (`currentColor`, `useId`).
+- Blog flow (skills in `.claude/skills/`): `write-post` (Turkish draft, runs `verify-sources`) → `localize-post` (English version) → `publish-post` (publish and share copy; only when the user asks).
 
 <!-- BEGIN:virastack-ai -->
 # ViraStack AI
