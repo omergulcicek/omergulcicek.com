@@ -58,15 +58,17 @@ export const VIRASTACK_PRODUCTS: readonly ViraStackProduct[] = [
     id: "password",
     name: "Password",
     Icon: SquareAsteriskIcon,
-    colorClass: "text-pink-600 dark:text-pink-500",
-    dotClass: "bg-pink-500"
+    // The form packages share Mask's indigo, as on virastack.com.
+    colorClass: "text-indigo-600 dark:text-indigo-400",
+    dotClass: "bg-indigo-500"
   },
   {
     id: "address",
     name: "Address",
     Icon: MapPinIcon,
-    colorClass: "text-red-600 dark:text-red-500",
-    dotClass: "bg-red-500"
+    // The form packages share Mask's indigo, as on virastack.com.
+    colorClass: "text-indigo-600 dark:text-indigo-400",
+    dotClass: "bg-indigo-500"
   },
   {
     id: "guide",
