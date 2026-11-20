@@ -1,5 +1,8 @@
+import type { ReactNode } from "react"
+
 type PageHeaderProps = {
-  title: string
+  /** Usually text; a page may pass a logo with an accessible name instead. */
+  title: ReactNode
   description: string
 }
 

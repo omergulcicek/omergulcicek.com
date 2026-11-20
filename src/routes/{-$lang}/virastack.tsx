@@ -20,6 +20,7 @@ import { ViraStackToc } from "@/features/virastack/components/ViraStackToc"
 import { ViraStackWhy } from "@/features/virastack/components/ViraStackWhy"
 import { VIRASTACK_BLOG_TAG } from "@/features/virastack/constants/virastack.constants"
 import { getViraStackSectionTitle } from "@/features/virastack/helpers/get-virastack-sections"
+import { ViraStackWordmark } from "@/features/virastack/icons/ViraStackWordmark"
 import * as m from "@/paraglide/messages.js"
 
 export const Route = createFileRoute("/{-$lang}/virastack")({
@@ -45,7 +46,16 @@ function ViraStackPage() {
   return (
     <div className={cn("flex flex-col gap-12", readingWidthClass)}>
       <div className="flex flex-col gap-6">
-        <PageHeader title={m.virastack_title()} description={m.virastack_description()} />
+        <PageHeader
+          title={
+            <ViraStackWordmark
+              role="img"
+              aria-label={m.virastack_title()}
+              className="h-14 w-auto"
+            />
+          }
+          description={m.virastack_description()}
+        />
         <ViraStackLinks />
       </div>
       <ViraStackProblem />
