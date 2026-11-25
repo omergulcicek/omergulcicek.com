@@ -35,7 +35,6 @@
   "experiences_title": "Experience",
   "experiences_description": "The companies I've worked at, my roles and what I did there.",
   "experiences_present": "Present",
-  "experiences_parent": "a {parent} company",
   "experiences_all": "All experience",
   "experiences_earlier": "Before that",
   "work_mode_remote": "Remote",

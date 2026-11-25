@@ -35,7 +35,7 @@ export const meSchema = z.strictObject({
     z.strictObject({
       id: z.string().min(1),
       company: z.string().min(1),
-      /** The larger company this one belongs to, shown as "Fibabanka iştiraki"; `null` for none. */
+      /** The brand or project the work was for, shown muted beside the company ("Alışgidiş"); `null` for none. */
       parent: z.string().min(1).nullable(),
       logo: z.string().startsWith("/"),
       role: localizedSchema,

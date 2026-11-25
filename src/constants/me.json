@@ -2,8 +2,8 @@
   "name": "Ömer Gülçiçek",
   "handle": "omergulcicek",
   "title": {
-    "tr": "Frontend Mühendisi",
-    "en": "Frontend Engineer"
+    "tr": "Yazılım Mühendisi",
+    "en": "Software Engineer"
   },
   "photo": {
     "src": "/img/omer-gulcicek.webp",
@@ -54,6 +54,10 @@
         {
           "tr": "Ürün kararlarını, geliştirmeyi, dokümantasyonu ve npm yayın sürecini uçtan uca yönetiyorum.",
           "en": "I own the full lifecycle end to end: product decisions, development, documentation and npm releases."
+        },
+        {
+          "tr": "Öncesinde Turkuaz CSS framework'ünü geliştirdim ve React dokümantasyonunun Türkçe çevirisine katkı verdim (500+ GitHub yıldızı).",
+          "en": "Earlier open-source work: the Turkuaz CSS framework and Turkish translations of the React docs (500+ GitHub stars)."
         }
       ]
     },
@@ -63,8 +67,8 @@
       "parent": null,
       "logo": "/media/company/machinarium-112.webp",
       "role": {
-        "tr": "Frontend Team Lead",
-        "en": "Frontend Team Lead"
+        "tr": "Yazılım Mühendisi",
+        "en": "Software Engineer"
       },
       "location": {
         "city": {
@@ -76,37 +80,37 @@
       "startDate": "2025-08",
       "endDate": "2025-11",
       "summary": {
-        "tr": "10 kişilik ekibe liderlik ettim. Ortak bileşen mimarisi ve AI destekli kod standartlarıyla teknik borcu azalttım.",
-        "en": "Led a team of 10. Cut technical debt with a shared component architecture and AI-assisted code standards."
+        "tr": "5+ projenin frontend mimarisinden sorumluydum. Ortak modül mimarisiyle geliştirme süresini 2-3 kat kısalttım.",
+        "en": "Responsible for the frontend architecture of 5+ projects. Cut development time by 2–3x with a shared module architecture."
       },
       "technologies": ["React", "Next.js", "TypeScript", "TanStack Query", "Tailwind CSS"],
       "highlights": [
         {
-          "tr": "10 kişilik frontend ekibinden sorumlu olarak 2 e-ticaret sitesi ile PIM, CMS ve OMS panelleri dahil 5+ projenin teknik liderliğini yürüttüm.",
-          "en": "Led a 10-person frontend team, owning the technical direction of 5+ projects, including 2 e-commerce sites and PIM, CMS and OMS panels."
+          "tr": "2 e-ticaret sitesi ile PIM, CMS ve OMS panelleri dahil 5+ projenin frontend mimarisinden ve ekip genelinde teknik kaliteden sorumluydum.",
+          "en": "Responsible for the frontend architecture of 5+ projects, including 2 e-commerce sites and PIM, CMS and OMS panels, and for technical quality across the team."
         },
         {
-          "tr": "Projelerde ayrı ayrı yazılan ortak yapıları ortak bileşen ve modül mimarisinde topladım; yeni geliştirme ve hata çözüm sürelerini 2-3 kat kısalttım.",
-          "en": "Brought structures rebuilt separately across projects into a shared component and module architecture, cutting feature and bug-fix turnaround by 2–3x."
+          "tr": "Projelerde ayrı ayrı yazılan kodu ortak bir bileşen ve modül mimarisinde topladım; yeni geliştirme ve hata çözüm sürelerini 2-3 kat kısalttım.",
+          "en": "Consolidated code each project had written separately into a shared component and module architecture, cutting feature and bug-fix turnaround by 2–3x."
+        },
+        {
+          "tr": "Yapay zekâ destekli Figma to Code akışı kurarak arayüz geliştirme süresini yaklaşık %40 azalttım.",
+          "en": "Set up an AI-assisted Figma-to-code workflow that cut UI development time by about 40%."
         },
         {
           "tr": "Yapay zekâ kuralları ve kod yazım standartları oluşturarak ekip genelinde kod tutarlılığını sağladım.",
           "en": "Established AI rules and coding standards, bringing code consistency across the team."
-        },
-        {
-          "tr": "Yapay zekâ destekli Figma to Code akışı kurarak tasarımların koda dönüşümünü hızlandırdım.",
-          "en": "Set up an AI-assisted Figma-to-code workflow that sped up turning designs into code."
         }
       ]
     },
     {
       "id": "alisgidis",
-      "company": "Alışgidiş",
-      "parent": "Fibabanka",
-      "logo": "/media/company/alisgidis-112.webp",
+      "company": "Fibabanka",
+      "parent": "Alışgidiş",
+      "logo": "/media/company/fibabanka-112.webp",
       "role": {
-        "tr": "Frontend Team Lead",
-        "en": "Frontend Team Lead"
+        "tr": "Yazılım Mühendisi",
+        "en": "Software Engineer"
       },
       "location": {
         "city": {
@@ -116,24 +120,24 @@
         "workMode": "remote"
       },
       "startDate": "2024-03",
-      "endDate": "2025-06",
+      "endDate": "2025-07",
       "summary": {
-        "tr": "alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum. Lighthouse 90+.",
-        "en": "Built the frontend team and architecture of alisgidis.com from scratch. Lighthouse 90+."
+        "tr": "alisgidis.com'un frontend mimarisini sıfırdan kurup 2 ayda yayına aldık. Lighthouse 90+.",
+        "en": "Built the frontend architecture of alisgidis.com from scratch and launched it in 2 months. Lighthouse 90+."
       },
       "technologies": ["React", "Next.js", "TypeScript", "TanStack Query", "Tailwind CSS"],
       "highlights": [
         {
-          "tr": "Fibabanka'nın e-ticaret girişimi alisgidis.com'un frontend ekibini ve mimarisini sıfırdan kurdum; 5 kişilik frontend ekibini yönettim.",
-          "en": "Built the frontend team and architecture of alisgidis.com, Fibabanka's e-commerce venture, from scratch, and led its 5-person frontend team."
+          "tr": "Fibabanka'nın e-ticaret girişimi alisgidis.com'un frontend mimarisini sıfırdan kurdum; teknoloji seçimlerinden ve ekibin kod standartlarından sorumluydum, siteyi 2 ayda yayına aldık.",
+          "en": "Built the frontend architecture of alisgidis.com, Fibabanka's e-commerce venture, from scratch; responsible for technology choices and the team's coding standards, and launched the site in 2 months."
         },
         {
-          "tr": "Core Web Vitals iyileştirmeleriyle Lighthouse skorlarını 90+ seviyesine taşıyarak site hızını ve SEO performansını artırdım.",
-          "en": "Raised Lighthouse scores to 90+ through Core Web Vitals improvements, improving site speed and SEO."
+          "tr": "Core Web Vitals iyileştirmeleriyle Lighthouse skorlarını 90+'a çıkardım; mobilde LCP süresini 3,8 saniyeden 1,9 saniyeye düşürdüm.",
+          "en": "Raised Lighthouse scores to 90+ through Core Web Vitals improvements, cutting mobile LCP from 3.8s to 1.9s."
         },
         {
-          "tr": "Atomic Design ile modüler, dark/light tema destekli bir UI kütüphanesi kurarak frontend geliştirme hızını %25 artırdım.",
-          "en": "Built a modular UI library with dark and light themes using Atomic Design, increasing frontend development speed by 25%."
+          "tr": "Atomic Design ile dark/light tema destekli bir UI kütüphanesi kurarak geliştirme hızını %25 artırdım.",
+          "en": "Built a UI library with dark and light themes using Atomic Design, increasing development speed by 25%."
         },
         {
           "tr": "Vitest ile birim, Playwright ile uçtan uca testleri geliştirme sürecine dahil ettim.",
@@ -143,12 +147,12 @@
     },
     {
       "id": "gordion",
-      "company": "Gordion",
-      "parent": null,
-      "logo": "/media/company/gordion-112.webp",
+      "company": "Jollytur",
+      "parent": "Gordion",
+      "logo": "/media/company/jollytur-112.webp",
       "role": {
-        "tr": "Senior Frontend Engineer",
-        "en": "Senior Frontend Engineer"
+        "tr": "Yazılım Geliştirme Uzmanı",
+        "en": "Software Development Specialist"
       },
       "location": {
         "city": {
@@ -160,22 +164,22 @@
       "startDate": "2022-01",
       "endDate": "2024-02",
       "summary": {
-        "tr": "Rezervasyon sayfalarını geliştirdim, merkezi bir UI Kit kurdum ve GraphQL entegrasyonunu yaptım.",
-        "en": "Built the booking pages, set up a central UI kit and handled the GraphQL integration."
+        "tr": "Rezervasyon platformlarının mimarisini ve kurumsal tasarım sistemini kurdum. Arama sayfalarını 1,4 saniyeye indirdim.",
+        "en": "Built the booking platforms' architecture and corporate design system. Brought search pages down to 1.4s."
       },
       "technologies": ["React", "Next.js", "GraphQL", "Styled Components", "Tailwind CSS"],
       "highlights": [
         {
-          "tr": "Otel, uçak bileti ve kültür turu rezervasyon platformları için ölçeklenebilir frontend mimarileri kurdum.",
-          "en": "Built scalable frontend architectures for hotel, flight and cultural tour booking platforms."
+          "tr": "Jollytur'un otel, uçak bileti ve kültür turu rezervasyon platformları için ölçeklenebilir frontend mimarileri kurdum; GraphQL entegrasyonuyla veri akışını sadeleştirdim.",
+          "en": "Built scalable frontend architectures for Jollytur's hotel, flight and cultural tour booking platforms; simplified data flow through GraphQL integration."
         },
         {
-          "tr": "Kurumsal UI Kit ve tasarım sistemi geliştirerek ekipler arası tutarlılığı sağladım.",
-          "en": "Developed a corporate UI kit and design system, bringing consistency across teams."
+          "tr": "Kurumsal UI Kit ve tasarım sistemi geliştirdim; 3+ rezervasyon ürününde kullanılarak yeni sayfa geliştirme süresini yaklaşık %30 kısalttı.",
+          "en": "Developed a corporate UI kit and design system, adopted across 3+ booking products, cutting new page development time by about 30%."
         },
         {
-          "tr": "6 kişilik frontend ekibinde resmi unvan olmadan teknik liderlik üstlendim; birkaç geliştiriciye mentorluk yaptım.",
-          "en": "Took on technical leadership of a 6-person frontend team without a formal title and mentored several developers."
+          "tr": "Kod bölme (code splitting) ve görsel optimizasyonuyla otel arama sonuç sayfalarının açılış süresini 3,2 saniyeden 1,4 saniyeye düşürdüm.",
+          "en": "Cut load time of hotel search result pages from 3.2s to 1.4s through code splitting and image optimization."
         }
       ]
     },
@@ -185,8 +189,8 @@
       "parent": null,
       "logo": "/media/company/hangikredi-112.webp",
       "role": {
-        "tr": "Frontend Developer",
-        "en": "Frontend Developer"
+        "tr": "Yazılım Geliştirme Uzmanı",
+        "en": "Software Development Specialist"
       },
       "location": {
         "city": {
@@ -196,20 +200,20 @@
         "workMode": "remote"
       },
       "startDate": "2020-09",
-      "endDate": "2022-01",
+      "endDate": "2021-12",
       "summary": {
-        "tr": "hangikredi.com'un arayüzlerini geliştirdim ve sayfa performansını iyileştirdim.",
-        "en": "Built interfaces for hangikredi.com and improved page performance."
+        "tr": "hangikredi.com'un arayüzlerini geliştirdim. Sayfa açılış süresini 4,5 saniyeden 1,6 saniyeye düşürdüm.",
+        "en": "Built interfaces for hangikredi.com. Cut page load time from 4.5s to 1.6s."
       },
       "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
       "highlights": [
         {
-          "tr": "hangikredi.com'un tüm sayfalarını geliştirdim; performans iyileştirmeleriyle Lighthouse skorlarını üst seviyeye taşıdım.",
-          "en": "Developed every page of hangikredi.com and raised Lighthouse scores to top levels through performance work."
+          "tr": "hangikredi.com'un tüm sayfalarını geliştirdim; 100+ sayfada Lighthouse performans skorunu yaklaşık 50'den 90+'a çıkardım ve sayfa açılış süresini 4,5 saniyeden 1,6 saniyeye düşürdüm.",
+          "en": "Developed every page of hangikredi.com; raised Lighthouse performance from about 50 to 90+ across 100+ pages and cut page load time from 4.5s to 1.6s."
         },
         {
           "tr": "Yeniden kullanılabilir JavaScript kütüphaneleri yazarak kod tekrarını azalttım.",
-          "en": "Wrote reusable JavaScript libraries to reduce code duplication."
+          "en": "Wrote reusable JavaScript libraries that reduced code duplication."
         }
       ]
     },
@@ -241,8 +245,8 @@
       "parent": null,
       "logo": "/media/company/akinon-112.webp",
       "role": {
-        "tr": "Frontend Developer",
-        "en": "Frontend Developer"
+        "tr": "Yazılım Uzmanı",
+        "en": "Software Specialist"
       },
       "location": {
         "city": {
@@ -252,10 +256,10 @@
         "workMode": "onsite"
       },
       "startDate": "2019-06",
-      "endDate": "2019-11",
+      "endDate": "2020-08",
       "summary": {
-        "tr": "Vakko ve A101 gibi e-ticaret siteleri için modüler bileşenler geliştirdim.",
-        "en": "Built modular components for e-commerce sites such as Vakko and A101."
+        "tr": "Vakko ve A101 dahil 4+ markanın e-ticaret mağazasını her biri yaklaşık 4 haftada yayına aldım.",
+        "en": "Launched storefronts for 4+ brands, including Vakko and A101, each in about 4 weeks."
       },
       "technologies": ["HTML", "CSS", "LESS", "JavaScript", "jQuery", "ES6", "Jinja"],
       "highlights": []
@@ -266,8 +270,8 @@
       "parent": null,
       "logo": "/media/company/turkcell-112.webp",
       "role": {
-        "tr": "Frontend Developer",
-        "en": "Frontend Developer"
+        "tr": "Yazılım Uzmanı",
+        "en": "Software Specialist"
       },
       "location": {
         "city": {
@@ -277,7 +281,7 @@
         "workMode": "onsite"
       },
       "startDate": "2018-07",
-      "endDate": "2018-11",
+      "endDate": "2019-05",
       "summary": {
         "tr": "Canlı sistemdeki kritik arayüz hatalarını çözdüm.",
         "en": "Fixed critical interface bugs in production."
@@ -291,8 +295,8 @@
       "parent": null,
       "logo": "/media/company/ziraat-112.webp",
       "role": {
-        "tr": "Frontend Developer",
-        "en": "Frontend Developer"
+        "tr": "Yazılım Uzmanı",
+        "en": "Software Specialist"
       },
       "location": {
         "city": {
@@ -301,7 +305,7 @@
         },
         "workMode": "onsite"
       },
-      "startDate": "2017-07",
+      "startDate": "2017-09",
       "endDate": "2018-06",
       "summary": {
         "tr": "Kurumsal bir admin paneli geliştirdim. İlk işimdi.",
@@ -661,8 +665,8 @@
   ],
   "hero": {
     "intro": {
-      "tr": "Sakarya'da yaşayan kıdemli bir frontend mühendisiyim. 10 yılı aşkın süredir React ile arayüz geliştiriyorum. Next.js ve TanStack ile sunucuda render edilen uygulamalar, tasarım sistemleri, erişilebilir form bileşenleri ve tip güvenli API katmanları kuruyorum. Ekiplere liderlik edip ortak kod standartlarını belirliyorum. Bugün bunların hepsini frontend geliştiriciler için açık kaynak şablonlara, paketlere ve ücretsiz rehberlere dönüştürüyorum: <virastack>ViraStack</virastack>.",
-      "en": "I'm a senior frontend engineer based in Sakarya, Turkey. I've been building interfaces with React for over 10 years. I build server-rendered apps with Next.js and TanStack, design systems, accessible form components and type-safe API layers. I lead teams and set shared code standards. Today I turn all of it into open-source templates, packages and free guides for frontend developers: <virastack>ViraStack</virastack>."
+      "tr": "Sakarya'da yaşayan bir yazılım mühendisiyim. 8 yılı aşkın süredir React ile arayüz geliştiriyorum. Next.js ve TanStack ile sunucuda render edilen uygulamalar, tasarım sistemleri, erişilebilir form bileşenleri ve tip güvenli API katmanları kuruyorum. Mimari kararlardan, kod standartlarından ve ekibin teknik kalitesinden sorumlu oluyorum. Bugün bunların hepsini frontend geliştiriciler için açık kaynak şablonlara, paketlere ve ücretsiz rehberlere dönüştürüyorum: <virastack>ViraStack</virastack>.",
+      "en": "I'm a software engineer based in Sakarya, Turkey. I've been building interfaces with React for over 8 years. I build server-rendered apps with Next.js and TanStack, design systems, accessible form components and type-safe API layers. I own architecture decisions, code standards and the team's technical quality. Today I turn all of it into open-source templates, packages and free guides for frontend developers: <virastack>ViraStack</virastack>."
     }
   }
 }

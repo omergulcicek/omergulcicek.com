@@ -33,6 +33,6 @@ export function describeExperience(experience: Experience) {
       countMonths(experience.startDate, experience.endDate, new Date()),
       locale
     ),
-    parent: experience.parent ? m.experiences_parent({ parent: experience.parent }) : null
+    parent: experience.parent
   }
 }
