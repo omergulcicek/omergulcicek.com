@@ -421,6 +421,19 @@
       }
     },
     {
+      "id": "gitscout",
+      "title": "Gitscout",
+      "group": "side",
+      "status": "active",
+      "href": "https://gitscout.io",
+      "repo": "omergulcicek/gitscout",
+      "npm": null,
+      "description": {
+        "tr": "GitHub profilini bir koleksiyon kartına dönüştürüp liderlik tablosundaki yerini gösterir; iki geliştiriciyi karşılaştırmak da mümkün.",
+        "en": "Turns a GitHub profile into a collectible card and shows where it ranks on the leaderboard; two developers can also go head to head."
+      }
+    },
+    {
       "id": "footy",
       "title": "Footy",
       "group": "side",

@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import type { ReactNode } from "react"
 
-import { BookTypeIcon, CalendarDaysIcon, CupSodaIcon, TrophyIcon } from "lucide-react"
+import { BookTypeIcon, CalendarDaysIcon, CupSodaIcon, IdCardIcon, TrophyIcon } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import { cn } from "cn"
 
@@ -29,6 +29,7 @@ export const PROJECT_ICONS = new Map<string, ReactNode>([
   // ViraStack products: icon and color from the shared list, so every page matches.
   ...VIRASTACK_PRODUCTS.map(({ id, Icon, colorClass }) => [id, lucide(Icon, colorClass)] as const),
   ["takvim", lucide(CalendarDaysIcon, "text-blue-600 dark:text-blue-500")],
+  ["gitscout", lucide(IdCardIcon, "text-amber-600 dark:text-amber-500")],
   ["footy", lucide(TrophyIcon, "text-green-600 dark:text-green-500")],
   [
     "react-tr",
