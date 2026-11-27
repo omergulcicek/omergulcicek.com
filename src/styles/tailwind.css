@@ -299,6 +299,18 @@ html:not([data-entered]) main[data-enter] > :first-child > :has([data-page-rail]
   }
 }
 
+/* The Gitscout card in the hero rises and tips a little on hover, the same lift gitscout.io
+   gives its cards. Only on a real pointer, and not with reduced motion. */
+.card-lift {
+  transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .card-lift:hover {
+    transform: translateY(-6px) rotate(-0.6deg);
+  }
+}
+
 /* Two icons in one spot, cross-faded on a state change: copy to copied, moon to sun. The first
    child shows by default; [data-copied] on the button or the dark theme shows the second. */
 .icon-swap {

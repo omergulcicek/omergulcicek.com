@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from "lucide-react"
 import { cn } from "cn"
 
 import { me } from "@/constants/me.constants"
@@ -7,16 +8,17 @@ import { localize } from "@/helpers/localize"
 import { emphasisTags } from "@/components/shared/emphasis-tags"
 import { ProseLink } from "@/components/shared/ProseLink"
 import { RichMessage } from "@/components/shared/RichMessage"
-import { surfaceDoubleFrameClass } from "@/components/shared/surface.styles"
+import { buttonVariants } from "@/components/ui/button"
 import { HomeCtaButton } from "@/features/home/components/HomeCtaButton"
 import { HomeSocialLinks } from "@/features/home/components/HomeSocialLinks"
+import * as m from "@/paraglide/messages.js"
 
-// Made from the 1344 px original; the photo shows at 256 px below md and 320 px from md up.
-const PHOTO_WIDTHS = [320, 480, 640, 960] as const
-const PHOTO_SIZES = "(min-width: 768px) 320px, 256px"
+// Made from the 640 × 960 Gitscout card; it shows 256 px wide below md and 320 px from md up.
+const CARD_WIDTHS = [320, 480, 640] as const
+const CARD_SIZES = "(min-width: 768px) 320px, 256px"
 
-function photoSrcSet(format: "avif" | "webp") {
-  return PHOTO_WIDTHS.map((width) => `/img/omer-gulcicek-${width}.${format} ${width}w`).join(", ")
+function cardSrcSet(format: "avif" | "webp") {
+  return CARD_WIDTHS.map((width) => `/img/gitscout-card-${width}.${format} ${width}w`).join(", ")
 }
 
 export function HomeHero() {
@@ -46,26 +48,40 @@ export function HomeHero() {
           <HomeSocialLinks />
         </div>
       </div>
-      {/* The hero photo is the LCP image: load it eagerly with high priority, and no async
-          decoding, which may paint it a frame later. AVIF first, WebP as the fallback; the
-          sizes cover 1x to 3x screens at both widths. */}
-      <picture className="shrink-0">
-        <source type="image/avif" srcSet={photoSrcSet("avif")} sizes={PHOTO_SIZES} />
-        <img
-          src={me.photo.src}
-          srcSet={photoSrcSet("webp")}
-          sizes={PHOTO_SIZES}
-          alt={localize(me.photo.alt)}
-          width={320}
-          height={320}
-          loading="eager"
-          fetchPriority="high"
+      <div className="flex shrink-0 flex-col items-center gap-3">
+        {/* The card is the LCP image: load it eagerly with high priority, and no async
+            decoding, which may paint it a frame later. AVIF first, WebP as the fallback; the
+            sizes cover 1x to 2x screens at both widths. The card draws its own rounded frame. */}
+        <picture>
+          <source type="image/avif" srcSet={cardSrcSet("avif")} sizes={CARD_SIZES} />
+          <img
+            src="/img/gitscout-card-640.webp"
+            srcSet={cardSrcSet("webp")}
+            sizes={CARD_SIZES}
+            alt={m.hero_gitscout_card_alt()}
+            width={320}
+            height={480}
+            loading="eager"
+            fetchPriority="high"
+            className="card-lift aspect-2/3 w-64 md:w-80"
+          />
+        </picture>
+        <a
+          href={links.gitscout}
+          target="_blank"
+          rel="noreferrer"
           className={cn(
-            "aspect-square w-full max-w-64 object-cover md:max-w-80",
-            surfaceDoubleFrameClass
+            buttonVariants({ variant: "ghost", size: "sm" }),
+            "group text-xs text-muted-foreground"
           )}
-        />
-      </picture>
+        >
+          gitscout.io
+          <ArrowUpRightIcon
+            aria-hidden
+            className="transition-[translate] duration-150 ease-out motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5"
+          />
+        </a>
+      </div>
     </section>
   )
 }
